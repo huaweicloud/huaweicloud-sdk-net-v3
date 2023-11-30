@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
     {
 
         /// <summary>
-        /// 普罗实例id。
+        /// Prometheus实例id。
         /// </summary>
         [SDKProperty("prom_id", IsQuery = true)]
         [JsonProperty("prom_id", NullValueHandling = NullValueHandling.Ignore)]

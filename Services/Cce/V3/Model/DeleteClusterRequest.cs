@@ -1055,6 +1055,242 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             }
         }
 
+        /// <summary>
+        /// 集群下所有按需节点处理策略， 枚举取值： - delete (删除服务器) - reset (保留服务器并重置服务器，数据不保留) - retain （保留服务器不重置服务器，数据保留）
+        /// </summary>
+        /// <value>集群下所有按需节点处理策略， 枚举取值： - delete (删除服务器) - reset (保留服务器并重置服务器，数据不保留) - retain （保留服务器不重置服务器，数据保留）</value>
+        [JsonConverter(typeof(EnumClassConverter<OndemandNodePolicyEnum>))]
+        public class OndemandNodePolicyEnum
+        {
+            /// <summary>
+            /// Enum DELETE for value: delete
+            /// </summary>
+            public static readonly OndemandNodePolicyEnum DELETE = new OndemandNodePolicyEnum("delete");
+
+            /// <summary>
+            /// Enum RESET for value: reset
+            /// </summary>
+            public static readonly OndemandNodePolicyEnum RESET = new OndemandNodePolicyEnum("reset");
+
+            /// <summary>
+            /// Enum RETAIN for value: retain
+            /// </summary>
+            public static readonly OndemandNodePolicyEnum RETAIN = new OndemandNodePolicyEnum("retain");
+
+            private static readonly Dictionary<string, OndemandNodePolicyEnum> StaticFields =
+            new Dictionary<string, OndemandNodePolicyEnum>()
+            {
+                { "delete", DELETE },
+                { "reset", RESET },
+                { "retain", RETAIN },
+            };
+
+            private string _value;
+
+            public OndemandNodePolicyEnum()
+            {
+
+            }
+
+            public OndemandNodePolicyEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static OndemandNodePolicyEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as OndemandNodePolicyEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(OndemandNodePolicyEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(OndemandNodePolicyEnum a, OndemandNodePolicyEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(OndemandNodePolicyEnum a, OndemandNodePolicyEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+        /// <summary>
+        /// 集群下所有包周期节点处理策略， 枚举取值： - reset (保留服务器并重置服务器，数据不保留) - retain （保留服务器不重置服务器，数据保留）
+        /// </summary>
+        /// <value>集群下所有包周期节点处理策略， 枚举取值： - reset (保留服务器并重置服务器，数据不保留) - retain （保留服务器不重置服务器，数据保留）</value>
+        [JsonConverter(typeof(EnumClassConverter<PeriodicNodePolicyEnum>))]
+        public class PeriodicNodePolicyEnum
+        {
+            /// <summary>
+            /// Enum RESET for value: reset
+            /// </summary>
+            public static readonly PeriodicNodePolicyEnum RESET = new PeriodicNodePolicyEnum("reset");
+
+            /// <summary>
+            /// Enum RETAIN for value: retain
+            /// </summary>
+            public static readonly PeriodicNodePolicyEnum RETAIN = new PeriodicNodePolicyEnum("retain");
+
+            private static readonly Dictionary<string, PeriodicNodePolicyEnum> StaticFields =
+            new Dictionary<string, PeriodicNodePolicyEnum>()
+            {
+                { "reset", RESET },
+                { "retain", RETAIN },
+            };
+
+            private string _value;
+
+            public PeriodicNodePolicyEnum()
+            {
+
+            }
+
+            public PeriodicNodePolicyEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static PeriodicNodePolicyEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as PeriodicNodePolicyEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(PeriodicNodePolicyEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(PeriodicNodePolicyEnum a, PeriodicNodePolicyEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(PeriodicNodePolicyEnum a, PeriodicNodePolicyEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 集群ID，获取方式请参见[如何获取接口URI中参数](cce_02_0271.xml)。
@@ -1111,6 +1347,18 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [SDKProperty("tobedeleted", IsQuery = true)]
         [JsonProperty("tobedeleted", NullValueHandling = NullValueHandling.Ignore)]
         public TobedeletedEnum Tobedeleted { get; set; }
+        /// <summary>
+        /// 集群下所有按需节点处理策略， 枚举取值： - delete (删除服务器) - reset (保留服务器并重置服务器，数据不保留) - retain （保留服务器不重置服务器，数据保留）
+        /// </summary>
+        [SDKProperty("ondemand_node_policy", IsQuery = true)]
+        [JsonProperty("ondemand_node_policy", NullValueHandling = NullValueHandling.Ignore)]
+        public OndemandNodePolicyEnum OndemandNodePolicy { get; set; }
+        /// <summary>
+        /// 集群下所有包周期节点处理策略， 枚举取值： - reset (保留服务器并重置服务器，数据不保留) - retain （保留服务器不重置服务器，数据保留）
+        /// </summary>
+        [SDKProperty("periodic_node_policy", IsQuery = true)]
+        [JsonProperty("periodic_node_policy", NullValueHandling = NullValueHandling.Ignore)]
+        public PeriodicNodePolicyEnum PeriodicNodePolicy { get; set; }
 
 
         /// <summary>
@@ -1129,6 +1377,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  deleteSfs: ").Append(DeleteSfs).Append("\n");
             sb.Append("  deleteSfs30: ").Append(DeleteSfs30).Append("\n");
             sb.Append("  tobedeleted: ").Append(Tobedeleted).Append("\n");
+            sb.Append("  ondemandNodePolicy: ").Append(OndemandNodePolicy).Append("\n");
+            sb.Append("  periodicNodePolicy: ").Append(PeriodicNodePolicy).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -1194,6 +1444,16 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.Tobedeleted == input.Tobedeleted ||
                     (this.Tobedeleted != null &&
                     this.Tobedeleted.Equals(input.Tobedeleted))
+                ) && 
+                (
+                    this.OndemandNodePolicy == input.OndemandNodePolicy ||
+                    (this.OndemandNodePolicy != null &&
+                    this.OndemandNodePolicy.Equals(input.OndemandNodePolicy))
+                ) && 
+                (
+                    this.PeriodicNodePolicy == input.PeriodicNodePolicy ||
+                    (this.PeriodicNodePolicy != null &&
+                    this.PeriodicNodePolicy.Equals(input.PeriodicNodePolicy))
                 );
         }
 
@@ -1223,6 +1483,10 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     hashCode = hashCode * 59 + this.DeleteSfs30.GetHashCode();
                 if (this.Tobedeleted != null)
                     hashCode = hashCode * 59 + this.Tobedeleted.GetHashCode();
+                if (this.OndemandNodePolicy != null)
+                    hashCode = hashCode * 59 + this.OndemandNodePolicy.GetHashCode();
+                if (this.PeriodicNodePolicy != null)
+                    hashCode = hashCode * 59 + this.PeriodicNodePolicy.GetHashCode();
                 return hashCode;
             }
         }

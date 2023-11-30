@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public Login Login { get; set; }
 
         /// <summary>
-        /// 节点名称 &gt; 重装时指定将修改节点名称，且服务器名称会同步修改。默认以服务器当前名称作为节点名称。 &gt; 命名规则：以小写字母开头，由小写字母、数字、中划线(-)组成，长度范围1-56位，且不能以中划线(-)结尾。
+        /// 节点名称 &gt; 重装时指定将修改节点名称，且服务器名称会同步修改。默认以服务器当前名称作为节点名称。 &gt; 命名规则：以小写字母开头，由小写字母、数字、中划线(-)组成，长度范围1-56位。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
@@ -76,6 +76,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("extendParam", NullValueHandling = NullValueHandling.Ignore)]
         public ReinstallExtendParam ExtendParam { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("hostnameConfig", NullValueHandling = NullValueHandling.Ignore)]
+        public HostnameConfig HostnameConfig { get; set; }
+
 
 
         /// <summary>
@@ -95,6 +101,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  lifecycle: ").Append(Lifecycle).Append("\n");
             sb.Append("  initializedConditions: ").Append(InitializedConditions).Append("\n");
             sb.Append("  extendParam: ").Append(ExtendParam).Append("\n");
+            sb.Append("  hostnameConfig: ").Append(HostnameConfig).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -166,6 +173,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.ExtendParam == input.ExtendParam ||
                     (this.ExtendParam != null &&
                     this.ExtendParam.Equals(input.ExtendParam))
+                ) && 
+                (
+                    this.HostnameConfig == input.HostnameConfig ||
+                    (this.HostnameConfig != null &&
+                    this.HostnameConfig.Equals(input.HostnameConfig))
                 );
         }
 
@@ -197,6 +209,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     hashCode = hashCode * 59 + this.InitializedConditions.GetHashCode();
                 if (this.ExtendParam != null)
                     hashCode = hashCode * 59 + this.ExtendParam.GetHashCode();
+                if (this.HostnameConfig != null)
+                    hashCode = hashCode * 59 + this.HostnameConfig.GetHashCode();
                 return hashCode;
             }
         }

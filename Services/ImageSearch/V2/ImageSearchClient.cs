@@ -23,12 +23,21 @@ namespace HuaweiCloud.SDK.ImageSearch.V2
         /// </summary>
         public RunAddDataResponse RunAddData(RunAddDataRequest runAddDataRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("service_name" , runAddDataRequest.ServiceName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/mms/{service_name}/data/add",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", runAddDataRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("service_name", runAddDataRequest.ServiceName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/mms/{service_name}/data/add", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", runAddDataRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<RunAddDataResponse>(response);
+        }
+
+        public SyncInvoker<RunAddDataResponse> RunAddDataInvoker(RunAddDataRequest runAddDataRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("service_name", runAddDataRequest.ServiceName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/mms/{service_name}/data/add", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", runAddDataRequest);
+            return new SyncInvoker<RunAddDataResponse>(this, "POST", request, JsonUtils.DeSerialize<RunAddDataResponse>);
         }
         
         /// <summary>
@@ -40,12 +49,21 @@ namespace HuaweiCloud.SDK.ImageSearch.V2
         /// </summary>
         public RunCheckDataResponse RunCheckData(RunCheckDataRequest runCheckDataRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("service_name" , runCheckDataRequest.ServiceName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/mms/{service_name}/data/check",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", runCheckDataRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("service_name", runCheckDataRequest.ServiceName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/mms/{service_name}/data/check", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", runCheckDataRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<RunCheckDataResponse>(response);
+        }
+
+        public SyncInvoker<RunCheckDataResponse> RunCheckDataInvoker(RunCheckDataRequest runCheckDataRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("service_name", runCheckDataRequest.ServiceName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/mms/{service_name}/data/check", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", runCheckDataRequest);
+            return new SyncInvoker<RunCheckDataResponse>(this, "POST", request, JsonUtils.DeSerialize<RunCheckDataResponse>);
         }
         
         /// <summary>
@@ -57,12 +75,21 @@ namespace HuaweiCloud.SDK.ImageSearch.V2
         /// </summary>
         public RunDeleteDataResponse RunDeleteData(RunDeleteDataRequest runDeleteDataRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("service_name" , runDeleteDataRequest.ServiceName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/mms/{service_name}/data/delete",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", runDeleteDataRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("service_name", runDeleteDataRequest.ServiceName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/mms/{service_name}/data/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", runDeleteDataRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<RunDeleteDataResponse>(response);
+        }
+
+        public SyncInvoker<RunDeleteDataResponse> RunDeleteDataInvoker(RunDeleteDataRequest runDeleteDataRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("service_name", runDeleteDataRequest.ServiceName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/mms/{service_name}/data/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", runDeleteDataRequest);
+            return new SyncInvoker<RunDeleteDataResponse>(this, "POST", request, JsonUtils.DeSerialize<RunDeleteDataResponse>);
         }
         
         /// <summary>
@@ -74,12 +101,21 @@ namespace HuaweiCloud.SDK.ImageSearch.V2
         /// </summary>
         public RunSearchResponse RunSearch(RunSearchRequest runSearchRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("service_name" , runSearchRequest.ServiceName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/mms/{service_name}/search",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", runSearchRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("service_name", runSearchRequest.ServiceName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/mms/{service_name}/search", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", runSearchRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<RunSearchResponse>(response);
+        }
+
+        public SyncInvoker<RunSearchResponse> RunSearchInvoker(RunSearchRequest runSearchRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("service_name", runSearchRequest.ServiceName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/mms/{service_name}/search", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", runSearchRequest);
+            return new SyncInvoker<RunSearchResponse>(this, "POST", request, JsonUtils.DeSerialize<RunSearchResponse>);
         }
         
         /// <summary>
@@ -91,12 +127,21 @@ namespace HuaweiCloud.SDK.ImageSearch.V2
         /// </summary>
         public RunUpdateDataResponse RunUpdateData(RunUpdateDataRequest runUpdateDataRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("service_name" , runUpdateDataRequest.ServiceName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/mms/{service_name}/data/update",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", runUpdateDataRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("service_name", runUpdateDataRequest.ServiceName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/mms/{service_name}/data/update", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", runUpdateDataRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<RunUpdateDataResponse>(response);
+        }
+
+        public SyncInvoker<RunUpdateDataResponse> RunUpdateDataInvoker(RunUpdateDataRequest runUpdateDataRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("service_name", runUpdateDataRequest.ServiceName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/mms/{service_name}/data/update", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", runUpdateDataRequest);
+            return new SyncInvoker<RunUpdateDataResponse>(this, "POST", request, JsonUtils.DeSerialize<RunUpdateDataResponse>);
         }
         
     }

@@ -15,6 +15,121 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
     /// </summary>
     public class LogInstanceInfo 
     {
+        /// <summary>
+        /// 日志类型。slow_log表示慢日志，audit_log表示审计日志。
+        /// </summary>
+        /// <value>日志类型。slow_log表示慢日志，audit_log表示审计日志。</value>
+        [JsonConverter(typeof(EnumClassConverter<SupportedLogTypesEnum>))]
+        public class SupportedLogTypesEnum
+        {
+            /// <summary>
+            /// Enum SLOW_LOG for value: slow_log
+            /// </summary>
+            public static readonly SupportedLogTypesEnum SLOW_LOG = new SupportedLogTypesEnum("slow_log");
+
+            /// <summary>
+            /// Enum AUDIT_LOG for value: audit_log
+            /// </summary>
+            public static readonly SupportedLogTypesEnum AUDIT_LOG = new SupportedLogTypesEnum("audit_log");
+
+            private static readonly Dictionary<string, SupportedLogTypesEnum> StaticFields =
+            new Dictionary<string, SupportedLogTypesEnum>()
+            {
+                { "slow_log", SLOW_LOG },
+                { "audit_log", AUDIT_LOG },
+            };
+
+            private string _value;
+
+            public SupportedLogTypesEnum()
+            {
+
+            }
+
+            public SupportedLogTypesEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static SupportedLogTypesEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as SupportedLogTypesEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(SupportedLogTypesEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(SupportedLogTypesEnum a, SupportedLogTypesEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(SupportedLogTypesEnum a, SupportedLogTypesEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 实例ID。
@@ -58,6 +173,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
+        /// <summary>
+        /// 日志类型。slow_log表示慢日志，audit_log表示审计日志。
+        /// </summary>
+        [JsonProperty("supported_log_types", NullValueHandling = NullValueHandling.Ignore)]
+        public SupportedLogTypesEnum SupportedLogTypes { get; set; }
 
 
         /// <summary>
@@ -74,6 +194,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
             sb.Append("  datastore: ").Append(Datastore).Append("\n");
             sb.Append("  actions: ").Append(Actions).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  supportedLogTypes: ").Append(SupportedLogTypes).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -130,6 +251,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
                     this.EnterpriseProjectId == input.EnterpriseProjectId ||
                     (this.EnterpriseProjectId != null &&
                     this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
+                ) && 
+                (
+                    this.SupportedLogTypes == input.SupportedLogTypes ||
+                    (this.SupportedLogTypes != null &&
+                    this.SupportedLogTypes.Equals(input.SupportedLogTypes))
                 );
         }
 
@@ -155,6 +281,8 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
                     hashCode = hashCode * 59 + this.Actions.GetHashCode();
                 if (this.EnterpriseProjectId != null)
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.SupportedLogTypes != null)
+                    hashCode = hashCode * 59 + this.SupportedLogTypes.GetHashCode();
                 return hashCode;
             }
         }

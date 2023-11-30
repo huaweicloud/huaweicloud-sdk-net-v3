@@ -37,8 +37,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// <summary>
         /// 检查成功时，检查报告到期时间，格式为“yyyy-mm-ddThh:mm:ssZ”。 其中，T指某个时间的开始；Z指时区偏移量，例如偏移1个小时显示为+0100。 该字段仅在action为check时返回。
         /// </summary>
-        [JsonProperty("report_expiration_time", NullValueHandling = NullValueHandling.Ignore)]
-        public string ReportExpirationTime { get; set; }
+        [JsonProperty("check_expiration_time", NullValueHandling = NullValueHandling.Ignore)]
+        public string CheckExpirationTime { get; set; }
 
         /// <summary>
         /// 预检查或升级报告信息。
@@ -58,7 +58,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  targetVersion: ").Append(TargetVersion).Append("\n");
             sb.Append("  startTime: ").Append(StartTime).Append("\n");
-            sb.Append("  reportExpirationTime: ").Append(ReportExpirationTime).Append("\n");
+            sb.Append("  checkExpirationTime: ").Append(CheckExpirationTime).Append("\n");
             sb.Append("  detail: ").Append(Detail).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -97,9 +97,9 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
                     this.StartTime.Equals(input.StartTime))
                 ) && 
                 (
-                    this.ReportExpirationTime == input.ReportExpirationTime ||
-                    (this.ReportExpirationTime != null &&
-                    this.ReportExpirationTime.Equals(input.ReportExpirationTime))
+                    this.CheckExpirationTime == input.CheckExpirationTime ||
+                    (this.CheckExpirationTime != null &&
+                    this.CheckExpirationTime.Equals(input.CheckExpirationTime))
                 ) && 
                 (
                     this.Detail == input.Detail ||
@@ -122,8 +122,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
                     hashCode = hashCode * 59 + this.TargetVersion.GetHashCode();
                 if (this.StartTime != null)
                     hashCode = hashCode * 59 + this.StartTime.GetHashCode();
-                if (this.ReportExpirationTime != null)
-                    hashCode = hashCode * 59 + this.ReportExpirationTime.GetHashCode();
+                if (this.CheckExpirationTime != null)
+                    hashCode = hashCode * 59 + this.CheckExpirationTime.GetHashCode();
                 if (this.Detail != null)
                     hashCode = hashCode * 59 + this.Detail.GetHashCode();
                 return hashCode;

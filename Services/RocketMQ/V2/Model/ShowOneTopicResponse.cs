@@ -137,9 +137,9 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         }
 
         /// <summary>
-        /// 消息类型。
+        /// 消息类型（RocketMQ实例5.x版本才包含此参数）。
         /// </summary>
-        /// <value>消息类型。</value>
+        /// <value>消息类型（RocketMQ实例5.x版本才包含此参数）。</value>
         [JsonConverter(typeof(EnumClassConverter<MessageTypeEnum>))]
         public class MessageTypeEnum
         {
@@ -294,7 +294,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public List<TopicBrokers> Brokers { get; set; }
 
         /// <summary>
-        /// 消息类型。
+        /// 消息类型（RocketMQ实例5.x版本才包含此参数）。
         /// </summary>
         [JsonProperty("message_type", NullValueHandling = NullValueHandling.Ignore)]
         public MessageTypeEnum MessageType { get; set; }

@@ -23,12 +23,21 @@ namespace HuaweiCloud.SDK.Sis.V1
         /// </summary>
         public CollectTranscriberJobResponse CollectTranscriberJob(CollectTranscriberJobRequest collectTranscriberJobRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id" , collectTranscriberJobRequest.JobId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asr/transcriber/jobs/{job_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", collectTranscriberJobRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", collectTranscriberJobRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asr/transcriber/jobs/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", collectTranscriberJobRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<CollectTranscriberJobResponse>(response);
+        }
+
+        public SyncInvoker<CollectTranscriberJobResponse> CollectTranscriberJobInvoker(CollectTranscriberJobRequest collectTranscriberJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", collectTranscriberJobRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asr/transcriber/jobs/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", collectTranscriberJobRequest);
+            return new SyncInvoker<CollectTranscriberJobResponse>(this, "GET", request, JsonUtils.DeSerialize<CollectTranscriberJobResponse>);
         }
         
         /// <summary>
@@ -40,11 +49,19 @@ namespace HuaweiCloud.SDK.Sis.V1
         /// </summary>
         public CreateVocabularyResponse CreateVocabulary(CreateVocabularyRequest createVocabularyRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asr/vocabularies",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createVocabularyRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asr/vocabularies", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createVocabularyRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<CreateVocabularyResponse>(response);
+        }
+
+        public SyncInvoker<CreateVocabularyResponse> CreateVocabularyInvoker(CreateVocabularyRequest createVocabularyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asr/vocabularies", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createVocabularyRequest);
+            return new SyncInvoker<CreateVocabularyResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateVocabularyResponse>);
         }
         
         /// <summary>
@@ -56,12 +73,21 @@ namespace HuaweiCloud.SDK.Sis.V1
         /// </summary>
         public DeleteVocabularyResponse DeleteVocabulary(DeleteVocabularyRequest deleteVocabularyRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("vocabulary_id" , deleteVocabularyRequest.VocabularyId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asr/vocabularies/{vocabulary_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteVocabularyRequest);
-            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("vocabulary_id", deleteVocabularyRequest.VocabularyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asr/vocabularies/{vocabulary_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteVocabularyRequest);
+            var response = DoHttpRequestSync("DELETE", request);
             return JsonUtils.DeSerializeNull<DeleteVocabularyResponse>(response);
+        }
+
+        public SyncInvoker<DeleteVocabularyResponse> DeleteVocabularyInvoker(DeleteVocabularyRequest deleteVocabularyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("vocabulary_id", deleteVocabularyRequest.VocabularyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asr/vocabularies/{vocabulary_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteVocabularyRequest);
+            return new SyncInvoker<DeleteVocabularyResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteVocabularyResponse>);
         }
         
         /// <summary>
@@ -82,11 +108,19 @@ namespace HuaweiCloud.SDK.Sis.V1
         /// </summary>
         public PushTranscriberJobsResponse PushTranscriberJobs(PushTranscriberJobsRequest pushTranscriberJobsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asr/transcriber/jobs",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", pushTranscriberJobsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asr/transcriber/jobs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", pushTranscriberJobsRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<PushTranscriberJobsResponse>(response);
+        }
+
+        public SyncInvoker<PushTranscriberJobsResponse> PushTranscriberJobsInvoker(PushTranscriberJobsRequest pushTranscriberJobsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asr/transcriber/jobs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", pushTranscriberJobsRequest);
+            return new SyncInvoker<PushTranscriberJobsResponse>(this, "POST", request, JsonUtils.DeSerialize<PushTranscriberJobsResponse>);
         }
         
         /// <summary>
@@ -99,11 +133,19 @@ namespace HuaweiCloud.SDK.Sis.V1
         /// </summary>
         public RecognizeFlashAsrResponse RecognizeFlashAsr(RecognizeFlashAsrRequest recognizeFlashAsrRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asr/flash",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", recognizeFlashAsrRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asr/flash", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", recognizeFlashAsrRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<RecognizeFlashAsrResponse>(response);
+        }
+
+        public SyncInvoker<RecognizeFlashAsrResponse> RecognizeFlashAsrInvoker(RecognizeFlashAsrRequest recognizeFlashAsrRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asr/flash", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", recognizeFlashAsrRequest);
+            return new SyncInvoker<RecognizeFlashAsrResponse>(this, "POST", request, JsonUtils.DeSerialize<RecognizeFlashAsrResponse>);
         }
         
         /// <summary>
@@ -115,11 +157,19 @@ namespace HuaweiCloud.SDK.Sis.V1
         /// </summary>
         public RecognizeShortAudioResponse RecognizeShortAudio(RecognizeShortAudioRequest recognizeShortAudioRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asr/short-audio",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeShortAudioRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asr/short-audio", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeShortAudioRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<RecognizeShortAudioResponse>(response);
+        }
+
+        public SyncInvoker<RecognizeShortAudioResponse> RecognizeShortAudioInvoker(RecognizeShortAudioRequest recognizeShortAudioRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asr/short-audio", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeShortAudioRequest);
+            return new SyncInvoker<RecognizeShortAudioResponse>(this, "POST", request, JsonUtils.DeSerialize<RecognizeShortAudioResponse>);
         }
         
         /// <summary>
@@ -131,11 +181,19 @@ namespace HuaweiCloud.SDK.Sis.V1
         /// </summary>
         public RunTtsResponse RunTts(RunTtsRequest runTtsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/tts",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", runTtsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/tts", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", runTtsRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<RunTtsResponse>(response);
+        }
+
+        public SyncInvoker<RunTtsResponse> RunTtsInvoker(RunTtsRequest runTtsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/tts", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", runTtsRequest);
+            return new SyncInvoker<RunTtsResponse>(this, "POST", request, JsonUtils.DeSerialize<RunTtsResponse>);
         }
         
         /// <summary>
@@ -147,11 +205,19 @@ namespace HuaweiCloud.SDK.Sis.V1
         /// </summary>
         public ShowVocabulariesResponse ShowVocabularies(ShowVocabulariesRequest showVocabulariesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asr/vocabularies",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", showVocabulariesRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asr/vocabularies", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", showVocabulariesRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowVocabulariesResponse>(response);
+        }
+
+        public SyncInvoker<ShowVocabulariesResponse> ShowVocabulariesInvoker(ShowVocabulariesRequest showVocabulariesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asr/vocabularies", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", showVocabulariesRequest);
+            return new SyncInvoker<ShowVocabulariesResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowVocabulariesResponse>);
         }
         
         /// <summary>
@@ -163,12 +229,21 @@ namespace HuaweiCloud.SDK.Sis.V1
         /// </summary>
         public ShowVocabularyResponse ShowVocabulary(ShowVocabularyRequest showVocabularyRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("vocabulary_id" , showVocabularyRequest.VocabularyId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asr/vocabularies/{vocabulary_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVocabularyRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("vocabulary_id", showVocabularyRequest.VocabularyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asr/vocabularies/{vocabulary_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVocabularyRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowVocabularyResponse>(response);
+        }
+
+        public SyncInvoker<ShowVocabularyResponse> ShowVocabularyInvoker(ShowVocabularyRequest showVocabularyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("vocabulary_id", showVocabularyRequest.VocabularyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asr/vocabularies/{vocabulary_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVocabularyRequest);
+            return new SyncInvoker<ShowVocabularyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowVocabularyResponse>);
         }
         
         /// <summary>
@@ -180,12 +255,21 @@ namespace HuaweiCloud.SDK.Sis.V1
         /// </summary>
         public UpdateVocabularyResponse UpdateVocabulary(UpdateVocabularyRequest updateVocabularyRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("vocabulary_id" , updateVocabularyRequest.VocabularyId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asr/vocabularies/{vocabulary_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateVocabularyRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("vocabulary_id", updateVocabularyRequest.VocabularyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asr/vocabularies/{vocabulary_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateVocabularyRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerialize<UpdateVocabularyResponse>(response);
+        }
+
+        public SyncInvoker<UpdateVocabularyResponse> UpdateVocabularyInvoker(UpdateVocabularyRequest updateVocabularyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("vocabulary_id", updateVocabularyRequest.VocabularyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asr/vocabularies/{vocabulary_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateVocabularyRequest);
+            return new SyncInvoker<UpdateVocabularyResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateVocabularyResponse>);
         }
         
     }

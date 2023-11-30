@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// 
         /// </summary>
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public Dictionary<string, AuthModel> Body { get; set; }
+        public string Body { get; set; }
 
 
 
@@ -55,9 +55,8 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
             return 
                 (
                     this.Body == input.Body ||
-                    this.Body != null &&
-                    input.Body != null &&
-                    this.Body.SequenceEqual(input.Body)
+                    (this.Body != null &&
+                    this.Body.Equals(input.Body))
                 );
         }
 

@@ -44,7 +44,7 @@ namespace HuaweiCloud.SDK.Core
 
         private SdkHttpClient _sdkHttpClient;
 
-        private Client WithCredential(ICredential credentials)
+        internal Client WithCredential(ICredential credentials)
         {
             _credentials = credentials ?? throw new ArgumentNullException(CredentialsNull);
             return this;
@@ -62,6 +62,11 @@ namespace HuaweiCloud.SDK.Core
             return this;
         }
 
+        internal ICredential GetCredential()
+        {
+            return _credentials;
+        }
+
 
         private void InitSdkHttpClient(HttpHandler httpHandler, bool enableLogging, LogLevel logLevel)
         {
@@ -69,7 +74,7 @@ namespace HuaweiCloud.SDK.Core
                 new SdkHttpClient(GetType().FullName, _httpConfig, httpHandler, enableLogging, logLevel);
         }
 
-        protected async Task<HttpResponseMessage> DoHttpRequestAsync(string methodType, SdkRequest request)
+        public async Task<HttpResponseMessage> DoHttpRequestAsync(string methodType, SdkRequest request)
         {
             var url = GetRealEndpoint(request)
                       + HttpUtils.AddUrlPath(request.Path, _credentials.GetPathParamDictionary())
@@ -98,7 +103,7 @@ namespace HuaweiCloud.SDK.Core
         }
 
         [MethodImpl(MethodImplOptions.Synchronized)]
-        protected HttpResponseMessage DoHttpRequestSync(string methodType, SdkRequest request)
+        public HttpResponseMessage DoHttpRequestSync(string methodType, SdkRequest request)
         {
             while (true)
             {

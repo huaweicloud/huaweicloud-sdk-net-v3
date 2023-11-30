@@ -32,7 +32,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// 实例信息
         /// </summary>
         [JsonProperty("instances", NullValueHandling = NullValueHandling.Ignore)]
-        public List<PostgreSQLHistoryDatabaseInstance> Instances { get; set; }
+        public List<HistoryDatabaseInstance> Instances { get; set; }
 
 
 

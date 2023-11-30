@@ -17,19 +17,19 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
     {
 
         /// <summary>
-        /// 应用id
+        /// 应用id。
         /// </summary>
         [JsonProperty("app_id", NullValueHandling = NullValueHandling.Ignore)]
         public string AppId { get; set; }
 
         /// <summary>
-        /// 应用名称
+        /// 应用名称。
         /// </summary>
         [JsonProperty("app_name", NullValueHandling = NullValueHandling.Ignore)]
         public string AppName { get; set; }
 
         /// <summary>
-        /// 应用来源
+        /// 应用来源。
         /// </summary>
         [JsonProperty("app_type", NullValueHandling = NullValueHandling.Ignore)]
         public string AppType { get; set; }

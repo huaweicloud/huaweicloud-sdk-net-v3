@@ -23,12 +23,21 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         /// </summary>
         public BatchCreateOrDeleteRocketmqTagResponse BatchCreateOrDeleteRocketmqTag(BatchCreateOrDeleteRocketmqTagRequest batchCreateOrDeleteRocketmqTagRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , batchCreateOrDeleteRocketmqTagRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/rocketmq/{instance_id}/tags/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateOrDeleteRocketmqTagRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", batchCreateOrDeleteRocketmqTagRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/rocketmq/{instance_id}/tags/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateOrDeleteRocketmqTagRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerializeNull<BatchCreateOrDeleteRocketmqTagResponse>(response);
+        }
+
+        public SyncInvoker<BatchCreateOrDeleteRocketmqTagResponse> BatchCreateOrDeleteRocketmqTagInvoker(BatchCreateOrDeleteRocketmqTagRequest batchCreateOrDeleteRocketmqTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", batchCreateOrDeleteRocketmqTagRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/rocketmq/{instance_id}/tags/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateOrDeleteRocketmqTagRequest);
+            return new SyncInvoker<BatchCreateOrDeleteRocketmqTagResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchCreateOrDeleteRocketmqTagResponse>);
         }
         
         /// <summary>
@@ -40,11 +49,19 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         /// </summary>
         public BatchDeleteInstancesResponse BatchDeleteInstances(BatchDeleteInstancesRequest batchDeleteInstancesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteInstancesRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteInstancesRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<BatchDeleteInstancesResponse>(response);
+        }
+
+        public SyncInvoker<BatchDeleteInstancesResponse> BatchDeleteInstancesInvoker(BatchDeleteInstancesRequest batchDeleteInstancesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteInstancesRequest);
+            return new SyncInvoker<BatchDeleteInstancesResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchDeleteInstancesResponse>);
         }
         
         /// <summary>
@@ -56,12 +73,21 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         /// </summary>
         public BatchUpdateConsumerGroupResponse BatchUpdateConsumerGroup(BatchUpdateConsumerGroupRequest batchUpdateConsumerGroupRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , batchUpdateConsumerGroupRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/groups",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchUpdateConsumerGroupRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", batchUpdateConsumerGroupRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/groups", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchUpdateConsumerGroupRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerialize<BatchUpdateConsumerGroupResponse>(response);
+        }
+
+        public SyncInvoker<BatchUpdateConsumerGroupResponse> BatchUpdateConsumerGroupInvoker(BatchUpdateConsumerGroupRequest batchUpdateConsumerGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", batchUpdateConsumerGroupRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/groups", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchUpdateConsumerGroupRequest);
+            return new SyncInvoker<BatchUpdateConsumerGroupResponse>(this, "PUT", request, JsonUtils.DeSerialize<BatchUpdateConsumerGroupResponse>);
         }
         
         /// <summary>
@@ -73,12 +99,21 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         /// </summary>
         public CreateConsumerGroupOrBatchDeleteConsumerGroupResponse CreateConsumerGroupOrBatchDeleteConsumerGroup(CreateConsumerGroupOrBatchDeleteConsumerGroupRequest createConsumerGroupOrBatchDeleteConsumerGroupRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , createConsumerGroupOrBatchDeleteConsumerGroupRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/groups",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createConsumerGroupOrBatchDeleteConsumerGroupRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createConsumerGroupOrBatchDeleteConsumerGroupRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/groups", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createConsumerGroupOrBatchDeleteConsumerGroupRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<CreateConsumerGroupOrBatchDeleteConsumerGroupResponse>(response);
+        }
+
+        public SyncInvoker<CreateConsumerGroupOrBatchDeleteConsumerGroupResponse> CreateConsumerGroupOrBatchDeleteConsumerGroupInvoker(CreateConsumerGroupOrBatchDeleteConsumerGroupRequest createConsumerGroupOrBatchDeleteConsumerGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createConsumerGroupOrBatchDeleteConsumerGroupRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/groups", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createConsumerGroupOrBatchDeleteConsumerGroupRequest);
+            return new SyncInvoker<CreateConsumerGroupOrBatchDeleteConsumerGroupResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateConsumerGroupOrBatchDeleteConsumerGroupResponse>);
         }
         
         /// <summary>
@@ -90,12 +125,21 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         /// </summary>
         public CreateInstanceByEngineResponse CreateInstanceByEngine(CreateInstanceByEngineRequest createInstanceByEngineRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine" , createInstanceByEngineRequest.Engine.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceByEngineRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine", createInstanceByEngineRequest.Engine.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceByEngineRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<CreateInstanceByEngineResponse>(response);
+        }
+
+        public SyncInvoker<CreateInstanceByEngineResponse> CreateInstanceByEngineInvoker(CreateInstanceByEngineRequest createInstanceByEngineRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine", createInstanceByEngineRequest.Engine.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceByEngineRequest);
+            return new SyncInvoker<CreateInstanceByEngineResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateInstanceByEngineResponse>);
         }
         
         /// <summary>
@@ -107,11 +151,19 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         /// </summary>
         public CreatePostPaidInstanceResponse CreatePostPaidInstance(CreatePostPaidInstanceRequest createPostPaidInstanceRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPostPaidInstanceRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPostPaidInstanceRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<CreatePostPaidInstanceResponse>(response);
+        }
+
+        public SyncInvoker<CreatePostPaidInstanceResponse> CreatePostPaidInstanceInvoker(CreatePostPaidInstanceRequest createPostPaidInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPostPaidInstanceRequest);
+            return new SyncInvoker<CreatePostPaidInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<CreatePostPaidInstanceResponse>);
         }
         
         /// <summary>
@@ -123,12 +175,21 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         /// </summary>
         public CreateRocketMqMigrationTaskResponse CreateRocketMqMigrationTask(CreateRocketMqMigrationTaskRequest createRocketMqMigrationTaskRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , createRocketMqMigrationTaskRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/metadata",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRocketMqMigrationTaskRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createRocketMqMigrationTaskRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/metadata", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRocketMqMigrationTaskRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<CreateRocketMqMigrationTaskResponse>(response);
+        }
+
+        public SyncInvoker<CreateRocketMqMigrationTaskResponse> CreateRocketMqMigrationTaskInvoker(CreateRocketMqMigrationTaskRequest createRocketMqMigrationTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createRocketMqMigrationTaskRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/metadata", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRocketMqMigrationTaskRequest);
+            return new SyncInvoker<CreateRocketMqMigrationTaskResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateRocketMqMigrationTaskResponse>);
         }
         
         /// <summary>
@@ -140,12 +201,21 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         /// </summary>
         public CreateUserResponse CreateUser(CreateUserRequest createUserRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , createUserRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/users",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createUserRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createUserRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/users", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createUserRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<CreateUserResponse>(response);
+        }
+
+        public SyncInvoker<CreateUserResponse> CreateUserInvoker(CreateUserRequest createUserRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createUserRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/users", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createUserRequest);
+            return new SyncInvoker<CreateUserResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateUserResponse>);
         }
         
         /// <summary>
@@ -157,13 +227,23 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         /// </summary>
         public DeleteConsumerGroupResponse DeleteConsumerGroup(DeleteConsumerGroupRequest deleteConsumerGroupRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , deleteConsumerGroupRequest.InstanceId.ToString());
-            urlParam.Add("group" , deleteConsumerGroupRequest.Group.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/groups/{group}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteConsumerGroupRequest);
-            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteConsumerGroupRequest.InstanceId.ToString());
+            urlParam.Add("group", deleteConsumerGroupRequest.Group.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/groups/{group}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteConsumerGroupRequest);
+            var response = DoHttpRequestSync("DELETE", request);
             return JsonUtils.DeSerializeNull<DeleteConsumerGroupResponse>(response);
+        }
+
+        public SyncInvoker<DeleteConsumerGroupResponse> DeleteConsumerGroupInvoker(DeleteConsumerGroupRequest deleteConsumerGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteConsumerGroupRequest.InstanceId.ToString());
+            urlParam.Add("group", deleteConsumerGroupRequest.Group.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/groups/{group}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteConsumerGroupRequest);
+            return new SyncInvoker<DeleteConsumerGroupResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteConsumerGroupResponse>);
         }
         
         /// <summary>
@@ -175,12 +255,21 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         /// </summary>
         public DeleteInstanceResponse DeleteInstance(DeleteInstanceRequest deleteInstanceRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , deleteInstanceRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceRequest);
-            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteInstanceRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceRequest);
+            var response = DoHttpRequestSync("DELETE", request);
             return JsonUtils.DeSerializeNull<DeleteInstanceResponse>(response);
+        }
+
+        public SyncInvoker<DeleteInstanceResponse> DeleteInstanceInvoker(DeleteInstanceRequest deleteInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteInstanceRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceRequest);
+            return new SyncInvoker<DeleteInstanceResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteInstanceResponse>);
         }
         
         /// <summary>
@@ -192,13 +281,21 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         /// </summary>
         public DeleteRocketMqMigrationTaskResponse DeleteRocketMqMigrationTask(DeleteRocketMqMigrationTaskRequest deleteRocketMqMigrationTaskRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , deleteRocketMqMigrationTaskRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/metadata",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRocketMqMigrationTaskRequest);
-            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
-            DeleteRocketMqMigrationTaskResponse deleteRocketMqMigrationTaskResponse = JsonUtils.DeSerializeNull<DeleteRocketMqMigrationTaskResponse>(response);
-            return deleteRocketMqMigrationTaskResponse;
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteRocketMqMigrationTaskRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/metadata", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRocketMqMigrationTaskRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteRocketMqMigrationTaskResponse>(response);
+        }
+
+        public SyncInvoker<DeleteRocketMqMigrationTaskResponse> DeleteRocketMqMigrationTaskInvoker(DeleteRocketMqMigrationTaskRequest deleteRocketMqMigrationTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteRocketMqMigrationTaskRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/metadata", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRocketMqMigrationTaskRequest);
+            return new SyncInvoker<DeleteRocketMqMigrationTaskResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteRocketMqMigrationTaskResponse>);
         }
         
         /// <summary>
@@ -210,13 +307,23 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         /// </summary>
         public DeleteUserResponse DeleteUser(DeleteUserRequest deleteUserRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , deleteUserRequest.InstanceId.ToString());
-            urlParam.Add("user_name" , deleteUserRequest.UserName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/users/{user_name}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteUserRequest);
-            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteUserRequest.InstanceId.ToString());
+            urlParam.Add("user_name", deleteUserRequest.UserName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/users/{user_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteUserRequest);
+            var response = DoHttpRequestSync("DELETE", request);
             return JsonUtils.DeSerialize<DeleteUserResponse>(response);
+        }
+
+        public SyncInvoker<DeleteUserResponse> DeleteUserInvoker(DeleteUserRequest deleteUserRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteUserRequest.InstanceId.ToString());
+            urlParam.Add("user_name", deleteUserRequest.UserName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/users/{user_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteUserRequest);
+            return new SyncInvoker<DeleteUserResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteUserResponse>);
         }
         
         /// <summary>
@@ -228,14 +335,28 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         /// </summary>
         public ExportDlqMessageResponse ExportDlqMessage(ExportDlqMessageRequest exportDlqMessageRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , exportDlqMessageRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/messages/export",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", exportDlqMessageRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
-            ExportDlqMessageResponse exportDlqMessageResponse = JsonUtils.DeSerializeNull<ExportDlqMessageResponse>(response);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", exportDlqMessageRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/messages/export", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", exportDlqMessageRequest);
+            var response = DoHttpRequestSync("POST", request);
+            var exportDlqMessageResponse = JsonUtils.DeSerializeNull<ExportDlqMessageResponse>(response);
             exportDlqMessageResponse.Body = JsonUtils.DeSerializeList<Message>(response);
             return exportDlqMessageResponse;
+        }
+
+        public SyncInvoker<ExportDlqMessageResponse> ExportDlqMessageInvoker(ExportDlqMessageRequest exportDlqMessageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", exportDlqMessageRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/messages/export", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", exportDlqMessageRequest);
+            return new SyncInvoker<ExportDlqMessageResponse>(this, "POST", request, response =>
+            {
+                var exportDlqMessageResponse = JsonUtils.DeSerializeNull<ExportDlqMessageResponse>(response);
+                exportDlqMessageResponse.Body = JsonUtils.DeSerializeList<Message>(response);
+                return exportDlqMessageResponse;
+            });
         }
         
         /// <summary>
@@ -247,11 +368,19 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         /// </summary>
         public ListAvailableZonesResponse ListAvailableZones(ListAvailableZonesRequest listAvailableZonesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/available-zones",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAvailableZonesRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/available-zones", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAvailableZonesRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ListAvailableZonesResponse>(response);
+        }
+
+        public SyncInvoker<ListAvailableZonesResponse> ListAvailableZonesInvoker(ListAvailableZonesRequest listAvailableZonesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/available-zones", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAvailableZonesRequest);
+            return new SyncInvoker<ListAvailableZonesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAvailableZonesResponse>);
         }
         
         /// <summary>
@@ -263,12 +392,21 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         /// </summary>
         public ListBrokersResponse ListBrokers(ListBrokersRequest listBrokersRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , listBrokersRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/brokers",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBrokersRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listBrokersRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/brokers", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBrokersRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ListBrokersResponse>(response);
+        }
+
+        public SyncInvoker<ListBrokersResponse> ListBrokersInvoker(ListBrokersRequest listBrokersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listBrokersRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/brokers", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBrokersRequest);
+            return new SyncInvoker<ListBrokersResponse>(this, "GET", request, JsonUtils.DeSerialize<ListBrokersResponse>);
         }
         
         /// <summary>
@@ -280,14 +418,25 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         /// </summary>
         public ListConsumeGroupAccessPolicyResponse ListConsumeGroupAccessPolicy(ListConsumeGroupAccessPolicyRequest listConsumeGroupAccessPolicyRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine" , listConsumeGroupAccessPolicyRequest.Engine.ToString());
-            urlParam.Add("instance_id" , listConsumeGroupAccessPolicyRequest.InstanceId.ToString());
-            urlParam.Add("group_id" , listConsumeGroupAccessPolicyRequest.GroupId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/groups/{group_id}/accesspolicy",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listConsumeGroupAccessPolicyRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine", listConsumeGroupAccessPolicyRequest.Engine.ToString());
+            urlParam.Add("instance_id", listConsumeGroupAccessPolicyRequest.InstanceId.ToString());
+            urlParam.Add("group_id", listConsumeGroupAccessPolicyRequest.GroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/groups/{group_id}/accesspolicy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listConsumeGroupAccessPolicyRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ListConsumeGroupAccessPolicyResponse>(response);
+        }
+
+        public SyncInvoker<ListConsumeGroupAccessPolicyResponse> ListConsumeGroupAccessPolicyInvoker(ListConsumeGroupAccessPolicyRequest listConsumeGroupAccessPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine", listConsumeGroupAccessPolicyRequest.Engine.ToString());
+            urlParam.Add("instance_id", listConsumeGroupAccessPolicyRequest.InstanceId.ToString());
+            urlParam.Add("group_id", listConsumeGroupAccessPolicyRequest.GroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/groups/{group_id}/accesspolicy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listConsumeGroupAccessPolicyRequest);
+            return new SyncInvoker<ListConsumeGroupAccessPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ListConsumeGroupAccessPolicyResponse>);
         }
         
         /// <summary>
@@ -299,12 +448,21 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         /// </summary>
         public ListInstanceConsumerGroupsResponse ListInstanceConsumerGroups(ListInstanceConsumerGroupsRequest listInstanceConsumerGroupsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , listInstanceConsumerGroupsRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/groups",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceConsumerGroupsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceConsumerGroupsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/groups", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceConsumerGroupsRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ListInstanceConsumerGroupsResponse>(response);
+        }
+
+        public SyncInvoker<ListInstanceConsumerGroupsResponse> ListInstanceConsumerGroupsInvoker(ListInstanceConsumerGroupsRequest listInstanceConsumerGroupsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceConsumerGroupsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/groups", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceConsumerGroupsRequest);
+            return new SyncInvoker<ListInstanceConsumerGroupsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceConsumerGroupsResponse>);
         }
         
         /// <summary>
@@ -316,11 +474,19 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         /// </summary>
         public ListInstancesResponse ListInstances(ListInstancesRequest listInstancesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstancesRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstancesRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ListInstancesResponse>(response);
+        }
+
+        public SyncInvoker<ListInstancesResponse> ListInstancesInvoker(ListInstancesRequest listInstancesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstancesRequest);
+            return new SyncInvoker<ListInstancesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstancesResponse>);
         }
         
         /// <summary>
@@ -332,13 +498,23 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         /// </summary>
         public ListMessageTraceResponse ListMessageTrace(ListMessageTraceRequest listMessageTraceRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine" , listMessageTraceRequest.Engine.ToString());
-            urlParam.Add("instance_id" , listMessageTraceRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/trace",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listMessageTraceRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine", listMessageTraceRequest.Engine.ToString());
+            urlParam.Add("instance_id", listMessageTraceRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/trace", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listMessageTraceRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ListMessageTraceResponse>(response);
+        }
+
+        public SyncInvoker<ListMessageTraceResponse> ListMessageTraceInvoker(ListMessageTraceRequest listMessageTraceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine", listMessageTraceRequest.Engine.ToString());
+            urlParam.Add("instance_id", listMessageTraceRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/trace", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listMessageTraceRequest);
+            return new SyncInvoker<ListMessageTraceResponse>(this, "GET", request, JsonUtils.DeSerialize<ListMessageTraceResponse>);
         }
         
         /// <summary>
@@ -350,13 +526,23 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         /// </summary>
         public ListMessagesResponse ListMessages(ListMessagesRequest listMessagesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine" , listMessagesRequest.Engine.ToString());
-            urlParam.Add("instance_id" , listMessagesRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/messages",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listMessagesRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine", listMessagesRequest.Engine.ToString());
+            urlParam.Add("instance_id", listMessagesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/messages", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listMessagesRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ListMessagesResponse>(response);
+        }
+
+        public SyncInvoker<ListMessagesResponse> ListMessagesInvoker(ListMessagesRequest listMessagesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine", listMessagesRequest.Engine.ToString());
+            urlParam.Add("instance_id", listMessagesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/messages", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listMessagesRequest);
+            return new SyncInvoker<ListMessagesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListMessagesResponse>);
         }
         
         /// <summary>
@@ -369,12 +555,21 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         /// </summary>
         public ListRocketMqMigrationTaskResponse ListRocketMqMigrationTask(ListRocketMqMigrationTaskRequest listRocketMqMigrationTaskRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , listRocketMqMigrationTaskRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/metadata",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRocketMqMigrationTaskRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listRocketMqMigrationTaskRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/metadata", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRocketMqMigrationTaskRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ListRocketMqMigrationTaskResponse>(response);
+        }
+
+        public SyncInvoker<ListRocketMqMigrationTaskResponse> ListRocketMqMigrationTaskInvoker(ListRocketMqMigrationTaskRequest listRocketMqMigrationTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listRocketMqMigrationTaskRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/metadata", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRocketMqMigrationTaskRequest);
+            return new SyncInvoker<ListRocketMqMigrationTaskResponse>(this, "GET", request, JsonUtils.DeSerialize<ListRocketMqMigrationTaskResponse>);
         }
         
         /// <summary>
@@ -386,13 +581,23 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         /// </summary>
         public ListTopicAccessPolicyResponse ListTopicAccessPolicy(ListTopicAccessPolicyRequest listTopicAccessPolicyRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , listTopicAccessPolicyRequest.InstanceId.ToString());
-            urlParam.Add("topic" , listTopicAccessPolicyRequest.Topic.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/topics/{topic}/accesspolicy",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTopicAccessPolicyRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listTopicAccessPolicyRequest.InstanceId.ToString());
+            urlParam.Add("topic", listTopicAccessPolicyRequest.Topic.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/topics/{topic}/accesspolicy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTopicAccessPolicyRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ListTopicAccessPolicyResponse>(response);
+        }
+
+        public SyncInvoker<ListTopicAccessPolicyResponse> ListTopicAccessPolicyInvoker(ListTopicAccessPolicyRequest listTopicAccessPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listTopicAccessPolicyRequest.InstanceId.ToString());
+            urlParam.Add("topic", listTopicAccessPolicyRequest.Topic.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/topics/{topic}/accesspolicy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTopicAccessPolicyRequest);
+            return new SyncInvoker<ListTopicAccessPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ListTopicAccessPolicyResponse>);
         }
         
         /// <summary>
@@ -404,12 +609,21 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         /// </summary>
         public ListUserResponse ListUser(ListUserRequest listUserRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , listUserRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/users",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listUserRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listUserRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/users", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listUserRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ListUserResponse>(response);
+        }
+
+        public SyncInvoker<ListUserResponse> ListUserInvoker(ListUserRequest listUserRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listUserRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/users", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listUserRequest);
+            return new SyncInvoker<ListUserResponse>(this, "GET", request, JsonUtils.DeSerialize<ListUserResponse>);
         }
         
         /// <summary>
@@ -421,14 +635,55 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         /// </summary>
         public ResetConsumeOffsetResponse ResetConsumeOffset(ResetConsumeOffsetRequest resetConsumeOffsetRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine" , resetConsumeOffsetRequest.Engine.ToString());
-            urlParam.Add("instance_id" , resetConsumeOffsetRequest.InstanceId.ToString());
-            urlParam.Add("group_id" , resetConsumeOffsetRequest.GroupId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/groups/{group_id}/reset-message-offset",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetConsumeOffsetRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine", resetConsumeOffsetRequest.Engine.ToString());
+            urlParam.Add("instance_id", resetConsumeOffsetRequest.InstanceId.ToString());
+            urlParam.Add("group_id", resetConsumeOffsetRequest.GroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/groups/{group_id}/reset-message-offset", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetConsumeOffsetRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<ResetConsumeOffsetResponse>(response);
+        }
+
+        public SyncInvoker<ResetConsumeOffsetResponse> ResetConsumeOffsetInvoker(ResetConsumeOffsetRequest resetConsumeOffsetRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine", resetConsumeOffsetRequest.Engine.ToString());
+            urlParam.Add("instance_id", resetConsumeOffsetRequest.InstanceId.ToString());
+            urlParam.Add("group_id", resetConsumeOffsetRequest.GroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/groups/{group_id}/reset-message-offset", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetConsumeOffsetRequest);
+            return new SyncInvoker<ResetConsumeOffsetResponse>(this, "POST", request, JsonUtils.DeSerialize<ResetConsumeOffsetResponse>);
+        }
+        
+        /// <summary>
+        /// 实例规格变更
+        ///
+        /// 实例规格变更。
+        /// 
+        /// [**当前通过调用API，只支持按需实例进行实例规格变更。**](tag:hws,hws_hk,ctc)
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ResizeInstanceResponse ResizeInstance(ResizeInstanceRequest resizeInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine", resizeInstanceRequest.Engine.ToString());
+            urlParam.Add("instance_id", resizeInstanceRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/extend", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resizeInstanceRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<ResizeInstanceResponse>(response);
+        }
+
+        public SyncInvoker<ResizeInstanceResponse> ResizeInstanceInvoker(ResizeInstanceRequest resizeInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine", resizeInstanceRequest.Engine.ToString());
+            urlParam.Add("instance_id", resizeInstanceRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/extend", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resizeInstanceRequest);
+            return new SyncInvoker<ResizeInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<ResizeInstanceResponse>);
         }
         
         /// <summary>
@@ -440,13 +695,23 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         /// </summary>
         public SendDlqMessageResponse SendDlqMessage(SendDlqMessageRequest sendDlqMessageRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine" , sendDlqMessageRequest.Engine.ToString());
-            urlParam.Add("instance_id" , sendDlqMessageRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/messages/deadletter-resend",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", sendDlqMessageRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine", sendDlqMessageRequest.Engine.ToString());
+            urlParam.Add("instance_id", sendDlqMessageRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/messages/deadletter-resend", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", sendDlqMessageRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<SendDlqMessageResponse>(response);
+        }
+
+        public SyncInvoker<SendDlqMessageResponse> SendDlqMessageInvoker(SendDlqMessageRequest sendDlqMessageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine", sendDlqMessageRequest.Engine.ToString());
+            urlParam.Add("instance_id", sendDlqMessageRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/messages/deadletter-resend", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", sendDlqMessageRequest);
+            return new SyncInvoker<SendDlqMessageResponse>(this, "POST", request, JsonUtils.DeSerialize<SendDlqMessageResponse>);
         }
         
         /// <summary>
@@ -458,13 +723,23 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         /// </summary>
         public ShowConsumerConnectionsResponse ShowConsumerConnections(ShowConsumerConnectionsRequest showConsumerConnectionsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , showConsumerConnectionsRequest.InstanceId.ToString());
-            urlParam.Add("group" , showConsumerConnectionsRequest.Group.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/rocketmq/{project_id}/instances/{instance_id}/groups/{group}/clients",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showConsumerConnectionsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showConsumerConnectionsRequest.InstanceId.ToString());
+            urlParam.Add("group", showConsumerConnectionsRequest.Group.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/rocketmq/{project_id}/instances/{instance_id}/groups/{group}/clients", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showConsumerConnectionsRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowConsumerConnectionsResponse>(response);
+        }
+
+        public SyncInvoker<ShowConsumerConnectionsResponse> ShowConsumerConnectionsInvoker(ShowConsumerConnectionsRequest showConsumerConnectionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showConsumerConnectionsRequest.InstanceId.ToString());
+            urlParam.Add("group", showConsumerConnectionsRequest.Group.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/rocketmq/{project_id}/instances/{instance_id}/groups/{group}/clients", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showConsumerConnectionsRequest);
+            return new SyncInvoker<ShowConsumerConnectionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowConsumerConnectionsResponse>);
         }
         
         /// <summary>
@@ -476,13 +751,51 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         /// </summary>
         public ShowConsumerListOrDetailsResponse ShowConsumerListOrDetails(ShowConsumerListOrDetailsRequest showConsumerListOrDetailsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , showConsumerListOrDetailsRequest.InstanceId.ToString());
-            urlParam.Add("group" , showConsumerListOrDetailsRequest.Group.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/groups/{group}/topics",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showConsumerListOrDetailsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showConsumerListOrDetailsRequest.InstanceId.ToString());
+            urlParam.Add("group", showConsumerListOrDetailsRequest.Group.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/groups/{group}/topics", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showConsumerListOrDetailsRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowConsumerListOrDetailsResponse>(response);
+        }
+
+        public SyncInvoker<ShowConsumerListOrDetailsResponse> ShowConsumerListOrDetailsInvoker(ShowConsumerListOrDetailsRequest showConsumerListOrDetailsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showConsumerListOrDetailsRequest.InstanceId.ToString());
+            urlParam.Add("group", showConsumerListOrDetailsRequest.Group.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/groups/{group}/topics", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showConsumerListOrDetailsRequest);
+            return new SyncInvoker<ShowConsumerListOrDetailsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowConsumerListOrDetailsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询实例的扩容规格列表
+        ///
+        /// 查询实例的扩容规格列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowEngineInstanceExtendProductInfoResponse ShowEngineInstanceExtendProductInfo(ShowEngineInstanceExtendProductInfoRequest showEngineInstanceExtendProductInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine", showEngineInstanceExtendProductInfoRequest.Engine.ToString());
+            urlParam.Add("instance_id", showEngineInstanceExtendProductInfoRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/extend", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showEngineInstanceExtendProductInfoRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowEngineInstanceExtendProductInfoResponse>(response);
+        }
+
+        public SyncInvoker<ShowEngineInstanceExtendProductInfoResponse> ShowEngineInstanceExtendProductInfoInvoker(ShowEngineInstanceExtendProductInfoRequest showEngineInstanceExtendProductInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine", showEngineInstanceExtendProductInfoRequest.Engine.ToString());
+            urlParam.Add("instance_id", showEngineInstanceExtendProductInfoRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/extend", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showEngineInstanceExtendProductInfoRequest);
+            return new SyncInvoker<ShowEngineInstanceExtendProductInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowEngineInstanceExtendProductInfoResponse>);
         }
         
         /// <summary>
@@ -494,13 +807,23 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         /// </summary>
         public ShowGroupResponse ShowGroup(ShowGroupRequest showGroupRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , showGroupRequest.InstanceId.ToString());
-            urlParam.Add("group" , showGroupRequest.Group.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/groups/{group}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showGroupRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showGroupRequest.InstanceId.ToString());
+            urlParam.Add("group", showGroupRequest.Group.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/groups/{group}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showGroupRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowGroupResponse>(response);
+        }
+
+        public SyncInvoker<ShowGroupResponse> ShowGroupInvoker(ShowGroupRequest showGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showGroupRequest.InstanceId.ToString());
+            urlParam.Add("group", showGroupRequest.Group.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/groups/{group}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showGroupRequest);
+            return new SyncInvoker<ShowGroupResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowGroupResponse>);
         }
         
         /// <summary>
@@ -512,12 +835,21 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         /// </summary>
         public ShowInstanceResponse ShowInstance(ShowInstanceRequest showInstanceRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , showInstanceRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showInstanceRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowInstanceResponse>(response);
+        }
+
+        public SyncInvoker<ShowInstanceResponse> ShowInstanceInvoker(ShowInstanceRequest showInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showInstanceRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceRequest);
+            return new SyncInvoker<ShowInstanceResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceResponse>);
         }
         
         /// <summary>
@@ -529,11 +861,19 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         /// </summary>
         public ShowRocketmqProjectTagsResponse ShowRocketmqProjectTags(ShowRocketmqProjectTagsRequest showRocketmqProjectTagsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/rocketmq/tags",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRocketmqProjectTagsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/rocketmq/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRocketmqProjectTagsRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowRocketmqProjectTagsResponse>(response);
+        }
+
+        public SyncInvoker<ShowRocketmqProjectTagsResponse> ShowRocketmqProjectTagsInvoker(ShowRocketmqProjectTagsRequest showRocketmqProjectTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/rocketmq/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRocketmqProjectTagsRequest);
+            return new SyncInvoker<ShowRocketmqProjectTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRocketmqProjectTagsResponse>);
         }
         
         /// <summary>
@@ -545,12 +885,21 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         /// </summary>
         public ShowRocketmqTagsResponse ShowRocketmqTags(ShowRocketmqTagsRequest showRocketmqTagsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , showRocketmqTagsRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/rocketmq/{instance_id}/tags",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRocketmqTagsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showRocketmqTagsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/rocketmq/{instance_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRocketmqTagsRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowRocketmqTagsResponse>(response);
+        }
+
+        public SyncInvoker<ShowRocketmqTagsResponse> ShowRocketmqTagsInvoker(ShowRocketmqTagsRequest showRocketmqTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showRocketmqTagsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/rocketmq/{instance_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRocketmqTagsRequest);
+            return new SyncInvoker<ShowRocketmqTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRocketmqTagsResponse>);
         }
         
         /// <summary>
@@ -562,13 +911,23 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         /// </summary>
         public ShowUserResponse ShowUser(ShowUserRequest showUserRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , showUserRequest.InstanceId.ToString());
-            urlParam.Add("user_name" , showUserRequest.UserName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/users/{user_name}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUserRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showUserRequest.InstanceId.ToString());
+            urlParam.Add("user_name", showUserRequest.UserName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/users/{user_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUserRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowUserResponse>(response);
+        }
+
+        public SyncInvoker<ShowUserResponse> ShowUserInvoker(ShowUserRequest showUserRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showUserRequest.InstanceId.ToString());
+            urlParam.Add("user_name", showUserRequest.UserName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/users/{user_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUserRequest);
+            return new SyncInvoker<ShowUserResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowUserResponse>);
         }
         
         /// <summary>
@@ -580,13 +939,23 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         /// </summary>
         public UpdateConsumerGroupResponse UpdateConsumerGroup(UpdateConsumerGroupRequest updateConsumerGroupRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , updateConsumerGroupRequest.InstanceId.ToString());
-            urlParam.Add("group" , updateConsumerGroupRequest.Group.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/groups/{group}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateConsumerGroupRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateConsumerGroupRequest.InstanceId.ToString());
+            urlParam.Add("group", updateConsumerGroupRequest.Group.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/groups/{group}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateConsumerGroupRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerializeNull<UpdateConsumerGroupResponse>(response);
+        }
+
+        public SyncInvoker<UpdateConsumerGroupResponse> UpdateConsumerGroupInvoker(UpdateConsumerGroupRequest updateConsumerGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateConsumerGroupRequest.InstanceId.ToString());
+            urlParam.Add("group", updateConsumerGroupRequest.Group.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/groups/{group}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateConsumerGroupRequest);
+            return new SyncInvoker<UpdateConsumerGroupResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateConsumerGroupResponse>);
         }
         
         /// <summary>
@@ -598,12 +967,21 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         /// </summary>
         public UpdateInstanceResponse UpdateInstance(UpdateInstanceRequest updateInstanceRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , updateInstanceRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateInstanceRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerializeNull<UpdateInstanceResponse>(response);
+        }
+
+        public SyncInvoker<UpdateInstanceResponse> UpdateInstanceInvoker(UpdateInstanceRequest updateInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateInstanceRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceRequest);
+            return new SyncInvoker<UpdateInstanceResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateInstanceResponse>);
         }
         
         /// <summary>
@@ -615,13 +993,23 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         /// </summary>
         public UpdateUserResponse UpdateUser(UpdateUserRequest updateUserRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , updateUserRequest.InstanceId.ToString());
-            urlParam.Add("user_name" , updateUserRequest.UserName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/users/{user_name}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateUserRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateUserRequest.InstanceId.ToString());
+            urlParam.Add("user_name", updateUserRequest.UserName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/users/{user_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateUserRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerialize<UpdateUserResponse>(response);
+        }
+
+        public SyncInvoker<UpdateUserResponse> UpdateUserInvoker(UpdateUserRequest updateUserRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateUserRequest.InstanceId.ToString());
+            urlParam.Add("user_name", updateUserRequest.UserName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/users/{user_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateUserRequest);
+            return new SyncInvoker<UpdateUserResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateUserResponse>);
         }
         
         /// <summary>
@@ -633,13 +1021,23 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         /// </summary>
         public ValidateConsumedMessageResponse ValidateConsumedMessage(ValidateConsumedMessageRequest validateConsumedMessageRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine" , validateConsumedMessageRequest.Engine.ToString());
-            urlParam.Add("instance_id" , validateConsumedMessageRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/messages/resend",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", validateConsumedMessageRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine", validateConsumedMessageRequest.Engine.ToString());
+            urlParam.Add("instance_id", validateConsumedMessageRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/messages/resend", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", validateConsumedMessageRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<ValidateConsumedMessageResponse>(response);
+        }
+
+        public SyncInvoker<ValidateConsumedMessageResponse> ValidateConsumedMessageInvoker(ValidateConsumedMessageRequest validateConsumedMessageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine", validateConsumedMessageRequest.Engine.ToString());
+            urlParam.Add("instance_id", validateConsumedMessageRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/messages/resend", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", validateConsumedMessageRequest);
+            return new SyncInvoker<ValidateConsumedMessageResponse>(this, "POST", request, JsonUtils.DeSerialize<ValidateConsumedMessageResponse>);
         }
         
         /// <summary>
@@ -651,12 +1049,21 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         /// </summary>
         public CreateTopicOrBatchDeleteTopicResponse CreateTopicOrBatchDeleteTopic(CreateTopicOrBatchDeleteTopicRequest createTopicOrBatchDeleteTopicRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , createTopicOrBatchDeleteTopicRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/topics",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTopicOrBatchDeleteTopicRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createTopicOrBatchDeleteTopicRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/topics", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTopicOrBatchDeleteTopicRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<CreateTopicOrBatchDeleteTopicResponse>(response);
+        }
+
+        public SyncInvoker<CreateTopicOrBatchDeleteTopicResponse> CreateTopicOrBatchDeleteTopicInvoker(CreateTopicOrBatchDeleteTopicRequest createTopicOrBatchDeleteTopicRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createTopicOrBatchDeleteTopicRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/topics", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTopicOrBatchDeleteTopicRequest);
+            return new SyncInvoker<CreateTopicOrBatchDeleteTopicResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateTopicOrBatchDeleteTopicResponse>);
         }
         
         /// <summary>
@@ -668,13 +1075,23 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         /// </summary>
         public DeleteTopicResponse DeleteTopic(DeleteTopicRequest deleteTopicRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , deleteTopicRequest.InstanceId.ToString());
-            urlParam.Add("topic" , deleteTopicRequest.Topic.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/topics/{topic}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTopicRequest);
-            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteTopicRequest.InstanceId.ToString());
+            urlParam.Add("topic", deleteTopicRequest.Topic.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/topics/{topic}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTopicRequest);
+            var response = DoHttpRequestSync("DELETE", request);
             return JsonUtils.DeSerializeNull<DeleteTopicResponse>(response);
+        }
+
+        public SyncInvoker<DeleteTopicResponse> DeleteTopicInvoker(DeleteTopicRequest deleteTopicRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteTopicRequest.InstanceId.ToString());
+            urlParam.Add("topic", deleteTopicRequest.Topic.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/topics/{topic}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTopicRequest);
+            return new SyncInvoker<DeleteTopicResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteTopicResponse>);
         }
         
         /// <summary>
@@ -686,13 +1103,23 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         /// </summary>
         public ListConsumerGroupOfTopicResponse ListConsumerGroupOfTopic(ListConsumerGroupOfTopicRequest listConsumerGroupOfTopicRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , listConsumerGroupOfTopicRequest.InstanceId.ToString());
-            urlParam.Add("topic" , listConsumerGroupOfTopicRequest.Topic.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/topics/{topic}/groups",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listConsumerGroupOfTopicRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listConsumerGroupOfTopicRequest.InstanceId.ToString());
+            urlParam.Add("topic", listConsumerGroupOfTopicRequest.Topic.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/topics/{topic}/groups", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listConsumerGroupOfTopicRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ListConsumerGroupOfTopicResponse>(response);
+        }
+
+        public SyncInvoker<ListConsumerGroupOfTopicResponse> ListConsumerGroupOfTopicInvoker(ListConsumerGroupOfTopicRequest listConsumerGroupOfTopicRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listConsumerGroupOfTopicRequest.InstanceId.ToString());
+            urlParam.Add("topic", listConsumerGroupOfTopicRequest.Topic.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/topics/{topic}/groups", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listConsumerGroupOfTopicRequest);
+            return new SyncInvoker<ListConsumerGroupOfTopicResponse>(this, "GET", request, JsonUtils.DeSerialize<ListConsumerGroupOfTopicResponse>);
         }
         
         /// <summary>
@@ -704,12 +1131,21 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         /// </summary>
         public ListRocketInstanceTopicsResponse ListRocketInstanceTopics(ListRocketInstanceTopicsRequest listRocketInstanceTopicsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , listRocketInstanceTopicsRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/topics",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRocketInstanceTopicsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listRocketInstanceTopicsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/topics", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRocketInstanceTopicsRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ListRocketInstanceTopicsResponse>(response);
+        }
+
+        public SyncInvoker<ListRocketInstanceTopicsResponse> ListRocketInstanceTopicsInvoker(ListRocketInstanceTopicsRequest listRocketInstanceTopicsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listRocketInstanceTopicsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/topics", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRocketInstanceTopicsRequest);
+            return new SyncInvoker<ListRocketInstanceTopicsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListRocketInstanceTopicsResponse>);
         }
         
         /// <summary>
@@ -721,13 +1157,23 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         /// </summary>
         public ShowOneTopicResponse ShowOneTopic(ShowOneTopicRequest showOneTopicRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , showOneTopicRequest.InstanceId.ToString());
-            urlParam.Add("topic" , showOneTopicRequest.Topic.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/topics/{topic}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showOneTopicRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showOneTopicRequest.InstanceId.ToString());
+            urlParam.Add("topic", showOneTopicRequest.Topic.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/topics/{topic}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showOneTopicRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowOneTopicResponse>(response);
+        }
+
+        public SyncInvoker<ShowOneTopicResponse> ShowOneTopicInvoker(ShowOneTopicRequest showOneTopicRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showOneTopicRequest.InstanceId.ToString());
+            urlParam.Add("topic", showOneTopicRequest.Topic.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/topics/{topic}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showOneTopicRequest);
+            return new SyncInvoker<ShowOneTopicResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowOneTopicResponse>);
         }
         
         /// <summary>
@@ -739,13 +1185,23 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         /// </summary>
         public ShowTopicStatusResponse ShowTopicStatus(ShowTopicStatusRequest showTopicStatusRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , showTopicStatusRequest.InstanceId.ToString());
-            urlParam.Add("topic" , showTopicStatusRequest.Topic.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/topics/{topic}/status",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTopicStatusRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showTopicStatusRequest.InstanceId.ToString());
+            urlParam.Add("topic", showTopicStatusRequest.Topic.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/topics/{topic}/status", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTopicStatusRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowTopicStatusResponse>(response);
+        }
+
+        public SyncInvoker<ShowTopicStatusResponse> ShowTopicStatusInvoker(ShowTopicStatusRequest showTopicStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showTopicStatusRequest.InstanceId.ToString());
+            urlParam.Add("topic", showTopicStatusRequest.Topic.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/topics/{topic}/status", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTopicStatusRequest);
+            return new SyncInvoker<ShowTopicStatusResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTopicStatusResponse>);
         }
         
         /// <summary>
@@ -757,13 +1213,23 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         /// </summary>
         public UpdateTopicResponse UpdateTopic(UpdateTopicRequest updateTopicRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , updateTopicRequest.InstanceId.ToString());
-            urlParam.Add("topic" , updateTopicRequest.Topic.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/topics/{topic}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTopicRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateTopicRequest.InstanceId.ToString());
+            urlParam.Add("topic", updateTopicRequest.Topic.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/topics/{topic}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTopicRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerializeNull<UpdateTopicResponse>(response);
+        }
+
+        public SyncInvoker<UpdateTopicResponse> UpdateTopicInvoker(UpdateTopicRequest updateTopicRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateTopicRequest.InstanceId.ToString());
+            urlParam.Add("topic", updateTopicRequest.Topic.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/topics/{topic}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTopicRequest);
+            return new SyncInvoker<UpdateTopicResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateTopicResponse>);
         }
         
     }

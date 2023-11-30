@@ -17,31 +17,31 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
     {
 
         /// <summary>
-        /// 普罗实例remote-write地址
+        /// Prometheus实例remote-write地址。
         /// </summary>
         [JsonProperty("remote_write_url", NullValueHandling = NullValueHandling.Ignore)]
         public string RemoteWriteUrl { get; set; }
 
         /// <summary>
-        /// 普罗实例remote-read地址
+        /// Prometheus实例remote-read地址。
         /// </summary>
         [JsonProperty("remote_read_url", NullValueHandling = NullValueHandling.Ignore)]
         public string RemoteReadUrl { get; set; }
 
         /// <summary>
-        /// 普罗实例调用url
+        /// Prometheus实例调用url。
         /// </summary>
         [JsonProperty("prom_http_api_endpoint", NullValueHandling = NullValueHandling.Ignore)]
         public string PromHttpApiEndpoint { get; set; }
 
         /// <summary>
-        /// 普罗实例关联dashboard的dashboard ID
+        /// Prometheus实例关联dashboard的dashboard id。
         /// </summary>
         [JsonProperty("dashboard_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DashboardId { get; set; }
 
         /// <summary>
-        /// 普罗实例所属的region
+        /// Prometheus实例所属的region。
         /// </summary>
         [JsonProperty("region_id", NullValueHandling = NullValueHandling.Ignore)]
         public string RegionId { get; set; }

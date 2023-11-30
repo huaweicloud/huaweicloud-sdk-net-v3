@@ -23,11 +23,19 @@ namespace HuaweiCloud.SDK.Ces.V3
         /// </summary>
         public ListAgentStatusResponse ListAgentStatus(ListAgentStatusRequest listAgentStatusRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/agent-status/batch-query",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAgentStatusRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/agent-status/batch-query", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAgentStatusRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<ListAgentStatusResponse>(response);
+        }
+
+        public SyncInvoker<ListAgentStatusResponse> ListAgentStatusInvoker(ListAgentStatusRequest listAgentStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/agent-status/batch-query", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAgentStatusRequest);
+            return new SyncInvoker<ListAgentStatusResponse>(this, "POST", request, JsonUtils.DeSerialize<ListAgentStatusResponse>);
         }
         
         /// <summary>
@@ -39,11 +47,19 @@ namespace HuaweiCloud.SDK.Ces.V3
         /// </summary>
         public BatchCreateAgentInvocationsResponse BatchCreateAgentInvocations(BatchCreateAgentInvocationsRequest batchCreateAgentInvocationsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/agent-invocations/batch-create",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateAgentInvocationsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/agent-invocations/batch-create", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateAgentInvocationsRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<BatchCreateAgentInvocationsResponse>(response);
+        }
+
+        public SyncInvoker<BatchCreateAgentInvocationsResponse> BatchCreateAgentInvocationsInvoker(BatchCreateAgentInvocationsRequest batchCreateAgentInvocationsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/agent-invocations/batch-create", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateAgentInvocationsRequest);
+            return new SyncInvoker<BatchCreateAgentInvocationsResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchCreateAgentInvocationsResponse>);
         }
         
         /// <summary>
@@ -55,11 +71,19 @@ namespace HuaweiCloud.SDK.Ces.V3
         /// </summary>
         public ListAgentInvocationsResponse ListAgentInvocations(ListAgentInvocationsRequest listAgentInvocationsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/agent-invocations",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAgentInvocationsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/agent-invocations", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAgentInvocationsRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ListAgentInvocationsResponse>(response);
+        }
+
+        public SyncInvoker<ListAgentInvocationsResponse> ListAgentInvocationsInvoker(ListAgentInvocationsRequest listAgentInvocationsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/agent-invocations", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAgentInvocationsRequest);
+            return new SyncInvoker<ListAgentInvocationsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAgentInvocationsResponse>);
         }
         
     }

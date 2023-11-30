@@ -24,11 +24,19 @@ namespace HuaweiCloud.SDK.Tms.V1
         /// </summary>
         public async Task<CreatePredefineTagsResponse> CreatePredefineTagsAsync(CreatePredefineTagsRequest createPredefineTagsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/predefine_tags/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createPredefineTagsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/predefine_tags/action",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createPredefineTagsRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerializeNull<CreatePredefineTagsResponse>(response);
+        }
+
+        public AsyncInvoker<CreatePredefineTagsResponse> CreatePredefineTagsAsyncInvoker(CreatePredefineTagsRequest createPredefineTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/predefine_tags/action",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createPredefineTagsRequest);
+            return new AsyncInvoker<CreatePredefineTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreatePredefineTagsResponse>);
         }
         
         /// <summary>
@@ -40,11 +48,19 @@ namespace HuaweiCloud.SDK.Tms.V1
         /// </summary>
         public async Task<CreateResourceTagResponse> CreateResourceTagAsync(CreateResourceTagRequest createResourceTagRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/resource-tags/batch-create",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createResourceTagRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/resource-tags/batch-create",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createResourceTagRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateResourceTagResponse>(response);
+        }
+
+        public AsyncInvoker<CreateResourceTagResponse> CreateResourceTagAsyncInvoker(CreateResourceTagRequest createResourceTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/resource-tags/batch-create",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createResourceTagRequest);
+            return new AsyncInvoker<CreateResourceTagResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateResourceTagResponse>);
         }
         
         /// <summary>
@@ -56,11 +72,19 @@ namespace HuaweiCloud.SDK.Tms.V1
         /// </summary>
         public async Task<DeletePredefineTagsResponse> DeletePredefineTagsAsync(DeletePredefineTagsRequest deletePredefineTagsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/predefine_tags/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deletePredefineTagsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/predefine_tags/action",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deletePredefineTagsRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerializeNull<DeletePredefineTagsResponse>(response);
+        }
+
+        public AsyncInvoker<DeletePredefineTagsResponse> DeletePredefineTagsAsyncInvoker(DeletePredefineTagsRequest deletePredefineTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/predefine_tags/action",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deletePredefineTagsRequest);
+            return new AsyncInvoker<DeletePredefineTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<DeletePredefineTagsResponse>);
         }
         
         /// <summary>
@@ -72,11 +96,19 @@ namespace HuaweiCloud.SDK.Tms.V1
         /// </summary>
         public async Task<DeleteResourceTagResponse> DeleteResourceTagAsync(DeleteResourceTagRequest deleteResourceTagRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/resource-tags/batch-delete",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteResourceTagRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/resource-tags/batch-delete",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteResourceTagRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<DeleteResourceTagResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteResourceTagResponse> DeleteResourceTagAsyncInvoker(DeleteResourceTagRequest deleteResourceTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/resource-tags/batch-delete",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteResourceTagRequest);
+            return new AsyncInvoker<DeleteResourceTagResponse>(this, "POST", request, JsonUtils.DeSerialize<DeleteResourceTagResponse>);
         }
         
         /// <summary>
@@ -88,11 +120,19 @@ namespace HuaweiCloud.SDK.Tms.V1
         /// </summary>
         public async Task<ListApiVersionsResponse> ListApiVersionsAsync(ListApiVersionsRequest listApiVersionsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listApiVersionsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listApiVersionsRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListApiVersionsResponse>(response);
+        }
+
+        public AsyncInvoker<ListApiVersionsResponse> ListApiVersionsAsyncInvoker(ListApiVersionsRequest listApiVersionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listApiVersionsRequest);
+            return new AsyncInvoker<ListApiVersionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListApiVersionsResponse>);
         }
         
         /// <summary>
@@ -104,11 +144,19 @@ namespace HuaweiCloud.SDK.Tms.V1
         /// </summary>
         public async Task<ListPredefineTagsResponse> ListPredefineTagsAsync(ListPredefineTagsRequest listPredefineTagsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/predefine_tags",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPredefineTagsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/predefine_tags",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPredefineTagsRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListPredefineTagsResponse>(response);
+        }
+
+        public AsyncInvoker<ListPredefineTagsResponse> ListPredefineTagsAsyncInvoker(ListPredefineTagsRequest listPredefineTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/predefine_tags",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPredefineTagsRequest);
+            return new AsyncInvoker<ListPredefineTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListPredefineTagsResponse>);
         }
         
         /// <summary>
@@ -120,11 +168,19 @@ namespace HuaweiCloud.SDK.Tms.V1
         /// </summary>
         public async Task<ListProvidersResponse> ListProvidersAsync(ListProvidersRequest listProvidersRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/tms/providers",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProvidersRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/tms/providers",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProvidersRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListProvidersResponse>(response);
+        }
+
+        public AsyncInvoker<ListProvidersResponse> ListProvidersAsyncInvoker(ListProvidersRequest listProvidersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/tms/providers",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProvidersRequest);
+            return new AsyncInvoker<ListProvidersResponse>(this, "GET", request, JsonUtils.DeSerialize<ListProvidersResponse>);
         }
         
         /// <summary>
@@ -136,11 +192,19 @@ namespace HuaweiCloud.SDK.Tms.V1
         /// </summary>
         public async Task<ListResourceResponse> ListResourceAsync(ListResourceRequest listResourceRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/resource-instances/filter",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listResourceRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/resource-instances/filter",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listResourceRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<ListResourceResponse>(response);
+        }
+
+        public AsyncInvoker<ListResourceResponse> ListResourceAsyncInvoker(ListResourceRequest listResourceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/resource-instances/filter",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listResourceRequest);
+            return new AsyncInvoker<ListResourceResponse>(this, "POST", request, JsonUtils.DeSerialize<ListResourceResponse>);
         }
         
         /// <summary>
@@ -152,11 +216,19 @@ namespace HuaweiCloud.SDK.Tms.V1
         /// </summary>
         public async Task<ListTagKeysResponse> ListTagKeysAsync(ListTagKeysRequest listTagKeysRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/tag-keys",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTagKeysRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/tag-keys",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTagKeysRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListTagKeysResponse>(response);
+        }
+
+        public AsyncInvoker<ListTagKeysResponse> ListTagKeysAsyncInvoker(ListTagKeysRequest listTagKeysRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/tag-keys",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTagKeysRequest);
+            return new AsyncInvoker<ListTagKeysResponse>(this, "GET", request, JsonUtils.DeSerialize<ListTagKeysResponse>);
         }
         
         /// <summary>
@@ -168,11 +240,19 @@ namespace HuaweiCloud.SDK.Tms.V1
         /// </summary>
         public async Task<ListTagValuesResponse> ListTagValuesAsync(ListTagValuesRequest listTagValuesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/tag-values",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTagValuesRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/tag-values",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTagValuesRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListTagValuesResponse>(response);
+        }
+
+        public AsyncInvoker<ListTagValuesResponse> ListTagValuesAsyncInvoker(ListTagValuesRequest listTagValuesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/tag-values",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTagValuesRequest);
+            return new AsyncInvoker<ListTagValuesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListTagValuesResponse>);
         }
         
         /// <summary>
@@ -184,12 +264,21 @@ namespace HuaweiCloud.SDK.Tms.V1
         /// </summary>
         public async Task<ShowApiVersionResponse> ShowApiVersionAsync(ShowApiVersionRequest showApiVersionRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("api_version" , showApiVersionRequest.ApiVersion.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/{api_version}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showApiVersionRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("api_version", showApiVersionRequest.ApiVersion.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/{api_version}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showApiVersionRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowApiVersionResponse>(response);
+        }
+
+        public AsyncInvoker<ShowApiVersionResponse> ShowApiVersionAsyncInvoker(ShowApiVersionRequest showApiVersionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("api_version", showApiVersionRequest.ApiVersion.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/{api_version}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showApiVersionRequest);
+            return new AsyncInvoker<ShowApiVersionResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowApiVersionResponse>);
         }
         
         /// <summary>
@@ -201,12 +290,21 @@ namespace HuaweiCloud.SDK.Tms.V1
         /// </summary>
         public async Task<ShowResourceTagResponse> ShowResourceTagAsync(ShowResourceTagRequest showResourceTagRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id" , showResourceTagRequest.ResourceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2.0/resources/{resource_id}/tags",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showResourceTagRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_id", showResourceTagRequest.ResourceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/resources/{resource_id}/tags",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showResourceTagRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowResourceTagResponse>(response);
+        }
+
+        public AsyncInvoker<ShowResourceTagResponse> ShowResourceTagAsyncInvoker(ShowResourceTagRequest showResourceTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_id", showResourceTagRequest.ResourceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/resources/{resource_id}/tags",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showResourceTagRequest);
+            return new AsyncInvoker<ShowResourceTagResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowResourceTagResponse>);
         }
         
         /// <summary>
@@ -218,11 +316,19 @@ namespace HuaweiCloud.SDK.Tms.V1
         /// </summary>
         public async Task<ShowTagQuotaResponse> ShowTagQuotaAsync(ShowTagQuotaRequest showTagQuotaRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/tms/quotas",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTagQuotaRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/tms/quotas",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTagQuotaRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowTagQuotaResponse>(response);
+        }
+
+        public AsyncInvoker<ShowTagQuotaResponse> ShowTagQuotaAsyncInvoker(ShowTagQuotaRequest showTagQuotaRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/tms/quotas",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTagQuotaRequest);
+            return new AsyncInvoker<ShowTagQuotaResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTagQuotaResponse>);
         }
         
         /// <summary>
@@ -234,11 +340,19 @@ namespace HuaweiCloud.SDK.Tms.V1
         /// </summary>
         public async Task<UpdatePredefineTagsResponse> UpdatePredefineTagsAsync(UpdatePredefineTagsRequest updatePredefineTagsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/predefine_tags",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updatePredefineTagsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/predefine_tags",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updatePredefineTagsRequest);
+            var response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerializeNull<UpdatePredefineTagsResponse>(response);
+        }
+
+        public AsyncInvoker<UpdatePredefineTagsResponse> UpdatePredefineTagsAsyncInvoker(UpdatePredefineTagsRequest updatePredefineTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/predefine_tags",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updatePredefineTagsRequest);
+            return new AsyncInvoker<UpdatePredefineTagsResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdatePredefineTagsResponse>);
         }
         
     }

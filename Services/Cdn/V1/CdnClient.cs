@@ -23,11 +23,19 @@ namespace HuaweiCloud.SDK.Cdn.V1
         /// </summary>
         public BatchDeleteTagsResponse BatchDeleteTags(BatchDeleteTagsRequest batchDeleteTagsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/configuration/tags/batch-delete",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteTagsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/configuration/tags/batch-delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteTagsRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerializeNull<BatchDeleteTagsResponse>(response);
+        }
+
+        public SyncInvoker<BatchDeleteTagsResponse> BatchDeleteTagsInvoker(BatchDeleteTagsRequest batchDeleteTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/configuration/tags/batch-delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteTagsRequest);
+            return new SyncInvoker<BatchDeleteTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchDeleteTagsResponse>);
         }
         
         /// <summary>
@@ -39,11 +47,19 @@ namespace HuaweiCloud.SDK.Cdn.V1
         /// </summary>
         public CreateDomainResponse CreateDomain(CreateDomainRequest createDomainRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDomainRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDomainRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<CreateDomainResponse>(response);
+        }
+
+        public SyncInvoker<CreateDomainResponse> CreateDomainInvoker(CreateDomainRequest createDomainRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDomainRequest);
+            return new SyncInvoker<CreateDomainResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateDomainResponse>);
         }
         
         /// <summary>
@@ -55,11 +71,19 @@ namespace HuaweiCloud.SDK.Cdn.V1
         /// </summary>
         public CreatePreheatingTasksResponse CreatePreheatingTasks(CreatePreheatingTasksRequest createPreheatingTasksRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/content/preheating-tasks",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPreheatingTasksRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/content/preheating-tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPreheatingTasksRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<CreatePreheatingTasksResponse>(response);
+        }
+
+        public SyncInvoker<CreatePreheatingTasksResponse> CreatePreheatingTasksInvoker(CreatePreheatingTasksRequest createPreheatingTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/content/preheating-tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPreheatingTasksRequest);
+            return new SyncInvoker<CreatePreheatingTasksResponse>(this, "POST", request, JsonUtils.DeSerialize<CreatePreheatingTasksResponse>);
         }
         
         /// <summary>
@@ -71,11 +95,19 @@ namespace HuaweiCloud.SDK.Cdn.V1
         /// </summary>
         public CreateRefreshTasksResponse CreateRefreshTasks(CreateRefreshTasksRequest createRefreshTasksRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/content/refresh-tasks",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRefreshTasksRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/content/refresh-tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRefreshTasksRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<CreateRefreshTasksResponse>(response);
+        }
+
+        public SyncInvoker<CreateRefreshTasksResponse> CreateRefreshTasksInvoker(CreateRefreshTasksRequest createRefreshTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/content/refresh-tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRefreshTasksRequest);
+            return new SyncInvoker<CreateRefreshTasksResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateRefreshTasksResponse>);
         }
         
         /// <summary>
@@ -87,11 +119,19 @@ namespace HuaweiCloud.SDK.Cdn.V1
         /// </summary>
         public CreateTagsResponse CreateTags(CreateTagsRequest createTagsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/configuration/tags",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTagsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/configuration/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTagsRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerializeNull<CreateTagsResponse>(response);
+        }
+
+        public SyncInvoker<CreateTagsResponse> CreateTagsInvoker(CreateTagsRequest createTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/configuration/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTagsRequest);
+            return new SyncInvoker<CreateTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateTagsResponse>);
         }
         
         /// <summary>
@@ -103,12 +143,21 @@ namespace HuaweiCloud.SDK.Cdn.V1
         /// </summary>
         public DeleteDomainResponse DeleteDomain(DeleteDomainRequest deleteDomainRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id" , deleteDomainRequest.DomainId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDomainRequest);
-            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id", deleteDomainRequest.DomainId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDomainRequest);
+            var response = DoHttpRequestSync("DELETE", request);
             return JsonUtils.DeSerialize<DeleteDomainResponse>(response);
+        }
+
+        public SyncInvoker<DeleteDomainResponse> DeleteDomainInvoker(DeleteDomainRequest deleteDomainRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id", deleteDomainRequest.DomainId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDomainRequest);
+            return new SyncInvoker<DeleteDomainResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteDomainResponse>);
         }
         
         /// <summary>
@@ -120,12 +169,21 @@ namespace HuaweiCloud.SDK.Cdn.V1
         /// </summary>
         public DisableDomainResponse DisableDomain(DisableDomainRequest disableDomainRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id" , disableDomainRequest.DomainId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}/disable",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", disableDomainRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id", disableDomainRequest.DomainId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}/disable", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disableDomainRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerialize<DisableDomainResponse>(response);
+        }
+
+        public SyncInvoker<DisableDomainResponse> DisableDomainInvoker(DisableDomainRequest disableDomainRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id", disableDomainRequest.DomainId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}/disable", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disableDomainRequest);
+            return new SyncInvoker<DisableDomainResponse>(this, "PUT", request, JsonUtils.DeSerialize<DisableDomainResponse>);
         }
         
         /// <summary>
@@ -137,12 +195,21 @@ namespace HuaweiCloud.SDK.Cdn.V1
         /// </summary>
         public EnableDomainResponse EnableDomain(EnableDomainRequest enableDomainRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id" , enableDomainRequest.DomainId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}/enable",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", enableDomainRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id", enableDomainRequest.DomainId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}/enable", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", enableDomainRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerialize<EnableDomainResponse>(response);
+        }
+
+        public SyncInvoker<EnableDomainResponse> EnableDomainInvoker(EnableDomainRequest enableDomainRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id", enableDomainRequest.DomainId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}/enable", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", enableDomainRequest);
+            return new SyncInvoker<EnableDomainResponse>(this, "PUT", request, JsonUtils.DeSerialize<EnableDomainResponse>);
         }
         
         /// <summary>
@@ -154,11 +221,19 @@ namespace HuaweiCloud.SDK.Cdn.V1
         /// </summary>
         public ListDomainsResponse ListDomains(ListDomainsRequest listDomainsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDomainsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDomainsRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ListDomainsResponse>(response);
+        }
+
+        public SyncInvoker<ListDomainsResponse> ListDomainsInvoker(ListDomainsRequest listDomainsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDomainsRequest);
+            return new SyncInvoker<ListDomainsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDomainsResponse>);
         }
         
         /// <summary>
@@ -170,12 +245,21 @@ namespace HuaweiCloud.SDK.Cdn.V1
         /// </summary>
         public ShowBlackWhiteListResponse ShowBlackWhiteList(ShowBlackWhiteListRequest showBlackWhiteListRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id" , showBlackWhiteListRequest.DomainId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}/ip-acl",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBlackWhiteListRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id", showBlackWhiteListRequest.DomainId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}/ip-acl", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBlackWhiteListRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowBlackWhiteListResponse>(response);
+        }
+
+        public SyncInvoker<ShowBlackWhiteListResponse> ShowBlackWhiteListInvoker(ShowBlackWhiteListRequest showBlackWhiteListRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id", showBlackWhiteListRequest.DomainId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}/ip-acl", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBlackWhiteListRequest);
+            return new SyncInvoker<ShowBlackWhiteListResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowBlackWhiteListResponse>);
         }
         
         /// <summary>
@@ -187,12 +271,21 @@ namespace HuaweiCloud.SDK.Cdn.V1
         /// </summary>
         public ShowCacheRulesResponse ShowCacheRules(ShowCacheRulesRequest showCacheRulesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id" , showCacheRulesRequest.DomainId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}/cache",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCacheRulesRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id", showCacheRulesRequest.DomainId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}/cache", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCacheRulesRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowCacheRulesResponse>(response);
+        }
+
+        public SyncInvoker<ShowCacheRulesResponse> ShowCacheRulesInvoker(ShowCacheRulesRequest showCacheRulesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id", showCacheRulesRequest.DomainId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}/cache", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCacheRulesRequest);
+            return new SyncInvoker<ShowCacheRulesResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowCacheRulesResponse>);
         }
         
         /// <summary>
@@ -204,11 +297,19 @@ namespace HuaweiCloud.SDK.Cdn.V1
         /// </summary>
         public ShowCertificatesHttpsInfoResponse ShowCertificatesHttpsInfo(ShowCertificatesHttpsInfoRequest showCertificatesHttpsInfoRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/https-certificate-info",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCertificatesHttpsInfoRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/https-certificate-info", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCertificatesHttpsInfoRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowCertificatesHttpsInfoResponse>(response);
+        }
+
+        public SyncInvoker<ShowCertificatesHttpsInfoResponse> ShowCertificatesHttpsInfoInvoker(ShowCertificatesHttpsInfoRequest showCertificatesHttpsInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/https-certificate-info", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCertificatesHttpsInfoRequest);
+            return new SyncInvoker<ShowCertificatesHttpsInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowCertificatesHttpsInfoResponse>);
         }
         
         /// <summary>
@@ -220,12 +321,21 @@ namespace HuaweiCloud.SDK.Cdn.V1
         /// </summary>
         public ShowDomainDetailResponse ShowDomainDetail(ShowDomainDetailRequest showDomainDetailRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id" , showDomainDetailRequest.DomainId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}/detail",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainDetailRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id", showDomainDetailRequest.DomainId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}/detail", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainDetailRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowDomainDetailResponse>(response);
+        }
+
+        public SyncInvoker<ShowDomainDetailResponse> ShowDomainDetailInvoker(ShowDomainDetailRequest showDomainDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id", showDomainDetailRequest.DomainId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}/detail", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainDetailRequest);
+            return new SyncInvoker<ShowDomainDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDomainDetailResponse>);
         }
         
         /// <summary>
@@ -238,12 +348,21 @@ namespace HuaweiCloud.SDK.Cdn.V1
         /// </summary>
         public ShowDomainFullConfigResponse ShowDomainFullConfig(ShowDomainFullConfigRequest showDomainFullConfigRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_name" , showDomainFullConfigRequest.DomainName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1.1/cdn/configuration/domains/{domain_name}/configs",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainFullConfigRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_name", showDomainFullConfigRequest.DomainName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.1/cdn/configuration/domains/{domain_name}/configs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainFullConfigRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowDomainFullConfigResponse>(response);
+        }
+
+        public SyncInvoker<ShowDomainFullConfigResponse> ShowDomainFullConfigInvoker(ShowDomainFullConfigRequest showDomainFullConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_name", showDomainFullConfigRequest.DomainName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.1/cdn/configuration/domains/{domain_name}/configs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainFullConfigRequest);
+            return new SyncInvoker<ShowDomainFullConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDomainFullConfigResponse>);
         }
         
         /// <summary>
@@ -263,11 +382,19 @@ namespace HuaweiCloud.SDK.Cdn.V1
         /// </summary>
         public ShowDomainItemDetailsResponse ShowDomainItemDetails(ShowDomainItemDetailsRequest showDomainItemDetailsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/statistics/domain-item-details",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainItemDetailsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/statistics/domain-item-details", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainItemDetailsRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowDomainItemDetailsResponse>(response);
+        }
+
+        public SyncInvoker<ShowDomainItemDetailsResponse> ShowDomainItemDetailsInvoker(ShowDomainItemDetailsRequest showDomainItemDetailsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/statistics/domain-item-details", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainItemDetailsRequest);
+            return new SyncInvoker<ShowDomainItemDetailsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDomainItemDetailsResponse>);
         }
         
         /// <summary>
@@ -290,11 +417,19 @@ namespace HuaweiCloud.SDK.Cdn.V1
         /// </summary>
         public ShowDomainItemLocationDetailsResponse ShowDomainItemLocationDetails(ShowDomainItemLocationDetailsRequest showDomainItemLocationDetailsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/statistics/domain-item-location-details",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainItemLocationDetailsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/statistics/domain-item-location-details", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainItemLocationDetailsRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowDomainItemLocationDetailsResponse>(response);
+        }
+
+        public SyncInvoker<ShowDomainItemLocationDetailsResponse> ShowDomainItemLocationDetailsInvoker(ShowDomainItemLocationDetailsRequest showDomainItemLocationDetailsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/statistics/domain-item-location-details", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainItemLocationDetailsRequest);
+            return new SyncInvoker<ShowDomainItemLocationDetailsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDomainItemLocationDetailsResponse>);
         }
         
         /// <summary>
@@ -318,11 +453,19 @@ namespace HuaweiCloud.SDK.Cdn.V1
         /// </summary>
         public ShowDomainLocationStatsResponse ShowDomainLocationStats(ShowDomainLocationStatsRequest showDomainLocationStatsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/statistics/domain-location-stats",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainLocationStatsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/statistics/domain-location-stats", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainLocationStatsRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowDomainLocationStatsResponse>(response);
+        }
+
+        public SyncInvoker<ShowDomainLocationStatsResponse> ShowDomainLocationStatsInvoker(ShowDomainLocationStatsRequest showDomainLocationStatsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/statistics/domain-location-stats", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainLocationStatsRequest);
+            return new SyncInvoker<ShowDomainLocationStatsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDomainLocationStatsResponse>);
         }
         
         /// <summary>
@@ -346,11 +489,19 @@ namespace HuaweiCloud.SDK.Cdn.V1
         /// </summary>
         public ShowDomainStatsResponse ShowDomainStats(ShowDomainStatsRequest showDomainStatsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/statistics/domain-stats",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainStatsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/statistics/domain-stats", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainStatsRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowDomainStatsResponse>(response);
+        }
+
+        public SyncInvoker<ShowDomainStatsResponse> ShowDomainStatsInvoker(ShowDomainStatsRequest showDomainStatsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/statistics/domain-stats", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainStatsRequest);
+            return new SyncInvoker<ShowDomainStatsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDomainStatsResponse>);
         }
         
         /// <summary>
@@ -362,12 +513,21 @@ namespace HuaweiCloud.SDK.Cdn.V1
         /// </summary>
         public ShowHistoryTaskDetailsResponse ShowHistoryTaskDetails(ShowHistoryTaskDetailsRequest showHistoryTaskDetailsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("history_tasks_id" , showHistoryTaskDetailsRequest.HistoryTasksId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/historytasks/{history_tasks_id}/detail",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showHistoryTaskDetailsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("history_tasks_id", showHistoryTaskDetailsRequest.HistoryTasksId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/historytasks/{history_tasks_id}/detail", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showHistoryTaskDetailsRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowHistoryTaskDetailsResponse>(response);
+        }
+
+        public SyncInvoker<ShowHistoryTaskDetailsResponse> ShowHistoryTaskDetailsInvoker(ShowHistoryTaskDetailsRequest showHistoryTaskDetailsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("history_tasks_id", showHistoryTaskDetailsRequest.HistoryTasksId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/historytasks/{history_tasks_id}/detail", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showHistoryTaskDetailsRequest);
+            return new SyncInvoker<ShowHistoryTaskDetailsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowHistoryTaskDetailsResponse>);
         }
         
         /// <summary>
@@ -379,11 +539,19 @@ namespace HuaweiCloud.SDK.Cdn.V1
         /// </summary>
         public ShowHistoryTasksResponse ShowHistoryTasks(ShowHistoryTasksRequest showHistoryTasksRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/historytasks",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showHistoryTasksRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/historytasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showHistoryTasksRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowHistoryTasksResponse>(response);
+        }
+
+        public SyncInvoker<ShowHistoryTasksResponse> ShowHistoryTasksInvoker(ShowHistoryTasksRequest showHistoryTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/historytasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showHistoryTasksRequest);
+            return new SyncInvoker<ShowHistoryTasksResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowHistoryTasksResponse>);
         }
         
         /// <summary>
@@ -395,12 +563,21 @@ namespace HuaweiCloud.SDK.Cdn.V1
         /// </summary>
         public ShowHttpInfoResponse ShowHttpInfo(ShowHttpInfoRequest showHttpInfoRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id" , showHttpInfoRequest.DomainId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}/https-info",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showHttpInfoRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id", showHttpInfoRequest.DomainId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}/https-info", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showHttpInfoRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowHttpInfoResponse>(response);
+        }
+
+        public SyncInvoker<ShowHttpInfoResponse> ShowHttpInfoInvoker(ShowHttpInfoRequest showHttpInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id", showHttpInfoRequest.DomainId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}/https-info", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showHttpInfoRequest);
+            return new SyncInvoker<ShowHttpInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowHttpInfoResponse>);
         }
         
         /// <summary>
@@ -412,11 +589,19 @@ namespace HuaweiCloud.SDK.Cdn.V1
         /// </summary>
         public ShowIpInfoResponse ShowIpInfo(ShowIpInfoRequest showIpInfoRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/ip-info",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showIpInfoRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/ip-info", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showIpInfoRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowIpInfoResponse>(response);
+        }
+
+        public SyncInvoker<ShowIpInfoResponse> ShowIpInfoInvoker(ShowIpInfoRequest showIpInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/ip-info", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showIpInfoRequest);
+            return new SyncInvoker<ShowIpInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowIpInfoResponse>);
         }
         
         /// <summary>
@@ -428,11 +613,19 @@ namespace HuaweiCloud.SDK.Cdn.V1
         /// </summary>
         public ShowLogsResponse ShowLogs(ShowLogsRequest showLogsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/logs",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLogsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/logs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLogsRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowLogsResponse>(response);
+        }
+
+        public SyncInvoker<ShowLogsResponse> ShowLogsInvoker(ShowLogsRequest showLogsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/logs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLogsRequest);
+            return new SyncInvoker<ShowLogsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowLogsResponse>);
         }
         
         /// <summary>
@@ -444,12 +637,21 @@ namespace HuaweiCloud.SDK.Cdn.V1
         /// </summary>
         public ShowOriginHostResponse ShowOriginHost(ShowOriginHostRequest showOriginHostRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id" , showOriginHostRequest.DomainId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}/originhost",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showOriginHostRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id", showOriginHostRequest.DomainId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}/originhost", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showOriginHostRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowOriginHostResponse>(response);
+        }
+
+        public SyncInvoker<ShowOriginHostResponse> ShowOriginHostInvoker(ShowOriginHostRequest showOriginHostRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id", showOriginHostRequest.DomainId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}/originhost", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showOriginHostRequest);
+            return new SyncInvoker<ShowOriginHostResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowOriginHostResponse>);
         }
         
         /// <summary>
@@ -461,11 +663,19 @@ namespace HuaweiCloud.SDK.Cdn.V1
         /// </summary>
         public ShowQuotaResponse ShowQuota(ShowQuotaRequest showQuotaRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/quota",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showQuotaRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/quota", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showQuotaRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowQuotaResponse>(response);
+        }
+
+        public SyncInvoker<ShowQuotaResponse> ShowQuotaInvoker(ShowQuotaRequest showQuotaRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/quota", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showQuotaRequest);
+            return new SyncInvoker<ShowQuotaResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowQuotaResponse>);
         }
         
         /// <summary>
@@ -477,12 +687,21 @@ namespace HuaweiCloud.SDK.Cdn.V1
         /// </summary>
         public ShowReferResponse ShowRefer(ShowReferRequest showReferRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id" , showReferRequest.DomainId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}/referer",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showReferRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id", showReferRequest.DomainId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}/referer", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showReferRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowReferResponse>(response);
+        }
+
+        public SyncInvoker<ShowReferResponse> ShowReferInvoker(ShowReferRequest showReferRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id", showReferRequest.DomainId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}/referer", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showReferRequest);
+            return new SyncInvoker<ShowReferResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowReferResponse>);
         }
         
         /// <summary>
@@ -494,12 +713,21 @@ namespace HuaweiCloud.SDK.Cdn.V1
         /// </summary>
         public ShowResponseHeaderResponse ShowResponseHeader(ShowResponseHeaderRequest showResponseHeaderRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id" , showResponseHeaderRequest.DomainId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}/response-header",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showResponseHeaderRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id", showResponseHeaderRequest.DomainId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}/response-header", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showResponseHeaderRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowResponseHeaderResponse>(response);
+        }
+
+        public SyncInvoker<ShowResponseHeaderResponse> ShowResponseHeaderInvoker(ShowResponseHeaderRequest showResponseHeaderRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id", showResponseHeaderRequest.DomainId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}/response-header", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showResponseHeaderRequest);
+            return new SyncInvoker<ShowResponseHeaderResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowResponseHeaderResponse>);
         }
         
         /// <summary>
@@ -511,11 +739,19 @@ namespace HuaweiCloud.SDK.Cdn.V1
         /// </summary>
         public ShowTagsResponse ShowTags(ShowTagsRequest showTagsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/configuration/tags",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTagsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/configuration/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTagsRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowTagsResponse>(response);
+        }
+
+        public SyncInvoker<ShowTagsResponse> ShowTagsInvoker(ShowTagsRequest showTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/configuration/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTagsRequest);
+            return new SyncInvoker<ShowTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTagsResponse>);
         }
         
         /// <summary>
@@ -540,11 +776,19 @@ namespace HuaweiCloud.SDK.Cdn.V1
         /// </summary>
         public ShowTopUrlResponse ShowTopUrl(ShowTopUrlRequest showTopUrlRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/statistics/top-url",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTopUrlRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/statistics/top-url", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTopUrlRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowTopUrlResponse>(response);
+        }
+
+        public SyncInvoker<ShowTopUrlResponse> ShowTopUrlInvoker(ShowTopUrlRequest showTopUrlRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/statistics/top-url", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTopUrlRequest);
+            return new SyncInvoker<ShowTopUrlResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTopUrlResponse>);
         }
         
         /// <summary>
@@ -556,11 +800,19 @@ namespace HuaweiCloud.SDK.Cdn.V1
         /// </summary>
         public ShowUrlTaskInfoResponse ShowUrlTaskInfo(ShowUrlTaskInfoRequest showUrlTaskInfoRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/contentgateway/url-tasks",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUrlTaskInfoRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/contentgateway/url-tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUrlTaskInfoRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowUrlTaskInfoResponse>(response);
+        }
+
+        public SyncInvoker<ShowUrlTaskInfoResponse> ShowUrlTaskInfoInvoker(ShowUrlTaskInfoRequest showUrlTaskInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/contentgateway/url-tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUrlTaskInfoRequest);
+            return new SyncInvoker<ShowUrlTaskInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowUrlTaskInfoResponse>);
         }
         
         /// <summary>
@@ -572,12 +824,21 @@ namespace HuaweiCloud.SDK.Cdn.V1
         /// </summary>
         public UpdateBlackWhiteListResponse UpdateBlackWhiteList(UpdateBlackWhiteListRequest updateBlackWhiteListRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id" , updateBlackWhiteListRequest.DomainId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}/ip-acl",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateBlackWhiteListRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id", updateBlackWhiteListRequest.DomainId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}/ip-acl", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateBlackWhiteListRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerialize<UpdateBlackWhiteListResponse>(response);
+        }
+
+        public SyncInvoker<UpdateBlackWhiteListResponse> UpdateBlackWhiteListInvoker(UpdateBlackWhiteListRequest updateBlackWhiteListRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id", updateBlackWhiteListRequest.DomainId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}/ip-acl", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateBlackWhiteListRequest);
+            return new SyncInvoker<UpdateBlackWhiteListResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateBlackWhiteListResponse>);
         }
         
         /// <summary>
@@ -589,12 +850,21 @@ namespace HuaweiCloud.SDK.Cdn.V1
         /// </summary>
         public UpdateCacheRulesResponse UpdateCacheRules(UpdateCacheRulesRequest updateCacheRulesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id" , updateCacheRulesRequest.DomainId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}/cache",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateCacheRulesRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id", updateCacheRulesRequest.DomainId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}/cache", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateCacheRulesRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerialize<UpdateCacheRulesResponse>(response);
+        }
+
+        public SyncInvoker<UpdateCacheRulesResponse> UpdateCacheRulesInvoker(UpdateCacheRulesRequest updateCacheRulesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id", updateCacheRulesRequest.DomainId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}/cache", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateCacheRulesRequest);
+            return new SyncInvoker<UpdateCacheRulesResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateCacheRulesResponse>);
         }
         
         /// <summary>
@@ -607,12 +877,21 @@ namespace HuaweiCloud.SDK.Cdn.V1
         /// </summary>
         public UpdateDomainFullConfigResponse UpdateDomainFullConfig(UpdateDomainFullConfigRequest updateDomainFullConfigRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_name" , updateDomainFullConfigRequest.DomainName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1.1/cdn/configuration/domains/{domain_name}/configs",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDomainFullConfigRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_name", updateDomainFullConfigRequest.DomainName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.1/cdn/configuration/domains/{domain_name}/configs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDomainFullConfigRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerializeNull<UpdateDomainFullConfigResponse>(response);
+        }
+
+        public SyncInvoker<UpdateDomainFullConfigResponse> UpdateDomainFullConfigInvoker(UpdateDomainFullConfigRequest updateDomainFullConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_name", updateDomainFullConfigRequest.DomainName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.1/cdn/configuration/domains/{domain_name}/configs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDomainFullConfigRequest);
+            return new SyncInvoker<UpdateDomainFullConfigResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateDomainFullConfigResponse>);
         }
         
         /// <summary>
@@ -624,11 +903,19 @@ namespace HuaweiCloud.SDK.Cdn.V1
         /// </summary>
         public UpdateDomainMultiCertificatesResponse UpdateDomainMultiCertificates(UpdateDomainMultiCertificatesRequest updateDomainMultiCertificatesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/config-https-info",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDomainMultiCertificatesRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/config-https-info", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDomainMultiCertificatesRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerialize<UpdateDomainMultiCertificatesResponse>(response);
+        }
+
+        public SyncInvoker<UpdateDomainMultiCertificatesResponse> UpdateDomainMultiCertificatesInvoker(UpdateDomainMultiCertificatesRequest updateDomainMultiCertificatesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/config-https-info", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDomainMultiCertificatesRequest);
+            return new SyncInvoker<UpdateDomainMultiCertificatesResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateDomainMultiCertificatesResponse>);
         }
         
         /// <summary>
@@ -640,12 +927,21 @@ namespace HuaweiCloud.SDK.Cdn.V1
         /// </summary>
         public UpdateDomainOriginResponse UpdateDomainOrigin(UpdateDomainOriginRequest updateDomainOriginRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id" , updateDomainOriginRequest.DomainId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}/origin",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDomainOriginRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id", updateDomainOriginRequest.DomainId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}/origin", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDomainOriginRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerialize<UpdateDomainOriginResponse>(response);
+        }
+
+        public SyncInvoker<UpdateDomainOriginResponse> UpdateDomainOriginInvoker(UpdateDomainOriginRequest updateDomainOriginRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id", updateDomainOriginRequest.DomainId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}/origin", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDomainOriginRequest);
+            return new SyncInvoker<UpdateDomainOriginResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateDomainOriginResponse>);
         }
         
         /// <summary>
@@ -657,12 +953,21 @@ namespace HuaweiCloud.SDK.Cdn.V1
         /// </summary>
         public UpdateFollow302SwitchResponse UpdateFollow302Switch(UpdateFollow302SwitchRequest updateFollow302SwitchRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id" , updateFollow302SwitchRequest.DomainId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}/follow302-switch",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateFollow302SwitchRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id", updateFollow302SwitchRequest.DomainId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}/follow302-switch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateFollow302SwitchRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerialize<UpdateFollow302SwitchResponse>(response);
+        }
+
+        public SyncInvoker<UpdateFollow302SwitchResponse> UpdateFollow302SwitchInvoker(UpdateFollow302SwitchRequest updateFollow302SwitchRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id", updateFollow302SwitchRequest.DomainId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}/follow302-switch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateFollow302SwitchRequest);
+            return new SyncInvoker<UpdateFollow302SwitchResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateFollow302SwitchResponse>);
         }
         
         /// <summary>
@@ -674,12 +979,21 @@ namespace HuaweiCloud.SDK.Cdn.V1
         /// </summary>
         public UpdateHttpsInfoResponse UpdateHttpsInfo(UpdateHttpsInfoRequest updateHttpsInfoRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id" , updateHttpsInfoRequest.DomainId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}/https-info",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateHttpsInfoRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id", updateHttpsInfoRequest.DomainId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}/https-info", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateHttpsInfoRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerialize<UpdateHttpsInfoResponse>(response);
+        }
+
+        public SyncInvoker<UpdateHttpsInfoResponse> UpdateHttpsInfoInvoker(UpdateHttpsInfoRequest updateHttpsInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id", updateHttpsInfoRequest.DomainId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}/https-info", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateHttpsInfoRequest);
+            return new SyncInvoker<UpdateHttpsInfoResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateHttpsInfoResponse>);
         }
         
         /// <summary>
@@ -691,12 +1005,21 @@ namespace HuaweiCloud.SDK.Cdn.V1
         /// </summary>
         public UpdateOriginHostResponse UpdateOriginHost(UpdateOriginHostRequest updateOriginHostRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id" , updateOriginHostRequest.DomainId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}/originhost",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateOriginHostRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id", updateOriginHostRequest.DomainId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}/originhost", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateOriginHostRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerialize<UpdateOriginHostResponse>(response);
+        }
+
+        public SyncInvoker<UpdateOriginHostResponse> UpdateOriginHostInvoker(UpdateOriginHostRequest updateOriginHostRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id", updateOriginHostRequest.DomainId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}/originhost", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateOriginHostRequest);
+            return new SyncInvoker<UpdateOriginHostResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateOriginHostResponse>);
         }
         
         /// <summary>
@@ -708,12 +1031,21 @@ namespace HuaweiCloud.SDK.Cdn.V1
         /// </summary>
         public UpdatePrivateBucketAccessResponse UpdatePrivateBucketAccess(UpdatePrivateBucketAccessRequest updatePrivateBucketAccessRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id" , updatePrivateBucketAccessRequest.DomainId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}/private-bucket-access",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePrivateBucketAccessRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id", updatePrivateBucketAccessRequest.DomainId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}/private-bucket-access", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePrivateBucketAccessRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerialize<UpdatePrivateBucketAccessResponse>(response);
+        }
+
+        public SyncInvoker<UpdatePrivateBucketAccessResponse> UpdatePrivateBucketAccessInvoker(UpdatePrivateBucketAccessRequest updatePrivateBucketAccessRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id", updatePrivateBucketAccessRequest.DomainId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}/private-bucket-access", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePrivateBucketAccessRequest);
+            return new SyncInvoker<UpdatePrivateBucketAccessResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdatePrivateBucketAccessResponse>);
         }
         
         /// <summary>
@@ -727,12 +1059,21 @@ namespace HuaweiCloud.SDK.Cdn.V1
         /// </summary>
         public UpdateRangeSwitchResponse UpdateRangeSwitch(UpdateRangeSwitchRequest updateRangeSwitchRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id" , updateRangeSwitchRequest.DomainId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}/range-switch",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateRangeSwitchRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id", updateRangeSwitchRequest.DomainId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}/range-switch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateRangeSwitchRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerialize<UpdateRangeSwitchResponse>(response);
+        }
+
+        public SyncInvoker<UpdateRangeSwitchResponse> UpdateRangeSwitchInvoker(UpdateRangeSwitchRequest updateRangeSwitchRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id", updateRangeSwitchRequest.DomainId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}/range-switch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateRangeSwitchRequest);
+            return new SyncInvoker<UpdateRangeSwitchResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateRangeSwitchResponse>);
         }
         
         /// <summary>
@@ -744,12 +1085,21 @@ namespace HuaweiCloud.SDK.Cdn.V1
         /// </summary>
         public UpdateReferResponse UpdateRefer(UpdateReferRequest updateReferRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id" , updateReferRequest.DomainId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}/referer",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateReferRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id", updateReferRequest.DomainId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}/referer", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateReferRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerialize<UpdateReferResponse>(response);
+        }
+
+        public SyncInvoker<UpdateReferResponse> UpdateReferInvoker(UpdateReferRequest updateReferRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id", updateReferRequest.DomainId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}/referer", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateReferRequest);
+            return new SyncInvoker<UpdateReferResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateReferResponse>);
         }
         
         /// <summary>
@@ -761,12 +1111,21 @@ namespace HuaweiCloud.SDK.Cdn.V1
         /// </summary>
         public UpdateResponseHeaderResponse UpdateResponseHeader(UpdateResponseHeaderRequest updateResponseHeaderRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id" , updateResponseHeaderRequest.DomainId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}/response-header",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateResponseHeaderRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id", updateResponseHeaderRequest.DomainId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}/response-header", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateResponseHeaderRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerialize<UpdateResponseHeaderResponse>(response);
+        }
+
+        public SyncInvoker<UpdateResponseHeaderResponse> UpdateResponseHeaderInvoker(UpdateResponseHeaderRequest updateResponseHeaderRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_id", updateResponseHeaderRequest.DomainId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}/response-header", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateResponseHeaderRequest);
+            return new SyncInvoker<UpdateResponseHeaderResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateResponseHeaderResponse>);
         }
         
     }

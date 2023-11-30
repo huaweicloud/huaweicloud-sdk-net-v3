@@ -41,10 +41,28 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         public int? Index { get; set; }
 
         /// <summary>
-        /// 当前内容片段中的文本内容
+        /// 当前内容片段中的文本内容，仅当type为text时存在
         /// </summary>
         [JsonProperty("text", NullValueHandling = NullValueHandling.Ignore)]
         public string Text { get; set; }
+
+        /// <summary>
+        /// 当前文本内容片段在输入中的起始位置，仅当type为text时存在
+        /// </summary>
+        [JsonProperty("start_position", NullValueHandling = NullValueHandling.Ignore)]
+        public int? StartPosition { get; set; }
+
+        /// <summary>
+        /// 当前文本内容片段在输入中的结束位置，仅当type为text时存在
+        /// </summary>
+        [JsonProperty("end_position", NullValueHandling = NullValueHandling.Ignore)]
+        public int? EndPosition { get; set; }
+
+        /// <summary>
+        /// 网页图片url，仅当type为image且文档格式为webpage时存在
+        /// </summary>
+        [JsonProperty("image_url", NullValueHandling = NullValueHandling.Ignore)]
+        public string ImageUrl { get; set; }
 
         /// <summary>
         /// 命中的风险片段信息列表，仅在有命中敏感词时才返回
@@ -78,6 +96,9 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
             sb.Append("  label: ").Append(Label).Append("\n");
             sb.Append("  index: ").Append(Index).Append("\n");
             sb.Append("  text: ").Append(Text).Append("\n");
+            sb.Append("  startPosition: ").Append(StartPosition).Append("\n");
+            sb.Append("  endPosition: ").Append(EndPosition).Append("\n");
+            sb.Append("  imageUrl: ").Append(ImageUrl).Append("\n");
             sb.Append("  segments: ").Append(Segments).Append("\n");
             sb.Append("  videoImageDetails: ").Append(VideoImageDetails).Append("\n");
             sb.Append("  audioDetails: ").Append(AudioDetails).Append("\n");
@@ -128,6 +149,21 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
                     this.Text.Equals(input.Text))
                 ) && 
                 (
+                    this.StartPosition == input.StartPosition ||
+                    (this.StartPosition != null &&
+                    this.StartPosition.Equals(input.StartPosition))
+                ) && 
+                (
+                    this.EndPosition == input.EndPosition ||
+                    (this.EndPosition != null &&
+                    this.EndPosition.Equals(input.EndPosition))
+                ) && 
+                (
+                    this.ImageUrl == input.ImageUrl ||
+                    (this.ImageUrl != null &&
+                    this.ImageUrl.Equals(input.ImageUrl))
+                ) && 
+                (
                     this.Segments == input.Segments ||
                     this.Segments != null &&
                     input.Segments != null &&
@@ -165,6 +201,12 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
                     hashCode = hashCode * 59 + this.Index.GetHashCode();
                 if (this.Text != null)
                     hashCode = hashCode * 59 + this.Text.GetHashCode();
+                if (this.StartPosition != null)
+                    hashCode = hashCode * 59 + this.StartPosition.GetHashCode();
+                if (this.EndPosition != null)
+                    hashCode = hashCode * 59 + this.EndPosition.GetHashCode();
+                if (this.ImageUrl != null)
+                    hashCode = hashCode * 59 + this.ImageUrl.GetHashCode();
                 if (this.Segments != null)
                     hashCode = hashCode * 59 + this.Segments.GetHashCode();
                 if (this.VideoImageDetails != null)

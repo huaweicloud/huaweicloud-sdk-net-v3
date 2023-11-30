@@ -23,12 +23,21 @@ namespace HuaweiCloud.SDK.Frs.V2
         /// </summary>
         public AddFacesByBase64Response AddFacesByBase64(AddFacesByBase64Request addFacesByBase64Request)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("face_set_name" , addFacesByBase64Request.FaceSetName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/faces",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", addFacesByBase64Request);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("face_set_name", addFacesByBase64Request.FaceSetName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/faces", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addFacesByBase64Request);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<AddFacesByBase64Response>(response);
+        }
+
+        public SyncInvoker<AddFacesByBase64Response> AddFacesByBase64Invoker(AddFacesByBase64Request addFacesByBase64Request)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("face_set_name", addFacesByBase64Request.FaceSetName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/faces", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addFacesByBase64Request);
+            return new SyncInvoker<AddFacesByBase64Response>(this, "POST", request, JsonUtils.DeSerialize<AddFacesByBase64Response>);
         }
         
         /// <summary>
@@ -40,12 +49,21 @@ namespace HuaweiCloud.SDK.Frs.V2
         /// </summary>
         public AddFacesByFileResponse AddFacesByFile(AddFacesByFileRequest addFacesByFileRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("face_set_name" , addFacesByFileRequest.FaceSetName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/faces",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", addFacesByFileRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("face_set_name", addFacesByFileRequest.FaceSetName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/faces", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", addFacesByFileRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<AddFacesByFileResponse>(response);
+        }
+
+        public SyncInvoker<AddFacesByFileResponse> AddFacesByFileInvoker(AddFacesByFileRequest addFacesByFileRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("face_set_name", addFacesByFileRequest.FaceSetName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/faces", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", addFacesByFileRequest);
+            return new SyncInvoker<AddFacesByFileResponse>(this, "POST", request, JsonUtils.DeSerialize<AddFacesByFileResponse>);
         }
         
         /// <summary>
@@ -57,12 +75,21 @@ namespace HuaweiCloud.SDK.Frs.V2
         /// </summary>
         public AddFacesByUrlResponse AddFacesByUrl(AddFacesByUrlRequest addFacesByUrlRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("face_set_name" , addFacesByUrlRequest.FaceSetName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/faces",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", addFacesByUrlRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("face_set_name", addFacesByUrlRequest.FaceSetName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/faces", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addFacesByUrlRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<AddFacesByUrlResponse>(response);
+        }
+
+        public SyncInvoker<AddFacesByUrlResponse> AddFacesByUrlInvoker(AddFacesByUrlRequest addFacesByUrlRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("face_set_name", addFacesByUrlRequest.FaceSetName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/faces", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addFacesByUrlRequest);
+            return new SyncInvoker<AddFacesByUrlResponse>(this, "POST", request, JsonUtils.DeSerialize<AddFacesByUrlResponse>);
         }
         
         /// <summary>
@@ -74,12 +101,21 @@ namespace HuaweiCloud.SDK.Frs.V2
         /// </summary>
         public BatchDeleteFacesResponse BatchDeleteFaces(BatchDeleteFacesRequest batchDeleteFacesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("face_set_name" , batchDeleteFacesRequest.FaceSetName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/faces/batch",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteFacesRequest);
-            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("face_set_name", batchDeleteFacesRequest.FaceSetName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/faces/batch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteFacesRequest);
+            var response = DoHttpRequestSync("DELETE", request);
             return JsonUtils.DeSerialize<BatchDeleteFacesResponse>(response);
+        }
+
+        public SyncInvoker<BatchDeleteFacesResponse> BatchDeleteFacesInvoker(BatchDeleteFacesRequest batchDeleteFacesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("face_set_name", batchDeleteFacesRequest.FaceSetName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/faces/batch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteFacesRequest);
+            return new SyncInvoker<BatchDeleteFacesResponse>(this, "DELETE", request, JsonUtils.DeSerialize<BatchDeleteFacesResponse>);
         }
         
         /// <summary>
@@ -91,11 +127,19 @@ namespace HuaweiCloud.SDK.Frs.V2
         /// </summary>
         public CompareFaceByBase64Response CompareFaceByBase64(CompareFaceByBase64Request compareFaceByBase64Request)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-compare",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", compareFaceByBase64Request);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-compare", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", compareFaceByBase64Request);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<CompareFaceByBase64Response>(response);
+        }
+
+        public SyncInvoker<CompareFaceByBase64Response> CompareFaceByBase64Invoker(CompareFaceByBase64Request compareFaceByBase64Request)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-compare", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", compareFaceByBase64Request);
+            return new SyncInvoker<CompareFaceByBase64Response>(this, "POST", request, JsonUtils.DeSerialize<CompareFaceByBase64Response>);
         }
         
         /// <summary>
@@ -107,11 +151,19 @@ namespace HuaweiCloud.SDK.Frs.V2
         /// </summary>
         public CompareFaceByFileResponse CompareFaceByFile(CompareFaceByFileRequest compareFaceByFileRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-compare",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", compareFaceByFileRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-compare", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", compareFaceByFileRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<CompareFaceByFileResponse>(response);
+        }
+
+        public SyncInvoker<CompareFaceByFileResponse> CompareFaceByFileInvoker(CompareFaceByFileRequest compareFaceByFileRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-compare", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", compareFaceByFileRequest);
+            return new SyncInvoker<CompareFaceByFileResponse>(this, "POST", request, JsonUtils.DeSerialize<CompareFaceByFileResponse>);
         }
         
         /// <summary>
@@ -123,11 +175,19 @@ namespace HuaweiCloud.SDK.Frs.V2
         /// </summary>
         public CompareFaceByUrlResponse CompareFaceByUrl(CompareFaceByUrlRequest compareFaceByUrlRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-compare",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", compareFaceByUrlRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-compare", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", compareFaceByUrlRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<CompareFaceByUrlResponse>(response);
+        }
+
+        public SyncInvoker<CompareFaceByUrlResponse> CompareFaceByUrlInvoker(CompareFaceByUrlRequest compareFaceByUrlRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-compare", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", compareFaceByUrlRequest);
+            return new SyncInvoker<CompareFaceByUrlResponse>(this, "POST", request, JsonUtils.DeSerialize<CompareFaceByUrlResponse>);
         }
         
         /// <summary>
@@ -139,11 +199,19 @@ namespace HuaweiCloud.SDK.Frs.V2
         /// </summary>
         public CreateFaceSetResponse CreateFaceSet(CreateFaceSetRequest createFaceSetRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createFaceSetRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createFaceSetRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<CreateFaceSetResponse>(response);
+        }
+
+        public SyncInvoker<CreateFaceSetResponse> CreateFaceSetInvoker(CreateFaceSetRequest createFaceSetRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createFaceSetRequest);
+            return new SyncInvoker<CreateFaceSetResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateFaceSetResponse>);
         }
         
         /// <summary>
@@ -155,12 +223,21 @@ namespace HuaweiCloud.SDK.Frs.V2
         /// </summary>
         public DeleteFaceByExternalImageIdResponse DeleteFaceByExternalImageId(DeleteFaceByExternalImageIdRequest deleteFaceByExternalImageIdRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("face_set_name" , deleteFaceByExternalImageIdRequest.FaceSetName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/faces",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteFaceByExternalImageIdRequest);
-            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("face_set_name", deleteFaceByExternalImageIdRequest.FaceSetName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/faces", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteFaceByExternalImageIdRequest);
+            var response = DoHttpRequestSync("DELETE", request);
             return JsonUtils.DeSerialize<DeleteFaceByExternalImageIdResponse>(response);
+        }
+
+        public SyncInvoker<DeleteFaceByExternalImageIdResponse> DeleteFaceByExternalImageIdInvoker(DeleteFaceByExternalImageIdRequest deleteFaceByExternalImageIdRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("face_set_name", deleteFaceByExternalImageIdRequest.FaceSetName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/faces", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteFaceByExternalImageIdRequest);
+            return new SyncInvoker<DeleteFaceByExternalImageIdResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteFaceByExternalImageIdResponse>);
         }
         
         /// <summary>
@@ -172,12 +249,21 @@ namespace HuaweiCloud.SDK.Frs.V2
         /// </summary>
         public DeleteFaceByFaceIdResponse DeleteFaceByFaceId(DeleteFaceByFaceIdRequest deleteFaceByFaceIdRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("face_set_name" , deleteFaceByFaceIdRequest.FaceSetName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/faces",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteFaceByFaceIdRequest);
-            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("face_set_name", deleteFaceByFaceIdRequest.FaceSetName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/faces", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteFaceByFaceIdRequest);
+            var response = DoHttpRequestSync("DELETE", request);
             return JsonUtils.DeSerialize<DeleteFaceByFaceIdResponse>(response);
+        }
+
+        public SyncInvoker<DeleteFaceByFaceIdResponse> DeleteFaceByFaceIdInvoker(DeleteFaceByFaceIdRequest deleteFaceByFaceIdRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("face_set_name", deleteFaceByFaceIdRequest.FaceSetName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/faces", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteFaceByFaceIdRequest);
+            return new SyncInvoker<DeleteFaceByFaceIdResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteFaceByFaceIdResponse>);
         }
         
         /// <summary>
@@ -189,12 +275,21 @@ namespace HuaweiCloud.SDK.Frs.V2
         /// </summary>
         public DeleteFaceSetResponse DeleteFaceSet(DeleteFaceSetRequest deleteFaceSetRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("face_set_name" , deleteFaceSetRequest.FaceSetName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteFaceSetRequest);
-            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("face_set_name", deleteFaceSetRequest.FaceSetName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteFaceSetRequest);
+            var response = DoHttpRequestSync("DELETE", request);
             return JsonUtils.DeSerialize<DeleteFaceSetResponse>(response);
+        }
+
+        public SyncInvoker<DeleteFaceSetResponse> DeleteFaceSetInvoker(DeleteFaceSetRequest deleteFaceSetRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("face_set_name", deleteFaceSetRequest.FaceSetName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteFaceSetRequest);
+            return new SyncInvoker<DeleteFaceSetResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteFaceSetResponse>);
         }
         
         /// <summary>
@@ -206,11 +301,19 @@ namespace HuaweiCloud.SDK.Frs.V2
         /// </summary>
         public DetectFaceByBase64Response DetectFaceByBase64(DetectFaceByBase64Request detectFaceByBase64Request)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-detect",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", detectFaceByBase64Request);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-detect", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", detectFaceByBase64Request);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<DetectFaceByBase64Response>(response);
+        }
+
+        public SyncInvoker<DetectFaceByBase64Response> DetectFaceByBase64Invoker(DetectFaceByBase64Request detectFaceByBase64Request)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-detect", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", detectFaceByBase64Request);
+            return new SyncInvoker<DetectFaceByBase64Response>(this, "POST", request, JsonUtils.DeSerialize<DetectFaceByBase64Response>);
         }
         
         /// <summary>
@@ -222,11 +325,19 @@ namespace HuaweiCloud.SDK.Frs.V2
         /// </summary>
         public DetectFaceByBase64IntlResponse DetectFaceByBase64Intl(DetectFaceByBase64IntlRequest detectFaceByBase64IntlRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-detect",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", detectFaceByBase64IntlRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-detect", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", detectFaceByBase64IntlRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<DetectFaceByBase64IntlResponse>(response);
+        }
+
+        public SyncInvoker<DetectFaceByBase64IntlResponse> DetectFaceByBase64IntlInvoker(DetectFaceByBase64IntlRequest detectFaceByBase64IntlRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-detect", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", detectFaceByBase64IntlRequest);
+            return new SyncInvoker<DetectFaceByBase64IntlResponse>(this, "POST", request, JsonUtils.DeSerialize<DetectFaceByBase64IntlResponse>);
         }
         
         /// <summary>
@@ -238,11 +349,19 @@ namespace HuaweiCloud.SDK.Frs.V2
         /// </summary>
         public DetectFaceByFileResponse DetectFaceByFile(DetectFaceByFileRequest detectFaceByFileRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-detect",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", detectFaceByFileRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-detect", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", detectFaceByFileRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<DetectFaceByFileResponse>(response);
+        }
+
+        public SyncInvoker<DetectFaceByFileResponse> DetectFaceByFileInvoker(DetectFaceByFileRequest detectFaceByFileRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-detect", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", detectFaceByFileRequest);
+            return new SyncInvoker<DetectFaceByFileResponse>(this, "POST", request, JsonUtils.DeSerialize<DetectFaceByFileResponse>);
         }
         
         /// <summary>
@@ -254,11 +373,19 @@ namespace HuaweiCloud.SDK.Frs.V2
         /// </summary>
         public DetectFaceByFileIntlResponse DetectFaceByFileIntl(DetectFaceByFileIntlRequest detectFaceByFileIntlRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-detect",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", detectFaceByFileIntlRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-detect", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", detectFaceByFileIntlRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<DetectFaceByFileIntlResponse>(response);
+        }
+
+        public SyncInvoker<DetectFaceByFileIntlResponse> DetectFaceByFileIntlInvoker(DetectFaceByFileIntlRequest detectFaceByFileIntlRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-detect", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", detectFaceByFileIntlRequest);
+            return new SyncInvoker<DetectFaceByFileIntlResponse>(this, "POST", request, JsonUtils.DeSerialize<DetectFaceByFileIntlResponse>);
         }
         
         /// <summary>
@@ -270,11 +397,19 @@ namespace HuaweiCloud.SDK.Frs.V2
         /// </summary>
         public DetectFaceByUrlResponse DetectFaceByUrl(DetectFaceByUrlRequest detectFaceByUrlRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-detect",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", detectFaceByUrlRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-detect", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", detectFaceByUrlRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<DetectFaceByUrlResponse>(response);
+        }
+
+        public SyncInvoker<DetectFaceByUrlResponse> DetectFaceByUrlInvoker(DetectFaceByUrlRequest detectFaceByUrlRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-detect", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", detectFaceByUrlRequest);
+            return new SyncInvoker<DetectFaceByUrlResponse>(this, "POST", request, JsonUtils.DeSerialize<DetectFaceByUrlResponse>);
         }
         
         /// <summary>
@@ -286,11 +421,19 @@ namespace HuaweiCloud.SDK.Frs.V2
         /// </summary>
         public DetectFaceByUrlIntlResponse DetectFaceByUrlIntl(DetectFaceByUrlIntlRequest detectFaceByUrlIntlRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-detect",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", detectFaceByUrlIntlRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-detect", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", detectFaceByUrlIntlRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<DetectFaceByUrlIntlResponse>(response);
+        }
+
+        public SyncInvoker<DetectFaceByUrlIntlResponse> DetectFaceByUrlIntlInvoker(DetectFaceByUrlIntlRequest detectFaceByUrlIntlRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-detect", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", detectFaceByUrlIntlRequest);
+            return new SyncInvoker<DetectFaceByUrlIntlResponse>(this, "POST", request, JsonUtils.DeSerialize<DetectFaceByUrlIntlResponse>);
         }
         
         /// <summary>
@@ -302,11 +445,19 @@ namespace HuaweiCloud.SDK.Frs.V2
         /// </summary>
         public DetectLiveByBase64Response DetectLiveByBase64(DetectLiveByBase64Request detectLiveByBase64Request)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/live-detect",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", detectLiveByBase64Request);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/live-detect", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", detectLiveByBase64Request);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<DetectLiveByBase64Response>(response);
+        }
+
+        public SyncInvoker<DetectLiveByBase64Response> DetectLiveByBase64Invoker(DetectLiveByBase64Request detectLiveByBase64Request)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/live-detect", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", detectLiveByBase64Request);
+            return new SyncInvoker<DetectLiveByBase64Response>(this, "POST", request, JsonUtils.DeSerialize<DetectLiveByBase64Response>);
         }
         
         /// <summary>
@@ -318,11 +469,19 @@ namespace HuaweiCloud.SDK.Frs.V2
         /// </summary>
         public DetectLiveByBase64IntlResponse DetectLiveByBase64Intl(DetectLiveByBase64IntlRequest detectLiveByBase64IntlRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/live-detect",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", detectLiveByBase64IntlRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/live-detect", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", detectLiveByBase64IntlRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<DetectLiveByBase64IntlResponse>(response);
+        }
+
+        public SyncInvoker<DetectLiveByBase64IntlResponse> DetectLiveByBase64IntlInvoker(DetectLiveByBase64IntlRequest detectLiveByBase64IntlRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/live-detect", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", detectLiveByBase64IntlRequest);
+            return new SyncInvoker<DetectLiveByBase64IntlResponse>(this, "POST", request, JsonUtils.DeSerialize<DetectLiveByBase64IntlResponse>);
         }
         
         /// <summary>
@@ -334,11 +493,19 @@ namespace HuaweiCloud.SDK.Frs.V2
         /// </summary>
         public DetectLiveByFileResponse DetectLiveByFile(DetectLiveByFileRequest detectLiveByFileRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/live-detect",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", detectLiveByFileRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/live-detect", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", detectLiveByFileRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<DetectLiveByFileResponse>(response);
+        }
+
+        public SyncInvoker<DetectLiveByFileResponse> DetectLiveByFileInvoker(DetectLiveByFileRequest detectLiveByFileRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/live-detect", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", detectLiveByFileRequest);
+            return new SyncInvoker<DetectLiveByFileResponse>(this, "POST", request, JsonUtils.DeSerialize<DetectLiveByFileResponse>);
         }
         
         /// <summary>
@@ -350,11 +517,19 @@ namespace HuaweiCloud.SDK.Frs.V2
         /// </summary>
         public DetectLiveByFileIntlResponse DetectLiveByFileIntl(DetectLiveByFileIntlRequest detectLiveByFileIntlRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/live-detect",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", detectLiveByFileIntlRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/live-detect", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", detectLiveByFileIntlRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<DetectLiveByFileIntlResponse>(response);
+        }
+
+        public SyncInvoker<DetectLiveByFileIntlResponse> DetectLiveByFileIntlInvoker(DetectLiveByFileIntlRequest detectLiveByFileIntlRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/live-detect", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", detectLiveByFileIntlRequest);
+            return new SyncInvoker<DetectLiveByFileIntlResponse>(this, "POST", request, JsonUtils.DeSerialize<DetectLiveByFileIntlResponse>);
         }
         
         /// <summary>
@@ -366,11 +541,19 @@ namespace HuaweiCloud.SDK.Frs.V2
         /// </summary>
         public DetectLiveByUrlResponse DetectLiveByUrl(DetectLiveByUrlRequest detectLiveByUrlRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/live-detect",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", detectLiveByUrlRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/live-detect", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", detectLiveByUrlRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<DetectLiveByUrlResponse>(response);
+        }
+
+        public SyncInvoker<DetectLiveByUrlResponse> DetectLiveByUrlInvoker(DetectLiveByUrlRequest detectLiveByUrlRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/live-detect", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", detectLiveByUrlRequest);
+            return new SyncInvoker<DetectLiveByUrlResponse>(this, "POST", request, JsonUtils.DeSerialize<DetectLiveByUrlResponse>);
         }
         
         /// <summary>
@@ -382,11 +565,19 @@ namespace HuaweiCloud.SDK.Frs.V2
         /// </summary>
         public DetectLiveByUrlIntlResponse DetectLiveByUrlIntl(DetectLiveByUrlIntlRequest detectLiveByUrlIntlRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/live-detect",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", detectLiveByUrlIntlRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/live-detect", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", detectLiveByUrlIntlRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<DetectLiveByUrlIntlResponse>(response);
+        }
+
+        public SyncInvoker<DetectLiveByUrlIntlResponse> DetectLiveByUrlIntlInvoker(DetectLiveByUrlIntlRequest detectLiveByUrlIntlRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/live-detect", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", detectLiveByUrlIntlRequest);
+            return new SyncInvoker<DetectLiveByUrlIntlResponse>(this, "POST", request, JsonUtils.DeSerialize<DetectLiveByUrlIntlResponse>);
         }
         
         /// <summary>
@@ -398,11 +589,19 @@ namespace HuaweiCloud.SDK.Frs.V2
         /// </summary>
         public DetectLiveFaceByBase64Response DetectLiveFaceByBase64(DetectLiveFaceByBase64Request detectLiveFaceByBase64Request)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/live-detect-face",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", detectLiveFaceByBase64Request);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/live-detect-face", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", detectLiveFaceByBase64Request);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<DetectLiveFaceByBase64Response>(response);
+        }
+
+        public SyncInvoker<DetectLiveFaceByBase64Response> DetectLiveFaceByBase64Invoker(DetectLiveFaceByBase64Request detectLiveFaceByBase64Request)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/live-detect-face", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", detectLiveFaceByBase64Request);
+            return new SyncInvoker<DetectLiveFaceByBase64Response>(this, "POST", request, JsonUtils.DeSerialize<DetectLiveFaceByBase64Response>);
         }
         
         /// <summary>
@@ -414,11 +613,19 @@ namespace HuaweiCloud.SDK.Frs.V2
         /// </summary>
         public DetectLiveFaceByFileResponse DetectLiveFaceByFile(DetectLiveFaceByFileRequest detectLiveFaceByFileRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/live-detect-face",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", detectLiveFaceByFileRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/live-detect-face", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", detectLiveFaceByFileRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<DetectLiveFaceByFileResponse>(response);
+        }
+
+        public SyncInvoker<DetectLiveFaceByFileResponse> DetectLiveFaceByFileInvoker(DetectLiveFaceByFileRequest detectLiveFaceByFileRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/live-detect-face", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", detectLiveFaceByFileRequest);
+            return new SyncInvoker<DetectLiveFaceByFileResponse>(this, "POST", request, JsonUtils.DeSerialize<DetectLiveFaceByFileResponse>);
         }
         
         /// <summary>
@@ -430,11 +637,19 @@ namespace HuaweiCloud.SDK.Frs.V2
         /// </summary>
         public DetectLiveFaceByUrlResponse DetectLiveFaceByUrl(DetectLiveFaceByUrlRequest detectLiveFaceByUrlRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/live-detect-face",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", detectLiveFaceByUrlRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/live-detect-face", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", detectLiveFaceByUrlRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<DetectLiveFaceByUrlResponse>(response);
+        }
+
+        public SyncInvoker<DetectLiveFaceByUrlResponse> DetectLiveFaceByUrlInvoker(DetectLiveFaceByUrlRequest detectLiveFaceByUrlRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/live-detect-face", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", detectLiveFaceByUrlRequest);
+            return new SyncInvoker<DetectLiveFaceByUrlResponse>(this, "POST", request, JsonUtils.DeSerialize<DetectLiveFaceByUrlResponse>);
         }
         
         /// <summary>
@@ -447,12 +662,21 @@ namespace HuaweiCloud.SDK.Frs.V2
         /// </summary>
         public SearchFaceByBase64Response SearchFaceByBase64(SearchFaceByBase64Request searchFaceByBase64Request)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("face_set_name" , searchFaceByBase64Request.FaceSetName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/search",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", searchFaceByBase64Request);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("face_set_name", searchFaceByBase64Request.FaceSetName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/search", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", searchFaceByBase64Request);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<SearchFaceByBase64Response>(response);
+        }
+
+        public SyncInvoker<SearchFaceByBase64Response> SearchFaceByBase64Invoker(SearchFaceByBase64Request searchFaceByBase64Request)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("face_set_name", searchFaceByBase64Request.FaceSetName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/search", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", searchFaceByBase64Request);
+            return new SyncInvoker<SearchFaceByBase64Response>(this, "POST", request, JsonUtils.DeSerialize<SearchFaceByBase64Response>);
         }
         
         /// <summary>
@@ -465,12 +689,21 @@ namespace HuaweiCloud.SDK.Frs.V2
         /// </summary>
         public SearchFaceByFaceIdResponse SearchFaceByFaceId(SearchFaceByFaceIdRequest searchFaceByFaceIdRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("face_set_name" , searchFaceByFaceIdRequest.FaceSetName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/search",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", searchFaceByFaceIdRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("face_set_name", searchFaceByFaceIdRequest.FaceSetName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/search", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", searchFaceByFaceIdRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<SearchFaceByFaceIdResponse>(response);
+        }
+
+        public SyncInvoker<SearchFaceByFaceIdResponse> SearchFaceByFaceIdInvoker(SearchFaceByFaceIdRequest searchFaceByFaceIdRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("face_set_name", searchFaceByFaceIdRequest.FaceSetName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/search", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", searchFaceByFaceIdRequest);
+            return new SyncInvoker<SearchFaceByFaceIdResponse>(this, "POST", request, JsonUtils.DeSerialize<SearchFaceByFaceIdResponse>);
         }
         
         /// <summary>
@@ -483,12 +716,21 @@ namespace HuaweiCloud.SDK.Frs.V2
         /// </summary>
         public SearchFaceByFileResponse SearchFaceByFile(SearchFaceByFileRequest searchFaceByFileRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("face_set_name" , searchFaceByFileRequest.FaceSetName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/search",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", searchFaceByFileRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("face_set_name", searchFaceByFileRequest.FaceSetName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/search", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", searchFaceByFileRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<SearchFaceByFileResponse>(response);
+        }
+
+        public SyncInvoker<SearchFaceByFileResponse> SearchFaceByFileInvoker(SearchFaceByFileRequest searchFaceByFileRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("face_set_name", searchFaceByFileRequest.FaceSetName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/search", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", searchFaceByFileRequest);
+            return new SyncInvoker<SearchFaceByFileResponse>(this, "POST", request, JsonUtils.DeSerialize<SearchFaceByFileResponse>);
         }
         
         /// <summary>
@@ -501,12 +743,21 @@ namespace HuaweiCloud.SDK.Frs.V2
         /// </summary>
         public SearchFaceByUrlResponse SearchFaceByUrl(SearchFaceByUrlRequest searchFaceByUrlRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("face_set_name" , searchFaceByUrlRequest.FaceSetName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/search",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", searchFaceByUrlRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("face_set_name", searchFaceByUrlRequest.FaceSetName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/search", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", searchFaceByUrlRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<SearchFaceByUrlResponse>(response);
+        }
+
+        public SyncInvoker<SearchFaceByUrlResponse> SearchFaceByUrlInvoker(SearchFaceByUrlRequest searchFaceByUrlRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("face_set_name", searchFaceByUrlRequest.FaceSetName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/search", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", searchFaceByUrlRequest);
+            return new SyncInvoker<SearchFaceByUrlResponse>(this, "POST", request, JsonUtils.DeSerialize<SearchFaceByUrlResponse>);
         }
         
         /// <summary>
@@ -518,11 +769,19 @@ namespace HuaweiCloud.SDK.Frs.V2
         /// </summary>
         public ShowAllFaceSetsResponse ShowAllFaceSets(ShowAllFaceSetsRequest showAllFaceSetsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAllFaceSetsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAllFaceSetsRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowAllFaceSetsResponse>(response);
+        }
+
+        public SyncInvoker<ShowAllFaceSetsResponse> ShowAllFaceSetsInvoker(ShowAllFaceSetsRequest showAllFaceSetsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAllFaceSetsRequest);
+            return new SyncInvoker<ShowAllFaceSetsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAllFaceSetsResponse>);
         }
         
         /// <summary>
@@ -534,12 +793,21 @@ namespace HuaweiCloud.SDK.Frs.V2
         /// </summary>
         public ShowFaceSetResponse ShowFaceSet(ShowFaceSetRequest showFaceSetRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("face_set_name" , showFaceSetRequest.FaceSetName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFaceSetRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("face_set_name", showFaceSetRequest.FaceSetName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFaceSetRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowFaceSetResponse>(response);
+        }
+
+        public SyncInvoker<ShowFaceSetResponse> ShowFaceSetInvoker(ShowFaceSetRequest showFaceSetRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("face_set_name", showFaceSetRequest.FaceSetName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFaceSetRequest);
+            return new SyncInvoker<ShowFaceSetResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowFaceSetResponse>);
         }
         
         /// <summary>
@@ -551,12 +819,21 @@ namespace HuaweiCloud.SDK.Frs.V2
         /// </summary>
         public ShowFacesByFaceIdResponse ShowFacesByFaceId(ShowFacesByFaceIdRequest showFacesByFaceIdRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("face_set_name" , showFacesByFaceIdRequest.FaceSetName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/faces",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFacesByFaceIdRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("face_set_name", showFacesByFaceIdRequest.FaceSetName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/faces", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFacesByFaceIdRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowFacesByFaceIdResponse>(response);
+        }
+
+        public SyncInvoker<ShowFacesByFaceIdResponse> ShowFacesByFaceIdInvoker(ShowFacesByFaceIdRequest showFacesByFaceIdRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("face_set_name", showFacesByFaceIdRequest.FaceSetName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/faces", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFacesByFaceIdRequest);
+            return new SyncInvoker<ShowFacesByFaceIdResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowFacesByFaceIdResponse>);
         }
         
         /// <summary>
@@ -568,12 +845,21 @@ namespace HuaweiCloud.SDK.Frs.V2
         /// </summary>
         public ShowFacesByLimitResponse ShowFacesByLimit(ShowFacesByLimitRequest showFacesByLimitRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("face_set_name" , showFacesByLimitRequest.FaceSetName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/faces",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFacesByLimitRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("face_set_name", showFacesByLimitRequest.FaceSetName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/faces", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFacesByLimitRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowFacesByLimitResponse>(response);
+        }
+
+        public SyncInvoker<ShowFacesByLimitResponse> ShowFacesByLimitInvoker(ShowFacesByLimitRequest showFacesByLimitRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("face_set_name", showFacesByLimitRequest.FaceSetName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/faces", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFacesByLimitRequest);
+            return new SyncInvoker<ShowFacesByLimitResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowFacesByLimitResponse>);
         }
         
         /// <summary>
@@ -585,12 +871,21 @@ namespace HuaweiCloud.SDK.Frs.V2
         /// </summary>
         public UpdateFaceResponse UpdateFace(UpdateFaceRequest updateFaceRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("face_set_name" , updateFaceRequest.FaceSetName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/faces",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateFaceRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("face_set_name", updateFaceRequest.FaceSetName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/faces", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateFaceRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerialize<UpdateFaceResponse>(response);
+        }
+
+        public SyncInvoker<UpdateFaceResponse> UpdateFaceInvoker(UpdateFaceRequest updateFaceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("face_set_name", updateFaceRequest.FaceSetName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/faces", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateFaceRequest);
+            return new SyncInvoker<UpdateFaceResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateFaceResponse>);
         }
         
     }

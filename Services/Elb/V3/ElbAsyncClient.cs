@@ -24,12 +24,21 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<BatchAddAvailableZonesResponse> BatchAddAvailableZonesAsync(BatchAddAvailableZonesRequest batchAddAvailableZonesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("loadbalancer_id" , batchAddAvailableZonesRequest.LoadbalancerId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/availability-zone/batch-add",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchAddAvailableZonesRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("loadbalancer_id", batchAddAvailableZonesRequest.LoadbalancerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/availability-zone/batch-add",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchAddAvailableZonesRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<BatchAddAvailableZonesResponse>(response);
+        }
+
+        public AsyncInvoker<BatchAddAvailableZonesResponse> BatchAddAvailableZonesAsyncInvoker(BatchAddAvailableZonesRequest batchAddAvailableZonesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("loadbalancer_id", batchAddAvailableZonesRequest.LoadbalancerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/availability-zone/batch-add",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchAddAvailableZonesRequest);
+            return new AsyncInvoker<BatchAddAvailableZonesResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchAddAvailableZonesResponse>);
         }
         
         /// <summary>
@@ -41,12 +50,21 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<BatchCreateMembersResponse> BatchCreateMembersAsync(BatchCreateMembersRequest batchCreateMembersRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("pool_id" , batchCreateMembersRequest.PoolId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}/members/batch-add",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchCreateMembersRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("pool_id", batchCreateMembersRequest.PoolId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}/members/batch-add",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchCreateMembersRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<BatchCreateMembersResponse>(response);
+        }
+
+        public AsyncInvoker<BatchCreateMembersResponse> BatchCreateMembersAsyncInvoker(BatchCreateMembersRequest batchCreateMembersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("pool_id", batchCreateMembersRequest.PoolId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}/members/batch-add",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchCreateMembersRequest);
+            return new AsyncInvoker<BatchCreateMembersResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchCreateMembersResponse>);
         }
         
         /// <summary>
@@ -58,12 +76,21 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<BatchDeleteMembersResponse> BatchDeleteMembersAsync(BatchDeleteMembersRequest batchDeleteMembersRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("pool_id" , batchDeleteMembersRequest.PoolId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}/members/batch-delete",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteMembersRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("pool_id", batchDeleteMembersRequest.PoolId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}/members/batch-delete",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteMembersRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<BatchDeleteMembersResponse>(response);
+        }
+
+        public AsyncInvoker<BatchDeleteMembersResponse> BatchDeleteMembersAsyncInvoker(BatchDeleteMembersRequest batchDeleteMembersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("pool_id", batchDeleteMembersRequest.PoolId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}/members/batch-delete",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteMembersRequest);
+            return new AsyncInvoker<BatchDeleteMembersResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchDeleteMembersResponse>);
         }
         
         /// <summary>
@@ -76,12 +103,21 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<BatchRemoveAvailableZonesResponse> BatchRemoveAvailableZonesAsync(BatchRemoveAvailableZonesRequest batchRemoveAvailableZonesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("loadbalancer_id" , batchRemoveAvailableZonesRequest.LoadbalancerId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/availability-zone/batch-remove",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchRemoveAvailableZonesRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("loadbalancer_id", batchRemoveAvailableZonesRequest.LoadbalancerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/availability-zone/batch-remove",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchRemoveAvailableZonesRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return XmlUtils.DeSerialize<BatchRemoveAvailableZonesResponse>(response);
+        }
+
+        public AsyncInvoker<BatchRemoveAvailableZonesResponse> BatchRemoveAvailableZonesAsyncInvoker(BatchRemoveAvailableZonesRequest batchRemoveAvailableZonesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("loadbalancer_id", batchRemoveAvailableZonesRequest.LoadbalancerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/availability-zone/batch-remove",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchRemoveAvailableZonesRequest);
+            return new AsyncInvoker<BatchRemoveAvailableZonesResponse>(this, "POST", request, XmlUtils.DeSerialize<BatchRemoveAvailableZonesResponse>);
         }
         
         /// <summary>
@@ -93,12 +129,21 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<BatchUpdateMembersResponse> BatchUpdateMembersAsync(BatchUpdateMembersRequest batchUpdateMembersRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("pool_id" , batchUpdateMembersRequest.PoolId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}/members/batch-update",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchUpdateMembersRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("pool_id", batchUpdateMembersRequest.PoolId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}/members/batch-update",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchUpdateMembersRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<BatchUpdateMembersResponse>(response);
+        }
+
+        public AsyncInvoker<BatchUpdateMembersResponse> BatchUpdateMembersAsyncInvoker(BatchUpdateMembersRequest batchUpdateMembersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("pool_id", batchUpdateMembersRequest.PoolId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}/members/batch-update",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchUpdateMembersRequest);
+            return new AsyncInvoker<BatchUpdateMembersResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchUpdateMembersResponse>);
         }
         
         /// <summary>
@@ -110,11 +155,19 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<BatchUpdatePoliciesPriorityResponse> BatchUpdatePoliciesPriorityAsync(BatchUpdatePoliciesPriorityRequest batchUpdatePoliciesPriorityRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/l7policies/batch-update-priority",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchUpdatePoliciesPriorityRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/l7policies/batch-update-priority",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchUpdatePoliciesPriorityRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<BatchUpdatePoliciesPriorityResponse>(response);
+        }
+
+        public AsyncInvoker<BatchUpdatePoliciesPriorityResponse> BatchUpdatePoliciesPriorityAsyncInvoker(BatchUpdatePoliciesPriorityRequest batchUpdatePoliciesPriorityRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/l7policies/batch-update-priority",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchUpdatePoliciesPriorityRequest);
+            return new AsyncInvoker<BatchUpdatePoliciesPriorityResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchUpdatePoliciesPriorityResponse>);
         }
         
         /// <summary>
@@ -129,11 +182,19 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<ChangeLoadbalancerChargeModeResponse> ChangeLoadbalancerChargeModeAsync(ChangeLoadbalancerChargeModeRequest changeLoadbalancerChargeModeRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/change-charge-mode",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", changeLoadbalancerChargeModeRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/change-charge-mode",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", changeLoadbalancerChargeModeRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<ChangeLoadbalancerChargeModeResponse>(response);
+        }
+
+        public AsyncInvoker<ChangeLoadbalancerChargeModeResponse> ChangeLoadbalancerChargeModeAsyncInvoker(ChangeLoadbalancerChargeModeRequest changeLoadbalancerChargeModeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/change-charge-mode",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", changeLoadbalancerChargeModeRequest);
+            return new AsyncInvoker<ChangeLoadbalancerChargeModeResponse>(this, "POST", request, JsonUtils.DeSerialize<ChangeLoadbalancerChargeModeResponse>);
         }
         
         /// <summary>
@@ -145,11 +206,19 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<CreateCertificateResponse> CreateCertificateAsync(CreateCertificateRequest createCertificateRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/certificates",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createCertificateRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/certificates",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createCertificateRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateCertificateResponse>(response);
+        }
+
+        public AsyncInvoker<CreateCertificateResponse> CreateCertificateAsyncInvoker(CreateCertificateRequest createCertificateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/certificates",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createCertificateRequest);
+            return new AsyncInvoker<CreateCertificateResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateCertificateResponse>);
         }
         
         /// <summary>
@@ -161,11 +230,19 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<CreateHealthMonitorResponse> CreateHealthMonitorAsync(CreateHealthMonitorRequest createHealthMonitorRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/healthmonitors",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createHealthMonitorRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/healthmonitors",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createHealthMonitorRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateHealthMonitorResponse>(response);
+        }
+
+        public AsyncInvoker<CreateHealthMonitorResponse> CreateHealthMonitorAsyncInvoker(CreateHealthMonitorRequest createHealthMonitorRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/healthmonitors",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createHealthMonitorRequest);
+            return new AsyncInvoker<CreateHealthMonitorResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateHealthMonitorResponse>);
         }
         
         /// <summary>
@@ -177,11 +254,19 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<CreateL7PolicyResponse> CreateL7PolicyAsync(CreateL7PolicyRequest createL7PolicyRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/l7policies",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createL7PolicyRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/l7policies",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createL7PolicyRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateL7PolicyResponse>(response);
+        }
+
+        public AsyncInvoker<CreateL7PolicyResponse> CreateL7PolicyAsyncInvoker(CreateL7PolicyRequest createL7PolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/l7policies",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createL7PolicyRequest);
+            return new AsyncInvoker<CreateL7PolicyResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateL7PolicyResponse>);
         }
         
         /// <summary>
@@ -193,12 +278,21 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<CreateL7RuleResponse> CreateL7RuleAsync(CreateL7RuleRequest createL7RuleRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("l7policy_id" , createL7RuleRequest.L7policyId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/l7policies/{l7policy_id}/rules",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createL7RuleRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("l7policy_id", createL7RuleRequest.L7policyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/l7policies/{l7policy_id}/rules",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createL7RuleRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateL7RuleResponse>(response);
+        }
+
+        public AsyncInvoker<CreateL7RuleResponse> CreateL7RuleAsyncInvoker(CreateL7RuleRequest createL7RuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("l7policy_id", createL7RuleRequest.L7policyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/l7policies/{l7policy_id}/rules",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createL7RuleRequest);
+            return new AsyncInvoker<CreateL7RuleResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateL7RuleResponse>);
         }
         
         /// <summary>
@@ -210,11 +304,19 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<CreateListenerResponse> CreateListenerAsync(CreateListenerRequest createListenerRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/listeners",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createListenerRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/listeners",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createListenerRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateListenerResponse>(response);
+        }
+
+        public AsyncInvoker<CreateListenerResponse> CreateListenerAsyncInvoker(CreateListenerRequest createListenerRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/listeners",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createListenerRequest);
+            return new AsyncInvoker<CreateListenerResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateListenerResponse>);
         }
         
         /// <summary>
@@ -240,11 +342,19 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<CreateLoadBalancerResponse> CreateLoadBalancerAsync(CreateLoadBalancerRequest createLoadBalancerRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createLoadBalancerRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createLoadBalancerRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateLoadBalancerResponse>(response);
+        }
+
+        public AsyncInvoker<CreateLoadBalancerResponse> CreateLoadBalancerAsyncInvoker(CreateLoadBalancerRequest createLoadBalancerRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createLoadBalancerRequest);
+            return new AsyncInvoker<CreateLoadBalancerResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateLoadBalancerResponse>);
         }
         
         /// <summary>
@@ -256,11 +366,19 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<CreateLogtankResponse> CreateLogtankAsync(CreateLogtankRequest createLogtankRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/logtanks",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createLogtankRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/logtanks",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createLogtankRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateLogtankResponse>(response);
+        }
+
+        public AsyncInvoker<CreateLogtankResponse> CreateLogtankAsyncInvoker(CreateLogtankRequest createLogtankRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/logtanks",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createLogtankRequest);
+            return new AsyncInvoker<CreateLogtankResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateLogtankResponse>);
         }
         
         /// <summary>
@@ -272,11 +390,19 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<CreateMasterSlavePoolResponse> CreateMasterSlavePoolAsync(CreateMasterSlavePoolRequest createMasterSlavePoolRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/master-slave-pools",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createMasterSlavePoolRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/master-slave-pools",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createMasterSlavePoolRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateMasterSlavePoolResponse>(response);
+        }
+
+        public AsyncInvoker<CreateMasterSlavePoolResponse> CreateMasterSlavePoolAsyncInvoker(CreateMasterSlavePoolRequest createMasterSlavePoolRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/master-slave-pools",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createMasterSlavePoolRequest);
+            return new AsyncInvoker<CreateMasterSlavePoolResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateMasterSlavePoolResponse>);
         }
         
         /// <summary>
@@ -288,12 +414,21 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<CreateMemberResponse> CreateMemberAsync(CreateMemberRequest createMemberRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("pool_id" , createMemberRequest.PoolId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}/members",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createMemberRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("pool_id", createMemberRequest.PoolId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}/members",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createMemberRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateMemberResponse>(response);
+        }
+
+        public AsyncInvoker<CreateMemberResponse> CreateMemberAsyncInvoker(CreateMemberRequest createMemberRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("pool_id", createMemberRequest.PoolId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}/members",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createMemberRequest);
+            return new AsyncInvoker<CreateMemberResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateMemberResponse>);
         }
         
         /// <summary>
@@ -305,11 +440,19 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<CreatePoolResponse> CreatePoolAsync(CreatePoolRequest createPoolRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createPoolRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createPoolRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreatePoolResponse>(response);
+        }
+
+        public AsyncInvoker<CreatePoolResponse> CreatePoolAsyncInvoker(CreatePoolRequest createPoolRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createPoolRequest);
+            return new AsyncInvoker<CreatePoolResponse>(this, "POST", request, JsonUtils.DeSerialize<CreatePoolResponse>);
         }
         
         /// <summary>
@@ -323,11 +466,19 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<CreateSecurityPolicyResponse> CreateSecurityPolicyAsync(CreateSecurityPolicyRequest createSecurityPolicyRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/security-policies",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createSecurityPolicyRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/security-policies",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createSecurityPolicyRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateSecurityPolicyResponse>(response);
+        }
+
+        public AsyncInvoker<CreateSecurityPolicyResponse> CreateSecurityPolicyAsyncInvoker(CreateSecurityPolicyRequest createSecurityPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/security-policies",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createSecurityPolicyRequest);
+            return new AsyncInvoker<CreateSecurityPolicyResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateSecurityPolicyResponse>);
         }
         
         /// <summary>
@@ -339,12 +490,21 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<DeleteCertificateResponse> DeleteCertificateAsync(DeleteCertificateRequest deleteCertificateRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("certificate_id" , deleteCertificateRequest.CertificateId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/certificates/{certificate_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteCertificateRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("certificate_id", deleteCertificateRequest.CertificateId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/certificates/{certificate_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteCertificateRequest);
+            var response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteCertificateResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteCertificateResponse> DeleteCertificateAsyncInvoker(DeleteCertificateRequest deleteCertificateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("certificate_id", deleteCertificateRequest.CertificateId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/certificates/{certificate_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteCertificateRequest);
+            return new AsyncInvoker<DeleteCertificateResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteCertificateResponse>);
         }
         
         /// <summary>
@@ -356,12 +516,21 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<DeleteHealthMonitorResponse> DeleteHealthMonitorAsync(DeleteHealthMonitorRequest deleteHealthMonitorRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("healthmonitor_id" , deleteHealthMonitorRequest.HealthmonitorId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/healthmonitors/{healthmonitor_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteHealthMonitorRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("healthmonitor_id", deleteHealthMonitorRequest.HealthmonitorId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/healthmonitors/{healthmonitor_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteHealthMonitorRequest);
+            var response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteHealthMonitorResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteHealthMonitorResponse> DeleteHealthMonitorAsyncInvoker(DeleteHealthMonitorRequest deleteHealthMonitorRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("healthmonitor_id", deleteHealthMonitorRequest.HealthmonitorId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/healthmonitors/{healthmonitor_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteHealthMonitorRequest);
+            return new AsyncInvoker<DeleteHealthMonitorResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteHealthMonitorResponse>);
         }
         
         /// <summary>
@@ -373,12 +542,21 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<DeleteL7PolicyResponse> DeleteL7PolicyAsync(DeleteL7PolicyRequest deleteL7PolicyRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("l7policy_id" , deleteL7PolicyRequest.L7policyId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/l7policies/{l7policy_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteL7PolicyRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("l7policy_id", deleteL7PolicyRequest.L7policyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/l7policies/{l7policy_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteL7PolicyRequest);
+            var response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteL7PolicyResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteL7PolicyResponse> DeleteL7PolicyAsyncInvoker(DeleteL7PolicyRequest deleteL7PolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("l7policy_id", deleteL7PolicyRequest.L7policyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/l7policies/{l7policy_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteL7PolicyRequest);
+            return new AsyncInvoker<DeleteL7PolicyResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteL7PolicyResponse>);
         }
         
         /// <summary>
@@ -390,13 +568,23 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<DeleteL7RuleResponse> DeleteL7RuleAsync(DeleteL7RuleRequest deleteL7RuleRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("l7policy_id" , deleteL7RuleRequest.L7policyId.ToString());
-            urlParam.Add("l7rule_id" , deleteL7RuleRequest.L7ruleId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/l7policies/{l7policy_id}/rules/{l7rule_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteL7RuleRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("l7policy_id", deleteL7RuleRequest.L7policyId.ToString());
+            urlParam.Add("l7rule_id", deleteL7RuleRequest.L7ruleId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/l7policies/{l7policy_id}/rules/{l7rule_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteL7RuleRequest);
+            var response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteL7RuleResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteL7RuleResponse> DeleteL7RuleAsyncInvoker(DeleteL7RuleRequest deleteL7RuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("l7policy_id", deleteL7RuleRequest.L7policyId.ToString());
+            urlParam.Add("l7rule_id", deleteL7RuleRequest.L7ruleId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/l7policies/{l7policy_id}/rules/{l7rule_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteL7RuleRequest);
+            return new AsyncInvoker<DeleteL7RuleResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteL7RuleResponse>);
         }
         
         /// <summary>
@@ -408,12 +596,21 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<DeleteListenerResponse> DeleteListenerAsync(DeleteListenerRequest deleteListenerRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("listener_id" , deleteListenerRequest.ListenerId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/listeners/{listener_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteListenerRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("listener_id", deleteListenerRequest.ListenerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/listeners/{listener_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteListenerRequest);
+            var response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteListenerResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteListenerResponse> DeleteListenerAsyncInvoker(DeleteListenerRequest deleteListenerRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("listener_id", deleteListenerRequest.ListenerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/listeners/{listener_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteListenerRequest);
+            return new AsyncInvoker<DeleteListenerResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteListenerResponse>);
         }
         
         /// <summary>
@@ -425,12 +622,21 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<DeleteListenerForceResponse> DeleteListenerForceAsync(DeleteListenerForceRequest deleteListenerForceRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("listener_id" , deleteListenerForceRequest.ListenerId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/listeners/{listener_id}/force",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteListenerForceRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("listener_id", deleteListenerForceRequest.ListenerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/listeners/{listener_id}/force",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteListenerForceRequest);
+            var response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteListenerForceResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteListenerForceResponse> DeleteListenerForceAsyncInvoker(DeleteListenerForceRequest deleteListenerForceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("listener_id", deleteListenerForceRequest.ListenerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/listeners/{listener_id}/force",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteListenerForceRequest);
+            return new AsyncInvoker<DeleteListenerForceResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteListenerForceResponse>);
         }
         
         /// <summary>
@@ -442,12 +648,21 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<DeleteLoadBalancerResponse> DeleteLoadBalancerAsync(DeleteLoadBalancerRequest deleteLoadBalancerRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("loadbalancer_id" , deleteLoadBalancerRequest.LoadbalancerId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteLoadBalancerRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("loadbalancer_id", deleteLoadBalancerRequest.LoadbalancerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteLoadBalancerRequest);
+            var response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteLoadBalancerResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteLoadBalancerResponse> DeleteLoadBalancerAsyncInvoker(DeleteLoadBalancerRequest deleteLoadBalancerRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("loadbalancer_id", deleteLoadBalancerRequest.LoadbalancerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteLoadBalancerRequest);
+            return new AsyncInvoker<DeleteLoadBalancerResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteLoadBalancerResponse>);
         }
         
         /// <summary>
@@ -459,12 +674,21 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<DeleteLoadBalancerForceResponse> DeleteLoadBalancerForceAsync(DeleteLoadBalancerForceRequest deleteLoadBalancerForceRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("loadbalancer_id" , deleteLoadBalancerForceRequest.LoadbalancerId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/force-elb",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteLoadBalancerForceRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("loadbalancer_id", deleteLoadBalancerForceRequest.LoadbalancerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/force-elb",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteLoadBalancerForceRequest);
+            var response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteLoadBalancerForceResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteLoadBalancerForceResponse> DeleteLoadBalancerForceAsyncInvoker(DeleteLoadBalancerForceRequest deleteLoadBalancerForceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("loadbalancer_id", deleteLoadBalancerForceRequest.LoadbalancerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/force-elb",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteLoadBalancerForceRequest);
+            return new AsyncInvoker<DeleteLoadBalancerForceResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteLoadBalancerForceResponse>);
         }
         
         /// <summary>
@@ -476,12 +700,21 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<DeleteLogtankResponse> DeleteLogtankAsync(DeleteLogtankRequest deleteLogtankRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("logtank_id" , deleteLogtankRequest.LogtankId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/logtanks/{logtank_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteLogtankRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("logtank_id", deleteLogtankRequest.LogtankId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/logtanks/{logtank_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteLogtankRequest);
+            var response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteLogtankResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteLogtankResponse> DeleteLogtankAsyncInvoker(DeleteLogtankRequest deleteLogtankRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("logtank_id", deleteLogtankRequest.LogtankId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/logtanks/{logtank_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteLogtankRequest);
+            return new AsyncInvoker<DeleteLogtankResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteLogtankResponse>);
         }
         
         /// <summary>
@@ -493,12 +726,21 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<DeleteMasterSlavePoolResponse> DeleteMasterSlavePoolAsync(DeleteMasterSlavePoolRequest deleteMasterSlavePoolRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("pool_id" , deleteMasterSlavePoolRequest.PoolId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/master-slave-pools/{pool_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteMasterSlavePoolRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("pool_id", deleteMasterSlavePoolRequest.PoolId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/master-slave-pools/{pool_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteMasterSlavePoolRequest);
+            var response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteMasterSlavePoolResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteMasterSlavePoolResponse> DeleteMasterSlavePoolAsyncInvoker(DeleteMasterSlavePoolRequest deleteMasterSlavePoolRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("pool_id", deleteMasterSlavePoolRequest.PoolId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/master-slave-pools/{pool_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteMasterSlavePoolRequest);
+            return new AsyncInvoker<DeleteMasterSlavePoolResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteMasterSlavePoolResponse>);
         }
         
         /// <summary>
@@ -510,13 +752,23 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<DeleteMemberResponse> DeleteMemberAsync(DeleteMemberRequest deleteMemberRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("pool_id" , deleteMemberRequest.PoolId.ToString());
-            urlParam.Add("member_id" , deleteMemberRequest.MemberId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}/members/{member_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteMemberRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("pool_id", deleteMemberRequest.PoolId.ToString());
+            urlParam.Add("member_id", deleteMemberRequest.MemberId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}/members/{member_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteMemberRequest);
+            var response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteMemberResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteMemberResponse> DeleteMemberAsyncInvoker(DeleteMemberRequest deleteMemberRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("pool_id", deleteMemberRequest.PoolId.ToString());
+            urlParam.Add("member_id", deleteMemberRequest.MemberId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}/members/{member_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteMemberRequest);
+            return new AsyncInvoker<DeleteMemberResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteMemberResponse>);
         }
         
         /// <summary>
@@ -528,12 +780,21 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<DeletePoolResponse> DeletePoolAsync(DeletePoolRequest deletePoolRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("pool_id" , deletePoolRequest.PoolId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePoolRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("pool_id", deletePoolRequest.PoolId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePoolRequest);
+            var response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeletePoolResponse>(response);
+        }
+
+        public AsyncInvoker<DeletePoolResponse> DeletePoolAsyncInvoker(DeletePoolRequest deletePoolRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("pool_id", deletePoolRequest.PoolId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePoolRequest);
+            return new AsyncInvoker<DeletePoolResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeletePoolResponse>);
         }
         
         /// <summary>
@@ -545,12 +806,21 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<DeleteSecurityPolicyResponse> DeleteSecurityPolicyAsync(DeleteSecurityPolicyRequest deleteSecurityPolicyRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("security_policy_id" , deleteSecurityPolicyRequest.SecurityPolicyId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/security-policies/{security_policy_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSecurityPolicyRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("security_policy_id", deleteSecurityPolicyRequest.SecurityPolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/security-policies/{security_policy_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSecurityPolicyRequest);
+            var response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteSecurityPolicyResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteSecurityPolicyResponse> DeleteSecurityPolicyAsyncInvoker(DeleteSecurityPolicyRequest deleteSecurityPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("security_policy_id", deleteSecurityPolicyRequest.SecurityPolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/security-policies/{security_policy_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSecurityPolicyRequest);
+            return new AsyncInvoker<DeleteSecurityPolicyResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteSecurityPolicyResponse>);
         }
         
         /// <summary>
@@ -562,11 +832,19 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<ListAllMembersResponse> ListAllMembersAsync(ListAllMembersRequest listAllMembersRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/members",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAllMembersRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/members",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAllMembersRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListAllMembersResponse>(response);
+        }
+
+        public AsyncInvoker<ListAllMembersResponse> ListAllMembersAsyncInvoker(ListAllMembersRequest listAllMembersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/members",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAllMembersRequest);
+            return new AsyncInvoker<ListAllMembersResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAllMembersResponse>);
         }
         
         /// <summary>
@@ -586,11 +864,19 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<ListAvailabilityZonesResponse> ListAvailabilityZonesAsync(ListAvailabilityZonesRequest listAvailabilityZonesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/availability-zones",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAvailabilityZonesRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/availability-zones",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAvailabilityZonesRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListAvailabilityZonesResponse>(response);
+        }
+
+        public AsyncInvoker<ListAvailabilityZonesResponse> ListAvailabilityZonesAsyncInvoker(ListAvailabilityZonesRequest listAvailabilityZonesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/availability-zones",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAvailabilityZonesRequest);
+            return new AsyncInvoker<ListAvailabilityZonesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAvailabilityZonesResponse>);
         }
         
         /// <summary>
@@ -602,11 +888,19 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<ListCertificatesResponse> ListCertificatesAsync(ListCertificatesRequest listCertificatesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/certificates",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCertificatesRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/certificates",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCertificatesRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListCertificatesResponse>(response);
+        }
+
+        public AsyncInvoker<ListCertificatesResponse> ListCertificatesAsyncInvoker(ListCertificatesRequest listCertificatesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/certificates",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCertificatesRequest);
+            return new AsyncInvoker<ListCertificatesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListCertificatesResponse>);
         }
         
         /// <summary>
@@ -618,11 +912,19 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<ListFlavorsResponse> ListFlavorsAsync(ListFlavorsRequest listFlavorsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/flavors",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFlavorsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/flavors",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFlavorsRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListFlavorsResponse>(response);
+        }
+
+        public AsyncInvoker<ListFlavorsResponse> ListFlavorsAsyncInvoker(ListFlavorsRequest listFlavorsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/flavors",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFlavorsRequest);
+            return new AsyncInvoker<ListFlavorsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListFlavorsResponse>);
         }
         
         /// <summary>
@@ -634,11 +936,19 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<ListHealthMonitorsResponse> ListHealthMonitorsAsync(ListHealthMonitorsRequest listHealthMonitorsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/healthmonitors",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listHealthMonitorsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/healthmonitors",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listHealthMonitorsRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListHealthMonitorsResponse>(response);
+        }
+
+        public AsyncInvoker<ListHealthMonitorsResponse> ListHealthMonitorsAsyncInvoker(ListHealthMonitorsRequest listHealthMonitorsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/healthmonitors",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listHealthMonitorsRequest);
+            return new AsyncInvoker<ListHealthMonitorsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListHealthMonitorsResponse>);
         }
         
         /// <summary>
@@ -650,11 +960,19 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<ListL7PoliciesResponse> ListL7PoliciesAsync(ListL7PoliciesRequest listL7PoliciesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/l7policies",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listL7PoliciesRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/l7policies",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listL7PoliciesRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListL7PoliciesResponse>(response);
+        }
+
+        public AsyncInvoker<ListL7PoliciesResponse> ListL7PoliciesAsyncInvoker(ListL7PoliciesRequest listL7PoliciesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/l7policies",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listL7PoliciesRequest);
+            return new AsyncInvoker<ListL7PoliciesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListL7PoliciesResponse>);
         }
         
         /// <summary>
@@ -666,12 +984,21 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<ListL7RulesResponse> ListL7RulesAsync(ListL7RulesRequest listL7RulesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("l7policy_id" , listL7RulesRequest.L7policyId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/l7policies/{l7policy_id}/rules",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listL7RulesRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("l7policy_id", listL7RulesRequest.L7policyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/l7policies/{l7policy_id}/rules",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listL7RulesRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListL7RulesResponse>(response);
+        }
+
+        public AsyncInvoker<ListL7RulesResponse> ListL7RulesAsyncInvoker(ListL7RulesRequest listL7RulesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("l7policy_id", listL7RulesRequest.L7policyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/l7policies/{l7policy_id}/rules",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listL7RulesRequest);
+            return new AsyncInvoker<ListL7RulesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListL7RulesResponse>);
         }
         
         /// <summary>
@@ -683,11 +1010,19 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<ListListenersResponse> ListListenersAsync(ListListenersRequest listListenersRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/listeners",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listListenersRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/listeners",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listListenersRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListListenersResponse>(response);
+        }
+
+        public AsyncInvoker<ListListenersResponse> ListListenersAsyncInvoker(ListListenersRequest listListenersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/listeners",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listListenersRequest);
+            return new AsyncInvoker<ListListenersResponse>(this, "GET", request, JsonUtils.DeSerialize<ListListenersResponse>);
         }
         
         /// <summary>
@@ -699,11 +1034,19 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<ListLoadBalancersResponse> ListLoadBalancersAsync(ListLoadBalancersRequest listLoadBalancersRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listLoadBalancersRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listLoadBalancersRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListLoadBalancersResponse>(response);
+        }
+
+        public AsyncInvoker<ListLoadBalancersResponse> ListLoadBalancersAsyncInvoker(ListLoadBalancersRequest listLoadBalancersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listLoadBalancersRequest);
+            return new AsyncInvoker<ListLoadBalancersResponse>(this, "GET", request, JsonUtils.DeSerialize<ListLoadBalancersResponse>);
         }
         
         /// <summary>
@@ -715,11 +1058,19 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<ListLogtanksResponse> ListLogtanksAsync(ListLogtanksRequest listLogtanksRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/logtanks",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listLogtanksRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/logtanks",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listLogtanksRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListLogtanksResponse>(response);
+        }
+
+        public AsyncInvoker<ListLogtanksResponse> ListLogtanksAsyncInvoker(ListLogtanksRequest listLogtanksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/logtanks",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listLogtanksRequest);
+            return new AsyncInvoker<ListLogtanksResponse>(this, "GET", request, JsonUtils.DeSerialize<ListLogtanksResponse>);
         }
         
         /// <summary>
@@ -731,11 +1082,19 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<ListMasterSlavePoolsResponse> ListMasterSlavePoolsAsync(ListMasterSlavePoolsRequest listMasterSlavePoolsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/master-slave-pools",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listMasterSlavePoolsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/master-slave-pools",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listMasterSlavePoolsRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListMasterSlavePoolsResponse>(response);
+        }
+
+        public AsyncInvoker<ListMasterSlavePoolsResponse> ListMasterSlavePoolsAsyncInvoker(ListMasterSlavePoolsRequest listMasterSlavePoolsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/master-slave-pools",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listMasterSlavePoolsRequest);
+            return new AsyncInvoker<ListMasterSlavePoolsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListMasterSlavePoolsResponse>);
         }
         
         /// <summary>
@@ -747,12 +1106,21 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<ListMembersResponse> ListMembersAsync(ListMembersRequest listMembersRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("pool_id" , listMembersRequest.PoolId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}/members",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listMembersRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("pool_id", listMembersRequest.PoolId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}/members",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listMembersRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListMembersResponse>(response);
+        }
+
+        public AsyncInvoker<ListMembersResponse> ListMembersAsyncInvoker(ListMembersRequest listMembersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("pool_id", listMembersRequest.PoolId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}/members",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listMembersRequest);
+            return new AsyncInvoker<ListMembersResponse>(this, "GET", request, JsonUtils.DeSerialize<ListMembersResponse>);
         }
         
         /// <summary>
@@ -764,11 +1132,19 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<ListPoolsResponse> ListPoolsAsync(ListPoolsRequest listPoolsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPoolsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPoolsRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListPoolsResponse>(response);
+        }
+
+        public AsyncInvoker<ListPoolsResponse> ListPoolsAsyncInvoker(ListPoolsRequest listPoolsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPoolsRequest);
+            return new AsyncInvoker<ListPoolsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListPoolsResponse>);
         }
         
         /// <summary>
@@ -780,11 +1156,19 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<ListQuotaDetailsResponse> ListQuotaDetailsAsync(ListQuotaDetailsRequest listQuotaDetailsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/quotas/details",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listQuotaDetailsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/quotas/details",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listQuotaDetailsRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListQuotaDetailsResponse>(response);
+        }
+
+        public AsyncInvoker<ListQuotaDetailsResponse> ListQuotaDetailsAsyncInvoker(ListQuotaDetailsRequest listQuotaDetailsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/quotas/details",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listQuotaDetailsRequest);
+            return new AsyncInvoker<ListQuotaDetailsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListQuotaDetailsResponse>);
         }
         
         /// <summary>
@@ -796,11 +1180,19 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<ListSecurityPoliciesResponse> ListSecurityPoliciesAsync(ListSecurityPoliciesRequest listSecurityPoliciesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/security-policies",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSecurityPoliciesRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/security-policies",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSecurityPoliciesRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListSecurityPoliciesResponse>(response);
+        }
+
+        public AsyncInvoker<ListSecurityPoliciesResponse> ListSecurityPoliciesAsyncInvoker(ListSecurityPoliciesRequest listSecurityPoliciesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/security-policies",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSecurityPoliciesRequest);
+            return new AsyncInvoker<ListSecurityPoliciesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSecurityPoliciesResponse>);
         }
         
         /// <summary>
@@ -814,11 +1206,19 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<ListSystemSecurityPoliciesResponse> ListSystemSecurityPoliciesAsync(ListSystemSecurityPoliciesRequest listSystemSecurityPoliciesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/system-security-policies",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSystemSecurityPoliciesRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/system-security-policies",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSystemSecurityPoliciesRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListSystemSecurityPoliciesResponse>(response);
+        }
+
+        public AsyncInvoker<ListSystemSecurityPoliciesResponse> ListSystemSecurityPoliciesAsyncInvoker(ListSystemSecurityPoliciesRequest listSystemSecurityPoliciesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/system-security-policies",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSystemSecurityPoliciesRequest);
+            return new AsyncInvoker<ListSystemSecurityPoliciesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSystemSecurityPoliciesResponse>);
         }
         
         /// <summary>
@@ -830,12 +1230,21 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<ShowCertificateResponse> ShowCertificateAsync(ShowCertificateRequest showCertificateRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("certificate_id" , showCertificateRequest.CertificateId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/certificates/{certificate_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCertificateRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("certificate_id", showCertificateRequest.CertificateId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/certificates/{certificate_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCertificateRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowCertificateResponse>(response);
+        }
+
+        public AsyncInvoker<ShowCertificateResponse> ShowCertificateAsyncInvoker(ShowCertificateRequest showCertificateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("certificate_id", showCertificateRequest.CertificateId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/certificates/{certificate_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCertificateRequest);
+            return new AsyncInvoker<ShowCertificateResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowCertificateResponse>);
         }
         
         /// <summary>
@@ -847,12 +1256,21 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<ShowFlavorResponse> ShowFlavorAsync(ShowFlavorRequest showFlavorRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("flavor_id" , showFlavorRequest.FlavorId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/flavors/{flavor_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFlavorRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("flavor_id", showFlavorRequest.FlavorId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/flavors/{flavor_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFlavorRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowFlavorResponse>(response);
+        }
+
+        public AsyncInvoker<ShowFlavorResponse> ShowFlavorAsyncInvoker(ShowFlavorRequest showFlavorRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("flavor_id", showFlavorRequest.FlavorId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/flavors/{flavor_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFlavorRequest);
+            return new AsyncInvoker<ShowFlavorResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowFlavorResponse>);
         }
         
         /// <summary>
@@ -864,12 +1282,21 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<ShowHealthMonitorResponse> ShowHealthMonitorAsync(ShowHealthMonitorRequest showHealthMonitorRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("healthmonitor_id" , showHealthMonitorRequest.HealthmonitorId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/healthmonitors/{healthmonitor_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showHealthMonitorRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("healthmonitor_id", showHealthMonitorRequest.HealthmonitorId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/healthmonitors/{healthmonitor_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showHealthMonitorRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowHealthMonitorResponse>(response);
+        }
+
+        public AsyncInvoker<ShowHealthMonitorResponse> ShowHealthMonitorAsyncInvoker(ShowHealthMonitorRequest showHealthMonitorRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("healthmonitor_id", showHealthMonitorRequest.HealthmonitorId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/healthmonitors/{healthmonitor_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showHealthMonitorRequest);
+            return new AsyncInvoker<ShowHealthMonitorResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowHealthMonitorResponse>);
         }
         
         /// <summary>
@@ -881,12 +1308,21 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<ShowL7PolicyResponse> ShowL7PolicyAsync(ShowL7PolicyRequest showL7PolicyRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("l7policy_id" , showL7PolicyRequest.L7policyId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/l7policies/{l7policy_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showL7PolicyRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("l7policy_id", showL7PolicyRequest.L7policyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/l7policies/{l7policy_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showL7PolicyRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowL7PolicyResponse>(response);
+        }
+
+        public AsyncInvoker<ShowL7PolicyResponse> ShowL7PolicyAsyncInvoker(ShowL7PolicyRequest showL7PolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("l7policy_id", showL7PolicyRequest.L7policyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/l7policies/{l7policy_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showL7PolicyRequest);
+            return new AsyncInvoker<ShowL7PolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowL7PolicyResponse>);
         }
         
         /// <summary>
@@ -898,13 +1334,23 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<ShowL7RuleResponse> ShowL7RuleAsync(ShowL7RuleRequest showL7RuleRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("l7policy_id" , showL7RuleRequest.L7policyId.ToString());
-            urlParam.Add("l7rule_id" , showL7RuleRequest.L7ruleId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/l7policies/{l7policy_id}/rules/{l7rule_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showL7RuleRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("l7policy_id", showL7RuleRequest.L7policyId.ToString());
+            urlParam.Add("l7rule_id", showL7RuleRequest.L7ruleId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/l7policies/{l7policy_id}/rules/{l7rule_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showL7RuleRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowL7RuleResponse>(response);
+        }
+
+        public AsyncInvoker<ShowL7RuleResponse> ShowL7RuleAsyncInvoker(ShowL7RuleRequest showL7RuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("l7policy_id", showL7RuleRequest.L7policyId.ToString());
+            urlParam.Add("l7rule_id", showL7RuleRequest.L7ruleId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/l7policies/{l7policy_id}/rules/{l7rule_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showL7RuleRequest);
+            return new AsyncInvoker<ShowL7RuleResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowL7RuleResponse>);
         }
         
         /// <summary>
@@ -916,12 +1362,21 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<ShowListenerResponse> ShowListenerAsync(ShowListenerRequest showListenerRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("listener_id" , showListenerRequest.ListenerId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/listeners/{listener_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showListenerRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("listener_id", showListenerRequest.ListenerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/listeners/{listener_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showListenerRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowListenerResponse>(response);
+        }
+
+        public AsyncInvoker<ShowListenerResponse> ShowListenerAsyncInvoker(ShowListenerRequest showListenerRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("listener_id", showListenerRequest.ListenerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/listeners/{listener_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showListenerRequest);
+            return new AsyncInvoker<ShowListenerResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowListenerResponse>);
         }
         
         /// <summary>
@@ -933,12 +1388,21 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<ShowLoadBalancerResponse> ShowLoadBalancerAsync(ShowLoadBalancerRequest showLoadBalancerRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("loadbalancer_id" , showLoadBalancerRequest.LoadbalancerId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLoadBalancerRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("loadbalancer_id", showLoadBalancerRequest.LoadbalancerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLoadBalancerRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowLoadBalancerResponse>(response);
+        }
+
+        public AsyncInvoker<ShowLoadBalancerResponse> ShowLoadBalancerAsyncInvoker(ShowLoadBalancerRequest showLoadBalancerRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("loadbalancer_id", showLoadBalancerRequest.LoadbalancerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLoadBalancerRequest);
+            return new AsyncInvoker<ShowLoadBalancerResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowLoadBalancerResponse>);
         }
         
         /// <summary>
@@ -953,12 +1417,21 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<ShowLoadBalancerStatusResponse> ShowLoadBalancerStatusAsync(ShowLoadBalancerStatusRequest showLoadBalancerStatusRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("loadbalancer_id" , showLoadBalancerStatusRequest.LoadbalancerId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/statuses",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLoadBalancerStatusRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("loadbalancer_id", showLoadBalancerStatusRequest.LoadbalancerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/statuses",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLoadBalancerStatusRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowLoadBalancerStatusResponse>(response);
+        }
+
+        public AsyncInvoker<ShowLoadBalancerStatusResponse> ShowLoadBalancerStatusAsyncInvoker(ShowLoadBalancerStatusRequest showLoadBalancerStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("loadbalancer_id", showLoadBalancerStatusRequest.LoadbalancerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/statuses",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLoadBalancerStatusRequest);
+            return new AsyncInvoker<ShowLoadBalancerStatusResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowLoadBalancerStatusResponse>);
         }
         
         /// <summary>
@@ -970,12 +1443,21 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<ShowLogtankResponse> ShowLogtankAsync(ShowLogtankRequest showLogtankRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("logtank_id" , showLogtankRequest.LogtankId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/logtanks/{logtank_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLogtankRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("logtank_id", showLogtankRequest.LogtankId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/logtanks/{logtank_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLogtankRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowLogtankResponse>(response);
+        }
+
+        public AsyncInvoker<ShowLogtankResponse> ShowLogtankAsyncInvoker(ShowLogtankRequest showLogtankRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("logtank_id", showLogtankRequest.LogtankId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/logtanks/{logtank_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLogtankRequest);
+            return new AsyncInvoker<ShowLogtankResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowLogtankResponse>);
         }
         
         /// <summary>
@@ -987,12 +1469,21 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<ShowMasterSlavePoolResponse> ShowMasterSlavePoolAsync(ShowMasterSlavePoolRequest showMasterSlavePoolRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("pool_id" , showMasterSlavePoolRequest.PoolId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/master-slave-pools/{pool_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMasterSlavePoolRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("pool_id", showMasterSlavePoolRequest.PoolId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/master-slave-pools/{pool_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMasterSlavePoolRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowMasterSlavePoolResponse>(response);
+        }
+
+        public AsyncInvoker<ShowMasterSlavePoolResponse> ShowMasterSlavePoolAsyncInvoker(ShowMasterSlavePoolRequest showMasterSlavePoolRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("pool_id", showMasterSlavePoolRequest.PoolId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/master-slave-pools/{pool_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMasterSlavePoolRequest);
+            return new AsyncInvoker<ShowMasterSlavePoolResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowMasterSlavePoolResponse>);
         }
         
         /// <summary>
@@ -1004,13 +1495,23 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<ShowMemberResponse> ShowMemberAsync(ShowMemberRequest showMemberRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("pool_id" , showMemberRequest.PoolId.ToString());
-            urlParam.Add("member_id" , showMemberRequest.MemberId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}/members/{member_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMemberRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("pool_id", showMemberRequest.PoolId.ToString());
+            urlParam.Add("member_id", showMemberRequest.MemberId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}/members/{member_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMemberRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowMemberResponse>(response);
+        }
+
+        public AsyncInvoker<ShowMemberResponse> ShowMemberAsyncInvoker(ShowMemberRequest showMemberRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("pool_id", showMemberRequest.PoolId.ToString());
+            urlParam.Add("member_id", showMemberRequest.MemberId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}/members/{member_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMemberRequest);
+            return new AsyncInvoker<ShowMemberResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowMemberResponse>);
         }
         
         /// <summary>
@@ -1022,12 +1523,21 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<ShowPoolResponse> ShowPoolAsync(ShowPoolRequest showPoolRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("pool_id" , showPoolRequest.PoolId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPoolRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("pool_id", showPoolRequest.PoolId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPoolRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowPoolResponse>(response);
+        }
+
+        public AsyncInvoker<ShowPoolResponse> ShowPoolAsyncInvoker(ShowPoolRequest showPoolRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("pool_id", showPoolRequest.PoolId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPoolRequest);
+            return new AsyncInvoker<ShowPoolResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPoolResponse>);
         }
         
         /// <summary>
@@ -1039,11 +1549,19 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<ShowQuotaResponse> ShowQuotaAsync(ShowQuotaRequest showQuotaRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/quotas",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showQuotaRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/quotas",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showQuotaRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowQuotaResponse>(response);
+        }
+
+        public AsyncInvoker<ShowQuotaResponse> ShowQuotaAsyncInvoker(ShowQuotaRequest showQuotaRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/quotas",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showQuotaRequest);
+            return new AsyncInvoker<ShowQuotaResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowQuotaResponse>);
         }
         
         /// <summary>
@@ -1055,12 +1573,21 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<ShowSecurityPolicyResponse> ShowSecurityPolicyAsync(ShowSecurityPolicyRequest showSecurityPolicyRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("security_policy_id" , showSecurityPolicyRequest.SecurityPolicyId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/security-policies/{security_policy_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSecurityPolicyRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("security_policy_id", showSecurityPolicyRequest.SecurityPolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/security-policies/{security_policy_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSecurityPolicyRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowSecurityPolicyResponse>(response);
+        }
+
+        public AsyncInvoker<ShowSecurityPolicyResponse> ShowSecurityPolicyAsyncInvoker(ShowSecurityPolicyRequest showSecurityPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("security_policy_id", showSecurityPolicyRequest.SecurityPolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/security-policies/{security_policy_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSecurityPolicyRequest);
+            return new AsyncInvoker<ShowSecurityPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSecurityPolicyResponse>);
         }
         
         /// <summary>
@@ -1072,12 +1599,21 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<UpdateCertificateResponse> UpdateCertificateAsync(UpdateCertificateRequest updateCertificateRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("certificate_id" , updateCertificateRequest.CertificateId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/certificates/{certificate_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateCertificateRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("certificate_id", updateCertificateRequest.CertificateId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/certificates/{certificate_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateCertificateRequest);
+            var response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<UpdateCertificateResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateCertificateResponse> UpdateCertificateAsyncInvoker(UpdateCertificateRequest updateCertificateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("certificate_id", updateCertificateRequest.CertificateId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/certificates/{certificate_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateCertificateRequest);
+            return new AsyncInvoker<UpdateCertificateResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateCertificateResponse>);
         }
         
         /// <summary>
@@ -1089,12 +1625,21 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<UpdateHealthMonitorResponse> UpdateHealthMonitorAsync(UpdateHealthMonitorRequest updateHealthMonitorRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("healthmonitor_id" , updateHealthMonitorRequest.HealthmonitorId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/healthmonitors/{healthmonitor_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateHealthMonitorRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("healthmonitor_id", updateHealthMonitorRequest.HealthmonitorId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/healthmonitors/{healthmonitor_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateHealthMonitorRequest);
+            var response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<UpdateHealthMonitorResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateHealthMonitorResponse> UpdateHealthMonitorAsyncInvoker(UpdateHealthMonitorRequest updateHealthMonitorRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("healthmonitor_id", updateHealthMonitorRequest.HealthmonitorId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/healthmonitors/{healthmonitor_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateHealthMonitorRequest);
+            return new AsyncInvoker<UpdateHealthMonitorResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateHealthMonitorResponse>);
         }
         
         /// <summary>
@@ -1106,12 +1651,21 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<UpdateL7PolicyResponse> UpdateL7PolicyAsync(UpdateL7PolicyRequest updateL7PolicyRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("l7policy_id" , updateL7PolicyRequest.L7policyId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/l7policies/{l7policy_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateL7PolicyRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("l7policy_id", updateL7PolicyRequest.L7policyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/l7policies/{l7policy_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateL7PolicyRequest);
+            var response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<UpdateL7PolicyResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateL7PolicyResponse> UpdateL7PolicyAsyncInvoker(UpdateL7PolicyRequest updateL7PolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("l7policy_id", updateL7PolicyRequest.L7policyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/l7policies/{l7policy_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateL7PolicyRequest);
+            return new AsyncInvoker<UpdateL7PolicyResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateL7PolicyResponse>);
         }
         
         /// <summary>
@@ -1123,13 +1677,23 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<UpdateL7RuleResponse> UpdateL7RuleAsync(UpdateL7RuleRequest updateL7RuleRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("l7policy_id" , updateL7RuleRequest.L7policyId.ToString());
-            urlParam.Add("l7rule_id" , updateL7RuleRequest.L7ruleId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/l7policies/{l7policy_id}/rules/{l7rule_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateL7RuleRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("l7policy_id", updateL7RuleRequest.L7policyId.ToString());
+            urlParam.Add("l7rule_id", updateL7RuleRequest.L7ruleId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/l7policies/{l7policy_id}/rules/{l7rule_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateL7RuleRequest);
+            var response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<UpdateL7RuleResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateL7RuleResponse> UpdateL7RuleAsyncInvoker(UpdateL7RuleRequest updateL7RuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("l7policy_id", updateL7RuleRequest.L7policyId.ToString());
+            urlParam.Add("l7rule_id", updateL7RuleRequest.L7ruleId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/l7policies/{l7policy_id}/rules/{l7rule_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateL7RuleRequest);
+            return new AsyncInvoker<UpdateL7RuleResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateL7RuleResponse>);
         }
         
         /// <summary>
@@ -1141,12 +1705,21 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<UpdateListenerResponse> UpdateListenerAsync(UpdateListenerRequest updateListenerRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("listener_id" , updateListenerRequest.ListenerId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/listeners/{listener_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateListenerRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("listener_id", updateListenerRequest.ListenerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/listeners/{listener_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateListenerRequest);
+            var response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<UpdateListenerResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateListenerResponse> UpdateListenerAsyncInvoker(UpdateListenerRequest updateListenerRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("listener_id", updateListenerRequest.ListenerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/listeners/{listener_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateListenerRequest);
+            return new AsyncInvoker<UpdateListenerResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateListenerResponse>);
         }
         
         /// <summary>
@@ -1158,12 +1731,21 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<UpdateLoadBalancerResponse> UpdateLoadBalancerAsync(UpdateLoadBalancerRequest updateLoadBalancerRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("loadbalancer_id" , updateLoadBalancerRequest.LoadbalancerId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateLoadBalancerRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("loadbalancer_id", updateLoadBalancerRequest.LoadbalancerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateLoadBalancerRequest);
+            var response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<UpdateLoadBalancerResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateLoadBalancerResponse> UpdateLoadBalancerAsyncInvoker(UpdateLoadBalancerRequest updateLoadBalancerRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("loadbalancer_id", updateLoadBalancerRequest.LoadbalancerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateLoadBalancerRequest);
+            return new AsyncInvoker<UpdateLoadBalancerResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateLoadBalancerResponse>);
         }
         
         /// <summary>
@@ -1175,12 +1757,21 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<UpdateLogtankResponse> UpdateLogtankAsync(UpdateLogtankRequest updateLogtankRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("logtank_id" , updateLogtankRequest.LogtankId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/logtanks/{logtank_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateLogtankRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("logtank_id", updateLogtankRequest.LogtankId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/logtanks/{logtank_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateLogtankRequest);
+            var response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<UpdateLogtankResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateLogtankResponse> UpdateLogtankAsyncInvoker(UpdateLogtankRequest updateLogtankRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("logtank_id", updateLogtankRequest.LogtankId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/logtanks/{logtank_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateLogtankRequest);
+            return new AsyncInvoker<UpdateLogtankResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateLogtankResponse>);
         }
         
         /// <summary>
@@ -1192,13 +1783,23 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<UpdateMemberResponse> UpdateMemberAsync(UpdateMemberRequest updateMemberRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("member_id" , updateMemberRequest.MemberId.ToString());
-            urlParam.Add("pool_id" , updateMemberRequest.PoolId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}/members/{member_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateMemberRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("member_id", updateMemberRequest.MemberId.ToString());
+            urlParam.Add("pool_id", updateMemberRequest.PoolId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}/members/{member_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateMemberRequest);
+            var response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<UpdateMemberResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateMemberResponse> UpdateMemberAsyncInvoker(UpdateMemberRequest updateMemberRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("member_id", updateMemberRequest.MemberId.ToString());
+            urlParam.Add("pool_id", updateMemberRequest.PoolId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}/members/{member_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateMemberRequest);
+            return new AsyncInvoker<UpdateMemberResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateMemberResponse>);
         }
         
         /// <summary>
@@ -1210,12 +1811,21 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<UpdatePoolResponse> UpdatePoolAsync(UpdatePoolRequest updatePoolRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("pool_id" , updatePoolRequest.PoolId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updatePoolRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("pool_id", updatePoolRequest.PoolId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updatePoolRequest);
+            var response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<UpdatePoolResponse>(response);
+        }
+
+        public AsyncInvoker<UpdatePoolResponse> UpdatePoolAsyncInvoker(UpdatePoolRequest updatePoolRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("pool_id", updatePoolRequest.PoolId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updatePoolRequest);
+            return new AsyncInvoker<UpdatePoolResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdatePoolResponse>);
         }
         
         /// <summary>
@@ -1227,12 +1837,21 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<UpdateSecurityPolicyResponse> UpdateSecurityPolicyAsync(UpdateSecurityPolicyRequest updateSecurityPolicyRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("security_policy_id" , updateSecurityPolicyRequest.SecurityPolicyId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/security-policies/{security_policy_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSecurityPolicyRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("security_policy_id", updateSecurityPolicyRequest.SecurityPolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/security-policies/{security_policy_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSecurityPolicyRequest);
+            var response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<UpdateSecurityPolicyResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateSecurityPolicyResponse> UpdateSecurityPolicyAsyncInvoker(UpdateSecurityPolicyRequest updateSecurityPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("security_policy_id", updateSecurityPolicyRequest.SecurityPolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/security-policies/{security_policy_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSecurityPolicyRequest);
+            return new AsyncInvoker<UpdateSecurityPolicyResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateSecurityPolicyResponse>);
         }
         
         /// <summary>
@@ -1244,11 +1863,19 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<ListApiVersionsResponse> ListApiVersionsAsync(ListApiVersionsRequest listApiVersionsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/versions",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listApiVersionsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/versions",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listApiVersionsRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListApiVersionsResponse>(response);
+        }
+
+        public AsyncInvoker<ListApiVersionsResponse> ListApiVersionsAsyncInvoker(ListApiVersionsRequest listApiVersionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/versions",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listApiVersionsRequest);
+            return new AsyncInvoker<ListApiVersionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListApiVersionsResponse>);
         }
         
         /// <summary>
@@ -1260,12 +1887,21 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<BatchDeleteIpListResponse> BatchDeleteIpListAsync(BatchDeleteIpListRequest batchDeleteIpListRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("ipgroup_id" , batchDeleteIpListRequest.IpgroupId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/ipgroups/{ipgroup_id}/iplist/batch-delete",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteIpListRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("ipgroup_id", batchDeleteIpListRequest.IpgroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/ipgroups/{ipgroup_id}/iplist/batch-delete",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteIpListRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<BatchDeleteIpListResponse>(response);
+        }
+
+        public AsyncInvoker<BatchDeleteIpListResponse> BatchDeleteIpListAsyncInvoker(BatchDeleteIpListRequest batchDeleteIpListRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("ipgroup_id", batchDeleteIpListRequest.IpgroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/ipgroups/{ipgroup_id}/iplist/batch-delete",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteIpListRequest);
+            return new AsyncInvoker<BatchDeleteIpListResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchDeleteIpListResponse>);
         }
         
         /// <summary>
@@ -1292,11 +1928,19 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<CountPreoccupyIpNumResponse> CountPreoccupyIpNumAsync(CountPreoccupyIpNumRequest countPreoccupyIpNumRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/preoccupy-ip-num",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", countPreoccupyIpNumRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/preoccupy-ip-num",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", countPreoccupyIpNumRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<CountPreoccupyIpNumResponse>(response);
+        }
+
+        public AsyncInvoker<CountPreoccupyIpNumResponse> CountPreoccupyIpNumAsyncInvoker(CountPreoccupyIpNumRequest countPreoccupyIpNumRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/preoccupy-ip-num",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", countPreoccupyIpNumRequest);
+            return new AsyncInvoker<CountPreoccupyIpNumResponse>(this, "GET", request, JsonUtils.DeSerialize<CountPreoccupyIpNumResponse>);
         }
         
         /// <summary>
@@ -1312,11 +1956,19 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<CreateIpGroupResponse> CreateIpGroupAsync(CreateIpGroupRequest createIpGroupRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/ipgroups",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createIpGroupRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/ipgroups",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createIpGroupRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateIpGroupResponse>(response);
+        }
+
+        public AsyncInvoker<CreateIpGroupResponse> CreateIpGroupAsyncInvoker(CreateIpGroupRequest createIpGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/ipgroups",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createIpGroupRequest);
+            return new AsyncInvoker<CreateIpGroupResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateIpGroupResponse>);
         }
         
         /// <summary>
@@ -1328,12 +1980,21 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<DeleteIpGroupResponse> DeleteIpGroupAsync(DeleteIpGroupRequest deleteIpGroupRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("ipgroup_id" , deleteIpGroupRequest.IpgroupId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/ipgroups/{ipgroup_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteIpGroupRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("ipgroup_id", deleteIpGroupRequest.IpgroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/ipgroups/{ipgroup_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteIpGroupRequest);
+            var response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteIpGroupResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteIpGroupResponse> DeleteIpGroupAsyncInvoker(DeleteIpGroupRequest deleteIpGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("ipgroup_id", deleteIpGroupRequest.IpgroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/ipgroups/{ipgroup_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteIpGroupRequest);
+            return new AsyncInvoker<DeleteIpGroupResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteIpGroupResponse>);
         }
         
         /// <summary>
@@ -1345,11 +2006,19 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<ListIpGroupsResponse> ListIpGroupsAsync(ListIpGroupsRequest listIpGroupsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/ipgroups",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listIpGroupsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/ipgroups",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listIpGroupsRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListIpGroupsResponse>(response);
+        }
+
+        public AsyncInvoker<ListIpGroupsResponse> ListIpGroupsAsyncInvoker(ListIpGroupsRequest listIpGroupsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/ipgroups",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listIpGroupsRequest);
+            return new AsyncInvoker<ListIpGroupsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListIpGroupsResponse>);
         }
         
         /// <summary>
@@ -1361,12 +2030,21 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<ShowIpGroupResponse> ShowIpGroupAsync(ShowIpGroupRequest showIpGroupRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("ipgroup_id" , showIpGroupRequest.IpgroupId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/ipgroups/{ipgroup_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showIpGroupRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("ipgroup_id", showIpGroupRequest.IpgroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/ipgroups/{ipgroup_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showIpGroupRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowIpGroupResponse>(response);
+        }
+
+        public AsyncInvoker<ShowIpGroupResponse> ShowIpGroupAsyncInvoker(ShowIpGroupRequest showIpGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("ipgroup_id", showIpGroupRequest.IpgroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/ipgroups/{ipgroup_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showIpGroupRequest);
+            return new AsyncInvoker<ShowIpGroupResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowIpGroupResponse>);
         }
         
         /// <summary>
@@ -1383,12 +2061,21 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<UpdateIpGroupResponse> UpdateIpGroupAsync(UpdateIpGroupRequest updateIpGroupRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("ipgroup_id" , updateIpGroupRequest.IpgroupId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/ipgroups/{ipgroup_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateIpGroupRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("ipgroup_id", updateIpGroupRequest.IpgroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/ipgroups/{ipgroup_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateIpGroupRequest);
+            var response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<UpdateIpGroupResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateIpGroupResponse> UpdateIpGroupAsyncInvoker(UpdateIpGroupRequest updateIpGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("ipgroup_id", updateIpGroupRequest.IpgroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/ipgroups/{ipgroup_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateIpGroupRequest);
+            return new AsyncInvoker<UpdateIpGroupResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateIpGroupResponse>);
         }
         
         /// <summary>
@@ -1400,12 +2087,21 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// </summary>
         public async Task<UpdateIpListResponse> UpdateIpListAsync(UpdateIpListRequest updateIpListRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("ipgroup_id" , updateIpListRequest.IpgroupId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/ipgroups/{ipgroup_id}/iplist/create-or-update",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateIpListRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("ipgroup_id", updateIpListRequest.IpgroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/ipgroups/{ipgroup_id}/iplist/create-or-update",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateIpListRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<UpdateIpListResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateIpListResponse> UpdateIpListAsyncInvoker(UpdateIpListRequest updateIpListRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("ipgroup_id", updateIpListRequest.IpgroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/ipgroups/{ipgroup_id}/iplist/create-or-update",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateIpListRequest);
+            return new AsyncInvoker<UpdateIpListResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateIpListResponse>);
         }
         
     }

@@ -24,11 +24,19 @@ namespace HuaweiCloud.SDK.Msgsms.V2
         /// </summary>
         public async Task<CreateAppResponse> CreateAppAsync(CreateAppRequest createAppRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/apps",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAppRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/apps",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAppRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateAppResponse>(response);
+        }
+
+        public AsyncInvoker<CreateAppResponse> CreateAppAsyncInvoker(CreateAppRequest createAppRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/apps",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAppRequest);
+            return new AsyncInvoker<CreateAppResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateAppResponse>);
         }
         
         /// <summary>
@@ -40,11 +48,19 @@ namespace HuaweiCloud.SDK.Msgsms.V2
         /// </summary>
         public async Task<ListAppDetailsResponse> ListAppDetailsAsync(ListAppDetailsRequest listAppDetailsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/apps",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAppDetailsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/apps",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAppDetailsRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListAppDetailsResponse>(response);
+        }
+
+        public AsyncInvoker<ListAppDetailsResponse> ListAppDetailsAsyncInvoker(ListAppDetailsRequest listAppDetailsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/apps",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAppDetailsRequest);
+            return new AsyncInvoker<ListAppDetailsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAppDetailsResponse>);
         }
         
         /// <summary>
@@ -56,12 +72,21 @@ namespace HuaweiCloud.SDK.Msgsms.V2
         /// </summary>
         public async Task<ShowAppResponse> ShowAppAsync(ShowAppRequest showAppRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("id" , showAppRequest.Id.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/apps/{id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAppRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("id", showAppRequest.Id.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/apps/{id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAppRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowAppResponse>(response);
+        }
+
+        public AsyncInvoker<ShowAppResponse> ShowAppAsyncInvoker(ShowAppRequest showAppRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("id", showAppRequest.Id.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/apps/{id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAppRequest);
+            return new AsyncInvoker<ShowAppResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAppResponse>);
         }
         
         /// <summary>
@@ -73,11 +98,19 @@ namespace HuaweiCloud.SDK.Msgsms.V2
         /// </summary>
         public async Task<ShowAppCountResponse> ShowAppCountAsync(ShowAppCountRequest showAppCountRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/apps-count",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAppCountRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/apps-count",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAppCountRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowAppCountResponse>(response);
+        }
+
+        public AsyncInvoker<ShowAppCountResponse> ShowAppCountAsyncInvoker(ShowAppCountRequest showAppCountRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/apps-count",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAppCountRequest);
+            return new AsyncInvoker<ShowAppCountResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAppCountResponse>);
         }
         
         /// <summary>
@@ -89,12 +122,21 @@ namespace HuaweiCloud.SDK.Msgsms.V2
         /// </summary>
         public async Task<UpdateAppResponse> UpdateAppAsync(UpdateAppRequest updateAppRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("id" , updateAppRequest.Id.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/apps/{id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAppRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("id", updateAppRequest.Id.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/apps/{id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAppRequest);
+            var response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<UpdateAppResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateAppResponse> UpdateAppAsyncInvoker(UpdateAppRequest updateAppRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("id", updateAppRequest.Id.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/apps/{id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAppRequest);
+            return new AsyncInvoker<UpdateAppResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateAppResponse>);
         }
         
         /// <summary>
@@ -106,11 +148,19 @@ namespace HuaweiCloud.SDK.Msgsms.V2
         /// </summary>
         public async Task<CreateSignatureResponse> CreateSignatureAsync(CreateSignatureRequest createSignatureRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/signatures",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createSignatureRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/signatures",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createSignatureRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateSignatureResponse>(response);
+        }
+
+        public AsyncInvoker<CreateSignatureResponse> CreateSignatureAsyncInvoker(CreateSignatureRequest createSignatureRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/signatures",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createSignatureRequest);
+            return new AsyncInvoker<CreateSignatureResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateSignatureResponse>);
         }
         
         /// <summary>
@@ -122,12 +172,21 @@ namespace HuaweiCloud.SDK.Msgsms.V2
         /// </summary>
         public async Task<DeleteSignatureResponse> DeleteSignatureAsync(DeleteSignatureRequest deleteSignatureRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("id" , deleteSignatureRequest.Id.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/signatures/{id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSignatureRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("id", deleteSignatureRequest.Id.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/signatures/{id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSignatureRequest);
+            var response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteSignatureResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteSignatureResponse> DeleteSignatureAsyncInvoker(DeleteSignatureRequest deleteSignatureRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("id", deleteSignatureRequest.Id.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/signatures/{id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSignatureRequest);
+            return new AsyncInvoker<DeleteSignatureResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteSignatureResponse>);
         }
         
         /// <summary>
@@ -139,12 +198,21 @@ namespace HuaweiCloud.SDK.Msgsms.V2
         /// </summary>
         public async Task<EnableSignatureResponse> EnableSignatureAsync(EnableSignatureRequest enableSignatureRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("id" , enableSignatureRequest.Id.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/signatures/{id}/active",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", enableSignatureRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("id", enableSignatureRequest.Id.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/signatures/{id}/active",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", enableSignatureRequest);
+            var response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerializeNull<EnableSignatureResponse>(response);
+        }
+
+        public AsyncInvoker<EnableSignatureResponse> EnableSignatureAsyncInvoker(EnableSignatureRequest enableSignatureRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("id", enableSignatureRequest.Id.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/signatures/{id}/active",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", enableSignatureRequest);
+            return new AsyncInvoker<EnableSignatureResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<EnableSignatureResponse>);
         }
         
         /// <summary>
@@ -156,11 +224,19 @@ namespace HuaweiCloud.SDK.Msgsms.V2
         /// </summary>
         public async Task<ListSignatureDetailsResponse> ListSignatureDetailsAsync(ListSignatureDetailsRequest listSignatureDetailsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/signatures",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSignatureDetailsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/signatures",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSignatureDetailsRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListSignatureDetailsResponse>(response);
+        }
+
+        public AsyncInvoker<ListSignatureDetailsResponse> ListSignatureDetailsAsyncInvoker(ListSignatureDetailsRequest listSignatureDetailsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/signatures",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSignatureDetailsRequest);
+            return new AsyncInvoker<ListSignatureDetailsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSignatureDetailsResponse>);
         }
         
         /// <summary>
@@ -172,12 +248,21 @@ namespace HuaweiCloud.SDK.Msgsms.V2
         /// </summary>
         public async Task<ShowSignatureResponse> ShowSignatureAsync(ShowSignatureRequest showSignatureRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("id" , showSignatureRequest.Id.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/signatures/{id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSignatureRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("id", showSignatureRequest.Id.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/signatures/{id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSignatureRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowSignatureResponse>(response);
+        }
+
+        public AsyncInvoker<ShowSignatureResponse> ShowSignatureAsyncInvoker(ShowSignatureRequest showSignatureRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("id", showSignatureRequest.Id.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/signatures/{id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSignatureRequest);
+            return new AsyncInvoker<ShowSignatureResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSignatureResponse>);
         }
         
         /// <summary>
@@ -189,11 +274,19 @@ namespace HuaweiCloud.SDK.Msgsms.V2
         /// </summary>
         public async Task<ShowSignatureFileResponse> ShowSignatureFileAsync(ShowSignatureFileRequest showSignatureFileRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/upload-files",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSignatureFileRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/upload-files",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSignatureFileRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowSignatureFileResponse>(response);
+        }
+
+        public AsyncInvoker<ShowSignatureFileResponse> ShowSignatureFileAsyncInvoker(ShowSignatureFileRequest showSignatureFileRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/upload-files",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSignatureFileRequest);
+            return new AsyncInvoker<ShowSignatureFileResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSignatureFileResponse>);
         }
         
         /// <summary>
@@ -205,12 +298,21 @@ namespace HuaweiCloud.SDK.Msgsms.V2
         /// </summary>
         public async Task<UpdateSignatureResponse> UpdateSignatureAsync(UpdateSignatureRequest updateSignatureRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("id" , updateSignatureRequest.Id.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/signatures/{id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSignatureRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("id", updateSignatureRequest.Id.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/signatures/{id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSignatureRequest);
+            var response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<UpdateSignatureResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateSignatureResponse> UpdateSignatureAsyncInvoker(UpdateSignatureRequest updateSignatureRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("id", updateSignatureRequest.Id.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/signatures/{id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSignatureRequest);
+            return new AsyncInvoker<UpdateSignatureResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateSignatureResponse>);
         }
         
         /// <summary>
@@ -222,11 +324,19 @@ namespace HuaweiCloud.SDK.Msgsms.V2
         /// </summary>
         public async Task<UploadSignatureFileResponse> UploadSignatureFileAsync(UploadSignatureFileRequest uploadSignatureFileRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/upload-files",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", uploadSignatureFileRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/upload-files",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", uploadSignatureFileRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<UploadSignatureFileResponse>(response);
+        }
+
+        public AsyncInvoker<UploadSignatureFileResponse> UploadSignatureFileAsyncInvoker(UploadSignatureFileRequest uploadSignatureFileRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/upload-files",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", uploadSignatureFileRequest);
+            return new AsyncInvoker<UploadSignatureFileResponse>(this, "POST", request, JsonUtils.DeSerialize<UploadSignatureFileResponse>);
         }
         
         /// <summary>
@@ -238,11 +348,19 @@ namespace HuaweiCloud.SDK.Msgsms.V2
         /// </summary>
         public async Task<CreateTemplateResponse> CreateTemplateAsync(CreateTemplateRequest createTemplateRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/templates",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTemplateRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/templates",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTemplateRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateTemplateResponse>(response);
+        }
+
+        public AsyncInvoker<CreateTemplateResponse> CreateTemplateAsyncInvoker(CreateTemplateRequest createTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/templates",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTemplateRequest);
+            return new AsyncInvoker<CreateTemplateResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateTemplateResponse>);
         }
         
         /// <summary>
@@ -254,12 +372,21 @@ namespace HuaweiCloud.SDK.Msgsms.V2
         /// </summary>
         public async Task<DeleteTemplateResponse> DeleteTemplateAsync(DeleteTemplateRequest deleteTemplateRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("id" , deleteTemplateRequest.Id.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/templates/{id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTemplateRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("id", deleteTemplateRequest.Id.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/templates/{id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTemplateRequest);
+            var response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteTemplateResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteTemplateResponse> DeleteTemplateAsyncInvoker(DeleteTemplateRequest deleteTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("id", deleteTemplateRequest.Id.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/templates/{id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTemplateRequest);
+            return new AsyncInvoker<DeleteTemplateResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteTemplateResponse>);
         }
         
         /// <summary>
@@ -271,13 +398,26 @@ namespace HuaweiCloud.SDK.Msgsms.V2
         /// </summary>
         public async Task<ListSendCountryDetailsResponse> ListSendCountryDetailsAsync(ListSendCountryDetailsRequest listSendCountryDetailsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/country",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSendCountryDetailsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
-            ListSendCountryDetailsResponse listSendCountryDetailsResponse = JsonUtils.DeSerializeNull<ListSendCountryDetailsResponse>(response);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/country",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSendCountryDetailsRequest);
+            var response = await DoHttpRequestAsync("GET",request);
+            var listSendCountryDetailsResponse = JsonUtils.DeSerializeNull<ListSendCountryDetailsResponse>(response);
             listSendCountryDetailsResponse.Body = JsonUtils.DeSerializeList<SmsCountryResp>(response);
             return listSendCountryDetailsResponse;
+        }
+
+        public AsyncInvoker<ListSendCountryDetailsResponse> ListSendCountryDetailsAsyncInvoker(ListSendCountryDetailsRequest listSendCountryDetailsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/country",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSendCountryDetailsRequest);
+            return new AsyncInvoker<ListSendCountryDetailsResponse>(this, "GET", request, response =>
+            {
+                var listSendCountryDetailsResponse = JsonUtils.DeSerializeNull<ListSendCountryDetailsResponse>(response);
+                listSendCountryDetailsResponse.Body = JsonUtils.DeSerializeList<SmsCountryResp>(response);
+                return listSendCountryDetailsResponse;
+            });
         }
         
         /// <summary>
@@ -289,11 +429,19 @@ namespace HuaweiCloud.SDK.Msgsms.V2
         /// </summary>
         public async Task<ListTemplateDetailsResponse> ListTemplateDetailsAsync(ListTemplateDetailsRequest listTemplateDetailsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/templates",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTemplateDetailsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/templates",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTemplateDetailsRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListTemplateDetailsResponse>(response);
+        }
+
+        public AsyncInvoker<ListTemplateDetailsResponse> ListTemplateDetailsAsyncInvoker(ListTemplateDetailsRequest listTemplateDetailsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/templates",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTemplateDetailsRequest);
+            return new AsyncInvoker<ListTemplateDetailsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListTemplateDetailsResponse>);
         }
         
         /// <summary>
@@ -305,12 +453,21 @@ namespace HuaweiCloud.SDK.Msgsms.V2
         /// </summary>
         public async Task<ListTemplateVarilableDetailsResponse> ListTemplateVarilableDetailsAsync(ListTemplateVarilableDetailsRequest listTemplateVarilableDetailsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("id" , listTemplateVarilableDetailsRequest.Id.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/templates/{id}/varilable",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTemplateVarilableDetailsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("id", listTemplateVarilableDetailsRequest.Id.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/templates/{id}/varilable",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTemplateVarilableDetailsRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListTemplateVarilableDetailsResponse>(response);
+        }
+
+        public AsyncInvoker<ListTemplateVarilableDetailsResponse> ListTemplateVarilableDetailsAsyncInvoker(ListTemplateVarilableDetailsRequest listTemplateVarilableDetailsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("id", listTemplateVarilableDetailsRequest.Id.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/templates/{id}/varilable",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTemplateVarilableDetailsRequest);
+            return new AsyncInvoker<ListTemplateVarilableDetailsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListTemplateVarilableDetailsResponse>);
         }
         
         /// <summary>
@@ -322,12 +479,21 @@ namespace HuaweiCloud.SDK.Msgsms.V2
         /// </summary>
         public async Task<ShowTemplateResponse> ShowTemplateAsync(ShowTemplateRequest showTemplateRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("id" , showTemplateRequest.Id.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/templates/{id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTemplateRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("id", showTemplateRequest.Id.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/templates/{id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTemplateRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowTemplateResponse>(response);
+        }
+
+        public AsyncInvoker<ShowTemplateResponse> ShowTemplateAsyncInvoker(ShowTemplateRequest showTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("id", showTemplateRequest.Id.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/templates/{id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTemplateRequest);
+            return new AsyncInvoker<ShowTemplateResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTemplateResponse>);
         }
         
         /// <summary>
@@ -339,12 +505,21 @@ namespace HuaweiCloud.SDK.Msgsms.V2
         /// </summary>
         public async Task<UpdateTemplateResponse> UpdateTemplateAsync(UpdateTemplateRequest updateTemplateRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("id" , updateTemplateRequest.Id.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/templates/{id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTemplateRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("id", updateTemplateRequest.Id.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/templates/{id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTemplateRequest);
+            var response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<UpdateTemplateResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateTemplateResponse> UpdateTemplateAsyncInvoker(UpdateTemplateRequest updateTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("id", updateTemplateRequest.Id.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/msgsms/templates/{id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTemplateRequest);
+            return new AsyncInvoker<UpdateTemplateResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateTemplateResponse>);
         }
         
     }

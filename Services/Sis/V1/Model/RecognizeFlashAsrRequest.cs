@@ -737,6 +737,20 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
         [JsonProperty("audio_format", NullValueHandling = NullValueHandling.Ignore)]
         public AudioFormatEnum AudioFormat { get; set; }
         /// <summary>
+        /// obs桶名
+        /// </summary>
+        [SDKProperty("obs_bucket_name", IsQuery = true)]
+        [JsonProperty("obs_bucket_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string ObsBucketName { get; set; }
+
+        /// <summary>
+        /// obs对象key，经过urlencode编码，长度不超过1024个字符
+        /// </summary>
+        [SDKProperty("obs_object_key", IsQuery = true)]
+        [JsonProperty("obs_object_key", NullValueHandling = NullValueHandling.Ignore)]
+        public string ObsObjectKey { get; set; }
+
+        /// <summary>
         /// 是否加标点， 可以为 yes, 默认no
         /// </summary>
         [SDKProperty("add_punc", IsQuery = true)]
@@ -762,20 +776,6 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
         public string VocabularyId { get; set; }
 
         /// <summary>
-        /// obs桶名
-        /// </summary>
-        [SDKProperty("obs_bucket_name", IsQuery = true)]
-        [JsonProperty("obs_bucket_name", NullValueHandling = NullValueHandling.Ignore)]
-        public string ObsBucketName { get; set; }
-
-        /// <summary>
-        /// obs对象key，经过urlencode编码，长度不超过1024个字符
-        /// </summary>
-        [SDKProperty("obs_object_key", IsQuery = true)]
-        [JsonProperty("obs_object_key", NullValueHandling = NullValueHandling.Ignore)]
-        public string ObsObjectKey { get; set; }
-
-        /// <summary>
         /// 表示是否在识别中只识别首个声道的音频数据，取值为“yes”和“no”，默认为“no”。
         /// </summary>
         [SDKProperty("first_channel_only", IsQuery = true)]
@@ -792,12 +792,12 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
             sb.Append("class RecognizeFlashAsrRequest {\n");
             sb.Append("  property: ").Append(Property).Append("\n");
             sb.Append("  audioFormat: ").Append(AudioFormat).Append("\n");
+            sb.Append("  obsBucketName: ").Append(ObsBucketName).Append("\n");
+            sb.Append("  obsObjectKey: ").Append(ObsObjectKey).Append("\n");
             sb.Append("  addPunc: ").Append(AddPunc).Append("\n");
             sb.Append("  digitNorm: ").Append(DigitNorm).Append("\n");
             sb.Append("  needWordInfo: ").Append(NeedWordInfo).Append("\n");
             sb.Append("  vocabularyId: ").Append(VocabularyId).Append("\n");
-            sb.Append("  obsBucketName: ").Append(ObsBucketName).Append("\n");
-            sb.Append("  obsObjectKey: ").Append(ObsObjectKey).Append("\n");
             sb.Append("  firstChannelOnly: ").Append(FirstChannelOnly).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -831,6 +831,16 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
                     this.AudioFormat.Equals(input.AudioFormat))
                 ) && 
                 (
+                    this.ObsBucketName == input.ObsBucketName ||
+                    (this.ObsBucketName != null &&
+                    this.ObsBucketName.Equals(input.ObsBucketName))
+                ) && 
+                (
+                    this.ObsObjectKey == input.ObsObjectKey ||
+                    (this.ObsObjectKey != null &&
+                    this.ObsObjectKey.Equals(input.ObsObjectKey))
+                ) && 
+                (
                     this.AddPunc == input.AddPunc ||
                     (this.AddPunc != null &&
                     this.AddPunc.Equals(input.AddPunc))
@@ -851,16 +861,6 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
                     this.VocabularyId.Equals(input.VocabularyId))
                 ) && 
                 (
-                    this.ObsBucketName == input.ObsBucketName ||
-                    (this.ObsBucketName != null &&
-                    this.ObsBucketName.Equals(input.ObsBucketName))
-                ) && 
-                (
-                    this.ObsObjectKey == input.ObsObjectKey ||
-                    (this.ObsObjectKey != null &&
-                    this.ObsObjectKey.Equals(input.ObsObjectKey))
-                ) && 
-                (
                     this.FirstChannelOnly == input.FirstChannelOnly ||
                     (this.FirstChannelOnly != null &&
                     this.FirstChannelOnly.Equals(input.FirstChannelOnly))
@@ -879,6 +879,10 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
                     hashCode = hashCode * 59 + this.Property.GetHashCode();
                 if (this.AudioFormat != null)
                     hashCode = hashCode * 59 + this.AudioFormat.GetHashCode();
+                if (this.ObsBucketName != null)
+                    hashCode = hashCode * 59 + this.ObsBucketName.GetHashCode();
+                if (this.ObsObjectKey != null)
+                    hashCode = hashCode * 59 + this.ObsObjectKey.GetHashCode();
                 if (this.AddPunc != null)
                     hashCode = hashCode * 59 + this.AddPunc.GetHashCode();
                 if (this.DigitNorm != null)
@@ -887,10 +891,6 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
                     hashCode = hashCode * 59 + this.NeedWordInfo.GetHashCode();
                 if (this.VocabularyId != null)
                     hashCode = hashCode * 59 + this.VocabularyId.GetHashCode();
-                if (this.ObsBucketName != null)
-                    hashCode = hashCode * 59 + this.ObsBucketName.GetHashCode();
-                if (this.ObsObjectKey != null)
-                    hashCode = hashCode * 59 + this.ObsObjectKey.GetHashCode();
                 if (this.FirstChannelOnly != null)
                     hashCode = hashCode * 59 + this.FirstChannelOnly.GetHashCode();
                 return hashCode;

@@ -25,11 +25,19 @@ namespace HuaweiCloud.SDK.Moderation.V2
         /// </summary>
         public async Task<RunCheckResultResponse> RunCheckResultAsync(RunCheckResultRequest runCheckResultRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/moderation/image/batch",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", runCheckResultRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/moderation/image/batch",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", runCheckResultRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<RunCheckResultResponse>(response);
+        }
+
+        public AsyncInvoker<RunCheckResultResponse> RunCheckResultAsyncInvoker(RunCheckResultRequest runCheckResultRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/moderation/image/batch",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", runCheckResultRequest);
+            return new AsyncInvoker<RunCheckResultResponse>(this, "GET", request, JsonUtils.DeSerialize<RunCheckResultResponse>);
         }
         
         /// <summary>
@@ -41,11 +49,19 @@ namespace HuaweiCloud.SDK.Moderation.V2
         /// </summary>
         public async Task<RunCheckTaskJobsResponse> RunCheckTaskJobsAsync(RunCheckTaskJobsRequest runCheckTaskJobsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/moderation/image/batch/jobs",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", runCheckTaskJobsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/moderation/image/batch/jobs",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", runCheckTaskJobsRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<RunCheckTaskJobsResponse>(response);
+        }
+
+        public AsyncInvoker<RunCheckTaskJobsResponse> RunCheckTaskJobsAsyncInvoker(RunCheckTaskJobsRequest runCheckTaskJobsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/moderation/image/batch/jobs",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", runCheckTaskJobsRequest);
+            return new AsyncInvoker<RunCheckTaskJobsResponse>(this, "GET", request, JsonUtils.DeSerialize<RunCheckTaskJobsResponse>);
         }
         
         /// <summary>
@@ -57,11 +73,19 @@ namespace HuaweiCloud.SDK.Moderation.V2
         /// </summary>
         public async Task<RunImageBatchModerationResponse> RunImageBatchModerationAsync(RunImageBatchModerationRequest runImageBatchModerationRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/moderation/image/batch",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", runImageBatchModerationRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/moderation/image/batch",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", runImageBatchModerationRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<RunImageBatchModerationResponse>(response);
+        }
+
+        public AsyncInvoker<RunImageBatchModerationResponse> RunImageBatchModerationAsyncInvoker(RunImageBatchModerationRequest runImageBatchModerationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/moderation/image/batch",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", runImageBatchModerationRequest);
+            return new AsyncInvoker<RunImageBatchModerationResponse>(this, "POST", request, JsonUtils.DeSerialize<RunImageBatchModerationResponse>);
         }
         
         /// <summary>
@@ -73,11 +97,19 @@ namespace HuaweiCloud.SDK.Moderation.V2
         /// </summary>
         public async Task<RunImageModerationResponse> RunImageModerationAsync(RunImageModerationRequest runImageModerationRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/moderation/image",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", runImageModerationRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/moderation/image",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", runImageModerationRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<RunImageModerationResponse>(response);
+        }
+
+        public AsyncInvoker<RunImageModerationResponse> RunImageModerationAsyncInvoker(RunImageModerationRequest runImageModerationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/moderation/image",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", runImageModerationRequest);
+            return new AsyncInvoker<RunImageModerationResponse>(this, "POST", request, JsonUtils.DeSerialize<RunImageModerationResponse>);
         }
         
         /// <summary>
@@ -89,11 +121,19 @@ namespace HuaweiCloud.SDK.Moderation.V2
         /// </summary>
         public async Task<RunModerationAudioResponse> RunModerationAudioAsync(RunModerationAudioRequest runModerationAudioRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/moderation/voice",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", runModerationAudioRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/moderation/voice",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", runModerationAudioRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<RunModerationAudioResponse>(response);
+        }
+
+        public AsyncInvoker<RunModerationAudioResponse> RunModerationAudioAsyncInvoker(RunModerationAudioRequest runModerationAudioRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/moderation/voice",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", runModerationAudioRequest);
+            return new AsyncInvoker<RunModerationAudioResponse>(this, "POST", request, JsonUtils.DeSerialize<RunModerationAudioResponse>);
         }
         
         /// <summary>
@@ -105,11 +145,19 @@ namespace HuaweiCloud.SDK.Moderation.V2
         /// </summary>
         public async Task<RunTaskSumbitResponse> RunTaskSumbitAsync(RunTaskSumbitRequest runTaskSumbitRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/moderation/image/batch/jobs",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", runTaskSumbitRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/moderation/image/batch/jobs",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", runTaskSumbitRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<RunTaskSumbitResponse>(response);
+        }
+
+        public AsyncInvoker<RunTaskSumbitResponse> RunTaskSumbitAsyncInvoker(RunTaskSumbitRequest runTaskSumbitRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/moderation/image/batch/jobs",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", runTaskSumbitRequest);
+            return new AsyncInvoker<RunTaskSumbitResponse>(this, "POST", request, JsonUtils.DeSerialize<RunTaskSumbitResponse>);
         }
         
         /// <summary>
@@ -121,11 +169,19 @@ namespace HuaweiCloud.SDK.Moderation.V2
         /// </summary>
         public async Task<RunTextModerationResponse> RunTextModerationAsync(RunTextModerationRequest runTextModerationRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/moderation/text",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", runTextModerationRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/moderation/text",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", runTextModerationRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<RunTextModerationResponse>(response);
+        }
+
+        public AsyncInvoker<RunTextModerationResponse> RunTextModerationAsyncInvoker(RunTextModerationRequest runTextModerationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/moderation/text",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", runTextModerationRequest);
+            return new AsyncInvoker<RunTextModerationResponse>(this, "POST", request, JsonUtils.DeSerialize<RunTextModerationResponse>);
         }
         
     }

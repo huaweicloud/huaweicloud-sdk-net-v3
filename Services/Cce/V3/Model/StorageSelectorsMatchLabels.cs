@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public string Size { get; set; }
 
         /// <summary>
-        /// 云硬盘类型，目前支持SSD\\GPSSD\\SAS三种。
+        /// 云硬盘类型，目前支持SSD\\GPSSD\\SAS\\ESSD\\SATA等。
         /// </summary>
         [JsonProperty("volumeType", NullValueHandling = NullValueHandling.Ignore)]
         public string VolumeType { get; set; }

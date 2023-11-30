@@ -237,8 +237,10 @@ the [CHANGELOG.md](https://github.com/huaweicloud/huaweicloud-sdk-net-v3/blob/ma
 * [6. Troubleshooting](#6-troubleshooting-top)
     * [6.1 Access Log](#61-access-log-top)
     * [6.2 Original HTTP Listener](#62-original-http-listener-top)
-* [7. Upload Files](#7-upload-files-top)
-* [8. FAQ](#8-faq-top)
+* [7. API Invoker](#7-api-invoker-top)
+    * [7.1 Custom request headers](#71-custom-request-headers-top)
+* [8. Upload Files](#8-upload-files-top)
+* [9. FAQ](#9-faq-top)
 
 ### 1. Client Configuration [:top:](#user-manual-top)
 
@@ -576,7 +578,7 @@ IamClient iamClient = IamClient.NewBuilder()
 
 ##### 3.3.1 IAM endpoint configuration [:top:](#user-manual-top)
 
-Automatically acquiring projectId/domainId will invoke the [KeystoneListProjects](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=IAM&api=KeystoneListProjects) /[KeystoneListAuthDomains](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=IAM&api=KeystoneListAuthDomains) interface of IAM service. The default iam enpoint is `https://iam.myhuaweicloud.com`, **European station users need to specify the endpoint as https://iam.eu-west-101.myhuaweicloud.com**, you can modify the endpoint in the following two ways:
+Automatically acquiring projectId/domainId will invoke the [KeystoneListProjects](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=IAM&api=KeystoneListProjects) /[KeystoneListAuthDomains](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=IAM&api=KeystoneListAuthDomains) interface of IAM service. The default iam enpoint is `https://iam.myhuaweicloud.com`, **European station users need to specify the endpoint as https://iam.eu-west-101.myhuaweicloud.eu**, you can modify the endpoint in the following two ways:
 
 ###### 3.3.1.1 Global scope [:top:](#user-manual-top)
 
@@ -779,7 +781,61 @@ var client = VpcClient.NewBuilder()
 
 HttpHandler supports method `AddRequestHandler` and `AddResponseHandler`.
 
-### 7. Upload Files [:top:](#user-manual-top)
+### 7. API Invoker [:top:](#user-manual-top)
+
+#### 7.1 Custom request headers [:top:](#user-manual-top)
+
+You can flexibly configure request headers as needed. **Do not** specify common request headers such as `Host`, `Authorization`, `User-Agent`, `Content-Type` unless necessary, as this may cause the errors.
+
+**Sync invoke**
+
+```csharp
+using System;
+using System.Net.Http;
+using HuaweiCloud.SDK.Core;
+using HuaweiCloud.SDK.Core.Auth;
+using HuaweiCloud.SDK.Vpc.V2;
+using HuaweiCloud.SDK.Vpc.V2.Model;
+
+var client = VpcClient.NewBuilder()
+    .WithCredential(auth)
+    .WithRegion(VpcRegion.ValueOf("cn-north-4"))
+    .Build();
+
+var req = new ListVpcsRequest();
+var resp = client.ListVpcsInvoker(req)
+    // Custom request headers
+    .AddHeader("key1", "value1")
+    .AddHeader("key2", "value2")
+    .Invoke();
+Console.WriteLine(resp.HttpStatusCode);
+```
+
+**Async invoke**
+
+```csharp
+using System;
+using System.Net.Http;
+using HuaweiCloud.SDK.Core;
+using HuaweiCloud.SDK.Core.Auth;
+using HuaweiCloud.SDK.Vpc.V2;
+using HuaweiCloud.SDK.Vpc.V2.Model;
+
+var client = VpcAsyncClient.NewBuilder()
+    .WithCredential(auth)
+    .WithRegion(VpcRegion.ValueOf("cn-north-4"))
+    .Build();
+
+var req = new ListVpcsRequest();
+var resp = await client.ListVpcsAsyncInvoker(req)
+    // Custom request headers
+    .AddHeader("key1", "value1")
+    .AddHeader("key2", "value2")
+    .Invoke();
+Console.WriteLine(resp.HttpStatusCode);
+```
+
+### 8. Upload Files [:top:](#user-manual-top)
 
 Take the interface `UploadBatchTaskFile` of the service `IoT Device Access` as an example:
 
@@ -836,7 +892,7 @@ namespace UploadBatchTaskFileDemo
 }
 ```
 
-### 8. FAQ [:top:](#user-manual-top)
+### 9. FAQ [:top:](#user-manual-top)
 
 1 Using .NET Framework 4.7 to integrate .NET SDK, an exception throws - ProtocolViolationException: Cannot send a content-body with this verb-type
 

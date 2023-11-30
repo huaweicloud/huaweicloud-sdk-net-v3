@@ -24,12 +24,21 @@ namespace HuaweiCloud.SDK.Kms.V2
         /// </summary>
         public async Task<BatchCreateKmsTagsResponse> BatchCreateKmsTagsAsync(BatchCreateKmsTagsRequest batchCreateKmsTagsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("key_id" , batchCreateKmsTagsRequest.KeyId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/{key_id}/tags/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchCreateKmsTagsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("key_id", batchCreateKmsTagsRequest.KeyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/{key_id}/tags/action",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchCreateKmsTagsRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerializeNull<BatchCreateKmsTagsResponse>(response);
+        }
+
+        public AsyncInvoker<BatchCreateKmsTagsResponse> BatchCreateKmsTagsAsyncInvoker(BatchCreateKmsTagsRequest batchCreateKmsTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("key_id", batchCreateKmsTagsRequest.KeyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/{key_id}/tags/action",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchCreateKmsTagsRequest);
+            return new AsyncInvoker<BatchCreateKmsTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchCreateKmsTagsResponse>);
         }
         
         /// <summary>
@@ -43,11 +52,19 @@ namespace HuaweiCloud.SDK.Kms.V2
         /// </summary>
         public async Task<CancelGrantResponse> CancelGrantAsync(CancelGrantRequest cancelGrantRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/revoke-grant",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", cancelGrantRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/revoke-grant",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", cancelGrantRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerializeNull<CancelGrantResponse>(response);
+        }
+
+        public AsyncInvoker<CancelGrantResponse> CancelGrantAsyncInvoker(CancelGrantRequest cancelGrantRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/revoke-grant",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", cancelGrantRequest);
+            return new AsyncInvoker<CancelGrantResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CancelGrantResponse>);
         }
         
         /// <summary>
@@ -60,11 +77,19 @@ namespace HuaweiCloud.SDK.Kms.V2
         /// </summary>
         public async Task<CancelKeyDeletionResponse> CancelKeyDeletionAsync(CancelKeyDeletionRequest cancelKeyDeletionRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/cancel-key-deletion",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", cancelKeyDeletionRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/cancel-key-deletion",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", cancelKeyDeletionRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CancelKeyDeletionResponse>(response);
+        }
+
+        public AsyncInvoker<CancelKeyDeletionResponse> CancelKeyDeletionAsyncInvoker(CancelKeyDeletionRequest cancelKeyDeletionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/cancel-key-deletion",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", cancelKeyDeletionRequest);
+            return new AsyncInvoker<CancelKeyDeletionResponse>(this, "POST", request, JsonUtils.DeSerialize<CancelKeyDeletionResponse>);
         }
         
         /// <summary>
@@ -83,11 +108,19 @@ namespace HuaweiCloud.SDK.Kms.V2
         /// </summary>
         public async Task<CancelSelfGrantResponse> CancelSelfGrantAsync(CancelSelfGrantRequest cancelSelfGrantRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/retire-grant",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", cancelSelfGrantRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/retire-grant",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", cancelSelfGrantRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerializeNull<CancelSelfGrantResponse>(response);
+        }
+
+        public AsyncInvoker<CancelSelfGrantResponse> CancelSelfGrantAsyncInvoker(CancelSelfGrantRequest cancelSelfGrantRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/retire-grant",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", cancelSelfGrantRequest);
+            return new AsyncInvoker<CancelSelfGrantResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CancelSelfGrantResponse>);
         }
         
         /// <summary>
@@ -99,11 +132,19 @@ namespace HuaweiCloud.SDK.Kms.V2
         /// </summary>
         public async Task<CreateDatakeyResponse> CreateDatakeyAsync(CreateDatakeyRequest createDatakeyRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/create-datakey",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createDatakeyRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/create-datakey",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createDatakeyRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateDatakeyResponse>(response);
+        }
+
+        public AsyncInvoker<CreateDatakeyResponse> CreateDatakeyAsyncInvoker(CreateDatakeyRequest createDatakeyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/create-datakey",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createDatakeyRequest);
+            return new AsyncInvoker<CreateDatakeyResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateDatakeyResponse>);
         }
         
         /// <summary>
@@ -115,11 +156,19 @@ namespace HuaweiCloud.SDK.Kms.V2
         /// </summary>
         public async Task<CreateDatakeyWithoutPlaintextResponse> CreateDatakeyWithoutPlaintextAsync(CreateDatakeyWithoutPlaintextRequest createDatakeyWithoutPlaintextRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/create-datakey-without-plaintext",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createDatakeyWithoutPlaintextRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/create-datakey-without-plaintext",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createDatakeyWithoutPlaintextRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateDatakeyWithoutPlaintextResponse>(response);
+        }
+
+        public AsyncInvoker<CreateDatakeyWithoutPlaintextResponse> CreateDatakeyWithoutPlaintextAsyncInvoker(CreateDatakeyWithoutPlaintextRequest createDatakeyWithoutPlaintextRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/create-datakey-without-plaintext",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createDatakeyWithoutPlaintextRequest);
+            return new AsyncInvoker<CreateDatakeyWithoutPlaintextResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateDatakeyWithoutPlaintextResponse>);
         }
         
         /// <summary>
@@ -133,11 +182,19 @@ namespace HuaweiCloud.SDK.Kms.V2
         /// </summary>
         public async Task<CreateGrantResponse> CreateGrantAsync(CreateGrantRequest createGrantRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/create-grant",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createGrantRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/create-grant",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createGrantRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateGrantResponse>(response);
+        }
+
+        public AsyncInvoker<CreateGrantResponse> CreateGrantAsyncInvoker(CreateGrantRequest createGrantRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/create-grant",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createGrantRequest);
+            return new AsyncInvoker<CreateGrantResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateGrantResponse>);
         }
         
         /// <summary>
@@ -151,11 +208,19 @@ namespace HuaweiCloud.SDK.Kms.V2
         /// </summary>
         public async Task<CreateKeyResponse> CreateKeyAsync(CreateKeyRequest createKeyRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/create-key",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createKeyRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/create-key",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createKeyRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateKeyResponse>(response);
+        }
+
+        public AsyncInvoker<CreateKeyResponse> CreateKeyAsyncInvoker(CreateKeyRequest createKeyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/create-key",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createKeyRequest);
+            return new AsyncInvoker<CreateKeyResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateKeyResponse>);
         }
         
         /// <summary>
@@ -167,11 +232,19 @@ namespace HuaweiCloud.SDK.Kms.V2
         /// </summary>
         public async Task<CreateKeyStoreResponse> CreateKeyStoreAsync(CreateKeyStoreRequest createKeyStoreRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/keystores",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createKeyStoreRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/keystores",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createKeyStoreRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateKeyStoreResponse>(response);
+        }
+
+        public AsyncInvoker<CreateKeyStoreResponse> CreateKeyStoreAsyncInvoker(CreateKeyStoreRequest createKeyStoreRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/keystores",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createKeyStoreRequest);
+            return new AsyncInvoker<CreateKeyStoreResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateKeyStoreResponse>);
         }
         
         /// <summary>
@@ -183,12 +256,21 @@ namespace HuaweiCloud.SDK.Kms.V2
         /// </summary>
         public async Task<CreateKmsTagResponse> CreateKmsTagAsync(CreateKmsTagRequest createKmsTagRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("key_id" , createKmsTagRequest.KeyId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/{key_id}/tags",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createKmsTagRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("key_id", createKmsTagRequest.KeyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/{key_id}/tags",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createKmsTagRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerializeNull<CreateKmsTagResponse>(response);
+        }
+
+        public AsyncInvoker<CreateKmsTagResponse> CreateKmsTagAsyncInvoker(CreateKmsTagRequest createKmsTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("key_id", createKmsTagRequest.KeyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/{key_id}/tags",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createKmsTagRequest);
+            return new AsyncInvoker<CreateKmsTagResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateKmsTagResponse>);
         }
         
         /// <summary>
@@ -201,11 +283,19 @@ namespace HuaweiCloud.SDK.Kms.V2
         /// </summary>
         public async Task<CreateParametersForImportResponse> CreateParametersForImportAsync(CreateParametersForImportRequest createParametersForImportRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/get-parameters-for-import",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createParametersForImportRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/get-parameters-for-import",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createParametersForImportRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateParametersForImportResponse>(response);
+        }
+
+        public AsyncInvoker<CreateParametersForImportResponse> CreateParametersForImportAsyncInvoker(CreateParametersForImportRequest createParametersForImportRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/get-parameters-for-import",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createParametersForImportRequest);
+            return new AsyncInvoker<CreateParametersForImportResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateParametersForImportResponse>);
         }
         
         /// <summary>
@@ -218,11 +308,19 @@ namespace HuaweiCloud.SDK.Kms.V2
         /// </summary>
         public async Task<CreateRandomResponse> CreateRandomAsync(CreateRandomRequest createRandomRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/gen-random",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createRandomRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/gen-random",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createRandomRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateRandomResponse>(response);
+        }
+
+        public AsyncInvoker<CreateRandomResponse> CreateRandomAsyncInvoker(CreateRandomRequest createRandomRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/gen-random",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createRandomRequest);
+            return new AsyncInvoker<CreateRandomResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateRandomResponse>);
         }
         
         /// <summary>
@@ -234,11 +332,19 @@ namespace HuaweiCloud.SDK.Kms.V2
         /// </summary>
         public async Task<DecryptDataResponse> DecryptDataAsync(DecryptDataRequest decryptDataRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/decrypt-data",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", decryptDataRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/decrypt-data",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", decryptDataRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<DecryptDataResponse>(response);
+        }
+
+        public AsyncInvoker<DecryptDataResponse> DecryptDataAsyncInvoker(DecryptDataRequest decryptDataRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/decrypt-data",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", decryptDataRequest);
+            return new AsyncInvoker<DecryptDataResponse>(this, "POST", request, JsonUtils.DeSerialize<DecryptDataResponse>);
         }
         
         /// <summary>
@@ -250,11 +356,19 @@ namespace HuaweiCloud.SDK.Kms.V2
         /// </summary>
         public async Task<DecryptDatakeyResponse> DecryptDatakeyAsync(DecryptDatakeyRequest decryptDatakeyRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/decrypt-datakey",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", decryptDatakeyRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/decrypt-datakey",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", decryptDatakeyRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<DecryptDatakeyResponse>(response);
+        }
+
+        public AsyncInvoker<DecryptDatakeyResponse> DecryptDatakeyAsyncInvoker(DecryptDatakeyRequest decryptDatakeyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/decrypt-datakey",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", decryptDatakeyRequest);
+            return new AsyncInvoker<DecryptDatakeyResponse>(this, "POST", request, JsonUtils.DeSerialize<DecryptDatakeyResponse>);
         }
         
         /// <summary>
@@ -266,11 +380,19 @@ namespace HuaweiCloud.SDK.Kms.V2
         /// </summary>
         public async Task<DeleteImportedKeyMaterialResponse> DeleteImportedKeyMaterialAsync(DeleteImportedKeyMaterialRequest deleteImportedKeyMaterialRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/delete-imported-key-material",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteImportedKeyMaterialRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/delete-imported-key-material",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteImportedKeyMaterialRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerializeNull<DeleteImportedKeyMaterialResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteImportedKeyMaterialResponse> DeleteImportedKeyMaterialAsyncInvoker(DeleteImportedKeyMaterialRequest deleteImportedKeyMaterialRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/delete-imported-key-material",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteImportedKeyMaterialRequest);
+            return new AsyncInvoker<DeleteImportedKeyMaterialResponse>(this, "POST", request, JsonUtils.DeSerializeNull<DeleteImportedKeyMaterialResponse>);
         }
         
         /// <summary>
@@ -282,11 +404,19 @@ namespace HuaweiCloud.SDK.Kms.V2
         /// </summary>
         public async Task<DeleteKeyResponse> DeleteKeyAsync(DeleteKeyRequest deleteKeyRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/schedule-key-deletion",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteKeyRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/schedule-key-deletion",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteKeyRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<DeleteKeyResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteKeyResponse> DeleteKeyAsyncInvoker(DeleteKeyRequest deleteKeyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/schedule-key-deletion",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteKeyRequest);
+            return new AsyncInvoker<DeleteKeyResponse>(this, "POST", request, JsonUtils.DeSerialize<DeleteKeyResponse>);
         }
         
         /// <summary>
@@ -298,12 +428,21 @@ namespace HuaweiCloud.SDK.Kms.V2
         /// </summary>
         public async Task<DeleteKeyStoreResponse> DeleteKeyStoreAsync(DeleteKeyStoreRequest deleteKeyStoreRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("keystore_id" , deleteKeyStoreRequest.KeystoreId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/keystores/{keystore_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteKeyStoreRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("keystore_id", deleteKeyStoreRequest.KeystoreId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/keystores/{keystore_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteKeyStoreRequest);
+            var response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteKeyStoreResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteKeyStoreResponse> DeleteKeyStoreAsyncInvoker(DeleteKeyStoreRequest deleteKeyStoreRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("keystore_id", deleteKeyStoreRequest.KeystoreId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/keystores/{keystore_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteKeyStoreRequest);
+            return new AsyncInvoker<DeleteKeyStoreResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteKeyStoreResponse>);
         }
         
         /// <summary>
@@ -315,13 +454,23 @@ namespace HuaweiCloud.SDK.Kms.V2
         /// </summary>
         public async Task<DeleteTagResponse> DeleteTagAsync(DeleteTagRequest deleteTagRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("key_id" , deleteTagRequest.KeyId.ToString());
-            urlParam.Add("key" , deleteTagRequest.Key.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/{key_id}/tags/{key}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTagRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("key_id", deleteTagRequest.KeyId.ToString());
+            urlParam.Add("key", deleteTagRequest.Key.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/{key_id}/tags/{key}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTagRequest);
+            var response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteTagResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteTagResponse> DeleteTagAsyncInvoker(DeleteTagRequest deleteTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("key_id", deleteTagRequest.KeyId.ToString());
+            urlParam.Add("key", deleteTagRequest.Key.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/{key_id}/tags/{key}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTagRequest);
+            return new AsyncInvoker<DeleteTagResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteTagResponse>);
         }
         
         /// <summary>
@@ -334,11 +483,19 @@ namespace HuaweiCloud.SDK.Kms.V2
         /// </summary>
         public async Task<DisableKeyResponse> DisableKeyAsync(DisableKeyRequest disableKeyRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/disable-key",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", disableKeyRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/disable-key",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", disableKeyRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<DisableKeyResponse>(response);
+        }
+
+        public AsyncInvoker<DisableKeyResponse> DisableKeyAsyncInvoker(DisableKeyRequest disableKeyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/disable-key",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", disableKeyRequest);
+            return new AsyncInvoker<DisableKeyResponse>(this, "POST", request, JsonUtils.DeSerialize<DisableKeyResponse>);
         }
         
         /// <summary>
@@ -350,11 +507,19 @@ namespace HuaweiCloud.SDK.Kms.V2
         /// </summary>
         public async Task<DisableKeyRotationResponse> DisableKeyRotationAsync(DisableKeyRotationRequest disableKeyRotationRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/disable-key-rotation",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", disableKeyRotationRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/disable-key-rotation",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", disableKeyRotationRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerializeNull<DisableKeyRotationResponse>(response);
+        }
+
+        public AsyncInvoker<DisableKeyRotationResponse> DisableKeyRotationAsyncInvoker(DisableKeyRotationRequest disableKeyRotationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/disable-key-rotation",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", disableKeyRotationRequest);
+            return new AsyncInvoker<DisableKeyRotationResponse>(this, "POST", request, JsonUtils.DeSerializeNull<DisableKeyRotationResponse>);
         }
         
         /// <summary>
@@ -366,12 +531,21 @@ namespace HuaweiCloud.SDK.Kms.V2
         /// </summary>
         public async Task<DisableKeyStoreResponse> DisableKeyStoreAsync(DisableKeyStoreRequest disableKeyStoreRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("keystore_id" , disableKeyStoreRequest.KeystoreId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/keystores/{keystore_id}/disable",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", disableKeyStoreRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("keystore_id", disableKeyStoreRequest.KeystoreId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/keystores/{keystore_id}/disable",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disableKeyStoreRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<DisableKeyStoreResponse>(response);
+        }
+
+        public AsyncInvoker<DisableKeyStoreResponse> DisableKeyStoreAsyncInvoker(DisableKeyStoreRequest disableKeyStoreRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("keystore_id", disableKeyStoreRequest.KeystoreId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/keystores/{keystore_id}/disable",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disableKeyStoreRequest);
+            return new AsyncInvoker<DisableKeyStoreResponse>(this, "POST", request, JsonUtils.DeSerialize<DisableKeyStoreResponse>);
         }
         
         /// <summary>
@@ -384,11 +558,19 @@ namespace HuaweiCloud.SDK.Kms.V2
         /// </summary>
         public async Task<EnableKeyResponse> EnableKeyAsync(EnableKeyRequest enableKeyRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/enable-key",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", enableKeyRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/enable-key",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", enableKeyRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<EnableKeyResponse>(response);
+        }
+
+        public AsyncInvoker<EnableKeyResponse> EnableKeyAsyncInvoker(EnableKeyRequest enableKeyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/enable-key",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", enableKeyRequest);
+            return new AsyncInvoker<EnableKeyResponse>(this, "POST", request, JsonUtils.DeSerialize<EnableKeyResponse>);
         }
         
         /// <summary>
@@ -403,11 +585,19 @@ namespace HuaweiCloud.SDK.Kms.V2
         /// </summary>
         public async Task<EnableKeyRotationResponse> EnableKeyRotationAsync(EnableKeyRotationRequest enableKeyRotationRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/enable-key-rotation",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", enableKeyRotationRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/enable-key-rotation",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", enableKeyRotationRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerializeNull<EnableKeyRotationResponse>(response);
+        }
+
+        public AsyncInvoker<EnableKeyRotationResponse> EnableKeyRotationAsyncInvoker(EnableKeyRotationRequest enableKeyRotationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/enable-key-rotation",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", enableKeyRotationRequest);
+            return new AsyncInvoker<EnableKeyRotationResponse>(this, "POST", request, JsonUtils.DeSerializeNull<EnableKeyRotationResponse>);
         }
         
         /// <summary>
@@ -419,12 +609,21 @@ namespace HuaweiCloud.SDK.Kms.V2
         /// </summary>
         public async Task<EnableKeyStoreResponse> EnableKeyStoreAsync(EnableKeyStoreRequest enableKeyStoreRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("keystore_id" , enableKeyStoreRequest.KeystoreId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/keystores/{keystore_id}/enable",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", enableKeyStoreRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("keystore_id", enableKeyStoreRequest.KeystoreId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/keystores/{keystore_id}/enable",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", enableKeyStoreRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<EnableKeyStoreResponse>(response);
+        }
+
+        public AsyncInvoker<EnableKeyStoreResponse> EnableKeyStoreAsyncInvoker(EnableKeyStoreRequest enableKeyStoreRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("keystore_id", enableKeyStoreRequest.KeystoreId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/keystores/{keystore_id}/enable",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", enableKeyStoreRequest);
+            return new AsyncInvoker<EnableKeyStoreResponse>(this, "POST", request, JsonUtils.DeSerialize<EnableKeyStoreResponse>);
         }
         
         /// <summary>
@@ -436,11 +635,19 @@ namespace HuaweiCloud.SDK.Kms.V2
         /// </summary>
         public async Task<EncryptDataResponse> EncryptDataAsync(EncryptDataRequest encryptDataRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/encrypt-data",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", encryptDataRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/encrypt-data",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", encryptDataRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<EncryptDataResponse>(response);
+        }
+
+        public AsyncInvoker<EncryptDataResponse> EncryptDataAsyncInvoker(EncryptDataRequest encryptDataRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/encrypt-data",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", encryptDataRequest);
+            return new AsyncInvoker<EncryptDataResponse>(this, "POST", request, JsonUtils.DeSerialize<EncryptDataResponse>);
         }
         
         /// <summary>
@@ -452,11 +659,19 @@ namespace HuaweiCloud.SDK.Kms.V2
         /// </summary>
         public async Task<EncryptDatakeyResponse> EncryptDatakeyAsync(EncryptDatakeyRequest encryptDatakeyRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/encrypt-datakey",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", encryptDatakeyRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/encrypt-datakey",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", encryptDatakeyRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<EncryptDatakeyResponse>(response);
+        }
+
+        public AsyncInvoker<EncryptDatakeyResponse> EncryptDatakeyAsyncInvoker(EncryptDatakeyRequest encryptDatakeyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/encrypt-datakey",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", encryptDatakeyRequest);
+            return new AsyncInvoker<EncryptDatakeyResponse>(this, "POST", request, JsonUtils.DeSerialize<EncryptDatakeyResponse>);
         }
         
         /// <summary>
@@ -468,11 +683,19 @@ namespace HuaweiCloud.SDK.Kms.V2
         /// </summary>
         public async Task<ImportKeyMaterialResponse> ImportKeyMaterialAsync(ImportKeyMaterialRequest importKeyMaterialRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/import-key-material",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", importKeyMaterialRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/import-key-material",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", importKeyMaterialRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerializeNull<ImportKeyMaterialResponse>(response);
+        }
+
+        public AsyncInvoker<ImportKeyMaterialResponse> ImportKeyMaterialAsyncInvoker(ImportKeyMaterialRequest importKeyMaterialRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/import-key-material",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", importKeyMaterialRequest);
+            return new AsyncInvoker<ImportKeyMaterialResponse>(this, "POST", request, JsonUtils.DeSerializeNull<ImportKeyMaterialResponse>);
         }
         
         /// <summary>
@@ -484,11 +707,19 @@ namespace HuaweiCloud.SDK.Kms.V2
         /// </summary>
         public async Task<ListGrantsResponse> ListGrantsAsync(ListGrantsRequest listGrantsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/list-grants",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listGrantsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/list-grants",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listGrantsRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<ListGrantsResponse>(response);
+        }
+
+        public AsyncInvoker<ListGrantsResponse> ListGrantsAsyncInvoker(ListGrantsRequest listGrantsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/list-grants",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listGrantsRequest);
+            return new AsyncInvoker<ListGrantsResponse>(this, "POST", request, JsonUtils.DeSerialize<ListGrantsResponse>);
         }
         
         /// <summary>
@@ -500,11 +731,19 @@ namespace HuaweiCloud.SDK.Kms.V2
         /// </summary>
         public async Task<ListKeyDetailResponse> ListKeyDetailAsync(ListKeyDetailRequest listKeyDetailRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/describe-key",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listKeyDetailRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/describe-key",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listKeyDetailRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<ListKeyDetailResponse>(response);
+        }
+
+        public AsyncInvoker<ListKeyDetailResponse> ListKeyDetailAsyncInvoker(ListKeyDetailRequest listKeyDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/describe-key",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listKeyDetailRequest);
+            return new AsyncInvoker<ListKeyDetailResponse>(this, "POST", request, JsonUtils.DeSerialize<ListKeyDetailResponse>);
         }
         
         /// <summary>
@@ -516,11 +755,19 @@ namespace HuaweiCloud.SDK.Kms.V2
         /// </summary>
         public async Task<ListKeyStoresResponse> ListKeyStoresAsync(ListKeyStoresRequest listKeyStoresRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/keystores",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listKeyStoresRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/keystores",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listKeyStoresRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListKeyStoresResponse>(response);
+        }
+
+        public AsyncInvoker<ListKeyStoresResponse> ListKeyStoresAsyncInvoker(ListKeyStoresRequest listKeyStoresRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/keystores",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listKeyStoresRequest);
+            return new AsyncInvoker<ListKeyStoresResponse>(this, "GET", request, JsonUtils.DeSerialize<ListKeyStoresResponse>);
         }
         
         /// <summary>
@@ -532,11 +779,19 @@ namespace HuaweiCloud.SDK.Kms.V2
         /// </summary>
         public async Task<ListKeysResponse> ListKeysAsync(ListKeysRequest listKeysRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/list-keys",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listKeysRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/list-keys",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listKeysRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<ListKeysResponse>(response);
+        }
+
+        public AsyncInvoker<ListKeysResponse> ListKeysAsyncInvoker(ListKeysRequest listKeysRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/list-keys",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listKeysRequest);
+            return new AsyncInvoker<ListKeysResponse>(this, "POST", request, JsonUtils.DeSerialize<ListKeysResponse>);
         }
         
         /// <summary>
@@ -548,12 +803,21 @@ namespace HuaweiCloud.SDK.Kms.V2
         /// </summary>
         public async Task<ListKmsByTagsResponse> ListKmsByTagsAsync(ListKmsByTagsRequest listKmsByTagsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_instances" , listKmsByTagsRequest.ResourceInstances.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/{resource_instances}/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listKmsByTagsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_instances", listKmsByTagsRequest.ResourceInstances.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/{resource_instances}/action",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listKmsByTagsRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<ListKmsByTagsResponse>(response);
+        }
+
+        public AsyncInvoker<ListKmsByTagsResponse> ListKmsByTagsAsyncInvoker(ListKmsByTagsRequest listKmsByTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_instances", listKmsByTagsRequest.ResourceInstances.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/{resource_instances}/action",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listKmsByTagsRequest);
+            return new AsyncInvoker<ListKmsByTagsResponse>(this, "POST", request, JsonUtils.DeSerialize<ListKmsByTagsResponse>);
         }
         
         /// <summary>
@@ -565,11 +829,19 @@ namespace HuaweiCloud.SDK.Kms.V2
         /// </summary>
         public async Task<ListKmsTagsResponse> ListKmsTagsAsync(ListKmsTagsRequest listKmsTagsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/tags",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listKmsTagsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/tags",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listKmsTagsRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListKmsTagsResponse>(response);
+        }
+
+        public AsyncInvoker<ListKmsTagsResponse> ListKmsTagsAsyncInvoker(ListKmsTagsRequest listKmsTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/tags",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listKmsTagsRequest);
+            return new AsyncInvoker<ListKmsTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListKmsTagsResponse>);
         }
         
         /// <summary>
@@ -581,11 +853,19 @@ namespace HuaweiCloud.SDK.Kms.V2
         /// </summary>
         public async Task<ListRetirableGrantsResponse> ListRetirableGrantsAsync(ListRetirableGrantsRequest listRetirableGrantsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/list-retirable-grants",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listRetirableGrantsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/list-retirable-grants",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listRetirableGrantsRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<ListRetirableGrantsResponse>(response);
+        }
+
+        public AsyncInvoker<ListRetirableGrantsResponse> ListRetirableGrantsAsyncInvoker(ListRetirableGrantsRequest listRetirableGrantsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/list-retirable-grants",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listRetirableGrantsRequest);
+            return new AsyncInvoker<ListRetirableGrantsResponse>(this, "POST", request, JsonUtils.DeSerialize<ListRetirableGrantsResponse>);
         }
         
         /// <summary>
@@ -597,11 +877,19 @@ namespace HuaweiCloud.SDK.Kms.V2
         /// </summary>
         public async Task<ShowKeyRotationStatusResponse> ShowKeyRotationStatusAsync(ShowKeyRotationStatusRequest showKeyRotationStatusRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/get-key-rotation-status",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", showKeyRotationStatusRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/get-key-rotation-status",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", showKeyRotationStatusRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<ShowKeyRotationStatusResponse>(response);
+        }
+
+        public AsyncInvoker<ShowKeyRotationStatusResponse> ShowKeyRotationStatusAsyncInvoker(ShowKeyRotationStatusRequest showKeyRotationStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/get-key-rotation-status",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", showKeyRotationStatusRequest);
+            return new AsyncInvoker<ShowKeyRotationStatusResponse>(this, "POST", request, JsonUtils.DeSerialize<ShowKeyRotationStatusResponse>);
         }
         
         /// <summary>
@@ -613,12 +901,21 @@ namespace HuaweiCloud.SDK.Kms.V2
         /// </summary>
         public async Task<ShowKeyStoreResponse> ShowKeyStoreAsync(ShowKeyStoreRequest showKeyStoreRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("keystore_id" , showKeyStoreRequest.KeystoreId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/keystores/{keystore_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKeyStoreRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("keystore_id", showKeyStoreRequest.KeystoreId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/keystores/{keystore_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKeyStoreRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowKeyStoreResponse>(response);
+        }
+
+        public AsyncInvoker<ShowKeyStoreResponse> ShowKeyStoreAsyncInvoker(ShowKeyStoreRequest showKeyStoreRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("keystore_id", showKeyStoreRequest.KeystoreId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/keystores/{keystore_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKeyStoreRequest);
+            return new AsyncInvoker<ShowKeyStoreResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowKeyStoreResponse>);
         }
         
         /// <summary>
@@ -630,12 +927,21 @@ namespace HuaweiCloud.SDK.Kms.V2
         /// </summary>
         public async Task<ShowKmsTagsResponse> ShowKmsTagsAsync(ShowKmsTagsRequest showKmsTagsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("key_id" , showKmsTagsRequest.KeyId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/{key_id}/tags",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKmsTagsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("key_id", showKmsTagsRequest.KeyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/{key_id}/tags",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKmsTagsRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowKmsTagsResponse>(response);
+        }
+
+        public AsyncInvoker<ShowKmsTagsResponse> ShowKmsTagsAsyncInvoker(ShowKmsTagsRequest showKmsTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("key_id", showKmsTagsRequest.KeyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/{key_id}/tags",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKmsTagsRequest);
+            return new AsyncInvoker<ShowKmsTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowKmsTagsResponse>);
         }
         
         /// <summary>
@@ -647,11 +953,19 @@ namespace HuaweiCloud.SDK.Kms.V2
         /// </summary>
         public async Task<ShowPublicKeyResponse> ShowPublicKeyAsync(ShowPublicKeyRequest showPublicKeyRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/get-publickey",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", showPublicKeyRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/get-publickey",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", showPublicKeyRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<ShowPublicKeyResponse>(response);
+        }
+
+        public AsyncInvoker<ShowPublicKeyResponse> ShowPublicKeyAsyncInvoker(ShowPublicKeyRequest showPublicKeyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/get-publickey",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", showPublicKeyRequest);
+            return new AsyncInvoker<ShowPublicKeyResponse>(this, "POST", request, JsonUtils.DeSerialize<ShowPublicKeyResponse>);
         }
         
         /// <summary>
@@ -663,11 +977,19 @@ namespace HuaweiCloud.SDK.Kms.V2
         /// </summary>
         public async Task<ShowUserInstancesResponse> ShowUserInstancesAsync(ShowUserInstancesRequest showUserInstancesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/user-instances",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUserInstancesRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/user-instances",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUserInstancesRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowUserInstancesResponse>(response);
+        }
+
+        public AsyncInvoker<ShowUserInstancesResponse> ShowUserInstancesAsyncInvoker(ShowUserInstancesRequest showUserInstancesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/user-instances",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUserInstancesRequest);
+            return new AsyncInvoker<ShowUserInstancesResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowUserInstancesResponse>);
         }
         
         /// <summary>
@@ -679,11 +1001,19 @@ namespace HuaweiCloud.SDK.Kms.V2
         /// </summary>
         public async Task<ShowUserQuotasResponse> ShowUserQuotasAsync(ShowUserQuotasRequest showUserQuotasRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/user-quotas",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUserQuotasRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/user-quotas",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUserQuotasRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowUserQuotasResponse>(response);
+        }
+
+        public AsyncInvoker<ShowUserQuotasResponse> ShowUserQuotasAsyncInvoker(ShowUserQuotasRequest showUserQuotasRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/user-quotas",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUserQuotasRequest);
+            return new AsyncInvoker<ShowUserQuotasResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowUserQuotasResponse>);
         }
         
         /// <summary>
@@ -695,11 +1025,19 @@ namespace HuaweiCloud.SDK.Kms.V2
         /// </summary>
         public async Task<SignResponse> SignAsync(SignRequest signRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/sign",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", signRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/sign",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", signRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<SignResponse>(response);
+        }
+
+        public AsyncInvoker<SignResponse> SignAsyncInvoker(SignRequest signRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/sign",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", signRequest);
+            return new AsyncInvoker<SignResponse>(this, "POST", request, JsonUtils.DeSerialize<SignResponse>);
         }
         
         /// <summary>
@@ -714,11 +1052,19 @@ namespace HuaweiCloud.SDK.Kms.V2
         /// </summary>
         public async Task<UpdateKeyAliasResponse> UpdateKeyAliasAsync(UpdateKeyAliasRequest updateKeyAliasRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/update-key-alias",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateKeyAliasRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/update-key-alias",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateKeyAliasRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<UpdateKeyAliasResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateKeyAliasResponse> UpdateKeyAliasAsyncInvoker(UpdateKeyAliasRequest updateKeyAliasRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/update-key-alias",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateKeyAliasRequest);
+            return new AsyncInvoker<UpdateKeyAliasResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateKeyAliasResponse>);
         }
         
         /// <summary>
@@ -733,11 +1079,19 @@ namespace HuaweiCloud.SDK.Kms.V2
         /// </summary>
         public async Task<UpdateKeyDescriptionResponse> UpdateKeyDescriptionAsync(UpdateKeyDescriptionRequest updateKeyDescriptionRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/update-key-description",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateKeyDescriptionRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/update-key-description",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateKeyDescriptionRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<UpdateKeyDescriptionResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateKeyDescriptionResponse> UpdateKeyDescriptionAsyncInvoker(UpdateKeyDescriptionRequest updateKeyDescriptionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/update-key-description",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateKeyDescriptionRequest);
+            return new AsyncInvoker<UpdateKeyDescriptionResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateKeyDescriptionResponse>);
         }
         
         /// <summary>
@@ -749,11 +1103,19 @@ namespace HuaweiCloud.SDK.Kms.V2
         /// </summary>
         public async Task<UpdateKeyRotationIntervalResponse> UpdateKeyRotationIntervalAsync(UpdateKeyRotationIntervalRequest updateKeyRotationIntervalRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/update-key-rotation-interval",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateKeyRotationIntervalRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/update-key-rotation-interval",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateKeyRotationIntervalRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerializeNull<UpdateKeyRotationIntervalResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateKeyRotationIntervalResponse> UpdateKeyRotationIntervalAsyncInvoker(UpdateKeyRotationIntervalRequest updateKeyRotationIntervalRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/update-key-rotation-interval",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateKeyRotationIntervalRequest);
+            return new AsyncInvoker<UpdateKeyRotationIntervalResponse>(this, "POST", request, JsonUtils.DeSerializeNull<UpdateKeyRotationIntervalResponse>);
         }
         
         /// <summary>
@@ -765,11 +1127,19 @@ namespace HuaweiCloud.SDK.Kms.V2
         /// </summary>
         public async Task<ValidateSignatureResponse> ValidateSignatureAsync(ValidateSignatureRequest validateSignatureRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/verify",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", validateSignatureRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/verify",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", validateSignatureRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<ValidateSignatureResponse>(response);
+        }
+
+        public AsyncInvoker<ValidateSignatureResponse> ValidateSignatureAsyncInvoker(ValidateSignatureRequest validateSignatureRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/verify",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", validateSignatureRequest);
+            return new AsyncInvoker<ValidateSignatureResponse>(this, "POST", request, JsonUtils.DeSerialize<ValidateSignatureResponse>);
         }
         
         /// <summary>
@@ -781,12 +1151,21 @@ namespace HuaweiCloud.SDK.Kms.V2
         /// </summary>
         public async Task<ShowVersionResponse> ShowVersionAsync(ShowVersionRequest showVersionRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("version_id" , showVersionRequest.VersionId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/{version_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVersionRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("version_id", showVersionRequest.VersionId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/{version_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVersionRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowVersionResponse>(response);
+        }
+
+        public AsyncInvoker<ShowVersionResponse> ShowVersionAsyncInvoker(ShowVersionRequest showVersionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("version_id", showVersionRequest.VersionId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/{version_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVersionRequest);
+            return new AsyncInvoker<ShowVersionResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowVersionResponse>);
         }
         
         /// <summary>
@@ -798,11 +1177,19 @@ namespace HuaweiCloud.SDK.Kms.V2
         /// </summary>
         public async Task<ShowVersionsResponse> ShowVersionsAsync(ShowVersionsRequest showVersionsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVersionsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVersionsRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowVersionsResponse>(response);
+        }
+
+        public AsyncInvoker<ShowVersionsResponse> ShowVersionsAsyncInvoker(ShowVersionsRequest showVersionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVersionsRequest);
+            return new AsyncInvoker<ShowVersionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowVersionsResponse>);
         }
         
     }

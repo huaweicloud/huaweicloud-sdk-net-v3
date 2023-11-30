@@ -24,12 +24,21 @@ namespace HuaweiCloud.SDK.Cce.V3
         /// </summary>
         public AddNodeResponse AddNode(AddNodeRequest addNodeRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("cluster_id" , addNodeRequest.ClusterId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes/add",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", addNodeRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", addNodeRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes/add", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addNodeRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<AddNodeResponse>(response);
+        }
+
+        public SyncInvoker<AddNodeResponse> AddNodeInvoker(AddNodeRequest addNodeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", addNodeRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes/add", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addNodeRequest);
+            return new SyncInvoker<AddNodeResponse>(this, "POST", request, JsonUtils.DeSerialize<AddNodeResponse>);
         }
         
         /// <summary>
@@ -41,12 +50,21 @@ namespace HuaweiCloud.SDK.Cce.V3
         /// </summary>
         public AwakeClusterResponse AwakeCluster(AwakeClusterRequest awakeClusterRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("cluster_id" , awakeClusterRequest.ClusterId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/awake",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", awakeClusterRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", awakeClusterRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/awake", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", awakeClusterRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerializeNull<AwakeClusterResponse>(response);
+        }
+
+        public SyncInvoker<AwakeClusterResponse> AwakeClusterInvoker(AwakeClusterRequest awakeClusterRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", awakeClusterRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/awake", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", awakeClusterRequest);
+            return new SyncInvoker<AwakeClusterResponse>(this, "POST", request, JsonUtils.DeSerializeNull<AwakeClusterResponse>);
         }
         
         /// <summary>
@@ -60,12 +78,21 @@ namespace HuaweiCloud.SDK.Cce.V3
         /// </summary>
         public BatchCreateClusterTagsResponse BatchCreateClusterTags(BatchCreateClusterTagsRequest batchCreateClusterTagsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("cluster_id" , batchCreateClusterTagsRequest.ClusterId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/tags/create",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateClusterTagsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", batchCreateClusterTagsRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/tags/create", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateClusterTagsRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerializeNull<BatchCreateClusterTagsResponse>(response);
+        }
+
+        public SyncInvoker<BatchCreateClusterTagsResponse> BatchCreateClusterTagsInvoker(BatchCreateClusterTagsRequest batchCreateClusterTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", batchCreateClusterTagsRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/tags/create", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateClusterTagsRequest);
+            return new SyncInvoker<BatchCreateClusterTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchCreateClusterTagsResponse>);
         }
         
         /// <summary>
@@ -78,12 +105,21 @@ namespace HuaweiCloud.SDK.Cce.V3
         /// </summary>
         public BatchDeleteClusterTagsResponse BatchDeleteClusterTags(BatchDeleteClusterTagsRequest batchDeleteClusterTagsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("cluster_id" , batchDeleteClusterTagsRequest.ClusterId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/tags/delete",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteClusterTagsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", batchDeleteClusterTagsRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/tags/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteClusterTagsRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerializeNull<BatchDeleteClusterTagsResponse>(response);
+        }
+
+        public SyncInvoker<BatchDeleteClusterTagsResponse> BatchDeleteClusterTagsInvoker(BatchDeleteClusterTagsRequest batchDeleteClusterTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", batchDeleteClusterTagsRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/tags/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteClusterTagsRequest);
+            return new SyncInvoker<BatchDeleteClusterTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchDeleteClusterTagsResponse>);
         }
         
         /// <summary>
@@ -97,12 +133,21 @@ namespace HuaweiCloud.SDK.Cce.V3
         /// </summary>
         public ContinueUpgradeClusterTaskResponse ContinueUpgradeClusterTask(ContinueUpgradeClusterTaskRequest continueUpgradeClusterTaskRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("cluster_id" , continueUpgradeClusterTaskRequest.ClusterId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgrade/continue",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", continueUpgradeClusterTaskRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", continueUpgradeClusterTaskRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgrade/continue", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", continueUpgradeClusterTaskRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerializeNull<ContinueUpgradeClusterTaskResponse>(response);
+        }
+
+        public SyncInvoker<ContinueUpgradeClusterTaskResponse> ContinueUpgradeClusterTaskInvoker(ContinueUpgradeClusterTaskRequest continueUpgradeClusterTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", continueUpgradeClusterTaskRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgrade/continue", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", continueUpgradeClusterTaskRequest);
+            return new SyncInvoker<ContinueUpgradeClusterTaskResponse>(this, "POST", request, JsonUtils.DeSerializeNull<ContinueUpgradeClusterTaskResponse>);
         }
         
         /// <summary>
@@ -114,11 +159,19 @@ namespace HuaweiCloud.SDK.Cce.V3
         /// </summary>
         public CreateAddonInstanceResponse CreateAddonInstance(CreateAddonInstanceRequest createAddonInstanceRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/api/v3/addons",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAddonInstanceRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/addons", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAddonInstanceRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<CreateAddonInstanceResponse>(response);
+        }
+
+        public SyncInvoker<CreateAddonInstanceResponse> CreateAddonInstanceInvoker(CreateAddonInstanceRequest createAddonInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/addons", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAddonInstanceRequest);
+            return new SyncInvoker<CreateAddonInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateAddonInstanceResponse>);
         }
         
         /// <summary>
@@ -133,12 +186,21 @@ namespace HuaweiCloud.SDK.Cce.V3
         /// </summary>
         public CreateCloudPersistentVolumeClaimsResponse CreateCloudPersistentVolumeClaims(CreateCloudPersistentVolumeClaimsRequest createCloudPersistentVolumeClaimsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace" , createCloudPersistentVolumeClaimsRequest.Namespace.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/api/v1/namespaces/{namespace}/cloudpersistentvolumeclaims",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createCloudPersistentVolumeClaimsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("namespace", createCloudPersistentVolumeClaimsRequest.Namespace.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v1/namespaces/{namespace}/cloudpersistentvolumeclaims", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createCloudPersistentVolumeClaimsRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<CreateCloudPersistentVolumeClaimsResponse>(response);
+        }
+
+        public SyncInvoker<CreateCloudPersistentVolumeClaimsResponse> CreateCloudPersistentVolumeClaimsInvoker(CreateCloudPersistentVolumeClaimsRequest createCloudPersistentVolumeClaimsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("namespace", createCloudPersistentVolumeClaimsRequest.Namespace.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v1/namespaces/{namespace}/cloudpersistentvolumeclaims", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createCloudPersistentVolumeClaimsRequest);
+            return new SyncInvoker<CreateCloudPersistentVolumeClaimsResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateCloudPersistentVolumeClaimsResponse>);
         }
         
         /// <summary>
@@ -154,11 +216,19 @@ namespace HuaweiCloud.SDK.Cce.V3
         /// </summary>
         public CreateClusterResponse CreateCluster(CreateClusterRequest createClusterRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createClusterRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createClusterRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<CreateClusterResponse>(response);
+        }
+
+        public SyncInvoker<CreateClusterResponse> CreateClusterInvoker(CreateClusterRequest createClusterRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createClusterRequest);
+            return new SyncInvoker<CreateClusterResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateClusterResponse>);
         }
         
         /// <summary>
@@ -170,12 +240,21 @@ namespace HuaweiCloud.SDK.Cce.V3
         /// </summary>
         public CreateKubernetesClusterCertResponse CreateKubernetesClusterCert(CreateKubernetesClusterCertRequest createKubernetesClusterCertRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("cluster_id" , createKubernetesClusterCertRequest.ClusterId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/clustercert",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createKubernetesClusterCertRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", createKubernetesClusterCertRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/clustercert", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createKubernetesClusterCertRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<CreateKubernetesClusterCertResponse>(response);
+        }
+
+        public SyncInvoker<CreateKubernetesClusterCertResponse> CreateKubernetesClusterCertInvoker(CreateKubernetesClusterCertRequest createKubernetesClusterCertRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", createKubernetesClusterCertRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/clustercert", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createKubernetesClusterCertRequest);
+            return new SyncInvoker<CreateKubernetesClusterCertResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateKubernetesClusterCertResponse>);
         }
         
         /// <summary>
@@ -189,12 +268,21 @@ namespace HuaweiCloud.SDK.Cce.V3
         /// </summary>
         public CreateNodeResponse CreateNode(CreateNodeRequest createNodeRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("cluster_id" , createNodeRequest.ClusterId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createNodeRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", createNodeRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createNodeRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<CreateNodeResponse>(response);
+        }
+
+        public SyncInvoker<CreateNodeResponse> CreateNodeInvoker(CreateNodeRequest createNodeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", createNodeRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createNodeRequest);
+            return new SyncInvoker<CreateNodeResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateNodeResponse>);
         }
         
         /// <summary>
@@ -213,12 +301,73 @@ namespace HuaweiCloud.SDK.Cce.V3
         /// </summary>
         public CreateNodePoolResponse CreateNodePool(CreateNodePoolRequest createNodePoolRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("cluster_id" , createNodePoolRequest.ClusterId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodepools",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createNodePoolRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", createNodePoolRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodepools", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createNodePoolRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<CreateNodePoolResponse>(response);
+        }
+
+        public SyncInvoker<CreateNodePoolResponse> CreateNodePoolInvoker(CreateNodePoolRequest createNodePoolRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", createNodePoolRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodepools", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createNodePoolRequest);
+            return new SyncInvoker<CreateNodePoolResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateNodePoolResponse>);
+        }
+        
+        /// <summary>
+        /// 创建分区
+        ///
+        /// 创建分区
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreatePartitionResponse CreatePartition(CreatePartitionRequest createPartitionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", createPartitionRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/partitions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPartitionRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreatePartitionResponse>(response);
+        }
+
+        public SyncInvoker<CreatePartitionResponse> CreatePartitionInvoker(CreatePartitionRequest createPartitionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", createPartitionRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/partitions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPartitionRequest);
+            return new SyncInvoker<CreatePartitionResponse>(this, "POST", request, JsonUtils.DeSerialize<CreatePartitionResponse>);
+        }
+        
+        /// <summary>
+        /// 创建模板实例
+        ///
+        /// 创建模板实例
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateReleaseResponse CreateRelease(CreateReleaseRequest createReleaseRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", createReleaseRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/cce/cam/v3/clusters/{cluster_id}/releases", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createReleaseRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateReleaseResponse>(response);
+        }
+
+        public SyncInvoker<CreateReleaseResponse> CreateReleaseInvoker(CreateReleaseRequest createReleaseRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", createReleaseRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/cce/cam/v3/clusters/{cluster_id}/releases", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createReleaseRequest);
+            return new SyncInvoker<CreateReleaseResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateReleaseResponse>);
         }
         
         /// <summary>
@@ -230,13 +379,47 @@ namespace HuaweiCloud.SDK.Cce.V3
         /// </summary>
         public DeleteAddonInstanceResponse DeleteAddonInstance(DeleteAddonInstanceRequest deleteAddonInstanceRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("id" , deleteAddonInstanceRequest.Id.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/api/v3/addons/{id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAddonInstanceRequest);
-            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
-            DeleteAddonInstanceResponse deleteAddonInstanceResponse = JsonUtils.DeSerializeNull<DeleteAddonInstanceResponse>(response);
-            return deleteAddonInstanceResponse;
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("id", deleteAddonInstanceRequest.Id.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/addons/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAddonInstanceRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteAddonInstanceResponse>(response);
+        }
+
+        public SyncInvoker<DeleteAddonInstanceResponse> DeleteAddonInstanceInvoker(DeleteAddonInstanceRequest deleteAddonInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("id", deleteAddonInstanceRequest.Id.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/addons/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAddonInstanceRequest);
+            return new SyncInvoker<DeleteAddonInstanceResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteAddonInstanceResponse>);
+        }
+        
+        /// <summary>
+        /// 删除模板
+        ///
+        /// 删除模板
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteChartResponse DeleteChart(DeleteChartRequest deleteChartRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("chart_id", deleteChartRequest.ChartId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/charts/{chart_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteChartRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteChartResponse>(response);
+        }
+
+        public SyncInvoker<DeleteChartResponse> DeleteChartInvoker(DeleteChartRequest deleteChartRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("chart_id", deleteChartRequest.ChartId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/charts/{chart_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteChartRequest);
+            return new SyncInvoker<DeleteChartResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteChartResponse>);
         }
         
         /// <summary>
@@ -249,13 +432,23 @@ namespace HuaweiCloud.SDK.Cce.V3
         /// </summary>
         public DeleteCloudPersistentVolumeClaimsResponse DeleteCloudPersistentVolumeClaims(DeleteCloudPersistentVolumeClaimsRequest deleteCloudPersistentVolumeClaimsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("name" , deleteCloudPersistentVolumeClaimsRequest.Name.ToString());
-            urlParam.Add("namespace" , deleteCloudPersistentVolumeClaimsRequest.Namespace.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/api/v1/namespaces/{namespace}/cloudpersistentvolumeclaims/{name}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteCloudPersistentVolumeClaimsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("name", deleteCloudPersistentVolumeClaimsRequest.Name.ToString());
+            urlParam.Add("namespace", deleteCloudPersistentVolumeClaimsRequest.Namespace.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v1/namespaces/{namespace}/cloudpersistentvolumeclaims/{name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteCloudPersistentVolumeClaimsRequest);
+            var response = DoHttpRequestSync("DELETE", request);
             return JsonUtils.DeSerialize<DeleteCloudPersistentVolumeClaimsResponse>(response);
+        }
+
+        public SyncInvoker<DeleteCloudPersistentVolumeClaimsResponse> DeleteCloudPersistentVolumeClaimsInvoker(DeleteCloudPersistentVolumeClaimsRequest deleteCloudPersistentVolumeClaimsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("name", deleteCloudPersistentVolumeClaimsRequest.Name.ToString());
+            urlParam.Add("namespace", deleteCloudPersistentVolumeClaimsRequest.Namespace.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v1/namespaces/{namespace}/cloudpersistentvolumeclaims/{name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteCloudPersistentVolumeClaimsRequest);
+            return new SyncInvoker<DeleteCloudPersistentVolumeClaimsResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteCloudPersistentVolumeClaimsResponse>);
         }
         
         /// <summary>
@@ -268,12 +461,21 @@ namespace HuaweiCloud.SDK.Cce.V3
         /// </summary>
         public DeleteClusterResponse DeleteCluster(DeleteClusterRequest deleteClusterRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("cluster_id" , deleteClusterRequest.ClusterId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteClusterRequest);
-            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", deleteClusterRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteClusterRequest);
+            var response = DoHttpRequestSync("DELETE", request);
             return JsonUtils.DeSerialize<DeleteClusterResponse>(response);
+        }
+
+        public SyncInvoker<DeleteClusterResponse> DeleteClusterInvoker(DeleteClusterRequest deleteClusterRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", deleteClusterRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteClusterRequest);
+            return new SyncInvoker<DeleteClusterResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteClusterResponse>);
         }
         
         /// <summary>
@@ -286,13 +488,23 @@ namespace HuaweiCloud.SDK.Cce.V3
         /// </summary>
         public DeleteNodeResponse DeleteNode(DeleteNodeRequest deleteNodeRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("cluster_id" , deleteNodeRequest.ClusterId.ToString());
-            urlParam.Add("node_id" , deleteNodeRequest.NodeId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes/{node_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteNodeRequest);
-            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", deleteNodeRequest.ClusterId.ToString());
+            urlParam.Add("node_id", deleteNodeRequest.NodeId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes/{node_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteNodeRequest);
+            var response = DoHttpRequestSync("DELETE", request);
             return JsonUtils.DeSerialize<DeleteNodeResponse>(response);
+        }
+
+        public SyncInvoker<DeleteNodeResponse> DeleteNodeInvoker(DeleteNodeRequest deleteNodeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", deleteNodeRequest.ClusterId.ToString());
+            urlParam.Add("node_id", deleteNodeRequest.NodeId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes/{node_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteNodeRequest);
+            return new SyncInvoker<DeleteNodeResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteNodeResponse>);
         }
         
         /// <summary>
@@ -305,13 +517,79 @@ namespace HuaweiCloud.SDK.Cce.V3
         /// </summary>
         public DeleteNodePoolResponse DeleteNodePool(DeleteNodePoolRequest deleteNodePoolRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("cluster_id" , deleteNodePoolRequest.ClusterId.ToString());
-            urlParam.Add("nodepool_id" , deleteNodePoolRequest.NodepoolId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodepools/{nodepool_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteNodePoolRequest);
-            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", deleteNodePoolRequest.ClusterId.ToString());
+            urlParam.Add("nodepool_id", deleteNodePoolRequest.NodepoolId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodepools/{nodepool_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteNodePoolRequest);
+            var response = DoHttpRequestSync("DELETE", request);
             return JsonUtils.DeSerialize<DeleteNodePoolResponse>(response);
+        }
+
+        public SyncInvoker<DeleteNodePoolResponse> DeleteNodePoolInvoker(DeleteNodePoolRequest deleteNodePoolRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", deleteNodePoolRequest.ClusterId.ToString());
+            urlParam.Add("nodepool_id", deleteNodePoolRequest.NodepoolId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodepools/{nodepool_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteNodePoolRequest);
+            return new SyncInvoker<DeleteNodePoolResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteNodePoolResponse>);
+        }
+        
+        /// <summary>
+        /// 删除指定模板实例
+        ///
+        /// 删除指定模板实例
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteReleaseResponse DeleteRelease(DeleteReleaseRequest deleteReleaseRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("name", deleteReleaseRequest.Name.ToString());
+            urlParam.Add("namespace", deleteReleaseRequest.Namespace.ToString());
+            urlParam.Add("cluster_id", deleteReleaseRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/cce/cam/v3/clusters/{cluster_id}/namespace/{namespace}/releases/{name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteReleaseRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteReleaseResponse>(response);
+        }
+
+        public SyncInvoker<DeleteReleaseResponse> DeleteReleaseInvoker(DeleteReleaseRequest deleteReleaseRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("name", deleteReleaseRequest.Name.ToString());
+            urlParam.Add("namespace", deleteReleaseRequest.Namespace.ToString());
+            urlParam.Add("cluster_id", deleteReleaseRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/cce/cam/v3/clusters/{cluster_id}/namespace/{namespace}/releases/{name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteReleaseRequest);
+            return new SyncInvoker<DeleteReleaseResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteReleaseResponse>);
+        }
+        
+        /// <summary>
+        /// 下载模板
+        ///
+        /// 下载模板
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DownloadChartResponse DownloadChart(DownloadChartRequest downloadChartRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("chart_id", downloadChartRequest.ChartId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/charts/{chart_id}/archive", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadChartRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<DownloadChartResponse>(response);
+        }
+
+        public SyncInvoker<DownloadChartResponse> DownloadChartInvoker(DownloadChartRequest downloadChartRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("chart_id", downloadChartRequest.ChartId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/charts/{chart_id}/archive", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadChartRequest);
+            return new SyncInvoker<DownloadChartResponse>(this, "GET", request, JsonUtils.DeSerialize<DownloadChartResponse>);
         }
         
         /// <summary>
@@ -323,12 +601,21 @@ namespace HuaweiCloud.SDK.Cce.V3
         /// </summary>
         public HibernateClusterResponse HibernateCluster(HibernateClusterRequest hibernateClusterRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("cluster_id" , hibernateClusterRequest.ClusterId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/hibernate",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", hibernateClusterRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", hibernateClusterRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/hibernate", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", hibernateClusterRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerializeNull<HibernateClusterResponse>(response);
+        }
+
+        public SyncInvoker<HibernateClusterResponse> HibernateClusterInvoker(HibernateClusterRequest hibernateClusterRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", hibernateClusterRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/hibernate", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", hibernateClusterRequest);
+            return new SyncInvoker<HibernateClusterResponse>(this, "POST", request, JsonUtils.DeSerializeNull<HibernateClusterResponse>);
         }
         
         /// <summary>
@@ -340,11 +627,19 @@ namespace HuaweiCloud.SDK.Cce.V3
         /// </summary>
         public ListAddonInstancesResponse ListAddonInstances(ListAddonInstancesRequest listAddonInstancesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/api/v3/addons",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAddonInstancesRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/addons", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAddonInstancesRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ListAddonInstancesResponse>(response);
+        }
+
+        public SyncInvoker<ListAddonInstancesResponse> ListAddonInstancesInvoker(ListAddonInstancesRequest listAddonInstancesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/addons", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAddonInstancesRequest);
+            return new SyncInvoker<ListAddonInstancesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAddonInstancesResponse>);
         }
         
         /// <summary>
@@ -356,11 +651,50 @@ namespace HuaweiCloud.SDK.Cce.V3
         /// </summary>
         public ListAddonTemplatesResponse ListAddonTemplates(ListAddonTemplatesRequest listAddonTemplatesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/api/v3/addontemplates",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAddonTemplatesRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/addontemplates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAddonTemplatesRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ListAddonTemplatesResponse>(response);
+        }
+
+        public SyncInvoker<ListAddonTemplatesResponse> ListAddonTemplatesInvoker(ListAddonTemplatesRequest listAddonTemplatesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/addontemplates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAddonTemplatesRequest);
+            return new SyncInvoker<ListAddonTemplatesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAddonTemplatesResponse>);
+        }
+        
+        /// <summary>
+        /// 获取模板列表
+        ///
+        /// 获取模板列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListChartsResponse ListCharts(ListChartsRequest listChartsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/charts", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listChartsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            var listChartsResponse = JsonUtils.DeSerializeNull<ListChartsResponse>(response);
+            listChartsResponse.Body = JsonUtils.DeSerializeList<ChartResp>(response);
+            return listChartsResponse;
+        }
+
+        public SyncInvoker<ListChartsResponse> ListChartsInvoker(ListChartsRequest listChartsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/charts", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listChartsRequest);
+            return new SyncInvoker<ListChartsResponse>(this, "GET", request, response =>
+            {
+                var listChartsResponse = JsonUtils.DeSerializeNull<ListChartsResponse>(response);
+                listChartsResponse.Body = JsonUtils.DeSerializeList<ChartResp>(response);
+                return listChartsResponse;
+            });
         }
         
         /// <summary>
@@ -372,11 +706,19 @@ namespace HuaweiCloud.SDK.Cce.V3
         /// </summary>
         public ListClustersResponse ListClusters(ListClustersRequest listClustersRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listClustersRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listClustersRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ListClustersResponse>(response);
+        }
+
+        public SyncInvoker<ListClustersResponse> ListClustersInvoker(ListClustersRequest listClustersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listClustersRequest);
+            return new SyncInvoker<ListClustersResponse>(this, "GET", request, JsonUtils.DeSerialize<ListClustersResponse>);
         }
         
         /// <summary>
@@ -390,12 +732,21 @@ namespace HuaweiCloud.SDK.Cce.V3
         /// </summary>
         public ListNodePoolsResponse ListNodePools(ListNodePoolsRequest listNodePoolsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("cluster_id" , listNodePoolsRequest.ClusterId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodepools",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listNodePoolsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", listNodePoolsRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodepools", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listNodePoolsRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ListNodePoolsResponse>(response);
+        }
+
+        public SyncInvoker<ListNodePoolsResponse> ListNodePoolsInvoker(ListNodePoolsRequest listNodePoolsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", listNodePoolsRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodepools", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listNodePoolsRequest);
+            return new SyncInvoker<ListNodePoolsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListNodePoolsResponse>);
         }
         
         /// <summary>
@@ -408,19 +759,86 @@ namespace HuaweiCloud.SDK.Cce.V3
         /// </summary>
         public ListNodesResponse ListNodes(ListNodesRequest listNodesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("cluster_id" , listNodesRequest.ClusterId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listNodesRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", listNodesRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listNodesRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ListNodesResponse>(response);
+        }
+
+        public SyncInvoker<ListNodesResponse> ListNodesInvoker(ListNodesRequest listNodesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", listNodesRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listNodesRequest);
+            return new SyncInvoker<ListNodesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListNodesResponse>);
+        }
+        
+        /// <summary>
+        /// 获取分区列表
+        ///
+        /// 获取分区列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListPartitionsResponse ListPartitions(ListPartitionsRequest listPartitionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", listPartitionsRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/partitions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPartitionsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListPartitionsResponse>(response);
+        }
+
+        public SyncInvoker<ListPartitionsResponse> ListPartitionsInvoker(ListPartitionsRequest listPartitionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", listPartitionsRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/partitions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPartitionsRequest);
+            return new SyncInvoker<ListPartitionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListPartitionsResponse>);
+        }
+        
+        /// <summary>
+        /// 获取模板实例列表
+        ///
+        /// 获取模板实例列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListReleasesResponse ListReleases(ListReleasesRequest listReleasesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", listReleasesRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/cce/cam/v3/clusters/{cluster_id}/releases", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listReleasesRequest);
+            var response = DoHttpRequestSync("GET", request);
+            var listReleasesResponse = JsonUtils.DeSerializeNull<ListReleasesResponse>(response);
+            listReleasesResponse.Body = JsonUtils.DeSerializeList<ReleaseResp>(response);
+            return listReleasesResponse;
+        }
+
+        public SyncInvoker<ListReleasesResponse> ListReleasesInvoker(ListReleasesRequest listReleasesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", listReleasesRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/cce/cam/v3/clusters/{cluster_id}/releases", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listReleasesRequest);
+            return new SyncInvoker<ListReleasesResponse>(this, "GET", request, response =>
+            {
+                var listReleasesResponse = JsonUtils.DeSerializeNull<ListReleasesResponse>(response);
+                listReleasesResponse.Body = JsonUtils.DeSerializeList<ReleaseResp>(response);
+                return listReleasesResponse;
+            });
         }
         
         /// <summary>
         /// 节点迁移
         ///
-        /// 该API用于在指定集群下迁移节点到另一集群（仅支持在同一VPC、同一项目下的不同集群之间进行迁移，且迁移前后的集群类型需相同）。
-        /// [CCE Turbo集群下弹性云服务-物理机类型节点不支持迁移。](tag:hws,hws_hk,dt)
+        /// 该API用于在指定集群下迁移节点到另一集群。
         /// 
         /// &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
         /// 
@@ -428,13 +846,23 @@ namespace HuaweiCloud.SDK.Cce.V3
         /// </summary>
         public MigrateNodeResponse MigrateNode(MigrateNodeRequest migrateNodeRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("cluster_id" , migrateNodeRequest.ClusterId.ToString());
-            urlParam.Add("target_cluster_id" , migrateNodeRequest.TargetClusterId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes/operation/migrateto/{target_cluster_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", migrateNodeRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", migrateNodeRequest.ClusterId.ToString());
+            urlParam.Add("target_cluster_id", migrateNodeRequest.TargetClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes/operation/migrateto/{target_cluster_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", migrateNodeRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerialize<MigrateNodeResponse>(response);
+        }
+
+        public SyncInvoker<MigrateNodeResponse> MigrateNodeInvoker(MigrateNodeRequest migrateNodeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", migrateNodeRequest.ClusterId.ToString());
+            urlParam.Add("target_cluster_id", migrateNodeRequest.TargetClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes/operation/migrateto/{target_cluster_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", migrateNodeRequest);
+            return new SyncInvoker<MigrateNodeResponse>(this, "PUT", request, JsonUtils.DeSerialize<MigrateNodeResponse>);
         }
         
         /// <summary>
@@ -448,12 +876,21 @@ namespace HuaweiCloud.SDK.Cce.V3
         /// </summary>
         public PauseUpgradeClusterTaskResponse PauseUpgradeClusterTask(PauseUpgradeClusterTaskRequest pauseUpgradeClusterTaskRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("cluster_id" , pauseUpgradeClusterTaskRequest.ClusterId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgrade/pause",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", pauseUpgradeClusterTaskRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", pauseUpgradeClusterTaskRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgrade/pause", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", pauseUpgradeClusterTaskRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerializeNull<PauseUpgradeClusterTaskResponse>(response);
+        }
+
+        public SyncInvoker<PauseUpgradeClusterTaskResponse> PauseUpgradeClusterTaskInvoker(PauseUpgradeClusterTaskRequest pauseUpgradeClusterTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", pauseUpgradeClusterTaskRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgrade/pause", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", pauseUpgradeClusterTaskRequest);
+            return new SyncInvoker<PauseUpgradeClusterTaskResponse>(this, "POST", request, JsonUtils.DeSerializeNull<PauseUpgradeClusterTaskResponse>);
         }
         
         /// <summary>
@@ -466,12 +903,21 @@ namespace HuaweiCloud.SDK.Cce.V3
         /// </summary>
         public RemoveNodeResponse RemoveNode(RemoveNodeRequest removeNodeRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("cluster_id" , removeNodeRequest.ClusterId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes/operation/remove",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", removeNodeRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", removeNodeRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes/operation/remove", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", removeNodeRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerialize<RemoveNodeResponse>(response);
+        }
+
+        public SyncInvoker<RemoveNodeResponse> RemoveNodeInvoker(RemoveNodeRequest removeNodeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", removeNodeRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes/operation/remove", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", removeNodeRequest);
+            return new SyncInvoker<RemoveNodeResponse>(this, "PUT", request, JsonUtils.DeSerialize<RemoveNodeResponse>);
         }
         
         /// <summary>
@@ -484,12 +930,21 @@ namespace HuaweiCloud.SDK.Cce.V3
         /// </summary>
         public ResetNodeResponse ResetNode(ResetNodeRequest resetNodeRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("cluster_id" , resetNodeRequest.ClusterId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes/reset",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetNodeRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", resetNodeRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes/reset", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetNodeRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<ResetNodeResponse>(response);
+        }
+
+        public SyncInvoker<ResetNodeResponse> ResetNodeInvoker(ResetNodeRequest resetNodeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", resetNodeRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes/reset", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetNodeRequest);
+            return new SyncInvoker<ResetNodeResponse>(this, "POST", request, JsonUtils.DeSerialize<ResetNodeResponse>);
         }
         
         /// <summary>
@@ -498,18 +953,28 @@ namespace HuaweiCloud.SDK.Cce.V3
         /// 该API用于变更一个指定集群的规格。
         /// 
         /// &gt;   - 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
-        /// &gt;   - 使用限制请参考：[[变更集群规格](https://support.huaweicloud.com/usermanual-cce/cce_10_0403.html)。](tag:hws)[[变更集群规格](https://support.huaweicloud.com/intl/zh-cn/usermanual-cce/cce_10_0403.html)](tag:hws_hk)
+        /// &gt;   [- 使用限制请参考[变更集群规格](https://support.huaweicloud.com/usermanual-cce/cce_10_0403.html)。](tag:hws)
+        /// &gt;   [- 使用限制请参考[变更集群规格](https://support.huaweicloud.com/intl/zh-cn/usermanual-cce/cce_10_0403.html)](tag:hws_hk)
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ResizeClusterResponse ResizeCluster(ResizeClusterRequest resizeClusterRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("cluster_id" , resizeClusterRequest.ClusterId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/resize",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", resizeClusterRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", resizeClusterRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/resize", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resizeClusterRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<ResizeClusterResponse>(response);
+        }
+
+        public SyncInvoker<ResizeClusterResponse> ResizeClusterInvoker(ResizeClusterRequest resizeClusterRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", resizeClusterRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/resize", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resizeClusterRequest);
+            return new SyncInvoker<ResizeClusterResponse>(this, "POST", request, JsonUtils.DeSerialize<ResizeClusterResponse>);
         }
         
         /// <summary>
@@ -523,12 +988,21 @@ namespace HuaweiCloud.SDK.Cce.V3
         /// </summary>
         public RetryUpgradeClusterTaskResponse RetryUpgradeClusterTask(RetryUpgradeClusterTaskRequest retryUpgradeClusterTaskRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("cluster_id" , retryUpgradeClusterTaskRequest.ClusterId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgrade/retry",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", retryUpgradeClusterTaskRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", retryUpgradeClusterTaskRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgrade/retry", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", retryUpgradeClusterTaskRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerializeNull<RetryUpgradeClusterTaskResponse>(response);
+        }
+
+        public SyncInvoker<RetryUpgradeClusterTaskResponse> RetryUpgradeClusterTaskInvoker(RetryUpgradeClusterTaskRequest retryUpgradeClusterTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", retryUpgradeClusterTaskRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgrade/retry", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", retryUpgradeClusterTaskRequest);
+            return new SyncInvoker<RetryUpgradeClusterTaskResponse>(this, "POST", request, JsonUtils.DeSerializeNull<RetryUpgradeClusterTaskResponse>);
         }
         
         /// <summary>
@@ -540,12 +1014,21 @@ namespace HuaweiCloud.SDK.Cce.V3
         /// </summary>
         public RollbackAddonInstanceResponse RollbackAddonInstance(RollbackAddonInstanceRequest rollbackAddonInstanceRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("id" , rollbackAddonInstanceRequest.Id.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/api/v3/addons/{id}/operation/rollback",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", rollbackAddonInstanceRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("id", rollbackAddonInstanceRequest.Id.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/addons/{id}/operation/rollback", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", rollbackAddonInstanceRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<RollbackAddonInstanceResponse>(response);
+        }
+
+        public SyncInvoker<RollbackAddonInstanceResponse> RollbackAddonInstanceInvoker(RollbackAddonInstanceRequest rollbackAddonInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("id", rollbackAddonInstanceRequest.Id.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/addons/{id}/operation/rollback", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", rollbackAddonInstanceRequest);
+            return new SyncInvoker<RollbackAddonInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<RollbackAddonInstanceResponse>);
         }
         
         /// <summary>
@@ -557,12 +1040,73 @@ namespace HuaweiCloud.SDK.Cce.V3
         /// </summary>
         public ShowAddonInstanceResponse ShowAddonInstance(ShowAddonInstanceRequest showAddonInstanceRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("id" , showAddonInstanceRequest.Id.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/api/v3/addons/{id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAddonInstanceRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("id", showAddonInstanceRequest.Id.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/addons/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAddonInstanceRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowAddonInstanceResponse>(response);
+        }
+
+        public SyncInvoker<ShowAddonInstanceResponse> ShowAddonInstanceInvoker(ShowAddonInstanceRequest showAddonInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("id", showAddonInstanceRequest.Id.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/addons/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAddonInstanceRequest);
+            return new SyncInvoker<ShowAddonInstanceResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAddonInstanceResponse>);
+        }
+        
+        /// <summary>
+        /// 获取模板
+        ///
+        /// 获取模板
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowChartResponse ShowChart(ShowChartRequest showChartRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("chart_id", showChartRequest.ChartId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/charts/{chart_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showChartRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowChartResponse>(response);
+        }
+
+        public SyncInvoker<ShowChartResponse> ShowChartInvoker(ShowChartRequest showChartRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("chart_id", showChartRequest.ChartId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/charts/{chart_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showChartRequest);
+            return new SyncInvoker<ShowChartResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowChartResponse>);
+        }
+        
+        /// <summary>
+        /// 获取模板Values
+        ///
+        /// 获取模板Values
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowChartValuesResponse ShowChartValues(ShowChartValuesRequest showChartValuesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("chart_id", showChartValuesRequest.ChartId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/charts/{chart_id}/values", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showChartValuesRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowChartValuesResponse>(response);
+        }
+
+        public SyncInvoker<ShowChartValuesResponse> ShowChartValuesInvoker(ShowChartValuesRequest showChartValuesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("chart_id", showChartValuesRequest.ChartId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/charts/{chart_id}/values", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showChartValuesRequest);
+            return new SyncInvoker<ShowChartValuesResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowChartValuesResponse>);
         }
         
         /// <summary>
@@ -575,12 +1119,73 @@ namespace HuaweiCloud.SDK.Cce.V3
         /// </summary>
         public ShowClusterResponse ShowCluster(ShowClusterRequest showClusterRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("cluster_id" , showClusterRequest.ClusterId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showClusterRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", showClusterRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showClusterRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowClusterResponse>(response);
+        }
+
+        public SyncInvoker<ShowClusterResponse> ShowClusterInvoker(ShowClusterRequest showClusterRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", showClusterRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showClusterRequest);
+            return new SyncInvoker<ShowClusterResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowClusterResponse>);
+        }
+        
+        /// <summary>
+        /// 查询集群日志配置信息
+        ///
+        /// 获取集群组件上报的LTS的配置信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowClusterConfigResponse ShowClusterConfig(ShowClusterConfigRequest showClusterConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", showClusterConfigRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/cluster/{cluster_id}/log-configs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showClusterConfigRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowClusterConfigResponse>(response);
+        }
+
+        public SyncInvoker<ShowClusterConfigResponse> ShowClusterConfigInvoker(ShowClusterConfigRequest showClusterConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", showClusterConfigRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/cluster/{cluster_id}/log-configs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showClusterConfigRequest);
+            return new SyncInvoker<ShowClusterConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowClusterConfigResponse>);
+        }
+        
+        /// <summary>
+        /// 查询指定集群支持配置的参数列表
+        ///
+        /// 该API用于查询CCE服务下指定集群支持配置的参数列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowClusterConfigurationDetailsResponse ShowClusterConfigurationDetails(ShowClusterConfigurationDetailsRequest showClusterConfigurationDetailsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", showClusterConfigurationDetailsRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/configuration/detail", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showClusterConfigurationDetailsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowClusterConfigurationDetailsResponse>(response);
+        }
+
+        public SyncInvoker<ShowClusterConfigurationDetailsResponse> ShowClusterConfigurationDetailsInvoker(ShowClusterConfigurationDetailsRequest showClusterConfigurationDetailsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", showClusterConfigurationDetailsRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/configuration/detail", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showClusterConfigurationDetailsRequest);
+            return new SyncInvoker<ShowClusterConfigurationDetailsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowClusterConfigurationDetailsResponse>);
         }
         
         /// <summary>
@@ -593,12 +1198,21 @@ namespace HuaweiCloud.SDK.Cce.V3
         /// </summary>
         public ShowClusterEndpointsResponse ShowClusterEndpoints(ShowClusterEndpointsRequest showClusterEndpointsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("cluster_id" , showClusterEndpointsRequest.ClusterId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/openapi",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showClusterEndpointsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", showClusterEndpointsRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/openapi", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showClusterEndpointsRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowClusterEndpointsResponse>(response);
+        }
+
+        public SyncInvoker<ShowClusterEndpointsResponse> ShowClusterEndpointsInvoker(ShowClusterEndpointsRequest showClusterEndpointsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", showClusterEndpointsRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/openapi", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showClusterEndpointsRequest);
+            return new SyncInvoker<ShowClusterEndpointsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowClusterEndpointsResponse>);
         }
         
         /// <summary>
@@ -614,12 +1228,21 @@ namespace HuaweiCloud.SDK.Cce.V3
         /// </summary>
         public ShowJobResponse ShowJob(ShowJobRequest showJobRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id" , showJobRequest.JobId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/jobs/{job_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showJobRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", showJobRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/jobs/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showJobRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowJobResponse>(response);
+        }
+
+        public SyncInvoker<ShowJobResponse> ShowJobInvoker(ShowJobRequest showJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", showJobRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/jobs/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showJobRequest);
+            return new SyncInvoker<ShowJobResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowJobResponse>);
         }
         
         /// <summary>
@@ -632,13 +1255,23 @@ namespace HuaweiCloud.SDK.Cce.V3
         /// </summary>
         public ShowNodeResponse ShowNode(ShowNodeRequest showNodeRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("cluster_id" , showNodeRequest.ClusterId.ToString());
-            urlParam.Add("node_id" , showNodeRequest.NodeId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes/{node_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showNodeRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", showNodeRequest.ClusterId.ToString());
+            urlParam.Add("node_id", showNodeRequest.NodeId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes/{node_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showNodeRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowNodeResponse>(response);
+        }
+
+        public SyncInvoker<ShowNodeResponse> ShowNodeInvoker(ShowNodeRequest showNodeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", showNodeRequest.ClusterId.ToString());
+            urlParam.Add("node_id", showNodeRequest.NodeId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes/{node_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showNodeRequest);
+            return new SyncInvoker<ShowNodeResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowNodeResponse>);
         }
         
         /// <summary>
@@ -651,13 +1284,79 @@ namespace HuaweiCloud.SDK.Cce.V3
         /// </summary>
         public ShowNodePoolResponse ShowNodePool(ShowNodePoolRequest showNodePoolRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("cluster_id" , showNodePoolRequest.ClusterId.ToString());
-            urlParam.Add("nodepool_id" , showNodePoolRequest.NodepoolId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodepools/{nodepool_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showNodePoolRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", showNodePoolRequest.ClusterId.ToString());
+            urlParam.Add("nodepool_id", showNodePoolRequest.NodepoolId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodepools/{nodepool_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showNodePoolRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowNodePoolResponse>(response);
+        }
+
+        public SyncInvoker<ShowNodePoolResponse> ShowNodePoolInvoker(ShowNodePoolRequest showNodePoolRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", showNodePoolRequest.ClusterId.ToString());
+            urlParam.Add("nodepool_id", showNodePoolRequest.NodepoolId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodepools/{nodepool_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showNodePoolRequest);
+            return new SyncInvoker<ShowNodePoolResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowNodePoolResponse>);
+        }
+        
+        /// <summary>
+        /// 查询指定节点池支持配置的参数内容
+        ///
+        /// 该API用于查询指定节点池支持配置的参数内容。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowNodePoolConfigurationsResponse ShowNodePoolConfigurations(ShowNodePoolConfigurationsRequest showNodePoolConfigurationsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", showNodePoolConfigurationsRequest.ClusterId.ToString());
+            urlParam.Add("nodepool_id", showNodePoolConfigurationsRequest.NodepoolId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodepools/{nodepool_id}/configuration", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showNodePoolConfigurationsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowNodePoolConfigurationsResponse>(response);
+        }
+
+        public SyncInvoker<ShowNodePoolConfigurationsResponse> ShowNodePoolConfigurationsInvoker(ShowNodePoolConfigurationsRequest showNodePoolConfigurationsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", showNodePoolConfigurationsRequest.ClusterId.ToString());
+            urlParam.Add("nodepool_id", showNodePoolConfigurationsRequest.NodepoolId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodepools/{nodepool_id}/configuration", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showNodePoolConfigurationsRequest);
+            return new SyncInvoker<ShowNodePoolConfigurationsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowNodePoolConfigurationsResponse>);
+        }
+        
+        /// <summary>
+        /// 获取分区详情
+        ///
+        /// 获取分区详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowPartitionResponse ShowPartition(ShowPartitionRequest showPartitionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", showPartitionRequest.ClusterId.ToString());
+            urlParam.Add("partition_name", showPartitionRequest.PartitionName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/partitions/{partition_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPartitionRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowPartitionResponse>(response);
+        }
+
+        public SyncInvoker<ShowPartitionResponse> ShowPartitionInvoker(ShowPartitionRequest showPartitionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", showPartitionRequest.ClusterId.ToString());
+            urlParam.Add("partition_name", showPartitionRequest.PartitionName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/partitions/{partition_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPartitionRequest);
+            return new SyncInvoker<ShowPartitionResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPartitionResponse>);
         }
         
         /// <summary>
@@ -669,11 +1368,86 @@ namespace HuaweiCloud.SDK.Cce.V3
         /// </summary>
         public ShowQuotasResponse ShowQuotas(ShowQuotasRequest showQuotasRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/quotas",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showQuotasRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/quotas", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showQuotasRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowQuotasResponse>(response);
+        }
+
+        public SyncInvoker<ShowQuotasResponse> ShowQuotasInvoker(ShowQuotasRequest showQuotasRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/quotas", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showQuotasRequest);
+            return new SyncInvoker<ShowQuotasResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowQuotasResponse>);
+        }
+        
+        /// <summary>
+        /// 获取指定模板实例
+        ///
+        /// 获取指定模板实例
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowReleaseResponse ShowRelease(ShowReleaseRequest showReleaseRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("name", showReleaseRequest.Name.ToString());
+            urlParam.Add("namespace", showReleaseRequest.Namespace.ToString());
+            urlParam.Add("cluster_id", showReleaseRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/cce/cam/v3/clusters/{cluster_id}/namespace/{namespace}/releases/{name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showReleaseRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowReleaseResponse>(response);
+        }
+
+        public SyncInvoker<ShowReleaseResponse> ShowReleaseInvoker(ShowReleaseRequest showReleaseRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("name", showReleaseRequest.Name.ToString());
+            urlParam.Add("namespace", showReleaseRequest.Namespace.ToString());
+            urlParam.Add("cluster_id", showReleaseRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/cce/cam/v3/clusters/{cluster_id}/namespace/{namespace}/releases/{name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showReleaseRequest);
+            return new SyncInvoker<ShowReleaseResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowReleaseResponse>);
+        }
+        
+        /// <summary>
+        /// 查询指定模板实例历史记录
+        ///
+        /// 查询指定模板实例历史记录
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowReleaseHistoryResponse ShowReleaseHistory(ShowReleaseHistoryRequest showReleaseHistoryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("name", showReleaseHistoryRequest.Name.ToString());
+            urlParam.Add("namespace", showReleaseHistoryRequest.Namespace.ToString());
+            urlParam.Add("cluster_id", showReleaseHistoryRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/cce/cam/v3/clusters/{cluster_id}/namespace/{namespace}/releases/{name}/history", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showReleaseHistoryRequest);
+            var response = DoHttpRequestSync("GET", request);
+            var showReleaseHistoryResponse = JsonUtils.DeSerializeNull<ShowReleaseHistoryResponse>(response);
+            showReleaseHistoryResponse.Body = JsonUtils.DeSerializeList<ReleaseResp>(response);
+            return showReleaseHistoryResponse;
+        }
+
+        public SyncInvoker<ShowReleaseHistoryResponse> ShowReleaseHistoryInvoker(ShowReleaseHistoryRequest showReleaseHistoryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("name", showReleaseHistoryRequest.Name.ToString());
+            urlParam.Add("namespace", showReleaseHistoryRequest.Namespace.ToString());
+            urlParam.Add("cluster_id", showReleaseHistoryRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/cce/cam/v3/clusters/{cluster_id}/namespace/{namespace}/releases/{name}/history", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showReleaseHistoryRequest);
+            return new SyncInvoker<ShowReleaseHistoryResponse>(this, "GET", request, response =>
+            {
+                var showReleaseHistoryResponse = JsonUtils.DeSerializeNull<ShowReleaseHistoryResponse>(response);
+                showReleaseHistoryResponse.Body = JsonUtils.DeSerializeList<ReleaseResp>(response);
+                return showReleaseHistoryResponse;
+            });
         }
         
         /// <summary>
@@ -687,13 +1461,47 @@ namespace HuaweiCloud.SDK.Cce.V3
         /// </summary>
         public ShowUpgradeClusterTaskResponse ShowUpgradeClusterTask(ShowUpgradeClusterTaskRequest showUpgradeClusterTaskRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("cluster_id" , showUpgradeClusterTaskRequest.ClusterId.ToString());
-            urlParam.Add("task_id" , showUpgradeClusterTaskRequest.TaskId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgrade/tasks/{task_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUpgradeClusterTaskRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", showUpgradeClusterTaskRequest.ClusterId.ToString());
+            urlParam.Add("task_id", showUpgradeClusterTaskRequest.TaskId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgrade/tasks/{task_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUpgradeClusterTaskRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowUpgradeClusterTaskResponse>(response);
+        }
+
+        public SyncInvoker<ShowUpgradeClusterTaskResponse> ShowUpgradeClusterTaskInvoker(ShowUpgradeClusterTaskRequest showUpgradeClusterTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", showUpgradeClusterTaskRequest.ClusterId.ToString());
+            urlParam.Add("task_id", showUpgradeClusterTaskRequest.TaskId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgrade/tasks/{task_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUpgradeClusterTaskRequest);
+            return new SyncInvoker<ShowUpgradeClusterTaskResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowUpgradeClusterTaskResponse>);
+        }
+        
+        /// <summary>
+        /// 获取用户模板配额
+        ///
+        /// 获取用户模板配额
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowUserChartsQuotasResponse ShowUserChartsQuotas(ShowUserChartsQuotasRequest showUserChartsQuotasRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/charts/{project_id}/quotas", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUserChartsQuotasRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowUserChartsQuotasResponse>(response);
+        }
+
+        public SyncInvoker<ShowUserChartsQuotasResponse> ShowUserChartsQuotasInvoker(ShowUserChartsQuotasRequest showUserChartsQuotasRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/charts/{project_id}/quotas", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUserChartsQuotasRequest);
+            return new SyncInvoker<ShowUserChartsQuotasResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowUserChartsQuotasResponse>);
         }
         
         /// <summary>
@@ -705,12 +1513,47 @@ namespace HuaweiCloud.SDK.Cce.V3
         /// </summary>
         public UpdateAddonInstanceResponse UpdateAddonInstance(UpdateAddonInstanceRequest updateAddonInstanceRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("id" , updateAddonInstanceRequest.Id.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/api/v3/addons/{id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAddonInstanceRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("id", updateAddonInstanceRequest.Id.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/addons/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAddonInstanceRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerialize<UpdateAddonInstanceResponse>(response);
+        }
+
+        public SyncInvoker<UpdateAddonInstanceResponse> UpdateAddonInstanceInvoker(UpdateAddonInstanceRequest updateAddonInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("id", updateAddonInstanceRequest.Id.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/addons/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAddonInstanceRequest);
+            return new SyncInvoker<UpdateAddonInstanceResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateAddonInstanceResponse>);
+        }
+        
+        /// <summary>
+        /// 更新模板
+        ///
+        /// 更新模板
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateChartResponse UpdateChart(UpdateChartRequest updateChartRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("chart_id", updateChartRequest.ChartId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/charts/{chart_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", updateChartRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateChartResponse>(response);
+        }
+
+        public SyncInvoker<UpdateChartResponse> UpdateChartInvoker(UpdateChartRequest updateChartRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("chart_id", updateChartRequest.ChartId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/charts/{chart_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", updateChartRequest);
+            return new SyncInvoker<UpdateChartResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateChartResponse>);
         }
         
         /// <summary>
@@ -723,12 +1566,21 @@ namespace HuaweiCloud.SDK.Cce.V3
         /// </summary>
         public UpdateClusterResponse UpdateCluster(UpdateClusterRequest updateClusterRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("cluster_id" , updateClusterRequest.ClusterId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateClusterRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", updateClusterRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateClusterRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerialize<UpdateClusterResponse>(response);
+        }
+
+        public SyncInvoker<UpdateClusterResponse> UpdateClusterInvoker(UpdateClusterRequest updateClusterRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", updateClusterRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateClusterRequest);
+            return new SyncInvoker<UpdateClusterResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateClusterResponse>);
         }
         
         /// <summary>
@@ -741,12 +1593,47 @@ namespace HuaweiCloud.SDK.Cce.V3
         /// </summary>
         public UpdateClusterEipResponse UpdateClusterEip(UpdateClusterEipRequest updateClusterEipRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("cluster_id" , updateClusterEipRequest.ClusterId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/mastereip",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateClusterEipRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", updateClusterEipRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/mastereip", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateClusterEipRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerialize<UpdateClusterEipResponse>(response);
+        }
+
+        public SyncInvoker<UpdateClusterEipResponse> UpdateClusterEipInvoker(UpdateClusterEipRequest updateClusterEipRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", updateClusterEipRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/mastereip", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateClusterEipRequest);
+            return new SyncInvoker<UpdateClusterEipResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateClusterEipResponse>);
+        }
+        
+        /// <summary>
+        /// 配置集群日志
+        ///
+        /// 用户可以选择集群管理节点上哪些组件的日志上报LTS
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateClusterLogConfigResponse UpdateClusterLogConfig(UpdateClusterLogConfigRequest updateClusterLogConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", updateClusterLogConfigRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/cluster/{cluster_id}/log-configs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateClusterLogConfigRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateClusterLogConfigResponse>(response);
+        }
+
+        public SyncInvoker<UpdateClusterLogConfigResponse> UpdateClusterLogConfigInvoker(UpdateClusterLogConfigRequest updateClusterLogConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", updateClusterLogConfigRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/cluster/{cluster_id}/log-configs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateClusterLogConfigRequest);
+            return new SyncInvoker<UpdateClusterLogConfigResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateClusterLogConfigResponse>);
         }
         
         /// <summary>
@@ -760,13 +1647,23 @@ namespace HuaweiCloud.SDK.Cce.V3
         /// </summary>
         public UpdateNodeResponse UpdateNode(UpdateNodeRequest updateNodeRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("cluster_id" , updateNodeRequest.ClusterId.ToString());
-            urlParam.Add("node_id" , updateNodeRequest.NodeId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes/{node_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateNodeRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", updateNodeRequest.ClusterId.ToString());
+            urlParam.Add("node_id", updateNodeRequest.NodeId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes/{node_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateNodeRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerialize<UpdateNodeResponse>(response);
+        }
+
+        public SyncInvoker<UpdateNodeResponse> UpdateNodeInvoker(UpdateNodeRequest updateNodeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", updateNodeRequest.ClusterId.ToString());
+            urlParam.Add("node_id", updateNodeRequest.NodeId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes/{node_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateNodeRequest);
+            return new SyncInvoker<UpdateNodeResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateNodeResponse>);
         }
         
         /// <summary>
@@ -783,13 +1680,109 @@ namespace HuaweiCloud.SDK.Cce.V3
         /// </summary>
         public UpdateNodePoolResponse UpdateNodePool(UpdateNodePoolRequest updateNodePoolRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("cluster_id" , updateNodePoolRequest.ClusterId.ToString());
-            urlParam.Add("nodepool_id" , updateNodePoolRequest.NodepoolId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodepools/{nodepool_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateNodePoolRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", updateNodePoolRequest.ClusterId.ToString());
+            urlParam.Add("nodepool_id", updateNodePoolRequest.NodepoolId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodepools/{nodepool_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateNodePoolRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerialize<UpdateNodePoolResponse>(response);
+        }
+
+        public SyncInvoker<UpdateNodePoolResponse> UpdateNodePoolInvoker(UpdateNodePoolRequest updateNodePoolRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", updateNodePoolRequest.ClusterId.ToString());
+            urlParam.Add("nodepool_id", updateNodePoolRequest.NodepoolId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodepools/{nodepool_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateNodePoolRequest);
+            return new SyncInvoker<UpdateNodePoolResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateNodePoolResponse>);
+        }
+        
+        /// <summary>
+        /// 修改指定节点池配置参数的值
+        ///
+        /// 该API用于修改CCE服务下指定节点池配置参数的值。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateNodePoolConfigurationResponse UpdateNodePoolConfiguration(UpdateNodePoolConfigurationRequest updateNodePoolConfigurationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", updateNodePoolConfigurationRequest.ClusterId.ToString());
+            urlParam.Add("nodepool_id", updateNodePoolConfigurationRequest.NodepoolId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodepools/{nodepool_id}/configuration", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateNodePoolConfigurationRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateNodePoolConfigurationResponse>(response);
+        }
+
+        public SyncInvoker<UpdateNodePoolConfigurationResponse> UpdateNodePoolConfigurationInvoker(UpdateNodePoolConfigurationRequest updateNodePoolConfigurationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", updateNodePoolConfigurationRequest.ClusterId.ToString());
+            urlParam.Add("nodepool_id", updateNodePoolConfigurationRequest.NodepoolId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodepools/{nodepool_id}/configuration", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateNodePoolConfigurationRequest);
+            return new SyncInvoker<UpdateNodePoolConfigurationResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateNodePoolConfigurationResponse>);
+        }
+        
+        /// <summary>
+        /// 更新分区
+        ///
+        /// 更新分区
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdatePartitionResponse UpdatePartition(UpdatePartitionRequest updatePartitionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", updatePartitionRequest.ClusterId.ToString());
+            urlParam.Add("partition_name", updatePartitionRequest.PartitionName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/partitions/{partition_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePartitionRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdatePartitionResponse>(response);
+        }
+
+        public SyncInvoker<UpdatePartitionResponse> UpdatePartitionInvoker(UpdatePartitionRequest updatePartitionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", updatePartitionRequest.ClusterId.ToString());
+            urlParam.Add("partition_name", updatePartitionRequest.PartitionName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/partitions/{partition_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePartitionRequest);
+            return new SyncInvoker<UpdatePartitionResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdatePartitionResponse>);
+        }
+        
+        /// <summary>
+        /// 更新指定模板实例
+        ///
+        /// 更新指定模板实例
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateReleaseResponse UpdateRelease(UpdateReleaseRequest updateReleaseRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("name", updateReleaseRequest.Name.ToString());
+            urlParam.Add("namespace", updateReleaseRequest.Namespace.ToString());
+            urlParam.Add("cluster_id", updateReleaseRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/cce/cam/v3/clusters/{cluster_id}/namespace/{namespace}/releases/{name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateReleaseRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateReleaseResponse>(response);
+        }
+
+        public SyncInvoker<UpdateReleaseResponse> UpdateReleaseInvoker(UpdateReleaseRequest updateReleaseRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("name", updateReleaseRequest.Name.ToString());
+            urlParam.Add("namespace", updateReleaseRequest.Namespace.ToString());
+            urlParam.Add("cluster_id", updateReleaseRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/cce/cam/v3/clusters/{cluster_id}/namespace/{namespace}/releases/{name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateReleaseRequest);
+            return new SyncInvoker<UpdateReleaseResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateReleaseResponse>);
         }
         
         /// <summary>
@@ -803,16 +1796,49 @@ namespace HuaweiCloud.SDK.Cce.V3
         /// </summary>
         public UpgradeClusterResponse UpgradeCluster(UpgradeClusterRequest upgradeClusterRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("cluster_id" , upgradeClusterRequest.ClusterId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgrade",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", upgradeClusterRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", upgradeClusterRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgrade", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", upgradeClusterRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<UpgradeClusterResponse>(response);
+        }
+
+        public SyncInvoker<UpgradeClusterResponse> UpgradeClusterInvoker(UpgradeClusterRequest upgradeClusterRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", upgradeClusterRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgrade", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", upgradeClusterRequest);
+            return new SyncInvoker<UpgradeClusterResponse>(this, "POST", request, JsonUtils.DeSerialize<UpgradeClusterResponse>);
         }
         
         /// <summary>
-        /// 查询API版本信息列表。
+        /// 上传模板
+        ///
+        /// 上传模板
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UploadChartResponse UploadChart(UploadChartRequest uploadChartRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/charts", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", uploadChartRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<UploadChartResponse>(response);
+        }
+
+        public SyncInvoker<UploadChartResponse> UploadChartInvoker(UploadChartRequest uploadChartRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/charts", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", uploadChartRequest);
+            return new SyncInvoker<UploadChartResponse>(this, "POST", request, JsonUtils.DeSerialize<UploadChartResponse>);
+        }
+        
+        /// <summary>
+        /// 查询API版本信息列表
         ///
         /// 该API用于查询CCE服务当前支持的API版本信息列表。
         /// 
@@ -820,11 +1846,19 @@ namespace HuaweiCloud.SDK.Cce.V3
         /// </summary>
         public ShowVersionResponse ShowVersion(ShowVersionRequest showVersionRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVersionRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVersionRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowVersionResponse>(response);
+        }
+
+        public SyncInvoker<ShowVersionResponse> ShowVersionInvoker(ShowVersionRequest showVersionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVersionRequest);
+            return new SyncInvoker<ShowVersionResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowVersionResponse>);
         }
         
     }

@@ -24,11 +24,19 @@ namespace HuaweiCloud.SDK.Moderation.V3
         /// </summary>
         public async Task<CheckImageModerationResponse> CheckImageModerationAsync(CheckImageModerationRequest checkImageModerationRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/image",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", checkImageModerationRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/image",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", checkImageModerationRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CheckImageModerationResponse>(response);
+        }
+
+        public AsyncInvoker<CheckImageModerationResponse> CheckImageModerationAsyncInvoker(CheckImageModerationRequest checkImageModerationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/image",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", checkImageModerationRequest);
+            return new AsyncInvoker<CheckImageModerationResponse>(this, "POST", request, JsonUtils.DeSerialize<CheckImageModerationResponse>);
         }
         
         /// <summary>
@@ -40,12 +48,21 @@ namespace HuaweiCloud.SDK.Moderation.V3
         /// </summary>
         public async Task<RunCloseAudioStreamModerationJobResponse> RunCloseAudioStreamModerationJobAsync(RunCloseAudioStreamModerationJobRequest runCloseAudioStreamModerationJobRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id" , runCloseAudioStreamModerationJobRequest.JobId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/audio-stream/jobs/stop/{job_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", runCloseAudioStreamModerationJobRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", runCloseAudioStreamModerationJobRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/audio-stream/jobs/stop/{job_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", runCloseAudioStreamModerationJobRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<RunCloseAudioStreamModerationJobResponse>(response);
+        }
+
+        public AsyncInvoker<RunCloseAudioStreamModerationJobResponse> RunCloseAudioStreamModerationJobAsyncInvoker(RunCloseAudioStreamModerationJobRequest runCloseAudioStreamModerationJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", runCloseAudioStreamModerationJobRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/audio-stream/jobs/stop/{job_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", runCloseAudioStreamModerationJobRequest);
+            return new AsyncInvoker<RunCloseAudioStreamModerationJobResponse>(this, "POST", request, JsonUtils.DeSerialize<RunCloseAudioStreamModerationJobResponse>);
         }
         
         /// <summary>
@@ -57,12 +74,21 @@ namespace HuaweiCloud.SDK.Moderation.V3
         /// </summary>
         public async Task<RunCloseVideoStreamModerationJobResponse> RunCloseVideoStreamModerationJobAsync(RunCloseVideoStreamModerationJobRequest runCloseVideoStreamModerationJobRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id" , runCloseVideoStreamModerationJobRequest.JobId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/video-stream/jobs/stop/{job_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", runCloseVideoStreamModerationJobRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", runCloseVideoStreamModerationJobRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/video-stream/jobs/stop/{job_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", runCloseVideoStreamModerationJobRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<RunCloseVideoStreamModerationJobResponse>(response);
+        }
+
+        public AsyncInvoker<RunCloseVideoStreamModerationJobResponse> RunCloseVideoStreamModerationJobAsyncInvoker(RunCloseVideoStreamModerationJobRequest runCloseVideoStreamModerationJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", runCloseVideoStreamModerationJobRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/video-stream/jobs/stop/{job_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", runCloseVideoStreamModerationJobRequest);
+            return new AsyncInvoker<RunCloseVideoStreamModerationJobResponse>(this, "POST", request, JsonUtils.DeSerialize<RunCloseVideoStreamModerationJobResponse>);
         }
         
         /// <summary>
@@ -74,11 +100,19 @@ namespace HuaweiCloud.SDK.Moderation.V3
         /// </summary>
         public async Task<RunCreateAudioModerationJobResponse> RunCreateAudioModerationJobAsync(RunCreateAudioModerationJobRequest runCreateAudioModerationJobRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/audio/jobs",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", runCreateAudioModerationJobRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/audio/jobs",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", runCreateAudioModerationJobRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<RunCreateAudioModerationJobResponse>(response);
+        }
+
+        public AsyncInvoker<RunCreateAudioModerationJobResponse> RunCreateAudioModerationJobAsyncInvoker(RunCreateAudioModerationJobRequest runCreateAudioModerationJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/audio/jobs",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", runCreateAudioModerationJobRequest);
+            return new AsyncInvoker<RunCreateAudioModerationJobResponse>(this, "POST", request, JsonUtils.DeSerialize<RunCreateAudioModerationJobResponse>);
         }
         
         /// <summary>
@@ -90,11 +124,19 @@ namespace HuaweiCloud.SDK.Moderation.V3
         /// </summary>
         public async Task<RunCreateAudioStreamModerationJobResponse> RunCreateAudioStreamModerationJobAsync(RunCreateAudioStreamModerationJobRequest runCreateAudioStreamModerationJobRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/audio-stream/jobs",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", runCreateAudioStreamModerationJobRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/audio-stream/jobs",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", runCreateAudioStreamModerationJobRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<RunCreateAudioStreamModerationJobResponse>(response);
+        }
+
+        public AsyncInvoker<RunCreateAudioStreamModerationJobResponse> RunCreateAudioStreamModerationJobAsyncInvoker(RunCreateAudioStreamModerationJobRequest runCreateAudioStreamModerationJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/audio-stream/jobs",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", runCreateAudioStreamModerationJobRequest);
+            return new AsyncInvoker<RunCreateAudioStreamModerationJobResponse>(this, "POST", request, JsonUtils.DeSerialize<RunCreateAudioStreamModerationJobResponse>);
         }
         
         /// <summary>
@@ -106,11 +148,19 @@ namespace HuaweiCloud.SDK.Moderation.V3
         /// </summary>
         public async Task<RunCreateDocumentModerationJobResponse> RunCreateDocumentModerationJobAsync(RunCreateDocumentModerationJobRequest runCreateDocumentModerationJobRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/document/jobs",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", runCreateDocumentModerationJobRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/document/jobs",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", runCreateDocumentModerationJobRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<RunCreateDocumentModerationJobResponse>(response);
+        }
+
+        public AsyncInvoker<RunCreateDocumentModerationJobResponse> RunCreateDocumentModerationJobAsyncInvoker(RunCreateDocumentModerationJobRequest runCreateDocumentModerationJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/document/jobs",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", runCreateDocumentModerationJobRequest);
+            return new AsyncInvoker<RunCreateDocumentModerationJobResponse>(this, "POST", request, JsonUtils.DeSerialize<RunCreateDocumentModerationJobResponse>);
         }
         
         /// <summary>
@@ -122,11 +172,19 @@ namespace HuaweiCloud.SDK.Moderation.V3
         /// </summary>
         public async Task<RunCreateVideoModerationJobResponse> RunCreateVideoModerationJobAsync(RunCreateVideoModerationJobRequest runCreateVideoModerationJobRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/video/jobs",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", runCreateVideoModerationJobRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/video/jobs",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", runCreateVideoModerationJobRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<RunCreateVideoModerationJobResponse>(response);
+        }
+
+        public AsyncInvoker<RunCreateVideoModerationJobResponse> RunCreateVideoModerationJobAsyncInvoker(RunCreateVideoModerationJobRequest runCreateVideoModerationJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/video/jobs",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", runCreateVideoModerationJobRequest);
+            return new AsyncInvoker<RunCreateVideoModerationJobResponse>(this, "POST", request, JsonUtils.DeSerialize<RunCreateVideoModerationJobResponse>);
         }
         
         /// <summary>
@@ -138,11 +196,19 @@ namespace HuaweiCloud.SDK.Moderation.V3
         /// </summary>
         public async Task<RunCreateVideoStreamModerationJobResponse> RunCreateVideoStreamModerationJobAsync(RunCreateVideoStreamModerationJobRequest runCreateVideoStreamModerationJobRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/video-stream/jobs",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", runCreateVideoStreamModerationJobRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/video-stream/jobs",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", runCreateVideoStreamModerationJobRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<RunCreateVideoStreamModerationJobResponse>(response);
+        }
+
+        public AsyncInvoker<RunCreateVideoStreamModerationJobResponse> RunCreateVideoStreamModerationJobAsyncInvoker(RunCreateVideoStreamModerationJobRequest runCreateVideoStreamModerationJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/video-stream/jobs",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", runCreateVideoStreamModerationJobRequest);
+            return new AsyncInvoker<RunCreateVideoStreamModerationJobResponse>(this, "POST", request, JsonUtils.DeSerialize<RunCreateVideoStreamModerationJobResponse>);
         }
         
         /// <summary>
@@ -153,12 +219,21 @@ namespace HuaweiCloud.SDK.Moderation.V3
         /// </summary>
         public async Task<RunQueryAudioModerationJobResponse> RunQueryAudioModerationJobAsync(RunQueryAudioModerationJobRequest runQueryAudioModerationJobRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id" , runQueryAudioModerationJobRequest.JobId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/audio/jobs/{job_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", runQueryAudioModerationJobRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", runQueryAudioModerationJobRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/audio/jobs/{job_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", runQueryAudioModerationJobRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<RunQueryAudioModerationJobResponse>(response);
+        }
+
+        public AsyncInvoker<RunQueryAudioModerationJobResponse> RunQueryAudioModerationJobAsyncInvoker(RunQueryAudioModerationJobRequest runQueryAudioModerationJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", runQueryAudioModerationJobRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/audio/jobs/{job_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", runQueryAudioModerationJobRequest);
+            return new AsyncInvoker<RunQueryAudioModerationJobResponse>(this, "GET", request, JsonUtils.DeSerialize<RunQueryAudioModerationJobResponse>);
         }
         
         /// <summary>
@@ -170,12 +245,21 @@ namespace HuaweiCloud.SDK.Moderation.V3
         /// </summary>
         public async Task<RunQueryDocumentModerationJobResponse> RunQueryDocumentModerationJobAsync(RunQueryDocumentModerationJobRequest runQueryDocumentModerationJobRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id" , runQueryDocumentModerationJobRequest.JobId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/document/jobs/{job_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", runQueryDocumentModerationJobRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", runQueryDocumentModerationJobRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/document/jobs/{job_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", runQueryDocumentModerationJobRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<RunQueryDocumentModerationJobResponse>(response);
+        }
+
+        public AsyncInvoker<RunQueryDocumentModerationJobResponse> RunQueryDocumentModerationJobAsyncInvoker(RunQueryDocumentModerationJobRequest runQueryDocumentModerationJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", runQueryDocumentModerationJobRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/document/jobs/{job_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", runQueryDocumentModerationJobRequest);
+            return new AsyncInvoker<RunQueryDocumentModerationJobResponse>(this, "GET", request, JsonUtils.DeSerialize<RunQueryDocumentModerationJobResponse>);
         }
         
         /// <summary>
@@ -187,12 +271,21 @@ namespace HuaweiCloud.SDK.Moderation.V3
         /// </summary>
         public async Task<RunQueryVideoModerationJobResponse> RunQueryVideoModerationJobAsync(RunQueryVideoModerationJobRequest runQueryVideoModerationJobRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id" , runQueryVideoModerationJobRequest.JobId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/video/jobs/{job_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", runQueryVideoModerationJobRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", runQueryVideoModerationJobRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/video/jobs/{job_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", runQueryVideoModerationJobRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<RunQueryVideoModerationJobResponse>(response);
+        }
+
+        public AsyncInvoker<RunQueryVideoModerationJobResponse> RunQueryVideoModerationJobAsyncInvoker(RunQueryVideoModerationJobRequest runQueryVideoModerationJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", runQueryVideoModerationJobRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/video/jobs/{job_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", runQueryVideoModerationJobRequest);
+            return new AsyncInvoker<RunQueryVideoModerationJobResponse>(this, "GET", request, JsonUtils.DeSerialize<RunQueryVideoModerationJobResponse>);
         }
         
         /// <summary>
@@ -204,11 +297,19 @@ namespace HuaweiCloud.SDK.Moderation.V3
         /// </summary>
         public async Task<RunTextModerationResponse> RunTextModerationAsync(RunTextModerationRequest runTextModerationRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/text",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", runTextModerationRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/text",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", runTextModerationRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<RunTextModerationResponse>(response);
+        }
+
+        public AsyncInvoker<RunTextModerationResponse> RunTextModerationAsyncInvoker(RunTextModerationRequest runTextModerationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/text",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", runTextModerationRequest);
+            return new AsyncInvoker<RunTextModerationResponse>(this, "POST", request, JsonUtils.DeSerialize<RunTextModerationResponse>);
         }
         
     }

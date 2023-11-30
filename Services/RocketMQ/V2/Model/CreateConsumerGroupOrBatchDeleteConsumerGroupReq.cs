@@ -53,7 +53,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public string GroupDesc { get; set; }
 
         /// <summary>
-        /// 最大重试次数。
+        /// 最大重试次数，取值范围为1~16。
         /// </summary>
         [JsonProperty("retry_max_time", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? RetryMaxTime { get; set; }

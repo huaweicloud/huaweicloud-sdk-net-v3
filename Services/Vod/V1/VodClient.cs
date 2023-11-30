@@ -23,11 +23,19 @@ namespace HuaweiCloud.SDK.Vod.V1
         /// </summary>
         public CancelAssetTranscodeTaskResponse CancelAssetTranscodeTask(CancelAssetTranscodeTaskRequest cancelAssetTranscodeTaskRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/process",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", cancelAssetTranscodeTaskRequest);
-            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/process", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", cancelAssetTranscodeTaskRequest);
+            var response = DoHttpRequestSync("DELETE", request);
             return JsonUtils.DeSerializeNull<CancelAssetTranscodeTaskResponse>(response);
+        }
+
+        public SyncInvoker<CancelAssetTranscodeTaskResponse> CancelAssetTranscodeTaskInvoker(CancelAssetTranscodeTaskRequest cancelAssetTranscodeTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/process", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", cancelAssetTranscodeTaskRequest);
+            return new SyncInvoker<CancelAssetTranscodeTaskResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<CancelAssetTranscodeTaskResponse>);
         }
         
         /// <summary>
@@ -39,11 +47,19 @@ namespace HuaweiCloud.SDK.Vod.V1
         /// </summary>
         public CancelExtractAudioTaskResponse CancelExtractAudioTask(CancelExtractAudioTaskRequest cancelExtractAudioTaskRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/extract_audio",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", cancelExtractAudioTaskRequest);
-            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/extract_audio", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", cancelExtractAudioTaskRequest);
+            var response = DoHttpRequestSync("DELETE", request);
             return JsonUtils.DeSerializeNull<CancelExtractAudioTaskResponse>(response);
+        }
+
+        public SyncInvoker<CancelExtractAudioTaskResponse> CancelExtractAudioTaskInvoker(CancelExtractAudioTaskRequest cancelExtractAudioTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/extract_audio", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", cancelExtractAudioTaskRequest);
+            return new SyncInvoker<CancelExtractAudioTaskResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<CancelExtractAudioTaskResponse>);
         }
         
         /// <summary>
@@ -55,11 +71,19 @@ namespace HuaweiCloud.SDK.Vod.V1
         /// </summary>
         public CheckMd5DuplicationResponse CheckMd5Duplication(CheckMd5DuplicationRequest checkMd5DuplicationRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/duplication",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", checkMd5DuplicationRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/duplication", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", checkMd5DuplicationRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<CheckMd5DuplicationResponse>(response);
+        }
+
+        public SyncInvoker<CheckMd5DuplicationResponse> CheckMd5DuplicationInvoker(CheckMd5DuplicationRequest checkMd5DuplicationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/duplication", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", checkMd5DuplicationRequest);
+            return new SyncInvoker<CheckMd5DuplicationResponse>(this, "GET", request, JsonUtils.DeSerialize<CheckMd5DuplicationResponse>);
         }
         
         /// <summary>
@@ -71,11 +95,19 @@ namespace HuaweiCloud.SDK.Vod.V1
         /// </summary>
         public ConfirmAssetUploadResponse ConfirmAssetUpload(ConfirmAssetUploadRequest confirmAssetUploadRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/status/uploaded",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", confirmAssetUploadRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/status/uploaded", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", confirmAssetUploadRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<ConfirmAssetUploadResponse>(response);
+        }
+
+        public SyncInvoker<ConfirmAssetUploadResponse> ConfirmAssetUploadInvoker(ConfirmAssetUploadRequest confirmAssetUploadRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/status/uploaded", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", confirmAssetUploadRequest);
+            return new SyncInvoker<ConfirmAssetUploadResponse>(this, "POST", request, JsonUtils.DeSerialize<ConfirmAssetUploadResponse>);
         }
         
         /// <summary>
@@ -87,11 +119,19 @@ namespace HuaweiCloud.SDK.Vod.V1
         /// </summary>
         public ConfirmImageUploadResponse ConfirmImageUpload(ConfirmImageUploadRequest confirmImageUploadRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/watermark/status/uploaded",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", confirmImageUploadRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/watermark/status/uploaded", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", confirmImageUploadRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<ConfirmImageUploadResponse>(response);
+        }
+
+        public SyncInvoker<ConfirmImageUploadResponse> ConfirmImageUploadInvoker(ConfirmImageUploadRequest confirmImageUploadRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/watermark/status/uploaded", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", confirmImageUploadRequest);
+            return new SyncInvoker<ConfirmImageUploadResponse>(this, "POST", request, JsonUtils.DeSerialize<ConfirmImageUploadResponse>);
         }
         
         /// <summary>
@@ -107,11 +147,19 @@ namespace HuaweiCloud.SDK.Vod.V1
         /// </summary>
         public CreateAssetByFileUploadResponse CreateAssetByFileUpload(CreateAssetByFileUploadRequest createAssetByFileUploadRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAssetByFileUploadRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAssetByFileUploadRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<CreateAssetByFileUploadResponse>(response);
+        }
+
+        public SyncInvoker<CreateAssetByFileUploadResponse> CreateAssetByFileUploadInvoker(CreateAssetByFileUploadRequest createAssetByFileUploadRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAssetByFileUploadRequest);
+            return new SyncInvoker<CreateAssetByFileUploadResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateAssetByFileUploadResponse>);
         }
         
         /// <summary>
@@ -123,11 +171,19 @@ namespace HuaweiCloud.SDK.Vod.V1
         /// </summary>
         public CreateAssetCategoryResponse CreateAssetCategory(CreateAssetCategoryRequest createAssetCategoryRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/category",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAssetCategoryRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/category", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAssetCategoryRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<CreateAssetCategoryResponse>(response);
+        }
+
+        public SyncInvoker<CreateAssetCategoryResponse> CreateAssetCategoryInvoker(CreateAssetCategoryRequest createAssetCategoryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/category", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAssetCategoryRequest);
+            return new SyncInvoker<CreateAssetCategoryResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateAssetCategoryResponse>);
         }
         
         /// <summary>
@@ -139,11 +195,19 @@ namespace HuaweiCloud.SDK.Vod.V1
         /// </summary>
         public CreateAssetProcessTaskResponse CreateAssetProcessTask(CreateAssetProcessTaskRequest createAssetProcessTaskRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/process",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAssetProcessTaskRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/process", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAssetProcessTaskRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<CreateAssetProcessTaskResponse>(response);
+        }
+
+        public SyncInvoker<CreateAssetProcessTaskResponse> CreateAssetProcessTaskInvoker(CreateAssetProcessTaskRequest createAssetProcessTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/process", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAssetProcessTaskRequest);
+            return new SyncInvoker<CreateAssetProcessTaskResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateAssetProcessTaskResponse>);
         }
         
         /// <summary>
@@ -155,11 +219,19 @@ namespace HuaweiCloud.SDK.Vod.V1
         /// </summary>
         public CreateAssetReviewTaskResponse CreateAssetReviewTask(CreateAssetReviewTaskRequest createAssetReviewTaskRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/review",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAssetReviewTaskRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/review", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAssetReviewTaskRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<CreateAssetReviewTaskResponse>(response);
+        }
+
+        public SyncInvoker<CreateAssetReviewTaskResponse> CreateAssetReviewTaskInvoker(CreateAssetReviewTaskRequest createAssetReviewTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/review", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAssetReviewTaskRequest);
+            return new SyncInvoker<CreateAssetReviewTaskResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateAssetReviewTaskResponse>);
         }
         
         /// <summary>
@@ -171,11 +243,19 @@ namespace HuaweiCloud.SDK.Vod.V1
         /// </summary>
         public CreateExtractAudioTaskResponse CreateExtractAudioTask(CreateExtractAudioTaskRequest createExtractAudioTaskRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/extract_audio",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createExtractAudioTaskRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/extract_audio", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createExtractAudioTaskRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<CreateExtractAudioTaskResponse>(response);
+        }
+
+        public SyncInvoker<CreateExtractAudioTaskResponse> CreateExtractAudioTaskInvoker(CreateExtractAudioTaskRequest createExtractAudioTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/extract_audio", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createExtractAudioTaskRequest);
+            return new SyncInvoker<CreateExtractAudioTaskResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateExtractAudioTaskResponse>);
         }
         
         /// <summary>
@@ -187,11 +267,19 @@ namespace HuaweiCloud.SDK.Vod.V1
         /// </summary>
         public CreatePreheatingAssetResponse CreatePreheatingAsset(CreatePreheatingAssetRequest createPreheatingAssetRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/preheating",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPreheatingAssetRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/preheating", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPreheatingAssetRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<CreatePreheatingAssetResponse>(response);
+        }
+
+        public SyncInvoker<CreatePreheatingAssetResponse> CreatePreheatingAssetInvoker(CreatePreheatingAssetRequest createPreheatingAssetRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/preheating", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPreheatingAssetRequest);
+            return new SyncInvoker<CreatePreheatingAssetResponse>(this, "POST", request, JsonUtils.DeSerialize<CreatePreheatingAssetResponse>);
         }
         
         /// <summary>
@@ -205,11 +293,19 @@ namespace HuaweiCloud.SDK.Vod.V1
         /// </summary>
         public CreateTakeOverTaskResponse CreateTakeOverTask(CreateTakeOverTaskRequest createTakeOverTaskRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/obs/host/stock/task",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTakeOverTaskRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/obs/host/stock/task", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTakeOverTaskRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<CreateTakeOverTaskResponse>(response);
+        }
+
+        public SyncInvoker<CreateTakeOverTaskResponse> CreateTakeOverTaskInvoker(CreateTakeOverTaskRequest createTakeOverTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/obs/host/stock/task", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTakeOverTaskRequest);
+            return new SyncInvoker<CreateTakeOverTaskResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateTakeOverTaskResponse>);
         }
         
         /// <summary>
@@ -221,11 +317,19 @@ namespace HuaweiCloud.SDK.Vod.V1
         /// </summary>
         public CreateTemplateGroupResponse CreateTemplateGroup(CreateTemplateGroupRequest createTemplateGroupRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/template_group/transcodings",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTemplateGroupRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/template_group/transcodings", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTemplateGroupRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<CreateTemplateGroupResponse>(response);
+        }
+
+        public SyncInvoker<CreateTemplateGroupResponse> CreateTemplateGroupInvoker(CreateTemplateGroupRequest createTemplateGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/template_group/transcodings", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTemplateGroupRequest);
+            return new SyncInvoker<CreateTemplateGroupResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateTemplateGroupResponse>);
         }
         
         /// <summary>
@@ -237,11 +341,19 @@ namespace HuaweiCloud.SDK.Vod.V1
         /// </summary>
         public CreateTemplateGroupCollectionResponse CreateTemplateGroupCollection(CreateTemplateGroupCollectionRequest createTemplateGroupCollectionRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/template-collection/transcodings",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTemplateGroupCollectionRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/template-collection/transcodings", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTemplateGroupCollectionRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<CreateTemplateGroupCollectionResponse>(response);
+        }
+
+        public SyncInvoker<CreateTemplateGroupCollectionResponse> CreateTemplateGroupCollectionInvoker(CreateTemplateGroupCollectionRequest createTemplateGroupCollectionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/template-collection/transcodings", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTemplateGroupCollectionRequest);
+            return new SyncInvoker<CreateTemplateGroupCollectionResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateTemplateGroupCollectionResponse>);
         }
         
         /// <summary>
@@ -253,11 +365,19 @@ namespace HuaweiCloud.SDK.Vod.V1
         /// </summary>
         public CreateTranscodeTemplateResponse CreateTranscodeTemplate(CreateTranscodeTemplateRequest createTranscodeTemplateRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/asset/template/transcodings",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTranscodeTemplateRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/asset/template/transcodings", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTranscodeTemplateRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<CreateTranscodeTemplateResponse>(response);
+        }
+
+        public SyncInvoker<CreateTranscodeTemplateResponse> CreateTranscodeTemplateInvoker(CreateTranscodeTemplateRequest createTranscodeTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/asset/template/transcodings", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTranscodeTemplateRequest);
+            return new SyncInvoker<CreateTranscodeTemplateResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateTranscodeTemplateResponse>);
         }
         
         /// <summary>
@@ -269,11 +389,19 @@ namespace HuaweiCloud.SDK.Vod.V1
         /// </summary>
         public CreateWatermarkTemplateResponse CreateWatermarkTemplate(CreateWatermarkTemplateRequest createWatermarkTemplateRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/template/watermark",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createWatermarkTemplateRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/template/watermark", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createWatermarkTemplateRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<CreateWatermarkTemplateResponse>(response);
+        }
+
+        public SyncInvoker<CreateWatermarkTemplateResponse> CreateWatermarkTemplateInvoker(CreateWatermarkTemplateRequest createWatermarkTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/template/watermark", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createWatermarkTemplateRequest);
+            return new SyncInvoker<CreateWatermarkTemplateResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateWatermarkTemplateResponse>);
         }
         
         /// <summary>
@@ -285,11 +413,19 @@ namespace HuaweiCloud.SDK.Vod.V1
         /// </summary>
         public DeleteAssetCategoryResponse DeleteAssetCategory(DeleteAssetCategoryRequest deleteAssetCategoryRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/category",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAssetCategoryRequest);
-            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/category", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAssetCategoryRequest);
+            var response = DoHttpRequestSync("DELETE", request);
             return JsonUtils.DeSerializeNull<DeleteAssetCategoryResponse>(response);
+        }
+
+        public SyncInvoker<DeleteAssetCategoryResponse> DeleteAssetCategoryInvoker(DeleteAssetCategoryRequest deleteAssetCategoryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/category", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAssetCategoryRequest);
+            return new SyncInvoker<DeleteAssetCategoryResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteAssetCategoryResponse>);
         }
         
         /// <summary>
@@ -301,11 +437,19 @@ namespace HuaweiCloud.SDK.Vod.V1
         /// </summary>
         public DeleteAssetsResponse DeleteAssets(DeleteAssetsRequest deleteAssetsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAssetsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAssetsRequest);
+            var response = DoHttpRequestSync("DELETE", request);
             return JsonUtils.DeSerialize<DeleteAssetsResponse>(response);
+        }
+
+        public SyncInvoker<DeleteAssetsResponse> DeleteAssetsInvoker(DeleteAssetsRequest deleteAssetsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAssetsRequest);
+            return new SyncInvoker<DeleteAssetsResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteAssetsResponse>);
         }
         
         /// <summary>
@@ -317,11 +461,19 @@ namespace HuaweiCloud.SDK.Vod.V1
         /// </summary>
         public DeleteTemplateGroupResponse DeleteTemplateGroup(DeleteTemplateGroupRequest deleteTemplateGroupRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/template_group/transcodings",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTemplateGroupRequest);
-            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/template_group/transcodings", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTemplateGroupRequest);
+            var response = DoHttpRequestSync("DELETE", request);
             return JsonUtils.DeSerializeNull<DeleteTemplateGroupResponse>(response);
+        }
+
+        public SyncInvoker<DeleteTemplateGroupResponse> DeleteTemplateGroupInvoker(DeleteTemplateGroupRequest deleteTemplateGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/template_group/transcodings", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTemplateGroupRequest);
+            return new SyncInvoker<DeleteTemplateGroupResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteTemplateGroupResponse>);
         }
         
         /// <summary>
@@ -333,11 +485,19 @@ namespace HuaweiCloud.SDK.Vod.V1
         /// </summary>
         public DeleteTemplateGroupCollectionResponse DeleteTemplateGroupCollection(DeleteTemplateGroupCollectionRequest deleteTemplateGroupCollectionRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/template-collection/transcodings",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTemplateGroupCollectionRequest);
-            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/template-collection/transcodings", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTemplateGroupCollectionRequest);
+            var response = DoHttpRequestSync("DELETE", request);
             return JsonUtils.DeSerializeNull<DeleteTemplateGroupCollectionResponse>(response);
+        }
+
+        public SyncInvoker<DeleteTemplateGroupCollectionResponse> DeleteTemplateGroupCollectionInvoker(DeleteTemplateGroupCollectionRequest deleteTemplateGroupCollectionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/template-collection/transcodings", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTemplateGroupCollectionRequest);
+            return new SyncInvoker<DeleteTemplateGroupCollectionResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteTemplateGroupCollectionResponse>);
         }
         
         /// <summary>
@@ -349,11 +509,19 @@ namespace HuaweiCloud.SDK.Vod.V1
         /// </summary>
         public DeleteTranscodeTemplateResponse DeleteTranscodeTemplate(DeleteTranscodeTemplateRequest deleteTranscodeTemplateRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/asset/template/transcodings",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTranscodeTemplateRequest);
-            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/asset/template/transcodings", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTranscodeTemplateRequest);
+            var response = DoHttpRequestSync("DELETE", request);
             return JsonUtils.DeSerializeNull<DeleteTranscodeTemplateResponse>(response);
+        }
+
+        public SyncInvoker<DeleteTranscodeTemplateResponse> DeleteTranscodeTemplateInvoker(DeleteTranscodeTemplateRequest deleteTranscodeTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/asset/template/transcodings", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTranscodeTemplateRequest);
+            return new SyncInvoker<DeleteTranscodeTemplateResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteTranscodeTemplateResponse>);
         }
         
         /// <summary>
@@ -365,11 +533,19 @@ namespace HuaweiCloud.SDK.Vod.V1
         /// </summary>
         public DeleteWatermarkTemplateResponse DeleteWatermarkTemplate(DeleteWatermarkTemplateRequest deleteWatermarkTemplateRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/template/watermark",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteWatermarkTemplateRequest);
-            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/template/watermark", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteWatermarkTemplateRequest);
+            var response = DoHttpRequestSync("DELETE", request);
             return JsonUtils.DeSerializeNull<DeleteWatermarkTemplateResponse>(response);
+        }
+
+        public SyncInvoker<DeleteWatermarkTemplateResponse> DeleteWatermarkTemplateInvoker(DeleteWatermarkTemplateRequest deleteWatermarkTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/template/watermark", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteWatermarkTemplateRequest);
+            return new SyncInvoker<DeleteWatermarkTemplateResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteWatermarkTemplateResponse>);
         }
         
         /// <summary>
@@ -381,13 +557,26 @@ namespace HuaweiCloud.SDK.Vod.V1
         /// </summary>
         public ListAssetCategoryResponse ListAssetCategory(ListAssetCategoryRequest listAssetCategoryRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/category",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAssetCategoryRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
-            ListAssetCategoryResponse listAssetCategoryResponse = JsonUtils.DeSerializeNull<ListAssetCategoryResponse>(response);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/category", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAssetCategoryRequest);
+            var response = DoHttpRequestSync("GET", request);
+            var listAssetCategoryResponse = JsonUtils.DeSerializeNull<ListAssetCategoryResponse>(response);
             listAssetCategoryResponse.Body = JsonUtils.DeSerializeList<QueryCategoryRsp>(response);
             return listAssetCategoryResponse;
+        }
+
+        public SyncInvoker<ListAssetCategoryResponse> ListAssetCategoryInvoker(ListAssetCategoryRequest listAssetCategoryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/category", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAssetCategoryRequest);
+            return new SyncInvoker<ListAssetCategoryResponse>(this, "GET", request, response =>
+            {
+                var listAssetCategoryResponse = JsonUtils.DeSerializeNull<ListAssetCategoryResponse>(response);
+                listAssetCategoryResponse.Body = JsonUtils.DeSerializeList<QueryCategoryRsp>(response);
+                return listAssetCategoryResponse;
+            });
         }
         
         /// <summary>
@@ -399,11 +588,19 @@ namespace HuaweiCloud.SDK.Vod.V1
         /// </summary>
         public ListAssetListResponse ListAssetList(ListAssetListRequest listAssetListRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/list",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAssetListRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/list", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAssetListRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ListAssetListResponse>(response);
+        }
+
+        public SyncInvoker<ListAssetListResponse> ListAssetListInvoker(ListAssetListRequest listAssetListRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/list", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAssetListRequest);
+            return new SyncInvoker<ListAssetListResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAssetListResponse>);
         }
         
         /// <summary>
@@ -415,11 +612,19 @@ namespace HuaweiCloud.SDK.Vod.V1
         /// </summary>
         public ListDomainLogsResponse ListDomainLogs(ListDomainLogsRequest listDomainLogsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/vod/cdn/logs",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDomainLogsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/vod/cdn/logs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDomainLogsRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ListDomainLogsResponse>(response);
+        }
+
+        public SyncInvoker<ListDomainLogsResponse> ListDomainLogsInvoker(ListDomainLogsRequest listDomainLogsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/vod/cdn/logs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDomainLogsRequest);
+            return new SyncInvoker<ListDomainLogsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDomainLogsResponse>);
         }
         
         /// <summary>
@@ -431,11 +636,19 @@ namespace HuaweiCloud.SDK.Vod.V1
         /// </summary>
         public ListTemplateGroupResponse ListTemplateGroup(ListTemplateGroupRequest listTemplateGroupRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/template_group/transcodings",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTemplateGroupRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/template_group/transcodings", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTemplateGroupRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ListTemplateGroupResponse>(response);
+        }
+
+        public SyncInvoker<ListTemplateGroupResponse> ListTemplateGroupInvoker(ListTemplateGroupRequest listTemplateGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/template_group/transcodings", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTemplateGroupRequest);
+            return new SyncInvoker<ListTemplateGroupResponse>(this, "GET", request, JsonUtils.DeSerialize<ListTemplateGroupResponse>);
         }
         
         /// <summary>
@@ -447,11 +660,19 @@ namespace HuaweiCloud.SDK.Vod.V1
         /// </summary>
         public ListTemplateGroupCollectionResponse ListTemplateGroupCollection(ListTemplateGroupCollectionRequest listTemplateGroupCollectionRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/template-collection/transcodings",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTemplateGroupCollectionRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/template-collection/transcodings", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTemplateGroupCollectionRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ListTemplateGroupCollectionResponse>(response);
+        }
+
+        public SyncInvoker<ListTemplateGroupCollectionResponse> ListTemplateGroupCollectionInvoker(ListTemplateGroupCollectionRequest listTemplateGroupCollectionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/template-collection/transcodings", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTemplateGroupCollectionRequest);
+            return new SyncInvoker<ListTemplateGroupCollectionResponse>(this, "GET", request, JsonUtils.DeSerialize<ListTemplateGroupCollectionResponse>);
         }
         
         /// <summary>
@@ -463,11 +684,19 @@ namespace HuaweiCloud.SDK.Vod.V1
         /// </summary>
         public ListTopStatisticsResponse ListTopStatistics(ListTopStatisticsRequest listTopStatisticsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/top-statistics",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTopStatisticsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/top-statistics", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTopStatisticsRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ListTopStatisticsResponse>(response);
+        }
+
+        public SyncInvoker<ListTopStatisticsResponse> ListTopStatisticsInvoker(ListTopStatisticsRequest listTopStatisticsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/top-statistics", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTopStatisticsRequest);
+            return new SyncInvoker<ListTopStatisticsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListTopStatisticsResponse>);
         }
         
         /// <summary>
@@ -479,11 +708,19 @@ namespace HuaweiCloud.SDK.Vod.V1
         /// </summary>
         public ListTranscodeTemplateResponse ListTranscodeTemplate(ListTranscodeTemplateRequest listTranscodeTemplateRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/asset/template/transcodings",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTranscodeTemplateRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/asset/template/transcodings", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTranscodeTemplateRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ListTranscodeTemplateResponse>(response);
+        }
+
+        public SyncInvoker<ListTranscodeTemplateResponse> ListTranscodeTemplateInvoker(ListTranscodeTemplateRequest listTranscodeTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/asset/template/transcodings", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTranscodeTemplateRequest);
+            return new SyncInvoker<ListTranscodeTemplateResponse>(this, "GET", request, JsonUtils.DeSerialize<ListTranscodeTemplateResponse>);
         }
         
         /// <summary>
@@ -495,11 +732,19 @@ namespace HuaweiCloud.SDK.Vod.V1
         /// </summary>
         public ListWatermarkTemplateResponse ListWatermarkTemplate(ListWatermarkTemplateRequest listWatermarkTemplateRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/template/watermark",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listWatermarkTemplateRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/template/watermark", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listWatermarkTemplateRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ListWatermarkTemplateResponse>(response);
+        }
+
+        public SyncInvoker<ListWatermarkTemplateResponse> ListWatermarkTemplateInvoker(ListWatermarkTemplateRequest listWatermarkTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/template/watermark", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listWatermarkTemplateRequest);
+            return new SyncInvoker<ListWatermarkTemplateResponse>(this, "GET", request, JsonUtils.DeSerialize<ListWatermarkTemplateResponse>);
         }
         
         /// <summary>
@@ -511,11 +756,19 @@ namespace HuaweiCloud.SDK.Vod.V1
         /// </summary>
         public PublishAssetFromObsResponse PublishAssetFromObs(PublishAssetFromObsRequest publishAssetFromObsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/reproduction",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", publishAssetFromObsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/reproduction", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", publishAssetFromObsRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<PublishAssetFromObsResponse>(response);
+        }
+
+        public SyncInvoker<PublishAssetFromObsResponse> PublishAssetFromObsInvoker(PublishAssetFromObsRequest publishAssetFromObsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/reproduction", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", publishAssetFromObsRequest);
+            return new SyncInvoker<PublishAssetFromObsResponse>(this, "POST", request, JsonUtils.DeSerialize<PublishAssetFromObsResponse>);
         }
         
         /// <summary>
@@ -527,11 +780,19 @@ namespace HuaweiCloud.SDK.Vod.V1
         /// </summary>
         public PublishAssetsResponse PublishAssets(PublishAssetsRequest publishAssetsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/status/publish",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", publishAssetsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/status/publish", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", publishAssetsRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<PublishAssetsResponse>(response);
+        }
+
+        public SyncInvoker<PublishAssetsResponse> PublishAssetsInvoker(PublishAssetsRequest publishAssetsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/status/publish", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", publishAssetsRequest);
+            return new SyncInvoker<PublishAssetsResponse>(this, "POST", request, JsonUtils.DeSerialize<PublishAssetsResponse>);
         }
         
         /// <summary>
@@ -543,11 +804,19 @@ namespace HuaweiCloud.SDK.Vod.V1
         /// </summary>
         public ShowAssetCipherResponse ShowAssetCipher(ShowAssetCipherRequest showAssetCipherRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/ciphers",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAssetCipherRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/ciphers", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAssetCipherRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowAssetCipherResponse>(response);
+        }
+
+        public SyncInvoker<ShowAssetCipherResponse> ShowAssetCipherInvoker(ShowAssetCipherRequest showAssetCipherRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/ciphers", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAssetCipherRequest);
+            return new SyncInvoker<ShowAssetCipherResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAssetCipherResponse>);
         }
         
         /// <summary>
@@ -559,11 +828,19 @@ namespace HuaweiCloud.SDK.Vod.V1
         /// </summary>
         public ShowAssetDetailResponse ShowAssetDetail(ShowAssetDetailRequest showAssetDetailRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/details",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAssetDetailRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/details", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAssetDetailRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowAssetDetailResponse>(response);
+        }
+
+        public SyncInvoker<ShowAssetDetailResponse> ShowAssetDetailInvoker(ShowAssetDetailRequest showAssetDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/details", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAssetDetailRequest);
+            return new SyncInvoker<ShowAssetDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAssetDetailResponse>);
         }
         
         /// <summary>
@@ -575,11 +852,19 @@ namespace HuaweiCloud.SDK.Vod.V1
         /// </summary>
         public ShowAssetMetaResponse ShowAssetMeta(ShowAssetMetaRequest showAssetMetaRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/info",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAssetMetaRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/info", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAssetMetaRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowAssetMetaResponse>(response);
+        }
+
+        public SyncInvoker<ShowAssetMetaResponse> ShowAssetMetaInvoker(ShowAssetMetaRequest showAssetMetaRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/info", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAssetMetaRequest);
+            return new SyncInvoker<ShowAssetMetaResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAssetMetaResponse>);
         }
         
         /// <summary>
@@ -597,11 +882,19 @@ namespace HuaweiCloud.SDK.Vod.V1
         /// </summary>
         public ShowAssetTempAuthorityResponse ShowAssetTempAuthority(ShowAssetTempAuthorityRequest showAssetTempAuthorityRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.1/{project_id}/asset/authority",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAssetTempAuthorityRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.1/{project_id}/asset/authority", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAssetTempAuthorityRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowAssetTempAuthorityResponse>(response);
+        }
+
+        public SyncInvoker<ShowAssetTempAuthorityResponse> ShowAssetTempAuthorityInvoker(ShowAssetTempAuthorityRequest showAssetTempAuthorityRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.1/{project_id}/asset/authority", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAssetTempAuthorityRequest);
+            return new SyncInvoker<ShowAssetTempAuthorityResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAssetTempAuthorityResponse>);
         }
         
         /// <summary>
@@ -613,11 +906,19 @@ namespace HuaweiCloud.SDK.Vod.V1
         /// </summary>
         public ShowCdnStatisticsResponse ShowCdnStatistics(ShowCdnStatisticsRequest showCdnStatisticsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/cdn-statistics",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCdnStatisticsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/cdn-statistics", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCdnStatisticsRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowCdnStatisticsResponse>(response);
+        }
+
+        public SyncInvoker<ShowCdnStatisticsResponse> ShowCdnStatisticsInvoker(ShowCdnStatisticsRequest showCdnStatisticsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/cdn-statistics", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCdnStatisticsRequest);
+            return new SyncInvoker<ShowCdnStatisticsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowCdnStatisticsResponse>);
         }
         
         /// <summary>
@@ -629,11 +930,19 @@ namespace HuaweiCloud.SDK.Vod.V1
         /// </summary>
         public ShowPreheatingAssetResponse ShowPreheatingAsset(ShowPreheatingAssetRequest showPreheatingAssetRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/preheating",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPreheatingAssetRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/preheating", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPreheatingAssetRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowPreheatingAssetResponse>(response);
+        }
+
+        public SyncInvoker<ShowPreheatingAssetResponse> ShowPreheatingAssetInvoker(ShowPreheatingAssetRequest showPreheatingAssetRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/preheating", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPreheatingAssetRequest);
+            return new SyncInvoker<ShowPreheatingAssetResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPreheatingAssetResponse>);
         }
         
         /// <summary>
@@ -645,11 +954,19 @@ namespace HuaweiCloud.SDK.Vod.V1
         /// </summary>
         public ShowVodStatisticsResponse ShowVodStatistics(ShowVodStatisticsRequest showVodStatisticsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/vod-statistics",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVodStatisticsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/vod-statistics", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVodStatisticsRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowVodStatisticsResponse>(response);
+        }
+
+        public SyncInvoker<ShowVodStatisticsResponse> ShowVodStatisticsInvoker(ShowVodStatisticsRequest showVodStatisticsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/vod-statistics", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVodStatisticsRequest);
+            return new SyncInvoker<ShowVodStatisticsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowVodStatisticsResponse>);
         }
         
         /// <summary>
@@ -661,11 +978,19 @@ namespace HuaweiCloud.SDK.Vod.V1
         /// </summary>
         public UnpublishAssetsResponse UnpublishAssets(UnpublishAssetsRequest unpublishAssetsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/status/unpublish",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", unpublishAssetsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/status/unpublish", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", unpublishAssetsRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<UnpublishAssetsResponse>(response);
+        }
+
+        public SyncInvoker<UnpublishAssetsResponse> UnpublishAssetsInvoker(UnpublishAssetsRequest unpublishAssetsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/status/unpublish", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", unpublishAssetsRequest);
+            return new SyncInvoker<UnpublishAssetsResponse>(this, "POST", request, JsonUtils.DeSerialize<UnpublishAssetsResponse>);
         }
         
         /// <summary>
@@ -683,11 +1008,19 @@ namespace HuaweiCloud.SDK.Vod.V1
         /// </summary>
         public UpdateAssetResponse UpdateAsset(UpdateAssetRequest updateAssetRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAssetRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAssetRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerialize<UpdateAssetResponse>(response);
+        }
+
+        public SyncInvoker<UpdateAssetResponse> UpdateAssetInvoker(UpdateAssetRequest updateAssetRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAssetRequest);
+            return new SyncInvoker<UpdateAssetResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateAssetResponse>);
         }
         
         /// <summary>
@@ -699,11 +1032,19 @@ namespace HuaweiCloud.SDK.Vod.V1
         /// </summary>
         public UpdateAssetCategoryResponse UpdateAssetCategory(UpdateAssetCategoryRequest updateAssetCategoryRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/category",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAssetCategoryRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/category", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAssetCategoryRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerialize<UpdateAssetCategoryResponse>(response);
+        }
+
+        public SyncInvoker<UpdateAssetCategoryResponse> UpdateAssetCategoryInvoker(UpdateAssetCategoryRequest updateAssetCategoryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/category", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAssetCategoryRequest);
+            return new SyncInvoker<UpdateAssetCategoryResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateAssetCategoryResponse>);
         }
         
         /// <summary>
@@ -715,11 +1056,19 @@ namespace HuaweiCloud.SDK.Vod.V1
         /// </summary>
         public UpdateAssetMetaResponse UpdateAssetMeta(UpdateAssetMetaRequest updateAssetMetaRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/info",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAssetMetaRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/info", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAssetMetaRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerializeNull<UpdateAssetMetaResponse>(response);
+        }
+
+        public SyncInvoker<UpdateAssetMetaResponse> UpdateAssetMetaInvoker(UpdateAssetMetaRequest updateAssetMetaRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/info", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAssetMetaRequest);
+            return new SyncInvoker<UpdateAssetMetaResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateAssetMetaResponse>);
         }
         
         /// <summary>
@@ -731,11 +1080,19 @@ namespace HuaweiCloud.SDK.Vod.V1
         /// </summary>
         public UpdateBucketAuthorizedResponse UpdateBucketAuthorized(UpdateBucketAuthorizedRequest updateBucketAuthorizedRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/authority",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateBucketAuthorizedRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/authority", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateBucketAuthorizedRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerializeNull<UpdateBucketAuthorizedResponse>(response);
+        }
+
+        public SyncInvoker<UpdateBucketAuthorizedResponse> UpdateBucketAuthorizedInvoker(UpdateBucketAuthorizedRequest updateBucketAuthorizedRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/authority", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateBucketAuthorizedRequest);
+            return new SyncInvoker<UpdateBucketAuthorizedResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateBucketAuthorizedResponse>);
         }
         
         /// <summary>
@@ -747,11 +1104,19 @@ namespace HuaweiCloud.SDK.Vod.V1
         /// </summary>
         public UpdateCoverByThumbnailResponse UpdateCoverByThumbnail(UpdateCoverByThumbnailRequest updateCoverByThumbnailRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/cover",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateCoverByThumbnailRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/cover", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateCoverByThumbnailRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerializeNull<UpdateCoverByThumbnailResponse>(response);
+        }
+
+        public SyncInvoker<UpdateCoverByThumbnailResponse> UpdateCoverByThumbnailInvoker(UpdateCoverByThumbnailRequest updateCoverByThumbnailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/cover", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateCoverByThumbnailRequest);
+            return new SyncInvoker<UpdateCoverByThumbnailResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateCoverByThumbnailResponse>);
         }
         
         /// <summary>
@@ -763,11 +1128,19 @@ namespace HuaweiCloud.SDK.Vod.V1
         /// </summary>
         public UpdateTemplateGroupResponse UpdateTemplateGroup(UpdateTemplateGroupRequest updateTemplateGroupRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/template_group/transcodings",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTemplateGroupRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/template_group/transcodings", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTemplateGroupRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerializeNull<UpdateTemplateGroupResponse>(response);
+        }
+
+        public SyncInvoker<UpdateTemplateGroupResponse> UpdateTemplateGroupInvoker(UpdateTemplateGroupRequest updateTemplateGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/template_group/transcodings", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTemplateGroupRequest);
+            return new SyncInvoker<UpdateTemplateGroupResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateTemplateGroupResponse>);
         }
         
         /// <summary>
@@ -779,11 +1152,19 @@ namespace HuaweiCloud.SDK.Vod.V1
         /// </summary>
         public UpdateTemplateGroupCollectionResponse UpdateTemplateGroupCollection(UpdateTemplateGroupCollectionRequest updateTemplateGroupCollectionRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/template-collection/transcodings",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTemplateGroupCollectionRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/template-collection/transcodings", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTemplateGroupCollectionRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerializeNull<UpdateTemplateGroupCollectionResponse>(response);
+        }
+
+        public SyncInvoker<UpdateTemplateGroupCollectionResponse> UpdateTemplateGroupCollectionInvoker(UpdateTemplateGroupCollectionRequest updateTemplateGroupCollectionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/template-collection/transcodings", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTemplateGroupCollectionRequest);
+            return new SyncInvoker<UpdateTemplateGroupCollectionResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateTemplateGroupCollectionResponse>);
         }
         
         /// <summary>
@@ -795,11 +1176,19 @@ namespace HuaweiCloud.SDK.Vod.V1
         /// </summary>
         public UpdateTranscodeTemplateResponse UpdateTranscodeTemplate(UpdateTranscodeTemplateRequest updateTranscodeTemplateRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/asset/template/transcodings",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTranscodeTemplateRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/asset/template/transcodings", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTranscodeTemplateRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerializeNull<UpdateTranscodeTemplateResponse>(response);
+        }
+
+        public SyncInvoker<UpdateTranscodeTemplateResponse> UpdateTranscodeTemplateInvoker(UpdateTranscodeTemplateRequest updateTranscodeTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/asset/template/transcodings", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTranscodeTemplateRequest);
+            return new SyncInvoker<UpdateTranscodeTemplateResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateTranscodeTemplateResponse>);
         }
         
         /// <summary>
@@ -811,11 +1200,19 @@ namespace HuaweiCloud.SDK.Vod.V1
         /// </summary>
         public UpdateWatermarkTemplateResponse UpdateWatermarkTemplate(UpdateWatermarkTemplateRequest updateWatermarkTemplateRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/template/watermark",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateWatermarkTemplateRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/template/watermark", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateWatermarkTemplateRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerializeNull<UpdateWatermarkTemplateResponse>(response);
+        }
+
+        public SyncInvoker<UpdateWatermarkTemplateResponse> UpdateWatermarkTemplateInvoker(UpdateWatermarkTemplateRequest updateWatermarkTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/template/watermark", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateWatermarkTemplateRequest);
+            return new SyncInvoker<UpdateWatermarkTemplateResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateWatermarkTemplateResponse>);
         }
         
         /// <summary>
@@ -827,11 +1224,19 @@ namespace HuaweiCloud.SDK.Vod.V1
         /// </summary>
         public UploadMetaDataByUrlResponse UploadMetaDataByUrl(UploadMetaDataByUrlRequest uploadMetaDataByUrlRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/upload_by_url",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", uploadMetaDataByUrlRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/upload_by_url", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", uploadMetaDataByUrlRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<UploadMetaDataByUrlResponse>(response);
+        }
+
+        public SyncInvoker<UploadMetaDataByUrlResponse> UploadMetaDataByUrlInvoker(UploadMetaDataByUrlRequest uploadMetaDataByUrlRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/upload_by_url", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", uploadMetaDataByUrlRequest);
+            return new SyncInvoker<UploadMetaDataByUrlResponse>(this, "POST", request, JsonUtils.DeSerialize<UploadMetaDataByUrlResponse>);
         }
         
         /// <summary>
@@ -843,11 +1248,19 @@ namespace HuaweiCloud.SDK.Vod.V1
         /// </summary>
         public ListTakeOverTaskResponse ListTakeOverTask(ListTakeOverTaskRequest listTakeOverTaskRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/obs/host/stock/task",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTakeOverTaskRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/obs/host/stock/task", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTakeOverTaskRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ListTakeOverTaskResponse>(response);
+        }
+
+        public SyncInvoker<ListTakeOverTaskResponse> ListTakeOverTaskInvoker(ListTakeOverTaskRequest listTakeOverTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/obs/host/stock/task", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTakeOverTaskRequest);
+            return new SyncInvoker<ListTakeOverTaskResponse>(this, "GET", request, JsonUtils.DeSerialize<ListTakeOverTaskResponse>);
         }
         
         /// <summary>
@@ -859,11 +1272,19 @@ namespace HuaweiCloud.SDK.Vod.V1
         /// </summary>
         public ShowTakeOverAssetDetailsResponse ShowTakeOverAssetDetails(ShowTakeOverAssetDetailsRequest showTakeOverAssetDetailsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/obs/host/task/details",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTakeOverAssetDetailsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/obs/host/task/details", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTakeOverAssetDetailsRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowTakeOverAssetDetailsResponse>(response);
+        }
+
+        public SyncInvoker<ShowTakeOverAssetDetailsResponse> ShowTakeOverAssetDetailsInvoker(ShowTakeOverAssetDetailsRequest showTakeOverAssetDetailsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/obs/host/task/details", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTakeOverAssetDetailsRequest);
+            return new SyncInvoker<ShowTakeOverAssetDetailsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTakeOverAssetDetailsResponse>);
         }
         
         /// <summary>
@@ -875,11 +1296,19 @@ namespace HuaweiCloud.SDK.Vod.V1
         /// </summary>
         public ShowTakeOverTaskDetailsResponse ShowTakeOverTaskDetails(ShowTakeOverTaskDetailsRequest showTakeOverTaskDetailsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/obs/host/stock/task/details",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTakeOverTaskDetailsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/obs/host/stock/task/details", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTakeOverTaskDetailsRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowTakeOverTaskDetailsResponse>(response);
+        }
+
+        public SyncInvoker<ShowTakeOverTaskDetailsResponse> ShowTakeOverTaskDetailsInvoker(ShowTakeOverTaskDetailsRequest showTakeOverTaskDetailsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/obs/host/stock/task/details", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTakeOverTaskDetailsRequest);
+            return new SyncInvoker<ShowTakeOverTaskDetailsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTakeOverTaskDetailsResponse>);
         }
         
         /// <summary>
@@ -891,11 +1320,19 @@ namespace HuaweiCloud.SDK.Vod.V1
         /// </summary>
         public ModifySubtitleResponse ModifySubtitle(ModifySubtitleRequest modifySubtitleRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/subtitles",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifySubtitleRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/subtitles", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifySubtitleRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerialize<ModifySubtitleResponse>(response);
+        }
+
+        public SyncInvoker<ModifySubtitleResponse> ModifySubtitleInvoker(ModifySubtitleRequest modifySubtitleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/subtitles", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifySubtitleRequest);
+            return new SyncInvoker<ModifySubtitleResponse>(this, "PUT", request, JsonUtils.DeSerialize<ModifySubtitleResponse>);
         }
         
     }

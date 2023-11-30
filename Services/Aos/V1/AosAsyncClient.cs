@@ -41,13 +41,23 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// </summary>
         public async Task<ApplyExecutionPlanResponse> ApplyExecutionPlanAsync(ApplyExecutionPlanRequest applyExecutionPlanRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_name" , applyExecutionPlanRequest.StackName.ToString());
-            urlParam.Add("execution_plan_name" , applyExecutionPlanRequest.ExecutionPlanName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans/{execution_plan_name}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", applyExecutionPlanRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_name", applyExecutionPlanRequest.StackName.ToString());
+            urlParam.Add("execution_plan_name", applyExecutionPlanRequest.ExecutionPlanName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans/{execution_plan_name}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", applyExecutionPlanRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<ApplyExecutionPlanResponse>(response);
+        }
+
+        public AsyncInvoker<ApplyExecutionPlanResponse> ApplyExecutionPlanAsyncInvoker(ApplyExecutionPlanRequest applyExecutionPlanRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_name", applyExecutionPlanRequest.StackName.ToString());
+            urlParam.Add("execution_plan_name", applyExecutionPlanRequest.ExecutionPlanName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans/{execution_plan_name}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", applyExecutionPlanRequest);
+            return new AsyncInvoker<ApplyExecutionPlanResponse>(this, "POST", request, JsonUtils.DeSerialize<ApplyExecutionPlanResponse>);
         }
         
         /// <summary>
@@ -73,12 +83,21 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// </summary>
         public async Task<CreateExecutionPlanResponse> CreateExecutionPlanAsync(CreateExecutionPlanRequest createExecutionPlanRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_name" , createExecutionPlanRequest.StackName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createExecutionPlanRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_name", createExecutionPlanRequest.StackName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createExecutionPlanRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateExecutionPlanResponse>(response);
+        }
+
+        public AsyncInvoker<CreateExecutionPlanResponse> CreateExecutionPlanAsyncInvoker(CreateExecutionPlanRequest createExecutionPlanRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_name", createExecutionPlanRequest.StackName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createExecutionPlanRequest);
+            return new AsyncInvoker<CreateExecutionPlanResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateExecutionPlanResponse>);
         }
         
         /// <summary>
@@ -94,13 +113,23 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// </summary>
         public async Task<DeleteExecutionPlanResponse> DeleteExecutionPlanAsync(DeleteExecutionPlanRequest deleteExecutionPlanRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_name" , deleteExecutionPlanRequest.StackName.ToString());
-            urlParam.Add("execution_plan_name" , deleteExecutionPlanRequest.ExecutionPlanName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans/{execution_plan_name}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteExecutionPlanRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_name", deleteExecutionPlanRequest.StackName.ToString());
+            urlParam.Add("execution_plan_name", deleteExecutionPlanRequest.ExecutionPlanName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans/{execution_plan_name}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteExecutionPlanRequest);
+            var response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteExecutionPlanResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteExecutionPlanResponse> DeleteExecutionPlanAsyncInvoker(DeleteExecutionPlanRequest deleteExecutionPlanRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_name", deleteExecutionPlanRequest.StackName.ToString());
+            urlParam.Add("execution_plan_name", deleteExecutionPlanRequest.ExecutionPlanName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans/{execution_plan_name}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteExecutionPlanRequest);
+            return new AsyncInvoker<DeleteExecutionPlanResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteExecutionPlanResponse>);
         }
         
         /// <summary>
@@ -163,13 +192,23 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// </summary>
         public async Task<EstimateExecutionPlanPriceResponse> EstimateExecutionPlanPriceAsync(EstimateExecutionPlanPriceRequest estimateExecutionPlanPriceRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_name" , estimateExecutionPlanPriceRequest.StackName.ToString());
-            urlParam.Add("execution_plan_name" , estimateExecutionPlanPriceRequest.ExecutionPlanName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans/{execution_plan_name}/prices",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", estimateExecutionPlanPriceRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_name", estimateExecutionPlanPriceRequest.StackName.ToString());
+            urlParam.Add("execution_plan_name", estimateExecutionPlanPriceRequest.ExecutionPlanName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans/{execution_plan_name}/prices",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", estimateExecutionPlanPriceRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<EstimateExecutionPlanPriceResponse>(response);
+        }
+
+        public AsyncInvoker<EstimateExecutionPlanPriceResponse> EstimateExecutionPlanPriceAsyncInvoker(EstimateExecutionPlanPriceRequest estimateExecutionPlanPriceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_name", estimateExecutionPlanPriceRequest.StackName.ToString());
+            urlParam.Add("execution_plan_name", estimateExecutionPlanPriceRequest.ExecutionPlanName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans/{execution_plan_name}/prices",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", estimateExecutionPlanPriceRequest);
+            return new AsyncInvoker<EstimateExecutionPlanPriceResponse>(this, "GET", request, JsonUtils.DeSerialize<EstimateExecutionPlanPriceResponse>);
         }
         
         /// <summary>
@@ -185,13 +224,23 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// </summary>
         public async Task<GetExecutionPlanResponse> GetExecutionPlanAsync(GetExecutionPlanRequest getExecutionPlanRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_name" , getExecutionPlanRequest.StackName.ToString());
-            urlParam.Add("execution_plan_name" , getExecutionPlanRequest.ExecutionPlanName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans/{execution_plan_name}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", getExecutionPlanRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_name", getExecutionPlanRequest.StackName.ToString());
+            urlParam.Add("execution_plan_name", getExecutionPlanRequest.ExecutionPlanName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans/{execution_plan_name}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getExecutionPlanRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<GetExecutionPlanResponse>(response);
+        }
+
+        public AsyncInvoker<GetExecutionPlanResponse> GetExecutionPlanAsyncInvoker(GetExecutionPlanRequest getExecutionPlanRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_name", getExecutionPlanRequest.StackName.ToString());
+            urlParam.Add("execution_plan_name", getExecutionPlanRequest.ExecutionPlanName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans/{execution_plan_name}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getExecutionPlanRequest);
+            return new AsyncInvoker<GetExecutionPlanResponse>(this, "GET", request, JsonUtils.DeSerialize<GetExecutionPlanResponse>);
         }
         
         /// <summary>
@@ -209,13 +258,23 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// </summary>
         public async Task<GetExecutionPlanMetadataResponse> GetExecutionPlanMetadataAsync(GetExecutionPlanMetadataRequest getExecutionPlanMetadataRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_name" , getExecutionPlanMetadataRequest.StackName.ToString());
-            urlParam.Add("execution_plan_name" , getExecutionPlanMetadataRequest.ExecutionPlanName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans/{execution_plan_name}/metadata",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", getExecutionPlanMetadataRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_name", getExecutionPlanMetadataRequest.StackName.ToString());
+            urlParam.Add("execution_plan_name", getExecutionPlanMetadataRequest.ExecutionPlanName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans/{execution_plan_name}/metadata",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getExecutionPlanMetadataRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<GetExecutionPlanMetadataResponse>(response);
+        }
+
+        public AsyncInvoker<GetExecutionPlanMetadataResponse> GetExecutionPlanMetadataAsyncInvoker(GetExecutionPlanMetadataRequest getExecutionPlanMetadataRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_name", getExecutionPlanMetadataRequest.StackName.ToString());
+            urlParam.Add("execution_plan_name", getExecutionPlanMetadataRequest.ExecutionPlanName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans/{execution_plan_name}/metadata",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getExecutionPlanMetadataRequest);
+            return new AsyncInvoker<GetExecutionPlanMetadataResponse>(this, "GET", request, JsonUtils.DeSerialize<GetExecutionPlanMetadataResponse>);
         }
         
         /// <summary>
@@ -236,12 +295,21 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// </summary>
         public async Task<ListExecutionPlansResponse> ListExecutionPlansAsync(ListExecutionPlansRequest listExecutionPlansRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_name" , listExecutionPlansRequest.StackName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listExecutionPlansRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_name", listExecutionPlansRequest.StackName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listExecutionPlansRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListExecutionPlansResponse>(response);
+        }
+
+        public AsyncInvoker<ListExecutionPlansResponse> ListExecutionPlansAsyncInvoker(ListExecutionPlansRequest listExecutionPlansRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_name", listExecutionPlansRequest.StackName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listExecutionPlansRequest);
+            return new AsyncInvoker<ListExecutionPlansResponse>(this, "GET", request, JsonUtils.DeSerialize<ListExecutionPlansResponse>);
         }
         
         /// <summary>
@@ -259,12 +327,21 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// </summary>
         public async Task<ContinueDeployStackResponse> ContinueDeployStackAsync(ContinueDeployStackRequest continueDeployStackRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_name" , continueDeployStackRequest.StackName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/continuations",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", continueDeployStackRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_name", continueDeployStackRequest.StackName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/continuations",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", continueDeployStackRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<ContinueDeployStackResponse>(response);
+        }
+
+        public AsyncInvoker<ContinueDeployStackResponse> ContinueDeployStackAsyncInvoker(ContinueDeployStackRequest continueDeployStackRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_name", continueDeployStackRequest.StackName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/continuations",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", continueDeployStackRequest);
+            return new AsyncInvoker<ContinueDeployStackResponse>(this, "POST", request, JsonUtils.DeSerialize<ContinueDeployStackResponse>);
         }
         
         /// <summary>
@@ -283,12 +360,21 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// </summary>
         public async Task<ContinueRollbackStackResponse> ContinueRollbackStackAsync(ContinueRollbackStackRequest continueRollbackStackRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_name" , continueRollbackStackRequest.StackName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/rollbacks",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", continueRollbackStackRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_name", continueRollbackStackRequest.StackName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/rollbacks",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", continueRollbackStackRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<ContinueRollbackStackResponse>(response);
+        }
+
+        public AsyncInvoker<ContinueRollbackStackResponse> ContinueRollbackStackAsyncInvoker(ContinueRollbackStackRequest continueRollbackStackRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_name", continueRollbackStackRequest.StackName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/rollbacks",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", continueRollbackStackRequest);
+            return new AsyncInvoker<ContinueRollbackStackResponse>(this, "POST", request, JsonUtils.DeSerialize<ContinueRollbackStackResponse>);
         }
         
         /// <summary>
@@ -303,11 +389,19 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// </summary>
         public async Task<CreateStackResponse> CreateStackAsync(CreateStackRequest createStackRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createStackRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createStackRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateStackResponse>(response);
+        }
+
+        public AsyncInvoker<CreateStackResponse> CreateStackAsyncInvoker(CreateStackRequest createStackRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createStackRequest);
+            return new AsyncInvoker<CreateStackResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateStackResponse>);
         }
         
         /// <summary>
@@ -332,12 +426,21 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// </summary>
         public async Task<DeleteStackResponse> DeleteStackAsync(DeleteStackRequest deleteStackRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_name" , deleteStackRequest.StackName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteStackRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_name", deleteStackRequest.StackName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteStackRequest);
+            var response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteStackResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteStackResponse> DeleteStackAsyncInvoker(DeleteStackRequest deleteStackRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_name", deleteStackRequest.StackName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteStackRequest);
+            return new AsyncInvoker<DeleteStackResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteStackResponse>);
         }
         
         /// <summary>
@@ -364,12 +467,21 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// </summary>
         public async Task<DeleteStackEnhancedResponse> DeleteStackEnhancedAsync(DeleteStackEnhancedRequest deleteStackEnhancedRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_name" , deleteStackEnhancedRequest.StackName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/deletion",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteStackEnhancedRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_name", deleteStackEnhancedRequest.StackName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/deletion",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteStackEnhancedRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerializeNull<DeleteStackEnhancedResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteStackEnhancedResponse> DeleteStackEnhancedAsyncInvoker(DeleteStackEnhancedRequest deleteStackEnhancedRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_name", deleteStackEnhancedRequest.StackName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/deletion",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteStackEnhancedRequest);
+            return new AsyncInvoker<DeleteStackEnhancedResponse>(this, "POST", request, JsonUtils.DeSerializeNull<DeleteStackEnhancedResponse>);
         }
         
         /// <summary>
@@ -391,12 +503,21 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// </summary>
         public async Task<DeployStackResponse> DeployStackAsync(DeployStackRequest deployStackRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_name" , deployStackRequest.StackName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/deployments",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deployStackRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_name", deployStackRequest.StackName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/deployments",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deployStackRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<DeployStackResponse>(response);
+        }
+
+        public AsyncInvoker<DeployStackResponse> DeployStackAsyncInvoker(DeployStackRequest deployStackRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_name", deployStackRequest.StackName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/deployments",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deployStackRequest);
+            return new AsyncInvoker<DeployStackResponse>(this, "POST", request, JsonUtils.DeSerialize<DeployStackResponse>);
         }
         
         /// <summary>
@@ -429,12 +550,21 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// </summary>
         public async Task<GetStackMetadataResponse> GetStackMetadataAsync(GetStackMetadataRequest getStackMetadataRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_name" , getStackMetadataRequest.StackName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/metadata",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", getStackMetadataRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_name", getStackMetadataRequest.StackName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/metadata",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getStackMetadataRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<GetStackMetadataResponse>(response);
+        }
+
+        public AsyncInvoker<GetStackMetadataResponse> GetStackMetadataAsyncInvoker(GetStackMetadataRequest getStackMetadataRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_name", getStackMetadataRequest.StackName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/metadata",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getStackMetadataRequest);
+            return new AsyncInvoker<GetStackMetadataResponse>(this, "GET", request, JsonUtils.DeSerialize<GetStackMetadataResponse>);
         }
         
         /// <summary>
@@ -468,12 +598,21 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// </summary>
         public async Task<GetStackTemplateResponse> GetStackTemplateAsync(GetStackTemplateRequest getStackTemplateRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_name" , getStackTemplateRequest.StackName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/templates",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", getStackTemplateRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_name", getStackTemplateRequest.StackName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/templates",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getStackTemplateRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerializeNull<GetStackTemplateResponse>(response);
+        }
+
+        public AsyncInvoker<GetStackTemplateResponse> GetStackTemplateAsyncInvoker(GetStackTemplateRequest getStackTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_name", getStackTemplateRequest.StackName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/templates",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getStackTemplateRequest);
+            return new AsyncInvoker<GetStackTemplateResponse>(this, "GET", request, JsonUtils.DeSerializeNull<GetStackTemplateResponse>);
         }
         
         /// <summary>
@@ -493,12 +632,21 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// </summary>
         public async Task<ListStackEventsResponse> ListStackEventsAsync(ListStackEventsRequest listStackEventsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_name" , listStackEventsRequest.StackName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/events",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStackEventsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_name", listStackEventsRequest.StackName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/events",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStackEventsRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListStackEventsResponse>(response);
+        }
+
+        public AsyncInvoker<ListStackEventsResponse> ListStackEventsAsyncInvoker(ListStackEventsRequest listStackEventsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_name", listStackEventsRequest.StackName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/events",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStackEventsRequest);
+            return new AsyncInvoker<ListStackEventsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListStackEventsResponse>);
         }
         
         /// <summary>
@@ -521,12 +669,21 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// </summary>
         public async Task<ListStackOutputsResponse> ListStackOutputsAsync(ListStackOutputsRequest listStackOutputsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_name" , listStackOutputsRequest.StackName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/outputs",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStackOutputsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_name", listStackOutputsRequest.StackName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/outputs",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStackOutputsRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListStackOutputsResponse>(response);
+        }
+
+        public AsyncInvoker<ListStackOutputsResponse> ListStackOutputsAsyncInvoker(ListStackOutputsRequest listStackOutputsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_name", listStackOutputsRequest.StackName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/outputs",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStackOutputsRequest);
+            return new AsyncInvoker<ListStackOutputsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListStackOutputsResponse>);
         }
         
         /// <summary>
@@ -547,12 +704,21 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// </summary>
         public async Task<ListStackResourcesResponse> ListStackResourcesAsync(ListStackResourcesRequest listStackResourcesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_name" , listStackResourcesRequest.StackName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/resources",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStackResourcesRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_name", listStackResourcesRequest.StackName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/resources",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStackResourcesRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListStackResourcesResponse>(response);
+        }
+
+        public AsyncInvoker<ListStackResourcesResponse> ListStackResourcesAsyncInvoker(ListStackResourcesRequest listStackResourcesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_name", listStackResourcesRequest.StackName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/resources",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStackResourcesRequest);
+            return new AsyncInvoker<ListStackResourcesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListStackResourcesResponse>);
         }
         
         /// <summary>
@@ -572,11 +738,19 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// </summary>
         public async Task<ListStacksResponse> ListStacksAsync(ListStacksRequest listStacksRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStacksRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStacksRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListStacksResponse>(response);
+        }
+
+        public AsyncInvoker<ListStacksResponse> ListStacksAsyncInvoker(ListStacksRequest listStacksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStacksRequest);
+            return new AsyncInvoker<ListStacksResponse>(this, "GET", request, JsonUtils.DeSerialize<ListStacksResponse>);
         }
         
         /// <summary>
@@ -606,12 +780,21 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// </summary>
         public async Task<UpdateStackResponse> UpdateStackAsync(UpdateStackRequest updateStackRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_name" , updateStackRequest.StackName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateStackRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PATCH",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_name", updateStackRequest.StackName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateStackRequest);
+            var response = await DoHttpRequestAsync("PATCH",request);
             return JsonUtils.DeSerializeNull<UpdateStackResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateStackResponse> UpdateStackAsyncInvoker(UpdateStackRequest updateStackRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_name", updateStackRequest.StackName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateStackRequest);
+            return new AsyncInvoker<UpdateStackResponse>(this, "PATCH", request, JsonUtils.DeSerializeNull<UpdateStackResponse>);
         }
         
         /// <summary>
@@ -633,12 +816,21 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// </summary>
         public async Task<CreateStackInstanceResponse> CreateStackInstanceAsync(CreateStackInstanceRequest createStackInstanceRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_set_name" , createStackInstanceRequest.StackSetName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createStackInstanceRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_set_name", createStackInstanceRequest.StackSetName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createStackInstanceRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateStackInstanceResponse>(response);
+        }
+
+        public AsyncInvoker<CreateStackInstanceResponse> CreateStackInstanceAsyncInvoker(CreateStackInstanceRequest createStackInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_set_name", createStackInstanceRequest.StackSetName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createStackInstanceRequest);
+            return new AsyncInvoker<CreateStackInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateStackInstanceResponse>);
         }
         
         /// <summary>
@@ -652,11 +844,19 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// </summary>
         public async Task<CreateStackSetResponse> CreateStackSetAsync(CreateStackSetRequest createStackSetRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/stack-sets",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createStackSetRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createStackSetRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateStackSetResponse>(response);
+        }
+
+        public AsyncInvoker<CreateStackSetResponse> CreateStackSetAsyncInvoker(CreateStackSetRequest createStackSetRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createStackSetRequest);
+            return new AsyncInvoker<CreateStackSetResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateStackSetResponse>);
         }
         
         /// <summary>
@@ -674,12 +874,21 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// </summary>
         public async Task<DeleteStackInstanceResponse> DeleteStackInstanceAsync(DeleteStackInstanceRequest deleteStackInstanceRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_set_name" , deleteStackInstanceRequest.StackSetName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteStackInstanceRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_set_name", deleteStackInstanceRequest.StackSetName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteStackInstanceRequest);
+            var response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerialize<DeleteStackInstanceResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteStackInstanceResponse> DeleteStackInstanceAsyncInvoker(DeleteStackInstanceRequest deleteStackInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_set_name", deleteStackInstanceRequest.StackSetName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteStackInstanceRequest);
+            return new AsyncInvoker<DeleteStackInstanceResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteStackInstanceResponse>);
         }
         
         /// <summary>
@@ -697,12 +906,21 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// </summary>
         public async Task<DeleteStackSetResponse> DeleteStackSetAsync(DeleteStackSetRequest deleteStackSetRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_set_name" , deleteStackSetRequest.StackSetName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteStackSetRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_set_name", deleteStackSetRequest.StackSetName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteStackSetRequest);
+            var response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteStackSetResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteStackSetResponse> DeleteStackSetAsyncInvoker(DeleteStackSetRequest deleteStackSetRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_set_name", deleteStackSetRequest.StackSetName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteStackSetRequest);
+            return new AsyncInvoker<DeleteStackSetResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteStackSetResponse>);
         }
         
         /// <summary>
@@ -726,12 +944,21 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// </summary>
         public async Task<DeployStackSetResponse> DeployStackSetAsync(DeployStackSetRequest deployStackSetRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_set_name" , deployStackSetRequest.StackSetName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/deployments",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deployStackSetRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_set_name", deployStackSetRequest.StackSetName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/deployments",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deployStackSetRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<DeployStackSetResponse>(response);
+        }
+
+        public AsyncInvoker<DeployStackSetResponse> DeployStackSetAsyncInvoker(DeployStackSetRequest deployStackSetRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_set_name", deployStackSetRequest.StackSetName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/deployments",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deployStackSetRequest);
+            return new AsyncInvoker<DeployStackSetResponse>(this, "POST", request, JsonUtils.DeSerialize<DeployStackSetResponse>);
         }
         
         /// <summary>
@@ -749,12 +976,21 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// </summary>
         public async Task<ListStackInstancesResponse> ListStackInstancesAsync(ListStackInstancesRequest listStackInstancesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_set_name" , listStackInstancesRequest.StackSetName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStackInstancesRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_set_name", listStackInstancesRequest.StackSetName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStackInstancesRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListStackInstancesResponse>(response);
+        }
+
+        public AsyncInvoker<ListStackInstancesResponse> ListStackInstancesAsyncInvoker(ListStackInstancesRequest listStackInstancesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_set_name", listStackInstancesRequest.StackSetName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStackInstancesRequest);
+            return new AsyncInvoker<ListStackInstancesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListStackInstancesResponse>);
         }
         
         /// <summary>
@@ -772,12 +1008,21 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// </summary>
         public async Task<ListStackSetOperationsResponse> ListStackSetOperationsAsync(ListStackSetOperationsRequest listStackSetOperationsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_set_name" , listStackSetOperationsRequest.StackSetName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/operations",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStackSetOperationsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_set_name", listStackSetOperationsRequest.StackSetName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/operations",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStackSetOperationsRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListStackSetOperationsResponse>(response);
+        }
+
+        public AsyncInvoker<ListStackSetOperationsResponse> ListStackSetOperationsAsyncInvoker(ListStackSetOperationsRequest listStackSetOperationsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_set_name", listStackSetOperationsRequest.StackSetName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/operations",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStackSetOperationsRequest);
+            return new AsyncInvoker<ListStackSetOperationsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListStackSetOperationsResponse>);
         }
         
         /// <summary>
@@ -796,11 +1041,19 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// </summary>
         public async Task<ListStackSetsResponse> ListStackSetsAsync(ListStackSetsRequest listStackSetsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/stack-sets",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStackSetsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStackSetsRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListStackSetsResponse>(response);
+        }
+
+        public AsyncInvoker<ListStackSetsResponse> ListStackSetsAsyncInvoker(ListStackSetsRequest listStackSetsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStackSetsRequest);
+            return new AsyncInvoker<ListStackSetsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListStackSetsResponse>);
         }
         
         /// <summary>
@@ -814,13 +1067,23 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// </summary>
         public async Task<ShowStackInstanceResponse> ShowStackInstanceAsync(ShowStackInstanceRequest showStackInstanceRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_set_name" , showStackInstanceRequest.StackSetName.ToString());
-            urlParam.Add("stack_instance_addr" , showStackInstanceRequest.StackInstanceAddr.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances/{stack_instance_addr}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStackInstanceRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_set_name", showStackInstanceRequest.StackSetName.ToString());
+            urlParam.Add("stack_instance_addr", showStackInstanceRequest.StackInstanceAddr.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances/{stack_instance_addr}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStackInstanceRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowStackInstanceResponse>(response);
+        }
+
+        public AsyncInvoker<ShowStackInstanceResponse> ShowStackInstanceAsyncInvoker(ShowStackInstanceRequest showStackInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_set_name", showStackInstanceRequest.StackSetName.ToString());
+            urlParam.Add("stack_instance_addr", showStackInstanceRequest.StackInstanceAddr.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances/{stack_instance_addr}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStackInstanceRequest);
+            return new AsyncInvoker<ShowStackInstanceResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowStackInstanceResponse>);
         }
         
         /// <summary>
@@ -834,12 +1097,21 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// </summary>
         public async Task<ShowStackSetMetadataResponse> ShowStackSetMetadataAsync(ShowStackSetMetadataRequest showStackSetMetadataRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_set_name" , showStackSetMetadataRequest.StackSetName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/metadata",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStackSetMetadataRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_set_name", showStackSetMetadataRequest.StackSetName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/metadata",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStackSetMetadataRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowStackSetMetadataResponse>(response);
+        }
+
+        public AsyncInvoker<ShowStackSetMetadataResponse> ShowStackSetMetadataAsyncInvoker(ShowStackSetMetadataRequest showStackSetMetadataRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_set_name", showStackSetMetadataRequest.StackSetName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/metadata",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStackSetMetadataRequest);
+            return new AsyncInvoker<ShowStackSetMetadataResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowStackSetMetadataResponse>);
         }
         
         /// <summary>
@@ -855,13 +1127,23 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// </summary>
         public async Task<ShowStackSetOperationMetadataResponse> ShowStackSetOperationMetadataAsync(ShowStackSetOperationMetadataRequest showStackSetOperationMetadataRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_set_name" , showStackSetOperationMetadataRequest.StackSetName.ToString());
-            urlParam.Add("stack_set_operation_id" , showStackSetOperationMetadataRequest.StackSetOperationId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/operations/{stack_set_operation_id}/metadata",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStackSetOperationMetadataRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_set_name", showStackSetOperationMetadataRequest.StackSetName.ToString());
+            urlParam.Add("stack_set_operation_id", showStackSetOperationMetadataRequest.StackSetOperationId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/operations/{stack_set_operation_id}/metadata",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStackSetOperationMetadataRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowStackSetOperationMetadataResponse>(response);
+        }
+
+        public AsyncInvoker<ShowStackSetOperationMetadataResponse> ShowStackSetOperationMetadataAsyncInvoker(ShowStackSetOperationMetadataRequest showStackSetOperationMetadataRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_set_name", showStackSetOperationMetadataRequest.StackSetName.ToString());
+            urlParam.Add("stack_set_operation_id", showStackSetOperationMetadataRequest.StackSetOperationId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/operations/{stack_set_operation_id}/metadata",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStackSetOperationMetadataRequest);
+            return new AsyncInvoker<ShowStackSetOperationMetadataResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowStackSetOperationMetadataResponse>);
         }
         
         /// <summary>
@@ -878,12 +1160,21 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// </summary>
         public async Task<ShowStackSetTemplateResponse> ShowStackSetTemplateAsync(ShowStackSetTemplateRequest showStackSetTemplateRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_set_name" , showStackSetTemplateRequest.StackSetName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/templates",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStackSetTemplateRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_set_name", showStackSetTemplateRequest.StackSetName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/templates",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStackSetTemplateRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerializeNull<ShowStackSetTemplateResponse>(response);
+        }
+
+        public AsyncInvoker<ShowStackSetTemplateResponse> ShowStackSetTemplateAsyncInvoker(ShowStackSetTemplateRequest showStackSetTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_set_name", showStackSetTemplateRequest.StackSetName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/templates",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStackSetTemplateRequest);
+            return new AsyncInvoker<ShowStackSetTemplateResponse>(this, "GET", request, JsonUtils.DeSerializeNull<ShowStackSetTemplateResponse>);
         }
         
         /// <summary>
@@ -907,12 +1198,21 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// </summary>
         public async Task<UpdateStackInstancesResponse> UpdateStackInstancesAsync(UpdateStackInstancesRequest updateStackInstancesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_set_name" , updateStackInstancesRequest.StackSetName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateStackInstancesRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PATCH",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_set_name", updateStackInstancesRequest.StackSetName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateStackInstancesRequest);
+            var response = await DoHttpRequestAsync("PATCH",request);
             return JsonUtils.DeSerialize<UpdateStackInstancesResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateStackInstancesResponse> UpdateStackInstancesAsyncInvoker(UpdateStackInstancesRequest updateStackInstancesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_set_name", updateStackInstancesRequest.StackSetName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateStackInstancesRequest);
+            return new AsyncInvoker<UpdateStackInstancesResponse>(this, "PATCH", request, JsonUtils.DeSerialize<UpdateStackInstancesResponse>);
         }
         
         /// <summary>
@@ -934,12 +1234,21 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// </summary>
         public async Task<UpdateStackSetResponse> UpdateStackSetAsync(UpdateStackSetRequest updateStackSetRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_set_name" , updateStackSetRequest.StackSetName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateStackSetRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PATCH",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_set_name", updateStackSetRequest.StackSetName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateStackSetRequest);
+            var response = await DoHttpRequestAsync("PATCH",request);
             return JsonUtils.DeSerializeNull<UpdateStackSetResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateStackSetResponse> UpdateStackSetAsyncInvoker(UpdateStackSetRequest updateStackSetRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_set_name", updateStackSetRequest.StackSetName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateStackSetRequest);
+            return new AsyncInvoker<UpdateStackSetResponse>(this, "PATCH", request, JsonUtils.DeSerializeNull<UpdateStackSetResponse>);
         }
         
         /// <summary>
@@ -957,11 +1266,19 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// </summary>
         public async Task<ParseTemplateVariablesResponse> ParseTemplateVariablesAsync(ParseTemplateVariablesRequest parseTemplateVariablesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/template-analyses/variables",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", parseTemplateVariablesRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/template-analyses/variables",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", parseTemplateVariablesRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<ParseTemplateVariablesResponse>(response);
+        }
+
+        public AsyncInvoker<ParseTemplateVariablesResponse> ParseTemplateVariablesAsyncInvoker(ParseTemplateVariablesRequest parseTemplateVariablesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/template-analyses/variables",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", parseTemplateVariablesRequest);
+            return new AsyncInvoker<ParseTemplateVariablesResponse>(this, "POST", request, JsonUtils.DeSerialize<ParseTemplateVariablesResponse>);
         }
         
         /// <summary>
@@ -978,13 +1295,21 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// </summary>
         public async Task<DeleteTemplateResponse> DeleteTemplateAsync(DeleteTemplateRequest deleteTemplateRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("template_name" , deleteTemplateRequest.TemplateName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTemplateRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
-            DeleteTemplateResponse deleteTemplateResponse = JsonUtils.DeSerializeNull<DeleteTemplateResponse>(response);
-            return deleteTemplateResponse;
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("template_name", deleteTemplateRequest.TemplateName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTemplateRequest);
+            var response = await DoHttpRequestAsync("DELETE",request);
+            return JsonUtils.DeSerializeNull<DeleteTemplateResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteTemplateResponse> DeleteTemplateAsyncInvoker(DeleteTemplateRequest deleteTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("template_name", deleteTemplateRequest.TemplateName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTemplateRequest);
+            return new AsyncInvoker<DeleteTemplateResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteTemplateResponse>);
         }
         
         /// <summary>
@@ -1003,14 +1328,23 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// </summary>
         public async Task<DeleteTemplateVersionResponse> DeleteTemplateVersionAsync(DeleteTemplateVersionRequest deleteTemplateVersionRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("template_name" , deleteTemplateVersionRequest.TemplateName.ToString());
-            urlParam.Add("version_id" , deleteTemplateVersionRequest.VersionId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/versions/{version_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTemplateVersionRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
-            DeleteTemplateVersionResponse deleteTemplateVersionResponse = JsonUtils.DeSerializeNull<DeleteTemplateVersionResponse>(response);
-            return deleteTemplateVersionResponse;
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("template_name", deleteTemplateVersionRequest.TemplateName.ToString());
+            urlParam.Add("version_id", deleteTemplateVersionRequest.VersionId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/versions/{version_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTemplateVersionRequest);
+            var response = await DoHttpRequestAsync("DELETE",request);
+            return JsonUtils.DeSerializeNull<DeleteTemplateVersionResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteTemplateVersionResponse> DeleteTemplateVersionAsyncInvoker(DeleteTemplateVersionRequest deleteTemplateVersionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("template_name", deleteTemplateVersionRequest.TemplateName.ToString());
+            urlParam.Add("version_id", deleteTemplateVersionRequest.VersionId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/versions/{version_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTemplateVersionRequest);
+            return new AsyncInvoker<DeleteTemplateVersionResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteTemplateVersionResponse>);
         }
         
         /// <summary>
@@ -1032,12 +1366,21 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// </summary>
         public async Task<ListTemplateVersionsResponse> ListTemplateVersionsAsync(ListTemplateVersionsRequest listTemplateVersionsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("template_name" , listTemplateVersionsRequest.TemplateName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/versions",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTemplateVersionsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("template_name", listTemplateVersionsRequest.TemplateName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/versions",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTemplateVersionsRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListTemplateVersionsResponse>(response);
+        }
+
+        public AsyncInvoker<ListTemplateVersionsResponse> ListTemplateVersionsAsyncInvoker(ListTemplateVersionsRequest listTemplateVersionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("template_name", listTemplateVersionsRequest.TemplateName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/versions",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTemplateVersionsRequest);
+            return new AsyncInvoker<ListTemplateVersionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListTemplateVersionsResponse>);
         }
         
         /// <summary>
@@ -1058,11 +1401,19 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// </summary>
         public async Task<ListTemplatesResponse> ListTemplatesAsync(ListTemplatesRequest listTemplatesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTemplatesRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTemplatesRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListTemplatesResponse>(response);
+        }
+
+        public AsyncInvoker<ListTemplatesResponse> ListTemplatesAsyncInvoker(ListTemplatesRequest listTemplatesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTemplatesRequest);
+            return new AsyncInvoker<ListTemplatesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListTemplatesResponse>);
         }
         
         /// <summary>
@@ -1080,12 +1431,21 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// </summary>
         public async Task<ShowTemplateMetadataResponse> ShowTemplateMetadataAsync(ShowTemplateMetadataRequest showTemplateMetadataRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("template_name" , showTemplateMetadataRequest.TemplateName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/metadata",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTemplateMetadataRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("template_name", showTemplateMetadataRequest.TemplateName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/metadata",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTemplateMetadataRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowTemplateMetadataResponse>(response);
+        }
+
+        public AsyncInvoker<ShowTemplateMetadataResponse> ShowTemplateMetadataAsyncInvoker(ShowTemplateMetadataRequest showTemplateMetadataRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("template_name", showTemplateMetadataRequest.TemplateName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/metadata",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTemplateMetadataRequest);
+            return new AsyncInvoker<ShowTemplateMetadataResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTemplateMetadataResponse>);
         }
         
         /// <summary>
@@ -1104,14 +1464,23 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// </summary>
         public async Task<ShowTemplateVersionContentResponse> ShowTemplateVersionContentAsync(ShowTemplateVersionContentRequest showTemplateVersionContentRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("template_name" , showTemplateVersionContentRequest.TemplateName.ToString());
-            urlParam.Add("version_id" , showTemplateVersionContentRequest.VersionId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/versions/{version_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTemplateVersionContentRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
-            ShowTemplateVersionContentResponse showTemplateVersionContentResponse = JsonUtils.DeSerializeNull<ShowTemplateVersionContentResponse>(response);
-            return showTemplateVersionContentResponse;
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("template_name", showTemplateVersionContentRequest.TemplateName.ToString());
+            urlParam.Add("version_id", showTemplateVersionContentRequest.VersionId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/versions/{version_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTemplateVersionContentRequest);
+            var response = await DoHttpRequestAsync("GET",request);
+            return JsonUtils.DeSerializeNull<ShowTemplateVersionContentResponse>(response);
+        }
+
+        public AsyncInvoker<ShowTemplateVersionContentResponse> ShowTemplateVersionContentAsyncInvoker(ShowTemplateVersionContentRequest showTemplateVersionContentRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("template_name", showTemplateVersionContentRequest.TemplateName.ToString());
+            urlParam.Add("version_id", showTemplateVersionContentRequest.VersionId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/versions/{version_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTemplateVersionContentRequest);
+            return new AsyncInvoker<ShowTemplateVersionContentResponse>(this, "GET", request, JsonUtils.DeSerializeNull<ShowTemplateVersionContentResponse>);
         }
         
         /// <summary>
@@ -1129,13 +1498,23 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// </summary>
         public async Task<ShowTemplateVersionMetadataResponse> ShowTemplateVersionMetadataAsync(ShowTemplateVersionMetadataRequest showTemplateVersionMetadataRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("template_name" , showTemplateVersionMetadataRequest.TemplateName.ToString());
-            urlParam.Add("version_id" , showTemplateVersionMetadataRequest.VersionId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/versions/{version_id}/metadata",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTemplateVersionMetadataRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("template_name", showTemplateVersionMetadataRequest.TemplateName.ToString());
+            urlParam.Add("version_id", showTemplateVersionMetadataRequest.VersionId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/versions/{version_id}/metadata",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTemplateVersionMetadataRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowTemplateVersionMetadataResponse>(response);
+        }
+
+        public AsyncInvoker<ShowTemplateVersionMetadataResponse> ShowTemplateVersionMetadataAsyncInvoker(ShowTemplateVersionMetadataRequest showTemplateVersionMetadataRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("template_name", showTemplateVersionMetadataRequest.TemplateName.ToString());
+            urlParam.Add("version_id", showTemplateVersionMetadataRequest.VersionId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/versions/{version_id}/metadata",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTemplateVersionMetadataRequest);
+            return new AsyncInvoker<ShowTemplateVersionMetadataResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTemplateVersionMetadataResponse>);
         }
         
         /// <summary>
@@ -1151,13 +1530,21 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// </summary>
         public async Task<UpdateTemplateMetadataResponse> UpdateTemplateMetadataAsync(UpdateTemplateMetadataRequest updateTemplateMetadataRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("template_name" , updateTemplateMetadataRequest.TemplateName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/metadata",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTemplateMetadataRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PATCH",request);
-            UpdateTemplateMetadataResponse updateTemplateMetadataResponse = JsonUtils.DeSerializeNull<UpdateTemplateMetadataResponse>(response);
-            return updateTemplateMetadataResponse;
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("template_name", updateTemplateMetadataRequest.TemplateName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/metadata",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTemplateMetadataRequest);
+            var response = await DoHttpRequestAsync("PATCH",request);
+            return JsonUtils.DeSerializeNull<UpdateTemplateMetadataResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateTemplateMetadataResponse> UpdateTemplateMetadataAsyncInvoker(UpdateTemplateMetadataRequest updateTemplateMetadataRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("template_name", updateTemplateMetadataRequest.TemplateName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/metadata",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTemplateMetadataRequest);
+            return new AsyncInvoker<UpdateTemplateMetadataResponse>(this, "PATCH", request, JsonUtils.DeSerializeNull<UpdateTemplateMetadataResponse>);
         }
         
     }

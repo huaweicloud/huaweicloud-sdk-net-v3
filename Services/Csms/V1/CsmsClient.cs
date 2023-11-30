@@ -23,12 +23,21 @@ namespace HuaweiCloud.SDK.Csms.V1
         /// </summary>
         public BatchCreateOrDeleteTagsResponse BatchCreateOrDeleteTags(BatchCreateOrDeleteTagsRequest batchCreateOrDeleteTagsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("secret_id" , batchCreateOrDeleteTagsRequest.SecretId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/{secret_id}/tags/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchCreateOrDeleteTagsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("secret_id", batchCreateOrDeleteTagsRequest.SecretId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/{secret_id}/tags/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchCreateOrDeleteTagsRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerializeNull<BatchCreateOrDeleteTagsResponse>(response);
+        }
+
+        public SyncInvoker<BatchCreateOrDeleteTagsResponse> BatchCreateOrDeleteTagsInvoker(BatchCreateOrDeleteTagsRequest batchCreateOrDeleteTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("secret_id", batchCreateOrDeleteTagsRequest.SecretId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/{secret_id}/tags/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchCreateOrDeleteTagsRequest);
+            return new SyncInvoker<BatchCreateOrDeleteTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchCreateOrDeleteTagsResponse>);
         }
         
         /// <summary>
@@ -44,11 +53,19 @@ namespace HuaweiCloud.SDK.Csms.V1
         /// </summary>
         public CreateSecretResponse CreateSecret(CreateSecretRequest createSecretRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createSecretRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createSecretRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<CreateSecretResponse>(response);
+        }
+
+        public SyncInvoker<CreateSecretResponse> CreateSecretInvoker(CreateSecretRequest createSecretRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createSecretRequest);
+            return new SyncInvoker<CreateSecretResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateSecretResponse>);
         }
         
         /// <summary>
@@ -60,11 +77,19 @@ namespace HuaweiCloud.SDK.Csms.V1
         /// </summary>
         public CreateSecretEventResponse CreateSecretEvent(CreateSecretEventRequest createSecretEventRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/events",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createSecretEventRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/events", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createSecretEventRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<CreateSecretEventResponse>(response);
+        }
+
+        public SyncInvoker<CreateSecretEventResponse> CreateSecretEventInvoker(CreateSecretEventRequest createSecretEventRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/events", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createSecretEventRequest);
+            return new SyncInvoker<CreateSecretEventResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateSecretEventResponse>);
         }
         
         /// <summary>
@@ -76,12 +101,21 @@ namespace HuaweiCloud.SDK.Csms.V1
         /// </summary>
         public CreateSecretTagResponse CreateSecretTag(CreateSecretTagRequest createSecretTagRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("secret_id" , createSecretTagRequest.SecretId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/{secret_id}/tags",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createSecretTagRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("secret_id", createSecretTagRequest.SecretId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/{secret_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createSecretTagRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerializeNull<CreateSecretTagResponse>(response);
+        }
+
+        public SyncInvoker<CreateSecretTagResponse> CreateSecretTagInvoker(CreateSecretTagRequest createSecretTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("secret_id", createSecretTagRequest.SecretId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/{secret_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createSecretTagRequest);
+            return new SyncInvoker<CreateSecretTagResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateSecretTagResponse>);
         }
         
         /// <summary>
@@ -93,12 +127,21 @@ namespace HuaweiCloud.SDK.Csms.V1
         /// </summary>
         public CreateSecretVersionResponse CreateSecretVersion(CreateSecretVersionRequest createSecretVersionRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("secret_name" , createSecretVersionRequest.SecretName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/versions",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createSecretVersionRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("secret_name", createSecretVersionRequest.SecretName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/versions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createSecretVersionRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<CreateSecretVersionResponse>(response);
+        }
+
+        public SyncInvoker<CreateSecretVersionResponse> CreateSecretVersionInvoker(CreateSecretVersionRequest createSecretVersionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("secret_name", createSecretVersionRequest.SecretName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/versions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createSecretVersionRequest);
+            return new SyncInvoker<CreateSecretVersionResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateSecretVersionResponse>);
         }
         
         /// <summary>
@@ -110,12 +153,21 @@ namespace HuaweiCloud.SDK.Csms.V1
         /// </summary>
         public DeleteSecretResponse DeleteSecret(DeleteSecretRequest deleteSecretRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("secret_name" , deleteSecretRequest.SecretName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSecretRequest);
-            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("secret_name", deleteSecretRequest.SecretName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSecretRequest);
+            var response = DoHttpRequestSync("DELETE", request);
             return JsonUtils.DeSerializeNull<DeleteSecretResponse>(response);
+        }
+
+        public SyncInvoker<DeleteSecretResponse> DeleteSecretInvoker(DeleteSecretRequest deleteSecretRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("secret_name", deleteSecretRequest.SecretName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSecretRequest);
+            return new SyncInvoker<DeleteSecretResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteSecretResponse>);
         }
         
         /// <summary>
@@ -127,12 +179,21 @@ namespace HuaweiCloud.SDK.Csms.V1
         /// </summary>
         public DeleteSecretEventResponse DeleteSecretEvent(DeleteSecretEventRequest deleteSecretEventRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("event_name" , deleteSecretEventRequest.EventName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/events/{event_name}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSecretEventRequest);
-            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("event_name", deleteSecretEventRequest.EventName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/events/{event_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSecretEventRequest);
+            var response = DoHttpRequestSync("DELETE", request);
             return JsonUtils.DeSerializeNull<DeleteSecretEventResponse>(response);
+        }
+
+        public SyncInvoker<DeleteSecretEventResponse> DeleteSecretEventInvoker(DeleteSecretEventRequest deleteSecretEventRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("event_name", deleteSecretEventRequest.EventName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/events/{event_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSecretEventRequest);
+            return new SyncInvoker<DeleteSecretEventResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteSecretEventResponse>);
         }
         
         /// <summary>
@@ -144,12 +205,21 @@ namespace HuaweiCloud.SDK.Csms.V1
         /// </summary>
         public DeleteSecretForScheduleResponse DeleteSecretForSchedule(DeleteSecretForScheduleRequest deleteSecretForScheduleRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("secret_name" , deleteSecretForScheduleRequest.SecretName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/scheduled-deleted-tasks/create",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteSecretForScheduleRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("secret_name", deleteSecretForScheduleRequest.SecretName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/scheduled-deleted-tasks/create", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteSecretForScheduleRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<DeleteSecretForScheduleResponse>(response);
+        }
+
+        public SyncInvoker<DeleteSecretForScheduleResponse> DeleteSecretForScheduleInvoker(DeleteSecretForScheduleRequest deleteSecretForScheduleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("secret_name", deleteSecretForScheduleRequest.SecretName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/scheduled-deleted-tasks/create", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteSecretForScheduleRequest);
+            return new SyncInvoker<DeleteSecretForScheduleResponse>(this, "POST", request, JsonUtils.DeSerialize<DeleteSecretForScheduleResponse>);
         }
         
         /// <summary>
@@ -161,13 +231,23 @@ namespace HuaweiCloud.SDK.Csms.V1
         /// </summary>
         public DeleteSecretStageResponse DeleteSecretStage(DeleteSecretStageRequest deleteSecretStageRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("secret_name" , deleteSecretStageRequest.SecretName.ToString());
-            urlParam.Add("stage_name" , deleteSecretStageRequest.StageName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/stages/{stage_name}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSecretStageRequest);
-            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("secret_name", deleteSecretStageRequest.SecretName.ToString());
+            urlParam.Add("stage_name", deleteSecretStageRequest.StageName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/stages/{stage_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSecretStageRequest);
+            var response = DoHttpRequestSync("DELETE", request);
             return JsonUtils.DeSerializeNull<DeleteSecretStageResponse>(response);
+        }
+
+        public SyncInvoker<DeleteSecretStageResponse> DeleteSecretStageInvoker(DeleteSecretStageRequest deleteSecretStageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("secret_name", deleteSecretStageRequest.SecretName.ToString());
+            urlParam.Add("stage_name", deleteSecretStageRequest.StageName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/stages/{stage_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSecretStageRequest);
+            return new SyncInvoker<DeleteSecretStageResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteSecretStageResponse>);
         }
         
         /// <summary>
@@ -179,13 +259,23 @@ namespace HuaweiCloud.SDK.Csms.V1
         /// </summary>
         public DeleteSecretTagResponse DeleteSecretTag(DeleteSecretTagRequest deleteSecretTagRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("secret_id" , deleteSecretTagRequest.SecretId.ToString());
-            urlParam.Add("key" , deleteSecretTagRequest.Key.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/{secret_id}/tags/{key}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSecretTagRequest);
-            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("secret_id", deleteSecretTagRequest.SecretId.ToString());
+            urlParam.Add("key", deleteSecretTagRequest.Key.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/{secret_id}/tags/{key}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSecretTagRequest);
+            var response = DoHttpRequestSync("DELETE", request);
             return JsonUtils.DeSerializeNull<DeleteSecretTagResponse>(response);
+        }
+
+        public SyncInvoker<DeleteSecretTagResponse> DeleteSecretTagInvoker(DeleteSecretTagRequest deleteSecretTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("secret_id", deleteSecretTagRequest.SecretId.ToString());
+            urlParam.Add("key", deleteSecretTagRequest.Key.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/{secret_id}/tags/{key}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSecretTagRequest);
+            return new SyncInvoker<DeleteSecretTagResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteSecretTagResponse>);
         }
         
         /// <summary>
@@ -197,12 +287,21 @@ namespace HuaweiCloud.SDK.Csms.V1
         /// </summary>
         public DownloadSecretBlobResponse DownloadSecretBlob(DownloadSecretBlobRequest downloadSecretBlobRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("secret_name" , downloadSecretBlobRequest.SecretName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/backup",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadSecretBlobRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("secret_name", downloadSecretBlobRequest.SecretName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/backup", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadSecretBlobRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<DownloadSecretBlobResponse>(response);
+        }
+
+        public SyncInvoker<DownloadSecretBlobResponse> DownloadSecretBlobInvoker(DownloadSecretBlobRequest downloadSecretBlobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("secret_name", downloadSecretBlobRequest.SecretName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/backup", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadSecretBlobRequest);
+            return new SyncInvoker<DownloadSecretBlobResponse>(this, "POST", request, JsonUtils.DeSerialize<DownloadSecretBlobResponse>);
         }
         
         /// <summary>
@@ -214,11 +313,19 @@ namespace HuaweiCloud.SDK.Csms.V1
         /// </summary>
         public ListNotificationRecordsResponse ListNotificationRecords(ListNotificationRecordsRequest listNotificationRecordsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/notification-records",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listNotificationRecordsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/notification-records", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listNotificationRecordsRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ListNotificationRecordsResponse>(response);
+        }
+
+        public SyncInvoker<ListNotificationRecordsResponse> ListNotificationRecordsInvoker(ListNotificationRecordsRequest listNotificationRecordsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/notification-records", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listNotificationRecordsRequest);
+            return new SyncInvoker<ListNotificationRecordsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListNotificationRecordsResponse>);
         }
         
         /// <summary>
@@ -230,11 +337,19 @@ namespace HuaweiCloud.SDK.Csms.V1
         /// </summary>
         public ListProjectSecretsTagsResponse ListProjectSecretsTags(ListProjectSecretsTagsRequest listProjectSecretsTagsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/tags",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProjectSecretsTagsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProjectSecretsTagsRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ListProjectSecretsTagsResponse>(response);
+        }
+
+        public SyncInvoker<ListProjectSecretsTagsResponse> ListProjectSecretsTagsInvoker(ListProjectSecretsTagsRequest listProjectSecretsTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProjectSecretsTagsRequest);
+            return new SyncInvoker<ListProjectSecretsTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListProjectSecretsTagsResponse>);
         }
         
         /// <summary>
@@ -246,12 +361,21 @@ namespace HuaweiCloud.SDK.Csms.V1
         /// </summary>
         public ListResourceInstancesResponse ListResourceInstances(ListResourceInstancesRequest listResourceInstancesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_instances" , listResourceInstancesRequest.ResourceInstances.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/{resource_instances}/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listResourceInstancesRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_instances", listResourceInstancesRequest.ResourceInstances.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/{resource_instances}/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listResourceInstancesRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<ListResourceInstancesResponse>(response);
+        }
+
+        public SyncInvoker<ListResourceInstancesResponse> ListResourceInstancesInvoker(ListResourceInstancesRequest listResourceInstancesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_instances", listResourceInstancesRequest.ResourceInstances.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/{resource_instances}/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listResourceInstancesRequest);
+            return new SyncInvoker<ListResourceInstancesResponse>(this, "POST", request, JsonUtils.DeSerialize<ListResourceInstancesResponse>);
         }
         
         /// <summary>
@@ -263,11 +387,19 @@ namespace HuaweiCloud.SDK.Csms.V1
         /// </summary>
         public ListSecretEventsResponse ListSecretEvents(ListSecretEventsRequest listSecretEventsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/events",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSecretEventsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/events", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSecretEventsRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ListSecretEventsResponse>(response);
+        }
+
+        public SyncInvoker<ListSecretEventsResponse> ListSecretEventsInvoker(ListSecretEventsRequest listSecretEventsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/events", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSecretEventsRequest);
+            return new SyncInvoker<ListSecretEventsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSecretEventsResponse>);
         }
         
         /// <summary>
@@ -279,12 +411,21 @@ namespace HuaweiCloud.SDK.Csms.V1
         /// </summary>
         public ListSecretTagsResponse ListSecretTags(ListSecretTagsRequest listSecretTagsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("secret_id" , listSecretTagsRequest.SecretId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/{secret_id}/tags",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSecretTagsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("secret_id", listSecretTagsRequest.SecretId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/{secret_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSecretTagsRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ListSecretTagsResponse>(response);
+        }
+
+        public SyncInvoker<ListSecretTagsResponse> ListSecretTagsInvoker(ListSecretTagsRequest listSecretTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("secret_id", listSecretTagsRequest.SecretId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/{secret_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSecretTagsRequest);
+            return new SyncInvoker<ListSecretTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSecretTagsResponse>);
         }
         
         /// <summary>
@@ -296,12 +437,21 @@ namespace HuaweiCloud.SDK.Csms.V1
         /// </summary>
         public ListSecretVersionsResponse ListSecretVersions(ListSecretVersionsRequest listSecretVersionsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("secret_name" , listSecretVersionsRequest.SecretName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/versions",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSecretVersionsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("secret_name", listSecretVersionsRequest.SecretName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/versions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSecretVersionsRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ListSecretVersionsResponse>(response);
+        }
+
+        public SyncInvoker<ListSecretVersionsResponse> ListSecretVersionsInvoker(ListSecretVersionsRequest listSecretVersionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("secret_name", listSecretVersionsRequest.SecretName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/versions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSecretVersionsRequest);
+            return new SyncInvoker<ListSecretVersionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSecretVersionsResponse>);
         }
         
         /// <summary>
@@ -313,11 +463,19 @@ namespace HuaweiCloud.SDK.Csms.V1
         /// </summary>
         public ListSecretsResponse ListSecrets(ListSecretsRequest listSecretsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSecretsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSecretsRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ListSecretsResponse>(response);
+        }
+
+        public SyncInvoker<ListSecretsResponse> ListSecretsInvoker(ListSecretsRequest listSecretsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSecretsRequest);
+            return new SyncInvoker<ListSecretsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSecretsResponse>);
         }
         
         /// <summary>
@@ -329,12 +487,21 @@ namespace HuaweiCloud.SDK.Csms.V1
         /// </summary>
         public RestoreSecretResponse RestoreSecret(RestoreSecretRequest restoreSecretRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("secret_name" , restoreSecretRequest.SecretName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/scheduled-deleted-tasks/cancel",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", restoreSecretRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("secret_name", restoreSecretRequest.SecretName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/scheduled-deleted-tasks/cancel", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restoreSecretRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<RestoreSecretResponse>(response);
+        }
+
+        public SyncInvoker<RestoreSecretResponse> RestoreSecretInvoker(RestoreSecretRequest restoreSecretRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("secret_name", restoreSecretRequest.SecretName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/scheduled-deleted-tasks/cancel", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restoreSecretRequest);
+            return new SyncInvoker<RestoreSecretResponse>(this, "POST", request, JsonUtils.DeSerialize<RestoreSecretResponse>);
         }
         
         /// <summary>
@@ -346,12 +513,21 @@ namespace HuaweiCloud.SDK.Csms.V1
         /// </summary>
         public RotateSecretResponse RotateSecret(RotateSecretRequest rotateSecretRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("secret_name" , rotateSecretRequest.SecretName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/rotate",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", rotateSecretRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("secret_name", rotateSecretRequest.SecretName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/rotate", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", rotateSecretRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<RotateSecretResponse>(response);
+        }
+
+        public SyncInvoker<RotateSecretResponse> RotateSecretInvoker(RotateSecretRequest rotateSecretRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("secret_name", rotateSecretRequest.SecretName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/rotate", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", rotateSecretRequest);
+            return new SyncInvoker<RotateSecretResponse>(this, "POST", request, JsonUtils.DeSerialize<RotateSecretResponse>);
         }
         
         /// <summary>
@@ -363,12 +539,21 @@ namespace HuaweiCloud.SDK.Csms.V1
         /// </summary>
         public ShowSecretResponse ShowSecret(ShowSecretRequest showSecretRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("secret_name" , showSecretRequest.SecretName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSecretRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("secret_name", showSecretRequest.SecretName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSecretRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowSecretResponse>(response);
+        }
+
+        public SyncInvoker<ShowSecretResponse> ShowSecretInvoker(ShowSecretRequest showSecretRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("secret_name", showSecretRequest.SecretName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSecretRequest);
+            return new SyncInvoker<ShowSecretResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSecretResponse>);
         }
         
         /// <summary>
@@ -380,12 +565,21 @@ namespace HuaweiCloud.SDK.Csms.V1
         /// </summary>
         public ShowSecretEventResponse ShowSecretEvent(ShowSecretEventRequest showSecretEventRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("event_name" , showSecretEventRequest.EventName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/events/{event_name}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSecretEventRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("event_name", showSecretEventRequest.EventName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/events/{event_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSecretEventRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowSecretEventResponse>(response);
+        }
+
+        public SyncInvoker<ShowSecretEventResponse> ShowSecretEventInvoker(ShowSecretEventRequest showSecretEventRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("event_name", showSecretEventRequest.EventName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/events/{event_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSecretEventRequest);
+            return new SyncInvoker<ShowSecretEventResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSecretEventResponse>);
         }
         
         /// <summary>
@@ -397,13 +591,23 @@ namespace HuaweiCloud.SDK.Csms.V1
         /// </summary>
         public ShowSecretStageResponse ShowSecretStage(ShowSecretStageRequest showSecretStageRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("secret_name" , showSecretStageRequest.SecretName.ToString());
-            urlParam.Add("stage_name" , showSecretStageRequest.StageName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/stages/{stage_name}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSecretStageRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("secret_name", showSecretStageRequest.SecretName.ToString());
+            urlParam.Add("stage_name", showSecretStageRequest.StageName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/stages/{stage_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSecretStageRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowSecretStageResponse>(response);
+        }
+
+        public SyncInvoker<ShowSecretStageResponse> ShowSecretStageInvoker(ShowSecretStageRequest showSecretStageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("secret_name", showSecretStageRequest.SecretName.ToString());
+            urlParam.Add("stage_name", showSecretStageRequest.StageName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/stages/{stage_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSecretStageRequest);
+            return new SyncInvoker<ShowSecretStageResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSecretStageResponse>);
         }
         
         /// <summary>
@@ -416,13 +620,23 @@ namespace HuaweiCloud.SDK.Csms.V1
         /// </summary>
         public ShowSecretVersionResponse ShowSecretVersion(ShowSecretVersionRequest showSecretVersionRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("secret_name" , showSecretVersionRequest.SecretName.ToString());
-            urlParam.Add("version_id" , showSecretVersionRequest.VersionId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/versions/{version_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSecretVersionRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("secret_name", showSecretVersionRequest.SecretName.ToString());
+            urlParam.Add("version_id", showSecretVersionRequest.VersionId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/versions/{version_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSecretVersionRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowSecretVersionResponse>(response);
+        }
+
+        public SyncInvoker<ShowSecretVersionResponse> ShowSecretVersionInvoker(ShowSecretVersionRequest showSecretVersionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("secret_name", showSecretVersionRequest.SecretName.ToString());
+            urlParam.Add("version_id", showSecretVersionRequest.VersionId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/versions/{version_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSecretVersionRequest);
+            return new SyncInvoker<ShowSecretVersionResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSecretVersionResponse>);
         }
         
         /// <summary>
@@ -434,12 +648,21 @@ namespace HuaweiCloud.SDK.Csms.V1
         /// </summary>
         public UpdateSecretResponse UpdateSecret(UpdateSecretRequest updateSecretRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("secret_name" , updateSecretRequest.SecretName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSecretRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("secret_name", updateSecretRequest.SecretName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSecretRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerialize<UpdateSecretResponse>(response);
+        }
+
+        public SyncInvoker<UpdateSecretResponse> UpdateSecretInvoker(UpdateSecretRequest updateSecretRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("secret_name", updateSecretRequest.SecretName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSecretRequest);
+            return new SyncInvoker<UpdateSecretResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateSecretResponse>);
         }
         
         /// <summary>
@@ -451,12 +674,21 @@ namespace HuaweiCloud.SDK.Csms.V1
         /// </summary>
         public UpdateSecretEventResponse UpdateSecretEvent(UpdateSecretEventRequest updateSecretEventRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("event_name" , updateSecretEventRequest.EventName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/events/{event_name}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSecretEventRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("event_name", updateSecretEventRequest.EventName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/events/{event_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSecretEventRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerialize<UpdateSecretEventResponse>(response);
+        }
+
+        public SyncInvoker<UpdateSecretEventResponse> UpdateSecretEventInvoker(UpdateSecretEventRequest updateSecretEventRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("event_name", updateSecretEventRequest.EventName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/events/{event_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSecretEventRequest);
+            return new SyncInvoker<UpdateSecretEventResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateSecretEventResponse>);
         }
         
         /// <summary>
@@ -468,13 +700,23 @@ namespace HuaweiCloud.SDK.Csms.V1
         /// </summary>
         public UpdateSecretStageResponse UpdateSecretStage(UpdateSecretStageRequest updateSecretStageRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("secret_name" , updateSecretStageRequest.SecretName.ToString());
-            urlParam.Add("stage_name" , updateSecretStageRequest.StageName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/stages/{stage_name}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSecretStageRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("secret_name", updateSecretStageRequest.SecretName.ToString());
+            urlParam.Add("stage_name", updateSecretStageRequest.StageName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/stages/{stage_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSecretStageRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerialize<UpdateSecretStageResponse>(response);
+        }
+
+        public SyncInvoker<UpdateSecretStageResponse> UpdateSecretStageInvoker(UpdateSecretStageRequest updateSecretStageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("secret_name", updateSecretStageRequest.SecretName.ToString());
+            urlParam.Add("stage_name", updateSecretStageRequest.StageName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/stages/{stage_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSecretStageRequest);
+            return new SyncInvoker<UpdateSecretStageResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateSecretStageResponse>);
         }
         
         /// <summary>
@@ -486,13 +728,23 @@ namespace HuaweiCloud.SDK.Csms.V1
         /// </summary>
         public UpdateVersionResponse UpdateVersion(UpdateVersionRequest updateVersionRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("secret_name" , updateVersionRequest.SecretName.ToString());
-            urlParam.Add("version_id" , updateVersionRequest.VersionId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/versions/{version_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateVersionRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("secret_name", updateVersionRequest.SecretName.ToString());
+            urlParam.Add("version_id", updateVersionRequest.VersionId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/versions/{version_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateVersionRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerialize<UpdateVersionResponse>(response);
+        }
+
+        public SyncInvoker<UpdateVersionResponse> UpdateVersionInvoker(UpdateVersionRequest updateVersionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("secret_name", updateVersionRequest.SecretName.ToString());
+            urlParam.Add("version_id", updateVersionRequest.VersionId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/versions/{version_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateVersionRequest);
+            return new SyncInvoker<UpdateVersionResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateVersionResponse>);
         }
         
         /// <summary>
@@ -504,11 +756,19 @@ namespace HuaweiCloud.SDK.Csms.V1
         /// </summary>
         public UploadSecretBlobResponse UploadSecretBlob(UploadSecretBlobRequest uploadSecretBlobRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/restore",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", uploadSecretBlobRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/restore", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", uploadSecretBlobRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<UploadSecretBlobResponse>(response);
+        }
+
+        public SyncInvoker<UploadSecretBlobResponse> UploadSecretBlobInvoker(UploadSecretBlobRequest uploadSecretBlobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/restore", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", uploadSecretBlobRequest);
+            return new SyncInvoker<UploadSecretBlobResponse>(this, "POST", request, JsonUtils.DeSerialize<UploadSecretBlobResponse>);
         }
         
     }

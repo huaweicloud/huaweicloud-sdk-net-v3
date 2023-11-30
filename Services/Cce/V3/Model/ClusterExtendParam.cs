@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     {
 
         /// <summary>
-        /// 集群控制节点可用区配置。  [CCE支持的可用区请参考[地区和终端节点](https://developer.huaweicloud.com/endpoint?CCE)](tag:hws) [CCE支持的可用区请参考[地区和终端节点](https://developer.huaweicloud.com/intl/zh-cn/endpoint?CCE)](tag:hws_hk)  - multi_az：多可用区，可选。仅使用高可用集群时才可以配置多可用区。 - 专属云计算池可用区：用于指定专属云可用区部署集群控制节点。如果需配置专属CCE集群，该字段为必选。 
+        /// 集群控制节点可用区配置。  [CCE支持的可用区请参考[地区和终端节点](https://developer.huaweicloud.com/endpoint?CCE)](tag:hws) [CCE支持的可用区请参考[地区和终端节点](https://developer.huaweicloud.com/intl/zh-cn/endpoint?CCE)](tag:hws_hk)    - multi_az：多可用区，可选。仅使用高可用集群时才可以配置多可用区。 - 专属云计算池可用区：用于指定专属云可用区部署集群控制节点。如果需配置专属CCE集群，该字段为必选。 
         /// </summary>
         [JsonProperty("clusterAZ", NullValueHandling = NullValueHandling.Ignore)]
         public string ClusterAZ { get; set; }
@@ -65,25 +65,25 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public string DockerUmaskMode { get; set; }
 
         /// <summary>
-        /// 集群CPU管理策略。取值为none或static，默认为none。 - none：关闭工作负载实例独占CPU核的功能，优点是CPU共享池的可分配核数较多 - static：支持给节点上的工作负载实例配置CPU独占，适用于对CPU缓存和调度延迟敏感的工作负载[，Turbo集群下仅对普通容器节点有效，安全容器节点无效](tag:hws,hws_hk,dt)。 
+        /// 集群CPU管理策略。取值为none（或空值）或static，默认为none（或空值）。 - none(或空值)：关闭工作负载实例独占CPU核的功能，优点是CPU共享池的可分配核数较多 - static：支持给节点上的工作负载实例配置CPU独占，适用于对CPU缓存和调度延迟敏感的工作负载[，Turbo集群下仅对普通容器节点有效，安全容器节点无效](tag:hws,hws_hk,dt,g42,sbc)。 
         /// </summary>
         [JsonProperty("kubernetes.io/cpuManagerPolicy", NullValueHandling = NullValueHandling.Ignore)]
         public string KubernetesIoCpuManagerPolicy { get; set; }
 
         /// <summary>
-        /// 订单ID，集群付费类型为自动付费包周期类型时，响应中会返回此字段。
+        /// 订单ID，集群付费类型为自动付费包周期类型时，响应中会返回此字段(仅创建场景涉及)。
         /// </summary>
         [JsonProperty("orderID", NullValueHandling = NullValueHandling.Ignore)]
         public string OrderID { get; set; }
 
         /// <summary>
-        /// - month：月 - year：年 &gt; billingMode为1（包周期）时生效，且为必选。 
+        /// - month：月 - year：年 &gt; 作为请求参数，billingMode为1（包周期）时生效，且为必选。 &gt; 作为响应参数，仅在创建包周期集群时返回。 
         /// </summary>
         [JsonProperty("periodType", NullValueHandling = NullValueHandling.Ignore)]
         public string PeriodType { get; set; }
 
         /// <summary>
-        /// 订购周期数，取值范围： - periodType&#x3D;month（周期类型为月）时，取值为[1-9]。 - periodType&#x3D;year（周期类型为年）时，取值为1-3。 &gt; billingMode为1时生效，且为必选。 
+        /// 订购周期数，取值范围： - periodType&#x3D;month（周期类型为月）时，取值为[1-9]。 - periodType&#x3D;year（周期类型为年）时，取值为1-3。 &gt; 作为请求参数，billingMode为1时生效，且为必选。 &gt; 作为响应参数，仅在创建包周期集群时返回。 
         /// </summary>
         [JsonProperty("periodNum", NullValueHandling = NullValueHandling.Ignore)]
         public int? PeriodNum { get; set; }

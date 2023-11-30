@@ -47,13 +47,13 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         public string ShardName { get; set; }
 
         /// <summary>
-        /// 慢日志数据库id
+        /// 数据库id，当前只对指定客户开放
         /// </summary>
         [JsonProperty("database_id", NullValueHandling = NullValueHandling.Ignore)]
         public int? DatabaseId { get; set; }
 
         /// <summary>
-        /// 慢日志名称
+        /// 操作慢日志的账号名称，当前只对指定客户开放
         /// </summary>
         [JsonProperty("username", NullValueHandling = NullValueHandling.Ignore)]
         public string Username { get; set; }

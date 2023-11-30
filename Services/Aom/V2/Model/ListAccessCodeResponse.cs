@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
     {
 
         /// <summary>
-        /// accessCodes
+        /// accessCodes。
         /// </summary>
         [JsonProperty("access_codes", NullValueHandling = NullValueHandling.Ignore)]
         public List<AccessCodeModel> AccessCodes { get; set; }

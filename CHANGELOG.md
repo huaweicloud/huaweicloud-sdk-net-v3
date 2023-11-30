@@ -1,3 +1,291 @@
+# 3.1.69 2023-11-30
+
+### HuaweiCloud SDK AOM
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListPermissions**
+    - changes of response param
+      - `* : map<string, AuthModel> -> string`
+  - **ListAccessCode**
+    - changes of response param
+      - `- access_codes.status: enum value [enable,unenable]`
+
+### HuaweiCloud SDK CCE
+
+- _Features_
+  - Support the following APIs:
+    - `ShowClusterConfig`
+    - `UpdateClusterLogConfig`
+    - `ListPartitions`
+    - `CreatePartition`
+    - `ShowPartition`
+    - `UpdatePartition`
+    - `ShowNodePoolConfigurations`
+    - `UpdateNodePoolConfiguration`
+    - `ShowClusterConfigurationDetails`
+    - `ListCharts`
+    - `UploadChart`
+    - `ShowChart`
+    - `UpdateChart`
+    - `DeleteChart`
+    - `DownloadChart`
+    - `ShowChartValues`
+    - `ShowUserChartsQuotas`
+    - `ListReleases`
+    - `CreateRelease`
+    - `ShowRelease`
+    - `UpdateRelease`
+    - `DeleteRelease`
+    - `ShowReleaseHistory`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ResizeCluster**
+    - changes of request param
+      - `* extendParam: object<ResizeClusterRequestExtendParam> -> object`
+  - **UpdateClusterEip**
+    - changes of request param
+      - `* spec: object -> object<MasterEIPRequestSpec>`
+    - changes of response param
+      - `* spec: object -> object<MasterEIPResponseSpec>`
+  - **ShowClusterEndpoints**
+    - changes of response param
+      - `* spec: object -> object<OpenAPISpec>`
+  - **ShowAddonInstance**
+    - changes of response param
+      - `- status.status: enum value [unknown]`
+  - **UpdateAddonInstance**
+    - changes of response param
+      - `- status.status: enum value [unknown]`
+  - **RollbackAddonInstance**
+    - changes of response param
+      - `- status.status: enum value [unknown]`
+  - **ShowCluster**
+    - changes of response param
+      - `+ spec.enableMasterVolumeEncryption`
+  - **UpdateCluster**
+    - changes of response param
+      - `+ spec.enableMasterVolumeEncryption`
+  - **DeleteCluster**
+    - changes of request param
+      - `+ ondemand_node_policy`
+      - `+ periodic_node_policy`
+    - changes of response param
+      - `+ spec.enableMasterVolumeEncryption`
+  - **CreateAddonInstance**
+    - changes of response param
+      - `- status.status: enum value [unknown]`
+  - **ListAddonInstances**
+    - changes of response param
+      - `- items.status.status: enum value [unknown]`
+  - **CreateCluster**
+    - changes of request param
+      - `+ spec.enableMasterVolumeEncryption`
+    - changes of response param
+      - `+ spec.enableMasterVolumeEncryption`
+  - **ListClusters**
+    - changes of request param
+      - `+ status: enum value [Hibernating,Hibernation,Awaking]`
+    - changes of response param
+      - `+ items.spec.enableMasterVolumeEncryption`
+  - **ShowNode**
+    - changes of response param
+      - `+ spec.hostnameConfig`
+      - `+ spec.extendParam.kubeReservedMem`
+      - `+ spec.extendParam.systemReservedMem`
+      - `+ spec.extendParam.init-node-password`
+      - `- spec.extendParam.kube-reserved-mem`
+      - `- spec.extendParam.system-reserved-mem`
+  - **UpdateNode**
+    - changes of response param
+      - `+ spec.hostnameConfig`
+      - `+ spec.extendParam.kubeReservedMem`
+      - `+ spec.extendParam.systemReservedMem`
+      - `+ spec.extendParam.init-node-password`
+      - `- spec.extendParam.kube-reserved-mem`
+      - `- spec.extendParam.system-reserved-mem`
+  - **DeleteNode**
+    - changes of response param
+      - `+ spec.hostnameConfig`
+      - `+ spec.extendParam.kubeReservedMem`
+      - `+ spec.extendParam.systemReservedMem`
+      - `+ spec.extendParam.init-node-password`
+      - `- spec.extendParam.kube-reserved-mem`
+      - `- spec.extendParam.system-reserved-mem`
+  - **CreateNode**
+    - changes of request param
+      - `+ spec.hostnameConfig`
+      - `+ spec.extendParam.kubeReservedMem`
+      - `+ spec.extendParam.systemReservedMem`
+      - `+ spec.extendParam.init-node-password`
+      - `- spec.extendParam.kube-reserved-mem`
+      - `- spec.extendParam.system-reserved-mem`
+    - changes of response param
+      - `+ spec.hostnameConfig`
+      - `+ spec.extendParam.kubeReservedMem`
+      - `+ spec.extendParam.systemReservedMem`
+      - `+ spec.extendParam.init-node-password`
+      - `- spec.extendParam.kube-reserved-mem`
+      - `- spec.extendParam.system-reserved-mem`
+  - **ListNodes**
+    - changes of response param
+      - `+ items.spec.hostnameConfig`
+      - `+ items.spec.extendParam.kubeReservedMem`
+      - `+ items.spec.extendParam.systemReservedMem`
+      - `+ items.spec.extendParam.init-node-password`
+      - `- items.spec.extendParam.kube-reserved-mem`
+      - `- items.spec.extendParam.system-reserved-mem`
+  - **ShowNodePool**
+    - changes of response param
+      - `+ spec.nodeTemplate.hostnameConfig`
+      - `+ spec.nodeTemplate.extendParam.kubeReservedMem`
+      - `+ spec.nodeTemplate.extendParam.systemReservedMem`
+      - `+ spec.nodeTemplate.extendParam.init-node-password`
+      - `- spec.nodeTemplate.extendParam.kube-reserved-mem`
+      - `- spec.nodeTemplate.extendParam.system-reserved-mem`
+  - **UpdateNodePool**
+    - changes of response param
+      - `+ spec.nodeTemplate.hostnameConfig`
+      - `+ spec.nodeTemplate.extendParam.kubeReservedMem`
+      - `+ spec.nodeTemplate.extendParam.systemReservedMem`
+      - `+ spec.nodeTemplate.extendParam.init-node-password`
+      - `- spec.nodeTemplate.extendParam.kube-reserved-mem`
+      - `- spec.nodeTemplate.extendParam.system-reserved-mem`
+  - **DeleteNodePool**
+    - changes of response param
+      - `+ spec.nodeTemplate.hostnameConfig`
+      - `+ spec.nodeTemplate.extendParam.kubeReservedMem`
+      - `+ spec.nodeTemplate.extendParam.systemReservedMem`
+      - `+ spec.nodeTemplate.extendParam.init-node-password`
+      - `- spec.nodeTemplate.extendParam.kube-reserved-mem`
+      - `- spec.nodeTemplate.extendParam.system-reserved-mem`
+  - **AddNode**
+    - changes of request param
+      - `+ nodeList.spec.hostnameConfig`
+  - **ResetNode**
+    - changes of request param
+      - `+ nodeList.spec.hostnameConfig`
+  - **CreateNodePool**
+    - changes of request param
+      - `+ spec.nodeTemplate.hostnameConfig`
+      - `+ spec.nodeTemplate.extendParam.kubeReservedMem`
+      - `+ spec.nodeTemplate.extendParam.systemReservedMem`
+      - `+ spec.nodeTemplate.extendParam.init-node-password`
+      - `- spec.nodeTemplate.extendParam.kube-reserved-mem`
+      - `- spec.nodeTemplate.extendParam.system-reserved-mem`
+    - changes of response param
+      - `+ spec.nodeTemplate.hostnameConfig`
+      - `+ spec.nodeTemplate.extendParam.kubeReservedMem`
+      - `+ spec.nodeTemplate.extendParam.systemReservedMem`
+      - `+ spec.nodeTemplate.extendParam.init-node-password`
+      - `- spec.nodeTemplate.extendParam.kube-reserved-mem`
+      - `- spec.nodeTemplate.extendParam.system-reserved-mem`
+  - **ListNodePools**
+    - changes of response param
+      - `+ items.spec.nodeTemplate.hostnameConfig`
+      - `+ items.spec.nodeTemplate.extendParam.kubeReservedMem`
+      - `+ items.spec.nodeTemplate.extendParam.systemReservedMem`
+      - `+ items.spec.nodeTemplate.extendParam.init-node-password`
+      - `- items.spec.nodeTemplate.extendParam.kube-reserved-mem`
+      - `- items.spec.nodeTemplate.extendParam.system-reserved-mem`
+
+### HuaweiCloud SDK DCS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListSlowlog**
+    - changes of response param
+      - `+ total_num`
+
+### HuaweiCloud SDK EIP
+
+- _Features_
+  - Support the APIs `BatchModifyBandwidth`, `ListEipBandwidths`, `ListBandwidthsLimit`, `UpdatePublicip`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _Features_
+  - Support the API `ListInfluxdbSlowLogs`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListLtsConfigs**
+    - changes of response param
+      - `+ instance_lts_configs.instance.supported_log_types`
+
+### HuaweiCloud SDK Moderation
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **RunQueryDocumentModerationJob**
+    - changes of response param
+      - `+ result.details.start_position`
+      - `+ result.details.end_position`
+      - `+ result.details.image_url`
+
+### HuaweiCloud SDK RDS
+
+- _Features_
+  - Support the API `SetInstancesDbShrink`
+- _Bug Fix_
+  - None
+- _Change_
+  - **UpgradeDbMajorVersion**
+    - changes of response param
+      - `+ job_id`
+  - **ShowUpgradeDbMajorVersionStatus**
+    - changes of response param
+      - `+ check_expiration_time`
+      - `- report_expiration_time`
+  - **StartResizeFlavorAction**
+    - changes of response param
+      - `+ order_id`
+  - **StartInstanceEnlargeVolumeAction**
+    - changes of response param
+      - `+ order_id`
+  - **StartInstanceSingleToHaAction**
+    - changes of response param
+      - `+ order_id`
+  - **ListHistoryDatabase**
+    - changes of request param
+      - `+ engine`
+      - `- database_name`
+
+### HuaweiCloud SDK RocketMQ
+
+- _Features_
+  - Support the APIs `ShowEngineInstanceExtendProductInfo`, `ResizeInstance`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK SIS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **RecognizeFlashAsr**
+    - changes of request param
+      - `* obs_bucket_name: optional -> required`
+      - `* obs_object_key: optional -> required`
+
 # 3.1.68 2023-11-23
 
 ### HuaweiCloud SDK CFW

@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
     public class ListPromInstanceRequest 
     {
         /// <summary>
-        /// 普罗实例类型,DEFAULT,ECS,VPC,CCE,REMOTE_WRITE,KUBERNETES,CLOUD_SERVICE,ACROSS_ACCOUNT
+        /// Prometheus实例类型。
         /// </summary>
-        /// <value>普罗实例类型,DEFAULT,ECS,VPC,CCE,REMOTE_WRITE,KUBERNETES,CLOUD_SERVICE,ACROSS_ACCOUNT</value>
+        /// <value>Prometheus实例类型。</value>
         [JsonConverter(typeof(EnumClassConverter<PromTypeEnum>))]
         public class PromTypeEnum
         {
@@ -167,9 +167,9 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         }
 
         /// <summary>
-        /// cce集群开关 true/false
+        /// cce集群开关。
         /// </summary>
-        /// <value>cce集群开关 true/false</value>
+        /// <value>cce集群开关。</value>
         [JsonConverter(typeof(EnumClassConverter<CceClusterEnableEnum>))]
         public class CceClusterEnableEnum
         {
@@ -282,9 +282,9 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         }
 
         /// <summary>
-        /// 普罗实例状态 true/false
+        /// Prometheus实例状态。
         /// </summary>
-        /// <value>普罗实例状态 true/false</value>
+        /// <value>Prometheus实例状态。</value>
         [JsonConverter(typeof(EnumClassConverter<PromStatusEnum>))]
         public class PromStatusEnum
         {
@@ -398,26 +398,26 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
 
 
         /// <summary>
-        /// 普罗实例ID
+        /// Prometheus实例id。
         /// </summary>
         [SDKProperty("prom_id", IsQuery = true)]
         [JsonProperty("prom_id", NullValueHandling = NullValueHandling.Ignore)]
         public string PromId { get; set; }
 
         /// <summary>
-        /// 普罗实例类型,DEFAULT,ECS,VPC,CCE,REMOTE_WRITE,KUBERNETES,CLOUD_SERVICE,ACROSS_ACCOUNT
+        /// Prometheus实例类型。
         /// </summary>
         [SDKProperty("prom_type", IsQuery = true)]
         [JsonProperty("prom_type", NullValueHandling = NullValueHandling.Ignore)]
         public PromTypeEnum PromType { get; set; }
         /// <summary>
-        /// cce集群开关 true/false
+        /// cce集群开关。
         /// </summary>
         [SDKProperty("cce_cluster_enable", IsQuery = true)]
         [JsonProperty("cce_cluster_enable", NullValueHandling = NullValueHandling.Ignore)]
         public CceClusterEnableEnum CceClusterEnable { get; set; }
         /// <summary>
-        /// 普罗实例状态 true/false
+        /// Prometheus实例状态。
         /// </summary>
         [SDKProperty("prom_status", IsQuery = true)]
         [JsonProperty("prom_status", NullValueHandling = NullValueHandling.Ignore)]

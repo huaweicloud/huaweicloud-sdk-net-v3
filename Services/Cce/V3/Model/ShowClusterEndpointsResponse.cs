@@ -26,7 +26,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// 
         /// </summary>
         [JsonProperty("spec", NullValueHandling = NullValueHandling.Ignore)]
-        public OpenAPIResponseSpec Spec { get; set; }
+        public OpenAPISpec Spec { get; set; }
 
         /// <summary>
         /// 

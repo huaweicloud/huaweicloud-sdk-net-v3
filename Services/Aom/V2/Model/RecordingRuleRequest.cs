@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
     {
 
         /// <summary>
-        /// recordingRule
+        /// 预聚合规则。
         /// </summary>
         [JsonProperty("recording_rule", NullValueHandling = NullValueHandling.Ignore)]
         public string RecordingRule { get; set; }

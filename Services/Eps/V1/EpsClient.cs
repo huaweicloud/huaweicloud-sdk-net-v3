@@ -23,11 +23,19 @@ namespace HuaweiCloud.SDK.Eps.V1
         /// </summary>
         public CreateEnterpriseProjectResponse CreateEnterpriseProject(CreateEnterpriseProjectRequest createEnterpriseProjectRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createEnterpriseProjectRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createEnterpriseProjectRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<CreateEnterpriseProjectResponse>(response);
+        }
+
+        public SyncInvoker<CreateEnterpriseProjectResponse> CreateEnterpriseProjectInvoker(CreateEnterpriseProjectRequest createEnterpriseProjectRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createEnterpriseProjectRequest);
+            return new SyncInvoker<CreateEnterpriseProjectResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateEnterpriseProjectResponse>);
         }
         
         /// <summary>
@@ -39,12 +47,21 @@ namespace HuaweiCloud.SDK.Eps.V1
         /// </summary>
         public DisableEnterpriseProjectResponse DisableEnterpriseProject(DisableEnterpriseProjectRequest disableEnterpriseProjectRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("enterprise_project_id" , disableEnterpriseProjectRequest.EnterpriseProjectId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/{enterprise_project_id}/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", disableEnterpriseProjectRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("enterprise_project_id", disableEnterpriseProjectRequest.EnterpriseProjectId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/{enterprise_project_id}/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", disableEnterpriseProjectRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerializeNull<DisableEnterpriseProjectResponse>(response);
+        }
+
+        public SyncInvoker<DisableEnterpriseProjectResponse> DisableEnterpriseProjectInvoker(DisableEnterpriseProjectRequest disableEnterpriseProjectRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("enterprise_project_id", disableEnterpriseProjectRequest.EnterpriseProjectId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/{enterprise_project_id}/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", disableEnterpriseProjectRequest);
+            return new SyncInvoker<DisableEnterpriseProjectResponse>(this, "POST", request, JsonUtils.DeSerializeNull<DisableEnterpriseProjectResponse>);
         }
         
         /// <summary>
@@ -56,12 +73,21 @@ namespace HuaweiCloud.SDK.Eps.V1
         /// </summary>
         public EnableEnterpriseProjectResponse EnableEnterpriseProject(EnableEnterpriseProjectRequest enableEnterpriseProjectRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("enterprise_project_id" , enableEnterpriseProjectRequest.EnterpriseProjectId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/{enterprise_project_id}/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", enableEnterpriseProjectRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("enterprise_project_id", enableEnterpriseProjectRequest.EnterpriseProjectId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/{enterprise_project_id}/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", enableEnterpriseProjectRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerializeNull<EnableEnterpriseProjectResponse>(response);
+        }
+
+        public SyncInvoker<EnableEnterpriseProjectResponse> EnableEnterpriseProjectInvoker(EnableEnterpriseProjectRequest enableEnterpriseProjectRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("enterprise_project_id", enableEnterpriseProjectRequest.EnterpriseProjectId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/{enterprise_project_id}/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", enableEnterpriseProjectRequest);
+            return new SyncInvoker<EnableEnterpriseProjectResponse>(this, "POST", request, JsonUtils.DeSerializeNull<EnableEnterpriseProjectResponse>);
         }
         
         /// <summary>
@@ -73,11 +99,19 @@ namespace HuaweiCloud.SDK.Eps.V1
         /// </summary>
         public ListApiVersionsResponse ListApiVersions(ListApiVersionsRequest listApiVersionsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listApiVersionsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listApiVersionsRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ListApiVersionsResponse>(response);
+        }
+
+        public SyncInvoker<ListApiVersionsResponse> ListApiVersionsInvoker(ListApiVersionsRequest listApiVersionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listApiVersionsRequest);
+            return new SyncInvoker<ListApiVersionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListApiVersionsResponse>);
         }
         
         /// <summary>
@@ -89,11 +123,19 @@ namespace HuaweiCloud.SDK.Eps.V1
         /// </summary>
         public ListEnterpriseProjectResponse ListEnterpriseProject(ListEnterpriseProjectRequest listEnterpriseProjectRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listEnterpriseProjectRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listEnterpriseProjectRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ListEnterpriseProjectResponse>(response);
+        }
+
+        public SyncInvoker<ListEnterpriseProjectResponse> ListEnterpriseProjectInvoker(ListEnterpriseProjectRequest listEnterpriseProjectRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listEnterpriseProjectRequest);
+            return new SyncInvoker<ListEnterpriseProjectResponse>(this, "GET", request, JsonUtils.DeSerialize<ListEnterpriseProjectResponse>);
         }
         
         /// <summary>
@@ -105,11 +147,19 @@ namespace HuaweiCloud.SDK.Eps.V1
         /// </summary>
         public ListProvidersResponse ListProviders(ListProvidersRequest listProvidersRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/providers",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProvidersRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/providers", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProvidersRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ListProvidersResponse>(response);
+        }
+
+        public SyncInvoker<ListProvidersResponse> ListProvidersInvoker(ListProvidersRequest listProvidersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/providers", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProvidersRequest);
+            return new SyncInvoker<ListProvidersResponse>(this, "GET", request, JsonUtils.DeSerialize<ListProvidersResponse>);
         }
         
         /// <summary>
@@ -121,12 +171,21 @@ namespace HuaweiCloud.SDK.Eps.V1
         /// </summary>
         public MigrateResourceResponse MigrateResource(MigrateResourceRequest migrateResourceRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("enterprise_project_id" , migrateResourceRequest.EnterpriseProjectId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/{enterprise_project_id}/resources-migrate",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", migrateResourceRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("enterprise_project_id", migrateResourceRequest.EnterpriseProjectId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/{enterprise_project_id}/resources-migrate", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", migrateResourceRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerializeNull<MigrateResourceResponse>(response);
+        }
+
+        public SyncInvoker<MigrateResourceResponse> MigrateResourceInvoker(MigrateResourceRequest migrateResourceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("enterprise_project_id", migrateResourceRequest.EnterpriseProjectId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/{enterprise_project_id}/resources-migrate", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", migrateResourceRequest);
+            return new SyncInvoker<MigrateResourceResponse>(this, "POST", request, JsonUtils.DeSerializeNull<MigrateResourceResponse>);
         }
         
         /// <summary>
@@ -138,12 +197,21 @@ namespace HuaweiCloud.SDK.Eps.V1
         /// </summary>
         public ShowApiVersionResponse ShowApiVersion(ShowApiVersionRequest showApiVersionRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("api_version" , showApiVersionRequest.ApiVersion.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/{api_version}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showApiVersionRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("api_version", showApiVersionRequest.ApiVersion.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/{api_version}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showApiVersionRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowApiVersionResponse>(response);
+        }
+
+        public SyncInvoker<ShowApiVersionResponse> ShowApiVersionInvoker(ShowApiVersionRequest showApiVersionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("api_version", showApiVersionRequest.ApiVersion.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/{api_version}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showApiVersionRequest);
+            return new SyncInvoker<ShowApiVersionResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowApiVersionResponse>);
         }
         
         /// <summary>
@@ -155,12 +223,21 @@ namespace HuaweiCloud.SDK.Eps.V1
         /// </summary>
         public ShowEnterpriseProjectResponse ShowEnterpriseProject(ShowEnterpriseProjectRequest showEnterpriseProjectRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("enterprise_project_id" , showEnterpriseProjectRequest.EnterpriseProjectId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/{enterprise_project_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showEnterpriseProjectRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("enterprise_project_id", showEnterpriseProjectRequest.EnterpriseProjectId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/{enterprise_project_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showEnterpriseProjectRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowEnterpriseProjectResponse>(response);
+        }
+
+        public SyncInvoker<ShowEnterpriseProjectResponse> ShowEnterpriseProjectInvoker(ShowEnterpriseProjectRequest showEnterpriseProjectRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("enterprise_project_id", showEnterpriseProjectRequest.EnterpriseProjectId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/{enterprise_project_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showEnterpriseProjectRequest);
+            return new SyncInvoker<ShowEnterpriseProjectResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowEnterpriseProjectResponse>);
         }
         
         /// <summary>
@@ -172,11 +249,19 @@ namespace HuaweiCloud.SDK.Eps.V1
         /// </summary>
         public ShowEnterpriseProjectQuotaResponse ShowEnterpriseProjectQuota(ShowEnterpriseProjectQuotaRequest showEnterpriseProjectQuotaRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/quotas",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showEnterpriseProjectQuotaRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/quotas", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showEnterpriseProjectQuotaRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowEnterpriseProjectQuotaResponse>(response);
+        }
+
+        public SyncInvoker<ShowEnterpriseProjectQuotaResponse> ShowEnterpriseProjectQuotaInvoker(ShowEnterpriseProjectQuotaRequest showEnterpriseProjectQuotaRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/quotas", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showEnterpriseProjectQuotaRequest);
+            return new SyncInvoker<ShowEnterpriseProjectQuotaResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowEnterpriseProjectQuotaResponse>);
         }
         
         /// <summary>
@@ -188,12 +273,21 @@ namespace HuaweiCloud.SDK.Eps.V1
         /// </summary>
         public ShowResourceBindEnterpriseProjectResponse ShowResourceBindEnterpriseProject(ShowResourceBindEnterpriseProjectRequest showResourceBindEnterpriseProjectRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("enterprise_project_id" , showResourceBindEnterpriseProjectRequest.EnterpriseProjectId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/{enterprise_project_id}/resources/filter",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", showResourceBindEnterpriseProjectRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("enterprise_project_id", showResourceBindEnterpriseProjectRequest.EnterpriseProjectId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/{enterprise_project_id}/resources/filter", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", showResourceBindEnterpriseProjectRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<ShowResourceBindEnterpriseProjectResponse>(response);
+        }
+
+        public SyncInvoker<ShowResourceBindEnterpriseProjectResponse> ShowResourceBindEnterpriseProjectInvoker(ShowResourceBindEnterpriseProjectRequest showResourceBindEnterpriseProjectRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("enterprise_project_id", showResourceBindEnterpriseProjectRequest.EnterpriseProjectId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/{enterprise_project_id}/resources/filter", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", showResourceBindEnterpriseProjectRequest);
+            return new SyncInvoker<ShowResourceBindEnterpriseProjectResponse>(this, "POST", request, JsonUtils.DeSerialize<ShowResourceBindEnterpriseProjectResponse>);
         }
         
         /// <summary>
@@ -205,12 +299,21 @@ namespace HuaweiCloud.SDK.Eps.V1
         /// </summary>
         public UpdateEnterpriseProjectResponse UpdateEnterpriseProject(UpdateEnterpriseProjectRequest updateEnterpriseProjectRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("enterprise_project_id" , updateEnterpriseProjectRequest.EnterpriseProjectId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/{enterprise_project_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateEnterpriseProjectRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("enterprise_project_id", updateEnterpriseProjectRequest.EnterpriseProjectId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/{enterprise_project_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateEnterpriseProjectRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerialize<UpdateEnterpriseProjectResponse>(response);
+        }
+
+        public SyncInvoker<UpdateEnterpriseProjectResponse> UpdateEnterpriseProjectInvoker(UpdateEnterpriseProjectRequest updateEnterpriseProjectRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("enterprise_project_id", updateEnterpriseProjectRequest.EnterpriseProjectId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/{enterprise_project_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateEnterpriseProjectRequest);
+            return new SyncInvoker<UpdateEnterpriseProjectResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateEnterpriseProjectResponse>);
         }
         
     }

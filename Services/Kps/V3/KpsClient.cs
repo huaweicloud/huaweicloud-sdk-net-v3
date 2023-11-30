@@ -23,11 +23,19 @@ namespace HuaweiCloud.SDK.Kps.V3
         /// </summary>
         public AssociateKeypairResponse AssociateKeypair(AssociateKeypairRequest associateKeypairRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/keypairs/associate",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", associateKeypairRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/keypairs/associate", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", associateKeypairRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<AssociateKeypairResponse>(response);
+        }
+
+        public SyncInvoker<AssociateKeypairResponse> AssociateKeypairInvoker(AssociateKeypairRequest associateKeypairRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/keypairs/associate", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", associateKeypairRequest);
+            return new SyncInvoker<AssociateKeypairResponse>(this, "POST", request, JsonUtils.DeSerialize<AssociateKeypairResponse>);
         }
         
         /// <summary>
@@ -39,11 +47,19 @@ namespace HuaweiCloud.SDK.Kps.V3
         /// </summary>
         public BatchAssociateKeypairResponse BatchAssociateKeypair(BatchAssociateKeypairRequest batchAssociateKeypairRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/keypairs/batch-associate",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchAssociateKeypairRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/keypairs/batch-associate", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchAssociateKeypairRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<BatchAssociateKeypairResponse>(response);
+        }
+
+        public SyncInvoker<BatchAssociateKeypairResponse> BatchAssociateKeypairInvoker(BatchAssociateKeypairRequest batchAssociateKeypairRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/keypairs/batch-associate", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchAssociateKeypairRequest);
+            return new SyncInvoker<BatchAssociateKeypairResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchAssociateKeypairResponse>);
         }
         
         /// <summary>
@@ -55,13 +71,21 @@ namespace HuaweiCloud.SDK.Kps.V3
         /// </summary>
         public ClearPrivateKeyResponse ClearPrivateKey(ClearPrivateKeyRequest clearPrivateKeyRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("keypair_name" , clearPrivateKeyRequest.KeypairName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/keypairs/{keypair_name}/private-key",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", clearPrivateKeyRequest);
-            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
-            ClearPrivateKeyResponse clearPrivateKeyResponse = JsonUtils.DeSerializeNull<ClearPrivateKeyResponse>(response);
-            return clearPrivateKeyResponse;
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("keypair_name", clearPrivateKeyRequest.KeypairName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/keypairs/{keypair_name}/private-key", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", clearPrivateKeyRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<ClearPrivateKeyResponse>(response);
+        }
+
+        public SyncInvoker<ClearPrivateKeyResponse> ClearPrivateKeyInvoker(ClearPrivateKeyRequest clearPrivateKeyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("keypair_name", clearPrivateKeyRequest.KeypairName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/keypairs/{keypair_name}/private-key", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", clearPrivateKeyRequest);
+            return new SyncInvoker<ClearPrivateKeyResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<ClearPrivateKeyResponse>);
         }
         
         /// <summary>
@@ -73,11 +97,19 @@ namespace HuaweiCloud.SDK.Kps.V3
         /// </summary>
         public CreateKeypairResponse CreateKeypair(CreateKeypairRequest createKeypairRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/keypairs",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createKeypairRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/keypairs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createKeypairRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<CreateKeypairResponse>(response);
+        }
+
+        public SyncInvoker<CreateKeypairResponse> CreateKeypairInvoker(CreateKeypairRequest createKeypairRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/keypairs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createKeypairRequest);
+            return new SyncInvoker<CreateKeypairResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateKeypairResponse>);
         }
         
         /// <summary>
@@ -89,11 +121,19 @@ namespace HuaweiCloud.SDK.Kps.V3
         /// </summary>
         public DeleteAllFailedTaskResponse DeleteAllFailedTask(DeleteAllFailedTaskRequest deleteAllFailedTaskRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/failed-tasks",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAllFailedTaskRequest);
-            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/failed-tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAllFailedTaskRequest);
+            var response = DoHttpRequestSync("DELETE", request);
             return JsonUtils.DeSerializeNull<DeleteAllFailedTaskResponse>(response);
+        }
+
+        public SyncInvoker<DeleteAllFailedTaskResponse> DeleteAllFailedTaskInvoker(DeleteAllFailedTaskRequest deleteAllFailedTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/failed-tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAllFailedTaskRequest);
+            return new SyncInvoker<DeleteAllFailedTaskResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteAllFailedTaskResponse>);
         }
         
         /// <summary>
@@ -105,12 +145,21 @@ namespace HuaweiCloud.SDK.Kps.V3
         /// </summary>
         public DeleteFailedTaskResponse DeleteFailedTask(DeleteFailedTaskRequest deleteFailedTaskRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("task_id" , deleteFailedTaskRequest.TaskId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/failed-tasks/{task_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteFailedTaskRequest);
-            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("task_id", deleteFailedTaskRequest.TaskId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/failed-tasks/{task_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteFailedTaskRequest);
+            var response = DoHttpRequestSync("DELETE", request);
             return JsonUtils.DeSerializeNull<DeleteFailedTaskResponse>(response);
+        }
+
+        public SyncInvoker<DeleteFailedTaskResponse> DeleteFailedTaskInvoker(DeleteFailedTaskRequest deleteFailedTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("task_id", deleteFailedTaskRequest.TaskId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/failed-tasks/{task_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteFailedTaskRequest);
+            return new SyncInvoker<DeleteFailedTaskResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteFailedTaskResponse>);
         }
         
         /// <summary>
@@ -122,12 +171,21 @@ namespace HuaweiCloud.SDK.Kps.V3
         /// </summary>
         public DeleteKeypairResponse DeleteKeypair(DeleteKeypairRequest deleteKeypairRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("keypair_name" , deleteKeypairRequest.KeypairName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/keypairs/{keypair_name}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteKeypairRequest);
-            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("keypair_name", deleteKeypairRequest.KeypairName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/keypairs/{keypair_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteKeypairRequest);
+            var response = DoHttpRequestSync("DELETE", request);
             return JsonUtils.DeSerializeNull<DeleteKeypairResponse>(response);
+        }
+
+        public SyncInvoker<DeleteKeypairResponse> DeleteKeypairInvoker(DeleteKeypairRequest deleteKeypairRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("keypair_name", deleteKeypairRequest.KeypairName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/keypairs/{keypair_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteKeypairRequest);
+            return new SyncInvoker<DeleteKeypairResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteKeypairResponse>);
         }
         
         /// <summary>
@@ -139,11 +197,19 @@ namespace HuaweiCloud.SDK.Kps.V3
         /// </summary>
         public DisassociateKeypairResponse DisassociateKeypair(DisassociateKeypairRequest disassociateKeypairRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/keypairs/disassociate",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", disassociateKeypairRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/keypairs/disassociate", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", disassociateKeypairRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<DisassociateKeypairResponse>(response);
+        }
+
+        public SyncInvoker<DisassociateKeypairResponse> DisassociateKeypairInvoker(DisassociateKeypairRequest disassociateKeypairRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/keypairs/disassociate", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", disassociateKeypairRequest);
+            return new SyncInvoker<DisassociateKeypairResponse>(this, "POST", request, JsonUtils.DeSerialize<DisassociateKeypairResponse>);
         }
         
         /// <summary>
@@ -155,11 +221,19 @@ namespace HuaweiCloud.SDK.Kps.V3
         /// </summary>
         public ExportPrivateKeyResponse ExportPrivateKey(ExportPrivateKeyRequest exportPrivateKeyRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/keypairs/private-key/export",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", exportPrivateKeyRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/keypairs/private-key/export", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", exportPrivateKeyRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<ExportPrivateKeyResponse>(response);
+        }
+
+        public SyncInvoker<ExportPrivateKeyResponse> ExportPrivateKeyInvoker(ExportPrivateKeyRequest exportPrivateKeyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/keypairs/private-key/export", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", exportPrivateKeyRequest);
+            return new SyncInvoker<ExportPrivateKeyResponse>(this, "POST", request, JsonUtils.DeSerialize<ExportPrivateKeyResponse>);
         }
         
         /// <summary>
@@ -171,11 +245,19 @@ namespace HuaweiCloud.SDK.Kps.V3
         /// </summary>
         public ImportPrivateKeyResponse ImportPrivateKey(ImportPrivateKeyRequest importPrivateKeyRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/keypairs/private-key/import",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", importPrivateKeyRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/keypairs/private-key/import", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", importPrivateKeyRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<ImportPrivateKeyResponse>(response);
+        }
+
+        public SyncInvoker<ImportPrivateKeyResponse> ImportPrivateKeyInvoker(ImportPrivateKeyRequest importPrivateKeyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/keypairs/private-key/import", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", importPrivateKeyRequest);
+            return new SyncInvoker<ImportPrivateKeyResponse>(this, "POST", request, JsonUtils.DeSerialize<ImportPrivateKeyResponse>);
         }
         
         /// <summary>
@@ -187,11 +269,19 @@ namespace HuaweiCloud.SDK.Kps.V3
         /// </summary>
         public ListFailedTaskResponse ListFailedTask(ListFailedTaskRequest listFailedTaskRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/failed-tasks",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFailedTaskRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/failed-tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFailedTaskRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ListFailedTaskResponse>(response);
+        }
+
+        public SyncInvoker<ListFailedTaskResponse> ListFailedTaskInvoker(ListFailedTaskRequest listFailedTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/failed-tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFailedTaskRequest);
+            return new SyncInvoker<ListFailedTaskResponse>(this, "GET", request, JsonUtils.DeSerialize<ListFailedTaskResponse>);
         }
         
         /// <summary>
@@ -203,12 +293,21 @@ namespace HuaweiCloud.SDK.Kps.V3
         /// </summary>
         public ListKeypairDetailResponse ListKeypairDetail(ListKeypairDetailRequest listKeypairDetailRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("keypair_name" , listKeypairDetailRequest.KeypairName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/keypairs/{keypair_name}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listKeypairDetailRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("keypair_name", listKeypairDetailRequest.KeypairName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/keypairs/{keypair_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listKeypairDetailRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ListKeypairDetailResponse>(response);
+        }
+
+        public SyncInvoker<ListKeypairDetailResponse> ListKeypairDetailInvoker(ListKeypairDetailRequest listKeypairDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("keypair_name", listKeypairDetailRequest.KeypairName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/keypairs/{keypair_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listKeypairDetailRequest);
+            return new SyncInvoker<ListKeypairDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ListKeypairDetailResponse>);
         }
         
         /// <summary>
@@ -220,12 +319,21 @@ namespace HuaweiCloud.SDK.Kps.V3
         /// </summary>
         public ListKeypairTaskResponse ListKeypairTask(ListKeypairTaskRequest listKeypairTaskRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("task_id" , listKeypairTaskRequest.TaskId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/tasks/{task_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listKeypairTaskRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("task_id", listKeypairTaskRequest.TaskId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/tasks/{task_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listKeypairTaskRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ListKeypairTaskResponse>(response);
+        }
+
+        public SyncInvoker<ListKeypairTaskResponse> ListKeypairTaskInvoker(ListKeypairTaskRequest listKeypairTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("task_id", listKeypairTaskRequest.TaskId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/tasks/{task_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listKeypairTaskRequest);
+            return new SyncInvoker<ListKeypairTaskResponse>(this, "GET", request, JsonUtils.DeSerialize<ListKeypairTaskResponse>);
         }
         
         /// <summary>
@@ -237,11 +345,19 @@ namespace HuaweiCloud.SDK.Kps.V3
         /// </summary>
         public ListKeypairsResponse ListKeypairs(ListKeypairsRequest listKeypairsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/keypairs",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listKeypairsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/keypairs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listKeypairsRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ListKeypairsResponse>(response);
+        }
+
+        public SyncInvoker<ListKeypairsResponse> ListKeypairsInvoker(ListKeypairsRequest listKeypairsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/keypairs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listKeypairsRequest);
+            return new SyncInvoker<ListKeypairsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListKeypairsResponse>);
         }
         
         /// <summary>
@@ -253,11 +369,19 @@ namespace HuaweiCloud.SDK.Kps.V3
         /// </summary>
         public ListRunningTaskResponse ListRunningTask(ListRunningTaskRequest listRunningTaskRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/running-tasks",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRunningTaskRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/running-tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRunningTaskRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ListRunningTaskResponse>(response);
+        }
+
+        public SyncInvoker<ListRunningTaskResponse> ListRunningTaskInvoker(ListRunningTaskRequest listRunningTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/running-tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRunningTaskRequest);
+            return new SyncInvoker<ListRunningTaskResponse>(this, "GET", request, JsonUtils.DeSerialize<ListRunningTaskResponse>);
         }
         
         /// <summary>
@@ -269,12 +393,21 @@ namespace HuaweiCloud.SDK.Kps.V3
         /// </summary>
         public UpdateKeypairDescriptionResponse UpdateKeypairDescription(UpdateKeypairDescriptionRequest updateKeypairDescriptionRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("keypair_name" , updateKeypairDescriptionRequest.KeypairName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/keypairs/{keypair_name}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateKeypairDescriptionRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("keypair_name", updateKeypairDescriptionRequest.KeypairName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/keypairs/{keypair_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateKeypairDescriptionRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerializeNull<UpdateKeypairDescriptionResponse>(response);
+        }
+
+        public SyncInvoker<UpdateKeypairDescriptionResponse> UpdateKeypairDescriptionInvoker(UpdateKeypairDescriptionRequest updateKeypairDescriptionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("keypair_name", updateKeypairDescriptionRequest.KeypairName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/keypairs/{keypair_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateKeypairDescriptionRequest);
+            return new SyncInvoker<UpdateKeypairDescriptionResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateKeypairDescriptionResponse>);
         }
         
     }

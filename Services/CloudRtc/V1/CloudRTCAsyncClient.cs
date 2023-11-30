@@ -24,11 +24,19 @@ namespace HuaweiCloud.SDK.CloudRtc.V1
         /// </summary>
         public async Task<ListRtcAbnormalEventResponse> ListRtcAbnormalEventAsync(ListRtcAbnormalEventRequest listRtcAbnormalEventRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/rtc/client/abnormalevent",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRtcAbnormalEventRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/rtc/client/abnormalevent",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRtcAbnormalEventRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListRtcAbnormalEventResponse>(response);
+        }
+
+        public AsyncInvoker<ListRtcAbnormalEventResponse> ListRtcAbnormalEventAsyncInvoker(ListRtcAbnormalEventRequest listRtcAbnormalEventRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/rtc/client/abnormalevent",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRtcAbnormalEventRequest);
+            return new AsyncInvoker<ListRtcAbnormalEventResponse>(this, "GET", request, JsonUtils.DeSerialize<ListRtcAbnormalEventResponse>);
         }
         
         /// <summary>
@@ -40,11 +48,19 @@ namespace HuaweiCloud.SDK.CloudRtc.V1
         /// </summary>
         public async Task<ListRtcEventResponse> ListRtcEventAsync(ListRtcEventRequest listRtcEventRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/rtc/client/event",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRtcEventRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/rtc/client/event",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRtcEventRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListRtcEventResponse>(response);
+        }
+
+        public AsyncInvoker<ListRtcEventResponse> ListRtcEventAsyncInvoker(ListRtcEventRequest listRtcEventRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/rtc/client/event",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRtcEventRequest);
+            return new AsyncInvoker<ListRtcEventResponse>(this, "GET", request, JsonUtils.DeSerialize<ListRtcEventResponse>);
         }
         
         /// <summary>
@@ -58,11 +74,19 @@ namespace HuaweiCloud.SDK.CloudRtc.V1
         /// </summary>
         public async Task<ListRtcAbnormalEventDimensionResponse> ListRtcAbnormalEventDimensionAsync(ListRtcAbnormalEventDimensionRequest listRtcAbnormalEventDimensionRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/rtc/data/abnormal-event/dimension",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRtcAbnormalEventDimensionRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/rtc/data/abnormal-event/dimension",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRtcAbnormalEventDimensionRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListRtcAbnormalEventDimensionResponse>(response);
+        }
+
+        public AsyncInvoker<ListRtcAbnormalEventDimensionResponse> ListRtcAbnormalEventDimensionAsyncInvoker(ListRtcAbnormalEventDimensionRequest listRtcAbnormalEventDimensionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/rtc/data/abnormal-event/dimension",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRtcAbnormalEventDimensionRequest);
+            return new AsyncInvoker<ListRtcAbnormalEventDimensionResponse>(this, "GET", request, JsonUtils.DeSerialize<ListRtcAbnormalEventDimensionResponse>);
         }
         
         /// <summary>
@@ -76,11 +100,19 @@ namespace HuaweiCloud.SDK.CloudRtc.V1
         /// </summary>
         public async Task<ListRtcAbnormalEventsResponse> ListRtcAbnormalEventsAsync(ListRtcAbnormalEventsRequest listRtcAbnormalEventsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/rtc/data/abnormal-events",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRtcAbnormalEventsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/rtc/data/abnormal-events",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRtcAbnormalEventsRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListRtcAbnormalEventsResponse>(response);
+        }
+
+        public AsyncInvoker<ListRtcAbnormalEventsResponse> ListRtcAbnormalEventsAsyncInvoker(ListRtcAbnormalEventsRequest listRtcAbnormalEventsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/rtc/data/abnormal-events",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRtcAbnormalEventsRequest);
+            return new AsyncInvoker<ListRtcAbnormalEventsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListRtcAbnormalEventsResponse>);
         }
         
         /// <summary>
@@ -94,11 +126,19 @@ namespace HuaweiCloud.SDK.CloudRtc.V1
         /// </summary>
         public async Task<ListRtcClientQosDetailsResponse> ListRtcClientQosDetailsAsync(ListRtcClientQosDetailsRequest listRtcClientQosDetailsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/rtc/client/qos/details",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRtcClientQosDetailsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/rtc/client/qos/details",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRtcClientQosDetailsRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListRtcClientQosDetailsResponse>(response);
+        }
+
+        public AsyncInvoker<ListRtcClientQosDetailsResponse> ListRtcClientQosDetailsAsyncInvoker(ListRtcClientQosDetailsRequest listRtcClientQosDetailsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/rtc/client/qos/details",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRtcClientQosDetailsRequest);
+            return new AsyncInvoker<ListRtcClientQosDetailsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListRtcClientQosDetailsResponse>);
         }
         
         /// <summary>
@@ -112,11 +152,19 @@ namespace HuaweiCloud.SDK.CloudRtc.V1
         /// </summary>
         public async Task<ListRtcHistoryQualityResponse> ListRtcHistoryQualityAsync(ListRtcHistoryQualityRequest listRtcHistoryQualityRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/rtc/history/quality",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRtcHistoryQualityRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/rtc/history/quality",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRtcHistoryQualityRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListRtcHistoryQualityResponse>(response);
+        }
+
+        public AsyncInvoker<ListRtcHistoryQualityResponse> ListRtcHistoryQualityAsyncInvoker(ListRtcHistoryQualityRequest listRtcHistoryQualityRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/rtc/history/quality",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRtcHistoryQualityRequest);
+            return new AsyncInvoker<ListRtcHistoryQualityResponse>(this, "GET", request, JsonUtils.DeSerialize<ListRtcHistoryQualityResponse>);
         }
         
         /// <summary>
@@ -130,11 +178,19 @@ namespace HuaweiCloud.SDK.CloudRtc.V1
         /// </summary>
         public async Task<ListRtcHistoryScaleResponse> ListRtcHistoryScaleAsync(ListRtcHistoryScaleRequest listRtcHistoryScaleRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/rtc/history/scale",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRtcHistoryScaleRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/rtc/history/scale",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRtcHistoryScaleRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListRtcHistoryScaleResponse>(response);
+        }
+
+        public AsyncInvoker<ListRtcHistoryScaleResponse> ListRtcHistoryScaleAsyncInvoker(ListRtcHistoryScaleRequest listRtcHistoryScaleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/rtc/history/scale",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRtcHistoryScaleRequest);
+            return new AsyncInvoker<ListRtcHistoryScaleResponse>(this, "GET", request, JsonUtils.DeSerialize<ListRtcHistoryScaleResponse>);
         }
         
         /// <summary>
@@ -146,11 +202,19 @@ namespace HuaweiCloud.SDK.CloudRtc.V1
         /// </summary>
         public async Task<ListRtcHistoryUsageResponse> ListRtcHistoryUsageAsync(ListRtcHistoryUsageRequest listRtcHistoryUsageRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/rtc/history/usage",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRtcHistoryUsageRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/rtc/history/usage",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRtcHistoryUsageRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListRtcHistoryUsageResponse>(response);
+        }
+
+        public AsyncInvoker<ListRtcHistoryUsageResponse> ListRtcHistoryUsageAsyncInvoker(ListRtcHistoryUsageRequest listRtcHistoryUsageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/rtc/history/usage",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRtcHistoryUsageRequest);
+            return new AsyncInvoker<ListRtcHistoryUsageResponse>(this, "GET", request, JsonUtils.DeSerialize<ListRtcHistoryUsageResponse>);
         }
         
         /// <summary>
@@ -164,11 +228,19 @@ namespace HuaweiCloud.SDK.CloudRtc.V1
         /// </summary>
         public async Task<ListRtcRealtimeNetworkResponse> ListRtcRealtimeNetworkAsync(ListRtcRealtimeNetworkRequest listRtcRealtimeNetworkRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/rtc/realtime/network",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRtcRealtimeNetworkRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/rtc/realtime/network",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRtcRealtimeNetworkRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListRtcRealtimeNetworkResponse>(response);
+        }
+
+        public AsyncInvoker<ListRtcRealtimeNetworkResponse> ListRtcRealtimeNetworkAsyncInvoker(ListRtcRealtimeNetworkRequest listRtcRealtimeNetworkRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/rtc/realtime/network",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRtcRealtimeNetworkRequest);
+            return new AsyncInvoker<ListRtcRealtimeNetworkResponse>(this, "GET", request, JsonUtils.DeSerialize<ListRtcRealtimeNetworkResponse>);
         }
         
         /// <summary>
@@ -182,11 +254,19 @@ namespace HuaweiCloud.SDK.CloudRtc.V1
         /// </summary>
         public async Task<ListRtcRealtimeQualityResponse> ListRtcRealtimeQualityAsync(ListRtcRealtimeQualityRequest listRtcRealtimeQualityRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/rtc/realtime/quality",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRtcRealtimeQualityRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/rtc/realtime/quality",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRtcRealtimeQualityRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListRtcRealtimeQualityResponse>(response);
+        }
+
+        public AsyncInvoker<ListRtcRealtimeQualityResponse> ListRtcRealtimeQualityAsyncInvoker(ListRtcRealtimeQualityRequest listRtcRealtimeQualityRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/rtc/realtime/quality",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRtcRealtimeQualityRequest);
+            return new AsyncInvoker<ListRtcRealtimeQualityResponse>(this, "GET", request, JsonUtils.DeSerialize<ListRtcRealtimeQualityResponse>);
         }
         
         /// <summary>
@@ -200,11 +280,19 @@ namespace HuaweiCloud.SDK.CloudRtc.V1
         /// </summary>
         public async Task<ListRtcRealtimeScaleResponse> ListRtcRealtimeScaleAsync(ListRtcRealtimeScaleRequest listRtcRealtimeScaleRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/rtc/realtime/scale",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRtcRealtimeScaleRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/rtc/realtime/scale",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRtcRealtimeScaleRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListRtcRealtimeScaleResponse>(response);
+        }
+
+        public AsyncInvoker<ListRtcRealtimeScaleResponse> ListRtcRealtimeScaleAsyncInvoker(ListRtcRealtimeScaleRequest listRtcRealtimeScaleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/rtc/realtime/scale",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRtcRealtimeScaleRequest);
+            return new AsyncInvoker<ListRtcRealtimeScaleResponse>(this, "GET", request, JsonUtils.DeSerialize<ListRtcRealtimeScaleResponse>);
         }
         
         /// <summary>
@@ -216,11 +304,19 @@ namespace HuaweiCloud.SDK.CloudRtc.V1
         /// </summary>
         public async Task<ListRtcRealtimeScaleDimensionResponse> ListRtcRealtimeScaleDimensionAsync(ListRtcRealtimeScaleDimensionRequest listRtcRealtimeScaleDimensionRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/rtc/realtime/scale/dimension",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRtcRealtimeScaleDimensionRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/rtc/realtime/scale/dimension",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRtcRealtimeScaleDimensionRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListRtcRealtimeScaleDimensionResponse>(response);
+        }
+
+        public AsyncInvoker<ListRtcRealtimeScaleDimensionResponse> ListRtcRealtimeScaleDimensionAsyncInvoker(ListRtcRealtimeScaleDimensionRequest listRtcRealtimeScaleDimensionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/rtc/realtime/scale/dimension",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRtcRealtimeScaleDimensionRequest);
+            return new AsyncInvoker<ListRtcRealtimeScaleDimensionResponse>(this, "GET", request, JsonUtils.DeSerialize<ListRtcRealtimeScaleDimensionResponse>);
         }
         
         /// <summary>
@@ -234,11 +330,19 @@ namespace HuaweiCloud.SDK.CloudRtc.V1
         /// </summary>
         public async Task<ListRtcRoomListResponse> ListRtcRoomListAsync(ListRtcRoomListRequest listRtcRoomListRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/rtc/rooms",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRtcRoomListRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/rtc/rooms",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRtcRoomListRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListRtcRoomListResponse>(response);
+        }
+
+        public AsyncInvoker<ListRtcRoomListResponse> ListRtcRoomListAsyncInvoker(ListRtcRoomListRequest listRtcRoomListRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/rtc/rooms",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRtcRoomListRequest);
+            return new AsyncInvoker<ListRtcRoomListResponse>(this, "GET", request, JsonUtils.DeSerialize<ListRtcRoomListResponse>);
         }
         
         /// <summary>
@@ -252,11 +356,19 @@ namespace HuaweiCloud.SDK.CloudRtc.V1
         /// </summary>
         public async Task<ListRtcUserListResponse> ListRtcUserListAsync(ListRtcUserListRequest listRtcUserListRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/rtc/users",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRtcUserListRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/rtc/users",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRtcUserListRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListRtcUserListResponse>(response);
+        }
+
+        public AsyncInvoker<ListRtcUserListResponse> ListRtcUserListAsyncInvoker(ListRtcUserListRequest listRtcUserListRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/rtc/users",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRtcUserListRequest);
+            return new AsyncInvoker<ListRtcUserListResponse>(this, "GET", request, JsonUtils.DeSerialize<ListRtcUserListResponse>);
         }
         
     }

@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// 库级恢复实例信息
         /// </summary>
         [JsonProperty("instances", NullValueHandling = NullValueHandling.Ignore)]
-        public List<PostgreSQLRestoreDatabaseInstance> Instances { get; set; }
+        public List<RestoreDatabaseInstance> Instances { get; set; }
 
 
 

@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
     public class PromInstanceEpsModel 
     {
         /// <summary>
-        /// 普罗实例类型,DEFAULT,ECS,VPC,CCE,REMOTE_WRITE,KUBERNETES,CLOUD_SERVICE,ACROSS_ACCOUNT
+        /// Prometheus实例类型。
         /// </summary>
-        /// <value>普罗实例类型,DEFAULT,ECS,VPC,CCE,REMOTE_WRITE,KUBERNETES,CLOUD_SERVICE,ACROSS_ACCOUNT</value>
+        /// <value>Prometheus实例类型。</value>
         [JsonConverter(typeof(EnumClassConverter<PromTypeEnum>))]
         public class PromTypeEnum
         {
@@ -168,30 +168,30 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
 
 
         /// <summary>
-        /// 普罗实例名称 名称不能以下划线或中划线开头结尾，只含有中文、英文、数字、下划线、中划线、长度1-100
+        /// Prometheus实例名称 名称不能以下划线或中划线开头结尾，只含有中文、英文、数字、下划线、中划线、长度1-100。
         /// </summary>
         [JsonProperty("prom_name", NullValueHandling = NullValueHandling.Ignore)]
         public string PromName { get; set; }
 
         /// <summary>
-        /// 普罗实例ID
+        /// Prometheus实例id。
         /// </summary>
         [JsonProperty("prom_id", NullValueHandling = NullValueHandling.Ignore)]
         public string PromId { get; set; }
 
         /// <summary>
-        /// 普罗实例类型,DEFAULT,ECS,VPC,CCE,REMOTE_WRITE,KUBERNETES,CLOUD_SERVICE,ACROSS_ACCOUNT
+        /// Prometheus实例类型。
         /// </summary>
         [JsonProperty("prom_type", NullValueHandling = NullValueHandling.Ignore)]
         public PromTypeEnum PromType { get; set; }
         /// <summary>
-        /// 普罗实例版本号
+        /// Prometheus实例版本号。
         /// </summary>
         [JsonProperty("prom_version", NullValueHandling = NullValueHandling.Ignore)]
         public string PromVersion { get; set; }
 
         /// <summary>
-        /// CCE场景特殊字段
+        /// CCE场景特殊字段。
         /// </summary>
         [JsonProperty("cce_spec", NullValueHandling = NullValueHandling.Ignore)]
         public string CceSpec { get; set; }
@@ -203,43 +203,43 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         public PromConfigModel PromConfig { get; set; }
 
         /// <summary>
-        /// 普罗实例创建时间戳
+        /// Prometheus实例创建时间戳。
         /// </summary>
         [JsonProperty("prom_create_timestamp", NullValueHandling = NullValueHandling.Ignore)]
         public long? PromCreateTimestamp { get; set; }
 
         /// <summary>
-        /// 普罗实例更新时间戳
+        /// Prometheus实例更新时间戳。
         /// </summary>
         [JsonProperty("prom_update_timestamp", NullValueHandling = NullValueHandling.Ignore)]
         public long? PromUpdateTimestamp { get; set; }
 
         /// <summary>
-        /// 普罗实例状态 true/false
+        /// Prometheus实例状态。
         /// </summary>
         [JsonProperty("prom_status", NullValueHandling = NullValueHandling.Ignore)]
         public string PromStatus { get; set; }
 
         /// <summary>
-        /// 普罗实例所属的企业项目
+        /// Prometheus实例所属的企业项目。
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 普罗实例所属projectId
+        /// Prometheus实例所属projectId。
         /// </summary>
         [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProjectId { get; set; }
 
         /// <summary>
-        /// 删除标记
+        /// 删除标记。
         /// </summary>
         [JsonProperty("is_deleted_tag", NullValueHandling = NullValueHandling.Ignore)]
         public long? IsDeletedTag { get; set; }
 
         /// <summary>
-        /// 删除时间
+        /// 删除时间。
         /// </summary>
         [JsonProperty("deleted_time", NullValueHandling = NullValueHandling.Ignore)]
         public long? DeletedTime { get; set; }
@@ -251,7 +251,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         public PromConfigModel PromSpecConfig { get; set; }
 
         /// <summary>
-        /// 普罗实例所属CCE特殊配置
+        /// Prometheus实例所属CCE特殊配置。
         /// </summary>
         [JsonProperty("cce_spec_config", NullValueHandling = NullValueHandling.Ignore)]
         public string CceSpecConfig { get; set; }

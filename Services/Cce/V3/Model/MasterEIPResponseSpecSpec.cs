@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cce.V3.Model
 {
     /// <summary>
-    /// 
+    /// 待绑定的弹性IP配置属性
     /// </summary>
     public class MasterEIPResponseSpecSpec 
     {

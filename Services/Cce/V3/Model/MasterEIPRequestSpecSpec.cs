@@ -11,13 +11,13 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cce.V3.Model
 {
     /// <summary>
-    /// 
+    /// 待绑定的弹性IP配置属性
     /// </summary>
     public class MasterEIPRequestSpecSpec 
     {
 
         /// <summary>
-        /// 弹性网卡ID，必选参数
+        /// 弹性网卡ID，绑定时必选，解绑时该字段无效
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }

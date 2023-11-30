@@ -24,12 +24,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<AddPostgresqlHbaConfResponse> AddPostgresqlHbaConfAsync(AddPostgresqlHbaConfRequest addPostgresqlHbaConfRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , addPostgresqlHbaConfRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/hba-info",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", addPostgresqlHbaConfRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", addPostgresqlHbaConfRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/hba-info",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addPostgresqlHbaConfRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<AddPostgresqlHbaConfResponse>(response);
+        }
+
+        public AsyncInvoker<AddPostgresqlHbaConfResponse> AddPostgresqlHbaConfAsyncInvoker(AddPostgresqlHbaConfRequest addPostgresqlHbaConfRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", addPostgresqlHbaConfRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/hba-info",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addPostgresqlHbaConfRequest);
+            return new AsyncInvoker<AddPostgresqlHbaConfResponse>(this, "POST", request, JsonUtils.DeSerialize<AddPostgresqlHbaConfResponse>);
         }
         
         /// <summary>
@@ -41,12 +50,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ApplyConfigurationAsyncResponse> ApplyConfigurationAsyncAsync(ApplyConfigurationAsyncRequest applyConfigurationAsyncRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("config_id" , applyConfigurationAsyncRequest.ConfigId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/configurations/{config_id}/apply",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", applyConfigurationAsyncRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("config_id", applyConfigurationAsyncRequest.ConfigId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/configurations/{config_id}/apply",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", applyConfigurationAsyncRequest);
+            var response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<ApplyConfigurationAsyncResponse>(response);
+        }
+
+        public AsyncInvoker<ApplyConfigurationAsyncResponse> ApplyConfigurationAsyncAsyncInvoker(ApplyConfigurationAsyncRequest applyConfigurationAsyncRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("config_id", applyConfigurationAsyncRequest.ConfigId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/configurations/{config_id}/apply",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", applyConfigurationAsyncRequest);
+            return new AsyncInvoker<ApplyConfigurationAsyncResponse>(this, "PUT", request, JsonUtils.DeSerialize<ApplyConfigurationAsyncResponse>);
         }
         
         /// <summary>
@@ -58,12 +76,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<AttachEipResponse> AttachEipAsync(AttachEipRequest attachEipRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , attachEipRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/public-ip",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", attachEipRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", attachEipRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/public-ip",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", attachEipRequest);
+            var response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerializeNull<AttachEipResponse>(response);
+        }
+
+        public AsyncInvoker<AttachEipResponse> AttachEipAsyncInvoker(AttachEipRequest attachEipRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", attachEipRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/public-ip",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", attachEipRequest);
+            return new AsyncInvoker<AttachEipResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<AttachEipResponse>);
         }
         
         /// <summary>
@@ -75,11 +102,19 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<BatchDeleteManualBackupResponse> BatchDeleteManualBackupAsync(BatchDeleteManualBackupRequest batchDeleteManualBackupRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups/batch-delete",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteManualBackupRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups/batch-delete",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteManualBackupRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<BatchDeleteManualBackupResponse>(response);
+        }
+
+        public AsyncInvoker<BatchDeleteManualBackupResponse> BatchDeleteManualBackupAsyncInvoker(BatchDeleteManualBackupRequest batchDeleteManualBackupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups/batch-delete",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteManualBackupRequest);
+            return new AsyncInvoker<BatchDeleteManualBackupResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchDeleteManualBackupResponse>);
         }
         
         /// <summary>
@@ -91,11 +126,19 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<BatchRestoreDatabaseResponse> BatchRestoreDatabaseAsync(BatchRestoreDatabaseRequest batchRestoreDatabaseRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/batch/restore/databases",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchRestoreDatabaseRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/batch/restore/databases",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchRestoreDatabaseRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<BatchRestoreDatabaseResponse>(response);
+        }
+
+        public AsyncInvoker<BatchRestoreDatabaseResponse> BatchRestoreDatabaseAsyncInvoker(BatchRestoreDatabaseRequest batchRestoreDatabaseRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/batch/restore/databases",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchRestoreDatabaseRequest);
+            return new AsyncInvoker<BatchRestoreDatabaseResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchRestoreDatabaseResponse>);
         }
         
         /// <summary>
@@ -107,11 +150,19 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<BatchRestorePostgreSqlTablesResponse> BatchRestorePostgreSqlTablesAsync(BatchRestorePostgreSqlTablesRequest batchRestorePostgreSqlTablesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/batch/restore/tables",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchRestorePostgreSqlTablesRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/batch/restore/tables",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchRestorePostgreSqlTablesRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<BatchRestorePostgreSqlTablesResponse>(response);
+        }
+
+        public AsyncInvoker<BatchRestorePostgreSqlTablesResponse> BatchRestorePostgreSqlTablesAsyncInvoker(BatchRestorePostgreSqlTablesRequest batchRestorePostgreSqlTablesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/batch/restore/tables",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchRestorePostgreSqlTablesRequest);
+            return new AsyncInvoker<BatchRestorePostgreSqlTablesResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchRestorePostgreSqlTablesResponse>);
         }
         
         /// <summary>
@@ -123,12 +174,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<BatchTagAddActionResponse> BatchTagAddActionAsync(BatchTagAddActionRequest batchTagAddActionRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , batchTagAddActionRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/tags/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchTagAddActionRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", batchTagAddActionRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/tags/action",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchTagAddActionRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerializeNull<BatchTagAddActionResponse>(response);
+        }
+
+        public AsyncInvoker<BatchTagAddActionResponse> BatchTagAddActionAsyncInvoker(BatchTagAddActionRequest batchTagAddActionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", batchTagAddActionRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/tags/action",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchTagAddActionRequest);
+            return new AsyncInvoker<BatchTagAddActionResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchTagAddActionResponse>);
         }
         
         /// <summary>
@@ -140,12 +200,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<BatchTagDelActionResponse> BatchTagDelActionAsync(BatchTagDelActionRequest batchTagDelActionRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , batchTagDelActionRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/tags/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchTagDelActionRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", batchTagDelActionRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/tags/action",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchTagDelActionRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerializeNull<BatchTagDelActionResponse>(response);
+        }
+
+        public AsyncInvoker<BatchTagDelActionResponse> BatchTagDelActionAsyncInvoker(BatchTagDelActionRequest batchTagDelActionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", batchTagDelActionRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/tags/action",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchTagDelActionRequest);
+            return new AsyncInvoker<BatchTagDelActionResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchTagDelActionResponse>);
         }
         
         /// <summary>
@@ -157,12 +226,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ChangeFailoverModeResponse> ChangeFailoverModeAsync(ChangeFailoverModeRequest changeFailoverModeRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , changeFailoverModeRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/failover/mode",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", changeFailoverModeRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", changeFailoverModeRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/failover/mode",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", changeFailoverModeRequest);
+            var response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<ChangeFailoverModeResponse>(response);
+        }
+
+        public AsyncInvoker<ChangeFailoverModeResponse> ChangeFailoverModeAsyncInvoker(ChangeFailoverModeRequest changeFailoverModeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", changeFailoverModeRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/failover/mode",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", changeFailoverModeRequest);
+            return new AsyncInvoker<ChangeFailoverModeResponse>(this, "PUT", request, JsonUtils.DeSerialize<ChangeFailoverModeResponse>);
         }
         
         /// <summary>
@@ -174,12 +252,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ChangeFailoverStrategyResponse> ChangeFailoverStrategyAsync(ChangeFailoverStrategyRequest changeFailoverStrategyRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , changeFailoverStrategyRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/failover/strategy",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", changeFailoverStrategyRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", changeFailoverStrategyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/failover/strategy",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", changeFailoverStrategyRequest);
+            var response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerializeNull<ChangeFailoverStrategyResponse>(response);
+        }
+
+        public AsyncInvoker<ChangeFailoverStrategyResponse> ChangeFailoverStrategyAsyncInvoker(ChangeFailoverStrategyRequest changeFailoverStrategyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", changeFailoverStrategyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/failover/strategy",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", changeFailoverStrategyRequest);
+            return new AsyncInvoker<ChangeFailoverStrategyResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<ChangeFailoverStrategyResponse>);
         }
         
         /// <summary>
@@ -191,12 +278,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ChangeOpsWindowResponse> ChangeOpsWindowAsync(ChangeOpsWindowRequest changeOpsWindowRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , changeOpsWindowRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/ops-window",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", changeOpsWindowRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", changeOpsWindowRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/ops-window",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", changeOpsWindowRequest);
+            var response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerializeNull<ChangeOpsWindowResponse>(response);
+        }
+
+        public AsyncInvoker<ChangeOpsWindowResponse> ChangeOpsWindowAsyncInvoker(ChangeOpsWindowRequest changeOpsWindowRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", changeOpsWindowRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/ops-window",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", changeOpsWindowRequest);
+            return new AsyncInvoker<ChangeOpsWindowResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<ChangeOpsWindowResponse>);
         }
         
         /// <summary>
@@ -208,12 +304,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<CopyConfigurationResponse> CopyConfigurationAsync(CopyConfigurationRequest copyConfigurationRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("config_id" , copyConfigurationRequest.ConfigId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}/copy",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", copyConfigurationRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("config_id", copyConfigurationRequest.ConfigId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}/copy",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", copyConfigurationRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CopyConfigurationResponse>(response);
+        }
+
+        public AsyncInvoker<CopyConfigurationResponse> CopyConfigurationAsyncInvoker(CopyConfigurationRequest copyConfigurationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("config_id", copyConfigurationRequest.ConfigId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}/copy",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", copyConfigurationRequest);
+            return new AsyncInvoker<CopyConfigurationResponse>(this, "POST", request, JsonUtils.DeSerialize<CopyConfigurationResponse>);
         }
         
         /// <summary>
@@ -225,11 +330,19 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<CreateConfigurationResponse> CreateConfigurationAsync(CreateConfigurationRequest createConfigurationRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createConfigurationRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createConfigurationRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateConfigurationResponse>(response);
+        }
+
+        public AsyncInvoker<CreateConfigurationResponse> CreateConfigurationAsyncInvoker(CreateConfigurationRequest createConfigurationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createConfigurationRequest);
+            return new AsyncInvoker<CreateConfigurationResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateConfigurationResponse>);
         }
         
         /// <summary>
@@ -241,12 +354,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<CreateDnsNameResponse> CreateDnsNameAsync(CreateDnsNameRequest createDnsNameRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , createDnsNameRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/create-dns",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDnsNameRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createDnsNameRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/create-dns",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDnsNameRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateDnsNameResponse>(response);
+        }
+
+        public AsyncInvoker<CreateDnsNameResponse> CreateDnsNameAsyncInvoker(CreateDnsNameRequest createDnsNameRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createDnsNameRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/create-dns",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDnsNameRequest);
+            return new AsyncInvoker<CreateDnsNameResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateDnsNameResponse>);
         }
         
         /// <summary>
@@ -258,11 +380,19 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<CreateInstanceResponse> CreateInstanceAsync(CreateInstanceRequest createInstanceRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateInstanceResponse>(response);
+        }
+
+        public AsyncInvoker<CreateInstanceResponse> CreateInstanceAsyncInvoker(CreateInstanceRequest createInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceRequest);
+            return new AsyncInvoker<CreateInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateInstanceResponse>);
         }
         
         /// <summary>
@@ -274,11 +404,19 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<CreateManualBackupResponse> CreateManualBackupAsync(CreateManualBackupRequest createManualBackupRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createManualBackupRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createManualBackupRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateManualBackupResponse>(response);
+        }
+
+        public AsyncInvoker<CreateManualBackupResponse> CreateManualBackupAsyncInvoker(CreateManualBackupRequest createManualBackupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createManualBackupRequest);
+            return new AsyncInvoker<CreateManualBackupResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateManualBackupResponse>);
         }
         
         /// <summary>
@@ -290,11 +428,19 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<CreateRestoreInstanceResponse> CreateRestoreInstanceAsync(CreateRestoreInstanceRequest createRestoreInstanceRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRestoreInstanceRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRestoreInstanceRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateRestoreInstanceResponse>(response);
+        }
+
+        public AsyncInvoker<CreateRestoreInstanceResponse> CreateRestoreInstanceAsyncInvoker(CreateRestoreInstanceRequest createRestoreInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRestoreInstanceRequest);
+            return new AsyncInvoker<CreateRestoreInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateRestoreInstanceResponse>);
         }
         
         /// <summary>
@@ -306,12 +452,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<CreateXelLogDownloadResponse> CreateXelLogDownloadAsync(CreateXelLogDownloadRequest createXelLogDownloadRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , createXelLogDownloadRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/xellog-download",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createXelLogDownloadRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createXelLogDownloadRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/xellog-download",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createXelLogDownloadRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateXelLogDownloadResponse>(response);
+        }
+
+        public AsyncInvoker<CreateXelLogDownloadResponse> CreateXelLogDownloadAsyncInvoker(CreateXelLogDownloadRequest createXelLogDownloadRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createXelLogDownloadRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/xellog-download",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createXelLogDownloadRequest);
+            return new AsyncInvoker<CreateXelLogDownloadResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateXelLogDownloadResponse>);
         }
         
         /// <summary>
@@ -323,12 +478,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<DeleteConfigurationResponse> DeleteConfigurationAsync(DeleteConfigurationRequest deleteConfigurationRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("config_id" , deleteConfigurationRequest.ConfigId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteConfigurationRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("config_id", deleteConfigurationRequest.ConfigId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteConfigurationRequest);
+            var response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteConfigurationResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteConfigurationResponse> DeleteConfigurationAsyncInvoker(DeleteConfigurationRequest deleteConfigurationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("config_id", deleteConfigurationRequest.ConfigId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteConfigurationRequest);
+            return new AsyncInvoker<DeleteConfigurationResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteConfigurationResponse>);
         }
         
         /// <summary>
@@ -340,12 +504,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<DeleteInstanceResponse> DeleteInstanceAsync(DeleteInstanceRequest deleteInstanceRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , deleteInstanceRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteInstanceRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceRequest);
+            var response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerialize<DeleteInstanceResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteInstanceResponse> DeleteInstanceAsyncInvoker(DeleteInstanceRequest deleteInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteInstanceRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceRequest);
+            return new AsyncInvoker<DeleteInstanceResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteInstanceResponse>);
         }
         
         /// <summary>
@@ -356,12 +529,19 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<DeleteJobResponse> DeleteJobAsync(DeleteJobRequest deleteJobRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteJobRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
-            DeleteJobResponse deleteJobResponse = JsonUtils.DeSerializeNull<DeleteJobResponse>(response);
-            return deleteJobResponse;
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteJobRequest);
+            var response = await DoHttpRequestAsync("DELETE",request);
+            return JsonUtils.DeSerializeNull<DeleteJobResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteJobResponse> DeleteJobAsyncInvoker(DeleteJobRequest deleteJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteJobRequest);
+            return new AsyncInvoker<DeleteJobResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteJobResponse>);
         }
         
         /// <summary>
@@ -373,12 +553,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<DeleteManualBackupResponse> DeleteManualBackupAsync(DeleteManualBackupRequest deleteManualBackupRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("backup_id" , deleteManualBackupRequest.BackupId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups/{backup_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteManualBackupRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("backup_id", deleteManualBackupRequest.BackupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups/{backup_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteManualBackupRequest);
+            var response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteManualBackupResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteManualBackupResponse> DeleteManualBackupAsyncInvoker(DeleteManualBackupRequest deleteManualBackupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("backup_id", deleteManualBackupRequest.BackupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups/{backup_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteManualBackupRequest);
+            return new AsyncInvoker<DeleteManualBackupResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteManualBackupResponse>);
         }
         
         /// <summary>
@@ -390,12 +579,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<DeletePostgresqlHbaConfResponse> DeletePostgresqlHbaConfAsync(DeletePostgresqlHbaConfRequest deletePostgresqlHbaConfRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , deletePostgresqlHbaConfRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/hba-info",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePostgresqlHbaConfRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deletePostgresqlHbaConfRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/hba-info",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePostgresqlHbaConfRequest);
+            var response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerialize<DeletePostgresqlHbaConfResponse>(response);
+        }
+
+        public AsyncInvoker<DeletePostgresqlHbaConfResponse> DeletePostgresqlHbaConfAsyncInvoker(DeletePostgresqlHbaConfRequest deletePostgresqlHbaConfRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deletePostgresqlHbaConfRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/hba-info",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePostgresqlHbaConfRequest);
+            return new AsyncInvoker<DeletePostgresqlHbaConfResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeletePostgresqlHbaConfResponse>);
         }
         
         /// <summary>
@@ -407,12 +605,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<DownloadSlowlogResponse> DownloadSlowlogAsync(DownloadSlowlogRequest downloadSlowlogRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , downloadSlowlogRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/slowlog-download",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadSlowlogRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", downloadSlowlogRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/slowlog-download",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadSlowlogRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<DownloadSlowlogResponse>(response);
+        }
+
+        public AsyncInvoker<DownloadSlowlogResponse> DownloadSlowlogAsyncInvoker(DownloadSlowlogRequest downloadSlowlogRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", downloadSlowlogRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/slowlog-download",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadSlowlogRequest);
+            return new AsyncInvoker<DownloadSlowlogResponse>(this, "POST", request, JsonUtils.DeSerialize<DownloadSlowlogResponse>);
         }
         
         /// <summary>
@@ -424,12 +631,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<EnableConfigurationResponse> EnableConfigurationAsync(EnableConfigurationRequest enableConfigurationRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("config_id" , enableConfigurationRequest.ConfigId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}/apply",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", enableConfigurationRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("config_id", enableConfigurationRequest.ConfigId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}/apply",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", enableConfigurationRequest);
+            var response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<EnableConfigurationResponse>(response);
+        }
+
+        public AsyncInvoker<EnableConfigurationResponse> EnableConfigurationAsyncInvoker(EnableConfigurationRequest enableConfigurationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("config_id", enableConfigurationRequest.ConfigId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}/apply",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", enableConfigurationRequest);
+            return new AsyncInvoker<EnableConfigurationResponse>(this, "PUT", request, JsonUtils.DeSerialize<EnableConfigurationResponse>);
         }
         
         /// <summary>
@@ -441,12 +657,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ListAuditlogsResponse> ListAuditlogsAsync(ListAuditlogsRequest listAuditlogsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , listAuditlogsRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/auditlog",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAuditlogsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listAuditlogsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/auditlog",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAuditlogsRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListAuditlogsResponse>(response);
+        }
+
+        public AsyncInvoker<ListAuditlogsResponse> ListAuditlogsAsyncInvoker(ListAuditlogsRequest listAuditlogsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listAuditlogsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/auditlog",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAuditlogsRequest);
+            return new AsyncInvoker<ListAuditlogsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAuditlogsResponse>);
         }
         
         /// <summary>
@@ -458,11 +683,19 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ListBackupsResponse> ListBackupsAsync(ListBackupsRequest listBackupsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBackupsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBackupsRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListBackupsResponse>(response);
+        }
+
+        public AsyncInvoker<ListBackupsResponse> ListBackupsAsyncInvoker(ListBackupsRequest listBackupsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBackupsRequest);
+            return new AsyncInvoker<ListBackupsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListBackupsResponse>);
         }
         
         /// <summary>
@@ -474,11 +707,19 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ListCollationsResponse> ListCollationsAsync(ListCollationsRequest listCollationsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/collations",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCollationsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/collations",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCollationsRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListCollationsResponse>(response);
+        }
+
+        public AsyncInvoker<ListCollationsResponse> ListCollationsAsyncInvoker(ListCollationsRequest listCollationsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/collations",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCollationsRequest);
+            return new AsyncInvoker<ListCollationsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListCollationsResponse>);
         }
         
         /// <summary>
@@ -490,11 +731,19 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ListConfigurationsResponse> ListConfigurationsAsync(ListConfigurationsRequest listConfigurationsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listConfigurationsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listConfigurationsRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListConfigurationsResponse>(response);
+        }
+
+        public AsyncInvoker<ListConfigurationsResponse> ListConfigurationsAsyncInvoker(ListConfigurationsRequest listConfigurationsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listConfigurationsRequest);
+            return new AsyncInvoker<ListConfigurationsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListConfigurationsResponse>);
         }
         
         /// <summary>
@@ -506,12 +755,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ListDatastoresResponse> ListDatastoresAsync(ListDatastoresRequest listDatastoresRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("database_name" , listDatastoresRequest.DatabaseName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/datastores/{database_name}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDatastoresRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("database_name", listDatastoresRequest.DatabaseName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/datastores/{database_name}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDatastoresRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListDatastoresResponse>(response);
+        }
+
+        public AsyncInvoker<ListDatastoresResponse> ListDatastoresAsyncInvoker(ListDatastoresRequest listDatastoresRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("database_name", listDatastoresRequest.DatabaseName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/datastores/{database_name}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDatastoresRequest);
+            return new AsyncInvoker<ListDatastoresResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDatastoresResponse>);
         }
         
         /// <summary>
@@ -523,11 +781,19 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ListDrRelationsResponse> ListDrRelationsAsync(ListDrRelationsRequest listDrRelationsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/disaster-recovery-relation",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDrRelationsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/disaster-recovery-relation",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDrRelationsRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListDrRelationsResponse>(response);
+        }
+
+        public AsyncInvoker<ListDrRelationsResponse> ListDrRelationsAsyncInvoker(ListDrRelationsRequest listDrRelationsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/disaster-recovery-relation",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDrRelationsRequest);
+            return new AsyncInvoker<ListDrRelationsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDrRelationsResponse>);
         }
         
         /// <summary>
@@ -539,12 +805,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ListEngineFlavorsResponse> ListEngineFlavorsAsync(ListEngineFlavorsRequest listEngineFlavorsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , listEngineFlavorsRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/available-flavors",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listEngineFlavorsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listEngineFlavorsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/available-flavors",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listEngineFlavorsRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListEngineFlavorsResponse>(response);
+        }
+
+        public AsyncInvoker<ListEngineFlavorsResponse> ListEngineFlavorsAsyncInvoker(ListEngineFlavorsRequest listEngineFlavorsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listEngineFlavorsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/available-flavors",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listEngineFlavorsRequest);
+            return new AsyncInvoker<ListEngineFlavorsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListEngineFlavorsResponse>);
         }
         
         /// <summary>
@@ -556,12 +831,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ListErrorLogsResponse> ListErrorLogsAsync(ListErrorLogsRequest listErrorLogsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , listErrorLogsRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/errorlog",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listErrorLogsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listErrorLogsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/errorlog",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listErrorLogsRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListErrorLogsResponse>(response);
+        }
+
+        public AsyncInvoker<ListErrorLogsResponse> ListErrorLogsAsyncInvoker(ListErrorLogsRequest listErrorLogsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listErrorLogsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/errorlog",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listErrorLogsRequest);
+            return new AsyncInvoker<ListErrorLogsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListErrorLogsResponse>);
         }
         
         /// <summary>
@@ -573,12 +857,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ListErrorLogsNewResponse> ListErrorLogsNewAsync(ListErrorLogsNewRequest listErrorLogsNewRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , listErrorLogsNewRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/instances/{instance_id}/errorlog",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listErrorLogsNewRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listErrorLogsNewRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/instances/{instance_id}/errorlog",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listErrorLogsNewRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListErrorLogsNewResponse>(response);
+        }
+
+        public AsyncInvoker<ListErrorLogsNewResponse> ListErrorLogsNewAsyncInvoker(ListErrorLogsNewRequest listErrorLogsNewRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listErrorLogsNewRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/instances/{instance_id}/errorlog",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listErrorLogsNewRequest);
+            return new AsyncInvoker<ListErrorLogsNewResponse>(this, "GET", request, JsonUtils.DeSerialize<ListErrorLogsNewResponse>);
         }
         
         /// <summary>
@@ -590,12 +883,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ListErrorlogForLtsResponse> ListErrorlogForLtsAsync(ListErrorlogForLtsRequest listErrorlogForLtsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , listErrorlogForLtsRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/error-logs",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listErrorlogForLtsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listErrorlogForLtsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/error-logs",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listErrorlogForLtsRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<ListErrorlogForLtsResponse>(response);
+        }
+
+        public AsyncInvoker<ListErrorlogForLtsResponse> ListErrorlogForLtsAsyncInvoker(ListErrorlogForLtsRequest listErrorlogForLtsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listErrorlogForLtsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/error-logs",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listErrorlogForLtsRequest);
+            return new AsyncInvoker<ListErrorlogForLtsResponse>(this, "POST", request, JsonUtils.DeSerialize<ListErrorlogForLtsResponse>);
         }
         
         /// <summary>
@@ -607,12 +909,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ListFlavorsResponse> ListFlavorsAsync(ListFlavorsRequest listFlavorsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("database_name" , listFlavorsRequest.DatabaseName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/flavors/{database_name}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFlavorsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("database_name", listFlavorsRequest.DatabaseName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/flavors/{database_name}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFlavorsRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListFlavorsResponse>(response);
+        }
+
+        public AsyncInvoker<ListFlavorsResponse> ListFlavorsAsyncInvoker(ListFlavorsRequest listFlavorsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("database_name", listFlavorsRequest.DatabaseName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/flavors/{database_name}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFlavorsRequest);
+            return new AsyncInvoker<ListFlavorsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListFlavorsResponse>);
         }
         
         /// <summary>
@@ -624,12 +935,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ListHistoryDatabaseResponse> ListHistoryDatabaseAsync(ListHistoryDatabaseRequest listHistoryDatabaseRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("database_name" , listHistoryDatabaseRequest.DatabaseName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/{database_name}/instances/history/databases",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listHistoryDatabaseRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine", listHistoryDatabaseRequest.Engine.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/{engine}/instances/history/databases",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listHistoryDatabaseRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<ListHistoryDatabaseResponse>(response);
+        }
+
+        public AsyncInvoker<ListHistoryDatabaseResponse> ListHistoryDatabaseAsyncInvoker(ListHistoryDatabaseRequest listHistoryDatabaseRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine", listHistoryDatabaseRequest.Engine.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/{engine}/instances/history/databases",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listHistoryDatabaseRequest);
+            return new AsyncInvoker<ListHistoryDatabaseResponse>(this, "POST", request, JsonUtils.DeSerialize<ListHistoryDatabaseResponse>);
         }
         
         /// <summary>
@@ -641,12 +961,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ListInspectionHistoriesResponse> ListInspectionHistoriesAsync(ListInspectionHistoriesRequest listInspectionHistoriesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , listInspectionHistoriesRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/major-version/inspection-histories",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInspectionHistoriesRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInspectionHistoriesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/major-version/inspection-histories",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInspectionHistoriesRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListInspectionHistoriesResponse>(response);
+        }
+
+        public AsyncInvoker<ListInspectionHistoriesResponse> ListInspectionHistoriesAsyncInvoker(ListInspectionHistoriesRequest listInspectionHistoriesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInspectionHistoriesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/major-version/inspection-histories",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInspectionHistoriesRequest);
+            return new AsyncInvoker<ListInspectionHistoriesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInspectionHistoriesResponse>);
         }
         
         /// <summary>
@@ -658,11 +987,19 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ListInstanceDiagnosisResponse> ListInstanceDiagnosisAsync(ListInstanceDiagnosisRequest listInstanceDiagnosisRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/diagnosis",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceDiagnosisRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/diagnosis",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceDiagnosisRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListInstanceDiagnosisResponse>(response);
+        }
+
+        public AsyncInvoker<ListInstanceDiagnosisResponse> ListInstanceDiagnosisAsyncInvoker(ListInstanceDiagnosisRequest listInstanceDiagnosisRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/diagnosis",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceDiagnosisRequest);
+            return new AsyncInvoker<ListInstanceDiagnosisResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceDiagnosisResponse>);
         }
         
         /// <summary>
@@ -674,12 +1011,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ListInstanceParamHistoriesResponse> ListInstanceParamHistoriesAsync(ListInstanceParamHistoriesRequest listInstanceParamHistoriesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , listInstanceParamHistoriesRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/configuration-histories",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceParamHistoriesRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceParamHistoriesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/configuration-histories",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceParamHistoriesRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListInstanceParamHistoriesResponse>(response);
+        }
+
+        public AsyncInvoker<ListInstanceParamHistoriesResponse> ListInstanceParamHistoriesAsyncInvoker(ListInstanceParamHistoriesRequest listInstanceParamHistoriesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceParamHistoriesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/configuration-histories",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceParamHistoriesRequest);
+            return new AsyncInvoker<ListInstanceParamHistoriesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceParamHistoriesResponse>);
         }
         
         /// <summary>
@@ -691,12 +1037,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ListInstanceTagsResponse> ListInstanceTagsAsync(ListInstanceTagsRequest listInstanceTagsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , listInstanceTagsRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/tags",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceTagsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceTagsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/tags",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceTagsRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListInstanceTagsResponse>(response);
+        }
+
+        public AsyncInvoker<ListInstanceTagsResponse> ListInstanceTagsAsyncInvoker(ListInstanceTagsRequest listInstanceTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceTagsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/tags",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceTagsRequest);
+            return new AsyncInvoker<ListInstanceTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceTagsResponse>);
         }
         
         /// <summary>
@@ -708,11 +1063,19 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ListInstancesResponse> ListInstancesAsync(ListInstancesRequest listInstancesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstancesRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstancesRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListInstancesResponse>(response);
+        }
+
+        public AsyncInvoker<ListInstancesResponse> ListInstancesAsyncInvoker(ListInstancesRequest listInstancesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstancesRequest);
+            return new AsyncInvoker<ListInstancesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstancesResponse>);
         }
         
         /// <summary>
@@ -724,11 +1087,19 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ListInstancesInfoDiagnosisResponse> ListInstancesInfoDiagnosisAsync(ListInstancesInfoDiagnosisRequest listInstancesInfoDiagnosisRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/diagnosis/info",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstancesInfoDiagnosisRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/diagnosis/info",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstancesInfoDiagnosisRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListInstancesInfoDiagnosisResponse>(response);
+        }
+
+        public AsyncInvoker<ListInstancesInfoDiagnosisResponse> ListInstancesInfoDiagnosisAsyncInvoker(ListInstancesInfoDiagnosisRequest listInstancesInfoDiagnosisRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/diagnosis/info",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstancesInfoDiagnosisRequest);
+            return new AsyncInvoker<ListInstancesInfoDiagnosisResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstancesInfoDiagnosisResponse>);
         }
         
         /// <summary>
@@ -742,11 +1113,19 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ListInstancesSupportFastRestoreResponse> ListInstancesSupportFastRestoreAsync(ListInstancesSupportFastRestoreRequest listInstancesSupportFastRestoreRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/fast-restore",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstancesSupportFastRestoreRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/fast-restore",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstancesSupportFastRestoreRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<ListInstancesSupportFastRestoreResponse>(response);
+        }
+
+        public AsyncInvoker<ListInstancesSupportFastRestoreResponse> ListInstancesSupportFastRestoreAsyncInvoker(ListInstancesSupportFastRestoreRequest listInstancesSupportFastRestoreRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/fast-restore",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstancesSupportFastRestoreRequest);
+            return new AsyncInvoker<ListInstancesSupportFastRestoreResponse>(this, "POST", request, JsonUtils.DeSerialize<ListInstancesSupportFastRestoreResponse>);
         }
         
         /// <summary>
@@ -758,11 +1137,19 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ListJobInfoResponse> ListJobInfoAsync(ListJobInfoRequest listJobInfoRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listJobInfoRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listJobInfoRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListJobInfoResponse>(response);
+        }
+
+        public AsyncInvoker<ListJobInfoResponse> ListJobInfoAsyncInvoker(ListJobInfoRequest listJobInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listJobInfoRequest);
+            return new AsyncInvoker<ListJobInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ListJobInfoResponse>);
         }
         
         /// <summary>
@@ -774,12 +1161,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ListJobInfoDetailResponse> ListJobInfoDetailAsync(ListJobInfoDetailRequest listJobInfoDetailRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , listJobInfoDetailRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/tasklist/detail",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listJobInfoDetailRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listJobInfoDetailRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/tasklist/detail",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listJobInfoDetailRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListJobInfoDetailResponse>(response);
+        }
+
+        public AsyncInvoker<ListJobInfoDetailResponse> ListJobInfoDetailAsyncInvoker(ListJobInfoDetailRequest listJobInfoDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listJobInfoDetailRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/tasklist/detail",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listJobInfoDetailRequest);
+            return new AsyncInvoker<ListJobInfoDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ListJobInfoDetailResponse>);
         }
         
         /// <summary>
@@ -791,11 +1187,19 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ListOffSiteBackupsResponse> ListOffSiteBackupsAsync(ListOffSiteBackupsRequest listOffSiteBackupsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/offsite-backups",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listOffSiteBackupsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/offsite-backups",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listOffSiteBackupsRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListOffSiteBackupsResponse>(response);
+        }
+
+        public AsyncInvoker<ListOffSiteBackupsResponse> ListOffSiteBackupsAsyncInvoker(ListOffSiteBackupsRequest listOffSiteBackupsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/offsite-backups",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listOffSiteBackupsRequest);
+            return new AsyncInvoker<ListOffSiteBackupsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListOffSiteBackupsResponse>);
         }
         
         /// <summary>
@@ -807,11 +1211,19 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ListOffSiteInstancesResponse> ListOffSiteInstancesAsync(ListOffSiteInstancesRequest listOffSiteInstancesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/backups/offsite-backup-instance",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listOffSiteInstancesRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/backups/offsite-backup-instance",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listOffSiteInstancesRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListOffSiteInstancesResponse>(response);
+        }
+
+        public AsyncInvoker<ListOffSiteInstancesResponse> ListOffSiteInstancesAsyncInvoker(ListOffSiteInstancesRequest listOffSiteInstancesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/backups/offsite-backup-instance",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listOffSiteInstancesRequest);
+            return new AsyncInvoker<ListOffSiteInstancesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListOffSiteInstancesResponse>);
         }
         
         /// <summary>
@@ -824,12 +1236,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ListOffSiteRestoreTimesResponse> ListOffSiteRestoreTimesAsync(ListOffSiteRestoreTimesRequest listOffSiteRestoreTimesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , listOffSiteRestoreTimesRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/offsite-restore-time",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listOffSiteRestoreTimesRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listOffSiteRestoreTimesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/offsite-restore-time",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listOffSiteRestoreTimesRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListOffSiteRestoreTimesResponse>(response);
+        }
+
+        public AsyncInvoker<ListOffSiteRestoreTimesResponse> ListOffSiteRestoreTimesAsyncInvoker(ListOffSiteRestoreTimesRequest listOffSiteRestoreTimesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listOffSiteRestoreTimesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/offsite-restore-time",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listOffSiteRestoreTimesRequest);
+            return new AsyncInvoker<ListOffSiteRestoreTimesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListOffSiteRestoreTimesResponse>);
         }
         
         /// <summary>
@@ -841,14 +1262,28 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ListPostgresqlHbaInfoResponse> ListPostgresqlHbaInfoAsync(ListPostgresqlHbaInfoRequest listPostgresqlHbaInfoRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , listPostgresqlHbaInfoRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/hba-info",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPostgresqlHbaInfoRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
-            ListPostgresqlHbaInfoResponse listPostgresqlHbaInfoResponse = JsonUtils.DeSerializeNull<ListPostgresqlHbaInfoResponse>(response);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listPostgresqlHbaInfoRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/hba-info",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPostgresqlHbaInfoRequest);
+            var response = await DoHttpRequestAsync("GET",request);
+            var listPostgresqlHbaInfoResponse = JsonUtils.DeSerializeNull<ListPostgresqlHbaInfoResponse>(response);
             listPostgresqlHbaInfoResponse.Body = JsonUtils.DeSerializeList<PostgresqlHbaConf>(response);
             return listPostgresqlHbaInfoResponse;
+        }
+
+        public AsyncInvoker<ListPostgresqlHbaInfoResponse> ListPostgresqlHbaInfoAsyncInvoker(ListPostgresqlHbaInfoRequest listPostgresqlHbaInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listPostgresqlHbaInfoRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/hba-info",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPostgresqlHbaInfoRequest);
+            return new AsyncInvoker<ListPostgresqlHbaInfoResponse>(this, "GET", request, response =>
+            {
+                var listPostgresqlHbaInfoResponse = JsonUtils.DeSerializeNull<ListPostgresqlHbaInfoResponse>(response);
+                listPostgresqlHbaInfoResponse.Body = JsonUtils.DeSerializeList<PostgresqlHbaConf>(response);
+                return listPostgresqlHbaInfoResponse;
+            });
         }
         
         /// <summary>
@@ -860,14 +1295,28 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ListPostgresqlHbaInfoHistoryResponse> ListPostgresqlHbaInfoHistoryAsync(ListPostgresqlHbaInfoHistoryRequest listPostgresqlHbaInfoHistoryRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , listPostgresqlHbaInfoHistoryRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/hba-info/history",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPostgresqlHbaInfoHistoryRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
-            ListPostgresqlHbaInfoHistoryResponse listPostgresqlHbaInfoHistoryResponse = JsonUtils.DeSerializeNull<ListPostgresqlHbaInfoHistoryResponse>(response);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listPostgresqlHbaInfoHistoryRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/hba-info/history",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPostgresqlHbaInfoHistoryRequest);
+            var response = await DoHttpRequestAsync("GET",request);
+            var listPostgresqlHbaInfoHistoryResponse = JsonUtils.DeSerializeNull<ListPostgresqlHbaInfoHistoryResponse>(response);
             listPostgresqlHbaInfoHistoryResponse.Body = JsonUtils.DeSerializeList<PostgresqlHbaHistory>(response);
             return listPostgresqlHbaInfoHistoryResponse;
+        }
+
+        public AsyncInvoker<ListPostgresqlHbaInfoHistoryResponse> ListPostgresqlHbaInfoHistoryAsyncInvoker(ListPostgresqlHbaInfoHistoryRequest listPostgresqlHbaInfoHistoryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listPostgresqlHbaInfoHistoryRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/hba-info/history",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPostgresqlHbaInfoHistoryRequest);
+            return new AsyncInvoker<ListPostgresqlHbaInfoHistoryResponse>(this, "GET", request, response =>
+            {
+                var listPostgresqlHbaInfoHistoryResponse = JsonUtils.DeSerializeNull<ListPostgresqlHbaInfoHistoryResponse>(response);
+                listPostgresqlHbaInfoHistoryResponse.Body = JsonUtils.DeSerializeList<PostgresqlHbaHistory>(response);
+                return listPostgresqlHbaInfoHistoryResponse;
+            });
         }
         
         /// <summary>
@@ -879,12 +1328,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ListPostgresqlListHistoryTablesResponse> ListPostgresqlListHistoryTablesAsync(ListPostgresqlListHistoryTablesRequest listPostgresqlListHistoryTablesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("database_name" , listPostgresqlListHistoryTablesRequest.DatabaseName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/{database_name}/instances/history/tables",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPostgresqlListHistoryTablesRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("database_name", listPostgresqlListHistoryTablesRequest.DatabaseName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/{database_name}/instances/history/tables",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPostgresqlListHistoryTablesRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<ListPostgresqlListHistoryTablesResponse>(response);
+        }
+
+        public AsyncInvoker<ListPostgresqlListHistoryTablesResponse> ListPostgresqlListHistoryTablesAsyncInvoker(ListPostgresqlListHistoryTablesRequest listPostgresqlListHistoryTablesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("database_name", listPostgresqlListHistoryTablesRequest.DatabaseName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/{database_name}/instances/history/tables",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPostgresqlListHistoryTablesRequest);
+            return new AsyncInvoker<ListPostgresqlListHistoryTablesResponse>(this, "POST", request, JsonUtils.DeSerialize<ListPostgresqlListHistoryTablesResponse>);
         }
         
         /// <summary>
@@ -896,11 +1354,19 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ListPredefinedTagResponse> ListPredefinedTagAsync(ListPredefinedTagRequest listPredefinedTagRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/tags/predefined-tag",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPredefinedTagRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/tags/predefined-tag",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPredefinedTagRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListPredefinedTagResponse>(response);
+        }
+
+        public AsyncInvoker<ListPredefinedTagResponse> ListPredefinedTagAsyncInvoker(ListPredefinedTagRequest listPredefinedTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/tags/predefined-tag",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPredefinedTagRequest);
+            return new AsyncInvoker<ListPredefinedTagResponse>(this, "GET", request, JsonUtils.DeSerialize<ListPredefinedTagResponse>);
         }
         
         /// <summary>
@@ -912,11 +1378,19 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ListProjectTagsResponse> ListProjectTagsAsync(ListProjectTagsRequest listProjectTagsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/tags",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProjectTagsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/tags",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProjectTagsRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListProjectTagsResponse>(response);
+        }
+
+        public AsyncInvoker<ListProjectTagsResponse> ListProjectTagsAsyncInvoker(ListProjectTagsRequest listProjectTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/tags",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProjectTagsRequest);
+            return new AsyncInvoker<ListProjectTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListProjectTagsResponse>);
         }
         
         /// <summary>
@@ -928,11 +1402,19 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ListRecycleInstancesResponse> ListRecycleInstancesAsync(ListRecycleInstancesRequest listRecycleInstancesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/recycle-instances",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRecycleInstancesRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/recycle-instances",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRecycleInstancesRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListRecycleInstancesResponse>(response);
+        }
+
+        public AsyncInvoker<ListRecycleInstancesResponse> ListRecycleInstancesAsyncInvoker(ListRecycleInstancesRequest listRecycleInstancesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/recycle-instances",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRecycleInstancesRequest);
+            return new AsyncInvoker<ListRecycleInstancesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListRecycleInstancesResponse>);
         }
         
         /// <summary>
@@ -945,12 +1427,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ListRestoreTimesResponse> ListRestoreTimesAsync(ListRestoreTimesRequest listRestoreTimesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , listRestoreTimesRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/restore-time",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRestoreTimesRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listRestoreTimesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/restore-time",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRestoreTimesRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListRestoreTimesResponse>(response);
+        }
+
+        public AsyncInvoker<ListRestoreTimesResponse> ListRestoreTimesAsyncInvoker(ListRestoreTimesRequest listRestoreTimesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listRestoreTimesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/restore-time",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRestoreTimesRequest);
+            return new AsyncInvoker<ListRestoreTimesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListRestoreTimesResponse>);
         }
         
         /// <summary>
@@ -962,11 +1453,19 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ListSimplifiedInstancesResponse> ListSimplifiedInstancesAsync(ListSimplifiedInstancesRequest listSimplifiedInstancesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/simplified-instances",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSimplifiedInstancesRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/simplified-instances",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSimplifiedInstancesRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<ListSimplifiedInstancesResponse>(response);
+        }
+
+        public AsyncInvoker<ListSimplifiedInstancesResponse> ListSimplifiedInstancesAsyncInvoker(ListSimplifiedInstancesRequest listSimplifiedInstancesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/simplified-instances",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSimplifiedInstancesRequest);
+            return new AsyncInvoker<ListSimplifiedInstancesResponse>(this, "POST", request, JsonUtils.DeSerialize<ListSimplifiedInstancesResponse>);
         }
         
         /// <summary>
@@ -979,12 +1478,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ListSlowLogFileResponse> ListSlowLogFileAsync(ListSlowLogFileRequest listSlowLogFileRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , listSlowLogFileRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/slowlog-files",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSlowLogFileRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listSlowLogFileRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/slowlog-files",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSlowLogFileRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListSlowLogFileResponse>(response);
+        }
+
+        public AsyncInvoker<ListSlowLogFileResponse> ListSlowLogFileAsyncInvoker(ListSlowLogFileRequest listSlowLogFileRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listSlowLogFileRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/slowlog-files",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSlowLogFileRequest);
+            return new AsyncInvoker<ListSlowLogFileResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSlowLogFileResponse>);
         }
         
         /// <summary>
@@ -996,12 +1504,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ListSlowLogStatisticsForLtsResponse> ListSlowLogStatisticsForLtsAsync(ListSlowLogStatisticsForLtsRequest listSlowLogStatisticsForLtsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , listSlowLogStatisticsForLtsRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/instances/{instance_id}/slow-logs/statistics",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSlowLogStatisticsForLtsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listSlowLogStatisticsForLtsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/instances/{instance_id}/slow-logs/statistics",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSlowLogStatisticsForLtsRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<ListSlowLogStatisticsForLtsResponse>(response);
+        }
+
+        public AsyncInvoker<ListSlowLogStatisticsForLtsResponse> ListSlowLogStatisticsForLtsAsyncInvoker(ListSlowLogStatisticsForLtsRequest listSlowLogStatisticsForLtsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listSlowLogStatisticsForLtsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/instances/{instance_id}/slow-logs/statistics",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSlowLogStatisticsForLtsRequest);
+            return new AsyncInvoker<ListSlowLogStatisticsForLtsResponse>(this, "POST", request, JsonUtils.DeSerialize<ListSlowLogStatisticsForLtsResponse>);
         }
         
         /// <summary>
@@ -1013,12 +1530,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ListSlowLogsResponse> ListSlowLogsAsync(ListSlowLogsRequest listSlowLogsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , listSlowLogsRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/slowlog",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSlowLogsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listSlowLogsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/slowlog",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSlowLogsRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListSlowLogsResponse>(response);
+        }
+
+        public AsyncInvoker<ListSlowLogsResponse> ListSlowLogsAsyncInvoker(ListSlowLogsRequest listSlowLogsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listSlowLogsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/slowlog",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSlowLogsRequest);
+            return new AsyncInvoker<ListSlowLogsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSlowLogsResponse>);
         }
         
         /// <summary>
@@ -1030,12 +1556,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ListSlowLogsNewResponse> ListSlowLogsNewAsync(ListSlowLogsNewRequest listSlowLogsNewRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , listSlowLogsNewRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/instances/{instance_id}/slowlog",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSlowLogsNewRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listSlowLogsNewRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/instances/{instance_id}/slowlog",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSlowLogsNewRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListSlowLogsNewResponse>(response);
+        }
+
+        public AsyncInvoker<ListSlowLogsNewResponse> ListSlowLogsNewAsyncInvoker(ListSlowLogsNewRequest listSlowLogsNewRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listSlowLogsNewRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/instances/{instance_id}/slowlog",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSlowLogsNewRequest);
+            return new AsyncInvoker<ListSlowLogsNewResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSlowLogsNewResponse>);
         }
         
         /// <summary>
@@ -1047,12 +1582,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ListSlowlogForLtsResponse> ListSlowlogForLtsAsync(ListSlowlogForLtsRequest listSlowlogForLtsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , listSlowlogForLtsRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/slow-logs",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSlowlogForLtsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listSlowlogForLtsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/slow-logs",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSlowlogForLtsRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<ListSlowlogForLtsResponse>(response);
+        }
+
+        public AsyncInvoker<ListSlowlogForLtsResponse> ListSlowlogForLtsAsyncInvoker(ListSlowlogForLtsRequest listSlowlogForLtsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listSlowlogForLtsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/slow-logs",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSlowlogForLtsRequest);
+            return new AsyncInvoker<ListSlowlogForLtsResponse>(this, "POST", request, JsonUtils.DeSerialize<ListSlowlogForLtsResponse>);
         }
         
         /// <summary>
@@ -1064,12 +1608,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ListSlowlogStatisticsResponse> ListSlowlogStatisticsAsync(ListSlowlogStatisticsRequest listSlowlogStatisticsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , listSlowlogStatisticsRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/slowlog/statistics",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSlowlogStatisticsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listSlowlogStatisticsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/slowlog/statistics",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSlowlogStatisticsRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListSlowlogStatisticsResponse>(response);
+        }
+
+        public AsyncInvoker<ListSlowlogStatisticsResponse> ListSlowlogStatisticsAsyncInvoker(ListSlowlogStatisticsRequest listSlowlogStatisticsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listSlowlogStatisticsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/slowlog/statistics",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSlowlogStatisticsRequest);
+            return new AsyncInvoker<ListSlowlogStatisticsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSlowlogStatisticsResponse>);
         }
         
         /// <summary>
@@ -1081,12 +1634,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ListSslCertDownloadLinkResponse> ListSslCertDownloadLinkAsync(ListSslCertDownloadLinkRequest listSslCertDownloadLinkRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , listSslCertDownloadLinkRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/ssl-cert/download-link",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSslCertDownloadLinkRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listSslCertDownloadLinkRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/ssl-cert/download-link",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSslCertDownloadLinkRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListSslCertDownloadLinkResponse>(response);
+        }
+
+        public AsyncInvoker<ListSslCertDownloadLinkResponse> ListSslCertDownloadLinkAsyncInvoker(ListSslCertDownloadLinkRequest listSslCertDownloadLinkRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listSslCertDownloadLinkRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/ssl-cert/download-link",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSslCertDownloadLinkRequest);
+            return new AsyncInvoker<ListSslCertDownloadLinkResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSslCertDownloadLinkResponse>);
         }
         
         /// <summary>
@@ -1098,12 +1660,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ListStorageTypesResponse> ListStorageTypesAsync(ListStorageTypesRequest listStorageTypesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("database_name" , listStorageTypesRequest.DatabaseName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/storage-type/{database_name}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStorageTypesRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("database_name", listStorageTypesRequest.DatabaseName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/storage-type/{database_name}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStorageTypesRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListStorageTypesResponse>(response);
+        }
+
+        public AsyncInvoker<ListStorageTypesResponse> ListStorageTypesAsyncInvoker(ListStorageTypesRequest listStorageTypesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("database_name", listStorageTypesRequest.DatabaseName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/storage-type/{database_name}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStorageTypesRequest);
+            return new AsyncInvoker<ListStorageTypesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListStorageTypesResponse>);
         }
         
         /// <summary>
@@ -1115,12 +1686,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ListUpgradeHistoriesResponse> ListUpgradeHistoriesAsync(ListUpgradeHistoriesRequest listUpgradeHistoriesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , listUpgradeHistoriesRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/major-version/upgrade-histories",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listUpgradeHistoriesRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listUpgradeHistoriesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/major-version/upgrade-histories",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listUpgradeHistoriesRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListUpgradeHistoriesResponse>(response);
+        }
+
+        public AsyncInvoker<ListUpgradeHistoriesResponse> ListUpgradeHistoriesAsyncInvoker(ListUpgradeHistoriesRequest listUpgradeHistoriesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listUpgradeHistoriesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/major-version/upgrade-histories",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listUpgradeHistoriesRequest);
+            return new AsyncInvoker<ListUpgradeHistoriesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListUpgradeHistoriesResponse>);
         }
         
         /// <summary>
@@ -1133,12 +1713,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ListXellogFilesResponse> ListXellogFilesAsync(ListXellogFilesRequest listXellogFilesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , listXellogFilesRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/xellog-files",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listXellogFilesRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listXellogFilesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/xellog-files",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listXellogFilesRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListXellogFilesResponse>(response);
+        }
+
+        public AsyncInvoker<ListXellogFilesResponse> ListXellogFilesAsyncInvoker(ListXellogFilesRequest listXellogFilesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listXellogFilesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/xellog-files",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listXellogFilesRequest);
+            return new AsyncInvoker<ListXellogFilesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListXellogFilesResponse>);
         }
         
         /// <summary>
@@ -1150,12 +1739,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<MigrateFollowerResponse> MigrateFollowerAsync(MigrateFollowerRequest migrateFollowerRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , migrateFollowerRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/migrateslave",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", migrateFollowerRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", migrateFollowerRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/migrateslave",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", migrateFollowerRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<MigrateFollowerResponse>(response);
+        }
+
+        public AsyncInvoker<MigrateFollowerResponse> MigrateFollowerAsyncInvoker(MigrateFollowerRequest migrateFollowerRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", migrateFollowerRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/migrateslave",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", migrateFollowerRequest);
+            return new AsyncInvoker<MigrateFollowerResponse>(this, "POST", request, JsonUtils.DeSerialize<MigrateFollowerResponse>);
         }
         
         /// <summary>
@@ -1167,12 +1765,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ModifyPostgresqlHbaConfResponse> ModifyPostgresqlHbaConfAsync(ModifyPostgresqlHbaConfRequest modifyPostgresqlHbaConfRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , modifyPostgresqlHbaConfRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/hba-info",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyPostgresqlHbaConfRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", modifyPostgresqlHbaConfRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/hba-info",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyPostgresqlHbaConfRequest);
+            var response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<ModifyPostgresqlHbaConfResponse>(response);
+        }
+
+        public AsyncInvoker<ModifyPostgresqlHbaConfResponse> ModifyPostgresqlHbaConfAsyncInvoker(ModifyPostgresqlHbaConfRequest modifyPostgresqlHbaConfRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", modifyPostgresqlHbaConfRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/hba-info",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyPostgresqlHbaConfRequest);
+            return new AsyncInvoker<ModifyPostgresqlHbaConfResponse>(this, "PUT", request, JsonUtils.DeSerialize<ModifyPostgresqlHbaConfResponse>);
         }
         
         /// <summary>
@@ -1184,11 +1791,19 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<RestoreExistInstanceResponse> RestoreExistInstanceAsync(RestoreExistInstanceRequest restoreExistInstanceRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/instances/recovery",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", restoreExistInstanceRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/instances/recovery",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restoreExistInstanceRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<RestoreExistInstanceResponse>(response);
+        }
+
+        public AsyncInvoker<RestoreExistInstanceResponse> RestoreExistInstanceAsyncInvoker(RestoreExistInstanceRequest restoreExistInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/instances/recovery",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restoreExistInstanceRequest);
+            return new AsyncInvoker<RestoreExistInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<RestoreExistInstanceResponse>);
         }
         
         /// <summary>
@@ -1200,12 +1815,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<RestoreTablesResponse> RestoreTablesAsync(RestoreTablesRequest restoreTablesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , restoreTablesRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/restore/tables",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", restoreTablesRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", restoreTablesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/restore/tables",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restoreTablesRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<RestoreTablesResponse>(response);
+        }
+
+        public AsyncInvoker<RestoreTablesResponse> RestoreTablesAsyncInvoker(RestoreTablesRequest restoreTablesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", restoreTablesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/restore/tables",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restoreTablesRequest);
+            return new AsyncInvoker<RestoreTablesResponse>(this, "POST", request, JsonUtils.DeSerialize<RestoreTablesResponse>);
         }
         
         /// <summary>
@@ -1217,12 +1841,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<RestoreTablesNewResponse> RestoreTablesNewAsync(RestoreTablesNewRequest restoreTablesNewRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , restoreTablesNewRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/instances/{instance_id}/restore/tables",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", restoreTablesNewRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", restoreTablesNewRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/instances/{instance_id}/restore/tables",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restoreTablesNewRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<RestoreTablesNewResponse>(response);
+        }
+
+        public AsyncInvoker<RestoreTablesNewResponse> RestoreTablesNewAsyncInvoker(RestoreTablesNewRequest restoreTablesNewRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", restoreTablesNewRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/instances/{instance_id}/restore/tables",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restoreTablesNewRequest);
+            return new AsyncInvoker<RestoreTablesNewResponse>(this, "POST", request, JsonUtils.DeSerialize<RestoreTablesNewResponse>);
         }
         
         /// <summary>
@@ -1234,11 +1867,19 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<RestoreToExistingInstanceResponse> RestoreToExistingInstanceAsync(RestoreToExistingInstanceRequest restoreToExistingInstanceRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/recovery",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", restoreToExistingInstanceRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/recovery",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restoreToExistingInstanceRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<RestoreToExistingInstanceResponse>(response);
+        }
+
+        public AsyncInvoker<RestoreToExistingInstanceResponse> RestoreToExistingInstanceAsyncInvoker(RestoreToExistingInstanceRequest restoreToExistingInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/recovery",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restoreToExistingInstanceRequest);
+            return new AsyncInvoker<RestoreToExistingInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<RestoreToExistingInstanceResponse>);
         }
         
         /// <summary>
@@ -1250,12 +1891,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<SetAuditlogPolicyResponse> SetAuditlogPolicyAsync(SetAuditlogPolicyRequest setAuditlogPolicyRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , setAuditlogPolicyRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/auditlog-policy",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", setAuditlogPolicyRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", setAuditlogPolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/auditlog-policy",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setAuditlogPolicyRequest);
+            var response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerializeNull<SetAuditlogPolicyResponse>(response);
+        }
+
+        public AsyncInvoker<SetAuditlogPolicyResponse> SetAuditlogPolicyAsyncInvoker(SetAuditlogPolicyRequest setAuditlogPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", setAuditlogPolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/auditlog-policy",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setAuditlogPolicyRequest);
+            return new AsyncInvoker<SetAuditlogPolicyResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<SetAuditlogPolicyResponse>);
         }
         
         /// <summary>
@@ -1269,13 +1919,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<SetAutoEnlargePolicyResponse> SetAutoEnlargePolicyAsync(SetAutoEnlargePolicyRequest setAutoEnlargePolicyRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , setAutoEnlargePolicyRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/disk-auto-expansion",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", setAutoEnlargePolicyRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
-            SetAutoEnlargePolicyResponse setAutoEnlargePolicyResponse = JsonUtils.DeSerializeNull<SetAutoEnlargePolicyResponse>(response);
-            return setAutoEnlargePolicyResponse;
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", setAutoEnlargePolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/disk-auto-expansion",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setAutoEnlargePolicyRequest);
+            var response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerializeNull<SetAutoEnlargePolicyResponse>(response);
+        }
+
+        public AsyncInvoker<SetAutoEnlargePolicyResponse> SetAutoEnlargePolicyAsyncInvoker(SetAutoEnlargePolicyRequest setAutoEnlargePolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", setAutoEnlargePolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/disk-auto-expansion",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setAutoEnlargePolicyRequest);
+            return new AsyncInvoker<SetAutoEnlargePolicyResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<SetAutoEnlargePolicyResponse>);
         }
         
         /// <summary>
@@ -1287,12 +1945,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<SetBackupPolicyResponse> SetBackupPolicyAsync(SetBackupPolicyRequest setBackupPolicyRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , setBackupPolicyRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/policy",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", setBackupPolicyRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", setBackupPolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/policy",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setBackupPolicyRequest);
+            var response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerializeNull<SetBackupPolicyResponse>(response);
+        }
+
+        public AsyncInvoker<SetBackupPolicyResponse> SetBackupPolicyAsyncInvoker(SetBackupPolicyRequest setBackupPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", setBackupPolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/policy",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setBackupPolicyRequest);
+            return new AsyncInvoker<SetBackupPolicyResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<SetBackupPolicyResponse>);
         }
         
         /// <summary>
@@ -1304,12 +1971,47 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<SetBinlogClearPolicyResponse> SetBinlogClearPolicyAsync(SetBinlogClearPolicyRequest setBinlogClearPolicyRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , setBinlogClearPolicyRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/binlog/clear-policy",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", setBinlogClearPolicyRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", setBinlogClearPolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/binlog/clear-policy",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setBinlogClearPolicyRequest);
+            var response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<SetBinlogClearPolicyResponse>(response);
+        }
+
+        public AsyncInvoker<SetBinlogClearPolicyResponse> SetBinlogClearPolicyAsyncInvoker(SetBinlogClearPolicyRequest setBinlogClearPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", setBinlogClearPolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/binlog/clear-policy",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setBinlogClearPolicyRequest);
+            return new AsyncInvoker<SetBinlogClearPolicyResponse>(this, "PUT", request, JsonUtils.DeSerialize<SetBinlogClearPolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 收缩数据库日志
+        ///
+        /// 收缩数据库日志
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<SetInstancesDbShrinkResponse> SetInstancesDbShrinkAsync(SetInstancesDbShrinkRequest setInstancesDbShrinkRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", setInstancesDbShrinkRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_shrink",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setInstancesDbShrinkRequest);
+            var response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<SetInstancesDbShrinkResponse>(response);
+        }
+
+        public AsyncInvoker<SetInstancesDbShrinkResponse> SetInstancesDbShrinkAsyncInvoker(SetInstancesDbShrinkRequest setInstancesDbShrinkRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", setInstancesDbShrinkRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_shrink",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setInstancesDbShrinkRequest);
+            return new AsyncInvoker<SetInstancesDbShrinkResponse>(this, "POST", request, JsonUtils.DeSerialize<SetInstancesDbShrinkResponse>);
         }
         
         /// <summary>
@@ -1321,12 +2023,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<SetOffSiteBackupPolicyResponse> SetOffSiteBackupPolicyAsync(SetOffSiteBackupPolicyRequest setOffSiteBackupPolicyRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , setOffSiteBackupPolicyRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/offsite-policy",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", setOffSiteBackupPolicyRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", setOffSiteBackupPolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/offsite-policy",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setOffSiteBackupPolicyRequest);
+            var response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerializeNull<SetOffSiteBackupPolicyResponse>(response);
+        }
+
+        public AsyncInvoker<SetOffSiteBackupPolicyResponse> SetOffSiteBackupPolicyAsyncInvoker(SetOffSiteBackupPolicyRequest setOffSiteBackupPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", setOffSiteBackupPolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/offsite-policy",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setOffSiteBackupPolicyRequest);
+            return new AsyncInvoker<SetOffSiteBackupPolicyResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<SetOffSiteBackupPolicyResponse>);
         }
         
         /// <summary>
@@ -1340,13 +2051,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<SetSecondLevelMonitorResponse> SetSecondLevelMonitorAsync(SetSecondLevelMonitorRequest setSecondLevelMonitorRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , setSecondLevelMonitorRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/second-level-monitor",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", setSecondLevelMonitorRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
-            SetSecondLevelMonitorResponse setSecondLevelMonitorResponse = JsonUtils.DeSerializeNull<SetSecondLevelMonitorResponse>(response);
-            return setSecondLevelMonitorResponse;
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", setSecondLevelMonitorRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/second-level-monitor",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setSecondLevelMonitorRequest);
+            var response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerializeNull<SetSecondLevelMonitorResponse>(response);
+        }
+
+        public AsyncInvoker<SetSecondLevelMonitorResponse> SetSecondLevelMonitorAsyncInvoker(SetSecondLevelMonitorRequest setSecondLevelMonitorRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", setSecondLevelMonitorRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/second-level-monitor",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setSecondLevelMonitorRequest);
+            return new AsyncInvoker<SetSecondLevelMonitorResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<SetSecondLevelMonitorResponse>);
         }
         
         /// <summary>
@@ -1358,12 +2077,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<SetSecurityGroupResponse> SetSecurityGroupAsync(SetSecurityGroupRequest setSecurityGroupRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , setSecurityGroupRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/security-group",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", setSecurityGroupRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", setSecurityGroupRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/security-group",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setSecurityGroupRequest);
+            var response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<SetSecurityGroupResponse>(response);
+        }
+
+        public AsyncInvoker<SetSecurityGroupResponse> SetSecurityGroupAsyncInvoker(SetSecurityGroupRequest setSecurityGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", setSecurityGroupRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/security-group",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setSecurityGroupRequest);
+            return new AsyncInvoker<SetSecurityGroupResponse>(this, "PUT", request, JsonUtils.DeSerialize<SetSecurityGroupResponse>);
         }
         
         /// <summary>
@@ -1375,13 +2103,23 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<SetSensitiveSlowLogResponse> SetSensitiveSlowLogAsync(SetSensitiveSlowLogRequest setSensitiveSlowLogRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , setSensitiveSlowLogRequest.InstanceId.ToString());
-            urlParam.Add("status" , setSensitiveSlowLogRequest.Status.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/slowlog-sensitization/{status}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", setSensitiveSlowLogRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", setSensitiveSlowLogRequest.InstanceId.ToString());
+            urlParam.Add("status", setSensitiveSlowLogRequest.Status.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/slowlog-sensitization/{status}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setSensitiveSlowLogRequest);
+            var response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerializeNull<SetSensitiveSlowLogResponse>(response);
+        }
+
+        public AsyncInvoker<SetSensitiveSlowLogResponse> SetSensitiveSlowLogAsyncInvoker(SetSensitiveSlowLogRequest setSensitiveSlowLogRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", setSensitiveSlowLogRequest.InstanceId.ToString());
+            urlParam.Add("status", setSensitiveSlowLogRequest.Status.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/slowlog-sensitization/{status}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setSensitiveSlowLogRequest);
+            return new AsyncInvoker<SetSensitiveSlowLogResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<SetSensitiveSlowLogResponse>);
         }
         
         /// <summary>
@@ -1393,12 +2131,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ShowAuditlogDownloadLinkResponse> ShowAuditlogDownloadLinkAsync(ShowAuditlogDownloadLinkRequest showAuditlogDownloadLinkRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , showAuditlogDownloadLinkRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/auditlog-links",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAuditlogDownloadLinkRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showAuditlogDownloadLinkRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/auditlog-links",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAuditlogDownloadLinkRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<ShowAuditlogDownloadLinkResponse>(response);
+        }
+
+        public AsyncInvoker<ShowAuditlogDownloadLinkResponse> ShowAuditlogDownloadLinkAsyncInvoker(ShowAuditlogDownloadLinkRequest showAuditlogDownloadLinkRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showAuditlogDownloadLinkRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/auditlog-links",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAuditlogDownloadLinkRequest);
+            return new AsyncInvoker<ShowAuditlogDownloadLinkResponse>(this, "POST", request, JsonUtils.DeSerialize<ShowAuditlogDownloadLinkResponse>);
         }
         
         /// <summary>
@@ -1410,12 +2157,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ShowAuditlogPolicyResponse> ShowAuditlogPolicyAsync(ShowAuditlogPolicyRequest showAuditlogPolicyRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , showAuditlogPolicyRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/auditlog-policy",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAuditlogPolicyRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showAuditlogPolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/auditlog-policy",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAuditlogPolicyRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowAuditlogPolicyResponse>(response);
+        }
+
+        public AsyncInvoker<ShowAuditlogPolicyResponse> ShowAuditlogPolicyAsyncInvoker(ShowAuditlogPolicyRequest showAuditlogPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showAuditlogPolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/auditlog-policy",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAuditlogPolicyRequest);
+            return new AsyncInvoker<ShowAuditlogPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAuditlogPolicyResponse>);
         }
         
         /// <summary>
@@ -1427,12 +2183,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ShowAutoEnlargePolicyResponse> ShowAutoEnlargePolicyAsync(ShowAutoEnlargePolicyRequest showAutoEnlargePolicyRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , showAutoEnlargePolicyRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/disk-auto-expansion",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutoEnlargePolicyRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showAutoEnlargePolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/disk-auto-expansion",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutoEnlargePolicyRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowAutoEnlargePolicyResponse>(response);
+        }
+
+        public AsyncInvoker<ShowAutoEnlargePolicyResponse> ShowAutoEnlargePolicyAsyncInvoker(ShowAutoEnlargePolicyRequest showAutoEnlargePolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showAutoEnlargePolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/disk-auto-expansion",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutoEnlargePolicyRequest);
+            return new AsyncInvoker<ShowAutoEnlargePolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAutoEnlargePolicyResponse>);
         }
         
         /// <summary>
@@ -1444,12 +2209,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ShowAvailableVersionResponse> ShowAvailableVersionAsync(ShowAvailableVersionRequest showAvailableVersionRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , showAvailableVersionRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/major-version/available-version",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAvailableVersionRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showAvailableVersionRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/major-version/available-version",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAvailableVersionRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowAvailableVersionResponse>(response);
+        }
+
+        public AsyncInvoker<ShowAvailableVersionResponse> ShowAvailableVersionAsyncInvoker(ShowAvailableVersionRequest showAvailableVersionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showAvailableVersionRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/major-version/available-version",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAvailableVersionRequest);
+            return new AsyncInvoker<ShowAvailableVersionResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAvailableVersionResponse>);
         }
         
         /// <summary>
@@ -1461,11 +2235,19 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ShowBackupDownloadLinkResponse> ShowBackupDownloadLinkAsync(ShowBackupDownloadLinkRequest showBackupDownloadLinkRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backup-files",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBackupDownloadLinkRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backup-files",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBackupDownloadLinkRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowBackupDownloadLinkResponse>(response);
+        }
+
+        public AsyncInvoker<ShowBackupDownloadLinkResponse> ShowBackupDownloadLinkAsyncInvoker(ShowBackupDownloadLinkRequest showBackupDownloadLinkRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backup-files",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBackupDownloadLinkRequest);
+            return new AsyncInvoker<ShowBackupDownloadLinkResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowBackupDownloadLinkResponse>);
         }
         
         /// <summary>
@@ -1477,12 +2259,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ShowBackupPolicyResponse> ShowBackupPolicyAsync(ShowBackupPolicyRequest showBackupPolicyRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , showBackupPolicyRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/policy",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBackupPolicyRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showBackupPolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/policy",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBackupPolicyRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowBackupPolicyResponse>(response);
+        }
+
+        public AsyncInvoker<ShowBackupPolicyResponse> ShowBackupPolicyAsyncInvoker(ShowBackupPolicyRequest showBackupPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showBackupPolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/policy",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBackupPolicyRequest);
+            return new AsyncInvoker<ShowBackupPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowBackupPolicyResponse>);
         }
         
         /// <summary>
@@ -1494,12 +2285,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ShowBinlogClearPolicyResponse> ShowBinlogClearPolicyAsync(ShowBinlogClearPolicyRequest showBinlogClearPolicyRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , showBinlogClearPolicyRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/binlog/clear-policy",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBinlogClearPolicyRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showBinlogClearPolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/binlog/clear-policy",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBinlogClearPolicyRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowBinlogClearPolicyResponse>(response);
+        }
+
+        public AsyncInvoker<ShowBinlogClearPolicyResponse> ShowBinlogClearPolicyAsyncInvoker(ShowBinlogClearPolicyRequest showBinlogClearPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showBinlogClearPolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/binlog/clear-policy",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBinlogClearPolicyRequest);
+            return new AsyncInvoker<ShowBinlogClearPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowBinlogClearPolicyResponse>);
         }
         
         /// <summary>
@@ -1511,12 +2311,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ShowConfigurationResponse> ShowConfigurationAsync(ShowConfigurationRequest showConfigurationRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("config_id" , showConfigurationRequest.ConfigId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showConfigurationRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("config_id", showConfigurationRequest.ConfigId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showConfigurationRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowConfigurationResponse>(response);
+        }
+
+        public AsyncInvoker<ShowConfigurationResponse> ShowConfigurationAsyncInvoker(ShowConfigurationRequest showConfigurationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("config_id", showConfigurationRequest.ConfigId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showConfigurationRequest);
+            return new AsyncInvoker<ShowConfigurationResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowConfigurationResponse>);
         }
         
         /// <summary>
@@ -1528,12 +2337,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ShowDnsNameResponse> ShowDnsNameAsync(ShowDnsNameRequest showDnsNameRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , showDnsNameRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/dns-ipv6",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDnsNameRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showDnsNameRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/dns-ipv6",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDnsNameRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowDnsNameResponse>(response);
+        }
+
+        public AsyncInvoker<ShowDnsNameResponse> ShowDnsNameAsyncInvoker(ShowDnsNameRequest showDnsNameRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showDnsNameRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/dns-ipv6",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDnsNameRequest);
+            return new AsyncInvoker<ShowDnsNameResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDnsNameResponse>);
         }
         
         /// <summary>
@@ -1545,12 +2363,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ShowDomainNameResponse> ShowDomainNameAsync(ShowDomainNameRequest showDomainNameRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , showDomainNameRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/dns",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainNameRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showDomainNameRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/dns",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainNameRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowDomainNameResponse>(response);
+        }
+
+        public AsyncInvoker<ShowDomainNameResponse> ShowDomainNameAsyncInvoker(ShowDomainNameRequest showDomainNameRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showDomainNameRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/dns",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainNameRequest);
+            return new AsyncInvoker<ShowDomainNameResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDomainNameResponse>);
         }
         
         /// <summary>
@@ -1562,12 +2389,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ShowDrReplicaStatusResponse> ShowDrReplicaStatusAsync(ShowDrReplicaStatusRequest showDrReplicaStatusRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , showDrReplicaStatusRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/disaster-recovery",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDrReplicaStatusRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showDrReplicaStatusRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/disaster-recovery",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDrReplicaStatusRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowDrReplicaStatusResponse>(response);
+        }
+
+        public AsyncInvoker<ShowDrReplicaStatusResponse> ShowDrReplicaStatusAsyncInvoker(ShowDrReplicaStatusRequest showDrReplicaStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showDrReplicaStatusRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/disaster-recovery",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDrReplicaStatusRequest);
+            return new AsyncInvoker<ShowDrReplicaStatusResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDrReplicaStatusResponse>);
         }
         
         /// <summary>
@@ -1579,12 +2415,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ShowInstanceConfigurationResponse> ShowInstanceConfigurationAsync(ShowInstanceConfigurationRequest showInstanceConfigurationRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , showInstanceConfigurationRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/configurations",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceConfigurationRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showInstanceConfigurationRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/configurations",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceConfigurationRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowInstanceConfigurationResponse>(response);
+        }
+
+        public AsyncInvoker<ShowInstanceConfigurationResponse> ShowInstanceConfigurationAsyncInvoker(ShowInstanceConfigurationRequest showInstanceConfigurationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showInstanceConfigurationRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/configurations",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceConfigurationRequest);
+            return new AsyncInvoker<ShowInstanceConfigurationResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceConfigurationResponse>);
         }
         
         /// <summary>
@@ -1596,12 +2441,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ShowOffSiteBackupPolicyResponse> ShowOffSiteBackupPolicyAsync(ShowOffSiteBackupPolicyRequest showOffSiteBackupPolicyRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , showOffSiteBackupPolicyRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/offsite-policy",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showOffSiteBackupPolicyRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showOffSiteBackupPolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/offsite-policy",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showOffSiteBackupPolicyRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowOffSiteBackupPolicyResponse>(response);
+        }
+
+        public AsyncInvoker<ShowOffSiteBackupPolicyResponse> ShowOffSiteBackupPolicyAsyncInvoker(ShowOffSiteBackupPolicyRequest showOffSiteBackupPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showOffSiteBackupPolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/offsite-policy",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showOffSiteBackupPolicyRequest);
+            return new AsyncInvoker<ShowOffSiteBackupPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowOffSiteBackupPolicyResponse>);
         }
         
         /// <summary>
@@ -1613,11 +2467,19 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ShowQuotasResponse> ShowQuotasAsync(ShowQuotasRequest showQuotasRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/quotas",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showQuotasRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/quotas",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showQuotasRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowQuotasResponse>(response);
+        }
+
+        public AsyncInvoker<ShowQuotasResponse> ShowQuotasAsyncInvoker(ShowQuotasRequest showQuotasRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/quotas",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showQuotasRequest);
+            return new AsyncInvoker<ShowQuotasResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowQuotasResponse>);
         }
         
         /// <summary>
@@ -1629,11 +2491,19 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ShowRecyclePolicyResponse> ShowRecyclePolicyAsync(ShowRecyclePolicyRequest showRecyclePolicyRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/recycle-policy",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecyclePolicyRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/recycle-policy",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecyclePolicyRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowRecyclePolicyResponse>(response);
+        }
+
+        public AsyncInvoker<ShowRecyclePolicyResponse> ShowRecyclePolicyAsyncInvoker(ShowRecyclePolicyRequest showRecyclePolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/recycle-policy",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecyclePolicyRequest);
+            return new AsyncInvoker<ShowRecyclePolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRecyclePolicyResponse>);
         }
         
         /// <summary>
@@ -1645,12 +2515,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ShowReplicationStatusResponse> ShowReplicationStatusAsync(ShowReplicationStatusRequest showReplicationStatusRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , showReplicationStatusRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/replication/status",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showReplicationStatusRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showReplicationStatusRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/replication/status",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showReplicationStatusRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowReplicationStatusResponse>(response);
+        }
+
+        public AsyncInvoker<ShowReplicationStatusResponse> ShowReplicationStatusAsyncInvoker(ShowReplicationStatusRequest showReplicationStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showReplicationStatusRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/replication/status",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showReplicationStatusRequest);
+            return new AsyncInvoker<ShowReplicationStatusResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowReplicationStatusResponse>);
         }
         
         /// <summary>
@@ -1662,12 +2541,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ShowSecondLevelMonitoringResponse> ShowSecondLevelMonitoringAsync(ShowSecondLevelMonitoringRequest showSecondLevelMonitoringRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , showSecondLevelMonitoringRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/second-level-monitor",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSecondLevelMonitoringRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showSecondLevelMonitoringRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/second-level-monitor",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSecondLevelMonitoringRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowSecondLevelMonitoringResponse>(response);
+        }
+
+        public AsyncInvoker<ShowSecondLevelMonitoringResponse> ShowSecondLevelMonitoringAsyncInvoker(ShowSecondLevelMonitoringRequest showSecondLevelMonitoringRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showSecondLevelMonitoringRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/second-level-monitor",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSecondLevelMonitoringRequest);
+            return new AsyncInvoker<ShowSecondLevelMonitoringResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSecondLevelMonitoringResponse>);
         }
         
         /// <summary>
@@ -1679,12 +2567,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ShowTdeStatusResponse> ShowTdeStatusAsync(ShowTdeStatusRequest showTdeStatusRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , showTdeStatusRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/tde-status",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTdeStatusRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showTdeStatusRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/tde-status",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTdeStatusRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowTdeStatusResponse>(response);
+        }
+
+        public AsyncInvoker<ShowTdeStatusResponse> ShowTdeStatusAsyncInvoker(ShowTdeStatusRequest showTdeStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showTdeStatusRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/tde-status",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTdeStatusRequest);
+            return new AsyncInvoker<ShowTdeStatusResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTdeStatusResponse>);
         }
         
         /// <summary>
@@ -1696,12 +2593,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ShowUpgradeDbMajorVersionStatusResponse> ShowUpgradeDbMajorVersionStatusAsync(ShowUpgradeDbMajorVersionStatusRequest showUpgradeDbMajorVersionStatusRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , showUpgradeDbMajorVersionStatusRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/major-version/status",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUpgradeDbMajorVersionStatusRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showUpgradeDbMajorVersionStatusRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/major-version/status",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUpgradeDbMajorVersionStatusRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowUpgradeDbMajorVersionStatusResponse>(response);
+        }
+
+        public AsyncInvoker<ShowUpgradeDbMajorVersionStatusResponse> ShowUpgradeDbMajorVersionStatusAsyncInvoker(ShowUpgradeDbMajorVersionStatusRequest showUpgradeDbMajorVersionStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showUpgradeDbMajorVersionStatusRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/major-version/status",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUpgradeDbMajorVersionStatusRequest);
+            return new AsyncInvoker<ShowUpgradeDbMajorVersionStatusResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowUpgradeDbMajorVersionStatusResponse>);
         }
         
         /// <summary>
@@ -1713,12 +2619,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<StartFailoverResponse> StartFailoverAsync(StartFailoverRequest startFailoverRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , startFailoverRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/failover",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", startFailoverRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", startFailoverRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/failover",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", startFailoverRequest);
+            var response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<StartFailoverResponse>(response);
+        }
+
+        public AsyncInvoker<StartFailoverResponse> StartFailoverAsyncInvoker(StartFailoverRequest startFailoverRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", startFailoverRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/failover",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", startFailoverRequest);
+            return new AsyncInvoker<StartFailoverResponse>(this, "PUT", request, JsonUtils.DeSerialize<StartFailoverResponse>);
         }
         
         /// <summary>
@@ -1730,12 +2645,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<StartInstanceEnlargeVolumeActionResponse> StartInstanceEnlargeVolumeActionAsync(StartInstanceEnlargeVolumeActionRequest startInstanceEnlargeVolumeActionRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , startInstanceEnlargeVolumeActionRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", startInstanceEnlargeVolumeActionRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", startInstanceEnlargeVolumeActionRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/action",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", startInstanceEnlargeVolumeActionRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<StartInstanceEnlargeVolumeActionResponse>(response);
+        }
+
+        public AsyncInvoker<StartInstanceEnlargeVolumeActionResponse> StartInstanceEnlargeVolumeActionAsyncInvoker(StartInstanceEnlargeVolumeActionRequest startInstanceEnlargeVolumeActionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", startInstanceEnlargeVolumeActionRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/action",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", startInstanceEnlargeVolumeActionRequest);
+            return new AsyncInvoker<StartInstanceEnlargeVolumeActionResponse>(this, "POST", request, JsonUtils.DeSerialize<StartInstanceEnlargeVolumeActionResponse>);
         }
         
         /// <summary>
@@ -1747,12 +2671,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<StartInstanceRestartActionResponse> StartInstanceRestartActionAsync(StartInstanceRestartActionRequest startInstanceRestartActionRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , startInstanceRestartActionRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", startInstanceRestartActionRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", startInstanceRestartActionRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/action",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", startInstanceRestartActionRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<StartInstanceRestartActionResponse>(response);
+        }
+
+        public AsyncInvoker<StartInstanceRestartActionResponse> StartInstanceRestartActionAsyncInvoker(StartInstanceRestartActionRequest startInstanceRestartActionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", startInstanceRestartActionRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/action",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", startInstanceRestartActionRequest);
+            return new AsyncInvoker<StartInstanceRestartActionResponse>(this, "POST", request, JsonUtils.DeSerialize<StartInstanceRestartActionResponse>);
         }
         
         /// <summary>
@@ -1764,12 +2697,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<StartInstanceSingleToHaActionResponse> StartInstanceSingleToHaActionAsync(StartInstanceSingleToHaActionRequest startInstanceSingleToHaActionRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , startInstanceSingleToHaActionRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", startInstanceSingleToHaActionRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", startInstanceSingleToHaActionRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/action",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", startInstanceSingleToHaActionRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<StartInstanceSingleToHaActionResponse>(response);
+        }
+
+        public AsyncInvoker<StartInstanceSingleToHaActionResponse> StartInstanceSingleToHaActionAsyncInvoker(StartInstanceSingleToHaActionRequest startInstanceSingleToHaActionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", startInstanceSingleToHaActionRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/action",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", startInstanceSingleToHaActionRequest);
+            return new AsyncInvoker<StartInstanceSingleToHaActionResponse>(this, "POST", request, JsonUtils.DeSerialize<StartInstanceSingleToHaActionResponse>);
         }
         
         /// <summary>
@@ -1781,11 +2723,19 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<StartRecyclePolicyResponse> StartRecyclePolicyAsync(StartRecyclePolicyRequest startRecyclePolicyRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/recycle-policy",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", startRecyclePolicyRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/recycle-policy",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", startRecyclePolicyRequest);
+            var response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<StartRecyclePolicyResponse>(response);
+        }
+
+        public AsyncInvoker<StartRecyclePolicyResponse> StartRecyclePolicyAsyncInvoker(StartRecyclePolicyRequest startRecyclePolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/recycle-policy",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", startRecyclePolicyRequest);
+            return new AsyncInvoker<StartRecyclePolicyResponse>(this, "PUT", request, JsonUtils.DeSerialize<StartRecyclePolicyResponse>);
         }
         
         /// <summary>
@@ -1797,12 +2747,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<StartResizeFlavorActionResponse> StartResizeFlavorActionAsync(StartResizeFlavorActionRequest startResizeFlavorActionRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , startResizeFlavorActionRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", startResizeFlavorActionRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", startResizeFlavorActionRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/action",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", startResizeFlavorActionRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<StartResizeFlavorActionResponse>(response);
+        }
+
+        public AsyncInvoker<StartResizeFlavorActionResponse> StartResizeFlavorActionAsyncInvoker(StartResizeFlavorActionRequest startResizeFlavorActionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", startResizeFlavorActionRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/action",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", startResizeFlavorActionRequest);
+            return new AsyncInvoker<StartResizeFlavorActionResponse>(this, "POST", request, JsonUtils.DeSerialize<StartResizeFlavorActionResponse>);
         }
         
         /// <summary>
@@ -1814,12 +2773,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<StartupInstanceResponse> StartupInstanceAsync(StartupInstanceRequest startupInstanceRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , startupInstanceRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/action/startup",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", startupInstanceRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", startupInstanceRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/action/startup",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", startupInstanceRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<StartupInstanceResponse>(response);
+        }
+
+        public AsyncInvoker<StartupInstanceResponse> StartupInstanceAsyncInvoker(StartupInstanceRequest startupInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", startupInstanceRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/action/startup",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", startupInstanceRequest);
+            return new AsyncInvoker<StartupInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<StartupInstanceResponse>);
         }
         
         /// <summary>
@@ -1831,12 +2799,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<StopInstanceResponse> StopInstanceAsync(StopInstanceRequest stopInstanceRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , stopInstanceRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/action/shutdown",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopInstanceRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", stopInstanceRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/action/shutdown",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopInstanceRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<StopInstanceResponse>(response);
+        }
+
+        public AsyncInvoker<StopInstanceResponse> StopInstanceAsyncInvoker(StopInstanceRequest stopInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", stopInstanceRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/action/shutdown",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopInstanceRequest);
+            return new AsyncInvoker<StopInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<StopInstanceResponse>);
         }
         
         /// <summary>
@@ -1848,12 +2825,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<SwitchSslResponse> SwitchSslAsync(SwitchSslRequest switchSslRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , switchSslRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/ssl",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchSslRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", switchSslRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/ssl",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchSslRequest);
+            var response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerializeNull<SwitchSslResponse>(response);
+        }
+
+        public AsyncInvoker<SwitchSslResponse> SwitchSslAsyncInvoker(SwitchSslRequest switchSslRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", switchSslRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/ssl",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchSslRequest);
+            return new AsyncInvoker<SwitchSslResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<SwitchSslResponse>);
         }
         
         /// <summary>
@@ -1865,12 +2851,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<UpdateConfigurationResponse> UpdateConfigurationAsync(UpdateConfigurationRequest updateConfigurationRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("config_id" , updateConfigurationRequest.ConfigId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateConfigurationRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("config_id", updateConfigurationRequest.ConfigId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateConfigurationRequest);
+            var response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<UpdateConfigurationResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateConfigurationResponse> UpdateConfigurationAsyncInvoker(UpdateConfigurationRequest updateConfigurationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("config_id", updateConfigurationRequest.ConfigId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateConfigurationRequest);
+            return new AsyncInvoker<UpdateConfigurationResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateConfigurationResponse>);
         }
         
         /// <summary>
@@ -1882,12 +2877,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<UpdateDataIpResponse> UpdateDataIpAsync(UpdateDataIpRequest updateDataIpRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , updateDataIpRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/ip",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDataIpRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateDataIpRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/ip",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDataIpRequest);
+            var response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<UpdateDataIpResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateDataIpResponse> UpdateDataIpAsyncInvoker(UpdateDataIpRequest updateDataIpRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateDataIpRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/ip",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDataIpRequest);
+            return new AsyncInvoker<UpdateDataIpResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateDataIpResponse>);
         }
         
         /// <summary>
@@ -1899,12 +2903,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<UpdateDnsNameResponse> UpdateDnsNameAsync(UpdateDnsNameRequest updateDnsNameRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , updateDnsNameRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/modify-dns",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDnsNameRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateDnsNameRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/modify-dns",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDnsNameRequest);
+            var response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<UpdateDnsNameResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateDnsNameResponse> UpdateDnsNameAsyncInvoker(UpdateDnsNameRequest updateDnsNameRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateDnsNameRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/modify-dns",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDnsNameRequest);
+            return new AsyncInvoker<UpdateDnsNameResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateDnsNameResponse>);
         }
         
         /// <summary>
@@ -1916,12 +2929,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<UpdateInstanceConfigurationResponse> UpdateInstanceConfigurationAsync(UpdateInstanceConfigurationRequest updateInstanceConfigurationRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , updateInstanceConfigurationRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/configurations",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceConfigurationRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateInstanceConfigurationRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/configurations",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceConfigurationRequest);
+            var response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<UpdateInstanceConfigurationResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateInstanceConfigurationResponse> UpdateInstanceConfigurationAsyncInvoker(UpdateInstanceConfigurationRequest updateInstanceConfigurationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateInstanceConfigurationRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/configurations",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceConfigurationRequest);
+            return new AsyncInvoker<UpdateInstanceConfigurationResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateInstanceConfigurationResponse>);
         }
         
         /// <summary>
@@ -1933,12 +2955,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<UpdateInstanceConfigurationAsyncResponse> UpdateInstanceConfigurationAsyncAsync(UpdateInstanceConfigurationAsyncRequest updateInstanceConfigurationAsyncRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , updateInstanceConfigurationAsyncRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/instances/{instance_id}/configurations",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceConfigurationAsyncRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateInstanceConfigurationAsyncRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/instances/{instance_id}/configurations",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceConfigurationAsyncRequest);
+            var response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<UpdateInstanceConfigurationAsyncResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateInstanceConfigurationAsyncResponse> UpdateInstanceConfigurationAsyncAsyncInvoker(UpdateInstanceConfigurationAsyncRequest updateInstanceConfigurationAsyncRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateInstanceConfigurationAsyncRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/instances/{instance_id}/configurations",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceConfigurationAsyncRequest);
+            return new AsyncInvoker<UpdateInstanceConfigurationAsyncResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateInstanceConfigurationAsyncResponse>);
         }
         
         /// <summary>
@@ -1950,12 +2981,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<UpdateInstanceNameResponse> UpdateInstanceNameAsync(UpdateInstanceNameRequest updateInstanceNameRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , updateInstanceNameRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/name",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceNameRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateInstanceNameRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/name",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceNameRequest);
+            var response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerializeNull<UpdateInstanceNameResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateInstanceNameResponse> UpdateInstanceNameAsyncInvoker(UpdateInstanceNameRequest updateInstanceNameRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateInstanceNameRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/name",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceNameRequest);
+            return new AsyncInvoker<UpdateInstanceNameResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateInstanceNameResponse>);
         }
         
         /// <summary>
@@ -1967,12 +3007,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<UpdatePortResponse> UpdatePortAsync(UpdatePortRequest updatePortRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , updatePortRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/port",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePortRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updatePortRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/port",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePortRequest);
+            var response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<UpdatePortResponse>(response);
+        }
+
+        public AsyncInvoker<UpdatePortResponse> UpdatePortAsyncInvoker(UpdatePortRequest updatePortRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updatePortRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/port",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePortRequest);
+            return new AsyncInvoker<UpdatePortResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdatePortResponse>);
         }
         
         /// <summary>
@@ -1984,12 +3033,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<UpdatePostgresqlInstanceAliasResponse> UpdatePostgresqlInstanceAliasAsync(UpdatePostgresqlInstanceAliasRequest updatePostgresqlInstanceAliasRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , updatePostgresqlInstanceAliasRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/alias",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePostgresqlInstanceAliasRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updatePostgresqlInstanceAliasRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/alias",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePostgresqlInstanceAliasRequest);
+            var response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<UpdatePostgresqlInstanceAliasResponse>(response);
+        }
+
+        public AsyncInvoker<UpdatePostgresqlInstanceAliasResponse> UpdatePostgresqlInstanceAliasAsyncInvoker(UpdatePostgresqlInstanceAliasRequest updatePostgresqlInstanceAliasRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updatePostgresqlInstanceAliasRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/alias",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePostgresqlInstanceAliasRequest);
+            return new AsyncInvoker<UpdatePostgresqlInstanceAliasResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdatePostgresqlInstanceAliasResponse>);
         }
         
         /// <summary>
@@ -2001,12 +3059,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<UpdateTdeStatusResponse> UpdateTdeStatusAsync(UpdateTdeStatusRequest updateTdeStatusRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , updateTdeStatusRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/tde",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTdeStatusRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
-            return JsonUtils.DeSerializeNull<UpdateTdeStatusResponse>(response);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateTdeStatusRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/tde",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTdeStatusRequest);
+            var response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerialize<UpdateTdeStatusResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateTdeStatusResponse> UpdateTdeStatusAsyncInvoker(UpdateTdeStatusRequest updateTdeStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateTdeStatusRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/tde",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTdeStatusRequest);
+            return new AsyncInvoker<UpdateTdeStatusResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateTdeStatusResponse>);
         }
         
         /// <summary>
@@ -2018,13 +3085,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<UpgradeDbMajorVersionResponse> UpgradeDbMajorVersionAsync(UpgradeDbMajorVersionRequest upgradeDbMajorVersionRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , upgradeDbMajorVersionRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/major-version/upgrade",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", upgradeDbMajorVersionRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
-            UpgradeDbMajorVersionResponse upgradeDbMajorVersionResponse = JsonUtils.DeSerializeNull<UpgradeDbMajorVersionResponse>(response);
-            return upgradeDbMajorVersionResponse;
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", upgradeDbMajorVersionRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/major-version/upgrade",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", upgradeDbMajorVersionRequest);
+            var response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerialize<UpgradeDbMajorVersionResponse>(response);
+        }
+
+        public AsyncInvoker<UpgradeDbMajorVersionResponse> UpgradeDbMajorVersionAsyncInvoker(UpgradeDbMajorVersionRequest upgradeDbMajorVersionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", upgradeDbMajorVersionRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/major-version/upgrade",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", upgradeDbMajorVersionRequest);
+            return new AsyncInvoker<UpgradeDbMajorVersionResponse>(this, "POST", request, JsonUtils.DeSerialize<UpgradeDbMajorVersionResponse>);
         }
         
         /// <summary>
@@ -2036,12 +3111,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<UpgradeDbMajorVersionPreCheckResponse> UpgradeDbMajorVersionPreCheckAsync(UpgradeDbMajorVersionPreCheckRequest upgradeDbMajorVersionPreCheckRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , upgradeDbMajorVersionPreCheckRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/major-version/inspection",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", upgradeDbMajorVersionPreCheckRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", upgradeDbMajorVersionPreCheckRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/major-version/inspection",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", upgradeDbMajorVersionPreCheckRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<UpgradeDbMajorVersionPreCheckResponse>(response);
+        }
+
+        public AsyncInvoker<UpgradeDbMajorVersionPreCheckResponse> UpgradeDbMajorVersionPreCheckAsyncInvoker(UpgradeDbMajorVersionPreCheckRequest upgradeDbMajorVersionPreCheckRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", upgradeDbMajorVersionPreCheckRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/major-version/inspection",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", upgradeDbMajorVersionPreCheckRequest);
+            return new AsyncInvoker<UpgradeDbMajorVersionPreCheckResponse>(this, "POST", request, JsonUtils.DeSerialize<UpgradeDbMajorVersionPreCheckResponse>);
         }
         
         /// <summary>
@@ -2053,12 +3137,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<UpgradeDbVersionResponse> UpgradeDbVersionAsync(UpgradeDbVersionRequest upgradeDbVersionRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , upgradeDbVersionRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/action/db-upgrade",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", upgradeDbVersionRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", upgradeDbVersionRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/action/db-upgrade",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", upgradeDbVersionRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<UpgradeDbVersionResponse>(response);
+        }
+
+        public AsyncInvoker<UpgradeDbVersionResponse> UpgradeDbVersionAsyncInvoker(UpgradeDbVersionRequest upgradeDbVersionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", upgradeDbVersionRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/action/db-upgrade",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", upgradeDbVersionRequest);
+            return new AsyncInvoker<UpgradeDbVersionResponse>(this, "POST", request, JsonUtils.DeSerialize<UpgradeDbVersionResponse>);
         }
         
         /// <summary>
@@ -2070,12 +3163,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<UpgradeDbVersionNewResponse> UpgradeDbVersionNewAsync(UpgradeDbVersionNewRequest upgradeDbVersionNewRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , upgradeDbVersionNewRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-upgrade",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", upgradeDbVersionNewRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", upgradeDbVersionNewRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-upgrade",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", upgradeDbVersionNewRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<UpgradeDbVersionNewResponse>(response);
+        }
+
+        public AsyncInvoker<UpgradeDbVersionNewResponse> UpgradeDbVersionNewAsyncInvoker(UpgradeDbVersionNewRequest upgradeDbVersionNewRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", upgradeDbVersionNewRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-upgrade",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", upgradeDbVersionNewRequest);
+            return new AsyncInvoker<UpgradeDbVersionNewResponse>(this, "POST", request, JsonUtils.DeSerialize<UpgradeDbVersionNewResponse>);
         }
         
         /// <summary>
@@ -2087,11 +3189,19 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ListApiVersionResponse> ListApiVersionAsync(ListApiVersionRequest listApiVersionRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/rds",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listApiVersionRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/rds",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listApiVersionRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListApiVersionResponse>(response);
+        }
+
+        public AsyncInvoker<ListApiVersionResponse> ListApiVersionAsyncInvoker(ListApiVersionRequest listApiVersionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/rds",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listApiVersionRequest);
+            return new AsyncInvoker<ListApiVersionResponse>(this, "GET", request, JsonUtils.DeSerialize<ListApiVersionResponse>);
         }
         
         /// <summary>
@@ -2103,11 +3213,19 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ListApiVersionNewResponse> ListApiVersionNewAsync(ListApiVersionNewRequest listApiVersionNewRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listApiVersionNewRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listApiVersionNewRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListApiVersionNewResponse>(response);
+        }
+
+        public AsyncInvoker<ListApiVersionNewResponse> ListApiVersionNewAsyncInvoker(ListApiVersionNewRequest listApiVersionNewRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listApiVersionNewRequest);
+            return new AsyncInvoker<ListApiVersionNewResponse>(this, "GET", request, JsonUtils.DeSerialize<ListApiVersionNewResponse>);
         }
         
         /// <summary>
@@ -2119,12 +3237,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ShowApiVersionResponse> ShowApiVersionAsync(ShowApiVersionRequest showApiVersionRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("version" , showApiVersionRequest.Version.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/rds/{version}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showApiVersionRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("version", showApiVersionRequest.Version.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/rds/{version}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showApiVersionRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowApiVersionResponse>(response);
+        }
+
+        public AsyncInvoker<ShowApiVersionResponse> ShowApiVersionAsyncInvoker(ShowApiVersionRequest showApiVersionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("version", showApiVersionRequest.Version.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/rds/{version}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showApiVersionRequest);
+            return new AsyncInvoker<ShowApiVersionResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowApiVersionResponse>);
         }
         
         /// <summary>
@@ -2136,12 +3263,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<AllowDbUserPrivilegeResponse> AllowDbUserPrivilegeAsync(AllowDbUserPrivilegeRequest allowDbUserPrivilegeRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , allowDbUserPrivilegeRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_privilege",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", allowDbUserPrivilegeRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", allowDbUserPrivilegeRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_privilege",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", allowDbUserPrivilegeRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<AllowDbUserPrivilegeResponse>(response);
+        }
+
+        public AsyncInvoker<AllowDbUserPrivilegeResponse> AllowDbUserPrivilegeAsyncInvoker(AllowDbUserPrivilegeRequest allowDbUserPrivilegeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", allowDbUserPrivilegeRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_privilege",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", allowDbUserPrivilegeRequest);
+            return new AsyncInvoker<AllowDbUserPrivilegeResponse>(this, "POST", request, JsonUtils.DeSerialize<AllowDbUserPrivilegeResponse>);
         }
         
         /// <summary>
@@ -2153,12 +3289,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<CreateDatabaseResponse> CreateDatabaseAsync(CreateDatabaseRequest createDatabaseRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , createDatabaseRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/database",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDatabaseRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createDatabaseRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/database",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDatabaseRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateDatabaseResponse>(response);
+        }
+
+        public AsyncInvoker<CreateDatabaseResponse> CreateDatabaseAsyncInvoker(CreateDatabaseRequest createDatabaseRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createDatabaseRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/database",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDatabaseRequest);
+            return new AsyncInvoker<CreateDatabaseResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateDatabaseResponse>);
         }
         
         /// <summary>
@@ -2170,12 +3315,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<CreateDbUserResponse> CreateDbUserAsync(CreateDbUserRequest createDbUserRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , createDbUserRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_user",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDbUserRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createDbUserRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_user",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDbUserRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateDbUserResponse>(response);
+        }
+
+        public AsyncInvoker<CreateDbUserResponse> CreateDbUserAsyncInvoker(CreateDbUserRequest createDbUserRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createDbUserRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_user",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDbUserRequest);
+            return new AsyncInvoker<CreateDbUserResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateDbUserResponse>);
         }
         
         /// <summary>
@@ -2187,13 +3341,23 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<DeleteDatabaseResponse> DeleteDatabaseAsync(DeleteDatabaseRequest deleteDatabaseRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , deleteDatabaseRequest.InstanceId.ToString());
-            urlParam.Add("db_name" , deleteDatabaseRequest.DbName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/database/{db_name}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDatabaseRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteDatabaseRequest.InstanceId.ToString());
+            urlParam.Add("db_name", deleteDatabaseRequest.DbName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/database/{db_name}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDatabaseRequest);
+            var response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerialize<DeleteDatabaseResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteDatabaseResponse> DeleteDatabaseAsyncInvoker(DeleteDatabaseRequest deleteDatabaseRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteDatabaseRequest.InstanceId.ToString());
+            urlParam.Add("db_name", deleteDatabaseRequest.DbName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/database/{db_name}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDatabaseRequest);
+            return new AsyncInvoker<DeleteDatabaseResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteDatabaseResponse>);
         }
         
         /// <summary>
@@ -2205,13 +3369,23 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<DeleteDbUserResponse> DeleteDbUserAsync(DeleteDbUserRequest deleteDbUserRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , deleteDbUserRequest.InstanceId.ToString());
-            urlParam.Add("user_name" , deleteDbUserRequest.UserName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_user/{user_name}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDbUserRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteDbUserRequest.InstanceId.ToString());
+            urlParam.Add("user_name", deleteDbUserRequest.UserName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_user/{user_name}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDbUserRequest);
+            var response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerialize<DeleteDbUserResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteDbUserResponse> DeleteDbUserAsyncInvoker(DeleteDbUserRequest deleteDbUserRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteDbUserRequest.InstanceId.ToString());
+            urlParam.Add("user_name", deleteDbUserRequest.UserName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_user/{user_name}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDbUserRequest);
+            return new AsyncInvoker<DeleteDbUserResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteDbUserResponse>);
         }
         
         /// <summary>
@@ -2223,12 +3397,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ListAuthorizedDatabasesResponse> ListAuthorizedDatabasesAsync(ListAuthorizedDatabasesRequest listAuthorizedDatabasesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , listAuthorizedDatabasesRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_user/database",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAuthorizedDatabasesRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listAuthorizedDatabasesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_user/database",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAuthorizedDatabasesRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListAuthorizedDatabasesResponse>(response);
+        }
+
+        public AsyncInvoker<ListAuthorizedDatabasesResponse> ListAuthorizedDatabasesAsyncInvoker(ListAuthorizedDatabasesRequest listAuthorizedDatabasesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listAuthorizedDatabasesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_user/database",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAuthorizedDatabasesRequest);
+            return new AsyncInvoker<ListAuthorizedDatabasesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAuthorizedDatabasesResponse>);
         }
         
         /// <summary>
@@ -2240,12 +3423,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ListAuthorizedDbUsersResponse> ListAuthorizedDbUsersAsync(ListAuthorizedDbUsersRequest listAuthorizedDbUsersRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , listAuthorizedDbUsersRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/database/db_user",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAuthorizedDbUsersRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listAuthorizedDbUsersRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/database/db_user",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAuthorizedDbUsersRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListAuthorizedDbUsersResponse>(response);
+        }
+
+        public AsyncInvoker<ListAuthorizedDbUsersResponse> ListAuthorizedDbUsersAsyncInvoker(ListAuthorizedDbUsersRequest listAuthorizedDbUsersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listAuthorizedDbUsersRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/database/db_user",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAuthorizedDbUsersRequest);
+            return new AsyncInvoker<ListAuthorizedDbUsersResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAuthorizedDbUsersResponse>);
         }
         
         /// <summary>
@@ -2257,12 +3449,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ListDatabasesResponse> ListDatabasesAsync(ListDatabasesRequest listDatabasesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , listDatabasesRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/database/detail",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDatabasesRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listDatabasesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/database/detail",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDatabasesRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListDatabasesResponse>(response);
+        }
+
+        public AsyncInvoker<ListDatabasesResponse> ListDatabasesAsyncInvoker(ListDatabasesRequest listDatabasesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listDatabasesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/database/detail",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDatabasesRequest);
+            return new AsyncInvoker<ListDatabasesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDatabasesResponse>);
         }
         
         /// <summary>
@@ -2274,12 +3475,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ListDbUsersResponse> ListDbUsersAsync(ListDbUsersRequest listDbUsersRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , listDbUsersRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_user/detail",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDbUsersRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listDbUsersRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_user/detail",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDbUsersRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListDbUsersResponse>(response);
+        }
+
+        public AsyncInvoker<ListDbUsersResponse> ListDbUsersAsyncInvoker(ListDbUsersRequest listDbUsersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listDbUsersRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_user/detail",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDbUsersRequest);
+            return new AsyncInvoker<ListDbUsersResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDbUsersResponse>);
         }
         
         /// <summary>
@@ -2291,12 +3501,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ResetPwdResponse> ResetPwdAsync(ResetPwdRequest resetPwdRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , resetPwdRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/password",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetPwdRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", resetPwdRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/password",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetPwdRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerializeNull<ResetPwdResponse>(response);
+        }
+
+        public AsyncInvoker<ResetPwdResponse> ResetPwdAsyncInvoker(ResetPwdRequest resetPwdRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", resetPwdRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/password",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetPwdRequest);
+            return new AsyncInvoker<ResetPwdResponse>(this, "POST", request, JsonUtils.DeSerializeNull<ResetPwdResponse>);
         }
         
         /// <summary>
@@ -2308,12 +3527,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<RevokeResponse> RevokeAsync(RevokeRequest revokeRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , revokeRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_privilege",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", revokeRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", revokeRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_privilege",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", revokeRequest);
+            var response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerialize<RevokeResponse>(response);
+        }
+
+        public AsyncInvoker<RevokeResponse> RevokeAsyncInvoker(RevokeRequest revokeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", revokeRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_privilege",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", revokeRequest);
+            return new AsyncInvoker<RevokeResponse>(this, "DELETE", request, JsonUtils.DeSerialize<RevokeResponse>);
         }
         
         /// <summary>
@@ -2325,12 +3553,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<SetDbUserPwdResponse> SetDbUserPwdAsync(SetDbUserPwdRequest setDbUserPwdRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , setDbUserPwdRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_user/resetpwd",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", setDbUserPwdRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", setDbUserPwdRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_user/resetpwd",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setDbUserPwdRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<SetDbUserPwdResponse>(response);
+        }
+
+        public AsyncInvoker<SetDbUserPwdResponse> SetDbUserPwdAsyncInvoker(SetDbUserPwdRequest setDbUserPwdRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", setDbUserPwdRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_user/resetpwd",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setDbUserPwdRequest);
+            return new AsyncInvoker<SetDbUserPwdResponse>(this, "POST", request, JsonUtils.DeSerialize<SetDbUserPwdResponse>);
         }
         
         /// <summary>
@@ -2342,12 +3579,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<SetReadOnlySwitchResponse> SetReadOnlySwitchAsync(SetReadOnlySwitchRequest setReadOnlySwitchRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , setReadOnlySwitchRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/readonly-status",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", setReadOnlySwitchRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", setReadOnlySwitchRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/readonly-status",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setReadOnlySwitchRequest);
+            var response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<SetReadOnlySwitchResponse>(response);
+        }
+
+        public AsyncInvoker<SetReadOnlySwitchResponse> SetReadOnlySwitchAsyncInvoker(SetReadOnlySwitchRequest setReadOnlySwitchRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", setReadOnlySwitchRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/readonly-status",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setReadOnlySwitchRequest);
+            return new AsyncInvoker<SetReadOnlySwitchResponse>(this, "PUT", request, JsonUtils.DeSerialize<SetReadOnlySwitchResponse>);
         }
         
         /// <summary>
@@ -2359,12 +3605,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<UpdateDatabaseResponse> UpdateDatabaseAsync(UpdateDatabaseRequest updateDatabaseRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , updateDatabaseRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/database/update",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDatabaseRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateDatabaseRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/database/update",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDatabaseRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<UpdateDatabaseResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateDatabaseResponse> UpdateDatabaseAsyncInvoker(UpdateDatabaseRequest updateDatabaseRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateDatabaseRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/database/update",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDatabaseRequest);
+            return new AsyncInvoker<UpdateDatabaseResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateDatabaseResponse>);
         }
         
         /// <summary>
@@ -2376,13 +3631,23 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<UpdateDbUserCommentResponse> UpdateDbUserCommentAsync(UpdateDbUserCommentRequest updateDbUserCommentRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , updateDbUserCommentRequest.InstanceId.ToString());
-            urlParam.Add("user_name" , updateDbUserCommentRequest.UserName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-users/{user_name}/comment",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDbUserCommentRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateDbUserCommentRequest.InstanceId.ToString());
+            urlParam.Add("user_name", updateDbUserCommentRequest.UserName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-users/{user_name}/comment",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDbUserCommentRequest);
+            var response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<UpdateDbUserCommentResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateDbUserCommentResponse> UpdateDbUserCommentAsyncInvoker(UpdateDbUserCommentRequest updateDbUserCommentRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateDbUserCommentRequest.InstanceId.ToString());
+            urlParam.Add("user_name", updateDbUserCommentRequest.UserName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-users/{user_name}/comment",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDbUserCommentRequest);
+            return new AsyncInvoker<UpdateDbUserCommentResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateDbUserCommentResponse>);
         }
         
         /// <summary>
@@ -2394,12 +3659,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<AllowDbPrivilegeResponse> AllowDbPrivilegeAsync(AllowDbPrivilegeRequest allowDbPrivilegeRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , allowDbPrivilegeRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_privilege",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", allowDbPrivilegeRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", allowDbPrivilegeRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_privilege",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", allowDbPrivilegeRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<AllowDbPrivilegeResponse>(response);
+        }
+
+        public AsyncInvoker<AllowDbPrivilegeResponse> AllowDbPrivilegeAsyncInvoker(AllowDbPrivilegeRequest allowDbPrivilegeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", allowDbPrivilegeRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_privilege",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", allowDbPrivilegeRequest);
+            return new AsyncInvoker<AllowDbPrivilegeResponse>(this, "POST", request, JsonUtils.DeSerialize<AllowDbPrivilegeResponse>);
         }
         
         /// <summary>
@@ -2413,12 +3687,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ChangeProxyScaleResponse> ChangeProxyScaleAsync(ChangeProxyScaleRequest changeProxyScaleRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , changeProxyScaleRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/scale",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", changeProxyScaleRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", changeProxyScaleRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/scale",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", changeProxyScaleRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<ChangeProxyScaleResponse>(response);
+        }
+
+        public AsyncInvoker<ChangeProxyScaleResponse> ChangeProxyScaleAsyncInvoker(ChangeProxyScaleRequest changeProxyScaleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", changeProxyScaleRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/scale",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", changeProxyScaleRequest);
+            return new AsyncInvoker<ChangeProxyScaleResponse>(this, "POST", request, JsonUtils.DeSerialize<ChangeProxyScaleResponse>);
         }
         
         /// <summary>
@@ -2430,12 +3713,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ChangeTheDelayThresholdResponse> ChangeTheDelayThresholdAsync(ChangeTheDelayThresholdRequest changeTheDelayThresholdRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , changeTheDelayThresholdRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/delay-threshold",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", changeTheDelayThresholdRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", changeTheDelayThresholdRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/delay-threshold",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", changeTheDelayThresholdRequest);
+            var response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<ChangeTheDelayThresholdResponse>(response);
+        }
+
+        public AsyncInvoker<ChangeTheDelayThresholdResponse> ChangeTheDelayThresholdAsyncInvoker(ChangeTheDelayThresholdRequest changeTheDelayThresholdRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", changeTheDelayThresholdRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/delay-threshold",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", changeTheDelayThresholdRequest);
+            return new AsyncInvoker<ChangeTheDelayThresholdResponse>(this, "PUT", request, JsonUtils.DeSerialize<ChangeTheDelayThresholdResponse>);
         }
         
         /// <summary>
@@ -2447,12 +3739,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<CreatePostgresqlDatabaseResponse> CreatePostgresqlDatabaseAsync(CreatePostgresqlDatabaseRequest createPostgresqlDatabaseRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , createPostgresqlDatabaseRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/database",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPostgresqlDatabaseRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createPostgresqlDatabaseRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/database",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPostgresqlDatabaseRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreatePostgresqlDatabaseResponse>(response);
+        }
+
+        public AsyncInvoker<CreatePostgresqlDatabaseResponse> CreatePostgresqlDatabaseAsyncInvoker(CreatePostgresqlDatabaseRequest createPostgresqlDatabaseRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createPostgresqlDatabaseRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/database",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPostgresqlDatabaseRequest);
+            return new AsyncInvoker<CreatePostgresqlDatabaseResponse>(this, "POST", request, JsonUtils.DeSerialize<CreatePostgresqlDatabaseResponse>);
         }
         
         /// <summary>
@@ -2464,12 +3765,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<CreatePostgresqlDatabaseSchemaResponse> CreatePostgresqlDatabaseSchemaAsync(CreatePostgresqlDatabaseSchemaRequest createPostgresqlDatabaseSchemaRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , createPostgresqlDatabaseSchemaRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/schema",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPostgresqlDatabaseSchemaRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createPostgresqlDatabaseSchemaRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/schema",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPostgresqlDatabaseSchemaRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreatePostgresqlDatabaseSchemaResponse>(response);
+        }
+
+        public AsyncInvoker<CreatePostgresqlDatabaseSchemaResponse> CreatePostgresqlDatabaseSchemaAsyncInvoker(CreatePostgresqlDatabaseSchemaRequest createPostgresqlDatabaseSchemaRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createPostgresqlDatabaseSchemaRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/schema",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPostgresqlDatabaseSchemaRequest);
+            return new AsyncInvoker<CreatePostgresqlDatabaseSchemaResponse>(this, "POST", request, JsonUtils.DeSerialize<CreatePostgresqlDatabaseSchemaResponse>);
         }
         
         /// <summary>
@@ -2481,12 +3791,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<CreatePostgresqlDbUserResponse> CreatePostgresqlDbUserAsync(CreatePostgresqlDbUserRequest createPostgresqlDbUserRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , createPostgresqlDbUserRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_user",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPostgresqlDbUserRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createPostgresqlDbUserRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_user",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPostgresqlDbUserRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreatePostgresqlDbUserResponse>(response);
+        }
+
+        public AsyncInvoker<CreatePostgresqlDbUserResponse> CreatePostgresqlDbUserAsyncInvoker(CreatePostgresqlDbUserRequest createPostgresqlDbUserRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createPostgresqlDbUserRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_user",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPostgresqlDbUserRequest);
+            return new AsyncInvoker<CreatePostgresqlDbUserResponse>(this, "POST", request, JsonUtils.DeSerialize<CreatePostgresqlDbUserResponse>);
         }
         
         /// <summary>
@@ -2498,13 +3817,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<CreatePostgresqlExtensionResponse> CreatePostgresqlExtensionAsync(CreatePostgresqlExtensionRequest createPostgresqlExtensionRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , createPostgresqlExtensionRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/extensions",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPostgresqlExtensionRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
-            CreatePostgresqlExtensionResponse createPostgresqlExtensionResponse = JsonUtils.DeSerializeNull<CreatePostgresqlExtensionResponse>(response);
-            return createPostgresqlExtensionResponse;
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createPostgresqlExtensionRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/extensions",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPostgresqlExtensionRequest);
+            var response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerializeNull<CreatePostgresqlExtensionResponse>(response);
+        }
+
+        public AsyncInvoker<CreatePostgresqlExtensionResponse> CreatePostgresqlExtensionAsyncInvoker(CreatePostgresqlExtensionRequest createPostgresqlExtensionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createPostgresqlExtensionRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/extensions",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPostgresqlExtensionRequest);
+            return new AsyncInvoker<CreatePostgresqlExtensionResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreatePostgresqlExtensionResponse>);
         }
         
         /// <summary>
@@ -2516,13 +3843,23 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<DeletePostgresqlDatabaseResponse> DeletePostgresqlDatabaseAsync(DeletePostgresqlDatabaseRequest deletePostgresqlDatabaseRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , deletePostgresqlDatabaseRequest.InstanceId.ToString());
-            urlParam.Add("db_name" , deletePostgresqlDatabaseRequest.DbName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/database/{db_name}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePostgresqlDatabaseRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deletePostgresqlDatabaseRequest.InstanceId.ToString());
+            urlParam.Add("db_name", deletePostgresqlDatabaseRequest.DbName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/database/{db_name}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePostgresqlDatabaseRequest);
+            var response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerialize<DeletePostgresqlDatabaseResponse>(response);
+        }
+
+        public AsyncInvoker<DeletePostgresqlDatabaseResponse> DeletePostgresqlDatabaseAsyncInvoker(DeletePostgresqlDatabaseRequest deletePostgresqlDatabaseRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deletePostgresqlDatabaseRequest.InstanceId.ToString());
+            urlParam.Add("db_name", deletePostgresqlDatabaseRequest.DbName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/database/{db_name}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePostgresqlDatabaseRequest);
+            return new AsyncInvoker<DeletePostgresqlDatabaseResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeletePostgresqlDatabaseResponse>);
         }
         
         /// <summary>
@@ -2534,13 +3871,23 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<DeletePostgresqlDbUserResponse> DeletePostgresqlDbUserAsync(DeletePostgresqlDbUserRequest deletePostgresqlDbUserRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , deletePostgresqlDbUserRequest.InstanceId.ToString());
-            urlParam.Add("user_name" , deletePostgresqlDbUserRequest.UserName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_user/{user_name}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePostgresqlDbUserRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deletePostgresqlDbUserRequest.InstanceId.ToString());
+            urlParam.Add("user_name", deletePostgresqlDbUserRequest.UserName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_user/{user_name}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePostgresqlDbUserRequest);
+            var response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerialize<DeletePostgresqlDbUserResponse>(response);
+        }
+
+        public AsyncInvoker<DeletePostgresqlDbUserResponse> DeletePostgresqlDbUserAsyncInvoker(DeletePostgresqlDbUserRequest deletePostgresqlDbUserRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deletePostgresqlDbUserRequest.InstanceId.ToString());
+            urlParam.Add("user_name", deletePostgresqlDbUserRequest.UserName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_user/{user_name}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePostgresqlDbUserRequest);
+            return new AsyncInvoker<DeletePostgresqlDbUserResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeletePostgresqlDbUserResponse>);
         }
         
         /// <summary>
@@ -2552,13 +3899,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<DeletePostgresqlExtensionResponse> DeletePostgresqlExtensionAsync(DeletePostgresqlExtensionRequest deletePostgresqlExtensionRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , deletePostgresqlExtensionRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/extensions",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePostgresqlExtensionRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
-            DeletePostgresqlExtensionResponse deletePostgresqlExtensionResponse = JsonUtils.DeSerializeNull<DeletePostgresqlExtensionResponse>(response);
-            return deletePostgresqlExtensionResponse;
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deletePostgresqlExtensionRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/extensions",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePostgresqlExtensionRequest);
+            var response = await DoHttpRequestAsync("DELETE",request);
+            return JsonUtils.DeSerializeNull<DeletePostgresqlExtensionResponse>(response);
+        }
+
+        public AsyncInvoker<DeletePostgresqlExtensionResponse> DeletePostgresqlExtensionAsyncInvoker(DeletePostgresqlExtensionRequest deletePostgresqlExtensionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deletePostgresqlExtensionRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/extensions",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePostgresqlExtensionRequest);
+            return new AsyncInvoker<DeletePostgresqlExtensionResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeletePostgresqlExtensionResponse>);
         }
         
         /// <summary>
@@ -2570,12 +3925,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ListPostgresqlDatabaseSchemasResponse> ListPostgresqlDatabaseSchemasAsync(ListPostgresqlDatabaseSchemasRequest listPostgresqlDatabaseSchemasRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , listPostgresqlDatabaseSchemasRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/schema/detail",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPostgresqlDatabaseSchemasRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listPostgresqlDatabaseSchemasRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/schema/detail",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPostgresqlDatabaseSchemasRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListPostgresqlDatabaseSchemasResponse>(response);
+        }
+
+        public AsyncInvoker<ListPostgresqlDatabaseSchemasResponse> ListPostgresqlDatabaseSchemasAsyncInvoker(ListPostgresqlDatabaseSchemasRequest listPostgresqlDatabaseSchemasRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listPostgresqlDatabaseSchemasRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/schema/detail",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPostgresqlDatabaseSchemasRequest);
+            return new AsyncInvoker<ListPostgresqlDatabaseSchemasResponse>(this, "GET", request, JsonUtils.DeSerialize<ListPostgresqlDatabaseSchemasResponse>);
         }
         
         /// <summary>
@@ -2587,12 +3951,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ListPostgresqlDatabasesResponse> ListPostgresqlDatabasesAsync(ListPostgresqlDatabasesRequest listPostgresqlDatabasesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , listPostgresqlDatabasesRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/database/detail",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPostgresqlDatabasesRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listPostgresqlDatabasesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/database/detail",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPostgresqlDatabasesRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListPostgresqlDatabasesResponse>(response);
+        }
+
+        public AsyncInvoker<ListPostgresqlDatabasesResponse> ListPostgresqlDatabasesAsyncInvoker(ListPostgresqlDatabasesRequest listPostgresqlDatabasesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listPostgresqlDatabasesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/database/detail",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPostgresqlDatabasesRequest);
+            return new AsyncInvoker<ListPostgresqlDatabasesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListPostgresqlDatabasesResponse>);
         }
         
         /// <summary>
@@ -2604,12 +3977,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ListPostgresqlDbUserPaginatedResponse> ListPostgresqlDbUserPaginatedAsync(ListPostgresqlDbUserPaginatedRequest listPostgresqlDbUserPaginatedRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , listPostgresqlDbUserPaginatedRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_user/detail",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPostgresqlDbUserPaginatedRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listPostgresqlDbUserPaginatedRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_user/detail",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPostgresqlDbUserPaginatedRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListPostgresqlDbUserPaginatedResponse>(response);
+        }
+
+        public AsyncInvoker<ListPostgresqlDbUserPaginatedResponse> ListPostgresqlDbUserPaginatedAsyncInvoker(ListPostgresqlDbUserPaginatedRequest listPostgresqlDbUserPaginatedRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listPostgresqlDbUserPaginatedRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_user/detail",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPostgresqlDbUserPaginatedRequest);
+            return new AsyncInvoker<ListPostgresqlDbUserPaginatedResponse>(this, "GET", request, JsonUtils.DeSerialize<ListPostgresqlDbUserPaginatedResponse>);
         }
         
         /// <summary>
@@ -2621,12 +4003,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ListPostgresqlExtensionResponse> ListPostgresqlExtensionAsync(ListPostgresqlExtensionRequest listPostgresqlExtensionRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , listPostgresqlExtensionRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/extensions",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPostgresqlExtensionRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listPostgresqlExtensionRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/extensions",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPostgresqlExtensionRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListPostgresqlExtensionResponse>(response);
+        }
+
+        public AsyncInvoker<ListPostgresqlExtensionResponse> ListPostgresqlExtensionAsyncInvoker(ListPostgresqlExtensionRequest listPostgresqlExtensionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listPostgresqlExtensionRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/extensions",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPostgresqlExtensionRequest);
+            return new AsyncInvoker<ListPostgresqlExtensionResponse>(this, "GET", request, JsonUtils.DeSerialize<ListPostgresqlExtensionResponse>);
         }
         
         /// <summary>
@@ -2638,12 +4029,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<RevokePostgresqlDbPrivilegeResponse> RevokePostgresqlDbPrivilegeAsync(RevokePostgresqlDbPrivilegeRequest revokePostgresqlDbPrivilegeRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , revokePostgresqlDbPrivilegeRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_privilege",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", revokePostgresqlDbPrivilegeRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", revokePostgresqlDbPrivilegeRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_privilege",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", revokePostgresqlDbPrivilegeRequest);
+            var response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerialize<RevokePostgresqlDbPrivilegeResponse>(response);
+        }
+
+        public AsyncInvoker<RevokePostgresqlDbPrivilegeResponse> RevokePostgresqlDbPrivilegeAsyncInvoker(RevokePostgresqlDbPrivilegeRequest revokePostgresqlDbPrivilegeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", revokePostgresqlDbPrivilegeRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_privilege",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", revokePostgresqlDbPrivilegeRequest);
+            return new AsyncInvoker<RevokePostgresqlDbPrivilegeResponse>(this, "DELETE", request, JsonUtils.DeSerialize<RevokePostgresqlDbPrivilegeResponse>);
         }
         
         /// <summary>
@@ -2657,12 +4057,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<SearchQueryScaleComputeFlavorsResponse> SearchQueryScaleComputeFlavorsAsync(SearchQueryScaleComputeFlavorsRequest searchQueryScaleComputeFlavorsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , searchQueryScaleComputeFlavorsRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/instances/{instance_id}/proxy/scale/flavors",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", searchQueryScaleComputeFlavorsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", searchQueryScaleComputeFlavorsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/instances/{instance_id}/proxy/scale/flavors",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", searchQueryScaleComputeFlavorsRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<SearchQueryScaleComputeFlavorsResponse>(response);
+        }
+
+        public AsyncInvoker<SearchQueryScaleComputeFlavorsResponse> SearchQueryScaleComputeFlavorsAsyncInvoker(SearchQueryScaleComputeFlavorsRequest searchQueryScaleComputeFlavorsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", searchQueryScaleComputeFlavorsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/instances/{instance_id}/proxy/scale/flavors",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", searchQueryScaleComputeFlavorsRequest);
+            return new AsyncInvoker<SearchQueryScaleComputeFlavorsResponse>(this, "GET", request, JsonUtils.DeSerialize<SearchQueryScaleComputeFlavorsResponse>);
         }
         
         /// <summary>
@@ -2676,12 +4085,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<SearchQueryScaleFlavorsResponse> SearchQueryScaleFlavorsAsync(SearchQueryScaleFlavorsRequest searchQueryScaleFlavorsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , searchQueryScaleFlavorsRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/scale/flavors",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", searchQueryScaleFlavorsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", searchQueryScaleFlavorsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/scale/flavors",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", searchQueryScaleFlavorsRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<SearchQueryScaleFlavorsResponse>(response);
+        }
+
+        public AsyncInvoker<SearchQueryScaleFlavorsResponse> SearchQueryScaleFlavorsAsyncInvoker(SearchQueryScaleFlavorsRequest searchQueryScaleFlavorsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", searchQueryScaleFlavorsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/scale/flavors",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", searchQueryScaleFlavorsRequest);
+            return new AsyncInvoker<SearchQueryScaleFlavorsResponse>(this, "GET", request, JsonUtils.DeSerialize<SearchQueryScaleFlavorsResponse>);
         }
         
         /// <summary>
@@ -2693,12 +4111,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<SetDatabaseUserPrivilegeResponse> SetDatabaseUserPrivilegeAsync(SetDatabaseUserPrivilegeRequest setDatabaseUserPrivilegeRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , setDatabaseUserPrivilegeRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/user-privilege",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", setDatabaseUserPrivilegeRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", setDatabaseUserPrivilegeRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/user-privilege",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setDatabaseUserPrivilegeRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerializeNull<SetDatabaseUserPrivilegeResponse>(response);
+        }
+
+        public AsyncInvoker<SetDatabaseUserPrivilegeResponse> SetDatabaseUserPrivilegeAsyncInvoker(SetDatabaseUserPrivilegeRequest setDatabaseUserPrivilegeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", setDatabaseUserPrivilegeRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/user-privilege",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setDatabaseUserPrivilegeRequest);
+            return new AsyncInvoker<SetDatabaseUserPrivilegeResponse>(this, "POST", request, JsonUtils.DeSerializeNull<SetDatabaseUserPrivilegeResponse>);
         }
         
         /// <summary>
@@ -2710,12 +4137,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<SetPostgresqlDbUserPwdResponse> SetPostgresqlDbUserPwdAsync(SetPostgresqlDbUserPwdRequest setPostgresqlDbUserPwdRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , setPostgresqlDbUserPwdRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_user/resetpwd",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", setPostgresqlDbUserPwdRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", setPostgresqlDbUserPwdRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_user/resetpwd",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setPostgresqlDbUserPwdRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<SetPostgresqlDbUserPwdResponse>(response);
+        }
+
+        public AsyncInvoker<SetPostgresqlDbUserPwdResponse> SetPostgresqlDbUserPwdAsyncInvoker(SetPostgresqlDbUserPwdRequest setPostgresqlDbUserPwdRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", setPostgresqlDbUserPwdRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_user/resetpwd",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setPostgresqlDbUserPwdRequest);
+            return new AsyncInvoker<SetPostgresqlDbUserPwdResponse>(this, "POST", request, JsonUtils.DeSerialize<SetPostgresqlDbUserPwdResponse>);
         }
         
         /// <summary>
@@ -2727,12 +4163,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ShowInformationAboutDatabaseProxyResponse> ShowInformationAboutDatabaseProxyAsync(ShowInformationAboutDatabaseProxyRequest showInformationAboutDatabaseProxyRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , showInformationAboutDatabaseProxyRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInformationAboutDatabaseProxyRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showInformationAboutDatabaseProxyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInformationAboutDatabaseProxyRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowInformationAboutDatabaseProxyResponse>(response);
+        }
+
+        public AsyncInvoker<ShowInformationAboutDatabaseProxyResponse> ShowInformationAboutDatabaseProxyAsyncInvoker(ShowInformationAboutDatabaseProxyRequest showInformationAboutDatabaseProxyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showInformationAboutDatabaseProxyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInformationAboutDatabaseProxyRequest);
+            return new AsyncInvoker<ShowInformationAboutDatabaseProxyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInformationAboutDatabaseProxyResponse>);
         }
         
         /// <summary>
@@ -2744,13 +4189,23 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ShowPostgresqlParamValueResponse> ShowPostgresqlParamValueAsync(ShowPostgresqlParamValueRequest showPostgresqlParamValueRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , showPostgresqlParamValueRequest.InstanceId.ToString());
-            urlParam.Add("name" , showPostgresqlParamValueRequest.Name.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/parameter/{name}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPostgresqlParamValueRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showPostgresqlParamValueRequest.InstanceId.ToString());
+            urlParam.Add("name", showPostgresqlParamValueRequest.Name.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/parameter/{name}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPostgresqlParamValueRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowPostgresqlParamValueResponse>(response);
+        }
+
+        public AsyncInvoker<ShowPostgresqlParamValueResponse> ShowPostgresqlParamValueAsyncInvoker(ShowPostgresqlParamValueRequest showPostgresqlParamValueRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showPostgresqlParamValueRequest.InstanceId.ToString());
+            urlParam.Add("name", showPostgresqlParamValueRequest.Name.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/parameter/{name}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPostgresqlParamValueRequest);
+            return new AsyncInvoker<ShowPostgresqlParamValueResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPostgresqlParamValueResponse>);
         }
         
         /// <summary>
@@ -2762,12 +4217,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<StartDatabaseProxyResponse> StartDatabaseProxyAsync(StartDatabaseProxyRequest startDatabaseProxyRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , startDatabaseProxyRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", startDatabaseProxyRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", startDatabaseProxyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", startDatabaseProxyRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<StartDatabaseProxyResponse>(response);
+        }
+
+        public AsyncInvoker<StartDatabaseProxyResponse> StartDatabaseProxyAsyncInvoker(StartDatabaseProxyRequest startDatabaseProxyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", startDatabaseProxyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", startDatabaseProxyRequest);
+            return new AsyncInvoker<StartDatabaseProxyResponse>(this, "POST", request, JsonUtils.DeSerialize<StartDatabaseProxyResponse>);
         }
         
         /// <summary>
@@ -2779,12 +4243,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<StopDatabaseProxyResponse> StopDatabaseProxyAsync(StopDatabaseProxyRequest stopDatabaseProxyRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , stopDatabaseProxyRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopDatabaseProxyRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", stopDatabaseProxyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopDatabaseProxyRequest);
+            var response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerialize<StopDatabaseProxyResponse>(response);
+        }
+
+        public AsyncInvoker<StopDatabaseProxyResponse> StopDatabaseProxyAsyncInvoker(StopDatabaseProxyRequest stopDatabaseProxyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", stopDatabaseProxyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopDatabaseProxyRequest);
+            return new AsyncInvoker<StopDatabaseProxyResponse>(this, "DELETE", request, JsonUtils.DeSerialize<StopDatabaseProxyResponse>);
         }
         
         /// <summary>
@@ -2796,12 +4269,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<UpdateDbUserPrivilegeResponse> UpdateDbUserPrivilegeAsync(UpdateDbUserPrivilegeRequest updateDbUserPrivilegeRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , updateDbUserPrivilegeRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-user-privilege",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDbUserPrivilegeRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateDbUserPrivilegeRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-user-privilege",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDbUserPrivilegeRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerializeNull<UpdateDbUserPrivilegeResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateDbUserPrivilegeResponse> UpdateDbUserPrivilegeAsyncInvoker(UpdateDbUserPrivilegeRequest updateDbUserPrivilegeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateDbUserPrivilegeRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-user-privilege",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDbUserPrivilegeRequest);
+            return new AsyncInvoker<UpdateDbUserPrivilegeResponse>(this, "POST", request, JsonUtils.DeSerializeNull<UpdateDbUserPrivilegeResponse>);
         }
         
         /// <summary>
@@ -2813,12 +4295,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<UpdatePostgresqlDatabaseResponse> UpdatePostgresqlDatabaseAsync(UpdatePostgresqlDatabaseRequest updatePostgresqlDatabaseRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , updatePostgresqlDatabaseRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/database/update",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePostgresqlDatabaseRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updatePostgresqlDatabaseRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/database/update",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePostgresqlDatabaseRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<UpdatePostgresqlDatabaseResponse>(response);
+        }
+
+        public AsyncInvoker<UpdatePostgresqlDatabaseResponse> UpdatePostgresqlDatabaseAsyncInvoker(UpdatePostgresqlDatabaseRequest updatePostgresqlDatabaseRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updatePostgresqlDatabaseRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/database/update",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePostgresqlDatabaseRequest);
+            return new AsyncInvoker<UpdatePostgresqlDatabaseResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdatePostgresqlDatabaseResponse>);
         }
         
         /// <summary>
@@ -2830,13 +4321,23 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<UpdatePostgresqlDbUserCommentResponse> UpdatePostgresqlDbUserCommentAsync(UpdatePostgresqlDbUserCommentRequest updatePostgresqlDbUserCommentRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , updatePostgresqlDbUserCommentRequest.InstanceId.ToString());
-            urlParam.Add("user_name" , updatePostgresqlDbUserCommentRequest.UserName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-users/{user_name}/comment",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePostgresqlDbUserCommentRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updatePostgresqlDbUserCommentRequest.InstanceId.ToString());
+            urlParam.Add("user_name", updatePostgresqlDbUserCommentRequest.UserName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-users/{user_name}/comment",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePostgresqlDbUserCommentRequest);
+            var response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<UpdatePostgresqlDbUserCommentResponse>(response);
+        }
+
+        public AsyncInvoker<UpdatePostgresqlDbUserCommentResponse> UpdatePostgresqlDbUserCommentAsyncInvoker(UpdatePostgresqlDbUserCommentRequest updatePostgresqlDbUserCommentRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updatePostgresqlDbUserCommentRequest.InstanceId.ToString());
+            urlParam.Add("user_name", updatePostgresqlDbUserCommentRequest.UserName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-users/{user_name}/comment",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePostgresqlDbUserCommentRequest);
+            return new AsyncInvoker<UpdatePostgresqlDbUserCommentResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdatePostgresqlDbUserCommentResponse>);
         }
         
         /// <summary>
@@ -2848,13 +4349,23 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<UpdatePostgresqlParameterValueResponse> UpdatePostgresqlParameterValueAsync(UpdatePostgresqlParameterValueRequest updatePostgresqlParameterValueRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , updatePostgresqlParameterValueRequest.InstanceId.ToString());
-            urlParam.Add("name" , updatePostgresqlParameterValueRequest.Name.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/parameter/{name}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePostgresqlParameterValueRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updatePostgresqlParameterValueRequest.InstanceId.ToString());
+            urlParam.Add("name", updatePostgresqlParameterValueRequest.Name.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/parameter/{name}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePostgresqlParameterValueRequest);
+            var response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<UpdatePostgresqlParameterValueResponse>(response);
+        }
+
+        public AsyncInvoker<UpdatePostgresqlParameterValueResponse> UpdatePostgresqlParameterValueAsyncInvoker(UpdatePostgresqlParameterValueRequest updatePostgresqlParameterValueRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updatePostgresqlParameterValueRequest.InstanceId.ToString());
+            urlParam.Add("name", updatePostgresqlParameterValueRequest.Name.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/parameter/{name}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePostgresqlParameterValueRequest);
+            return new AsyncInvoker<UpdatePostgresqlParameterValueResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdatePostgresqlParameterValueResponse>);
         }
         
         /// <summary>
@@ -2866,12 +4377,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<UpdateReadWeightResponse> UpdateReadWeightAsync(UpdateReadWeightRequest updateReadWeightRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , updateReadWeightRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/weight",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateReadWeightRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateReadWeightRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/weight",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateReadWeightRequest);
+            var response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<UpdateReadWeightResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateReadWeightResponse> UpdateReadWeightAsyncInvoker(UpdateReadWeightRequest updateReadWeightRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateReadWeightRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/weight",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateReadWeightRequest);
+            return new AsyncInvoker<UpdateReadWeightResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateReadWeightResponse>);
         }
         
         /// <summary>
@@ -2883,12 +4403,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<AllowSqlserverDbUserPrivilegeResponse> AllowSqlserverDbUserPrivilegeAsync(AllowSqlserverDbUserPrivilegeRequest allowSqlserverDbUserPrivilegeRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , allowSqlserverDbUserPrivilegeRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_privilege",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", allowSqlserverDbUserPrivilegeRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", allowSqlserverDbUserPrivilegeRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_privilege",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", allowSqlserverDbUserPrivilegeRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<AllowSqlserverDbUserPrivilegeResponse>(response);
+        }
+
+        public AsyncInvoker<AllowSqlserverDbUserPrivilegeResponse> AllowSqlserverDbUserPrivilegeAsyncInvoker(AllowSqlserverDbUserPrivilegeRequest allowSqlserverDbUserPrivilegeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", allowSqlserverDbUserPrivilegeRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_privilege",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", allowSqlserverDbUserPrivilegeRequest);
+            return new AsyncInvoker<AllowSqlserverDbUserPrivilegeResponse>(this, "POST", request, JsonUtils.DeSerialize<AllowSqlserverDbUserPrivilegeResponse>);
         }
         
         /// <summary>
@@ -2900,12 +4429,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<BatchAddMsdtcsResponse> BatchAddMsdtcsAsync(BatchAddMsdtcsRequest batchAddMsdtcsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , batchAddMsdtcsRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/msdtc/host",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchAddMsdtcsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", batchAddMsdtcsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/msdtc/host",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchAddMsdtcsRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<BatchAddMsdtcsResponse>(response);
+        }
+
+        public AsyncInvoker<BatchAddMsdtcsResponse> BatchAddMsdtcsAsyncInvoker(BatchAddMsdtcsRequest batchAddMsdtcsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", batchAddMsdtcsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/msdtc/host",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchAddMsdtcsRequest);
+            return new AsyncInvoker<BatchAddMsdtcsResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchAddMsdtcsResponse>);
         }
         
         /// <summary>
@@ -2917,12 +4455,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<CreateSqlserverDatabaseResponse> CreateSqlserverDatabaseAsync(CreateSqlserverDatabaseRequest createSqlserverDatabaseRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , createSqlserverDatabaseRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/database",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createSqlserverDatabaseRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createSqlserverDatabaseRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/database",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createSqlserverDatabaseRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateSqlserverDatabaseResponse>(response);
+        }
+
+        public AsyncInvoker<CreateSqlserverDatabaseResponse> CreateSqlserverDatabaseAsyncInvoker(CreateSqlserverDatabaseRequest createSqlserverDatabaseRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createSqlserverDatabaseRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/database",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createSqlserverDatabaseRequest);
+            return new AsyncInvoker<CreateSqlserverDatabaseResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateSqlserverDatabaseResponse>);
         }
         
         /// <summary>
@@ -2934,12 +4481,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<CreateSqlserverDbUserResponse> CreateSqlserverDbUserAsync(CreateSqlserverDbUserRequest createSqlserverDbUserRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , createSqlserverDbUserRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_user",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createSqlserverDbUserRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createSqlserverDbUserRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_user",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createSqlserverDbUserRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateSqlserverDbUserResponse>(response);
+        }
+
+        public AsyncInvoker<CreateSqlserverDbUserResponse> CreateSqlserverDbUserAsyncInvoker(CreateSqlserverDbUserRequest createSqlserverDbUserRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createSqlserverDbUserRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_user",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createSqlserverDbUserRequest);
+            return new AsyncInvoker<CreateSqlserverDbUserResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateSqlserverDbUserResponse>);
         }
         
         /// <summary>
@@ -2951,13 +4507,23 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<DeleteSqlserverDatabaseResponse> DeleteSqlserverDatabaseAsync(DeleteSqlserverDatabaseRequest deleteSqlserverDatabaseRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , deleteSqlserverDatabaseRequest.InstanceId.ToString());
-            urlParam.Add("db_name" , deleteSqlserverDatabaseRequest.DbName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/database/{db_name}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSqlserverDatabaseRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteSqlserverDatabaseRequest.InstanceId.ToString());
+            urlParam.Add("db_name", deleteSqlserverDatabaseRequest.DbName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/database/{db_name}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSqlserverDatabaseRequest);
+            var response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerialize<DeleteSqlserverDatabaseResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteSqlserverDatabaseResponse> DeleteSqlserverDatabaseAsyncInvoker(DeleteSqlserverDatabaseRequest deleteSqlserverDatabaseRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteSqlserverDatabaseRequest.InstanceId.ToString());
+            urlParam.Add("db_name", deleteSqlserverDatabaseRequest.DbName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/database/{db_name}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSqlserverDatabaseRequest);
+            return new AsyncInvoker<DeleteSqlserverDatabaseResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteSqlserverDatabaseResponse>);
         }
         
         /// <summary>
@@ -2969,13 +4535,23 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<DeleteSqlserverDatabaseExResponse> DeleteSqlserverDatabaseExAsync(DeleteSqlserverDatabaseExRequest deleteSqlserverDatabaseExRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , deleteSqlserverDatabaseExRequest.InstanceId.ToString());
-            urlParam.Add("db_name" , deleteSqlserverDatabaseExRequest.DbName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/instances/{instance_id}/database/{db_name}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSqlserverDatabaseExRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteSqlserverDatabaseExRequest.InstanceId.ToString());
+            urlParam.Add("db_name", deleteSqlserverDatabaseExRequest.DbName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/instances/{instance_id}/database/{db_name}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSqlserverDatabaseExRequest);
+            var response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerialize<DeleteSqlserverDatabaseExResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteSqlserverDatabaseExResponse> DeleteSqlserverDatabaseExAsyncInvoker(DeleteSqlserverDatabaseExRequest deleteSqlserverDatabaseExRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteSqlserverDatabaseExRequest.InstanceId.ToString());
+            urlParam.Add("db_name", deleteSqlserverDatabaseExRequest.DbName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/instances/{instance_id}/database/{db_name}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSqlserverDatabaseExRequest);
+            return new AsyncInvoker<DeleteSqlserverDatabaseExResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteSqlserverDatabaseExResponse>);
         }
         
         /// <summary>
@@ -2987,13 +4563,23 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<DeleteSqlserverDbUserResponse> DeleteSqlserverDbUserAsync(DeleteSqlserverDbUserRequest deleteSqlserverDbUserRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , deleteSqlserverDbUserRequest.InstanceId.ToString());
-            urlParam.Add("user_name" , deleteSqlserverDbUserRequest.UserName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_user/{user_name}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSqlserverDbUserRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteSqlserverDbUserRequest.InstanceId.ToString());
+            urlParam.Add("user_name", deleteSqlserverDbUserRequest.UserName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_user/{user_name}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSqlserverDbUserRequest);
+            var response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerialize<DeleteSqlserverDbUserResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteSqlserverDbUserResponse> DeleteSqlserverDbUserAsyncInvoker(DeleteSqlserverDbUserRequest deleteSqlserverDbUserRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteSqlserverDbUserRequest.InstanceId.ToString());
+            urlParam.Add("user_name", deleteSqlserverDbUserRequest.UserName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_user/{user_name}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSqlserverDbUserRequest);
+            return new AsyncInvoker<DeleteSqlserverDbUserResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteSqlserverDbUserResponse>);
         }
         
         /// <summary>
@@ -3005,12 +4591,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ListAuthorizedSqlserverDbUsersResponse> ListAuthorizedSqlserverDbUsersAsync(ListAuthorizedSqlserverDbUsersRequest listAuthorizedSqlserverDbUsersRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , listAuthorizedSqlserverDbUsersRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/database/db_user",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAuthorizedSqlserverDbUsersRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listAuthorizedSqlserverDbUsersRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/database/db_user",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAuthorizedSqlserverDbUsersRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListAuthorizedSqlserverDbUsersResponse>(response);
+        }
+
+        public AsyncInvoker<ListAuthorizedSqlserverDbUsersResponse> ListAuthorizedSqlserverDbUsersAsyncInvoker(ListAuthorizedSqlserverDbUsersRequest listAuthorizedSqlserverDbUsersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listAuthorizedSqlserverDbUsersRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/database/db_user",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAuthorizedSqlserverDbUsersRequest);
+            return new AsyncInvoker<ListAuthorizedSqlserverDbUsersResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAuthorizedSqlserverDbUsersResponse>);
         }
         
         /// <summary>
@@ -3022,12 +4617,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ListMsdtcHostsResponse> ListMsdtcHostsAsync(ListMsdtcHostsRequest listMsdtcHostsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , listMsdtcHostsRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/msdtc/hosts",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listMsdtcHostsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listMsdtcHostsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/msdtc/hosts",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listMsdtcHostsRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListMsdtcHostsResponse>(response);
+        }
+
+        public AsyncInvoker<ListMsdtcHostsResponse> ListMsdtcHostsAsyncInvoker(ListMsdtcHostsRequest listMsdtcHostsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listMsdtcHostsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/msdtc/hosts",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listMsdtcHostsRequest);
+            return new AsyncInvoker<ListMsdtcHostsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListMsdtcHostsResponse>);
         }
         
         /// <summary>
@@ -3039,12 +4643,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ListSqlserverDatabasesResponse> ListSqlserverDatabasesAsync(ListSqlserverDatabasesRequest listSqlserverDatabasesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , listSqlserverDatabasesRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/database/detail",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSqlserverDatabasesRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listSqlserverDatabasesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/database/detail",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSqlserverDatabasesRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListSqlserverDatabasesResponse>(response);
+        }
+
+        public AsyncInvoker<ListSqlserverDatabasesResponse> ListSqlserverDatabasesAsyncInvoker(ListSqlserverDatabasesRequest listSqlserverDatabasesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listSqlserverDatabasesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/database/detail",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSqlserverDatabasesRequest);
+            return new AsyncInvoker<ListSqlserverDatabasesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSqlserverDatabasesResponse>);
         }
         
         /// <summary>
@@ -3056,12 +4669,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ListSqlserverDbUsersResponse> ListSqlserverDbUsersAsync(ListSqlserverDbUsersRequest listSqlserverDbUsersRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , listSqlserverDbUsersRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_user/detail",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSqlserverDbUsersRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listSqlserverDbUsersRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_user/detail",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSqlserverDbUsersRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListSqlserverDbUsersResponse>(response);
+        }
+
+        public AsyncInvoker<ListSqlserverDbUsersResponse> ListSqlserverDbUsersAsyncInvoker(ListSqlserverDbUsersRequest listSqlserverDbUsersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listSqlserverDbUsersRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_user/detail",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSqlserverDbUsersRequest);
+            return new AsyncInvoker<ListSqlserverDbUsersResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSqlserverDbUsersResponse>);
         }
         
         /// <summary>
@@ -3073,12 +4695,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<ModifyCollationResponse> ModifyCollationAsync(ModifyCollationRequest modifyCollationRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , modifyCollationRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/collations",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyCollationRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", modifyCollationRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/collations",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyCollationRequest);
+            var response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<ModifyCollationResponse>(response);
+        }
+
+        public AsyncInvoker<ModifyCollationResponse> ModifyCollationAsyncInvoker(ModifyCollationRequest modifyCollationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", modifyCollationRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/collations",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyCollationRequest);
+            return new AsyncInvoker<ModifyCollationResponse>(this, "PUT", request, JsonUtils.DeSerialize<ModifyCollationResponse>);
         }
         
         /// <summary>
@@ -3090,12 +4721,21 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// </summary>
         public async Task<RevokeSqlserverDbUserPrivilegeResponse> RevokeSqlserverDbUserPrivilegeAsync(RevokeSqlserverDbUserPrivilegeRequest revokeSqlserverDbUserPrivilegeRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , revokeSqlserverDbUserPrivilegeRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_privilege",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", revokeSqlserverDbUserPrivilegeRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", revokeSqlserverDbUserPrivilegeRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_privilege",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", revokeSqlserverDbUserPrivilegeRequest);
+            var response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerialize<RevokeSqlserverDbUserPrivilegeResponse>(response);
+        }
+
+        public AsyncInvoker<RevokeSqlserverDbUserPrivilegeResponse> RevokeSqlserverDbUserPrivilegeAsyncInvoker(RevokeSqlserverDbUserPrivilegeRequest revokeSqlserverDbUserPrivilegeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", revokeSqlserverDbUserPrivilegeRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_privilege",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", revokeSqlserverDbUserPrivilegeRequest);
+            return new AsyncInvoker<RevokeSqlserverDbUserPrivilegeResponse>(this, "DELETE", request, JsonUtils.DeSerialize<RevokeSqlserverDbUserPrivilegeResponse>);
         }
         
     }

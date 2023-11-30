@@ -11,13 +11,13 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Moderation.V3.Model
 {
     /// <summary>
-    /// 作业审核结果
+    /// 作业审核结果，当作业状态为succeeded时存在。
     /// </summary>
     public class DocumentQueryResponseResult 
     {
 
         /// <summary>
-        /// 文档审核结果是否通过。 block：包含敏感信息，不通过 pass：不包含敏感信息，通过 review：需要人工复检
+        /// 文档审核结果是否通过。 block：包含敏感信息，不通过 review：需要人工复检 pass：不包含敏感信息，通过
         /// </summary>
         [JsonProperty("suggestion", NullValueHandling = NullValueHandling.Ignore)]
         public string Suggestion { get; set; }

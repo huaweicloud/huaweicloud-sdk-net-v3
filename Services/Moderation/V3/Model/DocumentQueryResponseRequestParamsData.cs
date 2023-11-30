@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
     {
 
         /// <summary>
-        /// 创建作业时传的url参数
+        /// 创建作业时传的url参数。目前支持：公网HTTP/HTTPS URL。
         /// </summary>
         [JsonProperty("url", NullValueHandling = NullValueHandling.Ignore)]
         public string Url { get; set; }

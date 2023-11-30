@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public string Az { get; set; }
 
         /// <summary>
-        /// 节点的操作系统类型。具体支持的操作系统请参见[节点操作系统说明](node-os.xml)。 &gt; - 系统会根据集群版本自动选择支持的系统版本。当前集群版本不支持该系统类型，则会报错。 &gt; - 若在创建节点时指定了extendParam中的alpha.cce/NodeImageID参数，可以不填写此参数。 
+        /// 节点的操作系统类型。具体支持的操作系统请参见[节点操作系统说明](node-os.xml)。 &gt; - 系统会根据集群版本自动选择支持的系统版本。当前集群版本不支持该系统类型，则会报错。 &gt; - 若在创建节点时指定了extendParam中的alpha.cce/NodeImageID参数，可以不填写此参数。 &gt; - 创建节点池时，该参数为必选。 
         /// </summary>
         [JsonProperty("os", NullValueHandling = NullValueHandling.Ignore)]
         public string Os { get; set; }
@@ -107,7 +107,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public string DedicatedHostId { get; set; }
 
         /// <summary>
-        /// 云服务器标签，键必须唯一，CCE支持的最大用户自定义标签数量依region而定，自定义标签数上限为8个。 字段使用场景：在节点创建场景下，支持指定初始值，查询时不返回该字段；在节点池场景下，其中节点模板中支持指定初始值，查询时支持返回该字段；在其余场景下，查询时都不会返回该字段。 
+        /// 云服务器标签，键必须唯一，CCE支持的最大用户自定义标签数量依region而定，自定义标签数上限为8个。 字段使用场景：在节点创建场景下，支持指定初始值，查询时不返回该字段；在节点池场景下，其中节点模板中支持指定初始值，查询时支持返回该字段；在其余场景下，查询时都不会返回该字段。 &gt; 标签键只能包含大写字母.小写字母、数字和特殊字符(-_)以及Unicode字符，长度不超过36个字符。 
         /// </summary>
         [JsonProperty("userTags", NullValueHandling = NullValueHandling.Ignore)]
         public List<UserTag> UserTags { get; set; }
@@ -129,6 +129,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         [JsonProperty("extendParam", NullValueHandling = NullValueHandling.Ignore)]
         public NodeExtendParam ExtendParam { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("hostnameConfig", NullValueHandling = NullValueHandling.Ignore)]
+        public HostnameConfig HostnameConfig { get; set; }
 
 
 
@@ -158,6 +164,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  runtime: ").Append(Runtime).Append("\n");
             sb.Append("  initializedConditions: ").Append(InitializedConditions).Append("\n");
             sb.Append("  extendParam: ").Append(ExtendParam).Append("\n");
+            sb.Append("  hostnameConfig: ").Append(HostnameConfig).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -278,6 +285,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.ExtendParam == input.ExtendParam ||
                     (this.ExtendParam != null &&
                     this.ExtendParam.Equals(input.ExtendParam))
+                ) && 
+                (
+                    this.HostnameConfig == input.HostnameConfig ||
+                    (this.HostnameConfig != null &&
+                    this.HostnameConfig.Equals(input.HostnameConfig))
                 );
         }
 
@@ -327,6 +339,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     hashCode = hashCode * 59 + this.InitializedConditions.GetHashCode();
                 if (this.ExtendParam != null)
                     hashCode = hashCode * 59 + this.ExtendParam.GetHashCode();
+                if (this.HostnameConfig != null)
+                    hashCode = hashCode * 59 + this.HostnameConfig.GetHashCode();
                 return hashCode;
             }
         }

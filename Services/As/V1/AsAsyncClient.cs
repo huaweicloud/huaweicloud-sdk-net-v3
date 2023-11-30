@@ -24,12 +24,21 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<AttachCallbackInstanceLifeCycleHookResponse> AttachCallbackInstanceLifeCycleHookAsync(AttachCallbackInstanceLifeCycleHookRequest attachCallbackInstanceLifeCycleHookRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("scaling_group_id" , attachCallbackInstanceLifeCycleHookRequest.ScalingGroupId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_instance_hook/{scaling_group_id}/callback",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", attachCallbackInstanceLifeCycleHookRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", attachCallbackInstanceLifeCycleHookRequest.ScalingGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_instance_hook/{scaling_group_id}/callback",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", attachCallbackInstanceLifeCycleHookRequest);
+            var response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerializeNull<AttachCallbackInstanceLifeCycleHookResponse>(response);
+        }
+
+        public AsyncInvoker<AttachCallbackInstanceLifeCycleHookResponse> AttachCallbackInstanceLifeCycleHookAsyncInvoker(AttachCallbackInstanceLifeCycleHookRequest attachCallbackInstanceLifeCycleHookRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", attachCallbackInstanceLifeCycleHookRequest.ScalingGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_instance_hook/{scaling_group_id}/callback",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", attachCallbackInstanceLifeCycleHookRequest);
+            return new AsyncInvoker<AttachCallbackInstanceLifeCycleHookResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<AttachCallbackInstanceLifeCycleHookResponse>);
         }
         
         /// <summary>
@@ -41,12 +50,21 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<BatchAddScalingInstancesResponse> BatchAddScalingInstancesAsync(BatchAddScalingInstancesRequest batchAddScalingInstancesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("scaling_group_id" , batchAddScalingInstancesRequest.ScalingGroupId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_group_instance/{scaling_group_id}/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchAddScalingInstancesRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", batchAddScalingInstancesRequest.ScalingGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_group_instance/{scaling_group_id}/action",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchAddScalingInstancesRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerializeNull<BatchAddScalingInstancesResponse>(response);
+        }
+
+        public AsyncInvoker<BatchAddScalingInstancesResponse> BatchAddScalingInstancesAsyncInvoker(BatchAddScalingInstancesRequest batchAddScalingInstancesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", batchAddScalingInstancesRequest.ScalingGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_group_instance/{scaling_group_id}/action",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchAddScalingInstancesRequest);
+            return new AsyncInvoker<BatchAddScalingInstancesResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchAddScalingInstancesResponse>);
         }
         
         /// <summary>
@@ -58,11 +76,19 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<BatchDeleteScalingConfigsResponse> BatchDeleteScalingConfigsAsync(BatchDeleteScalingConfigsRequest batchDeleteScalingConfigsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_configurations",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteScalingConfigsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_configurations",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteScalingConfigsRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerializeNull<BatchDeleteScalingConfigsResponse>(response);
+        }
+
+        public AsyncInvoker<BatchDeleteScalingConfigsResponse> BatchDeleteScalingConfigsAsyncInvoker(BatchDeleteScalingConfigsRequest batchDeleteScalingConfigsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_configurations",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteScalingConfigsRequest);
+            return new AsyncInvoker<BatchDeleteScalingConfigsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchDeleteScalingConfigsResponse>);
         }
         
         /// <summary>
@@ -74,11 +100,19 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<BatchDeleteScalingPoliciesResponse> BatchDeleteScalingPoliciesAsync(BatchDeleteScalingPoliciesRequest batchDeleteScalingPoliciesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_policies/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteScalingPoliciesRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_policies/action",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteScalingPoliciesRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerializeNull<BatchDeleteScalingPoliciesResponse>(response);
+        }
+
+        public AsyncInvoker<BatchDeleteScalingPoliciesResponse> BatchDeleteScalingPoliciesAsyncInvoker(BatchDeleteScalingPoliciesRequest batchDeleteScalingPoliciesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_policies/action",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteScalingPoliciesRequest);
+            return new AsyncInvoker<BatchDeleteScalingPoliciesResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchDeleteScalingPoliciesResponse>);
         }
         
         /// <summary>
@@ -90,11 +124,19 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<BatchPauseScalingPoliciesResponse> BatchPauseScalingPoliciesAsync(BatchPauseScalingPoliciesRequest batchPauseScalingPoliciesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_policies/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchPauseScalingPoliciesRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_policies/action",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchPauseScalingPoliciesRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerializeNull<BatchPauseScalingPoliciesResponse>(response);
+        }
+
+        public AsyncInvoker<BatchPauseScalingPoliciesResponse> BatchPauseScalingPoliciesAsyncInvoker(BatchPauseScalingPoliciesRequest batchPauseScalingPoliciesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_policies/action",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchPauseScalingPoliciesRequest);
+            return new AsyncInvoker<BatchPauseScalingPoliciesResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchPauseScalingPoliciesResponse>);
         }
         
         /// <summary>
@@ -106,12 +148,21 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<BatchProtectScalingInstancesResponse> BatchProtectScalingInstancesAsync(BatchProtectScalingInstancesRequest batchProtectScalingInstancesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("scaling_group_id" , batchProtectScalingInstancesRequest.ScalingGroupId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_group_instance/{scaling_group_id}/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchProtectScalingInstancesRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", batchProtectScalingInstancesRequest.ScalingGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_group_instance/{scaling_group_id}/action",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchProtectScalingInstancesRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerializeNull<BatchProtectScalingInstancesResponse>(response);
+        }
+
+        public AsyncInvoker<BatchProtectScalingInstancesResponse> BatchProtectScalingInstancesAsyncInvoker(BatchProtectScalingInstancesRequest batchProtectScalingInstancesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", batchProtectScalingInstancesRequest.ScalingGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_group_instance/{scaling_group_id}/action",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchProtectScalingInstancesRequest);
+            return new AsyncInvoker<BatchProtectScalingInstancesResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchProtectScalingInstancesResponse>);
         }
         
         /// <summary>
@@ -123,12 +174,21 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<BatchRemoveScalingInstancesResponse> BatchRemoveScalingInstancesAsync(BatchRemoveScalingInstancesRequest batchRemoveScalingInstancesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("scaling_group_id" , batchRemoveScalingInstancesRequest.ScalingGroupId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_group_instance/{scaling_group_id}/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchRemoveScalingInstancesRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", batchRemoveScalingInstancesRequest.ScalingGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_group_instance/{scaling_group_id}/action",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchRemoveScalingInstancesRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerializeNull<BatchRemoveScalingInstancesResponse>(response);
+        }
+
+        public AsyncInvoker<BatchRemoveScalingInstancesResponse> BatchRemoveScalingInstancesAsyncInvoker(BatchRemoveScalingInstancesRequest batchRemoveScalingInstancesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", batchRemoveScalingInstancesRequest.ScalingGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_group_instance/{scaling_group_id}/action",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchRemoveScalingInstancesRequest);
+            return new AsyncInvoker<BatchRemoveScalingInstancesResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchRemoveScalingInstancesResponse>);
         }
         
         /// <summary>
@@ -140,11 +200,19 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<BatchResumeScalingPoliciesResponse> BatchResumeScalingPoliciesAsync(BatchResumeScalingPoliciesRequest batchResumeScalingPoliciesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_policies/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchResumeScalingPoliciesRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_policies/action",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchResumeScalingPoliciesRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerializeNull<BatchResumeScalingPoliciesResponse>(response);
+        }
+
+        public AsyncInvoker<BatchResumeScalingPoliciesResponse> BatchResumeScalingPoliciesAsyncInvoker(BatchResumeScalingPoliciesRequest batchResumeScalingPoliciesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_policies/action",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchResumeScalingPoliciesRequest);
+            return new AsyncInvoker<BatchResumeScalingPoliciesResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchResumeScalingPoliciesResponse>);
         }
         
         /// <summary>
@@ -156,12 +224,21 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<BatchSetScalingInstancesStandbyResponse> BatchSetScalingInstancesStandbyAsync(BatchSetScalingInstancesStandbyRequest batchSetScalingInstancesStandbyRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("scaling_group_id" , batchSetScalingInstancesStandbyRequest.ScalingGroupId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_group_instance/{scaling_group_id}/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchSetScalingInstancesStandbyRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", batchSetScalingInstancesStandbyRequest.ScalingGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_group_instance/{scaling_group_id}/action",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchSetScalingInstancesStandbyRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerializeNull<BatchSetScalingInstancesStandbyResponse>(response);
+        }
+
+        public AsyncInvoker<BatchSetScalingInstancesStandbyResponse> BatchSetScalingInstancesStandbyAsyncInvoker(BatchSetScalingInstancesStandbyRequest batchSetScalingInstancesStandbyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", batchSetScalingInstancesStandbyRequest.ScalingGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_group_instance/{scaling_group_id}/action",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchSetScalingInstancesStandbyRequest);
+            return new AsyncInvoker<BatchSetScalingInstancesStandbyResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchSetScalingInstancesStandbyResponse>);
         }
         
         /// <summary>
@@ -173,12 +250,21 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<BatchUnprotectScalingInstancesResponse> BatchUnprotectScalingInstancesAsync(BatchUnprotectScalingInstancesRequest batchUnprotectScalingInstancesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("scaling_group_id" , batchUnprotectScalingInstancesRequest.ScalingGroupId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_group_instance/{scaling_group_id}/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchUnprotectScalingInstancesRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", batchUnprotectScalingInstancesRequest.ScalingGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_group_instance/{scaling_group_id}/action",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchUnprotectScalingInstancesRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerializeNull<BatchUnprotectScalingInstancesResponse>(response);
+        }
+
+        public AsyncInvoker<BatchUnprotectScalingInstancesResponse> BatchUnprotectScalingInstancesAsyncInvoker(BatchUnprotectScalingInstancesRequest batchUnprotectScalingInstancesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", batchUnprotectScalingInstancesRequest.ScalingGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_group_instance/{scaling_group_id}/action",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchUnprotectScalingInstancesRequest);
+            return new AsyncInvoker<BatchUnprotectScalingInstancesResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchUnprotectScalingInstancesResponse>);
         }
         
         /// <summary>
@@ -190,12 +276,21 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<BatchUnsetScalingInstancesStantbyResponse> BatchUnsetScalingInstancesStantbyAsync(BatchUnsetScalingInstancesStantbyRequest batchUnsetScalingInstancesStantbyRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("scaling_group_id" , batchUnsetScalingInstancesStantbyRequest.ScalingGroupId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_group_instance/{scaling_group_id}/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchUnsetScalingInstancesStantbyRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", batchUnsetScalingInstancesStantbyRequest.ScalingGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_group_instance/{scaling_group_id}/action",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchUnsetScalingInstancesStantbyRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerializeNull<BatchUnsetScalingInstancesStantbyResponse>(response);
+        }
+
+        public AsyncInvoker<BatchUnsetScalingInstancesStantbyResponse> BatchUnsetScalingInstancesStantbyAsyncInvoker(BatchUnsetScalingInstancesStantbyRequest batchUnsetScalingInstancesStantbyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", batchUnsetScalingInstancesStantbyRequest.ScalingGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_group_instance/{scaling_group_id}/action",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchUnsetScalingInstancesStantbyRequest);
+            return new AsyncInvoker<BatchUnsetScalingInstancesStantbyResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchUnsetScalingInstancesStantbyResponse>);
         }
         
         /// <summary>
@@ -207,12 +302,21 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<CreateGroupScheduledTaskResponse> CreateGroupScheduledTaskAsync(CreateGroupScheduledTaskRequest createGroupScheduledTaskRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("scaling_group_id" , createGroupScheduledTaskRequest.ScalingGroupId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling-groups/{scaling_group_id}/scheduled-tasks",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createGroupScheduledTaskRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", createGroupScheduledTaskRequest.ScalingGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling-groups/{scaling_group_id}/scheduled-tasks",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createGroupScheduledTaskRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateGroupScheduledTaskResponse>(response);
+        }
+
+        public AsyncInvoker<CreateGroupScheduledTaskResponse> CreateGroupScheduledTaskAsyncInvoker(CreateGroupScheduledTaskRequest createGroupScheduledTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", createGroupScheduledTaskRequest.ScalingGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling-groups/{scaling_group_id}/scheduled-tasks",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createGroupScheduledTaskRequest);
+            return new AsyncInvoker<CreateGroupScheduledTaskResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateGroupScheduledTaskResponse>);
         }
         
         /// <summary>
@@ -224,12 +328,21 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<CreateLifyCycleHookResponse> CreateLifyCycleHookAsync(CreateLifyCycleHookRequest createLifyCycleHookRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("scaling_group_id" , createLifyCycleHookRequest.ScalingGroupId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_lifecycle_hook/{scaling_group_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createLifyCycleHookRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", createLifyCycleHookRequest.ScalingGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_lifecycle_hook/{scaling_group_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createLifyCycleHookRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateLifyCycleHookResponse>(response);
+        }
+
+        public AsyncInvoker<CreateLifyCycleHookResponse> CreateLifyCycleHookAsyncInvoker(CreateLifyCycleHookRequest createLifyCycleHookRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", createLifyCycleHookRequest.ScalingGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_lifecycle_hook/{scaling_group_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createLifyCycleHookRequest);
+            return new AsyncInvoker<CreateLifyCycleHookResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateLifyCycleHookResponse>);
         }
         
         /// <summary>
@@ -241,11 +354,19 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<CreateScalingConfigResponse> CreateScalingConfigAsync(CreateScalingConfigRequest createScalingConfigRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_configuration",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createScalingConfigRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_configuration",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createScalingConfigRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateScalingConfigResponse>(response);
+        }
+
+        public AsyncInvoker<CreateScalingConfigResponse> CreateScalingConfigAsyncInvoker(CreateScalingConfigRequest createScalingConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_configuration",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createScalingConfigRequest);
+            return new AsyncInvoker<CreateScalingConfigResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateScalingConfigResponse>);
         }
         
         /// <summary>
@@ -257,11 +378,19 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<CreateScalingGroupResponse> CreateScalingGroupAsync(CreateScalingGroupRequest createScalingGroupRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_group",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createScalingGroupRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_group",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createScalingGroupRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateScalingGroupResponse>(response);
+        }
+
+        public AsyncInvoker<CreateScalingGroupResponse> CreateScalingGroupAsyncInvoker(CreateScalingGroupRequest createScalingGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_group",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createScalingGroupRequest);
+            return new AsyncInvoker<CreateScalingGroupResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateScalingGroupResponse>);
         }
         
         /// <summary>
@@ -273,12 +402,21 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<CreateScalingNotificationResponse> CreateScalingNotificationAsync(CreateScalingNotificationRequest createScalingNotificationRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("scaling_group_id" , createScalingNotificationRequest.ScalingGroupId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_notification/{scaling_group_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createScalingNotificationRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", createScalingNotificationRequest.ScalingGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_notification/{scaling_group_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createScalingNotificationRequest);
+            var response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<CreateScalingNotificationResponse>(response);
+        }
+
+        public AsyncInvoker<CreateScalingNotificationResponse> CreateScalingNotificationAsyncInvoker(CreateScalingNotificationRequest createScalingNotificationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", createScalingNotificationRequest.ScalingGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_notification/{scaling_group_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createScalingNotificationRequest);
+            return new AsyncInvoker<CreateScalingNotificationResponse>(this, "PUT", request, JsonUtils.DeSerialize<CreateScalingNotificationResponse>);
         }
         
         /// <summary>
@@ -290,11 +428,19 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<CreateScalingPolicyResponse> CreateScalingPolicyAsync(CreateScalingPolicyRequest createScalingPolicyRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_policy",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createScalingPolicyRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_policy",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createScalingPolicyRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateScalingPolicyResponse>(response);
+        }
+
+        public AsyncInvoker<CreateScalingPolicyResponse> CreateScalingPolicyAsyncInvoker(CreateScalingPolicyRequest createScalingPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_policy",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createScalingPolicyRequest);
+            return new AsyncInvoker<CreateScalingPolicyResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateScalingPolicyResponse>);
         }
         
         /// <summary>
@@ -306,13 +452,23 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<CreateScalingTagInfoResponse> CreateScalingTagInfoAsync(CreateScalingTagInfoRequest createScalingTagInfoRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type" , createScalingTagInfoRequest.ResourceType.ToString());
-            urlParam.Add("resource_id" , createScalingTagInfoRequest.ResourceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/{resource_type}/{resource_id}/tags/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createScalingTagInfoRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type", createScalingTagInfoRequest.ResourceType.ToString());
+            urlParam.Add("resource_id", createScalingTagInfoRequest.ResourceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/{resource_type}/{resource_id}/tags/action",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createScalingTagInfoRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerializeNull<CreateScalingTagInfoResponse>(response);
+        }
+
+        public AsyncInvoker<CreateScalingTagInfoResponse> CreateScalingTagInfoAsyncInvoker(CreateScalingTagInfoRequest createScalingTagInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type", createScalingTagInfoRequest.ResourceType.ToString());
+            urlParam.Add("resource_id", createScalingTagInfoRequest.ResourceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/{resource_type}/{resource_id}/tags/action",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createScalingTagInfoRequest);
+            return new AsyncInvoker<CreateScalingTagInfoResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateScalingTagInfoResponse>);
         }
         
         /// <summary>
@@ -324,13 +480,23 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<DeleteGroupScheduledTaskResponse> DeleteGroupScheduledTaskAsync(DeleteGroupScheduledTaskRequest deleteGroupScheduledTaskRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("scaling_group_id" , deleteGroupScheduledTaskRequest.ScalingGroupId.ToString());
-            urlParam.Add("scheduled_task_id" , deleteGroupScheduledTaskRequest.ScheduledTaskId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling-groups/{scaling_group_id}/scheduled-tasks/{scheduled_task_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteGroupScheduledTaskRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", deleteGroupScheduledTaskRequest.ScalingGroupId.ToString());
+            urlParam.Add("scheduled_task_id", deleteGroupScheduledTaskRequest.ScheduledTaskId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling-groups/{scaling_group_id}/scheduled-tasks/{scheduled_task_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteGroupScheduledTaskRequest);
+            var response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteGroupScheduledTaskResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteGroupScheduledTaskResponse> DeleteGroupScheduledTaskAsyncInvoker(DeleteGroupScheduledTaskRequest deleteGroupScheduledTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", deleteGroupScheduledTaskRequest.ScalingGroupId.ToString());
+            urlParam.Add("scheduled_task_id", deleteGroupScheduledTaskRequest.ScheduledTaskId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling-groups/{scaling_group_id}/scheduled-tasks/{scheduled_task_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteGroupScheduledTaskRequest);
+            return new AsyncInvoker<DeleteGroupScheduledTaskResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteGroupScheduledTaskResponse>);
         }
         
         /// <summary>
@@ -342,13 +508,23 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<DeleteLifecycleHookResponse> DeleteLifecycleHookAsync(DeleteLifecycleHookRequest deleteLifecycleHookRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("scaling_group_id" , deleteLifecycleHookRequest.ScalingGroupId.ToString());
-            urlParam.Add("lifecycle_hook_name" , deleteLifecycleHookRequest.LifecycleHookName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_lifecycle_hook/{scaling_group_id}/{lifecycle_hook_name}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteLifecycleHookRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", deleteLifecycleHookRequest.ScalingGroupId.ToString());
+            urlParam.Add("lifecycle_hook_name", deleteLifecycleHookRequest.LifecycleHookName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_lifecycle_hook/{scaling_group_id}/{lifecycle_hook_name}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteLifecycleHookRequest);
+            var response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteLifecycleHookResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteLifecycleHookResponse> DeleteLifecycleHookAsyncInvoker(DeleteLifecycleHookRequest deleteLifecycleHookRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", deleteLifecycleHookRequest.ScalingGroupId.ToString());
+            urlParam.Add("lifecycle_hook_name", deleteLifecycleHookRequest.LifecycleHookName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_lifecycle_hook/{scaling_group_id}/{lifecycle_hook_name}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteLifecycleHookRequest);
+            return new AsyncInvoker<DeleteLifecycleHookResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteLifecycleHookResponse>);
         }
         
         /// <summary>
@@ -360,12 +536,21 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<DeleteScalingConfigResponse> DeleteScalingConfigAsync(DeleteScalingConfigRequest deleteScalingConfigRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("scaling_configuration_id" , deleteScalingConfigRequest.ScalingConfigurationId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_configuration/{scaling_configuration_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteScalingConfigRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_configuration_id", deleteScalingConfigRequest.ScalingConfigurationId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_configuration/{scaling_configuration_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteScalingConfigRequest);
+            var response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteScalingConfigResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteScalingConfigResponse> DeleteScalingConfigAsyncInvoker(DeleteScalingConfigRequest deleteScalingConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_configuration_id", deleteScalingConfigRequest.ScalingConfigurationId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_configuration/{scaling_configuration_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteScalingConfigRequest);
+            return new AsyncInvoker<DeleteScalingConfigResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteScalingConfigResponse>);
         }
         
         /// <summary>
@@ -377,12 +562,21 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<DeleteScalingGroupResponse> DeleteScalingGroupAsync(DeleteScalingGroupRequest deleteScalingGroupRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("scaling_group_id" , deleteScalingGroupRequest.ScalingGroupId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_group/{scaling_group_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteScalingGroupRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", deleteScalingGroupRequest.ScalingGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_group/{scaling_group_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteScalingGroupRequest);
+            var response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteScalingGroupResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteScalingGroupResponse> DeleteScalingGroupAsyncInvoker(DeleteScalingGroupRequest deleteScalingGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", deleteScalingGroupRequest.ScalingGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_group/{scaling_group_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteScalingGroupRequest);
+            return new AsyncInvoker<DeleteScalingGroupResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteScalingGroupResponse>);
         }
         
         /// <summary>
@@ -394,12 +588,21 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<DeleteScalingInstanceResponse> DeleteScalingInstanceAsync(DeleteScalingInstanceRequest deleteScalingInstanceRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id" , deleteScalingInstanceRequest.InstanceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_group_instance/{instance_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteScalingInstanceRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteScalingInstanceRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_group_instance/{instance_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteScalingInstanceRequest);
+            var response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteScalingInstanceResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteScalingInstanceResponse> DeleteScalingInstanceAsyncInvoker(DeleteScalingInstanceRequest deleteScalingInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteScalingInstanceRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_group_instance/{instance_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteScalingInstanceRequest);
+            return new AsyncInvoker<DeleteScalingInstanceResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteScalingInstanceResponse>);
         }
         
         /// <summary>
@@ -411,13 +614,23 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<DeleteScalingNotificationResponse> DeleteScalingNotificationAsync(DeleteScalingNotificationRequest deleteScalingNotificationRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("scaling_group_id" , deleteScalingNotificationRequest.ScalingGroupId.ToString());
-            urlParam.Add("topic_urn" , deleteScalingNotificationRequest.TopicUrn.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_notification/{scaling_group_id}/{topic_urn}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteScalingNotificationRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", deleteScalingNotificationRequest.ScalingGroupId.ToString());
+            urlParam.Add("topic_urn", deleteScalingNotificationRequest.TopicUrn.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_notification/{scaling_group_id}/{topic_urn}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteScalingNotificationRequest);
+            var response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteScalingNotificationResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteScalingNotificationResponse> DeleteScalingNotificationAsyncInvoker(DeleteScalingNotificationRequest deleteScalingNotificationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", deleteScalingNotificationRequest.ScalingGroupId.ToString());
+            urlParam.Add("topic_urn", deleteScalingNotificationRequest.TopicUrn.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_notification/{scaling_group_id}/{topic_urn}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteScalingNotificationRequest);
+            return new AsyncInvoker<DeleteScalingNotificationResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteScalingNotificationResponse>);
         }
         
         /// <summary>
@@ -429,12 +642,21 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<DeleteScalingPolicyResponse> DeleteScalingPolicyAsync(DeleteScalingPolicyRequest deleteScalingPolicyRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("scaling_policy_id" , deleteScalingPolicyRequest.ScalingPolicyId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_policy/{scaling_policy_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteScalingPolicyRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_policy_id", deleteScalingPolicyRequest.ScalingPolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_policy/{scaling_policy_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteScalingPolicyRequest);
+            var response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerializeNull<DeleteScalingPolicyResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteScalingPolicyResponse> DeleteScalingPolicyAsyncInvoker(DeleteScalingPolicyRequest deleteScalingPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_policy_id", deleteScalingPolicyRequest.ScalingPolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_policy/{scaling_policy_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteScalingPolicyRequest);
+            return new AsyncInvoker<DeleteScalingPolicyResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteScalingPolicyResponse>);
         }
         
         /// <summary>
@@ -446,13 +668,23 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<DeleteScalingTagInfoResponse> DeleteScalingTagInfoAsync(DeleteScalingTagInfoRequest deleteScalingTagInfoRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type" , deleteScalingTagInfoRequest.ResourceType.ToString());
-            urlParam.Add("resource_id" , deleteScalingTagInfoRequest.ResourceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/{resource_type}/{resource_id}/tags/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteScalingTagInfoRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type", deleteScalingTagInfoRequest.ResourceType.ToString());
+            urlParam.Add("resource_id", deleteScalingTagInfoRequest.ResourceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/{resource_type}/{resource_id}/tags/action",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteScalingTagInfoRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerializeNull<DeleteScalingTagInfoResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteScalingTagInfoResponse> DeleteScalingTagInfoAsyncInvoker(DeleteScalingTagInfoRequest deleteScalingTagInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type", deleteScalingTagInfoRequest.ResourceType.ToString());
+            urlParam.Add("resource_id", deleteScalingTagInfoRequest.ResourceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/{resource_type}/{resource_id}/tags/action",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteScalingTagInfoRequest);
+            return new AsyncInvoker<DeleteScalingTagInfoResponse>(this, "POST", request, JsonUtils.DeSerializeNull<DeleteScalingTagInfoResponse>);
         }
         
         /// <summary>
@@ -464,12 +696,21 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<ExecuteScalingPolicyResponse> ExecuteScalingPolicyAsync(ExecuteScalingPolicyRequest executeScalingPolicyRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("scaling_policy_id" , executeScalingPolicyRequest.ScalingPolicyId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_policy/{scaling_policy_id}/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", executeScalingPolicyRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_policy_id", executeScalingPolicyRequest.ScalingPolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_policy/{scaling_policy_id}/action",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", executeScalingPolicyRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerializeNull<ExecuteScalingPolicyResponse>(response);
+        }
+
+        public AsyncInvoker<ExecuteScalingPolicyResponse> ExecuteScalingPolicyAsyncInvoker(ExecuteScalingPolicyRequest executeScalingPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_policy_id", executeScalingPolicyRequest.ScalingPolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_policy/{scaling_policy_id}/action",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", executeScalingPolicyRequest);
+            return new AsyncInvoker<ExecuteScalingPolicyResponse>(this, "POST", request, JsonUtils.DeSerializeNull<ExecuteScalingPolicyResponse>);
         }
         
         /// <summary>
@@ -481,12 +722,21 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<ListGroupScheduledTasksResponse> ListGroupScheduledTasksAsync(ListGroupScheduledTasksRequest listGroupScheduledTasksRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("scaling_group_id" , listGroupScheduledTasksRequest.ScalingGroupId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling-groups/{scaling_group_id}/scheduled-tasks",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listGroupScheduledTasksRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", listGroupScheduledTasksRequest.ScalingGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling-groups/{scaling_group_id}/scheduled-tasks",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listGroupScheduledTasksRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListGroupScheduledTasksResponse>(response);
+        }
+
+        public AsyncInvoker<ListGroupScheduledTasksResponse> ListGroupScheduledTasksAsyncInvoker(ListGroupScheduledTasksRequest listGroupScheduledTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", listGroupScheduledTasksRequest.ScalingGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling-groups/{scaling_group_id}/scheduled-tasks",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listGroupScheduledTasksRequest);
+            return new AsyncInvoker<ListGroupScheduledTasksResponse>(this, "GET", request, JsonUtils.DeSerialize<ListGroupScheduledTasksResponse>);
         }
         
         /// <summary>
@@ -498,12 +748,21 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<ListHookInstancesResponse> ListHookInstancesAsync(ListHookInstancesRequest listHookInstancesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("scaling_group_id" , listHookInstancesRequest.ScalingGroupId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_instance_hook/{scaling_group_id}/list",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listHookInstancesRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", listHookInstancesRequest.ScalingGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_instance_hook/{scaling_group_id}/list",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listHookInstancesRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListHookInstancesResponse>(response);
+        }
+
+        public AsyncInvoker<ListHookInstancesResponse> ListHookInstancesAsyncInvoker(ListHookInstancesRequest listHookInstancesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", listHookInstancesRequest.ScalingGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_instance_hook/{scaling_group_id}/list",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listHookInstancesRequest);
+            return new AsyncInvoker<ListHookInstancesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListHookInstancesResponse>);
         }
         
         /// <summary>
@@ -515,12 +774,21 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<ListLifeCycleHooksResponse> ListLifeCycleHooksAsync(ListLifeCycleHooksRequest listLifeCycleHooksRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("scaling_group_id" , listLifeCycleHooksRequest.ScalingGroupId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_lifecycle_hook/{scaling_group_id}/list",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listLifeCycleHooksRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", listLifeCycleHooksRequest.ScalingGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_lifecycle_hook/{scaling_group_id}/list",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listLifeCycleHooksRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListLifeCycleHooksResponse>(response);
+        }
+
+        public AsyncInvoker<ListLifeCycleHooksResponse> ListLifeCycleHooksAsyncInvoker(ListLifeCycleHooksRequest listLifeCycleHooksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", listLifeCycleHooksRequest.ScalingGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_lifecycle_hook/{scaling_group_id}/list",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listLifeCycleHooksRequest);
+            return new AsyncInvoker<ListLifeCycleHooksResponse>(this, "GET", request, JsonUtils.DeSerialize<ListLifeCycleHooksResponse>);
         }
         
         /// <summary>
@@ -532,12 +800,21 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<ListResourceInstancesResponse> ListResourceInstancesAsync(ListResourceInstancesRequest listResourceInstancesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type" , listResourceInstancesRequest.ResourceType.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/{resource_type}/resource_instances/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listResourceInstancesRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type", listResourceInstancesRequest.ResourceType.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/{resource_type}/resource_instances/action",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listResourceInstancesRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<ListResourceInstancesResponse>(response);
+        }
+
+        public AsyncInvoker<ListResourceInstancesResponse> ListResourceInstancesAsyncInvoker(ListResourceInstancesRequest listResourceInstancesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type", listResourceInstancesRequest.ResourceType.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/{resource_type}/resource_instances/action",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listResourceInstancesRequest);
+            return new AsyncInvoker<ListResourceInstancesResponse>(this, "POST", request, JsonUtils.DeSerialize<ListResourceInstancesResponse>);
         }
         
         /// <summary>
@@ -549,12 +826,21 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<ListScalingActivityLogsResponse> ListScalingActivityLogsAsync(ListScalingActivityLogsRequest listScalingActivityLogsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("scaling_group_id" , listScalingActivityLogsRequest.ScalingGroupId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_activity_log/{scaling_group_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listScalingActivityLogsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", listScalingActivityLogsRequest.ScalingGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_activity_log/{scaling_group_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listScalingActivityLogsRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListScalingActivityLogsResponse>(response);
+        }
+
+        public AsyncInvoker<ListScalingActivityLogsResponse> ListScalingActivityLogsAsyncInvoker(ListScalingActivityLogsRequest listScalingActivityLogsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", listScalingActivityLogsRequest.ScalingGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_activity_log/{scaling_group_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listScalingActivityLogsRequest);
+            return new AsyncInvoker<ListScalingActivityLogsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListScalingActivityLogsResponse>);
         }
         
         /// <summary>
@@ -566,12 +852,21 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<ListScalingActivityV2LogsResponse> ListScalingActivityV2LogsAsync(ListScalingActivityV2LogsRequest listScalingActivityV2LogsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("scaling_group_id" , listScalingActivityV2LogsRequest.ScalingGroupId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v2/{project_id}/scaling_activity_log/{scaling_group_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listScalingActivityV2LogsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", listScalingActivityV2LogsRequest.ScalingGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v2/{project_id}/scaling_activity_log/{scaling_group_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listScalingActivityV2LogsRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListScalingActivityV2LogsResponse>(response);
+        }
+
+        public AsyncInvoker<ListScalingActivityV2LogsResponse> ListScalingActivityV2LogsAsyncInvoker(ListScalingActivityV2LogsRequest listScalingActivityV2LogsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", listScalingActivityV2LogsRequest.ScalingGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v2/{project_id}/scaling_activity_log/{scaling_group_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listScalingActivityV2LogsRequest);
+            return new AsyncInvoker<ListScalingActivityV2LogsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListScalingActivityV2LogsResponse>);
         }
         
         /// <summary>
@@ -583,11 +878,19 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<ListScalingConfigsResponse> ListScalingConfigsAsync(ListScalingConfigsRequest listScalingConfigsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_configuration",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listScalingConfigsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_configuration",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listScalingConfigsRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListScalingConfigsResponse>(response);
+        }
+
+        public AsyncInvoker<ListScalingConfigsResponse> ListScalingConfigsAsyncInvoker(ListScalingConfigsRequest listScalingConfigsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_configuration",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listScalingConfigsRequest);
+            return new AsyncInvoker<ListScalingConfigsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListScalingConfigsResponse>);
         }
         
         /// <summary>
@@ -599,11 +902,19 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<ListScalingGroupsResponse> ListScalingGroupsAsync(ListScalingGroupsRequest listScalingGroupsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_group",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listScalingGroupsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_group",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listScalingGroupsRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListScalingGroupsResponse>(response);
+        }
+
+        public AsyncInvoker<ListScalingGroupsResponse> ListScalingGroupsAsyncInvoker(ListScalingGroupsRequest listScalingGroupsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_group",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listScalingGroupsRequest);
+            return new AsyncInvoker<ListScalingGroupsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListScalingGroupsResponse>);
         }
         
         /// <summary>
@@ -615,12 +926,21 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<ListScalingInstancesResponse> ListScalingInstancesAsync(ListScalingInstancesRequest listScalingInstancesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("scaling_group_id" , listScalingInstancesRequest.ScalingGroupId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_group_instance/{scaling_group_id}/list",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listScalingInstancesRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", listScalingInstancesRequest.ScalingGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_group_instance/{scaling_group_id}/list",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listScalingInstancesRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListScalingInstancesResponse>(response);
+        }
+
+        public AsyncInvoker<ListScalingInstancesResponse> ListScalingInstancesAsyncInvoker(ListScalingInstancesRequest listScalingInstancesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", listScalingInstancesRequest.ScalingGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_group_instance/{scaling_group_id}/list",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listScalingInstancesRequest);
+            return new AsyncInvoker<ListScalingInstancesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListScalingInstancesResponse>);
         }
         
         /// <summary>
@@ -632,12 +952,21 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<ListScalingNotificationsResponse> ListScalingNotificationsAsync(ListScalingNotificationsRequest listScalingNotificationsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("scaling_group_id" , listScalingNotificationsRequest.ScalingGroupId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_notification/{scaling_group_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listScalingNotificationsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", listScalingNotificationsRequest.ScalingGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_notification/{scaling_group_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listScalingNotificationsRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListScalingNotificationsResponse>(response);
+        }
+
+        public AsyncInvoker<ListScalingNotificationsResponse> ListScalingNotificationsAsyncInvoker(ListScalingNotificationsRequest listScalingNotificationsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", listScalingNotificationsRequest.ScalingGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_notification/{scaling_group_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listScalingNotificationsRequest);
+            return new AsyncInvoker<ListScalingNotificationsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListScalingNotificationsResponse>);
         }
         
         /// <summary>
@@ -649,12 +978,21 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<ListScalingPoliciesResponse> ListScalingPoliciesAsync(ListScalingPoliciesRequest listScalingPoliciesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("scaling_group_id" , listScalingPoliciesRequest.ScalingGroupId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_policy/{scaling_group_id}/list",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listScalingPoliciesRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", listScalingPoliciesRequest.ScalingGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_policy/{scaling_group_id}/list",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listScalingPoliciesRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListScalingPoliciesResponse>(response);
+        }
+
+        public AsyncInvoker<ListScalingPoliciesResponse> ListScalingPoliciesAsyncInvoker(ListScalingPoliciesRequest listScalingPoliciesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", listScalingPoliciesRequest.ScalingGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_policy/{scaling_group_id}/list",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listScalingPoliciesRequest);
+            return new AsyncInvoker<ListScalingPoliciesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListScalingPoliciesResponse>);
         }
         
         /// <summary>
@@ -666,12 +1004,21 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<ListScalingPolicyExecuteLogsResponse> ListScalingPolicyExecuteLogsAsync(ListScalingPolicyExecuteLogsRequest listScalingPolicyExecuteLogsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("scaling_policy_id" , listScalingPolicyExecuteLogsRequest.ScalingPolicyId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_policy_execute_log/{scaling_policy_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listScalingPolicyExecuteLogsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_policy_id", listScalingPolicyExecuteLogsRequest.ScalingPolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_policy_execute_log/{scaling_policy_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listScalingPolicyExecuteLogsRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListScalingPolicyExecuteLogsResponse>(response);
+        }
+
+        public AsyncInvoker<ListScalingPolicyExecuteLogsResponse> ListScalingPolicyExecuteLogsAsyncInvoker(ListScalingPolicyExecuteLogsRequest listScalingPolicyExecuteLogsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_policy_id", listScalingPolicyExecuteLogsRequest.ScalingPolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_policy_execute_log/{scaling_policy_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listScalingPolicyExecuteLogsRequest);
+            return new AsyncInvoker<ListScalingPolicyExecuteLogsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListScalingPolicyExecuteLogsResponse>);
         }
         
         /// <summary>
@@ -683,13 +1030,23 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<ListScalingTagInfosByResourceIdResponse> ListScalingTagInfosByResourceIdAsync(ListScalingTagInfosByResourceIdRequest listScalingTagInfosByResourceIdRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type" , listScalingTagInfosByResourceIdRequest.ResourceType.ToString());
-            urlParam.Add("resource_id" , listScalingTagInfosByResourceIdRequest.ResourceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/{resource_type}/{resource_id}/tags",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listScalingTagInfosByResourceIdRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type", listScalingTagInfosByResourceIdRequest.ResourceType.ToString());
+            urlParam.Add("resource_id", listScalingTagInfosByResourceIdRequest.ResourceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/{resource_type}/{resource_id}/tags",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listScalingTagInfosByResourceIdRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListScalingTagInfosByResourceIdResponse>(response);
+        }
+
+        public AsyncInvoker<ListScalingTagInfosByResourceIdResponse> ListScalingTagInfosByResourceIdAsyncInvoker(ListScalingTagInfosByResourceIdRequest listScalingTagInfosByResourceIdRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type", listScalingTagInfosByResourceIdRequest.ResourceType.ToString());
+            urlParam.Add("resource_id", listScalingTagInfosByResourceIdRequest.ResourceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/{resource_type}/{resource_id}/tags",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listScalingTagInfosByResourceIdRequest);
+            return new AsyncInvoker<ListScalingTagInfosByResourceIdResponse>(this, "GET", request, JsonUtils.DeSerialize<ListScalingTagInfosByResourceIdResponse>);
         }
         
         /// <summary>
@@ -701,12 +1058,21 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<ListScalingTagInfosByTenantIdResponse> ListScalingTagInfosByTenantIdAsync(ListScalingTagInfosByTenantIdRequest listScalingTagInfosByTenantIdRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type" , listScalingTagInfosByTenantIdRequest.ResourceType.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/{resource_type}/tags",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listScalingTagInfosByTenantIdRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type", listScalingTagInfosByTenantIdRequest.ResourceType.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/{resource_type}/tags",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listScalingTagInfosByTenantIdRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListScalingTagInfosByTenantIdResponse>(response);
+        }
+
+        public AsyncInvoker<ListScalingTagInfosByTenantIdResponse> ListScalingTagInfosByTenantIdAsyncInvoker(ListScalingTagInfosByTenantIdRequest listScalingTagInfosByTenantIdRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type", listScalingTagInfosByTenantIdRequest.ResourceType.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/{resource_type}/tags",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listScalingTagInfosByTenantIdRequest);
+            return new AsyncInvoker<ListScalingTagInfosByTenantIdResponse>(this, "GET", request, JsonUtils.DeSerialize<ListScalingTagInfosByTenantIdResponse>);
         }
         
         /// <summary>
@@ -718,12 +1084,21 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<PauseScalingGroupResponse> PauseScalingGroupAsync(PauseScalingGroupRequest pauseScalingGroupRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("scaling_group_id" , pauseScalingGroupRequest.ScalingGroupId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_group/{scaling_group_id}/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", pauseScalingGroupRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", pauseScalingGroupRequest.ScalingGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_group/{scaling_group_id}/action",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", pauseScalingGroupRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerializeNull<PauseScalingGroupResponse>(response);
+        }
+
+        public AsyncInvoker<PauseScalingGroupResponse> PauseScalingGroupAsyncInvoker(PauseScalingGroupRequest pauseScalingGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", pauseScalingGroupRequest.ScalingGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_group/{scaling_group_id}/action",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", pauseScalingGroupRequest);
+            return new AsyncInvoker<PauseScalingGroupResponse>(this, "POST", request, JsonUtils.DeSerializeNull<PauseScalingGroupResponse>);
         }
         
         /// <summary>
@@ -735,12 +1110,21 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<PauseScalingPolicyResponse> PauseScalingPolicyAsync(PauseScalingPolicyRequest pauseScalingPolicyRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("scaling_policy_id" , pauseScalingPolicyRequest.ScalingPolicyId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_policy/{scaling_policy_id}/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", pauseScalingPolicyRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_policy_id", pauseScalingPolicyRequest.ScalingPolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_policy/{scaling_policy_id}/action",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", pauseScalingPolicyRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerializeNull<PauseScalingPolicyResponse>(response);
+        }
+
+        public AsyncInvoker<PauseScalingPolicyResponse> PauseScalingPolicyAsyncInvoker(PauseScalingPolicyRequest pauseScalingPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_policy_id", pauseScalingPolicyRequest.ScalingPolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_policy/{scaling_policy_id}/action",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", pauseScalingPolicyRequest);
+            return new AsyncInvoker<PauseScalingPolicyResponse>(this, "POST", request, JsonUtils.DeSerializeNull<PauseScalingPolicyResponse>);
         }
         
         /// <summary>
@@ -752,12 +1136,21 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<ResumeScalingGroupResponse> ResumeScalingGroupAsync(ResumeScalingGroupRequest resumeScalingGroupRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("scaling_group_id" , resumeScalingGroupRequest.ScalingGroupId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_group/{scaling_group_id}/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", resumeScalingGroupRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", resumeScalingGroupRequest.ScalingGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_group/{scaling_group_id}/action",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", resumeScalingGroupRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerializeNull<ResumeScalingGroupResponse>(response);
+        }
+
+        public AsyncInvoker<ResumeScalingGroupResponse> ResumeScalingGroupAsyncInvoker(ResumeScalingGroupRequest resumeScalingGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", resumeScalingGroupRequest.ScalingGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_group/{scaling_group_id}/action",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", resumeScalingGroupRequest);
+            return new AsyncInvoker<ResumeScalingGroupResponse>(this, "POST", request, JsonUtils.DeSerializeNull<ResumeScalingGroupResponse>);
         }
         
         /// <summary>
@@ -769,12 +1162,21 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<ResumeScalingPolicyResponse> ResumeScalingPolicyAsync(ResumeScalingPolicyRequest resumeScalingPolicyRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("scaling_policy_id" , resumeScalingPolicyRequest.ScalingPolicyId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_policy/{scaling_policy_id}/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", resumeScalingPolicyRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_policy_id", resumeScalingPolicyRequest.ScalingPolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_policy/{scaling_policy_id}/action",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", resumeScalingPolicyRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerializeNull<ResumeScalingPolicyResponse>(response);
+        }
+
+        public AsyncInvoker<ResumeScalingPolicyResponse> ResumeScalingPolicyAsyncInvoker(ResumeScalingPolicyRequest resumeScalingPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_policy_id", resumeScalingPolicyRequest.ScalingPolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_policy/{scaling_policy_id}/action",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", resumeScalingPolicyRequest);
+            return new AsyncInvoker<ResumeScalingPolicyResponse>(this, "POST", request, JsonUtils.DeSerializeNull<ResumeScalingPolicyResponse>);
         }
         
         /// <summary>
@@ -786,13 +1188,23 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<ShowLifeCycleHookResponse> ShowLifeCycleHookAsync(ShowLifeCycleHookRequest showLifeCycleHookRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("scaling_group_id" , showLifeCycleHookRequest.ScalingGroupId.ToString());
-            urlParam.Add("lifecycle_hook_name" , showLifeCycleHookRequest.LifecycleHookName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_lifecycle_hook/{scaling_group_id}/{lifecycle_hook_name}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLifeCycleHookRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", showLifeCycleHookRequest.ScalingGroupId.ToString());
+            urlParam.Add("lifecycle_hook_name", showLifeCycleHookRequest.LifecycleHookName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_lifecycle_hook/{scaling_group_id}/{lifecycle_hook_name}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLifeCycleHookRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowLifeCycleHookResponse>(response);
+        }
+
+        public AsyncInvoker<ShowLifeCycleHookResponse> ShowLifeCycleHookAsyncInvoker(ShowLifeCycleHookRequest showLifeCycleHookRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", showLifeCycleHookRequest.ScalingGroupId.ToString());
+            urlParam.Add("lifecycle_hook_name", showLifeCycleHookRequest.LifecycleHookName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_lifecycle_hook/{scaling_group_id}/{lifecycle_hook_name}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLifeCycleHookRequest);
+            return new AsyncInvoker<ShowLifeCycleHookResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowLifeCycleHookResponse>);
         }
         
         /// <summary>
@@ -804,12 +1216,21 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<ShowPolicyAndInstanceQuotaResponse> ShowPolicyAndInstanceQuotaAsync(ShowPolicyAndInstanceQuotaRequest showPolicyAndInstanceQuotaRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("scaling_group_id" , showPolicyAndInstanceQuotaRequest.ScalingGroupId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/quotas/{scaling_group_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPolicyAndInstanceQuotaRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", showPolicyAndInstanceQuotaRequest.ScalingGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/quotas/{scaling_group_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPolicyAndInstanceQuotaRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowPolicyAndInstanceQuotaResponse>(response);
+        }
+
+        public AsyncInvoker<ShowPolicyAndInstanceQuotaResponse> ShowPolicyAndInstanceQuotaAsyncInvoker(ShowPolicyAndInstanceQuotaRequest showPolicyAndInstanceQuotaRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", showPolicyAndInstanceQuotaRequest.ScalingGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/quotas/{scaling_group_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPolicyAndInstanceQuotaRequest);
+            return new AsyncInvoker<ShowPolicyAndInstanceQuotaResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPolicyAndInstanceQuotaResponse>);
         }
         
         /// <summary>
@@ -821,11 +1242,19 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<ShowResourceQuotaResponse> ShowResourceQuotaAsync(ShowResourceQuotaRequest showResourceQuotaRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/quotas",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showResourceQuotaRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/quotas",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showResourceQuotaRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowResourceQuotaResponse>(response);
+        }
+
+        public AsyncInvoker<ShowResourceQuotaResponse> ShowResourceQuotaAsyncInvoker(ShowResourceQuotaRequest showResourceQuotaRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/quotas",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showResourceQuotaRequest);
+            return new AsyncInvoker<ShowResourceQuotaResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowResourceQuotaResponse>);
         }
         
         /// <summary>
@@ -837,12 +1266,21 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<ShowScalingConfigResponse> ShowScalingConfigAsync(ShowScalingConfigRequest showScalingConfigRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("scaling_configuration_id" , showScalingConfigRequest.ScalingConfigurationId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_configuration/{scaling_configuration_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showScalingConfigRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_configuration_id", showScalingConfigRequest.ScalingConfigurationId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_configuration/{scaling_configuration_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showScalingConfigRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowScalingConfigResponse>(response);
+        }
+
+        public AsyncInvoker<ShowScalingConfigResponse> ShowScalingConfigAsyncInvoker(ShowScalingConfigRequest showScalingConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_configuration_id", showScalingConfigRequest.ScalingConfigurationId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_configuration/{scaling_configuration_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showScalingConfigRequest);
+            return new AsyncInvoker<ShowScalingConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowScalingConfigResponse>);
         }
         
         /// <summary>
@@ -854,12 +1292,21 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<ShowScalingGroupResponse> ShowScalingGroupAsync(ShowScalingGroupRequest showScalingGroupRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("scaling_group_id" , showScalingGroupRequest.ScalingGroupId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_group/{scaling_group_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showScalingGroupRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", showScalingGroupRequest.ScalingGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_group/{scaling_group_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showScalingGroupRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowScalingGroupResponse>(response);
+        }
+
+        public AsyncInvoker<ShowScalingGroupResponse> ShowScalingGroupAsyncInvoker(ShowScalingGroupRequest showScalingGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", showScalingGroupRequest.ScalingGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_group/{scaling_group_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showScalingGroupRequest);
+            return new AsyncInvoker<ShowScalingGroupResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowScalingGroupResponse>);
         }
         
         /// <summary>
@@ -871,12 +1318,21 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<ShowScalingPolicyResponse> ShowScalingPolicyAsync(ShowScalingPolicyRequest showScalingPolicyRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("scaling_policy_id" , showScalingPolicyRequest.ScalingPolicyId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_policy/{scaling_policy_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showScalingPolicyRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_policy_id", showScalingPolicyRequest.ScalingPolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_policy/{scaling_policy_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showScalingPolicyRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowScalingPolicyResponse>(response);
+        }
+
+        public AsyncInvoker<ShowScalingPolicyResponse> ShowScalingPolicyAsyncInvoker(ShowScalingPolicyRequest showScalingPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_policy_id", showScalingPolicyRequest.ScalingPolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_policy/{scaling_policy_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showScalingPolicyRequest);
+            return new AsyncInvoker<ShowScalingPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowScalingPolicyResponse>);
         }
         
         /// <summary>
@@ -888,13 +1344,23 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<UpdateGroupScheduledTaskResponse> UpdateGroupScheduledTaskAsync(UpdateGroupScheduledTaskRequest updateGroupScheduledTaskRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("scaling_group_id" , updateGroupScheduledTaskRequest.ScalingGroupId.ToString());
-            urlParam.Add("scheduled_task_id" , updateGroupScheduledTaskRequest.ScheduledTaskId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling-groups/{scaling_group_id}/scheduled-tasks/{scheduled_task_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateGroupScheduledTaskRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", updateGroupScheduledTaskRequest.ScalingGroupId.ToString());
+            urlParam.Add("scheduled_task_id", updateGroupScheduledTaskRequest.ScheduledTaskId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling-groups/{scaling_group_id}/scheduled-tasks/{scheduled_task_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateGroupScheduledTaskRequest);
+            var response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerializeNull<UpdateGroupScheduledTaskResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateGroupScheduledTaskResponse> UpdateGroupScheduledTaskAsyncInvoker(UpdateGroupScheduledTaskRequest updateGroupScheduledTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", updateGroupScheduledTaskRequest.ScalingGroupId.ToString());
+            urlParam.Add("scheduled_task_id", updateGroupScheduledTaskRequest.ScheduledTaskId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling-groups/{scaling_group_id}/scheduled-tasks/{scheduled_task_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateGroupScheduledTaskRequest);
+            return new AsyncInvoker<UpdateGroupScheduledTaskResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateGroupScheduledTaskResponse>);
         }
         
         /// <summary>
@@ -906,13 +1372,23 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<UpdateLifeCycleHookResponse> UpdateLifeCycleHookAsync(UpdateLifeCycleHookRequest updateLifeCycleHookRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("scaling_group_id" , updateLifeCycleHookRequest.ScalingGroupId.ToString());
-            urlParam.Add("lifecycle_hook_name" , updateLifeCycleHookRequest.LifecycleHookName.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_lifecycle_hook/{scaling_group_id}/{lifecycle_hook_name}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateLifeCycleHookRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", updateLifeCycleHookRequest.ScalingGroupId.ToString());
+            urlParam.Add("lifecycle_hook_name", updateLifeCycleHookRequest.LifecycleHookName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_lifecycle_hook/{scaling_group_id}/{lifecycle_hook_name}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateLifeCycleHookRequest);
+            var response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<UpdateLifeCycleHookResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateLifeCycleHookResponse> UpdateLifeCycleHookAsyncInvoker(UpdateLifeCycleHookRequest updateLifeCycleHookRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", updateLifeCycleHookRequest.ScalingGroupId.ToString());
+            urlParam.Add("lifecycle_hook_name", updateLifeCycleHookRequest.LifecycleHookName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_lifecycle_hook/{scaling_group_id}/{lifecycle_hook_name}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateLifeCycleHookRequest);
+            return new AsyncInvoker<UpdateLifeCycleHookResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateLifeCycleHookResponse>);
         }
         
         /// <summary>
@@ -924,12 +1400,21 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<UpdateScalingGroupResponse> UpdateScalingGroupAsync(UpdateScalingGroupRequest updateScalingGroupRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("scaling_group_id" , updateScalingGroupRequest.ScalingGroupId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_group/{scaling_group_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateScalingGroupRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", updateScalingGroupRequest.ScalingGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_group/{scaling_group_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateScalingGroupRequest);
+            var response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<UpdateScalingGroupResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateScalingGroupResponse> UpdateScalingGroupAsyncInvoker(UpdateScalingGroupRequest updateScalingGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", updateScalingGroupRequest.ScalingGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_group/{scaling_group_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateScalingGroupRequest);
+            return new AsyncInvoker<UpdateScalingGroupResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateScalingGroupResponse>);
         }
         
         /// <summary>
@@ -941,12 +1426,21 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<UpdateScalingPolicyResponse> UpdateScalingPolicyAsync(UpdateScalingPolicyRequest updateScalingPolicyRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("scaling_policy_id" , updateScalingPolicyRequest.ScalingPolicyId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_policy/{scaling_policy_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateScalingPolicyRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_policy_id", updateScalingPolicyRequest.ScalingPolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_policy/{scaling_policy_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateScalingPolicyRequest);
+            var response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<UpdateScalingPolicyResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateScalingPolicyResponse> UpdateScalingPolicyAsyncInvoker(UpdateScalingPolicyRequest updateScalingPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_policy_id", updateScalingPolicyRequest.ScalingPolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_policy/{scaling_policy_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateScalingPolicyRequest);
+            return new AsyncInvoker<UpdateScalingPolicyResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateScalingPolicyResponse>);
         }
         
         /// <summary>
@@ -958,11 +1452,19 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<ListApiVersionsResponse> ListApiVersionsAsync(ListApiVersionsRequest listApiVersionsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listApiVersionsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listApiVersionsRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListApiVersionsResponse>(response);
+        }
+
+        public AsyncInvoker<ListApiVersionsResponse> ListApiVersionsAsyncInvoker(ListApiVersionsRequest listApiVersionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listApiVersionsRequest);
+            return new AsyncInvoker<ListApiVersionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListApiVersionsResponse>);
         }
         
         /// <summary>
@@ -974,12 +1476,21 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<ShowApiVersionResponse> ShowApiVersionAsync(ShowApiVersionRequest showApiVersionRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("api_version" , showApiVersionRequest.ApiVersion.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/{api_version}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showApiVersionRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("api_version", showApiVersionRequest.ApiVersion.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/{api_version}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showApiVersionRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowApiVersionResponse>(response);
+        }
+
+        public AsyncInvoker<ShowApiVersionResponse> ShowApiVersionAsyncInvoker(ShowApiVersionRequest showApiVersionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("api_version", showApiVersionRequest.ApiVersion.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/{api_version}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showApiVersionRequest);
+            return new AsyncInvoker<ShowApiVersionResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowApiVersionResponse>);
         }
         
         /// <summary>
@@ -991,11 +1502,19 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<CreateScalingV2PolicyResponse> CreateScalingV2PolicyAsync(CreateScalingV2PolicyRequest createScalingV2PolicyRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v2/{project_id}/scaling_policy",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createScalingV2PolicyRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v2/{project_id}/scaling_policy",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createScalingV2PolicyRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateScalingV2PolicyResponse>(response);
+        }
+
+        public AsyncInvoker<CreateScalingV2PolicyResponse> CreateScalingV2PolicyAsyncInvoker(CreateScalingV2PolicyRequest createScalingV2PolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v2/{project_id}/scaling_policy",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createScalingV2PolicyRequest);
+            return new AsyncInvoker<CreateScalingV2PolicyResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateScalingV2PolicyResponse>);
         }
         
         /// <summary>
@@ -1007,11 +1526,19 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<ListAllScalingV2PoliciesResponse> ListAllScalingV2PoliciesAsync(ListAllScalingV2PoliciesRequest listAllScalingV2PoliciesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v2/{project_id}/scaling_policy",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAllScalingV2PoliciesRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v2/{project_id}/scaling_policy",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAllScalingV2PoliciesRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListAllScalingV2PoliciesResponse>(response);
+        }
+
+        public AsyncInvoker<ListAllScalingV2PoliciesResponse> ListAllScalingV2PoliciesAsyncInvoker(ListAllScalingV2PoliciesRequest listAllScalingV2PoliciesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v2/{project_id}/scaling_policy",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAllScalingV2PoliciesRequest);
+            return new AsyncInvoker<ListAllScalingV2PoliciesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAllScalingV2PoliciesResponse>);
         }
         
         /// <summary>
@@ -1023,12 +1550,21 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<ListScalingV2PoliciesResponse> ListScalingV2PoliciesAsync(ListScalingV2PoliciesRequest listScalingV2PoliciesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("scaling_resource_id" , listScalingV2PoliciesRequest.ScalingResourceId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v2/{project_id}/scaling_policy/{scaling_resource_id}/list",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listScalingV2PoliciesRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_resource_id", listScalingV2PoliciesRequest.ScalingResourceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v2/{project_id}/scaling_policy/{scaling_resource_id}/list",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listScalingV2PoliciesRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListScalingV2PoliciesResponse>(response);
+        }
+
+        public AsyncInvoker<ListScalingV2PoliciesResponse> ListScalingV2PoliciesAsyncInvoker(ListScalingV2PoliciesRequest listScalingV2PoliciesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_resource_id", listScalingV2PoliciesRequest.ScalingResourceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v2/{project_id}/scaling_policy/{scaling_resource_id}/list",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listScalingV2PoliciesRequest);
+            return new AsyncInvoker<ListScalingV2PoliciesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListScalingV2PoliciesResponse>);
         }
         
         /// <summary>
@@ -1040,12 +1576,21 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<ShowScalingV2PolicyResponse> ShowScalingV2PolicyAsync(ShowScalingV2PolicyRequest showScalingV2PolicyRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("scaling_policy_id" , showScalingV2PolicyRequest.ScalingPolicyId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v2/{project_id}/scaling_policy/{scaling_policy_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showScalingV2PolicyRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_policy_id", showScalingV2PolicyRequest.ScalingPolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v2/{project_id}/scaling_policy/{scaling_policy_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showScalingV2PolicyRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowScalingV2PolicyResponse>(response);
+        }
+
+        public AsyncInvoker<ShowScalingV2PolicyResponse> ShowScalingV2PolicyAsyncInvoker(ShowScalingV2PolicyRequest showScalingV2PolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_policy_id", showScalingV2PolicyRequest.ScalingPolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v2/{project_id}/scaling_policy/{scaling_policy_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showScalingV2PolicyRequest);
+            return new AsyncInvoker<ShowScalingV2PolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowScalingV2PolicyResponse>);
         }
         
         /// <summary>
@@ -1057,12 +1602,21 @@ namespace HuaweiCloud.SDK.As.V1
         /// </summary>
         public async Task<UpdateScalingV2PolicyResponse> UpdateScalingV2PolicyAsync(UpdateScalingV2PolicyRequest updateScalingV2PolicyRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("scaling_policy_id" , updateScalingV2PolicyRequest.ScalingPolicyId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v2/{project_id}/scaling_policy/{scaling_policy_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateScalingV2PolicyRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_policy_id", updateScalingV2PolicyRequest.ScalingPolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v2/{project_id}/scaling_policy/{scaling_policy_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateScalingV2PolicyRequest);
+            var response = await DoHttpRequestAsync("PUT",request);
             return JsonUtils.DeSerialize<UpdateScalingV2PolicyResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateScalingV2PolicyResponse> UpdateScalingV2PolicyAsyncInvoker(UpdateScalingV2PolicyRequest updateScalingV2PolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_policy_id", updateScalingV2PolicyRequest.ScalingPolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v2/{project_id}/scaling_policy/{scaling_policy_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateScalingV2PolicyRequest);
+            return new AsyncInvoker<UpdateScalingV2PolicyResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateScalingV2PolicyResponse>);
         }
         
     }

@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
     {
 
         /// <summary>
-        /// 文档url
+        /// 文档url。目前支持：公网HTTP/HTTPS URL。
         /// </summary>
         [JsonProperty("url", NullValueHandling = NullValueHandling.Ignore)]
         public string Url { get; set; }

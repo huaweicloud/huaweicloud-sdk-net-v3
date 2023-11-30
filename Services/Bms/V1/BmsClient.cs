@@ -22,12 +22,21 @@ namespace HuaweiCloud.SDK.Bms.V1
         /// </summary>
         public AddServerNicsResponse AddServerNics(AddServerNicsRequest addServerNicsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("server_id" , addServerNicsRequest.ServerId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/nics",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", addServerNicsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", addServerNicsRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/nics", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", addServerNicsRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<AddServerNicsResponse>(response);
+        }
+
+        public SyncInvoker<AddServerNicsResponse> AddServerNicsInvoker(AddServerNicsRequest addServerNicsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", addServerNicsRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/nics", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", addServerNicsRequest);
+            return new SyncInvoker<AddServerNicsResponse>(this, "POST", request, JsonUtils.DeSerialize<AddServerNicsResponse>);
         }
         
         /// <summary>
@@ -39,12 +48,21 @@ namespace HuaweiCloud.SDK.Bms.V1
         /// </summary>
         public AttachBaremetalServerVolumeResponse AttachBaremetalServerVolume(AttachBaremetalServerVolumeRequest attachBaremetalServerVolumeRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("server_id" , attachBaremetalServerVolumeRequest.ServerId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/attachvolume",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", attachBaremetalServerVolumeRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", attachBaremetalServerVolumeRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/attachvolume", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", attachBaremetalServerVolumeRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<AttachBaremetalServerVolumeResponse>(response);
+        }
+
+        public SyncInvoker<AttachBaremetalServerVolumeResponse> AttachBaremetalServerVolumeInvoker(AttachBaremetalServerVolumeRequest attachBaremetalServerVolumeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", attachBaremetalServerVolumeRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/attachvolume", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", attachBaremetalServerVolumeRequest);
+            return new SyncInvoker<AttachBaremetalServerVolumeResponse>(this, "POST", request, JsonUtils.DeSerialize<AttachBaremetalServerVolumeResponse>);
         }
         
         /// <summary>
@@ -56,12 +74,21 @@ namespace HuaweiCloud.SDK.Bms.V1
         /// </summary>
         public BatchCreateBaremetalServerTagsResponse BatchCreateBaremetalServerTags(BatchCreateBaremetalServerTagsRequest batchCreateBaremetalServerTagsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("server_id" , batchCreateBaremetalServerTagsRequest.ServerId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/tags/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchCreateBaremetalServerTagsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", batchCreateBaremetalServerTagsRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/tags/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchCreateBaremetalServerTagsRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerializeNull<BatchCreateBaremetalServerTagsResponse>(response);
+        }
+
+        public SyncInvoker<BatchCreateBaremetalServerTagsResponse> BatchCreateBaremetalServerTagsInvoker(BatchCreateBaremetalServerTagsRequest batchCreateBaremetalServerTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", batchCreateBaremetalServerTagsRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/tags/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchCreateBaremetalServerTagsRequest);
+            return new SyncInvoker<BatchCreateBaremetalServerTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchCreateBaremetalServerTagsResponse>);
         }
         
         /// <summary>
@@ -73,12 +100,21 @@ namespace HuaweiCloud.SDK.Bms.V1
         /// </summary>
         public BatchDeleteBaremetalServerTagsResponse BatchDeleteBaremetalServerTags(BatchDeleteBaremetalServerTagsRequest batchDeleteBaremetalServerTagsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("server_id" , batchDeleteBaremetalServerTagsRequest.ServerId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/tags/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteBaremetalServerTagsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", batchDeleteBaremetalServerTagsRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/tags/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteBaremetalServerTagsRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerializeNull<BatchDeleteBaremetalServerTagsResponse>(response);
+        }
+
+        public SyncInvoker<BatchDeleteBaremetalServerTagsResponse> BatchDeleteBaremetalServerTagsInvoker(BatchDeleteBaremetalServerTagsRequest batchDeleteBaremetalServerTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", batchDeleteBaremetalServerTagsRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/tags/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteBaremetalServerTagsRequest);
+            return new SyncInvoker<BatchDeleteBaremetalServerTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchDeleteBaremetalServerTagsResponse>);
         }
         
         /// <summary>
@@ -90,11 +126,19 @@ namespace HuaweiCloud.SDK.Bms.V1
         /// </summary>
         public BatchRebootBaremetalServersResponse BatchRebootBaremetalServers(BatchRebootBaremetalServersRequest batchRebootBaremetalServersRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchRebootBaremetalServersRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchRebootBaremetalServersRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<BatchRebootBaremetalServersResponse>(response);
+        }
+
+        public SyncInvoker<BatchRebootBaremetalServersResponse> BatchRebootBaremetalServersInvoker(BatchRebootBaremetalServersRequest batchRebootBaremetalServersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchRebootBaremetalServersRequest);
+            return new SyncInvoker<BatchRebootBaremetalServersResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchRebootBaremetalServersResponse>);
         }
         
         /// <summary>
@@ -106,11 +150,19 @@ namespace HuaweiCloud.SDK.Bms.V1
         /// </summary>
         public BatchStartBaremetalServersResponse BatchStartBaremetalServers(BatchStartBaremetalServersRequest batchStartBaremetalServersRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchStartBaremetalServersRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchStartBaremetalServersRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<BatchStartBaremetalServersResponse>(response);
+        }
+
+        public SyncInvoker<BatchStartBaremetalServersResponse> BatchStartBaremetalServersInvoker(BatchStartBaremetalServersRequest batchStartBaremetalServersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchStartBaremetalServersRequest);
+            return new SyncInvoker<BatchStartBaremetalServersResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchStartBaremetalServersResponse>);
         }
         
         /// <summary>
@@ -122,11 +174,19 @@ namespace HuaweiCloud.SDK.Bms.V1
         /// </summary>
         public BatchStopBaremetalServersResponse BatchStopBaremetalServers(BatchStopBaremetalServersRequest batchStopBaremetalServersRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchStopBaremetalServersRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchStopBaremetalServersRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<BatchStopBaremetalServersResponse>(response);
+        }
+
+        public SyncInvoker<BatchStopBaremetalServersResponse> BatchStopBaremetalServersInvoker(BatchStopBaremetalServersRequest batchStopBaremetalServersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchStopBaremetalServersRequest);
+            return new SyncInvoker<BatchStopBaremetalServersResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchStopBaremetalServersResponse>);
         }
         
         /// <summary>
@@ -138,12 +198,21 @@ namespace HuaweiCloud.SDK.Bms.V1
         /// </summary>
         public ChangeBaremetalServerNameResponse ChangeBaremetalServerName(ChangeBaremetalServerNameRequest changeBaremetalServerNameRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("server_id" , changeBaremetalServerNameRequest.ServerId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", changeBaremetalServerNameRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", changeBaremetalServerNameRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", changeBaremetalServerNameRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerialize<ChangeBaremetalServerNameResponse>(response);
+        }
+
+        public SyncInvoker<ChangeBaremetalServerNameResponse> ChangeBaremetalServerNameInvoker(ChangeBaremetalServerNameRequest changeBaremetalServerNameRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", changeBaremetalServerNameRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", changeBaremetalServerNameRequest);
+            return new SyncInvoker<ChangeBaremetalServerNameResponse>(this, "PUT", request, JsonUtils.DeSerialize<ChangeBaremetalServerNameResponse>);
         }
         
         /// <summary>
@@ -155,12 +224,21 @@ namespace HuaweiCloud.SDK.Bms.V1
         /// </summary>
         public ChangeBaremetalServerOsResponse ChangeBaremetalServerOs(ChangeBaremetalServerOsRequest changeBaremetalServerOsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("server_id" , changeBaremetalServerOsRequest.ServerId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/changeos",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", changeBaremetalServerOsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", changeBaremetalServerOsRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/changeos", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", changeBaremetalServerOsRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<ChangeBaremetalServerOsResponse>(response);
+        }
+
+        public SyncInvoker<ChangeBaremetalServerOsResponse> ChangeBaremetalServerOsInvoker(ChangeBaremetalServerOsRequest changeBaremetalServerOsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", changeBaremetalServerOsRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/changeos", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", changeBaremetalServerOsRequest);
+            return new SyncInvoker<ChangeBaremetalServerOsResponse>(this, "POST", request, JsonUtils.DeSerialize<ChangeBaremetalServerOsResponse>);
         }
         
         /// <summary>
@@ -172,11 +250,19 @@ namespace HuaweiCloud.SDK.Bms.V1
         /// </summary>
         public CreateBareMetalServersResponse CreateBareMetalServers(CreateBareMetalServersRequest createBareMetalServersRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createBareMetalServersRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createBareMetalServersRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<CreateBareMetalServersResponse>(response);
+        }
+
+        public SyncInvoker<CreateBareMetalServersResponse> CreateBareMetalServersInvoker(CreateBareMetalServersRequest createBareMetalServersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createBareMetalServersRequest);
+            return new SyncInvoker<CreateBareMetalServersResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateBareMetalServersResponse>);
         }
         
         /// <summary>
@@ -187,12 +273,21 @@ namespace HuaweiCloud.SDK.Bms.V1
         /// </summary>
         public DeleteServerNicsResponse DeleteServerNics(DeleteServerNicsRequest deleteServerNicsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("server_id" , deleteServerNicsRequest.ServerId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/nics/delete",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteServerNicsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", deleteServerNicsRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/nics/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteServerNicsRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<DeleteServerNicsResponse>(response);
+        }
+
+        public SyncInvoker<DeleteServerNicsResponse> DeleteServerNicsInvoker(DeleteServerNicsRequest deleteServerNicsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", deleteServerNicsRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/nics/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteServerNicsRequest);
+            return new SyncInvoker<DeleteServerNicsResponse>(this, "POST", request, JsonUtils.DeSerialize<DeleteServerNicsResponse>);
         }
         
         /// <summary>
@@ -204,12 +299,21 @@ namespace HuaweiCloud.SDK.Bms.V1
         /// </summary>
         public DeleteWindowsBareMetalServerPasswordResponse DeleteWindowsBareMetalServerPassword(DeleteWindowsBareMetalServerPasswordRequest deleteWindowsBareMetalServerPasswordRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("server_id" , deleteWindowsBareMetalServerPasswordRequest.ServerId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/os-server-password",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteWindowsBareMetalServerPasswordRequest);
-            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", deleteWindowsBareMetalServerPasswordRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/os-server-password", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteWindowsBareMetalServerPasswordRequest);
+            var response = DoHttpRequestSync("DELETE", request);
             return JsonUtils.DeSerializeNull<DeleteWindowsBareMetalServerPasswordResponse>(response);
+        }
+
+        public SyncInvoker<DeleteWindowsBareMetalServerPasswordResponse> DeleteWindowsBareMetalServerPasswordInvoker(DeleteWindowsBareMetalServerPasswordRequest deleteWindowsBareMetalServerPasswordRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", deleteWindowsBareMetalServerPasswordRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/os-server-password", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteWindowsBareMetalServerPasswordRequest);
+            return new SyncInvoker<DeleteWindowsBareMetalServerPasswordResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteWindowsBareMetalServerPasswordResponse>);
         }
         
         /// <summary>
@@ -221,13 +325,23 @@ namespace HuaweiCloud.SDK.Bms.V1
         /// </summary>
         public DetachBaremetalServerVolumeResponse DetachBaremetalServerVolume(DetachBaremetalServerVolumeRequest detachBaremetalServerVolumeRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("server_id" , detachBaremetalServerVolumeRequest.ServerId.ToString());
-            urlParam.Add("attachment_id" , detachBaremetalServerVolumeRequest.AttachmentId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/detachvolume/{attachment_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", detachBaremetalServerVolumeRequest);
-            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", detachBaremetalServerVolumeRequest.ServerId.ToString());
+            urlParam.Add("attachment_id", detachBaremetalServerVolumeRequest.AttachmentId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/detachvolume/{attachment_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", detachBaremetalServerVolumeRequest);
+            var response = DoHttpRequestSync("DELETE", request);
             return JsonUtils.DeSerialize<DetachBaremetalServerVolumeResponse>(response);
+        }
+
+        public SyncInvoker<DetachBaremetalServerVolumeResponse> DetachBaremetalServerVolumeInvoker(DetachBaremetalServerVolumeRequest detachBaremetalServerVolumeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", detachBaremetalServerVolumeRequest.ServerId.ToString());
+            urlParam.Add("attachment_id", detachBaremetalServerVolumeRequest.AttachmentId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/detachvolume/{attachment_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", detachBaremetalServerVolumeRequest);
+            return new SyncInvoker<DetachBaremetalServerVolumeResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DetachBaremetalServerVolumeResponse>);
         }
         
         /// <summary>
@@ -239,12 +353,21 @@ namespace HuaweiCloud.SDK.Bms.V1
         /// </summary>
         public ListBareMetalServerDetailsResponse ListBareMetalServerDetails(ListBareMetalServerDetailsRequest listBareMetalServerDetailsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("server_id" , listBareMetalServerDetailsRequest.ServerId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBareMetalServerDetailsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", listBareMetalServerDetailsRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBareMetalServerDetailsRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ListBareMetalServerDetailsResponse>(response);
+        }
+
+        public SyncInvoker<ListBareMetalServerDetailsResponse> ListBareMetalServerDetailsInvoker(ListBareMetalServerDetailsRequest listBareMetalServerDetailsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", listBareMetalServerDetailsRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBareMetalServerDetailsRequest);
+            return new SyncInvoker<ListBareMetalServerDetailsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListBareMetalServerDetailsResponse>);
         }
         
         /// <summary>
@@ -256,11 +379,19 @@ namespace HuaweiCloud.SDK.Bms.V1
         /// </summary>
         public ListBareMetalServersResponse ListBareMetalServers(ListBareMetalServersRequest listBareMetalServersRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/detail",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBareMetalServersRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/detail", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBareMetalServersRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ListBareMetalServersResponse>(response);
+        }
+
+        public SyncInvoker<ListBareMetalServersResponse> ListBareMetalServersInvoker(ListBareMetalServersRequest listBareMetalServersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/detail", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBareMetalServersRequest);
+            return new SyncInvoker<ListBareMetalServersResponse>(this, "GET", request, JsonUtils.DeSerialize<ListBareMetalServersResponse>);
         }
         
         /// <summary>
@@ -272,11 +403,19 @@ namespace HuaweiCloud.SDK.Bms.V1
         /// </summary>
         public ListBaremetalFlavorDetailExtendsResponse ListBaremetalFlavorDetailExtends(ListBaremetalFlavorDetailExtendsRequest listBaremetalFlavorDetailExtendsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/flavors",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBaremetalFlavorDetailExtendsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/flavors", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBaremetalFlavorDetailExtendsRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ListBaremetalFlavorDetailExtendsResponse>(response);
+        }
+
+        public SyncInvoker<ListBaremetalFlavorDetailExtendsResponse> ListBaremetalFlavorDetailExtendsInvoker(ListBaremetalFlavorDetailExtendsRequest listBaremetalFlavorDetailExtendsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/flavors", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBaremetalFlavorDetailExtendsRequest);
+            return new SyncInvoker<ListBaremetalFlavorDetailExtendsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListBaremetalFlavorDetailExtendsResponse>);
         }
         
         /// <summary>
@@ -288,12 +427,21 @@ namespace HuaweiCloud.SDK.Bms.V1
         /// </summary>
         public ReinstallBaremetalServerOsResponse ReinstallBaremetalServerOs(ReinstallBaremetalServerOsRequest reinstallBaremetalServerOsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("server_id" , reinstallBaremetalServerOsRequest.ServerId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/reinstallos",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", reinstallBaremetalServerOsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", reinstallBaremetalServerOsRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/reinstallos", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", reinstallBaremetalServerOsRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<ReinstallBaremetalServerOsResponse>(response);
+        }
+
+        public SyncInvoker<ReinstallBaremetalServerOsResponse> ReinstallBaremetalServerOsInvoker(ReinstallBaremetalServerOsRequest reinstallBaremetalServerOsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", reinstallBaremetalServerOsRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/reinstallos", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", reinstallBaremetalServerOsRequest);
+            return new SyncInvoker<ReinstallBaremetalServerOsResponse>(this, "POST", request, JsonUtils.DeSerialize<ReinstallBaremetalServerOsResponse>);
         }
         
         /// <summary>
@@ -305,12 +453,21 @@ namespace HuaweiCloud.SDK.Bms.V1
         /// </summary>
         public ResetPwdOneClickResponse ResetPwdOneClick(ResetPwdOneClickRequest resetPwdOneClickRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("server_id" , resetPwdOneClickRequest.ServerId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/os-reset-password",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", resetPwdOneClickRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", resetPwdOneClickRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/os-reset-password", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", resetPwdOneClickRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerializeNull<ResetPwdOneClickResponse>(response);
+        }
+
+        public SyncInvoker<ResetPwdOneClickResponse> ResetPwdOneClickInvoker(ResetPwdOneClickRequest resetPwdOneClickRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", resetPwdOneClickRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/os-reset-password", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", resetPwdOneClickRequest);
+            return new SyncInvoker<ResetPwdOneClickResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<ResetPwdOneClickResponse>);
         }
         
         /// <summary>
@@ -322,12 +479,21 @@ namespace HuaweiCloud.SDK.Bms.V1
         /// </summary>
         public ShowBaremetalServerInterfaceAttachmentsResponse ShowBaremetalServerInterfaceAttachments(ShowBaremetalServerInterfaceAttachmentsRequest showBaremetalServerInterfaceAttachmentsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("server_id" , showBaremetalServerInterfaceAttachmentsRequest.ServerId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/os-interface",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBaremetalServerInterfaceAttachmentsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", showBaremetalServerInterfaceAttachmentsRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/os-interface", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBaremetalServerInterfaceAttachmentsRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowBaremetalServerInterfaceAttachmentsResponse>(response);
+        }
+
+        public SyncInvoker<ShowBaremetalServerInterfaceAttachmentsResponse> ShowBaremetalServerInterfaceAttachmentsInvoker(ShowBaremetalServerInterfaceAttachmentsRequest showBaremetalServerInterfaceAttachmentsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", showBaremetalServerInterfaceAttachmentsRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/os-interface", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBaremetalServerInterfaceAttachmentsRequest);
+            return new SyncInvoker<ShowBaremetalServerInterfaceAttachmentsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowBaremetalServerInterfaceAttachmentsResponse>);
         }
         
         /// <summary>
@@ -339,12 +505,21 @@ namespace HuaweiCloud.SDK.Bms.V1
         /// </summary>
         public ShowBaremetalServerTagsResponse ShowBaremetalServerTags(ShowBaremetalServerTagsRequest showBaremetalServerTagsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("server_id" , showBaremetalServerTagsRequest.ServerId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/tags",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBaremetalServerTagsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", showBaremetalServerTagsRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBaremetalServerTagsRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowBaremetalServerTagsResponse>(response);
+        }
+
+        public SyncInvoker<ShowBaremetalServerTagsResponse> ShowBaremetalServerTagsInvoker(ShowBaremetalServerTagsRequest showBaremetalServerTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", showBaremetalServerTagsRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBaremetalServerTagsRequest);
+            return new SyncInvoker<ShowBaremetalServerTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowBaremetalServerTagsResponse>);
         }
         
         /// <summary>
@@ -356,12 +531,21 @@ namespace HuaweiCloud.SDK.Bms.V1
         /// </summary>
         public ShowBaremetalServerVolumeInfoResponse ShowBaremetalServerVolumeInfo(ShowBaremetalServerVolumeInfoRequest showBaremetalServerVolumeInfoRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("server_id" , showBaremetalServerVolumeInfoRequest.ServerId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/os-volume_attachments",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBaremetalServerVolumeInfoRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", showBaremetalServerVolumeInfoRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/os-volume_attachments", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBaremetalServerVolumeInfoRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowBaremetalServerVolumeInfoResponse>(response);
+        }
+
+        public SyncInvoker<ShowBaremetalServerVolumeInfoResponse> ShowBaremetalServerVolumeInfoInvoker(ShowBaremetalServerVolumeInfoRequest showBaremetalServerVolumeInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", showBaremetalServerVolumeInfoRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/os-volume_attachments", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBaremetalServerVolumeInfoRequest);
+            return new SyncInvoker<ShowBaremetalServerVolumeInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowBaremetalServerVolumeInfoResponse>);
         }
         
         /// <summary>
@@ -373,12 +557,21 @@ namespace HuaweiCloud.SDK.Bms.V1
         /// </summary>
         public ShowResetPwdResponse ShowResetPwd(ShowResetPwdRequest showResetPwdRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("server_id" , showResetPwdRequest.ServerId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/os-resetpwd-flag",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showResetPwdRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", showResetPwdRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/os-resetpwd-flag", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showResetPwdRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowResetPwdResponse>(response);
+        }
+
+        public SyncInvoker<ShowResetPwdResponse> ShowResetPwdInvoker(ShowResetPwdRequest showResetPwdRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", showResetPwdRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/os-resetpwd-flag", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showResetPwdRequest);
+            return new SyncInvoker<ShowResetPwdResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowResetPwdResponse>);
         }
         
         /// <summary>
@@ -389,12 +582,21 @@ namespace HuaweiCloud.SDK.Bms.V1
         /// </summary>
         public ShowServerRemoteConsoleResponse ShowServerRemoteConsole(ShowServerRemoteConsoleRequest showServerRemoteConsoleRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("server_id" , showServerRemoteConsoleRequest.ServerId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/remote_console",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", showServerRemoteConsoleRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", showServerRemoteConsoleRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/remote_console", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", showServerRemoteConsoleRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<ShowServerRemoteConsoleResponse>(response);
+        }
+
+        public SyncInvoker<ShowServerRemoteConsoleResponse> ShowServerRemoteConsoleInvoker(ShowServerRemoteConsoleRequest showServerRemoteConsoleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", showServerRemoteConsoleRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/remote_console", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", showServerRemoteConsoleRequest);
+            return new SyncInvoker<ShowServerRemoteConsoleResponse>(this, "POST", request, JsonUtils.DeSerialize<ShowServerRemoteConsoleResponse>);
         }
         
         /// <summary>
@@ -406,11 +608,19 @@ namespace HuaweiCloud.SDK.Bms.V1
         /// </summary>
         public ShowTenantQuotaResponse ShowTenantQuota(ShowTenantQuotaRequest showTenantQuotaRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/limits",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTenantQuotaRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/limits", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTenantQuotaRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowTenantQuotaResponse>(response);
+        }
+
+        public SyncInvoker<ShowTenantQuotaResponse> ShowTenantQuotaInvoker(ShowTenantQuotaRequest showTenantQuotaRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/limits", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTenantQuotaRequest);
+            return new SyncInvoker<ShowTenantQuotaResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTenantQuotaResponse>);
         }
         
         /// <summary>
@@ -422,12 +632,21 @@ namespace HuaweiCloud.SDK.Bms.V1
         /// </summary>
         public ShowWindowsBaremetalServerPwdResponse ShowWindowsBaremetalServerPwd(ShowWindowsBaremetalServerPwdRequest showWindowsBaremetalServerPwdRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("server_id" , showWindowsBaremetalServerPwdRequest.ServerId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/os-server-password",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showWindowsBaremetalServerPwdRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", showWindowsBaremetalServerPwdRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/os-server-password", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showWindowsBaremetalServerPwdRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowWindowsBaremetalServerPwdResponse>(response);
+        }
+
+        public SyncInvoker<ShowWindowsBaremetalServerPwdResponse> ShowWindowsBaremetalServerPwdInvoker(ShowWindowsBaremetalServerPwdRequest showWindowsBaremetalServerPwdRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", showWindowsBaremetalServerPwdRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/os-server-password", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showWindowsBaremetalServerPwdRequest);
+            return new SyncInvoker<ShowWindowsBaremetalServerPwdResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowWindowsBaremetalServerPwdResponse>);
         }
         
         /// <summary>
@@ -438,13 +657,23 @@ namespace HuaweiCloud.SDK.Bms.V1
         /// </summary>
         public UpdateBaremetalServerInterfaceAttachmentsResponse UpdateBaremetalServerInterfaceAttachments(UpdateBaremetalServerInterfaceAttachmentsRequest updateBaremetalServerInterfaceAttachmentsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("port_id" , updateBaremetalServerInterfaceAttachmentsRequest.PortId.ToString());
-            urlParam.Add("server_id" , updateBaremetalServerInterfaceAttachmentsRequest.ServerId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/os-interface/{port_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateBaremetalServerInterfaceAttachmentsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("port_id", updateBaremetalServerInterfaceAttachmentsRequest.PortId.ToString());
+            urlParam.Add("server_id", updateBaremetalServerInterfaceAttachmentsRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/os-interface/{port_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateBaremetalServerInterfaceAttachmentsRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerializeNull<UpdateBaremetalServerInterfaceAttachmentsResponse>(response);
+        }
+
+        public SyncInvoker<UpdateBaremetalServerInterfaceAttachmentsResponse> UpdateBaremetalServerInterfaceAttachmentsInvoker(UpdateBaremetalServerInterfaceAttachmentsRequest updateBaremetalServerInterfaceAttachmentsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("port_id", updateBaremetalServerInterfaceAttachmentsRequest.PortId.ToString());
+            urlParam.Add("server_id", updateBaremetalServerInterfaceAttachmentsRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/os-interface/{port_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateBaremetalServerInterfaceAttachmentsRequest);
+            return new SyncInvoker<UpdateBaremetalServerInterfaceAttachmentsResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateBaremetalServerInterfaceAttachmentsResponse>);
         }
         
         /// <summary>
@@ -456,12 +685,21 @@ namespace HuaweiCloud.SDK.Bms.V1
         /// </summary>
         public UpdateBaremetalServerMetadataResponse UpdateBaremetalServerMetadata(UpdateBaremetalServerMetadataRequest updateBaremetalServerMetadataRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("server_id" , updateBaremetalServerMetadataRequest.ServerId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/metadata",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateBaremetalServerMetadataRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", updateBaremetalServerMetadataRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/metadata", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateBaremetalServerMetadataRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<UpdateBaremetalServerMetadataResponse>(response);
+        }
+
+        public SyncInvoker<UpdateBaremetalServerMetadataResponse> UpdateBaremetalServerMetadataInvoker(UpdateBaremetalServerMetadataRequest updateBaremetalServerMetadataRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", updateBaremetalServerMetadataRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/metadata", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateBaremetalServerMetadataRequest);
+            return new SyncInvoker<UpdateBaremetalServerMetadataResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateBaremetalServerMetadataResponse>);
         }
         
         /// <summary>
@@ -473,12 +711,21 @@ namespace HuaweiCloud.SDK.Bms.V1
         /// </summary>
         public ShowSpecifiedVersionResponse ShowSpecifiedVersion(ShowSpecifiedVersionRequest showSpecifiedVersionRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("api_version" , showSpecifiedVersionRequest.ApiVersion.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/{api_version}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSpecifiedVersionRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("api_version", showSpecifiedVersionRequest.ApiVersion.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/{api_version}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSpecifiedVersionRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowSpecifiedVersionResponse>(response);
+        }
+
+        public SyncInvoker<ShowSpecifiedVersionResponse> ShowSpecifiedVersionInvoker(ShowSpecifiedVersionRequest showSpecifiedVersionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("api_version", showSpecifiedVersionRequest.ApiVersion.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/{api_version}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSpecifiedVersionRequest);
+            return new SyncInvoker<ShowSpecifiedVersionResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSpecifiedVersionResponse>);
         }
         
         /// <summary>
@@ -490,12 +737,21 @@ namespace HuaweiCloud.SDK.Bms.V1
         /// </summary>
         public ShowJobInfosResponse ShowJobInfos(ShowJobInfosRequest showJobInfosRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id" , showJobInfosRequest.JobId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/jobs/{job_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showJobInfosRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", showJobInfosRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/jobs/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showJobInfosRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowJobInfosResponse>(response);
+        }
+
+        public SyncInvoker<ShowJobInfosResponse> ShowJobInfosInvoker(ShowJobInfosRequest showJobInfosRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", showJobInfosRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/jobs/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showJobInfosRequest);
+            return new SyncInvoker<ShowJobInfosResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowJobInfosResponse>);
         }
         
     }

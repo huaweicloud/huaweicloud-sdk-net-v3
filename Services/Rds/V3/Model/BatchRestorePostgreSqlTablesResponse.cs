@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// 表信息
         /// </summary>
         [JsonProperty("restore_result", NullValueHandling = NullValueHandling.Ignore)]
-        public List<PostgreSQLRestoreResult> RestoreResult { get; set; }
+        public List<RestoreResult> RestoreResult { get; set; }
 
 
 

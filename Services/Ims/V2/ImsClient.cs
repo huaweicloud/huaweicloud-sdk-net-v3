@@ -23,12 +23,21 @@ namespace HuaweiCloud.SDK.Ims.V2
         /// </summary>
         public AddImageTagResponse AddImageTag(AddImageTagRequest addImageTagRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("image_id" , addImageTagRequest.ImageId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/images/{image_id}/tags",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", addImageTagRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("image_id", addImageTagRequest.ImageId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/images/{image_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", addImageTagRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerializeNull<AddImageTagResponse>(response);
+        }
+
+        public SyncInvoker<AddImageTagResponse> AddImageTagInvoker(AddImageTagRequest addImageTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("image_id", addImageTagRequest.ImageId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/images/{image_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", addImageTagRequest);
+            return new SyncInvoker<AddImageTagResponse>(this, "POST", request, JsonUtils.DeSerializeNull<AddImageTagResponse>);
         }
         
         /// <summary>
@@ -41,11 +50,19 @@ namespace HuaweiCloud.SDK.Ims.V2
         /// </summary>
         public BatchAddMembersResponse BatchAddMembers(BatchAddMembersRequest batchAddMembersRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/cloudimages/members",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchAddMembersRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/cloudimages/members", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchAddMembersRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<BatchAddMembersResponse>(response);
+        }
+
+        public SyncInvoker<BatchAddMembersResponse> BatchAddMembersInvoker(BatchAddMembersRequest batchAddMembersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/cloudimages/members", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchAddMembersRequest);
+            return new SyncInvoker<BatchAddMembersResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchAddMembersResponse>);
         }
         
         /// <summary>
@@ -57,12 +74,21 @@ namespace HuaweiCloud.SDK.Ims.V2
         /// </summary>
         public BatchAddOrDeleteTagsResponse BatchAddOrDeleteTags(BatchAddOrDeleteTagsRequest batchAddOrDeleteTagsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("image_id" , batchAddOrDeleteTagsRequest.ImageId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/images/{image_id}/tags/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchAddOrDeleteTagsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("image_id", batchAddOrDeleteTagsRequest.ImageId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/images/{image_id}/tags/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchAddOrDeleteTagsRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerializeNull<BatchAddOrDeleteTagsResponse>(response);
+        }
+
+        public SyncInvoker<BatchAddOrDeleteTagsResponse> BatchAddOrDeleteTagsInvoker(BatchAddOrDeleteTagsRequest batchAddOrDeleteTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("image_id", batchAddOrDeleteTagsRequest.ImageId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/images/{image_id}/tags/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchAddOrDeleteTagsRequest);
+            return new SyncInvoker<BatchAddOrDeleteTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchAddOrDeleteTagsResponse>);
         }
         
         /// <summary>
@@ -75,11 +101,19 @@ namespace HuaweiCloud.SDK.Ims.V2
         /// </summary>
         public BatchDeleteMembersResponse BatchDeleteMembers(BatchDeleteMembersRequest batchDeleteMembersRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/cloudimages/members",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteMembersRequest);
-            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/cloudimages/members", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteMembersRequest);
+            var response = DoHttpRequestSync("DELETE", request);
             return JsonUtils.DeSerialize<BatchDeleteMembersResponse>(response);
+        }
+
+        public SyncInvoker<BatchDeleteMembersResponse> BatchDeleteMembersInvoker(BatchDeleteMembersRequest batchDeleteMembersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/cloudimages/members", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteMembersRequest);
+            return new SyncInvoker<BatchDeleteMembersResponse>(this, "DELETE", request, JsonUtils.DeSerialize<BatchDeleteMembersResponse>);
         }
         
         /// <summary>
@@ -92,11 +126,19 @@ namespace HuaweiCloud.SDK.Ims.V2
         /// </summary>
         public BatchUpdateMembersResponse BatchUpdateMembers(BatchUpdateMembersRequest batchUpdateMembersRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/cloudimages/members",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchUpdateMembersRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/cloudimages/members", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchUpdateMembersRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerialize<BatchUpdateMembersResponse>(response);
+        }
+
+        public SyncInvoker<BatchUpdateMembersResponse> BatchUpdateMembersInvoker(BatchUpdateMembersRequest batchUpdateMembersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/cloudimages/members", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchUpdateMembersRequest);
+            return new SyncInvoker<BatchUpdateMembersResponse>(this, "PUT", request, JsonUtils.DeSerialize<BatchUpdateMembersResponse>);
         }
         
         /// <summary>
@@ -110,12 +152,21 @@ namespace HuaweiCloud.SDK.Ims.V2
         /// </summary>
         public CopyImageCrossRegionResponse CopyImageCrossRegion(CopyImageCrossRegionRequest copyImageCrossRegionRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("image_id" , copyImageCrossRegionRequest.ImageId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/cloudimages/{image_id}/cross_region_copy",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", copyImageCrossRegionRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("image_id", copyImageCrossRegionRequest.ImageId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/cloudimages/{image_id}/cross_region_copy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", copyImageCrossRegionRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<CopyImageCrossRegionResponse>(response);
+        }
+
+        public SyncInvoker<CopyImageCrossRegionResponse> CopyImageCrossRegionInvoker(CopyImageCrossRegionRequest copyImageCrossRegionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("image_id", copyImageCrossRegionRequest.ImageId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/cloudimages/{image_id}/cross_region_copy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", copyImageCrossRegionRequest);
+            return new SyncInvoker<CopyImageCrossRegionResponse>(this, "POST", request, JsonUtils.DeSerialize<CopyImageCrossRegionResponse>);
         }
         
         /// <summary>
@@ -128,12 +179,21 @@ namespace HuaweiCloud.SDK.Ims.V2
         /// </summary>
         public CopyImageInRegionResponse CopyImageInRegion(CopyImageInRegionRequest copyImageInRegionRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("image_id" , copyImageInRegionRequest.ImageId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/cloudimages/{image_id}/copy",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", copyImageInRegionRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("image_id", copyImageInRegionRequest.ImageId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/cloudimages/{image_id}/copy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", copyImageInRegionRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<CopyImageInRegionResponse>(response);
+        }
+
+        public SyncInvoker<CopyImageInRegionResponse> CopyImageInRegionInvoker(CopyImageInRegionRequest copyImageInRegionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("image_id", copyImageInRegionRequest.ImageId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/cloudimages/{image_id}/copy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", copyImageInRegionRequest);
+            return new SyncInvoker<CopyImageInRegionResponse>(this, "POST", request, JsonUtils.DeSerialize<CopyImageInRegionResponse>);
         }
         
         /// <summary>
@@ -145,11 +205,19 @@ namespace HuaweiCloud.SDK.Ims.V2
         /// </summary>
         public CreateDataImageResponse CreateDataImage(CreateDataImageRequest createDataImageRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/cloudimages/dataimages/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createDataImageRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/cloudimages/dataimages/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createDataImageRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<CreateDataImageResponse>(response);
+        }
+
+        public SyncInvoker<CreateDataImageResponse> CreateDataImageInvoker(CreateDataImageRequest createDataImageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/cloudimages/dataimages/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createDataImageRequest);
+            return new SyncInvoker<CreateDataImageResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateDataImageResponse>);
         }
         
         /// <summary>
@@ -172,11 +240,19 @@ namespace HuaweiCloud.SDK.Ims.V2
         /// </summary>
         public CreateImageResponse CreateImage(CreateImageRequest createImageRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/cloudimages/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createImageRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/cloudimages/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createImageRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<CreateImageResponse>(response);
+        }
+
+        public SyncInvoker<CreateImageResponse> CreateImageInvoker(CreateImageRequest createImageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/cloudimages/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createImageRequest);
+            return new SyncInvoker<CreateImageResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateImageResponse>);
         }
         
         /// <summary>
@@ -188,11 +264,19 @@ namespace HuaweiCloud.SDK.Ims.V2
         /// </summary>
         public CreateOrUpdateTagsResponse CreateOrUpdateTags(CreateOrUpdateTagsRequest createOrUpdateTagsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/cloudimages/tags",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createOrUpdateTagsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/cloudimages/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createOrUpdateTagsRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerializeNull<CreateOrUpdateTagsResponse>(response);
+        }
+
+        public SyncInvoker<CreateOrUpdateTagsResponse> CreateOrUpdateTagsInvoker(CreateOrUpdateTagsRequest createOrUpdateTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/cloudimages/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createOrUpdateTagsRequest);
+            return new SyncInvoker<CreateOrUpdateTagsResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<CreateOrUpdateTagsResponse>);
         }
         
         /// <summary>
@@ -204,11 +288,19 @@ namespace HuaweiCloud.SDK.Ims.V2
         /// </summary>
         public CreateWholeImageResponse CreateWholeImage(CreateWholeImageRequest createWholeImageRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/cloudimages/wholeimages/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createWholeImageRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/cloudimages/wholeimages/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createWholeImageRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<CreateWholeImageResponse>(response);
+        }
+
+        public SyncInvoker<CreateWholeImageResponse> CreateWholeImageInvoker(CreateWholeImageRequest createWholeImageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/cloudimages/wholeimages/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createWholeImageRequest);
+            return new SyncInvoker<CreateWholeImageResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateWholeImageResponse>);
         }
         
         /// <summary>
@@ -220,13 +312,23 @@ namespace HuaweiCloud.SDK.Ims.V2
         /// </summary>
         public DeleteImageTagResponse DeleteImageTag(DeleteImageTagRequest deleteImageTagRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("image_id" , deleteImageTagRequest.ImageId.ToString());
-            urlParam.Add("key" , deleteImageTagRequest.Key.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/images/{image_id}/tags/{key}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteImageTagRequest);
-            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("image_id", deleteImageTagRequest.ImageId.ToString());
+            urlParam.Add("key", deleteImageTagRequest.Key.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/images/{image_id}/tags/{key}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteImageTagRequest);
+            var response = DoHttpRequestSync("DELETE", request);
             return JsonUtils.DeSerializeNull<DeleteImageTagResponse>(response);
+        }
+
+        public SyncInvoker<DeleteImageTagResponse> DeleteImageTagInvoker(DeleteImageTagRequest deleteImageTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("image_id", deleteImageTagRequest.ImageId.ToString());
+            urlParam.Add("key", deleteImageTagRequest.Key.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/images/{image_id}/tags/{key}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteImageTagRequest);
+            return new SyncInvoker<DeleteImageTagResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteImageTagResponse>);
         }
         
         /// <summary>
@@ -238,12 +340,21 @@ namespace HuaweiCloud.SDK.Ims.V2
         /// </summary>
         public ExportImageResponse ExportImage(ExportImageRequest exportImageRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("image_id" , exportImageRequest.ImageId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/cloudimages/{image_id}/file",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", exportImageRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("image_id", exportImageRequest.ImageId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/cloudimages/{image_id}/file", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", exportImageRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<ExportImageResponse>(response);
+        }
+
+        public SyncInvoker<ExportImageResponse> ExportImageInvoker(ExportImageRequest exportImageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("image_id", exportImageRequest.ImageId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/cloudimages/{image_id}/file", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", exportImageRequest);
+            return new SyncInvoker<ExportImageResponse>(this, "POST", request, JsonUtils.DeSerialize<ExportImageResponse>);
         }
         
         /// <summary>
@@ -257,11 +368,19 @@ namespace HuaweiCloud.SDK.Ims.V2
         /// </summary>
         public ImportImageQuickResponse ImportImageQuick(ImportImageQuickRequest importImageQuickRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/cloudimages/quickimport/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", importImageQuickRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/cloudimages/quickimport/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", importImageQuickRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<ImportImageQuickResponse>(response);
+        }
+
+        public SyncInvoker<ImportImageQuickResponse> ImportImageQuickInvoker(ImportImageQuickRequest importImageQuickRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/cloudimages/quickimport/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", importImageQuickRequest);
+            return new SyncInvoker<ImportImageQuickResponse>(this, "POST", request, JsonUtils.DeSerialize<ImportImageQuickResponse>);
         }
         
         /// <summary>
@@ -273,11 +392,19 @@ namespace HuaweiCloud.SDK.Ims.V2
         /// </summary>
         public ListImageByTagsResponse ListImageByTags(ListImageByTagsRequest listImageByTagsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/images/resource_instances/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listImageByTagsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/images/resource_instances/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listImageByTagsRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<ListImageByTagsResponse>(response);
+        }
+
+        public SyncInvoker<ListImageByTagsResponse> ListImageByTagsInvoker(ListImageByTagsRequest listImageByTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/images/resource_instances/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listImageByTagsRequest);
+            return new SyncInvoker<ListImageByTagsResponse>(this, "POST", request, JsonUtils.DeSerialize<ListImageByTagsResponse>);
         }
         
         /// <summary>
@@ -289,12 +416,21 @@ namespace HuaweiCloud.SDK.Ims.V2
         /// </summary>
         public ListImageTagsResponse ListImageTags(ListImageTagsRequest listImageTagsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("image_id" , listImageTagsRequest.ImageId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/images/{image_id}/tags",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listImageTagsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("image_id", listImageTagsRequest.ImageId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/images/{image_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listImageTagsRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ListImageTagsResponse>(response);
+        }
+
+        public SyncInvoker<ListImageTagsResponse> ListImageTagsInvoker(ListImageTagsRequest listImageTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("image_id", listImageTagsRequest.ImageId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/images/{image_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listImageTagsRequest);
+            return new SyncInvoker<ListImageTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListImageTagsResponse>);
         }
         
         /// <summary>
@@ -307,11 +443,19 @@ namespace HuaweiCloud.SDK.Ims.V2
         /// </summary>
         public ListImagesResponse ListImages(ListImagesRequest listImagesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/cloudimages",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listImagesRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/cloudimages", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listImagesRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ListImagesResponse>(response);
+        }
+
+        public SyncInvoker<ListImagesResponse> ListImagesInvoker(ListImagesRequest listImagesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/cloudimages", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listImagesRequest);
+            return new SyncInvoker<ListImagesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListImagesResponse>);
         }
         
         /// <summary>
@@ -323,11 +467,19 @@ namespace HuaweiCloud.SDK.Ims.V2
         /// </summary>
         public ListImagesTagsResponse ListImagesTags(ListImagesTagsRequest listImagesTagsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/images/tags",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listImagesTagsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/images/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listImagesTagsRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ListImagesTagsResponse>(response);
+        }
+
+        public SyncInvoker<ListImagesTagsResponse> ListImagesTagsInvoker(ListImagesTagsRequest listImagesTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/images/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listImagesTagsRequest);
+            return new SyncInvoker<ListImagesTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListImagesTagsResponse>);
         }
         
         /// <summary>
@@ -339,13 +491,26 @@ namespace HuaweiCloud.SDK.Ims.V2
         /// </summary>
         public ListOsVersionsResponse ListOsVersions(ListOsVersionsRequest listOsVersionsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/cloudimages/os_version",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listOsVersionsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
-            ListOsVersionsResponse listOsVersionsResponse = JsonUtils.DeSerializeNull<ListOsVersionsResponse>(response);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/cloudimages/os_version", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listOsVersionsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            var listOsVersionsResponse = JsonUtils.DeSerializeNull<ListOsVersionsResponse>(response);
             listOsVersionsResponse.Body = JsonUtils.DeSerializeList<ListOsVersionsResponseBody>(response);
             return listOsVersionsResponse;
+        }
+
+        public SyncInvoker<ListOsVersionsResponse> ListOsVersionsInvoker(ListOsVersionsRequest listOsVersionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/cloudimages/os_version", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listOsVersionsRequest);
+            return new SyncInvoker<ListOsVersionsResponse>(this, "GET", request, response =>
+            {
+                var listOsVersionsResponse = JsonUtils.DeSerializeNull<ListOsVersionsResponse>(response);
+                listOsVersionsResponse.Body = JsonUtils.DeSerializeList<ListOsVersionsResponseBody>(response);
+                return listOsVersionsResponse;
+            });
         }
         
         /// <summary>
@@ -357,11 +522,19 @@ namespace HuaweiCloud.SDK.Ims.V2
         /// </summary>
         public ListTagsResponse ListTags(ListTagsRequest listTagsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/cloudimages/tags",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTagsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/cloudimages/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTagsRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ListTagsResponse>(response);
+        }
+
+        public SyncInvoker<ListTagsResponse> ListTagsInvoker(ListTagsRequest listTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/cloudimages/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTagsRequest);
+            return new SyncInvoker<ListTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListTagsResponse>);
         }
         
         /// <summary>
@@ -379,12 +552,21 @@ namespace HuaweiCloud.SDK.Ims.V2
         /// </summary>
         public RegisterImageResponse RegisterImage(RegisterImageRequest registerImageRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("image_id" , registerImageRequest.ImageId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/cloudimages/{image_id}/upload",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", registerImageRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("image_id", registerImageRequest.ImageId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/cloudimages/{image_id}/upload", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", registerImageRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerialize<RegisterImageResponse>(response);
+        }
+
+        public SyncInvoker<RegisterImageResponse> RegisterImageInvoker(RegisterImageRequest registerImageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("image_id", registerImageRequest.ImageId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/cloudimages/{image_id}/upload", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", registerImageRequest);
+            return new SyncInvoker<RegisterImageResponse>(this, "PUT", request, JsonUtils.DeSerialize<RegisterImageResponse>);
         }
         
         /// <summary>
@@ -396,11 +578,19 @@ namespace HuaweiCloud.SDK.Ims.V2
         /// </summary>
         public ShowImageQuotaResponse ShowImageQuota(ShowImageQuotaRequest showImageQuotaRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/cloudimages/quota",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showImageQuotaRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/cloudimages/quota", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showImageQuotaRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowImageQuotaResponse>(response);
+        }
+
+        public SyncInvoker<ShowImageQuotaResponse> ShowImageQuotaInvoker(ShowImageQuotaRequest showImageQuotaRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/cloudimages/quota", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showImageQuotaRequest);
+            return new SyncInvoker<ShowImageQuotaResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowImageQuotaResponse>);
         }
         
         /// <summary>
@@ -412,12 +602,21 @@ namespace HuaweiCloud.SDK.Ims.V2
         /// </summary>
         public ShowJobResponse ShowJob(ShowJobRequest showJobRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id" , showJobRequest.JobId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/jobs/{job_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showJobRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", showJobRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/jobs/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showJobRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowJobResponse>(response);
+        }
+
+        public SyncInvoker<ShowJobResponse> ShowJobInvoker(ShowJobRequest showJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", showJobRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/jobs/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showJobRequest);
+            return new SyncInvoker<ShowJobResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowJobResponse>);
         }
         
         /// <summary>
@@ -429,12 +628,21 @@ namespace HuaweiCloud.SDK.Ims.V2
         /// </summary>
         public ShowJobProgressResponse ShowJobProgress(ShowJobProgressRequest showJobProgressRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id" , showJobProgressRequest.JobId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/cloudimages/job/{job_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showJobProgressRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", showJobProgressRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/cloudimages/job/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showJobProgressRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowJobProgressResponse>(response);
+        }
+
+        public SyncInvoker<ShowJobProgressResponse> ShowJobProgressInvoker(ShowJobProgressRequest showJobProgressRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", showJobProgressRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/cloudimages/job/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showJobProgressRequest);
+            return new SyncInvoker<ShowJobProgressResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowJobProgressResponse>);
         }
         
         /// <summary>
@@ -446,12 +654,21 @@ namespace HuaweiCloud.SDK.Ims.V2
         /// </summary>
         public UpdateImageResponse UpdateImage(UpdateImageRequest updateImageRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("image_id" , updateImageRequest.ImageId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/cloudimages/{image_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateImageRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PATCH",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("image_id", updateImageRequest.ImageId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/cloudimages/{image_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateImageRequest);
+            var response = DoHttpRequestSync("PATCH", request);
             return JsonUtils.DeSerialize<UpdateImageResponse>(response);
+        }
+
+        public SyncInvoker<UpdateImageResponse> UpdateImageInvoker(UpdateImageRequest updateImageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("image_id", updateImageRequest.ImageId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/cloudimages/{image_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateImageRequest);
+            return new SyncInvoker<UpdateImageResponse>(this, "PATCH", request, JsonUtils.DeSerialize<UpdateImageResponse>);
         }
         
         /// <summary>
@@ -463,11 +680,19 @@ namespace HuaweiCloud.SDK.Ims.V2
         /// </summary>
         public ListVersionsResponse ListVersions(ListVersionsRequest listVersionsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listVersionsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listVersionsRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ListVersionsResponse>(response);
+        }
+
+        public SyncInvoker<ListVersionsResponse> ListVersionsInvoker(ListVersionsRequest listVersionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listVersionsRequest);
+            return new SyncInvoker<ListVersionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListVersionsResponse>);
         }
         
         /// <summary>
@@ -479,12 +704,21 @@ namespace HuaweiCloud.SDK.Ims.V2
         /// </summary>
         public ShowVersionResponse ShowVersion(ShowVersionRequest showVersionRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("version" , showVersionRequest.Version.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/{version}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVersionRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("version", showVersionRequest.Version.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/{version}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVersionRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowVersionResponse>(response);
+        }
+
+        public SyncInvoker<ShowVersionResponse> ShowVersionInvoker(ShowVersionRequest showVersionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("version", showVersionRequest.Version.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/{version}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVersionRequest);
+            return new SyncInvoker<ShowVersionResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowVersionResponse>);
         }
         
         /// <summary>
@@ -496,12 +730,21 @@ namespace HuaweiCloud.SDK.Ims.V2
         /// </summary>
         public GlanceAddImageMemberResponse GlanceAddImageMember(GlanceAddImageMemberRequest glanceAddImageMemberRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("image_id" , glanceAddImageMemberRequest.ImageId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/images/{image_id}/members",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", glanceAddImageMemberRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("image_id", glanceAddImageMemberRequest.ImageId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/images/{image_id}/members", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", glanceAddImageMemberRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<GlanceAddImageMemberResponse>(response);
+        }
+
+        public SyncInvoker<GlanceAddImageMemberResponse> GlanceAddImageMemberInvoker(GlanceAddImageMemberRequest glanceAddImageMemberRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("image_id", glanceAddImageMemberRequest.ImageId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/images/{image_id}/members", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", glanceAddImageMemberRequest);
+            return new SyncInvoker<GlanceAddImageMemberResponse>(this, "POST", request, JsonUtils.DeSerialize<GlanceAddImageMemberResponse>);
         }
         
         /// <summary>
@@ -513,11 +756,19 @@ namespace HuaweiCloud.SDK.Ims.V2
         /// </summary>
         public GlanceCreateImageMetadataResponse GlanceCreateImageMetadata(GlanceCreateImageMetadataRequest glanceCreateImageMetadataRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/images",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", glanceCreateImageMetadataRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/images", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", glanceCreateImageMetadataRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<GlanceCreateImageMetadataResponse>(response);
+        }
+
+        public SyncInvoker<GlanceCreateImageMetadataResponse> GlanceCreateImageMetadataInvoker(GlanceCreateImageMetadataRequest glanceCreateImageMetadataRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/images", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", glanceCreateImageMetadataRequest);
+            return new SyncInvoker<GlanceCreateImageMetadataResponse>(this, "POST", request, JsonUtils.DeSerialize<GlanceCreateImageMetadataResponse>);
         }
         
         /// <summary>
@@ -529,13 +780,23 @@ namespace HuaweiCloud.SDK.Ims.V2
         /// </summary>
         public GlanceCreateTagResponse GlanceCreateTag(GlanceCreateTagRequest glanceCreateTagRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("image_id" , glanceCreateTagRequest.ImageId.ToString());
-            urlParam.Add("tag" , glanceCreateTagRequest.Tag.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/images/{image_id}/tags/{tag}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", glanceCreateTagRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("image_id", glanceCreateTagRequest.ImageId.ToString());
+            urlParam.Add("tag", glanceCreateTagRequest.Tag.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/images/{image_id}/tags/{tag}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", glanceCreateTagRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerializeNull<GlanceCreateTagResponse>(response);
+        }
+
+        public SyncInvoker<GlanceCreateTagResponse> GlanceCreateTagInvoker(GlanceCreateTagRequest glanceCreateTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("image_id", glanceCreateTagRequest.ImageId.ToString());
+            urlParam.Add("tag", glanceCreateTagRequest.Tag.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/images/{image_id}/tags/{tag}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", glanceCreateTagRequest);
+            return new SyncInvoker<GlanceCreateTagResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<GlanceCreateTagResponse>);
         }
         
         /// <summary>
@@ -547,12 +808,21 @@ namespace HuaweiCloud.SDK.Ims.V2
         /// </summary>
         public GlanceDeleteImageResponse GlanceDeleteImage(GlanceDeleteImageRequest glanceDeleteImageRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("image_id" , glanceDeleteImageRequest.ImageId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/images/{image_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", glanceDeleteImageRequest);
-            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("image_id", glanceDeleteImageRequest.ImageId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/images/{image_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", glanceDeleteImageRequest);
+            var response = DoHttpRequestSync("DELETE", request);
             return JsonUtils.DeSerializeNull<GlanceDeleteImageResponse>(response);
+        }
+
+        public SyncInvoker<GlanceDeleteImageResponse> GlanceDeleteImageInvoker(GlanceDeleteImageRequest glanceDeleteImageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("image_id", glanceDeleteImageRequest.ImageId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/images/{image_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", glanceDeleteImageRequest);
+            return new SyncInvoker<GlanceDeleteImageResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<GlanceDeleteImageResponse>);
         }
         
         /// <summary>
@@ -564,13 +834,23 @@ namespace HuaweiCloud.SDK.Ims.V2
         /// </summary>
         public GlanceDeleteImageMemberResponse GlanceDeleteImageMember(GlanceDeleteImageMemberRequest glanceDeleteImageMemberRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("image_id" , glanceDeleteImageMemberRequest.ImageId.ToString());
-            urlParam.Add("member_id" , glanceDeleteImageMemberRequest.MemberId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/images/{image_id}/members/{member_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", glanceDeleteImageMemberRequest);
-            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("image_id", glanceDeleteImageMemberRequest.ImageId.ToString());
+            urlParam.Add("member_id", glanceDeleteImageMemberRequest.MemberId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/images/{image_id}/members/{member_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", glanceDeleteImageMemberRequest);
+            var response = DoHttpRequestSync("DELETE", request);
             return JsonUtils.DeSerializeNull<GlanceDeleteImageMemberResponse>(response);
+        }
+
+        public SyncInvoker<GlanceDeleteImageMemberResponse> GlanceDeleteImageMemberInvoker(GlanceDeleteImageMemberRequest glanceDeleteImageMemberRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("image_id", glanceDeleteImageMemberRequest.ImageId.ToString());
+            urlParam.Add("member_id", glanceDeleteImageMemberRequest.MemberId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/images/{image_id}/members/{member_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", glanceDeleteImageMemberRequest);
+            return new SyncInvoker<GlanceDeleteImageMemberResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<GlanceDeleteImageMemberResponse>);
         }
         
         /// <summary>
@@ -582,13 +862,23 @@ namespace HuaweiCloud.SDK.Ims.V2
         /// </summary>
         public GlanceDeleteTagResponse GlanceDeleteTag(GlanceDeleteTagRequest glanceDeleteTagRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("image_id" , glanceDeleteTagRequest.ImageId.ToString());
-            urlParam.Add("tag" , glanceDeleteTagRequest.Tag.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/images/{image_id}/tags/{tag}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", glanceDeleteTagRequest);
-            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("image_id", glanceDeleteTagRequest.ImageId.ToString());
+            urlParam.Add("tag", glanceDeleteTagRequest.Tag.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/images/{image_id}/tags/{tag}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", glanceDeleteTagRequest);
+            var response = DoHttpRequestSync("DELETE", request);
             return JsonUtils.DeSerializeNull<GlanceDeleteTagResponse>(response);
+        }
+
+        public SyncInvoker<GlanceDeleteTagResponse> GlanceDeleteTagInvoker(GlanceDeleteTagRequest glanceDeleteTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("image_id", glanceDeleteTagRequest.ImageId.ToString());
+            urlParam.Add("tag", glanceDeleteTagRequest.Tag.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/images/{image_id}/tags/{tag}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", glanceDeleteTagRequest);
+            return new SyncInvoker<GlanceDeleteTagResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<GlanceDeleteTagResponse>);
         }
         
         /// <summary>
@@ -600,11 +890,19 @@ namespace HuaweiCloud.SDK.Ims.V2
         /// </summary>
         public GlanceListImageMemberSchemasResponse GlanceListImageMemberSchemas(GlanceListImageMemberSchemasRequest glanceListImageMemberSchemasRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/schemas/members",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", glanceListImageMemberSchemasRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/schemas/members", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", glanceListImageMemberSchemasRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<GlanceListImageMemberSchemasResponse>(response);
+        }
+
+        public SyncInvoker<GlanceListImageMemberSchemasResponse> GlanceListImageMemberSchemasInvoker(GlanceListImageMemberSchemasRequest glanceListImageMemberSchemasRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/schemas/members", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", glanceListImageMemberSchemasRequest);
+            return new SyncInvoker<GlanceListImageMemberSchemasResponse>(this, "GET", request, JsonUtils.DeSerialize<GlanceListImageMemberSchemasResponse>);
         }
         
         /// <summary>
@@ -616,12 +914,21 @@ namespace HuaweiCloud.SDK.Ims.V2
         /// </summary>
         public GlanceListImageMembersResponse GlanceListImageMembers(GlanceListImageMembersRequest glanceListImageMembersRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("image_id" , glanceListImageMembersRequest.ImageId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/images/{image_id}/members",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", glanceListImageMembersRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("image_id", glanceListImageMembersRequest.ImageId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/images/{image_id}/members", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", glanceListImageMembersRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<GlanceListImageMembersResponse>(response);
+        }
+
+        public SyncInvoker<GlanceListImageMembersResponse> GlanceListImageMembersInvoker(GlanceListImageMembersRequest glanceListImageMembersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("image_id", glanceListImageMembersRequest.ImageId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/images/{image_id}/members", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", glanceListImageMembersRequest);
+            return new SyncInvoker<GlanceListImageMembersResponse>(this, "GET", request, JsonUtils.DeSerialize<GlanceListImageMembersResponse>);
         }
         
         /// <summary>
@@ -633,11 +940,19 @@ namespace HuaweiCloud.SDK.Ims.V2
         /// </summary>
         public GlanceListImageSchemasResponse GlanceListImageSchemas(GlanceListImageSchemasRequest glanceListImageSchemasRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/schemas/images",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", glanceListImageSchemasRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/schemas/images", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", glanceListImageSchemasRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<GlanceListImageSchemasResponse>(response);
+        }
+
+        public SyncInvoker<GlanceListImageSchemasResponse> GlanceListImageSchemasInvoker(GlanceListImageSchemasRequest glanceListImageSchemasRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/schemas/images", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", glanceListImageSchemasRequest);
+            return new SyncInvoker<GlanceListImageSchemasResponse>(this, "GET", request, JsonUtils.DeSerialize<GlanceListImageSchemasResponse>);
         }
         
         /// <summary>
@@ -653,11 +968,19 @@ namespace HuaweiCloud.SDK.Ims.V2
         /// </summary>
         public GlanceListImagesResponse GlanceListImages(GlanceListImagesRequest glanceListImagesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/images",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", glanceListImagesRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/images", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", glanceListImagesRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<GlanceListImagesResponse>(response);
+        }
+
+        public SyncInvoker<GlanceListImagesResponse> GlanceListImagesInvoker(GlanceListImagesRequest glanceListImagesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/images", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", glanceListImagesRequest);
+            return new SyncInvoker<GlanceListImagesResponse>(this, "GET", request, JsonUtils.DeSerialize<GlanceListImagesResponse>);
         }
         
         /// <summary>
@@ -669,12 +992,21 @@ namespace HuaweiCloud.SDK.Ims.V2
         /// </summary>
         public GlanceShowImageResponse GlanceShowImage(GlanceShowImageRequest glanceShowImageRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("image_id" , glanceShowImageRequest.ImageId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/images/{image_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", glanceShowImageRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("image_id", glanceShowImageRequest.ImageId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/images/{image_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", glanceShowImageRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<GlanceShowImageResponse>(response);
+        }
+
+        public SyncInvoker<GlanceShowImageResponse> GlanceShowImageInvoker(GlanceShowImageRequest glanceShowImageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("image_id", glanceShowImageRequest.ImageId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/images/{image_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", glanceShowImageRequest);
+            return new SyncInvoker<GlanceShowImageResponse>(this, "GET", request, JsonUtils.DeSerialize<GlanceShowImageResponse>);
         }
         
         /// <summary>
@@ -686,13 +1018,23 @@ namespace HuaweiCloud.SDK.Ims.V2
         /// </summary>
         public GlanceShowImageMemberResponse GlanceShowImageMember(GlanceShowImageMemberRequest glanceShowImageMemberRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("image_id" , glanceShowImageMemberRequest.ImageId.ToString());
-            urlParam.Add("member_id" , glanceShowImageMemberRequest.MemberId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/images/{image_id}/members/{member_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", glanceShowImageMemberRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("image_id", glanceShowImageMemberRequest.ImageId.ToString());
+            urlParam.Add("member_id", glanceShowImageMemberRequest.MemberId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/images/{image_id}/members/{member_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", glanceShowImageMemberRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<GlanceShowImageMemberResponse>(response);
+        }
+
+        public SyncInvoker<GlanceShowImageMemberResponse> GlanceShowImageMemberInvoker(GlanceShowImageMemberRequest glanceShowImageMemberRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("image_id", glanceShowImageMemberRequest.ImageId.ToString());
+            urlParam.Add("member_id", glanceShowImageMemberRequest.MemberId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/images/{image_id}/members/{member_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", glanceShowImageMemberRequest);
+            return new SyncInvoker<GlanceShowImageMemberResponse>(this, "GET", request, JsonUtils.DeSerialize<GlanceShowImageMemberResponse>);
         }
         
         /// <summary>
@@ -704,11 +1046,19 @@ namespace HuaweiCloud.SDK.Ims.V2
         /// </summary>
         public GlanceShowImageMemberSchemasResponse GlanceShowImageMemberSchemas(GlanceShowImageMemberSchemasRequest glanceShowImageMemberSchemasRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/schemas/member",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", glanceShowImageMemberSchemasRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/schemas/member", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", glanceShowImageMemberSchemasRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<GlanceShowImageMemberSchemasResponse>(response);
+        }
+
+        public SyncInvoker<GlanceShowImageMemberSchemasResponse> GlanceShowImageMemberSchemasInvoker(GlanceShowImageMemberSchemasRequest glanceShowImageMemberSchemasRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/schemas/member", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", glanceShowImageMemberSchemasRequest);
+            return new SyncInvoker<GlanceShowImageMemberSchemasResponse>(this, "GET", request, JsonUtils.DeSerialize<GlanceShowImageMemberSchemasResponse>);
         }
         
         /// <summary>
@@ -720,11 +1070,19 @@ namespace HuaweiCloud.SDK.Ims.V2
         /// </summary>
         public GlanceShowImageSchemasResponse GlanceShowImageSchemas(GlanceShowImageSchemasRequest glanceShowImageSchemasRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/schemas/image",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", glanceShowImageSchemasRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/schemas/image", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", glanceShowImageSchemasRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<GlanceShowImageSchemasResponse>(response);
+        }
+
+        public SyncInvoker<GlanceShowImageSchemasResponse> GlanceShowImageSchemasInvoker(GlanceShowImageSchemasRequest glanceShowImageSchemasRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/schemas/image", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", glanceShowImageSchemasRequest);
+            return new SyncInvoker<GlanceShowImageSchemasResponse>(this, "GET", request, JsonUtils.DeSerialize<GlanceShowImageSchemasResponse>);
         }
         
         /// <summary>
@@ -736,12 +1094,21 @@ namespace HuaweiCloud.SDK.Ims.V2
         /// </summary>
         public GlanceUpdateImageResponse GlanceUpdateImage(GlanceUpdateImageRequest glanceUpdateImageRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("image_id" , glanceUpdateImageRequest.ImageId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/images/{image_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/openstack-images-v2.1-json-patch", glanceUpdateImageRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PATCH",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("image_id", glanceUpdateImageRequest.ImageId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/images/{image_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/openstack-images-v2.1-json-patch", glanceUpdateImageRequest);
+            var response = DoHttpRequestSync("PATCH", request);
             return JsonUtils.DeSerialize<GlanceUpdateImageResponse>(response);
+        }
+
+        public SyncInvoker<GlanceUpdateImageResponse> GlanceUpdateImageInvoker(GlanceUpdateImageRequest glanceUpdateImageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("image_id", glanceUpdateImageRequest.ImageId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/images/{image_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/openstack-images-v2.1-json-patch", glanceUpdateImageRequest);
+            return new SyncInvoker<GlanceUpdateImageResponse>(this, "PATCH", request, JsonUtils.DeSerialize<GlanceUpdateImageResponse>);
         }
         
         /// <summary>
@@ -753,13 +1120,23 @@ namespace HuaweiCloud.SDK.Ims.V2
         /// </summary>
         public GlanceUpdateImageMemberResponse GlanceUpdateImageMember(GlanceUpdateImageMemberRequest glanceUpdateImageMemberRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("image_id" , glanceUpdateImageMemberRequest.ImageId.ToString());
-            urlParam.Add("member_id" , glanceUpdateImageMemberRequest.MemberId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/images/{image_id}/members/{member_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", glanceUpdateImageMemberRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("image_id", glanceUpdateImageMemberRequest.ImageId.ToString());
+            urlParam.Add("member_id", glanceUpdateImageMemberRequest.MemberId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/images/{image_id}/members/{member_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", glanceUpdateImageMemberRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerialize<GlanceUpdateImageMemberResponse>(response);
+        }
+
+        public SyncInvoker<GlanceUpdateImageMemberResponse> GlanceUpdateImageMemberInvoker(GlanceUpdateImageMemberRequest glanceUpdateImageMemberRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("image_id", glanceUpdateImageMemberRequest.ImageId.ToString());
+            urlParam.Add("member_id", glanceUpdateImageMemberRequest.MemberId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/images/{image_id}/members/{member_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", glanceUpdateImageMemberRequest);
+            return new SyncInvoker<GlanceUpdateImageMemberResponse>(this, "PUT", request, JsonUtils.DeSerialize<GlanceUpdateImageMemberResponse>);
         }
         
     }

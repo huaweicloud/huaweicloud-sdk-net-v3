@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public string Ecsperformancetype { get; set; }
 
         /// <summary>
-        /// 订单ID，节点付费类型为自动付费包周期类型时，响应中会返回此字段。
+        /// 订单ID，节点付费类型为自动付费包周期类型时，响应中会返回此字段(仅创建场景涉及)。
         /// </summary>
         [JsonProperty("orderID", NullValueHandling = NullValueHandling.Ignore)]
         public string OrderID { get; set; }
@@ -41,13 +41,13 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public int? MaxPods { get; set; }
 
         /// <summary>
-        /// - month：月 - year：年 &gt; billingMode为1（包周期）或2（已废弃：自动付费包周期）时生效，且为必选。 
+        /// - month：月 - year：年 &gt; 作为请求参数，billingMode为1（包周期）或2（已废弃：自动付费包周期）时生效，且为必选。 &gt; 作为响应参数，仅在创建包周期节点时返回。 
         /// </summary>
         [JsonProperty("periodType", NullValueHandling = NullValueHandling.Ignore)]
         public string PeriodType { get; set; }
 
         /// <summary>
-        /// 订购周期数，取值范围： - periodType&#x3D;month（周期类型为月）时，取值为[1-9]。 - periodType&#x3D;year（周期类型为年）时，取值为1。 &gt; billingMode为1或2（已废弃）时生效，且为必选。 
+        /// 订购周期数，取值范围： - periodType&#x3D;month（周期类型为月）时，取值为[1-9]。 - periodType&#x3D;year（周期类型为年）时，取值为1。 &gt; 作为请求参数，billingMode为1或2（已废弃）时生效，且为必选。 &gt; 作为响应参数，仅在创建包周期节点时返回。 
         /// </summary>
         [JsonProperty("periodNum", NullValueHandling = NullValueHandling.Ignore)]
         public int? PeriodNum { get; set; }
@@ -119,22 +119,28 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public int? ChargingMode { get; set; }
 
         /// <summary>
-        /// 委托的名称。  委托是由租户管理员在统一身份认证服务（Identity and Access Management，IAM）上创建的，可以为CCE节点提供访问云服务器的临时凭证。 
+        /// 委托的名称。  委托是由租户管理员在统一身份认证服务（Identity and Access Management，IAM）上创建的，可以为CCE节点提供访问云服务器的临时凭证。 作为响应参数仅在创建节点传入时返回该字段。 
         /// </summary>
         [JsonProperty("agency_name", NullValueHandling = NullValueHandling.Ignore)]
         public string AgencyName { get; set; }
 
         /// <summary>
-        /// 节点内存预留，Kubernetes相关组件预留值。 
+        /// 节点内存预留，Kubernetes相关组件预留值。[随节点规格变动，具体请参见[节点预留资源策略说明](https://support.huaweicloud.com/usermanual-cce/cce_10_0178.html)。](tag:hws) 
         /// </summary>
-        [JsonProperty("kube-reserved-mem", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("kubeReservedMem", NullValueHandling = NullValueHandling.Ignore)]
         public int? KubeReservedMem { get; set; }
 
         /// <summary>
-        /// 节点内存预留，系统组件预留值。 
+        /// 节点内存预留，系统组件预留值。[随节点规格变动，具体请参见[节点预留资源策略说明](https://support.huaweicloud.com/usermanual-cce/cce_10_0178.html)。](tag:hws) 
         /// </summary>
-        [JsonProperty("system-reserved-mem", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("systemReservedMem", NullValueHandling = NullValueHandling.Ignore)]
         public int? SystemReservedMem { get; set; }
+
+        /// <summary>
+        /// 节点密码，作为响应参数时，固定展示星号。
+        /// </summary>
+        [JsonProperty("init-node-password", NullValueHandling = NullValueHandling.Ignore)]
+        public string InitNodePassword { get; set; }
 
 
 
@@ -165,6 +171,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  agencyName: ").Append(AgencyName).Append("\n");
             sb.Append("  kubeReservedMem: ").Append(KubeReservedMem).Append("\n");
             sb.Append("  systemReservedMem: ").Append(SystemReservedMem).Append("\n");
+            sb.Append("  initNodePassword: ").Append(InitNodePassword).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -285,6 +292,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.SystemReservedMem == input.SystemReservedMem ||
                     (this.SystemReservedMem != null &&
                     this.SystemReservedMem.Equals(input.SystemReservedMem))
+                ) && 
+                (
+                    this.InitNodePassword == input.InitNodePassword ||
+                    (this.InitNodePassword != null &&
+                    this.InitNodePassword.Equals(input.InitNodePassword))
                 );
         }
 
@@ -336,6 +348,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     hashCode = hashCode * 59 + this.KubeReservedMem.GetHashCode();
                 if (this.SystemReservedMem != null)
                     hashCode = hashCode * 59 + this.SystemReservedMem.GetHashCode();
+                if (this.InitNodePassword != null)
+                    hashCode = hashCode * 59 + this.InitNodePassword.GetHashCode();
                 return hashCode;
             }
         }

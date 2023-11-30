@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 集群ID，资源唯一标识，创建成功后自动生成，填写无效
+        /// 集群ID，资源唯一标识，创建成功后自动生成，填写无效。在创建包周期集群时，响应体不返回集群ID。
         /// </summary>
         [JsonProperty("uid", NullValueHandling = NullValueHandling.Ignore)]
         public string Uid { get; set; }

@@ -26,12 +26,21 @@ namespace HuaweiCloud.SDK.Evs.V2
         /// </summary>
         public BatchCreateVolumeTagsResponse BatchCreateVolumeTags(BatchCreateVolumeTagsRequest batchCreateVolumeTagsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("volume_id" , batchCreateVolumeTagsRequest.VolumeId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudvolumes/{volume_id}/tags/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchCreateVolumeTagsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("volume_id", batchCreateVolumeTagsRequest.VolumeId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudvolumes/{volume_id}/tags/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchCreateVolumeTagsRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerializeNull<BatchCreateVolumeTagsResponse>(response);
+        }
+
+        public SyncInvoker<BatchCreateVolumeTagsResponse> BatchCreateVolumeTagsInvoker(BatchCreateVolumeTagsRequest batchCreateVolumeTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("volume_id", batchCreateVolumeTagsRequest.VolumeId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudvolumes/{volume_id}/tags/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchCreateVolumeTagsRequest);
+            return new SyncInvoker<BatchCreateVolumeTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchCreateVolumeTagsResponse>);
         }
         
         /// <summary>
@@ -43,12 +52,21 @@ namespace HuaweiCloud.SDK.Evs.V2
         /// </summary>
         public BatchDeleteVolumeTagsResponse BatchDeleteVolumeTags(BatchDeleteVolumeTagsRequest batchDeleteVolumeTagsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("volume_id" , batchDeleteVolumeTagsRequest.VolumeId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudvolumes/{volume_id}/tags/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteVolumeTagsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("volume_id", batchDeleteVolumeTagsRequest.VolumeId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudvolumes/{volume_id}/tags/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteVolumeTagsRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerializeNull<BatchDeleteVolumeTagsResponse>(response);
+        }
+
+        public SyncInvoker<BatchDeleteVolumeTagsResponse> BatchDeleteVolumeTagsInvoker(BatchDeleteVolumeTagsRequest batchDeleteVolumeTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("volume_id", batchDeleteVolumeTagsRequest.VolumeId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudvolumes/{volume_id}/tags/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteVolumeTagsRequest);
+            return new SyncInvoker<BatchDeleteVolumeTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchDeleteVolumeTagsResponse>);
         }
         
         /// <summary>
@@ -60,12 +78,21 @@ namespace HuaweiCloud.SDK.Evs.V2
         /// </summary>
         public CinderAcceptVolumeTransferResponse CinderAcceptVolumeTransfer(CinderAcceptVolumeTransferRequest cinderAcceptVolumeTransferRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("transfer_id" , cinderAcceptVolumeTransferRequest.TransferId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/os-volume-transfer/{transfer_id}/accept",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", cinderAcceptVolumeTransferRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("transfer_id", cinderAcceptVolumeTransferRequest.TransferId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/os-volume-transfer/{transfer_id}/accept", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", cinderAcceptVolumeTransferRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<CinderAcceptVolumeTransferResponse>(response);
+        }
+
+        public SyncInvoker<CinderAcceptVolumeTransferResponse> CinderAcceptVolumeTransferInvoker(CinderAcceptVolumeTransferRequest cinderAcceptVolumeTransferRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("transfer_id", cinderAcceptVolumeTransferRequest.TransferId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/os-volume-transfer/{transfer_id}/accept", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", cinderAcceptVolumeTransferRequest);
+            return new SyncInvoker<CinderAcceptVolumeTransferResponse>(this, "POST", request, JsonUtils.DeSerialize<CinderAcceptVolumeTransferResponse>);
         }
         
         /// <summary>
@@ -78,11 +105,19 @@ namespace HuaweiCloud.SDK.Evs.V2
         /// </summary>
         public CinderCreateVolumeTransferResponse CinderCreateVolumeTransfer(CinderCreateVolumeTransferRequest cinderCreateVolumeTransferRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/os-volume-transfer",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", cinderCreateVolumeTransferRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/os-volume-transfer", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", cinderCreateVolumeTransferRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<CinderCreateVolumeTransferResponse>(response);
+        }
+
+        public SyncInvoker<CinderCreateVolumeTransferResponse> CinderCreateVolumeTransferInvoker(CinderCreateVolumeTransferRequest cinderCreateVolumeTransferRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/os-volume-transfer", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", cinderCreateVolumeTransferRequest);
+            return new SyncInvoker<CinderCreateVolumeTransferResponse>(this, "POST", request, JsonUtils.DeSerialize<CinderCreateVolumeTransferResponse>);
         }
         
         /// <summary>
@@ -94,12 +129,21 @@ namespace HuaweiCloud.SDK.Evs.V2
         /// </summary>
         public CinderDeleteVolumeTransferResponse CinderDeleteVolumeTransfer(CinderDeleteVolumeTransferRequest cinderDeleteVolumeTransferRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("transfer_id" , cinderDeleteVolumeTransferRequest.TransferId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/os-volume-transfer/{transfer_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", cinderDeleteVolumeTransferRequest);
-            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("transfer_id", cinderDeleteVolumeTransferRequest.TransferId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/os-volume-transfer/{transfer_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", cinderDeleteVolumeTransferRequest);
+            var response = DoHttpRequestSync("DELETE", request);
             return JsonUtils.DeSerializeNull<CinderDeleteVolumeTransferResponse>(response);
+        }
+
+        public SyncInvoker<CinderDeleteVolumeTransferResponse> CinderDeleteVolumeTransferInvoker(CinderDeleteVolumeTransferRequest cinderDeleteVolumeTransferRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("transfer_id", cinderDeleteVolumeTransferRequest.TransferId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/os-volume-transfer/{transfer_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", cinderDeleteVolumeTransferRequest);
+            return new SyncInvoker<CinderDeleteVolumeTransferResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<CinderDeleteVolumeTransferResponse>);
         }
         
         /// <summary>
@@ -111,11 +155,19 @@ namespace HuaweiCloud.SDK.Evs.V2
         /// </summary>
         public CinderListAvailabilityZonesResponse CinderListAvailabilityZones(CinderListAvailabilityZonesRequest cinderListAvailabilityZonesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/os-availability-zone",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", cinderListAvailabilityZonesRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/os-availability-zone", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", cinderListAvailabilityZonesRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<CinderListAvailabilityZonesResponse>(response);
+        }
+
+        public SyncInvoker<CinderListAvailabilityZonesResponse> CinderListAvailabilityZonesInvoker(CinderListAvailabilityZonesRequest cinderListAvailabilityZonesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/os-availability-zone", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", cinderListAvailabilityZonesRequest);
+            return new SyncInvoker<CinderListAvailabilityZonesResponse>(this, "GET", request, JsonUtils.DeSerialize<CinderListAvailabilityZonesResponse>);
         }
         
         /// <summary>
@@ -127,12 +179,21 @@ namespace HuaweiCloud.SDK.Evs.V2
         /// </summary>
         public CinderListQuotasResponse CinderListQuotas(CinderListQuotasRequest cinderListQuotasRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("target_project_id" , cinderListQuotasRequest.TargetProjectId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/os-quota-sets/{target_project_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", cinderListQuotasRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("target_project_id", cinderListQuotasRequest.TargetProjectId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/os-quota-sets/{target_project_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", cinderListQuotasRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<CinderListQuotasResponse>(response);
+        }
+
+        public SyncInvoker<CinderListQuotasResponse> CinderListQuotasInvoker(CinderListQuotasRequest cinderListQuotasRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("target_project_id", cinderListQuotasRequest.TargetProjectId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/os-quota-sets/{target_project_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", cinderListQuotasRequest);
+            return new SyncInvoker<CinderListQuotasResponse>(this, "GET", request, JsonUtils.DeSerialize<CinderListQuotasResponse>);
         }
         
         /// <summary>
@@ -144,11 +205,19 @@ namespace HuaweiCloud.SDK.Evs.V2
         /// </summary>
         public CinderListVolumeTransfersResponse CinderListVolumeTransfers(CinderListVolumeTransfersRequest cinderListVolumeTransfersRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/os-volume-transfer",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", cinderListVolumeTransfersRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/os-volume-transfer", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", cinderListVolumeTransfersRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<CinderListVolumeTransfersResponse>(response);
+        }
+
+        public SyncInvoker<CinderListVolumeTransfersResponse> CinderListVolumeTransfersInvoker(CinderListVolumeTransfersRequest cinderListVolumeTransfersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/os-volume-transfer", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", cinderListVolumeTransfersRequest);
+            return new SyncInvoker<CinderListVolumeTransfersResponse>(this, "GET", request, JsonUtils.DeSerialize<CinderListVolumeTransfersResponse>);
         }
         
         /// <summary>
@@ -160,11 +229,19 @@ namespace HuaweiCloud.SDK.Evs.V2
         /// </summary>
         public CinderListVolumeTypesResponse CinderListVolumeTypes(CinderListVolumeTypesRequest cinderListVolumeTypesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/types",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", cinderListVolumeTypesRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/types", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", cinderListVolumeTypesRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<CinderListVolumeTypesResponse>(response);
+        }
+
+        public SyncInvoker<CinderListVolumeTypesResponse> CinderListVolumeTypesInvoker(CinderListVolumeTypesRequest cinderListVolumeTypesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/types", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", cinderListVolumeTypesRequest);
+            return new SyncInvoker<CinderListVolumeTypesResponse>(this, "GET", request, JsonUtils.DeSerialize<CinderListVolumeTypesResponse>);
         }
         
         /// <summary>
@@ -176,12 +253,21 @@ namespace HuaweiCloud.SDK.Evs.V2
         /// </summary>
         public CinderShowVolumeTransferResponse CinderShowVolumeTransfer(CinderShowVolumeTransferRequest cinderShowVolumeTransferRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("transfer_id" , cinderShowVolumeTransferRequest.TransferId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/os-volume-transfer/{transfer_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", cinderShowVolumeTransferRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("transfer_id", cinderShowVolumeTransferRequest.TransferId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/os-volume-transfer/{transfer_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", cinderShowVolumeTransferRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<CinderShowVolumeTransferResponse>(response);
+        }
+
+        public SyncInvoker<CinderShowVolumeTransferResponse> CinderShowVolumeTransferInvoker(CinderShowVolumeTransferRequest cinderShowVolumeTransferRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("transfer_id", cinderShowVolumeTransferRequest.TransferId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/os-volume-transfer/{transfer_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", cinderShowVolumeTransferRequest);
+            return new SyncInvoker<CinderShowVolumeTransferResponse>(this, "GET", request, JsonUtils.DeSerialize<CinderShowVolumeTransferResponse>);
         }
         
         /// <summary>
@@ -193,11 +279,19 @@ namespace HuaweiCloud.SDK.Evs.V2
         /// </summary>
         public CreateSnapshotResponse CreateSnapshot(CreateSnapshotRequest createSnapshotRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudsnapshots",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createSnapshotRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudsnapshots", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createSnapshotRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<CreateSnapshotResponse>(response);
+        }
+
+        public SyncInvoker<CreateSnapshotResponse> CreateSnapshotInvoker(CreateSnapshotRequest createSnapshotRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudsnapshots", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createSnapshotRequest);
+            return new SyncInvoker<CreateSnapshotResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateSnapshotResponse>);
         }
         
         /// <summary>
@@ -214,11 +308,19 @@ namespace HuaweiCloud.SDK.Evs.V2
         /// </summary>
         public CreateVolumeResponse CreateVolume(CreateVolumeRequest createVolumeRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2.1/{project_id}/cloudvolumes",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createVolumeRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/{project_id}/cloudvolumes", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createVolumeRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<CreateVolumeResponse>(response);
+        }
+
+        public SyncInvoker<CreateVolumeResponse> CreateVolumeInvoker(CreateVolumeRequest createVolumeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/{project_id}/cloudvolumes", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createVolumeRequest);
+            return new SyncInvoker<CreateVolumeResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateVolumeResponse>);
         }
         
         /// <summary>
@@ -230,12 +332,21 @@ namespace HuaweiCloud.SDK.Evs.V2
         /// </summary>
         public DeleteSnapshotResponse DeleteSnapshot(DeleteSnapshotRequest deleteSnapshotRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("snapshot_id" , deleteSnapshotRequest.SnapshotId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudsnapshots/{snapshot_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSnapshotRequest);
-            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("snapshot_id", deleteSnapshotRequest.SnapshotId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudsnapshots/{snapshot_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSnapshotRequest);
+            var response = DoHttpRequestSync("DELETE", request);
             return JsonUtils.DeSerializeNull<DeleteSnapshotResponse>(response);
+        }
+
+        public SyncInvoker<DeleteSnapshotResponse> DeleteSnapshotInvoker(DeleteSnapshotRequest deleteSnapshotRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("snapshot_id", deleteSnapshotRequest.SnapshotId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudsnapshots/{snapshot_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSnapshotRequest);
+            return new SyncInvoker<DeleteSnapshotResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteSnapshotResponse>);
         }
         
         /// <summary>
@@ -247,12 +358,21 @@ namespace HuaweiCloud.SDK.Evs.V2
         /// </summary>
         public DeleteVolumeResponse DeleteVolume(DeleteVolumeRequest deleteVolumeRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("volume_id" , deleteVolumeRequest.VolumeId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudvolumes/{volume_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteVolumeRequest);
-            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("volume_id", deleteVolumeRequest.VolumeId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudvolumes/{volume_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteVolumeRequest);
+            var response = DoHttpRequestSync("DELETE", request);
             return JsonUtils.DeSerialize<DeleteVolumeResponse>(response);
+        }
+
+        public SyncInvoker<DeleteVolumeResponse> DeleteVolumeInvoker(DeleteVolumeRequest deleteVolumeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("volume_id", deleteVolumeRequest.VolumeId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudvolumes/{volume_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteVolumeRequest);
+            return new SyncInvoker<DeleteVolumeResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteVolumeResponse>);
         }
         
         /// <summary>
@@ -264,11 +384,19 @@ namespace HuaweiCloud.SDK.Evs.V2
         /// </summary>
         public ListSnapshotsResponse ListSnapshots(ListSnapshotsRequest listSnapshotsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudsnapshots/detail",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSnapshotsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudsnapshots/detail", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSnapshotsRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ListSnapshotsResponse>(response);
+        }
+
+        public SyncInvoker<ListSnapshotsResponse> ListSnapshotsInvoker(ListSnapshotsRequest listSnapshotsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudsnapshots/detail", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSnapshotsRequest);
+            return new SyncInvoker<ListSnapshotsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSnapshotsResponse>);
         }
         
         /// <summary>
@@ -280,11 +408,19 @@ namespace HuaweiCloud.SDK.Evs.V2
         /// </summary>
         public ListVolumeTagsResponse ListVolumeTags(ListVolumeTagsRequest listVolumeTagsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudvolumes/tags",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listVolumeTagsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudvolumes/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listVolumeTagsRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ListVolumeTagsResponse>(response);
+        }
+
+        public SyncInvoker<ListVolumeTagsResponse> ListVolumeTagsInvoker(ListVolumeTagsRequest listVolumeTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudvolumes/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listVolumeTagsRequest);
+            return new SyncInvoker<ListVolumeTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListVolumeTagsResponse>);
         }
         
         /// <summary>
@@ -296,11 +432,19 @@ namespace HuaweiCloud.SDK.Evs.V2
         /// </summary>
         public ListVolumesResponse ListVolumes(ListVolumesRequest listVolumesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudvolumes/detail",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listVolumesRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudvolumes/detail", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listVolumesRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ListVolumesResponse>(response);
+        }
+
+        public SyncInvoker<ListVolumesResponse> ListVolumesInvoker(ListVolumesRequest listVolumesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudvolumes/detail", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listVolumesRequest);
+            return new SyncInvoker<ListVolumesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListVolumesResponse>);
         }
         
         /// <summary>
@@ -312,11 +456,19 @@ namespace HuaweiCloud.SDK.Evs.V2
         /// </summary>
         public ListVolumesByTagsResponse ListVolumesByTags(ListVolumesByTagsRequest listVolumesByTagsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudvolumes/resource_instances/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listVolumesByTagsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudvolumes/resource_instances/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listVolumesByTagsRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<ListVolumesByTagsResponse>(response);
+        }
+
+        public SyncInvoker<ListVolumesByTagsResponse> ListVolumesByTagsInvoker(ListVolumesByTagsRequest listVolumesByTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudvolumes/resource_instances/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listVolumesByTagsRequest);
+            return new SyncInvoker<ListVolumesByTagsResponse>(this, "POST", request, JsonUtils.DeSerialize<ListVolumesByTagsResponse>);
         }
         
         /// <summary>
@@ -328,12 +480,21 @@ namespace HuaweiCloud.SDK.Evs.V2
         /// </summary>
         public ModifyVolumeQoSResponse ModifyVolumeQoS(ModifyVolumeQoSRequest modifyVolumeQoSRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("volume_id" , modifyVolumeQoSRequest.VolumeId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/cloudvolumes/{volume_id}/qos",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", modifyVolumeQoSRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("volume_id", modifyVolumeQoSRequest.VolumeId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/cloudvolumes/{volume_id}/qos", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", modifyVolumeQoSRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerialize<ModifyVolumeQoSResponse>(response);
+        }
+
+        public SyncInvoker<ModifyVolumeQoSResponse> ModifyVolumeQoSInvoker(ModifyVolumeQoSRequest modifyVolumeQoSRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("volume_id", modifyVolumeQoSRequest.VolumeId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/cloudvolumes/{volume_id}/qos", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", modifyVolumeQoSRequest);
+            return new SyncInvoker<ModifyVolumeQoSResponse>(this, "PUT", request, JsonUtils.DeSerialize<ModifyVolumeQoSResponse>);
         }
         
         /// <summary>
@@ -350,12 +511,21 @@ namespace HuaweiCloud.SDK.Evs.V2
         /// </summary>
         public ResizeVolumeResponse ResizeVolume(ResizeVolumeRequest resizeVolumeRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("volume_id" , resizeVolumeRequest.VolumeId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2.1/{project_id}/cloudvolumes/{volume_id}/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", resizeVolumeRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("volume_id", resizeVolumeRequest.VolumeId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/{project_id}/cloudvolumes/{volume_id}/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", resizeVolumeRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<ResizeVolumeResponse>(response);
+        }
+
+        public SyncInvoker<ResizeVolumeResponse> ResizeVolumeInvoker(ResizeVolumeRequest resizeVolumeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("volume_id", resizeVolumeRequest.VolumeId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/{project_id}/cloudvolumes/{volume_id}/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", resizeVolumeRequest);
+            return new SyncInvoker<ResizeVolumeResponse>(this, "POST", request, JsonUtils.DeSerialize<ResizeVolumeResponse>);
         }
         
         /// <summary>
@@ -367,12 +537,21 @@ namespace HuaweiCloud.SDK.Evs.V2
         /// </summary>
         public RollbackSnapshotResponse RollbackSnapshot(RollbackSnapshotRequest rollbackSnapshotRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("snapshot_id" , rollbackSnapshotRequest.SnapshotId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudsnapshots/{snapshot_id}/rollback",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", rollbackSnapshotRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("snapshot_id", rollbackSnapshotRequest.SnapshotId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudsnapshots/{snapshot_id}/rollback", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", rollbackSnapshotRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<RollbackSnapshotResponse>(response);
+        }
+
+        public SyncInvoker<RollbackSnapshotResponse> RollbackSnapshotInvoker(RollbackSnapshotRequest rollbackSnapshotRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("snapshot_id", rollbackSnapshotRequest.SnapshotId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudsnapshots/{snapshot_id}/rollback", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", rollbackSnapshotRequest);
+            return new SyncInvoker<RollbackSnapshotResponse>(this, "POST", request, JsonUtils.DeSerialize<RollbackSnapshotResponse>);
         }
         
         /// <summary>
@@ -385,12 +564,21 @@ namespace HuaweiCloud.SDK.Evs.V2
         /// </summary>
         public ShowJobResponse ShowJob(ShowJobRequest showJobRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id" , showJobRequest.JobId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/jobs/{job_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showJobRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", showJobRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/jobs/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showJobRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowJobResponse>(response);
+        }
+
+        public SyncInvoker<ShowJobResponse> ShowJobInvoker(ShowJobRequest showJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", showJobRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/jobs/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showJobRequest);
+            return new SyncInvoker<ShowJobResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowJobResponse>);
         }
         
         /// <summary>
@@ -402,12 +590,21 @@ namespace HuaweiCloud.SDK.Evs.V2
         /// </summary>
         public ShowSnapshotResponse ShowSnapshot(ShowSnapshotRequest showSnapshotRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("snapshot_id" , showSnapshotRequest.SnapshotId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudsnapshots/{snapshot_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSnapshotRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("snapshot_id", showSnapshotRequest.SnapshotId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudsnapshots/{snapshot_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSnapshotRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowSnapshotResponse>(response);
+        }
+
+        public SyncInvoker<ShowSnapshotResponse> ShowSnapshotInvoker(ShowSnapshotRequest showSnapshotRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("snapshot_id", showSnapshotRequest.SnapshotId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudsnapshots/{snapshot_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSnapshotRequest);
+            return new SyncInvoker<ShowSnapshotResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSnapshotResponse>);
         }
         
         /// <summary>
@@ -419,12 +616,21 @@ namespace HuaweiCloud.SDK.Evs.V2
         /// </summary>
         public ShowVolumeResponse ShowVolume(ShowVolumeRequest showVolumeRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("volume_id" , showVolumeRequest.VolumeId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudvolumes/{volume_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVolumeRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("volume_id", showVolumeRequest.VolumeId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudvolumes/{volume_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVolumeRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowVolumeResponse>(response);
+        }
+
+        public SyncInvoker<ShowVolumeResponse> ShowVolumeInvoker(ShowVolumeRequest showVolumeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("volume_id", showVolumeRequest.VolumeId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudvolumes/{volume_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVolumeRequest);
+            return new SyncInvoker<ShowVolumeResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowVolumeResponse>);
         }
         
         /// <summary>
@@ -436,12 +642,21 @@ namespace HuaweiCloud.SDK.Evs.V2
         /// </summary>
         public ShowVolumeTagsResponse ShowVolumeTags(ShowVolumeTagsRequest showVolumeTagsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("volume_id" , showVolumeTagsRequest.VolumeId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudvolumes/{volume_id}/tags",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVolumeTagsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("volume_id", showVolumeTagsRequest.VolumeId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudvolumes/{volume_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVolumeTagsRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowVolumeTagsResponse>(response);
+        }
+
+        public SyncInvoker<ShowVolumeTagsResponse> ShowVolumeTagsInvoker(ShowVolumeTagsRequest showVolumeTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("volume_id", showVolumeTagsRequest.VolumeId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudvolumes/{volume_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVolumeTagsRequest);
+            return new SyncInvoker<ShowVolumeTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowVolumeTagsResponse>);
         }
         
         /// <summary>
@@ -453,12 +668,21 @@ namespace HuaweiCloud.SDK.Evs.V2
         /// </summary>
         public UpdateSnapshotResponse UpdateSnapshot(UpdateSnapshotRequest updateSnapshotRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("snapshot_id" , updateSnapshotRequest.SnapshotId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudsnapshots/{snapshot_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSnapshotRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("snapshot_id", updateSnapshotRequest.SnapshotId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudsnapshots/{snapshot_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSnapshotRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerialize<UpdateSnapshotResponse>(response);
+        }
+
+        public SyncInvoker<UpdateSnapshotResponse> UpdateSnapshotInvoker(UpdateSnapshotRequest updateSnapshotRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("snapshot_id", updateSnapshotRequest.SnapshotId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudsnapshots/{snapshot_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSnapshotRequest);
+            return new SyncInvoker<UpdateSnapshotResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateSnapshotResponse>);
         }
         
         /// <summary>
@@ -470,12 +694,21 @@ namespace HuaweiCloud.SDK.Evs.V2
         /// </summary>
         public UpdateVolumeResponse UpdateVolume(UpdateVolumeRequest updateVolumeRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("volume_id" , updateVolumeRequest.VolumeId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudvolumes/{volume_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateVolumeRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("volume_id", updateVolumeRequest.VolumeId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudvolumes/{volume_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateVolumeRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerialize<UpdateVolumeResponse>(response);
+        }
+
+        public SyncInvoker<UpdateVolumeResponse> UpdateVolumeInvoker(UpdateVolumeRequest updateVolumeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("volume_id", updateVolumeRequest.VolumeId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudvolumes/{volume_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateVolumeRequest);
+            return new SyncInvoker<UpdateVolumeResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateVolumeResponse>);
         }
         
         /// <summary>
@@ -487,11 +720,19 @@ namespace HuaweiCloud.SDK.Evs.V2
         /// </summary>
         public ListVersionsResponse ListVersions(ListVersionsRequest listVersionsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listVersionsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listVersionsRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ListVersionsResponse>(response);
+        }
+
+        public SyncInvoker<ListVersionsResponse> ListVersionsInvoker(ListVersionsRequest listVersionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listVersionsRequest);
+            return new SyncInvoker<ListVersionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListVersionsResponse>);
         }
         
         /// <summary>
@@ -503,12 +744,21 @@ namespace HuaweiCloud.SDK.Evs.V2
         /// </summary>
         public ShowVersionResponse ShowVersion(ShowVersionRequest showVersionRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("version" , showVersionRequest.Version.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/{version}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVersionRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("version", showVersionRequest.Version.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/{version}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVersionRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowVersionResponse>(response);
+        }
+
+        public SyncInvoker<ShowVersionResponse> ShowVersionInvoker(ShowVersionRequest showVersionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("version", showVersionRequest.Version.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/{version}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVersionRequest);
+            return new SyncInvoker<ShowVersionResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowVersionResponse>);
         }
         
     }

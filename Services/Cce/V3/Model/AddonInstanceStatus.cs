@@ -82,11 +82,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             /// </summary>
             public static readonly StatusEnum ROLLBACKFAILED = new StatusEnum("rollbackFailed");
 
-            /// <summary>
-            /// Enum UNKNOWN for value: unknown
-            /// </summary>
-            public static readonly StatusEnum UNKNOWN = new StatusEnum("unknown");
-
             private static readonly Dictionary<string, StatusEnum> StaticFields =
             new Dictionary<string, StatusEnum>()
             {
@@ -102,7 +97,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 { "available", AVAILABLE },
                 { "rollbacking", ROLLBACKING },
                 { "rollbackFailed", ROLLBACKFAILED },
-                { "unknown", UNKNOWN },
             };
 
             private string _value;

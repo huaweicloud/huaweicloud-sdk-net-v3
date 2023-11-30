@@ -235,8 +235,10 @@ namespace ListVpcsSolution
 * [6. 故障处理](#6-故障处理-top)
     * [6.1 访问日志](#61-访问日志-top)
     * [6.2 HTTP 监听器](#62-http-监听器-top)
-* [7. 文件上传](#7-文件上传-top)
-* [8. FAQ](#8-faq-top)
+* [7. 接口调用器](#7-接口调用器-top)
+    * [7.1 自定义请求头](71-自定义请求头-top)
+* [8. 文件上传](#8-文件上传-top)
+* [9. FAQ](#9-faq-top)
 
 ### 1. 客户端连接参数 [:top:](#用户手册-top)
 
@@ -568,7 +570,7 @@ IamClient iamClient = IamClient.NewBuilder()
 
 ##### 3.3.1 IAM endpoint配置 [:top:](#用户手册-top)
 
-自动获取用户的 projectId 和 domainId 会分别调用统一身份认证服务的 [KeystoneListProjects](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=IAM&api=KeystoneListProjects) 和 [KeystoneListAuthDomains](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=IAM&api=KeystoneListAuthDomains) 接口，默认访问的endpoint为 https://iam.myhuaweicloud.com， **欧洲站用户需要指定 endpoint 为 https://iam.eu-west-101.myhuaweicloud.com**
+自动获取用户的 projectId 和 domainId 会分别调用统一身份认证服务的 [KeystoneListProjects](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=IAM&api=KeystoneListProjects) 和 [KeystoneListAuthDomains](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=IAM&api=KeystoneListAuthDomains) 接口，默认访问的endpoint为 https://iam.myhuaweicloud.com， **欧洲站用户需要指定 endpoint 为 https://iam.eu-west-101.myhuaweicloud.eu**
 
 用户可以通过以下两种方式来修改endpoint
 
@@ -766,7 +768,61 @@ var client = VpcClient.NewBuilder()
 
 HttpHandler 支持如下方法 `AddRequestHandler` 、`AddResponseHandler` 。
 
-### 7. 文件上传 [:top:](#用户手册-top)
+### 7. 接口调用器 [:top:](#用户手册-top)
+
+#### 7.1 自定义请求头 [:top:](#用户手册-top)
+
+可以根据需要灵活地配置请求头域参数，非必要**请勿**指定诸如`Host`、`Authorization`、`User-Agent`、`Content-Type`等通用请求头，可能会导致接口调用错误。
+
+**同步调用**
+
+```csharp
+using System;
+using System.Net.Http;
+using HuaweiCloud.SDK.Core;
+using HuaweiCloud.SDK.Core.Auth;
+using HuaweiCloud.SDK.Vpc.V2;
+using HuaweiCloud.SDK.Vpc.V2.Model;
+
+var client = VpcClient.NewBuilder()
+    .WithCredential(auth)
+    .WithRegion(VpcRegion.ValueOf("cn-north-4"))
+    .Build();
+
+var req = new ListVpcsRequest();
+var resp = client.ListVpcsInvoker(req)
+    // 自定义请求头
+    .AddHeader("key1", "value1")
+    .AddHeader("key2", "value2")
+    .Invoke();
+Console.WriteLine(resp.HttpStatusCode);
+```
+
+**异步调用**
+
+```csharp
+using System;
+using System.Net.Http;
+using HuaweiCloud.SDK.Core;
+using HuaweiCloud.SDK.Core.Auth;
+using HuaweiCloud.SDK.Vpc.V2;
+using HuaweiCloud.SDK.Vpc.V2.Model;
+
+var client = VpcAsyncClient.NewBuilder()
+    .WithCredential(auth)
+    .WithRegion(VpcRegion.ValueOf("cn-north-4"))
+    .Build();
+
+var req = new ListVpcsRequest();
+var resp = await client.ListVpcsAsyncInvoker(req)
+    // 自定义请求头
+    .AddHeader("key1", "value1")
+    .AddHeader("key2", "value2")
+    .Invoke();
+Console.WriteLine(resp.HttpStatusCode);
+```
+
+### 8. 文件上传 [](#用户手册-top)
 
 以设备接入服务的上传批量任务文件接口为例：
 
@@ -823,7 +879,7 @@ namespace UploadBatchTaskFileDemo
 }
 ```
 
-### 8. FAQ [:top:](#用户手册-top)
+### 9. FAQ [:top:](#用户手册-top)
 
 1、使用 .NET Framework 集成 .Net SDK, 报错 System.Net.ProtocolViolationException: 无法发送具有此谓词类型的内容正文
 

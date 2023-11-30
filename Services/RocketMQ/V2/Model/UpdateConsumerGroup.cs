@@ -35,13 +35,13 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public List<string> Brokers { get; set; }
 
         /// <summary>
-        /// 消费组名称，只能由英文字母、数字、百分号、竖线、中划线、下划线组成，长度3~64个字符。
+        /// 待修改参数的消费组（消费组名称不支持修改）。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 最大重试次数。
+        /// 最大重试次数，取值范围为1~16。
         /// </summary>
         [JsonProperty("retry_max_time", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? RetryMaxTime { get; set; }

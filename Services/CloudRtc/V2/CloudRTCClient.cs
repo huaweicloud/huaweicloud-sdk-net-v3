@@ -23,11 +23,19 @@ namespace HuaweiCloud.SDK.CloudRtc.V2
         /// </summary>
         public CreateAppResponse CreateApp(CreateAppRequest createAppRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/apps",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=utf-8", createAppRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/apps", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=utf-8", createAppRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<CreateAppResponse>(response);
+        }
+
+        public SyncInvoker<CreateAppResponse> CreateAppInvoker(CreateAppRequest createAppRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/apps", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=utf-8", createAppRequest);
+            return new SyncInvoker<CreateAppResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateAppResponse>);
         }
         
         /// <summary>
@@ -43,12 +51,21 @@ namespace HuaweiCloud.SDK.CloudRtc.V2
         /// </summary>
         public CreateIndividualStreamJobResponse CreateIndividualStreamJob(CreateIndividualStreamJobRequest createIndividualStreamJobRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("app_id" , createIndividualStreamJobRequest.AppId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/individual-stream-jobs",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=utf-8", createIndividualStreamJobRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("app_id", createIndividualStreamJobRequest.AppId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/individual-stream-jobs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=utf-8", createIndividualStreamJobRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<CreateIndividualStreamJobResponse>(response);
+        }
+
+        public SyncInvoker<CreateIndividualStreamJobResponse> CreateIndividualStreamJobInvoker(CreateIndividualStreamJobRequest createIndividualStreamJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("app_id", createIndividualStreamJobRequest.AppId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/individual-stream-jobs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=utf-8", createIndividualStreamJobRequest);
+            return new SyncInvoker<CreateIndividualStreamJobResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateIndividualStreamJobResponse>);
         }
         
         /// <summary>
@@ -76,12 +93,21 @@ namespace HuaweiCloud.SDK.CloudRtc.V2
         /// </summary>
         public CreateMixJobResponse CreateMixJob(CreateMixJobRequest createMixJobRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("app_id" , createMixJobRequest.AppId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/mix-stream-jobs",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=utf-8", createMixJobRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("app_id", createMixJobRequest.AppId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/mix-stream-jobs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=utf-8", createMixJobRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<CreateMixJobResponse>(response);
+        }
+
+        public SyncInvoker<CreateMixJobResponse> CreateMixJobInvoker(CreateMixJobRequest createMixJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("app_id", createMixJobRequest.AppId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/mix-stream-jobs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=utf-8", createMixJobRequest);
+            return new SyncInvoker<CreateMixJobResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateMixJobResponse>);
         }
         
         /// <summary>
@@ -96,12 +122,21 @@ namespace HuaweiCloud.SDK.CloudRtc.V2
         /// </summary>
         public CreateRecordRuleResponse CreateRecordRule(CreateRecordRuleRequest createRecordRuleRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("app_id" , createRecordRuleRequest.AppId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/record-rules",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=utf-8", createRecordRuleRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("app_id", createRecordRuleRequest.AppId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/record-rules", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=utf-8", createRecordRuleRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<CreateRecordRuleResponse>(response);
+        }
+
+        public SyncInvoker<CreateRecordRuleResponse> CreateRecordRuleInvoker(CreateRecordRuleRequest createRecordRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("app_id", createRecordRuleRequest.AppId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/record-rules", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=utf-8", createRecordRuleRequest);
+            return new SyncInvoker<CreateRecordRuleResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateRecordRuleResponse>);
         }
         
         /// <summary>
@@ -113,12 +148,21 @@ namespace HuaweiCloud.SDK.CloudRtc.V2
         /// </summary>
         public DeleteAppResponse DeleteApp(DeleteAppRequest deleteAppRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("app_id" , deleteAppRequest.AppId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAppRequest);
-            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("app_id", deleteAppRequest.AppId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAppRequest);
+            var response = DoHttpRequestSync("DELETE", request);
             return JsonUtils.DeSerializeNull<DeleteAppResponse>(response);
+        }
+
+        public SyncInvoker<DeleteAppResponse> DeleteAppInvoker(DeleteAppRequest deleteAppRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("app_id", deleteAppRequest.AppId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAppRequest);
+            return new SyncInvoker<DeleteAppResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteAppResponse>);
         }
         
         /// <summary>
@@ -130,13 +174,23 @@ namespace HuaweiCloud.SDK.CloudRtc.V2
         /// </summary>
         public DeleteRecordRuleResponse DeleteRecordRule(DeleteRecordRuleRequest deleteRecordRuleRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("app_id" , deleteRecordRuleRequest.AppId.ToString());
-            urlParam.Add("rule_id" , deleteRecordRuleRequest.RuleId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/record-rules/{rule_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRecordRuleRequest);
-            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("app_id", deleteRecordRuleRequest.AppId.ToString());
+            urlParam.Add("rule_id", deleteRecordRuleRequest.RuleId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/record-rules/{rule_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRecordRuleRequest);
+            var response = DoHttpRequestSync("DELETE", request);
             return JsonUtils.DeSerializeNull<DeleteRecordRuleResponse>(response);
+        }
+
+        public SyncInvoker<DeleteRecordRuleResponse> DeleteRecordRuleInvoker(DeleteRecordRuleRequest deleteRecordRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("app_id", deleteRecordRuleRequest.AppId.ToString());
+            urlParam.Add("rule_id", deleteRecordRuleRequest.RuleId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/record-rules/{rule_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRecordRuleRequest);
+            return new SyncInvoker<DeleteRecordRuleResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteRecordRuleResponse>);
         }
         
         /// <summary>
@@ -148,11 +202,19 @@ namespace HuaweiCloud.SDK.CloudRtc.V2
         /// </summary>
         public ListAppsResponse ListApps(ListAppsRequest listAppsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/apps",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAppsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/apps", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAppsRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ListAppsResponse>(response);
+        }
+
+        public SyncInvoker<ListAppsResponse> ListAppsInvoker(ListAppsRequest listAppsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/apps", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAppsRequest);
+            return new SyncInvoker<ListAppsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAppsResponse>);
         }
         
         /// <summary>
@@ -164,12 +226,21 @@ namespace HuaweiCloud.SDK.CloudRtc.V2
         /// </summary>
         public ListRecordRulesResponse ListRecordRules(ListRecordRulesRequest listRecordRulesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("app_id" , listRecordRulesRequest.AppId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/record-rules",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRecordRulesRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("app_id", listRecordRulesRequest.AppId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/record-rules", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRecordRulesRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ListRecordRulesResponse>(response);
+        }
+
+        public SyncInvoker<ListRecordRulesResponse> ListRecordRulesInvoker(ListRecordRulesRequest listRecordRulesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("app_id", listRecordRulesRequest.AppId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/record-rules", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRecordRulesRequest);
+            return new SyncInvoker<ListRecordRulesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListRecordRulesResponse>);
         }
         
         /// <summary>
@@ -181,13 +252,23 @@ namespace HuaweiCloud.SDK.CloudRtc.V2
         /// </summary>
         public RemoveRoomResponse RemoveRoom(RemoveRoomRequest removeRoomRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("app_id" , removeRoomRequest.AppId.ToString());
-            urlParam.Add("room_id" , removeRoomRequest.RoomId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/rooms/{room_id}/dismiss",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", removeRoomRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("app_id", removeRoomRequest.AppId.ToString());
+            urlParam.Add("room_id", removeRoomRequest.RoomId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/rooms/{room_id}/dismiss", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", removeRoomRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerializeNull<RemoveRoomResponse>(response);
+        }
+
+        public SyncInvoker<RemoveRoomResponse> RemoveRoomInvoker(RemoveRoomRequest removeRoomRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("app_id", removeRoomRequest.AppId.ToString());
+            urlParam.Add("room_id", removeRoomRequest.RoomId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/rooms/{room_id}/dismiss", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", removeRoomRequest);
+            return new SyncInvoker<RemoveRoomResponse>(this, "POST", request, JsonUtils.DeSerializeNull<RemoveRoomResponse>);
         }
         
         /// <summary>
@@ -199,13 +280,23 @@ namespace HuaweiCloud.SDK.CloudRtc.V2
         /// </summary>
         public RemoveUsersResponse RemoveUsers(RemoveUsersRequest removeUsersRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("app_id" , removeUsersRequest.AppId.ToString());
-            urlParam.Add("room_id" , removeUsersRequest.RoomId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/rooms/{room_id}/batch-remove-users",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=utf-8", removeUsersRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("app_id", removeUsersRequest.AppId.ToString());
+            urlParam.Add("room_id", removeUsersRequest.RoomId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/rooms/{room_id}/batch-remove-users", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=utf-8", removeUsersRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerializeNull<RemoveUsersResponse>(response);
+        }
+
+        public SyncInvoker<RemoveUsersResponse> RemoveUsersInvoker(RemoveUsersRequest removeUsersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("app_id", removeUsersRequest.AppId.ToString());
+            urlParam.Add("room_id", removeUsersRequest.RoomId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/rooms/{room_id}/batch-remove-users", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=utf-8", removeUsersRequest);
+            return new SyncInvoker<RemoveUsersResponse>(this, "POST", request, JsonUtils.DeSerializeNull<RemoveUsersResponse>);
         }
         
         /// <summary>
@@ -217,12 +308,21 @@ namespace HuaweiCloud.SDK.CloudRtc.V2
         /// </summary>
         public ShowAppResponse ShowApp(ShowAppRequest showAppRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("app_id" , showAppRequest.AppId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAppRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("app_id", showAppRequest.AppId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAppRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowAppResponse>(response);
+        }
+
+        public SyncInvoker<ShowAppResponse> ShowAppInvoker(ShowAppRequest showAppRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("app_id", showAppRequest.AppId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAppRequest);
+            return new SyncInvoker<ShowAppResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAppResponse>);
         }
         
         /// <summary>
@@ -234,12 +334,21 @@ namespace HuaweiCloud.SDK.CloudRtc.V2
         /// </summary>
         public ShowAutoRecordResponse ShowAutoRecord(ShowAutoRecordRequest showAutoRecordRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("app_id" , showAutoRecordRequest.AppId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/auto-record-mode",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutoRecordRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("app_id", showAutoRecordRequest.AppId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/auto-record-mode", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutoRecordRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowAutoRecordResponse>(response);
+        }
+
+        public SyncInvoker<ShowAutoRecordResponse> ShowAutoRecordInvoker(ShowAutoRecordRequest showAutoRecordRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("app_id", showAutoRecordRequest.AppId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/auto-record-mode", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutoRecordRequest);
+            return new SyncInvoker<ShowAutoRecordResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAutoRecordResponse>);
         }
         
         /// <summary>
@@ -253,13 +362,23 @@ namespace HuaweiCloud.SDK.CloudRtc.V2
         /// </summary>
         public ShowIndividualStreamJobResponse ShowIndividualStreamJob(ShowIndividualStreamJobRequest showIndividualStreamJobRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("app_id" , showIndividualStreamJobRequest.AppId.ToString());
-            urlParam.Add("job_id" , showIndividualStreamJobRequest.JobId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/individual-stream-jobs/{job_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showIndividualStreamJobRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("app_id", showIndividualStreamJobRequest.AppId.ToString());
+            urlParam.Add("job_id", showIndividualStreamJobRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/individual-stream-jobs/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showIndividualStreamJobRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowIndividualStreamJobResponse>(response);
+        }
+
+        public SyncInvoker<ShowIndividualStreamJobResponse> ShowIndividualStreamJobInvoker(ShowIndividualStreamJobRequest showIndividualStreamJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("app_id", showIndividualStreamJobRequest.AppId.ToString());
+            urlParam.Add("job_id", showIndividualStreamJobRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/individual-stream-jobs/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showIndividualStreamJobRequest);
+            return new SyncInvoker<ShowIndividualStreamJobResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowIndividualStreamJobResponse>);
         }
         
         /// <summary>
@@ -271,13 +390,23 @@ namespace HuaweiCloud.SDK.CloudRtc.V2
         /// </summary>
         public ShowMixJobResponse ShowMixJob(ShowMixJobRequest showMixJobRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("app_id" , showMixJobRequest.AppId.ToString());
-            urlParam.Add("job_id" , showMixJobRequest.JobId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/mix-stream-jobs/{job_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMixJobRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("app_id", showMixJobRequest.AppId.ToString());
+            urlParam.Add("job_id", showMixJobRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/mix-stream-jobs/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMixJobRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowMixJobResponse>(response);
+        }
+
+        public SyncInvoker<ShowMixJobResponse> ShowMixJobInvoker(ShowMixJobRequest showMixJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("app_id", showMixJobRequest.AppId.ToString());
+            urlParam.Add("job_id", showMixJobRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/mix-stream-jobs/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMixJobRequest);
+            return new SyncInvoker<ShowMixJobResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowMixJobResponse>);
         }
         
         /// <summary>
@@ -289,12 +418,21 @@ namespace HuaweiCloud.SDK.CloudRtc.V2
         /// </summary>
         public ShowRecordCallbackResponse ShowRecordCallback(ShowRecordCallbackRequest showRecordCallbackRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("app_id" , showRecordCallbackRequest.AppId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/record-callback",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecordCallbackRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("app_id", showRecordCallbackRequest.AppId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/record-callback", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecordCallbackRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowRecordCallbackResponse>(response);
+        }
+
+        public SyncInvoker<ShowRecordCallbackResponse> ShowRecordCallbackInvoker(ShowRecordCallbackRequest showRecordCallbackRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("app_id", showRecordCallbackRequest.AppId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/record-callback", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecordCallbackRequest);
+            return new SyncInvoker<ShowRecordCallbackResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRecordCallbackResponse>);
         }
         
         /// <summary>
@@ -306,13 +444,23 @@ namespace HuaweiCloud.SDK.CloudRtc.V2
         /// </summary>
         public ShowRecordRuleResponse ShowRecordRule(ShowRecordRuleRequest showRecordRuleRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("app_id" , showRecordRuleRequest.AppId.ToString());
-            urlParam.Add("rule_id" , showRecordRuleRequest.RuleId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/record-rules/{rule_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecordRuleRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("app_id", showRecordRuleRequest.AppId.ToString());
+            urlParam.Add("rule_id", showRecordRuleRequest.RuleId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/record-rules/{rule_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecordRuleRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowRecordRuleResponse>(response);
+        }
+
+        public SyncInvoker<ShowRecordRuleResponse> ShowRecordRuleInvoker(ShowRecordRuleRequest showRecordRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("app_id", showRecordRuleRequest.AppId.ToString());
+            urlParam.Add("rule_id", showRecordRuleRequest.RuleId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/record-rules/{rule_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecordRuleRequest);
+            return new SyncInvoker<ShowRecordRuleResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRecordRuleResponse>);
         }
         
         /// <summary>
@@ -324,12 +472,21 @@ namespace HuaweiCloud.SDK.CloudRtc.V2
         /// </summary>
         public ShowUrlAuthResponse ShowUrlAuth(ShowUrlAuthRequest showUrlAuthRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("app_id" , showUrlAuthRequest.AppId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/authentication",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUrlAuthRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("app_id", showUrlAuthRequest.AppId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/authentication", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUrlAuthRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ShowUrlAuthResponse>(response);
+        }
+
+        public SyncInvoker<ShowUrlAuthResponse> ShowUrlAuthInvoker(ShowUrlAuthRequest showUrlAuthRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("app_id", showUrlAuthRequest.AppId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/authentication", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUrlAuthRequest);
+            return new SyncInvoker<ShowUrlAuthResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowUrlAuthResponse>);
         }
         
         /// <summary>
@@ -341,12 +498,21 @@ namespace HuaweiCloud.SDK.CloudRtc.V2
         /// </summary>
         public StartAppResponse StartApp(StartAppRequest startAppRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("app_id" , startAppRequest.AppId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/enable",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", startAppRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("app_id", startAppRequest.AppId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/enable", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", startAppRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<StartAppResponse>(response);
+        }
+
+        public SyncInvoker<StartAppResponse> StartAppInvoker(StartAppRequest startAppRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("app_id", startAppRequest.AppId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/enable", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", startAppRequest);
+            return new SyncInvoker<StartAppResponse>(this, "POST", request, JsonUtils.DeSerialize<StartAppResponse>);
         }
         
         /// <summary>
@@ -360,12 +526,21 @@ namespace HuaweiCloud.SDK.CloudRtc.V2
         /// </summary>
         public StopAppResponse StopApp(StopAppRequest stopAppRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("app_id" , stopAppRequest.AppId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/disable",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopAppRequest);
-            HttpResponseMessage response = DoHttpRequestSync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("app_id", stopAppRequest.AppId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/disable", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopAppRequest);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<StopAppResponse>(response);
+        }
+
+        public SyncInvoker<StopAppResponse> StopAppInvoker(StopAppRequest stopAppRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("app_id", stopAppRequest.AppId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/disable", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopAppRequest);
+            return new SyncInvoker<StopAppResponse>(this, "POST", request, JsonUtils.DeSerialize<StopAppResponse>);
         }
         
         /// <summary>
@@ -377,13 +552,23 @@ namespace HuaweiCloud.SDK.CloudRtc.V2
         /// </summary>
         public StopIndividualStreamJobResponse StopIndividualStreamJob(StopIndividualStreamJobRequest stopIndividualStreamJobRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("app_id" , stopIndividualStreamJobRequest.AppId.ToString());
-            urlParam.Add("job_id" , stopIndividualStreamJobRequest.JobId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/individual-stream-jobs/{job_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopIndividualStreamJobRequest);
-            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("app_id", stopIndividualStreamJobRequest.AppId.ToString());
+            urlParam.Add("job_id", stopIndividualStreamJobRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/individual-stream-jobs/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopIndividualStreamJobRequest);
+            var response = DoHttpRequestSync("DELETE", request);
             return JsonUtils.DeSerializeNull<StopIndividualStreamJobResponse>(response);
+        }
+
+        public SyncInvoker<StopIndividualStreamJobResponse> StopIndividualStreamJobInvoker(StopIndividualStreamJobRequest stopIndividualStreamJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("app_id", stopIndividualStreamJobRequest.AppId.ToString());
+            urlParam.Add("job_id", stopIndividualStreamJobRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/individual-stream-jobs/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopIndividualStreamJobRequest);
+            return new SyncInvoker<StopIndividualStreamJobResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<StopIndividualStreamJobResponse>);
         }
         
         /// <summary>
@@ -395,13 +580,23 @@ namespace HuaweiCloud.SDK.CloudRtc.V2
         /// </summary>
         public StopMixJobResponse StopMixJob(StopMixJobRequest stopMixJobRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("app_id" , stopMixJobRequest.AppId.ToString());
-            urlParam.Add("job_id" , stopMixJobRequest.JobId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/mix-stream-jobs/{job_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopMixJobRequest);
-            HttpResponseMessage response = DoHttpRequestSync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("app_id", stopMixJobRequest.AppId.ToString());
+            urlParam.Add("job_id", stopMixJobRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/mix-stream-jobs/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopMixJobRequest);
+            var response = DoHttpRequestSync("DELETE", request);
             return JsonUtils.DeSerializeNull<StopMixJobResponse>(response);
+        }
+
+        public SyncInvoker<StopMixJobResponse> StopMixJobInvoker(StopMixJobRequest stopMixJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("app_id", stopMixJobRequest.AppId.ToString());
+            urlParam.Add("job_id", stopMixJobRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/mix-stream-jobs/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopMixJobRequest);
+            return new SyncInvoker<StopMixJobResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<StopMixJobResponse>);
         }
         
         /// <summary>
@@ -413,12 +608,21 @@ namespace HuaweiCloud.SDK.CloudRtc.V2
         /// </summary>
         public UpdateAutoRecordResponse UpdateAutoRecord(UpdateAutoRecordRequest updateAutoRecordRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("app_id" , updateAutoRecordRequest.AppId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/auto-record-mode",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=utf-8", updateAutoRecordRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("app_id", updateAutoRecordRequest.AppId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/auto-record-mode", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=utf-8", updateAutoRecordRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerialize<UpdateAutoRecordResponse>(response);
+        }
+
+        public SyncInvoker<UpdateAutoRecordResponse> UpdateAutoRecordInvoker(UpdateAutoRecordRequest updateAutoRecordRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("app_id", updateAutoRecordRequest.AppId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/auto-record-mode", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=utf-8", updateAutoRecordRequest);
+            return new SyncInvoker<UpdateAutoRecordResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateAutoRecordResponse>);
         }
         
         /// <summary>
@@ -432,13 +636,23 @@ namespace HuaweiCloud.SDK.CloudRtc.V2
         /// </summary>
         public UpdateIndividualStreamJobResponse UpdateIndividualStreamJob(UpdateIndividualStreamJobRequest updateIndividualStreamJobRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("app_id" , updateIndividualStreamJobRequest.AppId.ToString());
-            urlParam.Add("job_id" , updateIndividualStreamJobRequest.JobId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/individual-stream-jobs/{job_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=utf-8", updateIndividualStreamJobRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("app_id", updateIndividualStreamJobRequest.AppId.ToString());
+            urlParam.Add("job_id", updateIndividualStreamJobRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/individual-stream-jobs/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=utf-8", updateIndividualStreamJobRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerialize<UpdateIndividualStreamJobResponse>(response);
+        }
+
+        public SyncInvoker<UpdateIndividualStreamJobResponse> UpdateIndividualStreamJobInvoker(UpdateIndividualStreamJobRequest updateIndividualStreamJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("app_id", updateIndividualStreamJobRequest.AppId.ToString());
+            urlParam.Add("job_id", updateIndividualStreamJobRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/individual-stream-jobs/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=utf-8", updateIndividualStreamJobRequest);
+            return new SyncInvoker<UpdateIndividualStreamJobResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateIndividualStreamJobResponse>);
         }
         
         /// <summary>
@@ -450,13 +664,23 @@ namespace HuaweiCloud.SDK.CloudRtc.V2
         /// </summary>
         public UpdateMixJobResponse UpdateMixJob(UpdateMixJobRequest updateMixJobRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("app_id" , updateMixJobRequest.AppId.ToString());
-            urlParam.Add("job_id" , updateMixJobRequest.JobId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/mix-stream-jobs/{job_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=utf-8", updateMixJobRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("app_id", updateMixJobRequest.AppId.ToString());
+            urlParam.Add("job_id", updateMixJobRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/mix-stream-jobs/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=utf-8", updateMixJobRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerialize<UpdateMixJobResponse>(response);
+        }
+
+        public SyncInvoker<UpdateMixJobResponse> UpdateMixJobInvoker(UpdateMixJobRequest updateMixJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("app_id", updateMixJobRequest.AppId.ToString());
+            urlParam.Add("job_id", updateMixJobRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/mix-stream-jobs/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=utf-8", updateMixJobRequest);
+            return new SyncInvoker<UpdateMixJobResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateMixJobResponse>);
         }
         
         /// <summary>
@@ -472,12 +696,21 @@ namespace HuaweiCloud.SDK.CloudRtc.V2
         /// </summary>
         public UpdateRecordCallbackResponse UpdateRecordCallback(UpdateRecordCallbackRequest updateRecordCallbackRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("app_id" , updateRecordCallbackRequest.AppId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/record-callback",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=utf-8", updateRecordCallbackRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("app_id", updateRecordCallbackRequest.AppId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/record-callback", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=utf-8", updateRecordCallbackRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerialize<UpdateRecordCallbackResponse>(response);
+        }
+
+        public SyncInvoker<UpdateRecordCallbackResponse> UpdateRecordCallbackInvoker(UpdateRecordCallbackRequest updateRecordCallbackRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("app_id", updateRecordCallbackRequest.AppId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/record-callback", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=utf-8", updateRecordCallbackRequest);
+            return new SyncInvoker<UpdateRecordCallbackResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateRecordCallbackResponse>);
         }
         
         /// <summary>
@@ -489,13 +722,23 @@ namespace HuaweiCloud.SDK.CloudRtc.V2
         /// </summary>
         public UpdateRecordRuleResponse UpdateRecordRule(UpdateRecordRuleRequest updateRecordRuleRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("app_id" , updateRecordRuleRequest.AppId.ToString());
-            urlParam.Add("rule_id" , updateRecordRuleRequest.RuleId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/record-rules/{rule_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=utf-8", updateRecordRuleRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("app_id", updateRecordRuleRequest.AppId.ToString());
+            urlParam.Add("rule_id", updateRecordRuleRequest.RuleId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/record-rules/{rule_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=utf-8", updateRecordRuleRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerialize<UpdateRecordRuleResponse>(response);
+        }
+
+        public SyncInvoker<UpdateRecordRuleResponse> UpdateRecordRuleInvoker(UpdateRecordRuleRequest updateRecordRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("app_id", updateRecordRuleRequest.AppId.ToString());
+            urlParam.Add("rule_id", updateRecordRuleRequest.RuleId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/record-rules/{rule_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=utf-8", updateRecordRuleRequest);
+            return new SyncInvoker<UpdateRecordRuleResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateRecordRuleResponse>);
         }
         
         /// <summary>
@@ -507,12 +750,21 @@ namespace HuaweiCloud.SDK.CloudRtc.V2
         /// </summary>
         public UpdateUrlAuthResponse UpdateUrlAuth(UpdateUrlAuthRequest updateUrlAuthRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("app_id" , updateUrlAuthRequest.AppId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/authentication",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateUrlAuthRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("app_id", updateUrlAuthRequest.AppId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/authentication", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateUrlAuthRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerialize<UpdateUrlAuthResponse>(response);
+        }
+
+        public SyncInvoker<UpdateUrlAuthResponse> UpdateUrlAuthInvoker(UpdateUrlAuthRequest updateUrlAuthRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("app_id", updateUrlAuthRequest.AppId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/authentication", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateUrlAuthRequest);
+            return new SyncInvoker<UpdateUrlAuthResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateUrlAuthResponse>);
         }
         
         /// <summary>
@@ -524,11 +776,19 @@ namespace HuaweiCloud.SDK.CloudRtc.V2
         /// </summary>
         public ListObsBucketObjectsResponse ListObsBucketObjects(ListObsBucketObjectsRequest listObsBucketObjectsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/rtc-ops/buckets/objects",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listObsBucketObjectsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/rtc-ops/buckets/objects", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listObsBucketObjectsRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ListObsBucketObjectsResponse>(response);
+        }
+
+        public SyncInvoker<ListObsBucketObjectsResponse> ListObsBucketObjectsInvoker(ListObsBucketObjectsRequest listObsBucketObjectsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/rtc-ops/buckets/objects", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listObsBucketObjectsRequest);
+            return new SyncInvoker<ListObsBucketObjectsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListObsBucketObjectsResponse>);
         }
         
         /// <summary>
@@ -540,11 +800,19 @@ namespace HuaweiCloud.SDK.CloudRtc.V2
         /// </summary>
         public ListObsBucketsResponse ListObsBuckets(ListObsBucketsRequest listObsBucketsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/rtc-ops/buckets",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listObsBucketsRequest);
-            HttpResponseMessage response = DoHttpRequestSync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/rtc-ops/buckets", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listObsBucketsRequest);
+            var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<ListObsBucketsResponse>(response);
+        }
+
+        public SyncInvoker<ListObsBucketsResponse> ListObsBucketsInvoker(ListObsBucketsRequest listObsBucketsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/rtc-ops/buckets", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listObsBucketsRequest);
+            return new SyncInvoker<ListObsBucketsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListObsBucketsResponse>);
         }
         
         /// <summary>
@@ -556,11 +824,19 @@ namespace HuaweiCloud.SDK.CloudRtc.V2
         /// </summary>
         public UpdateObsBucketAuthorityResponse UpdateObsBucketAuthority(UpdateObsBucketAuthorityRequest updateObsBucketAuthorityRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v2/rtc-ops/buckets/authentication",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateObsBucketAuthorityRequest);
-            HttpResponseMessage response = DoHttpRequestSync("PUT",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/rtc-ops/buckets/authentication", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateObsBucketAuthorityRequest);
+            var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerializeNull<UpdateObsBucketAuthorityResponse>(response);
+        }
+
+        public SyncInvoker<UpdateObsBucketAuthorityResponse> UpdateObsBucketAuthorityInvoker(UpdateObsBucketAuthorityRequest updateObsBucketAuthorityRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/rtc-ops/buckets/authentication", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateObsBucketAuthorityRequest);
+            return new SyncInvoker<UpdateObsBucketAuthorityResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateObsBucketAuthorityResponse>);
         }
         
     }

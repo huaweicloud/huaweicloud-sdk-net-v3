@@ -17,6 +17,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
     {
 
         /// <summary>
+        /// 慢日志总条数
+        /// </summary>
+        [JsonProperty("total_num", NullValueHandling = NullValueHandling.Ignore)]
+        public int? TotalNum { get; set; }
+
+        /// <summary>
         /// 总数
         /// </summary>
         [JsonProperty("count", NullValueHandling = NullValueHandling.Ignore)]
@@ -37,6 +43,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListSlowlogResponse {\n");
+            sb.Append("  totalNum: ").Append(TotalNum).Append("\n");
             sb.Append("  count: ").Append(Count).Append("\n");
             sb.Append("  slowlogs: ").Append(Slowlogs).Append("\n");
             sb.Append("}\n");
@@ -61,6 +68,11 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
 
             return 
                 (
+                    this.TotalNum == input.TotalNum ||
+                    (this.TotalNum != null &&
+                    this.TotalNum.Equals(input.TotalNum))
+                ) && 
+                (
                     this.Count == input.Count ||
                     (this.Count != null &&
                     this.Count.Equals(input.Count))
@@ -81,6 +93,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.TotalNum != null)
+                    hashCode = hashCode * 59 + this.TotalNum.GetHashCode();
                 if (this.Count != null)
                     hashCode = hashCode * 59 + this.Count.GetHashCode();
                 if (this.Slowlogs != null)

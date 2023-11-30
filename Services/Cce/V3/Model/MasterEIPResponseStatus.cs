@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cce.V3.Model
 {
     /// <summary>
-    /// 
+    /// 状态信息
     /// </summary>
     public class MasterEIPResponseStatus 
     {

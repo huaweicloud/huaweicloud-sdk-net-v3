@@ -24,11 +24,19 @@ namespace HuaweiCloud.SDK.Aom.V1
         /// </summary>
         public async Task<CreateFastExecuteScriptResponse> CreateFastExecuteScriptAsync(CreateFastExecuteScriptRequest createFastExecuteScriptRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cms/fast-execute-script",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createFastExecuteScriptRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cms/fast-execute-script",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createFastExecuteScriptRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateFastExecuteScriptResponse>(response);
+        }
+
+        public AsyncInvoker<CreateFastExecuteScriptResponse> CreateFastExecuteScriptAsyncInvoker(CreateFastExecuteScriptRequest createFastExecuteScriptRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cms/fast-execute-script",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createFastExecuteScriptRequest);
+            return new AsyncInvoker<CreateFastExecuteScriptResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateFastExecuteScriptResponse>);
         }
         
         /// <summary>
@@ -40,11 +48,19 @@ namespace HuaweiCloud.SDK.Aom.V1
         /// </summary>
         public async Task<CreateWorkflowResponse> CreateWorkflowAsync(CreateWorkflowRequest createWorkflowRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cms/workflow",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createWorkflowRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cms/workflow",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createWorkflowRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateWorkflowResponse>(response);
+        }
+
+        public AsyncInvoker<CreateWorkflowResponse> CreateWorkflowAsyncInvoker(CreateWorkflowRequest createWorkflowRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cms/workflow",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createWorkflowRequest);
+            return new AsyncInvoker<CreateWorkflowResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateWorkflowResponse>);
         }
         
         /// <summary>
@@ -56,12 +72,21 @@ namespace HuaweiCloud.SDK.Aom.V1
         /// </summary>
         public async Task<ExecuteWorkflowResponse> ExecuteWorkflowAsync(ExecuteWorkflowRequest executeWorkflowRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("workflow_id" , executeWorkflowRequest.WorkflowId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cms/workflow/{workflow_id}/executions",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", executeWorkflowRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("workflow_id", executeWorkflowRequest.WorkflowId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cms/workflow/{workflow_id}/executions",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", executeWorkflowRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<ExecuteWorkflowResponse>(response);
+        }
+
+        public AsyncInvoker<ExecuteWorkflowResponse> ExecuteWorkflowAsyncInvoker(ExecuteWorkflowRequest executeWorkflowRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("workflow_id", executeWorkflowRequest.WorkflowId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cms/workflow/{workflow_id}/executions",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", executeWorkflowRequest);
+            return new AsyncInvoker<ExecuteWorkflowResponse>(this, "POST", request, JsonUtils.DeSerialize<ExecuteWorkflowResponse>);
         }
         
         /// <summary>
@@ -73,11 +98,19 @@ namespace HuaweiCloud.SDK.Aom.V1
         /// </summary>
         public async Task<ListAllJobByNameResponse> ListAllJobByNameAsync(ListAllJobByNameRequest listAllJobByNameRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cms/job/list",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAllJobByNameRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cms/job/list",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAllJobByNameRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<ListAllJobByNameResponse>(response);
+        }
+
+        public AsyncInvoker<ListAllJobByNameResponse> ListAllJobByNameAsyncInvoker(ListAllJobByNameRequest listAllJobByNameRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cms/job/list",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAllJobByNameRequest);
+            return new AsyncInvoker<ListAllJobByNameResponse>(this, "POST", request, JsonUtils.DeSerialize<ListAllJobByNameResponse>);
         }
         
         /// <summary>
@@ -89,11 +122,19 @@ namespace HuaweiCloud.SDK.Aom.V1
         /// </summary>
         public async Task<ListAllScriptByNameResponse> ListAllScriptByNameAsync(ListAllScriptByNameRequest listAllScriptByNameRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cms/script/list",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAllScriptByNameRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cms/script/list",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAllScriptByNameRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<ListAllScriptByNameResponse>(response);
+        }
+
+        public AsyncInvoker<ListAllScriptByNameResponse> ListAllScriptByNameAsyncInvoker(ListAllScriptByNameRequest listAllScriptByNameRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cms/script/list",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAllScriptByNameRequest);
+            return new AsyncInvoker<ListAllScriptByNameResponse>(this, "POST", request, JsonUtils.DeSerialize<ListAllScriptByNameResponse>);
         }
         
         /// <summary>
@@ -105,11 +146,19 @@ namespace HuaweiCloud.SDK.Aom.V1
         /// </summary>
         public async Task<ListAllVersionByVersionIdResponse> ListAllVersionByVersionIdAsync(ListAllVersionByVersionIdRequest listAllVersionByVersionIdRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cms/script-version-list",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAllVersionByVersionIdRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cms/script-version-list",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAllVersionByVersionIdRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<ListAllVersionByVersionIdResponse>(response);
+        }
+
+        public AsyncInvoker<ListAllVersionByVersionIdResponse> ListAllVersionByVersionIdAsyncInvoker(ListAllVersionByVersionIdRequest listAllVersionByVersionIdRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cms/script-version-list",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAllVersionByVersionIdRequest);
+            return new AsyncInvoker<ListAllVersionByVersionIdResponse>(this, "POST", request, JsonUtils.DeSerialize<ListAllVersionByVersionIdResponse>);
         }
         
         /// <summary>
@@ -121,12 +170,21 @@ namespace HuaweiCloud.SDK.Aom.V1
         /// </summary>
         public async Task<ListTemplateByJobIdResponse> ListTemplateByJobIdAsync(ListTemplateByJobIdRequest listTemplateByJobIdRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id" , listTemplateByJobIdRequest.JobId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cms/template-list/{job_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTemplateByJobIdRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", listTemplateByJobIdRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cms/template-list/{job_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTemplateByJobIdRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<ListTemplateByJobIdResponse>(response);
+        }
+
+        public AsyncInvoker<ListTemplateByJobIdResponse> ListTemplateByJobIdAsyncInvoker(ListTemplateByJobIdRequest listTemplateByJobIdRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", listTemplateByJobIdRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cms/template-list/{job_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTemplateByJobIdRequest);
+            return new AsyncInvoker<ListTemplateByJobIdResponse>(this, "POST", request, JsonUtils.DeSerialize<ListTemplateByJobIdResponse>);
         }
         
         /// <summary>
@@ -138,11 +196,19 @@ namespace HuaweiCloud.SDK.Aom.V1
         /// </summary>
         public async Task<ListWorkflowResponse> ListWorkflowAsync(ListWorkflowRequest listWorkflowRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cms/workflow-list",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listWorkflowRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cms/workflow-list",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listWorkflowRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<ListWorkflowResponse>(response);
+        }
+
+        public AsyncInvoker<ListWorkflowResponse> ListWorkflowAsyncInvoker(ListWorkflowRequest listWorkflowRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cms/workflow-list",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listWorkflowRequest);
+            return new AsyncInvoker<ListWorkflowResponse>(this, "POST", request, JsonUtils.DeSerialize<ListWorkflowResponse>);
         }
         
         /// <summary>
@@ -154,14 +220,28 @@ namespace HuaweiCloud.SDK.Aom.V1
         /// </summary>
         public async Task<ListWorkflowExecutionsResponse> ListWorkflowExecutionsAsync(ListWorkflowExecutionsRequest listWorkflowExecutionsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("workflow_id" , listWorkflowExecutionsRequest.WorkflowId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cms/workflow/{workflow_id}/executions",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listWorkflowExecutionsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
-            ListWorkflowExecutionsResponse listWorkflowExecutionsResponse = JsonUtils.DeSerializeNull<ListWorkflowExecutionsResponse>(response);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("workflow_id", listWorkflowExecutionsRequest.WorkflowId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cms/workflow/{workflow_id}/executions",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listWorkflowExecutionsRequest);
+            var response = await DoHttpRequestAsync("GET",request);
+            var listWorkflowExecutionsResponse = JsonUtils.DeSerializeNull<ListWorkflowExecutionsResponse>(response);
             listWorkflowExecutionsResponse.Body = JsonUtils.DeSerializeList<WorkflowExecutionBrief>(response);
             return listWorkflowExecutionsResponse;
+        }
+
+        public AsyncInvoker<ListWorkflowExecutionsResponse> ListWorkflowExecutionsAsyncInvoker(ListWorkflowExecutionsRequest listWorkflowExecutionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("workflow_id", listWorkflowExecutionsRequest.WorkflowId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cms/workflow/{workflow_id}/executions",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listWorkflowExecutionsRequest);
+            return new AsyncInvoker<ListWorkflowExecutionsResponse>(this, "GET", request, response =>
+            {
+                var listWorkflowExecutionsResponse = JsonUtils.DeSerializeNull<ListWorkflowExecutionsResponse>(response);
+                listWorkflowExecutionsResponse.Body = JsonUtils.DeSerializeList<WorkflowExecutionBrief>(response);
+                return listWorkflowExecutionsResponse;
+            });
         }
         
         /// <summary>
@@ -173,12 +253,21 @@ namespace HuaweiCloud.SDK.Aom.V1
         /// </summary>
         public async Task<SearchTemplateByIdResponse> SearchTemplateByIdAsync(SearchTemplateByIdRequest searchTemplateByIdRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("template_id" , searchTemplateByIdRequest.TemplateId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cms/template/{template_id}",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", searchTemplateByIdRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("template_id", searchTemplateByIdRequest.TemplateId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cms/template/{template_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", searchTemplateByIdRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<SearchTemplateByIdResponse>(response);
+        }
+
+        public AsyncInvoker<SearchTemplateByIdResponse> SearchTemplateByIdAsyncInvoker(SearchTemplateByIdRequest searchTemplateByIdRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("template_id", searchTemplateByIdRequest.TemplateId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cms/template/{template_id}",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", searchTemplateByIdRequest);
+            return new AsyncInvoker<SearchTemplateByIdResponse>(this, "GET", request, JsonUtils.DeSerialize<SearchTemplateByIdResponse>);
         }
         
         /// <summary>
@@ -190,13 +279,23 @@ namespace HuaweiCloud.SDK.Aom.V1
         /// </summary>
         public async Task<SearchWorkflowExecutionDetailResponse> SearchWorkflowExecutionDetailAsync(SearchWorkflowExecutionDetailRequest searchWorkflowExecutionDetailRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("workflow_id" , searchWorkflowExecutionDetailRequest.WorkflowId.ToString());
-            urlParam.Add("execution_id" , searchWorkflowExecutionDetailRequest.ExecutionId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cms/workflow/{workflow_id}/executions/{execution_id}/status",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", searchWorkflowExecutionDetailRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("workflow_id", searchWorkflowExecutionDetailRequest.WorkflowId.ToString());
+            urlParam.Add("execution_id", searchWorkflowExecutionDetailRequest.ExecutionId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cms/workflow/{workflow_id}/executions/{execution_id}/status",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", searchWorkflowExecutionDetailRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<SearchWorkflowExecutionDetailResponse>(response);
+        }
+
+        public AsyncInvoker<SearchWorkflowExecutionDetailResponse> SearchWorkflowExecutionDetailAsyncInvoker(SearchWorkflowExecutionDetailRequest searchWorkflowExecutionDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("workflow_id", searchWorkflowExecutionDetailRequest.WorkflowId.ToString());
+            urlParam.Add("execution_id", searchWorkflowExecutionDetailRequest.ExecutionId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cms/workflow/{workflow_id}/executions/{execution_id}/status",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", searchWorkflowExecutionDetailRequest);
+            return new AsyncInvoker<SearchWorkflowExecutionDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<SearchWorkflowExecutionDetailResponse>);
         }
         
         /// <summary>
@@ -208,13 +307,23 @@ namespace HuaweiCloud.SDK.Aom.V1
         /// </summary>
         public async Task<StartPausingWorkflowExecutionsResponse> StartPausingWorkflowExecutionsAsync(StartPausingWorkflowExecutionsRequest startPausingWorkflowExecutionsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("workflow_id" , startPausingWorkflowExecutionsRequest.WorkflowId.ToString());
-            urlParam.Add("execution_id" , startPausingWorkflowExecutionsRequest.ExecutionId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cms/workflow/{workflow_id}/executions/{execution_id}/operation",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", startPausingWorkflowExecutionsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("workflow_id", startPausingWorkflowExecutionsRequest.WorkflowId.ToString());
+            urlParam.Add("execution_id", startPausingWorkflowExecutionsRequest.ExecutionId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cms/workflow/{workflow_id}/executions/{execution_id}/operation",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", startPausingWorkflowExecutionsRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<StartPausingWorkflowExecutionsResponse>(response);
+        }
+
+        public AsyncInvoker<StartPausingWorkflowExecutionsResponse> StartPausingWorkflowExecutionsAsyncInvoker(StartPausingWorkflowExecutionsRequest startPausingWorkflowExecutionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("workflow_id", startPausingWorkflowExecutionsRequest.WorkflowId.ToString());
+            urlParam.Add("execution_id", startPausingWorkflowExecutionsRequest.ExecutionId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cms/workflow/{workflow_id}/executions/{execution_id}/operation",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", startPausingWorkflowExecutionsRequest);
+            return new AsyncInvoker<StartPausingWorkflowExecutionsResponse>(this, "POST", request, JsonUtils.DeSerialize<StartPausingWorkflowExecutionsResponse>);
         }
         
         /// <summary>
@@ -226,14 +335,23 @@ namespace HuaweiCloud.SDK.Aom.V1
         /// </summary>
         public async Task<StopExecutionResponse> StopExecutionAsync(StopExecutionRequest stopExecutionRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("workflow_id" , stopExecutionRequest.WorkflowId.ToString());
-            urlParam.Add("execution_id" , stopExecutionRequest.ExecutionId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cms/workflow/{workflow_id}/executions/{execution_id}/terminate",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopExecutionRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
-            StopExecutionResponse stopExecutionResponse = JsonUtils.DeSerializeNull<StopExecutionResponse>(response);
-            return stopExecutionResponse;
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("workflow_id", stopExecutionRequest.WorkflowId.ToString());
+            urlParam.Add("execution_id", stopExecutionRequest.ExecutionId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cms/workflow/{workflow_id}/executions/{execution_id}/terminate",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopExecutionRequest);
+            var response = await DoHttpRequestAsync("POST",request);
+            return JsonUtils.DeSerializeNull<StopExecutionResponse>(response);
+        }
+
+        public AsyncInvoker<StopExecutionResponse> StopExecutionAsyncInvoker(StopExecutionRequest stopExecutionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("workflow_id", stopExecutionRequest.WorkflowId.ToString());
+            urlParam.Add("execution_id", stopExecutionRequest.ExecutionId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cms/workflow/{workflow_id}/executions/{execution_id}/terminate",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopExecutionRequest);
+            return new AsyncInvoker<StopExecutionResponse>(this, "POST", request, JsonUtils.DeSerializeNull<StopExecutionResponse>);
         }
         
         /// <summary>
@@ -245,13 +363,21 @@ namespace HuaweiCloud.SDK.Aom.V1
         /// </summary>
         public async Task<UpdateWorkflowTriggerStatusResponse> UpdateWorkflowTriggerStatusAsync(UpdateWorkflowTriggerStatusRequest updateWorkflowTriggerStatusRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("workflow_id" , updateWorkflowTriggerStatusRequest.WorkflowId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cms/workflow/{workflow_id}/trigger/action",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateWorkflowTriggerStatusRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("PUT",request);
-            UpdateWorkflowTriggerStatusResponse updateWorkflowTriggerStatusResponse = JsonUtils.DeSerializeNull<UpdateWorkflowTriggerStatusResponse>(response);
-            return updateWorkflowTriggerStatusResponse;
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("workflow_id", updateWorkflowTriggerStatusRequest.WorkflowId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cms/workflow/{workflow_id}/trigger/action",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateWorkflowTriggerStatusRequest);
+            var response = await DoHttpRequestAsync("PUT",request);
+            return JsonUtils.DeSerializeNull<UpdateWorkflowTriggerStatusResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateWorkflowTriggerStatusResponse> UpdateWorkflowTriggerStatusAsyncInvoker(UpdateWorkflowTriggerStatusRequest updateWorkflowTriggerStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("workflow_id", updateWorkflowTriggerStatusRequest.WorkflowId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cms/workflow/{workflow_id}/trigger/action",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateWorkflowTriggerStatusRequest);
+            return new AsyncInvoker<UpdateWorkflowTriggerStatusResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateWorkflowTriggerStatusResponse>);
         }
         
     }

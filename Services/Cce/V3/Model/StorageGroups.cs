@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     {
 
         /// <summary>
-        /// storageGroups的名字，作为虚拟存储组的名字，因此各个group名字不能重复。
+        /// storageGroups的名字，作为虚拟存储组的名字，因此各个group名字不能重复。 &gt; - 当cceManaged&#x3D;ture时，name必须为：vgpass。 &gt; - 当数据盘作为临时存储卷时：name必须为：vg-everest-localvolume-ephemeral。 &gt; - 当数据盘作为持久存储卷时：name必须为：vg-everest-localvolume-persistent。 
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }

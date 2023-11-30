@@ -17,10 +17,16 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
     {
 
         /// <summary>
-        /// 任务ID。
+        /// 扩容数据库磁盘空间的任务id。 仅磁盘扩容按需实例时会返回该参数。
         /// </summary>
         [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
         public string JobId { get; set; }
+
+        /// <summary>
+        /// 订单号，磁盘扩容包年包月时返回该参数。
+        /// </summary>
+        [JsonProperty("order_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string OrderId { get; set; }
 
 
 
@@ -32,6 +38,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             var sb = new StringBuilder();
             sb.Append("class StartInstanceEnlargeVolumeActionResponse {\n");
             sb.Append("  jobId: ").Append(JobId).Append("\n");
+            sb.Append("  orderId: ").Append(OrderId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -57,6 +64,11 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
                     this.JobId == input.JobId ||
                     (this.JobId != null &&
                     this.JobId.Equals(input.JobId))
+                ) && 
+                (
+                    this.OrderId == input.OrderId ||
+                    (this.OrderId != null &&
+                    this.OrderId.Equals(input.OrderId))
                 );
         }
 
@@ -70,6 +82,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
                 int hashCode = 41;
                 if (this.JobId != null)
                     hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.OrderId != null)
+                    hashCode = hashCode * 59 + this.OrderId.GetHashCode();
                 return hashCode;
             }
         }

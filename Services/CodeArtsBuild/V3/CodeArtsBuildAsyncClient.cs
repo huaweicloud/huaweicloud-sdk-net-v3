@@ -24,11 +24,19 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3
         /// </summary>
         public async Task<CreateBuildJobResponse> CreateBuildJobAsync(CreateBuildJobRequest createBuildJobRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/jobs/create",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createBuildJobRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/jobs/create",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createBuildJobRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateBuildJobResponse>(response);
+        }
+
+        public AsyncInvoker<CreateBuildJobResponse> CreateBuildJobAsyncInvoker(CreateBuildJobRequest createBuildJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/jobs/create",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createBuildJobRequest);
+            return new AsyncInvoker<CreateBuildJobResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateBuildJobResponse>);
         }
         
         /// <summary>
@@ -40,11 +48,19 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3
         /// </summary>
         public async Task<CreateTemplatesResponse> CreateTemplatesAsync(CreateTemplatesRequest createTemplatesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/templates/create",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTemplatesRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/templates/create",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTemplatesRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<CreateTemplatesResponse>(response);
+        }
+
+        public AsyncInvoker<CreateTemplatesResponse> CreateTemplatesAsyncInvoker(CreateTemplatesRequest createTemplatesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/templates/create",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTemplatesRequest);
+            return new AsyncInvoker<CreateTemplatesResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateTemplatesResponse>);
         }
         
         /// <summary>
@@ -56,12 +72,21 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3
         /// </summary>
         public async Task<DeleteBuildJobResponse> DeleteBuildJobAsync(DeleteBuildJobRequest deleteBuildJobRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id" , deleteBuildJobRequest.JobId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/jobs/{job_id}/delete",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteBuildJobRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", deleteBuildJobRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/jobs/{job_id}/delete",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteBuildJobRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<DeleteBuildJobResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteBuildJobResponse> DeleteBuildJobAsyncInvoker(DeleteBuildJobRequest deleteBuildJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", deleteBuildJobRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/jobs/{job_id}/delete",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteBuildJobRequest);
+            return new AsyncInvoker<DeleteBuildJobResponse>(this, "POST", request, JsonUtils.DeSerialize<DeleteBuildJobResponse>);
         }
         
         /// <summary>
@@ -73,12 +98,21 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3
         /// </summary>
         public async Task<DeleteTemplatesResponse> DeleteTemplatesAsync(DeleteTemplatesRequest deleteTemplatesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("uuid" , deleteTemplatesRequest.Uuid.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/templates/{uuid}/delete",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTemplatesRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("DELETE",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("uuid", deleteTemplatesRequest.Uuid.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/templates/{uuid}/delete",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTemplatesRequest);
+            var response = await DoHttpRequestAsync("DELETE",request);
             return JsonUtils.DeSerialize<DeleteTemplatesResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteTemplatesResponse> DeleteTemplatesAsyncInvoker(DeleteTemplatesRequest deleteTemplatesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("uuid", deleteTemplatesRequest.Uuid.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/templates/{uuid}/delete",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTemplatesRequest);
+            return new AsyncInvoker<DeleteTemplatesResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteTemplatesResponse>);
         }
         
         /// <summary>
@@ -90,12 +124,21 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3
         /// </summary>
         public async Task<DisableBuildJobResponse> DisableBuildJobAsync(DisableBuildJobRequest disableBuildJobRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id" , disableBuildJobRequest.JobId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/jobs/{job_id}/disable",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", disableBuildJobRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", disableBuildJobRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/jobs/{job_id}/disable",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disableBuildJobRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<DisableBuildJobResponse>(response);
+        }
+
+        public AsyncInvoker<DisableBuildJobResponse> DisableBuildJobAsyncInvoker(DisableBuildJobRequest disableBuildJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", disableBuildJobRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/jobs/{job_id}/disable",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disableBuildJobRequest);
+            return new AsyncInvoker<DisableBuildJobResponse>(this, "POST", request, JsonUtils.DeSerialize<DisableBuildJobResponse>);
         }
         
         /// <summary>
@@ -107,12 +150,21 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3
         /// </summary>
         public async Task<DisableNoticeResponse> DisableNoticeAsync(DisableNoticeRequest disableNoticeRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id" , disableNoticeRequest.JobId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/jobs/notice/{job_id}/disable",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", disableNoticeRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", disableNoticeRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/jobs/notice/{job_id}/disable",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disableNoticeRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<DisableNoticeResponse>(response);
+        }
+
+        public AsyncInvoker<DisableNoticeResponse> DisableNoticeAsyncInvoker(DisableNoticeRequest disableNoticeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", disableNoticeRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/jobs/notice/{job_id}/disable",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disableNoticeRequest);
+            return new AsyncInvoker<DisableNoticeResponse>(this, "POST", request, JsonUtils.DeSerialize<DisableNoticeResponse>);
         }
         
         /// <summary>
@@ -124,12 +176,21 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3
         /// </summary>
         public async Task<DownloadBuildLogResponse> DownloadBuildLogAsync(DownloadBuildLogRequest downloadBuildLogRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("record_id" , downloadBuildLogRequest.RecordId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v4/{record_id}/download-log",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadBuildLogRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("record_id", downloadBuildLogRequest.RecordId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v4/{record_id}/download-log",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadBuildLogRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<DownloadBuildLogResponse>(response);
+        }
+
+        public AsyncInvoker<DownloadBuildLogResponse> DownloadBuildLogAsyncInvoker(DownloadBuildLogRequest downloadBuildLogRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("record_id", downloadBuildLogRequest.RecordId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v4/{record_id}/download-log",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadBuildLogRequest);
+            return new AsyncInvoker<DownloadBuildLogResponse>(this, "GET", request, JsonUtils.DeSerialize<DownloadBuildLogResponse>);
         }
         
         /// <summary>
@@ -141,11 +202,19 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3
         /// </summary>
         public async Task<DownloadKeystoreResponse> DownloadKeystoreAsync(DownloadKeystoreRequest downloadKeystoreRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/keystore",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadKeystoreRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/keystore",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadKeystoreRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<DownloadKeystoreResponse>(response);
+        }
+
+        public AsyncInvoker<DownloadKeystoreResponse> DownloadKeystoreAsyncInvoker(DownloadKeystoreRequest downloadKeystoreRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/keystore",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadKeystoreRequest);
+            return new AsyncInvoker<DownloadKeystoreResponse>(this, "GET", request, JsonUtils.DeSerialize<DownloadKeystoreResponse>);
         }
         
         /// <summary>
@@ -157,12 +226,21 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3
         /// </summary>
         public async Task<DownloadTaskLogResponse> DownloadTaskLogAsync(DownloadTaskLogRequest downloadTaskLogRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("record_id" , downloadTaskLogRequest.RecordId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v4/{record_id}/task-log",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadTaskLogRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("record_id", downloadTaskLogRequest.RecordId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v4/{record_id}/task-log",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadTaskLogRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<DownloadTaskLogResponse>(response);
+        }
+
+        public AsyncInvoker<DownloadTaskLogResponse> DownloadTaskLogAsyncInvoker(DownloadTaskLogRequest downloadTaskLogRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("record_id", downloadTaskLogRequest.RecordId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v4/{record_id}/task-log",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadTaskLogRequest);
+            return new AsyncInvoker<DownloadTaskLogResponse>(this, "GET", request, JsonUtils.DeSerialize<DownloadTaskLogResponse>);
         }
         
         /// <summary>
@@ -174,12 +252,21 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3
         /// </summary>
         public async Task<EnableBuildJobResponse> EnableBuildJobAsync(EnableBuildJobRequest enableBuildJobRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id" , enableBuildJobRequest.JobId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/jobs/{job_id}/recover",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", enableBuildJobRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", enableBuildJobRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/jobs/{job_id}/recover",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", enableBuildJobRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<EnableBuildJobResponse>(response);
+        }
+
+        public AsyncInvoker<EnableBuildJobResponse> EnableBuildJobAsyncInvoker(EnableBuildJobRequest enableBuildJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", enableBuildJobRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/jobs/{job_id}/recover",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", enableBuildJobRequest);
+            return new AsyncInvoker<EnableBuildJobResponse>(this, "POST", request, JsonUtils.DeSerialize<EnableBuildJobResponse>);
         }
         
         /// <summary>
@@ -191,12 +278,21 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3
         /// </summary>
         public async Task<ListJobConfigResponse> ListJobConfigAsync(ListJobConfigRequest listJobConfigRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id" , listJobConfigRequest.JobId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/jobs/{job_id}/query",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listJobConfigRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", listJobConfigRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/jobs/{job_id}/query",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listJobConfigRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListJobConfigResponse>(response);
+        }
+
+        public AsyncInvoker<ListJobConfigResponse> ListJobConfigAsyncInvoker(ListJobConfigRequest listJobConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", listJobConfigRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/jobs/{job_id}/query",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listJobConfigRequest);
+            return new AsyncInvoker<ListJobConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ListJobConfigResponse>);
         }
         
         /// <summary>
@@ -208,12 +304,21 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3
         /// </summary>
         public async Task<ListNoticeResponse> ListNoticeAsync(ListNoticeRequest listNoticeRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id" , listNoticeRequest.JobId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/jobs/notice/{job_id}/query",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listNoticeRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", listNoticeRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/jobs/notice/{job_id}/query",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listNoticeRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListNoticeResponse>(response);
+        }
+
+        public AsyncInvoker<ListNoticeResponse> ListNoticeAsyncInvoker(ListNoticeRequest listNoticeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", listNoticeRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/jobs/notice/{job_id}/query",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listNoticeRequest);
+            return new AsyncInvoker<ListNoticeResponse>(this, "GET", request, JsonUtils.DeSerialize<ListNoticeResponse>);
         }
         
         /// <summary>
@@ -225,11 +330,19 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3
         /// </summary>
         public async Task<ListTemplatesResponse> ListTemplatesAsync(ListTemplatesRequest listTemplatesRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/templates/query",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTemplatesRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/templates/query",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTemplatesRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ListTemplatesResponse>(response);
+        }
+
+        public AsyncInvoker<ListTemplatesResponse> ListTemplatesAsyncInvoker(ListTemplatesRequest listTemplatesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/templates/query",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTemplatesRequest);
+            return new AsyncInvoker<ListTemplatesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListTemplatesResponse>);
         }
         
         /// <summary>
@@ -241,11 +354,19 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3
         /// </summary>
         public async Task<RunJobResponse> RunJobAsync(RunJobRequest runJobRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/jobs/build",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", runJobRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/jobs/build",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", runJobRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<RunJobResponse>(response);
+        }
+
+        public AsyncInvoker<RunJobResponse> RunJobAsyncInvoker(RunJobRequest runJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/jobs/build",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", runJobRequest);
+            return new AsyncInvoker<RunJobResponse>(this, "POST", request, JsonUtils.DeSerialize<RunJobResponse>);
         }
         
         /// <summary>
@@ -257,13 +378,23 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3
         /// </summary>
         public async Task<ShowHistoryDetailsResponse> ShowHistoryDetailsAsync(ShowHistoryDetailsRequest showHistoryDetailsRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id" , showHistoryDetailsRequest.JobId.ToString());
-            urlParam.Add("build_number" , showHistoryDetailsRequest.BuildNumber.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/jobs/{job_id}/{build_number}/history-details",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showHistoryDetailsRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", showHistoryDetailsRequest.JobId.ToString());
+            urlParam.Add("build_number", showHistoryDetailsRequest.BuildNumber.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/jobs/{job_id}/{build_number}/history-details",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showHistoryDetailsRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowHistoryDetailsResponse>(response);
+        }
+
+        public AsyncInvoker<ShowHistoryDetailsResponse> ShowHistoryDetailsAsyncInvoker(ShowHistoryDetailsRequest showHistoryDetailsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", showHistoryDetailsRequest.JobId.ToString());
+            urlParam.Add("build_number", showHistoryDetailsRequest.BuildNumber.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/jobs/{job_id}/{build_number}/history-details",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showHistoryDetailsRequest);
+            return new AsyncInvoker<ShowHistoryDetailsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowHistoryDetailsResponse>);
         }
         
         /// <summary>
@@ -275,12 +406,21 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3
         /// </summary>
         public async Task<ShowJobListByProjectIdResponse> ShowJobListByProjectIdAsync(ShowJobListByProjectIdRequest showJobListByProjectIdRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("project_id" , showJobListByProjectIdRequest.ProjectId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showJobListByProjectIdRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id", showJobListByProjectIdRequest.ProjectId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showJobListByProjectIdRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowJobListByProjectIdResponse>(response);
+        }
+
+        public AsyncInvoker<ShowJobListByProjectIdResponse> ShowJobListByProjectIdAsyncInvoker(ShowJobListByProjectIdRequest showJobListByProjectIdRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id", showJobListByProjectIdRequest.ProjectId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showJobListByProjectIdRequest);
+            return new AsyncInvoker<ShowJobListByProjectIdResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowJobListByProjectIdResponse>);
         }
         
         /// <summary>
@@ -292,12 +432,21 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3
         /// </summary>
         public async Task<ShowJobStatusResponse> ShowJobStatusAsync(ShowJobStatusRequest showJobStatusRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id" , showJobStatusRequest.JobId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/jobs/{job_id}/status",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showJobStatusRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", showJobStatusRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/jobs/{job_id}/status",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showJobStatusRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowJobStatusResponse>(response);
+        }
+
+        public AsyncInvoker<ShowJobStatusResponse> ShowJobStatusAsyncInvoker(ShowJobStatusRequest showJobStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", showJobStatusRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/jobs/{job_id}/status",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showJobStatusRequest);
+            return new AsyncInvoker<ShowJobStatusResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowJobStatusResponse>);
         }
         
         /// <summary>
@@ -309,12 +458,21 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3
         /// </summary>
         public async Task<ShowJobSuccessRatioResponse> ShowJobSuccessRatioAsync(ShowJobSuccessRatioRequest showJobSuccessRatioRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id" , showJobSuccessRatioRequest.JobId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/jobs/{job_id}/success-ratio",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showJobSuccessRatioRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", showJobSuccessRatioRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/jobs/{job_id}/success-ratio",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showJobSuccessRatioRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowJobSuccessRatioResponse>(response);
+        }
+
+        public AsyncInvoker<ShowJobSuccessRatioResponse> ShowJobSuccessRatioAsyncInvoker(ShowJobSuccessRatioRequest showJobSuccessRatioRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", showJobSuccessRatioRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/jobs/{job_id}/success-ratio",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showJobSuccessRatioRequest);
+            return new AsyncInvoker<ShowJobSuccessRatioResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowJobSuccessRatioResponse>);
         }
         
         /// <summary>
@@ -326,12 +484,21 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3
         /// </summary>
         public async Task<ShowLastHistoryResponse> ShowLastHistoryAsync(ShowLastHistoryRequest showLastHistoryRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("project_id" , showLastHistoryRequest.ProjectId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/jobs/{project_id}/last-history",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLastHistoryRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id", showLastHistoryRequest.ProjectId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/jobs/{project_id}/last-history",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLastHistoryRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowLastHistoryResponse>(response);
+        }
+
+        public AsyncInvoker<ShowLastHistoryResponse> ShowLastHistoryAsyncInvoker(ShowLastHistoryRequest showLastHistoryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id", showLastHistoryRequest.ProjectId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/jobs/{project_id}/last-history",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLastHistoryRequest);
+            return new AsyncInvoker<ShowLastHistoryResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowLastHistoryResponse>);
         }
         
         /// <summary>
@@ -343,12 +510,21 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3
         /// </summary>
         public async Task<ShowListHistoryResponse> ShowListHistoryAsync(ShowListHistoryRequest showListHistoryRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id" , showListHistoryRequest.JobId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/jobs/{job_id}/history",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showListHistoryRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", showListHistoryRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/jobs/{job_id}/history",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showListHistoryRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowListHistoryResponse>(response);
+        }
+
+        public AsyncInvoker<ShowListHistoryResponse> ShowListHistoryAsyncInvoker(ShowListHistoryRequest showListHistoryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", showListHistoryRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/jobs/{job_id}/history",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showListHistoryRequest);
+            return new AsyncInvoker<ShowListHistoryResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowListHistoryResponse>);
         }
         
         /// <summary>
@@ -360,12 +536,21 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3
         /// </summary>
         public async Task<ShowListPeriodHistoryResponse> ShowListPeriodHistoryAsync(ShowListPeriodHistoryRequest showListPeriodHistoryRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id" , showListPeriodHistoryRequest.JobId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/jobs/{job_id}/period-history",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showListPeriodHistoryRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", showListPeriodHistoryRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/jobs/{job_id}/period-history",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showListPeriodHistoryRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowListPeriodHistoryResponse>(response);
+        }
+
+        public AsyncInvoker<ShowListPeriodHistoryResponse> ShowListPeriodHistoryAsyncInvoker(ShowListPeriodHistoryRequest showListPeriodHistoryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", showListPeriodHistoryRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/jobs/{job_id}/period-history",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showListPeriodHistoryRequest);
+            return new AsyncInvoker<ShowListPeriodHistoryResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowListPeriodHistoryResponse>);
         }
         
         /// <summary>
@@ -377,13 +562,23 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3
         /// </summary>
         public async Task<ShowOutputInfoResponse> ShowOutputInfoAsync(ShowOutputInfoRequest showOutputInfoRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id" , showOutputInfoRequest.JobId.ToString());
-            urlParam.Add("build_no" , showOutputInfoRequest.BuildNo.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/jobs/{job_id}/{build_no}/output-info",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showOutputInfoRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", showOutputInfoRequest.JobId.ToString());
+            urlParam.Add("build_no", showOutputInfoRequest.BuildNo.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/jobs/{job_id}/{build_no}/output-info",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showOutputInfoRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowOutputInfoResponse>(response);
+        }
+
+        public AsyncInvoker<ShowOutputInfoResponse> ShowOutputInfoAsyncInvoker(ShowOutputInfoRequest showOutputInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", showOutputInfoRequest.JobId.ToString());
+            urlParam.Add("build_no", showOutputInfoRequest.BuildNo.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/jobs/{job_id}/{build_no}/output-info",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showOutputInfoRequest);
+            return new AsyncInvoker<ShowOutputInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowOutputInfoResponse>);
         }
         
         /// <summary>
@@ -395,13 +590,23 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3
         /// </summary>
         public async Task<ShowRecordDetailResponse> ShowRecordDetailAsync(ShowRecordDetailRequest showRecordDetailRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id" , showRecordDetailRequest.JobId.ToString());
-            urlParam.Add("build_no" , showRecordDetailRequest.BuildNo.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v4/jobs/{job_id}/{build_no}/record-info",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecordDetailRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", showRecordDetailRequest.JobId.ToString());
+            urlParam.Add("build_no", showRecordDetailRequest.BuildNo.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v4/jobs/{job_id}/{build_no}/record-info",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecordDetailRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowRecordDetailResponse>(response);
+        }
+
+        public AsyncInvoker<ShowRecordDetailResponse> ShowRecordDetailAsyncInvoker(ShowRecordDetailRequest showRecordDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", showRecordDetailRequest.JobId.ToString());
+            urlParam.Add("build_no", showRecordDetailRequest.BuildNo.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v4/jobs/{job_id}/{build_no}/record-info",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecordDetailRequest);
+            return new AsyncInvoker<ShowRecordDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRecordDetailResponse>);
         }
         
         /// <summary>
@@ -413,13 +618,23 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3
         /// </summary>
         public async Task<StopBuildJobResponse> StopBuildJobAsync(StopBuildJobRequest stopBuildJobRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id" , stopBuildJobRequest.JobId.ToString());
-            urlParam.Add("build_no" , stopBuildJobRequest.BuildNo.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/jobs/{job_id}/{build_no}/stop",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopBuildJobRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", stopBuildJobRequest.JobId.ToString());
+            urlParam.Add("build_no", stopBuildJobRequest.BuildNo.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/jobs/{job_id}/{build_no}/stop",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopBuildJobRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<StopBuildJobResponse>(response);
+        }
+
+        public AsyncInvoker<StopBuildJobResponse> StopBuildJobAsyncInvoker(StopBuildJobRequest stopBuildJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", stopBuildJobRequest.JobId.ToString());
+            urlParam.Add("build_no", stopBuildJobRequest.BuildNo.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/jobs/{job_id}/{build_no}/stop",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopBuildJobRequest);
+            return new AsyncInvoker<StopBuildJobResponse>(this, "POST", request, JsonUtils.DeSerialize<StopBuildJobResponse>);
         }
         
         /// <summary>
@@ -431,11 +646,19 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3
         /// </summary>
         public async Task<UpdateBuildJobResponse> UpdateBuildJobAsync(UpdateBuildJobRequest updateBuildJobRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/jobs/update",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateBuildJobRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/jobs/update",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateBuildJobRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<UpdateBuildJobResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateBuildJobResponse> UpdateBuildJobAsyncInvoker(UpdateBuildJobRequest updateBuildJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/jobs/update",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateBuildJobRequest);
+            return new AsyncInvoker<UpdateBuildJobResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateBuildJobResponse>);
         }
         
         /// <summary>
@@ -447,12 +670,21 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3
         /// </summary>
         public async Task<UpdateNoticeResponse> UpdateNoticeAsync(UpdateNoticeRequest updateNoticeRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id" , updateNoticeRequest.JobId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/jobs/notice/{job_id}/update",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateNoticeRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", updateNoticeRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/jobs/notice/{job_id}/update",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateNoticeRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<UpdateNoticeResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateNoticeResponse> UpdateNoticeAsyncInvoker(UpdateNoticeRequest updateNoticeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", updateNoticeRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/jobs/notice/{job_id}/update",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateNoticeRequest);
+            return new AsyncInvoker<UpdateNoticeResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateNoticeResponse>);
         }
         
         /// <summary>
@@ -464,12 +696,21 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3
         /// </summary>
         public async Task<DownloadLogByRecordIdResponse> DownloadLogByRecordIdAsync(DownloadLogByRecordIdRequest downloadLogByRecordIdRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("record_id" , downloadLogByRecordIdRequest.RecordId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{record_id}/download-log",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadLogByRecordIdRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("record_id", downloadLogByRecordIdRequest.RecordId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{record_id}/download-log",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadLogByRecordIdRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<DownloadLogByRecordIdResponse>(response);
+        }
+
+        public AsyncInvoker<DownloadLogByRecordIdResponse> DownloadLogByRecordIdAsyncInvoker(DownloadLogByRecordIdRequest downloadLogByRecordIdRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("record_id", downloadLogByRecordIdRequest.RecordId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{record_id}/download-log",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadLogByRecordIdRequest);
+            return new AsyncInvoker<DownloadLogByRecordIdResponse>(this, "GET", request, JsonUtils.DeSerialize<DownloadLogByRecordIdResponse>);
         }
         
         /// <summary>
@@ -481,12 +722,21 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3
         /// </summary>
         public async Task<ShowFlowGraphResponse> ShowFlowGraphAsync(ShowFlowGraphRequest showFlowGraphRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("build_flow_record_id" , showFlowGraphRequest.BuildFlowRecordId.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/{build_flow_record_id}/flow-graph",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFlowGraphRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("build_flow_record_id", showFlowGraphRequest.BuildFlowRecordId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{build_flow_record_id}/flow-graph",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFlowGraphRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowFlowGraphResponse>(response);
+        }
+
+        public AsyncInvoker<ShowFlowGraphResponse> ShowFlowGraphAsyncInvoker(ShowFlowGraphRequest showFlowGraphRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("build_flow_record_id", showFlowGraphRequest.BuildFlowRecordId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{build_flow_record_id}/flow-graph",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFlowGraphRequest);
+            return new AsyncInvoker<ShowFlowGraphResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowFlowGraphResponse>);
         }
         
         /// <summary>
@@ -498,13 +748,23 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3
         /// </summary>
         public async Task<ShowRecordInfoResponse> ShowRecordInfoAsync(ShowRecordInfoRequest showRecordInfoRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id" , showRecordInfoRequest.JobId.ToString());
-            urlParam.Add("build_no" , showRecordInfoRequest.BuildNo.ToString());
-            string urlPath = HttpUtils.AddUrlPath("/v3/jobs/{job_id}/{build_no}/record-info",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecordInfoRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("GET",request);
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", showRecordInfoRequest.JobId.ToString());
+            urlParam.Add("build_no", showRecordInfoRequest.BuildNo.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/jobs/{job_id}/{build_no}/record-info",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecordInfoRequest);
+            var response = await DoHttpRequestAsync("GET",request);
             return JsonUtils.DeSerialize<ShowRecordInfoResponse>(response);
+        }
+
+        public AsyncInvoker<ShowRecordInfoResponse> ShowRecordInfoAsyncInvoker(ShowRecordInfoRequest showRecordInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", showRecordInfoRequest.JobId.ToString());
+            urlParam.Add("build_no", showRecordInfoRequest.BuildNo.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/jobs/{job_id}/{build_no}/record-info",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecordInfoRequest);
+            return new AsyncInvoker<ShowRecordInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRecordInfoResponse>);
         }
         
         /// <summary>
@@ -516,11 +776,19 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3
         /// </summary>
         public async Task<StopJobResponse> StopJobAsync(StopJobRequest stopJobRequest)
         {
-            Dictionary<string, string> urlParam = new Dictionary<string, string>();
-            string urlPath = HttpUtils.AddUrlPath("/v3/jobs/stop",urlParam);
-            SdkRequest request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopJobRequest);
-            HttpResponseMessage response = await DoHttpRequestAsync("POST",request);
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/jobs/stop",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopJobRequest);
+            var response = await DoHttpRequestAsync("POST",request);
             return JsonUtils.DeSerialize<StopJobResponse>(response);
+        }
+
+        public AsyncInvoker<StopJobResponse> StopJobAsyncInvoker(StopJobRequest stopJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/jobs/stop",urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopJobRequest);
+            return new AsyncInvoker<StopJobResponse>(this, "POST", request, JsonUtils.DeSerialize<StopJobResponse>);
         }
         
     }

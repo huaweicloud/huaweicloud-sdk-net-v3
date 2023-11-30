@@ -17,11 +17,11 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
     {
 
         /// <summary>
-        /// 数据库引擎。支持的引擎如下，不区分大小写：postgresql
+        /// 数据库引擎。支持的引擎如下，不区分大小写：postgresql,mysql
         /// </summary>
-        [SDKProperty("database_name", IsPath = true)]
-        [JsonProperty("database_name", NullValueHandling = NullValueHandling.Ignore)]
-        public string DatabaseName { get; set; }
+        [SDKProperty("engine", IsPath = true)]
+        [JsonProperty("engine", NullValueHandling = NullValueHandling.Ignore)]
+        public string Engine { get; set; }
 
         /// <summary>
         /// 语言
@@ -46,7 +46,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListHistoryDatabaseRequest {\n");
-            sb.Append("  databaseName: ").Append(DatabaseName).Append("\n");
+            sb.Append("  engine: ").Append(Engine).Append("\n");
             sb.Append("  xLanguage: ").Append(XLanguage).Append("\n");
             sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
@@ -71,9 +71,9 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
 
             return 
                 (
-                    this.DatabaseName == input.DatabaseName ||
-                    (this.DatabaseName != null &&
-                    this.DatabaseName.Equals(input.DatabaseName))
+                    this.Engine == input.Engine ||
+                    (this.Engine != null &&
+                    this.Engine.Equals(input.Engine))
                 ) && 
                 (
                     this.XLanguage == input.XLanguage ||
@@ -95,8 +95,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.DatabaseName != null)
-                    hashCode = hashCode * 59 + this.DatabaseName.GetHashCode();
+                if (this.Engine != null)
+                    hashCode = hashCode * 59 + this.Engine.GetHashCode();
                 if (this.XLanguage != null)
                     hashCode = hashCode * 59 + this.XLanguage.GetHashCode();
                 if (this.Body != null)
