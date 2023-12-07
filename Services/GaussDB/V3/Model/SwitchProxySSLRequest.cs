@@ -8,20 +8,19 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
+namespace HuaweiCloud.SDK.GaussDB.V3.Model
 {
     /// <summary>
-    /// Request Object
+    /// 开关数据库代理SSL加密请求体。
     /// </summary>
-    public class ShowDependcyRequest 
+    public class SwitchProxySSLRequest 
     {
 
         /// <summary>
-        /// 依赖包的ID。
+        /// SSL数据加密开关设置。    取值范围： - true: 开启SSL数据加密。 - false: 关闭SSL数据加密。
         /// </summary>
-        [SDKProperty("depend_id", IsPath = true)]
-        [JsonProperty("depend_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string DependId { get; set; }
+        [JsonProperty("ssl_option", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? SslOption { get; set; }
 
 
 
@@ -31,8 +30,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ShowDependcyRequest {\n");
-            sb.Append("  dependId: ").Append(DependId).Append("\n");
+            sb.Append("class SwitchProxySSLRequest {\n");
+            sb.Append("  sslOption: ").Append(SslOption).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -42,22 +41,22 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ShowDependcyRequest);
+            return this.Equals(input as SwitchProxySSLRequest);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ShowDependcyRequest input)
+        public bool Equals(SwitchProxySSLRequest input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.DependId == input.DependId ||
-                    (this.DependId != null &&
-                    this.DependId.Equals(input.DependId))
+                    this.SslOption == input.SslOption ||
+                    (this.SslOption != null &&
+                    this.SslOption.Equals(input.SslOption))
                 );
         }
 
@@ -69,8 +68,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.DependId != null)
-                    hashCode = hashCode * 59 + this.DependId.GetHashCode();
+                if (this.SslOption != null)
+                    hashCode = hashCode * 59 + this.SslOption.GetHashCode();
                 return hashCode;
             }
         }

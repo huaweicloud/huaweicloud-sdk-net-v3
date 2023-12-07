@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
     public class StackSetOperationActionPrimitiveTypeHolder 
     {
         /// <summary>
-        /// 用户当前的操作   * &#x60;CREATE_STACK_INSTANCES&#x60; - 创建资源栈实例   * &#x60;DELETE_STACK_INSTANCES&#x60; - 删除资源栈实例   * &#x60;DEPLOY_STACK_SET&#x60; - 部署资源栈集   * &#x60;DEPLOY_STACK_INSTANCES&#x60; - 部署资源栈实例
+        /// 用户当前的操作   * &#x60;CREATE_STACK_INSTANCES&#x60; - 创建资源栈实例   * &#x60;DELETE_STACK_INSTANCES&#x60; - 删除资源栈实例   * &#x60;DEPLOY_STACK_SET&#x60; - 部署资源栈集   * &#x60;DEPLOY_STACK_INSTANCES&#x60; - 部署资源栈实例   * &#x60;UPDATE_STACK_INSTANCES&#x60; - 更新资源栈实例
         /// </summary>
-        /// <value>用户当前的操作   * &#x60;CREATE_STACK_INSTANCES&#x60; - 创建资源栈实例   * &#x60;DELETE_STACK_INSTANCES&#x60; - 删除资源栈实例   * &#x60;DEPLOY_STACK_SET&#x60; - 部署资源栈集   * &#x60;DEPLOY_STACK_INSTANCES&#x60; - 部署资源栈实例</value>
+        /// <value>用户当前的操作   * &#x60;CREATE_STACK_INSTANCES&#x60; - 创建资源栈实例   * &#x60;DELETE_STACK_INSTANCES&#x60; - 删除资源栈实例   * &#x60;DEPLOY_STACK_SET&#x60; - 部署资源栈集   * &#x60;DEPLOY_STACK_INSTANCES&#x60; - 部署资源栈实例   * &#x60;UPDATE_STACK_INSTANCES&#x60; - 更新资源栈实例</value>
         [JsonConverter(typeof(EnumClassConverter<ActionEnum>))]
         public class ActionEnum
         {
@@ -42,6 +42,11 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
             /// </summary>
             public static readonly ActionEnum DEPLOY_STACK_INSTANCES = new ActionEnum("DEPLOY_STACK_INSTANCES");
 
+            /// <summary>
+            /// Enum UPDATE_STACK_INSTANCES for value: UPDATE_STACK_INSTANCES
+            /// </summary>
+            public static readonly ActionEnum UPDATE_STACK_INSTANCES = new ActionEnum("UPDATE_STACK_INSTANCES");
+
             private static readonly Dictionary<string, ActionEnum> StaticFields =
             new Dictionary<string, ActionEnum>()
             {
@@ -49,6 +54,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
                 { "DELETE_STACK_INSTANCES", DELETE_STACK_INSTANCES },
                 { "DEPLOY_STACK_SET", DEPLOY_STACK_SET },
                 { "DEPLOY_STACK_INSTANCES", DEPLOY_STACK_INSTANCES },
+                { "UPDATE_STACK_INSTANCES", UPDATE_STACK_INSTANCES },
             };
 
             private string _value;
@@ -144,7 +150,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
 
 
         /// <summary>
-        /// 用户当前的操作   * &#x60;CREATE_STACK_INSTANCES&#x60; - 创建资源栈实例   * &#x60;DELETE_STACK_INSTANCES&#x60; - 删除资源栈实例   * &#x60;DEPLOY_STACK_SET&#x60; - 部署资源栈集   * &#x60;DEPLOY_STACK_INSTANCES&#x60; - 部署资源栈实例
+        /// 用户当前的操作   * &#x60;CREATE_STACK_INSTANCES&#x60; - 创建资源栈实例   * &#x60;DELETE_STACK_INSTANCES&#x60; - 删除资源栈实例   * &#x60;DEPLOY_STACK_SET&#x60; - 部署资源栈集   * &#x60;DEPLOY_STACK_INSTANCES&#x60; - 部署资源栈实例   * &#x60;UPDATE_STACK_INSTANCES&#x60; - 更新资源栈实例
         /// </summary>
         [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]
         public ActionEnum Action { get; set; }

@@ -1410,6 +1410,32 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         }
         
         /// <summary>
+        /// 支持节点的开关机
+        ///
+        /// 当底层故障导致节点无法正常工作时，可以对该节点执行关机操作，关机后会由其他节点接管业务。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public OfflineNodesResponse OfflineNodes(OfflineNodesRequest offlineNodesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", offlineNodesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/nodes", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", offlineNodesRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerializeNull<OfflineNodesResponse>(response);
+        }
+
+        public SyncInvoker<OfflineNodesResponse> OfflineNodesInvoker(OfflineNodesRequest offlineNodesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", offlineNodesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/nodes", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", offlineNodesRequest);
+            return new SyncInvoker<OfflineNodesResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<OfflineNodesResponse>);
+        }
+        
+        /// <summary>
         /// 暂停/恢复具备容灾关系的实例数据同步
         ///
         /// 该接口用于暂停/恢复具备容灾关系的实例数据同步。

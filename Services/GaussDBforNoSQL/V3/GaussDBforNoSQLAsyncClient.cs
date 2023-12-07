@@ -26,9 +26,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("config_id", applyConfigurationRequest.ConfigId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}/apply",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}/apply", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", applyConfigurationRequest);
-            var response = await DoHttpRequestAsync("PUT",request);
+            var response = await DoHttpRequestAsync("PUT", request);
             return JsonUtils.DeSerialize<ApplyConfigurationResponse>(response);
         }
 
@@ -36,7 +36,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("config_id", applyConfigurationRequest.ConfigId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}/apply",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}/apply", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", applyConfigurationRequest);
             return new AsyncInvoker<ApplyConfigurationResponse>(this, "PUT", request, JsonUtils.DeSerialize<ApplyConfigurationResponse>);
         }
@@ -52,9 +52,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", batchTagActionRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/tags/action",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/tags/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchTagActionRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerializeNull<BatchTagActionResponse>(response);
         }
 
@@ -62,7 +62,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", batchTagActionRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/tags/action",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/tags/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchTagActionRequest);
             return new AsyncInvoker<BatchTagActionResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchTagActionResponse>);
         }
@@ -79,9 +79,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", checkDisasterRecoveryOperationRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/disaster-recovery/precheck",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/disaster-recovery/precheck", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", checkDisasterRecoveryOperationRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerializeNull<CheckDisasterRecoveryOperationResponse>(response);
         }
 
@@ -89,7 +89,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", checkDisasterRecoveryOperationRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/disaster-recovery/precheck",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/disaster-recovery/precheck", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", checkDisasterRecoveryOperationRequest);
             return new AsyncInvoker<CheckDisasterRecoveryOperationResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CheckDisasterRecoveryOperationResponse>);
         }
@@ -104,16 +104,16 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         public async Task<CheckWeekPasswordResponse> CheckWeekPasswordAsync(CheckWeekPasswordRequest checkWeekPasswordRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/weak-password-verification",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/weak-password-verification", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", checkWeekPasswordRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<CheckWeekPasswordResponse>(response);
         }
 
         public AsyncInvoker<CheckWeekPasswordResponse> CheckWeekPasswordAsyncInvoker(CheckWeekPasswordRequest checkWeekPasswordRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/weak-password-verification",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/weak-password-verification", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", checkWeekPasswordRequest);
             return new AsyncInvoker<CheckWeekPasswordResponse>(this, "POST", request, JsonUtils.DeSerialize<CheckWeekPasswordResponse>);
         }
@@ -128,16 +128,16 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         public async Task<CompareConfigurationResponse> CompareConfigurationAsync(CompareConfigurationRequest compareConfigurationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/comparison",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/comparison", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", compareConfigurationRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<CompareConfigurationResponse>(response);
         }
 
         public AsyncInvoker<CompareConfigurationResponse> CompareConfigurationAsyncInvoker(CompareConfigurationRequest compareConfigurationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/comparison",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/comparison", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", compareConfigurationRequest);
             return new AsyncInvoker<CompareConfigurationResponse>(this, "POST", request, JsonUtils.DeSerialize<CompareConfigurationResponse>);
         }
@@ -153,9 +153,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("config_id", copyConfigurationRequest.ConfigId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}/copy",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}/copy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", copyConfigurationRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<CopyConfigurationResponse>(response);
         }
 
@@ -163,7 +163,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("config_id", copyConfigurationRequest.ConfigId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}/copy",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}/copy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", copyConfigurationRequest);
             return new AsyncInvoker<CopyConfigurationResponse>(this, "POST", request, JsonUtils.DeSerialize<CopyConfigurationResponse>);
         }
@@ -179,9 +179,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", createBackRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createBackRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<CreateBackResponse>(response);
         }
 
@@ -189,7 +189,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", createBackRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createBackRequest);
             return new AsyncInvoker<CreateBackResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateBackResponse>);
         }
@@ -205,9 +205,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", createColdVolumeRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/cold-volume",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/cold-volume", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createColdVolumeRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<CreateColdVolumeResponse>(response);
         }
 
@@ -215,7 +215,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", createColdVolumeRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/cold-volume",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/cold-volume", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createColdVolumeRequest);
             return new AsyncInvoker<CreateColdVolumeResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateColdVolumeResponse>);
         }
@@ -230,16 +230,16 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         public async Task<CreateConfigurationResponse> CreateConfigurationAsync(CreateConfigurationRequest createConfigurationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createConfigurationRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<CreateConfigurationResponse>(response);
         }
 
         public AsyncInvoker<CreateConfigurationResponse> CreateConfigurationAsyncInvoker(CreateConfigurationRequest createConfigurationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createConfigurationRequest);
             return new AsyncInvoker<CreateConfigurationResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateConfigurationResponse>);
         }
@@ -255,9 +255,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", createDbUserRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/instances/{instance_id}/db-users",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/instances/{instance_id}/db-users", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDbUserRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<CreateDbUserResponse>(response);
         }
 
@@ -265,7 +265,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", createDbUserRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/instances/{instance_id}/db-users",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/instances/{instance_id}/db-users", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDbUserRequest);
             return new AsyncInvoker<CreateDbUserResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateDbUserResponse>);
         }
@@ -281,9 +281,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", createDisasterRecoveryRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/disaster-recovery/construction",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/disaster-recovery/construction", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDisasterRecoveryRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<CreateDisasterRecoveryResponse>(response);
         }
 
@@ -291,7 +291,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", createDisasterRecoveryRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/disaster-recovery/construction",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/disaster-recovery/construction", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDisasterRecoveryRequest);
             return new AsyncInvoker<CreateDisasterRecoveryResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateDisasterRecoveryResponse>);
         }
@@ -306,16 +306,16 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         public async Task<CreateInstanceResponse> CreateInstanceAsync(CreateInstanceRequest createInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<CreateInstanceResponse>(response);
         }
 
         public AsyncInvoker<CreateInstanceResponse> CreateInstanceAsyncInvoker(CreateInstanceRequest createInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceRequest);
             return new AsyncInvoker<CreateInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateInstanceResponse>);
         }
@@ -331,9 +331,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("backup_id", deleteBackupRequest.BackupId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups/{backup_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups/{backup_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteBackupRequest);
-            var response = await DoHttpRequestAsync("DELETE",request);
+            var response = await DoHttpRequestAsync("DELETE", request);
             return JsonUtils.DeSerialize<DeleteBackupResponse>(response);
         }
 
@@ -341,7 +341,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("backup_id", deleteBackupRequest.BackupId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups/{backup_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups/{backup_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteBackupRequest);
             return new AsyncInvoker<DeleteBackupResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteBackupResponse>);
         }
@@ -357,9 +357,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("config_id", deleteConfigurationRequest.ConfigId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteConfigurationRequest);
-            var response = await DoHttpRequestAsync("DELETE",request);
+            var response = await DoHttpRequestAsync("DELETE", request);
             return JsonUtils.DeSerializeNull<DeleteConfigurationResponse>(response);
         }
 
@@ -367,7 +367,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("config_id", deleteConfigurationRequest.ConfigId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteConfigurationRequest);
             return new AsyncInvoker<DeleteConfigurationResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteConfigurationResponse>);
         }
@@ -383,9 +383,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", deleteDbUserRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/instances/{instance_id}/db-users",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/instances/{instance_id}/db-users", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDbUserRequest);
-            var response = await DoHttpRequestAsync("DELETE",request);
+            var response = await DoHttpRequestAsync("DELETE", request);
             return JsonUtils.DeSerialize<DeleteDbUserResponse>(response);
         }
 
@@ -393,7 +393,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", deleteDbUserRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/instances/{instance_id}/db-users",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/instances/{instance_id}/db-users", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDbUserRequest);
             return new AsyncInvoker<DeleteDbUserResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteDbUserResponse>);
         }
@@ -409,9 +409,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", deleteDisasterRecoveryRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/disaster-recovery/deconstruction",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/disaster-recovery/deconstruction", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDisasterRecoveryRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<DeleteDisasterRecoveryResponse>(response);
         }
 
@@ -419,7 +419,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", deleteDisasterRecoveryRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/disaster-recovery/deconstruction",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/disaster-recovery/deconstruction", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDisasterRecoveryRequest);
             return new AsyncInvoker<DeleteDisasterRecoveryResponse>(this, "POST", request, JsonUtils.DeSerialize<DeleteDisasterRecoveryResponse>);
         }
@@ -435,9 +435,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", deleteEnlargeFailNodeRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/enlarge-failed-nodes",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/enlarge-failed-nodes", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteEnlargeFailNodeRequest);
-            var response = await DoHttpRequestAsync("DELETE",request);
+            var response = await DoHttpRequestAsync("DELETE", request);
             return JsonUtils.DeSerialize<DeleteEnlargeFailNodeResponse>(response);
         }
 
@@ -445,7 +445,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", deleteEnlargeFailNodeRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/enlarge-failed-nodes",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/enlarge-failed-nodes", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteEnlargeFailNodeRequest);
             return new AsyncInvoker<DeleteEnlargeFailNodeResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteEnlargeFailNodeResponse>);
         }
@@ -461,9 +461,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", deleteInstanceRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceRequest);
-            var response = await DoHttpRequestAsync("DELETE",request);
+            var response = await DoHttpRequestAsync("DELETE", request);
             return JsonUtils.DeSerialize<DeleteInstanceResponse>(response);
         }
 
@@ -471,7 +471,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", deleteInstanceRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceRequest);
             return new AsyncInvoker<DeleteInstanceResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteInstanceResponse>);
         }
@@ -487,9 +487,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("node_id", deleteInstancesSessionRequest.NodeId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/nodes/{node_id}/sessions",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/nodes/{node_id}/sessions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstancesSessionRequest);
-            var response = await DoHttpRequestAsync("DELETE",request);
+            var response = await DoHttpRequestAsync("DELETE", request);
             return JsonUtils.DeSerializeNull<DeleteInstancesSessionResponse>(response);
         }
 
@@ -497,7 +497,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("node_id", deleteInstancesSessionRequest.NodeId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/nodes/{node_id}/sessions",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/nodes/{node_id}/sessions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstancesSessionRequest);
             return new AsyncInvoker<DeleteInstancesSessionResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteInstancesSessionResponse>);
         }
@@ -512,16 +512,16 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         public async Task<DeleteLtsConfigsResponse> DeleteLtsConfigsAsync(DeleteLtsConfigsRequest deleteLtsConfigsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/logs/lts-configs",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/logs/lts-configs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteLtsConfigsRequest);
-            var response = await DoHttpRequestAsync("DELETE",request);
+            var response = await DoHttpRequestAsync("DELETE", request);
             return JsonUtils.DeSerializeNull<DeleteLtsConfigsResponse>(response);
         }
 
         public AsyncInvoker<DeleteLtsConfigsResponse> DeleteLtsConfigsAsyncInvoker(DeleteLtsConfigsRequest deleteLtsConfigsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/logs/lts-configs",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/logs/lts-configs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteLtsConfigsRequest);
             return new AsyncInvoker<DeleteLtsConfigsResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteLtsConfigsResponse>);
         }
@@ -537,9 +537,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", expandInstanceNodeRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/enlarge-node",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/enlarge-node", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", expandInstanceNodeRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<ExpandInstanceNodeResponse>(response);
         }
 
@@ -547,7 +547,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", expandInstanceNodeRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/enlarge-node",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/enlarge-node", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", expandInstanceNodeRequest);
             return new AsyncInvoker<ExpandInstanceNodeResponse>(this, "POST", request, JsonUtils.DeSerialize<ExpandInstanceNodeResponse>);
         }
@@ -563,9 +563,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", listAvailableFlavorInfosRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/available-flavors",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/available-flavors", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAvailableFlavorInfosRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ListAvailableFlavorInfosResponse>(response);
         }
 
@@ -573,7 +573,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", listAvailableFlavorInfosRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/available-flavors",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/available-flavors", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAvailableFlavorInfosRequest);
             return new AsyncInvoker<ListAvailableFlavorInfosResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAvailableFlavorInfosResponse>);
         }
@@ -589,9 +589,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", listCassandraSlowLogsRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/cassandra/instances/{instance_id}/slow-logs",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/cassandra/instances/{instance_id}/slow-logs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCassandraSlowLogsRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<ListCassandraSlowLogsResponse>(response);
         }
 
@@ -599,7 +599,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", listCassandraSlowLogsRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/cassandra/instances/{instance_id}/slow-logs",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/cassandra/instances/{instance_id}/slow-logs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCassandraSlowLogsRequest);
             return new AsyncInvoker<ListCassandraSlowLogsResponse>(this, "POST", request, JsonUtils.DeSerialize<ListCassandraSlowLogsResponse>);
         }
@@ -614,16 +614,16 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         public async Task<ListConfigurationDatastoresResponse> ListConfigurationDatastoresAsync(ListConfigurationDatastoresRequest listConfigurationDatastoresRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/datastores",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/datastores", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listConfigurationDatastoresRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ListConfigurationDatastoresResponse>(response);
         }
 
         public AsyncInvoker<ListConfigurationDatastoresResponse> ListConfigurationDatastoresAsyncInvoker(ListConfigurationDatastoresRequest listConfigurationDatastoresRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/datastores",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/datastores", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listConfigurationDatastoresRequest);
             return new AsyncInvoker<ListConfigurationDatastoresResponse>(this, "GET", request, JsonUtils.DeSerialize<ListConfigurationDatastoresResponse>);
         }
@@ -638,16 +638,16 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         public async Task<ListConfigurationTemplatesResponse> ListConfigurationTemplatesAsync(ListConfigurationTemplatesRequest listConfigurationTemplatesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/configurations",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/configurations", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listConfigurationTemplatesRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ListConfigurationTemplatesResponse>(response);
         }
 
         public AsyncInvoker<ListConfigurationTemplatesResponse> ListConfigurationTemplatesAsyncInvoker(ListConfigurationTemplatesRequest listConfigurationTemplatesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/configurations",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/configurations", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listConfigurationTemplatesRequest);
             return new AsyncInvoker<ListConfigurationTemplatesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListConfigurationTemplatesResponse>);
         }
@@ -662,16 +662,16 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         public async Task<ListConfigurationsResponse> ListConfigurationsAsync(ListConfigurationsRequest listConfigurationsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listConfigurationsRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ListConfigurationsResponse>(response);
         }
 
         public AsyncInvoker<ListConfigurationsResponse> ListConfigurationsAsyncInvoker(ListConfigurationsRequest listConfigurationsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listConfigurationsRequest);
             return new AsyncInvoker<ListConfigurationsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListConfigurationsResponse>);
         }
@@ -687,9 +687,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("datastore_name", listDatastoresRequest.DatastoreName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/datastores/{datastore_name}/versions",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/datastores/{datastore_name}/versions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDatastoresRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ListDatastoresResponse>(response);
         }
 
@@ -697,7 +697,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("datastore_name", listDatastoresRequest.DatastoreName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/datastores/{datastore_name}/versions",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/datastores/{datastore_name}/versions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDatastoresRequest);
             return new AsyncInvoker<ListDatastoresResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDatastoresResponse>);
         }
@@ -713,9 +713,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", listDbUsersRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/instances/{instance_id}/db-users",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/instances/{instance_id}/db-users", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDbUsersRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ListDbUsersResponse>(response);
         }
 
@@ -723,7 +723,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", listDbUsersRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/instances/{instance_id}/db-users",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/instances/{instance_id}/db-users", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDbUsersRequest);
             return new AsyncInvoker<ListDbUsersResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDbUsersResponse>);
         }
@@ -738,16 +738,16 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         public async Task<ListDedicatedResourcesResponse> ListDedicatedResourcesAsync(ListDedicatedResourcesRequest listDedicatedResourcesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/dedicated-resources",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/dedicated-resources", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDedicatedResourcesRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ListDedicatedResourcesResponse>(response);
         }
 
         public AsyncInvoker<ListDedicatedResourcesResponse> ListDedicatedResourcesAsyncInvoker(ListDedicatedResourcesRequest listDedicatedResourcesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/dedicated-resources",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/dedicated-resources", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDedicatedResourcesRequest);
             return new AsyncInvoker<ListDedicatedResourcesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDedicatedResourcesResponse>);
         }
@@ -762,16 +762,16 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         public async Task<ListEpsQuotasResponse> ListEpsQuotasAsync(ListEpsQuotasRequest listEpsQuotasRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/enterprise-projects/quotas",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/enterprise-projects/quotas", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listEpsQuotasRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ListEpsQuotasResponse>(response);
         }
 
         public AsyncInvoker<ListEpsQuotasResponse> ListEpsQuotasAsyncInvoker(ListEpsQuotasRequest listEpsQuotasRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/enterprise-projects/quotas",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/enterprise-projects/quotas", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listEpsQuotasRequest);
             return new AsyncInvoker<ListEpsQuotasResponse>(this, "GET", request, JsonUtils.DeSerialize<ListEpsQuotasResponse>);
         }
@@ -786,16 +786,16 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         public async Task<ListFlavorInfosResponse> ListFlavorInfosAsync(ListFlavorInfosRequest listFlavorInfosRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/flavors",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/flavors", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFlavorInfosRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ListFlavorInfosResponse>(response);
         }
 
         public AsyncInvoker<ListFlavorInfosResponse> ListFlavorInfosAsyncInvoker(ListFlavorInfosRequest listFlavorInfosRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/flavors",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/flavors", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFlavorInfosRequest);
             return new AsyncInvoker<ListFlavorInfosResponse>(this, "GET", request, JsonUtils.DeSerialize<ListFlavorInfosResponse>);
         }
@@ -810,16 +810,16 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         public async Task<ListFlavorsResponse> ListFlavorsAsync(ListFlavorsRequest listFlavorsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/flavors",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/flavors", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFlavorsRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ListFlavorsResponse>(response);
         }
 
         public AsyncInvoker<ListFlavorsResponse> ListFlavorsAsyncInvoker(ListFlavorsRequest listFlavorsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/flavors",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/flavors", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFlavorsRequest);
             return new AsyncInvoker<ListFlavorsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListFlavorsResponse>);
         }
@@ -835,9 +835,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", listInfluxdbSlowLogsRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/influxdb/instances/{instance_id}/slow-logs",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/influxdb/instances/{instance_id}/slow-logs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInfluxdbSlowLogsRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<ListInfluxdbSlowLogsResponse>(response);
         }
 
@@ -845,7 +845,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", listInfluxdbSlowLogsRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/influxdb/instances/{instance_id}/slow-logs",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/influxdb/instances/{instance_id}/slow-logs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInfluxdbSlowLogsRequest);
             return new AsyncInvoker<ListInfluxdbSlowLogsResponse>(this, "POST", request, JsonUtils.DeSerialize<ListInfluxdbSlowLogsResponse>);
         }
@@ -861,9 +861,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", listInstanceDatabasesRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/instances/{instance_id}/databases",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/instances/{instance_id}/databases", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceDatabasesRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ListInstanceDatabasesResponse>(response);
         }
 
@@ -871,7 +871,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", listInstanceDatabasesRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/instances/{instance_id}/databases",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/instances/{instance_id}/databases", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceDatabasesRequest);
             return new AsyncInvoker<ListInstanceDatabasesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceDatabasesResponse>);
         }
@@ -887,9 +887,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", listInstanceTagsRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/tags",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceTagsRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ListInstanceTagsResponse>(response);
         }
 
@@ -897,7 +897,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", listInstanceTagsRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/tags",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceTagsRequest);
             return new AsyncInvoker<ListInstanceTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceTagsResponse>);
         }
@@ -912,16 +912,16 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         public async Task<ListInstancesResponse> ListInstancesAsync(ListInstancesRequest listInstancesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstancesRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ListInstancesResponse>(response);
         }
 
         public AsyncInvoker<ListInstancesResponse> ListInstancesAsyncInvoker(ListInstancesRequest listInstancesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstancesRequest);
             return new AsyncInvoker<ListInstancesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstancesResponse>);
         }
@@ -936,16 +936,16 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         public async Task<ListInstancesByResourceTagsResponse> ListInstancesByResourceTagsAsync(ListInstancesByResourceTagsRequest listInstancesByResourceTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/resource-instances/action",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/resource-instances/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstancesByResourceTagsRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<ListInstancesByResourceTagsResponse>(response);
         }
 
         public AsyncInvoker<ListInstancesByResourceTagsResponse> ListInstancesByResourceTagsAsyncInvoker(ListInstancesByResourceTagsRequest listInstancesByResourceTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/resource-instances/action",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/resource-instances/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstancesByResourceTagsRequest);
             return new AsyncInvoker<ListInstancesByResourceTagsResponse>(this, "POST", request, JsonUtils.DeSerialize<ListInstancesByResourceTagsResponse>);
         }
@@ -960,16 +960,16 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         public async Task<ListInstancesByTagsResponse> ListInstancesByTagsAsync(ListInstancesByTagsRequest listInstancesByTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/resource_instances/action",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/resource_instances/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstancesByTagsRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<ListInstancesByTagsResponse>(response);
         }
 
         public AsyncInvoker<ListInstancesByTagsResponse> ListInstancesByTagsAsyncInvoker(ListInstancesByTagsRequest listInstancesByTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/resource_instances/action",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/resource_instances/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstancesByTagsRequest);
             return new AsyncInvoker<ListInstancesByTagsResponse>(this, "POST", request, JsonUtils.DeSerialize<ListInstancesByTagsResponse>);
         }
@@ -985,9 +985,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("node_id", listInstancesSessionRequest.NodeId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/nodes/{node_id}/sessions",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/nodes/{node_id}/sessions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstancesSessionRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ListInstancesSessionResponse>(response);
         }
 
@@ -995,7 +995,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("node_id", listInstancesSessionRequest.NodeId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/nodes/{node_id}/sessions",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/nodes/{node_id}/sessions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstancesSessionRequest);
             return new AsyncInvoker<ListInstancesSessionResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstancesSessionResponse>);
         }
@@ -1011,9 +1011,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("node_id", listInstancesSessionStatisticsRequest.NodeId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/nodes/{node_id}/session-statistics",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/nodes/{node_id}/session-statistics", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstancesSessionStatisticsRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ListInstancesSessionStatisticsResponse>(response);
         }
 
@@ -1021,7 +1021,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("node_id", listInstancesSessionStatisticsRequest.NodeId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/nodes/{node_id}/session-statistics",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/nodes/{node_id}/session-statistics", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstancesSessionStatisticsRequest);
             return new AsyncInvoker<ListInstancesSessionStatisticsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstancesSessionStatisticsResponse>);
         }
@@ -1036,16 +1036,16 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         public async Task<ListLtsConfigsResponse> ListLtsConfigsAsync(ListLtsConfigsRequest listLtsConfigsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/logs/lts-configs",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/logs/lts-configs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listLtsConfigsRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ListLtsConfigsResponse>(response);
         }
 
         public AsyncInvoker<ListLtsConfigsResponse> ListLtsConfigsAsyncInvoker(ListLtsConfigsRequest listLtsConfigsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/logs/lts-configs",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/logs/lts-configs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listLtsConfigsRequest);
             return new AsyncInvoker<ListLtsConfigsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListLtsConfigsResponse>);
         }
@@ -1061,9 +1061,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", listMongodbErrorLogsRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/mongodb/instances/{instance_id}/error-logs",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/mongodb/instances/{instance_id}/error-logs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listMongodbErrorLogsRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<ListMongodbErrorLogsResponse>(response);
         }
 
@@ -1071,7 +1071,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", listMongodbErrorLogsRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/mongodb/instances/{instance_id}/error-logs",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/mongodb/instances/{instance_id}/error-logs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listMongodbErrorLogsRequest);
             return new AsyncInvoker<ListMongodbErrorLogsResponse>(this, "POST", request, JsonUtils.DeSerialize<ListMongodbErrorLogsResponse>);
         }
@@ -1087,9 +1087,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", listMongodbSlowLogsRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/mongodb/instances/{instance_id}/slow-logs",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/mongodb/instances/{instance_id}/slow-logs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listMongodbSlowLogsRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<ListMongodbSlowLogsResponse>(response);
         }
 
@@ -1097,7 +1097,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", listMongodbSlowLogsRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/mongodb/instances/{instance_id}/slow-logs",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/mongodb/instances/{instance_id}/slow-logs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listMongodbSlowLogsRequest);
             return new AsyncInvoker<ListMongodbSlowLogsResponse>(this, "POST", request, JsonUtils.DeSerialize<ListMongodbSlowLogsResponse>);
         }
@@ -1112,16 +1112,16 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         public async Task<ListProjectTagsResponse> ListProjectTagsAsync(ListProjectTagsRequest listProjectTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/tags",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProjectTagsRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ListProjectTagsResponse>(response);
         }
 
         public AsyncInvoker<ListProjectTagsResponse> ListProjectTagsAsyncInvoker(ListProjectTagsRequest listProjectTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/tags",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProjectTagsRequest);
             return new AsyncInvoker<ListProjectTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListProjectTagsResponse>);
         }
@@ -1136,16 +1136,16 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         public async Task<ListRecycleInstancesResponse> ListRecycleInstancesAsync(ListRecycleInstancesRequest listRecycleInstancesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/recycle-instances",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/recycle-instances", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRecycleInstancesRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ListRecycleInstancesResponse>(response);
         }
 
         public AsyncInvoker<ListRecycleInstancesResponse> ListRecycleInstancesAsyncInvoker(ListRecycleInstancesRequest listRecycleInstancesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/recycle-instances",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/recycle-instances", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRecycleInstancesRequest);
             return new AsyncInvoker<ListRecycleInstancesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListRecycleInstancesResponse>);
         }
@@ -1161,9 +1161,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", listRedisSlowLogsRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/instances/{instance_id}/slow-logs",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/instances/{instance_id}/slow-logs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRedisSlowLogsRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<ListRedisSlowLogsResponse>(response);
         }
 
@@ -1171,7 +1171,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", listRedisSlowLogsRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/instances/{instance_id}/slow-logs",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/instances/{instance_id}/slow-logs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRedisSlowLogsRequest);
             return new AsyncInvoker<ListRedisSlowLogsResponse>(this, "POST", request, JsonUtils.DeSerialize<ListRedisSlowLogsResponse>);
         }
@@ -1187,9 +1187,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", listRestoreDatabasesRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/databases",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/databases", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRestoreDatabasesRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ListRestoreDatabasesResponse>(response);
         }
 
@@ -1197,7 +1197,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", listRestoreDatabasesRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/databases",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/databases", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRestoreDatabasesRequest);
             return new AsyncInvoker<ListRestoreDatabasesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListRestoreDatabasesResponse>);
         }
@@ -1213,9 +1213,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", listRestoreTablesRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/tables",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/tables", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRestoreTablesRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ListRestoreTablesResponse>(response);
         }
 
@@ -1223,7 +1223,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", listRestoreTablesRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/tables",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/tables", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRestoreTablesRequest);
             return new AsyncInvoker<ListRestoreTablesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListRestoreTablesResponse>);
         }
@@ -1239,9 +1239,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", listRestoreTimeRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/restorable-time-periods",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/restorable-time-periods", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRestoreTimeRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ListRestoreTimeResponse>(response);
         }
 
@@ -1249,7 +1249,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", listRestoreTimeRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/restorable-time-periods",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/restorable-time-periods", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRestoreTimeRequest);
             return new AsyncInvoker<ListRestoreTimeResponse>(this, "GET", request, JsonUtils.DeSerialize<ListRestoreTimeResponse>);
         }
@@ -1265,9 +1265,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", listSlowLogsRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/slowlog",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/slowlog", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSlowLogsRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ListSlowLogsResponse>(response);
         }
 
@@ -1275,7 +1275,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", listSlowLogsRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/slowlog",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/slowlog", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSlowLogsRequest);
             return new AsyncInvoker<ListSlowLogsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSlowLogsResponse>);
         }
@@ -1291,9 +1291,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", modifyDbUserPrivilegeRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/instances/{instance_id}/db-users/privilege",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/instances/{instance_id}/db-users/privilege", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyDbUserPrivilegeRequest);
-            var response = await DoHttpRequestAsync("PUT",request);
+            var response = await DoHttpRequestAsync("PUT", request);
             return JsonUtils.DeSerialize<ModifyDbUserPrivilegeResponse>(response);
         }
 
@@ -1301,7 +1301,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", modifyDbUserPrivilegeRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/instances/{instance_id}/db-users/privilege",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/instances/{instance_id}/db-users/privilege", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyDbUserPrivilegeRequest);
             return new AsyncInvoker<ModifyDbUserPrivilegeResponse>(this, "PUT", request, JsonUtils.DeSerialize<ModifyDbUserPrivilegeResponse>);
         }
@@ -1316,16 +1316,16 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         public async Task<ModifyEpsQuotasResponse> ModifyEpsQuotasAsync(ModifyEpsQuotasRequest modifyEpsQuotasRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/enterprise-projects/quotas",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/enterprise-projects/quotas", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyEpsQuotasRequest);
-            var response = await DoHttpRequestAsync("PUT",request);
+            var response = await DoHttpRequestAsync("PUT", request);
             return JsonUtils.DeSerializeNull<ModifyEpsQuotasResponse>(response);
         }
 
         public AsyncInvoker<ModifyEpsQuotasResponse> ModifyEpsQuotasAsyncInvoker(ModifyEpsQuotasRequest modifyEpsQuotasRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/enterprise-projects/quotas",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/enterprise-projects/quotas", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyEpsQuotasRequest);
             return new AsyncInvoker<ModifyEpsQuotasResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<ModifyEpsQuotasResponse>);
         }
@@ -1341,9 +1341,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", modifyPortRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/port",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/port", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyPortRequest);
-            var response = await DoHttpRequestAsync("PUT",request);
+            var response = await DoHttpRequestAsync("PUT", request);
             return JsonUtils.DeSerialize<ModifyPortResponse>(response);
         }
 
@@ -1351,7 +1351,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", modifyPortRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/port",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/port", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyPortRequest);
             return new AsyncInvoker<ModifyPortResponse>(this, "PUT", request, JsonUtils.DeSerialize<ModifyPortResponse>);
         }
@@ -1368,9 +1368,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", modifyPublicIpRequest.InstanceId.ToString());
             urlParam.Add("node_id", modifyPublicIpRequest.NodeId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/nodes/{node_id}/public-ip",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/nodes/{node_id}/public-ip", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyPublicIpRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<ModifyPublicIpResponse>(response);
         }
 
@@ -1379,7 +1379,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", modifyPublicIpRequest.InstanceId.ToString());
             urlParam.Add("node_id", modifyPublicIpRequest.NodeId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/nodes/{node_id}/public-ip",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/nodes/{node_id}/public-ip", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyPublicIpRequest);
             return new AsyncInvoker<ModifyPublicIpResponse>(this, "POST", request, JsonUtils.DeSerialize<ModifyPublicIpResponse>);
         }
@@ -1395,9 +1395,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", modifyVolumeRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/volume",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/volume", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyVolumeRequest);
-            var response = await DoHttpRequestAsync("PUT",request);
+            var response = await DoHttpRequestAsync("PUT", request);
             return JsonUtils.DeSerialize<ModifyVolumeResponse>(response);
         }
 
@@ -1405,9 +1405,35 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", modifyVolumeRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/volume",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/volume", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyVolumeRequest);
             return new AsyncInvoker<ModifyVolumeResponse>(this, "PUT", request, JsonUtils.DeSerialize<ModifyVolumeResponse>);
+        }
+        
+        /// <summary>
+        /// 支持节点的开关机
+        ///
+        /// 当底层故障导致节点无法正常工作时，可以对该节点执行关机操作，关机后会由其他节点接管业务。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<OfflineNodesResponse> OfflineNodesAsync(OfflineNodesRequest offlineNodesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", offlineNodesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/nodes", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", offlineNodesRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerializeNull<OfflineNodesResponse>(response);
+        }
+
+        public AsyncInvoker<OfflineNodesResponse> OfflineNodesAsyncInvoker(OfflineNodesRequest offlineNodesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", offlineNodesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/nodes", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", offlineNodesRequest);
+            return new AsyncInvoker<OfflineNodesResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<OfflineNodesResponse>);
         }
         
         /// <summary>
@@ -1423,9 +1449,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", pauseResumeDataSynchronizationRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/disaster-recovery/data-synchronization",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/disaster-recovery/data-synchronization", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", pauseResumeDataSynchronizationRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<PauseResumeDataSynchronizationResponse>(response);
         }
 
@@ -1433,7 +1459,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", pauseResumeDataSynchronizationRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/disaster-recovery/data-synchronization",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/disaster-recovery/data-synchronization", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", pauseResumeDataSynchronizationRequest);
             return new AsyncInvoker<PauseResumeDataSynchronizationResponse>(this, "POST", request, JsonUtils.DeSerialize<PauseResumeDataSynchronizationResponse>);
         }
@@ -1449,9 +1475,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", resetDbUserPasswordRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/instances/{instance_id}/db-users/password",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/instances/{instance_id}/db-users/password", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetDbUserPasswordRequest);
-            var response = await DoHttpRequestAsync("PUT",request);
+            var response = await DoHttpRequestAsync("PUT", request);
             return JsonUtils.DeSerializeNull<ResetDbUserPasswordResponse>(response);
         }
 
@@ -1459,7 +1485,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", resetDbUserPasswordRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/instances/{instance_id}/db-users/password",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/instances/{instance_id}/db-users/password", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetDbUserPasswordRequest);
             return new AsyncInvoker<ResetDbUserPasswordResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<ResetDbUserPasswordResponse>);
         }
@@ -1475,9 +1501,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("config_id", resetParamGroupTemplateRequest.ConfigId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}/reset",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}/reset", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetParamGroupTemplateRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerializeNull<ResetParamGroupTemplateResponse>(response);
         }
 
@@ -1485,7 +1511,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("config_id", resetParamGroupTemplateRequest.ConfigId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}/reset",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}/reset", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetParamGroupTemplateRequest);
             return new AsyncInvoker<ResetParamGroupTemplateResponse>(this, "POST", request, JsonUtils.DeSerializeNull<ResetParamGroupTemplateResponse>);
         }
@@ -1501,9 +1527,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", resetPasswordRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/password",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/password", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetPasswordRequest);
-            var response = await DoHttpRequestAsync("PUT",request);
+            var response = await DoHttpRequestAsync("PUT", request);
             return JsonUtils.DeSerializeNull<ResetPasswordResponse>(response);
         }
 
@@ -1511,7 +1537,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", resetPasswordRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/password",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/password", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetPasswordRequest);
             return new AsyncInvoker<ResetPasswordResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<ResetPasswordResponse>);
         }
@@ -1527,9 +1553,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", resizeColdVolumeRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/cold-volume",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/cold-volume", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resizeColdVolumeRequest);
-            var response = await DoHttpRequestAsync("PUT",request);
+            var response = await DoHttpRequestAsync("PUT", request);
             return JsonUtils.DeSerialize<ResizeColdVolumeResponse>(response);
         }
 
@@ -1537,7 +1563,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", resizeColdVolumeRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/cold-volume",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/cold-volume", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resizeColdVolumeRequest);
             return new AsyncInvoker<ResizeColdVolumeResponse>(this, "PUT", request, JsonUtils.DeSerialize<ResizeColdVolumeResponse>);
         }
@@ -1553,9 +1579,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", resizeInstanceRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/resize",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/resize", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resizeInstanceRequest);
-            var response = await DoHttpRequestAsync("PUT",request);
+            var response = await DoHttpRequestAsync("PUT", request);
             return JsonUtils.DeSerialize<ResizeInstanceResponse>(response);
         }
 
@@ -1563,7 +1589,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", resizeInstanceRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/resize",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/resize", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resizeInstanceRequest);
             return new AsyncInvoker<ResizeInstanceResponse>(this, "PUT", request, JsonUtils.DeSerialize<ResizeInstanceResponse>);
         }
@@ -1579,9 +1605,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", resizeInstanceVolumeRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/extend-volume",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/extend-volume", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resizeInstanceVolumeRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<ResizeInstanceVolumeResponse>(response);
         }
 
@@ -1589,7 +1615,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", resizeInstanceVolumeRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/extend-volume",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/extend-volume", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resizeInstanceVolumeRequest);
             return new AsyncInvoker<ResizeInstanceVolumeResponse>(this, "POST", request, JsonUtils.DeSerialize<ResizeInstanceVolumeResponse>);
         }
@@ -1605,9 +1631,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", restartInstanceRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/restart",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/restart", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restartInstanceRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<RestartInstanceResponse>(response);
         }
 
@@ -1615,7 +1641,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", restartInstanceRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/restart",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/restart", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restartInstanceRequest);
             return new AsyncInvoker<RestartInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<RestartInstanceResponse>);
         }
@@ -1631,9 +1657,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", restoreExistingInstanceRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/recovery",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/recovery", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restoreExistingInstanceRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<RestoreExistingInstanceResponse>(response);
         }
 
@@ -1641,7 +1667,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", restoreExistingInstanceRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/recovery",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/recovery", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restoreExistingInstanceRequest);
             return new AsyncInvoker<RestoreExistingInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<RestoreExistingInstanceResponse>);
         }
@@ -1658,16 +1684,16 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         public async Task<SaveLtsConfigsResponse> SaveLtsConfigsAsync(SaveLtsConfigsRequest saveLtsConfigsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/logs/lts-configs",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/logs/lts-configs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", saveLtsConfigsRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerializeNull<SaveLtsConfigsResponse>(response);
         }
 
         public AsyncInvoker<SaveLtsConfigsResponse> SaveLtsConfigsAsyncInvoker(SaveLtsConfigsRequest saveLtsConfigsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/logs/lts-configs",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/logs/lts-configs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", saveLtsConfigsRequest);
             return new AsyncInvoker<SaveLtsConfigsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<SaveLtsConfigsResponse>);
         }
@@ -1682,16 +1708,16 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         public async Task<SetAutoEnlargePolicyResponse> SetAutoEnlargePolicyAsync(SetAutoEnlargePolicyRequest setAutoEnlargePolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/disk-auto-expansion",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/disk-auto-expansion", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setAutoEnlargePolicyRequest);
-            var response = await DoHttpRequestAsync("PUT",request);
+            var response = await DoHttpRequestAsync("PUT", request);
             return JsonUtils.DeSerializeNull<SetAutoEnlargePolicyResponse>(response);
         }
 
         public AsyncInvoker<SetAutoEnlargePolicyResponse> SetAutoEnlargePolicyAsyncInvoker(SetAutoEnlargePolicyRequest setAutoEnlargePolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/disk-auto-expansion",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/disk-auto-expansion", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setAutoEnlargePolicyRequest);
             return new AsyncInvoker<SetAutoEnlargePolicyResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<SetAutoEnlargePolicyResponse>);
         }
@@ -1707,9 +1733,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", setBackupPolicyRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/policy",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setBackupPolicyRequest);
-            var response = await DoHttpRequestAsync("PUT",request);
+            var response = await DoHttpRequestAsync("PUT", request);
             return JsonUtils.DeSerializeNull<SetBackupPolicyResponse>(response);
         }
 
@@ -1717,7 +1743,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", setBackupPolicyRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/policy",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setBackupPolicyRequest);
             return new AsyncInvoker<SetBackupPolicyResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<SetBackupPolicyResponse>);
         }
@@ -1732,16 +1758,16 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         public async Task<SetRecyclePolicyResponse> SetRecyclePolicyAsync(SetRecyclePolicyRequest setRecyclePolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/recycle-policy",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/recycle-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setRecyclePolicyRequest);
-            var response = await DoHttpRequestAsync("PUT",request);
+            var response = await DoHttpRequestAsync("PUT", request);
             return JsonUtils.DeSerializeNull<SetRecyclePolicyResponse>(response);
         }
 
         public AsyncInvoker<SetRecyclePolicyResponse> SetRecyclePolicyAsyncInvoker(SetRecyclePolicyRequest setRecyclePolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/recycle-policy",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/recycle-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setRecyclePolicyRequest);
             return new AsyncInvoker<SetRecyclePolicyResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<SetRecyclePolicyResponse>);
         }
@@ -1756,16 +1782,16 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         public async Task<ShowAllInstancesBackupsResponse> ShowAllInstancesBackupsAsync(ShowAllInstancesBackupsRequest showAllInstancesBackupsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAllInstancesBackupsRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowAllInstancesBackupsResponse>(response);
         }
 
         public AsyncInvoker<ShowAllInstancesBackupsResponse> ShowAllInstancesBackupsAsyncInvoker(ShowAllInstancesBackupsRequest showAllInstancesBackupsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAllInstancesBackupsRequest);
             return new AsyncInvoker<ShowAllInstancesBackupsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAllInstancesBackupsResponse>);
         }
@@ -1780,16 +1806,16 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         public async Task<ShowAllInstancesBackupsNewResponse> ShowAllInstancesBackupsNewAsync(ShowAllInstancesBackupsNewRequest showAllInstancesBackupsNewRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/backups",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/backups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAllInstancesBackupsNewRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowAllInstancesBackupsNewResponse>(response);
         }
 
         public AsyncInvoker<ShowAllInstancesBackupsNewResponse> ShowAllInstancesBackupsNewAsyncInvoker(ShowAllInstancesBackupsNewRequest showAllInstancesBackupsNewRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/backups",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/backups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAllInstancesBackupsNewRequest);
             return new AsyncInvoker<ShowAllInstancesBackupsNewResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAllInstancesBackupsNewResponse>);
         }
@@ -1805,9 +1831,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("config_id", showApplicableInstancesRequest.ConfigId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}/applicable-instances",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}/applicable-instances", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showApplicableInstancesRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowApplicableInstancesResponse>(response);
         }
 
@@ -1815,7 +1841,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("config_id", showApplicableInstancesRequest.ConfigId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}/applicable-instances",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}/applicable-instances", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showApplicableInstancesRequest);
             return new AsyncInvoker<ShowApplicableInstancesResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowApplicableInstancesResponse>);
         }
@@ -1830,9 +1856,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("config_id", showApplyHistoryRequest.ConfigId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}/applied-histories",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}/applied-histories", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showApplyHistoryRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowApplyHistoryResponse>(response);
         }
 
@@ -1840,7 +1866,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("config_id", showApplyHistoryRequest.ConfigId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}/applied-histories",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}/applied-histories", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showApplyHistoryRequest);
             return new AsyncInvoker<ShowApplyHistoryResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowApplyHistoryResponse>);
         }
@@ -1856,9 +1882,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", showAutoEnlargePolicyRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/disk-auto-expansion",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/disk-auto-expansion", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutoEnlargePolicyRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowAutoEnlargePolicyResponse>(response);
         }
 
@@ -1866,7 +1892,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", showAutoEnlargePolicyRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/disk-auto-expansion",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/disk-auto-expansion", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutoEnlargePolicyRequest);
             return new AsyncInvoker<ShowAutoEnlargePolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAutoEnlargePolicyResponse>);
         }
@@ -1882,9 +1908,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", showBackupPolicyRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/policy",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBackupPolicyRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowBackupPolicyResponse>(response);
         }
 
@@ -1892,7 +1918,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", showBackupPolicyRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/policy",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBackupPolicyRequest);
             return new AsyncInvoker<ShowBackupPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowBackupPolicyResponse>);
         }
@@ -1908,9 +1934,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("config_id", showConfigurationDetailRequest.ConfigId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showConfigurationDetailRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowConfigurationDetailResponse>(response);
         }
 
@@ -1918,7 +1944,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("config_id", showConfigurationDetailRequest.ConfigId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showConfigurationDetailRequest);
             return new AsyncInvoker<ShowConfigurationDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowConfigurationDetailResponse>);
         }
@@ -1934,9 +1960,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", showElbIpGroupRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/lb/access-control",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/lb/access-control", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showElbIpGroupRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowElbIpGroupResponse>(response);
         }
 
@@ -1944,7 +1970,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", showElbIpGroupRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/lb/access-control",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/lb/access-control", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showElbIpGroupRequest);
             return new AsyncInvoker<ShowElbIpGroupResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowElbIpGroupResponse>);
         }
@@ -1960,9 +1986,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", showErrorLogRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/error-log",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/error-log", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showErrorLogRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowErrorLogResponse>(response);
         }
 
@@ -1970,7 +1996,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", showErrorLogRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/error-log",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/error-log", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showErrorLogRequest);
             return new AsyncInvoker<ShowErrorLogResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowErrorLogResponse>);
         }
@@ -1986,9 +2012,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", showHighRiskCommandsRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/high-risk-commands",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/high-risk-commands", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showHighRiskCommandsRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowHighRiskCommandsResponse>(response);
         }
 
@@ -1996,7 +2022,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", showHighRiskCommandsRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/high-risk-commands",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/high-risk-commands", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showHighRiskCommandsRequest);
             return new AsyncInvoker<ShowHighRiskCommandsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowHighRiskCommandsResponse>);
         }
@@ -2012,9 +2038,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", showInstanceBiactiveRegionsRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/disaster-recovery/regions",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/disaster-recovery/regions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceBiactiveRegionsRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowInstanceBiactiveRegionsResponse>(response);
         }
 
@@ -2022,7 +2048,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", showInstanceBiactiveRegionsRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/disaster-recovery/regions",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/disaster-recovery/regions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceBiactiveRegionsRequest);
             return new AsyncInvoker<ShowInstanceBiactiveRegionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceBiactiveRegionsResponse>);
         }
@@ -2038,9 +2064,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", showInstanceConfigurationRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/configurations",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/configurations", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceConfigurationRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowInstanceConfigurationResponse>(response);
         }
 
@@ -2048,7 +2074,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", showInstanceConfigurationRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/configurations",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/configurations", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceConfigurationRequest);
             return new AsyncInvoker<ShowInstanceConfigurationResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceConfigurationResponse>);
         }
@@ -2064,9 +2090,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", showInstanceRoleRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/instance-role",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/instance-role", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceRoleRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowInstanceRoleResponse>(response);
         }
 
@@ -2074,7 +2100,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", showInstanceRoleRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/instance-role",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/instance-role", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceRoleRequest);
             return new AsyncInvoker<ShowInstanceRoleResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceRoleResponse>);
         }
@@ -2089,16 +2115,16 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         public async Task<ShowIpNumRequirementResponse> ShowIpNumRequirementAsync(ShowIpNumRequirementRequest showIpNumRequirementRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ip-num-requirement",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ip-num-requirement", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showIpNumRequirementRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowIpNumRequirementResponse>(response);
         }
 
         public AsyncInvoker<ShowIpNumRequirementResponse> ShowIpNumRequirementAsyncInvoker(ShowIpNumRequirementRequest showIpNumRequirementRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ip-num-requirement",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ip-num-requirement", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showIpNumRequirementRequest);
             return new AsyncInvoker<ShowIpNumRequirementResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowIpNumRequirementResponse>);
         }
@@ -2114,9 +2140,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", showModifyHistoryRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/configuration-histories",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/configuration-histories", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showModifyHistoryRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowModifyHistoryResponse>(response);
         }
 
@@ -2124,7 +2150,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", showModifyHistoryRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/configuration-histories",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/configuration-histories", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showModifyHistoryRequest);
             return new AsyncInvoker<ShowModifyHistoryResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowModifyHistoryResponse>);
         }
@@ -2140,9 +2166,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", showPauseResumeStutusRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/disaster-recovery/data-synchronization",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/disaster-recovery/data-synchronization", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPauseResumeStutusRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowPauseResumeStutusResponse>(response);
         }
 
@@ -2150,7 +2176,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", showPauseResumeStutusRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/disaster-recovery/data-synchronization",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/disaster-recovery/data-synchronization", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPauseResumeStutusRequest);
             return new AsyncInvoker<ShowPauseResumeStutusResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPauseResumeStutusResponse>);
         }
@@ -2165,16 +2191,16 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         public async Task<ShowQuotasResponse> ShowQuotasAsync(ShowQuotasRequest showQuotasRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/quotas",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/quotas", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showQuotasRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowQuotasResponse>(response);
         }
 
         public AsyncInvoker<ShowQuotasResponse> ShowQuotasAsyncInvoker(ShowQuotasRequest showQuotasRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/quotas",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/quotas", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showQuotasRequest);
             return new AsyncInvoker<ShowQuotasResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowQuotasResponse>);
         }
@@ -2189,16 +2215,16 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         public async Task<ShowRecyclePolicyResponse> ShowRecyclePolicyAsync(ShowRecyclePolicyRequest showRecyclePolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/recycle-policy",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/recycle-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecyclePolicyRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowRecyclePolicyResponse>(response);
         }
 
         public AsyncInvoker<ShowRecyclePolicyResponse> ShowRecyclePolicyAsyncInvoker(ShowRecyclePolicyRequest showRecyclePolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/recycle-policy",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/recycle-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecyclePolicyRequest);
             return new AsyncInvoker<ShowRecyclePolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRecyclePolicyResponse>);
         }
@@ -2214,9 +2240,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("backup_id", showRestorableListRequest.BackupId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups/{backup_id}/restorable-instances",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups/{backup_id}/restorable-instances", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRestorableListRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowRestorableListResponse>(response);
         }
 
@@ -2224,7 +2250,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("backup_id", showRestorableListRequest.BackupId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups/{backup_id}/restorable-instances",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups/{backup_id}/restorable-instances", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRestorableListRequest);
             return new AsyncInvoker<ShowRestorableListResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRestorableListResponse>);
         }
@@ -2240,9 +2266,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", showSlowLogDesensitizationRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/slowlog-desensitization",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/slowlog-desensitization", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSlowLogDesensitizationRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowSlowLogDesensitizationResponse>(response);
         }
 
@@ -2250,7 +2276,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", showSlowLogDesensitizationRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/slowlog-desensitization",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/slowlog-desensitization", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSlowLogDesensitizationRequest);
             return new AsyncInvoker<ShowSlowLogDesensitizationResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSlowLogDesensitizationResponse>);
         }
@@ -2266,9 +2292,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", shrinkInstanceNodeRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/reduce-node",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/reduce-node", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", shrinkInstanceNodeRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<ShrinkInstanceNodeResponse>(response);
         }
 
@@ -2276,7 +2302,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", shrinkInstanceNodeRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/reduce-node",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/reduce-node", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", shrinkInstanceNodeRequest);
             return new AsyncInvoker<ShrinkInstanceNodeResponse>(this, "POST", request, JsonUtils.DeSerialize<ShrinkInstanceNodeResponse>);
         }
@@ -2292,9 +2318,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", switchIpGroupRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/lb/access-control",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/lb/access-control", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchIpGroupRequest);
-            var response = await DoHttpRequestAsync("PUT",request);
+            var response = await DoHttpRequestAsync("PUT", request);
             return JsonUtils.DeSerializeNull<SwitchIpGroupResponse>(response);
         }
 
@@ -2302,7 +2328,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", switchIpGroupRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/lb/access-control",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/lb/access-control", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchIpGroupRequest);
             return new AsyncInvoker<SwitchIpGroupResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<SwitchIpGroupResponse>);
         }
@@ -2318,9 +2344,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", switchSlowlogDesensitizationRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/slowlog-desensitization",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/slowlog-desensitization", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchSlowlogDesensitizationRequest);
-            var response = await DoHttpRequestAsync("PUT",request);
+            var response = await DoHttpRequestAsync("PUT", request);
             return JsonUtils.DeSerializeNull<SwitchSlowlogDesensitizationResponse>(response);
         }
 
@@ -2328,7 +2354,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", switchSlowlogDesensitizationRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/slowlog-desensitization",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/slowlog-desensitization", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchSlowlogDesensitizationRequest);
             return new AsyncInvoker<SwitchSlowlogDesensitizationResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<SwitchSlowlogDesensitizationResponse>);
         }
@@ -2344,9 +2370,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", switchSslRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/ssl-option",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/ssl-option", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchSslRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<SwitchSslResponse>(response);
         }
 
@@ -2354,7 +2380,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", switchSslRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/ssl-option",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/ssl-option", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchSslRequest);
             return new AsyncInvoker<SwitchSslResponse>(this, "POST", request, JsonUtils.DeSerialize<SwitchSslResponse>);
         }
@@ -2370,9 +2396,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", switchToMasterRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/switchover-master",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/switchover-master", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchToMasterRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<SwitchToMasterResponse>(response);
         }
 
@@ -2380,7 +2406,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", switchToMasterRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/switchover-master",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/switchover-master", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchToMasterRequest);
             return new AsyncInvoker<SwitchToMasterResponse>(this, "POST", request, JsonUtils.DeSerialize<SwitchToMasterResponse>);
         }
@@ -2396,9 +2422,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", switchToSlaveRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/switchover-slave",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/switchover-slave", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchToSlaveRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<SwitchToSlaveResponse>(response);
         }
 
@@ -2406,7 +2432,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", switchToSlaveRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/switchover-slave",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/switchover-slave", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchToSlaveRequest);
             return new AsyncInvoker<SwitchToSlaveResponse>(this, "POST", request, JsonUtils.DeSerialize<SwitchToSlaveResponse>);
         }
@@ -2422,9 +2448,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", updateClientNetworkRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/client-network",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/client-network", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateClientNetworkRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<UpdateClientNetworkResponse>(response);
         }
 
@@ -2432,7 +2458,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", updateClientNetworkRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/client-network",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/client-network", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateClientNetworkRequest);
             return new AsyncInvoker<UpdateClientNetworkResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateClientNetworkResponse>);
         }
@@ -2448,9 +2474,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("config_id", updateConfigurationRequest.ConfigId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateConfigurationRequest);
-            var response = await DoHttpRequestAsync("PUT",request);
+            var response = await DoHttpRequestAsync("PUT", request);
             return JsonUtils.DeSerializeNull<UpdateConfigurationResponse>(response);
         }
 
@@ -2458,7 +2484,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("config_id", updateConfigurationRequest.ConfigId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateConfigurationRequest);
             return new AsyncInvoker<UpdateConfigurationResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateConfigurationResponse>);
         }
@@ -2474,9 +2500,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", updateHighRiskCommandsRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/high-risk-commands",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/high-risk-commands", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateHighRiskCommandsRequest);
-            var response = await DoHttpRequestAsync("PUT",request);
+            var response = await DoHttpRequestAsync("PUT", request);
             return JsonUtils.DeSerializeNull<UpdateHighRiskCommandsResponse>(response);
         }
 
@@ -2484,7 +2510,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", updateHighRiskCommandsRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/high-risk-commands",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/high-risk-commands", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateHighRiskCommandsRequest);
             return new AsyncInvoker<UpdateHighRiskCommandsResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateHighRiskCommandsResponse>);
         }
@@ -2500,9 +2526,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", updateInstanceConfigurationRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/configurations",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/configurations", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceConfigurationRequest);
-            var response = await DoHttpRequestAsync("PUT",request);
+            var response = await DoHttpRequestAsync("PUT", request);
             return JsonUtils.DeSerialize<UpdateInstanceConfigurationResponse>(response);
         }
 
@@ -2510,7 +2536,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", updateInstanceConfigurationRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/configurations",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/configurations", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceConfigurationRequest);
             return new AsyncInvoker<UpdateInstanceConfigurationResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateInstanceConfigurationResponse>);
         }
@@ -2526,9 +2552,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", updateInstanceNameRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/name",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/name", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceNameRequest);
-            var response = await DoHttpRequestAsync("PUT",request);
+            var response = await DoHttpRequestAsync("PUT", request);
             return JsonUtils.DeSerializeNull<UpdateInstanceNameResponse>(response);
         }
 
@@ -2536,7 +2562,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", updateInstanceNameRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/name",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/name", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceNameRequest);
             return new AsyncInvoker<UpdateInstanceNameResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateInstanceNameResponse>);
         }
@@ -2552,9 +2578,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", updateSecurityGroupRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/security-group",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/security-group", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSecurityGroupRequest);
-            var response = await DoHttpRequestAsync("PUT",request);
+            var response = await DoHttpRequestAsync("PUT", request);
             return JsonUtils.DeSerialize<UpdateSecurityGroupResponse>(response);
         }
 
@@ -2562,7 +2588,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", updateSecurityGroupRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/security-group",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/security-group", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSecurityGroupRequest);
             return new AsyncInvoker<UpdateSecurityGroupResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateSecurityGroupResponse>);
         }
@@ -2578,9 +2604,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", upgradeDbVersionRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-upgrade",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-upgrade", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", upgradeDbVersionRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<UpgradeDbVersionResponse>(response);
         }
 
@@ -2588,7 +2614,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("instance_id", upgradeDbVersionRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-upgrade",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-upgrade", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", upgradeDbVersionRequest);
             return new AsyncInvoker<UpgradeDbVersionResponse>(this, "POST", request, JsonUtils.DeSerialize<UpgradeDbVersionResponse>);
         }
@@ -2603,16 +2629,16 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         public async Task<ListApiVersionResponse> ListApiVersionAsync(ListApiVersionRequest listApiVersionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listApiVersionRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ListApiVersionResponse>(response);
         }
 
         public AsyncInvoker<ListApiVersionResponse> ListApiVersionAsyncInvoker(ListApiVersionRequest listApiVersionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listApiVersionRequest);
             return new AsyncInvoker<ListApiVersionResponse>(this, "GET", request, JsonUtils.DeSerialize<ListApiVersionResponse>);
         }
@@ -2628,9 +2654,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("version", showApiVersionRequest.Version.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/{version}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/{version}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showApiVersionRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowApiVersionResponse>(response);
         }
 
@@ -2638,7 +2664,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("version", showApiVersionRequest.Version.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/{version}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/{version}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showApiVersionRequest);
             return new AsyncInvoker<ShowApiVersionResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowApiVersionResponse>);
         }

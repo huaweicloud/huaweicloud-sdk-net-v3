@@ -380,6 +380,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public ShowDomainItemDetailsResponse ShowDomainItemDetails(ShowDomainItemDetailsRequest showDomainItemDetailsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -389,6 +390,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
             return JsonUtils.DeSerialize<ShowDomainItemDetailsResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<ShowDomainItemDetailsResponse> ShowDomainItemDetailsInvoker(ShowDomainItemDetailsRequest showDomainItemDetailsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -415,6 +417,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public ShowDomainItemLocationDetailsResponse ShowDomainItemLocationDetails(ShowDomainItemLocationDetailsRequest showDomainItemLocationDetailsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -424,6 +427,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
             return JsonUtils.DeSerialize<ShowDomainItemLocationDetailsResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<ShowDomainItemLocationDetailsResponse> ShowDomainItemLocationDetailsInvoker(ShowDomainItemLocationDetailsRequest showDomainItemLocationDetailsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -451,6 +455,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public ShowDomainLocationStatsResponse ShowDomainLocationStats(ShowDomainLocationStatsRequest showDomainLocationStatsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -460,6 +465,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
             return JsonUtils.DeSerialize<ShowDomainLocationStatsResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<ShowDomainLocationStatsResponse> ShowDomainLocationStatsInvoker(ShowDomainLocationStatsRequest showDomainLocationStatsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -487,6 +493,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public ShowDomainStatsResponse ShowDomainStats(ShowDomainStatsRequest showDomainStatsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -496,6 +503,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
             return JsonUtils.DeSerialize<ShowDomainStatsResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<ShowDomainStatsResponse> ShowDomainStatsInvoker(ShowDomainStatsRequest showDomainStatsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -774,6 +782,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public ShowTopUrlResponse ShowTopUrl(ShowTopUrlRequest showTopUrlRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -783,6 +792,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
             return JsonUtils.DeSerialize<ShowTopUrlResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<ShowTopUrlResponse> ShowTopUrlInvoker(ShowTopUrlRequest showTopUrlRequest)
         {
             var urlParam = new Dictionary<string, string>();

@@ -28,6 +28,12 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         [JsonProperty("force_disconnect", NullValueHandling = NullValueHandling.Ignore)]
         public bool? ForceDisconnect { get; set; }
 
+        /// <summary>
+        /// **参数说明**：重置设备证书指纹的的类型。 **取值范围**： - PRIMARY：重置主指纹。设备证书鉴权优先使用的指纹，当设备接入物联网平台时，平台将优先使用主指纹进行校验。 - SECONDARY：重置辅指纹。设备的备用指纹，当主指纹校验不通过时，会启用辅指纹校验，辅指纹与主指纹有相同的效力。
+        /// </summary>
+        [JsonProperty("fingerprint_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string FingerprintType { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +45,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             sb.Append("class ResetFingerprint {\n");
             sb.Append("  fingerprint: ").Append(Fingerprint).Append("\n");
             sb.Append("  forceDisconnect: ").Append(ForceDisconnect).Append("\n");
+            sb.Append("  fingerprintType: ").Append(FingerprintType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -69,6 +76,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.ForceDisconnect == input.ForceDisconnect ||
                     (this.ForceDisconnect != null &&
                     this.ForceDisconnect.Equals(input.ForceDisconnect))
+                ) && 
+                (
+                    this.FingerprintType == input.FingerprintType ||
+                    (this.FingerprintType != null &&
+                    this.FingerprintType.Equals(input.FingerprintType))
                 );
         }
 
@@ -84,6 +96,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     hashCode = hashCode * 59 + this.Fingerprint.GetHashCode();
                 if (this.ForceDisconnect != null)
                     hashCode = hashCode * 59 + this.ForceDisconnect.GetHashCode();
+                if (this.FingerprintType != null)
+                    hashCode = hashCode * 59 + this.FingerprintType.GetHashCode();
                 return hashCode;
             }
         }

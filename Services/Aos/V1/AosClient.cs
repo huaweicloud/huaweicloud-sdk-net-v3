@@ -283,7 +283,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// 
         /// 列举当前局点下用户指定资源栈下所有的执行计划
         /// 
-        ///   * 默认按照生成时间排序，最早生成的在最前
+        ///   * 默认按照生成时间降序排序，最新生成的在最前
         ///   * 注意：目前暂时返回全量执行计划信息，即不支持分页
         ///   * 如果指定的资源栈下没有任何执行计划，则返回空list
         ///   * 如果指定的资源栈不存在，则返回404
@@ -727,7 +727,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// 
         /// 此API用于列举当前局点下用户所有的资源栈
         /// 
-        ///   * 默认按照生成时间排序，最早生成的在最前
+        ///   * 默认按照生成时间降序排序，最新生成的在最前
         ///   * 注意：目前暂时返回全量资源栈信息，即不支持分页
         ///   * 如果没有任何资源栈，则返回空list
         /// 
@@ -875,9 +875,9 @@ namespace HuaweiCloud.SDK.Aos.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_set_name", deleteStackInstanceRequest.StackSetName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances", urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances/deletion", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteStackInstanceRequest);
-            var response = DoHttpRequestSync("DELETE", request);
+            var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<DeleteStackInstanceResponse>(response);
         }
 
@@ -885,9 +885,41 @@ namespace HuaweiCloud.SDK.Aos.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_set_name", deleteStackInstanceRequest.StackSetName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances", urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances/deletion", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteStackInstanceRequest);
-            return new SyncInvoker<DeleteStackInstanceResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteStackInstanceResponse>);
+            return new SyncInvoker<DeleteStackInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<DeleteStackInstanceResponse>);
+        }
+        
+        /// <summary>
+        /// 删除资源栈实例-已废弃
+        ///
+        /// 删除资源栈实例-被废弃（DeleteStackInstanceDeprecated）
+        /// 
+        /// 此API用于删除指定资源栈集下指定局点（region）或指定成员账户（domain_id）的资源栈实例，并返回资源栈集操作ID（stack_set_operation_id）
+        /// 
+        /// **请谨慎操作，删除资源栈实例将会删除与该资源栈实例相关的堆栈以及堆栈所管理的一切资源。**
+        /// 
+        /// * 用户可以根据资源栈集操作ID（stack_set_operation_id），通过ShowStackSetOperationMetadata API获取资源栈集操作状态
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteStackInstanceDeprecatedResponse DeleteStackInstanceDeprecated(DeleteStackInstanceDeprecatedRequest deleteStackInstanceDeprecatedRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_set_name", deleteStackInstanceDeprecatedRequest.StackSetName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteStackInstanceDeprecatedRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteStackInstanceDeprecatedResponse>(response);
+        }
+
+        public SyncInvoker<DeleteStackInstanceDeprecatedResponse> DeleteStackInstanceDeprecatedInvoker(DeleteStackInstanceDeprecatedRequest deleteStackInstanceDeprecatedRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_set_name", deleteStackInstanceDeprecatedRequest.StackSetName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteStackInstanceDeprecatedRequest);
+            return new SyncInvoker<DeleteStackInstanceDeprecatedResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteStackInstanceDeprecatedResponse>);
         }
         
         /// <summary>
@@ -897,7 +929,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// 
         /// **请谨慎操作，删除资源栈集将会删除与该资源栈集相关的所有数据，如：资源栈集操作、资源栈集操作事件等。**
         /// 
-        /// 当且仅当指定的资源栈集满足以下所有条件时，资源栈集才能被成功删除，否则会报错
+        /// 当且仅当指定的资源栈集满足以下所有条件时，资源栈集才能被成功删除，否则会报错：
         ///   * 资源栈集下没有资源栈实例
         ///   * 资源栈集状态处于空闲（&#x60;IDLE&#x60;）状态
         /// 
@@ -968,7 +1000,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// 此API用于列举指定资源栈集下指定局点（region）或指定成员账户（stack_domain_id）或全部资源栈实例
         /// 
         /// * 可以使用filter作为过滤器，过滤出指定局点（region）或指定成员账户（stack_domain_id）下的资源栈实例
-        /// * 可以使用sort_key和sort_dir两个关键字对返回结果按创建时间（create_time）进行排序。给予的sort_key和sort_dir数量须一致，否则返回400。若未给予sort_key和sort_dir，则默认按照创建时间升序排序。
+        /// * 可以使用sort_key和sort_dir两个关键字对返回结果按创建时间（create_time）进行排序。给予的sort_key和sort_dir数量须一致，否则返回400。若未给予sort_key和sort_dir，则默认按照创建时间降序排序。
         /// * 若指定资源栈集下没有任何资源栈实例，则返回空list
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
@@ -1000,7 +1032,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// 列举指定资源栈集下所有的资源栈集的操作。
         /// 
         /// 可以使用filter作为过滤器，过滤出指定操作状态（status）或操作类型（action）下的资源栈集操作。
-        /// 可以使用sort_key和sort_dir两个关键字对返回结果按创建时间（create_time）进行排序。给予的sort_key和sort_dir数量须一致，否则返回400。若未给予sort_key和sort_dir，则默认按照创建时间升序排序。
+        /// 可以使用sort_key和sort_dir两个关键字对返回结果按创建时间（create_time）进行排序。给予的sort_key和sort_dir数量须一致，否则返回400。若未给予sort_key和sort_dir，则默认按照创建时间降序排序。
         /// 若指定资源栈集下没有任何资源栈集操作，则返回空list。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
@@ -1032,7 +1064,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// 此API用于列举当前用户（domain）当前局点（region）下全部资源栈集。
         /// 
         /// * 可以使用filter作为过滤器，过滤出指定权限模型（permission_model）下的资源栈集。
-        /// * 可以使用sort_key和sort_dir两个关键字对返回结果按创建时间（create_time）进行排序。给予的sort_key和sort_dir数量须一致，否则返回400。若未给予sort_key和sort_dir，则默认按照创建时间升序排序。
+        /// * 可以使用sort_key和sort_dir两个关键字对返回结果按创建时间（create_time）进行排序。给予的sort_key和sort_dir数量须一致，否则返回400。若未给予sort_key和sort_dir，则默认按照创建时间降序排序。
         /// * 注意：目前暂时返回全量资源栈集信息，即不支持分页
         /// * 如果没有任何资源栈集，则返回空list
         /// 
@@ -1219,13 +1251,13 @@ namespace HuaweiCloud.SDK.Aos.V1
         ///
         /// 更新资源栈集（UpdateStackSet）
         /// 
-        /// 该API可以根据用户给予的信息对资源栈集的属性进行更新，可以更新资源栈集的“stack_set_description”、\&quot;initial_stack_description\&quot;、\&quot;permission_model\&quot;、“administration_agency_name”、\&quot;managed_agency_name\&quot;五个属性中的一个或多个。
+        /// 该API可以根据用户给予的信息对资源栈集的属性进行更新，可以更新资源栈集的“stack_set_description”、\&quot;initial_stack_description\&quot;、\&quot;permission_model\&quot;、“administration_agency_name”、\&quot;managed_agency_name\&quot;、“administration_agency_urn”六个属性中的一个或多个。
         /// 
         /// 该API只会更新用户给予的信息中所涉及的字段；若某字段未给予，则不会对该资源栈集属性进行更新。
         /// 
         /// 注：
         ///   * 所有属性的更新都是覆盖式更新。即，所给予的参数将被完全覆盖至资源栈已有的属性上。
-        ///   * 只有在permission_model&#x3D;self_managed时，才可更新administration_agency_name和managed_agency_name。
+        ///   * 只有在permission_model&#x3D;SELF_MANAGED时，才可更新administration_agency_name、managed_agency_name和administration_agency_urn。
         ///   * permission_model目前只支持更新SELF_MANAGED
         ///   * 若资源栈集的状态是OPERATION_IN_PROGRESS，不允许更新资源栈集。
         /// 
@@ -1353,7 +1385,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// 
         /// 此API用于列举模板下所有的模板版本信息
         /// 
-        ///   * 默认按照生成时间排序，最早生成的模板排列在最前面
+        ///   * 默认按照生成时间降序排序，最新生成的模板排列在最前面
         ///   * 注意：目前返回全量模板版本信息，即不支持分页
         ///   * 如果没有任何模板版本，则返回空list
         ///   * template_id是模板的唯一Id。此Id由资源编排服务在生成模板的时候生成，为UUID。由于模板名仅仅在同一时间下唯一，即用户允许先生成一个叫HelloWorld的模板，删除，再重新创建一个同名模板。对于团队并行开发，用户可能希望确保，当前我操作的模板就是我认为的那个，而不是其他队友删除后创建的同名模板。因此，使用ID就可以做到强匹配。资源编排服务保证每次创建的模板所对应的ID都不相同，更新不会影响ID。如果给与的template_id和当前模板管理的ID不一致，则返回400
@@ -1389,7 +1421,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// 
         /// 此API用于列举当前局点下用户所有的模板
         /// 
-        ///   * 默认按照生成时间排序，最早生成的模板排列在最前面
+        ///   * 默认按照生成时间降序排序，最新生成的模板排列在最前面
         ///   * 注意：目前返回全量模板信息，即不支持分页
         ///   * 如果没有任何模板，则返回空list
         ///   * 若用户需要详细的模板版本信息，请调用ListTemplateVersions

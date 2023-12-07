@@ -104,6 +104,7 @@ namespace HuaweiCloud.SDK.Cdn.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public DownloadRegionCarrierExcelResponse DownloadRegionCarrierExcel(DownloadRegionCarrierExcelRequest downloadRegionCarrierExcelRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -113,6 +114,7 @@ namespace HuaweiCloud.SDK.Cdn.V2
             return JsonUtils.DeSerializeNull<DownloadRegionCarrierExcelResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<DownloadRegionCarrierExcelResponse> DownloadRegionCarrierExcelInvoker(DownloadRegionCarrierExcelRequest downloadRegionCarrierExcelRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -138,6 +140,7 @@ namespace HuaweiCloud.SDK.Cdn.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public DownloadStatisticsExcelResponse DownloadStatisticsExcel(DownloadStatisticsExcelRequest downloadStatisticsExcelRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -147,6 +150,7 @@ namespace HuaweiCloud.SDK.Cdn.V2
             return JsonUtils.DeSerializeNull<DownloadStatisticsExcelResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<DownloadStatisticsExcelResponse> DownloadStatisticsExcelInvoker(DownloadStatisticsExcelRequest downloadStatisticsExcelRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -230,6 +234,7 @@ namespace HuaweiCloud.SDK.Cdn.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public ShowBandwidthCalcResponse ShowBandwidthCalc(ShowBandwidthCalcRequest showBandwidthCalcRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -239,6 +244,7 @@ namespace HuaweiCloud.SDK.Cdn.V2
             return JsonUtils.DeSerialize<ShowBandwidthCalcResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<ShowBandwidthCalcResponse> ShowBandwidthCalcInvoker(ShowBandwidthCalcRequest showBandwidthCalcRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -472,6 +478,7 @@ namespace HuaweiCloud.SDK.Cdn.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public ShowTopDomainNamesResponse ShowTopDomainNames(ShowTopDomainNamesRequest showTopDomainNamesRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -481,6 +488,7 @@ namespace HuaweiCloud.SDK.Cdn.V2
             return JsonUtils.DeSerialize<ShowTopDomainNamesResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<ShowTopDomainNamesResponse> ShowTopDomainNamesInvoker(ShowTopDomainNamesRequest showTopDomainNamesRequest)
         {
             var urlParam = new Dictionary<string, string>();

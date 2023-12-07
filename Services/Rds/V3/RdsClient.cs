@@ -1988,32 +1988,6 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
-        /// 收缩数据库日志
-        ///
-        /// 收缩数据库日志
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public SetInstancesDbShrinkResponse SetInstancesDbShrink(SetInstancesDbShrinkRequest setInstancesDbShrinkRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", setInstancesDbShrinkRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_shrink", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setInstancesDbShrinkRequest);
-            var response = DoHttpRequestSync("POST", request);
-            return JsonUtils.DeSerialize<SetInstancesDbShrinkResponse>(response);
-        }
-
-        public SyncInvoker<SetInstancesDbShrinkResponse> SetInstancesDbShrinkInvoker(SetInstancesDbShrinkRequest setInstancesDbShrinkRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", setInstancesDbShrinkRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_shrink", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setInstancesDbShrinkRequest);
-            return new SyncInvoker<SetInstancesDbShrinkResponse>(this, "POST", request, JsonUtils.DeSerialize<SetInstancesDbShrinkResponse>);
-        }
-        
-        /// <summary>
         /// 设置跨区域备份策略
         ///
         /// 设置跨区域备份策略。
@@ -4735,6 +4709,32 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_privilege", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", revokeSqlserverDbUserPrivilegeRequest);
             return new SyncInvoker<RevokeSqlserverDbUserPrivilegeResponse>(this, "DELETE", request, JsonUtils.DeSerialize<RevokeSqlserverDbUserPrivilegeResponse>);
+        }
+        
+        /// <summary>
+        /// 收缩数据库日志
+        ///
+        /// 收缩数据库日志
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public SetInstancesDbShrinkResponse SetInstancesDbShrink(SetInstancesDbShrinkRequest setInstancesDbShrinkRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", setInstancesDbShrinkRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_shrink", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setInstancesDbShrinkRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<SetInstancesDbShrinkResponse>(response);
+        }
+
+        public SyncInvoker<SetInstancesDbShrinkResponse> SetInstancesDbShrinkInvoker(SetInstancesDbShrinkRequest setInstancesDbShrinkRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", setInstancesDbShrinkRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_shrink", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setInstancesDbShrinkRequest);
+            return new SyncInvoker<SetInstancesDbShrinkResponse>(this, "POST", request, JsonUtils.DeSerialize<SetInstancesDbShrinkResponse>);
         }
         
     }

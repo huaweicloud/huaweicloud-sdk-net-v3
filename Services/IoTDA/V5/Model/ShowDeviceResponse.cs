@@ -86,7 +86,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// 
         /// </summary>
         [JsonProperty("auth_info", NullValueHandling = NullValueHandling.Ignore)]
-        public AuthInfo AuthInfo { get; set; }
+        public AuthInfoRes AuthInfo { get; set; }
 
         /// <summary>
         /// 设备关联的产品ID，用于唯一标识一个产品模型。

@@ -1,3 +1,126 @@
+# 3.1.70 2023-12-07
+
+### HuaweiCloud SDK AOS
+
+- _Features_
+  - Support the API `DeleteStackInstance`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListStackSetOperations**
+    - changes of response param
+      - `+ stack_set_operations.action: enum value [UPDATE_STACK_INSTANCES]`
+  - **ShowStackSetOperationMetadata**
+    - changes of response param
+      - `+ action: enum value [UPDATE_STACK_INSTANCES]`
+
+### HuaweiCloud SDK FunctionGraph
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Remove the following APIs:
+    - `ShowDependcy`
+    - `UpdateDependcy`
+    - `DeleteDependency`
+    - `AsyncInvokeReservedFunction`
+    - `CreateDependency`
+  - **ShowFuncReservedInstanceMetrics**
+    - changes of request param
+      - `+ marker`
+      - `+ limit`
+  - **ListFunctionApplications**
+    - changes of request param
+      - `+ limit`
+      - `+ marker`
+  - **ListStatistics**
+    - changes of request param
+      - `+ limit`
+      - `+ marker`
+
+### HuaweiCloud SDK GaussDB
+
+- _Features_
+  - Support the APIs `ListGaussMySqlInstancesUnifyStatus`, `ShowGaussMySqlInstanceInfoUnifyStatus`, `ListGaussMySqlInstanceDetailInfoUnifyStatus`, `SwitchGaussMySqlProxySsl`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowGaussMySqlProxyList**
+    - changes of response param
+      - `+ proxy_list.proxy.ssl_option`
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _Features_
+  - Support the API `OfflineNodes`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListLtsConfigs**
+    - changes of response param
+      - `* instance_lts_configs.instance.supported_log_types: string -> list<string>`
+
+### HuaweiCloud SDK IoTDA
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ResetDeviceSecret**
+    - changes of request param
+      - `+ secret_type`
+    - changes of response param
+      - `+ secret_type`
+  - **ResetFingerprint**
+    - changes of request param
+      - `+ fingerprint_type`
+    - changes of response param
+      - `+ fingerprint_type`
+  - **ShowDevice**
+    - changes of response param
+      - `+ auth_info.secondary_secret`
+      - `+ auth_info.secondary_fingerprint`
+      - `* auth_info: object<AuthInfo> -> object<AuthInfoRes>`
+  - **UpdateDevice**
+    - changes of response param
+      - `+ auth_info.secondary_secret`
+      - `+ auth_info.secondary_fingerprint`
+      - `* auth_info: object<AuthInfo> -> object<AuthInfoRes>`
+  - **AddDevice**
+    - changes of response param
+      - `+ auth_info.secondary_secret`
+      - `+ auth_info.secondary_fingerprint`
+      - `* auth_info: object<AuthInfo> -> object<AuthInfoRes>`
+
+### HuaweiCloud SDK NAT
+
+- _Features_
+  - Support the following APIs:
+    - `ListNatGatewayByTag`
+    - `BatchCreateDeleteNatGatewayTag`
+    - `ShowNatGatewayTag`
+    - `CreateNatGatewayTag`
+    - `DeleteNatGatewayTag`
+    - `ListNatGatewayTag`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK RocketMQ
+
+- _Features_
+  - Support the APIs `ShowRocketMqConfigs`, `UpdateRocketMqConfigs`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListInstances**
+    - changes of request param
+      - `+ status: enum value [UPGRADING,UPGRADINGFAILED]`
+
 # 3.1.69 2023-11-30
 
 ### HuaweiCloud SDK AOM

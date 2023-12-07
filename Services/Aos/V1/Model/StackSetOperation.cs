@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
     public class StackSetOperation 
     {
         /// <summary>
-        /// 用户当前的操作   * &#x60;CREATE_STACK_INSTANCES&#x60; - 创建资源栈实例   * &#x60;DELETE_STACK_INSTANCES&#x60; - 删除资源栈实例   * &#x60;DEPLOY_STACK_SET&#x60; - 部署资源栈集   * &#x60;DEPLOY_STACK_INSTANCES&#x60; - 部署资源栈实例
+        /// 用户当前的操作   * &#x60;CREATE_STACK_INSTANCES&#x60; - 创建资源栈实例   * &#x60;DELETE_STACK_INSTANCES&#x60; - 删除资源栈实例   * &#x60;DEPLOY_STACK_SET&#x60; - 部署资源栈集   * &#x60;DEPLOY_STACK_INSTANCES&#x60; - 部署资源栈实例   * &#x60;UPDATE_STACK_INSTANCES&#x60; - 更新资源栈实例
         /// </summary>
-        /// <value>用户当前的操作   * &#x60;CREATE_STACK_INSTANCES&#x60; - 创建资源栈实例   * &#x60;DELETE_STACK_INSTANCES&#x60; - 删除资源栈实例   * &#x60;DEPLOY_STACK_SET&#x60; - 部署资源栈集   * &#x60;DEPLOY_STACK_INSTANCES&#x60; - 部署资源栈实例</value>
+        /// <value>用户当前的操作   * &#x60;CREATE_STACK_INSTANCES&#x60; - 创建资源栈实例   * &#x60;DELETE_STACK_INSTANCES&#x60; - 删除资源栈实例   * &#x60;DEPLOY_STACK_SET&#x60; - 部署资源栈集   * &#x60;DEPLOY_STACK_INSTANCES&#x60; - 部署资源栈实例   * &#x60;UPDATE_STACK_INSTANCES&#x60; - 更新资源栈实例</value>
         [JsonConverter(typeof(EnumClassConverter<ActionEnum>))]
         public class ActionEnum
         {
@@ -42,6 +42,11 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
             /// </summary>
             public static readonly ActionEnum DEPLOY_STACK_INSTANCES = new ActionEnum("DEPLOY_STACK_INSTANCES");
 
+            /// <summary>
+            /// Enum UPDATE_STACK_INSTANCES for value: UPDATE_STACK_INSTANCES
+            /// </summary>
+            public static readonly ActionEnum UPDATE_STACK_INSTANCES = new ActionEnum("UPDATE_STACK_INSTANCES");
+
             private static readonly Dictionary<string, ActionEnum> StaticFields =
             new Dictionary<string, ActionEnum>()
             {
@@ -49,6 +54,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
                 { "DELETE_STACK_INSTANCES", DELETE_STACK_INSTANCES },
                 { "DEPLOY_STACK_SET", DEPLOY_STACK_SET },
                 { "DEPLOY_STACK_INSTANCES", DEPLOY_STACK_INSTANCES },
+                { "UPDATE_STACK_INSTANCES", UPDATE_STACK_INSTANCES },
             };
 
             private string _value;
@@ -289,13 +295,13 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
 
 
         /// <summary>
-        /// 资源栈集操作Id。  此Id由资源编排服务在生成资源栈集操作的时候生成，为UUID。
+        /// 资源栈集操作Id。  此ID由资源编排服务在生成资源栈集操作的时候生成，为UUID。
         /// </summary>
         [JsonProperty("operation_id", NullValueHandling = NullValueHandling.Ignore)]
         public string OperationId { get; set; }
 
         /// <summary>
-        /// 资源栈集（stack_set）的唯一ID。  此ID由资源编排服务在生成资源栈的时候生成，为UUID。  由于资源栈集名仅仅在同一时间下唯一，即用户允许先生成一个叫HelloWorld的资源栈集，删除，在重新创建一个同名资源栈集。  对于团队并行开发，用户可能希望确保，当前我操作的资源栈集就是我以为的那个，而不是又其他队友删除后创建的同名资源栈集。因此，使用ID就可以做到强匹配。  资源编排服务保证每次创建的资源栈集所对应的ID都不相同，更新不会影响ID。如果给与的stack_set_id和当前资源栈集的ID不一致，则返回400
+        /// 资源栈集（stack_set）的唯一ID。  此ID由资源编排服务在生成资源栈集的时候生成，为UUID。  由于资源栈集名仅仅在同一时间下唯一，即用户允许先生成一个叫HelloWorld的资源栈集，删除，在重新创建一个同名资源栈集。  对于团队并行开发，用户可能希望确保，当前我操作的资源栈集就是我以为的那个，而不是又其他队友删除后创建的同名资源栈集。因此，使用ID就可以做到强匹配。  资源编排服务保证每次创建的资源栈集所对应的ID都不相同，更新不会影响ID。如果给与的stack_set_id和当前资源栈集的ID不一致，则返回400
         /// </summary>
         [JsonProperty("stack_set_id", NullValueHandling = NullValueHandling.Ignore)]
         public string StackSetId { get; set; }
@@ -307,7 +313,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         public string StackSetName { get; set; }
 
         /// <summary>
-        /// 用户当前的操作   * &#x60;CREATE_STACK_INSTANCES&#x60; - 创建资源栈实例   * &#x60;DELETE_STACK_INSTANCES&#x60; - 删除资源栈实例   * &#x60;DEPLOY_STACK_SET&#x60; - 部署资源栈集   * &#x60;DEPLOY_STACK_INSTANCES&#x60; - 部署资源栈实例
+        /// 用户当前的操作   * &#x60;CREATE_STACK_INSTANCES&#x60; - 创建资源栈实例   * &#x60;DELETE_STACK_INSTANCES&#x60; - 删除资源栈实例   * &#x60;DEPLOY_STACK_SET&#x60; - 部署资源栈集   * &#x60;DEPLOY_STACK_INSTANCES&#x60; - 部署资源栈实例   * &#x60;UPDATE_STACK_INSTANCES&#x60; - 更新资源栈实例
         /// </summary>
         [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]
         public ActionEnum Action { get; set; }

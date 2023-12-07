@@ -25,16 +25,16 @@ namespace HuaweiCloud.SDK.Drs.V3
         public async Task<BatchChangeDataResponse> BatchChangeDataAsync(BatchChangeDataRequest batchChangeDataRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-transformation",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-transformation", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchChangeDataRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<BatchChangeDataResponse>(response);
         }
 
         public AsyncInvoker<BatchChangeDataResponse> BatchChangeDataAsyncInvoker(BatchChangeDataRequest batchChangeDataRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-transformation",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-transformation", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchChangeDataRequest);
             return new AsyncInvoker<BatchChangeDataResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchChangeDataResponse>);
         }
@@ -49,16 +49,16 @@ namespace HuaweiCloud.SDK.Drs.V3
         public async Task<BatchCheckJobsResponse> BatchCheckJobsAsync(BatchCheckJobsRequest batchCheckJobsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-precheck",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-precheck", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCheckJobsRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<BatchCheckJobsResponse>(response);
         }
 
         public AsyncInvoker<BatchCheckJobsResponse> BatchCheckJobsAsyncInvoker(BatchCheckJobsRequest batchCheckJobsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-precheck",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-precheck", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCheckJobsRequest);
             return new AsyncInvoker<BatchCheckJobsResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchCheckJobsResponse>);
         }
@@ -73,16 +73,16 @@ namespace HuaweiCloud.SDK.Drs.V3
         public async Task<BatchCheckResultsResponse> BatchCheckResultsAsync(BatchCheckResultsRequest batchCheckResultsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-precheck-result",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-precheck-result", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCheckResultsRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<BatchCheckResultsResponse>(response);
         }
 
         public AsyncInvoker<BatchCheckResultsResponse> BatchCheckResultsAsyncInvoker(BatchCheckResultsRequest batchCheckResultsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-precheck-result",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-precheck-result", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCheckResultsRequest);
             return new AsyncInvoker<BatchCheckResultsResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchCheckResultsResponse>);
         }
@@ -97,16 +97,16 @@ namespace HuaweiCloud.SDK.Drs.V3
         public async Task<BatchCreateJobsResponse> BatchCreateJobsAsync(BatchCreateJobsRequest batchCreateJobsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-creation",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-creation", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateJobsRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<BatchCreateJobsResponse>(response);
         }
 
         public AsyncInvoker<BatchCreateJobsResponse> BatchCreateJobsAsyncInvoker(BatchCreateJobsRequest batchCreateJobsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-creation",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-creation", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateJobsRequest);
             return new AsyncInvoker<BatchCreateJobsResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchCreateJobsResponse>);
         }
@@ -121,16 +121,16 @@ namespace HuaweiCloud.SDK.Drs.V3
         public async Task<BatchDeleteJobsResponse> BatchDeleteJobsAsync(BatchDeleteJobsRequest batchDeleteJobsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-jobs",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-jobs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteJobsRequest);
-            var response = await DoHttpRequestAsync("DELETE",request);
+            var response = await DoHttpRequestAsync("DELETE", request);
             return JsonUtils.DeSerialize<BatchDeleteJobsResponse>(response);
         }
 
         public AsyncInvoker<BatchDeleteJobsResponse> BatchDeleteJobsAsyncInvoker(BatchDeleteJobsRequest batchDeleteJobsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-jobs",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-jobs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteJobsRequest);
             return new AsyncInvoker<BatchDeleteJobsResponse>(this, "DELETE", request, JsonUtils.DeSerialize<BatchDeleteJobsResponse>);
         }
@@ -145,16 +145,16 @@ namespace HuaweiCloud.SDK.Drs.V3
         public async Task<BatchListJobDetailsResponse> BatchListJobDetailsAsync(BatchListJobDetailsRequest batchListJobDetailsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-detail",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-detail", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchListJobDetailsRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<BatchListJobDetailsResponse>(response);
         }
 
         public AsyncInvoker<BatchListJobDetailsResponse> BatchListJobDetailsAsyncInvoker(BatchListJobDetailsRequest batchListJobDetailsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-detail",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-detail", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchListJobDetailsRequest);
             return new AsyncInvoker<BatchListJobDetailsResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchListJobDetailsResponse>);
         }
@@ -169,16 +169,16 @@ namespace HuaweiCloud.SDK.Drs.V3
         public async Task<BatchListJobStatusResponse> BatchListJobStatusAsync(BatchListJobStatusRequest batchListJobStatusRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-status",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-status", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchListJobStatusRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<BatchListJobStatusResponse>(response);
         }
 
         public AsyncInvoker<BatchListJobStatusResponse> BatchListJobStatusAsyncInvoker(BatchListJobStatusRequest batchListJobStatusRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-status",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-status", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchListJobStatusRequest);
             return new AsyncInvoker<BatchListJobStatusResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchListJobStatusResponse>);
         }
@@ -193,16 +193,16 @@ namespace HuaweiCloud.SDK.Drs.V3
         public async Task<BatchListProgressesResponse> BatchListProgressesAsync(BatchListProgressesRequest batchListProgressesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-progress",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-progress", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchListProgressesRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<BatchListProgressesResponse>(response);
         }
 
         public AsyncInvoker<BatchListProgressesResponse> BatchListProgressesAsyncInvoker(BatchListProgressesRequest batchListProgressesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-progress",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-progress", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchListProgressesRequest);
             return new AsyncInvoker<BatchListProgressesResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchListProgressesResponse>);
         }
@@ -217,16 +217,16 @@ namespace HuaweiCloud.SDK.Drs.V3
         public async Task<BatchListRposAndRtosResponse> BatchListRposAndRtosAsync(BatchListRposAndRtosRequest batchListRposAndRtosRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-rpo-and-rto",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-rpo-and-rto", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchListRposAndRtosRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<BatchListRposAndRtosResponse>(response);
         }
 
         public AsyncInvoker<BatchListRposAndRtosResponse> BatchListRposAndRtosAsyncInvoker(BatchListRposAndRtosRequest batchListRposAndRtosRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-rpo-and-rto",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-rpo-and-rto", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchListRposAndRtosRequest);
             return new AsyncInvoker<BatchListRposAndRtosResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchListRposAndRtosResponse>);
         }
@@ -242,9 +242,9 @@ namespace HuaweiCloud.SDK.Drs.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("type", batchListStructDetailRequest.Type.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{type}/batch-struct-detail",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{type}/batch-struct-detail", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchListStructDetailRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<BatchListStructDetailResponse>(response);
         }
 
@@ -252,7 +252,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("type", batchListStructDetailRequest.Type.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{type}/batch-struct-detail",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{type}/batch-struct-detail", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchListStructDetailRequest);
             return new AsyncInvoker<BatchListStructDetailResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchListStructDetailResponse>);
         }
@@ -267,16 +267,16 @@ namespace HuaweiCloud.SDK.Drs.V3
         public async Task<BatchListStructProcessResponse> BatchListStructProcessAsync(BatchListStructProcessRequest batchListStructProcessRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-struct-process",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-struct-process", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchListStructProcessRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<BatchListStructProcessResponse>(response);
         }
 
         public AsyncInvoker<BatchListStructProcessResponse> BatchListStructProcessAsyncInvoker(BatchListStructProcessRequest batchListStructProcessRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-struct-process",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-struct-process", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchListStructProcessRequest);
             return new AsyncInvoker<BatchListStructProcessResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchListStructProcessResponse>);
         }
@@ -291,16 +291,16 @@ namespace HuaweiCloud.SDK.Drs.V3
         public async Task<BatchResetPasswordResponse> BatchResetPasswordAsync(BatchResetPasswordRequest batchResetPasswordRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-modify-pwd",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-modify-pwd", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchResetPasswordRequest);
-            var response = await DoHttpRequestAsync("PUT",request);
+            var response = await DoHttpRequestAsync("PUT", request);
             return JsonUtils.DeSerialize<BatchResetPasswordResponse>(response);
         }
 
         public AsyncInvoker<BatchResetPasswordResponse> BatchResetPasswordAsyncInvoker(BatchResetPasswordRequest batchResetPasswordRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-modify-pwd",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-modify-pwd", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchResetPasswordRequest);
             return new AsyncInvoker<BatchResetPasswordResponse>(this, "PUT", request, JsonUtils.DeSerialize<BatchResetPasswordResponse>);
         }
@@ -315,16 +315,16 @@ namespace HuaweiCloud.SDK.Drs.V3
         public async Task<BatchRestoreTaskResponse> BatchRestoreTaskAsync(BatchRestoreTaskRequest batchRestoreTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-retry-task",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-retry-task", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchRestoreTaskRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<BatchRestoreTaskResponse>(response);
         }
 
         public AsyncInvoker<BatchRestoreTaskResponse> BatchRestoreTaskAsyncInvoker(BatchRestoreTaskRequest batchRestoreTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-retry-task",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-retry-task", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchRestoreTaskRequest);
             return new AsyncInvoker<BatchRestoreTaskResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchRestoreTaskResponse>);
         }
@@ -341,16 +341,16 @@ namespace HuaweiCloud.SDK.Drs.V3
         public async Task<BatchSetDefinerResponse> BatchSetDefinerAsync(BatchSetDefinerRequest batchSetDefinerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-replace-definer",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-replace-definer", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchSetDefinerRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<BatchSetDefinerResponse>(response);
         }
 
         public AsyncInvoker<BatchSetDefinerResponse> BatchSetDefinerAsyncInvoker(BatchSetDefinerRequest batchSetDefinerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-replace-definer",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-replace-definer", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchSetDefinerRequest);
             return new AsyncInvoker<BatchSetDefinerResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchSetDefinerResponse>);
         }
@@ -365,16 +365,16 @@ namespace HuaweiCloud.SDK.Drs.V3
         public async Task<BatchSetObjectsResponse> BatchSetObjectsAsync(BatchSetObjectsRequest batchSetObjectsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-select-objects",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-select-objects", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchSetObjectsRequest);
-            var response = await DoHttpRequestAsync("PUT",request);
+            var response = await DoHttpRequestAsync("PUT", request);
             return JsonUtils.DeSerialize<BatchSetObjectsResponse>(response);
         }
 
         public AsyncInvoker<BatchSetObjectsResponse> BatchSetObjectsAsyncInvoker(BatchSetObjectsRequest batchSetObjectsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-select-objects",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-select-objects", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchSetObjectsRequest);
             return new AsyncInvoker<BatchSetObjectsResponse>(this, "PUT", request, JsonUtils.DeSerialize<BatchSetObjectsResponse>);
         }
@@ -390,16 +390,16 @@ namespace HuaweiCloud.SDK.Drs.V3
         public async Task<BatchSetPolicyResponse> BatchSetPolicyAsync(BatchSetPolicyRequest batchSetPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-sync-policy",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-sync-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchSetPolicyRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<BatchSetPolicyResponse>(response);
         }
 
         public AsyncInvoker<BatchSetPolicyResponse> BatchSetPolicyAsyncInvoker(BatchSetPolicyRequest batchSetPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-sync-policy",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-sync-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchSetPolicyRequest);
             return new AsyncInvoker<BatchSetPolicyResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchSetPolicyResponse>);
         }
@@ -415,16 +415,16 @@ namespace HuaweiCloud.SDK.Drs.V3
         public async Task<BatchSetSmnResponse> BatchSetSmnAsync(BatchSetSmnRequest batchSetSmnRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-set-smn",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-set-smn", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchSetSmnRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<BatchSetSmnResponse>(response);
         }
 
         public AsyncInvoker<BatchSetSmnResponse> BatchSetSmnAsyncInvoker(BatchSetSmnRequest batchSetSmnRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-set-smn",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-set-smn", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchSetSmnRequest);
             return new AsyncInvoker<BatchSetSmnResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchSetSmnResponse>);
         }
@@ -441,16 +441,16 @@ namespace HuaweiCloud.SDK.Drs.V3
         public async Task<BatchSetSpeedResponse> BatchSetSpeedAsync(BatchSetSpeedRequest batchSetSpeedRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-limit-speed",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-limit-speed", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchSetSpeedRequest);
-            var response = await DoHttpRequestAsync("PUT",request);
+            var response = await DoHttpRequestAsync("PUT", request);
             return JsonUtils.DeSerialize<BatchSetSpeedResponse>(response);
         }
 
         public AsyncInvoker<BatchSetSpeedResponse> BatchSetSpeedAsyncInvoker(BatchSetSpeedRequest batchSetSpeedRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-limit-speed",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-limit-speed", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchSetSpeedRequest);
             return new AsyncInvoker<BatchSetSpeedResponse>(this, "PUT", request, JsonUtils.DeSerialize<BatchSetSpeedResponse>);
         }
@@ -465,16 +465,16 @@ namespace HuaweiCloud.SDK.Drs.V3
         public async Task<BatchShowParamsResponse> BatchShowParamsAsync(BatchShowParamsRequest batchShowParamsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-get-params",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-get-params", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchShowParamsRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<BatchShowParamsResponse>(response);
         }
 
         public AsyncInvoker<BatchShowParamsResponse> BatchShowParamsAsyncInvoker(BatchShowParamsRequest batchShowParamsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-get-params",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-get-params", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchShowParamsRequest);
             return new AsyncInvoker<BatchShowParamsResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchShowParamsResponse>);
         }
@@ -489,16 +489,16 @@ namespace HuaweiCloud.SDK.Drs.V3
         public async Task<BatchStartJobsResponse> BatchStartJobsAsync(BatchStartJobsRequest batchStartJobsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-starting",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-starting", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchStartJobsRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<BatchStartJobsResponse>(response);
         }
 
         public AsyncInvoker<BatchStartJobsResponse> BatchStartJobsAsyncInvoker(BatchStartJobsRequest batchStartJobsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-starting",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-starting", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchStartJobsRequest);
             return new AsyncInvoker<BatchStartJobsResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchStartJobsResponse>);
         }
@@ -513,16 +513,16 @@ namespace HuaweiCloud.SDK.Drs.V3
         public async Task<BatchStopJobsResponse> BatchStopJobsAsync(BatchStopJobsRequest batchStopJobsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-pause-task",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-pause-task", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchStopJobsRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<BatchStopJobsResponse>(response);
         }
 
         public AsyncInvoker<BatchStopJobsResponse> BatchStopJobsAsyncInvoker(BatchStopJobsRequest batchStopJobsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-pause-task",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-pause-task", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchStopJobsRequest);
             return new AsyncInvoker<BatchStopJobsResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchStopJobsResponse>);
         }
@@ -537,16 +537,16 @@ namespace HuaweiCloud.SDK.Drs.V3
         public async Task<BatchSwitchoverResponse> BatchSwitchoverAsync(BatchSwitchoverRequest batchSwitchoverRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-switchover",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-switchover", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchSwitchoverRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<BatchSwitchoverResponse>(response);
         }
 
         public AsyncInvoker<BatchSwitchoverResponse> BatchSwitchoverAsyncInvoker(BatchSwitchoverRequest batchSwitchoverRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-switchover",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-switchover", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchSwitchoverRequest);
             return new AsyncInvoker<BatchSwitchoverResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchSwitchoverResponse>);
         }
@@ -561,16 +561,16 @@ namespace HuaweiCloud.SDK.Drs.V3
         public async Task<BatchUpdateJobResponse> BatchUpdateJobAsync(BatchUpdateJobRequest batchUpdateJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-modification",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-modification", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchUpdateJobRequest);
-            var response = await DoHttpRequestAsync("PUT",request);
+            var response = await DoHttpRequestAsync("PUT", request);
             return JsonUtils.DeSerialize<BatchUpdateJobResponse>(response);
         }
 
         public AsyncInvoker<BatchUpdateJobResponse> BatchUpdateJobAsyncInvoker(BatchUpdateJobRequest batchUpdateJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-modification",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-modification", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchUpdateJobRequest);
             return new AsyncInvoker<BatchUpdateJobResponse>(this, "PUT", request, JsonUtils.DeSerialize<BatchUpdateJobResponse>);
         }
@@ -585,16 +585,16 @@ namespace HuaweiCloud.SDK.Drs.V3
         public async Task<BatchUpdateUserResponse> BatchUpdateUserAsync(BatchUpdateUserRequest batchUpdateUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-update-user",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-update-user", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchUpdateUserRequest);
-            var response = await DoHttpRequestAsync("PUT",request);
+            var response = await DoHttpRequestAsync("PUT", request);
             return JsonUtils.DeSerialize<BatchUpdateUserResponse>(response);
         }
 
         public AsyncInvoker<BatchUpdateUserResponse> BatchUpdateUserAsyncInvoker(BatchUpdateUserRequest batchUpdateUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-update-user",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-update-user", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchUpdateUserRequest);
             return new AsyncInvoker<BatchUpdateUserResponse>(this, "PUT", request, JsonUtils.DeSerialize<BatchUpdateUserResponse>);
         }
@@ -610,16 +610,16 @@ namespace HuaweiCloud.SDK.Drs.V3
         public async Task<BatchValidateClustersConnectionsResponse> BatchValidateClustersConnectionsAsync(BatchValidateClustersConnectionsRequest batchValidateClustersConnectionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/cluster/batch-connection",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/cluster/batch-connection", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchValidateClustersConnectionsRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<BatchValidateClustersConnectionsResponse>(response);
         }
 
         public AsyncInvoker<BatchValidateClustersConnectionsResponse> BatchValidateClustersConnectionsAsyncInvoker(BatchValidateClustersConnectionsRequest batchValidateClustersConnectionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/cluster/batch-connection",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/cluster/batch-connection", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchValidateClustersConnectionsRequest);
             return new AsyncInvoker<BatchValidateClustersConnectionsResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchValidateClustersConnectionsResponse>);
         }
@@ -634,16 +634,16 @@ namespace HuaweiCloud.SDK.Drs.V3
         public async Task<BatchValidateConnectionsResponse> BatchValidateConnectionsAsync(BatchValidateConnectionsRequest batchValidateConnectionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-connection",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-connection", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchValidateConnectionsRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<BatchValidateConnectionsResponse>(response);
         }
 
         public AsyncInvoker<BatchValidateConnectionsResponse> BatchValidateConnectionsAsyncInvoker(BatchValidateConnectionsRequest batchValidateConnectionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-connection",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/batch-connection", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchValidateConnectionsRequest);
             return new AsyncInvoker<BatchValidateConnectionsResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchValidateConnectionsResponse>);
         }
@@ -658,16 +658,16 @@ namespace HuaweiCloud.SDK.Drs.V3
         public async Task<CreateCompareTaskResponse> CreateCompareTaskAsync(CreateCompareTaskRequest createCompareTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/create-compare-task",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/create-compare-task", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createCompareTaskRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<CreateCompareTaskResponse>(response);
         }
 
         public AsyncInvoker<CreateCompareTaskResponse> CreateCompareTaskAsyncInvoker(CreateCompareTaskRequest createCompareTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/create-compare-task",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/create-compare-task", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createCompareTaskRequest);
             return new AsyncInvoker<CreateCompareTaskResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateCompareTaskResponse>);
         }
@@ -682,16 +682,16 @@ namespace HuaweiCloud.SDK.Drs.V3
         public async Task<ListAvailableZoneResponse> ListAvailableZoneAsync(ListAvailableZoneRequest listAvailableZoneRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/available-zone",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/available-zone", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAvailableZoneRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<ListAvailableZoneResponse>(response);
         }
 
         public AsyncInvoker<ListAvailableZoneResponse> ListAvailableZoneAsyncInvoker(ListAvailableZoneRequest listAvailableZoneRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/available-zone",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/available-zone", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAvailableZoneRequest);
             return new AsyncInvoker<ListAvailableZoneResponse>(this, "POST", request, JsonUtils.DeSerialize<ListAvailableZoneResponse>);
         }
@@ -706,16 +706,16 @@ namespace HuaweiCloud.SDK.Drs.V3
         public async Task<ListCompareResultResponse> ListCompareResultAsync(ListCompareResultRequest listCompareResultRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/query-compare-result",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/query-compare-result", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCompareResultRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<ListCompareResultResponse>(response);
         }
 
         public AsyncInvoker<ListCompareResultResponse> ListCompareResultAsyncInvoker(ListCompareResultRequest listCompareResultRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/query-compare-result",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/query-compare-result", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCompareResultRequest);
             return new AsyncInvoker<ListCompareResultResponse>(this, "POST", request, JsonUtils.DeSerialize<ListCompareResultResponse>);
         }
@@ -731,9 +731,9 @@ namespace HuaweiCloud.SDK.Drs.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("job_id", listUsersRequest.JobId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/get-src-user",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/get-src-user", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listUsersRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ListUsersResponse>(response);
         }
 
@@ -741,7 +741,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("job_id", listUsersRequest.JobId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/get-src-user",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/get-src-user", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listUsersRequest);
             return new AsyncInvoker<ListUsersResponse>(this, "GET", request, JsonUtils.DeSerialize<ListUsersResponse>);
         }
@@ -756,16 +756,16 @@ namespace HuaweiCloud.SDK.Drs.V3
         public async Task<ShowJobListResponse> ShowJobListAsync(ShowJobListRequest showJobListRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showJobListRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<ShowJobListResponse>(response);
         }
 
         public AsyncInvoker<ShowJobListResponse> ShowJobListAsyncInvoker(ShowJobListRequest showJobListRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showJobListRequest);
             return new AsyncInvoker<ShowJobListResponse>(this, "POST", request, JsonUtils.DeSerialize<ShowJobListResponse>);
         }
@@ -780,16 +780,16 @@ namespace HuaweiCloud.SDK.Drs.V3
         public async Task<ShowMonitoringDataResponse> ShowMonitoringDataAsync(ShowMonitoringDataRequest showMonitoringDataRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/disaster-recovery-monitoring-data",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/disaster-recovery-monitoring-data", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMonitoringDataRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<ShowMonitoringDataResponse>(response);
         }
 
         public AsyncInvoker<ShowMonitoringDataResponse> ShowMonitoringDataAsyncInvoker(ShowMonitoringDataRequest showMonitoringDataRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/disaster-recovery-monitoring-data",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/disaster-recovery-monitoring-data", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMonitoringDataRequest);
             return new AsyncInvoker<ShowMonitoringDataResponse>(this, "POST", request, JsonUtils.DeSerialize<ShowMonitoringDataResponse>);
         }
@@ -804,16 +804,16 @@ namespace HuaweiCloud.SDK.Drs.V3
         public async Task<ShowQuotasResponse> ShowQuotasAsync(ShowQuotasRequest showQuotasRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/quotas",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/quotas", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showQuotasRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowQuotasResponse>(response);
         }
 
         public AsyncInvoker<ShowQuotasResponse> ShowQuotasAsyncInvoker(ShowQuotasRequest showQuotasRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/quotas",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/quotas", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showQuotasRequest);
             return new AsyncInvoker<ShowQuotasResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowQuotasResponse>);
         }
@@ -829,9 +829,9 @@ namespace HuaweiCloud.SDK.Drs.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("job_id", updateParamsRequest.JobId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/params",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/params", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateParamsRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<UpdateParamsResponse>(response);
         }
 
@@ -839,7 +839,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("job_id", updateParamsRequest.JobId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/params",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/params", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateParamsRequest);
             return new AsyncInvoker<UpdateParamsResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateParamsResponse>);
         }
@@ -855,9 +855,9 @@ namespace HuaweiCloud.SDK.Drs.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("job_id", updateTuningParamsRequest.JobId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/job/{job_id}/tuning-params/modify-params",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/job/{job_id}/tuning-params/modify-params", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTuningParamsRequest);
-            var response = await DoHttpRequestAsync("PUT",request);
+            var response = await DoHttpRequestAsync("PUT", request);
             return JsonUtils.DeSerialize<UpdateTuningParamsResponse>(response);
         }
 
@@ -865,7 +865,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("job_id", updateTuningParamsRequest.JobId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/job/{job_id}/tuning-params/modify-params",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/job/{job_id}/tuning-params/modify-params", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTuningParamsRequest);
             return new AsyncInvoker<UpdateTuningParamsResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateTuningParamsResponse>);
         }

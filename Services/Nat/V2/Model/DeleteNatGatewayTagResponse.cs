@@ -8,27 +8,19 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
+namespace HuaweiCloud.SDK.Nat.V2.Model
 {
     /// <summary>
-    /// Request Object
+    /// Response Object
     /// </summary>
-    public class AsyncInvokeReservedFunctionRequest 
+    public class DeleteNatGatewayTagResponse : SdkResponse
     {
 
         /// <summary>
-        /// 函数的URN（Uniform Resource Name），唯一标识函数。
+        /// 
         /// </summary>
-        [SDKProperty("function_urn", IsPath = true)]
-        [JsonProperty("function_urn", NullValueHandling = NullValueHandling.Ignore)]
-        public string FunctionUrn { get; set; }
-
-        /// <summary>
-        /// 执行函数请求体，为json格式。
-        /// </summary>
-        [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public Dictionary<string, Object> Body { get; set; }
+        public string Body { get; set; }
 
 
 
@@ -38,8 +30,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class AsyncInvokeReservedFunctionRequest {\n");
-            sb.Append("  functionUrn: ").Append(FunctionUrn).Append("\n");
+            sb.Append("class DeleteNatGatewayTagResponse {\n");
             sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -50,28 +41,22 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as AsyncInvokeReservedFunctionRequest);
+            return this.Equals(input as DeleteNatGatewayTagResponse);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(AsyncInvokeReservedFunctionRequest input)
+        public bool Equals(DeleteNatGatewayTagResponse input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.FunctionUrn == input.FunctionUrn ||
-                    (this.FunctionUrn != null &&
-                    this.FunctionUrn.Equals(input.FunctionUrn))
-                ) && 
-                (
                     this.Body == input.Body ||
-                    this.Body != null &&
-                    input.Body != null &&
-                    this.Body.SequenceEqual(input.Body)
+                    (this.Body != null &&
+                    this.Body.Equals(input.Body))
                 );
         }
 
@@ -83,8 +68,6 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.FunctionUrn != null)
-                    hashCode = hashCode * 59 + this.FunctionUrn.GetHashCode();
                 if (this.Body != null)
                     hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;

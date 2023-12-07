@@ -25,16 +25,16 @@ namespace HuaweiCloud.SDK.Aom.V3
         public async Task<CreateAppResponse> CreateAppAsync(CreateAppRequest createAppRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/applications",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/applications", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAppRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerializeNull<CreateAppResponse>(response);
         }
 
         public AsyncInvoker<CreateAppResponse> CreateAppAsyncInvoker(CreateAppRequest createAppRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/applications",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/applications", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAppRequest);
             return new AsyncInvoker<CreateAppResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateAppResponse>);
         }
@@ -49,16 +49,16 @@ namespace HuaweiCloud.SDK.Aom.V3
         public async Task<CreateComponentResponse> CreateComponentAsync(CreateComponentRequest createComponentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/components",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/components", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createComponentRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<CreateComponentResponse>(response);
         }
 
         public AsyncInvoker<CreateComponentResponse> CreateComponentAsyncInvoker(CreateComponentRequest createComponentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/components",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/components", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createComponentRequest);
             return new AsyncInvoker<CreateComponentResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateComponentResponse>);
         }
@@ -73,16 +73,16 @@ namespace HuaweiCloud.SDK.Aom.V3
         public async Task<CreateEnvResponse> CreateEnvAsync(CreateEnvRequest createEnvRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/environments",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/environments", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createEnvRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<CreateEnvResponse>(response);
         }
 
         public AsyncInvoker<CreateEnvResponse> CreateEnvAsyncInvoker(CreateEnvRequest createEnvRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/environments",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/environments", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createEnvRequest);
             return new AsyncInvoker<CreateEnvResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateEnvResponse>);
         }
@@ -97,16 +97,16 @@ namespace HuaweiCloud.SDK.Aom.V3
         public async Task<CreateSubAppResponse> CreateSubAppAsync(CreateSubAppRequest createSubAppRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/sub-applications",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/sub-applications", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createSubAppRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerializeNull<CreateSubAppResponse>(response);
         }
 
         public AsyncInvoker<CreateSubAppResponse> CreateSubAppAsyncInvoker(CreateSubAppRequest createSubAppRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/sub-applications",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/sub-applications", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createSubAppRequest);
             return new AsyncInvoker<CreateSubAppResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateSubAppResponse>);
         }
@@ -122,9 +122,9 @@ namespace HuaweiCloud.SDK.Aom.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("application_id", deleteAppRequest.ApplicationId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/applications/{application_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/applications/{application_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAppRequest);
-            var response = await DoHttpRequestAsync("DELETE",request);
+            var response = await DoHttpRequestAsync("DELETE", request);
             return JsonUtils.DeSerializeNull<DeleteAppResponse>(response);
         }
 
@@ -132,7 +132,7 @@ namespace HuaweiCloud.SDK.Aom.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("application_id", deleteAppRequest.ApplicationId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/applications/{application_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/applications/{application_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAppRequest);
             return new AsyncInvoker<DeleteAppResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteAppResponse>);
         }
@@ -148,9 +148,9 @@ namespace HuaweiCloud.SDK.Aom.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("component_id", deleteComponentRequest.ComponentId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/components/{component_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/components/{component_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteComponentRequest);
-            var response = await DoHttpRequestAsync("DELETE",request);
+            var response = await DoHttpRequestAsync("DELETE", request);
             return JsonUtils.DeSerializeNull<DeleteComponentResponse>(response);
         }
 
@@ -158,7 +158,7 @@ namespace HuaweiCloud.SDK.Aom.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("component_id", deleteComponentRequest.ComponentId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/components/{component_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/components/{component_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteComponentRequest);
             return new AsyncInvoker<DeleteComponentResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteComponentResponse>);
         }
@@ -174,9 +174,9 @@ namespace HuaweiCloud.SDK.Aom.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("environment_id", deleteEnvRequest.EnvironmentId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/environments/{environment_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/environments/{environment_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteEnvRequest);
-            var response = await DoHttpRequestAsync("DELETE",request);
+            var response = await DoHttpRequestAsync("DELETE", request);
             return JsonUtils.DeSerializeNull<DeleteEnvResponse>(response);
         }
 
@@ -184,7 +184,7 @@ namespace HuaweiCloud.SDK.Aom.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("environment_id", deleteEnvRequest.EnvironmentId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/environments/{environment_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/environments/{environment_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteEnvRequest);
             return new AsyncInvoker<DeleteEnvResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteEnvResponse>);
         }
@@ -200,9 +200,9 @@ namespace HuaweiCloud.SDK.Aom.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("sub_app_id", deleteSubAppRequest.SubAppId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/sub-applications/{sub_app_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/sub-applications/{sub_app_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSubAppRequest);
-            var response = await DoHttpRequestAsync("DELETE",request);
+            var response = await DoHttpRequestAsync("DELETE", request);
             return JsonUtils.DeSerializeNull<DeleteSubAppResponse>(response);
         }
 
@@ -210,7 +210,7 @@ namespace HuaweiCloud.SDK.Aom.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("sub_app_id", deleteSubAppRequest.SubAppId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/sub-applications/{sub_app_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/sub-applications/{sub_app_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSubAppRequest);
             return new AsyncInvoker<DeleteSubAppResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteSubAppResponse>);
         }
@@ -227,9 +227,9 @@ namespace HuaweiCloud.SDK.Aom.V3
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("rf_resource_type", listResourceUnderNodeRequest.RfResourceType.ToString());
             urlParam.Add("type", listResourceUnderNodeRequest.Type.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/resource/{rf_resource_type}/type/{type}/ci-relationships",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/resource/{rf_resource_type}/type/{type}/ci-relationships", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listResourceUnderNodeRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<ListResourceUnderNodeResponse>(response);
         }
 
@@ -238,7 +238,7 @@ namespace HuaweiCloud.SDK.Aom.V3
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("rf_resource_type", listResourceUnderNodeRequest.RfResourceType.ToString());
             urlParam.Add("type", listResourceUnderNodeRequest.Type.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/resource/{rf_resource_type}/type/{type}/ci-relationships",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/resource/{rf_resource_type}/type/{type}/ci-relationships", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listResourceUnderNodeRequest);
             return new AsyncInvoker<ListResourceUnderNodeResponse>(this, "POST", request, JsonUtils.DeSerialize<ListResourceUnderNodeResponse>);
         }
@@ -254,9 +254,9 @@ namespace HuaweiCloud.SDK.Aom.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("application_id", showAppRequest.ApplicationId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/applications/{application_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/applications/{application_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAppRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowAppResponse>(response);
         }
 
@@ -264,7 +264,7 @@ namespace HuaweiCloud.SDK.Aom.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("application_id", showAppRequest.ApplicationId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/applications/{application_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/applications/{application_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAppRequest);
             return new AsyncInvoker<ShowAppResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAppResponse>);
         }
@@ -279,16 +279,16 @@ namespace HuaweiCloud.SDK.Aom.V3
         public async Task<ShowAppByNameResponse> ShowAppByNameAsync(ShowAppByNameRequest showAppByNameRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/applications",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/applications", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAppByNameRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowAppByNameResponse>(response);
         }
 
         public AsyncInvoker<ShowAppByNameResponse> ShowAppByNameAsyncInvoker(ShowAppByNameRequest showAppByNameRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/applications",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/applications", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAppByNameRequest);
             return new AsyncInvoker<ShowAppByNameResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAppByNameResponse>);
         }
@@ -304,9 +304,9 @@ namespace HuaweiCloud.SDK.Aom.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("component_id", showComponentRequest.ComponentId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/components/{component_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/components/{component_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showComponentRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowComponentResponse>(response);
         }
 
@@ -314,7 +314,7 @@ namespace HuaweiCloud.SDK.Aom.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("component_id", showComponentRequest.ComponentId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/components/{component_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/components/{component_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showComponentRequest);
             return new AsyncInvoker<ShowComponentResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowComponentResponse>);
         }
@@ -331,9 +331,9 @@ namespace HuaweiCloud.SDK.Aom.V3
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("application_id", showComponentByNameRequest.ApplicationId.ToString());
             urlParam.Add("component_name", showComponentByNameRequest.ComponentName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/components/application/{application_id}/name/{component_name}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/components/application/{application_id}/name/{component_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showComponentByNameRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowComponentByNameResponse>(response);
         }
 
@@ -342,7 +342,7 @@ namespace HuaweiCloud.SDK.Aom.V3
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("application_id", showComponentByNameRequest.ApplicationId.ToString());
             urlParam.Add("component_name", showComponentByNameRequest.ComponentName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/components/application/{application_id}/name/{component_name}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/components/application/{application_id}/name/{component_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showComponentByNameRequest);
             return new AsyncInvoker<ShowComponentByNameResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowComponentByNameResponse>);
         }
@@ -358,9 +358,9 @@ namespace HuaweiCloud.SDK.Aom.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("environment_id", showEnvRequest.EnvironmentId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/environments/{environment_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/environments/{environment_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showEnvRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowEnvResponse>(response);
         }
 
@@ -368,7 +368,7 @@ namespace HuaweiCloud.SDK.Aom.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("environment_id", showEnvRequest.EnvironmentId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/environments/{environment_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/environments/{environment_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showEnvRequest);
             return new AsyncInvoker<ShowEnvResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowEnvResponse>);
         }
@@ -384,9 +384,9 @@ namespace HuaweiCloud.SDK.Aom.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("environment_name", showEnvByNameRequest.EnvironmentName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/environments/name/{environment_name}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/environments/name/{environment_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showEnvByNameRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowEnvByNameResponse>(response);
         }
 
@@ -394,7 +394,7 @@ namespace HuaweiCloud.SDK.Aom.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("environment_name", showEnvByNameRequest.EnvironmentName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/environments/name/{environment_name}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/environments/name/{environment_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showEnvByNameRequest);
             return new AsyncInvoker<ShowEnvByNameResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowEnvByNameResponse>);
         }
@@ -410,9 +410,9 @@ namespace HuaweiCloud.SDK.Aom.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("application_id", updateAppRequest.ApplicationId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/applications/{application_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/applications/{application_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAppRequest);
-            var response = await DoHttpRequestAsync("PUT",request);
+            var response = await DoHttpRequestAsync("PUT", request);
             return JsonUtils.DeSerializeNull<UpdateAppResponse>(response);
         }
 
@@ -420,7 +420,7 @@ namespace HuaweiCloud.SDK.Aom.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("application_id", updateAppRequest.ApplicationId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/applications/{application_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/applications/{application_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAppRequest);
             return new AsyncInvoker<UpdateAppResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateAppResponse>);
         }
@@ -436,9 +436,9 @@ namespace HuaweiCloud.SDK.Aom.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("component_id", updateComponentRequest.ComponentId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/components/{component_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/components/{component_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateComponentRequest);
-            var response = await DoHttpRequestAsync("PUT",request);
+            var response = await DoHttpRequestAsync("PUT", request);
             return JsonUtils.DeSerializeNull<UpdateComponentResponse>(response);
         }
 
@@ -446,7 +446,7 @@ namespace HuaweiCloud.SDK.Aom.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("component_id", updateComponentRequest.ComponentId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/components/{component_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/components/{component_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateComponentRequest);
             return new AsyncInvoker<UpdateComponentResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateComponentResponse>);
         }
@@ -462,9 +462,9 @@ namespace HuaweiCloud.SDK.Aom.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("environment_id", updateEnvRequest.EnvironmentId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/environments/{environment_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/environments/{environment_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateEnvRequest);
-            var response = await DoHttpRequestAsync("PUT",request);
+            var response = await DoHttpRequestAsync("PUT", request);
             return JsonUtils.DeSerializeNull<UpdateEnvResponse>(response);
         }
 
@@ -472,7 +472,7 @@ namespace HuaweiCloud.SDK.Aom.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("environment_id", updateEnvRequest.EnvironmentId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/environments/{environment_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/environments/{environment_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateEnvRequest);
             return new AsyncInvoker<UpdateEnvResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateEnvResponse>);
         }
@@ -488,9 +488,9 @@ namespace HuaweiCloud.SDK.Aom.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("sub_app_id", updateSubAppRequest.SubAppId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/sub-applications/{sub_app_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/sub-applications/{sub_app_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSubAppRequest);
-            var response = await DoHttpRequestAsync("PUT",request);
+            var response = await DoHttpRequestAsync("PUT", request);
             return JsonUtils.DeSerializeNull<UpdateSubAppResponse>(response);
         }
 
@@ -498,7 +498,7 @@ namespace HuaweiCloud.SDK.Aom.V3
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("sub_app_id", updateSubAppRequest.SubAppId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/sub-applications/{sub_app_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/sub-applications/{sub_app_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSubAppRequest);
             return new AsyncInvoker<UpdateSubAppResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateSubAppResponse>);
         }

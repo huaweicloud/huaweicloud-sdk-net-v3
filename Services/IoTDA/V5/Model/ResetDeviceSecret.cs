@@ -28,6 +28,12 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         [JsonProperty("force_disconnect", NullValueHandling = NullValueHandling.Ignore)]
         public bool? ForceDisconnect { get; set; }
 
+        /// <summary>
+        /// **参数说明**：重置设备秘钥的的类型。 **取值范围**： - PRIMARY：重置主秘钥。设备秘钥鉴权优先使用的密钥，当设备接入物联网平台时，平台将优先使用主密钥进行校验。 - SECONDARY：重置辅秘钥。设备的备用密钥，当主密钥校验不通过时，会启用辅密钥校验，辅密钥与主密钥有相同的效力；辅密钥对coap协议接入的设备不生效。
+        /// </summary>
+        [JsonProperty("secret_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string SecretType { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +45,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             sb.Append("class ResetDeviceSecret {\n");
             sb.Append("  secret: ").Append(Secret).Append("\n");
             sb.Append("  forceDisconnect: ").Append(ForceDisconnect).Append("\n");
+            sb.Append("  secretType: ").Append(SecretType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -69,6 +76,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.ForceDisconnect == input.ForceDisconnect ||
                     (this.ForceDisconnect != null &&
                     this.ForceDisconnect.Equals(input.ForceDisconnect))
+                ) && 
+                (
+                    this.SecretType == input.SecretType ||
+                    (this.SecretType != null &&
+                    this.SecretType.Equals(input.SecretType))
                 );
         }
 
@@ -84,6 +96,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     hashCode = hashCode * 59 + this.Secret.GetHashCode();
                 if (this.ForceDisconnect != null)
                     hashCode = hashCode * 59 + this.ForceDisconnect.GetHashCode();
+                if (this.SecretType != null)
+                    hashCode = hashCode * 59 + this.SecretType.GetHashCode();
                 return hashCode;
             }
         }

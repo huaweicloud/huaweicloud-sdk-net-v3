@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Nat.V2.Model
 {
     /// <summary>
-    /// 
+    /// 更新SNAT规则的请求体。
     /// </summary>
     public class UpdateNatGatewaySnatRuleOption 
     {

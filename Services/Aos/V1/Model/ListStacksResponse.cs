@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
     {
 
         /// <summary>
-        /// 资源栈列表。默认按照生成时间排序，最早生成的在最前
+        /// 资源栈列表。默认按照生成时间降序排序，最新生成的在最前
         /// </summary>
         [JsonProperty("stacks", NullValueHandling = NullValueHandling.Ignore)]
         public List<Stack> Stacks { get; set; }

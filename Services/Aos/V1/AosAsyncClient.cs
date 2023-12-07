@@ -44,9 +44,9 @@ namespace HuaweiCloud.SDK.Aos.V1
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_name", applyExecutionPlanRequest.StackName.ToString());
             urlParam.Add("execution_plan_name", applyExecutionPlanRequest.ExecutionPlanName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans/{execution_plan_name}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans/{execution_plan_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", applyExecutionPlanRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<ApplyExecutionPlanResponse>(response);
         }
 
@@ -55,7 +55,7 @@ namespace HuaweiCloud.SDK.Aos.V1
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_name", applyExecutionPlanRequest.StackName.ToString());
             urlParam.Add("execution_plan_name", applyExecutionPlanRequest.ExecutionPlanName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans/{execution_plan_name}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans/{execution_plan_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", applyExecutionPlanRequest);
             return new AsyncInvoker<ApplyExecutionPlanResponse>(this, "POST", request, JsonUtils.DeSerialize<ApplyExecutionPlanResponse>);
         }
@@ -85,9 +85,9 @@ namespace HuaweiCloud.SDK.Aos.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_name", createExecutionPlanRequest.StackName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createExecutionPlanRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<CreateExecutionPlanResponse>(response);
         }
 
@@ -95,7 +95,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_name", createExecutionPlanRequest.StackName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createExecutionPlanRequest);
             return new AsyncInvoker<CreateExecutionPlanResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateExecutionPlanResponse>);
         }
@@ -116,9 +116,9 @@ namespace HuaweiCloud.SDK.Aos.V1
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_name", deleteExecutionPlanRequest.StackName.ToString());
             urlParam.Add("execution_plan_name", deleteExecutionPlanRequest.ExecutionPlanName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans/{execution_plan_name}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans/{execution_plan_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteExecutionPlanRequest);
-            var response = await DoHttpRequestAsync("DELETE",request);
+            var response = await DoHttpRequestAsync("DELETE", request);
             return JsonUtils.DeSerializeNull<DeleteExecutionPlanResponse>(response);
         }
 
@@ -127,7 +127,7 @@ namespace HuaweiCloud.SDK.Aos.V1
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_name", deleteExecutionPlanRequest.StackName.ToString());
             urlParam.Add("execution_plan_name", deleteExecutionPlanRequest.ExecutionPlanName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans/{execution_plan_name}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans/{execution_plan_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteExecutionPlanRequest);
             return new AsyncInvoker<DeleteExecutionPlanResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteExecutionPlanResponse>);
         }
@@ -195,9 +195,9 @@ namespace HuaweiCloud.SDK.Aos.V1
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_name", estimateExecutionPlanPriceRequest.StackName.ToString());
             urlParam.Add("execution_plan_name", estimateExecutionPlanPriceRequest.ExecutionPlanName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans/{execution_plan_name}/prices",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans/{execution_plan_name}/prices", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", estimateExecutionPlanPriceRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<EstimateExecutionPlanPriceResponse>(response);
         }
 
@@ -206,7 +206,7 @@ namespace HuaweiCloud.SDK.Aos.V1
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_name", estimateExecutionPlanPriceRequest.StackName.ToString());
             urlParam.Add("execution_plan_name", estimateExecutionPlanPriceRequest.ExecutionPlanName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans/{execution_plan_name}/prices",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans/{execution_plan_name}/prices", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", estimateExecutionPlanPriceRequest);
             return new AsyncInvoker<EstimateExecutionPlanPriceResponse>(this, "GET", request, JsonUtils.DeSerialize<EstimateExecutionPlanPriceResponse>);
         }
@@ -227,9 +227,9 @@ namespace HuaweiCloud.SDK.Aos.V1
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_name", getExecutionPlanRequest.StackName.ToString());
             urlParam.Add("execution_plan_name", getExecutionPlanRequest.ExecutionPlanName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans/{execution_plan_name}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans/{execution_plan_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getExecutionPlanRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<GetExecutionPlanResponse>(response);
         }
 
@@ -238,7 +238,7 @@ namespace HuaweiCloud.SDK.Aos.V1
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_name", getExecutionPlanRequest.StackName.ToString());
             urlParam.Add("execution_plan_name", getExecutionPlanRequest.ExecutionPlanName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans/{execution_plan_name}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans/{execution_plan_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getExecutionPlanRequest);
             return new AsyncInvoker<GetExecutionPlanResponse>(this, "GET", request, JsonUtils.DeSerialize<GetExecutionPlanResponse>);
         }
@@ -261,9 +261,9 @@ namespace HuaweiCloud.SDK.Aos.V1
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_name", getExecutionPlanMetadataRequest.StackName.ToString());
             urlParam.Add("execution_plan_name", getExecutionPlanMetadataRequest.ExecutionPlanName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans/{execution_plan_name}/metadata",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans/{execution_plan_name}/metadata", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getExecutionPlanMetadataRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<GetExecutionPlanMetadataResponse>(response);
         }
 
@@ -272,7 +272,7 @@ namespace HuaweiCloud.SDK.Aos.V1
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_name", getExecutionPlanMetadataRequest.StackName.ToString());
             urlParam.Add("execution_plan_name", getExecutionPlanMetadataRequest.ExecutionPlanName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans/{execution_plan_name}/metadata",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans/{execution_plan_name}/metadata", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getExecutionPlanMetadataRequest);
             return new AsyncInvoker<GetExecutionPlanMetadataResponse>(this, "GET", request, JsonUtils.DeSerialize<GetExecutionPlanMetadataResponse>);
         }
@@ -284,7 +284,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// 
         /// 列举当前局点下用户指定资源栈下所有的执行计划
         /// 
-        ///   * 默认按照生成时间排序，最早生成的在最前
+        ///   * 默认按照生成时间降序排序，最新生成的在最前
         ///   * 注意：目前暂时返回全量执行计划信息，即不支持分页
         ///   * 如果指定的资源栈下没有任何执行计划，则返回空list
         ///   * 如果指定的资源栈不存在，则返回404
@@ -297,9 +297,9 @@ namespace HuaweiCloud.SDK.Aos.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_name", listExecutionPlansRequest.StackName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listExecutionPlansRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ListExecutionPlansResponse>(response);
         }
 
@@ -307,7 +307,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_name", listExecutionPlansRequest.StackName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listExecutionPlansRequest);
             return new AsyncInvoker<ListExecutionPlansResponse>(this, "GET", request, JsonUtils.DeSerialize<ListExecutionPlansResponse>);
         }
@@ -329,9 +329,9 @@ namespace HuaweiCloud.SDK.Aos.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_name", continueDeployStackRequest.StackName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/continuations",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/continuations", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", continueDeployStackRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<ContinueDeployStackResponse>(response);
         }
 
@@ -339,7 +339,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_name", continueDeployStackRequest.StackName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/continuations",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/continuations", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", continueDeployStackRequest);
             return new AsyncInvoker<ContinueDeployStackResponse>(this, "POST", request, JsonUtils.DeSerialize<ContinueDeployStackResponse>);
         }
@@ -362,9 +362,9 @@ namespace HuaweiCloud.SDK.Aos.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_name", continueRollbackStackRequest.StackName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/rollbacks",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/rollbacks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", continueRollbackStackRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<ContinueRollbackStackResponse>(response);
         }
 
@@ -372,7 +372,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_name", continueRollbackStackRequest.StackName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/rollbacks",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/rollbacks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", continueRollbackStackRequest);
             return new AsyncInvoker<ContinueRollbackStackResponse>(this, "POST", request, JsonUtils.DeSerialize<ContinueRollbackStackResponse>);
         }
@@ -390,16 +390,16 @@ namespace HuaweiCloud.SDK.Aos.V1
         public async Task<CreateStackResponse> CreateStackAsync(CreateStackRequest createStackRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createStackRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<CreateStackResponse>(response);
         }
 
         public AsyncInvoker<CreateStackResponse> CreateStackAsyncInvoker(CreateStackRequest createStackRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createStackRequest);
             return new AsyncInvoker<CreateStackResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateStackResponse>);
         }
@@ -428,9 +428,9 @@ namespace HuaweiCloud.SDK.Aos.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_name", deleteStackRequest.StackName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteStackRequest);
-            var response = await DoHttpRequestAsync("DELETE",request);
+            var response = await DoHttpRequestAsync("DELETE", request);
             return JsonUtils.DeSerializeNull<DeleteStackResponse>(response);
         }
 
@@ -438,7 +438,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_name", deleteStackRequest.StackName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteStackRequest);
             return new AsyncInvoker<DeleteStackResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteStackResponse>);
         }
@@ -469,9 +469,9 @@ namespace HuaweiCloud.SDK.Aos.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_name", deleteStackEnhancedRequest.StackName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/deletion",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/deletion", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteStackEnhancedRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerializeNull<DeleteStackEnhancedResponse>(response);
         }
 
@@ -479,7 +479,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_name", deleteStackEnhancedRequest.StackName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/deletion",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/deletion", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteStackEnhancedRequest);
             return new AsyncInvoker<DeleteStackEnhancedResponse>(this, "POST", request, JsonUtils.DeSerializeNull<DeleteStackEnhancedResponse>);
         }
@@ -505,9 +505,9 @@ namespace HuaweiCloud.SDK.Aos.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_name", deployStackRequest.StackName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/deployments",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/deployments", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deployStackRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<DeployStackResponse>(response);
         }
 
@@ -515,7 +515,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_name", deployStackRequest.StackName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/deployments",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/deployments", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deployStackRequest);
             return new AsyncInvoker<DeployStackResponse>(this, "POST", request, JsonUtils.DeSerialize<DeployStackResponse>);
         }
@@ -552,9 +552,9 @@ namespace HuaweiCloud.SDK.Aos.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_name", getStackMetadataRequest.StackName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/metadata",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/metadata", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getStackMetadataRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<GetStackMetadataResponse>(response);
         }
 
@@ -562,7 +562,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_name", getStackMetadataRequest.StackName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/metadata",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/metadata", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getStackMetadataRequest);
             return new AsyncInvoker<GetStackMetadataResponse>(this, "GET", request, JsonUtils.DeSerialize<GetStackMetadataResponse>);
         }
@@ -600,9 +600,9 @@ namespace HuaweiCloud.SDK.Aos.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_name", getStackTemplateRequest.StackName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/templates",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/templates", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getStackTemplateRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerializeNull<GetStackTemplateResponse>(response);
         }
 
@@ -610,7 +610,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_name", getStackTemplateRequest.StackName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/templates",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/templates", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getStackTemplateRequest);
             return new AsyncInvoker<GetStackTemplateResponse>(this, "GET", request, JsonUtils.DeSerializeNull<GetStackTemplateResponse>);
         }
@@ -634,9 +634,9 @@ namespace HuaweiCloud.SDK.Aos.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_name", listStackEventsRequest.StackName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/events",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/events", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStackEventsRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ListStackEventsResponse>(response);
         }
 
@@ -644,7 +644,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_name", listStackEventsRequest.StackName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/events",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/events", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStackEventsRequest);
             return new AsyncInvoker<ListStackEventsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListStackEventsResponse>);
         }
@@ -671,9 +671,9 @@ namespace HuaweiCloud.SDK.Aos.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_name", listStackOutputsRequest.StackName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/outputs",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/outputs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStackOutputsRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ListStackOutputsResponse>(response);
         }
 
@@ -681,7 +681,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_name", listStackOutputsRequest.StackName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/outputs",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/outputs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStackOutputsRequest);
             return new AsyncInvoker<ListStackOutputsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListStackOutputsResponse>);
         }
@@ -706,9 +706,9 @@ namespace HuaweiCloud.SDK.Aos.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_name", listStackResourcesRequest.StackName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/resources",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/resources", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStackResourcesRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ListStackResourcesResponse>(response);
         }
 
@@ -716,7 +716,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_name", listStackResourcesRequest.StackName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/resources",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/resources", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStackResourcesRequest);
             return new AsyncInvoker<ListStackResourcesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListStackResourcesResponse>);
         }
@@ -728,7 +728,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// 
         /// 此API用于列举当前局点下用户所有的资源栈
         /// 
-        ///   * 默认按照生成时间排序，最早生成的在最前
+        ///   * 默认按照生成时间降序排序，最新生成的在最前
         ///   * 注意：目前暂时返回全量资源栈信息，即不支持分页
         ///   * 如果没有任何资源栈，则返回空list
         /// 
@@ -739,16 +739,16 @@ namespace HuaweiCloud.SDK.Aos.V1
         public async Task<ListStacksResponse> ListStacksAsync(ListStacksRequest listStacksRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStacksRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ListStacksResponse>(response);
         }
 
         public AsyncInvoker<ListStacksResponse> ListStacksAsyncInvoker(ListStacksRequest listStacksRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStacksRequest);
             return new AsyncInvoker<ListStacksResponse>(this, "GET", request, JsonUtils.DeSerialize<ListStacksResponse>);
         }
@@ -782,9 +782,9 @@ namespace HuaweiCloud.SDK.Aos.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_name", updateStackRequest.StackName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateStackRequest);
-            var response = await DoHttpRequestAsync("PATCH",request);
+            var response = await DoHttpRequestAsync("PATCH", request);
             return JsonUtils.DeSerializeNull<UpdateStackResponse>(response);
         }
 
@@ -792,7 +792,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_name", updateStackRequest.StackName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateStackRequest);
             return new AsyncInvoker<UpdateStackResponse>(this, "PATCH", request, JsonUtils.DeSerializeNull<UpdateStackResponse>);
         }
@@ -818,9 +818,9 @@ namespace HuaweiCloud.SDK.Aos.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_set_name", createStackInstanceRequest.StackSetName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createStackInstanceRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<CreateStackInstanceResponse>(response);
         }
 
@@ -828,7 +828,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_set_name", createStackInstanceRequest.StackSetName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createStackInstanceRequest);
             return new AsyncInvoker<CreateStackInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateStackInstanceResponse>);
         }
@@ -845,16 +845,16 @@ namespace HuaweiCloud.SDK.Aos.V1
         public async Task<CreateStackSetResponse> CreateStackSetAsync(CreateStackSetRequest createStackSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createStackSetRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<CreateStackSetResponse>(response);
         }
 
         public AsyncInvoker<CreateStackSetResponse> CreateStackSetAsyncInvoker(CreateStackSetRequest createStackSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createStackSetRequest);
             return new AsyncInvoker<CreateStackSetResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateStackSetResponse>);
         }
@@ -876,9 +876,9 @@ namespace HuaweiCloud.SDK.Aos.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_set_name", deleteStackInstanceRequest.StackSetName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances/deletion", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteStackInstanceRequest);
-            var response = await DoHttpRequestAsync("DELETE",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<DeleteStackInstanceResponse>(response);
         }
 
@@ -886,9 +886,41 @@ namespace HuaweiCloud.SDK.Aos.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_set_name", deleteStackInstanceRequest.StackSetName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances/deletion", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteStackInstanceRequest);
-            return new AsyncInvoker<DeleteStackInstanceResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteStackInstanceResponse>);
+            return new AsyncInvoker<DeleteStackInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<DeleteStackInstanceResponse>);
+        }
+        
+        /// <summary>
+        /// 删除资源栈实例-已废弃
+        ///
+        /// 删除资源栈实例-被废弃（DeleteStackInstanceDeprecated）
+        /// 
+        /// 此API用于删除指定资源栈集下指定局点（region）或指定成员账户（domain_id）的资源栈实例，并返回资源栈集操作ID（stack_set_operation_id）
+        /// 
+        /// **请谨慎操作，删除资源栈实例将会删除与该资源栈实例相关的堆栈以及堆栈所管理的一切资源。**
+        /// 
+        /// * 用户可以根据资源栈集操作ID（stack_set_operation_id），通过ShowStackSetOperationMetadata API获取资源栈集操作状态
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteStackInstanceDeprecatedResponse> DeleteStackInstanceDeprecatedAsync(DeleteStackInstanceDeprecatedRequest deleteStackInstanceDeprecatedRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_set_name", deleteStackInstanceDeprecatedRequest.StackSetName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteStackInstanceDeprecatedRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteStackInstanceDeprecatedResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteStackInstanceDeprecatedResponse> DeleteStackInstanceDeprecatedAsyncInvoker(DeleteStackInstanceDeprecatedRequest deleteStackInstanceDeprecatedRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("stack_set_name", deleteStackInstanceDeprecatedRequest.StackSetName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteStackInstanceDeprecatedRequest);
+            return new AsyncInvoker<DeleteStackInstanceDeprecatedResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteStackInstanceDeprecatedResponse>);
         }
         
         /// <summary>
@@ -898,7 +930,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// 
         /// **请谨慎操作，删除资源栈集将会删除与该资源栈集相关的所有数据，如：资源栈集操作、资源栈集操作事件等。**
         /// 
-        /// 当且仅当指定的资源栈集满足以下所有条件时，资源栈集才能被成功删除，否则会报错
+        /// 当且仅当指定的资源栈集满足以下所有条件时，资源栈集才能被成功删除，否则会报错：
         ///   * 资源栈集下没有资源栈实例
         ///   * 资源栈集状态处于空闲（&#x60;IDLE&#x60;）状态
         /// 
@@ -908,9 +940,9 @@ namespace HuaweiCloud.SDK.Aos.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_set_name", deleteStackSetRequest.StackSetName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteStackSetRequest);
-            var response = await DoHttpRequestAsync("DELETE",request);
+            var response = await DoHttpRequestAsync("DELETE", request);
             return JsonUtils.DeSerializeNull<DeleteStackSetResponse>(response);
         }
 
@@ -918,7 +950,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_set_name", deleteStackSetRequest.StackSetName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteStackSetRequest);
             return new AsyncInvoker<DeleteStackSetResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteStackSetResponse>);
         }
@@ -946,9 +978,9 @@ namespace HuaweiCloud.SDK.Aos.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_set_name", deployStackSetRequest.StackSetName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/deployments",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/deployments", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deployStackSetRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<DeployStackSetResponse>(response);
         }
 
@@ -956,7 +988,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_set_name", deployStackSetRequest.StackSetName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/deployments",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/deployments", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deployStackSetRequest);
             return new AsyncInvoker<DeployStackSetResponse>(this, "POST", request, JsonUtils.DeSerialize<DeployStackSetResponse>);
         }
@@ -969,7 +1001,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// 此API用于列举指定资源栈集下指定局点（region）或指定成员账户（stack_domain_id）或全部资源栈实例
         /// 
         /// * 可以使用filter作为过滤器，过滤出指定局点（region）或指定成员账户（stack_domain_id）下的资源栈实例
-        /// * 可以使用sort_key和sort_dir两个关键字对返回结果按创建时间（create_time）进行排序。给予的sort_key和sort_dir数量须一致，否则返回400。若未给予sort_key和sort_dir，则默认按照创建时间升序排序。
+        /// * 可以使用sort_key和sort_dir两个关键字对返回结果按创建时间（create_time）进行排序。给予的sort_key和sort_dir数量须一致，否则返回400。若未给予sort_key和sort_dir，则默认按照创建时间降序排序。
         /// * 若指定资源栈集下没有任何资源栈实例，则返回空list
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
@@ -978,9 +1010,9 @@ namespace HuaweiCloud.SDK.Aos.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_set_name", listStackInstancesRequest.StackSetName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStackInstancesRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ListStackInstancesResponse>(response);
         }
 
@@ -988,7 +1020,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_set_name", listStackInstancesRequest.StackSetName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStackInstancesRequest);
             return new AsyncInvoker<ListStackInstancesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListStackInstancesResponse>);
         }
@@ -1001,7 +1033,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// 列举指定资源栈集下所有的资源栈集的操作。
         /// 
         /// 可以使用filter作为过滤器，过滤出指定操作状态（status）或操作类型（action）下的资源栈集操作。
-        /// 可以使用sort_key和sort_dir两个关键字对返回结果按创建时间（create_time）进行排序。给予的sort_key和sort_dir数量须一致，否则返回400。若未给予sort_key和sort_dir，则默认按照创建时间升序排序。
+        /// 可以使用sort_key和sort_dir两个关键字对返回结果按创建时间（create_time）进行排序。给予的sort_key和sort_dir数量须一致，否则返回400。若未给予sort_key和sort_dir，则默认按照创建时间降序排序。
         /// 若指定资源栈集下没有任何资源栈集操作，则返回空list。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
@@ -1010,9 +1042,9 @@ namespace HuaweiCloud.SDK.Aos.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_set_name", listStackSetOperationsRequest.StackSetName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/operations",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/operations", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStackSetOperationsRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ListStackSetOperationsResponse>(response);
         }
 
@@ -1020,7 +1052,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_set_name", listStackSetOperationsRequest.StackSetName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/operations",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/operations", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStackSetOperationsRequest);
             return new AsyncInvoker<ListStackSetOperationsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListStackSetOperationsResponse>);
         }
@@ -1033,7 +1065,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// 此API用于列举当前用户（domain）当前局点（region）下全部资源栈集。
         /// 
         /// * 可以使用filter作为过滤器，过滤出指定权限模型（permission_model）下的资源栈集。
-        /// * 可以使用sort_key和sort_dir两个关键字对返回结果按创建时间（create_time）进行排序。给予的sort_key和sort_dir数量须一致，否则返回400。若未给予sort_key和sort_dir，则默认按照创建时间升序排序。
+        /// * 可以使用sort_key和sort_dir两个关键字对返回结果按创建时间（create_time）进行排序。给予的sort_key和sort_dir数量须一致，否则返回400。若未给予sort_key和sort_dir，则默认按照创建时间降序排序。
         /// * 注意：目前暂时返回全量资源栈集信息，即不支持分页
         /// * 如果没有任何资源栈集，则返回空list
         /// 
@@ -1042,16 +1074,16 @@ namespace HuaweiCloud.SDK.Aos.V1
         public async Task<ListStackSetsResponse> ListStackSetsAsync(ListStackSetsRequest listStackSetsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStackSetsRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ListStackSetsResponse>(response);
         }
 
         public AsyncInvoker<ListStackSetsResponse> ListStackSetsAsyncInvoker(ListStackSetsRequest listStackSetsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStackSetsRequest);
             return new AsyncInvoker<ListStackSetsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListStackSetsResponse>);
         }
@@ -1070,9 +1102,9 @@ namespace HuaweiCloud.SDK.Aos.V1
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_set_name", showStackInstanceRequest.StackSetName.ToString());
             urlParam.Add("stack_instance_addr", showStackInstanceRequest.StackInstanceAddr.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances/{stack_instance_addr}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances/{stack_instance_addr}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStackInstanceRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowStackInstanceResponse>(response);
         }
 
@@ -1081,7 +1113,7 @@ namespace HuaweiCloud.SDK.Aos.V1
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_set_name", showStackInstanceRequest.StackSetName.ToString());
             urlParam.Add("stack_instance_addr", showStackInstanceRequest.StackInstanceAddr.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances/{stack_instance_addr}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances/{stack_instance_addr}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStackInstanceRequest);
             return new AsyncInvoker<ShowStackInstanceResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowStackInstanceResponse>);
         }
@@ -1099,9 +1131,9 @@ namespace HuaweiCloud.SDK.Aos.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_set_name", showStackSetMetadataRequest.StackSetName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/metadata",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/metadata", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStackSetMetadataRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowStackSetMetadataResponse>(response);
         }
 
@@ -1109,7 +1141,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_set_name", showStackSetMetadataRequest.StackSetName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/metadata",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/metadata", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStackSetMetadataRequest);
             return new AsyncInvoker<ShowStackSetMetadataResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowStackSetMetadataResponse>);
         }
@@ -1130,9 +1162,9 @@ namespace HuaweiCloud.SDK.Aos.V1
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_set_name", showStackSetOperationMetadataRequest.StackSetName.ToString());
             urlParam.Add("stack_set_operation_id", showStackSetOperationMetadataRequest.StackSetOperationId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/operations/{stack_set_operation_id}/metadata",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/operations/{stack_set_operation_id}/metadata", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStackSetOperationMetadataRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowStackSetOperationMetadataResponse>(response);
         }
 
@@ -1141,7 +1173,7 @@ namespace HuaweiCloud.SDK.Aos.V1
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_set_name", showStackSetOperationMetadataRequest.StackSetName.ToString());
             urlParam.Add("stack_set_operation_id", showStackSetOperationMetadataRequest.StackSetOperationId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/operations/{stack_set_operation_id}/metadata",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/operations/{stack_set_operation_id}/metadata", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStackSetOperationMetadataRequest);
             return new AsyncInvoker<ShowStackSetOperationMetadataResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowStackSetOperationMetadataResponse>);
         }
@@ -1162,9 +1194,9 @@ namespace HuaweiCloud.SDK.Aos.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_set_name", showStackSetTemplateRequest.StackSetName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/templates",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/templates", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStackSetTemplateRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerializeNull<ShowStackSetTemplateResponse>(response);
         }
 
@@ -1172,7 +1204,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_set_name", showStackSetTemplateRequest.StackSetName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/templates",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/templates", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStackSetTemplateRequest);
             return new AsyncInvoker<ShowStackSetTemplateResponse>(this, "GET", request, JsonUtils.DeSerializeNull<ShowStackSetTemplateResponse>);
         }
@@ -1200,9 +1232,9 @@ namespace HuaweiCloud.SDK.Aos.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_set_name", updateStackInstancesRequest.StackSetName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateStackInstancesRequest);
-            var response = await DoHttpRequestAsync("PATCH",request);
+            var response = await DoHttpRequestAsync("PATCH", request);
             return JsonUtils.DeSerialize<UpdateStackInstancesResponse>(response);
         }
 
@@ -1210,7 +1242,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_set_name", updateStackInstancesRequest.StackSetName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateStackInstancesRequest);
             return new AsyncInvoker<UpdateStackInstancesResponse>(this, "PATCH", request, JsonUtils.DeSerialize<UpdateStackInstancesResponse>);
         }
@@ -1220,13 +1252,13 @@ namespace HuaweiCloud.SDK.Aos.V1
         ///
         /// 更新资源栈集（UpdateStackSet）
         /// 
-        /// 该API可以根据用户给予的信息对资源栈集的属性进行更新，可以更新资源栈集的“stack_set_description”、\&quot;initial_stack_description\&quot;、\&quot;permission_model\&quot;、“administration_agency_name”、\&quot;managed_agency_name\&quot;五个属性中的一个或多个。
+        /// 该API可以根据用户给予的信息对资源栈集的属性进行更新，可以更新资源栈集的“stack_set_description”、\&quot;initial_stack_description\&quot;、\&quot;permission_model\&quot;、“administration_agency_name”、\&quot;managed_agency_name\&quot;、“administration_agency_urn”六个属性中的一个或多个。
         /// 
         /// 该API只会更新用户给予的信息中所涉及的字段；若某字段未给予，则不会对该资源栈集属性进行更新。
         /// 
         /// 注：
         ///   * 所有属性的更新都是覆盖式更新。即，所给予的参数将被完全覆盖至资源栈已有的属性上。
-        ///   * 只有在permission_model&#x3D;self_managed时，才可更新administration_agency_name和managed_agency_name。
+        ///   * 只有在permission_model&#x3D;SELF_MANAGED时，才可更新administration_agency_name、managed_agency_name和administration_agency_urn。
         ///   * permission_model目前只支持更新SELF_MANAGED
         ///   * 若资源栈集的状态是OPERATION_IN_PROGRESS，不允许更新资源栈集。
         /// 
@@ -1236,9 +1268,9 @@ namespace HuaweiCloud.SDK.Aos.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_set_name", updateStackSetRequest.StackSetName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateStackSetRequest);
-            var response = await DoHttpRequestAsync("PATCH",request);
+            var response = await DoHttpRequestAsync("PATCH", request);
             return JsonUtils.DeSerializeNull<UpdateStackSetResponse>(response);
         }
 
@@ -1246,7 +1278,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("stack_set_name", updateStackSetRequest.StackSetName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateStackSetRequest);
             return new AsyncInvoker<UpdateStackSetResponse>(this, "PATCH", request, JsonUtils.DeSerializeNull<UpdateStackSetResponse>);
         }
@@ -1267,16 +1299,16 @@ namespace HuaweiCloud.SDK.Aos.V1
         public async Task<ParseTemplateVariablesResponse> ParseTemplateVariablesAsync(ParseTemplateVariablesRequest parseTemplateVariablesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/template-analyses/variables",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/template-analyses/variables", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", parseTemplateVariablesRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<ParseTemplateVariablesResponse>(response);
         }
 
         public AsyncInvoker<ParseTemplateVariablesResponse> ParseTemplateVariablesAsyncInvoker(ParseTemplateVariablesRequest parseTemplateVariablesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/template-analyses/variables",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/template-analyses/variables", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", parseTemplateVariablesRequest);
             return new AsyncInvoker<ParseTemplateVariablesResponse>(this, "POST", request, JsonUtils.DeSerialize<ParseTemplateVariablesResponse>);
         }
@@ -1297,9 +1329,9 @@ namespace HuaweiCloud.SDK.Aos.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("template_name", deleteTemplateRequest.TemplateName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTemplateRequest);
-            var response = await DoHttpRequestAsync("DELETE",request);
+            var response = await DoHttpRequestAsync("DELETE", request);
             return JsonUtils.DeSerializeNull<DeleteTemplateResponse>(response);
         }
 
@@ -1307,7 +1339,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("template_name", deleteTemplateRequest.TemplateName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTemplateRequest);
             return new AsyncInvoker<DeleteTemplateResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteTemplateResponse>);
         }
@@ -1331,9 +1363,9 @@ namespace HuaweiCloud.SDK.Aos.V1
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("template_name", deleteTemplateVersionRequest.TemplateName.ToString());
             urlParam.Add("version_id", deleteTemplateVersionRequest.VersionId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/versions/{version_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/versions/{version_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTemplateVersionRequest);
-            var response = await DoHttpRequestAsync("DELETE",request);
+            var response = await DoHttpRequestAsync("DELETE", request);
             return JsonUtils.DeSerializeNull<DeleteTemplateVersionResponse>(response);
         }
 
@@ -1342,7 +1374,7 @@ namespace HuaweiCloud.SDK.Aos.V1
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("template_name", deleteTemplateVersionRequest.TemplateName.ToString());
             urlParam.Add("version_id", deleteTemplateVersionRequest.VersionId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/versions/{version_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/versions/{version_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTemplateVersionRequest);
             return new AsyncInvoker<DeleteTemplateVersionResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteTemplateVersionResponse>);
         }
@@ -1354,7 +1386,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// 
         /// 此API用于列举模板下所有的模板版本信息
         /// 
-        ///   * 默认按照生成时间排序，最早生成的模板排列在最前面
+        ///   * 默认按照生成时间降序排序，最新生成的模板排列在最前面
         ///   * 注意：目前返回全量模板版本信息，即不支持分页
         ///   * 如果没有任何模板版本，则返回空list
         ///   * template_id是模板的唯一Id。此Id由资源编排服务在生成模板的时候生成，为UUID。由于模板名仅仅在同一时间下唯一，即用户允许先生成一个叫HelloWorld的模板，删除，再重新创建一个同名模板。对于团队并行开发，用户可能希望确保，当前我操作的模板就是我认为的那个，而不是其他队友删除后创建的同名模板。因此，使用ID就可以做到强匹配。资源编排服务保证每次创建的模板所对应的ID都不相同，更新不会影响ID。如果给与的template_id和当前模板管理的ID不一致，则返回400
@@ -1368,9 +1400,9 @@ namespace HuaweiCloud.SDK.Aos.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("template_name", listTemplateVersionsRequest.TemplateName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/versions",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/versions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTemplateVersionsRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ListTemplateVersionsResponse>(response);
         }
 
@@ -1378,7 +1410,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("template_name", listTemplateVersionsRequest.TemplateName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/versions",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/versions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTemplateVersionsRequest);
             return new AsyncInvoker<ListTemplateVersionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListTemplateVersionsResponse>);
         }
@@ -1390,7 +1422,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// 
         /// 此API用于列举当前局点下用户所有的模板
         /// 
-        ///   * 默认按照生成时间排序，最早生成的模板排列在最前面
+        ///   * 默认按照生成时间降序排序，最新生成的模板排列在最前面
         ///   * 注意：目前返回全量模板信息，即不支持分页
         ///   * 如果没有任何模板，则返回空list
         ///   * 若用户需要详细的模板版本信息，请调用ListTemplateVersions
@@ -1402,16 +1434,16 @@ namespace HuaweiCloud.SDK.Aos.V1
         public async Task<ListTemplatesResponse> ListTemplatesAsync(ListTemplatesRequest listTemplatesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTemplatesRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ListTemplatesResponse>(response);
         }
 
         public AsyncInvoker<ListTemplatesResponse> ListTemplatesAsyncInvoker(ListTemplatesRequest listTemplatesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTemplatesRequest);
             return new AsyncInvoker<ListTemplatesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListTemplatesResponse>);
         }
@@ -1433,9 +1465,9 @@ namespace HuaweiCloud.SDK.Aos.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("template_name", showTemplateMetadataRequest.TemplateName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/metadata",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/metadata", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTemplateMetadataRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowTemplateMetadataResponse>(response);
         }
 
@@ -1443,7 +1475,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("template_name", showTemplateMetadataRequest.TemplateName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/metadata",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/metadata", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTemplateMetadataRequest);
             return new AsyncInvoker<ShowTemplateMetadataResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTemplateMetadataResponse>);
         }
@@ -1467,9 +1499,9 @@ namespace HuaweiCloud.SDK.Aos.V1
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("template_name", showTemplateVersionContentRequest.TemplateName.ToString());
             urlParam.Add("version_id", showTemplateVersionContentRequest.VersionId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/versions/{version_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/versions/{version_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTemplateVersionContentRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerializeNull<ShowTemplateVersionContentResponse>(response);
         }
 
@@ -1478,7 +1510,7 @@ namespace HuaweiCloud.SDK.Aos.V1
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("template_name", showTemplateVersionContentRequest.TemplateName.ToString());
             urlParam.Add("version_id", showTemplateVersionContentRequest.VersionId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/versions/{version_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/versions/{version_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTemplateVersionContentRequest);
             return new AsyncInvoker<ShowTemplateVersionContentResponse>(this, "GET", request, JsonUtils.DeSerializeNull<ShowTemplateVersionContentResponse>);
         }
@@ -1501,9 +1533,9 @@ namespace HuaweiCloud.SDK.Aos.V1
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("template_name", showTemplateVersionMetadataRequest.TemplateName.ToString());
             urlParam.Add("version_id", showTemplateVersionMetadataRequest.VersionId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/versions/{version_id}/metadata",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/versions/{version_id}/metadata", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTemplateVersionMetadataRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowTemplateVersionMetadataResponse>(response);
         }
 
@@ -1512,7 +1544,7 @@ namespace HuaweiCloud.SDK.Aos.V1
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("template_name", showTemplateVersionMetadataRequest.TemplateName.ToString());
             urlParam.Add("version_id", showTemplateVersionMetadataRequest.VersionId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/versions/{version_id}/metadata",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/versions/{version_id}/metadata", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTemplateVersionMetadataRequest);
             return new AsyncInvoker<ShowTemplateVersionMetadataResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTemplateVersionMetadataResponse>);
         }
@@ -1532,9 +1564,9 @@ namespace HuaweiCloud.SDK.Aos.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("template_name", updateTemplateMetadataRequest.TemplateName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/metadata",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/metadata", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTemplateMetadataRequest);
-            var response = await DoHttpRequestAsync("PATCH",request);
+            var response = await DoHttpRequestAsync("PATCH", request);
             return JsonUtils.DeSerializeNull<UpdateTemplateMetadataResponse>(response);
         }
 
@@ -1542,7 +1574,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("template_name", updateTemplateMetadataRequest.TemplateName.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/metadata",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/metadata", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTemplateMetadataRequest);
             return new AsyncInvoker<UpdateTemplateMetadataResponse>(this, "PATCH", request, JsonUtils.DeSerializeNull<UpdateTemplateMetadataResponse>);
         }

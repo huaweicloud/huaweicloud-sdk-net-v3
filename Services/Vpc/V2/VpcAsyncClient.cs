@@ -26,9 +26,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("peering_id", acceptVpcPeeringRequest.PeeringId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/vpc/peerings/{peering_id}/accept",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/vpc/peerings/{peering_id}/accept", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", acceptVpcPeeringRequest);
-            var response = await DoHttpRequestAsync("PUT",request);
+            var response = await DoHttpRequestAsync("PUT", request);
             return JsonUtils.DeSerialize<AcceptVpcPeeringResponse>(response);
         }
 
@@ -36,7 +36,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("peering_id", acceptVpcPeeringRequest.PeeringId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/vpc/peerings/{peering_id}/accept",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/vpc/peerings/{peering_id}/accept", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", acceptVpcPeeringRequest);
             return new AsyncInvoker<AcceptVpcPeeringResponse>(this, "PUT", request, JsonUtils.DeSerialize<AcceptVpcPeeringResponse>);
         }
@@ -52,9 +52,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("routetable_id", associateRouteTableRequest.RoutetableId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/routetables/{routetable_id}/action",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/routetables/{routetable_id}/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", associateRouteTableRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<AssociateRouteTableResponse>(response);
         }
 
@@ -62,7 +62,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("routetable_id", associateRouteTableRequest.RoutetableId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/routetables/{routetable_id}/action",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/routetables/{routetable_id}/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", associateRouteTableRequest);
             return new AsyncInvoker<AssociateRouteTableResponse>(this, "POST", request, JsonUtils.DeSerialize<AssociateRouteTableResponse>);
         }
@@ -79,9 +79,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("subnet_id", batchCreateSubnetTagsRequest.SubnetId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/subnets/{subnet_id}/tags/action",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/subnets/{subnet_id}/tags/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchCreateSubnetTagsRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerializeNull<BatchCreateSubnetTagsResponse>(response);
         }
 
@@ -89,7 +89,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("subnet_id", batchCreateSubnetTagsRequest.SubnetId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/subnets/{subnet_id}/tags/action",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/subnets/{subnet_id}/tags/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchCreateSubnetTagsRequest);
             return new AsyncInvoker<BatchCreateSubnetTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchCreateSubnetTagsResponse>);
         }
@@ -106,9 +106,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("subnet_id", batchDeleteSubnetTagsRequest.SubnetId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/subnets/{subnet_id}/tags/action",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/subnets/{subnet_id}/tags/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteSubnetTagsRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerializeNull<BatchDeleteSubnetTagsResponse>(response);
         }
 
@@ -116,7 +116,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("subnet_id", batchDeleteSubnetTagsRequest.SubnetId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/subnets/{subnet_id}/tags/action",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/subnets/{subnet_id}/tags/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteSubnetTagsRequest);
             return new AsyncInvoker<BatchDeleteSubnetTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchDeleteSubnetTagsResponse>);
         }
@@ -133,16 +133,16 @@ namespace HuaweiCloud.SDK.Vpc.V2
         public async Task<CreateFlowLogResponse> CreateFlowLogAsync(CreateFlowLogRequest createFlowLogRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/fl/flow_logs",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/fl/flow_logs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createFlowLogRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<CreateFlowLogResponse>(response);
         }
 
         public AsyncInvoker<CreateFlowLogResponse> CreateFlowLogAsyncInvoker(CreateFlowLogRequest createFlowLogRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/fl/flow_logs",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/fl/flow_logs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createFlowLogRequest);
             return new AsyncInvoker<CreateFlowLogResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateFlowLogResponse>);
         }
@@ -157,16 +157,16 @@ namespace HuaweiCloud.SDK.Vpc.V2
         public async Task<CreatePortResponse> CreatePortAsync(CreatePortRequest createPortRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ports",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ports", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createPortRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<CreatePortResponse>(response);
         }
 
         public AsyncInvoker<CreatePortResponse> CreatePortAsyncInvoker(CreatePortRequest createPortRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ports",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ports", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createPortRequest);
             return new AsyncInvoker<CreatePortResponse>(this, "POST", request, JsonUtils.DeSerialize<CreatePortResponse>);
         }
@@ -181,16 +181,16 @@ namespace HuaweiCloud.SDK.Vpc.V2
         public async Task<CreateRouteTableResponse> CreateRouteTableAsync(CreateRouteTableRequest createRouteTableRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/routetables",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/routetables", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createRouteTableRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<CreateRouteTableResponse>(response);
         }
 
         public AsyncInvoker<CreateRouteTableResponse> CreateRouteTableAsyncInvoker(CreateRouteTableRequest createRouteTableRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/routetables",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/routetables", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createRouteTableRequest);
             return new AsyncInvoker<CreateRouteTableResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateRouteTableResponse>);
         }
@@ -205,16 +205,16 @@ namespace HuaweiCloud.SDK.Vpc.V2
         public async Task<CreateSecurityGroupResponse> CreateSecurityGroupAsync(CreateSecurityGroupRequest createSecurityGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/security-groups",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/security-groups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createSecurityGroupRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<CreateSecurityGroupResponse>(response);
         }
 
         public AsyncInvoker<CreateSecurityGroupResponse> CreateSecurityGroupAsyncInvoker(CreateSecurityGroupRequest createSecurityGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/security-groups",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/security-groups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createSecurityGroupRequest);
             return new AsyncInvoker<CreateSecurityGroupResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateSecurityGroupResponse>);
         }
@@ -229,16 +229,16 @@ namespace HuaweiCloud.SDK.Vpc.V2
         public async Task<CreateSecurityGroupRuleResponse> CreateSecurityGroupRuleAsync(CreateSecurityGroupRuleRequest createSecurityGroupRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/security-group-rules",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/security-group-rules", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createSecurityGroupRuleRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<CreateSecurityGroupRuleResponse>(response);
         }
 
         public AsyncInvoker<CreateSecurityGroupRuleResponse> CreateSecurityGroupRuleAsyncInvoker(CreateSecurityGroupRuleRequest createSecurityGroupRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/security-group-rules",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/security-group-rules", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createSecurityGroupRuleRequest);
             return new AsyncInvoker<CreateSecurityGroupRuleResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateSecurityGroupRuleResponse>);
         }
@@ -253,16 +253,16 @@ namespace HuaweiCloud.SDK.Vpc.V2
         public async Task<CreateSubnetResponse> CreateSubnetAsync(CreateSubnetRequest createSubnetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/subnets",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/subnets", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createSubnetRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<CreateSubnetResponse>(response);
         }
 
         public AsyncInvoker<CreateSubnetResponse> CreateSubnetAsyncInvoker(CreateSubnetRequest createSubnetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/subnets",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/subnets", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createSubnetRequest);
             return new AsyncInvoker<CreateSubnetResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateSubnetResponse>);
         }
@@ -279,9 +279,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("subnet_id", createSubnetTagRequest.SubnetId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/subnets/{subnet_id}/tags",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/subnets/{subnet_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createSubnetTagRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerializeNull<CreateSubnetTagResponse>(response);
         }
 
@@ -289,7 +289,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("subnet_id", createSubnetTagRequest.SubnetId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/subnets/{subnet_id}/tags",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/subnets/{subnet_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createSubnetTagRequest);
             return new AsyncInvoker<CreateSubnetTagResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateSubnetTagResponse>);
         }
@@ -304,16 +304,16 @@ namespace HuaweiCloud.SDK.Vpc.V2
         public async Task<CreateVpcPeeringResponse> CreateVpcPeeringAsync(CreateVpcPeeringRequest createVpcPeeringRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/vpc/peerings",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/vpc/peerings", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createVpcPeeringRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<CreateVpcPeeringResponse>(response);
         }
 
         public AsyncInvoker<CreateVpcPeeringResponse> CreateVpcPeeringAsyncInvoker(CreateVpcPeeringRequest createVpcPeeringRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/vpc/peerings",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/vpc/peerings", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createVpcPeeringRequest);
             return new AsyncInvoker<CreateVpcPeeringResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateVpcPeeringResponse>);
         }
@@ -329,9 +329,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("flowlog_id", deleteFlowLogRequest.FlowlogId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/fl/flow_logs/{flowlog_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/fl/flow_logs/{flowlog_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteFlowLogRequest);
-            var response = await DoHttpRequestAsync("DELETE",request);
+            var response = await DoHttpRequestAsync("DELETE", request);
             return JsonUtils.DeSerializeNull<DeleteFlowLogResponse>(response);
         }
 
@@ -339,7 +339,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("flowlog_id", deleteFlowLogRequest.FlowlogId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/fl/flow_logs/{flowlog_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/fl/flow_logs/{flowlog_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteFlowLogRequest);
             return new AsyncInvoker<DeleteFlowLogResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteFlowLogResponse>);
         }
@@ -355,9 +355,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("port_id", deletePortRequest.PortId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ports/{port_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ports/{port_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePortRequest);
-            var response = await DoHttpRequestAsync("DELETE",request);
+            var response = await DoHttpRequestAsync("DELETE", request);
             return JsonUtils.DeSerializeNull<DeletePortResponse>(response);
         }
 
@@ -365,7 +365,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("port_id", deletePortRequest.PortId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ports/{port_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ports/{port_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePortRequest);
             return new AsyncInvoker<DeletePortResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeletePortResponse>);
         }
@@ -381,9 +381,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("routetable_id", deleteRouteTableRequest.RoutetableId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/routetables/{routetable_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/routetables/{routetable_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRouteTableRequest);
-            var response = await DoHttpRequestAsync("DELETE",request);
+            var response = await DoHttpRequestAsync("DELETE", request);
             return JsonUtils.DeSerializeNull<DeleteRouteTableResponse>(response);
         }
 
@@ -391,7 +391,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("routetable_id", deleteRouteTableRequest.RoutetableId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/routetables/{routetable_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/routetables/{routetable_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRouteTableRequest);
             return new AsyncInvoker<DeleteRouteTableResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteRouteTableResponse>);
         }
@@ -407,9 +407,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("security_group_id", deleteSecurityGroupRequest.SecurityGroupId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/security-groups/{security_group_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/security-groups/{security_group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSecurityGroupRequest);
-            var response = await DoHttpRequestAsync("DELETE",request);
+            var response = await DoHttpRequestAsync("DELETE", request);
             return JsonUtils.DeSerializeNull<DeleteSecurityGroupResponse>(response);
         }
 
@@ -417,7 +417,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("security_group_id", deleteSecurityGroupRequest.SecurityGroupId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/security-groups/{security_group_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/security-groups/{security_group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSecurityGroupRequest);
             return new AsyncInvoker<DeleteSecurityGroupResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteSecurityGroupResponse>);
         }
@@ -433,9 +433,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("security_group_rule_id", deleteSecurityGroupRuleRequest.SecurityGroupRuleId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/security-group-rules/{security_group_rule_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/security-group-rules/{security_group_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSecurityGroupRuleRequest);
-            var response = await DoHttpRequestAsync("DELETE",request);
+            var response = await DoHttpRequestAsync("DELETE", request);
             return JsonUtils.DeSerializeNull<DeleteSecurityGroupRuleResponse>(response);
         }
 
@@ -443,7 +443,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("security_group_rule_id", deleteSecurityGroupRuleRequest.SecurityGroupRuleId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/security-group-rules/{security_group_rule_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/security-group-rules/{security_group_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSecurityGroupRuleRequest);
             return new AsyncInvoker<DeleteSecurityGroupRuleResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteSecurityGroupRuleResponse>);
         }
@@ -460,9 +460,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("vpc_id", deleteSubnetRequest.VpcId.ToString());
             urlParam.Add("subnet_id", deleteSubnetRequest.SubnetId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpcs/{vpc_id}/subnets/{subnet_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpcs/{vpc_id}/subnets/{subnet_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSubnetRequest);
-            var response = await DoHttpRequestAsync("DELETE",request);
+            var response = await DoHttpRequestAsync("DELETE", request);
             return JsonUtils.DeSerializeNull<DeleteSubnetResponse>(response);
         }
 
@@ -471,7 +471,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("vpc_id", deleteSubnetRequest.VpcId.ToString());
             urlParam.Add("subnet_id", deleteSubnetRequest.SubnetId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpcs/{vpc_id}/subnets/{subnet_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpcs/{vpc_id}/subnets/{subnet_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSubnetRequest);
             return new AsyncInvoker<DeleteSubnetResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteSubnetResponse>);
         }
@@ -489,9 +489,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("subnet_id", deleteSubnetTagRequest.SubnetId.ToString());
             urlParam.Add("key", deleteSubnetTagRequest.Key.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/subnets/{subnet_id}/tags/{key}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/subnets/{subnet_id}/tags/{key}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSubnetTagRequest);
-            var response = await DoHttpRequestAsync("DELETE",request);
+            var response = await DoHttpRequestAsync("DELETE", request);
             return JsonUtils.DeSerializeNull<DeleteSubnetTagResponse>(response);
         }
 
@@ -500,7 +500,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("subnet_id", deleteSubnetTagRequest.SubnetId.ToString());
             urlParam.Add("key", deleteSubnetTagRequest.Key.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/subnets/{subnet_id}/tags/{key}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/subnets/{subnet_id}/tags/{key}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSubnetTagRequest);
             return new AsyncInvoker<DeleteSubnetTagResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteSubnetTagResponse>);
         }
@@ -517,9 +517,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("peering_id", deleteVpcPeeringRequest.PeeringId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/vpc/peerings/{peering_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/vpc/peerings/{peering_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteVpcPeeringRequest);
-            var response = await DoHttpRequestAsync("DELETE",request);
+            var response = await DoHttpRequestAsync("DELETE", request);
             return JsonUtils.DeSerializeNull<DeleteVpcPeeringResponse>(response);
         }
 
@@ -527,7 +527,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("peering_id", deleteVpcPeeringRequest.PeeringId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/vpc/peerings/{peering_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/vpc/peerings/{peering_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteVpcPeeringRequest);
             return new AsyncInvoker<DeleteVpcPeeringResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteVpcPeeringResponse>);
         }
@@ -543,9 +543,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("routetable_id", disassociateRouteTableRequest.RoutetableId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/routetables/{routetable_id}/action",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/routetables/{routetable_id}/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", disassociateRouteTableRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<DisassociateRouteTableResponse>(response);
         }
 
@@ -553,7 +553,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("routetable_id", disassociateRouteTableRequest.RoutetableId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/routetables/{routetable_id}/action",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/routetables/{routetable_id}/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", disassociateRouteTableRequest);
             return new AsyncInvoker<DisassociateRouteTableResponse>(this, "POST", request, JsonUtils.DeSerialize<DisassociateRouteTableResponse>);
         }
@@ -568,16 +568,16 @@ namespace HuaweiCloud.SDK.Vpc.V2
         public async Task<ListFlowLogsResponse> ListFlowLogsAsync(ListFlowLogsRequest listFlowLogsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/fl/flow_logs",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/fl/flow_logs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFlowLogsRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ListFlowLogsResponse>(response);
         }
 
         public AsyncInvoker<ListFlowLogsResponse> ListFlowLogsAsyncInvoker(ListFlowLogsRequest listFlowLogsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/fl/flow_logs",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/fl/flow_logs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFlowLogsRequest);
             return new AsyncInvoker<ListFlowLogsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListFlowLogsResponse>);
         }
@@ -592,16 +592,16 @@ namespace HuaweiCloud.SDK.Vpc.V2
         public async Task<ListPortsResponse> ListPortsAsync(ListPortsRequest listPortsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ports",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ports", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPortsRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ListPortsResponse>(response);
         }
 
         public AsyncInvoker<ListPortsResponse> ListPortsAsyncInvoker(ListPortsRequest listPortsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ports",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ports", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPortsRequest);
             return new AsyncInvoker<ListPortsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListPortsResponse>);
         }
@@ -616,16 +616,16 @@ namespace HuaweiCloud.SDK.Vpc.V2
         public async Task<ListRouteTablesResponse> ListRouteTablesAsync(ListRouteTablesRequest listRouteTablesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/routetables",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/routetables", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRouteTablesRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ListRouteTablesResponse>(response);
         }
 
         public AsyncInvoker<ListRouteTablesResponse> ListRouteTablesAsyncInvoker(ListRouteTablesRequest listRouteTablesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/routetables",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/routetables", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRouteTablesRequest);
             return new AsyncInvoker<ListRouteTablesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListRouteTablesResponse>);
         }
@@ -640,16 +640,16 @@ namespace HuaweiCloud.SDK.Vpc.V2
         public async Task<ListSecurityGroupRulesResponse> ListSecurityGroupRulesAsync(ListSecurityGroupRulesRequest listSecurityGroupRulesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/security-group-rules",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/security-group-rules", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSecurityGroupRulesRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ListSecurityGroupRulesResponse>(response);
         }
 
         public AsyncInvoker<ListSecurityGroupRulesResponse> ListSecurityGroupRulesAsyncInvoker(ListSecurityGroupRulesRequest listSecurityGroupRulesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/security-group-rules",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/security-group-rules", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSecurityGroupRulesRequest);
             return new AsyncInvoker<ListSecurityGroupRulesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSecurityGroupRulesResponse>);
         }
@@ -664,16 +664,16 @@ namespace HuaweiCloud.SDK.Vpc.V2
         public async Task<ListSecurityGroupsResponse> ListSecurityGroupsAsync(ListSecurityGroupsRequest listSecurityGroupsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/security-groups",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/security-groups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSecurityGroupsRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ListSecurityGroupsResponse>(response);
         }
 
         public AsyncInvoker<ListSecurityGroupsResponse> ListSecurityGroupsAsyncInvoker(ListSecurityGroupsRequest listSecurityGroupsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/security-groups",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/security-groups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSecurityGroupsRequest);
             return new AsyncInvoker<ListSecurityGroupsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSecurityGroupsResponse>);
         }
@@ -688,16 +688,16 @@ namespace HuaweiCloud.SDK.Vpc.V2
         public async Task<ListSubnetTagsResponse> ListSubnetTagsAsync(ListSubnetTagsRequest listSubnetTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/subnets/tags",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/subnets/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSubnetTagsRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ListSubnetTagsResponse>(response);
         }
 
         public AsyncInvoker<ListSubnetTagsResponse> ListSubnetTagsAsyncInvoker(ListSubnetTagsRequest listSubnetTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/subnets/tags",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/subnets/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSubnetTagsRequest);
             return new AsyncInvoker<ListSubnetTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSubnetTagsResponse>);
         }
@@ -712,16 +712,16 @@ namespace HuaweiCloud.SDK.Vpc.V2
         public async Task<ListSubnetsResponse> ListSubnetsAsync(ListSubnetsRequest listSubnetsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/subnets",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/subnets", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSubnetsRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ListSubnetsResponse>(response);
         }
 
         public AsyncInvoker<ListSubnetsResponse> ListSubnetsAsyncInvoker(ListSubnetsRequest listSubnetsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/subnets",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/subnets", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSubnetsRequest);
             return new AsyncInvoker<ListSubnetsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSubnetsResponse>);
         }
@@ -736,16 +736,16 @@ namespace HuaweiCloud.SDK.Vpc.V2
         public async Task<ListSubnetsByTagsResponse> ListSubnetsByTagsAsync(ListSubnetsByTagsRequest listSubnetsByTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/subnets/resource_instances/action",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/subnets/resource_instances/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listSubnetsByTagsRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<ListSubnetsByTagsResponse>(response);
         }
 
         public AsyncInvoker<ListSubnetsByTagsResponse> ListSubnetsByTagsAsyncInvoker(ListSubnetsByTagsRequest listSubnetsByTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/subnets/resource_instances/action",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/subnets/resource_instances/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listSubnetsByTagsRequest);
             return new AsyncInvoker<ListSubnetsByTagsResponse>(this, "POST", request, JsonUtils.DeSerialize<ListSubnetsByTagsResponse>);
         }
@@ -760,16 +760,16 @@ namespace HuaweiCloud.SDK.Vpc.V2
         public async Task<ListVpcPeeringsResponse> ListVpcPeeringsAsync(ListVpcPeeringsRequest listVpcPeeringsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/vpc/peerings",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/vpc/peerings", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listVpcPeeringsRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ListVpcPeeringsResponse>(response);
         }
 
         public AsyncInvoker<ListVpcPeeringsResponse> ListVpcPeeringsAsyncInvoker(ListVpcPeeringsRequest listVpcPeeringsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/vpc/peerings",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/vpc/peerings", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listVpcPeeringsRequest);
             return new AsyncInvoker<ListVpcPeeringsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListVpcPeeringsResponse>);
         }
@@ -785,9 +785,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("peering_id", rejectVpcPeeringRequest.PeeringId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/vpc/peerings/{peering_id}/reject",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/vpc/peerings/{peering_id}/reject", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", rejectVpcPeeringRequest);
-            var response = await DoHttpRequestAsync("PUT",request);
+            var response = await DoHttpRequestAsync("PUT", request);
             return JsonUtils.DeSerialize<RejectVpcPeeringResponse>(response);
         }
 
@@ -795,7 +795,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("peering_id", rejectVpcPeeringRequest.PeeringId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/vpc/peerings/{peering_id}/reject",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/vpc/peerings/{peering_id}/reject", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", rejectVpcPeeringRequest);
             return new AsyncInvoker<RejectVpcPeeringResponse>(this, "PUT", request, JsonUtils.DeSerialize<RejectVpcPeeringResponse>);
         }
@@ -811,9 +811,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("flowlog_id", showFlowLogRequest.FlowlogId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/fl/flow_logs/{flowlog_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/fl/flow_logs/{flowlog_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFlowLogRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowFlowLogResponse>(response);
         }
 
@@ -821,7 +821,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("flowlog_id", showFlowLogRequest.FlowlogId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/fl/flow_logs/{flowlog_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/fl/flow_logs/{flowlog_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFlowLogRequest);
             return new AsyncInvoker<ShowFlowLogResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowFlowLogResponse>);
         }
@@ -837,9 +837,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("port_id", showPortRequest.PortId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ports/{port_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ports/{port_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPortRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowPortResponse>(response);
         }
 
@@ -847,7 +847,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("port_id", showPortRequest.PortId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ports/{port_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ports/{port_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPortRequest);
             return new AsyncInvoker<ShowPortResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPortResponse>);
         }
@@ -862,16 +862,16 @@ namespace HuaweiCloud.SDK.Vpc.V2
         public async Task<ShowQuotaResponse> ShowQuotaAsync(ShowQuotaRequest showQuotaRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/quotas",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/quotas", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showQuotaRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowQuotaResponse>(response);
         }
 
         public AsyncInvoker<ShowQuotaResponse> ShowQuotaAsyncInvoker(ShowQuotaRequest showQuotaRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/quotas",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/quotas", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showQuotaRequest);
             return new AsyncInvoker<ShowQuotaResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowQuotaResponse>);
         }
@@ -887,9 +887,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("routetable_id", showRouteTableRequest.RoutetableId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/routetables/{routetable_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/routetables/{routetable_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRouteTableRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowRouteTableResponse>(response);
         }
 
@@ -897,7 +897,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("routetable_id", showRouteTableRequest.RoutetableId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/routetables/{routetable_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/routetables/{routetable_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRouteTableRequest);
             return new AsyncInvoker<ShowRouteTableResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRouteTableResponse>);
         }
@@ -913,9 +913,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("security_group_id", showSecurityGroupRequest.SecurityGroupId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/security-groups/{security_group_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/security-groups/{security_group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSecurityGroupRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowSecurityGroupResponse>(response);
         }
 
@@ -923,7 +923,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("security_group_id", showSecurityGroupRequest.SecurityGroupId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/security-groups/{security_group_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/security-groups/{security_group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSecurityGroupRequest);
             return new AsyncInvoker<ShowSecurityGroupResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSecurityGroupResponse>);
         }
@@ -939,9 +939,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("security_group_rule_id", showSecurityGroupRuleRequest.SecurityGroupRuleId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/security-group-rules/{security_group_rule_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/security-group-rules/{security_group_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSecurityGroupRuleRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowSecurityGroupRuleResponse>(response);
         }
 
@@ -949,7 +949,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("security_group_rule_id", showSecurityGroupRuleRequest.SecurityGroupRuleId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/security-group-rules/{security_group_rule_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/security-group-rules/{security_group_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSecurityGroupRuleRequest);
             return new AsyncInvoker<ShowSecurityGroupRuleResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSecurityGroupRuleResponse>);
         }
@@ -965,9 +965,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("subnet_id", showSubnetRequest.SubnetId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/subnets/{subnet_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/subnets/{subnet_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSubnetRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowSubnetResponse>(response);
         }
 
@@ -975,7 +975,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("subnet_id", showSubnetRequest.SubnetId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/subnets/{subnet_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/subnets/{subnet_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSubnetRequest);
             return new AsyncInvoker<ShowSubnetResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSubnetResponse>);
         }
@@ -991,9 +991,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("subnet_id", showSubnetTagsRequest.SubnetId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/subnets/{subnet_id}/tags",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/subnets/{subnet_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSubnetTagsRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowSubnetTagsResponse>(response);
         }
 
@@ -1001,7 +1001,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("subnet_id", showSubnetTagsRequest.SubnetId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/subnets/{subnet_id}/tags",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/subnets/{subnet_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSubnetTagsRequest);
             return new AsyncInvoker<ShowSubnetTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSubnetTagsResponse>);
         }
@@ -1017,9 +1017,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("peering_id", showVpcPeeringRequest.PeeringId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/vpc/peerings/{peering_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/vpc/peerings/{peering_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVpcPeeringRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowVpcPeeringResponse>(response);
         }
 
@@ -1027,7 +1027,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("peering_id", showVpcPeeringRequest.PeeringId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/vpc/peerings/{peering_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/vpc/peerings/{peering_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVpcPeeringRequest);
             return new AsyncInvoker<ShowVpcPeeringResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowVpcPeeringResponse>);
         }
@@ -1043,9 +1043,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("flowlog_id", updateFlowLogRequest.FlowlogId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/fl/flow_logs/{flowlog_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/fl/flow_logs/{flowlog_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateFlowLogRequest);
-            var response = await DoHttpRequestAsync("PUT",request);
+            var response = await DoHttpRequestAsync("PUT", request);
             return JsonUtils.DeSerialize<UpdateFlowLogResponse>(response);
         }
 
@@ -1053,7 +1053,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("flowlog_id", updateFlowLogRequest.FlowlogId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/fl/flow_logs/{flowlog_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/fl/flow_logs/{flowlog_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateFlowLogRequest);
             return new AsyncInvoker<UpdateFlowLogResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateFlowLogResponse>);
         }
@@ -1069,9 +1069,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("port_id", updatePortRequest.PortId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ports/{port_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ports/{port_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updatePortRequest);
-            var response = await DoHttpRequestAsync("PUT",request);
+            var response = await DoHttpRequestAsync("PUT", request);
             return JsonUtils.DeSerialize<UpdatePortResponse>(response);
         }
 
@@ -1079,7 +1079,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("port_id", updatePortRequest.PortId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ports/{port_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ports/{port_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updatePortRequest);
             return new AsyncInvoker<UpdatePortResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdatePortResponse>);
         }
@@ -1095,9 +1095,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("routetable_id", updateRouteTableRequest.RoutetableId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/routetables/{routetable_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/routetables/{routetable_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateRouteTableRequest);
-            var response = await DoHttpRequestAsync("PUT",request);
+            var response = await DoHttpRequestAsync("PUT", request);
             return JsonUtils.DeSerialize<UpdateRouteTableResponse>(response);
         }
 
@@ -1105,7 +1105,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("routetable_id", updateRouteTableRequest.RoutetableId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/routetables/{routetable_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/routetables/{routetable_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateRouteTableRequest);
             return new AsyncInvoker<UpdateRouteTableResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateRouteTableResponse>);
         }
@@ -1122,9 +1122,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("vpc_id", updateSubnetRequest.VpcId.ToString());
             urlParam.Add("subnet_id", updateSubnetRequest.SubnetId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpcs/{vpc_id}/subnets/{subnet_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpcs/{vpc_id}/subnets/{subnet_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSubnetRequest);
-            var response = await DoHttpRequestAsync("PUT",request);
+            var response = await DoHttpRequestAsync("PUT", request);
             return JsonUtils.DeSerialize<UpdateSubnetResponse>(response);
         }
 
@@ -1133,7 +1133,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("vpc_id", updateSubnetRequest.VpcId.ToString());
             urlParam.Add("subnet_id", updateSubnetRequest.SubnetId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpcs/{vpc_id}/subnets/{subnet_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpcs/{vpc_id}/subnets/{subnet_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSubnetRequest);
             return new AsyncInvoker<UpdateSubnetResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateSubnetResponse>);
         }
@@ -1149,9 +1149,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("peering_id", updateVpcPeeringRequest.PeeringId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/vpc/peerings/{peering_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/vpc/peerings/{peering_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateVpcPeeringRequest);
-            var response = await DoHttpRequestAsync("PUT",request);
+            var response = await DoHttpRequestAsync("PUT", request);
             return JsonUtils.DeSerialize<UpdateVpcPeeringResponse>(response);
         }
 
@@ -1159,7 +1159,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("peering_id", updateVpcPeeringRequest.PeeringId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/vpc/peerings/{peering_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/vpc/peerings/{peering_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateVpcPeeringRequest);
             return new AsyncInvoker<UpdateVpcPeeringResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateVpcPeeringResponse>);
         }
@@ -1174,16 +1174,16 @@ namespace HuaweiCloud.SDK.Vpc.V2
         public async Task<CreatePrivateipResponse> CreatePrivateipAsync(CreatePrivateipRequest createPrivateipRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/privateips",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/privateips", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createPrivateipRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<CreatePrivateipResponse>(response);
         }
 
         public AsyncInvoker<CreatePrivateipResponse> CreatePrivateipAsyncInvoker(CreatePrivateipRequest createPrivateipRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/privateips",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/privateips", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createPrivateipRequest);
             return new AsyncInvoker<CreatePrivateipResponse>(this, "POST", request, JsonUtils.DeSerialize<CreatePrivateipResponse>);
         }
@@ -1199,9 +1199,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("privateip_id", deletePrivateipRequest.PrivateipId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/privateips/{privateip_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/privateips/{privateip_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePrivateipRequest);
-            var response = await DoHttpRequestAsync("DELETE",request);
+            var response = await DoHttpRequestAsync("DELETE", request);
             return JsonUtils.DeSerializeNull<DeletePrivateipResponse>(response);
         }
 
@@ -1209,7 +1209,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("privateip_id", deletePrivateipRequest.PrivateipId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/privateips/{privateip_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/privateips/{privateip_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePrivateipRequest);
             return new AsyncInvoker<DeletePrivateipResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeletePrivateipResponse>);
         }
@@ -1225,9 +1225,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("subnet_id", listPrivateipsRequest.SubnetId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/subnets/{subnet_id}/privateips",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/subnets/{subnet_id}/privateips", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPrivateipsRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ListPrivateipsResponse>(response);
         }
 
@@ -1235,7 +1235,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("subnet_id", listPrivateipsRequest.SubnetId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/subnets/{subnet_id}/privateips",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/subnets/{subnet_id}/privateips", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPrivateipsRequest);
             return new AsyncInvoker<ListPrivateipsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListPrivateipsResponse>);
         }
@@ -1258,9 +1258,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("network_id", showNetworkIpAvailabilitiesRequest.NetworkId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/network-ip-availabilities/{network_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/network-ip-availabilities/{network_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showNetworkIpAvailabilitiesRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowNetworkIpAvailabilitiesResponse>(response);
         }
 
@@ -1268,7 +1268,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("network_id", showNetworkIpAvailabilitiesRequest.NetworkId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/network-ip-availabilities/{network_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/network-ip-availabilities/{network_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showNetworkIpAvailabilitiesRequest);
             return new AsyncInvoker<ShowNetworkIpAvailabilitiesResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowNetworkIpAvailabilitiesResponse>);
         }
@@ -1284,9 +1284,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("privateip_id", showPrivateipRequest.PrivateipId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/privateips/{privateip_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/privateips/{privateip_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPrivateipRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowPrivateipResponse>(response);
         }
 
@@ -1294,7 +1294,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("privateip_id", showPrivateipRequest.PrivateipId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/privateips/{privateip_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/privateips/{privateip_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPrivateipRequest);
             return new AsyncInvoker<ShowPrivateipResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPrivateipResponse>);
         }
@@ -1310,9 +1310,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("router_id", neutronAddRouterInterfaceRequest.RouterId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/routers/{router_id}/add_router_interface",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/routers/{router_id}/add_router_interface", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", neutronAddRouterInterfaceRequest);
-            var response = await DoHttpRequestAsync("PUT",request);
+            var response = await DoHttpRequestAsync("PUT", request);
             return JsonUtils.DeSerialize<NeutronAddRouterInterfaceResponse>(response);
         }
 
@@ -1320,7 +1320,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("router_id", neutronAddRouterInterfaceRequest.RouterId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/routers/{router_id}/add_router_interface",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/routers/{router_id}/add_router_interface", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", neutronAddRouterInterfaceRequest);
             return new AsyncInvoker<NeutronAddRouterInterfaceResponse>(this, "PUT", request, JsonUtils.DeSerialize<NeutronAddRouterInterfaceResponse>);
         }
@@ -1335,16 +1335,16 @@ namespace HuaweiCloud.SDK.Vpc.V2
         public async Task<NeutronCreateNetworkResponse> NeutronCreateNetworkAsync(NeutronCreateNetworkRequest neutronCreateNetworkRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/networks",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/networks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", neutronCreateNetworkRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<NeutronCreateNetworkResponse>(response);
         }
 
         public AsyncInvoker<NeutronCreateNetworkResponse> NeutronCreateNetworkAsyncInvoker(NeutronCreateNetworkRequest neutronCreateNetworkRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/networks",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/networks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", neutronCreateNetworkRequest);
             return new AsyncInvoker<NeutronCreateNetworkResponse>(this, "POST", request, JsonUtils.DeSerialize<NeutronCreateNetworkResponse>);
         }
@@ -1359,16 +1359,16 @@ namespace HuaweiCloud.SDK.Vpc.V2
         public async Task<NeutronCreatePortResponse> NeutronCreatePortAsync(NeutronCreatePortRequest neutronCreatePortRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/ports",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/ports", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", neutronCreatePortRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<NeutronCreatePortResponse>(response);
         }
 
         public AsyncInvoker<NeutronCreatePortResponse> NeutronCreatePortAsyncInvoker(NeutronCreatePortRequest neutronCreatePortRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/ports",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/ports", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", neutronCreatePortRequest);
             return new AsyncInvoker<NeutronCreatePortResponse>(this, "POST", request, JsonUtils.DeSerialize<NeutronCreatePortResponse>);
         }
@@ -1383,16 +1383,16 @@ namespace HuaweiCloud.SDK.Vpc.V2
         public async Task<NeutronCreateRouterResponse> NeutronCreateRouterAsync(NeutronCreateRouterRequest neutronCreateRouterRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/routers",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/routers", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", neutronCreateRouterRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<NeutronCreateRouterResponse>(response);
         }
 
         public AsyncInvoker<NeutronCreateRouterResponse> NeutronCreateRouterAsyncInvoker(NeutronCreateRouterRequest neutronCreateRouterRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/routers",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/routers", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", neutronCreateRouterRequest);
             return new AsyncInvoker<NeutronCreateRouterResponse>(this, "POST", request, JsonUtils.DeSerialize<NeutronCreateRouterResponse>);
         }
@@ -1407,16 +1407,16 @@ namespace HuaweiCloud.SDK.Vpc.V2
         public async Task<NeutronCreateSecurityGroupResponse> NeutronCreateSecurityGroupAsync(NeutronCreateSecurityGroupRequest neutronCreateSecurityGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/security-groups",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/security-groups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", neutronCreateSecurityGroupRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<NeutronCreateSecurityGroupResponse>(response);
         }
 
         public AsyncInvoker<NeutronCreateSecurityGroupResponse> NeutronCreateSecurityGroupAsyncInvoker(NeutronCreateSecurityGroupRequest neutronCreateSecurityGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/security-groups",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/security-groups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", neutronCreateSecurityGroupRequest);
             return new AsyncInvoker<NeutronCreateSecurityGroupResponse>(this, "POST", request, JsonUtils.DeSerialize<NeutronCreateSecurityGroupResponse>);
         }
@@ -1431,16 +1431,16 @@ namespace HuaweiCloud.SDK.Vpc.V2
         public async Task<NeutronCreateSecurityGroupRuleResponse> NeutronCreateSecurityGroupRuleAsync(NeutronCreateSecurityGroupRuleRequest neutronCreateSecurityGroupRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/security-group-rules",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/security-group-rules", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", neutronCreateSecurityGroupRuleRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<NeutronCreateSecurityGroupRuleResponse>(response);
         }
 
         public AsyncInvoker<NeutronCreateSecurityGroupRuleResponse> NeutronCreateSecurityGroupRuleAsyncInvoker(NeutronCreateSecurityGroupRuleRequest neutronCreateSecurityGroupRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/security-group-rules",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/security-group-rules", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", neutronCreateSecurityGroupRuleRequest);
             return new AsyncInvoker<NeutronCreateSecurityGroupRuleResponse>(this, "POST", request, JsonUtils.DeSerialize<NeutronCreateSecurityGroupRuleResponse>);
         }
@@ -1455,16 +1455,16 @@ namespace HuaweiCloud.SDK.Vpc.V2
         public async Task<NeutronCreateSubnetResponse> NeutronCreateSubnetAsync(NeutronCreateSubnetRequest neutronCreateSubnetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/subnets",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/subnets", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", neutronCreateSubnetRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<NeutronCreateSubnetResponse>(response);
         }
 
         public AsyncInvoker<NeutronCreateSubnetResponse> NeutronCreateSubnetAsyncInvoker(NeutronCreateSubnetRequest neutronCreateSubnetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/subnets",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/subnets", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", neutronCreateSubnetRequest);
             return new AsyncInvoker<NeutronCreateSubnetResponse>(this, "POST", request, JsonUtils.DeSerialize<NeutronCreateSubnetResponse>);
         }
@@ -1480,9 +1480,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("network_id", neutronDeleteNetworkRequest.NetworkId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/networks/{network_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/networks/{network_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronDeleteNetworkRequest);
-            var response = await DoHttpRequestAsync("DELETE",request);
+            var response = await DoHttpRequestAsync("DELETE", request);
             return JsonUtils.DeSerializeNull<NeutronDeleteNetworkResponse>(response);
         }
 
@@ -1490,7 +1490,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("network_id", neutronDeleteNetworkRequest.NetworkId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/networks/{network_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/networks/{network_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronDeleteNetworkRequest);
             return new AsyncInvoker<NeutronDeleteNetworkResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<NeutronDeleteNetworkResponse>);
         }
@@ -1506,9 +1506,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("port_id", neutronDeletePortRequest.PortId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/ports/{port_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/ports/{port_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronDeletePortRequest);
-            var response = await DoHttpRequestAsync("DELETE",request);
+            var response = await DoHttpRequestAsync("DELETE", request);
             return JsonUtils.DeSerializeNull<NeutronDeletePortResponse>(response);
         }
 
@@ -1516,7 +1516,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("port_id", neutronDeletePortRequest.PortId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/ports/{port_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/ports/{port_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronDeletePortRequest);
             return new AsyncInvoker<NeutronDeletePortResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<NeutronDeletePortResponse>);
         }
@@ -1532,9 +1532,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("router_id", neutronDeleteRouterRequest.RouterId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/routers/{router_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/routers/{router_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronDeleteRouterRequest);
-            var response = await DoHttpRequestAsync("DELETE",request);
+            var response = await DoHttpRequestAsync("DELETE", request);
             return JsonUtils.DeSerializeNull<NeutronDeleteRouterResponse>(response);
         }
 
@@ -1542,7 +1542,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("router_id", neutronDeleteRouterRequest.RouterId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/routers/{router_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/routers/{router_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronDeleteRouterRequest);
             return new AsyncInvoker<NeutronDeleteRouterResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<NeutronDeleteRouterResponse>);
         }
@@ -1558,9 +1558,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("security_group_id", neutronDeleteSecurityGroupRequest.SecurityGroupId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/security-groups/{security_group_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/security-groups/{security_group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronDeleteSecurityGroupRequest);
-            var response = await DoHttpRequestAsync("DELETE",request);
+            var response = await DoHttpRequestAsync("DELETE", request);
             return JsonUtils.DeSerializeNull<NeutronDeleteSecurityGroupResponse>(response);
         }
 
@@ -1568,7 +1568,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("security_group_id", neutronDeleteSecurityGroupRequest.SecurityGroupId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/security-groups/{security_group_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/security-groups/{security_group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronDeleteSecurityGroupRequest);
             return new AsyncInvoker<NeutronDeleteSecurityGroupResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<NeutronDeleteSecurityGroupResponse>);
         }
@@ -1584,9 +1584,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("security_group_rule_id", neutronDeleteSecurityGroupRuleRequest.SecurityGroupRuleId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/security-group-rules/{security_group_rule_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/security-group-rules/{security_group_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronDeleteSecurityGroupRuleRequest);
-            var response = await DoHttpRequestAsync("DELETE",request);
+            var response = await DoHttpRequestAsync("DELETE", request);
             return JsonUtils.DeSerializeNull<NeutronDeleteSecurityGroupRuleResponse>(response);
         }
 
@@ -1594,7 +1594,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("security_group_rule_id", neutronDeleteSecurityGroupRuleRequest.SecurityGroupRuleId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/security-group-rules/{security_group_rule_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/security-group-rules/{security_group_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronDeleteSecurityGroupRuleRequest);
             return new AsyncInvoker<NeutronDeleteSecurityGroupRuleResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<NeutronDeleteSecurityGroupRuleResponse>);
         }
@@ -1610,9 +1610,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("subnet_id", neutronDeleteSubnetRequest.SubnetId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/subnets/{subnet_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/subnets/{subnet_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronDeleteSubnetRequest);
-            var response = await DoHttpRequestAsync("DELETE",request);
+            var response = await DoHttpRequestAsync("DELETE", request);
             return JsonUtils.DeSerializeNull<NeutronDeleteSubnetResponse>(response);
         }
 
@@ -1620,7 +1620,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("subnet_id", neutronDeleteSubnetRequest.SubnetId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/subnets/{subnet_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/subnets/{subnet_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronDeleteSubnetRequest);
             return new AsyncInvoker<NeutronDeleteSubnetResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<NeutronDeleteSubnetResponse>);
         }
@@ -1635,16 +1635,16 @@ namespace HuaweiCloud.SDK.Vpc.V2
         public async Task<NeutronListNetworksResponse> NeutronListNetworksAsync(NeutronListNetworksRequest neutronListNetworksRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/networks",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/networks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronListNetworksRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<NeutronListNetworksResponse>(response);
         }
 
         public AsyncInvoker<NeutronListNetworksResponse> NeutronListNetworksAsyncInvoker(NeutronListNetworksRequest neutronListNetworksRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/networks",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/networks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronListNetworksRequest);
             return new AsyncInvoker<NeutronListNetworksResponse>(this, "GET", request, JsonUtils.DeSerialize<NeutronListNetworksResponse>);
         }
@@ -1659,16 +1659,16 @@ namespace HuaweiCloud.SDK.Vpc.V2
         public async Task<NeutronListPortsResponse> NeutronListPortsAsync(NeutronListPortsRequest neutronListPortsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/ports",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/ports", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronListPortsRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<NeutronListPortsResponse>(response);
         }
 
         public AsyncInvoker<NeutronListPortsResponse> NeutronListPortsAsyncInvoker(NeutronListPortsRequest neutronListPortsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/ports",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/ports", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronListPortsRequest);
             return new AsyncInvoker<NeutronListPortsResponse>(this, "GET", request, JsonUtils.DeSerialize<NeutronListPortsResponse>);
         }
@@ -1683,16 +1683,16 @@ namespace HuaweiCloud.SDK.Vpc.V2
         public async Task<NeutronListRoutersResponse> NeutronListRoutersAsync(NeutronListRoutersRequest neutronListRoutersRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/routers",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/routers", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronListRoutersRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<NeutronListRoutersResponse>(response);
         }
 
         public AsyncInvoker<NeutronListRoutersResponse> NeutronListRoutersAsyncInvoker(NeutronListRoutersRequest neutronListRoutersRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/routers",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/routers", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronListRoutersRequest);
             return new AsyncInvoker<NeutronListRoutersResponse>(this, "GET", request, JsonUtils.DeSerialize<NeutronListRoutersResponse>);
         }
@@ -1707,16 +1707,16 @@ namespace HuaweiCloud.SDK.Vpc.V2
         public async Task<NeutronListSecurityGroupRulesResponse> NeutronListSecurityGroupRulesAsync(NeutronListSecurityGroupRulesRequest neutronListSecurityGroupRulesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/security-group-rules",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/security-group-rules", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronListSecurityGroupRulesRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<NeutronListSecurityGroupRulesResponse>(response);
         }
 
         public AsyncInvoker<NeutronListSecurityGroupRulesResponse> NeutronListSecurityGroupRulesAsyncInvoker(NeutronListSecurityGroupRulesRequest neutronListSecurityGroupRulesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/security-group-rules",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/security-group-rules", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronListSecurityGroupRulesRequest);
             return new AsyncInvoker<NeutronListSecurityGroupRulesResponse>(this, "GET", request, JsonUtils.DeSerialize<NeutronListSecurityGroupRulesResponse>);
         }
@@ -1731,16 +1731,16 @@ namespace HuaweiCloud.SDK.Vpc.V2
         public async Task<NeutronListSecurityGroupsResponse> NeutronListSecurityGroupsAsync(NeutronListSecurityGroupsRequest neutronListSecurityGroupsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/security-groups",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/security-groups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronListSecurityGroupsRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<NeutronListSecurityGroupsResponse>(response);
         }
 
         public AsyncInvoker<NeutronListSecurityGroupsResponse> NeutronListSecurityGroupsAsyncInvoker(NeutronListSecurityGroupsRequest neutronListSecurityGroupsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/security-groups",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/security-groups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronListSecurityGroupsRequest);
             return new AsyncInvoker<NeutronListSecurityGroupsResponse>(this, "GET", request, JsonUtils.DeSerialize<NeutronListSecurityGroupsResponse>);
         }
@@ -1755,16 +1755,16 @@ namespace HuaweiCloud.SDK.Vpc.V2
         public async Task<NeutronListSubnetsResponse> NeutronListSubnetsAsync(NeutronListSubnetsRequest neutronListSubnetsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/subnets",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/subnets", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronListSubnetsRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<NeutronListSubnetsResponse>(response);
         }
 
         public AsyncInvoker<NeutronListSubnetsResponse> NeutronListSubnetsAsyncInvoker(NeutronListSubnetsRequest neutronListSubnetsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/subnets",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/subnets", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronListSubnetsRequest);
             return new AsyncInvoker<NeutronListSubnetsResponse>(this, "GET", request, JsonUtils.DeSerialize<NeutronListSubnetsResponse>);
         }
@@ -1780,9 +1780,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("router_id", neutronRemoveRouterInterfaceRequest.RouterId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/routers/{router_id}/remove_router_interface",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/routers/{router_id}/remove_router_interface", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", neutronRemoveRouterInterfaceRequest);
-            var response = await DoHttpRequestAsync("PUT",request);
+            var response = await DoHttpRequestAsync("PUT", request);
             return JsonUtils.DeSerialize<NeutronRemoveRouterInterfaceResponse>(response);
         }
 
@@ -1790,7 +1790,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("router_id", neutronRemoveRouterInterfaceRequest.RouterId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/routers/{router_id}/remove_router_interface",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/routers/{router_id}/remove_router_interface", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", neutronRemoveRouterInterfaceRequest);
             return new AsyncInvoker<NeutronRemoveRouterInterfaceResponse>(this, "PUT", request, JsonUtils.DeSerialize<NeutronRemoveRouterInterfaceResponse>);
         }
@@ -1806,9 +1806,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("network_id", neutronShowNetworkRequest.NetworkId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/networks/{network_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/networks/{network_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronShowNetworkRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<NeutronShowNetworkResponse>(response);
         }
 
@@ -1816,7 +1816,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("network_id", neutronShowNetworkRequest.NetworkId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/networks/{network_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/networks/{network_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronShowNetworkRequest);
             return new AsyncInvoker<NeutronShowNetworkResponse>(this, "GET", request, JsonUtils.DeSerialize<NeutronShowNetworkResponse>);
         }
@@ -1832,9 +1832,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("port_id", neutronShowPortRequest.PortId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/ports/{port_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/ports/{port_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronShowPortRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<NeutronShowPortResponse>(response);
         }
 
@@ -1842,7 +1842,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("port_id", neutronShowPortRequest.PortId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/ports/{port_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/ports/{port_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronShowPortRequest);
             return new AsyncInvoker<NeutronShowPortResponse>(this, "GET", request, JsonUtils.DeSerialize<NeutronShowPortResponse>);
         }
@@ -1858,9 +1858,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("router_id", neutronShowRouterRequest.RouterId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/routers/{router_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/routers/{router_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronShowRouterRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<NeutronShowRouterResponse>(response);
         }
 
@@ -1868,7 +1868,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("router_id", neutronShowRouterRequest.RouterId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/routers/{router_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/routers/{router_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronShowRouterRequest);
             return new AsyncInvoker<NeutronShowRouterResponse>(this, "GET", request, JsonUtils.DeSerialize<NeutronShowRouterResponse>);
         }
@@ -1884,9 +1884,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("security_group_id", neutronShowSecurityGroupRequest.SecurityGroupId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/security-groups/{security_group_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/security-groups/{security_group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronShowSecurityGroupRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<NeutronShowSecurityGroupResponse>(response);
         }
 
@@ -1894,7 +1894,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("security_group_id", neutronShowSecurityGroupRequest.SecurityGroupId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/security-groups/{security_group_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/security-groups/{security_group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronShowSecurityGroupRequest);
             return new AsyncInvoker<NeutronShowSecurityGroupResponse>(this, "GET", request, JsonUtils.DeSerialize<NeutronShowSecurityGroupResponse>);
         }
@@ -1910,9 +1910,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("security_group_rule_id", neutronShowSecurityGroupRuleRequest.SecurityGroupRuleId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/security-group-rules/{security_group_rule_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/security-group-rules/{security_group_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronShowSecurityGroupRuleRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<NeutronShowSecurityGroupRuleResponse>(response);
         }
 
@@ -1920,7 +1920,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("security_group_rule_id", neutronShowSecurityGroupRuleRequest.SecurityGroupRuleId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/security-group-rules/{security_group_rule_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/security-group-rules/{security_group_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronShowSecurityGroupRuleRequest);
             return new AsyncInvoker<NeutronShowSecurityGroupRuleResponse>(this, "GET", request, JsonUtils.DeSerialize<NeutronShowSecurityGroupRuleResponse>);
         }
@@ -1936,9 +1936,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("subnet_id", neutronShowSubnetRequest.SubnetId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/subnets/{subnet_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/subnets/{subnet_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronShowSubnetRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<NeutronShowSubnetResponse>(response);
         }
 
@@ -1946,7 +1946,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("subnet_id", neutronShowSubnetRequest.SubnetId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/subnets/{subnet_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/subnets/{subnet_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronShowSubnetRequest);
             return new AsyncInvoker<NeutronShowSubnetResponse>(this, "GET", request, JsonUtils.DeSerialize<NeutronShowSubnetResponse>);
         }
@@ -1962,9 +1962,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("network_id", neutronUpdateNetworkRequest.NetworkId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/networks/{network_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/networks/{network_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", neutronUpdateNetworkRequest);
-            var response = await DoHttpRequestAsync("PUT",request);
+            var response = await DoHttpRequestAsync("PUT", request);
             return JsonUtils.DeSerialize<NeutronUpdateNetworkResponse>(response);
         }
 
@@ -1972,7 +1972,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("network_id", neutronUpdateNetworkRequest.NetworkId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/networks/{network_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/networks/{network_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", neutronUpdateNetworkRequest);
             return new AsyncInvoker<NeutronUpdateNetworkResponse>(this, "PUT", request, JsonUtils.DeSerialize<NeutronUpdateNetworkResponse>);
         }
@@ -1988,9 +1988,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("port_id", neutronUpdatePortRequest.PortId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/ports/{port_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/ports/{port_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", neutronUpdatePortRequest);
-            var response = await DoHttpRequestAsync("PUT",request);
+            var response = await DoHttpRequestAsync("PUT", request);
             return JsonUtils.DeSerialize<NeutronUpdatePortResponse>(response);
         }
 
@@ -1998,7 +1998,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("port_id", neutronUpdatePortRequest.PortId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/ports/{port_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/ports/{port_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", neutronUpdatePortRequest);
             return new AsyncInvoker<NeutronUpdatePortResponse>(this, "PUT", request, JsonUtils.DeSerialize<NeutronUpdatePortResponse>);
         }
@@ -2014,9 +2014,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("router_id", neutronUpdateRouterRequest.RouterId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/routers/{router_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/routers/{router_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", neutronUpdateRouterRequest);
-            var response = await DoHttpRequestAsync("PUT",request);
+            var response = await DoHttpRequestAsync("PUT", request);
             return JsonUtils.DeSerialize<NeutronUpdateRouterResponse>(response);
         }
 
@@ -2024,7 +2024,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("router_id", neutronUpdateRouterRequest.RouterId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/routers/{router_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/routers/{router_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", neutronUpdateRouterRequest);
             return new AsyncInvoker<NeutronUpdateRouterResponse>(this, "PUT", request, JsonUtils.DeSerialize<NeutronUpdateRouterResponse>);
         }
@@ -2040,9 +2040,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("security_group_id", neutronUpdateSecurityGroupRequest.SecurityGroupId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/security-groups/{security_group_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/security-groups/{security_group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", neutronUpdateSecurityGroupRequest);
-            var response = await DoHttpRequestAsync("PUT",request);
+            var response = await DoHttpRequestAsync("PUT", request);
             return JsonUtils.DeSerialize<NeutronUpdateSecurityGroupResponse>(response);
         }
 
@@ -2050,7 +2050,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("security_group_id", neutronUpdateSecurityGroupRequest.SecurityGroupId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/security-groups/{security_group_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/security-groups/{security_group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", neutronUpdateSecurityGroupRequest);
             return new AsyncInvoker<NeutronUpdateSecurityGroupResponse>(this, "PUT", request, JsonUtils.DeSerialize<NeutronUpdateSecurityGroupResponse>);
         }
@@ -2066,9 +2066,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("subnet_id", neutronUpdateSubnetRequest.SubnetId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/subnets/{subnet_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/subnets/{subnet_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", neutronUpdateSubnetRequest);
-            var response = await DoHttpRequestAsync("PUT",request);
+            var response = await DoHttpRequestAsync("PUT", request);
             return JsonUtils.DeSerialize<NeutronUpdateSubnetResponse>(response);
         }
 
@@ -2076,7 +2076,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("subnet_id", neutronUpdateSubnetRequest.SubnetId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/subnets/{subnet_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/subnets/{subnet_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", neutronUpdateSubnetRequest);
             return new AsyncInvoker<NeutronUpdateSubnetResponse>(this, "PUT", request, JsonUtils.DeSerialize<NeutronUpdateSubnetResponse>);
         }
@@ -2092,9 +2092,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("firewall_policy_id", neutronAddFirewallRuleRequest.FirewallPolicyId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_policies/{firewall_policy_id}/insert_rule",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_policies/{firewall_policy_id}/insert_rule", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", neutronAddFirewallRuleRequest);
-            var response = await DoHttpRequestAsync("PUT",request);
+            var response = await DoHttpRequestAsync("PUT", request);
             return JsonUtils.DeSerialize<NeutronAddFirewallRuleResponse>(response);
         }
 
@@ -2102,7 +2102,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("firewall_policy_id", neutronAddFirewallRuleRequest.FirewallPolicyId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_policies/{firewall_policy_id}/insert_rule",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_policies/{firewall_policy_id}/insert_rule", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", neutronAddFirewallRuleRequest);
             return new AsyncInvoker<NeutronAddFirewallRuleResponse>(this, "PUT", request, JsonUtils.DeSerialize<NeutronAddFirewallRuleResponse>);
         }
@@ -2117,16 +2117,16 @@ namespace HuaweiCloud.SDK.Vpc.V2
         public async Task<NeutronCreateFirewallGroupResponse> NeutronCreateFirewallGroupAsync(NeutronCreateFirewallGroupRequest neutronCreateFirewallGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_groups",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_groups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", neutronCreateFirewallGroupRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<NeutronCreateFirewallGroupResponse>(response);
         }
 
         public AsyncInvoker<NeutronCreateFirewallGroupResponse> NeutronCreateFirewallGroupAsyncInvoker(NeutronCreateFirewallGroupRequest neutronCreateFirewallGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_groups",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_groups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", neutronCreateFirewallGroupRequest);
             return new AsyncInvoker<NeutronCreateFirewallGroupResponse>(this, "POST", request, JsonUtils.DeSerialize<NeutronCreateFirewallGroupResponse>);
         }
@@ -2141,16 +2141,16 @@ namespace HuaweiCloud.SDK.Vpc.V2
         public async Task<NeutronCreateFirewallPolicyResponse> NeutronCreateFirewallPolicyAsync(NeutronCreateFirewallPolicyRequest neutronCreateFirewallPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_policies",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_policies", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", neutronCreateFirewallPolicyRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<NeutronCreateFirewallPolicyResponse>(response);
         }
 
         public AsyncInvoker<NeutronCreateFirewallPolicyResponse> NeutronCreateFirewallPolicyAsyncInvoker(NeutronCreateFirewallPolicyRequest neutronCreateFirewallPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_policies",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_policies", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", neutronCreateFirewallPolicyRequest);
             return new AsyncInvoker<NeutronCreateFirewallPolicyResponse>(this, "POST", request, JsonUtils.DeSerialize<NeutronCreateFirewallPolicyResponse>);
         }
@@ -2165,16 +2165,16 @@ namespace HuaweiCloud.SDK.Vpc.V2
         public async Task<NeutronCreateFirewallRuleResponse> NeutronCreateFirewallRuleAsync(NeutronCreateFirewallRuleRequest neutronCreateFirewallRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_rules",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_rules", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", neutronCreateFirewallRuleRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<NeutronCreateFirewallRuleResponse>(response);
         }
 
         public AsyncInvoker<NeutronCreateFirewallRuleResponse> NeutronCreateFirewallRuleAsyncInvoker(NeutronCreateFirewallRuleRequest neutronCreateFirewallRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_rules",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_rules", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", neutronCreateFirewallRuleRequest);
             return new AsyncInvoker<NeutronCreateFirewallRuleResponse>(this, "POST", request, JsonUtils.DeSerialize<NeutronCreateFirewallRuleResponse>);
         }
@@ -2190,9 +2190,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("firewall_group_id", neutronDeleteFirewallGroupRequest.FirewallGroupId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_groups/{firewall_group_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_groups/{firewall_group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronDeleteFirewallGroupRequest);
-            var response = await DoHttpRequestAsync("DELETE",request);
+            var response = await DoHttpRequestAsync("DELETE", request);
             return JsonUtils.DeSerializeNull<NeutronDeleteFirewallGroupResponse>(response);
         }
 
@@ -2200,7 +2200,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("firewall_group_id", neutronDeleteFirewallGroupRequest.FirewallGroupId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_groups/{firewall_group_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_groups/{firewall_group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronDeleteFirewallGroupRequest);
             return new AsyncInvoker<NeutronDeleteFirewallGroupResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<NeutronDeleteFirewallGroupResponse>);
         }
@@ -2216,9 +2216,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("firewall_policy_id", neutronDeleteFirewallPolicyRequest.FirewallPolicyId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_policies/{firewall_policy_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_policies/{firewall_policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronDeleteFirewallPolicyRequest);
-            var response = await DoHttpRequestAsync("DELETE",request);
+            var response = await DoHttpRequestAsync("DELETE", request);
             return JsonUtils.DeSerializeNull<NeutronDeleteFirewallPolicyResponse>(response);
         }
 
@@ -2226,7 +2226,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("firewall_policy_id", neutronDeleteFirewallPolicyRequest.FirewallPolicyId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_policies/{firewall_policy_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_policies/{firewall_policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronDeleteFirewallPolicyRequest);
             return new AsyncInvoker<NeutronDeleteFirewallPolicyResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<NeutronDeleteFirewallPolicyResponse>);
         }
@@ -2242,9 +2242,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("firewall_rule_id", neutronDeleteFirewallRuleRequest.FirewallRuleId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_rules/{firewall_rule_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_rules/{firewall_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronDeleteFirewallRuleRequest);
-            var response = await DoHttpRequestAsync("DELETE",request);
+            var response = await DoHttpRequestAsync("DELETE", request);
             return JsonUtils.DeSerializeNull<NeutronDeleteFirewallRuleResponse>(response);
         }
 
@@ -2252,7 +2252,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("firewall_rule_id", neutronDeleteFirewallRuleRequest.FirewallRuleId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_rules/{firewall_rule_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_rules/{firewall_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronDeleteFirewallRuleRequest);
             return new AsyncInvoker<NeutronDeleteFirewallRuleResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<NeutronDeleteFirewallRuleResponse>);
         }
@@ -2267,16 +2267,16 @@ namespace HuaweiCloud.SDK.Vpc.V2
         public async Task<NeutronListFirewallGroupsResponse> NeutronListFirewallGroupsAsync(NeutronListFirewallGroupsRequest neutronListFirewallGroupsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_groups",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_groups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronListFirewallGroupsRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<NeutronListFirewallGroupsResponse>(response);
         }
 
         public AsyncInvoker<NeutronListFirewallGroupsResponse> NeutronListFirewallGroupsAsyncInvoker(NeutronListFirewallGroupsRequest neutronListFirewallGroupsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_groups",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_groups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronListFirewallGroupsRequest);
             return new AsyncInvoker<NeutronListFirewallGroupsResponse>(this, "GET", request, JsonUtils.DeSerialize<NeutronListFirewallGroupsResponse>);
         }
@@ -2291,16 +2291,16 @@ namespace HuaweiCloud.SDK.Vpc.V2
         public async Task<NeutronListFirewallPoliciesResponse> NeutronListFirewallPoliciesAsync(NeutronListFirewallPoliciesRequest neutronListFirewallPoliciesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_policies",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_policies", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronListFirewallPoliciesRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<NeutronListFirewallPoliciesResponse>(response);
         }
 
         public AsyncInvoker<NeutronListFirewallPoliciesResponse> NeutronListFirewallPoliciesAsyncInvoker(NeutronListFirewallPoliciesRequest neutronListFirewallPoliciesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_policies",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_policies", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronListFirewallPoliciesRequest);
             return new AsyncInvoker<NeutronListFirewallPoliciesResponse>(this, "GET", request, JsonUtils.DeSerialize<NeutronListFirewallPoliciesResponse>);
         }
@@ -2315,16 +2315,16 @@ namespace HuaweiCloud.SDK.Vpc.V2
         public async Task<NeutronListFirewallRulesResponse> NeutronListFirewallRulesAsync(NeutronListFirewallRulesRequest neutronListFirewallRulesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_rules",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_rules", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronListFirewallRulesRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<NeutronListFirewallRulesResponse>(response);
         }
 
         public AsyncInvoker<NeutronListFirewallRulesResponse> NeutronListFirewallRulesAsyncInvoker(NeutronListFirewallRulesRequest neutronListFirewallRulesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_rules",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_rules", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronListFirewallRulesRequest);
             return new AsyncInvoker<NeutronListFirewallRulesResponse>(this, "GET", request, JsonUtils.DeSerialize<NeutronListFirewallRulesResponse>);
         }
@@ -2340,9 +2340,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("firewall_policy_id", neutronRemoveFirewallRuleRequest.FirewallPolicyId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_policies/{firewall_policy_id}/remove_rule",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_policies/{firewall_policy_id}/remove_rule", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", neutronRemoveFirewallRuleRequest);
-            var response = await DoHttpRequestAsync("PUT",request);
+            var response = await DoHttpRequestAsync("PUT", request);
             return JsonUtils.DeSerialize<NeutronRemoveFirewallRuleResponse>(response);
         }
 
@@ -2350,7 +2350,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("firewall_policy_id", neutronRemoveFirewallRuleRequest.FirewallPolicyId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_policies/{firewall_policy_id}/remove_rule",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_policies/{firewall_policy_id}/remove_rule", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", neutronRemoveFirewallRuleRequest);
             return new AsyncInvoker<NeutronRemoveFirewallRuleResponse>(this, "PUT", request, JsonUtils.DeSerialize<NeutronRemoveFirewallRuleResponse>);
         }
@@ -2366,9 +2366,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("firewall_group_id", neutronShowFirewallGroupRequest.FirewallGroupId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_groups/{firewall_group_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_groups/{firewall_group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronShowFirewallGroupRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<NeutronShowFirewallGroupResponse>(response);
         }
 
@@ -2376,7 +2376,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("firewall_group_id", neutronShowFirewallGroupRequest.FirewallGroupId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_groups/{firewall_group_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_groups/{firewall_group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronShowFirewallGroupRequest);
             return new AsyncInvoker<NeutronShowFirewallGroupResponse>(this, "GET", request, JsonUtils.DeSerialize<NeutronShowFirewallGroupResponse>);
         }
@@ -2392,9 +2392,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("firewall_policy_id", neutronShowFirewallPolicyRequest.FirewallPolicyId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_policies/{firewall_policy_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_policies/{firewall_policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronShowFirewallPolicyRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<NeutronShowFirewallPolicyResponse>(response);
         }
 
@@ -2402,7 +2402,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("firewall_policy_id", neutronShowFirewallPolicyRequest.FirewallPolicyId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_policies/{firewall_policy_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_policies/{firewall_policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronShowFirewallPolicyRequest);
             return new AsyncInvoker<NeutronShowFirewallPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<NeutronShowFirewallPolicyResponse>);
         }
@@ -2418,9 +2418,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("firewall_rule_id", neutronShowFirewallRuleRequest.FirewallRuleId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_rules/{firewall_rule_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_rules/{firewall_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronShowFirewallRuleRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<NeutronShowFirewallRuleResponse>(response);
         }
 
@@ -2428,7 +2428,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("firewall_rule_id", neutronShowFirewallRuleRequest.FirewallRuleId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_rules/{firewall_rule_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_rules/{firewall_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronShowFirewallRuleRequest);
             return new AsyncInvoker<NeutronShowFirewallRuleResponse>(this, "GET", request, JsonUtils.DeSerialize<NeutronShowFirewallRuleResponse>);
         }
@@ -2444,9 +2444,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("firewall_group_id", neutronUpdateFirewallGroupRequest.FirewallGroupId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_groups/{firewall_group_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_groups/{firewall_group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", neutronUpdateFirewallGroupRequest);
-            var response = await DoHttpRequestAsync("PUT",request);
+            var response = await DoHttpRequestAsync("PUT", request);
             return JsonUtils.DeSerialize<NeutronUpdateFirewallGroupResponse>(response);
         }
 
@@ -2454,7 +2454,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("firewall_group_id", neutronUpdateFirewallGroupRequest.FirewallGroupId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_groups/{firewall_group_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_groups/{firewall_group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", neutronUpdateFirewallGroupRequest);
             return new AsyncInvoker<NeutronUpdateFirewallGroupResponse>(this, "PUT", request, JsonUtils.DeSerialize<NeutronUpdateFirewallGroupResponse>);
         }
@@ -2470,9 +2470,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("firewall_policy_id", neutronUpdateFirewallPolicyRequest.FirewallPolicyId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_policies/{firewall_policy_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_policies/{firewall_policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", neutronUpdateFirewallPolicyRequest);
-            var response = await DoHttpRequestAsync("PUT",request);
+            var response = await DoHttpRequestAsync("PUT", request);
             return JsonUtils.DeSerialize<NeutronUpdateFirewallPolicyResponse>(response);
         }
 
@@ -2480,7 +2480,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("firewall_policy_id", neutronUpdateFirewallPolicyRequest.FirewallPolicyId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_policies/{firewall_policy_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_policies/{firewall_policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", neutronUpdateFirewallPolicyRequest);
             return new AsyncInvoker<NeutronUpdateFirewallPolicyResponse>(this, "PUT", request, JsonUtils.DeSerialize<NeutronUpdateFirewallPolicyResponse>);
         }
@@ -2496,9 +2496,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("firewall_rule_id", neutronUpdateFirewallRuleRequest.FirewallRuleId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_rules/{firewall_rule_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_rules/{firewall_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", neutronUpdateFirewallRuleRequest);
-            var response = await DoHttpRequestAsync("PUT",request);
+            var response = await DoHttpRequestAsync("PUT", request);
             return JsonUtils.DeSerialize<NeutronUpdateFirewallRuleResponse>(response);
         }
 
@@ -2506,7 +2506,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("firewall_rule_id", neutronUpdateFirewallRuleRequest.FirewallRuleId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_rules/{firewall_rule_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/fwaas/firewall_rules/{firewall_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", neutronUpdateFirewallRuleRequest);
             return new AsyncInvoker<NeutronUpdateFirewallRuleResponse>(this, "PUT", request, JsonUtils.DeSerialize<NeutronUpdateFirewallRuleResponse>);
         }
@@ -2521,16 +2521,16 @@ namespace HuaweiCloud.SDK.Vpc.V2
         public async Task<ListApiVersionResponse> ListApiVersionAsync(ListApiVersionRequest listApiVersionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listApiVersionRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ListApiVersionResponse>(response);
         }
 
         public AsyncInvoker<ListApiVersionResponse> ListApiVersionAsyncInvoker(ListApiVersionRequest listApiVersionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listApiVersionRequest);
             return new AsyncInvoker<ListApiVersionResponse>(this, "GET", request, JsonUtils.DeSerialize<ListApiVersionResponse>);
         }
@@ -2547,9 +2547,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("vpc_id", batchCreateVpcTagsRequest.VpcId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/vpcs/{vpc_id}/tags/action",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/vpcs/{vpc_id}/tags/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchCreateVpcTagsRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerializeNull<BatchCreateVpcTagsResponse>(response);
         }
 
@@ -2557,7 +2557,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("vpc_id", batchCreateVpcTagsRequest.VpcId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/vpcs/{vpc_id}/tags/action",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/vpcs/{vpc_id}/tags/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchCreateVpcTagsRequest);
             return new AsyncInvoker<BatchCreateVpcTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchCreateVpcTagsResponse>);
         }
@@ -2574,9 +2574,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("vpc_id", batchDeleteVpcTagsRequest.VpcId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/vpcs/{vpc_id}/tags/action",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/vpcs/{vpc_id}/tags/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteVpcTagsRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerializeNull<BatchDeleteVpcTagsResponse>(response);
         }
 
@@ -2584,7 +2584,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("vpc_id", batchDeleteVpcTagsRequest.VpcId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/vpcs/{vpc_id}/tags/action",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/vpcs/{vpc_id}/tags/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteVpcTagsRequest);
             return new AsyncInvoker<BatchDeleteVpcTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchDeleteVpcTagsResponse>);
         }
@@ -2599,16 +2599,16 @@ namespace HuaweiCloud.SDK.Vpc.V2
         public async Task<CreateVpcResponse> CreateVpcAsync(CreateVpcRequest createVpcRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpcs",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpcs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createVpcRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<CreateVpcResponse>(response);
         }
 
         public AsyncInvoker<CreateVpcResponse> CreateVpcAsyncInvoker(CreateVpcRequest createVpcRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpcs",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpcs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createVpcRequest);
             return new AsyncInvoker<CreateVpcResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateVpcResponse>);
         }
@@ -2625,9 +2625,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("vpc_id", createVpcResourceTagRequest.VpcId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/vpcs/{vpc_id}/tags",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/vpcs/{vpc_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createVpcResourceTagRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerializeNull<CreateVpcResourceTagResponse>(response);
         }
 
@@ -2635,7 +2635,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("vpc_id", createVpcResourceTagRequest.VpcId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/vpcs/{vpc_id}/tags",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/vpcs/{vpc_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createVpcResourceTagRequest);
             return new AsyncInvoker<CreateVpcResourceTagResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateVpcResourceTagResponse>);
         }
@@ -2650,16 +2650,16 @@ namespace HuaweiCloud.SDK.Vpc.V2
         public async Task<CreateVpcRouteResponse> CreateVpcRouteAsync(CreateVpcRouteRequest createVpcRouteRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/vpc/routes",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/vpc/routes", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createVpcRouteRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<CreateVpcRouteResponse>(response);
         }
 
         public AsyncInvoker<CreateVpcRouteResponse> CreateVpcRouteAsyncInvoker(CreateVpcRouteRequest createVpcRouteRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/vpc/routes",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/vpc/routes", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createVpcRouteRequest);
             return new AsyncInvoker<CreateVpcRouteResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateVpcRouteResponse>);
         }
@@ -2675,9 +2675,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("vpc_id", deleteVpcRequest.VpcId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpcs/{vpc_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpcs/{vpc_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteVpcRequest);
-            var response = await DoHttpRequestAsync("DELETE",request);
+            var response = await DoHttpRequestAsync("DELETE", request);
             return JsonUtils.DeSerializeNull<DeleteVpcResponse>(response);
         }
 
@@ -2685,7 +2685,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("vpc_id", deleteVpcRequest.VpcId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpcs/{vpc_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpcs/{vpc_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteVpcRequest);
             return new AsyncInvoker<DeleteVpcResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteVpcResponse>);
         }
@@ -2701,9 +2701,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("route_id", deleteVpcRouteRequest.RouteId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/vpc/routes/{route_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/vpc/routes/{route_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteVpcRouteRequest);
-            var response = await DoHttpRequestAsync("DELETE",request);
+            var response = await DoHttpRequestAsync("DELETE", request);
             return JsonUtils.DeSerializeNull<DeleteVpcRouteResponse>(response);
         }
 
@@ -2711,7 +2711,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("route_id", deleteVpcRouteRequest.RouteId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/vpc/routes/{route_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/vpc/routes/{route_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteVpcRouteRequest);
             return new AsyncInvoker<DeleteVpcRouteResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteVpcRouteResponse>);
         }
@@ -2729,9 +2729,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("vpc_id", deleteVpcTagRequest.VpcId.ToString());
             urlParam.Add("key", deleteVpcTagRequest.Key.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/vpcs/{vpc_id}/tags/{key}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/vpcs/{vpc_id}/tags/{key}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteVpcTagRequest);
-            var response = await DoHttpRequestAsync("DELETE",request);
+            var response = await DoHttpRequestAsync("DELETE", request);
             return JsonUtils.DeSerializeNull<DeleteVpcTagResponse>(response);
         }
 
@@ -2740,7 +2740,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("vpc_id", deleteVpcTagRequest.VpcId.ToString());
             urlParam.Add("key", deleteVpcTagRequest.Key.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/vpcs/{vpc_id}/tags/{key}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/vpcs/{vpc_id}/tags/{key}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteVpcTagRequest);
             return new AsyncInvoker<DeleteVpcTagResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteVpcTagResponse>);
         }
@@ -2755,16 +2755,16 @@ namespace HuaweiCloud.SDK.Vpc.V2
         public async Task<ListVpcRoutesResponse> ListVpcRoutesAsync(ListVpcRoutesRequest listVpcRoutesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/vpc/routes",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/vpc/routes", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listVpcRoutesRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ListVpcRoutesResponse>(response);
         }
 
         public AsyncInvoker<ListVpcRoutesResponse> ListVpcRoutesAsyncInvoker(ListVpcRoutesRequest listVpcRoutesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/vpc/routes",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/vpc/routes", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listVpcRoutesRequest);
             return new AsyncInvoker<ListVpcRoutesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListVpcRoutesResponse>);
         }
@@ -2779,16 +2779,16 @@ namespace HuaweiCloud.SDK.Vpc.V2
         public async Task<ListVpcTagsResponse> ListVpcTagsAsync(ListVpcTagsRequest listVpcTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/vpcs/tags",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/vpcs/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listVpcTagsRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ListVpcTagsResponse>(response);
         }
 
         public AsyncInvoker<ListVpcTagsResponse> ListVpcTagsAsyncInvoker(ListVpcTagsRequest listVpcTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/vpcs/tags",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/vpcs/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listVpcTagsRequest);
             return new AsyncInvoker<ListVpcTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListVpcTagsResponse>);
         }
@@ -2803,16 +2803,16 @@ namespace HuaweiCloud.SDK.Vpc.V2
         public async Task<ListVpcsResponse> ListVpcsAsync(ListVpcsRequest listVpcsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpcs",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpcs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listVpcsRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ListVpcsResponse>(response);
         }
 
         public AsyncInvoker<ListVpcsResponse> ListVpcsAsyncInvoker(ListVpcsRequest listVpcsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpcs",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpcs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listVpcsRequest);
             return new AsyncInvoker<ListVpcsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListVpcsResponse>);
         }
@@ -2827,16 +2827,16 @@ namespace HuaweiCloud.SDK.Vpc.V2
         public async Task<ListVpcsByTagsResponse> ListVpcsByTagsAsync(ListVpcsByTagsRequest listVpcsByTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/vpcs/resource_instances/action",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/vpcs/resource_instances/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listVpcsByTagsRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<ListVpcsByTagsResponse>(response);
         }
 
         public AsyncInvoker<ListVpcsByTagsResponse> ListVpcsByTagsAsyncInvoker(ListVpcsByTagsRequest listVpcsByTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/vpcs/resource_instances/action",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/vpcs/resource_instances/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listVpcsByTagsRequest);
             return new AsyncInvoker<ListVpcsByTagsResponse>(this, "POST", request, JsonUtils.DeSerialize<ListVpcsByTagsResponse>);
         }
@@ -2852,9 +2852,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("vpc_id", showVpcRequest.VpcId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpcs/{vpc_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpcs/{vpc_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVpcRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowVpcResponse>(response);
         }
 
@@ -2862,7 +2862,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("vpc_id", showVpcRequest.VpcId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpcs/{vpc_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpcs/{vpc_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVpcRequest);
             return new AsyncInvoker<ShowVpcResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowVpcResponse>);
         }
@@ -2878,9 +2878,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("route_id", showVpcRouteRequest.RouteId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/vpc/routes/{route_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/vpc/routes/{route_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVpcRouteRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowVpcRouteResponse>(response);
         }
 
@@ -2888,7 +2888,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("route_id", showVpcRouteRequest.RouteId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/vpc/routes/{route_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/vpc/routes/{route_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVpcRouteRequest);
             return new AsyncInvoker<ShowVpcRouteResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowVpcRouteResponse>);
         }
@@ -2904,9 +2904,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("vpc_id", showVpcTagsRequest.VpcId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/vpcs/{vpc_id}/tags",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/vpcs/{vpc_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVpcTagsRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowVpcTagsResponse>(response);
         }
 
@@ -2914,7 +2914,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("vpc_id", showVpcTagsRequest.VpcId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/vpcs/{vpc_id}/tags",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/vpcs/{vpc_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVpcTagsRequest);
             return new AsyncInvoker<ShowVpcTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowVpcTagsResponse>);
         }
@@ -2930,9 +2930,9 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("vpc_id", updateVpcRequest.VpcId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpcs/{vpc_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpcs/{vpc_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateVpcRequest);
-            var response = await DoHttpRequestAsync("PUT",request);
+            var response = await DoHttpRequestAsync("PUT", request);
             return JsonUtils.DeSerialize<UpdateVpcResponse>(response);
         }
 
@@ -2940,7 +2940,7 @@ namespace HuaweiCloud.SDK.Vpc.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("vpc_id", updateVpcRequest.VpcId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpcs/{vpc_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpcs/{vpc_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateVpcRequest);
             return new AsyncInvoker<UpdateVpcResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateVpcResponse>);
         }

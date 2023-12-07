@@ -25,16 +25,16 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1
         public async Task<CreateDefaultConfigResponse> CreateDefaultConfigAsync(CreateDefaultConfigRequest createDefaultConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos/default-config",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos/default-config", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDefaultConfigRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<CreateDefaultConfigResponse>(response);
         }
 
         public AsyncInvoker<CreateDefaultConfigResponse> CreateDefaultConfigAsyncInvoker(CreateDefaultConfigRequest createDefaultConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos/default-config",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos/default-config", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDefaultConfigRequest);
             return new AsyncInvoker<CreateDefaultConfigResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateDefaultConfigResponse>);
         }
@@ -49,16 +49,16 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1
         public async Task<DeleteDefaultConfigResponse> DeleteDefaultConfigAsync(DeleteDefaultConfigRequest deleteDefaultConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos/default-config",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos/default-config", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDefaultConfigRequest);
-            var response = await DoHttpRequestAsync("DELETE",request);
+            var response = await DoHttpRequestAsync("DELETE", request);
             return JsonUtils.DeSerialize<DeleteDefaultConfigResponse>(response);
         }
 
         public AsyncInvoker<DeleteDefaultConfigResponse> DeleteDefaultConfigAsyncInvoker(DeleteDefaultConfigRequest deleteDefaultConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos/default-config",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos/default-config", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDefaultConfigRequest);
             return new AsyncInvoker<DeleteDefaultConfigResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteDefaultConfigResponse>);
         }
@@ -73,16 +73,16 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1
         public async Task<ShowAlertConfigResponse> ShowAlertConfigAsync(ShowAlertConfigRequest showAlertConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/warnalert/alertconfig/query",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/warnalert/alertconfig/query", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAlertConfigRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowAlertConfigResponse>(response);
         }
 
         public AsyncInvoker<ShowAlertConfigResponse> ShowAlertConfigAsyncInvoker(ShowAlertConfigRequest showAlertConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/warnalert/alertconfig/query",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/warnalert/alertconfig/query", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAlertConfigRequest);
             return new AsyncInvoker<ShowAlertConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAlertConfigResponse>);
         }
@@ -97,16 +97,16 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1
         public async Task<ShowDefaultConfigResponse> ShowDefaultConfigAsync(ShowDefaultConfigRequest showDefaultConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos/default-config",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos/default-config", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDefaultConfigRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowDefaultConfigResponse>(response);
         }
 
         public AsyncInvoker<ShowDefaultConfigResponse> ShowDefaultConfigAsyncInvoker(ShowDefaultConfigRequest showDefaultConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos/default-config",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos/default-config", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDefaultConfigRequest);
             return new AsyncInvoker<ShowDefaultConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDefaultConfigResponse>);
         }
@@ -121,16 +121,16 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1
         public async Task<UpdateAlertConfigResponse> UpdateAlertConfigAsync(UpdateAlertConfigRequest updateAlertConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/warnalert/alertconfig/update",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/warnalert/alertconfig/update", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAlertConfigRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<UpdateAlertConfigResponse>(response);
         }
 
         public AsyncInvoker<UpdateAlertConfigResponse> UpdateAlertConfigAsyncInvoker(UpdateAlertConfigRequest updateAlertConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/warnalert/alertconfig/update",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/warnalert/alertconfig/update", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAlertConfigRequest);
             return new AsyncInvoker<UpdateAlertConfigResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateAlertConfigResponse>);
         }
@@ -145,16 +145,16 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1
         public async Task<ListDDosStatusResponse> ListDDosStatusAsync(ListDDosStatusRequest listDDosStatusRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDDosStatusRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ListDDosStatusResponse>(response);
         }
 
         public AsyncInvoker<ListDDosStatusResponse> ListDDosStatusAsyncInvoker(ListDDosStatusRequest listDDosStatusRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDDosStatusRequest);
             return new AsyncInvoker<ListDDosStatusResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDDosStatusResponse>);
         }
@@ -170,9 +170,9 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("floating_ip_id", listDailyLogRequest.FloatingIpId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos/{floating_ip_id}/logs",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos/{floating_ip_id}/logs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDailyLogRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ListDailyLogResponse>(response);
         }
 
@@ -180,7 +180,7 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("floating_ip_id", listDailyLogRequest.FloatingIpId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos/{floating_ip_id}/logs",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos/{floating_ip_id}/logs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDailyLogRequest);
             return new AsyncInvoker<ListDailyLogResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDailyLogResponse>);
         }
@@ -196,9 +196,9 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("floating_ip_id", listDailyReportRequest.FloatingIpId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos/{floating_ip_id}/daily",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos/{floating_ip_id}/daily", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDailyReportRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ListDailyReportResponse>(response);
         }
 
@@ -206,7 +206,7 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("floating_ip_id", listDailyReportRequest.FloatingIpId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos/{floating_ip_id}/daily",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos/{floating_ip_id}/daily", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDailyReportRequest);
             return new AsyncInvoker<ListDailyReportResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDailyReportResponse>);
         }
@@ -221,16 +221,16 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1
         public async Task<ListNewConfigsResponse> ListNewConfigsAsync(ListNewConfigsRequest listNewConfigsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/antiddos/query-config-list",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/antiddos/query-config-list", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listNewConfigsRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ListNewConfigsResponse>(response);
         }
 
         public AsyncInvoker<ListNewConfigsResponse> ListNewConfigsAsyncInvoker(ListNewConfigsRequest listNewConfigsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/antiddos/query-config-list",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/antiddos/query-config-list", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listNewConfigsRequest);
             return new AsyncInvoker<ListNewConfigsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListNewConfigsResponse>);
         }
@@ -245,16 +245,16 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1
         public async Task<ListWeeklyReportsResponse> ListWeeklyReportsAsync(ListWeeklyReportsRequest listWeeklyReportsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos/weekly",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos/weekly", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listWeeklyReportsRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ListWeeklyReportsResponse>(response);
         }
 
         public AsyncInvoker<ListWeeklyReportsResponse> ListWeeklyReportsAsyncInvoker(ListWeeklyReportsRequest listWeeklyReportsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos/weekly",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos/weekly", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listWeeklyReportsRequest);
             return new AsyncInvoker<ListWeeklyReportsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListWeeklyReportsResponse>);
         }
@@ -270,9 +270,9 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("floating_ip_id", showDDosRequest.FloatingIpId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos/{floating_ip_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos/{floating_ip_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDDosRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowDDosResponse>(response);
         }
 
@@ -280,7 +280,7 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("floating_ip_id", showDDosRequest.FloatingIpId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos/{floating_ip_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos/{floating_ip_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDDosRequest);
             return new AsyncInvoker<ShowDDosResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDDosResponse>);
         }
@@ -296,9 +296,9 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("floating_ip_id", showDDosStatusRequest.FloatingIpId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos/{floating_ip_id}/status",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos/{floating_ip_id}/status", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDDosStatusRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowDDosStatusResponse>(response);
         }
 
@@ -306,7 +306,7 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("floating_ip_id", showDDosStatusRequest.FloatingIpId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos/{floating_ip_id}/status",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos/{floating_ip_id}/status", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDDosStatusRequest);
             return new AsyncInvoker<ShowDDosStatusResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDDosStatusResponse>);
         }
@@ -321,16 +321,16 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1
         public async Task<ShowNewTaskStatusResponse> ShowNewTaskStatusAsync(ShowNewTaskStatusRequest showNewTaskStatusRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/query-task-status",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/query-task-status", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showNewTaskStatusRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowNewTaskStatusResponse>(response);
         }
 
         public AsyncInvoker<ShowNewTaskStatusResponse> ShowNewTaskStatusAsyncInvoker(ShowNewTaskStatusRequest showNewTaskStatusRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/query-task-status",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/query-task-status", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showNewTaskStatusRequest);
             return new AsyncInvoker<ShowNewTaskStatusResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowNewTaskStatusResponse>);
         }
@@ -346,9 +346,9 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("floating_ip_id", updateDDosRequest.FloatingIpId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos/{floating_ip_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos/{floating_ip_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDDosRequest);
-            var response = await DoHttpRequestAsync("PUT",request);
+            var response = await DoHttpRequestAsync("PUT", request);
             return JsonUtils.DeSerialize<UpdateDDosResponse>(response);
         }
 
@@ -356,7 +356,7 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("floating_ip_id", updateDDosRequest.FloatingIpId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos/{floating_ip_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos/{floating_ip_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDDosRequest);
             return new AsyncInvoker<UpdateDDosResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateDDosResponse>);
         }

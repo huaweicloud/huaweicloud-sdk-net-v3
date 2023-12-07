@@ -25,16 +25,16 @@ namespace HuaweiCloud.SDK.Ocr.V1
         public async Task<RecognizeAcceptanceBillResponse> RecognizeAcceptanceBillAsync(RecognizeAcceptanceBillRequest recognizeAcceptanceBillRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/acceptance-bill",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/acceptance-bill", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeAcceptanceBillRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<RecognizeAcceptanceBillResponse>(response);
         }
 
         public AsyncInvoker<RecognizeAcceptanceBillResponse> RecognizeAcceptanceBillAsyncInvoker(RecognizeAcceptanceBillRequest recognizeAcceptanceBillRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/acceptance-bill",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/acceptance-bill", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeAcceptanceBillRequest);
             return new AsyncInvoker<RecognizeAcceptanceBillResponse>(this, "POST", request, JsonUtils.DeSerialize<RecognizeAcceptanceBillResponse>);
         }
@@ -51,16 +51,16 @@ namespace HuaweiCloud.SDK.Ocr.V1
         public async Task<RecognizeAutoClassificationResponse> RecognizeAutoClassificationAsync(RecognizeAutoClassificationRequest recognizeAutoClassificationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/auto-classification",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/auto-classification", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeAutoClassificationRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<RecognizeAutoClassificationResponse>(response);
         }
 
         public AsyncInvoker<RecognizeAutoClassificationResponse> RecognizeAutoClassificationAsyncInvoker(RecognizeAutoClassificationRequest recognizeAutoClassificationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/auto-classification",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/auto-classification", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeAutoClassificationRequest);
             return new AsyncInvoker<RecognizeAutoClassificationResponse>(this, "POST", request, JsonUtils.DeSerialize<RecognizeAutoClassificationResponse>);
         }
@@ -77,16 +77,16 @@ namespace HuaweiCloud.SDK.Ocr.V1
         public async Task<RecognizeBankcardResponse> RecognizeBankcardAsync(RecognizeBankcardRequest recognizeBankcardRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/bankcard",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/bankcard", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeBankcardRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<RecognizeBankcardResponse>(response);
         }
 
         public AsyncInvoker<RecognizeBankcardResponse> RecognizeBankcardAsyncInvoker(RecognizeBankcardRequest recognizeBankcardRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/bankcard",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/bankcard", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeBankcardRequest);
             return new AsyncInvoker<RecognizeBankcardResponse>(this, "POST", request, JsonUtils.DeSerialize<RecognizeBankcardResponse>);
         }
@@ -101,16 +101,16 @@ namespace HuaweiCloud.SDK.Ocr.V1
         public async Task<RecognizeBusinessCardResponse> RecognizeBusinessCardAsync(RecognizeBusinessCardRequest recognizeBusinessCardRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/business-card",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/business-card", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeBusinessCardRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<RecognizeBusinessCardResponse>(response);
         }
 
         public AsyncInvoker<RecognizeBusinessCardResponse> RecognizeBusinessCardAsyncInvoker(RecognizeBusinessCardRequest recognizeBusinessCardRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/business-card",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/business-card", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeBusinessCardRequest);
             return new AsyncInvoker<RecognizeBusinessCardResponse>(this, "POST", request, JsonUtils.DeSerialize<RecognizeBusinessCardResponse>);
         }
@@ -129,16 +129,16 @@ namespace HuaweiCloud.SDK.Ocr.V1
         public async Task<RecognizeBusinessLicenseResponse> RecognizeBusinessLicenseAsync(RecognizeBusinessLicenseRequest recognizeBusinessLicenseRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/business-license",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/business-license", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeBusinessLicenseRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<RecognizeBusinessLicenseResponse>(response);
         }
 
         public AsyncInvoker<RecognizeBusinessLicenseResponse> RecognizeBusinessLicenseAsyncInvoker(RecognizeBusinessLicenseRequest recognizeBusinessLicenseRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/business-license",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/business-license", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeBusinessLicenseRequest);
             return new AsyncInvoker<RecognizeBusinessLicenseResponse>(this, "POST", request, JsonUtils.DeSerialize<RecognizeBusinessLicenseResponse>);
         }
@@ -153,16 +153,16 @@ namespace HuaweiCloud.SDK.Ocr.V1
         public async Task<RecognizeCambodianIdCardResponse> RecognizeCambodianIdCardAsync(RecognizeCambodianIdCardRequest recognizeCambodianIdCardRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/cambodian-idcard",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/cambodian-idcard", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeCambodianIdCardRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<RecognizeCambodianIdCardResponse>(response);
         }
 
         public AsyncInvoker<RecognizeCambodianIdCardResponse> RecognizeCambodianIdCardAsyncInvoker(RecognizeCambodianIdCardRequest recognizeCambodianIdCardRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/cambodian-idcard",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/cambodian-idcard", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeCambodianIdCardRequest);
             return new AsyncInvoker<RecognizeCambodianIdCardResponse>(this, "POST", request, JsonUtils.DeSerialize<RecognizeCambodianIdCardResponse>);
         }
@@ -177,16 +177,16 @@ namespace HuaweiCloud.SDK.Ocr.V1
         public async Task<RecognizeChileIdCardResponse> RecognizeChileIdCardAsync(RecognizeChileIdCardRequest recognizeChileIdCardRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/chile-id-card",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/chile-id-card", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeChileIdCardRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<RecognizeChileIdCardResponse>(response);
         }
 
         public AsyncInvoker<RecognizeChileIdCardResponse> RecognizeChileIdCardAsyncInvoker(RecognizeChileIdCardRequest recognizeChileIdCardRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/chile-id-card",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/chile-id-card", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeChileIdCardRequest);
             return new AsyncInvoker<RecognizeChileIdCardResponse>(this, "POST", request, JsonUtils.DeSerialize<RecognizeChileIdCardResponse>);
         }
@@ -201,16 +201,16 @@ namespace HuaweiCloud.SDK.Ocr.V1
         public async Task<RecognizeColombiaIdCardResponse> RecognizeColombiaIdCardAsync(RecognizeColombiaIdCardRequest recognizeColombiaIdCardRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/colombia-id-card",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/colombia-id-card", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeColombiaIdCardRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<RecognizeColombiaIdCardResponse>(response);
         }
 
         public AsyncInvoker<RecognizeColombiaIdCardResponse> RecognizeColombiaIdCardAsyncInvoker(RecognizeColombiaIdCardRequest recognizeColombiaIdCardRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/colombia-id-card",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/colombia-id-card", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeColombiaIdCardRequest);
             return new AsyncInvoker<RecognizeColombiaIdCardResponse>(this, "POST", request, JsonUtils.DeSerialize<RecognizeColombiaIdCardResponse>);
         }
@@ -229,16 +229,16 @@ namespace HuaweiCloud.SDK.Ocr.V1
         public async Task<RecognizeDriverLicenseResponse> RecognizeDriverLicenseAsync(RecognizeDriverLicenseRequest recognizeDriverLicenseRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/driver-license",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/driver-license", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeDriverLicenseRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<RecognizeDriverLicenseResponse>(response);
         }
 
         public AsyncInvoker<RecognizeDriverLicenseResponse> RecognizeDriverLicenseAsyncInvoker(RecognizeDriverLicenseRequest recognizeDriverLicenseRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/driver-license",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/driver-license", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeDriverLicenseRequest);
             return new AsyncInvoker<RecognizeDriverLicenseResponse>(this, "POST", request, JsonUtils.DeSerialize<RecognizeDriverLicenseResponse>);
         }
@@ -253,16 +253,16 @@ namespace HuaweiCloud.SDK.Ocr.V1
         public async Task<RecognizeExitEntryPermitResponse> RecognizeExitEntryPermitAsync(RecognizeExitEntryPermitRequest recognizeExitEntryPermitRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/exit-entry-permit",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/exit-entry-permit", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeExitEntryPermitRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<RecognizeExitEntryPermitResponse>(response);
         }
 
         public AsyncInvoker<RecognizeExitEntryPermitResponse> RecognizeExitEntryPermitAsyncInvoker(RecognizeExitEntryPermitRequest recognizeExitEntryPermitRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/exit-entry-permit",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/exit-entry-permit", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeExitEntryPermitRequest);
             return new AsyncInvoker<RecognizeExitEntryPermitResponse>(this, "POST", request, JsonUtils.DeSerialize<RecognizeExitEntryPermitResponse>);
         }
@@ -277,16 +277,16 @@ namespace HuaweiCloud.SDK.Ocr.V1
         public async Task<RecognizeFinancialStatementResponse> RecognizeFinancialStatementAsync(RecognizeFinancialStatementRequest recognizeFinancialStatementRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/financial-statement",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/financial-statement", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeFinancialStatementRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<RecognizeFinancialStatementResponse>(response);
         }
 
         public AsyncInvoker<RecognizeFinancialStatementResponse> RecognizeFinancialStatementAsyncInvoker(RecognizeFinancialStatementRequest recognizeFinancialStatementRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/financial-statement",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/financial-statement", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeFinancialStatementRequest);
             return new AsyncInvoker<RecognizeFinancialStatementResponse>(this, "POST", request, JsonUtils.DeSerialize<RecognizeFinancialStatementResponse>);
         }
@@ -303,16 +303,16 @@ namespace HuaweiCloud.SDK.Ocr.V1
         public async Task<RecognizeFlightItineraryResponse> RecognizeFlightItineraryAsync(RecognizeFlightItineraryRequest recognizeFlightItineraryRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/flight-itinerary",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/flight-itinerary", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeFlightItineraryRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<RecognizeFlightItineraryResponse>(response);
         }
 
         public AsyncInvoker<RecognizeFlightItineraryResponse> RecognizeFlightItineraryAsyncInvoker(RecognizeFlightItineraryRequest recognizeFlightItineraryRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/flight-itinerary",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/flight-itinerary", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeFlightItineraryRequest);
             return new AsyncInvoker<RecognizeFlightItineraryResponse>(this, "POST", request, JsonUtils.DeSerialize<RecognizeFlightItineraryResponse>);
         }
@@ -327,16 +327,16 @@ namespace HuaweiCloud.SDK.Ocr.V1
         public async Task<RecognizeGeneralTableResponse> RecognizeGeneralTableAsync(RecognizeGeneralTableRequest recognizeGeneralTableRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/general-table",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/general-table", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeGeneralTableRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<RecognizeGeneralTableResponse>(response);
         }
 
         public AsyncInvoker<RecognizeGeneralTableResponse> RecognizeGeneralTableAsyncInvoker(RecognizeGeneralTableRequest recognizeGeneralTableRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/general-table",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/general-table", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeGeneralTableRequest);
             return new AsyncInvoker<RecognizeGeneralTableResponse>(this, "POST", request, JsonUtils.DeSerialize<RecognizeGeneralTableResponse>);
         }
@@ -351,16 +351,16 @@ namespace HuaweiCloud.SDK.Ocr.V1
         public async Task<RecognizeGeneralTextResponse> RecognizeGeneralTextAsync(RecognizeGeneralTextRequest recognizeGeneralTextRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/general-text",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/general-text", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeGeneralTextRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<RecognizeGeneralTextResponse>(response);
         }
 
         public AsyncInvoker<RecognizeGeneralTextResponse> RecognizeGeneralTextAsyncInvoker(RecognizeGeneralTextRequest recognizeGeneralTextRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/general-text",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/general-text", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeGeneralTextRequest);
             return new AsyncInvoker<RecognizeGeneralTextResponse>(this, "POST", request, JsonUtils.DeSerialize<RecognizeGeneralTextResponse>);
         }
@@ -375,16 +375,16 @@ namespace HuaweiCloud.SDK.Ocr.V1
         public async Task<RecognizeHandwritingResponse> RecognizeHandwritingAsync(RecognizeHandwritingRequest recognizeHandwritingRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/handwriting",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/handwriting", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeHandwritingRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<RecognizeHandwritingResponse>(response);
         }
 
         public AsyncInvoker<RecognizeHandwritingResponse> RecognizeHandwritingAsyncInvoker(RecognizeHandwritingRequest recognizeHandwritingRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/handwriting",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/handwriting", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeHandwritingRequest);
             return new AsyncInvoker<RecognizeHandwritingResponse>(this, "POST", request, JsonUtils.DeSerialize<RecognizeHandwritingResponse>);
         }
@@ -399,16 +399,16 @@ namespace HuaweiCloud.SDK.Ocr.V1
         public async Task<RecognizeHealthCodeResponse> RecognizeHealthCodeAsync(RecognizeHealthCodeRequest recognizeHealthCodeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/health-code",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/health-code", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeHealthCodeRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<RecognizeHealthCodeResponse>(response);
         }
 
         public AsyncInvoker<RecognizeHealthCodeResponse> RecognizeHealthCodeAsyncInvoker(RecognizeHealthCodeRequest recognizeHealthCodeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/health-code",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/health-code", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeHealthCodeRequest);
             return new AsyncInvoker<RecognizeHealthCodeResponse>(this, "POST", request, JsonUtils.DeSerialize<RecognizeHealthCodeResponse>);
         }
@@ -423,16 +423,16 @@ namespace HuaweiCloud.SDK.Ocr.V1
         public async Task<RecognizeHkIdCardResponse> RecognizeHkIdCardAsync(RecognizeHkIdCardRequest recognizeHkIdCardRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/hk-id-card",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/hk-id-card", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeHkIdCardRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<RecognizeHkIdCardResponse>(response);
         }
 
         public AsyncInvoker<RecognizeHkIdCardResponse> RecognizeHkIdCardAsyncInvoker(RecognizeHkIdCardRequest recognizeHkIdCardRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/hk-id-card",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/hk-id-card", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeHkIdCardRequest);
             return new AsyncInvoker<RecognizeHkIdCardResponse>(this, "POST", request, JsonUtils.DeSerialize<RecognizeHkIdCardResponse>);
         }
@@ -453,16 +453,16 @@ namespace HuaweiCloud.SDK.Ocr.V1
         public async Task<RecognizeIdCardResponse> RecognizeIdCardAsync(RecognizeIdCardRequest recognizeIdCardRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/id-card",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/id-card", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeIdCardRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<RecognizeIdCardResponse>(response);
         }
 
         public AsyncInvoker<RecognizeIdCardResponse> RecognizeIdCardAsyncInvoker(RecognizeIdCardRequest recognizeIdCardRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/id-card",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/id-card", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeIdCardRequest);
             return new AsyncInvoker<RecognizeIdCardResponse>(this, "POST", request, JsonUtils.DeSerialize<RecognizeIdCardResponse>);
         }
@@ -501,16 +501,16 @@ namespace HuaweiCloud.SDK.Ocr.V1
         public async Task<RecognizeIdDocumentResponse> RecognizeIdDocumentAsync(RecognizeIdDocumentRequest recognizeIdDocumentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/id-document",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/id-document", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeIdDocumentRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<RecognizeIdDocumentResponse>(response);
         }
 
         public AsyncInvoker<RecognizeIdDocumentResponse> RecognizeIdDocumentAsyncInvoker(RecognizeIdDocumentRequest recognizeIdDocumentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/id-document",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/id-document", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeIdDocumentRequest);
             return new AsyncInvoker<RecognizeIdDocumentResponse>(this, "POST", request, JsonUtils.DeSerialize<RecognizeIdDocumentResponse>);
         }
@@ -525,16 +525,16 @@ namespace HuaweiCloud.SDK.Ocr.V1
         public async Task<RecognizeInsurancePolicyResponse> RecognizeInsurancePolicyAsync(RecognizeInsurancePolicyRequest recognizeInsurancePolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/insurance-policy",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/insurance-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeInsurancePolicyRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<RecognizeInsurancePolicyResponse>(response);
         }
 
         public AsyncInvoker<RecognizeInsurancePolicyResponse> RecognizeInsurancePolicyAsyncInvoker(RecognizeInsurancePolicyRequest recognizeInsurancePolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/insurance-policy",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/insurance-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeInsurancePolicyRequest);
             return new AsyncInvoker<RecognizeInsurancePolicyResponse>(this, "POST", request, JsonUtils.DeSerialize<RecognizeInsurancePolicyResponse>);
         }
@@ -549,16 +549,16 @@ namespace HuaweiCloud.SDK.Ocr.V1
         public async Task<RecognizeInvoiceVerificationResponse> RecognizeInvoiceVerificationAsync(RecognizeInvoiceVerificationRequest recognizeInvoiceVerificationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/invoice-verification",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/invoice-verification", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeInvoiceVerificationRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<RecognizeInvoiceVerificationResponse>(response);
         }
 
         public AsyncInvoker<RecognizeInvoiceVerificationResponse> RecognizeInvoiceVerificationAsyncInvoker(RecognizeInvoiceVerificationRequest recognizeInvoiceVerificationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/invoice-verification",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/invoice-verification", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeInvoiceVerificationRequest);
             return new AsyncInvoker<RecognizeInvoiceVerificationResponse>(this, "POST", request, JsonUtils.DeSerialize<RecognizeInvoiceVerificationResponse>);
         }
@@ -573,16 +573,16 @@ namespace HuaweiCloud.SDK.Ocr.V1
         public async Task<RecognizeLicensePlateResponse> RecognizeLicensePlateAsync(RecognizeLicensePlateRequest recognizeLicensePlateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/license-plate",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/license-plate", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeLicensePlateRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<RecognizeLicensePlateResponse>(response);
         }
 
         public AsyncInvoker<RecognizeLicensePlateResponse> RecognizeLicensePlateAsyncInvoker(RecognizeLicensePlateRequest recognizeLicensePlateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/license-plate",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/license-plate", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeLicensePlateRequest);
             return new AsyncInvoker<RecognizeLicensePlateResponse>(this, "POST", request, JsonUtils.DeSerialize<RecognizeLicensePlateResponse>);
         }
@@ -597,16 +597,16 @@ namespace HuaweiCloud.SDK.Ocr.V1
         public async Task<RecognizeMacaoIdCardResponse> RecognizeMacaoIdCardAsync(RecognizeMacaoIdCardRequest recognizeMacaoIdCardRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/macao-id-card",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/macao-id-card", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeMacaoIdCardRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<RecognizeMacaoIdCardResponse>(response);
         }
 
         public AsyncInvoker<RecognizeMacaoIdCardResponse> RecognizeMacaoIdCardAsyncInvoker(RecognizeMacaoIdCardRequest recognizeMacaoIdCardRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/macao-id-card",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/macao-id-card", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeMacaoIdCardRequest);
             return new AsyncInvoker<RecognizeMacaoIdCardResponse>(this, "POST", request, JsonUtils.DeSerialize<RecognizeMacaoIdCardResponse>);
         }
@@ -621,16 +621,16 @@ namespace HuaweiCloud.SDK.Ocr.V1
         public async Task<RecognizeMainlandTravelPermitResponse> RecognizeMainlandTravelPermitAsync(RecognizeMainlandTravelPermitRequest recognizeMainlandTravelPermitRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/mainland-travel-permit",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/mainland-travel-permit", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeMainlandTravelPermitRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<RecognizeMainlandTravelPermitResponse>(response);
         }
 
         public AsyncInvoker<RecognizeMainlandTravelPermitResponse> RecognizeMainlandTravelPermitAsyncInvoker(RecognizeMainlandTravelPermitRequest recognizeMainlandTravelPermitRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/mainland-travel-permit",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/mainland-travel-permit", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeMainlandTravelPermitRequest);
             return new AsyncInvoker<RecognizeMainlandTravelPermitResponse>(this, "POST", request, JsonUtils.DeSerialize<RecognizeMainlandTravelPermitResponse>);
         }
@@ -648,16 +648,16 @@ namespace HuaweiCloud.SDK.Ocr.V1
         public async Task<RecognizeMvsInvoiceResponse> RecognizeMvsInvoiceAsync(RecognizeMvsInvoiceRequest recognizeMvsInvoiceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/mvs-invoice",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/mvs-invoice", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeMvsInvoiceRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<RecognizeMvsInvoiceResponse>(response);
         }
 
         public AsyncInvoker<RecognizeMvsInvoiceResponse> RecognizeMvsInvoiceAsyncInvoker(RecognizeMvsInvoiceRequest recognizeMvsInvoiceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/mvs-invoice",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/mvs-invoice", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeMvsInvoiceRequest);
             return new AsyncInvoker<RecognizeMvsInvoiceResponse>(this, "POST", request, JsonUtils.DeSerialize<RecognizeMvsInvoiceResponse>);
         }
@@ -672,16 +672,16 @@ namespace HuaweiCloud.SDK.Ocr.V1
         public async Task<RecognizeMyanmarDriverLicenseResponse> RecognizeMyanmarDriverLicenseAsync(RecognizeMyanmarDriverLicenseRequest recognizeMyanmarDriverLicenseRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/myanmar-driver-license",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/myanmar-driver-license", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeMyanmarDriverLicenseRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<RecognizeMyanmarDriverLicenseResponse>(response);
         }
 
         public AsyncInvoker<RecognizeMyanmarDriverLicenseResponse> RecognizeMyanmarDriverLicenseAsyncInvoker(RecognizeMyanmarDriverLicenseRequest recognizeMyanmarDriverLicenseRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/myanmar-driver-license",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/myanmar-driver-license", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeMyanmarDriverLicenseRequest);
             return new AsyncInvoker<RecognizeMyanmarDriverLicenseResponse>(this, "POST", request, JsonUtils.DeSerialize<RecognizeMyanmarDriverLicenseResponse>);
         }
@@ -696,16 +696,16 @@ namespace HuaweiCloud.SDK.Ocr.V1
         public async Task<RecognizeMyanmarIdcardResponse> RecognizeMyanmarIdcardAsync(RecognizeMyanmarIdcardRequest recognizeMyanmarIdcardRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/myanmar-id-card",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/myanmar-id-card", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeMyanmarIdcardRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<RecognizeMyanmarIdcardResponse>(response);
         }
 
         public AsyncInvoker<RecognizeMyanmarIdcardResponse> RecognizeMyanmarIdcardAsyncInvoker(RecognizeMyanmarIdcardRequest recognizeMyanmarIdcardRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/myanmar-id-card",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/myanmar-id-card", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeMyanmarIdcardRequest);
             return new AsyncInvoker<RecognizeMyanmarIdcardResponse>(this, "POST", request, JsonUtils.DeSerialize<RecognizeMyanmarIdcardResponse>);
         }
@@ -722,16 +722,16 @@ namespace HuaweiCloud.SDK.Ocr.V1
         public async Task<RecognizePassportResponse> RecognizePassportAsync(RecognizePassportRequest recognizePassportRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/passport",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/passport", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizePassportRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<RecognizePassportResponse>(response);
         }
 
         public AsyncInvoker<RecognizePassportResponse> RecognizePassportAsyncInvoker(RecognizePassportRequest recognizePassportRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/passport",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/passport", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizePassportRequest);
             return new AsyncInvoker<RecognizePassportResponse>(this, "POST", request, JsonUtils.DeSerialize<RecognizePassportResponse>);
         }
@@ -746,16 +746,16 @@ namespace HuaweiCloud.SDK.Ocr.V1
         public async Task<RecognizePcrTestRecordResponse> RecognizePcrTestRecordAsync(RecognizePcrTestRecordRequest recognizePcrTestRecordRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/pcr-test-record",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/pcr-test-record", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizePcrTestRecordRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<RecognizePcrTestRecordResponse>(response);
         }
 
         public AsyncInvoker<RecognizePcrTestRecordResponse> RecognizePcrTestRecordAsyncInvoker(RecognizePcrTestRecordRequest recognizePcrTestRecordRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/pcr-test-record",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/pcr-test-record", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizePcrTestRecordRequest);
             return new AsyncInvoker<RecognizePcrTestRecordResponse>(this, "POST", request, JsonUtils.DeSerialize<RecognizePcrTestRecordResponse>);
         }
@@ -770,16 +770,16 @@ namespace HuaweiCloud.SDK.Ocr.V1
         public async Task<RecognizePeruIdCardResponse> RecognizePeruIdCardAsync(RecognizePeruIdCardRequest recognizePeruIdCardRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/peru-id-card",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/peru-id-card", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizePeruIdCardRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<RecognizePeruIdCardResponse>(response);
         }
 
         public AsyncInvoker<RecognizePeruIdCardResponse> RecognizePeruIdCardAsyncInvoker(RecognizePeruIdCardRequest recognizePeruIdCardRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/peru-id-card",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/peru-id-card", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizePeruIdCardRequest);
             return new AsyncInvoker<RecognizePeruIdCardResponse>(this, "POST", request, JsonUtils.DeSerialize<RecognizePeruIdCardResponse>);
         }
@@ -794,16 +794,16 @@ namespace HuaweiCloud.SDK.Ocr.V1
         public async Task<RecognizeQualificationCertificateResponse> RecognizeQualificationCertificateAsync(RecognizeQualificationCertificateRequest recognizeQualificationCertificateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/transportation-qualification-certificate",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/transportation-qualification-certificate", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeQualificationCertificateRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<RecognizeQualificationCertificateResponse>(response);
         }
 
         public AsyncInvoker<RecognizeQualificationCertificateResponse> RecognizeQualificationCertificateAsyncInvoker(RecognizeQualificationCertificateRequest recognizeQualificationCertificateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/transportation-qualification-certificate",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/transportation-qualification-certificate", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeQualificationCertificateRequest);
             return new AsyncInvoker<RecognizeQualificationCertificateResponse>(this, "POST", request, JsonUtils.DeSerialize<RecognizeQualificationCertificateResponse>);
         }
@@ -822,16 +822,16 @@ namespace HuaweiCloud.SDK.Ocr.V1
         public async Task<RecognizeQuotaInvoiceResponse> RecognizeQuotaInvoiceAsync(RecognizeQuotaInvoiceRequest recognizeQuotaInvoiceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/quota-invoice",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/quota-invoice", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeQuotaInvoiceRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<RecognizeQuotaInvoiceResponse>(response);
         }
 
         public AsyncInvoker<RecognizeQuotaInvoiceResponse> RecognizeQuotaInvoiceAsyncInvoker(RecognizeQuotaInvoiceRequest recognizeQuotaInvoiceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/quota-invoice",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/quota-invoice", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeQuotaInvoiceRequest);
             return new AsyncInvoker<RecognizeQuotaInvoiceResponse>(this, "POST", request, JsonUtils.DeSerialize<RecognizeQuotaInvoiceResponse>);
         }
@@ -847,16 +847,16 @@ namespace HuaweiCloud.SDK.Ocr.V1
         public async Task<RecognizeRealEstateCertificateResponse> RecognizeRealEstateCertificateAsync(RecognizeRealEstateCertificateRequest recognizeRealEstateCertificateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/real-estate-certificate",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/real-estate-certificate", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeRealEstateCertificateRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<RecognizeRealEstateCertificateResponse>(response);
         }
 
         public AsyncInvoker<RecognizeRealEstateCertificateResponse> RecognizeRealEstateCertificateAsyncInvoker(RecognizeRealEstateCertificateRequest recognizeRealEstateCertificateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/real-estate-certificate",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/real-estate-certificate", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeRealEstateCertificateRequest);
             return new AsyncInvoker<RecognizeRealEstateCertificateResponse>(this, "POST", request, JsonUtils.DeSerialize<RecognizeRealEstateCertificateResponse>);
         }
@@ -871,16 +871,16 @@ namespace HuaweiCloud.SDK.Ocr.V1
         public async Task<RecognizeSmartDocumentRecognizerResponse> RecognizeSmartDocumentRecognizerAsync(RecognizeSmartDocumentRecognizerRequest recognizeSmartDocumentRecognizerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/smart-document-recognizer",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/smart-document-recognizer", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeSmartDocumentRecognizerRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<RecognizeSmartDocumentRecognizerResponse>(response);
         }
 
         public AsyncInvoker<RecognizeSmartDocumentRecognizerResponse> RecognizeSmartDocumentRecognizerAsyncInvoker(RecognizeSmartDocumentRecognizerRequest recognizeSmartDocumentRecognizerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/smart-document-recognizer",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/smart-document-recognizer", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeSmartDocumentRecognizerRequest);
             return new AsyncInvoker<RecognizeSmartDocumentRecognizerResponse>(this, "POST", request, JsonUtils.DeSerialize<RecognizeSmartDocumentRecognizerResponse>);
         }
@@ -898,16 +898,16 @@ namespace HuaweiCloud.SDK.Ocr.V1
         public async Task<RecognizeTaxiInvoiceResponse> RecognizeTaxiInvoiceAsync(RecognizeTaxiInvoiceRequest recognizeTaxiInvoiceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/taxi-invoice",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/taxi-invoice", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeTaxiInvoiceRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<RecognizeTaxiInvoiceResponse>(response);
         }
 
         public AsyncInvoker<RecognizeTaxiInvoiceResponse> RecognizeTaxiInvoiceAsyncInvoker(RecognizeTaxiInvoiceRequest recognizeTaxiInvoiceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/taxi-invoice",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/taxi-invoice", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeTaxiInvoiceRequest);
             return new AsyncInvoker<RecognizeTaxiInvoiceResponse>(this, "POST", request, JsonUtils.DeSerialize<RecognizeTaxiInvoiceResponse>);
         }
@@ -922,16 +922,16 @@ namespace HuaweiCloud.SDK.Ocr.V1
         public async Task<RecognizeThailandIdcardResponse> RecognizeThailandIdcardAsync(RecognizeThailandIdcardRequest recognizeThailandIdcardRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/thailand-id-card",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/thailand-id-card", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeThailandIdcardRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<RecognizeThailandIdcardResponse>(response);
         }
 
         public AsyncInvoker<RecognizeThailandIdcardResponse> RecognizeThailandIdcardAsyncInvoker(RecognizeThailandIdcardRequest recognizeThailandIdcardRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/thailand-id-card",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/thailand-id-card", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeThailandIdcardRequest);
             return new AsyncInvoker<RecognizeThailandIdcardResponse>(this, "POST", request, JsonUtils.DeSerialize<RecognizeThailandIdcardResponse>);
         }
@@ -946,16 +946,16 @@ namespace HuaweiCloud.SDK.Ocr.V1
         public async Task<RecognizeThailandLicensePlateResponse> RecognizeThailandLicensePlateAsync(RecognizeThailandLicensePlateRequest recognizeThailandLicensePlateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/thailand-license-plate",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/thailand-license-plate", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeThailandLicensePlateRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<RecognizeThailandLicensePlateResponse>(response);
         }
 
         public AsyncInvoker<RecognizeThailandLicensePlateResponse> RecognizeThailandLicensePlateAsyncInvoker(RecognizeThailandLicensePlateRequest recognizeThailandLicensePlateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/thailand-license-plate",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/thailand-license-plate", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeThailandLicensePlateRequest);
             return new AsyncInvoker<RecognizeThailandLicensePlateResponse>(this, "POST", request, JsonUtils.DeSerialize<RecognizeThailandLicensePlateResponse>);
         }
@@ -972,16 +972,16 @@ namespace HuaweiCloud.SDK.Ocr.V1
         public async Task<RecognizeTollInvoiceResponse> RecognizeTollInvoiceAsync(RecognizeTollInvoiceRequest recognizeTollInvoiceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/toll-invoice",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/toll-invoice", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeTollInvoiceRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<RecognizeTollInvoiceResponse>(response);
         }
 
         public AsyncInvoker<RecognizeTollInvoiceResponse> RecognizeTollInvoiceAsyncInvoker(RecognizeTollInvoiceRequest recognizeTollInvoiceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/toll-invoice",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/toll-invoice", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeTollInvoiceRequest);
             return new AsyncInvoker<RecognizeTollInvoiceResponse>(this, "POST", request, JsonUtils.DeSerialize<RecognizeTollInvoiceResponse>);
         }
@@ -998,16 +998,16 @@ namespace HuaweiCloud.SDK.Ocr.V1
         public async Task<RecognizeTrainTicketResponse> RecognizeTrainTicketAsync(RecognizeTrainTicketRequest recognizeTrainTicketRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/train-ticket",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/train-ticket", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeTrainTicketRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<RecognizeTrainTicketResponse>(response);
         }
 
         public AsyncInvoker<RecognizeTrainTicketResponse> RecognizeTrainTicketAsyncInvoker(RecognizeTrainTicketRequest recognizeTrainTicketRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/train-ticket",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/train-ticket", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeTrainTicketRequest);
             return new AsyncInvoker<RecognizeTrainTicketResponse>(this, "POST", request, JsonUtils.DeSerialize<RecognizeTrainTicketResponse>);
         }
@@ -1023,16 +1023,16 @@ namespace HuaweiCloud.SDK.Ocr.V1
         public async Task<RecognizeTransportationLicenseResponse> RecognizeTransportationLicenseAsync(RecognizeTransportationLicenseRequest recognizeTransportationLicenseRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/transportation-license",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/transportation-license", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeTransportationLicenseRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<RecognizeTransportationLicenseResponse>(response);
         }
 
         public AsyncInvoker<RecognizeTransportationLicenseResponse> RecognizeTransportationLicenseAsyncInvoker(RecognizeTransportationLicenseRequest recognizeTransportationLicenseRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/transportation-license",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/transportation-license", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeTransportationLicenseRequest);
             return new AsyncInvoker<RecognizeTransportationLicenseResponse>(this, "POST", request, JsonUtils.DeSerialize<RecognizeTransportationLicenseResponse>);
         }
@@ -1051,16 +1051,16 @@ namespace HuaweiCloud.SDK.Ocr.V1
         public async Task<RecognizeVatInvoiceResponse> RecognizeVatInvoiceAsync(RecognizeVatInvoiceRequest recognizeVatInvoiceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/vat-invoice",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/vat-invoice", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeVatInvoiceRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<RecognizeVatInvoiceResponse>(response);
         }
 
         public AsyncInvoker<RecognizeVatInvoiceResponse> RecognizeVatInvoiceAsyncInvoker(RecognizeVatInvoiceRequest recognizeVatInvoiceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/vat-invoice",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/vat-invoice", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeVatInvoiceRequest);
             return new AsyncInvoker<RecognizeVatInvoiceResponse>(this, "POST", request, JsonUtils.DeSerialize<RecognizeVatInvoiceResponse>);
         }
@@ -1075,16 +1075,16 @@ namespace HuaweiCloud.SDK.Ocr.V1
         public async Task<RecognizeVehicleCertificateResponse> RecognizeVehicleCertificateAsync(RecognizeVehicleCertificateRequest recognizeVehicleCertificateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/vehicle-certificate",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/vehicle-certificate", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeVehicleCertificateRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<RecognizeVehicleCertificateResponse>(response);
         }
 
         public AsyncInvoker<RecognizeVehicleCertificateResponse> RecognizeVehicleCertificateAsyncInvoker(RecognizeVehicleCertificateRequest recognizeVehicleCertificateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/vehicle-certificate",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/vehicle-certificate", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeVehicleCertificateRequest);
             return new AsyncInvoker<RecognizeVehicleCertificateResponse>(this, "POST", request, JsonUtils.DeSerialize<RecognizeVehicleCertificateResponse>);
         }
@@ -1101,16 +1101,16 @@ namespace HuaweiCloud.SDK.Ocr.V1
         public async Task<RecognizeVehicleLicenseResponse> RecognizeVehicleLicenseAsync(RecognizeVehicleLicenseRequest recognizeVehicleLicenseRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/vehicle-license",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/vehicle-license", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeVehicleLicenseRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<RecognizeVehicleLicenseResponse>(response);
         }
 
         public AsyncInvoker<RecognizeVehicleLicenseResponse> RecognizeVehicleLicenseAsyncInvoker(RecognizeVehicleLicenseRequest recognizeVehicleLicenseRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/vehicle-license",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/vehicle-license", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeVehicleLicenseRequest);
             return new AsyncInvoker<RecognizeVehicleLicenseResponse>(this, "POST", request, JsonUtils.DeSerialize<RecognizeVehicleLicenseResponse>);
         }
@@ -1125,16 +1125,16 @@ namespace HuaweiCloud.SDK.Ocr.V1
         public async Task<RecognizeVietnamIdCardResponse> RecognizeVietnamIdCardAsync(RecognizeVietnamIdCardRequest recognizeVietnamIdCardRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/vietnam-id-card",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/vietnam-id-card", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeVietnamIdCardRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<RecognizeVietnamIdCardResponse>(response);
         }
 
         public AsyncInvoker<RecognizeVietnamIdCardResponse> RecognizeVietnamIdCardAsyncInvoker(RecognizeVietnamIdCardRequest recognizeVietnamIdCardRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/vietnam-id-card",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/vietnam-id-card", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeVietnamIdCardRequest);
             return new AsyncInvoker<RecognizeVietnamIdCardResponse>(this, "POST", request, JsonUtils.DeSerialize<RecognizeVietnamIdCardResponse>);
         }
@@ -1149,16 +1149,16 @@ namespace HuaweiCloud.SDK.Ocr.V1
         public async Task<RecognizeWaybillElectronicResponse> RecognizeWaybillElectronicAsync(RecognizeWaybillElectronicRequest recognizeWaybillElectronicRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/waybill-electronic",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/waybill-electronic", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeWaybillElectronicRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<RecognizeWaybillElectronicResponse>(response);
         }
 
         public AsyncInvoker<RecognizeWaybillElectronicResponse> RecognizeWaybillElectronicAsyncInvoker(RecognizeWaybillElectronicRequest recognizeWaybillElectronicRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/waybill-electronic",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/waybill-electronic", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeWaybillElectronicRequest);
             return new AsyncInvoker<RecognizeWaybillElectronicResponse>(this, "POST", request, JsonUtils.DeSerialize<RecognizeWaybillElectronicResponse>);
         }
@@ -1173,16 +1173,16 @@ namespace HuaweiCloud.SDK.Ocr.V1
         public async Task<RecognizeWebImageResponse> RecognizeWebImageAsync(RecognizeWebImageRequest recognizeWebImageRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/web-image",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/web-image", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeWebImageRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<RecognizeWebImageResponse>(response);
         }
 
         public AsyncInvoker<RecognizeWebImageResponse> RecognizeWebImageAsyncInvoker(RecognizeWebImageRequest recognizeWebImageRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/web-image",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/web-image", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeWebImageRequest);
             return new AsyncInvoker<RecognizeWebImageResponse>(this, "POST", request, JsonUtils.DeSerialize<RecognizeWebImageResponse>);
         }
@@ -1197,16 +1197,16 @@ namespace HuaweiCloud.SDK.Ocr.V1
         public async Task<RecognizeCustomTemplateResponse> RecognizeCustomTemplateAsync(RecognizeCustomTemplateRequest recognizeCustomTemplateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/custom-template",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/custom-template", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeCustomTemplateRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<RecognizeCustomTemplateResponse>(response);
         }
 
         public AsyncInvoker<RecognizeCustomTemplateResponse> RecognizeCustomTemplateAsyncInvoker(RecognizeCustomTemplateRequest recognizeCustomTemplateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/custom-template",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/custom-template", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeCustomTemplateRequest);
             return new AsyncInvoker<RecognizeCustomTemplateResponse>(this, "POST", request, JsonUtils.DeSerialize<RecognizeCustomTemplateResponse>);
         }
@@ -1221,16 +1221,16 @@ namespace HuaweiCloud.SDK.Ocr.V1
         public async Task<RecognizeVinResponse> RecognizeVinAsync(RecognizeVinRequest recognizeVinRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/vin",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/vin", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeVinRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<RecognizeVinResponse>(response);
         }
 
         public AsyncInvoker<RecognizeVinResponse> RecognizeVinAsyncInvoker(RecognizeVinRequest recognizeVinRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/vin",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/vin", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeVinRequest);
             return new AsyncInvoker<RecognizeVinResponse>(this, "POST", request, JsonUtils.DeSerialize<RecognizeVinResponse>);
         }

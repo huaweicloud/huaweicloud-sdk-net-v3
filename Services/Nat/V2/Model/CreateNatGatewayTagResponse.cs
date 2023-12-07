@@ -8,12 +8,12 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
+namespace HuaweiCloud.SDK.Nat.V2.Model
 {
     /// <summary>
     /// Response Object
     /// </summary>
-    public class DeleteDependencyResponse : SdkResponse
+    public class CreateNatGatewayTagResponse : SdkResponse
     {
 
 

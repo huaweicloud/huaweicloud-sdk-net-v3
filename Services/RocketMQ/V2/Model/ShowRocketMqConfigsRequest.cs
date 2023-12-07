@@ -8,20 +8,20 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
+namespace HuaweiCloud.SDK.RocketMQ.V2.Model
 {
     /// <summary>
     /// Request Object
     /// </summary>
-    public class CreateDependencyRequest 
+    public class ShowRocketMqConfigsRequest 
     {
 
         /// <summary>
-        /// 
+        /// 实例ID。
         /// </summary>
-        [SDKProperty("body", IsBody = true)]
-        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public CreateDependencyRequestBody Body { get; set; }
+        [SDKProperty("instance_id", IsPath = true)]
+        [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string InstanceId { get; set; }
 
 
 
@@ -31,8 +31,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class CreateDependencyRequest {\n");
-            sb.Append("  body: ").Append(Body).Append("\n");
+            sb.Append("class ShowRocketMqConfigsRequest {\n");
+            sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -42,22 +42,22 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CreateDependencyRequest);
+            return this.Equals(input as ShowRocketMqConfigsRequest);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(CreateDependencyRequest input)
+        public bool Equals(ShowRocketMqConfigsRequest input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Body == input.Body ||
-                    (this.Body != null &&
-                    this.Body.Equals(input.Body))
+                    this.InstanceId == input.InstanceId ||
+                    (this.InstanceId != null &&
+                    this.InstanceId.Equals(input.InstanceId))
                 );
         }
 
@@ -69,8 +69,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Body != null)
-                    hashCode = hashCode * 59 + this.Body.GetHashCode();
+                if (this.InstanceId != null)
+                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
                 return hashCode;
             }
         }

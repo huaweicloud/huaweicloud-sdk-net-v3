@@ -8,20 +8,19 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
+namespace HuaweiCloud.SDK.GaussDB.V3.Model
 {
     /// <summary>
-    /// Request Object
+    /// Response Object
     /// </summary>
-    public class DeleteDependencyRequest 
+    public class SwitchGaussMySqlProxySslResponse : SdkResponse
     {
 
         /// <summary>
-        /// 依赖包的ID。
+        /// 任务ID。
         /// </summary>
-        [SDKProperty("depend_id", IsPath = true)]
-        [JsonProperty("depend_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string DependId { get; set; }
+        [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string JobId { get; set; }
 
 
 
@@ -31,8 +30,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class DeleteDependencyRequest {\n");
-            sb.Append("  dependId: ").Append(DependId).Append("\n");
+            sb.Append("class SwitchGaussMySqlProxySslResponse {\n");
+            sb.Append("  jobId: ").Append(JobId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -42,22 +41,22 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as DeleteDependencyRequest);
+            return this.Equals(input as SwitchGaussMySqlProxySslResponse);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(DeleteDependencyRequest input)
+        public bool Equals(SwitchGaussMySqlProxySslResponse input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.DependId == input.DependId ||
-                    (this.DependId != null &&
-                    this.DependId.Equals(input.DependId))
+                    this.JobId == input.JobId ||
+                    (this.JobId != null &&
+                    this.JobId.Equals(input.JobId))
                 );
         }
 
@@ -69,8 +68,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.DependId != null)
-                    hashCode = hashCode * 59 + this.DependId.GetHashCode();
+                if (this.JobId != null)
+                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
                 return hashCode;
             }
         }

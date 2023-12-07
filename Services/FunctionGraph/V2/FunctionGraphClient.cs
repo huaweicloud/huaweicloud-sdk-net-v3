@@ -41,32 +41,6 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
-        /// 函数异步执行并返回预留实例ID
-        ///
-        /// 函数异步执行并返回预留实例ID用于场景指客户端请求执行比较费时任务，不需要同步等待执行完成返回结果，该方法提前返回任务执行对应的预留实例ID, 如果预留实例有异常，可以通过该实例ID把对应实例删除（该接口主要针对白名单用户）。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public AsyncInvokeReservedFunctionResponse AsyncInvokeReservedFunction(AsyncInvokeReservedFunctionRequest asyncInvokeReservedFunctionRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", asyncInvokeReservedFunctionRequest.FunctionUrn.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/reserved-invocations", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", asyncInvokeReservedFunctionRequest);
-            var response = DoHttpRequestSync("POST", request);
-            return JsonUtils.DeSerialize<AsyncInvokeReservedFunctionResponse>(response);
-        }
-
-        public SyncInvoker<AsyncInvokeReservedFunctionResponse> AsyncInvokeReservedFunctionInvoker(AsyncInvokeReservedFunctionRequest asyncInvokeReservedFunctionRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", asyncInvokeReservedFunctionRequest.FunctionUrn.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/reserved-invocations", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", asyncInvokeReservedFunctionRequest);
-            return new SyncInvoker<AsyncInvokeReservedFunctionResponse>(this, "POST", request, JsonUtils.DeSerialize<AsyncInvokeReservedFunctionResponse>);
-        }
-        
-        /// <summary>
         /// 删除指定函数的所有触发器
         ///
         /// 删除指定函数所有触发器设置。
@@ -173,30 +147,6 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         }
         
         /// <summary>
-        /// 创建依赖包
-        ///
-        /// 创建依赖包
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public CreateDependencyResponse CreateDependency(CreateDependencyRequest createDependencyRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/dependencies", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDependencyRequest);
-            var response = DoHttpRequestSync("POST", request);
-            return JsonUtils.DeSerialize<CreateDependencyResponse>(response);
-        }
-
-        public SyncInvoker<CreateDependencyResponse> CreateDependencyInvoker(CreateDependencyRequest createDependencyRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/dependencies", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDependencyRequest);
-            return new SyncInvoker<CreateDependencyResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateDependencyResponse>);
-        }
-        
-        /// <summary>
         /// 创建依赖包版本
         ///
         /// 创建依赖包版本
@@ -273,7 +223,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         /// <summary>
         /// 创建应用程序
         ///
-        /// 创建应用程序
+        /// 创建应用程序（该功能目前仅支持华北-北京四、华东-上海一）
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -407,7 +357,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         /// <summary>
         /// 创建下沉入口
         ///
-        /// 创建下沉入口。
+        /// 创建下沉入口。（该功能目前仅支持华北-北京四、华东-上海一、华东-上海二、西南-贵阳一）
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -450,32 +400,6 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/workflows", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createWorkflowRequest);
             return new SyncInvoker<CreateWorkflowResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateWorkflowResponse>);
-        }
-        
-        /// <summary>
-        /// 删除指定的依赖包
-        ///
-        /// 删除指定的依赖包
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public DeleteDependencyResponse DeleteDependency(DeleteDependencyRequest deleteDependencyRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("depend_id", deleteDependencyRequest.DependId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/dependencies/{depend_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDependencyRequest);
-            var response = DoHttpRequestSync("DELETE", request);
-            return JsonUtils.DeSerializeNull<DeleteDependencyResponse>(response);
-        }
-
-        public SyncInvoker<DeleteDependencyResponse> DeleteDependencyInvoker(DeleteDependencyRequest deleteDependencyRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("depend_id", deleteDependencyRequest.DependId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/dependencies/{depend_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDependencyRequest);
-            return new SyncInvoker<DeleteDependencyResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteDependencyResponse>);
         }
         
         /// <summary>
@@ -566,7 +490,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         /// <summary>
         /// 删除应用程序
         ///
-        /// 删除应用程序
+        /// 删除应用程序（该功能目前仅支持华北-北京四、华东-上海一）
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -704,7 +628,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         /// <summary>
         /// 删除下沉入口
         ///
-        /// 删除下沉入口。
+        /// 删除下沉入口。（该功能目前仅支持华北-北京四、华东-上海一、华东-上海二、西南-贵阳一）
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -882,7 +806,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         /// <summary>
         /// 查询应用程序模板列表
         ///
-        /// 查询应用程序模板列表
+        /// 查询应用程序模板列表（该功能目前仅支持华北-北京四、华东-上海一）
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1072,7 +996,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         /// <summary>
         /// 查询应用程序列表
         ///
-        /// 查询应用程序列表
+        /// 查询应用程序列表（该功能目前仅支持华北-北京四、华东-上海一）
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1521,7 +1445,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         /// <summary>
         /// 查询应用程序模板详情
         ///
-        /// 查询应用程序模板详情
+        /// 查询应用程序模板详情（该功能目前仅支持华北-北京四、华东-上海一）
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1542,32 +1466,6 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/application/templates/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAppTemplateRequest);
             return new SyncInvoker<ShowAppTemplateResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAppTemplateResponse>);
-        }
-        
-        /// <summary>
-        /// 获取指定依赖包
-        ///
-        /// 获取指定依赖包
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public ShowDependcyResponse ShowDependcy(ShowDependcyRequest showDependcyRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("depend_id", showDependcyRequest.DependId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/dependencies/{depend_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDependcyRequest);
-            var response = DoHttpRequestSync("GET", request);
-            return JsonUtils.DeSerialize<ShowDependcyResponse>(response);
-        }
-
-        public SyncInvoker<ShowDependcyResponse> ShowDependcyInvoker(ShowDependcyRequest showDependcyRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("depend_id", showDependcyRequest.DependId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/dependencies/{depend_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDependcyRequest);
-            return new SyncInvoker<ShowDependcyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDependcyResponse>);
         }
         
         /// <summary>
@@ -1689,7 +1587,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         /// <summary>
         /// 查询应用程序详情
         ///
-        /// 查询应用程序详情
+        /// 查询应用程序详情（该功能目前仅支持华北-北京四、华东-上海一）
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -2240,32 +2138,6 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/workflows/{workflow_id}/executions/{execution_id}/terminate", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopWorkFlowRequest);
             return new SyncInvoker<StopWorkFlowResponse>(this, "POST", request, JsonUtils.DeSerializeNull<StopWorkFlowResponse>);
-        }
-        
-        /// <summary>
-        /// 更新指定依赖包
-        ///
-        /// 更新指定依赖包
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public UpdateDependcyResponse UpdateDependcy(UpdateDependcyRequest updateDependcyRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("depend_id", updateDependcyRequest.DependId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/dependencies/{depend_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDependcyRequest);
-            var response = DoHttpRequestSync("PUT", request);
-            return JsonUtils.DeSerialize<UpdateDependcyResponse>(response);
-        }
-
-        public SyncInvoker<UpdateDependcyResponse> UpdateDependcyInvoker(UpdateDependcyRequest updateDependcyRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("depend_id", updateDependcyRequest.DependId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/dependencies/{depend_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDependcyRequest);
-            return new SyncInvoker<UpdateDependcyResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateDependcyResponse>);
         }
         
         /// <summary>

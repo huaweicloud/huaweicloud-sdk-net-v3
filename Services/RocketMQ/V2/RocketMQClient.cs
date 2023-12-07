@@ -853,6 +853,32 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         }
         
         /// <summary>
+        /// 查询RocketMQ配置
+        ///
+        /// 该接口用于查询RocketMQ配置，若成功则返回配置的相关信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowRocketMqConfigsResponse ShowRocketMqConfigs(ShowRocketMqConfigsRequest showRocketMqConfigsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showRocketMqConfigsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/rocketmq/instances/{instance_id}/configs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRocketMqConfigsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowRocketMqConfigsResponse>(response);
+        }
+
+        public SyncInvoker<ShowRocketMqConfigsResponse> ShowRocketMqConfigsInvoker(ShowRocketMqConfigsRequest showRocketMqConfigsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showRocketMqConfigsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/rocketmq/instances/{instance_id}/configs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRocketMqConfigsRequest);
+            return new SyncInvoker<ShowRocketMqConfigsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRocketMqConfigsResponse>);
+        }
+        
+        /// <summary>
         /// 查询项目标签
         ///
         /// 查询项目标签。
@@ -982,6 +1008,32 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceRequest);
             return new SyncInvoker<UpdateInstanceResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateInstanceResponse>);
+        }
+        
+        /// <summary>
+        /// 修改RocketMQ配置
+        ///
+        /// 该接口用于修改RocketMQ配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateRocketMqConfigsResponse UpdateRocketMqConfigs(UpdateRocketMqConfigsRequest updateRocketMqConfigsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateRocketMqConfigsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/rocketmq/instances/{instance_id}/configs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateRocketMqConfigsRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateRocketMqConfigsResponse>(response);
+        }
+
+        public SyncInvoker<UpdateRocketMqConfigsResponse> UpdateRocketMqConfigsInvoker(UpdateRocketMqConfigsRequest updateRocketMqConfigsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateRocketMqConfigsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/rocketmq/instances/{instance_id}/configs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateRocketMqConfigsRequest);
+            return new SyncInvoker<UpdateRocketMqConfigsResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateRocketMqConfigsResponse>);
         }
         
         /// <summary>

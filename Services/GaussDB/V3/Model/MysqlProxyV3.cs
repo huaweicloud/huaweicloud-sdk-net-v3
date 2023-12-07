@@ -148,6 +148,12 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         [JsonProperty("subnet_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SubnetId { get; set; }
 
+        /// <summary>
+        /// SSL数据加密开关设置。  取值范围： - true: 开启SSL数据加密。 - false: 关闭SSL数据加密。
+        /// </summary>
+        [JsonProperty("ssl_option", NullValueHandling = NullValueHandling.Ignore)]
+        public string SslOption { get; set; }
+
 
 
         /// <summary>
@@ -179,6 +185,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             sb.Append("  balanceRouteModeEnabled: ").Append(BalanceRouteModeEnabled).Append("\n");
             sb.Append("  consistenceMode: ").Append(ConsistenceMode).Append("\n");
             sb.Append("  subnetId: ").Append(SubnetId).Append("\n");
+            sb.Append("  sslOption: ").Append(SslOption).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -310,6 +317,11 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                     this.SubnetId == input.SubnetId ||
                     (this.SubnetId != null &&
                     this.SubnetId.Equals(input.SubnetId))
+                ) && 
+                (
+                    this.SslOption == input.SslOption ||
+                    (this.SslOption != null &&
+                    this.SslOption.Equals(input.SslOption))
                 );
         }
 
@@ -365,6 +377,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                     hashCode = hashCode * 59 + this.ConsistenceMode.GetHashCode();
                 if (this.SubnetId != null)
                     hashCode = hashCode * 59 + this.SubnetId.GetHashCode();
+                if (this.SslOption != null)
+                    hashCode = hashCode * 59 + this.SslOption.GetHashCode();
                 return hashCode;
             }
         }

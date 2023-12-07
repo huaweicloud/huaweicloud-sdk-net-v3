@@ -915,6 +915,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public ListServersByTagResponse ListServersByTag(ListServersByTagRequest listServersByTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -924,6 +925,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             return JsonUtils.DeSerialize<ListServersByTagResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<ListServersByTagResponse> ListServersByTagInvoker(ListServersByTagRequest listServersByTagRequest)
         {
             var urlParam = new Dictionary<string, string>();

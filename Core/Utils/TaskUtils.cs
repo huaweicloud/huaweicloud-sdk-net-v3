@@ -7,6 +7,46 @@ namespace HuaweiCloud.SDK.Core
 {
     public static class TaskUtils
     {
+        /// <summary>
+        /// Synchronously execute an async Task method which has a void return value.
+        /// </summary>
+        /// <param name="task">The Task method to execute.</param>
+        public static void RunSync(Func<Task> task)
+        {
+            var oldContext = SynchronizationContext.Current;
+            if (oldContext == null)
+            {
+                task.Invoke().Wait();
+                return;
+            }
+
+            var exclusiveContext = new ExclusiveSynchronizationContext();
+            SynchronizationContext.SetSynchronizationContext(exclusiveContext);
+            exclusiveContext.Post(async _ =>
+            {
+                try
+                {
+                    await task();
+                }
+                catch (Exception e)
+                {
+                    exclusiveContext.InnerException = e;
+                    throw;
+                }
+                finally
+                {
+                    exclusiveContext.EndMessageLoop();
+                }
+            }, null);
+
+            exclusiveContext.BeginMessageLoop();
+            SynchronizationContext.SetSynchronizationContext(oldContext);
+        }
+
+        /// <summary>
+        /// Synchronously execute an async Task method and return a value of type T.
+        /// </summary>
+        /// <param name="task">The Task method to execute.</param>
         public static T RunSync<T>(Func<Task<T>> task)
         {
             var oldContext = SynchronizationContext.Current;
@@ -34,6 +74,7 @@ namespace HuaweiCloud.SDK.Core
                     exclusiveContext.EndMessageLoop();
                 }
             }, null);
+
             exclusiveContext.BeginMessageLoop();
             SynchronizationContext.SetSynchronizationContext(oldContext);
             return result;

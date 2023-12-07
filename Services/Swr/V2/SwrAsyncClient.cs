@@ -27,9 +27,9 @@ namespace HuaweiCloud.SDK.Swr.V2
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("namespace", createImageSyncRepoRequest.Namespace.ToString());
             urlParam.Add("repository", createImageSyncRepoRequest.Repository.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/sync_repo",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/sync_repo", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createImageSyncRepoRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerializeNull<CreateImageSyncRepoResponse>(response);
         }
 
@@ -38,7 +38,7 @@ namespace HuaweiCloud.SDK.Swr.V2
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("namespace", createImageSyncRepoRequest.Namespace.ToString());
             urlParam.Add("repository", createImageSyncRepoRequest.Repository.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/sync_repo",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/sync_repo", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createImageSyncRepoRequest);
             return new AsyncInvoker<CreateImageSyncRepoResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateImageSyncRepoResponse>);
         }
@@ -55,9 +55,9 @@ namespace HuaweiCloud.SDK.Swr.V2
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("namespace", createManualImageSyncRepoRequest.Namespace.ToString());
             urlParam.Add("repository", createManualImageSyncRepoRequest.Repository.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/sync_images",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/sync_images", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createManualImageSyncRepoRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             var createManualImageSyncRepoResponse = JsonUtils.DeSerializeNull<CreateManualImageSyncRepoResponse>(response);
             createManualImageSyncRepoResponse.Body = JsonUtils.DeSerializeList<string>(response);
             return createManualImageSyncRepoResponse;
@@ -68,7 +68,7 @@ namespace HuaweiCloud.SDK.Swr.V2
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("namespace", createManualImageSyncRepoRequest.Namespace.ToString());
             urlParam.Add("repository", createManualImageSyncRepoRequest.Repository.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/sync_images",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/sync_images", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createManualImageSyncRepoRequest);
             return new AsyncInvoker<CreateManualImageSyncRepoResponse>(this, "POST", request, response =>
             {
@@ -88,16 +88,16 @@ namespace HuaweiCloud.SDK.Swr.V2
         public async Task<CreateNamespaceResponse> CreateNamespaceAsync(CreateNamespaceRequest createNamespaceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createNamespaceRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerializeNull<CreateNamespaceResponse>(response);
         }
 
         public AsyncInvoker<CreateNamespaceResponse> CreateNamespaceAsyncInvoker(CreateNamespaceRequest createNamespaceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createNamespaceRequest);
             return new AsyncInvoker<CreateNamespaceResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateNamespaceResponse>);
         }
@@ -113,9 +113,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("namespace", createNamespaceAuthRequest.Namespace.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/access",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/access", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createNamespaceAuthRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerializeNull<CreateNamespaceAuthResponse>(response);
         }
 
@@ -123,7 +123,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("namespace", createNamespaceAuthRequest.Namespace.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/access",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/access", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createNamespaceAuthRequest);
             return new AsyncInvoker<CreateNamespaceAuthResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateNamespaceAuthResponse>);
         }
@@ -139,9 +139,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("namespace", createRepoRequest.Namespace.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRepoRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerializeNull<CreateRepoResponse>(response);
         }
 
@@ -149,7 +149,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("namespace", createRepoRequest.Namespace.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRepoRequest);
             return new AsyncInvoker<CreateRepoResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateRepoResponse>);
         }
@@ -166,9 +166,9 @@ namespace HuaweiCloud.SDK.Swr.V2
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("namespace", createRepoDomainsRequest.Namespace.ToString());
             urlParam.Add("repository", createRepoDomainsRequest.Repository.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repositories/{repository}/access-domains",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repositories/{repository}/access-domains", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRepoDomainsRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerializeNull<CreateRepoDomainsResponse>(response);
         }
 
@@ -177,7 +177,7 @@ namespace HuaweiCloud.SDK.Swr.V2
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("namespace", createRepoDomainsRequest.Namespace.ToString());
             urlParam.Add("repository", createRepoDomainsRequest.Repository.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repositories/{repository}/access-domains",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repositories/{repository}/access-domains", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRepoDomainsRequest);
             return new AsyncInvoker<CreateRepoDomainsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateRepoDomainsResponse>);
         }
@@ -194,9 +194,9 @@ namespace HuaweiCloud.SDK.Swr.V2
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("namespace", createRetentionRequest.Namespace.ToString());
             urlParam.Add("repository", createRetentionRequest.Repository.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/retentions",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/retentions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRetentionRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<CreateRetentionResponse>(response);
         }
 
@@ -205,7 +205,7 @@ namespace HuaweiCloud.SDK.Swr.V2
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("namespace", createRetentionRequest.Namespace.ToString());
             urlParam.Add("repository", createRetentionRequest.Repository.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/retentions",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/retentions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRetentionRequest);
             return new AsyncInvoker<CreateRetentionResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateRetentionResponse>);
         }
@@ -220,16 +220,16 @@ namespace HuaweiCloud.SDK.Swr.V2
         public async Task<CreateSecretResponse> CreateSecretAsync(CreateSecretRequest createSecretRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/utils/secret",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/utils/secret", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createSecretRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<CreateSecretResponse>(response);
         }
 
         public AsyncInvoker<CreateSecretResponse> CreateSecretAsyncInvoker(CreateSecretRequest createSecretRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/utils/secret",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/utils/secret", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createSecretRequest);
             return new AsyncInvoker<CreateSecretResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateSecretResponse>);
         }
@@ -246,9 +246,9 @@ namespace HuaweiCloud.SDK.Swr.V2
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("namespace", createTriggerRequest.Namespace.ToString());
             urlParam.Add("repository", createTriggerRequest.Repository.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/triggers",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/triggers", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTriggerRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerializeNull<CreateTriggerResponse>(response);
         }
 
@@ -257,7 +257,7 @@ namespace HuaweiCloud.SDK.Swr.V2
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("namespace", createTriggerRequest.Namespace.ToString());
             urlParam.Add("repository", createTriggerRequest.Repository.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/triggers",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/triggers", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTriggerRequest);
             return new AsyncInvoker<CreateTriggerResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateTriggerResponse>);
         }
@@ -274,9 +274,9 @@ namespace HuaweiCloud.SDK.Swr.V2
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("namespace", createUserRepositoryAuthRequest.Namespace.ToString());
             urlParam.Add("repository", createUserRepositoryAuthRequest.Repository.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/access",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/access", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createUserRepositoryAuthRequest);
-            var response = await DoHttpRequestAsync("POST",request);
+            var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerializeNull<CreateUserRepositoryAuthResponse>(response);
         }
 
@@ -285,7 +285,7 @@ namespace HuaweiCloud.SDK.Swr.V2
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("namespace", createUserRepositoryAuthRequest.Namespace.ToString());
             urlParam.Add("repository", createUserRepositoryAuthRequest.Repository.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/access",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/access", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createUserRepositoryAuthRequest);
             return new AsyncInvoker<CreateUserRepositoryAuthResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateUserRepositoryAuthResponse>);
         }
@@ -302,9 +302,9 @@ namespace HuaweiCloud.SDK.Swr.V2
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("namespace", deleteImageSyncRepoRequest.Namespace.ToString());
             urlParam.Add("repository", deleteImageSyncRepoRequest.Repository.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/sync_repo",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/sync_repo", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteImageSyncRepoRequest);
-            var response = await DoHttpRequestAsync("DELETE",request);
+            var response = await DoHttpRequestAsync("DELETE", request);
             return JsonUtils.DeSerializeNull<DeleteImageSyncRepoResponse>(response);
         }
 
@@ -313,7 +313,7 @@ namespace HuaweiCloud.SDK.Swr.V2
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("namespace", deleteImageSyncRepoRequest.Namespace.ToString());
             urlParam.Add("repository", deleteImageSyncRepoRequest.Repository.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/sync_repo",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/sync_repo", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteImageSyncRepoRequest);
             return new AsyncInvoker<DeleteImageSyncRepoResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteImageSyncRepoResponse>);
         }
@@ -329,9 +329,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("namespace", deleteNamespaceAuthRequest.Namespace.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/access",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/access", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteNamespaceAuthRequest);
-            var response = await DoHttpRequestAsync("DELETE",request);
+            var response = await DoHttpRequestAsync("DELETE", request);
             return JsonUtils.DeSerializeNull<DeleteNamespaceAuthResponse>(response);
         }
 
@@ -339,7 +339,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("namespace", deleteNamespaceAuthRequest.Namespace.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/access",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/access", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteNamespaceAuthRequest);
             return new AsyncInvoker<DeleteNamespaceAuthResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteNamespaceAuthResponse>);
         }
@@ -355,9 +355,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("namespace", deleteNamespacesRequest.Namespace.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteNamespacesRequest);
-            var response = await DoHttpRequestAsync("DELETE",request);
+            var response = await DoHttpRequestAsync("DELETE", request);
             return JsonUtils.DeSerializeNull<DeleteNamespacesResponse>(response);
         }
 
@@ -365,7 +365,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("namespace", deleteNamespacesRequest.Namespace.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteNamespacesRequest);
             return new AsyncInvoker<DeleteNamespacesResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteNamespacesResponse>);
         }
@@ -382,9 +382,9 @@ namespace HuaweiCloud.SDK.Swr.V2
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("namespace", deleteRepoRequest.Namespace.ToString());
             urlParam.Add("repository", deleteRepoRequest.Repository.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRepoRequest);
-            var response = await DoHttpRequestAsync("DELETE",request);
+            var response = await DoHttpRequestAsync("DELETE", request);
             return JsonUtils.DeSerializeNull<DeleteRepoResponse>(response);
         }
 
@@ -393,7 +393,7 @@ namespace HuaweiCloud.SDK.Swr.V2
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("namespace", deleteRepoRequest.Namespace.ToString());
             urlParam.Add("repository", deleteRepoRequest.Repository.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRepoRequest);
             return new AsyncInvoker<DeleteRepoResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteRepoResponse>);
         }
@@ -411,9 +411,9 @@ namespace HuaweiCloud.SDK.Swr.V2
             urlParam.Add("namespace", deleteRepoDomainsRequest.Namespace.ToString());
             urlParam.Add("repository", deleteRepoDomainsRequest.Repository.ToString());
             urlParam.Add("access_domain", deleteRepoDomainsRequest.AccessDomain.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repositories/{repository}/access-domains/{access_domain}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repositories/{repository}/access-domains/{access_domain}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRepoDomainsRequest);
-            var response = await DoHttpRequestAsync("DELETE",request);
+            var response = await DoHttpRequestAsync("DELETE", request);
             return JsonUtils.DeSerializeNull<DeleteRepoDomainsResponse>(response);
         }
 
@@ -423,7 +423,7 @@ namespace HuaweiCloud.SDK.Swr.V2
             urlParam.Add("namespace", deleteRepoDomainsRequest.Namespace.ToString());
             urlParam.Add("repository", deleteRepoDomainsRequest.Repository.ToString());
             urlParam.Add("access_domain", deleteRepoDomainsRequest.AccessDomain.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repositories/{repository}/access-domains/{access_domain}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repositories/{repository}/access-domains/{access_domain}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRepoDomainsRequest);
             return new AsyncInvoker<DeleteRepoDomainsResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteRepoDomainsResponse>);
         }
@@ -441,9 +441,9 @@ namespace HuaweiCloud.SDK.Swr.V2
             urlParam.Add("namespace", deleteRepoTagRequest.Namespace.ToString());
             urlParam.Add("repository", deleteRepoTagRequest.Repository.ToString());
             urlParam.Add("tag", deleteRepoTagRequest.Tag.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/tags/{tag}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/tags/{tag}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRepoTagRequest);
-            var response = await DoHttpRequestAsync("DELETE",request);
+            var response = await DoHttpRequestAsync("DELETE", request);
             return JsonUtils.DeSerializeNull<DeleteRepoTagResponse>(response);
         }
 
@@ -453,7 +453,7 @@ namespace HuaweiCloud.SDK.Swr.V2
             urlParam.Add("namespace", deleteRepoTagRequest.Namespace.ToString());
             urlParam.Add("repository", deleteRepoTagRequest.Repository.ToString());
             urlParam.Add("tag", deleteRepoTagRequest.Tag.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/tags/{tag}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/tags/{tag}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRepoTagRequest);
             return new AsyncInvoker<DeleteRepoTagResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteRepoTagResponse>);
         }
@@ -471,9 +471,9 @@ namespace HuaweiCloud.SDK.Swr.V2
             urlParam.Add("namespace", deleteRetentionRequest.Namespace.ToString());
             urlParam.Add("repository", deleteRetentionRequest.Repository.ToString());
             urlParam.Add("retention_id", deleteRetentionRequest.RetentionId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/retentions/{retention_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/retentions/{retention_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRetentionRequest);
-            var response = await DoHttpRequestAsync("DELETE",request);
+            var response = await DoHttpRequestAsync("DELETE", request);
             return JsonUtils.DeSerializeNull<DeleteRetentionResponse>(response);
         }
 
@@ -483,7 +483,7 @@ namespace HuaweiCloud.SDK.Swr.V2
             urlParam.Add("namespace", deleteRetentionRequest.Namespace.ToString());
             urlParam.Add("repository", deleteRetentionRequest.Repository.ToString());
             urlParam.Add("retention_id", deleteRetentionRequest.RetentionId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/retentions/{retention_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/retentions/{retention_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRetentionRequest);
             return new AsyncInvoker<DeleteRetentionResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteRetentionResponse>);
         }
@@ -501,9 +501,9 @@ namespace HuaweiCloud.SDK.Swr.V2
             urlParam.Add("namespace", deleteTriggerRequest.Namespace.ToString());
             urlParam.Add("repository", deleteTriggerRequest.Repository.ToString());
             urlParam.Add("trigger", deleteTriggerRequest.Trigger.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/triggers/{trigger}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/triggers/{trigger}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTriggerRequest);
-            var response = await DoHttpRequestAsync("DELETE",request);
+            var response = await DoHttpRequestAsync("DELETE", request);
             return JsonUtils.DeSerializeNull<DeleteTriggerResponse>(response);
         }
 
@@ -513,7 +513,7 @@ namespace HuaweiCloud.SDK.Swr.V2
             urlParam.Add("namespace", deleteTriggerRequest.Namespace.ToString());
             urlParam.Add("repository", deleteTriggerRequest.Repository.ToString());
             urlParam.Add("trigger", deleteTriggerRequest.Trigger.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/triggers/{trigger}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/triggers/{trigger}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTriggerRequest);
             return new AsyncInvoker<DeleteTriggerResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteTriggerResponse>);
         }
@@ -530,9 +530,9 @@ namespace HuaweiCloud.SDK.Swr.V2
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("namespace", deleteUserRepositoryAuthRequest.Namespace.ToString());
             urlParam.Add("repository", deleteUserRepositoryAuthRequest.Repository.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/access",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/access", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteUserRepositoryAuthRequest);
-            var response = await DoHttpRequestAsync("DELETE",request);
+            var response = await DoHttpRequestAsync("DELETE", request);
             return JsonUtils.DeSerializeNull<DeleteUserRepositoryAuthResponse>(response);
         }
 
@@ -541,7 +541,7 @@ namespace HuaweiCloud.SDK.Swr.V2
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("namespace", deleteUserRepositoryAuthRequest.Namespace.ToString());
             urlParam.Add("repository", deleteUserRepositoryAuthRequest.Repository.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/access",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/access", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteUserRepositoryAuthRequest);
             return new AsyncInvoker<DeleteUserRepositoryAuthResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteUserRepositoryAuthResponse>);
         }
@@ -558,9 +558,9 @@ namespace HuaweiCloud.SDK.Swr.V2
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("namespace", listImageAutoSyncReposDetailsRequest.Namespace.ToString());
             urlParam.Add("repository", listImageAutoSyncReposDetailsRequest.Repository.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/sync_repo",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/sync_repo", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listImageAutoSyncReposDetailsRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             var listImageAutoSyncReposDetailsResponse = JsonUtils.DeSerializeNull<ListImageAutoSyncReposDetailsResponse>(response);
             listImageAutoSyncReposDetailsResponse.Body = JsonUtils.DeSerializeList<SyncRepo>(response);
             return listImageAutoSyncReposDetailsResponse;
@@ -571,7 +571,7 @@ namespace HuaweiCloud.SDK.Swr.V2
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("namespace", listImageAutoSyncReposDetailsRequest.Namespace.ToString());
             urlParam.Add("repository", listImageAutoSyncReposDetailsRequest.Repository.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/sync_repo",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/sync_repo", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listImageAutoSyncReposDetailsRequest);
             return new AsyncInvoker<ListImageAutoSyncReposDetailsResponse>(this, "GET", request, response =>
             {
@@ -591,16 +591,16 @@ namespace HuaweiCloud.SDK.Swr.V2
         public async Task<ListNamespacesResponse> ListNamespacesAsync(ListNamespacesRequest listNamespacesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listNamespacesRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ListNamespacesResponse>(response);
         }
 
         public AsyncInvoker<ListNamespacesResponse> ListNamespacesAsyncInvoker(ListNamespacesRequest listNamespacesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listNamespacesRequest);
             return new AsyncInvoker<ListNamespacesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListNamespacesResponse>);
         }
@@ -615,16 +615,16 @@ namespace HuaweiCloud.SDK.Swr.V2
         public async Task<ListQuotasResponse> ListQuotasAsync(ListQuotasRequest listQuotasRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/projects/{project_id}/quotas",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/projects/{project_id}/quotas", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listQuotasRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ListQuotasResponse>(response);
         }
 
         public AsyncInvoker<ListQuotasResponse> ListQuotasAsyncInvoker(ListQuotasRequest listQuotasRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/projects/{project_id}/quotas",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/projects/{project_id}/quotas", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listQuotasRequest);
             return new AsyncInvoker<ListQuotasResponse>(this, "GET", request, JsonUtils.DeSerialize<ListQuotasResponse>);
         }
@@ -641,9 +641,9 @@ namespace HuaweiCloud.SDK.Swr.V2
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("namespace", listRepoDomainsRequest.Namespace.ToString());
             urlParam.Add("repository", listRepoDomainsRequest.Repository.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repositories/{repository}/access-domains",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repositories/{repository}/access-domains", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRepoDomainsRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             var listRepoDomainsResponse = JsonUtils.DeSerializeNull<ListRepoDomainsResponse>(response);
             listRepoDomainsResponse.Body = JsonUtils.DeSerializeList<ShowRepoDomainsResponse>(response);
             return listRepoDomainsResponse;
@@ -654,7 +654,7 @@ namespace HuaweiCloud.SDK.Swr.V2
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("namespace", listRepoDomainsRequest.Namespace.ToString());
             urlParam.Add("repository", listRepoDomainsRequest.Repository.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repositories/{repository}/access-domains",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repositories/{repository}/access-domains", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRepoDomainsRequest);
             return new AsyncInvoker<ListRepoDomainsResponse>(this, "GET", request, response =>
             {
@@ -674,9 +674,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public async Task<ListReposDetailsResponse> ListReposDetailsAsync(ListReposDetailsRequest listReposDetailsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/repos",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/repos", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listReposDetailsRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             var listReposDetailsResponse = JsonUtils.DeSerializeNull<ListReposDetailsResponse>(response);
             listReposDetailsResponse.Body = JsonUtils.DeSerializeList<ShowReposResp>(response);
             return listReposDetailsResponse;
@@ -685,7 +685,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public AsyncInvoker<ListReposDetailsResponse> ListReposDetailsAsyncInvoker(ListReposDetailsRequest listReposDetailsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/repos",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/repos", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listReposDetailsRequest);
             return new AsyncInvoker<ListReposDetailsResponse>(this, "GET", request, response =>
             {
@@ -707,9 +707,9 @@ namespace HuaweiCloud.SDK.Swr.V2
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("namespace", listRepositoryTagsRequest.Namespace.ToString());
             urlParam.Add("repository", listRepositoryTagsRequest.Repository.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/tags",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRepositoryTagsRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             var listRepositoryTagsResponse = JsonUtils.DeSerializeNull<ListRepositoryTagsResponse>(response);
             listRepositoryTagsResponse.Body = JsonUtils.DeSerializeList<ShowReposTagResp>(response);
             return listRepositoryTagsResponse;
@@ -720,7 +720,7 @@ namespace HuaweiCloud.SDK.Swr.V2
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("namespace", listRepositoryTagsRequest.Namespace.ToString());
             urlParam.Add("repository", listRepositoryTagsRequest.Repository.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/tags",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRepositoryTagsRequest);
             return new AsyncInvoker<ListRepositoryTagsResponse>(this, "GET", request, response =>
             {
@@ -742,9 +742,9 @@ namespace HuaweiCloud.SDK.Swr.V2
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("namespace", listRetentionHistoriesRequest.Namespace.ToString());
             urlParam.Add("repository", listRetentionHistoriesRequest.Repository.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/retentions/histories",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/retentions/histories", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRetentionHistoriesRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ListRetentionHistoriesResponse>(response);
         }
 
@@ -753,7 +753,7 @@ namespace HuaweiCloud.SDK.Swr.V2
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("namespace", listRetentionHistoriesRequest.Namespace.ToString());
             urlParam.Add("repository", listRetentionHistoriesRequest.Repository.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/retentions/histories",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/retentions/histories", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRetentionHistoriesRequest);
             return new AsyncInvoker<ListRetentionHistoriesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListRetentionHistoriesResponse>);
         }
@@ -770,9 +770,9 @@ namespace HuaweiCloud.SDK.Swr.V2
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("namespace", listRetentionsRequest.Namespace.ToString());
             urlParam.Add("repository", listRetentionsRequest.Repository.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/retentions",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/retentions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRetentionsRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             var listRetentionsResponse = JsonUtils.DeSerializeNull<ListRetentionsResponse>(response);
             listRetentionsResponse.Body = JsonUtils.DeSerializeList<Retention>(response);
             return listRetentionsResponse;
@@ -783,7 +783,7 @@ namespace HuaweiCloud.SDK.Swr.V2
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("namespace", listRetentionsRequest.Namespace.ToString());
             urlParam.Add("repository", listRetentionsRequest.Repository.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/retentions",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/retentions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRetentionsRequest);
             return new AsyncInvoker<ListRetentionsResponse>(this, "GET", request, response =>
             {
@@ -803,9 +803,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public async Task<ListSharedReposDetailsResponse> ListSharedReposDetailsAsync(ListSharedReposDetailsRequest listSharedReposDetailsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/shared-repositories",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/shared-repositories", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSharedReposDetailsRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             var listSharedReposDetailsResponse = JsonUtils.DeSerializeNull<ListSharedReposDetailsResponse>(response);
             listSharedReposDetailsResponse.Body = JsonUtils.DeSerializeList<ShowReposResp>(response);
             return listSharedReposDetailsResponse;
@@ -814,7 +814,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public AsyncInvoker<ListSharedReposDetailsResponse> ListSharedReposDetailsAsyncInvoker(ListSharedReposDetailsRequest listSharedReposDetailsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/shared-repositories",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/shared-repositories", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSharedReposDetailsRequest);
             return new AsyncInvoker<ListSharedReposDetailsResponse>(this, "GET", request, response =>
             {
@@ -836,9 +836,9 @@ namespace HuaweiCloud.SDK.Swr.V2
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("namespace", listTriggersDetailsRequest.Namespace.ToString());
             urlParam.Add("repository", listTriggersDetailsRequest.Repository.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/triggers",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/triggers", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTriggersDetailsRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             var listTriggersDetailsResponse = JsonUtils.DeSerializeNull<ListTriggersDetailsResponse>(response);
             listTriggersDetailsResponse.Body = JsonUtils.DeSerializeList<Trigger>(response);
             return listTriggersDetailsResponse;
@@ -849,7 +849,7 @@ namespace HuaweiCloud.SDK.Swr.V2
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("namespace", listTriggersDetailsRequest.Namespace.ToString());
             urlParam.Add("repository", listTriggersDetailsRequest.Repository.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/triggers",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/triggers", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTriggersDetailsRequest);
             return new AsyncInvoker<ListTriggersDetailsResponse>(this, "GET", request, response =>
             {
@@ -872,9 +872,9 @@ namespace HuaweiCloud.SDK.Swr.V2
             urlParam.Add("namespace", showAccessDomainRequest.Namespace.ToString());
             urlParam.Add("repository", showAccessDomainRequest.Repository.ToString());
             urlParam.Add("access_domain", showAccessDomainRequest.AccessDomain.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repositories/{repository}/access-domains/{access_domain}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repositories/{repository}/access-domains/{access_domain}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAccessDomainRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowAccessDomainResponse>(response);
         }
 
@@ -884,7 +884,7 @@ namespace HuaweiCloud.SDK.Swr.V2
             urlParam.Add("namespace", showAccessDomainRequest.Namespace.ToString());
             urlParam.Add("repository", showAccessDomainRequest.Repository.ToString());
             urlParam.Add("access_domain", showAccessDomainRequest.AccessDomain.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repositories/{repository}/access-domains/{access_domain}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repositories/{repository}/access-domains/{access_domain}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAccessDomainRequest);
             return new AsyncInvoker<ShowAccessDomainResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAccessDomainResponse>);
         }
@@ -900,9 +900,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("namespace", showNamespaceRequest.Namespace.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showNamespaceRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowNamespaceResponse>(response);
         }
 
@@ -910,7 +910,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("namespace", showNamespaceRequest.Namespace.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showNamespaceRequest);
             return new AsyncInvoker<ShowNamespaceResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowNamespaceResponse>);
         }
@@ -926,9 +926,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("namespace", showNamespaceAuthRequest.Namespace.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/access",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/access", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showNamespaceAuthRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowNamespaceAuthResponse>(response);
         }
 
@@ -936,7 +936,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("namespace", showNamespaceAuthRequest.Namespace.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/access",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/access", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showNamespaceAuthRequest);
             return new AsyncInvoker<ShowNamespaceAuthResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowNamespaceAuthResponse>);
         }
@@ -953,9 +953,9 @@ namespace HuaweiCloud.SDK.Swr.V2
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("namespace", showRepositoryRequest.Namespace.ToString());
             urlParam.Add("repository", showRepositoryRequest.Repository.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRepositoryRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowRepositoryResponse>(response);
         }
 
@@ -964,7 +964,7 @@ namespace HuaweiCloud.SDK.Swr.V2
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("namespace", showRepositoryRequest.Namespace.ToString());
             urlParam.Add("repository", showRepositoryRequest.Repository.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRepositoryRequest);
             return new AsyncInvoker<ShowRepositoryResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRepositoryResponse>);
         }
@@ -982,9 +982,9 @@ namespace HuaweiCloud.SDK.Swr.V2
             urlParam.Add("namespace", showRetentionRequest.Namespace.ToString());
             urlParam.Add("repository", showRetentionRequest.Repository.ToString());
             urlParam.Add("retention_id", showRetentionRequest.RetentionId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/retentions/{retention_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/retentions/{retention_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRetentionRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowRetentionResponse>(response);
         }
 
@@ -994,7 +994,7 @@ namespace HuaweiCloud.SDK.Swr.V2
             urlParam.Add("namespace", showRetentionRequest.Namespace.ToString());
             urlParam.Add("repository", showRetentionRequest.Repository.ToString());
             urlParam.Add("retention_id", showRetentionRequest.RetentionId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/retentions/{retention_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/retentions/{retention_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRetentionRequest);
             return new AsyncInvoker<ShowRetentionResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRetentionResponse>);
         }
@@ -1011,9 +1011,9 @@ namespace HuaweiCloud.SDK.Swr.V2
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("namespace", showSyncJobRequest.Namespace.ToString());
             urlParam.Add("repository", showSyncJobRequest.Repository.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/sync_job",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/sync_job", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSyncJobRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             var showSyncJobResponse = JsonUtils.DeSerializeNull<ShowSyncJobResponse>(response);
             showSyncJobResponse.Body = JsonUtils.DeSerializeList<SyncJob>(response);
             return showSyncJobResponse;
@@ -1024,7 +1024,7 @@ namespace HuaweiCloud.SDK.Swr.V2
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("namespace", showSyncJobRequest.Namespace.ToString());
             urlParam.Add("repository", showSyncJobRequest.Repository.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/sync_job",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/sync_job", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSyncJobRequest);
             return new AsyncInvoker<ShowSyncJobResponse>(this, "GET", request, response =>
             {
@@ -1047,9 +1047,9 @@ namespace HuaweiCloud.SDK.Swr.V2
             urlParam.Add("namespace", showTriggerRequest.Namespace.ToString());
             urlParam.Add("repository", showTriggerRequest.Repository.ToString());
             urlParam.Add("trigger", showTriggerRequest.Trigger.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/triggers/{trigger}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/triggers/{trigger}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTriggerRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowTriggerResponse>(response);
         }
 
@@ -1059,7 +1059,7 @@ namespace HuaweiCloud.SDK.Swr.V2
             urlParam.Add("namespace", showTriggerRequest.Namespace.ToString());
             urlParam.Add("repository", showTriggerRequest.Repository.ToString());
             urlParam.Add("trigger", showTriggerRequest.Trigger.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/triggers/{trigger}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/triggers/{trigger}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTriggerRequest);
             return new AsyncInvoker<ShowTriggerResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTriggerResponse>);
         }
@@ -1076,9 +1076,9 @@ namespace HuaweiCloud.SDK.Swr.V2
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("namespace", showUserRepositoryAuthRequest.Namespace.ToString());
             urlParam.Add("repository", showUserRepositoryAuthRequest.Repository.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/access",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/access", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUserRepositoryAuthRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowUserRepositoryAuthResponse>(response);
         }
 
@@ -1087,7 +1087,7 @@ namespace HuaweiCloud.SDK.Swr.V2
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("namespace", showUserRepositoryAuthRequest.Namespace.ToString());
             urlParam.Add("repository", showUserRepositoryAuthRequest.Repository.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/access",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/access", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUserRepositoryAuthRequest);
             return new AsyncInvoker<ShowUserRepositoryAuthResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowUserRepositoryAuthResponse>);
         }
@@ -1103,9 +1103,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("namespace", updateNamespaceAuthRequest.Namespace.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/access",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/access", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateNamespaceAuthRequest);
-            var response = await DoHttpRequestAsync("PATCH",request);
+            var response = await DoHttpRequestAsync("PATCH", request);
             return JsonUtils.DeSerializeNull<UpdateNamespaceAuthResponse>(response);
         }
 
@@ -1113,7 +1113,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("namespace", updateNamespaceAuthRequest.Namespace.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/access",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/access", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateNamespaceAuthRequest);
             return new AsyncInvoker<UpdateNamespaceAuthResponse>(this, "PATCH", request, JsonUtils.DeSerializeNull<UpdateNamespaceAuthResponse>);
         }
@@ -1130,9 +1130,9 @@ namespace HuaweiCloud.SDK.Swr.V2
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("namespace", updateRepoRequest.Namespace.ToString());
             urlParam.Add("repository", updateRepoRequest.Repository.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateRepoRequest);
-            var response = await DoHttpRequestAsync("PATCH",request);
+            var response = await DoHttpRequestAsync("PATCH", request);
             return JsonUtils.DeSerializeNull<UpdateRepoResponse>(response);
         }
 
@@ -1141,7 +1141,7 @@ namespace HuaweiCloud.SDK.Swr.V2
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("namespace", updateRepoRequest.Namespace.ToString());
             urlParam.Add("repository", updateRepoRequest.Repository.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateRepoRequest);
             return new AsyncInvoker<UpdateRepoResponse>(this, "PATCH", request, JsonUtils.DeSerializeNull<UpdateRepoResponse>);
         }
@@ -1159,9 +1159,9 @@ namespace HuaweiCloud.SDK.Swr.V2
             urlParam.Add("namespace", updateRepoDomainsRequest.Namespace.ToString());
             urlParam.Add("repository", updateRepoDomainsRequest.Repository.ToString());
             urlParam.Add("access_domain", updateRepoDomainsRequest.AccessDomain.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repositories/{repository}/access-domains/{access_domain}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repositories/{repository}/access-domains/{access_domain}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateRepoDomainsRequest);
-            var response = await DoHttpRequestAsync("PATCH",request);
+            var response = await DoHttpRequestAsync("PATCH", request);
             return JsonUtils.DeSerializeNull<UpdateRepoDomainsResponse>(response);
         }
 
@@ -1171,7 +1171,7 @@ namespace HuaweiCloud.SDK.Swr.V2
             urlParam.Add("namespace", updateRepoDomainsRequest.Namespace.ToString());
             urlParam.Add("repository", updateRepoDomainsRequest.Repository.ToString());
             urlParam.Add("access_domain", updateRepoDomainsRequest.AccessDomain.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repositories/{repository}/access-domains/{access_domain}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repositories/{repository}/access-domains/{access_domain}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateRepoDomainsRequest);
             return new AsyncInvoker<UpdateRepoDomainsResponse>(this, "PATCH", request, JsonUtils.DeSerializeNull<UpdateRepoDomainsResponse>);
         }
@@ -1189,9 +1189,9 @@ namespace HuaweiCloud.SDK.Swr.V2
             urlParam.Add("namespace", updateRetentionRequest.Namespace.ToString());
             urlParam.Add("repository", updateRetentionRequest.Repository.ToString());
             urlParam.Add("retention_id", updateRetentionRequest.RetentionId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/retentions/{retention_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/retentions/{retention_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateRetentionRequest);
-            var response = await DoHttpRequestAsync("PATCH",request);
+            var response = await DoHttpRequestAsync("PATCH", request);
             return JsonUtils.DeSerializeNull<UpdateRetentionResponse>(response);
         }
 
@@ -1201,7 +1201,7 @@ namespace HuaweiCloud.SDK.Swr.V2
             urlParam.Add("namespace", updateRetentionRequest.Namespace.ToString());
             urlParam.Add("repository", updateRetentionRequest.Repository.ToString());
             urlParam.Add("retention_id", updateRetentionRequest.RetentionId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/retentions/{retention_id}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/retentions/{retention_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateRetentionRequest);
             return new AsyncInvoker<UpdateRetentionResponse>(this, "PATCH", request, JsonUtils.DeSerializeNull<UpdateRetentionResponse>);
         }
@@ -1219,9 +1219,9 @@ namespace HuaweiCloud.SDK.Swr.V2
             urlParam.Add("namespace", updateTriggerRequest.Namespace.ToString());
             urlParam.Add("repository", updateTriggerRequest.Repository.ToString());
             urlParam.Add("trigger", updateTriggerRequest.Trigger.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/triggers/{trigger}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/triggers/{trigger}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTriggerRequest);
-            var response = await DoHttpRequestAsync("PATCH",request);
+            var response = await DoHttpRequestAsync("PATCH", request);
             return JsonUtils.DeSerializeNull<UpdateTriggerResponse>(response);
         }
 
@@ -1231,7 +1231,7 @@ namespace HuaweiCloud.SDK.Swr.V2
             urlParam.Add("namespace", updateTriggerRequest.Namespace.ToString());
             urlParam.Add("repository", updateTriggerRequest.Repository.ToString());
             urlParam.Add("trigger", updateTriggerRequest.Trigger.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/triggers/{trigger}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/triggers/{trigger}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTriggerRequest);
             return new AsyncInvoker<UpdateTriggerResponse>(this, "PATCH", request, JsonUtils.DeSerializeNull<UpdateTriggerResponse>);
         }
@@ -1248,9 +1248,9 @@ namespace HuaweiCloud.SDK.Swr.V2
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("namespace", updateUserRepositoryAuthRequest.Namespace.ToString());
             urlParam.Add("repository", updateUserRepositoryAuthRequest.Repository.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/access",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/access", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateUserRepositoryAuthRequest);
-            var response = await DoHttpRequestAsync("PATCH",request);
+            var response = await DoHttpRequestAsync("PATCH", request);
             return JsonUtils.DeSerializeNull<UpdateUserRepositoryAuthResponse>(response);
         }
 
@@ -1259,7 +1259,7 @@ namespace HuaweiCloud.SDK.Swr.V2
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("namespace", updateUserRepositoryAuthRequest.Namespace.ToString());
             urlParam.Add("repository", updateUserRepositoryAuthRequest.Repository.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/access",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/access", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateUserRepositoryAuthRequest);
             return new AsyncInvoker<UpdateUserRepositoryAuthResponse>(this, "PATCH", request, JsonUtils.DeSerializeNull<UpdateUserRepositoryAuthResponse>);
         }
@@ -1274,16 +1274,16 @@ namespace HuaweiCloud.SDK.Swr.V2
         public async Task<ListApiVersionsResponse> ListApiVersionsAsync(ListApiVersionsRequest listApiVersionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listApiVersionsRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ListApiVersionsResponse>(response);
         }
 
         public AsyncInvoker<ListApiVersionsResponse> ListApiVersionsAsyncInvoker(ListApiVersionsRequest listApiVersionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listApiVersionsRequest);
             return new AsyncInvoker<ListApiVersionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListApiVersionsResponse>);
         }
@@ -1299,9 +1299,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("api_version", showApiVersionRequest.ApiVersion.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/{api_version}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/{api_version}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showApiVersionRequest);
-            var response = await DoHttpRequestAsync("GET",request);
+            var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowApiVersionResponse>(response);
         }
 
@@ -1309,7 +1309,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         {
             var urlParam = new Dictionary<string, string>();
             urlParam.Add("api_version", showApiVersionRequest.ApiVersion.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/{api_version}",urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/{api_version}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showApiVersionRequest);
             return new AsyncInvoker<ShowApiVersionResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowApiVersionResponse>);
         }

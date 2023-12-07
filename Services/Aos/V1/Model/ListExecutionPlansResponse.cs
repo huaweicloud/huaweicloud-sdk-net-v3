@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
     {
 
         /// <summary>
-        /// 执行计划列表。默认按照生成时间排序，最早生成的在最前
+        /// 执行计划列表。默认按照生成时间降序排序，最新生成的在最前
         /// </summary>
         [JsonProperty("execution_plans", NullValueHandling = NullValueHandling.Ignore)]
         public List<ExecutionPlan> ExecutionPlans { get; set; }

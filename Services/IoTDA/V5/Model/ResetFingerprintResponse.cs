@@ -28,6 +28,12 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         [JsonProperty("fingerprint", NullValueHandling = NullValueHandling.Ignore)]
         public string Fingerprint { get; set; }
 
+        /// <summary>
+        /// **参数说明**：重置设备证书指纹的的类型。 **取值范围**： - PRIMARY：重置主指纹。 - SECONDARY：重置辅指纹。
+        /// </summary>
+        [JsonProperty("fingerprint_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string FingerprintType { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +45,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             sb.Append("class ResetFingerprintResponse {\n");
             sb.Append("  deviceId: ").Append(DeviceId).Append("\n");
             sb.Append("  fingerprint: ").Append(Fingerprint).Append("\n");
+            sb.Append("  fingerprintType: ").Append(FingerprintType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -69,6 +76,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.Fingerprint == input.Fingerprint ||
                     (this.Fingerprint != null &&
                     this.Fingerprint.Equals(input.Fingerprint))
+                ) && 
+                (
+                    this.FingerprintType == input.FingerprintType ||
+                    (this.FingerprintType != null &&
+                    this.FingerprintType.Equals(input.FingerprintType))
                 );
         }
 
@@ -84,6 +96,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     hashCode = hashCode * 59 + this.DeviceId.GetHashCode();
                 if (this.Fingerprint != null)
                     hashCode = hashCode * 59 + this.Fingerprint.GetHashCode();
+                if (this.FingerprintType != null)
+                    hashCode = hashCode * 59 + this.FingerprintType.GetHashCode();
                 return hashCode;
             }
         }

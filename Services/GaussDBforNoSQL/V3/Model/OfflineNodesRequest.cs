@@ -8,26 +8,27 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
+namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
 {
     /// <summary>
-    /// Response Object
+    /// Request Object
     /// </summary>
-    public class AsyncInvokeReservedFunctionResponse : SdkResponse
+    public class OfflineNodesRequest 
     {
 
         /// <summary>
-        /// 预留实例id
+        /// 实例ID。
         /// </summary>
+        [SDKProperty("instance_id", IsPath = true)]
         [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string InstanceId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [SDKProperty("Content-Type", IsHeader = true)]
-        [JsonProperty("Content-Type", NullValueHandling = NullValueHandling.Ignore)]
-        public string ContentType { get; set; }
+        [SDKProperty("body", IsBody = true)]
+        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
+        public OfflineNodesRequestBody Body { get; set; }
 
 
 
@@ -37,9 +38,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class AsyncInvokeReservedFunctionResponse {\n");
+            sb.Append("class OfflineNodesRequest {\n");
             sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
-            sb.Append("  contentType: ").Append(ContentType).Append("\n");
+            sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -49,13 +50,13 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as AsyncInvokeReservedFunctionResponse);
+            return this.Equals(input as OfflineNodesRequest);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(AsyncInvokeReservedFunctionResponse input)
+        public bool Equals(OfflineNodesRequest input)
         {
             if (input == null)
                 return false;
@@ -67,9 +68,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.InstanceId.Equals(input.InstanceId))
                 ) && 
                 (
-                    this.ContentType == input.ContentType ||
-                    (this.ContentType != null &&
-                    this.ContentType.Equals(input.ContentType))
+                    this.Body == input.Body ||
+                    (this.Body != null &&
+                    this.Body.Equals(input.Body))
                 );
         }
 
@@ -83,8 +84,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                 int hashCode = 41;
                 if (this.InstanceId != null)
                     hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.ContentType != null)
-                    hashCode = hashCode * 59 + this.ContentType.GetHashCode();
+                if (this.Body != null)
+                    hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;
             }
         }

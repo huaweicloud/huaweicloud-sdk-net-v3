@@ -8,27 +8,27 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
+namespace HuaweiCloud.SDK.Nat.V2.Model
 {
     /// <summary>
     /// Request Object
     /// </summary>
-    public class UpdateDependcyRequest 
+    public class BatchCreateDeleteNatGatewayTagRequest 
     {
 
         /// <summary>
-        /// 依赖包的ID。
+        /// 公网NAT网关ID。
         /// </summary>
-        [SDKProperty("depend_id", IsPath = true)]
-        [JsonProperty("depend_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string DependId { get; set; }
+        [SDKProperty("nat_gateway_id", IsPath = true)]
+        [JsonProperty("nat_gateway_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string NatGatewayId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public UpdateDependencyRequestBody Body { get; set; }
+        public BatchCreateDeleteNatTagsRequestBody Body { get; set; }
 
 
 
@@ -38,8 +38,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class UpdateDependcyRequest {\n");
-            sb.Append("  dependId: ").Append(DependId).Append("\n");
+            sb.Append("class BatchCreateDeleteNatGatewayTagRequest {\n");
+            sb.Append("  natGatewayId: ").Append(NatGatewayId).Append("\n");
             sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -50,22 +50,22 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as UpdateDependcyRequest);
+            return this.Equals(input as BatchCreateDeleteNatGatewayTagRequest);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(UpdateDependcyRequest input)
+        public bool Equals(BatchCreateDeleteNatGatewayTagRequest input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.DependId == input.DependId ||
-                    (this.DependId != null &&
-                    this.DependId.Equals(input.DependId))
+                    this.NatGatewayId == input.NatGatewayId ||
+                    (this.NatGatewayId != null &&
+                    this.NatGatewayId.Equals(input.NatGatewayId))
                 ) && 
                 (
                     this.Body == input.Body ||
@@ -82,8 +82,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.DependId != null)
-                    hashCode = hashCode * 59 + this.DependId.GetHashCode();
+                if (this.NatGatewayId != null)
+                    hashCode = hashCode * 59 + this.NatGatewayId.GetHashCode();
                 if (this.Body != null)
                     hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;

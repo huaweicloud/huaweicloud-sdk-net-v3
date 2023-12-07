@@ -1,3 +1,126 @@
+# 3.1.70 2023-12-07
+
+### HuaweiCloud SDK AOS
+
+- _新增特性_
+  - 支持接口`DeleteStackInstance`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListStackSetOperations**
+    - 响应参数变更
+      - `+ stack_set_operations.action: enum value [UPDATE_STACK_INSTANCES]`
+  - **ShowStackSetOperationMetadata**
+    - 响应参数变更
+      - `+ action: enum value [UPDATE_STACK_INSTANCES]`
+
+### HuaweiCloud SDK FunctionGraph
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 移除以下接口：
+    - `ShowDependcy`
+    - `UpdateDependcy`
+    - `DeleteDependency`
+    - `AsyncInvokeReservedFunction`
+    - `CreateDependency`
+  - **ShowFuncReservedInstanceMetrics**
+    - 请求参数变更
+      - `+ marker`
+      - `+ limit`
+  - **ListFunctionApplications**
+    - 请求参数变更
+      - `+ limit`
+      - `+ marker`
+  - **ListStatistics**
+    - 请求参数变更
+      - `+ limit`
+      - `+ marker`
+
+### HuaweiCloud SDK GaussDB
+
+- _新增特性_
+  - 支持接口`ListGaussMySqlInstancesUnifyStatus`、`ShowGaussMySqlInstanceInfoUnifyStatus`、`ListGaussMySqlInstanceDetailInfoUnifyStatus`、`SwitchGaussMySqlProxySsl`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowGaussMySqlProxyList**
+    - 响应参数变更
+      - `+ proxy_list.proxy.ssl_option`
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _新增特性_
+  - 支持接口`OfflineNodes`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListLtsConfigs**
+    - 响应参数变更
+      - `* instance_lts_configs.instance.supported_log_types: string -> list<string>`
+
+### HuaweiCloud SDK IoTDA
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ResetDeviceSecret**
+    - 请求参数变更
+      - `+ secret_type`
+    - 响应参数变更
+      - `+ secret_type`
+  - **ResetFingerprint**
+    - 请求参数变更
+      - `+ fingerprint_type`
+    - 响应参数变更
+      - `+ fingerprint_type`
+  - **ShowDevice**
+    - 响应参数变更
+      - `+ auth_info.secondary_secret`
+      - `+ auth_info.secondary_fingerprint`
+      - `* auth_info: object<AuthInfo> -> object<AuthInfoRes>`
+  - **UpdateDevice**
+    - 响应参数变更
+      - `+ auth_info.secondary_secret`
+      - `+ auth_info.secondary_fingerprint`
+      - `* auth_info: object<AuthInfo> -> object<AuthInfoRes>`
+  - **AddDevice**
+    - 响应参数变更
+      - `+ auth_info.secondary_secret`
+      - `+ auth_info.secondary_fingerprint`
+      - `* auth_info: object<AuthInfo> -> object<AuthInfoRes>`
+
+### HuaweiCloud SDK NAT
+
+- _新增特性_
+  - 支持以下接口：
+    - `ListNatGatewayByTag`
+    - `BatchCreateDeleteNatGatewayTag`
+    - `ShowNatGatewayTag`
+    - `CreateNatGatewayTag`
+    - `DeleteNatGatewayTag`
+    - `ListNatGatewayTag`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK RocketMQ
+
+- _新增特性_
+  - 支持接口`ShowRocketMqConfigs`、`UpdateRocketMqConfigs`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListInstances**
+    - 请求参数变更
+      - `+ status: enum value [UPGRADING,UPGRADINGFAILED]`
+
 # 3.1.69 2023-11-30
 
 ### HuaweiCloud SDK AOM
