@@ -273,11 +273,11 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }
         /// <summary>
-        /// 元数据json文件。
+        /// 
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public Dictionary<string, Object> Body { get; set; }
+        public CreateRocketMqMigrationTaskReq Body { get; set; }
 
 
 
@@ -336,9 +336,8 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                 ) && 
                 (
                     this.Body == input.Body ||
-                    this.Body != null &&
-                    input.Body != null &&
-                    this.Body.SequenceEqual(input.Body)
+                    (this.Body != null &&
+                    this.Body.Equals(input.Body))
                 );
         }
 

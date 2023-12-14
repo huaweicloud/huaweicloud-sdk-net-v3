@@ -305,6 +305,30 @@ namespace HuaweiCloud.SDK.Cfw.V1
         }
         
         /// <summary>
+        /// 创建防火墙
+        ///
+        /// 创建防火墙
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateFirewallResponse CreateFirewall(CreateFirewallRequest createFirewallRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/firewall", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createFirewallRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateFirewallResponse>(response);
+        }
+
+        public SyncInvoker<CreateFirewallResponse> CreateFirewallInvoker(CreateFirewallRequest createFirewallRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/firewall", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createFirewallRequest);
+            return new SyncInvoker<CreateFirewallResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateFirewallResponse>);
+        }
+        
+        /// <summary>
         /// 删除地址组成员
         ///
         /// 删除地址组成员
@@ -432,6 +456,32 @@ namespace HuaweiCloud.SDK.Cfw.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/domain-set/domains/{set_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDomainsRequest);
             return new SyncInvoker<DeleteDomainsResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteDomainsResponse>);
+        }
+        
+        /// <summary>
+        /// 删除防火墙
+        ///
+        /// 删除防火墙，仅按需生效
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteFirewallResponse DeleteFirewall(DeleteFirewallRequest deleteFirewallRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_id", deleteFirewallRequest.ResourceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/firewall/{resource_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteFirewallRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteFirewallResponse>(response);
+        }
+
+        public SyncInvoker<DeleteFirewallResponse> DeleteFirewallInvoker(DeleteFirewallRequest deleteFirewallRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_id", deleteFirewallRequest.ResourceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/firewall/{resource_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteFirewallRequest);
+            return new SyncInvoker<DeleteFirewallResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteFirewallResponse>);
         }
         
         /// <summary>
@@ -826,6 +876,32 @@ namespace HuaweiCloud.SDK.Cfw.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cfw/logs/flow", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFlowLogsRequest);
             return new SyncInvoker<ListFlowLogsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListFlowLogsResponse>);
+        }
+        
+        /// <summary>
+        /// 获取CFW任务执行状态
+        ///
+        /// 获取CFW任务执行状态
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListJobResponse ListJob(ListJobRequest listJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", listJobRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listJobRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListJobResponse>(response);
+        }
+
+        public SyncInvoker<ListJobResponse> ListJobInvoker(ListJobRequest listJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", listJobRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listJobRequest);
+            return new SyncInvoker<ListJobResponse>(this, "GET", request, JsonUtils.DeSerialize<ListJobResponse>);
         }
         
         /// <summary>

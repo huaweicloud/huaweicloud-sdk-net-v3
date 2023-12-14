@@ -231,6 +231,30 @@ namespace HuaweiCloud.SDK.Live.V1
         }
         
         /// <summary>
+        /// 生成URL鉴权串
+        ///
+        /// 生成URL鉴权串
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateUrlAuthchainResponse CreateUrlAuthchain(CreateUrlAuthchainRequest createUrlAuthchainRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/auth/chain", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", createUrlAuthchainRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateUrlAuthchainResponse>(response);
+        }
+
+        public SyncInvoker<CreateUrlAuthchainResponse> CreateUrlAuthchainInvoker(CreateUrlAuthchainRequest createUrlAuthchainRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/auth/chain", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", createUrlAuthchainRequest);
+            return new SyncInvoker<CreateUrlAuthchainResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateUrlAuthchainResponse>);
+        }
+        
+        /// <summary>
         /// 删除直播域名
         ///
         /// 删除域名。只有在域名停用（off）状态时才能删除。
@@ -300,6 +324,30 @@ namespace HuaweiCloud.SDK.Live.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/domains_mapping", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDomainMappingRequest);
             return new SyncInvoker<DeleteDomainMappingResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteDomainMappingResponse>);
+        }
+        
+        /// <summary>
+        /// 删除直播推流通知配置
+        ///
+        /// 删除直播推流通知配置
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeletePublishTemplateResponse DeletePublishTemplate(DeletePublishTemplateRequest deletePublishTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/notifications/publish", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePublishTemplateRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeletePublishTemplateResponse>(response);
+        }
+
+        public SyncInvoker<DeletePublishTemplateResponse> DeletePublishTemplateInvoker(DeletePublishTemplateRequest deletePublishTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/notifications/publish", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePublishTemplateRequest);
+            return new SyncInvoker<DeletePublishTemplateResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeletePublishTemplateResponse>);
         }
         
         /// <summary>
@@ -427,6 +475,81 @@ namespace HuaweiCloud.SDK.Live.V1
         }
         
         /// <summary>
+        /// 查询播放域名延时配置
+        ///
+        /// 查询播放域名延时配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListDelayConfigResponse ListDelayConfig(ListDelayConfigRequest listDelayConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/domain/delay", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDelayConfigRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListDelayConfigResponse>(response);
+        }
+
+        public SyncInvoker<ListDelayConfigResponse> ListDelayConfigInvoker(ListDelayConfigRequest listDelayConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/domain/delay", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDelayConfigRequest);
+            return new SyncInvoker<ListDelayConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDelayConfigResponse>);
+        }
+        
+        /// <summary>
+        /// 获取地域限制配置列表
+        ///
+        /// 查询播放域名的地域限制列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListGeoBlockingConfigResponse ListGeoBlockingConfig(ListGeoBlockingConfigRequest listGeoBlockingConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/domain/geo-blocking", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listGeoBlockingConfigRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListGeoBlockingConfigResponse>(response);
+        }
+
+        public SyncInvoker<ListGeoBlockingConfigResponse> ListGeoBlockingConfigInvoker(ListGeoBlockingConfigRequest listGeoBlockingConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/domain/geo-blocking", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listGeoBlockingConfigRequest);
+            return new SyncInvoker<ListGeoBlockingConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ListGeoBlockingConfigResponse>);
+        }
+        
+        /// <summary>
+        /// 查询IP黑/白名单
+        ///
+        /// 查询推流/播放域名的IP黑/白名单。
+        /// - 黑名单模式：禁止指定的IP或网段
+        /// - 白名单模式：仅允许指定的IP或网段
+        /// - 默认：全放通。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListIpAuthListResponse ListIpAuthList(ListIpAuthListRequest listIpAuthListRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/guard/ip", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listIpAuthListRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListIpAuthListResponse>(response);
+        }
+
+        public SyncInvoker<ListIpAuthListResponse> ListIpAuthListInvoker(ListIpAuthListRequest listIpAuthListRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/guard/ip", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listIpAuthListRequest);
+            return new SyncInvoker<ListIpAuthListResponse>(this, "GET", request, JsonUtils.DeSerialize<ListIpAuthListResponse>);
+        }
+        
+        /// <summary>
         /// 获取直播播放日志
         ///
         /// 获取直播播放日志，基于域名以5分钟粒度进行打包，日志内容以 \&quot;|\&quot; 进行分隔。
@@ -472,6 +595,30 @@ namespace HuaweiCloud.SDK.Live.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/realtime/streams", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listLiveStreamsOnlineRequest);
             return new SyncInvoker<ListLiveStreamsOnlineResponse>(this, "GET", request, JsonUtils.DeSerialize<ListLiveStreamsOnlineResponse>);
+        }
+        
+        /// <summary>
+        /// 查询直播推流通知配置
+        ///
+        /// 查询直播推流通知配置
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListPublishTemplateResponse ListPublishTemplate(ListPublishTemplateRequest listPublishTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/notifications/publish", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPublishTemplateRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListPublishTemplateResponse>(response);
+        }
+
+        public SyncInvoker<ListPublishTemplateResponse> ListPublishTemplateInvoker(ListPublishTemplateRequest listPublishTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/notifications/publish", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPublishTemplateRequest);
+            return new SyncInvoker<ListPublishTemplateResponse>(this, "GET", request, JsonUtils.DeSerialize<ListPublishTemplateResponse>);
         }
         
         /// <summary>
@@ -667,6 +814,30 @@ namespace HuaweiCloud.SDK.Live.V1
         }
         
         /// <summary>
+        /// 查询直播拉流回源配置
+        ///
+        /// 查询直播拉流回源配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowPullSourcesConfigResponse ShowPullSourcesConfig(ShowPullSourcesConfigRequest showPullSourcesConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/domain/pull-sources", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPullSourcesConfigRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowPullSourcesConfigResponse>(response);
+        }
+
+        public SyncInvoker<ShowPullSourcesConfigResponse> ShowPullSourcesConfigInvoker(ShowPullSourcesConfigRequest showPullSourcesConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/domain/pull-sources", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPullSourcesConfigRequest);
+            return new SyncInvoker<ShowPullSourcesConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPullSourcesConfigResponse>);
+        }
+        
+        /// <summary>
         /// 查询录制回调配置
         ///
         /// 查询录制回调配置接口
@@ -743,6 +914,30 @@ namespace HuaweiCloud.SDK.Live.V1
         }
         
         /// <summary>
+        /// 修改播放域名延时配置
+        ///
+        /// 修改播放域名延时配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateDelayConfigResponse UpdateDelayConfig(UpdateDelayConfigRequest updateDelayConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/domain/delay", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", updateDelayConfigRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateDelayConfigResponse>(response);
+        }
+
+        public SyncInvoker<UpdateDelayConfigResponse> UpdateDelayConfigInvoker(UpdateDelayConfigRequest updateDelayConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/domain/delay", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", updateDelayConfigRequest);
+            return new SyncInvoker<UpdateDelayConfigResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateDelayConfigResponse>);
+        }
+        
+        /// <summary>
         /// 修改直播域名
         ///
         /// 修改直播播放、RTMP推流加速域名相关信息
@@ -812,6 +1007,105 @@ namespace HuaweiCloud.SDK.Live.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/guard/key-chain", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", updateDomainKeyChainRequest);
             return new SyncInvoker<UpdateDomainKeyChainResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateDomainKeyChainResponse>);
+        }
+        
+        /// <summary>
+        /// 修改地域限制配置
+        ///
+        /// 修改播放域名的地域限制，选中地域允许接入。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateGeoBlockingConfigResponse UpdateGeoBlockingConfig(UpdateGeoBlockingConfigRequest updateGeoBlockingConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/domain/geo-blocking", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", updateGeoBlockingConfigRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateGeoBlockingConfigResponse>(response);
+        }
+
+        public SyncInvoker<UpdateGeoBlockingConfigResponse> UpdateGeoBlockingConfigInvoker(UpdateGeoBlockingConfigRequest updateGeoBlockingConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/domain/geo-blocking", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", updateGeoBlockingConfigRequest);
+            return new SyncInvoker<UpdateGeoBlockingConfigResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateGeoBlockingConfigResponse>);
+        }
+        
+        /// <summary>
+        /// 修改IP黑/白名单
+        ///
+        /// 修改推流/播放域名的IP黑/白名单，当前仅支持ipv4。
+        /// - 黑名单模式：禁止指定的IP或网段
+        /// - 白名单模式：仅允许指定的IP或网段
+        /// - 默认：全放通。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateIpAuthListResponse UpdateIpAuthList(UpdateIpAuthListRequest updateIpAuthListRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/guard/ip", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", updateIpAuthListRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateIpAuthListResponse>(response);
+        }
+
+        public SyncInvoker<UpdateIpAuthListResponse> UpdateIpAuthListInvoker(UpdateIpAuthListRequest updateIpAuthListRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/guard/ip", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", updateIpAuthListRequest);
+            return new SyncInvoker<UpdateIpAuthListResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateIpAuthListResponse>);
+        }
+        
+        /// <summary>
+        /// 新增、覆盖直播推流通知配置
+        ///
+        /// 新增、覆盖直播推流通知配置
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdatePublishTemplateResponse UpdatePublishTemplate(UpdatePublishTemplateRequest updatePublishTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/notifications/publish", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", updatePublishTemplateRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdatePublishTemplateResponse>(response);
+        }
+
+        public SyncInvoker<UpdatePublishTemplateResponse> UpdatePublishTemplateInvoker(UpdatePublishTemplateRequest updatePublishTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/notifications/publish", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", updatePublishTemplateRequest);
+            return new SyncInvoker<UpdatePublishTemplateResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdatePublishTemplateResponse>);
+        }
+        
+        /// <summary>
+        /// 修改直播拉流回源配置
+        ///
+        /// 修改直播拉流回源配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdatePullSourcesConfigResponse UpdatePullSourcesConfig(UpdatePullSourcesConfigRequest updatePullSourcesConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/domain/pull-sources", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", updatePullSourcesConfigRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdatePullSourcesConfigResponse>(response);
+        }
+
+        public SyncInvoker<UpdatePullSourcesConfigResponse> UpdatePullSourcesConfigInvoker(UpdatePullSourcesConfigRequest updatePullSourcesConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/domain/pull-sources", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", updatePullSourcesConfigRequest);
+            return new SyncInvoker<UpdatePullSourcesConfigResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdatePullSourcesConfigResponse>);
         }
         
         /// <summary>

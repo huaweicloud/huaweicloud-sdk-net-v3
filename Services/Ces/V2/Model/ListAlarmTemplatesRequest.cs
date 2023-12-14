@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     public class ListAlarmTemplatesRequest 
     {
         /// <summary>
-        /// 模板类型(custom代表默认自定义模板，system代表系统模板),不传自定义和系统均需返回
+        /// 模板类型(system代表默认指标模板，custom代表自定义指标模板，system_event代表默认事件模板，custom_event代表自定义事件模板，system_custom_event代表全部事件模板),不传返回全部指标模板
         /// </summary>
-        /// <value>模板类型(custom代表默认自定义模板，system代表系统模板),不传自定义和系统均需返回</value>
+        /// <value>模板类型(system代表默认指标模板，custom代表自定义指标模板，system_event代表默认事件模板，custom_event代表自定义事件模板，system_custom_event代表全部事件模板),不传返回全部指标模板</value>
         [JsonConverter(typeof(EnumClassConverter<TemplateTypeEnum>))]
         public class TemplateTypeEnum
         {
@@ -32,11 +32,29 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             /// </summary>
             public static readonly TemplateTypeEnum CUSTOM = new TemplateTypeEnum("custom");
 
+            /// <summary>
+            /// Enum SYSTEM_EVENT for value: system_event
+            /// </summary>
+            public static readonly TemplateTypeEnum SYSTEM_EVENT = new TemplateTypeEnum("system_event");
+
+            /// <summary>
+            /// Enum CUSTOM_EVENT for value: custom_event
+            /// </summary>
+            public static readonly TemplateTypeEnum CUSTOM_EVENT = new TemplateTypeEnum("custom_event");
+
+            /// <summary>
+            /// Enum SYSTEM_CUSTOM_EVENT for value: system_custom_event
+            /// </summary>
+            public static readonly TemplateTypeEnum SYSTEM_CUSTOM_EVENT = new TemplateTypeEnum("system_custom_event");
+
             private static readonly Dictionary<string, TemplateTypeEnum> StaticFields =
             new Dictionary<string, TemplateTypeEnum>()
             {
                 { "system", SYSTEM },
                 { "custom", CUSTOM },
+                { "system_event", SYSTEM_EVENT },
+                { "custom_event", CUSTOM_EVENT },
+                { "system_custom_event", SYSTEM_CUSTOM_EVENT },
             };
 
             private string _value;
@@ -160,7 +178,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string DimName { get; set; }
 
         /// <summary>
-        /// 模板类型(custom代表默认自定义模板，system代表系统模板),不传自定义和系统均需返回
+        /// 模板类型(system代表默认指标模板，custom代表自定义指标模板，system_event代表默认事件模板，custom_event代表自定义事件模板，system_custom_event代表全部事件模板),不传返回全部指标模板
         /// </summary>
         [SDKProperty("template_type", IsQuery = true)]
         [JsonProperty("template_type", NullValueHandling = NullValueHandling.Ignore)]

@@ -155,7 +155,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         public string Version { get; set; }
 
         /// <summary>
-        /// 数据库完整版本号。仅在数据库引擎是”PostgreSQL”时返回。
+        /// 数据库完整版本号。仅在数据库引擎是”MySQL”和”PostgreSQL”时返回。
         /// </summary>
         [JsonProperty("complete_version", NullValueHandling = NullValueHandling.Ignore)]
         public string CompleteVersion { get; set; }

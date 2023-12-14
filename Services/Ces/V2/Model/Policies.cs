@@ -23,6 +23,11 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public class PeriodEnum
         {
             /// <summary>
+            /// Enum NUMBER_0 for value: 0
+            /// </summary>
+            public static readonly PeriodEnum NUMBER_0 = new PeriodEnum(0);
+
+            /// <summary>
             /// Enum NUMBER_1 for value: 1
             /// </summary>
             public static readonly PeriodEnum NUMBER_1 = new PeriodEnum(1);
@@ -55,6 +60,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             private static readonly Dictionary<int?, PeriodEnum> StaticFields =
             new Dictionary<int?, PeriodEnum>()
             {
+                { 0, NUMBER_0 },
                 { 1, NUMBER_1 },
                 { 300, NUMBER_300 },
                 { 1200, NUMBER_1200 },
@@ -366,7 +372,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string Unit { get; set; }
 
         /// <summary>
-        /// 告警连续触发次数，正整数[1, 5]
+        /// 告警连续触发次数，事件告警时参数值为1~180（包括1和180）；指标告警和站点告警时，次数采用枚举值，枚举值分别为：1、2、3、4、5、10、15、30、60、90、120、180
         /// </summary>
         [JsonProperty("count", NullValueHandling = NullValueHandling.Ignore)]
         public int? Count { get; set; }

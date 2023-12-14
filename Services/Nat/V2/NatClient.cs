@@ -483,138 +483,6 @@ namespace HuaweiCloud.SDK.Nat.V2
         }
         
         /// <summary>
-        /// 添加公网NAT网关资源标签
-        ///
-        /// - 添加公网NAT网关资源标签。一个资源上最多有10个标签。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public CreateNatGatewayTagResponse CreateNatGatewayTag(CreateNatGatewayTagRequest createNatGatewayTagRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("nat_gateway_id", createNatGatewayTagRequest.NatGatewayId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/nat_gateways/{nat_gateway_id}/tags", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createNatGatewayTagRequest);
-            var response = DoHttpRequestSync("POST", request);
-            return JsonUtils.DeSerializeNull<CreateNatGatewayTagResponse>(response);
-        }
-
-        public SyncInvoker<CreateNatGatewayTagResponse> CreateNatGatewayTagInvoker(CreateNatGatewayTagRequest createNatGatewayTagRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("nat_gateway_id", createNatGatewayTagRequest.NatGatewayId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/nat_gateways/{nat_gateway_id}/tags", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createNatGatewayTagRequest);
-            return new SyncInvoker<CreateNatGatewayTagResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateNatGatewayTagResponse>);
-        }
-        
-        /// <summary>
-        /// 删除公网NAT网关资源标签
-        ///
-        /// - 删除指定公网NAT网关资源实例的标签信息。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public DeleteNatGatewayTagResponse DeleteNatGatewayTag(DeleteNatGatewayTagRequest deleteNatGatewayTagRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("nat_gateway_id", deleteNatGatewayTagRequest.NatGatewayId.ToString());
-            urlParam.Add("key", deleteNatGatewayTagRequest.Key.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/nat_gateways/{nat_gateway_id}/tags/{key}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteNatGatewayTagRequest);
-            var response = DoHttpRequestSync("DELETE", request);
-            return JsonUtils.DeSerializeNull<DeleteNatGatewayTagResponse>(response);
-        }
-
-        public SyncInvoker<DeleteNatGatewayTagResponse> DeleteNatGatewayTagInvoker(DeleteNatGatewayTagRequest deleteNatGatewayTagRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("nat_gateway_id", deleteNatGatewayTagRequest.NatGatewayId.ToString());
-            urlParam.Add("key", deleteNatGatewayTagRequest.Key.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/nat_gateways/{nat_gateway_id}/tags/{key}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteNatGatewayTagRequest);
-            return new SyncInvoker<DeleteNatGatewayTagResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteNatGatewayTagResponse>);
-        }
-        
-        /// <summary>
-        /// 查询公网NAT网关资源实例
-        ///
-        /// - 使用标签过滤公网NAT网关资源实例。
-        /// - 标签管理服务需要提供按标签过滤公网NAT网关服务实例并汇总显示在列表中，需要公网NAT网关服务提供查询能力。
-        /// - 资源默认按照创建时间倒序，资源tag也按照创建时间倒序。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public ListNatGatewayByTagResponse ListNatGatewayByTag(ListNatGatewayByTagRequest listNatGatewayByTagRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/nat_gateways/resource_instances/action", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listNatGatewayByTagRequest);
-            var response = DoHttpRequestSync("POST", request);
-            return JsonUtils.DeSerialize<ListNatGatewayByTagResponse>(response);
-        }
-
-        public SyncInvoker<ListNatGatewayByTagResponse> ListNatGatewayByTagInvoker(ListNatGatewayByTagRequest listNatGatewayByTagRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/nat_gateways/resource_instances/action", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listNatGatewayByTagRequest);
-            return new SyncInvoker<ListNatGatewayByTagResponse>(this, "POST", request, JsonUtils.DeSerialize<ListNatGatewayByTagResponse>);
-        }
-        
-        /// <summary>
-        /// 查询公网NAT网关项目标签
-        ///
-        /// - 查询租户在指定项目和公网NAT网关实例类型的所有标签集合。
-        /// - 标签管理服务需要能够列出当前租户全部已使用的标签集合，为各服务Console打标签和过滤实例时提供标签联想功能。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public ListNatGatewayTagResponse ListNatGatewayTag(ListNatGatewayTagRequest listNatGatewayTagRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/nat_gateways/tags", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listNatGatewayTagRequest);
-            var response = DoHttpRequestSync("GET", request);
-            return JsonUtils.DeSerialize<ListNatGatewayTagResponse>(response);
-        }
-
-        public SyncInvoker<ListNatGatewayTagResponse> ListNatGatewayTagInvoker(ListNatGatewayTagRequest listNatGatewayTagRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/nat_gateways/tags", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listNatGatewayTagRequest);
-            return new SyncInvoker<ListNatGatewayTagResponse>(this, "GET", request, JsonUtils.DeSerialize<ListNatGatewayTagResponse>);
-        }
-        
-        /// <summary>
-        /// 查询公网NAT网关资源标签
-        ///
-        /// - 查询指定公网NAT网关实例的标签信息。
-        /// - 标签管理服务需要使用该接口查询指定公网NAT网关实例的全部标签数据。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public ShowNatGatewayTagResponse ShowNatGatewayTag(ShowNatGatewayTagRequest showNatGatewayTagRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("nat_gateway_id", showNatGatewayTagRequest.NatGatewayId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/nat_gateways/{nat_gateway_id}/tags", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showNatGatewayTagRequest);
-            var response = DoHttpRequestSync("GET", request);
-            return JsonUtils.DeSerialize<ShowNatGatewayTagResponse>(response);
-        }
-
-        public SyncInvoker<ShowNatGatewayTagResponse> ShowNatGatewayTagInvoker(ShowNatGatewayTagRequest showNatGatewayTagRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("nat_gateway_id", showNatGatewayTagRequest.NatGatewayId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/nat_gateways/{nat_gateway_id}/tags", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showNatGatewayTagRequest);
-            return new SyncInvoker<ShowNatGatewayTagResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowNatGatewayTagResponse>);
-        }
-        
-        /// <summary>
         /// 批量添加删除私网NAT网关标签
         ///
         /// - 为指定私网NAT网关实例批量添加或删除标签
@@ -664,6 +532,32 @@ namespace HuaweiCloud.SDK.Nat.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/nat_gateways", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createNatGatewayRequest);
             return new SyncInvoker<CreateNatGatewayResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateNatGatewayResponse>);
+        }
+        
+        /// <summary>
+        /// 添加公网NAT网关资源标签
+        ///
+        /// - 添加公网NAT网关资源标签。一个资源上最多有10个标签。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateNatGatewayTagResponse CreateNatGatewayTag(CreateNatGatewayTagRequest createNatGatewayTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("nat_gateway_id", createNatGatewayTagRequest.NatGatewayId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/nat_gateways/{nat_gateway_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createNatGatewayTagRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<CreateNatGatewayTagResponse>(response);
+        }
+
+        public SyncInvoker<CreateNatGatewayTagResponse> CreateNatGatewayTagInvoker(CreateNatGatewayTagRequest createNatGatewayTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("nat_gateway_id", createNatGatewayTagRequest.NatGatewayId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/nat_gateways/{nat_gateway_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createNatGatewayTagRequest);
+            return new SyncInvoker<CreateNatGatewayTagResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateNatGatewayTagResponse>);
         }
         
         /// <summary>
@@ -745,6 +639,34 @@ namespace HuaweiCloud.SDK.Nat.V2
         }
         
         /// <summary>
+        /// 删除公网NAT网关资源标签
+        ///
+        /// - 删除指定公网NAT网关资源实例的标签信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteNatGatewayTagResponse DeleteNatGatewayTag(DeleteNatGatewayTagRequest deleteNatGatewayTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("nat_gateway_id", deleteNatGatewayTagRequest.NatGatewayId.ToString());
+            urlParam.Add("key", deleteNatGatewayTagRequest.Key.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/nat_gateways/{nat_gateway_id}/tags/{key}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteNatGatewayTagRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteNatGatewayTagResponse>(response);
+        }
+
+        public SyncInvoker<DeleteNatGatewayTagResponse> DeleteNatGatewayTagInvoker(DeleteNatGatewayTagRequest deleteNatGatewayTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("nat_gateway_id", deleteNatGatewayTagRequest.NatGatewayId.ToString());
+            urlParam.Add("key", deleteNatGatewayTagRequest.Key.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/nat_gateways/{nat_gateway_id}/tags/{key}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteNatGatewayTagRequest);
+            return new SyncInvoker<DeleteNatGatewayTagResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteNatGatewayTagResponse>);
+        }
+        
+        /// <summary>
         /// 删除私网NAT网关
         ///
         /// 删除私网NAT网关实例。
@@ -797,6 +719,57 @@ namespace HuaweiCloud.SDK.Nat.V2
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/private-nat-gateways/{resource_id}/tags/{key}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePrivateNatTagRequest);
             return new SyncInvoker<DeletePrivateNatTagResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeletePrivateNatTagResponse>);
+        }
+        
+        /// <summary>
+        /// 查询公网NAT网关资源实例
+        ///
+        /// - 使用标签过滤公网NAT网关资源实例。
+        /// - 标签管理服务需要提供按标签过滤公网NAT网关服务实例并汇总显示在列表中，需要公网NAT网关服务提供查询能力。
+        /// - 资源默认按照创建时间倒序，资源tag也按照创建时间倒序。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListNatGatewayByTagResponse ListNatGatewayByTag(ListNatGatewayByTagRequest listNatGatewayByTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/nat_gateways/resource_instances/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listNatGatewayByTagRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<ListNatGatewayByTagResponse>(response);
+        }
+
+        public SyncInvoker<ListNatGatewayByTagResponse> ListNatGatewayByTagInvoker(ListNatGatewayByTagRequest listNatGatewayByTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/nat_gateways/resource_instances/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listNatGatewayByTagRequest);
+            return new SyncInvoker<ListNatGatewayByTagResponse>(this, "POST", request, JsonUtils.DeSerialize<ListNatGatewayByTagResponse>);
+        }
+        
+        /// <summary>
+        /// 查询公网NAT网关项目标签
+        ///
+        /// - 查询租户在指定项目和公网NAT网关实例类型的所有标签集合。
+        /// - 标签管理服务需要能够列出当前租户全部已使用的标签集合，为各服务Console打标签和过滤实例时提供标签联想功能。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListNatGatewayTagResponse ListNatGatewayTag(ListNatGatewayTagRequest listNatGatewayTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/nat_gateways/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listNatGatewayTagRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListNatGatewayTagResponse>(response);
+        }
+
+        public SyncInvoker<ListNatGatewayTagResponse> ListNatGatewayTagInvoker(ListNatGatewayTagRequest listNatGatewayTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/nat_gateways/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listNatGatewayTagRequest);
+            return new SyncInvoker<ListNatGatewayTagResponse>(this, "GET", request, JsonUtils.DeSerialize<ListNatGatewayTagResponse>);
         }
         
         /// <summary>
@@ -921,6 +894,33 @@ namespace HuaweiCloud.SDK.Nat.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/nat_gateways/{nat_gateway_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showNatGatewayRequest);
             return new SyncInvoker<ShowNatGatewayResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowNatGatewayResponse>);
+        }
+        
+        /// <summary>
+        /// 查询公网NAT网关资源标签
+        ///
+        /// - 查询指定公网NAT网关实例的标签信息。
+        /// - 标签管理服务需要使用该接口查询指定公网NAT网关实例的全部标签数据。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowNatGatewayTagResponse ShowNatGatewayTag(ShowNatGatewayTagRequest showNatGatewayTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("nat_gateway_id", showNatGatewayTagRequest.NatGatewayId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/nat_gateways/{nat_gateway_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showNatGatewayTagRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowNatGatewayTagResponse>(response);
+        }
+
+        public SyncInvoker<ShowNatGatewayTagResponse> ShowNatGatewayTagInvoker(ShowNatGatewayTagRequest showNatGatewayTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("nat_gateway_id", showNatGatewayTagRequest.NatGatewayId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/nat_gateways/{nat_gateway_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showNatGatewayTagRequest);
+            return new SyncInvoker<ShowNatGatewayTagResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowNatGatewayTagResponse>);
         }
         
         /// <summary>

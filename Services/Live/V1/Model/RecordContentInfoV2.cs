@@ -137,9 +137,9 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         }
 
         /// <summary>
-        /// 录制类型，CONTINUOUS_RECORD，COMMAND_RECORD，PLAN_RECORD, ON_DEMAND_RECORD。默认CONTINUOUS_RECORD。 - CONTINUOUS_RECORD：持续录制，在该规则类型配置后，只要有流到推送到录制系统，就触发录制。 - COMMAND_RECORD：命令录制，在该规则类型配置后，在流推送到录制系统后，租户需要通过命令控制该流的录制开始和结束。 - PLAN_RECORD：计划录制，在该规则类型配置后，推的流如果在计划录制的时间区间则触发录制。 - ON_DEMAND_RECORD：按需录制，在该规则类型配置后，录制系统收到推流后，需要调用租户提供的接口查询录制规则，并根据规则录制。 
+        /// 录制类型，CONTINUOUS_RECORD，COMMAND_RECORD。默认CONTINUOUS_RECORD。 - CONTINUOUS_RECORD：持续录制，在该规则类型配置后，只要有流到推送到录制系统，就触发录制。 - COMMAND_RECORD：命令录制，在该规则类型配置后，在流推送到录制系统后，租户需要通过命令控制该流的录制开始和结束。 
         /// </summary>
-        /// <value>录制类型，CONTINUOUS_RECORD，COMMAND_RECORD，PLAN_RECORD, ON_DEMAND_RECORD。默认CONTINUOUS_RECORD。 - CONTINUOUS_RECORD：持续录制，在该规则类型配置后，只要有流到推送到录制系统，就触发录制。 - COMMAND_RECORD：命令录制，在该规则类型配置后，在流推送到录制系统后，租户需要通过命令控制该流的录制开始和结束。 - PLAN_RECORD：计划录制，在该规则类型配置后，推的流如果在计划录制的时间区间则触发录制。 - ON_DEMAND_RECORD：按需录制，在该规则类型配置后，录制系统收到推流后，需要调用租户提供的接口查询录制规则，并根据规则录制。 </value>
+        /// <value>录制类型，CONTINUOUS_RECORD，COMMAND_RECORD。默认CONTINUOUS_RECORD。 - CONTINUOUS_RECORD：持续录制，在该规则类型配置后，只要有流到推送到录制系统，就触发录制。 - COMMAND_RECORD：命令录制，在该规则类型配置后，在流推送到录制系统后，租户需要通过命令控制该流的录制开始和结束。 </value>
         [JsonConverter(typeof(EnumClassConverter<RecordTypeEnum>))]
         public class RecordTypeEnum
         {
@@ -153,23 +153,11 @@ namespace HuaweiCloud.SDK.Live.V1.Model
             /// </summary>
             public static readonly RecordTypeEnum COMMAND_RECORD = new RecordTypeEnum("COMMAND_RECORD");
 
-            /// <summary>
-            /// Enum PLAN_RECORD for value: PLAN_RECORD
-            /// </summary>
-            public static readonly RecordTypeEnum PLAN_RECORD = new RecordTypeEnum("PLAN_RECORD");
-
-            /// <summary>
-            /// Enum ON_DEMAND_RECORD for value: ON_DEMAND_RECORD
-            /// </summary>
-            public static readonly RecordTypeEnum ON_DEMAND_RECORD = new RecordTypeEnum("ON_DEMAND_RECORD");
-
             private static readonly Dictionary<string, RecordTypeEnum> StaticFields =
             new Dictionary<string, RecordTypeEnum>()
             {
                 { "CONTINUOUS_RECORD", CONTINUOUS_RECORD },
                 { "COMMAND_RECORD", COMMAND_RECORD },
-                { "PLAN_RECORD", PLAN_RECORD },
-                { "ON_DEMAND_RECORD", ON_DEMAND_RECORD },
             };
 
             private string _value;
@@ -294,7 +282,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         [JsonProperty("record_format", NullValueHandling = NullValueHandling.Ignore)]
         public RecordFormatEnum RecordFormat { get; set; }
         /// <summary>
-        /// 录制类型，CONTINUOUS_RECORD，COMMAND_RECORD，PLAN_RECORD, ON_DEMAND_RECORD。默认CONTINUOUS_RECORD。 - CONTINUOUS_RECORD：持续录制，在该规则类型配置后，只要有流到推送到录制系统，就触发录制。 - COMMAND_RECORD：命令录制，在该规则类型配置后，在流推送到录制系统后，租户需要通过命令控制该流的录制开始和结束。 - PLAN_RECORD：计划录制，在该规则类型配置后，推的流如果在计划录制的时间区间则触发录制。 - ON_DEMAND_RECORD：按需录制，在该规则类型配置后，录制系统收到推流后，需要调用租户提供的接口查询录制规则，并根据规则录制。 
+        /// 录制类型，CONTINUOUS_RECORD，COMMAND_RECORD。默认CONTINUOUS_RECORD。 - CONTINUOUS_RECORD：持续录制，在该规则类型配置后，只要有流到推送到录制系统，就触发录制。 - COMMAND_RECORD：命令录制，在该规则类型配置后，在流推送到录制系统后，租户需要通过命令控制该流的录制开始和结束。 
         /// </summary>
         [JsonProperty("record_type", NullValueHandling = NullValueHandling.Ignore)]
         public RecordTypeEnum RecordType { get; set; }

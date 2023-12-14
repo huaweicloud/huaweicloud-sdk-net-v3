@@ -143,26 +143,27 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         }
 
         /// <summary>
-        /// Defines status
+        /// 告警状态
         /// </summary>
+        /// <value>告警状态</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
             /// <summary>
-            /// Enum RUNNING for value: RUNNING
+            /// Enum RUNNING_ for value: RUNNING  启用
             /// </summary>
-            public static readonly StatusEnum RUNNING = new StatusEnum("RUNNING");
+            public static readonly StatusEnum RUNNING_ = new StatusEnum("RUNNING  启用");
 
             /// <summary>
-            /// Enum STOPPING for value: STOPPING
+            /// Enum STOPPING_ for value: STOPPING  停止
             /// </summary>
-            public static readonly StatusEnum STOPPING = new StatusEnum("STOPPING");
+            public static readonly StatusEnum STOPPING_ = new StatusEnum("STOPPING  停止");
 
             private static readonly Dictionary<string, StatusEnum> StaticFields =
             new Dictionary<string, StatusEnum>()
             {
-                { "RUNNING", RUNNING },
-                { "STOPPING", STOPPING },
+                { "RUNNING  启用", RUNNING_ },
+                { "STOPPING  停止", STOPPING_ },
             };
 
             private string _value;
@@ -256,6 +257,157 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             }
         }
 
+        /// <summary>
+        /// 通知频率,单位(分钟)
+        /// </summary>
+        /// <value>通知频率,单位(分钟)</value>
+        [JsonConverter(typeof(EnumClassConverter<NotificationFrequencyEnum>))]
+        public class NotificationFrequencyEnum
+        {
+            /// <summary>
+            /// Enum NUMBER_0 for value: 0
+            /// </summary>
+            public static readonly NotificationFrequencyEnum NUMBER_0 = new NotificationFrequencyEnum(0);
+
+            /// <summary>
+            /// Enum NUMBER_5 for value: 5
+            /// </summary>
+            public static readonly NotificationFrequencyEnum NUMBER_5 = new NotificationFrequencyEnum(5);
+
+            /// <summary>
+            /// Enum NUMBER_10 for value: 10
+            /// </summary>
+            public static readonly NotificationFrequencyEnum NUMBER_10 = new NotificationFrequencyEnum(10);
+
+            /// <summary>
+            /// Enum NUMBER_15 for value: 15
+            /// </summary>
+            public static readonly NotificationFrequencyEnum NUMBER_15 = new NotificationFrequencyEnum(15);
+
+            /// <summary>
+            /// Enum NUMBER_30 for value: 30
+            /// </summary>
+            public static readonly NotificationFrequencyEnum NUMBER_30 = new NotificationFrequencyEnum(30);
+
+            /// <summary>
+            /// Enum NUMBER_60 for value: 60
+            /// </summary>
+            public static readonly NotificationFrequencyEnum NUMBER_60 = new NotificationFrequencyEnum(60);
+
+            /// <summary>
+            /// Enum NUMBER_180 for value: 180
+            /// </summary>
+            public static readonly NotificationFrequencyEnum NUMBER_180 = new NotificationFrequencyEnum(180);
+
+            /// <summary>
+            /// Enum NUMBER_360 for value: 360
+            /// </summary>
+            public static readonly NotificationFrequencyEnum NUMBER_360 = new NotificationFrequencyEnum(360);
+
+            private static readonly Dictionary<int?, NotificationFrequencyEnum> StaticFields =
+            new Dictionary<int?, NotificationFrequencyEnum>()
+            {
+                { 0, NUMBER_0 },
+                { 5, NUMBER_5 },
+                { 10, NUMBER_10 },
+                { 15, NUMBER_15 },
+                { 30, NUMBER_30 },
+                { 60, NUMBER_60 },
+                { 180, NUMBER_180 },
+                { 360, NUMBER_360 },
+            };
+
+            private int? _value;
+
+            public NotificationFrequencyEnum()
+            {
+
+            }
+
+            public NotificationFrequencyEnum(int? value)
+            {
+                _value = value;
+            }
+
+            public static NotificationFrequencyEnum FromValue(int? value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public int? GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as NotificationFrequencyEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(NotificationFrequencyEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(NotificationFrequencyEnum a, NotificationFrequencyEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(NotificationFrequencyEnum a, NotificationFrequencyEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 项目id
@@ -317,42 +469,42 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         public string DomainId { get; set; }
 
         /// <summary>
-        /// 创建时间(毫秒时间戳)
+        /// 创建时间（毫秒时间戳）
         /// </summary>
         [JsonProperty("create_time", NullValueHandling = NullValueHandling.Ignore)]
         public long? CreateTime { get; set; }
 
         /// <summary>
-        /// 更新时间(毫秒时间戳)
+        /// 更新时间（毫秒时间戳）
         /// </summary>
         [JsonProperty("update_time", NullValueHandling = NullValueHandling.Ignore)]
         public long? UpdateTime { get; set; }
 
         /// <summary>
-        /// 主题
+        /// 通知主题
         /// </summary>
         [JsonProperty("topics", NullValueHandling = NullValueHandling.Ignore)]
         public List<Topics> Topics { get; set; }
 
         /// <summary>
-        /// 
+        /// 消息模板名称
         /// </summary>
         [JsonProperty("template_name", NullValueHandling = NullValueHandling.Ignore)]
         public string TemplateName { get; set; }
 
         /// <summary>
-        /// 
+        /// 告警状态
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
         /// <summary>
-        /// 触发条件：触发次数;默认为1
+        /// 触发条件：触发周期;默认为1
         /// </summary>
         [JsonProperty("trigger_condition_count", NullValueHandling = NullValueHandling.Ignore)]
         public int? TriggerConditionCount { get; set; }
 
         /// <summary>
-        /// 触发条件：触发周期;默认为1
+        /// 触发条件：触发次数;默认为1
         /// </summary>
         [JsonProperty("trigger_condition_frequency", NullValueHandling = NullValueHandling.Ignore)]
         public int? TriggerConditionFrequency { get; set; }
@@ -368,6 +520,17 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         [JsonProperty("recovery_policy", NullValueHandling = NullValueHandling.Ignore)]
         public int? RecoveryPolicy { get; set; }
+
+        /// <summary>
+        /// 通知频率,单位(分钟)
+        /// </summary>
+        [JsonProperty("notification_frequency", NullValueHandling = NullValueHandling.Ignore)]
+        public NotificationFrequencyEnum NotificationFrequency { get; set; }
+        /// <summary>
+        /// 告警行动规则名称 &gt;alarm_action_rule_name和notification_save_rule可以选填一个，如果都填，优先选择alarm_action_rule_name
+        /// </summary>
+        [JsonProperty("alarm_action_rule_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string AlarmActionRuleName { get; set; }
 
 
 
@@ -397,6 +560,8 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             sb.Append("  triggerConditionFrequency: ").Append(TriggerConditionFrequency).Append("\n");
             sb.Append("  whetherRecoveryPolicy: ").Append(WhetherRecoveryPolicy).Append("\n");
             sb.Append("  recoveryPolicy: ").Append(RecoveryPolicy).Append("\n");
+            sb.Append("  notificationFrequency: ").Append(NotificationFrequency).Append("\n");
+            sb.Append("  alarmActionRuleName: ").Append(AlarmActionRuleName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -514,6 +679,16 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                     this.RecoveryPolicy == input.RecoveryPolicy ||
                     (this.RecoveryPolicy != null &&
                     this.RecoveryPolicy.Equals(input.RecoveryPolicy))
+                ) && 
+                (
+                    this.NotificationFrequency == input.NotificationFrequency ||
+                    (this.NotificationFrequency != null &&
+                    this.NotificationFrequency.Equals(input.NotificationFrequency))
+                ) && 
+                (
+                    this.AlarmActionRuleName == input.AlarmActionRuleName ||
+                    (this.AlarmActionRuleName != null &&
+                    this.AlarmActionRuleName.Equals(input.AlarmActionRuleName))
                 );
         }
 
@@ -563,6 +738,10 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                     hashCode = hashCode * 59 + this.WhetherRecoveryPolicy.GetHashCode();
                 if (this.RecoveryPolicy != null)
                     hashCode = hashCode * 59 + this.RecoveryPolicy.GetHashCode();
+                if (this.NotificationFrequency != null)
+                    hashCode = hashCode * 59 + this.NotificationFrequency.GetHashCode();
+                if (this.AlarmActionRuleName != null)
+                    hashCode = hashCode * 59 + this.AlarmActionRuleName.GetHashCode();
                 return hashCode;
             }
         }

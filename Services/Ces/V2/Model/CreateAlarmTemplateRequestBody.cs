@@ -15,6 +15,121 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     /// </summary>
     public class CreateAlarmTemplateRequestBody 
     {
+        /// <summary>
+        /// 自定义告警模板类型 0：指标 2： 事件
+        /// </summary>
+        /// <value>自定义告警模板类型 0：指标 2： 事件</value>
+        [JsonConverter(typeof(EnumClassConverter<TemplateTypeEnum>))]
+        public class TemplateTypeEnum
+        {
+            /// <summary>
+            /// Enum NUMBER_0 for value: 0
+            /// </summary>
+            public static readonly TemplateTypeEnum NUMBER_0 = new TemplateTypeEnum(0);
+
+            /// <summary>
+            /// Enum NUMBER_2 for value: 2
+            /// </summary>
+            public static readonly TemplateTypeEnum NUMBER_2 = new TemplateTypeEnum(2);
+
+            private static readonly Dictionary<int?, TemplateTypeEnum> StaticFields =
+            new Dictionary<int?, TemplateTypeEnum>()
+            {
+                { 0, NUMBER_0 },
+                { 2, NUMBER_2 },
+            };
+
+            private int? _value;
+
+            public TemplateTypeEnum()
+            {
+
+            }
+
+            public TemplateTypeEnum(int? value)
+            {
+                _value = value;
+            }
+
+            public static TemplateTypeEnum FromValue(int? value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public int? GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as TemplateTypeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(TemplateTypeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(TemplateTypeEnum a, TemplateTypeEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(TemplateTypeEnum a, TemplateTypeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 告警模板的名称，以字母或汉字开头，可包含字母、数字、汉字、_、-，长度范围[1,128]
@@ -28,6 +143,11 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         [JsonProperty("template_description", NullValueHandling = NullValueHandling.Ignore)]
         public string TemplateDescription { get; set; }
 
+        /// <summary>
+        /// 自定义告警模板类型 0：指标 2： 事件
+        /// </summary>
+        [JsonProperty("template_type", NullValueHandling = NullValueHandling.Ignore)]
+        public TemplateTypeEnum TemplateType { get; set; }
         /// <summary>
         /// 告警模板策略列表
         /// </summary>
@@ -45,6 +165,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             sb.Append("class CreateAlarmTemplateRequestBody {\n");
             sb.Append("  templateName: ").Append(TemplateName).Append("\n");
             sb.Append("  templateDescription: ").Append(TemplateDescription).Append("\n");
+            sb.Append("  templateType: ").Append(TemplateType).Append("\n");
             sb.Append("  policies: ").Append(Policies).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -78,6 +199,11 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                     this.TemplateDescription.Equals(input.TemplateDescription))
                 ) && 
                 (
+                    this.TemplateType == input.TemplateType ||
+                    (this.TemplateType != null &&
+                    this.TemplateType.Equals(input.TemplateType))
+                ) && 
+                (
                     this.Policies == input.Policies ||
                     this.Policies != null &&
                     input.Policies != null &&
@@ -97,6 +223,8 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                     hashCode = hashCode * 59 + this.TemplateName.GetHashCode();
                 if (this.TemplateDescription != null)
                     hashCode = hashCode * 59 + this.TemplateDescription.GetHashCode();
+                if (this.TemplateType != null)
+                    hashCode = hashCode * 59 + this.TemplateType.GetHashCode();
                 if (this.Policies != null)
                     hashCode = hashCode * 59 + this.Policies.GetHashCode();
                 return hashCode;

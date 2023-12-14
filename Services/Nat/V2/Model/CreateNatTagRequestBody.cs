@@ -17,10 +17,10 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
     {
 
         /// <summary>
-        /// 标签列表。请参考表TagBody字段数据结构说明。
+        /// 
         /// </summary>
         [JsonProperty("tag", NullValueHandling = NullValueHandling.Ignore)]
-        public Object Tag { get; set; }
+        public TagBody Tag { get; set; }
 
 
 

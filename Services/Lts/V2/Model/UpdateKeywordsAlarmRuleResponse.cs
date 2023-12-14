@@ -142,6 +142,272 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             }
         }
 
+        /// <summary>
+        /// 邮件附加信息语言
+        /// </summary>
+        /// <value>邮件附加信息语言</value>
+        [JsonConverter(typeof(EnumClassConverter<LanguageEnum>))]
+        public class LanguageEnum
+        {
+            /// <summary>
+            /// Enum ZH_CN for value: zh-cn
+            /// </summary>
+            public static readonly LanguageEnum ZH_CN = new LanguageEnum("zh-cn");
+
+            /// <summary>
+            /// Enum EN_US for value: en-us
+            /// </summary>
+            public static readonly LanguageEnum EN_US = new LanguageEnum("en-us");
+
+            private static readonly Dictionary<string, LanguageEnum> StaticFields =
+            new Dictionary<string, LanguageEnum>()
+            {
+                { "zh-cn", ZH_CN },
+                { "en-us", EN_US },
+            };
+
+            private string _value;
+
+            public LanguageEnum()
+            {
+
+            }
+
+            public LanguageEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static LanguageEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as LanguageEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(LanguageEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(LanguageEnum a, LanguageEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(LanguageEnum a, LanguageEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+        /// <summary>
+        /// 通知频率,单位(分钟)
+        /// </summary>
+        /// <value>通知频率,单位(分钟)</value>
+        [JsonConverter(typeof(EnumClassConverter<NotificationFrequencyEnum>))]
+        public class NotificationFrequencyEnum
+        {
+            /// <summary>
+            /// Enum NUMBER_0 for value: 0
+            /// </summary>
+            public static readonly NotificationFrequencyEnum NUMBER_0 = new NotificationFrequencyEnum(0);
+
+            /// <summary>
+            /// Enum NUMBER_5 for value: 5
+            /// </summary>
+            public static readonly NotificationFrequencyEnum NUMBER_5 = new NotificationFrequencyEnum(5);
+
+            /// <summary>
+            /// Enum NUMBER_10 for value: 10
+            /// </summary>
+            public static readonly NotificationFrequencyEnum NUMBER_10 = new NotificationFrequencyEnum(10);
+
+            /// <summary>
+            /// Enum NUMBER_15 for value: 15
+            /// </summary>
+            public static readonly NotificationFrequencyEnum NUMBER_15 = new NotificationFrequencyEnum(15);
+
+            /// <summary>
+            /// Enum NUMBER_30 for value: 30
+            /// </summary>
+            public static readonly NotificationFrequencyEnum NUMBER_30 = new NotificationFrequencyEnum(30);
+
+            /// <summary>
+            /// Enum NUMBER_60 for value: 60
+            /// </summary>
+            public static readonly NotificationFrequencyEnum NUMBER_60 = new NotificationFrequencyEnum(60);
+
+            /// <summary>
+            /// Enum NUMBER_180 for value: 180
+            /// </summary>
+            public static readonly NotificationFrequencyEnum NUMBER_180 = new NotificationFrequencyEnum(180);
+
+            /// <summary>
+            /// Enum NUMBER_360 for value: 360
+            /// </summary>
+            public static readonly NotificationFrequencyEnum NUMBER_360 = new NotificationFrequencyEnum(360);
+
+            private static readonly Dictionary<int?, NotificationFrequencyEnum> StaticFields =
+            new Dictionary<int?, NotificationFrequencyEnum>()
+            {
+                { 0, NUMBER_0 },
+                { 5, NUMBER_5 },
+                { 10, NUMBER_10 },
+                { 15, NUMBER_15 },
+                { 30, NUMBER_30 },
+                { 60, NUMBER_60 },
+                { 180, NUMBER_180 },
+                { 360, NUMBER_360 },
+            };
+
+            private int? _value;
+
+            public NotificationFrequencyEnum()
+            {
+
+            }
+
+            public NotificationFrequencyEnum(int? value)
+            {
+                _value = value;
+            }
+
+            public static NotificationFrequencyEnum FromValue(int? value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public int? GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as NotificationFrequencyEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(NotificationFrequencyEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(NotificationFrequencyEnum a, NotificationFrequencyEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(NotificationFrequencyEnum a, NotificationFrequencyEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 关键词告警id
@@ -165,13 +431,13 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// 关键词详细信息
         /// </summary>
         [JsonProperty("keywords_requests", NullValueHandling = NullValueHandling.Ignore)]
-        public List<KeywordsRequest> KeywordsRequests { get; set; }
+        public List<KeywordsResBody> KeywordsRequests { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("frequency", NullValueHandling = NullValueHandling.Ignore)]
-        public Frequency Frequency { get; set; }
+        public FrequencyRespBody Frequency { get; set; }
 
         /// <summary>
         /// 告警级别
@@ -203,11 +469,10 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         public long? UpdateTime { get; set; }
 
         /// <summary>
-        /// 语言
+        /// 邮件附加信息语言
         /// </summary>
         [JsonProperty("language", NullValueHandling = NullValueHandling.Ignore)]
-        public string Language { get; set; }
-
+        public LanguageEnum Language { get; set; }
         /// <summary>
         /// 项目id
         /// </summary>
@@ -215,22 +480,33 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         public string ProjectId { get; set; }
 
         /// <summary>
-        /// 主题信息
+        /// 通知主题
         /// </summary>
         [JsonProperty("topics", NullValueHandling = NullValueHandling.Ignore)]
         public List<Topics> Topics { get; set; }
 
         /// <summary>
-        /// 暂无
+        /// 情况表述
         /// </summary>
         [JsonProperty("condition_expression", NullValueHandling = NullValueHandling.Ignore)]
         public string ConditionExpression { get; set; }
 
         /// <summary>
-        /// 暂无
+        /// 索引id
         /// </summary>
         [JsonProperty("indexId", NullValueHandling = NullValueHandling.Ignore)]
         public string IndexId { get; set; }
+
+        /// <summary>
+        /// 通知频率,单位(分钟)
+        /// </summary>
+        [JsonProperty("notification_frequency", NullValueHandling = NullValueHandling.Ignore)]
+        public NotificationFrequencyEnum NotificationFrequency { get; set; }
+        /// <summary>
+        /// 告警行动规则名称 &gt;alarm_action_rule_name和notification_save_rule可以选填一个，如果都填，优先选择alarm_action_rule_name
+        /// </summary>
+        [JsonProperty("alarm_action_rule_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string AlarmActionRuleName { get; set; }
 
 
 
@@ -256,6 +532,8 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             sb.Append("  topics: ").Append(Topics).Append("\n");
             sb.Append("  conditionExpression: ").Append(ConditionExpression).Append("\n");
             sb.Append("  indexId: ").Append(IndexId).Append("\n");
+            sb.Append("  notificationFrequency: ").Append(NotificationFrequency).Append("\n");
+            sb.Append("  alarmActionRuleName: ").Append(AlarmActionRuleName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -353,6 +631,16 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                     this.IndexId == input.IndexId ||
                     (this.IndexId != null &&
                     this.IndexId.Equals(input.IndexId))
+                ) && 
+                (
+                    this.NotificationFrequency == input.NotificationFrequency ||
+                    (this.NotificationFrequency != null &&
+                    this.NotificationFrequency.Equals(input.NotificationFrequency))
+                ) && 
+                (
+                    this.AlarmActionRuleName == input.AlarmActionRuleName ||
+                    (this.AlarmActionRuleName != null &&
+                    this.AlarmActionRuleName.Equals(input.AlarmActionRuleName))
                 );
         }
 
@@ -394,6 +682,10 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                     hashCode = hashCode * 59 + this.ConditionExpression.GetHashCode();
                 if (this.IndexId != null)
                     hashCode = hashCode * 59 + this.IndexId.GetHashCode();
+                if (this.NotificationFrequency != null)
+                    hashCode = hashCode * 59 + this.NotificationFrequency.GetHashCode();
+                if (this.AlarmActionRuleName != null)
+                    hashCode = hashCode * 59 + this.AlarmActionRuleName.GetHashCode();
                 return hashCode;
             }
         }

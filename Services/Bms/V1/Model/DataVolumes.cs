@@ -23,6 +23,11 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         public class VolumetypeEnum
         {
             /// <summary>
+            /// Enum GPSSD for value: GPSSD
+            /// </summary>
+            public static readonly VolumetypeEnum GPSSD = new VolumetypeEnum("GPSSD");
+
+            /// <summary>
             /// Enum SATA for value: SATA
             /// </summary>
             public static readonly VolumetypeEnum SATA = new VolumetypeEnum("SATA");
@@ -40,6 +45,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
             private static readonly Dictionary<string, VolumetypeEnum> StaticFields =
             new Dictionary<string, VolumetypeEnum>()
             {
+                { "GPSSD", GPSSD },
                 { "SATA", SATA },
                 { "SAS", SAS },
                 { "SSD", SSD },

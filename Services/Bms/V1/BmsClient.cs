@@ -266,6 +266,30 @@ namespace HuaweiCloud.SDK.Bms.V1
         }
         
         /// <summary>
+        /// 删除裸金属服务器裸金属服务器物理机
+        ///
+        /// 删除裸金属服务器裸金属服务器物理机
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteBaremetalServerResponse DeleteBaremetalServer(DeleteBaremetalServerRequest deleteBaremetalServerRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteBaremetalServerRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<DeleteBaremetalServerResponse>(response);
+        }
+
+        public SyncInvoker<DeleteBaremetalServerResponse> DeleteBaremetalServerInvoker(DeleteBaremetalServerRequest deleteBaremetalServerRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteBaremetalServerRequest);
+            return new SyncInvoker<DeleteBaremetalServerResponse>(this, "POST", request, JsonUtils.DeSerialize<DeleteBaremetalServerResponse>);
+        }
+        
+        /// <summary>
         /// 裸金属服务器解绑弹性网卡
         ///
         /// 

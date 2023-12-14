@@ -17,6 +17,12 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
     {
 
         /// <summary>
+        /// 设备属性查询ID，用于唯一标识一条属性查询，在下发查询属性时由物联网平台分配获得。
+        /// </summary>
+        [JsonProperty("request_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string RequestId { get; set; }
+
+        /// <summary>
         /// 设备上报的属性执行结果。Json格式，具体格式需要应用和设备约定。
         /// </summary>
         [JsonProperty("response", NullValueHandling = NullValueHandling.Ignore)]
@@ -43,6 +49,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListPropertiesResponse {\n");
+            sb.Append("  requestId: ").Append(RequestId).Append("\n");
             sb.Append("  response: ").Append(Response).Append("\n");
             sb.Append("  errorCode: ").Append(ErrorCode).Append("\n");
             sb.Append("  errorMsg: ").Append(ErrorMsg).Append("\n");
@@ -68,6 +75,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
 
             return 
                 (
+                    this.RequestId == input.RequestId ||
+                    (this.RequestId != null &&
+                    this.RequestId.Equals(input.RequestId))
+                ) && 
+                (
                     this.Response == input.Response ||
                     (this.Response != null &&
                     this.Response.Equals(input.Response))
@@ -92,6 +104,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.RequestId != null)
+                    hashCode = hashCode * 59 + this.RequestId.GetHashCode();
                 if (this.Response != null)
                     hashCode = hashCode * 59 + this.Response.GetHashCode();
                 if (this.ErrorCode != null)

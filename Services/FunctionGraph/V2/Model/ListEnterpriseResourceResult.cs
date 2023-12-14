@@ -26,7 +26,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// 
         /// </summary>
         [JsonProperty("resource_detail", NullValueHandling = NullValueHandling.Ignore)]
-        public ListFunctionResult ResourceDetail { get; set; }
+        public ListEnterpriseResourceDetail ResourceDetail { get; set; }
 
         /// <summary>
         /// 标签列表

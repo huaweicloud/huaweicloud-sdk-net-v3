@@ -50,6 +50,8 @@ namespace HuaweiCloud.SDK.Vpc.V3
             "https://vpc.me-east-1.myhuaweicloud.com");
         public static readonly Region AE_AD_1 = new Region("ae-ad-1",
             "https://vpc.ae-ad-1.myhuaweicloud.com");
+        public static readonly Region EU_WEST_0 = new Region("eu-west-0",
+            "https://vpc.eu-west-0.myhuaweicloud.com");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("VPC");
 
@@ -77,6 +79,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
                 { "eu-west-101", EU_WEST_101 },
                 { "me-east-1", ME_EAST_1 },
                 { "ae-ad-1", AE_AD_1 },
+                { "eu-west-0", EU_WEST_0 },
         };
 
         public static Region ValueOf(string regionId)

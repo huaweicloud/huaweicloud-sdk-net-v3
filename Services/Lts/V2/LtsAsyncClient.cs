@@ -40,6 +40,37 @@ namespace HuaweiCloud.SDK.Lts.V2
         }
         
         /// <summary>
+        /// 新建跨账号日志接入
+        ///
+        /// 新建跨账号日志接入
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateAgencyAccessResponse> CreateAgencyAccessAsync(CreateAgencyAccessRequest createAgencyAccessRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/lts/createAgencyAccess", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createAgencyAccessRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            var createAgencyAccessResponse = JsonUtils.DeSerializeNull<CreateAgencyAccessResponse>(response);
+            createAgencyAccessResponse.Body = JsonUtils.DeSerializeList<LTSAccessConfigInfoRespon200>(response);
+            return createAgencyAccessResponse;
+        }
+
+        public AsyncInvoker<CreateAgencyAccessResponse> CreateAgencyAccessAsyncInvoker(CreateAgencyAccessRequest createAgencyAccessRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/lts/createAgencyAccess", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createAgencyAccessRequest);
+            return new AsyncInvoker<CreateAgencyAccessResponse>(this, "POST", request, response =>
+            {
+                var createAgencyAccessResponse = JsonUtils.DeSerializeNull<CreateAgencyAccessResponse>(response);
+                createAgencyAccessResponse.Body = JsonUtils.DeSerializeList<LTSAccessConfigInfoRespon200>(response);
+                return createAgencyAccessResponse;
+            });
+        }
+        
+        /// <summary>
         /// 创建仪表盘
         ///
         /// 创建仪表盘

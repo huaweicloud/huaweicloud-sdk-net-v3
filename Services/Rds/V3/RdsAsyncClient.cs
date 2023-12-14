@@ -545,6 +545,32 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 
+        ///
+        /// 解除LTS配置信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteLogLtsConfigsResponse> DeleteLogLtsConfigsAsync(DeleteLogLtsConfigsRequest deleteLogLtsConfigsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine", deleteLogLtsConfigsRequest.Engine.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/{engine}/instances/logs/lts-configs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteLogLtsConfigsRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteLogLtsConfigsResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteLogLtsConfigsResponse> DeleteLogLtsConfigsAsyncInvoker(DeleteLogLtsConfigsRequest deleteLogLtsConfigsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine", deleteLogLtsConfigsRequest.Engine.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/{engine}/instances/logs/lts-configs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteLogLtsConfigsRequest);
+            return new AsyncInvoker<DeleteLogLtsConfigsResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteLogLtsConfigsResponse>);
+        }
+        
+        /// <summary>
         /// 删除手动备份
         ///
         /// 删除手动备份。
@@ -1176,6 +1202,32 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/tasklist/detail", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listJobInfoDetailRequest);
             return new AsyncInvoker<ListJobInfoDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ListJobInfoDetailResponse>);
+        }
+        
+        /// <summary>
+        /// 
+        ///
+        /// 获取LTS配置信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListLogLtsConfigsResponse> ListLogLtsConfigsAsync(ListLogLtsConfigsRequest listLogLtsConfigsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine", listLogLtsConfigsRequest.Engine.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/{engine}/instances/logs/lts-configs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listLogLtsConfigsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerializeNull<ListLogLtsConfigsResponse>(response);
+        }
+
+        public AsyncInvoker<ListLogLtsConfigsResponse> ListLogLtsConfigsAsyncInvoker(ListLogLtsConfigsRequest listLogLtsConfigsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine", listLogLtsConfigsRequest.Engine.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/{engine}/instances/logs/lts-configs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listLogLtsConfigsRequest);
+            return new AsyncInvoker<ListLogLtsConfigsResponse>(this, "GET", request, JsonUtils.DeSerializeNull<ListLogLtsConfigsResponse>);
         }
         
         /// <summary>
@@ -1986,6 +2038,32 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/binlog/clear-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setBinlogClearPolicyRequest);
             return new AsyncInvoker<SetBinlogClearPolicyResponse>(this, "PUT", request, JsonUtils.DeSerialize<SetBinlogClearPolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 
+        ///
+        /// 关联LTS配置信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<SetLogLtsConfigsResponse> SetLogLtsConfigsAsync(SetLogLtsConfigsRequest setLogLtsConfigsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine", setLogLtsConfigsRequest.Engine.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/{engine}/instances/logs/lts-configs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setLogLtsConfigsRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<SetLogLtsConfigsResponse>(response);
+        }
+
+        public AsyncInvoker<SetLogLtsConfigsResponse> SetLogLtsConfigsAsyncInvoker(SetLogLtsConfigsRequest setLogLtsConfigsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine", setLogLtsConfigsRequest.Engine.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/{engine}/instances/logs/lts-configs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setLogLtsConfigsRequest);
+            return new AsyncInvoker<SetLogLtsConfigsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<SetLogLtsConfigsResponse>);
         }
         
         /// <summary>
