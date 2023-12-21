@@ -34,6 +34,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         [JsonProperty("hostname", NullValueHandling = NullValueHandling.Ignore)]
         public string Hostname { get; set; }
 
+        /// <summary>
+        /// 修改云服务器云主机过程中待注入实例自定义数据。支持注入文本、文本文件。  示例：  base64编码前：   Linux服务器：     #!/bin/bash     echo user_test &gt; /home/user.txt   Windows服务器：     rem cmd     echo 111 &gt; c:\\aaa.txt  base64编码后：   Linux服务器：IyEvYmluL2Jhc2gKZWNobyB1c2VyX3Rlc3QgPiAvaG9tZS91c2VyLnR4dA&#x3D;&#x3D;   Windows服务器：cmVtIGNtZA0KZWNobyAxMTEgJmd0OyBjOlxhYWEudHh0
+        /// </summary>
+        [JsonProperty("user_data", NullValueHandling = NullValueHandling.Ignore)]
+        public string UserData { get; set; }
+
 
 
         /// <summary>
@@ -46,6 +52,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  hostname: ").Append(Hostname).Append("\n");
+            sb.Append("  userData: ").Append(UserData).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -81,6 +88,11 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     this.Hostname == input.Hostname ||
                     (this.Hostname != null &&
                     this.Hostname.Equals(input.Hostname))
+                ) && 
+                (
+                    this.UserData == input.UserData ||
+                    (this.UserData != null &&
+                    this.UserData.Equals(input.UserData))
                 );
         }
 
@@ -98,6 +110,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.Hostname != null)
                     hashCode = hashCode * 59 + this.Hostname.GetHashCode();
+                if (this.UserData != null)
+                    hashCode = hashCode * 59 + this.UserData.GetHashCode();
                 return hashCode;
             }
         }

@@ -35,6 +35,12 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         public string Description { get; set; }
 
         /// <summary>
+        /// 是否是多转码模式 
+        /// </summary>
+        [JsonProperty("is_multi_transcode", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsMultiTranscode { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("base_info", NullValueHandling = NullValueHandling.Ignore)]
@@ -58,6 +64,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
             sb.Append("  assetId: ").Append(AssetId).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
+            sb.Append("  isMultiTranscode: ").Append(IsMultiTranscode).Append("\n");
             sb.Append("  baseInfo: ").Append(BaseInfo).Append("\n");
             sb.Append("  playInfoArray: ").Append(PlayInfoArray).Append("\n");
             sb.Append("}\n");
@@ -97,6 +104,11 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
                     this.Description.Equals(input.Description))
                 ) && 
                 (
+                    this.IsMultiTranscode == input.IsMultiTranscode ||
+                    (this.IsMultiTranscode != null &&
+                    this.IsMultiTranscode.Equals(input.IsMultiTranscode))
+                ) && 
+                (
                     this.BaseInfo == input.BaseInfo ||
                     (this.BaseInfo != null &&
                     this.BaseInfo.Equals(input.BaseInfo))
@@ -123,6 +135,8 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.Description != null)
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.IsMultiTranscode != null)
+                    hashCode = hashCode * 59 + this.IsMultiTranscode.GetHashCode();
                 if (this.BaseInfo != null)
                     hashCode = hashCode * 59 + this.BaseInfo.GetHashCode();
                 if (this.PlayInfoArray != null)

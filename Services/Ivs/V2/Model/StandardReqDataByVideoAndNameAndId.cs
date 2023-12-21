@@ -46,6 +46,12 @@ namespace HuaweiCloud.SDK.Ivs.V2.Model
         [JsonProperty("nod_threshold", NullValueHandling = NullValueHandling.Ignore)]
         public double? NodThreshold { get; set; }
 
+        /// <summary>
+        /// 响应参数similarity是否详细显示，默认为false。 - true表示响应中的similarity为0~1000的小数。 - false表示响应中的similarity为0~100的整数。
+        /// </summary>
+        [JsonProperty("detail", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? Detail { get; set; }
+
 
 
         /// <summary>
@@ -60,6 +66,7 @@ namespace HuaweiCloud.SDK.Ivs.V2.Model
             sb.Append("  video: ").Append(Video).Append("\n");
             sb.Append("  actions: ").Append(Actions).Append("\n");
             sb.Append("  nodThreshold: ").Append(NodThreshold).Append("\n");
+            sb.Append("  detail: ").Append(Detail).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -105,6 +112,11 @@ namespace HuaweiCloud.SDK.Ivs.V2.Model
                     this.NodThreshold == input.NodThreshold ||
                     (this.NodThreshold != null &&
                     this.NodThreshold.Equals(input.NodThreshold))
+                ) && 
+                (
+                    this.Detail == input.Detail ||
+                    (this.Detail != null &&
+                    this.Detail.Equals(input.Detail))
                 );
         }
 
@@ -126,6 +138,8 @@ namespace HuaweiCloud.SDK.Ivs.V2.Model
                     hashCode = hashCode * 59 + this.Actions.GetHashCode();
                 if (this.NodThreshold != null)
                     hashCode = hashCode * 59 + this.NodThreshold.GetHashCode();
+                if (this.Detail != null)
+                    hashCode = hashCode * 59 + this.Detail.GetHashCode();
                 return hashCode;
             }
         }

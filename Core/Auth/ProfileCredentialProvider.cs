@@ -13,7 +13,7 @@ namespace HuaweiCloud.SDK.Core.Auth
 
         public ProfileCredentialProvider(string credentialType)
         {
-            _credentialType = credentialType.ToLower();
+            _credentialType = credentialType.ToLowerInvariant();
         }
 
         public static ProfileCredentialProvider GetBasic()

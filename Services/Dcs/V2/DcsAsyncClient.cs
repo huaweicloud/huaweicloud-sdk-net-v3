@@ -579,7 +579,7 @@ namespace HuaweiCloud.SDK.Dcs.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/bigkey-task/{bigkey_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteBigkeyScanTaskRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
-            return JsonUtils.DeSerializeNull<DeleteBigkeyScanTaskResponse>(response);
+            return JsonUtils.DeSerialize<DeleteBigkeyScanTaskResponse>(response);
         }
 
         public AsyncInvoker<DeleteBigkeyScanTaskResponse> DeleteBigkeyScanTaskAsyncInvoker(DeleteBigkeyScanTaskRequest deleteBigkeyScanTaskRequest)
@@ -589,7 +589,7 @@ namespace HuaweiCloud.SDK.Dcs.V2
             urlParam.Add("bigkey_id", deleteBigkeyScanTaskRequest.BigkeyId.ToString());
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/bigkey-task/{bigkey_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteBigkeyScanTaskRequest);
-            return new AsyncInvoker<DeleteBigkeyScanTaskResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteBigkeyScanTaskResponse>);
+            return new AsyncInvoker<DeleteBigkeyScanTaskResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteBigkeyScanTaskResponse>);
         }
         
         /// <summary>
@@ -2792,6 +2792,32 @@ namespace HuaweiCloud.SDK.Dcs.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/groups/{group_id}/replications/{node_id}/slave-priority", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSlavePriorityRequest);
             return new AsyncInvoker<UpdateSlavePriorityResponse>(this, "POST", request, JsonUtils.DeSerializeNull<UpdateSlavePriorityResponse>);
+        }
+        
+        /// <summary>
+        /// 校验集群副本是否支持删除
+        ///
+        /// 校验集群副本是否支持删除
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ValidateDeletableReplicaResponse> ValidateDeletableReplicaAsync(ValidateDeletableReplicaRequest validateDeletableReplicaRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", validateDeletableReplicaRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/deletable-replication", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", validateDeletableReplicaRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ValidateDeletableReplicaResponse>(response);
+        }
+
+        public AsyncInvoker<ValidateDeletableReplicaResponse> ValidateDeletableReplicaAsyncInvoker(ValidateDeletableReplicaRequest validateDeletableReplicaRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", validateDeletableReplicaRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/deletable-replication", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", validateDeletableReplicaRequest);
+            return new AsyncInvoker<ValidateDeletableReplicaResponse>(this, "GET", request, JsonUtils.DeSerialize<ValidateDeletableReplicaResponse>);
         }
         
         /// <summary>

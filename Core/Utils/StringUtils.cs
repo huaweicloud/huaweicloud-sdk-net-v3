@@ -7,7 +7,7 @@ namespace HuaweiCloud.SDK.Core
         public static string ToSnakeCase(string str)
         {
             return string.Concat(str.Select((x, i) => i > 0 && char.IsUpper(x) ? "_" + x : x.ToString()))
-                .ToLower();
+                .ToLowerInvariant();
         }
 
         public static string UnderscoreToCamel(string str)
@@ -16,8 +16,8 @@ namespace HuaweiCloud.SDK.Core
             while (item.IndexOf('_') >= 0)
             {
                 var newUpper = item.Substring(item.IndexOf('_'), 2);
-                item = item.Replace(newUpper, newUpper.Trim('_').ToUpper());
-                str = str.Replace(newUpper, newUpper.Trim('_').ToUpper());
+                item = item.Replace(newUpper, newUpper.Trim('_').ToUpperInvariant());
+                str = str.Replace(newUpper, newUpper.Trim('_').ToUpperInvariant());
             }
             return str;
         }

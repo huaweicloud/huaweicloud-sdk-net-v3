@@ -22,6 +22,8 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
             "https://codearts-deploy.sa-brazil-1.myhuaweicloud.com");
         public static readonly Region LA_NORTH_2 = new Region("la-north-2",
             "https://codearts-deploy.la-north-2.myhuaweicloud.com");
+        public static readonly Region TR_WEST_1 = new Region("tr-west-1",
+            "https://codearts-deploy.tr-west-1.myhuaweicloud.com");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("CODEARTSDEPLOY");
 
@@ -35,6 +37,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
                 { "cn-north-4", CN_NORTH_4 },
                 { "sa-brazil-1", SA_BRAZIL_1 },
                 { "la-north-2", LA_NORTH_2 },
+                { "tr-west-1", TR_WEST_1 },
         };
 
         public static Region ValueOf(string regionId)

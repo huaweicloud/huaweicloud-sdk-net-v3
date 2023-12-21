@@ -131,9 +131,9 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         }
 
         /// <summary>
-        /// 任务详情类型。取值： - overview：任务概览信息。 - detail：任务基本信息。 - network：测试连接结果信息，需配合query_id参数一起查询。 - precheck：预检查结果信息，需配合query_id参数一起查询。 - progress：任务进度信息。 - log：任务日志信息，支持分页查询参数offset与limit。 - comapre：查询对比任务。 - file：对象导入信息
+        /// 任务详情类型。取值： - overview：任务概览信息。 - detail：任务基本信息。 - network：测试连接结果信息，需配合query_id参数一起查询。 - precheck：预检查结果信息，需配合query_id参数一起查询。 - progress：任务进度信息。 - log：任务日志信息，支持分页查询参数offset与limit。 - compare：查询对比任务。 - file：对象导入信息
         /// </summary>
-        /// <value>任务详情类型。取值： - overview：任务概览信息。 - detail：任务基本信息。 - network：测试连接结果信息，需配合query_id参数一起查询。 - precheck：预检查结果信息，需配合query_id参数一起查询。 - progress：任务进度信息。 - log：任务日志信息，支持分页查询参数offset与limit。 - comapre：查询对比任务。 - file：对象导入信息</value>
+        /// <value>任务详情类型。取值： - overview：任务概览信息。 - detail：任务基本信息。 - network：测试连接结果信息，需配合query_id参数一起查询。 - precheck：预检查结果信息，需配合query_id参数一起查询。 - progress：任务进度信息。 - log：任务日志信息，支持分页查询参数offset与limit。 - compare：查询对比任务。 - file：对象导入信息</value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -168,9 +168,9 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             public static readonly TypeEnum LOG = new TypeEnum("log");
 
             /// <summary>
-            /// Enum COMAPRE for value: comapre
+            /// Enum COMPARE for value: compare
             /// </summary>
-            public static readonly TypeEnum COMAPRE = new TypeEnum("comapre");
+            public static readonly TypeEnum COMPARE = new TypeEnum("compare");
 
             /// <summary>
             /// Enum FILE for value: file
@@ -186,7 +186,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                 { "precheck", PRECHECK },
                 { "progress", PROGRESS },
                 { "log", LOG },
-                { "comapre", COMAPRE },
+                { "compare", COMPARE },
                 { "file", FILE },
             };
 
@@ -430,12 +430,18 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             /// </summary>
             public static readonly QueryTypeEnum DETAIL = new QueryTypeEnum("detail");
 
+            /// <summary>
+            /// Enum DIFF for value: diff
+            /// </summary>
+            public static readonly QueryTypeEnum DIFF = new QueryTypeEnum("diff");
+
             private static readonly Dictionary<string, QueryTypeEnum> StaticFields =
             new Dictionary<string, QueryTypeEnum>()
             {
                 { "overview", OVERVIEW },
                 { "list", LIST },
                 { "detail", DETAIL },
+                { "diff", DIFF },
             };
 
             private string _value;
@@ -780,7 +786,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         [JsonProperty("X-Language", NullValueHandling = NullValueHandling.Ignore)]
         public XLanguageEnum XLanguage { get; set; }
         /// <summary>
-        /// 任务详情类型。取值： - overview：任务概览信息。 - detail：任务基本信息。 - network：测试连接结果信息，需配合query_id参数一起查询。 - precheck：预检查结果信息，需配合query_id参数一起查询。 - progress：任务进度信息。 - log：任务日志信息，支持分页查询参数offset与limit。 - comapre：查询对比任务。 - file：对象导入信息
+        /// 任务详情类型。取值： - overview：任务概览信息。 - detail：任务基本信息。 - network：测试连接结果信息，需配合query_id参数一起查询。 - precheck：预检查结果信息，需配合query_id参数一起查询。 - progress：任务进度信息。 - log：任务日志信息，支持分页查询参数offset与limit。 - compare：查询对比任务。 - file：对象导入信息
         /// </summary>
         [SDKProperty("type", IsQuery = true)]
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]

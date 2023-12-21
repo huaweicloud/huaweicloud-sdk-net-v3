@@ -288,6 +288,18 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         public string Url { get; set; }
 
         /// <summary>
+        /// 所属转码组Id
+        /// </summary>
+        [JsonProperty("group_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string GroupId { get; set; }
+
+        /// <summary>
+        /// 所属转码组名称
+        /// </summary>
+        [JsonProperty("group_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string GroupName { get; set; }
+
+        /// <summary>
         /// 标记流是否已被加密。  取值如下： - 0：表示未加密。 - 1：表示已被加密。
         /// </summary>
         [JsonProperty("encrypted", NullValueHandling = NullValueHandling.Ignore)]
@@ -315,6 +327,8 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
             sb.Append("class Output {\n");
             sb.Append("  playType: ").Append(PlayType).Append("\n");
             sb.Append("  url: ").Append(Url).Append("\n");
+            sb.Append("  groupId: ").Append(GroupId).Append("\n");
+            sb.Append("  groupName: ").Append(GroupName).Append("\n");
             sb.Append("  encrypted: ").Append(Encrypted).Append("\n");
             sb.Append("  quality: ").Append(Quality).Append("\n");
             sb.Append("  metaData: ").Append(MetaData).Append("\n");
@@ -350,6 +364,16 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
                     this.Url.Equals(input.Url))
                 ) && 
                 (
+                    this.GroupId == input.GroupId ||
+                    (this.GroupId != null &&
+                    this.GroupId.Equals(input.GroupId))
+                ) && 
+                (
+                    this.GroupName == input.GroupName ||
+                    (this.GroupName != null &&
+                    this.GroupName.Equals(input.GroupName))
+                ) && 
+                (
                     this.Encrypted == input.Encrypted ||
                     (this.Encrypted != null &&
                     this.Encrypted.Equals(input.Encrypted))
@@ -378,6 +402,10 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
                     hashCode = hashCode * 59 + this.PlayType.GetHashCode();
                 if (this.Url != null)
                     hashCode = hashCode * 59 + this.Url.GetHashCode();
+                if (this.GroupId != null)
+                    hashCode = hashCode * 59 + this.GroupId.GetHashCode();
+                if (this.GroupName != null)
+                    hashCode = hashCode * 59 + this.GroupName.GetHashCode();
                 if (this.Encrypted != null)
                     hashCode = hashCode * 59 + this.Encrypted.GetHashCode();
                 if (this.Quality != null)

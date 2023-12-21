@@ -147,9 +147,9 @@ namespace HuaweiCloud.SDK.Kafka.V2
         }
         
         /// <summary>
-        /// 关闭kafka manager
+        /// 关闭Kafka Manager
         ///
-        /// 关闭kafka manager，相应的原来开放出的management相关接口也将不可用
+        /// 关闭Kafka Manager，相应的原来开放出的management相关接口也将不可用。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -333,9 +333,9 @@ namespace HuaweiCloud.SDK.Kafka.V2
         }
         
         /// <summary>
-        /// 创建客户端流控配置
+        /// 创建用户/客户端流控配置
         ///
-        /// 该接口用于向Kafka实例提交创建user、client级别的流控任务，若成功则返回流控任务的job id。
+        /// 该接口用于向Kafka实例提交创建用户、客户端级别的流控任务，若成功则返回流控任务的job_id。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -356,34 +356,6 @@ namespace HuaweiCloud.SDK.Kafka.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/kafka-user-client-quota", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createKafkaUserClientQuotaTaskRequest);
             return new SyncInvoker<CreateKafkaUserClientQuotaTaskResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateKafkaUserClientQuotaTaskResponse>);
-        }
-        
-        /// <summary>
-        /// 新增Kafka实例指定Topic分区
-        ///
-        /// 新增Kafka实例指定Topic分区。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public CreatePartitionResponse CreatePartition(CreatePartitionRequest createPartitionRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createPartitionRequest.InstanceId.ToString());
-            urlParam.Add("topic", createPartitionRequest.Topic.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/management/topics/{topic}/partitions-reassignment", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPartitionRequest);
-            var response = DoHttpRequestSync("POST", request);
-            return JsonUtils.DeSerializeNull<CreatePartitionResponse>(response);
-        }
-
-        public SyncInvoker<CreatePartitionResponse> CreatePartitionInvoker(CreatePartitionRequest createPartitionRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createPartitionRequest.InstanceId.ToString());
-            urlParam.Add("topic", createPartitionRequest.Topic.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/management/topics/{topic}/partitions-reassignment", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPartitionRequest);
-            return new SyncInvoker<CreatePartitionResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreatePartitionResponse>);
         }
         
         /// <summary>
@@ -491,9 +463,9 @@ namespace HuaweiCloud.SDK.Kafka.V2
         }
         
         /// <summary>
-        /// 关闭实例转储节点
+        /// 关闭Smart Connect（按需实例）
         ///
-        /// 关闭实例转储节点。
+        /// 介绍按需实例如何关闭Smart Connect。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -543,9 +515,9 @@ namespace HuaweiCloud.SDK.Kafka.V2
         }
         
         /// <summary>
-        /// 删除客户端流控设置
+        /// 删除用户/客户端流控配置
         ///
-        /// 该接口用于向Kafka实例提交删除user、client级别的流控任务，若成功则返回流控任务的job id。
+        /// 该接口用于向Kafka实例提交删除用户、客户端级别的流控任务，若成功则返回流控任务的job_id。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -945,7 +917,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         /// <summary>
         /// 重置密码
         ///
-        /// 重置密码。
+        /// 重置密码（只针对开通SSL的实例）。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -997,9 +969,9 @@ namespace HuaweiCloud.SDK.Kafka.V2
         }
         
         /// <summary>
-        /// 实例规格变更
+        /// 实例扩容
         ///
-        /// 实例规格变更。[当前通过调用API，只支持按需实例进行实例规格变更。](tag:hws,hws_hk,ctc,cmcc,hws_eu)
+        /// 实例规格变更。[当前通过调用API，只支持按需实例进行实例扩容。](tag:hws,hws_hk,ctc,cmcc,hws_eu)
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1025,9 +997,9 @@ namespace HuaweiCloud.SDK.Kafka.V2
         }
         
         /// <summary>
-        /// 实例规格变更
+        /// 实例扩容
         ///
-        /// 实例规格变更。[当前通过调用API，只支持按需实例进行实例规格变更。](tag:hws,hws_hk,ctc,cmcc,hws_eu)
+        /// 实例扩容。[当前通过调用API，只支持按需实例进行实例扩容。](tag:hws,hws_hk,ctc,cmcc,hws_eu)
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1074,6 +1046,32 @@ namespace HuaweiCloud.SDK.Kafka.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/restart-kafka-manager", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restartManagerRequest);
             return new SyncInvoker<RestartManagerResponse>(this, "PUT", request, JsonUtils.DeSerialize<RestartManagerResponse>);
+        }
+        
+        /// <summary>
+        /// Kafka生产消息
+        ///
+        /// 在控制台发送指定消息到Kafka实例
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public SendKafkaMessageResponse SendKafkaMessage(SendKafkaMessageRequest sendKafkaMessageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", sendKafkaMessageRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/messages/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", sendKafkaMessageRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<SendKafkaMessageResponse>(response);
+        }
+
+        public SyncInvoker<SendKafkaMessageResponse> SendKafkaMessageInvoker(SendKafkaMessageRequest sendKafkaMessageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", sendKafkaMessageRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/messages/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", sendKafkaMessageRequest);
+            return new SyncInvoker<SendKafkaMessageResponse>(this, "POST", request, JsonUtils.DeSerialize<SendKafkaMessageResponse>);
         }
         
         /// <summary>
@@ -1476,7 +1474,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         }
         
         /// <summary>
-        /// 查询客户端流控配置
+        /// 查询用户/客户端流控配置
         ///
         /// 该接口用于向Kafka实例查询流控的配置，若成功则返回流控配置的列表。
         /// 
@@ -1866,9 +1864,9 @@ namespace HuaweiCloud.SDK.Kafka.V2
         }
         
         /// <summary>
-        /// 修改客户端流控设置
+        /// 修改用户/客户端流控配置
         ///
-        /// 该接口用于向Kafka实例提交修改user、client级别的流控任务，若成功则返回流控任务的job id。
+        /// 该接口用于向Kafka实例提交修改用户、客户端级别的流控任务，若成功则返回流控任务的job_id。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>

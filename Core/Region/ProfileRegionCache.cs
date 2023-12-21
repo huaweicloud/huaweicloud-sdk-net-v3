@@ -77,7 +77,7 @@ namespace HuaweiCloud.SDK.Core
 
                     if (regionInfo.Endpoints != null && regionInfo.Endpoints.Count != 0)
                     {
-                        result[pair.Key.ToUpper() + regionInfo.Id] = new Region(regionInfo.Id, regionInfo.Endpoints.ToArray());
+                        result[pair.Key.ToUpperInvariant() + regionInfo.Id] = new Region(regionInfo.Id, regionInfo.Endpoints.ToArray());
                     }
                 }
             }

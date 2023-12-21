@@ -8,19 +8,19 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Eip.V3.Model
+namespace HuaweiCloud.SDK.Vod.V1.Model
 {
     /// <summary>
-    /// 解绑弹性公网IP的请求体
+    /// Response Object
     /// </summary>
-    public class DisassociatePublicipsRequestBody 
+    public class UpdateStorageModeResponse : SdkResponse
     {
 
         /// <summary>
         /// 
         /// </summary>
-        [JsonProperty("publicip", NullValueHandling = NullValueHandling.Ignore)]
-        public DisassociatePublicipsOption Publicip { get; set; }
+        [JsonProperty("task_result_array", NullValueHandling = NullValueHandling.Ignore)]
+        public List<TaskResult> TaskResultArray { get; set; }
 
 
 
@@ -30,8 +30,8 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class DisassociatePublicipsRequestBody {\n");
-            sb.Append("  publicip: ").Append(Publicip).Append("\n");
+            sb.Append("class UpdateStorageModeResponse {\n");
+            sb.Append("  taskResultArray: ").Append(TaskResultArray).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -41,22 +41,23 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as DisassociatePublicipsRequestBody);
+            return this.Equals(input as UpdateStorageModeResponse);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(DisassociatePublicipsRequestBody input)
+        public bool Equals(UpdateStorageModeResponse input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Publicip == input.Publicip ||
-                    (this.Publicip != null &&
-                    this.Publicip.Equals(input.Publicip))
+                    this.TaskResultArray == input.TaskResultArray ||
+                    this.TaskResultArray != null &&
+                    input.TaskResultArray != null &&
+                    this.TaskResultArray.SequenceEqual(input.TaskResultArray)
                 );
         }
 
@@ -68,8 +69,8 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Publicip != null)
-                    hashCode = hashCode * 59 + this.Publicip.GetHashCode();
+                if (this.TaskResultArray != null)
+                    hashCode = hashCode * 59 + this.TaskResultArray.GetHashCode();
                 return hashCode;
             }
         }

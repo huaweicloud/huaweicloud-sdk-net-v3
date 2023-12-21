@@ -158,12 +158,42 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
             /// </summary>
             public static readonly EngineTypeEnum CLOUDDATAGUARD_MYSQL = new EngineTypeEnum("cloudDataGuard-mysql");
 
+            /// <summary>
+            /// Enum GAUSSDBV5 for value: gaussdbv5
+            /// </summary>
+            public static readonly EngineTypeEnum GAUSSDBV5 = new EngineTypeEnum("gaussdbv5");
+
+            /// <summary>
+            /// Enum POSTGRESQL for value: postgresql
+            /// </summary>
+            public static readonly EngineTypeEnum POSTGRESQL = new EngineTypeEnum("postgresql");
+
+            /// <summary>
+            /// Enum MYSQL_TO_KAFKA for value: mysql-to-kafka
+            /// </summary>
+            public static readonly EngineTypeEnum MYSQL_TO_KAFKA = new EngineTypeEnum("mysql-to-kafka");
+
+            /// <summary>
+            /// Enum TAURUS_TO_KAFKA for value: taurus-to-kafka
+            /// </summary>
+            public static readonly EngineTypeEnum TAURUS_TO_KAFKA = new EngineTypeEnum("taurus-to-kafka");
+
+            /// <summary>
+            /// Enum GAUSSDBV5HA_TO_KAFKA for value: gaussdbv5ha-to-kafka
+            /// </summary>
+            public static readonly EngineTypeEnum GAUSSDBV5HA_TO_KAFKA = new EngineTypeEnum("gaussdbv5ha-to-kafka");
+
             private static readonly Dictionary<string, EngineTypeEnum> StaticFields =
             new Dictionary<string, EngineTypeEnum>()
             {
                 { "mysql", MYSQL },
                 { "mongodb", MONGODB },
                 { "cloudDataGuard-mysql", CLOUDDATAGUARD_MYSQL },
+                { "gaussdbv5", GAUSSDBV5 },
+                { "postgresql", POSTGRESQL },
+                { "mysql-to-kafka", MYSQL_TO_KAFKA },
+                { "taurus-to-kafka", TAURUS_TO_KAFKA },
+                { "gaussdbv5ha-to-kafka", GAUSSDBV5HA_TO_KAFKA },
             };
 
             private string _value;

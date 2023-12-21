@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// topic名称，长度为4-64，以字母开头且只支持大小写字母、中横线、下划线、点以及数字。
+        /// topic名称，长度为3-200，以字母开头且只支持大小写字母、中横线、下划线、点以及数字。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }

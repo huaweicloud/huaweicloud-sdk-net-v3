@@ -488,58 +488,6 @@ namespace HuaweiCloud.SDK.Eip.V3
         }
         
         /// <summary>
-        /// 绑定弹性公网IP
-        ///
-        /// 绑定弹性公网IP
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<UpdateAssociatePublicipResponse> UpdateAssociatePublicipAsync(UpdateAssociatePublicipRequest updateAssociatePublicipRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("publicip_id", updateAssociatePublicipRequest.PublicipId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/eip/publicips/{publicip_id}/associate-instance", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateAssociatePublicipRequest);
-            var response = await DoHttpRequestAsync("PUT", request);
-            return JsonUtils.DeSerialize<UpdateAssociatePublicipResponse>(response);
-        }
-
-        public AsyncInvoker<UpdateAssociatePublicipResponse> UpdateAssociatePublicipAsyncInvoker(UpdateAssociatePublicipRequest updateAssociatePublicipRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("publicip_id", updateAssociatePublicipRequest.PublicipId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/eip/publicips/{publicip_id}/associate-instance", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateAssociatePublicipRequest);
-            return new AsyncInvoker<UpdateAssociatePublicipResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateAssociatePublicipResponse>);
-        }
-        
-        /// <summary>
-        /// 解绑弹性公网IP
-        ///
-        /// 解绑弹性公网IP
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<UpdateDisassociatePublicipResponse> UpdateDisassociatePublicipAsync(UpdateDisassociatePublicipRequest updateDisassociatePublicipRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("publicip_id", updateDisassociatePublicipRequest.PublicipId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/eip/publicips/{publicip_id}/disassociate-instance", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateDisassociatePublicipRequest);
-            var response = await DoHttpRequestAsync("PUT", request);
-            return JsonUtils.DeSerialize<UpdateDisassociatePublicipResponse>(response);
-        }
-
-        public AsyncInvoker<UpdateDisassociatePublicipResponse> UpdateDisassociatePublicipAsyncInvoker(UpdateDisassociatePublicipRequest updateDisassociatePublicipRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("publicip_id", updateDisassociatePublicipRequest.PublicipId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/eip/publicips/{publicip_id}/disassociate-instance", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateDisassociatePublicipRequest);
-            return new AsyncInvoker<UpdateDisassociatePublicipResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateDisassociatePublicipResponse>);
-        }
-        
-        /// <summary>
         /// 更新弹性公网IP
         ///
         /// 更新弹性公网IP

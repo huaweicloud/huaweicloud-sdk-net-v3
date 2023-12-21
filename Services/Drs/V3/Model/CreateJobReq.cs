@@ -137,9 +137,9 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         }
 
         /// <summary>
-        /// 引擎类型 - mysql：迁移，同步使用 - mongodb：迁移使用 - cloudDataGuard-mysql：灾备使用 - gaussdbv5，postgresql：同步使用
+        /// 引擎类型 - mysql：MySQL到MySQL迁移，MySQL到MySQL同步 - mongodb：MongoDB到DDS迁移 - cloudDataGuard-mysql：MySQL到MySQL灾备 - gaussdbv5：GaussDB同步 - mysql-to-kafka：MySQL到Kafka同步 - taurus-to-kafka：GaussDB(for MySQL)到Kafka同步 - gaussdbv5ha-to-kafka：GaussDB主备版到Kafka同步 - postgresql：PostgreSQL到PostgreSQL同步
         /// </summary>
-        /// <value>引擎类型 - mysql：迁移，同步使用 - mongodb：迁移使用 - cloudDataGuard-mysql：灾备使用 - gaussdbv5，postgresql：同步使用</value>
+        /// <value>引擎类型 - mysql：MySQL到MySQL迁移，MySQL到MySQL同步 - mongodb：MongoDB到DDS迁移 - cloudDataGuard-mysql：MySQL到MySQL灾备 - gaussdbv5：GaussDB同步 - mysql-to-kafka：MySQL到Kafka同步 - taurus-to-kafka：GaussDB(for MySQL)到Kafka同步 - gaussdbv5ha-to-kafka：GaussDB主备版到Kafka同步 - postgresql：PostgreSQL到PostgreSQL同步</value>
         [JsonConverter(typeof(EnumClassConverter<EngineTypeEnum>))]
         public class EngineTypeEnum
         {
@@ -168,6 +168,21 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
             /// </summary>
             public static readonly EngineTypeEnum POSTGRESQL = new EngineTypeEnum("postgresql");
 
+            /// <summary>
+            /// Enum MYSQL_TO_KAFKA for value: mysql-to-kafka
+            /// </summary>
+            public static readonly EngineTypeEnum MYSQL_TO_KAFKA = new EngineTypeEnum("mysql-to-kafka");
+
+            /// <summary>
+            /// Enum TAURUS_TO_KAFKA for value: taurus-to-kafka
+            /// </summary>
+            public static readonly EngineTypeEnum TAURUS_TO_KAFKA = new EngineTypeEnum("taurus-to-kafka");
+
+            /// <summary>
+            /// Enum GAUSSDBV5HA_TO_KAFKA for value: gaussdbv5ha-to-kafka
+            /// </summary>
+            public static readonly EngineTypeEnum GAUSSDBV5HA_TO_KAFKA = new EngineTypeEnum("gaussdbv5ha-to-kafka");
+
             private static readonly Dictionary<string, EngineTypeEnum> StaticFields =
             new Dictionary<string, EngineTypeEnum>()
             {
@@ -176,6 +191,9 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
                 { "cloudDataGuard-mysql", CLOUDDATAGUARD_MYSQL },
                 { "gaussdbv5", GAUSSDBV5 },
                 { "postgresql", POSTGRESQL },
+                { "mysql-to-kafka", MYSQL_TO_KAFKA },
+                { "taurus-to-kafka", TAURUS_TO_KAFKA },
+                { "gaussdbv5ha-to-kafka", GAUSSDBV5HA_TO_KAFKA },
             };
 
             private string _value;
@@ -881,7 +899,7 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// 引擎类型 - mysql：迁移，同步使用 - mongodb：迁移使用 - cloudDataGuard-mysql：灾备使用 - gaussdbv5，postgresql：同步使用
+        /// 引擎类型 - mysql：MySQL到MySQL迁移，MySQL到MySQL同步 - mongodb：MongoDB到DDS迁移 - cloudDataGuard-mysql：MySQL到MySQL灾备 - gaussdbv5：GaussDB同步 - mysql-to-kafka：MySQL到Kafka同步 - taurus-to-kafka：GaussDB(for MySQL)到Kafka同步 - gaussdbv5ha-to-kafka：GaussDB主备版到Kafka同步 - postgresql：PostgreSQL到PostgreSQL同步
         /// </summary>
         [JsonProperty("engine_type", NullValueHandling = NullValueHandling.Ignore)]
         public EngineTypeEnum EngineType { get; set; }

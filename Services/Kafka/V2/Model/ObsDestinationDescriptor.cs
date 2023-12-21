@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     public class ObsDestinationDescriptor 
     {
         /// <summary>
-        /// 转储启动偏移量：   - latest: 从Topic最后端开始消费。   - earliest: 从Topic最前端消息开始消费。  默认是latest。 
+        ///  转储启动偏移量：    - latest: 从Topic最后端开始消费。      - earliest: 从Topic最前端消息开始消费。  默认是latest。 
         /// </summary>
-        /// <value>转储启动偏移量：   - latest: 从Topic最后端开始消费。   - earliest: 从Topic最前端消息开始消费。  默认是latest。 </value>
+        /// <value> 转储启动偏移量：    - latest: 从Topic最后端开始消费。      - earliest: 从Topic最前端消息开始消费。  默认是latest。 </value>
         [JsonConverter(typeof(EnumClassConverter<ConsumerStrategyEnum>))]
         public class ConsumerStrategyEnum
         {
@@ -131,9 +131,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         }
 
         /// <summary>
-        /// 转储文件格式。当前只支持text。 
+        /// 转储文件格式。当前只支持text。
         /// </summary>
-        /// <value>转储文件格式。当前只支持text。 </value>
+        /// <value>转储文件格式。当前只支持text。</value>
         [JsonConverter(typeof(EnumClassConverter<DestinationFileTypeEnum>))]
         public class DestinationFileTypeEnum
         {
@@ -241,65 +241,65 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
 
 
         /// <summary>
-        /// 转存的topic列表名称，支持多个topic同时放置，以逗号“,”分隔。同时支持正则表达式。 例如topic1,topic2。 
+        /// 转存的topic列表名称，支持输入多个topic，以逗号“,”分隔。同时支持正则表达式。
         /// </summary>
         [JsonProperty("topics", NullValueHandling = NullValueHandling.Ignore)]
         public string Topics { get; set; }
 
         /// <summary>
-        /// 转存topic的正则表达式，与topics必须二选一，不能同时都设置或者“.*”。 
+        /// 转存topic的正则表达式，与topics必须二选一，不能同时都设置或者“.*”。
         /// </summary>
         [JsonProperty("topics_regex", NullValueHandling = NullValueHandling.Ignore)]
         public string TopicsRegex { get; set; }
 
         /// <summary>
-        /// 转储启动偏移量：   - latest: 从Topic最后端开始消费。   - earliest: 从Topic最前端消息开始消费。  默认是latest。 
+        ///  转储启动偏移量：    - latest: 从Topic最后端开始消费。      - earliest: 从Topic最前端消息开始消费。  默认是latest。 
         /// </summary>
         [JsonProperty("consumer_strategy", NullValueHandling = NullValueHandling.Ignore)]
         public ConsumerStrategyEnum ConsumerStrategy { get; set; }
         /// <summary>
-        /// 转储文件格式。当前只支持text。 
+        /// 转储文件格式。当前只支持text。
         /// </summary>
         [JsonProperty("destination_file_type", NullValueHandling = NullValueHandling.Ignore)]
         public DestinationFileTypeEnum DestinationFileType { get; set; }
         /// <summary>
-        /// 访问密钥AK。 
+        /// 访问密钥AK。
         /// </summary>
         [JsonProperty("access_key", NullValueHandling = NullValueHandling.Ignore)]
         public string AccessKey { get; set; }
 
         /// <summary>
-        /// 访问密钥SK。 
+        /// 访问密钥SK。
         /// </summary>
         [JsonProperty("secret_key", NullValueHandling = NullValueHandling.Ignore)]
         public string SecretKey { get; set; }
 
         /// <summary>
-        /// 存储该通道数据的OBS桶名称。 
+        /// 存储该通道数据的OBS桶名称。
         /// </summary>
         [JsonProperty("obs_bucket_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ObsBucketName { get; set; }
 
         /// <summary>
-        /// 存储在obs的路径，默认可以不填。 取值范围：英文字母、数字、下划线、中划线和斜杠，最大长度为64个字符。 默认配置为空。 
+        ///  存储在obs的路径，默认可以不填。  取值范围：英文字母、数字、下划线、中划线和斜杠，最大长度为64个字符。  默认配置为空。 
         /// </summary>
         [JsonProperty("obs_path", NullValueHandling = NullValueHandling.Ignore)]
         public string ObsPath { get; set; }
 
         /// <summary>
-        /// 将转储文件的生成时间使用“yyyy/MM/dd/HH/mm”格式生成分区字符串，用来定义写到OBS的Object文件所在的目录层次结构。   - N/A：置空，不使用日期时间目录。   - yyyy：年   - yyyy/MM：年/月   - yyyy/MM/dd：年/月/日   - yyyy/MM/dd/HH：年/月/日/时   - yyyy/MM/dd/HH/mm：年/月/日/时/分，例如：2017/11/10/14/49，目录结构就是“2017 &gt; 11 &gt; 10 &gt; 14 &gt; 49”，“2017”表示最外层文件夹。  默认值：空 &gt; 数据转储成功后，存储的目录结构为“obs_bucket_path/file_prefix/partition_format”。默认时间是GMT+8 时间 
+        ///  将转储文件的生成时间使用“yyyy/MM/dd/HH/mm”格式生成分区字符串，用来定义写到OBS的Object文件所在的目录层次结构。    - N/A：置空，不使用日期时间目录。      - yyyy：年      - yyyy/MM：年/月      - yyyy/MM/dd：年/月/日      - yyyy/MM/dd/HH：年/月/日/时      - yyyy/MM/dd/HH/mm：年/月/日/时/分，例如：2017/11/10/14/49，目录结构就是“2017 &gt; 11 &gt; 10 &gt; 14 &gt; 49”，“2017”表示最外层文件夹。  默认值：空  &gt; 数据转储成功后，存储的目录结构为“obs_bucket_path/file_prefix/partition_format”。默认时间是GMT+8 时间 
         /// </summary>
         [JsonProperty("partition_format", NullValueHandling = NullValueHandling.Ignore)]
         public string PartitionFormat { get; set; }
 
         /// <summary>
-        /// 转储文件的记录分隔符，用于分隔写入转储文件的用户数据。 取值范围：   - 逗号“,”   - 分号“;”   - 竖线“|”   - 换行符“\\n”   - NULL  默认值：换行符“\\n”。 
+        ///  转储文件的记录分隔符，用于分隔写入转储文件的用户数据。  取值范围：   - 逗号“,”   - 分号“;”   - 竖线“|”   - 换行符“\\n”   - NULL  默认值：换行符“\\n”。 
         /// </summary>
         [JsonProperty("record_delimiter", NullValueHandling = NullValueHandling.Ignore)]
         public string RecordDelimiter { get; set; }
 
         /// <summary>
-        /// 根据用户配置的时间，周期性的将数据导入OBS，若某个时间段内无数据，则此时间段不会生成打包文件。 取值范围：30～900 单位：秒。 &gt; 使用OBS通道转储流式数据时该参数为必选配置。 
+        ///  根据用户配置的时间，周期性的将数据导入OBS，若某个时间段内无数据，则此时间段不会生成打包文件。  取值范围：30～900  单位：秒。  &gt; 使用OBS通道转储流式数据时该参数为必选配置。 
         /// </summary>
         [JsonProperty("deliver_time_interval", NullValueHandling = NullValueHandling.Ignore)]
         public int? DeliverTimeInterval { get; set; }

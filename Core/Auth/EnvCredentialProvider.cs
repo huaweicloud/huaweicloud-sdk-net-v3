@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Core.Auth
 
         public EnvCredentialProvider(string credentialType)
         {
-            _credentialType = credentialType.ToLower();
+            _credentialType = credentialType.ToLowerInvariant();
         }
 
         public static EnvCredentialProvider GetBasic()

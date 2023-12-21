@@ -23,6 +23,18 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         public string PlayType { get; set; }
 
         /// <summary>
+        /// 所属转码组Id
+        /// </summary>
+        [JsonProperty("group_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string GroupId { get; set; }
+
+        /// <summary>
+        /// 所属转码组名称
+        /// </summary>
+        [JsonProperty("group_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string GroupName { get; set; }
+
+        /// <summary>
         /// 播放URL。
         /// </summary>
         [JsonProperty("url", NullValueHandling = NullValueHandling.Ignore)]
@@ -50,6 +62,8 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
             var sb = new StringBuilder();
             sb.Append("class PlayInfo {\n");
             sb.Append("  playType: ").Append(PlayType).Append("\n");
+            sb.Append("  groupId: ").Append(GroupId).Append("\n");
+            sb.Append("  groupName: ").Append(GroupName).Append("\n");
             sb.Append("  url: ").Append(Url).Append("\n");
             sb.Append("  encrypted: ").Append(Encrypted).Append("\n");
             sb.Append("  metaData: ").Append(MetaData).Append("\n");
@@ -80,6 +94,16 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
                     this.PlayType.Equals(input.PlayType))
                 ) && 
                 (
+                    this.GroupId == input.GroupId ||
+                    (this.GroupId != null &&
+                    this.GroupId.Equals(input.GroupId))
+                ) && 
+                (
+                    this.GroupName == input.GroupName ||
+                    (this.GroupName != null &&
+                    this.GroupName.Equals(input.GroupName))
+                ) && 
+                (
                     this.Url == input.Url ||
                     (this.Url != null &&
                     this.Url.Equals(input.Url))
@@ -106,6 +130,10 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
                 int hashCode = 41;
                 if (this.PlayType != null)
                     hashCode = hashCode * 59 + this.PlayType.GetHashCode();
+                if (this.GroupId != null)
+                    hashCode = hashCode * 59 + this.GroupId.GetHashCode();
+                if (this.GroupName != null)
+                    hashCode = hashCode * 59 + this.GroupName.GetHashCode();
                 if (this.Url != null)
                     hashCode = hashCode * 59 + this.Url.GetHashCode();
                 if (this.Encrypted != null)

@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Kafka.V2.Model
 {
     /// <summary>
-    /// 客户端流控配置
+    /// 用户/客户端流控配置
     /// </summary>
     public class Quota 
     {

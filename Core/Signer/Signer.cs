@@ -43,7 +43,7 @@ namespace HuaweiCloud.SDK.Core
         {
             "content-type"
         };
-        
+
         internal string Algorithm { get; set; } = "SDK-HMAC-SHA256";
 
         internal string HeaderContent { get; set; } = "X-Sdk-Content-Sha256";
@@ -135,12 +135,14 @@ namespace HuaweiCloud.SDK.Core
         /// </summary>
         protected string ConstructCanonicalRequest(HttpRequest request)
         {
-            return $"{ProcessRequestMethod(request)}\n" +
-                   $"{ProcessCanonicalUri(request)}\n" +
-                   $"{ProcessCanonicalQueryString(request)}\n" +
-                   $"{CanonicalHeaders(request)}\n" +
-                   $"{Join(";", ProcessSignedHeaders(request))}\n" +
-                   $"{ProcessRequestPayload(request)}";
+            var stringBuilder = new StringBuilder();
+            stringBuilder.Append(ProcessRequestMethod(request)).Append("\n")
+                .Append(ProcessCanonicalUri(request)).Append("\n")
+                .Append(ProcessCanonicalQueryString(request)).Append("\n")
+                .Append(CanonicalHeaders(request)).Append("\n")
+                .Append(Join(";", ProcessSignedHeaders(request))).Append("\n")
+                .Append(ProcessRequestPayload(request));
+            return stringBuilder.ToString();
         }
 
         private string ProcessRequestMethod(HttpRequest request)
@@ -179,7 +181,12 @@ namespace HuaweiCloud.SDK.Core
             var signedHeaders = ProcessSignedHeaders(request);
             foreach (var key in signedHeaders)
             {
-                var values = new List<string>(request.Headers.GetValues(key));
+                var valuesOfKey = request.Headers.GetValues(key);
+                if (valuesOfKey == null || valuesOfKey.Length == 0)
+                {
+                    continue;
+                }
+                var values = new List<string>(valuesOfKey);
                 values.Sort(CompareOrdinal);
                 foreach (var value in values)
                 {
@@ -203,9 +210,9 @@ namespace HuaweiCloud.SDK.Core
         protected List<string> ProcessSignedHeaders(HttpRequest request)
         {
             var signedHeaders = (from key in request.Headers.AllKeys
-                                 let keyLower = key.ToLower()
+                                 let keyLower = key.ToLowerInvariant()
                                  where !_unsignedHeaders.Contains(keyLower)
-                                 select key.ToLower()).ToList();
+                                 select key.ToLowerInvariant()).ToList();
 
             signedHeaders.Sort(CompareOrdinal);
             return signedHeaders;
@@ -236,9 +243,7 @@ namespace HuaweiCloud.SDK.Core
 
         private string StringToSign(string canonicalRequest, DateTime t)
         {
-            return $"{Algorithm}\n" +
-                   $"{t.ToUniversalTime().ToString(BasicDateFormat)}\n" +
-                   $"{Hasher.HashHexString(Encoding.UTF8.GetBytes(canonicalRequest))}";
+            return $"{Algorithm}\n{t.ToUniversalTime().ToString(BasicDateFormat)}\n{Hasher.HashHexString(Encoding.UTF8.GetBytes(canonicalRequest))}";
         }
 
         protected static string SignStringToSign(string stringToSign, ISigningKey signingKey)

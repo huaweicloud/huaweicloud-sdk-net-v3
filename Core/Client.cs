@@ -79,7 +79,7 @@ namespace HuaweiCloud.SDK.Core
             var url = GetRealEndpoint(request)
                       + HttpUtils.AddUrlPath(request.Path, _credentials.GetPathParamDictionary())
                       + (string.IsNullOrEmpty(request.QueryParams) ? "" : "?" + request.QueryParams);
-            return await _async_http(url, methodType.ToUpper(), request);
+            return await _async_http(url, methodType.ToUpperInvariant(), request);
         }
 
         private async Task<HttpResponseMessage> _async_http(string url, string method, SdkRequest sdkRequest)
@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.Core
                                                    + (string.IsNullOrEmpty(request.QueryParams) ? "" : "?" + request.QueryParams);
                 try
                 {
-                    return _sync_http(url, methodType.ToUpper(), request);
+                    return _sync_http(url, methodType.ToUpperInvariant(), request);
                 }
                 catch (HostUnreachableException hostUnreachableException)
                 {
@@ -170,7 +170,7 @@ namespace HuaweiCloud.SDK.Core
 
         private HttpRequest GetHttpRequest(string url, string method, SdkRequest sdkRequest)
         {
-            var request = new HttpRequest(method.ToUpper(), sdkRequest.ContentType, new Uri(url))
+            var request = new HttpRequest(method.ToUpperInvariant(), sdkRequest.ContentType, new Uri(url))
             {
                 Body = sdkRequest.Body ?? "",
                 FileStream = sdkRequest.FileStream,

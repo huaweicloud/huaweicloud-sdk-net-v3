@@ -1,3 +1,190 @@
+# 3.1.72 2023-12-21
+
+### HuaweiCloud SDK Core
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 解决在不同文化环境下英文字母大小写转换规则不一致的问题
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK AS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateScalingConfig**
+    - 请求参数变更
+      - `+ instance_config.disk.iops`
+      - `+ instance_config.disk.throughput`
+      - `+ instance_config.disk.volume_type: enum value [GPSSD2,ESSD2]`
+  - **ListScalingConfigs**
+    - 响应参数变更
+      - `+ scaling_configurations.instance_config.disk.iops`
+      - `+ scaling_configurations.instance_config.disk.throughput`
+      - `+ scaling_configurations.instance_config.disk.volume_type: enum value [GPSSD2,ESSD2]`
+  - **ShowScalingConfig**
+    - 响应参数变更
+      - `+ scaling_configuration.instance_config.disk.iops`
+      - `+ scaling_configuration.instance_config.disk.throughput`
+      - `+ scaling_configuration.instance_config.disk.volume_type: enum value [GPSSD2,ESSD2]`
+
+### HuaweiCloud SDK DCS
+
+- _新增特性_
+  - 支持接口`ValidateDeletableReplica`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowExpireKeyScanInfo**
+    - 请求参数变更
+      - `+ offset`
+      - `+ limit`
+      - `+ status`
+
+### HuaweiCloud SDK DRS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **BatchCreateJobs**
+    - 请求参数变更
+      - `+ jobs.engine_type: enum value [mysql-to-kafka,taurus-to-kafka,gaussdbv5ha-to-kafka]`
+      - `+ jobs.source_endpoint.db_type: enum value [taurus]`
+  - **BatchValidateConnections**
+    - 请求参数变更
+      - `+ jobs.db_type: enum value [taurus]`
+  - **ShowJobList**
+    - 请求参数变更
+      - `+ engine_type: enum value [gaussdbv5,postgresql,mysql-to-kafka,taurus-to-kafka,gaussdbv5ha-to-kafka]`
+  - **BatchUpdateJob**
+    - 请求参数变更
+      - `+ jobs.engine_type: enum value [gaussdbv5,postgresql,mysql-to-kafka,taurus-to-kafka,gaussdbv5ha-to-kafka]`
+      - `+ jobs.source_endpoint.db_type: enum value [taurus]`
+  - **BatchListJobDetails**
+    - 响应参数变更
+      - `+ results.source_endpoint.db_type: enum value [taurus]`
+      - `+ results.inst_info.engine_type: enum value [gaussdbv5,postgresql,mysql-to-kafka,taurus-to-kafka,gaussdbv5ha-to-kafka]`
+  - **ShowJobDetail**
+    - 请求参数变更
+      - `+ type: enum value [compare]`
+      - `+ type: enum value [comapre]`
+      - `+ query_type: enum value [diff]`
+
+### HuaweiCloud SDK ECS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **BatchCreateServerTags**
+    - 请求参数变更
+      - `* tags: list<ServerTag> -> list<BatchAddServerTag>`
+  - **UpdateServer**
+    - 请求参数变更
+      - `+ server.user_data`
+
+### HuaweiCloud SDK EIP
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 移除接口`UpdateDisassociatePublicip`、`UpdateAssociatePublicip`
+
+### HuaweiCloud SDK IVS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **DetectStandardByNameAndId**
+    - 请求参数变更
+      - `+ data.req_data.detail`
+      - `+ data.req_data.crop`
+  - **DetectStandardByIdCardImage**
+    - 请求参数变更
+      - `+ data.req_data.detail`
+      - `+ data.req_data.crop`
+  - **DetectStandardByVideoAndIdCardImage**
+    - 请求参数变更
+      - `+ data.req_data.detail`
+  - **DetectStandardByVideoAndNameAndId**
+    - 请求参数变更
+      - `+ data.req_data.detail`
+
+### HuaweiCloud SDK Kafka
+
+- _新增特性_
+  - 支持接口`SendKafkaMessage`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 移除接口`CreatePartition`
+  - **UpdateInstanceTopic**
+    - 请求参数变更
+      - `+ topics.new_partition_brokers`
+  - **ListInstanceConsumerGroups**
+    - 响应参数变更
+      - `* groups.lag: int32 -> int64`
+  - **ListInstances**
+    - 请求参数变更
+      - `+ status: enum value [UPGRADING,UPGRADINGFAILED]`
+
+### HuaweiCloud SDK MPC
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateTranscodingTask**
+    - 请求参数变更
+      - `+ video_process.hls_storage_type`
+
+### HuaweiCloud SDK VOD
+
+- _新增特性_
+  - 支持接口`ListAssetDailySummaryLog`、`UpdateStorageMode`、`ShowVodRetrieval`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowTakeOverAssetDetails**
+    - 响应参数变更
+      - `+ transcode_info.output.group_id`
+      - `+ transcode_info.output.group_name`
+  - **PublishAssets**
+    - 响应参数变更
+      - `+ asset_info_array.is_multi_transcode`
+      - `+ asset_info_array.play_info_array.group_id`
+      - `+ asset_info_array.play_info_array.group_name`
+  - **UnpublishAssets**
+    - 响应参数变更
+      - `+ asset_info_array.is_multi_transcode`
+      - `+ asset_info_array.play_info_array.group_id`
+      - `+ asset_info_array.play_info_array.group_name`
+  - **ShowAssetMeta**
+    - 响应参数变更
+      - `+ asset_info_array.is_multi_transcode`
+      - `+ asset_info_array.play_info_array.group_id`
+      - `+ asset_info_array.play_info_array.group_name`
+  - **ShowAssetDetail**
+    - 响应参数变更
+      - `+ transcode_info.output.group_id`
+      - `+ transcode_info.output.group_name`
+  - **ShowTakeOverTaskDetails**
+    - 响应参数变更
+      - `+ assets.transcode_info.output.group_id`
+      - `+ assets.transcode_info.output.group_name`
+
 # 3.1.71 2023-12-14
 
 ### HuaweiCloud SDK BMS

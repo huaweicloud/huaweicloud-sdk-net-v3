@@ -47,6 +47,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public int? NewPartitionNumbers { get; set; }
 
         /// <summary>
+        /// 增加分区时指定broker列表
+        /// </summary>
+        [JsonProperty("new_partition_brokers", NullValueHandling = NullValueHandling.Ignore)]
+        public List<int?> NewPartitionBrokers { get; set; }
+
+        /// <summary>
         /// topic配置
         /// </summary>
         [JsonProperty("topic_other_configs", NullValueHandling = NullValueHandling.Ignore)]
@@ -72,6 +78,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             sb.Append("  syncReplication: ").Append(SyncReplication).Append("\n");
             sb.Append("  syncMessageFlush: ").Append(SyncMessageFlush).Append("\n");
             sb.Append("  newPartitionNumbers: ").Append(NewPartitionNumbers).Append("\n");
+            sb.Append("  newPartitionBrokers: ").Append(NewPartitionBrokers).Append("\n");
             sb.Append("  topicOtherConfigs: ").Append(TopicOtherConfigs).Append("\n");
             sb.Append("  topicDesc: ").Append(TopicDesc).Append("\n");
             sb.Append("}\n");
@@ -121,6 +128,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     this.NewPartitionNumbers.Equals(input.NewPartitionNumbers))
                 ) && 
                 (
+                    this.NewPartitionBrokers == input.NewPartitionBrokers ||
+                    this.NewPartitionBrokers != null &&
+                    input.NewPartitionBrokers != null &&
+                    this.NewPartitionBrokers.SequenceEqual(input.NewPartitionBrokers)
+                ) && 
+                (
                     this.TopicOtherConfigs == input.TopicOtherConfigs ||
                     this.TopicOtherConfigs != null &&
                     input.TopicOtherConfigs != null &&
@@ -151,6 +164,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     hashCode = hashCode * 59 + this.SyncMessageFlush.GetHashCode();
                 if (this.NewPartitionNumbers != null)
                     hashCode = hashCode * 59 + this.NewPartitionNumbers.GetHashCode();
+                if (this.NewPartitionBrokers != null)
+                    hashCode = hashCode * 59 + this.NewPartitionBrokers.GetHashCode();
                 if (this.TopicOtherConfigs != null)
                     hashCode = hashCode * 59 + this.TopicOtherConfigs.GetHashCode();
                 if (this.TopicDesc != null)

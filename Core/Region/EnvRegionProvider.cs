@@ -31,7 +31,7 @@ namespace HuaweiCloud.SDK.Core
 
         public EnvRegionProvider(string serviceName)
         {
-            _serviceName = serviceName.ToUpper();
+            _serviceName = serviceName.ToUpperInvariant();
         }
 
         public Region GetRegion(string regionId)
@@ -43,7 +43,7 @@ namespace HuaweiCloud.SDK.Core
             }
             
             
-            var envName = $"{EnvRegionPrefix}_{_serviceName}_{regionId.Replace('-', '_').ToUpper()}";
+            var envName = $"{EnvRegionPrefix}_{_serviceName}_{regionId.Replace('-', '_').ToUpperInvariant()}";
             var endpoint = Environment.GetEnvironmentVariable(envName);
             if (string.IsNullOrEmpty(endpoint))
             {

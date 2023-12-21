@@ -581,6 +581,34 @@ namespace HuaweiCloud.SDK.Vod.V1
         }
         
         /// <summary>
+        /// 查询媒资日播放统计数据
+        ///
+        /// 查询媒资日播放统计数据。
+        /// 
+        /// 使用媒资日播放统计查询API前，需要先提交工单开通统计功能，才能触发统计任务。
+        /// 
+        /// 支持查询最近一年的播放统计数据。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListAssetDailySummaryLogResponse> ListAssetDailySummaryLogAsync(ListAssetDailySummaryLogRequest listAssetDailySummaryLogRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/daily-summary", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAssetDailySummaryLogRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListAssetDailySummaryLogResponse>(response);
+        }
+
+        public AsyncInvoker<ListAssetDailySummaryLogResponse> ListAssetDailySummaryLogAsyncInvoker(ListAssetDailySummaryLogRequest listAssetDailySummaryLogRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/daily-summary", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAssetDailySummaryLogRequest);
+            return new AsyncInvoker<ListAssetDailySummaryLogResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAssetDailySummaryLogResponse>);
+        }
+        
+        /// <summary>
         /// 查询媒资列表
         ///
         /// 查询媒资列表，列表中的每一条记录包含媒资的概要信息。
@@ -1313,6 +1341,34 @@ namespace HuaweiCloud.SDK.Vod.V1
         }
         
         /// <summary>
+        /// 查询取回数据信息
+        ///
+        /// ## 典型场景 ##
+        ///  用于查询点播低频和归档取回量统计数据。&lt;br/&gt;
+        /// 
+        /// ## 接口功能 ##
+        ///  用于查询点播低频和归档取回量统计数据。&lt;br/&gt;
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowVodRetrievalResponse> ShowVodRetrievalAsync(ShowVodRetrievalRequest showVodRetrievalRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/vod-retrieval", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVodRetrievalRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowVodRetrievalResponse>(response);
+        }
+
+        public AsyncInvoker<ShowVodRetrievalResponse> ShowVodRetrievalAsyncInvoker(ShowVodRetrievalRequest showVodRetrievalRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/vod-retrieval", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVodRetrievalRequest);
+            return new AsyncInvoker<ShowVodRetrievalResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowVodRetrievalResponse>);
+        }
+        
+        /// <summary>
         /// 多字幕封装
         ///
         /// 多字幕封装，仅支持 HLS VTT格式
@@ -1334,6 +1390,31 @@ namespace HuaweiCloud.SDK.Vod.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/subtitles", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifySubtitleRequest);
             return new AsyncInvoker<ModifySubtitleResponse>(this, "PUT", request, JsonUtils.DeSerialize<ModifySubtitleResponse>);
+        }
+        
+        /// <summary>
+        /// 修改媒资文件在obs的存储模式
+        ///
+        /// ## 接口功能 ##
+        ///   修改媒资文件在obs的存储模式&lt;br/&gt;
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateStorageModeResponse> UpdateStorageModeAsync(UpdateStorageModeRequest updateStorageModeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/storage-mode", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateStorageModeRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateStorageModeResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateStorageModeResponse> UpdateStorageModeAsyncInvoker(UpdateStorageModeRequest updateStorageModeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/storage-mode", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateStorageModeRequest);
+            return new AsyncInvoker<UpdateStorageModeResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateStorageModeResponse>);
         }
         
     }

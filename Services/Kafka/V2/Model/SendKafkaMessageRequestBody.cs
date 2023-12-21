@@ -8,27 +8,31 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Eip.V3.Model
+namespace HuaweiCloud.SDK.Kafka.V2.Model
 {
     /// <summary>
-    /// Request Object
+    /// Kafka生产消息请求体
     /// </summary>
-    public class UpdateDisassociatePublicipRequest 
+    public class SendKafkaMessageRequestBody 
     {
 
         /// <summary>
-        /// 弹性公网IP的ID
+        /// Kafka的topic
         /// </summary>
-        [SDKProperty("publicip_id", IsPath = true)]
-        [JsonProperty("publicip_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string PublicipId { get; set; }
+        [JsonProperty("topic", NullValueHandling = NullValueHandling.Ignore)]
+        public string Topic { get; set; }
 
         /// <summary>
-        /// 
+        /// 消息内容
         /// </summary>
-        [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public DisassociatePublicipsRequestBody Body { get; set; }
+        public string Body { get; set; }
+
+        /// <summary>
+        /// topic的分区信息等
+        /// </summary>
+        [JsonProperty("property_list", NullValueHandling = NullValueHandling.Ignore)]
+        public List<Object> PropertyList { get; set; }
 
 
 
@@ -38,9 +42,10 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class UpdateDisassociatePublicipRequest {\n");
-            sb.Append("  publicipId: ").Append(PublicipId).Append("\n");
+            sb.Append("class SendKafkaMessageRequestBody {\n");
+            sb.Append("  topic: ").Append(Topic).Append("\n");
             sb.Append("  body: ").Append(Body).Append("\n");
+            sb.Append("  propertyList: ").Append(PropertyList).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -50,27 +55,33 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as UpdateDisassociatePublicipRequest);
+            return this.Equals(input as SendKafkaMessageRequestBody);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(UpdateDisassociatePublicipRequest input)
+        public bool Equals(SendKafkaMessageRequestBody input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.PublicipId == input.PublicipId ||
-                    (this.PublicipId != null &&
-                    this.PublicipId.Equals(input.PublicipId))
+                    this.Topic == input.Topic ||
+                    (this.Topic != null &&
+                    this.Topic.Equals(input.Topic))
                 ) && 
                 (
                     this.Body == input.Body ||
                     (this.Body != null &&
                     this.Body.Equals(input.Body))
+                ) && 
+                (
+                    this.PropertyList == input.PropertyList ||
+                    this.PropertyList != null &&
+                    input.PropertyList != null &&
+                    this.PropertyList.SequenceEqual(input.PropertyList)
                 );
         }
 
@@ -82,10 +93,12 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.PublicipId != null)
-                    hashCode = hashCode * 59 + this.PublicipId.GetHashCode();
+                if (this.Topic != null)
+                    hashCode = hashCode * 59 + this.Topic.GetHashCode();
                 if (this.Body != null)
                     hashCode = hashCode * 59 + this.Body.GetHashCode();
+                if (this.PropertyList != null)
+                    hashCode = hashCode * 59 + this.PropertyList.GetHashCode();
                 return hashCode;
             }
         }

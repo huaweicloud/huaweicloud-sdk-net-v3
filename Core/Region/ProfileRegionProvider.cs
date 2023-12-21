@@ -27,7 +27,7 @@ namespace HuaweiCloud.SDK.Core
 
         public ProfileRegionProvider(string serviceName)
         {
-            _serviceName = serviceName.ToUpper();
+            _serviceName = serviceName.ToUpperInvariant();
         }
 
         public Region GetRegion(string regionId)

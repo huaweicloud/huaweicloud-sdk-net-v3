@@ -134,7 +134,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// 标签列表。
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ServerTag> Tags { get; set; }
+        public List<BatchAddServerTag> Tags { get; set; }
 
 
 

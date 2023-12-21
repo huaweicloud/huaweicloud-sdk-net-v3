@@ -34,6 +34,18 @@ namespace HuaweiCloud.SDK.Ivs.V2.Model
         [JsonProperty("face_image", NullValueHandling = NullValueHandling.Ignore)]
         public string FaceImage { get; set; }
 
+        /// <summary>
+        /// 响应参数similarity是否详细显示，默认为false。 - true表示响应中的similarity为0~1000的小数。 - false表示响应中的similarity为0~100的整数。
+        /// </summary>
+        [JsonProperty("detail", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? Detail { get; set; }
+
+        /// <summary>
+        /// 是否允许对入参face_image进行人脸检测及图片裁剪，默认为true，表示允许。
+        /// </summary>
+        [JsonProperty("crop", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? Crop { get; set; }
+
 
 
         /// <summary>
@@ -46,6 +58,8 @@ namespace HuaweiCloud.SDK.Ivs.V2.Model
             sb.Append("  verificationName: ").Append(VerificationName).Append("\n");
             sb.Append("  verificationId: ").Append(VerificationId).Append("\n");
             sb.Append("  faceImage: ").Append(FaceImage).Append("\n");
+            sb.Append("  detail: ").Append(Detail).Append("\n");
+            sb.Append("  crop: ").Append(Crop).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -81,6 +95,16 @@ namespace HuaweiCloud.SDK.Ivs.V2.Model
                     this.FaceImage == input.FaceImage ||
                     (this.FaceImage != null &&
                     this.FaceImage.Equals(input.FaceImage))
+                ) && 
+                (
+                    this.Detail == input.Detail ||
+                    (this.Detail != null &&
+                    this.Detail.Equals(input.Detail))
+                ) && 
+                (
+                    this.Crop == input.Crop ||
+                    (this.Crop != null &&
+                    this.Crop.Equals(input.Crop))
                 );
         }
 
@@ -98,6 +122,10 @@ namespace HuaweiCloud.SDK.Ivs.V2.Model
                     hashCode = hashCode * 59 + this.VerificationId.GetHashCode();
                 if (this.FaceImage != null)
                     hashCode = hashCode * 59 + this.FaceImage.GetHashCode();
+                if (this.Detail != null)
+                    hashCode = hashCode * 59 + this.Detail.GetHashCode();
+                if (this.Crop != null)
+                    hashCode = hashCode * 59 + this.Crop.GetHashCode();
                 return hashCode;
             }
         }

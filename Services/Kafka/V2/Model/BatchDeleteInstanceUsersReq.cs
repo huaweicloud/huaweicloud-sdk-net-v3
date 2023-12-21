@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     public class BatchDeleteInstanceUsersReq 
     {
         /// <summary>
-        /// 删除类型。当前只支持delete。
+        /// 删除类型。当前只支持delete。  当删除用户时，为必选参数。
         /// </summary>
-        /// <value>删除类型。当前只支持delete。</value>
+        /// <value>删除类型。当前只支持delete。  当删除用户时，为必选参数。</value>
         [JsonConverter(typeof(EnumClassConverter<ActionEnum>))]
         public class ActionEnum
         {
@@ -126,12 +126,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
 
 
         /// <summary>
-        /// 删除类型。当前只支持delete。
+        /// 删除类型。当前只支持delete。  当删除用户时，为必选参数。
         /// </summary>
         [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]
         public ActionEnum Action { get; set; }
         /// <summary>
-        /// 用户列表。
+        /// 用户列表。  当删除用户时，为必选参数。
         /// </summary>
         [JsonProperty("users", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Users { get; set; }

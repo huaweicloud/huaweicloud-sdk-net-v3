@@ -192,16 +192,6 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             public static readonly StatusEnum CONFIGURING = new StatusEnum("CONFIGURING");
 
             /// <summary>
-            /// Enum UPGRADING for value: UPGRADING
-            /// </summary>
-            public static readonly StatusEnum UPGRADING = new StatusEnum("UPGRADING");
-
-            /// <summary>
-            /// Enum UPGRADINGFAILED for value: UPGRADINGFAILED
-            /// </summary>
-            public static readonly StatusEnum UPGRADINGFAILED = new StatusEnum("UPGRADINGFAILED");
-
-            /// <summary>
             /// Enum ROLLBACK for value: ROLLBACK
             /// </summary>
             public static readonly StatusEnum ROLLBACK = new StatusEnum("ROLLBACK");
@@ -231,8 +221,6 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                 { "SHRINKING", SHRINKING },
                 { "EXTENDEDFAILED", EXTENDEDFAILED },
                 { "CONFIGURING", CONFIGURING },
-                { "UPGRADING", UPGRADING },
-                { "UPGRADINGFAILED", UPGRADINGFAILED },
                 { "ROLLBACK", ROLLBACK },
                 { "ROLLBACKFAILED", ROLLBACKFAILED },
                 { "VOLUMETYPECHANGING", VOLUMETYPECHANGING },
@@ -330,9 +318,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         }
 
         /// <summary>
-        /// 是否返回创建失败的实例数。  当参数值为“true”时，返回创建失败的实例数。参数值为“false”或者其他值，不返回创建失败的实例数。
+        /// 是否返回创建失败的实例数。  当参数值为“true”时，返回创建失败的实例数。参数值为“false”，不返回创建失败的实例数。
         /// </summary>
-        /// <value>是否返回创建失败的实例数。  当参数值为“true”时，返回创建失败的实例数。参数值为“false”或者其他值，不返回创建失败的实例数。</value>
+        /// <value>是否返回创建失败的实例数。  当参数值为“true”时，返回创建失败的实例数。参数值为“false”，不返回创建失败的实例数。</value>
         [JsonConverter(typeof(EnumClassConverter<IncludeFailureEnum>))]
         public class IncludeFailureEnum
         {
@@ -587,7 +575,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
         /// <summary>
-        /// 是否返回创建失败的实例数。  当参数值为“true”时，返回创建失败的实例数。参数值为“false”或者其他值，不返回创建失败的实例数。
+        /// 是否返回创建失败的实例数。  当参数值为“true”时，返回创建失败的实例数。参数值为“false”，不返回创建失败的实例数。
         /// </summary>
         [SDKProperty("include_failure", IsQuery = true)]
         [JsonProperty("include_failure", NullValueHandling = NullValueHandling.Ignore)]

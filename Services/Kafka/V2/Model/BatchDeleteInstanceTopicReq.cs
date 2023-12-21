@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// 待删除的topic列表。
+        /// 待删除的topic列表。  批量删除实例topic时，为必选参数。
         /// </summary>
         [JsonProperty("topics", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Topics { get; set; }

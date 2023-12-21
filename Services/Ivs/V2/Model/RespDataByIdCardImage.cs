@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Ivs.V2.Model
         public int? VerificationCode { get; set; }
 
         /// <summary>
-        /// 人像相识度。取值范围[0,100]
+        /// 人像相识度，取值默认范围为[0,100]，当入参detail为true时，取值范围为[0,1000]。
         /// </summary>
         [JsonProperty("similarity", NullValueHandling = NullValueHandling.Ignore)]
         public string Similarity { get; set; }

@@ -16,6 +16,121 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
     public class VideoProcess 
     {
         /// <summary>
+        /// hls的音视频流存储方式。  - composite：存储在同一个文件中。 - separate：存储在不同的文件中 
+        /// </summary>
+        /// <value>hls的音视频流存储方式。  - composite：存储在同一个文件中。 - separate：存储在不同的文件中 </value>
+        [JsonConverter(typeof(EnumClassConverter<HlsStorageTypeEnum>))]
+        public class HlsStorageTypeEnum
+        {
+            /// <summary>
+            /// Enum COMPOSITE for value: composite
+            /// </summary>
+            public static readonly HlsStorageTypeEnum COMPOSITE = new HlsStorageTypeEnum("composite");
+
+            /// <summary>
+            /// Enum SEPARATE for value: separate
+            /// </summary>
+            public static readonly HlsStorageTypeEnum SEPARATE = new HlsStorageTypeEnum("separate");
+
+            private static readonly Dictionary<string, HlsStorageTypeEnum> StaticFields =
+            new Dictionary<string, HlsStorageTypeEnum>()
+            {
+                { "composite", COMPOSITE },
+                { "separate", SEPARATE },
+            };
+
+            private string _value;
+
+            public HlsStorageTypeEnum()
+            {
+
+            }
+
+            public HlsStorageTypeEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static HlsStorageTypeEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as HlsStorageTypeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(HlsStorageTypeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(HlsStorageTypeEnum a, HlsStorageTypeEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(HlsStorageTypeEnum a, HlsStorageTypeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+        /// <summary>
         /// 长短边自适应控制字段： - SHORT：表示短边自适应 - LONG：表示长边自适应 - NONE：表示不自适应 
         /// </summary>
         /// <value>长短边自适应控制字段： - SHORT：表示短边自适应 - LONG：表示长边自适应 - NONE：表示不自适应 </value>
@@ -150,6 +265,11 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         public int? HlsInitInterval { get; set; }
 
         /// <summary>
+        /// hls的音视频流存储方式。  - composite：存储在同一个文件中。 - separate：存储在不同的文件中 
+        /// </summary>
+        [JsonProperty("hls_storage_type", NullValueHandling = NullValueHandling.Ignore)]
+        public HlsStorageTypeEnum HlsStorageType { get; set; }
+        /// <summary>
         /// 视频顺时针旋转角度。  - 0：表示不旋转 - 1：表示顺时针旋转90度 - 2：表示顺时针旋转180度 - 3：表示顺时针旋转270度 
         /// </summary>
         [JsonProperty("rotate", NullValueHandling = NullValueHandling.Ignore)]
@@ -177,6 +297,7 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
             sb.Append("class VideoProcess {\n");
             sb.Append("  hlsInitCount: ").Append(HlsInitCount).Append("\n");
             sb.Append("  hlsInitInterval: ").Append(HlsInitInterval).Append("\n");
+            sb.Append("  hlsStorageType: ").Append(HlsStorageType).Append("\n");
             sb.Append("  rotate: ").Append(Rotate).Append("\n");
             sb.Append("  adaptation: ").Append(Adaptation).Append("\n");
             sb.Append("  upsample: ").Append(Upsample).Append("\n");
@@ -212,6 +333,11 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
                     this.HlsInitInterval.Equals(input.HlsInitInterval))
                 ) && 
                 (
+                    this.HlsStorageType == input.HlsStorageType ||
+                    (this.HlsStorageType != null &&
+                    this.HlsStorageType.Equals(input.HlsStorageType))
+                ) && 
+                (
                     this.Rotate == input.Rotate ||
                     (this.Rotate != null &&
                     this.Rotate.Equals(input.Rotate))
@@ -240,6 +366,8 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
                     hashCode = hashCode * 59 + this.HlsInitCount.GetHashCode();
                 if (this.HlsInitInterval != null)
                     hashCode = hashCode * 59 + this.HlsInitInterval.GetHashCode();
+                if (this.HlsStorageType != null)
+                    hashCode = hashCode * 59 + this.HlsStorageType.GetHashCode();
                 if (this.Rotate != null)
                     hashCode = hashCode * 59 + this.Rotate.GetHashCode();
                 if (this.Adaptation != null)

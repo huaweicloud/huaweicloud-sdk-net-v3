@@ -125,7 +125,7 @@ namespace HuaweiCloud.SDK.Core
         private static StringBuilder BuildQueryBooleanParameter(string key, bool boolean)
         {
             var sb = new StringBuilder();
-            return sb.Append(key).Append("=").Append(Convert.ToString(boolean).ToLower()).Append("&");
+            return sb.Append(key).Append("=").Append(Convert.ToString(boolean).ToLowerInvariant()).Append("&");
         }
 
         private static StringBuilder BuildQueryListParameter(string key, IList list)

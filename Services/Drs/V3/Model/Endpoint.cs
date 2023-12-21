@@ -52,6 +52,11 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
             /// </summary>
             public static readonly DbTypeEnum GAUSSDBV5HA = new DbTypeEnum("gaussdbv5ha");
 
+            /// <summary>
+            /// Enum TAURUS for value: taurus
+            /// </summary>
+            public static readonly DbTypeEnum TAURUS = new DbTypeEnum("taurus");
+
             private static readonly Dictionary<string, DbTypeEnum> StaticFields =
             new Dictionary<string, DbTypeEnum>()
             {
@@ -61,6 +66,7 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
                 { "postgresql", POSTGRESQL },
                 { "kafka", KAFKA },
                 { "gaussdbv5ha", GAUSSDBV5HA },
+                { "taurus", TAURUS },
             };
 
             private string _value;

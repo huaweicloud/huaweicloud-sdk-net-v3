@@ -13,29 +13,29 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     /// <summary>
     /// Request Object
     /// </summary>
-    public class CreatePartitionRequest 
+    public class SendKafkaMessageRequest 
     {
 
         /// <summary>
-        /// 实例ID。
+        /// 实例ID
         /// </summary>
         [SDKProperty("instance_id", IsPath = true)]
         [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// Topic名称。
+        /// 动作ID，生产消息对应的action_id为send。
         /// </summary>
-        [SDKProperty("topic", IsPath = true)]
-        [JsonProperty("topic", NullValueHandling = NullValueHandling.Ignore)]
-        public string Topic { get; set; }
+        [SDKProperty("action_id", IsQuery = true)]
+        [JsonProperty("action_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ActionId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public CreatePartitionReq Body { get; set; }
+        public SendKafkaMessageRequestBody Body { get; set; }
 
 
 
@@ -45,9 +45,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class CreatePartitionRequest {\n");
+            sb.Append("class SendKafkaMessageRequest {\n");
             sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
-            sb.Append("  topic: ").Append(Topic).Append("\n");
+            sb.Append("  actionId: ").Append(ActionId).Append("\n");
             sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -58,13 +58,13 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CreatePartitionRequest);
+            return this.Equals(input as SendKafkaMessageRequest);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(CreatePartitionRequest input)
+        public bool Equals(SendKafkaMessageRequest input)
         {
             if (input == null)
                 return false;
@@ -76,9 +76,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     this.InstanceId.Equals(input.InstanceId))
                 ) && 
                 (
-                    this.Topic == input.Topic ||
-                    (this.Topic != null &&
-                    this.Topic.Equals(input.Topic))
+                    this.ActionId == input.ActionId ||
+                    (this.ActionId != null &&
+                    this.ActionId.Equals(input.ActionId))
                 ) && 
                 (
                     this.Body == input.Body ||
@@ -97,8 +97,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                 int hashCode = 41;
                 if (this.InstanceId != null)
                     hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.Topic != null)
-                    hashCode = hashCode * 59 + this.Topic.GetHashCode();
+                if (this.ActionId != null)
+                    hashCode = hashCode * 59 + this.ActionId.GetHashCode();
                 if (this.Body != null)
                     hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;
