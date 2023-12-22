@@ -44,7 +44,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// 该副本当前落后hw的消息数。
         /// </summary>
         [JsonProperty("lag", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Lag { get; set; }
+        public long? Lag { get; set; }
 
 
 

@@ -1,3 +1,19 @@
+# 3.1.73 2023-12-22
+
+### HuaweiCloud SDK Kafka
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowGroups**
+    - changes of response param
+      - `* group.group_message_offsets.lag: int32 -> int64`
+  - **ShowInstanceTopicDetail**
+    - changes of response param
+      - `* partitions.replicas.lag: int32 -> int64`
+
 # 3.1.72 2023-12-21
 
 ### HuaweiCloud SDK Core

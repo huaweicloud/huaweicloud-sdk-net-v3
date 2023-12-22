@@ -26,7 +26,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// 剩余可消费消息数，即消息堆积数。
         /// </summary>
         [JsonProperty("lag", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Lag { get; set; }
+        public long? Lag { get; set; }
 
         /// <summary>
         /// topic名称。
