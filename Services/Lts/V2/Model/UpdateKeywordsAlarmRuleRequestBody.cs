@@ -434,6 +434,12 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         public string KeywordsAlarmRuleName { get; set; }
 
         /// <summary>
+        /// 规则名称
+        /// </summary>
+        [JsonProperty("alarm_rule_alias", NullValueHandling = NullValueHandling.Ignore)]
+        public string AlarmRuleAlias { get; set; }
+
+        /// <summary>
         /// 关键词告警信息描述
         /// </summary>
         [JsonProperty("keywords_alarm_rule_description", NullValueHandling = NullValueHandling.Ignore)]
@@ -525,6 +531,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             sb.Append("class UpdateKeywordsAlarmRuleRequestBody {\n");
             sb.Append("  keywordsAlarmRuleId: ").Append(KeywordsAlarmRuleId).Append("\n");
             sb.Append("  keywordsAlarmRuleName: ").Append(KeywordsAlarmRuleName).Append("\n");
+            sb.Append("  alarmRuleAlias: ").Append(AlarmRuleAlias).Append("\n");
             sb.Append("  keywordsAlarmRuleDescription: ").Append(KeywordsAlarmRuleDescription).Append("\n");
             sb.Append("  keywordsRequests: ").Append(KeywordsRequests).Append("\n");
             sb.Append("  frequency: ").Append(Frequency).Append("\n");
@@ -569,6 +576,11 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                     this.KeywordsAlarmRuleName == input.KeywordsAlarmRuleName ||
                     (this.KeywordsAlarmRuleName != null &&
                     this.KeywordsAlarmRuleName.Equals(input.KeywordsAlarmRuleName))
+                ) && 
+                (
+                    this.AlarmRuleAlias == input.AlarmRuleAlias ||
+                    (this.AlarmRuleAlias != null &&
+                    this.AlarmRuleAlias.Equals(input.AlarmRuleAlias))
                 ) && 
                 (
                     this.KeywordsAlarmRuleDescription == input.KeywordsAlarmRuleDescription ||
@@ -655,6 +667,8 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                     hashCode = hashCode * 59 + this.KeywordsAlarmRuleId.GetHashCode();
                 if (this.KeywordsAlarmRuleName != null)
                     hashCode = hashCode * 59 + this.KeywordsAlarmRuleName.GetHashCode();
+                if (this.AlarmRuleAlias != null)
+                    hashCode = hashCode * 59 + this.AlarmRuleAlias.GetHashCode();
                 if (this.KeywordsAlarmRuleDescription != null)
                     hashCode = hashCode * 59 + this.KeywordsAlarmRuleDescription.GetHashCode();
                 if (this.KeywordsRequests != null)

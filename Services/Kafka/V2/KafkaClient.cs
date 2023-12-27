@@ -409,6 +409,34 @@ namespace HuaweiCloud.SDK.Kafka.V2
         }
         
         /// <summary>
+        /// 实例缩容
+        ///
+        /// 实例缩容
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateShrinkageJobResponse CreateShrinkageJob(CreateShrinkageJobRequest createShrinkageJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine", createShrinkageJobRequest.Engine.ToString());
+            urlParam.Add("instance_id", createShrinkageJobRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/shrink", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createShrinkageJobRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateShrinkageJobResponse>(response);
+        }
+
+        public SyncInvoker<CreateShrinkageJobResponse> CreateShrinkageJobInvoker(CreateShrinkageJobRequest createShrinkageJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine", createShrinkageJobRequest.Engine.ToString());
+            urlParam.Add("instance_id", createShrinkageJobRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/shrink", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createShrinkageJobRequest);
+            return new SyncInvoker<CreateShrinkageJobResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateShrinkageJobResponse>);
+        }
+        
+        /// <summary>
         /// 创建转储任务
         ///
         /// 创建转储任务。
@@ -1639,6 +1667,34 @@ namespace HuaweiCloud.SDK.Kafka.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/management/topics/{topic}/partitions/{partition}/message", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPartitionMessageRequest);
             return new SyncInvoker<ShowPartitionMessageResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPartitionMessageResponse>);
+        }
+        
+        /// <summary>
+        /// 实例缩容前置检查
+        ///
+        /// 实例缩容前置检查。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowShrinkCheckResultResponse ShowShrinkCheckResult(ShowShrinkCheckResultRequest showShrinkCheckResultRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine", showShrinkCheckResultRequest.Engine.ToString());
+            urlParam.Add("instance_id", showShrinkCheckResultRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/shrink-check", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showShrinkCheckResultRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<ShowShrinkCheckResultResponse>(response);
+        }
+
+        public SyncInvoker<ShowShrinkCheckResultResponse> ShowShrinkCheckResultInvoker(ShowShrinkCheckResultRequest showShrinkCheckResultRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine", showShrinkCheckResultRequest.Engine.ToString());
+            urlParam.Add("instance_id", showShrinkCheckResultRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/shrink-check", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showShrinkCheckResultRequest);
+            return new SyncInvoker<ShowShrinkCheckResultResponse>(this, "POST", request, JsonUtils.DeSerialize<ShowShrinkCheckResultResponse>);
         }
         
         /// <summary>

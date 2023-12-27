@@ -17,10 +17,10 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
     {
 
         /// <summary>
-        /// 查询模板结果
+        /// 
         /// </summary>
         [JsonProperty("result", NullValueHandling = NullValueHandling.Ignore)]
-        public List<QueryTemplatesResult> Result { get; set; }
+        public QueryTemplatesResult Result { get; set; }
 
         /// <summary>
         /// 返回错误信息
@@ -69,9 +69,8 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
             return 
                 (
                     this.Result == input.Result ||
-                    this.Result != null &&
-                    input.Result != null &&
-                    this.Result.SequenceEqual(input.Result)
+                    (this.Result != null &&
+                    this.Result.Equals(input.Result))
                 ) && 
                 (
                     this.Error == input.Error ||

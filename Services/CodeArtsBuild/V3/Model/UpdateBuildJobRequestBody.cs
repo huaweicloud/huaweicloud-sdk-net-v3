@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
 {
     /// <summary>
-    /// 更新构建作业配置接口请求体
+    /// 更新构建任务请求体
     /// </summary>
     public class UpdateBuildJobRequestBody 
     {

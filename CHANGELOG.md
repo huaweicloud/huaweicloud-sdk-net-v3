@@ -1,3 +1,76 @@
+# 3.1.74 2023-12-27
+
+### HuaweiCloud SDK AAD
+
+- _Features_
+  - Support the following APIs:
+    - `CreateAadDomain`
+    - `CreateCertificate`
+    - `ModifyDomainWebSwitch`
+    - `ListSourceIps`
+    - `AddBlackWhiteIpList`
+    - `DeleteBlackWhiteIpList`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK CSMS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListResourceInstances**
+    - changes of response param
+      - `+ resources.sys_tags`
+
+### HuaweiCloud SDK DCS
+
+- _Features_
+  - Support the APIs `ShowInstanceSslDetail`, `UpdateSslSwitch`, `DownloadSslCert`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK DDS
+
+- _Features_
+  - Support the API `ShowClientNetwork`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _Features_
+  - Support the API `ListJobs`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK Kafka
+
+- _Features_
+  - Support the APIs `CreateShrinkageJob`, `ShowShrinkCheckResult`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK RDS
+
+- _Features_
+  - Support the APIs `SetInstancesNewDbShrink`, `StopBackup`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.1.73 2023-12-22
 
 ### HuaweiCloud SDK Kafka

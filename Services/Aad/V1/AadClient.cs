@@ -145,6 +145,30 @@ namespace HuaweiCloud.SDK.Aad.V1
         }
         
         /// <summary>
+        /// 高防实例添加黑白名单
+        ///
+        /// 高防实例添加黑白名单
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public AddBlackWhiteIpListResponse AddBlackWhiteIpList(AddBlackWhiteIpListRequest addBlackWhiteIpListRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/aad/external/bwlist", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addBlackWhiteIpListRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<AddBlackWhiteIpListResponse>(response);
+        }
+
+        public SyncInvoker<AddBlackWhiteIpListResponse> AddBlackWhiteIpListInvoker(AddBlackWhiteIpListRequest addBlackWhiteIpListRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/aad/external/bwlist", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addBlackWhiteIpListRequest);
+            return new SyncInvoker<AddBlackWhiteIpListResponse>(this, "POST", request, JsonUtils.DeSerializeNull<AddBlackWhiteIpListResponse>);
+        }
+        
+        /// <summary>
         /// 策略添加黑白名单
         ///
         /// 策略添加黑白名单
@@ -253,6 +277,54 @@ namespace HuaweiCloud.SDK.Aad.V1
         }
         
         /// <summary>
+        /// 创建防护域名
+        ///
+        /// 创建防护域名
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateAadDomainResponse CreateAadDomain(CreateAadDomainRequest createAadDomainRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/aad/external/domains", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAadDomainRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateAadDomainResponse>(response);
+        }
+
+        public SyncInvoker<CreateAadDomainResponse> CreateAadDomainInvoker(CreateAadDomainRequest createAadDomainRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/aad/external/domains", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAadDomainRequest);
+            return new SyncInvoker<CreateAadDomainResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateAadDomainResponse>);
+        }
+        
+        /// <summary>
+        /// 上传/修改域名对应证书
+        ///
+        /// 上传/修改域名对应证书
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateCertificateResponse CreateCertificate(CreateCertificateRequest createCertificateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/aad/external/domains/certificate", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createCertificateRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<CreateCertificateResponse>(response);
+        }
+
+        public SyncInvoker<CreateCertificateResponse> CreateCertificateInvoker(CreateCertificateRequest createCertificateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/aad/external/domains/certificate", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createCertificateRequest);
+            return new SyncInvoker<CreateCertificateResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateCertificateResponse>);
+        }
+        
+        /// <summary>
         /// 创建策略
         ///
         /// 创建策略
@@ -298,6 +370,30 @@ namespace HuaweiCloud.SDK.Aad.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/cnad/alarm-config", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAlarmConfigRequest);
             return new SyncInvoker<DeleteAlarmConfigResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteAlarmConfigResponse>);
+        }
+        
+        /// <summary>
+        /// 高防实例删除黑白名单
+        ///
+        /// 高防实例删除黑白名单
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteBlackWhiteIpListResponse DeleteBlackWhiteIpList(DeleteBlackWhiteIpListRequest deleteBlackWhiteIpListRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/aad/external/bwlist", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteBlackWhiteIpListRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteBlackWhiteIpListResponse>(response);
+        }
+
+        public SyncInvoker<DeleteBlackWhiteIpListResponse> DeleteBlackWhiteIpListInvoker(DeleteBlackWhiteIpListRequest deleteBlackWhiteIpListRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/aad/external/bwlist", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteBlackWhiteIpListRequest);
+            return new SyncInvoker<DeleteBlackWhiteIpListResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteBlackWhiteIpListResponse>);
         }
         
         /// <summary>
@@ -581,6 +677,30 @@ namespace HuaweiCloud.SDK.Aad.V1
         }
         
         /// <summary>
+        /// 查询高防回源IP段列表
+        ///
+        /// 查询高防回源IP段列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListSourceIpsResponse ListSourceIps(ListSourceIpsRequest listSourceIpsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/aad/external/source-ip", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSourceIpsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListSourceIpsResponse>(response);
+        }
+
+        public SyncInvoker<ListSourceIpsResponse> ListSourceIpsInvoker(ListSourceIpsRequest listSourceIpsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/aad/external/source-ip", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSourceIpsRequest);
+            return new SyncInvoker<ListSourceIpsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSourceIpsResponse>);
+        }
+        
+        /// <summary>
         /// 查询可绑定的防护对象列表
         ///
         /// 查询可绑定的防护对象列表
@@ -604,6 +724,30 @@ namespace HuaweiCloud.SDK.Aad.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/cnad/packages/{package_id}/unbound-protected-ips", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listUnboundProtectedIpRequest);
             return new SyncInvoker<ListUnboundProtectedIpResponse>(this, "GET", request, JsonUtils.DeSerialize<ListUnboundProtectedIpResponse>);
+        }
+        
+        /// <summary>
+        /// 修改域名WEB基础防护开关/CC防护开关
+        ///
+        /// 修改域名WEB基础防护开关/CC防护开关
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ModifyDomainWebSwitchResponse ModifyDomainWebSwitch(ModifyDomainWebSwitchRequest modifyDomainWebSwitchRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/aad/external/domains/switch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyDomainWebSwitchRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<ModifyDomainWebSwitchResponse>(response);
+        }
+
+        public SyncInvoker<ModifyDomainWebSwitchResponse> ModifyDomainWebSwitchInvoker(ModifyDomainWebSwitchRequest modifyDomainWebSwitchRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/aad/external/domains/switch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyDomainWebSwitchRequest);
+            return new SyncInvoker<ModifyDomainWebSwitchResponse>(this, "POST", request, JsonUtils.DeSerializeNull<ModifyDomainWebSwitchResponse>);
         }
         
         /// <summary>

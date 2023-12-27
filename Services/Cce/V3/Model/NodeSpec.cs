@@ -95,7 +95,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public Dictionary<string, string> K8sTags { get; set; }
 
         /// <summary>
-        /// 云服务器组ID，若指定，将节点创建在该云服务器组下
+        /// 云服务器组ID，若指定，将节点创建在该云服务器组下 &gt; 创建节点池时该配置不会生效，若要保持节点池中的节点都在同一个云服务器组内，请在节点池 nodeManagement 字段中配置
         /// </summary>
         [JsonProperty("ecsGroupId", NullValueHandling = NullValueHandling.Ignore)]
         public string EcsGroupId { get; set; }

@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         public string WebUrl { get; set; }
 
         /// <summary>
-        /// 仓库类别，codehub还是github等等
+        /// 仓库类别，Repo、Github等
         /// </summary>
         [JsonProperty("scm_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ScmType { get; set; }

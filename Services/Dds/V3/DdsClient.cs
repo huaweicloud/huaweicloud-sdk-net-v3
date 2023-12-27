@@ -1951,6 +1951,32 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
+        /// 查询副本集跨网段访问配置
+        ///
+        /// 查询副本集跨网段访问配置
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowClientNetworkResponse ShowClientNetwork(ShowClientNetworkRequest showClientNetworkRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showClientNetworkRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/client-network", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showClientNetworkRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowClientNetworkResponse>(response);
+        }
+
+        public SyncInvoker<ShowClientNetworkResponse> ShowClientNetworkInvoker(ShowClientNetworkRequest showClientNetworkRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showClientNetworkRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/client-network", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showClientNetworkRequest);
+            return new SyncInvoker<ShowClientNetworkResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowClientNetworkResponse>);
+        }
+        
+        /// <summary>
         /// 查询参数模板被应用历史
         ///
         /// 查询参数模板应用历史

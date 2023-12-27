@@ -40,6 +40,12 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<TagItem> Tags { get; set; }
 
+        /// <summary>
+        /// 系统标签列表，没有标签，数组默认为空
+        /// </summary>
+        [JsonProperty("sys_tags", NullValueHandling = NullValueHandling.Ignore)]
+        public List<SysTag> SysTags { get; set; }
+
 
 
         /// <summary>
@@ -53,6 +59,7 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
             sb.Append("  resourceDetail: ").Append(ResourceDetail).Append("\n");
             sb.Append("  resourceName: ").Append(ResourceName).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
+            sb.Append("  sysTags: ").Append(SysTags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -94,6 +101,12 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
                     this.Tags != null &&
                     input.Tags != null &&
                     this.Tags.SequenceEqual(input.Tags)
+                ) && 
+                (
+                    this.SysTags == input.SysTags ||
+                    this.SysTags != null &&
+                    input.SysTags != null &&
+                    this.SysTags.SequenceEqual(input.SysTags)
                 );
         }
 
@@ -113,6 +126,8 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
                     hashCode = hashCode * 59 + this.ResourceName.GetHashCode();
                 if (this.Tags != null)
                     hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.SysTags != null)
+                    hashCode = hashCode * 59 + this.SysTags.GetHashCode();
                 return hashCode;
             }
         }

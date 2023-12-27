@@ -542,7 +542,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public List<string> AvailableZones { get; set; }
 
         /// <summary>
-        /// 产品ID。  产品ID可以从[查询产品规格列表](ListEngineProducts.xml)获取。
+        /// 产品ID。  [产品ID可以从[查询产品规格列表](ListEngineProducts.xml)获取。](tag:hws,hws_hk,ctc,cmcc,hws_eu,g42,hk_g42,tm,hk_tm,ocb,hws_ocb) [产品ID可以从[查询产品规格列表](ListProducts.xml)获取。](tag:hk_sbc,sbc,otc)
         /// </summary>
         [JsonProperty("product_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProductId { get; set; }

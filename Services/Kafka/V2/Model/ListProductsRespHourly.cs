@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 消息引擎的版本，当前仅支持1.1.0和2.3.0。
+        /// 消息引擎的版本，当前支持1.1.0、2.3.0和2.7。
         /// </summary>
         [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]
         public string Version { get; set; }

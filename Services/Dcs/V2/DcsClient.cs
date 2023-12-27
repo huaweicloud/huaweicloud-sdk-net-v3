@@ -780,6 +780,32 @@ namespace HuaweiCloud.SDK.Dcs.V2
         }
         
         /// <summary>
+        /// 下载实例SSL证书
+        ///
+        /// 下载实例SSL证书。该接口目前仅针对Redis 6.0[基础版](tag:hws,hws_hk)版本实例。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DownloadSslCertResponse DownloadSslCert(DownloadSslCertRequest downloadSslCertRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", downloadSslCertRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/ssl-certs/download", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadSslCertRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<DownloadSslCertResponse>(response);
+        }
+
+        public SyncInvoker<DownloadSslCertResponse> DownloadSslCertInvoker(DownloadSslCertRequest downloadSslCertRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", downloadSslCertRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/ssl-certs/download", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadSslCertRequest);
+            return new SyncInvoker<DownloadSslCertResponse>(this, "POST", request, JsonUtils.DeSerialize<DownloadSslCertResponse>);
+        }
+        
+        /// <summary>
         /// 进行IP交换
         ///
         /// 进行IP交换
@@ -2125,6 +2151,32 @@ namespace HuaweiCloud.SDK.Dcs.V2
         }
         
         /// <summary>
+        /// 查询实例SSL信息
+        ///
+        /// 查询实例SSL信息。该接口目前仅针对Redis 6.0[基础版](tag:hws,hws_hk)版本实例。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowInstanceSslDetailResponse ShowInstanceSslDetail(ShowInstanceSslDetailRequest showInstanceSslDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showInstanceSslDetailRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/ssl", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceSslDetailRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowInstanceSslDetailResponse>(response);
+        }
+
+        public SyncInvoker<ShowInstanceSslDetailResponse> ShowInstanceSslDetailInvoker(ShowInstanceSslDetailRequest showInstanceSslDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showInstanceSslDetailRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/ssl", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceSslDetailRequest);
+            return new SyncInvoker<ShowInstanceSslDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceSslDetailResponse>);
+        }
+        
+        /// <summary>
         /// 查询租户Job执行结果
         ///
         /// 查询租户Job执行结果
@@ -2791,6 +2843,32 @@ namespace HuaweiCloud.SDK.Dcs.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/groups/{group_id}/replications/{node_id}/slave-priority", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSlavePriorityRequest);
             return new SyncInvoker<UpdateSlavePriorityResponse>(this, "POST", request, JsonUtils.DeSerializeNull<UpdateSlavePriorityResponse>);
+        }
+        
+        /// <summary>
+        /// 开启/关闭SSL
+        ///
+        /// 开启/关闭SSL。该接口目前仅针对Redis 6.0[基础版](tag:hws,hws_hk)版本实例。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateSslSwitchResponse UpdateSslSwitch(UpdateSslSwitchRequest updateSslSwitchRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateSslSwitchRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/ssl", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSslSwitchRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateSslSwitchResponse>(response);
+        }
+
+        public SyncInvoker<UpdateSslSwitchResponse> UpdateSslSwitchInvoker(UpdateSslSwitchRequest updateSslSwitchRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateSslSwitchRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/ssl", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSslSwitchRequest);
+            return new SyncInvoker<UpdateSslSwitchResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateSslSwitchResponse>);
         }
         
         /// <summary>

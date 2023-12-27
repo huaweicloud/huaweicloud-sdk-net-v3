@@ -24,7 +24,7 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         public string RecordId { get; set; }
 
         /// <summary>
-        /// 记录ID,36位数字、小写字母、&#39;-&#39;组组合。
+        /// 步骤名称
         /// </summary>
         [SDKProperty("task_name", IsQuery = true)]
         [JsonProperty("task_name", NullValueHandling = NullValueHandling.Ignore)]

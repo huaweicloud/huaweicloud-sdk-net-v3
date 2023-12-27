@@ -416,6 +416,12 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         public string SqlAlarmRuleName { get; set; }
 
         /// <summary>
+        /// 规则名称
+        /// </summary>
+        [JsonProperty("alarm_rule_alias", NullValueHandling = NullValueHandling.Ignore)]
+        public string AlarmRuleAlias { get; set; }
+
+        /// <summary>
         /// 是否管道符sql查询
         /// </summary>
         [JsonProperty("is_css_sql", NullValueHandling = NullValueHandling.Ignore)]
@@ -530,6 +536,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             var sb = new StringBuilder();
             sb.Append("class UpdateSqlAlarmRuleResponse {\n");
             sb.Append("  sqlAlarmRuleName: ").Append(SqlAlarmRuleName).Append("\n");
+            sb.Append("  alarmRuleAlias: ").Append(AlarmRuleAlias).Append("\n");
             sb.Append("  isCssSql: ").Append(IsCssSql).Append("\n");
             sb.Append("  indexId: ").Append(IndexId).Append("\n");
             sb.Append("  projectId: ").Append(ProjectId).Append("\n");
@@ -573,6 +580,11 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                     this.SqlAlarmRuleName == input.SqlAlarmRuleName ||
                     (this.SqlAlarmRuleName != null &&
                     this.SqlAlarmRuleName.Equals(input.SqlAlarmRuleName))
+                ) && 
+                (
+                    this.AlarmRuleAlias == input.AlarmRuleAlias ||
+                    (this.AlarmRuleAlias != null &&
+                    this.AlarmRuleAlias.Equals(input.AlarmRuleAlias))
                 ) && 
                 (
                     this.IsCssSql == input.IsCssSql ||
@@ -678,6 +690,8 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                 int hashCode = 41;
                 if (this.SqlAlarmRuleName != null)
                     hashCode = hashCode * 59 + this.SqlAlarmRuleName.GetHashCode();
+                if (this.AlarmRuleAlias != null)
+                    hashCode = hashCode * 59 + this.AlarmRuleAlias.GetHashCode();
                 if (this.IsCssSql != null)
                     hashCode = hashCode * 59 + this.IsCssSql.GetHashCode();
                 if (this.IndexId != null)

@@ -410,6 +410,34 @@ namespace HuaweiCloud.SDK.Kafka.V2
         }
         
         /// <summary>
+        /// 实例缩容
+        ///
+        /// 实例缩容
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateShrinkageJobResponse> CreateShrinkageJobAsync(CreateShrinkageJobRequest createShrinkageJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine", createShrinkageJobRequest.Engine.ToString());
+            urlParam.Add("instance_id", createShrinkageJobRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/shrink", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createShrinkageJobRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateShrinkageJobResponse>(response);
+        }
+
+        public AsyncInvoker<CreateShrinkageJobResponse> CreateShrinkageJobAsyncInvoker(CreateShrinkageJobRequest createShrinkageJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine", createShrinkageJobRequest.Engine.ToString());
+            urlParam.Add("instance_id", createShrinkageJobRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/shrink", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createShrinkageJobRequest);
+            return new AsyncInvoker<CreateShrinkageJobResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateShrinkageJobResponse>);
+        }
+        
+        /// <summary>
         /// 创建转储任务
         ///
         /// 创建转储任务。
@@ -1640,6 +1668,34 @@ namespace HuaweiCloud.SDK.Kafka.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/management/topics/{topic}/partitions/{partition}/message", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPartitionMessageRequest);
             return new AsyncInvoker<ShowPartitionMessageResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPartitionMessageResponse>);
+        }
+        
+        /// <summary>
+        /// 实例缩容前置检查
+        ///
+        /// 实例缩容前置检查。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowShrinkCheckResultResponse> ShowShrinkCheckResultAsync(ShowShrinkCheckResultRequest showShrinkCheckResultRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine", showShrinkCheckResultRequest.Engine.ToString());
+            urlParam.Add("instance_id", showShrinkCheckResultRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/shrink-check", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showShrinkCheckResultRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<ShowShrinkCheckResultResponse>(response);
+        }
+
+        public AsyncInvoker<ShowShrinkCheckResultResponse> ShowShrinkCheckResultAsyncInvoker(ShowShrinkCheckResultRequest showShrinkCheckResultRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine", showShrinkCheckResultRequest.Engine.ToString());
+            urlParam.Add("instance_id", showShrinkCheckResultRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/shrink-check", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showShrinkCheckResultRequest);
+            return new AsyncInvoker<ShowShrinkCheckResultResponse>(this, "POST", request, JsonUtils.DeSerialize<ShowShrinkCheckResultResponse>);
         }
         
         /// <summary>

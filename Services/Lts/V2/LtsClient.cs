@@ -240,6 +240,34 @@ namespace HuaweiCloud.SDK.Lts.V2
         }
         
         /// <summary>
+        /// 向指定流创建索引
+        ///
+        /// 向指定流创建索引
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateLogStreamIndexResponse CreateLogStreamIndex(CreateLogStreamIndexRequest createLogStreamIndexRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("group_id", createLogStreamIndexRequest.GroupId.ToString());
+            urlParam.Add("stream_id", createLogStreamIndexRequest.StreamId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/groups/{group_id}/stream/{stream_id}/index/config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createLogStreamIndexRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateLogStreamIndexResponse>(response);
+        }
+
+        public SyncInvoker<CreateLogStreamIndexResponse> CreateLogStreamIndexInvoker(CreateLogStreamIndexRequest createLogStreamIndexRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("group_id", createLogStreamIndexRequest.GroupId.ToString());
+            urlParam.Add("stream_id", createLogStreamIndexRequest.StreamId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/groups/{group_id}/stream/{stream_id}/index/config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createLogStreamIndexRequest);
+            return new SyncInvoker<CreateLogStreamIndexResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateLogStreamIndexResponse>);
+        }
+        
+        /// <summary>
         /// 创建消息模板
         ///
         /// 该接口用于创建通知模板，目前每个帐户最多可以创建共100个通知模板，创建后名称不可修改。
