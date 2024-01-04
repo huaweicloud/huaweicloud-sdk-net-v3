@@ -1319,7 +1319,7 @@ namespace HuaweiCloud.SDK.Lts.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/streams/{log_stream_id}/struct-content/query", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStructuredLogsWithTimeRangeRequest);
             var response = DoHttpRequestSync("POST", request);
-            return JsonUtils.DeSerialize<ListStructuredLogsWithTimeRangeResponse>(response);
+            return JsonUtils.DeSerializeNull<ListStructuredLogsWithTimeRangeResponse>(response);
         }
 
         public SyncInvoker<ListStructuredLogsWithTimeRangeResponse> ListStructuredLogsWithTimeRangeInvoker(ListStructuredLogsWithTimeRangeRequest listStructuredLogsWithTimeRangeRequest)
@@ -1328,7 +1328,7 @@ namespace HuaweiCloud.SDK.Lts.V2
             urlParam.Add("log_stream_id", listStructuredLogsWithTimeRangeRequest.LogStreamId.ToString());
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/streams/{log_stream_id}/struct-content/query", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStructuredLogsWithTimeRangeRequest);
-            return new SyncInvoker<ListStructuredLogsWithTimeRangeResponse>(this, "POST", request, JsonUtils.DeSerialize<ListStructuredLogsWithTimeRangeResponse>);
+            return new SyncInvoker<ListStructuredLogsWithTimeRangeResponse>(this, "POST", request, JsonUtils.DeSerializeNull<ListStructuredLogsWithTimeRangeResponse>);
         }
         
         /// <summary>

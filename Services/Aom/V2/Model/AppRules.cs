@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
     {
 
         /// <summary>
-        /// 规则创建时间(创建时不传,修改时传查询返回的createTime)。
+        /// 规则创建时间(创建时不传，修改时传查询返回的createTime)。
         /// </summary>
         [JsonProperty("createTime", NullValueHandling = NullValueHandling.Ignore)]
         public string CreateTime { get; set; }
@@ -29,13 +29,13 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         public bool? Enable { get; set; }
 
         /// <summary>
-        /// aom_inventory_rules_event 规则事件名称,对于服务发现固定 为\&quot;aom_inventory_rules_event\&quot;。
+        /// aom_inventory_rules_event规则事件名称，对于服务发现固定为\&quot;aom_inventory_rules_event\&quot;。
         /// </summary>
         [JsonProperty("eventName", NullValueHandling = NullValueHandling.Ignore)]
         public string EventName { get; set; }
 
         /// <summary>
-        /// 主机ID(暂不使用,传空即可)。
+        /// 主机ID（暂不使用，传空即可）。
         /// </summary>
         [JsonProperty("hostid", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Hostid { get; set; }
@@ -47,13 +47,13 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         public string Id { get; set; }
 
         /// <summary>
-        /// 规则名称。 字符长度小于64位,以小写字母(a-z)开头,只能包含0-9/a-z/-,不能以-结尾。
+        /// 规则名称。 字符长度为4到63位，以小写字母a-z开头，只能包含0-9/a-z/-，不能以-结尾。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 租户从IAM申请到的projectid,一般为32位字符串。
+        /// 租户从IAM申请到的projectid，一般为32位字符串。
         /// </summary>
         [JsonProperty("projectid", NullValueHandling = NullValueHandling.Ignore)]
         public string Projectid { get; set; }
@@ -63,6 +63,12 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// </summary>
         [JsonProperty("spec", NullValueHandling = NullValueHandling.Ignore)]
         public AppRulesSpec Spec { get; set; }
+
+        /// <summary>
+        /// 自定义描述信息
+        /// </summary>
+        [JsonProperty("desc", NullValueHandling = NullValueHandling.Ignore)]
+        public string Desc { get; set; }
 
 
 
@@ -81,6 +87,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  projectid: ").Append(Projectid).Append("\n");
             sb.Append("  spec: ").Append(Spec).Append("\n");
+            sb.Append("  desc: ").Append(Desc).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -142,6 +149,11 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
                     this.Spec == input.Spec ||
                     (this.Spec != null &&
                     this.Spec.Equals(input.Spec))
+                ) && 
+                (
+                    this.Desc == input.Desc ||
+                    (this.Desc != null &&
+                    this.Desc.Equals(input.Desc))
                 );
         }
 
@@ -169,6 +181,8 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
                     hashCode = hashCode * 59 + this.Projectid.GetHashCode();
                 if (this.Spec != null)
                     hashCode = hashCode * 59 + this.Spec.GetHashCode();
+                if (this.Desc != null)
+                    hashCode = hashCode * 59 + this.Desc.GetHashCode();
                 return hashCode;
             }
         }

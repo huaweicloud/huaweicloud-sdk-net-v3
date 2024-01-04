@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.Demo.V1.Model
         /// 
         /// </summary>
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public Dictionary<string, string> Body { get; set; }
+        public Dictionary<string, SimpleItem> Body { get; set; }
 
 
 

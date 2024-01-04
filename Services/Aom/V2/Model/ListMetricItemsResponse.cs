@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// 
         /// </summary>
         [JsonProperty("metaData", NullValueHandling = NullValueHandling.Ignore)]
-        public MetaData MetaData { get; set; }
+        public MetaDataSeries MetaData { get; set; }
 
         /// <summary>
         /// 指标对象列表。

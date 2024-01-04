@@ -16,17 +16,12 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
     public class BatchRestartOrDeleteInstanceReq 
     {
         /// <summary>
-        /// 对实例的操作：restart、delete
+        /// 对实例的操作：delete
         /// </summary>
-        /// <value>对实例的操作：restart、delete</value>
+        /// <value>对实例的操作：delete</value>
         [JsonConverter(typeof(EnumClassConverter<ActionEnum>))]
         public class ActionEnum
         {
-            /// <summary>
-            /// Enum RESTART for value: restart
-            /// </summary>
-            public static readonly ActionEnum RESTART = new ActionEnum("restart");
-
             /// <summary>
             /// Enum DELETE for value: delete
             /// </summary>
@@ -35,7 +30,6 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
             private static readonly Dictionary<string, ActionEnum> StaticFields =
             new Dictionary<string, ActionEnum>()
             {
-                { "restart", RESTART },
                 { "delete", DELETE },
             };
 
@@ -247,7 +241,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public List<string> Instances { get; set; }
 
         /// <summary>
-        /// 对实例的操作：restart、delete
+        /// 对实例的操作：delete
         /// </summary>
         [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]
         public ActionEnum Action { get; set; }

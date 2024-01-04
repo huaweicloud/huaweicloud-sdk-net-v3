@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
     public class ValueData 
     {
         /// <summary>
-        /// 数据的类型。 取值范围 只能是\&quot;int\&quot;或\&quot;float\&quot;。
+        /// 数据的类型。取值范围只能是\&quot;int\&quot;或\&quot;float\&quot;。
         /// </summary>
-        /// <value>数据的类型。 取值范围 只能是\&quot;int\&quot;或\&quot;float\&quot;。</value>
+        /// <value>数据的类型。取值范围只能是\&quot;int\&quot;或\&quot;float\&quot;。</value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -138,7 +138,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         public string MetricName { get; set; }
 
         /// <summary>
-        /// 数据的类型。 取值范围 只能是\&quot;int\&quot;或\&quot;float\&quot;。
+        /// 数据的类型。取值范围只能是\&quot;int\&quot;或\&quot;float\&quot;。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }
@@ -149,7 +149,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         public string Unit { get; set; }
 
         /// <summary>
-        /// 指标数据的值。 取值范围 有效的数值类型。
+        /// 指标数据的值。取值范围有效的数值类型。
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public double? Value { get; set; }

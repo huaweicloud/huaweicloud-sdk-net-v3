@@ -943,6 +943,38 @@ namespace HuaweiCloud.SDK.Kafka.V2
         }
         
         /// <summary>
+        /// 重置消费组消费进度到指定位置
+        ///
+        /// Kafka实例不支持在线重置消费进度。在执行重置消费进度之前，必须停止被重置消费组客户端。
+        /// 
+        /// 停止待重置消费组客户端，然后等待一段时间（即ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG配置的时间，默认为1000毫秒）后，服务端才认为此消费组客户端已下线。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ResetMessageOffsetWithEngineResponse ResetMessageOffsetWithEngine(ResetMessageOffsetWithEngineRequest resetMessageOffsetWithEngineRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine", resetMessageOffsetWithEngineRequest.Engine.ToString());
+            urlParam.Add("instance_id", resetMessageOffsetWithEngineRequest.InstanceId.ToString());
+            urlParam.Add("group", resetMessageOffsetWithEngineRequest.Group.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/groups/{group}/reset-message-offset", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetMessageOffsetWithEngineRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerializeNull<ResetMessageOffsetWithEngineResponse>(response);
+        }
+
+        public SyncInvoker<ResetMessageOffsetWithEngineResponse> ResetMessageOffsetWithEngineInvoker(ResetMessageOffsetWithEngineRequest resetMessageOffsetWithEngineRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine", resetMessageOffsetWithEngineRequest.Engine.ToString());
+            urlParam.Add("instance_id", resetMessageOffsetWithEngineRequest.InstanceId.ToString());
+            urlParam.Add("group", resetMessageOffsetWithEngineRequest.Group.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/groups/{group}/reset-message-offset", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetMessageOffsetWithEngineRequest);
+            return new SyncInvoker<ResetMessageOffsetWithEngineResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<ResetMessageOffsetWithEngineResponse>);
+        }
+        
+        /// <summary>
         /// 重置密码
         ///
         /// 重置密码（只针对开通SSL的实例）。

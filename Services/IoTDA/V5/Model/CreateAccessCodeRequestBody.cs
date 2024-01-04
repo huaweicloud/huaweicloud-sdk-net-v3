@@ -22,6 +22,12 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
 
+        /// <summary>
+        /// **参数说明**: 是否将AMQP/MQTT连接断开
+        /// </summary>
+        [JsonProperty("force_disconnect", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? ForceDisconnect { get; set; }
+
 
 
         /// <summary>
@@ -32,6 +38,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             var sb = new StringBuilder();
             sb.Append("class CreateAccessCodeRequestBody {\n");
             sb.Append("  type: ").Append(Type).Append("\n");
+            sb.Append("  forceDisconnect: ").Append(ForceDisconnect).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -57,6 +64,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.Type == input.Type ||
                     (this.Type != null &&
                     this.Type.Equals(input.Type))
+                ) && 
+                (
+                    this.ForceDisconnect == input.ForceDisconnect ||
+                    (this.ForceDisconnect != null &&
+                    this.ForceDisconnect.Equals(input.ForceDisconnect))
                 );
         }
 
@@ -70,6 +82,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                 int hashCode = 41;
                 if (this.Type != null)
                     hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.ForceDisconnect != null)
+                    hashCode = hashCode * 59 + this.ForceDisconnect.GetHashCode();
                 return hashCode;
             }
         }

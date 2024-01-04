@@ -1140,6 +1140,54 @@ namespace HuaweiCloud.SDK.Mpc.V1
         }
         
         /// <summary>
+        /// 租户查询服务开通状态信息
+        ///
+        /// 租户查询媒体转码服务开通状态信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowTenantAccessInfoResponse> ShowTenantAccessInfoAsync(ShowTenantAccessInfoRequest showTenantAccessInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/tenant/access", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTenantAccessInfoRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowTenantAccessInfoResponse>(response);
+        }
+
+        public AsyncInvoker<ShowTenantAccessInfoResponse> ShowTenantAccessInfoAsyncInvoker(ShowTenantAccessInfoRequest showTenantAccessInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/tenant/access", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTenantAccessInfoRequest);
+            return new AsyncInvoker<ShowTenantAccessInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTenantAccessInfoResponse>);
+        }
+        
+        /// <summary>
+        /// 租户开通媒体转码服务
+        ///
+        /// 租户开通媒体转码服务。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateTenantAccessInfoResponse> UpdateTenantAccessInfoAsync(UpdateTenantAccessInfoRequest updateTenantAccessInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/tenant/access", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTenantAccessInfoRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateTenantAccessInfoResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateTenantAccessInfoResponse> UpdateTenantAccessInfoAsyncInvoker(UpdateTenantAccessInfoRequest updateTenantAccessInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/tenant/access", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTenantAccessInfoRequest);
+            return new AsyncInvoker<UpdateTenantAccessInfoResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateTenantAccessInfoResponse>);
+        }
+        
+        /// <summary>
         /// 新建截图任务
         ///
         /// 新建截图任务，视频截图将从首帧开始，按设置的时间间隔截图，最后截取末帧。

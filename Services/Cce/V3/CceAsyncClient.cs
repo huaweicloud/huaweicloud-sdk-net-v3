@@ -233,6 +233,32 @@ namespace HuaweiCloud.SDK.Cce.V3
         }
         
         /// <summary>
+        /// 集群备份
+        ///
+        /// 集群备份
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateClusterMasterSnapshotResponse> CreateClusterMasterSnapshotAsync(CreateClusterMasterSnapshotRequest createClusterMasterSnapshotRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", createClusterMasterSnapshotRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3.1/projects/{project_id}/clusters/{cluster_id}/operation/snapshot", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createClusterMasterSnapshotRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateClusterMasterSnapshotResponse>(response);
+        }
+
+        public AsyncInvoker<CreateClusterMasterSnapshotResponse> CreateClusterMasterSnapshotAsyncInvoker(CreateClusterMasterSnapshotRequest createClusterMasterSnapshotRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", createClusterMasterSnapshotRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3.1/projects/{project_id}/clusters/{cluster_id}/operation/snapshot", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createClusterMasterSnapshotRequest);
+            return new AsyncInvoker<CreateClusterMasterSnapshotResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateClusterMasterSnapshotResponse>);
+        }
+        
+        /// <summary>
         /// 获取集群证书
         ///
         /// 该API用于获取指定集群的证书信息。
@@ -346,6 +372,58 @@ namespace HuaweiCloud.SDK.Cce.V3
         }
         
         /// <summary>
+        /// 集群升级后确认
+        ///
+        /// 集群升级后确认，该接口建议配合Console使用，主要用于升级步骤完成后，客户确认集群状态和业务正常后做反馈。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreatePostCheckResponse> CreatePostCheckAsync(CreatePostCheckRequest createPostCheckRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", createPostCheckRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/postcheck", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPostCheckRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreatePostCheckResponse>(response);
+        }
+
+        public AsyncInvoker<CreatePostCheckResponse> CreatePostCheckAsyncInvoker(CreatePostCheckRequest createPostCheckRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", createPostCheckRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/postcheck", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPostCheckRequest);
+            return new AsyncInvoker<CreatePostCheckResponse>(this, "POST", request, JsonUtils.DeSerialize<CreatePostCheckResponse>);
+        }
+        
+        /// <summary>
+        /// 集群升级前检查
+        ///
+        /// 集群升级前检查
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreatePreCheckResponse> CreatePreCheckAsync(CreatePreCheckRequest createPreCheckRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", createPreCheckRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/precheck", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPreCheckRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreatePreCheckResponse>(response);
+        }
+
+        public AsyncInvoker<CreatePreCheckResponse> CreatePreCheckAsyncInvoker(CreatePreCheckRequest createPreCheckRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", createPreCheckRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/precheck", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPreCheckRequest);
+            return new AsyncInvoker<CreatePreCheckResponse>(this, "POST", request, JsonUtils.DeSerialize<CreatePreCheckResponse>);
+        }
+        
+        /// <summary>
         /// 创建模板实例
         ///
         /// 创建模板实例
@@ -369,6 +447,33 @@ namespace HuaweiCloud.SDK.Cce.V3
             var urlPath = HttpUtils.AddUrlPath("/cce/cam/v3/clusters/{cluster_id}/releases", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createReleaseRequest);
             return new AsyncInvoker<CreateReleaseResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateReleaseResponse>);
+        }
+        
+        /// <summary>
+        /// 开启集群升级流程引导任务
+        ///
+        /// 该API用于创建一个集群升级流程引导任务。请在调用本接口完成引导任务创建之后，通过集群升级前检查开始检查任务。
+        /// 升级流程任务用于控制集群升级任务的执行流程，执行流程为 升级前检查 &#x3D;&gt; 集群升级 &#x3D;&gt; 升级后检查。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateUpgradeWorkFlowResponse> CreateUpgradeWorkFlowAsync(CreateUpgradeWorkFlowRequest createUpgradeWorkFlowRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", createUpgradeWorkFlowRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgradeworkflows", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createUpgradeWorkFlowRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateUpgradeWorkFlowResponse>(response);
+        }
+
+        public AsyncInvoker<CreateUpgradeWorkFlowResponse> CreateUpgradeWorkFlowAsyncInvoker(CreateUpgradeWorkFlowRequest createUpgradeWorkFlowRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", createUpgradeWorkFlowRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgradeworkflows", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createUpgradeWorkFlowRequest);
+            return new AsyncInvoker<CreateUpgradeWorkFlowResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateUpgradeWorkFlowResponse>);
         }
         
         /// <summary>
@@ -699,6 +804,80 @@ namespace HuaweiCloud.SDK.Cce.V3
         }
         
         /// <summary>
+        /// 获取集群备份任务详情列表
+        ///
+        /// 获取集群备份任务详情列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListClusterMasterSnapshotTasksResponse> ListClusterMasterSnapshotTasksAsync(ListClusterMasterSnapshotTasksRequest listClusterMasterSnapshotTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", listClusterMasterSnapshotTasksRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3.1/projects/{project_id}/clusters/{cluster_id}/operation/snapshot/tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listClusterMasterSnapshotTasksRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListClusterMasterSnapshotTasksResponse>(response);
+        }
+
+        public AsyncInvoker<ListClusterMasterSnapshotTasksResponse> ListClusterMasterSnapshotTasksAsyncInvoker(ListClusterMasterSnapshotTasksRequest listClusterMasterSnapshotTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", listClusterMasterSnapshotTasksRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3.1/projects/{project_id}/clusters/{cluster_id}/operation/snapshot/tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listClusterMasterSnapshotTasksRequest);
+            return new AsyncInvoker<ListClusterMasterSnapshotTasksResponse>(this, "GET", request, JsonUtils.DeSerialize<ListClusterMasterSnapshotTasksResponse>);
+        }
+        
+        /// <summary>
+        /// 获取集群升级特性开关配置
+        ///
+        /// 获取集群升级特性开关配置
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListClusterUpgradeFeatureGatesResponse> ListClusterUpgradeFeatureGatesAsync(ListClusterUpgradeFeatureGatesRequest listClusterUpgradeFeatureGatesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/clusterupgradefeaturegates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listClusterUpgradeFeatureGatesRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListClusterUpgradeFeatureGatesResponse>(response);
+        }
+
+        public AsyncInvoker<ListClusterUpgradeFeatureGatesResponse> ListClusterUpgradeFeatureGatesAsyncInvoker(ListClusterUpgradeFeatureGatesRequest listClusterUpgradeFeatureGatesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/clusterupgradefeaturegates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listClusterUpgradeFeatureGatesRequest);
+            return new AsyncInvoker<ListClusterUpgradeFeatureGatesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListClusterUpgradeFeatureGatesResponse>);
+        }
+        
+        /// <summary>
+        /// 获取集群升级路径
+        ///
+        /// 获取集群升级路径
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListClusterUpgradePathsResponse> ListClusterUpgradePathsAsync(ListClusterUpgradePathsRequest listClusterUpgradePathsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/clusterupgradepaths", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listClusterUpgradePathsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListClusterUpgradePathsResponse>(response);
+        }
+
+        public AsyncInvoker<ListClusterUpgradePathsResponse> ListClusterUpgradePathsAsyncInvoker(ListClusterUpgradePathsRequest listClusterUpgradePathsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/clusterupgradepaths", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listClusterUpgradePathsRequest);
+            return new AsyncInvoker<ListClusterUpgradePathsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListClusterUpgradePathsResponse>);
+        }
+        
+        /// <summary>
         /// 获取指定项目下的集群
         ///
         /// 该API用于获取指定项目下所有集群的详细信息。
@@ -804,6 +983,32 @@ namespace HuaweiCloud.SDK.Cce.V3
         }
         
         /// <summary>
+        /// 获取集群升级前检查任务详情列表
+        ///
+        /// 获取集群升级前检查任务详情列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListPreCheckTasksResponse> ListPreCheckTasksAsync(ListPreCheckTasksRequest listPreCheckTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", listPreCheckTasksRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/precheck/tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPreCheckTasksRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListPreCheckTasksResponse>(response);
+        }
+
+        public AsyncInvoker<ListPreCheckTasksResponse> ListPreCheckTasksAsyncInvoker(ListPreCheckTasksRequest listPreCheckTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", listPreCheckTasksRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/precheck/tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPreCheckTasksRequest);
+            return new AsyncInvoker<ListPreCheckTasksResponse>(this, "GET", request, JsonUtils.DeSerialize<ListPreCheckTasksResponse>);
+        }
+        
+        /// <summary>
         /// 获取模板实例列表
         ///
         /// 获取模板实例列表
@@ -834,6 +1039,58 @@ namespace HuaweiCloud.SDK.Cce.V3
                 listReleasesResponse.Body = JsonUtils.DeSerializeList<ReleaseResp>(response);
                 return listReleasesResponse;
             });
+        }
+        
+        /// <summary>
+        /// 获取集群升级任务详情列表
+        ///
+        /// 获取集群升级任务详情列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListUpgradeClusterTasksResponse> ListUpgradeClusterTasksAsync(ListUpgradeClusterTasksRequest listUpgradeClusterTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", listUpgradeClusterTasksRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgrade/tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listUpgradeClusterTasksRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListUpgradeClusterTasksResponse>(response);
+        }
+
+        public AsyncInvoker<ListUpgradeClusterTasksResponse> ListUpgradeClusterTasksAsyncInvoker(ListUpgradeClusterTasksRequest listUpgradeClusterTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", listUpgradeClusterTasksRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgrade/tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listUpgradeClusterTasksRequest);
+            return new AsyncInvoker<ListUpgradeClusterTasksResponse>(this, "GET", request, JsonUtils.DeSerialize<ListUpgradeClusterTasksResponse>);
+        }
+        
+        /// <summary>
+        /// 获取UpgradeWorkFlows列表
+        ///
+        /// 获取历史集群升级引导任务列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListUpgradeWorkFlowsResponse> ListUpgradeWorkFlowsAsync(ListUpgradeWorkFlowsRequest listUpgradeWorkFlowsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", listUpgradeWorkFlowsRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgradeworkflows", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listUpgradeWorkFlowsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListUpgradeWorkFlowsResponse>(response);
+        }
+
+        public AsyncInvoker<ListUpgradeWorkFlowsResponse> ListUpgradeWorkFlowsAsyncInvoker(ListUpgradeWorkFlowsRequest listUpgradeWorkFlowsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", listUpgradeWorkFlowsRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgradeworkflows", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listUpgradeWorkFlowsRequest);
+            return new AsyncInvoker<ListUpgradeWorkFlowsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListUpgradeWorkFlowsResponse>);
         }
         
         /// <summary>
@@ -1217,6 +1474,32 @@ namespace HuaweiCloud.SDK.Cce.V3
         }
         
         /// <summary>
+        /// 获取集群升级相关信息
+        ///
+        /// 获取集群升级相关信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowClusterUpgradeInfoResponse> ShowClusterUpgradeInfoAsync(ShowClusterUpgradeInfoRequest showClusterUpgradeInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", showClusterUpgradeInfoRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/upgradeinfo", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showClusterUpgradeInfoRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowClusterUpgradeInfoResponse>(response);
+        }
+
+        public AsyncInvoker<ShowClusterUpgradeInfoResponse> ShowClusterUpgradeInfoAsyncInvoker(ShowClusterUpgradeInfoRequest showClusterUpgradeInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", showClusterUpgradeInfoRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/upgradeinfo", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showClusterUpgradeInfoRequest);
+            return new AsyncInvoker<ShowClusterUpgradeInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowClusterUpgradeInfoResponse>);
+        }
+        
+        /// <summary>
         /// 获取任务信息
         ///
         /// 该API用于获取任务信息。通过某一任务请求下发后返回的jobID来查询指定任务的进度。
@@ -1361,6 +1644,34 @@ namespace HuaweiCloud.SDK.Cce.V3
         }
         
         /// <summary>
+        /// 获取集群升级前检查任务详情
+        ///
+        /// 获取集群升级前检查任务详情，任务ID由调用集群检查API后从响应体中uid字段获取。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowPreCheckResponse> ShowPreCheckAsync(ShowPreCheckRequest showPreCheckRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", showPreCheckRequest.ClusterId.ToString());
+            urlParam.Add("task_id", showPreCheckRequest.TaskId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/precheck/tasks/{task_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPreCheckRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowPreCheckResponse>(response);
+        }
+
+        public AsyncInvoker<ShowPreCheckResponse> ShowPreCheckAsyncInvoker(ShowPreCheckRequest showPreCheckRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", showPreCheckRequest.ClusterId.ToString());
+            urlParam.Add("task_id", showPreCheckRequest.TaskId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/precheck/tasks/{task_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPreCheckRequest);
+            return new AsyncInvoker<ShowPreCheckResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPreCheckResponse>);
+        }
+        
+        /// <summary>
         /// 查询CCE服务下的资源配额
         ///
         /// 该API用于查询CCE服务下的资源配额。
@@ -1479,6 +1790,34 @@ namespace HuaweiCloud.SDK.Cce.V3
             var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgrade/tasks/{task_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUpgradeClusterTaskRequest);
             return new AsyncInvoker<ShowUpgradeClusterTaskResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowUpgradeClusterTaskResponse>);
+        }
+        
+        /// <summary>
+        /// 获取指定集群升级引导任务详情
+        ///
+        /// 该API用于通过升级引导任务ID获取任务的详细信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowUpgradeWorkFlowResponse> ShowUpgradeWorkFlowAsync(ShowUpgradeWorkFlowRequest showUpgradeWorkFlowRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", showUpgradeWorkFlowRequest.ClusterId.ToString());
+            urlParam.Add("upgrade_workflow_id", showUpgradeWorkFlowRequest.UpgradeWorkflowId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgradeworkflows/{upgrade_workflow_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUpgradeWorkFlowRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowUpgradeWorkFlowResponse>(response);
+        }
+
+        public AsyncInvoker<ShowUpgradeWorkFlowResponse> ShowUpgradeWorkFlowAsyncInvoker(ShowUpgradeWorkFlowRequest showUpgradeWorkFlowRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", showUpgradeWorkFlowRequest.ClusterId.ToString());
+            urlParam.Add("upgrade_workflow_id", showUpgradeWorkFlowRequest.UpgradeWorkflowId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgradeworkflows/{upgrade_workflow_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUpgradeWorkFlowRequest);
+            return new AsyncInvoker<ShowUpgradeWorkFlowResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowUpgradeWorkFlowResponse>);
         }
         
         /// <summary>
@@ -1812,6 +2151,35 @@ namespace HuaweiCloud.SDK.Cce.V3
             var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgrade", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", upgradeClusterRequest);
             return new AsyncInvoker<UpgradeClusterResponse>(this, "POST", request, JsonUtils.DeSerialize<UpgradeClusterResponse>);
+        }
+        
+        /// <summary>
+        /// 更新指定集群升级引导任务状态
+        ///
+        /// 该API用于更新指定集群升级引导任务状态，当前仅适用于取消升级流程
+        /// 调用该API时升级流程引导任务状态不能为进行中(running) 已完成(success) 已取消(cancel),升级子任务状态不能为running(进行中) init(已初始化) pause(任务被暂停) queue(队列中)
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpgradeWorkFlowUpdateResponse> UpgradeWorkFlowUpdateAsync(UpgradeWorkFlowUpdateRequest upgradeWorkFlowUpdateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", upgradeWorkFlowUpdateRequest.ClusterId.ToString());
+            urlParam.Add("upgrade_workflow_id", upgradeWorkFlowUpdateRequest.UpgradeWorkflowId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgradeworkflows/{upgrade_workflow_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", upgradeWorkFlowUpdateRequest);
+            var response = await DoHttpRequestAsync("PATCH", request);
+            return JsonUtils.DeSerialize<UpgradeWorkFlowUpdateResponse>(response);
+        }
+
+        public AsyncInvoker<UpgradeWorkFlowUpdateResponse> UpgradeWorkFlowUpdateAsyncInvoker(UpgradeWorkFlowUpdateRequest upgradeWorkFlowUpdateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", upgradeWorkFlowUpdateRequest.ClusterId.ToString());
+            urlParam.Add("upgrade_workflow_id", upgradeWorkFlowUpdateRequest.UpgradeWorkflowId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgradeworkflows/{upgrade_workflow_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", upgradeWorkFlowUpdateRequest);
+            return new AsyncInvoker<UpgradeWorkFlowUpdateResponse>(this, "PATCH", request, JsonUtils.DeSerialize<UpgradeWorkFlowUpdateResponse>);
         }
         
         /// <summary>

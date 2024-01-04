@@ -38,13 +38,13 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// 当前消费进度。
         /// </summary>
         [JsonProperty("message_current_offset", NullValueHandling = NullValueHandling.Ignore)]
-        public int? MessageCurrentOffset { get; set; }
+        public long? MessageCurrentOffset { get; set; }
 
         /// <summary>
         /// 最大消息位置（LEO）。
         /// </summary>
         [JsonProperty("message_log_end_offset", NullValueHandling = NullValueHandling.Ignore)]
-        public int? MessageLogEndOffset { get; set; }
+        public long? MessageLogEndOffset { get; set; }
 
 
 

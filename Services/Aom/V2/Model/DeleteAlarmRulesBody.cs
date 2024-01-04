@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
     {
 
         /// <summary>
-        /// 阈值规则列表
+        /// 要删除的规则名称
         /// </summary>
         [JsonProperty("alarm_rules", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> AlarmRules { get; set; }

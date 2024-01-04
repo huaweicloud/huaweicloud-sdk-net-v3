@@ -143,6 +143,260 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         }
 
         /// <summary>
+        /// 超限条件。&lt;：小于阈值。&gt;：大于阈值。&lt;&#x3D;：小于等于阈值。&gt;&#x3D;：大于等于阈值。
+        /// </summary>
+        /// <value>超限条件。&lt;：小于阈值。&gt;：大于阈值。&lt;&#x3D;：小于等于阈值。&gt;&#x3D;：大于等于阈值。</value>
+        [JsonConverter(typeof(EnumClassConverter<ComparisonOperatorEnum>))]
+        public class ComparisonOperatorEnum
+        {
+            /// <summary>
+            /// Enum LessThan for value: <
+            /// </summary>
+            public static readonly ComparisonOperatorEnum LessThan = new ComparisonOperatorEnum("<");
+
+            /// <summary>
+            /// Enum GreaterThan for value: >
+            /// </summary>
+            public static readonly ComparisonOperatorEnum GreaterThan = new ComparisonOperatorEnum(">");
+
+            /// <summary>
+            /// Enum LessThanOrEqualTo for value: <=
+            /// </summary>
+            public static readonly ComparisonOperatorEnum LessThanOrEqualTo = new ComparisonOperatorEnum("<=");
+
+            /// <summary>
+            /// Enum GreaterThanOrEqualTo for value: >=
+            /// </summary>
+            public static readonly ComparisonOperatorEnum GreaterThanOrEqualTo = new ComparisonOperatorEnum(">=");
+
+            private static readonly Dictionary<string, ComparisonOperatorEnum> StaticFields =
+            new Dictionary<string, ComparisonOperatorEnum>()
+            {
+                { "<", LessThan },
+                { ">", GreaterThan },
+                { "<=", LessThanOrEqualTo },
+                { ">=", GreaterThanOrEqualTo },
+            };
+
+            private string _value;
+
+            public ComparisonOperatorEnum()
+            {
+
+            }
+
+            public ComparisonOperatorEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static ComparisonOperatorEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as ComparisonOperatorEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(ComparisonOperatorEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(ComparisonOperatorEnum a, ComparisonOperatorEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(ComparisonOperatorEnum a, ComparisonOperatorEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+        /// <summary>
+        /// 统计周期。60000：一分钟。300000：五分钟。900000：十五分钟。3600000：一小时。
+        /// </summary>
+        /// <value>统计周期。60000：一分钟。300000：五分钟。900000：十五分钟。3600000：一小时。</value>
+        [JsonConverter(typeof(EnumClassConverter<PeriodEnum>))]
+        public class PeriodEnum
+        {
+            /// <summary>
+            /// Enum NUMBER_60000 for value: 60000
+            /// </summary>
+            public static readonly PeriodEnum NUMBER_60000 = new PeriodEnum(60000);
+
+            /// <summary>
+            /// Enum NUMBER_300000 for value: 300000
+            /// </summary>
+            public static readonly PeriodEnum NUMBER_300000 = new PeriodEnum(300000);
+
+            /// <summary>
+            /// Enum NUMBER_900000 for value: 900000
+            /// </summary>
+            public static readonly PeriodEnum NUMBER_900000 = new PeriodEnum(900000);
+
+            /// <summary>
+            /// Enum NUMBER_36000000 for value: 36000000
+            /// </summary>
+            public static readonly PeriodEnum NUMBER_36000000 = new PeriodEnum(36000000);
+
+            private static readonly Dictionary<int?, PeriodEnum> StaticFields =
+            new Dictionary<int?, PeriodEnum>()
+            {
+                { 60000, NUMBER_60000 },
+                { 300000, NUMBER_300000 },
+                { 900000, NUMBER_900000 },
+                { 36000000, NUMBER_36000000 },
+            };
+
+            private int? _value;
+
+            public PeriodEnum()
+            {
+
+            }
+
+            public PeriodEnum(int? value)
+            {
+                _value = value;
+            }
+
+            public static PeriodEnum FromValue(int? value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public int? GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as PeriodEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(PeriodEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(PeriodEnum a, PeriodEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(PeriodEnum a, PeriodEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+        /// <summary>
         /// 统计方式。
         /// </summary>
         /// <value>统计方式。</value>
@@ -289,13 +543,13 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         public List<string> AlarmActions { get; set; }
 
         /// <summary>
-        /// 告警清除建议。
+        /// 告警清除建议。字符长度为0-255。
         /// </summary>
         [JsonProperty("alarm_advice", NullValueHandling = NullValueHandling.Ignore)]
         public string AlarmAdvice { get; set; }
 
         /// <summary>
-        /// 阈值规则描述。
+        /// 阈值规则描述。字符长度为0-1024。
         /// </summary>
         [JsonProperty("alarm_description", NullValueHandling = NullValueHandling.Ignore)]
         public string AlarmDescription { get; set; }
@@ -306,17 +560,16 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         [JsonProperty("alarm_level", NullValueHandling = NullValueHandling.Ignore)]
         public AlarmLevelEnum AlarmLevel { get; set; }
         /// <summary>
-        /// 阈值规则名称。
+        /// 阈值规则名称。规则名称包含大小写字母、数字、特殊字符（-_）和汉字组成，不能以特殊字符开头或结尾，最大长度为100。
         /// </summary>
         [JsonProperty("alarm_rule_name", NullValueHandling = NullValueHandling.Ignore)]
         public string AlarmRuleName { get; set; }
 
         /// <summary>
-        /// 超限条件。
+        /// 超限条件。&lt;：小于阈值。&gt;：大于阈值。&lt;&#x3D;：小于等于阈值。&gt;&#x3D;：大于等于阈值。
         /// </summary>
         [JsonProperty("comparison_operator", NullValueHandling = NullValueHandling.Ignore)]
-        public string ComparisonOperator { get; set; }
-
+        public ComparisonOperatorEnum ComparisonOperator { get; set; }
         /// <summary>
         /// 时间序列维度。
         /// </summary>
@@ -332,8 +585,8 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// <summary>
         /// 阈值规则是否启用。
         /// </summary>
-        [JsonProperty("id_turn_on", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? IdTurnOn { get; set; }
+        [JsonProperty("is_turn_on", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsTurnOn { get; set; }
 
         /// <summary>
         /// 数据不足通知列表。
@@ -360,11 +613,10 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         public List<string> OkActions { get; set; }
 
         /// <summary>
-        /// 统计周期。
+        /// 统计周期。60000：一分钟。300000：五分钟。900000：十五分钟。3600000：一小时。
         /// </summary>
         [JsonProperty("period", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Period { get; set; }
-
+        public PeriodEnum Period { get; set; }
         /// <summary>
         /// 统计方式。
         /// </summary>
@@ -400,7 +652,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
             sb.Append("  comparisonOperator: ").Append(ComparisonOperator).Append("\n");
             sb.Append("  dimensions: ").Append(Dimensions).Append("\n");
             sb.Append("  evaluationPeriods: ").Append(EvaluationPeriods).Append("\n");
-            sb.Append("  idTurnOn: ").Append(IdTurnOn).Append("\n");
+            sb.Append("  isTurnOn: ").Append(IsTurnOn).Append("\n");
             sb.Append("  insufficientDataActions: ").Append(InsufficientDataActions).Append("\n");
             sb.Append("  metricName: ").Append(MetricName).Append("\n");
             sb.Append("  Namespace: ").Append(Namespace).Append("\n");
@@ -478,9 +730,9 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
                     this.EvaluationPeriods.Equals(input.EvaluationPeriods))
                 ) && 
                 (
-                    this.IdTurnOn == input.IdTurnOn ||
-                    (this.IdTurnOn != null &&
-                    this.IdTurnOn.Equals(input.IdTurnOn))
+                    this.IsTurnOn == input.IsTurnOn ||
+                    (this.IsTurnOn != null &&
+                    this.IsTurnOn.Equals(input.IsTurnOn))
                 ) && 
                 (
                     this.InsufficientDataActions == input.InsufficientDataActions ||
@@ -552,8 +804,8 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
                     hashCode = hashCode * 59 + this.Dimensions.GetHashCode();
                 if (this.EvaluationPeriods != null)
                     hashCode = hashCode * 59 + this.EvaluationPeriods.GetHashCode();
-                if (this.IdTurnOn != null)
-                    hashCode = hashCode * 59 + this.IdTurnOn.GetHashCode();
+                if (this.IsTurnOn != null)
+                    hashCode = hashCode * 59 + this.IsTurnOn.GetHashCode();
                 if (this.InsufficientDataActions != null)
                     hashCode = hashCode * 59 + this.InsufficientDataActions.GetHashCode();
                 if (this.MetricName != null)

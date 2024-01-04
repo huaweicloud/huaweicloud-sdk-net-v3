@@ -45,7 +45,7 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 检索的主题名称，模糊匹配，按照startwith模式进行匹配。
+        /// 检索的主题名称，模糊匹配。
         /// </summary>
         [SDKProperty("fuzzy_name", IsQuery = true)]
         [JsonProperty("fuzzy_name", NullValueHandling = NullValueHandling.Ignore)]
@@ -57,6 +57,13 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         [SDKProperty("topic_id", IsQuery = true)]
         [JsonProperty("topic_id", NullValueHandling = NullValueHandling.Ignore)]
         public string TopicId { get; set; }
+
+        /// <summary>
+        /// 检索的主题显示名。模糊匹配。参数字节长度不能大于192字节。
+        /// </summary>
+        [SDKProperty("fuzzy_display_name", IsQuery = true)]
+        [JsonProperty("fuzzy_display_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string FuzzyDisplayName { get; set; }
 
 
 
@@ -73,6 +80,7 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  fuzzyName: ").Append(FuzzyName).Append("\n");
             sb.Append("  topicId: ").Append(TopicId).Append("\n");
+            sb.Append("  fuzzyDisplayName: ").Append(FuzzyDisplayName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -123,6 +131,11 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
                     this.TopicId == input.TopicId ||
                     (this.TopicId != null &&
                     this.TopicId.Equals(input.TopicId))
+                ) && 
+                (
+                    this.FuzzyDisplayName == input.FuzzyDisplayName ||
+                    (this.FuzzyDisplayName != null &&
+                    this.FuzzyDisplayName.Equals(input.FuzzyDisplayName))
                 );
         }
 
@@ -146,6 +159,8 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
                     hashCode = hashCode * 59 + this.FuzzyName.GetHashCode();
                 if (this.TopicId != null)
                     hashCode = hashCode * 59 + this.TopicId.GetHashCode();
+                if (this.FuzzyDisplayName != null)
+                    hashCode = hashCode * 59 + this.FuzzyDisplayName.GetHashCode();
                 return hashCode;
             }
         }

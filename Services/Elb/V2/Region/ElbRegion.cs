@@ -48,6 +48,8 @@ namespace HuaweiCloud.SDK.Elb.V2
             "https://elb.tr-west-1.myhuaweicloud.com");
         public static readonly Region AE_AD_1 = new Region("ae-ad-1",
             "https://elb.ae-ad-1.myhuaweicloud.com");
+        public static readonly Region EU_WEST_0 = new Region("eu-west-0",
+            "https://elb.eu-west-0.myhuaweicloud.com");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("ELB");
 
@@ -74,6 +76,7 @@ namespace HuaweiCloud.SDK.Elb.V2
                 { "ap-southeast-4", AP_SOUTHEAST_4 },
                 { "tr-west-1", TR_WEST_1 },
                 { "ae-ad-1", AE_AD_1 },
+                { "eu-west-0", EU_WEST_0 },
         };
 
         public static Region ValueOf(string regionId)

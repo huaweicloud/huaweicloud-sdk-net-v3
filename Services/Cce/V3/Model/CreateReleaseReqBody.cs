@@ -41,6 +41,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public string Namespace { get; set; }
 
         /// <summary>
+        /// 模板实例版本号
+        /// </summary>
+        [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]
+        public string Version { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("parameters", NullValueHandling = NullValueHandling.Ignore)]
@@ -65,6 +71,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  Namespace: ").Append(Namespace).Append("\n");
+            sb.Append("  version: ").Append(Version).Append("\n");
             sb.Append("  parameters: ").Append(Parameters).Append("\n");
             sb.Append("  values: ").Append(Values).Append("\n");
             sb.Append("}\n");
@@ -109,6 +116,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.Namespace.Equals(input.Namespace))
                 ) && 
                 (
+                    this.Version == input.Version ||
+                    (this.Version != null &&
+                    this.Version.Equals(input.Version))
+                ) && 
+                (
                     this.Parameters == input.Parameters ||
                     (this.Parameters != null &&
                     this.Parameters.Equals(input.Parameters))
@@ -136,6 +148,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Namespace != null)
                     hashCode = hashCode * 59 + this.Namespace.GetHashCode();
+                if (this.Version != null)
+                    hashCode = hashCode * 59 + this.Version.GetHashCode();
                 if (this.Parameters != null)
                     hashCode = hashCode * 59 + this.Parameters.GetHashCode();
                 if (this.Values != null)

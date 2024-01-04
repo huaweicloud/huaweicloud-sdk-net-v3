@@ -51,6 +51,13 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         [JsonProperty("endpoint", NullValueHandling = NullValueHandling.Ignore)]
         public string Endpoint { get; set; }
 
+        /// <summary>
+        /// 检索的订阅备注字段，模糊匹配。最大长度限制为128个字节。
+        /// </summary>
+        [SDKProperty("fuzzy_remark", IsQuery = true)]
+        [JsonProperty("fuzzy_remark", NullValueHandling = NullValueHandling.Ignore)]
+        public string FuzzyRemark { get; set; }
+
 
 
         /// <summary>
@@ -65,6 +72,7 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
             sb.Append("  protocol: ").Append(Protocol).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  endpoint: ").Append(Endpoint).Append("\n");
+            sb.Append("  fuzzyRemark: ").Append(FuzzyRemark).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -110,6 +118,11 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
                     this.Endpoint == input.Endpoint ||
                     (this.Endpoint != null &&
                     this.Endpoint.Equals(input.Endpoint))
+                ) && 
+                (
+                    this.FuzzyRemark == input.FuzzyRemark ||
+                    (this.FuzzyRemark != null &&
+                    this.FuzzyRemark.Equals(input.FuzzyRemark))
                 );
         }
 
@@ -131,6 +144,8 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.Endpoint != null)
                     hashCode = hashCode * 59 + this.Endpoint.GetHashCode();
+                if (this.FuzzyRemark != null)
+                    hashCode = hashCode * 59 + this.FuzzyRemark.GetHashCode();
                 return hashCode;
             }
         }

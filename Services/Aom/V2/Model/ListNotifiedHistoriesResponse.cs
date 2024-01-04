@@ -17,16 +17,10 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
     {
 
         /// <summary>
-        /// 告警流水号
+        /// 通知历史列表。
         /// </summary>
-        [JsonProperty("event_sn", NullValueHandling = NullValueHandling.Ignore)]
-        public string EventSn { get; set; }
-
-        /// <summary>
-        /// 通知结果
-        /// </summary>
-        [JsonProperty("notifications", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Notifications> Notifications { get; set; }
+        [JsonProperty("notified_histories", NullValueHandling = NullValueHandling.Ignore)]
+        public List<NotifiedHistoriesResult> NotifiedHistories { get; set; }
 
 
 
@@ -37,8 +31,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListNotifiedHistoriesResponse {\n");
-            sb.Append("  eventSn: ").Append(EventSn).Append("\n");
-            sb.Append("  notifications: ").Append(Notifications).Append("\n");
+            sb.Append("  notifiedHistories: ").Append(NotifiedHistories).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -61,15 +54,10 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
 
             return 
                 (
-                    this.EventSn == input.EventSn ||
-                    (this.EventSn != null &&
-                    this.EventSn.Equals(input.EventSn))
-                ) && 
-                (
-                    this.Notifications == input.Notifications ||
-                    this.Notifications != null &&
-                    input.Notifications != null &&
-                    this.Notifications.SequenceEqual(input.Notifications)
+                    this.NotifiedHistories == input.NotifiedHistories ||
+                    this.NotifiedHistories != null &&
+                    input.NotifiedHistories != null &&
+                    this.NotifiedHistories.SequenceEqual(input.NotifiedHistories)
                 );
         }
 
@@ -81,10 +69,8 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.EventSn != null)
-                    hashCode = hashCode * 59 + this.EventSn.GetHashCode();
-                if (this.Notifications != null)
-                    hashCode = hashCode * 59 + this.Notifications.GetHashCode();
+                if (this.NotifiedHistories != null)
+                    hashCode = hashCode * 59 + this.NotifiedHistories.GetHashCode();
                 return hashCode;
             }
         }

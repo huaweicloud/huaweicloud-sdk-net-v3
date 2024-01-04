@@ -8,25 +8,19 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Demo.V1.Model
+namespace HuaweiCloud.SDK.Cce.V3.Model
 {
     /// <summary>
-    /// 
+    /// 升级前检查元数据
     /// </summary>
-    public class ArrayItem 
+    public class PrecheckCluserResponseMetadata 
     {
 
         /// <summary>
-        /// 
+        /// 检查任务ID
         /// </summary>
-        [JsonProperty("itme1", NullValueHandling = NullValueHandling.Ignore)]
-        public string Itme1 { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("itme2", NullValueHandling = NullValueHandling.Ignore)]
-        public string Itme2 { get; set; }
+        [JsonProperty("uid", NullValueHandling = NullValueHandling.Ignore)]
+        public string Uid { get; set; }
 
 
 
@@ -36,9 +30,8 @@ namespace HuaweiCloud.SDK.Demo.V1.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ArrayItem {\n");
-            sb.Append("  itme1: ").Append(Itme1).Append("\n");
-            sb.Append("  itme2: ").Append(Itme2).Append("\n");
+            sb.Append("class PrecheckCluserResponseMetadata {\n");
+            sb.Append("  uid: ").Append(Uid).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -48,27 +41,22 @@ namespace HuaweiCloud.SDK.Demo.V1.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ArrayItem);
+            return this.Equals(input as PrecheckCluserResponseMetadata);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ArrayItem input)
+        public bool Equals(PrecheckCluserResponseMetadata input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Itme1 == input.Itme1 ||
-                    (this.Itme1 != null &&
-                    this.Itme1.Equals(input.Itme1))
-                ) && 
-                (
-                    this.Itme2 == input.Itme2 ||
-                    (this.Itme2 != null &&
-                    this.Itme2.Equals(input.Itme2))
+                    this.Uid == input.Uid ||
+                    (this.Uid != null &&
+                    this.Uid.Equals(input.Uid))
                 );
         }
 
@@ -80,10 +68,8 @@ namespace HuaweiCloud.SDK.Demo.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Itme1 != null)
-                    hashCode = hashCode * 59 + this.Itme1.GetHashCode();
-                if (this.Itme2 != null)
-                    hashCode = hashCode * 59 + this.Itme2.GetHashCode();
+                if (this.Uid != null)
+                    hashCode = hashCode * 59 + this.Uid.GetHashCode();
                 return hashCode;
             }
         }

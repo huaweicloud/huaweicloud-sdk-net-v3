@@ -48,6 +48,8 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1
             "https://antiddos.ap-southeast-4.myhuaweicloud.com");
         public static readonly Region AE_AD_1 = new Region("ae-ad-1",
             "https://antiddos.ae-ad-1.myhuaweicloud.com");
+        public static readonly Region EU_WEST_0 = new Region("eu-west-0",
+            "https://antiddos.eu-west-0.myhuaweicloud.com");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("ANTIDDOS");
 
@@ -74,6 +76,7 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1
                 { "cn-north-9", CN_NORTH_9 },
                 { "ap-southeast-4", AP_SOUTHEAST_4 },
                 { "ae-ad-1", AE_AD_1 },
+                { "eu-west-0", EU_WEST_0 },
         };
 
         public static Region ValueOf(string regionId)

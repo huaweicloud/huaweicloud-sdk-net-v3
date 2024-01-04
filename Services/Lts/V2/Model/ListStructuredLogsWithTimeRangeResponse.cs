@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
     {
 
         /// <summary>
-        /// 此参数在请求实体中，采用json字符串格式。
+        /// 
         /// </summary>
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
         public Object Body { get; set; }

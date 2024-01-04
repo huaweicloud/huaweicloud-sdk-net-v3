@@ -52,6 +52,12 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         [JsonProperty("time_to_live", NullValueHandling = NullValueHandling.Ignore)]
         public string TimeToLive { get; set; }
 
+        /// <summary>
+        /// 消息属性列表
+        /// </summary>
+        [JsonProperty("message_attributes", NullValueHandling = NullValueHandling.Ignore)]
+        public List<MessageAttribute> MessageAttributes { get; set; }
+
 
 
         /// <summary>
@@ -67,6 +73,7 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
             sb.Append("  messageTemplateName: ").Append(MessageTemplateName).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  timeToLive: ").Append(TimeToLive).Append("\n");
+            sb.Append("  messageAttributes: ").Append(MessageAttributes).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -118,6 +125,12 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
                     this.TimeToLive == input.TimeToLive ||
                     (this.TimeToLive != null &&
                     this.TimeToLive.Equals(input.TimeToLive))
+                ) && 
+                (
+                    this.MessageAttributes == input.MessageAttributes ||
+                    this.MessageAttributes != null &&
+                    input.MessageAttributes != null &&
+                    this.MessageAttributes.SequenceEqual(input.MessageAttributes)
                 );
         }
 
@@ -141,6 +154,8 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
                     hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 if (this.TimeToLive != null)
                     hashCode = hashCode * 59 + this.TimeToLive.GetHashCode();
+                if (this.MessageAttributes != null)
+                    hashCode = hashCode * 59 + this.MessageAttributes.GetHashCode();
                 return hashCode;
             }
         }

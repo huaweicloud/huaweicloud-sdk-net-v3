@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
     {
 
         /// <summary>
-        /// 取值类型。 从cmdLineHash、cmdLine、env、str里面选取。
+        /// 取值类型。从cmdLineHash、cmdLine、env、str里面选取。
         /// </summary>
         [JsonProperty("nameType", NullValueHandling = NullValueHandling.Ignore)]
         public string NameType { get; set; }

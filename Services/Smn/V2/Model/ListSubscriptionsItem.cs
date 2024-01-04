@@ -58,6 +58,12 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public int? Status { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("filter_polices", NullValueHandling = NullValueHandling.Ignore)]
+        public List<SubscriptionsFilterPolicy> FilterPolices { get; set; }
+
 
 
         /// <summary>
@@ -74,6 +80,7 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
             sb.Append("  endpoint: ").Append(Endpoint).Append("\n");
             sb.Append("  remark: ").Append(Remark).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
+            sb.Append("  filterPolices: ").Append(FilterPolices).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -129,6 +136,12 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
                     this.Status == input.Status ||
                     (this.Status != null &&
                     this.Status.Equals(input.Status))
+                ) && 
+                (
+                    this.FilterPolices == input.FilterPolices ||
+                    this.FilterPolices != null &&
+                    input.FilterPolices != null &&
+                    this.FilterPolices.SequenceEqual(input.FilterPolices)
                 );
         }
 
@@ -154,6 +167,8 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
                     hashCode = hashCode * 59 + this.Remark.GetHashCode();
                 if (this.Status != null)
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.FilterPolices != null)
+                    hashCode = hashCode * 59 + this.FilterPolices.GetHashCode();
                 return hashCode;
             }
         }

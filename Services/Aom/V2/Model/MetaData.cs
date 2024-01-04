@@ -26,7 +26,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// 下一个开始的标记，用于分页，null表示无更多数据。
         /// </summary>
         [JsonProperty("start", NullValueHandling = NullValueHandling.Ignore)]
-        public long? Start { get; set; }
+        public string Start { get; set; }
 
         /// <summary>
         /// 总条数。

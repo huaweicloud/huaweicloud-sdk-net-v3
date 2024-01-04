@@ -23,13 +23,13 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         public List<string> CheckContent { get; set; }
 
         /// <summary>
-        /// 匹配条件。 contain、equals
+        /// 匹配条件。contain、equals
         /// </summary>
         [JsonProperty("checkMode", NullValueHandling = NullValueHandling.Ignore)]
         public string CheckMode { get; set; }
 
         /// <summary>
-        /// 匹配类型。 cmdLine、env、scope
+        /// 匹配类型。cmdLine、env、scope
         /// </summary>
         [JsonProperty("checkType", NullValueHandling = NullValueHandling.Ignore)]
         public string CheckType { get; set; }

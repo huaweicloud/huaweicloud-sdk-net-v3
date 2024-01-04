@@ -32,7 +32,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// 消息编号。
         /// </summary>
         [JsonProperty("message_offset", NullValueHandling = NullValueHandling.Ignore)]
-        public int? MessageOffset { get; set; }
+        public long? MessageOffset { get; set; }
 
         /// <summary>
         /// 消息大小，单位字节。

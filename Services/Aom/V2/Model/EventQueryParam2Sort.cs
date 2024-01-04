@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
     public class EventQueryParam2Sort 
     {
         /// <summary>
-        /// 排序方式枚举值。asc代表正序，desc代表倒叙。
+        /// 排序方式枚举值。asc代表正序，desc代表倒序。
         /// </summary>
-        /// <value>排序方式枚举值。asc代表正序，desc代表倒叙。</value>
+        /// <value>排序方式枚举值。asc代表正序，desc代表倒序。</value>
         [JsonConverter(typeof(EnumClassConverter<OrderEnum>))]
         public class OrderEnum
         {
@@ -138,7 +138,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         public List<string> OrderBy { get; set; }
 
         /// <summary>
-        /// 排序方式枚举值。asc代表正序，desc代表倒叙。
+        /// 排序方式枚举值。asc代表正序，desc代表倒序。
         /// </summary>
         [JsonProperty("order", NullValueHandling = NullValueHandling.Ignore)]
         public OrderEnum Order { get; set; }

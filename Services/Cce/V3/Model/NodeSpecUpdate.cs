@@ -40,6 +40,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("initializedConditions", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> InitializedConditions { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("login", NullValueHandling = NullValueHandling.Ignore)]
+        public Login Login { get; set; }
+
 
 
         /// <summary>
@@ -53,6 +59,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  k8sTags: ").Append(K8sTags).Append("\n");
             sb.Append("  userTags: ").Append(UserTags).Append("\n");
             sb.Append("  initializedConditions: ").Append(InitializedConditions).Append("\n");
+            sb.Append("  login: ").Append(Login).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -97,6 +104,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.InitializedConditions != null &&
                     input.InitializedConditions != null &&
                     this.InitializedConditions.SequenceEqual(input.InitializedConditions)
+                ) && 
+                (
+                    this.Login == input.Login ||
+                    (this.Login != null &&
+                    this.Login.Equals(input.Login))
                 );
         }
 
@@ -116,6 +128,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     hashCode = hashCode * 59 + this.UserTags.GetHashCode();
                 if (this.InitializedConditions != null)
                     hashCode = hashCode * 59 + this.InitializedConditions.GetHashCode();
+                if (this.Login != null)
+                    hashCode = hashCode * 59 + this.Login.GetHashCode();
                 return hashCode;
             }
         }

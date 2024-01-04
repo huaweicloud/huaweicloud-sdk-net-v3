@@ -72,7 +72,7 @@ namespace HuaweiCloud.SDK.Demo.V1
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDemoArrayRequest);
             var response = DoHttpRequestSync("GET", request);
             var listDemoArrayResponse = JsonUtils.DeSerializeNull<ListDemoArrayResponse>(response);
-            listDemoArrayResponse.Body = JsonUtils.DeSerializeList<ArrayItem>(response);
+            listDemoArrayResponse.Body = JsonUtils.DeSerializeList<SimpleItem>(response);
             return listDemoArrayResponse;
         }
 
@@ -84,7 +84,7 @@ namespace HuaweiCloud.SDK.Demo.V1
             return new SyncInvoker<ListDemoArrayResponse>(this, "GET", request, response =>
             {
                 var listDemoArrayResponse = JsonUtils.DeSerializeNull<ListDemoArrayResponse>(response);
-                listDemoArrayResponse.Body = JsonUtils.DeSerializeList<ArrayItem>(response);
+                listDemoArrayResponse.Body = JsonUtils.DeSerializeList<SimpleItem>(response);
                 return listDemoArrayResponse;
             });
         }
@@ -101,7 +101,7 @@ namespace HuaweiCloud.SDK.Demo.V1
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDemoMapRequest);
             var response = DoHttpRequestSync("GET", request);
             var listDemoMapResponse = JsonUtils.DeSerializeNull<ListDemoMapResponse>(response);
-            listDemoMapResponse.Body = JsonUtils.DeSerializeMap<string, string>(response);
+            listDemoMapResponse.Body = JsonUtils.DeSerializeMap<string, SimpleItem>(response);
             return listDemoMapResponse;
         }
 
@@ -113,9 +113,31 @@ namespace HuaweiCloud.SDK.Demo.V1
             return new SyncInvoker<ListDemoMapResponse>(this, "GET", request, response =>
             {
                 var listDemoMapResponse = JsonUtils.DeSerializeNull<ListDemoMapResponse>(response);
-                listDemoMapResponse.Body = JsonUtils.DeSerializeMap<string, string>(response);
+                listDemoMapResponse.Body = JsonUtils.DeSerializeMap<string, SimpleItem>(response);
                 return listDemoMapResponse;
             });
+        }
+        
+        /// <summary>
+        /// demo
+        ///
+        /// ListDemoObject Test
+        /// </summary>
+        public ListDemoObjectResponse ListDemoObject(ListDemoObjectRequest listDemoObjectRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/object", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDemoObjectRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerializeNull<ListDemoObjectResponse>(response);
+        }
+
+        public SyncInvoker<ListDemoObjectResponse> ListDemoObjectInvoker(ListDemoObjectRequest listDemoObjectRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/object", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDemoObjectRequest);
+            return new SyncInvoker<ListDemoObjectResponse>(this, "GET", request, JsonUtils.DeSerializeNull<ListDemoObjectResponse>);
         }
         
         /// <summary>
@@ -138,6 +160,144 @@ namespace HuaweiCloud.SDK.Demo.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/demo", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDemoResourcesRequest);
             return new SyncInvoker<ListDemoResourcesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDemoResourcesResponse>);
+        }
+        
+        /// <summary>
+        /// demo
+        ///
+        /// ListDemoString Test
+        /// </summary>
+        public ListDemoStringResponse ListDemoString(ListDemoStringRequest listDemoStringRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/string", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDemoStringRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerializeNull<ListDemoStringResponse>(response);
+        }
+
+        public SyncInvoker<ListDemoStringResponse> ListDemoStringInvoker(ListDemoStringRequest listDemoStringRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/string", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDemoStringRequest);
+            return new SyncInvoker<ListDemoStringResponse>(this, "GET", request, JsonUtils.DeSerializeNull<ListDemoStringResponse>);
+        }
+        
+        /// <summary>
+        /// demo
+        ///
+        /// ListObjectArray Test
+        /// </summary>
+        public ListObjectArrayResponse ListObjectArray(ListObjectArrayRequest listObjectArrayRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/object_array", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listObjectArrayRequest);
+            var response = DoHttpRequestSync("GET", request);
+            var listObjectArrayResponse = JsonUtils.DeSerializeNull<ListObjectArrayResponse>(response);
+            listObjectArrayResponse.Body = JsonUtils.DeSerializeList<Object>(response);
+            return listObjectArrayResponse;
+        }
+
+        public SyncInvoker<ListObjectArrayResponse> ListObjectArrayInvoker(ListObjectArrayRequest listObjectArrayRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/object_array", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listObjectArrayRequest);
+            return new SyncInvoker<ListObjectArrayResponse>(this, "GET", request, response =>
+            {
+                var listObjectArrayResponse = JsonUtils.DeSerializeNull<ListObjectArrayResponse>(response);
+                listObjectArrayResponse.Body = JsonUtils.DeSerializeList<Object>(response);
+                return listObjectArrayResponse;
+            });
+        }
+        
+        /// <summary>
+        /// demo
+        ///
+        /// ListObjectMap Test
+        /// </summary>
+        public ListObjectMapResponse ListObjectMap(ListObjectMapRequest listObjectMapRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/object_map", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listObjectMapRequest);
+            var response = DoHttpRequestSync("GET", request);
+            var listObjectMapResponse = JsonUtils.DeSerializeNull<ListObjectMapResponse>(response);
+            listObjectMapResponse.Body = JsonUtils.DeSerializeMap<string, Object>(response);
+            return listObjectMapResponse;
+        }
+
+        public SyncInvoker<ListObjectMapResponse> ListObjectMapInvoker(ListObjectMapRequest listObjectMapRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/object_map", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listObjectMapRequest);
+            return new SyncInvoker<ListObjectMapResponse>(this, "GET", request, response =>
+            {
+                var listObjectMapResponse = JsonUtils.DeSerializeNull<ListObjectMapResponse>(response);
+                listObjectMapResponse.Body = JsonUtils.DeSerializeMap<string, Object>(response);
+                return listObjectMapResponse;
+            });
+        }
+        
+        /// <summary>
+        /// demo
+        ///
+        /// ListStringArray Test
+        /// </summary>
+        public ListStringArrayResponse ListStringArray(ListStringArrayRequest listStringArrayRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/string_array", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStringArrayRequest);
+            var response = DoHttpRequestSync("GET", request);
+            var listStringArrayResponse = JsonUtils.DeSerializeNull<ListStringArrayResponse>(response);
+            listStringArrayResponse.Body = JsonUtils.DeSerializeList<string>(response);
+            return listStringArrayResponse;
+        }
+
+        public SyncInvoker<ListStringArrayResponse> ListStringArrayInvoker(ListStringArrayRequest listStringArrayRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/string_array", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStringArrayRequest);
+            return new SyncInvoker<ListStringArrayResponse>(this, "GET", request, response =>
+            {
+                var listStringArrayResponse = JsonUtils.DeSerializeNull<ListStringArrayResponse>(response);
+                listStringArrayResponse.Body = JsonUtils.DeSerializeList<string>(response);
+                return listStringArrayResponse;
+            });
+        }
+        
+        /// <summary>
+        /// demo
+        ///
+        /// ListStringMap Test
+        /// </summary>
+        public ListStringMapResponse ListStringMap(ListStringMapRequest listStringMapRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/string_map", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStringMapRequest);
+            var response = DoHttpRequestSync("GET", request);
+            var listStringMapResponse = JsonUtils.DeSerializeNull<ListStringMapResponse>(response);
+            listStringMapResponse.Body = JsonUtils.DeSerializeMap<string, string>(response);
+            return listStringMapResponse;
+        }
+
+        public SyncInvoker<ListStringMapResponse> ListStringMapInvoker(ListStringMapRequest listStringMapRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/string_map", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStringMapRequest);
+            return new SyncInvoker<ListStringMapResponse>(this, "GET", request, response =>
+            {
+                var listStringMapResponse = JsonUtils.DeSerializeNull<ListStringMapResponse>(response);
+                listStringMapResponse.Body = JsonUtils.DeSerializeMap<string, string>(response);
+                return listStringMapResponse;
+            });
         }
         
         /// <summary>

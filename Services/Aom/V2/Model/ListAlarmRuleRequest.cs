@@ -24,7 +24,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         public string Offset { get; set; }
 
         /// <summary>
-        /// 用于限制结果数据条数。 取值范围(0,1000],默认值为1000。
+        /// 用于限制结果数据条数。 取值范围(0,1000]，默认值为1000。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]

@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
     {
 
         /// <summary>
-        /// 发现规则ID,传多个时以逗号分隔。
+        /// 发现规则ID，传多个时以逗号分隔。不允许为空。
         /// </summary>
         [SDKProperty("appRulesIds", IsQuery = true)]
         [JsonProperty("appRulesIds", NullValueHandling = NullValueHandling.Ignore)]

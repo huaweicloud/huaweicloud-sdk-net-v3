@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
     {
 
         /// <summary>
-        /// 8-32个字符。 至少包含以下字符中的3种： - 大写字母 - 小写字母 - 数字 - 特殊字符&#x60;~!@#$%^&amp;*()-_&#x3D;+\\\\|[{}];:\\&#39;\\\&quot;,&lt;.&gt;/?  和空格，并且不能以-开头。
+        /// 8-32个字符。  至少包含以下字符中的3种：  - 大写字母  - 小写字母  - 数字  - 特殊字符&#x60;~!@#$%^&amp;*()-_&#x3D;+\\\\|[{}];:\\&#39;\\\&quot;,&lt;.&gt;/?  和空格，并且不能以-开头。
         /// </summary>
         [JsonProperty("new_password", NullValueHandling = NullValueHandling.Ignore)]
         public string NewPassword { get; set; }

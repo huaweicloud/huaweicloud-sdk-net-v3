@@ -17,10 +17,10 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
     {
 
         /// <summary>
-        /// 备份策略对象，包括备份类型、备份保留天数、目标区域ID和目标project ID。
+        /// 
         /// </summary>
         [JsonProperty("policy_para", NullValueHandling = NullValueHandling.Ignore)]
-        public List<OffSiteBackupPolicy> PolicyPara { get; set; }
+        public OffSiteBackupPolicy PolicyPara { get; set; }
 
 
 
@@ -55,9 +55,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             return 
                 (
                     this.PolicyPara == input.PolicyPara ||
-                    this.PolicyPara != null &&
-                    input.PolicyPara != null &&
-                    this.PolicyPara.SequenceEqual(input.PolicyPara)
+                    (this.PolicyPara != null &&
+                    this.PolicyPara.Equals(input.PolicyPara))
                 );
         }
 

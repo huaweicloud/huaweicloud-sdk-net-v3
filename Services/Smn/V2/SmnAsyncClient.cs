@@ -42,6 +42,32 @@ namespace HuaweiCloud.SDK.Smn.V2
         }
         
         /// <summary>
+        /// 导入订阅
+        ///
+        /// 为指定的Topic添加订阅者，订阅者信息来源为订阅用户列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<AddSubscriptionFromSubscriptionUserResponse> AddSubscriptionFromSubscriptionUserAsync(AddSubscriptionFromSubscriptionUserRequest addSubscriptionFromSubscriptionUserRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("topic_urn", addSubscriptionFromSubscriptionUserRequest.TopicUrn.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/notifications/topics/{topic_urn}/subscriptions/from-subscription-users", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", addSubscriptionFromSubscriptionUserRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<AddSubscriptionFromSubscriptionUserResponse>(response);
+        }
+
+        public AsyncInvoker<AddSubscriptionFromSubscriptionUserResponse> AddSubscriptionFromSubscriptionUserAsyncInvoker(AddSubscriptionFromSubscriptionUserRequest addSubscriptionFromSubscriptionUserRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("topic_urn", addSubscriptionFromSubscriptionUserRequest.TopicUrn.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/notifications/topics/{topic_urn}/subscriptions/from-subscription-users", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", addSubscriptionFromSubscriptionUserRequest);
+            return new AsyncInvoker<AddSubscriptionFromSubscriptionUserResponse>(this, "POST", request, JsonUtils.DeSerialize<AddSubscriptionFromSubscriptionUserResponse>);
+        }
+        
+        /// <summary>
         /// 批量添加删除资源标签
         ///
         /// 为指定实例批量添加或删除标签。一个资源上最多有10个标签。
@@ -70,6 +96,78 @@ namespace HuaweiCloud.SDK.Smn.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/{resource_id}/tags/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchCreateOrDeleteResourceTagsRequest);
             return new AsyncInvoker<BatchCreateOrDeleteResourceTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchCreateOrDeleteResourceTagsResponse>);
+        }
+        
+        /// <summary>
+        /// 批量创建订阅过滤策略
+        ///
+        /// 创建订阅者的消息过滤策略。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchCreateSubscriptionsFilterPolicesResponse> BatchCreateSubscriptionsFilterPolicesAsync(BatchCreateSubscriptionsFilterPolicesRequest batchCreateSubscriptionsFilterPolicesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/notifications/subscriptions/filter_polices", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchCreateSubscriptionsFilterPolicesRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<BatchCreateSubscriptionsFilterPolicesResponse>(response);
+        }
+
+        public AsyncInvoker<BatchCreateSubscriptionsFilterPolicesResponse> BatchCreateSubscriptionsFilterPolicesAsyncInvoker(BatchCreateSubscriptionsFilterPolicesRequest batchCreateSubscriptionsFilterPolicesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/notifications/subscriptions/filter_polices", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchCreateSubscriptionsFilterPolicesRequest);
+            return new AsyncInvoker<BatchCreateSubscriptionsFilterPolicesResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchCreateSubscriptionsFilterPolicesResponse>);
+        }
+        
+        /// <summary>
+        /// 批量删除订阅过滤策略
+        ///
+        /// 删除订阅者的消息过滤策略。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchDeleteSubscriptionsFilterPolicesResponse> BatchDeleteSubscriptionsFilterPolicesAsync(BatchDeleteSubscriptionsFilterPolicesRequest batchDeleteSubscriptionsFilterPolicesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/notifications/subscriptions/filter_polices", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteSubscriptionsFilterPolicesRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerialize<BatchDeleteSubscriptionsFilterPolicesResponse>(response);
+        }
+
+        public AsyncInvoker<BatchDeleteSubscriptionsFilterPolicesResponse> BatchDeleteSubscriptionsFilterPolicesAsyncInvoker(BatchDeleteSubscriptionsFilterPolicesRequest batchDeleteSubscriptionsFilterPolicesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/notifications/subscriptions/filter_polices", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteSubscriptionsFilterPolicesRequest);
+            return new AsyncInvoker<BatchDeleteSubscriptionsFilterPolicesResponse>(this, "DELETE", request, JsonUtils.DeSerialize<BatchDeleteSubscriptionsFilterPolicesResponse>);
+        }
+        
+        /// <summary>
+        /// 批量更新订阅过滤策略
+        ///
+        /// 更新订阅者的消息过滤策略。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchUpdateSubscriptionsFilterPolicesResponse> BatchUpdateSubscriptionsFilterPolicesAsync(BatchUpdateSubscriptionsFilterPolicesRequest batchUpdateSubscriptionsFilterPolicesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/notifications/subscriptions/filter_polices", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchUpdateSubscriptionsFilterPolicesRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<BatchUpdateSubscriptionsFilterPolicesResponse>(response);
+        }
+
+        public AsyncInvoker<BatchUpdateSubscriptionsFilterPolicesResponse> BatchUpdateSubscriptionsFilterPolicesAsyncInvoker(BatchUpdateSubscriptionsFilterPolicesRequest batchUpdateSubscriptionsFilterPolicesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/notifications/subscriptions/filter_polices", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchUpdateSubscriptionsFilterPolicesRequest);
+            return new AsyncInvoker<BatchUpdateSubscriptionsFilterPolicesResponse>(this, "PUT", request, JsonUtils.DeSerialize<BatchUpdateSubscriptionsFilterPolicesResponse>);
         }
         
         /// <summary>
@@ -697,6 +795,32 @@ namespace HuaweiCloud.SDK.Smn.V2
         }
         
         /// <summary>
+        /// 发布探测消息
+        ///
+        /// 基于主题发送http/https探测消息，探测当前http/https 终端是否可用，SMN出口是否能够正常访问该终端。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<PublishHttpDetectResponse> PublishHttpDetectAsync(PublishHttpDetectRequest publishHttpDetectRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("topic_urn", publishHttpDetectRequest.TopicUrn.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/notifications/topics/{topic_urn}/detection", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", publishHttpDetectRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<PublishHttpDetectResponse>(response);
+        }
+
+        public AsyncInvoker<PublishHttpDetectResponse> PublishHttpDetectAsyncInvoker(PublishHttpDetectRequest publishHttpDetectRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("topic_urn", publishHttpDetectRequest.TopicUrn.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/notifications/topics/{topic_urn}/detection", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", publishHttpDetectRequest);
+            return new AsyncInvoker<PublishHttpDetectResponse>(this, "POST", request, JsonUtils.DeSerialize<PublishHttpDetectResponse>);
+        }
+        
+        /// <summary>
         /// 消息发布
         ///
         /// 将消息发送给Topic的所有订阅端点。当返回消息ID时，该消息已被保存并开始尝试将其推送给Topic的订阅者。三种消息发送方式
@@ -729,6 +853,34 @@ namespace HuaweiCloud.SDK.Smn.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/notifications/topics/{topic_urn}/publish", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", publishMessageRequest);
             return new AsyncInvoker<PublishMessageResponse>(this, "POST", request, JsonUtils.DeSerialize<PublishMessageResponse>);
+        }
+        
+        /// <summary>
+        /// 获取http探测结果
+        ///
+        /// 根据http探测发送返回的task_id查询探测结果。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowHttpDetectResultResponse> ShowHttpDetectResultAsync(ShowHttpDetectResultRequest showHttpDetectResultRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("topic_urn", showHttpDetectResultRequest.TopicUrn.ToString());
+            urlParam.Add("task_id", showHttpDetectResultRequest.TaskId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/notifications/topics/{topic_urn}/detection/{task_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showHttpDetectResultRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowHttpDetectResultResponse>(response);
+        }
+
+        public AsyncInvoker<ShowHttpDetectResultResponse> ShowHttpDetectResultAsyncInvoker(ShowHttpDetectResultRequest showHttpDetectResultRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("topic_urn", showHttpDetectResultRequest.TopicUrn.ToString());
+            urlParam.Add("task_id", showHttpDetectResultRequest.TaskId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/notifications/topics/{topic_urn}/detection/{task_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showHttpDetectResultRequest);
+            return new AsyncInvoker<ShowHttpDetectResultResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowHttpDetectResultResponse>);
         }
         
         /// <summary>
@@ -874,6 +1026,7 @@ namespace HuaweiCloud.SDK.Smn.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public async Task<CreateApplicationResponse> CreateApplicationAsync(CreateApplicationRequest createApplicationRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -883,6 +1036,7 @@ namespace HuaweiCloud.SDK.Smn.V2
             return JsonUtils.DeSerialize<CreateApplicationResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public AsyncInvoker<CreateApplicationResponse> CreateApplicationAsyncInvoker(CreateApplicationRequest createApplicationRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -898,6 +1052,7 @@ namespace HuaweiCloud.SDK.Smn.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public async Task<DeleteApplicationResponse> DeleteApplicationAsync(DeleteApplicationRequest deleteApplicationRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -908,6 +1063,7 @@ namespace HuaweiCloud.SDK.Smn.V2
             return JsonUtils.DeSerialize<DeleteApplicationResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public AsyncInvoker<DeleteApplicationResponse> DeleteApplicationAsyncInvoker(DeleteApplicationRequest deleteApplicationRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -924,6 +1080,7 @@ namespace HuaweiCloud.SDK.Smn.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public async Task<ListApplicationAttributesResponse> ListApplicationAttributesAsync(ListApplicationAttributesRequest listApplicationAttributesRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -934,6 +1091,7 @@ namespace HuaweiCloud.SDK.Smn.V2
             return JsonUtils.DeSerialize<ListApplicationAttributesResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public AsyncInvoker<ListApplicationAttributesResponse> ListApplicationAttributesAsyncInvoker(ListApplicationAttributesRequest listApplicationAttributesRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -950,6 +1108,7 @@ namespace HuaweiCloud.SDK.Smn.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public async Task<ListApplicationsResponse> ListApplicationsAsync(ListApplicationsRequest listApplicationsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -959,6 +1118,7 @@ namespace HuaweiCloud.SDK.Smn.V2
             return JsonUtils.DeSerialize<ListApplicationsResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public AsyncInvoker<ListApplicationsResponse> ListApplicationsAsyncInvoker(ListApplicationsRequest listApplicationsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -974,6 +1134,7 @@ namespace HuaweiCloud.SDK.Smn.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public async Task<PublishAppMessageResponse> PublishAppMessageAsync(PublishAppMessageRequest publishAppMessageRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -984,6 +1145,7 @@ namespace HuaweiCloud.SDK.Smn.V2
             return JsonUtils.DeSerialize<PublishAppMessageResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public AsyncInvoker<PublishAppMessageResponse> PublishAppMessageAsyncInvoker(PublishAppMessageRequest publishAppMessageRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1000,6 +1162,7 @@ namespace HuaweiCloud.SDK.Smn.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public async Task<UpdateApplicationResponse> UpdateApplicationAsync(UpdateApplicationRequest updateApplicationRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1010,6 +1173,7 @@ namespace HuaweiCloud.SDK.Smn.V2
             return JsonUtils.DeSerialize<UpdateApplicationResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public AsyncInvoker<UpdateApplicationResponse> UpdateApplicationAsyncInvoker(UpdateApplicationRequest updateApplicationRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1026,6 +1190,7 @@ namespace HuaweiCloud.SDK.Smn.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public async Task<CreateApplicationEndpointResponse> CreateApplicationEndpointAsync(CreateApplicationEndpointRequest createApplicationEndpointRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1036,6 +1201,7 @@ namespace HuaweiCloud.SDK.Smn.V2
             return JsonUtils.DeSerialize<CreateApplicationEndpointResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public AsyncInvoker<CreateApplicationEndpointResponse> CreateApplicationEndpointAsyncInvoker(CreateApplicationEndpointRequest createApplicationEndpointRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1052,6 +1218,7 @@ namespace HuaweiCloud.SDK.Smn.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public async Task<DeleteApplicationEndpointResponse> DeleteApplicationEndpointAsync(DeleteApplicationEndpointRequest deleteApplicationEndpointRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1062,6 +1229,7 @@ namespace HuaweiCloud.SDK.Smn.V2
             return JsonUtils.DeSerialize<DeleteApplicationEndpointResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public AsyncInvoker<DeleteApplicationEndpointResponse> DeleteApplicationEndpointAsyncInvoker(DeleteApplicationEndpointRequest deleteApplicationEndpointRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1078,6 +1246,7 @@ namespace HuaweiCloud.SDK.Smn.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public async Task<ListApplicationEndpointAttributesResponse> ListApplicationEndpointAttributesAsync(ListApplicationEndpointAttributesRequest listApplicationEndpointAttributesRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1088,6 +1257,7 @@ namespace HuaweiCloud.SDK.Smn.V2
             return JsonUtils.DeSerialize<ListApplicationEndpointAttributesResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public AsyncInvoker<ListApplicationEndpointAttributesResponse> ListApplicationEndpointAttributesAsyncInvoker(ListApplicationEndpointAttributesRequest listApplicationEndpointAttributesRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1104,6 +1274,7 @@ namespace HuaweiCloud.SDK.Smn.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public async Task<ListApplicationEndpointsResponse> ListApplicationEndpointsAsync(ListApplicationEndpointsRequest listApplicationEndpointsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1114,6 +1285,7 @@ namespace HuaweiCloud.SDK.Smn.V2
             return JsonUtils.DeSerialize<ListApplicationEndpointsResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public AsyncInvoker<ListApplicationEndpointsResponse> ListApplicationEndpointsAsyncInvoker(ListApplicationEndpointsRequest listApplicationEndpointsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1130,6 +1302,7 @@ namespace HuaweiCloud.SDK.Smn.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public async Task<UpdateApplicationEndpointResponse> UpdateApplicationEndpointAsync(UpdateApplicationEndpointRequest updateApplicationEndpointRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1140,6 +1313,7 @@ namespace HuaweiCloud.SDK.Smn.V2
             return JsonUtils.DeSerialize<UpdateApplicationEndpointResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public AsyncInvoker<UpdateApplicationEndpointResponse> UpdateApplicationEndpointAsyncInvoker(UpdateApplicationEndpointRequest updateApplicationEndpointRequest)
         {
             var urlParam = new Dictionary<string, string>();

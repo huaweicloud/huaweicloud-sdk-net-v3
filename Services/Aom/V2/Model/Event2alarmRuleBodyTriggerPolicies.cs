@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
     public class Event2alarmRuleBodyTriggerPolicies 
     {
         /// <summary>
-        /// 触发类型
+        /// 触发类型。accumulative: 累计触发，immediately: 立即触发
         /// </summary>
-        /// <value>触发类型</value>
+        /// <value>触发类型。accumulative: 累计触发，immediately: 立即触发</value>
         [JsonConverter(typeof(EnumClassConverter<TriggerTypeEnum>))]
         public class TriggerTypeEnum
         {
@@ -28,15 +28,15 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
             public static readonly TriggerTypeEnum ACCUMULATIVE = new TriggerTypeEnum("accumulative");
 
             /// <summary>
-            /// Enum NOTIFICATION for value: notification
+            /// Enum IMMEDIATELY for value: immediately
             /// </summary>
-            public static readonly TriggerTypeEnum NOTIFICATION = new TriggerTypeEnum("notification");
+            public static readonly TriggerTypeEnum IMMEDIATELY = new TriggerTypeEnum("immediately");
 
             private static readonly Dictionary<string, TriggerTypeEnum> StaticFields =
             new Dictionary<string, TriggerTypeEnum>()
             {
                 { "accumulative", ACCUMULATIVE },
-                { "notification", NOTIFICATION },
+                { "immediately", IMMEDIATELY },
             };
 
             private string _value;
@@ -144,7 +144,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 触发类型
+        /// 触发类型。accumulative: 累计触发，immediately: 立即触发
         /// </summary>
         [JsonProperty("trigger_type", NullValueHandling = NullValueHandling.Ignore)]
         public TriggerTypeEnum TriggerType { get; set; }

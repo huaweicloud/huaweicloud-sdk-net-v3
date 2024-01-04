@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public string Key { get; set; }
 
         /// <summary>
-        /// 标签值。  - 长度为0~255个字符（中文也可以输入128个字符）。  - 由任意语种字母、数字、空格和字符组成，字符仅支持_ . : &#x3D; + - @  - 首尾字符不能为空格。
+        /// 标签值。  - 长度为0~255个字符（中文也可以输入255个字符）。  - 由任意语种字母、数字、空格和字符组成，字符仅支持_ . : &#x3D; + - @  - 首尾字符不能为空格。
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public string Value { get; set; }

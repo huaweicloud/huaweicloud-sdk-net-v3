@@ -62,7 +62,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// 消息偏移量。
         /// </summary>
         [JsonProperty("message_offset", NullValueHandling = NullValueHandling.Ignore)]
-        public int? MessageOffset { get; set; }
+        public long? MessageOffset { get; set; }
 
         /// <summary>
         /// 消息ID。

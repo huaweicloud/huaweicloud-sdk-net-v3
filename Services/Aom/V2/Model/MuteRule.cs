@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         public string Desc { get; set; }
 
         /// <summary>
-        /// 规则的匹配条件
+        /// 规则的匹配条件。串行条件和并行条件的最大数量限制为10。
         /// </summary>
         [JsonProperty("match", NullValueHandling = NullValueHandling.Ignore)]
         public List<List<Match>> Match { get; set; }
@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         public MuteConfig MuteConfig { get; set; }
 
         /// <summary>
-        /// 规则名称
+        /// 规则名称。名称包含大小写字母、数字、特殊字符（_）、不能以下划线开头或结尾，最大长度为100。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }

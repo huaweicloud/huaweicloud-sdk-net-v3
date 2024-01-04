@@ -23,20 +23,20 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         public class TypeEnum
         {
             /// <summary>
-            /// Enum _1_ for value: \"1\"
+            /// Enum _1 for value: 1
             /// </summary>
-            public static readonly TypeEnum _1_ = new TypeEnum("\"1\"");
+            public static readonly TypeEnum _1 = new TypeEnum("1");
 
             /// <summary>
-            /// Enum _2_ for value: \"2\"
+            /// Enum _2 for value: 2
             /// </summary>
-            public static readonly TypeEnum _2_ = new TypeEnum("\"2\"");
+            public static readonly TypeEnum _2 = new TypeEnum("2");
 
             private static readonly Dictionary<string, TypeEnum> StaticFields =
             new Dictionary<string, TypeEnum>()
             {
-                { "\"1\"", _1_ },
-                { "\"2\"", _2_ },
+                { "1", _1 },
+                { "2", _2 },
             };
 
             private string _value;
@@ -132,7 +132,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
 
 
         /// <summary>
-        /// 规则名称
+        /// 规则名称 只含有汉字数字、字母、下划线，不能以下划线等特殊符号开头和结尾，长度为 1 - 100
         /// </summary>
         [JsonProperty("rule_name", NullValueHandling = NullValueHandling.Ignore)]
         public string RuleName { get; set; }
@@ -150,7 +150,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         public string UserName { get; set; }
 
         /// <summary>
-        /// 规则描述
+        /// 规则描述。规则描述长度为0到1024个字符，并且只能是数字、字母、特殊字符（_*）、空格和中文组成，不能以下划线开头和结尾。
         /// </summary>
         [JsonProperty("desc", NullValueHandling = NullValueHandling.Ignore)]
         public string Desc { get; set; }

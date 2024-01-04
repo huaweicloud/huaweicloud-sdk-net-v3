@@ -15,6 +15,121 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
     /// </summary>
     public class Event2alarmRuleBody 
     {
+        /// <summary>
+        /// 告警类型。notification：直接告警。denoising：告警降噪。
+        /// </summary>
+        /// <value>告警类型。notification：直接告警。denoising：告警降噪。</value>
+        [JsonConverter(typeof(EnumClassConverter<AlarmTypeEnum>))]
+        public class AlarmTypeEnum
+        {
+            /// <summary>
+            /// Enum NOTIFICATION for value: notification
+            /// </summary>
+            public static readonly AlarmTypeEnum NOTIFICATION = new AlarmTypeEnum("notification");
+
+            /// <summary>
+            /// Enum DENOISING for value: denoising
+            /// </summary>
+            public static readonly AlarmTypeEnum DENOISING = new AlarmTypeEnum("denoising");
+
+            private static readonly Dictionary<string, AlarmTypeEnum> StaticFields =
+            new Dictionary<string, AlarmTypeEnum>()
+            {
+                { "notification", NOTIFICATION },
+                { "denoising", DENOISING },
+            };
+
+            private string _value;
+
+            public AlarmTypeEnum()
+            {
+
+            }
+
+            public AlarmTypeEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static AlarmTypeEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as AlarmTypeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(AlarmTypeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(AlarmTypeEnum a, AlarmTypeEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(AlarmTypeEnum a, AlarmTypeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 用户项目id
@@ -23,13 +138,13 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         public string UserId { get; set; }
 
         /// <summary>
-        /// 规则名称
+        /// 规则名称。规则名称包含大小写字母，数字，特殊字符（_-）和汉字组成，不能以特殊字符开头或结尾，最大长度为100。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 规则描述
+        /// 规则描述。描述包含大小写字母，数字，特殊字符（_-&lt;&gt;&#x3D;,.）和汉字组成，不能以下划线、中划线开头结尾，最大长度为1024。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
@@ -71,11 +186,10 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         public List<Event2alarmRuleBodyTriggerPolicies> TriggerPolicies { get; set; }
 
         /// <summary>
-        /// 告警类型
+        /// 告警类型。notification：直接告警。denoising：告警降噪。
         /// </summary>
         [JsonProperty("alarm_type", NullValueHandling = NullValueHandling.Ignore)]
-        public string AlarmType { get; set; }
-
+        public AlarmTypeEnum AlarmType { get; set; }
         /// <summary>
         /// 告警行动规则
         /// </summary>
@@ -89,10 +203,28 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         public string InhibitRule { get; set; }
 
         /// <summary>
-        /// 告警静默规则
+        /// 告警分组规则
         /// </summary>
         [JsonProperty("route_group_rule", NullValueHandling = NullValueHandling.Ignore)]
         public string RouteGroupRule { get; set; }
+
+        /// <summary>
+        /// 事件名称
+        /// </summary>
+        [JsonProperty("event_names", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> EventNames { get; set; }
+
+        /// <summary>
+        /// 是否迁移到2.0
+        /// </summary>
+        [JsonProperty("migrated", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? Migrated { get; set; }
+
+        /// <summary>
+        /// smn信息
+        /// </summary>
+        [JsonProperty("topics", NullValueHandling = NullValueHandling.Ignore)]
+        public List<SmnTopics> Topics { get; set; }
 
 
 
@@ -116,6 +248,9 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
             sb.Append("  actionRule: ").Append(ActionRule).Append("\n");
             sb.Append("  inhibitRule: ").Append(InhibitRule).Append("\n");
             sb.Append("  routeGroupRule: ").Append(RouteGroupRule).Append("\n");
+            sb.Append("  eventNames: ").Append(EventNames).Append("\n");
+            sb.Append("  migrated: ").Append(Migrated).Append("\n");
+            sb.Append("  topics: ").Append(Topics).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -202,6 +337,23 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
                     this.RouteGroupRule == input.RouteGroupRule ||
                     (this.RouteGroupRule != null &&
                     this.RouteGroupRule.Equals(input.RouteGroupRule))
+                ) && 
+                (
+                    this.EventNames == input.EventNames ||
+                    this.EventNames != null &&
+                    input.EventNames != null &&
+                    this.EventNames.SequenceEqual(input.EventNames)
+                ) && 
+                (
+                    this.Migrated == input.Migrated ||
+                    (this.Migrated != null &&
+                    this.Migrated.Equals(input.Migrated))
+                ) && 
+                (
+                    this.Topics == input.Topics ||
+                    this.Topics != null &&
+                    input.Topics != null &&
+                    this.Topics.SequenceEqual(input.Topics)
                 );
         }
 
@@ -239,6 +391,12 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
                     hashCode = hashCode * 59 + this.InhibitRule.GetHashCode();
                 if (this.RouteGroupRule != null)
                     hashCode = hashCode * 59 + this.RouteGroupRule.GetHashCode();
+                if (this.EventNames != null)
+                    hashCode = hashCode * 59 + this.EventNames.GetHashCode();
+                if (this.Migrated != null)
+                    hashCode = hashCode * 59 + this.Migrated.GetHashCode();
+                if (this.Topics != null)
+                    hashCode = hashCode * 59 + this.Topics.GetHashCode();
                 return hashCode;
             }
         }

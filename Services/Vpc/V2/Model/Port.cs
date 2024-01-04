@@ -400,6 +400,12 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         [JsonProperty("enable_efi", NullValueHandling = NullValueHandling.Ignore)]
         public bool? EnableEfi { get; set; }
 
+        /// <summary>
+        /// 功能说明：IPv6网卡绑定的共享带宽ID 约束：只有IPv6网卡绑定了共享带宽，才会显示此参数
+        /// </summary>
+        [JsonProperty("ipv6_bandwidth_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string Ipv6BandwidthId { get; set; }
+
 
 
         /// <summary>
@@ -432,6 +438,7 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
             sb.Append("  portSecurityEnabled: ").Append(PortSecurityEnabled).Append("\n");
             sb.Append("  zoneId: ").Append(ZoneId).Append("\n");
             sb.Append("  enableEfi: ").Append(EnableEfi).Append("\n");
+            sb.Append("  ipv6BandwidthId: ").Append(Ipv6BandwidthId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -572,6 +579,11 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
                     this.EnableEfi == input.EnableEfi ||
                     (this.EnableEfi != null &&
                     this.EnableEfi.Equals(input.EnableEfi))
+                ) && 
+                (
+                    this.Ipv6BandwidthId == input.Ipv6BandwidthId ||
+                    (this.Ipv6BandwidthId != null &&
+                    this.Ipv6BandwidthId.Equals(input.Ipv6BandwidthId))
                 );
         }
 
@@ -629,6 +641,8 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
                     hashCode = hashCode * 59 + this.ZoneId.GetHashCode();
                 if (this.EnableEfi != null)
                     hashCode = hashCode * 59 + this.EnableEfi.GetHashCode();
+                if (this.Ipv6BandwidthId != null)
+                    hashCode = hashCode * 59 + this.Ipv6BandwidthId.GetHashCode();
                 return hashCode;
             }
         }

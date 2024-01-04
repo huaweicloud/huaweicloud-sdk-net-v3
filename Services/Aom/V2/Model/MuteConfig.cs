@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
     public class MuteConfig 
     {
         /// <summary>
-        /// 静默规则生效时间种类。FIXED:固定方式统计,DAILY:按日合计,WEEKLY:按周统计,MONTHLY:按月统计
+        /// 静默规则生效时间种类。FIXED：固定方式统计，DAILY：按日合计，WEEKLY：按周统计，MONTHLY：按月统计
         /// </summary>
-        /// <value>静默规则生效时间种类。FIXED:固定方式统计,DAILY:按日合计,WEEKLY:按周统计,MONTHLY:按月统计</value>
+        /// <value>静默规则生效时间种类。FIXED：固定方式统计，DAILY：按日合计，WEEKLY：按周统计，MONTHLY：按月统计</value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -153,7 +153,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// 当type为每周或者每月时，scope不能为空
         /// </summary>
         [JsonProperty("scope", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> Scope { get; set; }
+        public List<int?> Scope { get; set; }
 
         /// <summary>
         /// 静默规则开始时间
@@ -162,7 +162,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         public long? StartsAt { get; set; }
 
         /// <summary>
-        /// 静默规则生效时间种类。FIXED:固定方式统计,DAILY:按日合计,WEEKLY:按周统计,MONTHLY:按月统计
+        /// 静默规则生效时间种类。FIXED：固定方式统计，DAILY：按日合计，WEEKLY：按周统计，MONTHLY：按月统计
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }

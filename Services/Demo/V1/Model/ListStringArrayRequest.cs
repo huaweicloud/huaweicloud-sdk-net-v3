@@ -8,12 +8,12 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Lts.V2.Model
+namespace HuaweiCloud.SDK.Demo.V1.Model
 {
     /// <summary>
-    /// 此参数在请求实体中，采用json字符串格式。
+    /// Request Object
     /// </summary>
-    public class QueryLtsStructLogResponseBodyNew 
+    public class ListStringArrayRequest 
     {
 
 

@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 指标数据的值。
+        /// 维度取值。
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public string Value { get; set; }

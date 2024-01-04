@@ -17,10 +17,10 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     {
 
         /// <summary>
-        /// 指定集群配置项列表返回体，非实际返回参数
+        /// 获取指定集群配置项列表返回体
         /// </summary>
-        [JsonProperty("responses", NullValueHandling = NullValueHandling.Ignore)]
-        public Dictionary<string, List<PackageOptions>> Responses { get; set; }
+        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
+        public Dictionary<string, List<PackageOptions>> Body { get; set; }
 
 
 
@@ -31,7 +31,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ShowClusterConfigurationDetailsResponse {\n");
-            sb.Append("  responses: ").Append(Responses).Append("\n");
+            sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -54,10 +54,10 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
             return 
                 (
-                    this.Responses == input.Responses ||
-                    this.Responses != null &&
-                    input.Responses != null &&
-                    this.Responses.SequenceEqual(input.Responses)
+                    this.Body == input.Body ||
+                    this.Body != null &&
+                    input.Body != null &&
+                    this.Body.SequenceEqual(input.Body)
                 );
         }
 
@@ -69,8 +69,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Responses != null)
-                    hashCode = hashCode * 59 + this.Responses.GetHashCode();
+                if (this.Body != null)
+                    hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;
             }
         }
