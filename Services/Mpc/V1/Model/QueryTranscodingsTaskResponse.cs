@@ -173,6 +173,12 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
         /// <summary>
+        /// 任务执行进度百分比, 取值范围：[0, 100]。 
+        /// </summary>
+        [JsonProperty("progress", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Progress { get; set; }
+
+        /// <summary>
         /// 转码任务启动时间 
         /// </summary>
         [JsonProperty("create_time", NullValueHandling = NullValueHandling.Ignore)]
@@ -273,6 +279,7 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
             sb.Append("class QueryTranscodingsTaskResponse {\n");
             sb.Append("  taskId: ").Append(TaskId).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
+            sb.Append("  progress: ").Append(Progress).Append("\n");
             sb.Append("  createTime: ").Append(CreateTime).Append("\n");
             sb.Append("  endTime: ").Append(EndTime).Append("\n");
             sb.Append("  transTemplateId: ").Append(TransTemplateId).Append("\n");
@@ -318,6 +325,11 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
                     this.Status == input.Status ||
                     (this.Status != null &&
                     this.Status.Equals(input.Status))
+                ) && 
+                (
+                    this.Progress == input.Progress ||
+                    (this.Progress != null &&
+                    this.Progress.Equals(input.Progress))
                 ) && 
                 (
                     this.CreateTime == input.CreateTime ||
@@ -412,6 +424,8 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
                     hashCode = hashCode * 59 + this.TaskId.GetHashCode();
                 if (this.Status != null)
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Progress != null)
+                    hashCode = hashCode * 59 + this.Progress.GetHashCode();
                 if (this.CreateTime != null)
                     hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
                 if (this.EndTime != null)

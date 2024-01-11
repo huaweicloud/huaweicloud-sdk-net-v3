@@ -40,6 +40,12 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }
 
+        /// <summary>
+        /// 用于标识SMB服务
+        /// </summary>
+        [JsonProperty("sys_lock_source_service", NullValueHandling = NullValueHandling.Ignore)]
+        public string SysLockSourceService { get; set; }
+
 
 
         /// <summary>
@@ -53,6 +59,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             sb.Append("  count: ").Append(Count).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
+            sb.Append("  sysLockSourceService: ").Append(SysLockSourceService).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -94,6 +101,11 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                     this.Offset == input.Offset ||
                     (this.Offset != null &&
                     this.Offset.Equals(input.Offset))
+                ) && 
+                (
+                    this.SysLockSourceService == input.SysLockSourceService ||
+                    (this.SysLockSourceService != null &&
+                    this.SysLockSourceService.Equals(input.SysLockSourceService))
                 );
         }
 
@@ -113,6 +125,8 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                     hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.Offset != null)
                     hashCode = hashCode * 59 + this.Offset.GetHashCode();
+                if (this.SysLockSourceService != null)
+                    hashCode = hashCode * 59 + this.SysLockSourceService.GetHashCode();
                 return hashCode;
             }
         }

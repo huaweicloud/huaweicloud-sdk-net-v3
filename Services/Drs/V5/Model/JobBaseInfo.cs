@@ -137,9 +137,9 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         }
 
         /// <summary>
-        /// 引擎类型。取值： - oracle-to-gaussdbv5：Oracle同步到GaussDB分布式版，实时同步场景使用。
+        /// 引擎类型。取值： - oracle-to-gaussdbv5：Oracle同步到GaussDB分布式版，实时同步场景使用。 - redis-to-gaussredis：Redis同步到GeminiDB Redis，实时迁移场景使用。 - rediscluster-to-gaussredis：Redis集群同步到GeminiDB Redis，实时迁移场景使用。
         /// </summary>
-        /// <value>引擎类型。取值： - oracle-to-gaussdbv5：Oracle同步到GaussDB分布式版，实时同步场景使用。</value>
+        /// <value>引擎类型。取值： - oracle-to-gaussdbv5：Oracle同步到GaussDB分布式版，实时同步场景使用。 - redis-to-gaussredis：Redis同步到GeminiDB Redis，实时迁移场景使用。 - rediscluster-to-gaussredis：Redis集群同步到GeminiDB Redis，实时迁移场景使用。</value>
         [JsonConverter(typeof(EnumClassConverter<EngineTypeEnum>))]
         public class EngineTypeEnum
         {
@@ -148,10 +148,22 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             /// </summary>
             public static readonly EngineTypeEnum ORACLE_TO_GAUSSDBV5 = new EngineTypeEnum("oracle-to-gaussdbv5");
 
+            /// <summary>
+            /// Enum REDIS_TO_GAUSSREDIS for value: redis-to-gaussredis
+            /// </summary>
+            public static readonly EngineTypeEnum REDIS_TO_GAUSSREDIS = new EngineTypeEnum("redis-to-gaussredis");
+
+            /// <summary>
+            /// Enum REDISCLUSTER_TO_GAUSSREDIS for value: rediscluster-to-gaussredis
+            /// </summary>
+            public static readonly EngineTypeEnum REDISCLUSTER_TO_GAUSSREDIS = new EngineTypeEnum("rediscluster-to-gaussredis");
+
             private static readonly Dictionary<string, EngineTypeEnum> StaticFields =
             new Dictionary<string, EngineTypeEnum>()
             {
                 { "oracle-to-gaussdbv5", ORACLE_TO_GAUSSDBV5 },
+                { "redis-to-gaussredis", REDIS_TO_GAUSSREDIS },
+                { "rediscluster-to-gaussredis", REDISCLUSTER_TO_GAUSSREDIS },
             };
 
             private string _value;
@@ -742,7 +754,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         public bool? MultiWrite { get; set; }
 
         /// <summary>
-        /// 引擎类型。取值： - oracle-to-gaussdbv5：Oracle同步到GaussDB分布式版，实时同步场景使用。
+        /// 引擎类型。取值： - oracle-to-gaussdbv5：Oracle同步到GaussDB分布式版，实时同步场景使用。 - redis-to-gaussredis：Redis同步到GeminiDB Redis，实时迁移场景使用。 - rediscluster-to-gaussredis：Redis集群同步到GeminiDB Redis，实时迁移场景使用。
         /// </summary>
         [JsonProperty("engine_type", NullValueHandling = NullValueHandling.Ignore)]
         public EngineTypeEnum EngineType { get; set; }

@@ -107,7 +107,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public int? SecurityPolicy { get; set; }
 
         /// <summary>
-        /// 单个LB实例下的监听器配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+        /// 单个LB实例下的监听器配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。  &gt; 当前单个 LB下监听器配额实际未限制，但建议不要超过默认配额。
         /// </summary>
         [JsonProperty("listeners_per_loadbalancer", NullValueHandling = NullValueHandling.Ignore)]
         public int? ListenersPerLoadbalancer { get; set; }

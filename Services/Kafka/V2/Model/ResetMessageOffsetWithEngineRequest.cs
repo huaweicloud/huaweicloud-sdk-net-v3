@@ -17,13 +17,6 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// 引擎。
-        /// </summary>
-        [SDKProperty("engine", IsPath = true)]
-        [JsonProperty("engine", NullValueHandling = NullValueHandling.Ignore)]
-        public string Engine { get; set; }
-
-        /// <summary>
         /// 实例ID。
         /// </summary>
         [SDKProperty("instance_id", IsPath = true)]
@@ -53,7 +46,6 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ResetMessageOffsetWithEngineRequest {\n");
-            sb.Append("  engine: ").Append(Engine).Append("\n");
             sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
             sb.Append("  group: ").Append(Group).Append("\n");
             sb.Append("  body: ").Append(Body).Append("\n");
@@ -79,11 +71,6 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
 
             return 
                 (
-                    this.Engine == input.Engine ||
-                    (this.Engine != null &&
-                    this.Engine.Equals(input.Engine))
-                ) && 
-                (
                     this.InstanceId == input.InstanceId ||
                     (this.InstanceId != null &&
                     this.InstanceId.Equals(input.InstanceId))
@@ -108,8 +95,6 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Engine != null)
-                    hashCode = hashCode * 59 + this.Engine.GetHashCode();
                 if (this.InstanceId != null)
                     hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
                 if (this.Group != null)

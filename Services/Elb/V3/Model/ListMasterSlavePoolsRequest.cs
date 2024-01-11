@@ -142,6 +142,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Type { get; set; }
 
+        /// <summary>
+        /// 查询是否开启延迟注销的功能，查询条件格式：*connection_drain&#x3D;true或者*connection_drain&#x3D;false
+        /// </summary>
+        [SDKProperty("connection_drain", IsQuery = true)]
+        [JsonProperty("connection_drain", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? ConnectionDrain { get; set; }
+
 
 
         /// <summary>
@@ -169,6 +176,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  memberInstanceId: ").Append(MemberInstanceId).Append("\n");
             sb.Append("  vpcId: ").Append(VpcId).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
+            sb.Append("  connectionDrain: ").Append(ConnectionDrain).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -294,6 +302,11 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.Type != null &&
                     input.Type != null &&
                     this.Type.SequenceEqual(input.Type)
+                ) && 
+                (
+                    this.ConnectionDrain == input.ConnectionDrain ||
+                    (this.ConnectionDrain != null &&
+                    this.ConnectionDrain.Equals(input.ConnectionDrain))
                 );
         }
 
@@ -341,6 +354,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     hashCode = hashCode * 59 + this.VpcId.GetHashCode();
                 if (this.Type != null)
                     hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.ConnectionDrain != null)
+                    hashCode = hashCode * 59 + this.ConnectionDrain.GetHashCode();
                 return hashCode;
             }
         }

@@ -39,6 +39,34 @@ namespace HuaweiCloud.SDK.Drs.V5
         }
         
         /// <summary>
+        /// 批量添加资源标签
+        ///
+        /// 批量添加资源标签。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public BatchCreateTagsResponse BatchCreateTags(BatchCreateTagsRequest batchCreateTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type", batchCreateTagsRequest.ResourceType.ToString());
+            urlParam.Add("resource_id", batchCreateTagsRequest.ResourceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/{resource_type}/{resource_id}/tags/create", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateTagsRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<BatchCreateTagsResponse>(response);
+        }
+
+        public SyncInvoker<BatchCreateTagsResponse> BatchCreateTagsInvoker(BatchCreateTagsRequest batchCreateTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type", batchCreateTagsRequest.ResourceType.ToString());
+            urlParam.Add("resource_id", batchCreateTagsRequest.ResourceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/{resource_type}/{resource_id}/tags/create", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateTagsRequest);
+            return new SyncInvoker<BatchCreateTagsResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchCreateTagsResponse>);
+        }
+        
+        /// <summary>
         /// 批量删除任务
         ///
         /// 批量删除租户指定ID任务。
@@ -60,6 +88,34 @@ namespace HuaweiCloud.SDK.Drs.V5
             var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteJobsByIdRequest);
             return new SyncInvoker<BatchDeleteJobsByIdResponse>(this, "DELETE", request, JsonUtils.DeSerialize<BatchDeleteJobsByIdResponse>);
+        }
+        
+        /// <summary>
+        /// 批量删除资源标签
+        ///
+        /// 为指定实例批量删除标签。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public BatchDeleteTagsResponse BatchDeleteTags(BatchDeleteTagsRequest batchDeleteTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type", batchDeleteTagsRequest.ResourceType.ToString());
+            urlParam.Add("resource_id", batchDeleteTagsRequest.ResourceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/{resource_type}/{resource_id}/tags/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteTagsRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<BatchDeleteTagsResponse>(response);
+        }
+
+        public SyncInvoker<BatchDeleteTagsResponse> BatchDeleteTagsInvoker(BatchDeleteTagsRequest batchDeleteTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type", batchDeleteTagsRequest.ResourceType.ToString());
+            urlParam.Add("resource_id", batchDeleteTagsRequest.ResourceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/{resource_type}/{resource_id}/tags/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteTagsRequest);
+            return new SyncInvoker<BatchDeleteTagsResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchDeleteTagsResponse>);
         }
         
         /// <summary>
@@ -322,6 +378,32 @@ namespace HuaweiCloud.SDK.Drs.V5
             var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/clone", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", copyJobRequest);
             return new SyncInvoker<CopyJobResponse>(this, "POST", request, JsonUtils.DeSerialize<CopyJobResponse>);
+        }
+        
+        /// <summary>
+        /// 查询资源实例数量
+        ///
+        /// 查询资源实例数量。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CountInstanceByTagsResponse CountInstanceByTags(CountInstanceByTagsRequest countInstanceByTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type", countInstanceByTagsRequest.ResourceType.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/{resource_type}/resource-instances/count", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", countInstanceByTagsRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CountInstanceByTagsResponse>(response);
+        }
+
+        public SyncInvoker<CountInstanceByTagsResponse> CountInstanceByTagsInvoker(CountInstanceByTagsRequest countInstanceByTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type", countInstanceByTagsRequest.ResourceType.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/{resource_type}/resource-instances/count", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", countInstanceByTagsRequest);
+            return new SyncInvoker<CountInstanceByTagsResponse>(this, "POST", request, JsonUtils.DeSerialize<CountInstanceByTagsResponse>);
         }
         
         /// <summary>
@@ -601,6 +683,60 @@ namespace HuaweiCloud.SDK.Drs.V5
         }
         
         /// <summary>
+        /// 查询资源实例列表
+        ///
+        /// 查询资源实例列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListInstanceByTagsResponse ListInstanceByTags(ListInstanceByTagsRequest listInstanceByTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type", listInstanceByTagsRequest.ResourceType.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/{resource_type}/resource-instances/filter", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceByTagsRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<ListInstanceByTagsResponse>(response);
+        }
+
+        public SyncInvoker<ListInstanceByTagsResponse> ListInstanceByTagsInvoker(ListInstanceByTagsRequest listInstanceByTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type", listInstanceByTagsRequest.ResourceType.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/{resource_type}/resource-instances/filter", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceByTagsRequest);
+            return new SyncInvoker<ListInstanceByTagsResponse>(this, "POST", request, JsonUtils.DeSerialize<ListInstanceByTagsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询资源标签
+        ///
+        /// 查询指定实例的标签信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListInstanceTagsResponse ListInstanceTags(ListInstanceTagsRequest listInstanceTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type", listInstanceTagsRequest.ResourceType.ToString());
+            urlParam.Add("resource_id", listInstanceTagsRequest.ResourceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/{resource_type}/{resource_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceTagsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListInstanceTagsResponse>(response);
+        }
+
+        public SyncInvoker<ListInstanceTagsResponse> ListInstanceTagsInvoker(ListInstanceTagsRequest listInstanceTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type", listInstanceTagsRequest.ResourceType.ToString());
+            urlParam.Add("resource_id", listInstanceTagsRequest.ResourceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/{resource_type}/{resource_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceTagsRequest);
+            return new SyncInvoker<ListInstanceTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceTagsResponse>);
+        }
+        
+        /// <summary>
         /// 查询驱动文件列表
         ///
         /// 查询驱动文件列表。
@@ -622,6 +758,60 @@ namespace HuaweiCloud.SDK.Drs.V5
             var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jdbc-drivers", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listJdbcDriversRequest);
             return new SyncInvoker<ListJdbcDriversResponse>(this, "GET", request, JsonUtils.DeSerialize<ListJdbcDriversResponse>);
+        }
+        
+        /// <summary>
+        /// 查询任务的参数配置修改历史
+        ///
+        /// 查询任务的参数配置修改历史
+        /// - 仅engine_type为mysql、mysql-to-pgl、mysql-to-gaussdbv5、mysql-to-gaussdbv5ha、mysql-to-dws、mysql-to-taurus、mysql-to-kafka、mysql-to-elasticsearch、mysql-to-oracle且任务状态只能为配置中、全量中、增量中、全量失败、增量失败、暂停中的实时同步任务支持。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListJobHistoryParametersResponse ListJobHistoryParameters(ListJobHistoryParametersRequest listJobHistoryParametersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", listJobHistoryParametersRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/configuration-histories", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listJobHistoryParametersRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListJobHistoryParametersResponse>(response);
+        }
+
+        public SyncInvoker<ListJobHistoryParametersResponse> ListJobHistoryParametersInvoker(ListJobHistoryParametersRequest listJobHistoryParametersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", listJobHistoryParametersRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/configuration-histories", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listJobHistoryParametersRequest);
+            return new SyncInvoker<ListJobHistoryParametersResponse>(this, "GET", request, JsonUtils.DeSerialize<ListJobHistoryParametersResponse>);
+        }
+        
+        /// <summary>
+        /// 查询任务参数配置列表
+        ///
+        /// 查询任务的参数配置列表信息
+        /// - 仅engine_type为mysql、mysql-to-pgl、mysql-to-gaussdbv5、mysql-to-gaussdbv5ha、mysql-to-dws、mysql-to-taurus、mysql-to-kafka、mysql-to-elasticsearch、mysql-to-oracle且任务状态只能为配置中、全量中、增量中、全量失败、增量失败、暂停中的实时同步任务支持。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListJobParametersResponse ListJobParameters(ListJobParametersRequest listJobParametersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", listJobParametersRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/configurations", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listJobParametersRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListJobParametersResponse>(response);
+        }
+
+        public SyncInvoker<ListJobParametersResponse> ListJobParametersInvoker(ListJobParametersRequest listJobParametersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", listJobParametersRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/configurations", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listJobParametersRequest);
+            return new SyncInvoker<ListJobParametersResponse>(this, "GET", request, JsonUtils.DeSerialize<ListJobParametersResponse>);
         }
         
         /// <summary>
@@ -696,6 +886,32 @@ namespace HuaweiCloud.SDK.Drs.V5
             var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{resource_type}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProjectTagsRequest);
             return new SyncInvoker<ListProjectTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListProjectTagsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询项目标签
+        ///
+        /// 查询租户在指定Project中实例类型的所有资源标签集合。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListTagsResponse ListTags(ListTagsRequest listTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type", listTagsRequest.ResourceType.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/{resource_type}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTagsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListTagsResponse>(response);
+        }
+
+        public SyncInvoker<ListTagsResponse> ListTagsInvoker(ListTagsRequest listTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type", listTagsRequest.ResourceType.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/{resource_type}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTagsRequest);
+            return new SyncInvoker<ListTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListTagsResponse>);
         }
         
         /// <summary>
@@ -1225,7 +1441,7 @@ namespace HuaweiCloud.SDK.Drs.V5
         ///
         /// 查询不同迁移对象类型的迁移进度。
         /// 说明：
-        /// - 目前仅MySQL-&gt;MySQL、MySQL-&gt;GaussDB(for MySQL)、MongoDB-&gt;DDS、DDS-&gt;MongoDB的迁移支持查看迁移明细。
+        /// - 目前仅MySQL-&gt;MySQL、MySQL-&gt;GaussDB(for MySQL)、MongoDB-&gt;DDS、DDS-&gt;MongoDB的实时迁移和所有实时同步链路支持查看迁移明细。
         /// - 在任务未结束前，不能修改源库和目标库的所有用户、密码和用户权限等。
         /// - 全量、增量完成不代表任务结束，如果存在触发器和事件将会进行迁移。
         /// 
@@ -1433,6 +1649,33 @@ namespace HuaweiCloud.SDK.Drs.V5
             var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateJobRequest);
             return new SyncInvoker<UpdateJobResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateJobResponse>);
+        }
+        
+        /// <summary>
+        /// 更新任务的参数信息
+        ///
+        /// 更新任务的参数信息。
+        /// - 仅engine_type为mysql、mysql-to-pgl、mysql-to-gaussdbv5、mysql-to-gaussdbv5ha、mysql-to-dws、mysql-to-taurus、mysql-to-kafka、mysql-to-elasticsearch、mysql-to-oracle且任务状态只能为配置中、全量中、增量中、全量失败、增量失败、暂停中的实时同步任务支持。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateJobConfigurationsResponse UpdateJobConfigurations(UpdateJobConfigurationsRequest updateJobConfigurationsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", updateJobConfigurationsRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/modify-configuration", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateJobConfigurationsRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateJobConfigurationsResponse>(response);
+        }
+
+        public SyncInvoker<UpdateJobConfigurationsResponse> UpdateJobConfigurationsInvoker(UpdateJobConfigurationsRequest updateJobConfigurationsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", updateJobConfigurationsRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/modify-configuration", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateJobConfigurationsRequest);
+            return new SyncInvoker<UpdateJobConfigurationsResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateJobConfigurationsResponse>);
         }
         
         /// <summary>

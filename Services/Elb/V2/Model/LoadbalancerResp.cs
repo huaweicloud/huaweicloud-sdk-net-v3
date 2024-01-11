@@ -376,6 +376,24 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Tags { get; set; }
 
+        /// <summary>
+        /// 负载均衡器绑定的公网IP。只支持绑定一个公网IP。
+        /// </summary>
+        [JsonProperty("publicips", NullValueHandling = NullValueHandling.Ignore)]
+        public List<PublicIpInfo> Publicips { get; set; }
+
+        /// <summary>
+        /// 收费模式。取值：  flavor：按规格计费 lcu：按使用量计费 说明：不影响弹性扩缩容实例、包周期实例的计费方式
+        /// </summary>
+        [JsonProperty("charge_mode", NullValueHandling = NullValueHandling.Ignore)]
+        public string ChargeMode { get; set; }
+
+        /// <summary>
+        /// 负载均衡器的冻结场景。若负载均衡器有多个冻结场景，用逗号分隔。取值：  POLICE：公安冻结场景。 ILLEGAL：违规冻结场景。 VERIFY：客户未实名认证冻结场景。 PARTNER：合作伙伴冻结（合作伙伴冻结子客户资源）。 AREAR：欠费冻结场景。
+        /// </summary>
+        [JsonProperty("frozen_scene", NullValueHandling = NullValueHandling.Ignore)]
+        public string FrozenScene { get; set; }
+
 
 
         /// <summary>
@@ -403,6 +421,9 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  projectId: ").Append(ProjectId).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
+            sb.Append("  publicips: ").Append(Publicips).Append("\n");
+            sb.Append("  chargeMode: ").Append(ChargeMode).Append("\n");
+            sb.Append("  frozenScene: ").Append(FrozenScene).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -516,6 +537,22 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
                     this.Tags != null &&
                     input.Tags != null &&
                     this.Tags.SequenceEqual(input.Tags)
+                ) && 
+                (
+                    this.Publicips == input.Publicips ||
+                    this.Publicips != null &&
+                    input.Publicips != null &&
+                    this.Publicips.SequenceEqual(input.Publicips)
+                ) && 
+                (
+                    this.ChargeMode == input.ChargeMode ||
+                    (this.ChargeMode != null &&
+                    this.ChargeMode.Equals(input.ChargeMode))
+                ) && 
+                (
+                    this.FrozenScene == input.FrozenScene ||
+                    (this.FrozenScene != null &&
+                    this.FrozenScene.Equals(input.FrozenScene))
                 );
         }
 
@@ -563,6 +600,12 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
                     hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
                 if (this.Tags != null)
                     hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.Publicips != null)
+                    hashCode = hashCode * 59 + this.Publicips.GetHashCode();
+                if (this.ChargeMode != null)
+                    hashCode = hashCode * 59 + this.ChargeMode.GetHashCode();
+                if (this.FrozenScene != null)
+                    hashCode = hashCode * 59 + this.FrozenScene.GetHashCode();
                 return hashCode;
             }
         }

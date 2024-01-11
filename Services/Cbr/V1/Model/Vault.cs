@@ -112,6 +112,12 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         [JsonProperty("threshold", NullValueHandling = NullValueHandling.Ignore)]
         public int? Threshold { get; set; }
 
+        /// <summary>
+        /// 用于标识SMB服务
+        /// </summary>
+        [JsonProperty("sys_lock_source_service", NullValueHandling = NullValueHandling.Ignore)]
+        public string SysLockSourceService { get; set; }
+
 
 
         /// <summary>
@@ -137,6 +143,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             sb.Append("  autoExpand: ").Append(AutoExpand).Append("\n");
             sb.Append("  smnNotify: ").Append(SmnNotify).Append("\n");
             sb.Append("  threshold: ").Append(Threshold).Append("\n");
+            sb.Append("  sysLockSourceService: ").Append(SysLockSourceService).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -239,6 +246,11 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                     this.Threshold == input.Threshold ||
                     (this.Threshold != null &&
                     this.Threshold.Equals(input.Threshold))
+                ) && 
+                (
+                    this.SysLockSourceService == input.SysLockSourceService ||
+                    (this.SysLockSourceService != null &&
+                    this.SysLockSourceService.Equals(input.SysLockSourceService))
                 );
         }
 
@@ -282,6 +294,8 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                     hashCode = hashCode * 59 + this.SmnNotify.GetHashCode();
                 if (this.Threshold != null)
                     hashCode = hashCode * 59 + this.Threshold.GetHashCode();
+                if (this.SysLockSourceService != null)
+                    hashCode = hashCode * 59 + this.SysLockSourceService.GetHashCode();
                 return hashCode;
             }
         }

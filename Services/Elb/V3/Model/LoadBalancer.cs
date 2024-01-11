@@ -265,7 +265,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string ProvisioningStatus { get; set; }
 
         /// <summary>
-        /// 负载均衡器的管理状态。取值：false停用，true启用。
+        /// 负载均衡器的启用状态。取值：false停用，true启用。
         /// </summary>
         [JsonProperty("admin_state_up", NullValueHandling = NullValueHandling.Ignore)]
         public bool? AdminStateUp { get; set; }
@@ -397,7 +397,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string BillingInfo { get; set; }
 
         /// <summary>
-        /// 四层Flavor ID。  对于弹性扩缩容实例，表示上限规格。  当传入的规格类型为L4，表示该实例为固定规格实例，按规格计费； 当传入的规格类型为L4_elastic_max，表示该实例为弹性实例，按LCU计费  [hsco场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:hcso,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b)
+        /// 网络型规格ID。  对于弹性扩缩容实例，表示上限规格。  当传入的规格类型为L4，表示该实例为固定规格实例，按规格计费； 当传入的规格类型为L4_elastic_max，表示该实例为弹性实例，按LCU计费  [hsco场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:hcso,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b)
         /// </summary>
         [JsonProperty("l4_flavor_id", NullValueHandling = NullValueHandling.Ignore)]
         public string L4FlavorId { get; set; }
@@ -409,7 +409,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string L4ScaleFlavorId { get; set; }
 
         /// <summary>
-        /// 七层Flavor ID。 对于弹性扩缩容实例，表示上限规格ID。  当传入的规格类型为L7，表示该实例为固定规格实例，按规格计费； 当传入的规格类型为L7_elastic_max，表示该实例为弹性实例，按LCU计费  [hsco场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:hcso,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b)
+        /// 应用型ID。 对于弹性扩缩容实例，表示上限规格ID。  当传入的规格类型为L7，表示该实例为固定规格实例，按规格计费； 当传入的规格类型为L7_elastic_max，表示该实例为弹性实例，按LCU计费  [hsco场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:hcso,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b)
         /// </summary>
         [JsonProperty("l7_flavor_id", NullValueHandling = NullValueHandling.Ignore)]
         public string L7FlavorId { get; set; }

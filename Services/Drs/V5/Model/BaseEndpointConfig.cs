@@ -22,6 +22,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         [JsonProperty("is_target_readonly", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsTargetReadonly { get; set; }
 
+        /// <summary>
+        /// Redis集群到GeminiDB Redis迁移场景填写，连接源端Redis集群的子任务个数，输入值在1到16之间，且输入值不能大于源端Redis集群的分片个数，请根据源端Redis集群的规模合理选择。建议集群的每4个分片设置1个源端分片个数，即每1个子任务连接源端集群的4个分片。
+        /// </summary>
+        [JsonProperty("node_num", NullValueHandling = NullValueHandling.Ignore)]
+        public int? NodeNum { get; set; }
+
 
 
         /// <summary>
@@ -32,6 +38,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             var sb = new StringBuilder();
             sb.Append("class BaseEndpointConfig {\n");
             sb.Append("  isTargetReadonly: ").Append(IsTargetReadonly).Append("\n");
+            sb.Append("  nodeNum: ").Append(NodeNum).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -57,6 +64,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                     this.IsTargetReadonly == input.IsTargetReadonly ||
                     (this.IsTargetReadonly != null &&
                     this.IsTargetReadonly.Equals(input.IsTargetReadonly))
+                ) && 
+                (
+                    this.NodeNum == input.NodeNum ||
+                    (this.NodeNum != null &&
+                    this.NodeNum.Equals(input.NodeNum))
                 );
         }
 
@@ -70,6 +82,8 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                 int hashCode = 41;
                 if (this.IsTargetReadonly != null)
                     hashCode = hashCode * 59 + this.IsTargetReadonly.GetHashCode();
+                if (this.NodeNum != null)
+                    hashCode = hashCode * 59 + this.NodeNum.GetHashCode();
                 return hashCode;
             }
         }

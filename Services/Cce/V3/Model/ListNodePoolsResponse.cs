@@ -32,7 +32,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// /
         /// </summary>
         [JsonProperty("items", NullValueHandling = NullValueHandling.Ignore)]
-        public List<NodePool> Items { get; set; }
+        public List<NodePoolResp> Items { get; set; }
 
 
 

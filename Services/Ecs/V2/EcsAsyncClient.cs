@@ -1326,6 +1326,34 @@ namespace HuaweiCloud.SDK.Ecs.V2
         }
         
         /// <summary>
+        /// 查询指定云服务器网卡信息
+        ///
+        /// 根据网卡ID，查询云服务器网卡信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<NovaShowServerInterfaceResponse> NovaShowServerInterfaceAsync(NovaShowServerInterfaceRequest novaShowServerInterfaceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("port_id", novaShowServerInterfaceRequest.PortId.ToString());
+            urlParam.Add("server_id", novaShowServerInterfaceRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/{project_id}/servers/{server_id}/os-interface/{port_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", novaShowServerInterfaceRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<NovaShowServerInterfaceResponse>(response);
+        }
+
+        public AsyncInvoker<NovaShowServerInterfaceResponse> NovaShowServerInterfaceAsyncInvoker(NovaShowServerInterfaceRequest novaShowServerInterfaceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("port_id", novaShowServerInterfaceRequest.PortId.ToString());
+            urlParam.Add("server_id", novaShowServerInterfaceRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/{project_id}/servers/{server_id}/os-interface/{port_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", novaShowServerInterfaceRequest);
+            return new AsyncInvoker<NovaShowServerInterfaceResponse>(this, "GET", request, JsonUtils.DeSerialize<NovaShowServerInterfaceResponse>);
+        }
+        
+        /// <summary>
         /// 管理云服务器自动恢复动作
         ///
         /// 配置、删除云服务器自动恢复动作。

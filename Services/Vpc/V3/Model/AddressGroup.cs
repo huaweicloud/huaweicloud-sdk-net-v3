@@ -94,6 +94,12 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         [JsonProperty("status_message", NullValueHandling = NullValueHandling.Ignore)]
         public string StatusMessage { get; set; }
 
+        /// <summary>
+        /// 功能说明：地址组包含的地址集及其备注信息
+        /// </summary>
+        [JsonProperty("ip_extra_set", NullValueHandling = NullValueHandling.Ignore)]
+        public List<IpExtraSetRespOption> IpExtraSet { get; set; }
+
 
 
         /// <summary>
@@ -116,6 +122,7 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
             sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  statusMessage: ").Append(StatusMessage).Append("\n");
+            sb.Append("  ipExtraSet: ").Append(IpExtraSet).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -203,6 +210,12 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
                     this.StatusMessage == input.StatusMessage ||
                     (this.StatusMessage != null &&
                     this.StatusMessage.Equals(input.StatusMessage))
+                ) && 
+                (
+                    this.IpExtraSet == input.IpExtraSet ||
+                    this.IpExtraSet != null &&
+                    input.IpExtraSet != null &&
+                    this.IpExtraSet.SequenceEqual(input.IpExtraSet)
                 );
         }
 
@@ -240,6 +253,8 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.StatusMessage != null)
                     hashCode = hashCode * 59 + this.StatusMessage.GetHashCode();
+                if (this.IpExtraSet != null)
+                    hashCode = hashCode * 59 + this.IpExtraSet.GetHashCode();
                 return hashCode;
             }
         }

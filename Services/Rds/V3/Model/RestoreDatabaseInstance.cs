@@ -29,6 +29,12 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         public string InstanceId { get; set; }
 
         /// <summary>
+        /// 是否使用极速恢复，可先根据”获取实例是否能使用极速恢复“接口判断本次恢复是否能使用极速恢复。 如果实例使用了XA事务，采用极速恢复的方式会导致恢复失败！
+        /// </summary>
+        [JsonProperty("is_fast_restore", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsFastRestore { get; set; }
+
+        /// <summary>
         /// 库信息
         /// </summary>
         [JsonProperty("databases", NullValueHandling = NullValueHandling.Ignore)]
@@ -45,6 +51,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             sb.Append("class RestoreDatabaseInstance {\n");
             sb.Append("  restoreTime: ").Append(RestoreTime).Append("\n");
             sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
+            sb.Append("  isFastRestore: ").Append(IsFastRestore).Append("\n");
             sb.Append("  databases: ").Append(Databases).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -78,6 +85,11 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
                     this.InstanceId.Equals(input.InstanceId))
                 ) && 
                 (
+                    this.IsFastRestore == input.IsFastRestore ||
+                    (this.IsFastRestore != null &&
+                    this.IsFastRestore.Equals(input.IsFastRestore))
+                ) && 
+                (
                     this.Databases == input.Databases ||
                     this.Databases != null &&
                     input.Databases != null &&
@@ -97,6 +109,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
                     hashCode = hashCode * 59 + this.RestoreTime.GetHashCode();
                 if (this.InstanceId != null)
                     hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.IsFastRestore != null)
+                    hashCode = hashCode * 59 + this.IsFastRestore.GetHashCode();
                 if (this.Databases != null)
                     hashCode = hashCode * 59 + this.Databases.GetHashCode();
                 return hashCode;

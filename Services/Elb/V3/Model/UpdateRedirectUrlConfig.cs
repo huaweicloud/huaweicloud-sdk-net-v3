@@ -294,7 +294,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string Path { get; set; }
 
         /// <summary>
-        /// 重定向的查询字符串。默认${query}表示继承原值（即与被转发请求保持一致）。举例如下：  若该字段被设置为：${query}&amp;name&#x3D;my_name，则在转发符合条件的URL （如https://www.xxx.com:8080/elb?type&#x3D;loadbalancer， 此时${query}表示type&#x3D;loadbalancer）时，将会重定向到 https://www.xxx.com:8080/elb?type&#x3D;loadbalancer&amp;name&#x3D;my_name。其中$1，$2会匹配请求url通配符星号（*）。  只能包含英文字母、数字和特殊字符：!$&amp;&#39;()*+,-./:;&#x3D;?@^_&#x60;。字母区分大小写。
+        /// 重定向的查询字符串。默认${query}表示继承原值（即与被转发请求保持一致）。举例如下：  若该字段被设置为：${query}&amp;name&#x3D;my_name，则在转发符合条件的URL （如https://www.example.com:8080/elb?type&#x3D;loadbalancer， 此时${query}表示type&#x3D;loadbalancer）时，将会重定向到 https://www.example.com:8080/elb?type&#x3D;loadbalancer&amp;name&#x3D;my_name。其中$1，$2会匹配请求url通配符星号（*）。  只能包含英文字母、数字和特殊字符：!$&amp;&#39;()*+,-./:;&#x3D;?@^_&#x60;。字母区分大小写。
         /// </summary>
         [JsonProperty("query", NullValueHandling = NullValueHandling.Ignore)]
         public string Query { get; set; }

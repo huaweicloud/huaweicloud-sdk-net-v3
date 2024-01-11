@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
     public class BaseEndpoint 
     {
         /// <summary>
-        /// 数据库场景类型。取值： - oracle：云下自建Oracle数据库。 - ecs_oracle：华为云ECS自建Oracle数据库。 - cloud_gaussdbv5：华为云数据库GaussDB分布式。 - mysql：他云/本地自建MySQL数据库。 - ecs_mysql：华为云ECS自建MySQL数据库。 - cloud_mysql：华为云数据库RDS for MySQL。
+        /// 数据库场景类型。取值： - oracle：云下自建Oracle数据库。 - ecs_oracle：华为云ECS自建Oracle数据库。 - cloud_gaussdbv5：华为云数据库GaussDB分布式。 - mysql：他云/本地自建MySQL数据库。 - ecs_mysql：华为云ECS自建MySQL数据库。 - cloud_mysql：华为云数据库RDS for MySQL。 - redis：云下自建Redis数据。 - ecs_redis：华为云ECS自建Redis数据。 - rediscluster：云下自建Redis集群数据库。 - ecs_rediscluster：华为云ECS自建Redis集群数据库。 - cloud_gaussdb_redis：华为云数据库GeminiDB Redis。
         /// </summary>
-        /// <value>数据库场景类型。取值： - oracle：云下自建Oracle数据库。 - ecs_oracle：华为云ECS自建Oracle数据库。 - cloud_gaussdbv5：华为云数据库GaussDB分布式。 - mysql：他云/本地自建MySQL数据库。 - ecs_mysql：华为云ECS自建MySQL数据库。 - cloud_mysql：华为云数据库RDS for MySQL。</value>
+        /// <value>数据库场景类型。取值： - oracle：云下自建Oracle数据库。 - ecs_oracle：华为云ECS自建Oracle数据库。 - cloud_gaussdbv5：华为云数据库GaussDB分布式。 - mysql：他云/本地自建MySQL数据库。 - ecs_mysql：华为云ECS自建MySQL数据库。 - cloud_mysql：华为云数据库RDS for MySQL。 - redis：云下自建Redis数据。 - ecs_redis：华为云ECS自建Redis数据。 - rediscluster：云下自建Redis集群数据库。 - ecs_rediscluster：华为云ECS自建Redis集群数据库。 - cloud_gaussdb_redis：华为云数据库GeminiDB Redis。</value>
         [JsonConverter(typeof(EnumClassConverter<EndpointNameEnum>))]
         public class EndpointNameEnum
         {
@@ -52,6 +52,31 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             /// </summary>
             public static readonly EndpointNameEnum CLOUD_MYSQL = new EndpointNameEnum("cloud_mysql");
 
+            /// <summary>
+            /// Enum REDIS for value: redis
+            /// </summary>
+            public static readonly EndpointNameEnum REDIS = new EndpointNameEnum("redis");
+
+            /// <summary>
+            /// Enum ECS_REDIS for value: ecs_redis
+            /// </summary>
+            public static readonly EndpointNameEnum ECS_REDIS = new EndpointNameEnum("ecs_redis");
+
+            /// <summary>
+            /// Enum REDISCLUSTER for value: rediscluster
+            /// </summary>
+            public static readonly EndpointNameEnum REDISCLUSTER = new EndpointNameEnum("rediscluster");
+
+            /// <summary>
+            /// Enum ECS_REDISCLUSTER for value: ecs_rediscluster
+            /// </summary>
+            public static readonly EndpointNameEnum ECS_REDISCLUSTER = new EndpointNameEnum("ecs_rediscluster");
+
+            /// <summary>
+            /// Enum CLOUD_GAUSSDB_REDIS for value: cloud_gaussdb_redis
+            /// </summary>
+            public static readonly EndpointNameEnum CLOUD_GAUSSDB_REDIS = new EndpointNameEnum("cloud_gaussdb_redis");
+
             private static readonly Dictionary<string, EndpointNameEnum> StaticFields =
             new Dictionary<string, EndpointNameEnum>()
             {
@@ -61,6 +86,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                 { "mysql", MYSQL },
                 { "ecs_mysql", ECS_MYSQL },
                 { "cloud_mysql", CLOUD_MYSQL },
+                { "redis", REDIS },
+                { "ecs_redis", ECS_REDIS },
+                { "rediscluster", REDISCLUSTER },
+                { "ecs_rediscluster", ECS_REDISCLUSTER },
+                { "cloud_gaussdb_redis", CLOUD_GAUSSDB_REDIS },
             };
 
             private string _value;
@@ -162,12 +192,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         public string Id { get; set; }
 
         /// <summary>
-        /// 数据库场景类型。取值： - oracle：云下自建Oracle数据库。 - ecs_oracle：华为云ECS自建Oracle数据库。 - cloud_gaussdbv5：华为云数据库GaussDB分布式。 - mysql：他云/本地自建MySQL数据库。 - ecs_mysql：华为云ECS自建MySQL数据库。 - cloud_mysql：华为云数据库RDS for MySQL。
+        /// 数据库场景类型。取值： - oracle：云下自建Oracle数据库。 - ecs_oracle：华为云ECS自建Oracle数据库。 - cloud_gaussdbv5：华为云数据库GaussDB分布式。 - mysql：他云/本地自建MySQL数据库。 - ecs_mysql：华为云ECS自建MySQL数据库。 - cloud_mysql：华为云数据库RDS for MySQL。 - redis：云下自建Redis数据。 - ecs_redis：华为云ECS自建Redis数据。 - rediscluster：云下自建Redis集群数据库。 - ecs_rediscluster：华为云ECS自建Redis集群数据库。 - cloud_gaussdb_redis：华为云数据库GeminiDB Redis。
         /// </summary>
         [JsonProperty("endpoint_name", NullValueHandling = NullValueHandling.Ignore)]
         public EndpointNameEnum EndpointName { get; set; }
         /// <summary>
-        /// 数据库IP。 约束： - 数据库为自建MongoDB时，数据库IP与端口之间用“:”英文冒号拼接，多个值之间请用“,”英文逗号隔开，最多支持填写3个IP地址或域名。 - 数据库为DDS实例时，数据库IP与端口之间用“:”英文冒号拼接，多个IP端口之间请用“,”英文逗号分隔。 示例： - MySQL：192.168.0.10 - MongoDB：192.168.0.10:8080,192.168.0.11:8080,192.168.0.12:8080 - DDS：192.168.205.130:8635,192.168.250.64:8635
+        /// 数据库IP。 约束： - 数据库为自建MongoDB时，数据库IP与端口之间用“:”英文冒号拼接，多个值之间请用“,”英文逗号隔开，最多支持填写3个IP地址或域名。 - 数据库为DDS实例时，数据库IP与端口之间用“:”英文冒号拼接，多个IP端口之间请用“,”英文逗号分隔。 - 数据库为Redis集群时，请填写源端Redis集群所有分片的IP地址和对应端口，数据库IP与端口之间用“:”英文冒号拼接，多个IP端口之间请用“,”英文逗号分隔，并且推荐填写集群分片的Slave节点的IP地址。最多支持填写32个IP地址或域名，多个值之间请用英文逗号隔开。 示例： - MySQL：192.168.0.10 - MongoDB：192.168.0.10:8080,192.168.0.11:8080,192.168.0.12:8080 - DDS：192.168.205.130:8635,192.168.250.64:8635  - Redis集群：192.168.0.1:8080,192.168.0.2:8080
         /// </summary>
         [JsonProperty("ip", NullValueHandling = NullValueHandling.Ignore)]
         public string Ip { get; set; }

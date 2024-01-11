@@ -410,13 +410,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string Provider { get; set; }
 
         /// <summary>
-        /// 四层Flavor ID。  [使用说明：当l4_flavor_id和l7_flavor_id都不传的时，会使用默认flavor （默认flavor根据不同局点有所不同，具体以实际值为准）。  当传入的规格类型为L4，表示该实例为固定规格实例，按规格计费；  当传入的规格类型为L4_elastic_max，表示该实例为弹性实例，按LCU计费 ](tag:hws,hws_hk,hws_eu,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb)  [只支持设置为l4_flavor.elb.shared。](tag:hcso_dt)  [所有LB实例共享带宽，该字段无效，请勿使用。](tag:hcso,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b)
+        /// 网络型规格ID。  [使用说明： - 可以通过GET https://{ELB_Endpoint}/v3/{project_id}/flavors?type&#x3D;L4 响应参数中的id得到。 - 当l4_flavor_id和l7_flavor_id都不传的时，会使用默认flavor （默认flavor根据不同局点有所不同，具体以实际值为准）。 - 当传入的规格类型为L4，表示该实例为固定规格实例，按规格计费。 - 当传入的规格类型为L4_elastic_max，表示该实例为弹性实例，按LCU计费。  ](tag:hws,hws_hk,hws_eu,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb)  [只支持设置为l4_flavor.elb.shared。](tag:hcso_dt)  [所有LB实例共享带宽，该字段无效，请勿使用。](tag:hcso,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b)
         /// </summary>
         [JsonProperty("l4_flavor_id", NullValueHandling = NullValueHandling.Ignore)]
         public string L4FlavorId { get; set; }
 
         /// <summary>
-        /// 七层Flavor ID。  [使用说明：当l4_flavor_id和l7_flavor_id都不传的时，会使用默认flavor （默认flavor根据不同局点有所不同，具体以实际值为准）。  当传入的规格类型为L7，表示该实例为固定规格实例，按规格计费；  当传入的规格类型为L7_elastic_max，表示该实例为弹性实例，按LCU计费 ](tag:hws,hws_hk,hws_eu,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb)  [只支持设置为l4_flavor.elb.shared。](tag:hcso_dt)  [所有LB实例共享带宽，该字段无效，请勿使用。](tag:hcso,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b)
+        /// 应用型规格ID。  [使用说明： - 可以通过GET https://{ELB_Endpoint}/v3/{project_id}/flavors?type&#x3D;L7 响应参数中的id得到。 - 当l4_flavor_id和l7_flavor_id都不传的时，会使用默认flavor （默认flavor根据不同局点有所不同，具体以实际值为准）。 - 当传入的规格类型为L7，表示该实例为固定规格实例，按规格计费。 - 当传入的规格类型为L7_elastic_max，表示该实例为弹性实例，按LCU计费。 ](tag:hws,hws_hk,hws_eu,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb)  [只支持设置为l7_flavor.elb.shared。](tag:hcso_dt)  [所有LB实例共享带宽，该字段无效，请勿使用。](tag:hcso,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b)
         /// </summary>
         [JsonProperty("l7_flavor_id", NullValueHandling = NullValueHandling.Ignore)]
         public string L7FlavorId { get; set; }
@@ -452,7 +452,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<Tag> Tags { get; set; }
 
         /// <summary>
-        /// 负载均衡器的管理状态。只能设置为true。默认：true。  [不支持该字段，请勿使用。](tag:dt,dt_test)
+        /// 负载均衡器的启用状态，true表示启用，false表示停用。只能设置为true。默认：true。  [不支持该字段，请勿使用。](tag:dt,dt_test)
         /// </summary>
         [JsonProperty("admin_state_up", NullValueHandling = NullValueHandling.Ignore)]
         public bool? AdminStateUp { get; set; }

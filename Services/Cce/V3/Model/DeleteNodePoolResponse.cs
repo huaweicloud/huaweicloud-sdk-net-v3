@@ -44,7 +44,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// 
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
-        public NodePoolStatus Status { get; set; }
+        public DeleteNodePoolStatus Status { get; set; }
 
 
 

@@ -240,7 +240,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public bool? EnableMemberRetry { get; set; }
 
         /// <summary>
-        /// 客户端连接空闲超时时间。在超过keepalive_timeout时长一直没有请求， 负载均衡会暂时中断当前连接，直到下一次请求时重新建立新的连接。  取值： - 若为TCP监听器，取值范围为（10-4000s）默认值为300s。 - 若为HTTP/HTTPS/TERMINATED_HTTPS监听器，取值范围为（0-4000s）默认值为60s。  UDP监听器不支持此字段。
+        /// 客户端连接空闲超时时间。在超过keepalive_timeout时长一直没有请求， 负载均衡会暂时中断当前连接，直到下一次请求时重新建立新的连接。  取值： - 若为TCP监听器，取值范围为（10-4000s）默认值为300s。 - 若为HTTP/HTTPS/TERMINATED_HTTPS监听器，取值范围为（0-4000s）默认值为60s。  共享型实例的UDP监听器不支持此字段。
         /// </summary>
         [JsonProperty("keepalive_timeout", NullValueHandling = NullValueHandling.Ignore)]
         public int? KeepaliveTimeout { get; set; }

@@ -137,6 +137,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         public string Status { get; set; }
 
         /// <summary>
+        /// 创建弹性云服务器时指定的user_data（编码过后的信息）。
+        /// </summary>
+        [JsonProperty("OS-EXT-SRV-ATTR:user_data", NullValueHandling = NullValueHandling.Ignore)]
+        public string OSEXTSRVATTRuserData { get; set; }
+
+        /// <summary>
         /// 弹性云服务器的主机名。
         /// </summary>
         [JsonProperty("OS-EXT-SRV-ATTR:hostname", NullValueHandling = NullValueHandling.Ignore)]
@@ -171,6 +177,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
+            sb.Append("  oSEXTSRVATTRuserData: ").Append(OSEXTSRVATTRuserData).Append("\n");
             sb.Append("  oSEXTSRVATTRhostname: ").Append(OSEXTSRVATTRhostname).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -298,6 +305,11 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     this.Status.Equals(input.Status))
                 ) && 
                 (
+                    this.OSEXTSRVATTRuserData == input.OSEXTSRVATTRuserData ||
+                    (this.OSEXTSRVATTRuserData != null &&
+                    this.OSEXTSRVATTRuserData.Equals(input.OSEXTSRVATTRuserData))
+                ) && 
+                (
                     this.OSEXTSRVATTRhostname == input.OSEXTSRVATTRhostname ||
                     (this.OSEXTSRVATTRhostname != null &&
                     this.OSEXTSRVATTRhostname.Equals(input.OSEXTSRVATTRhostname))
@@ -352,6 +364,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 if (this.Status != null)
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.OSEXTSRVATTRuserData != null)
+                    hashCode = hashCode * 59 + this.OSEXTSRVATTRuserData.GetHashCode();
                 if (this.OSEXTSRVATTRhostname != null)
                     hashCode = hashCode * 59 + this.OSEXTSRVATTRhostname.GetHashCode();
                 return hashCode;

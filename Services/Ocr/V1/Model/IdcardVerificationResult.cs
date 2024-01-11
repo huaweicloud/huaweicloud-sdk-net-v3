@@ -11,34 +11,40 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Ocr.V1.Model
 {
     /// <summary>
-    /// 校验信息。仅在输入参数return_verification为true时，返回该字段，该字段包含valid_number、valid_birth、valid_sex和valid_date的校验信息。
+    /// 
     /// </summary>
     public class IdcardVerificationResult 
     {
 
         /// <summary>
-        /// 身份证号规则校验是否通过。“true”表示身份证号规则校验通过，“false”表示身份证号规则校验不通过。当身份证图片是国徽面时，默认是false。仅在输入参数return_verification为true时，返回该字段。 
+        /// 身份证号规则校验是否通过。 - true：表示身份证号规则校验通过。 - false：表示身份证号规则校验不通过。 当识别结果为单页，身份证图片是国徽面时，默认是false。输入参数side为double_side时，该字典仅在front字段中存在。 仅在输入参数return_verification为true时，返回该字段。 
         /// </summary>
         [JsonProperty("valid_number", NullValueHandling = NullValueHandling.Ignore)]
         public bool? ValidNumber { get; set; }
 
         /// <summary>
-        /// 出生日期与身份证号所表示的出生日期是否一致。“true”表示一致，“false”表示不一致。当身份证图片是国徽面，或者身份证号规则校验不通过时，默认是false。仅在输入参数return_verification为true时，返回该字段。 
+        /// 出生日期与身份证号所表示的出生日期是否一致。 - true：出生日期与身份证号所表示的出生日期一致。 - false：出生日期与身份证号所表示的出生日期不一致。 当识别结果为单页，身份证图片是国徽面，或者身份证号规则校验不通过时，默认是false。输入参数side为double_side时，该字段仅在front字典中存在。 仅在输入参数return_verification为true时，返回该字段。 
         /// </summary>
         [JsonProperty("valid_birth", NullValueHandling = NullValueHandling.Ignore)]
         public bool? ValidBirth { get; set; }
 
         /// <summary>
-        /// 性别与身份证号所表示的性别信息是否一致。“true”表示一致，“false”表示不一致。当身份证图片是国徽面，或者身份证号规则校验不通过时，默认是false。仅在输入参数return_verification为true时，返回该字段。 
+        /// 性别与身份证号所表示的性别信息是否一致。 -true：性别与身份证号所表示的性别信息一致 -false：性别与身份证号所表示的性别信息不一致。 当识别结果为单页，身份证图片是国徽面，或者身份证号规则校验不通过时，默认是false。输入参数side为double_side时，该字段仅在front字典中存在。 仅在输入参数return_verification为true时，返回该字段。 
         /// </summary>
         [JsonProperty("valid_sex", NullValueHandling = NullValueHandling.Ignore)]
         public bool? ValidSex { get; set; }
 
         /// <summary>
-        /// 当前日期是否在有效期内。“true”表示当前日期在有效期内，“false”表示当前日期不在有效期内。当身份证图片是人像面时，默认是false。仅在输入参数return_verification为true时，返回该字段。 
+        /// 当前日期是否在有效期内。 - true：表示当前日期在有效期内。 - false：表示当前日期不在有效期内。 当识别结果为单页，身份证图片是人像面时，默认是false。输入参数side为double_side时，该字段仅在back字典中存在。 仅在输入参数return_verification为true时，返回该字段。 
         /// </summary>
         [JsonProperty("valid_date", NullValueHandling = NullValueHandling.Ignore)]
         public bool? ValidDate { get; set; }
+
+        /// <summary>
+        /// 身份证有效日期是否合法。 - true：表示身份证的有效日期合法 - false：表示身份证有效日期非法 当识别结果为单页，身份证图片是人像面时，默认是false。输入参数side为double_side时，该字段仅在back字典中存在。 仅在输入参数return_verification为true时，返回该字段。 
+        /// </summary>
+        [JsonProperty("valid_validity_period", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? ValidValidityPeriod { get; set; }
 
 
 
@@ -53,6 +59,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  validBirth: ").Append(ValidBirth).Append("\n");
             sb.Append("  validSex: ").Append(ValidSex).Append("\n");
             sb.Append("  validDate: ").Append(ValidDate).Append("\n");
+            sb.Append("  validValidityPeriod: ").Append(ValidValidityPeriod).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -93,6 +100,11 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     this.ValidDate == input.ValidDate ||
                     (this.ValidDate != null &&
                     this.ValidDate.Equals(input.ValidDate))
+                ) && 
+                (
+                    this.ValidValidityPeriod == input.ValidValidityPeriod ||
+                    (this.ValidValidityPeriod != null &&
+                    this.ValidValidityPeriod.Equals(input.ValidValidityPeriod))
                 );
         }
 
@@ -112,6 +124,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     hashCode = hashCode * 59 + this.ValidSex.GetHashCode();
                 if (this.ValidDate != null)
                     hashCode = hashCode * 59 + this.ValidDate.GetHashCode();
+                if (this.ValidValidityPeriod != null)
+                    hashCode = hashCode * 59 + this.ValidValidityPeriod.GetHashCode();
                 return hashCode;
             }
         }

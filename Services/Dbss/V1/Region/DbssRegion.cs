@@ -40,6 +40,18 @@ namespace HuaweiCloud.SDK.Dbss.V1
             "https://dbss.la-south-2.myhuaweicloud.com");
         public static readonly Region CN_NORTH_9 = new Region("cn-north-9",
             "https://dbss.cn-north-9.myhuaweicloud.com");
+        public static readonly Region CN_NORTH_11 = new Region("cn-north-11",
+            "https://dbss.cn-north-11.myhuaweicloud.com");
+        public static readonly Region ME_EAST_1 = new Region("me-east-1",
+            "https://dbss.me-east-1.myhuaweicloud.com");
+        public static readonly Region CN_SOUTH_4 = new Region("cn-south-4",
+            "https://dbss.cn-south-4.myhuaweicloud.com");
+        public static readonly Region AP_SOUTHEAST_4 = new Region("ap-southeast-4",
+            "https://dbss.ap-southeast-4.myhuaweicloud.com");
+        public static readonly Region TR_WEST_1 = new Region("tr-west-1",
+            "https://dbss.tr-west-1.myhuaweicloud.com");
+        public static readonly Region CN_EAST_5 = new Region("cn-east-5",
+            "https://dbss.cn-east-5.myhuaweicloud.com");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("DBSS");
 
@@ -62,6 +74,12 @@ namespace HuaweiCloud.SDK.Dbss.V1
                 { "cn-north-2", CN_NORTH_2 },
                 { "la-south-2", LA_SOUTH_2 },
                 { "cn-north-9", CN_NORTH_9 },
+                { "cn-north-11", CN_NORTH_11 },
+                { "me-east-1", ME_EAST_1 },
+                { "cn-south-4", CN_SOUTH_4 },
+                { "ap-southeast-4", AP_SOUTHEAST_4 },
+                { "tr-west-1", TR_WEST_1 },
+                { "cn-east-5", CN_EAST_5 },
         };
 
         public static Region ValueOf(string regionId)

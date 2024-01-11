@@ -124,6 +124,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         [JsonProperty("any_port_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? AnyPortEnable { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("connection_drain", NullValueHandling = NullValueHandling.Ignore)]
+        public ConnectionDrain ConnectionDrain { get; set; }
+
 
 
         /// <summary>
@@ -151,6 +157,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  healthmonitor: ").Append(Healthmonitor).Append("\n");
             sb.Append("  anyPortEnable: ").Append(AnyPortEnable).Append("\n");
+            sb.Append("  connectionDrain: ").Append(ConnectionDrain).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -264,6 +271,11 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.AnyPortEnable == input.AnyPortEnable ||
                     (this.AnyPortEnable != null &&
                     this.AnyPortEnable.Equals(input.AnyPortEnable))
+                ) && 
+                (
+                    this.ConnectionDrain == input.ConnectionDrain ||
+                    (this.ConnectionDrain != null &&
+                    this.ConnectionDrain.Equals(input.ConnectionDrain))
                 );
         }
 
@@ -311,6 +323,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     hashCode = hashCode * 59 + this.Healthmonitor.GetHashCode();
                 if (this.AnyPortEnable != null)
                     hashCode = hashCode * 59 + this.AnyPortEnable.GetHashCode();
+                if (this.ConnectionDrain != null)
+                    hashCode = hashCode * 59 + this.ConnectionDrain.GetHashCode();
                 return hashCode;
             }
         }

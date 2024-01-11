@@ -142,6 +142,121 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
             }
         }
 
+        /// <summary>
+        /// 修改保护状态, 取值： - nonProtection: 不保护，默认值为nonProtection - consoleProtection: 控制台修改保护
+        /// </summary>
+        /// <value>修改保护状态, 取值： - nonProtection: 不保护，默认值为nonProtection - consoleProtection: 控制台修改保护</value>
+        [JsonConverter(typeof(EnumClassConverter<ProtectionStatusEnum>))]
+        public class ProtectionStatusEnum
+        {
+            /// <summary>
+            /// Enum NONPROTECTION for value: nonProtection
+            /// </summary>
+            public static readonly ProtectionStatusEnum NONPROTECTION = new ProtectionStatusEnum("nonProtection");
+
+            /// <summary>
+            /// Enum CONSOLEPROTECTION for value: consoleProtection
+            /// </summary>
+            public static readonly ProtectionStatusEnum CONSOLEPROTECTION = new ProtectionStatusEnum("consoleProtection");
+
+            private static readonly Dictionary<string, ProtectionStatusEnum> StaticFields =
+            new Dictionary<string, ProtectionStatusEnum>()
+            {
+                { "nonProtection", NONPROTECTION },
+                { "consoleProtection", CONSOLEPROTECTION },
+            };
+
+            private string _value;
+
+            public ProtectionStatusEnum()
+            {
+
+            }
+
+            public ProtectionStatusEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static ProtectionStatusEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as ProtectionStatusEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(ProtectionStatusEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(ProtectionStatusEnum a, ProtectionStatusEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(ProtectionStatusEnum a, ProtectionStatusEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 监听器ID
@@ -262,6 +377,17 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         [JsonProperty("tls_ciphers_policy", NullValueHandling = NullValueHandling.Ignore)]
         public string TlsCiphersPolicy { get; set; }
 
+        /// <summary>
+        /// 修改保护状态, 取值： - nonProtection: 不保护，默认值为nonProtection - consoleProtection: 控制台修改保护
+        /// </summary>
+        [JsonProperty("protection_status", NullValueHandling = NullValueHandling.Ignore)]
+        public ProtectionStatusEnum ProtectionStatus { get; set; }
+        /// <summary>
+        /// 设置保护的原因。 &gt;仅当protection_status为consoleProtection时有效。
+        /// </summary>
+        [JsonProperty("protection_reason", NullValueHandling = NullValueHandling.Ignore)]
+        public string ProtectionReason { get; set; }
+
 
 
         /// <summary>
@@ -291,6 +417,8 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
             sb.Append("  insertHeaders: ").Append(InsertHeaders).Append("\n");
             sb.Append("  projectId: ").Append(ProjectId).Append("\n");
             sb.Append("  tlsCiphersPolicy: ").Append(TlsCiphersPolicy).Append("\n");
+            sb.Append("  protectionStatus: ").Append(ProtectionStatus).Append("\n");
+            sb.Append("  protectionReason: ").Append(ProtectionReason).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -414,6 +542,16 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
                     this.TlsCiphersPolicy == input.TlsCiphersPolicy ||
                     (this.TlsCiphersPolicy != null &&
                     this.TlsCiphersPolicy.Equals(input.TlsCiphersPolicy))
+                ) && 
+                (
+                    this.ProtectionStatus == input.ProtectionStatus ||
+                    (this.ProtectionStatus != null &&
+                    this.ProtectionStatus.Equals(input.ProtectionStatus))
+                ) && 
+                (
+                    this.ProtectionReason == input.ProtectionReason ||
+                    (this.ProtectionReason != null &&
+                    this.ProtectionReason.Equals(input.ProtectionReason))
                 );
         }
 
@@ -465,6 +603,10 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
                     hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
                 if (this.TlsCiphersPolicy != null)
                     hashCode = hashCode * 59 + this.TlsCiphersPolicy.GetHashCode();
+                if (this.ProtectionStatus != null)
+                    hashCode = hashCode * 59 + this.ProtectionStatus.GetHashCode();
+                if (this.ProtectionReason != null)
+                    hashCode = hashCode * 59 + this.ProtectionReason.GetHashCode();
                 return hashCode;
             }
         }

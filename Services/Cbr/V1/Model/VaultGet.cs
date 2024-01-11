@@ -113,6 +113,12 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         public int? Threshold { get; set; }
 
         /// <summary>
+        /// 用于标识SMB服务
+        /// </summary>
+        [JsonProperty("sys_lock_source_service", NullValueHandling = NullValueHandling.Ignore)]
+        public string SysLockSourceService { get; set; }
+
+        /// <summary>
         /// 更新时间,例如:\&quot;2020-02-05T10:38:34.209782\&quot;
         /// </summary>
         [JsonProperty("updated_at", NullValueHandling = NullValueHandling.Ignore)]
@@ -149,6 +155,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             sb.Append("  autoExpand: ").Append(AutoExpand).Append("\n");
             sb.Append("  smnNotify: ").Append(SmnNotify).Append("\n");
             sb.Append("  threshold: ").Append(Threshold).Append("\n");
+            sb.Append("  sysLockSourceService: ").Append(SysLockSourceService).Append("\n");
             sb.Append("  updatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("  version: ").Append(Version).Append("\n");
             sb.Append("}\n");
@@ -255,6 +262,11 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                     this.Threshold.Equals(input.Threshold))
                 ) && 
                 (
+                    this.SysLockSourceService == input.SysLockSourceService ||
+                    (this.SysLockSourceService != null &&
+                    this.SysLockSourceService.Equals(input.SysLockSourceService))
+                ) && 
+                (
                     this.UpdatedAt == input.UpdatedAt ||
                     (this.UpdatedAt != null &&
                     this.UpdatedAt.Equals(input.UpdatedAt))
@@ -306,6 +318,8 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                     hashCode = hashCode * 59 + this.SmnNotify.GetHashCode();
                 if (this.Threshold != null)
                     hashCode = hashCode * 59 + this.Threshold.GetHashCode();
+                if (this.SysLockSourceService != null)
+                    hashCode = hashCode * 59 + this.SysLockSourceService.GetHashCode();
                 if (this.UpdatedAt != null)
                     hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
                 if (this.Version != null)

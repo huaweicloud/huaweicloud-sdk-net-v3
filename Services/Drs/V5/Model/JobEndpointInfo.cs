@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
     public class JobEndpointInfo 
     {
         /// <summary>
-        /// 数据库类型。取值：  - oracle：Oracle。 - gaussdbv5：GaussDB分布式版。
+        /// 数据库类型。取值：  - oracle：Oracle。 - gaussdbv5：GaussDB分布式版。 - redis：Redis。 - rediscluster：Redis集群版。 - gaussredis: GeminiDB Redis。
         /// </summary>
-        /// <value>数据库类型。取值：  - oracle：Oracle。 - gaussdbv5：GaussDB分布式版。</value>
+        /// <value>数据库类型。取值：  - oracle：Oracle。 - gaussdbv5：GaussDB分布式版。 - redis：Redis。 - rediscluster：Redis集群版。 - gaussredis: GeminiDB Redis。</value>
         [JsonConverter(typeof(EnumClassConverter<DbTypeEnum>))]
         public class DbTypeEnum
         {
@@ -32,11 +32,29 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             /// </summary>
             public static readonly DbTypeEnum GAUSSDBV5 = new DbTypeEnum("gaussdbv5");
 
+            /// <summary>
+            /// Enum REDIS for value: redis
+            /// </summary>
+            public static readonly DbTypeEnum REDIS = new DbTypeEnum("redis");
+
+            /// <summary>
+            /// Enum REDISCLUSTER for value: rediscluster
+            /// </summary>
+            public static readonly DbTypeEnum REDISCLUSTER = new DbTypeEnum("rediscluster");
+
+            /// <summary>
+            /// Enum GAUSSREDIS for value: gaussredis
+            /// </summary>
+            public static readonly DbTypeEnum GAUSSREDIS = new DbTypeEnum("gaussredis");
+
             private static readonly Dictionary<string, DbTypeEnum> StaticFields =
             new Dictionary<string, DbTypeEnum>()
             {
                 { "oracle", ORACLE },
                 { "gaussdbv5", GAUSSDBV5 },
+                { "redis", REDIS },
+                { "rediscluster", REDISCLUSTER },
+                { "gaussredis", GAUSSREDIS },
             };
 
             private string _value;
@@ -368,7 +386,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
 
 
         /// <summary>
-        /// 数据库类型。取值：  - oracle：Oracle。 - gaussdbv5：GaussDB分布式版。
+        /// 数据库类型。取值：  - oracle：Oracle。 - gaussdbv5：GaussDB分布式版。 - redis：Redis。 - rediscluster：Redis集群版。 - gaussredis: GeminiDB Redis。
         /// </summary>
         [JsonProperty("db_type", NullValueHandling = NullValueHandling.Ignore)]
         public DbTypeEnum DbType { get; set; }
@@ -412,6 +430,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         [JsonProperty("ssl", NullValueHandling = NullValueHandling.Ignore)]
         public EndpointSslConfig Ssl { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("customized_dns", NullValueHandling = NullValueHandling.Ignore)]
+        public CustomizedDns CustomizedDns { get; set; }
+
 
 
         /// <summary>
@@ -429,6 +453,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             sb.Append("  vpc: ").Append(Vpc).Append("\n");
             sb.Append("  config: ").Append(Config).Append("\n");
             sb.Append("  ssl: ").Append(Ssl).Append("\n");
+            sb.Append("  customizedDns: ").Append(CustomizedDns).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -489,6 +514,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                     this.Ssl == input.Ssl ||
                     (this.Ssl != null &&
                     this.Ssl.Equals(input.Ssl))
+                ) && 
+                (
+                    this.CustomizedDns == input.CustomizedDns ||
+                    (this.CustomizedDns != null &&
+                    this.CustomizedDns.Equals(input.CustomizedDns))
                 );
         }
 
@@ -516,6 +546,8 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                     hashCode = hashCode * 59 + this.Config.GetHashCode();
                 if (this.Ssl != null)
                     hashCode = hashCode * 59 + this.Ssl.GetHashCode();
+                if (this.CustomizedDns != null)
+                    hashCode = hashCode * 59 + this.CustomizedDns.GetHashCode();
                 return hashCode;
             }
         }

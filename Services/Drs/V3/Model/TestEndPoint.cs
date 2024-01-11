@@ -514,6 +514,12 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         [JsonProperty("kafka_security_config", NullValueHandling = NullValueHandling.Ignore)]
         public KafkaSecurity KafkaSecurityConfig { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("customized_dns", NullValueHandling = NullValueHandling.Ignore)]
+        public CustomizedDns CustomizedDns { get; set; }
+
 
 
         /// <summary>
@@ -543,6 +549,7 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
             sb.Append("  projectId: ").Append(ProjectId).Append("\n");
             sb.Append("  dbName: ").Append(DbName).Append("\n");
             sb.Append("  kafkaSecurityConfig: ").Append(KafkaSecurityConfig).Append("\n");
+            sb.Append("  customizedDns: ").Append(CustomizedDns).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -663,6 +670,11 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
                     this.KafkaSecurityConfig == input.KafkaSecurityConfig ||
                     (this.KafkaSecurityConfig != null &&
                     this.KafkaSecurityConfig.Equals(input.KafkaSecurityConfig))
+                ) && 
+                (
+                    this.CustomizedDns == input.CustomizedDns ||
+                    (this.CustomizedDns != null &&
+                    this.CustomizedDns.Equals(input.CustomizedDns))
                 );
         }
 
@@ -714,6 +726,8 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
                     hashCode = hashCode * 59 + this.DbName.GetHashCode();
                 if (this.KafkaSecurityConfig != null)
                     hashCode = hashCode * 59 + this.KafkaSecurityConfig.GetHashCode();
+                if (this.CustomizedDns != null)
+                    hashCode = hashCode * 59 + this.CustomizedDns.GetHashCode();
                 return hashCode;
             }
         }

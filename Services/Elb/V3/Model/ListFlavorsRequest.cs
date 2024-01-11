@@ -52,7 +52,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<string> Name { get; set; }
 
         /// <summary>
-        /// 规格类别。  取值： - L4和L7 表示四层和七层flavor。 - L4_elastic和L7_elastic 表示弹性扩缩容实例的下限规格。 - L4_elastic_max和L7_elastic_max 表示弹性扩缩容实例的上限规格。  支持多值查询，查询条件格式：*type&#x3D;xxx&amp;type&#x3D;xxx*。
+        /// 规格类别。  取值： - L4和L7 表示四层网络型和七层应用型flavor。 - L4_elastic和L7_elastic 表示弹性扩缩容实例的下限规格。 - L4_elastic_max和L7_elastic_max 表示弹性扩缩容实例的上限规格。  支持多值查询，查询条件格式：*type&#x3D;xxx&amp;type&#x3D;xxx*。
         /// </summary>
         [SDKProperty("type", IsQuery = true)]
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]

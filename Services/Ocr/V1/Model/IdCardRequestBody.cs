@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public string Url { get; set; }
 
         /// <summary>
-        ///  - front：身份证正面。 - back：身份证背面。  &gt; 说明： 如果参数值为空或无该参数，系统自动识别，建议填写，准确率更高。 
+        ///  - front：身份证人像面。 - back：身份证国徽面。 - double_side：身份证双面信息 &gt; 说明： 如果参数值为空或无该参数，系统自动识别，建议填写，准确率更高。 
         /// </summary>
         [JsonProperty("side", NullValueHandling = NullValueHandling.Ignore)]
         public string Side { get; set; }
@@ -47,13 +47,13 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public bool? ReturnTextLocation { get; set; }
 
         /// <summary>
-        /// 返回判断身份证图像是否经过翻拍的开关，默认false，可选值如下所示：  - true ：返回身份证图像是否经过翻拍  - false：不返回身份证图像是否经过翻拍 
+        /// 返回判断身份证图像是否经过翻拍的开关，默认false，可选值如下所示：  - true ：开启判断身份证图像是否经过翻拍功能  - false：关闭判断身份证图像是否经过翻拍功能 
         /// </summary>
         [JsonProperty("detect_reproduce", NullValueHandling = NullValueHandling.Ignore)]
         public bool? DetectReproduce { get; set; }
 
         /// <summary>
-        /// 返回判断身份证图像是否是黑白复印件的开关，默认false，可选值如下所示：  - true ：返回身份证图像是否是复印件  - false : 不返回身份证图像是否是复印件 
+        /// 返回判断身份证图像是否是黑白复印件的开关，默认false，可选值如下所示：  - true ：开启判断身份证图像是否是复印件功能  - false : 关闭身份证图像是否是复印件功能 
         /// </summary>
         [JsonProperty("detect_copy", NullValueHandling = NullValueHandling.Ignore)]
         public bool? DetectCopy { get; set; }
@@ -63,6 +63,42 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         [JsonProperty("return_portrait_location", NullValueHandling = NullValueHandling.Ignore)]
         public bool? ReturnPortraitLocation { get; set; }
+
+        /// <summary>
+        /// 身份证图像PS告警功能开关，默认false，可选值如下：  - true ：开启身份证图像PS告警功能 - false : 关闭身份证图像告警功能 
+        /// </summary>
+        [JsonProperty("detect_tampering", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? DetectTampering { get; set; }
+
+        /// <summary>
+        /// 身份证图像边框完整性告警功能开关，默认false，可选值如下：  - true ：打开身份证图像边框完整性告警功能 - false : 关闭身份证图像边框完整性告警功能 
+        /// </summary>
+        [JsonProperty("detect_border_integrity", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? DetectBorderIntegrity { get; set; }
+
+        /// <summary>
+        /// 身份证图像边框内部是否有异物遮挡的告警功能开关，默认false，可选值如下：  - true ：开启身份证边框内部异物遮挡告警功能 - false : 关闭身份证边框内部异物遮挡告警功能 
+        /// </summary>
+        [JsonProperty("detect_blocking_within_border", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? DetectBlockingWithinBorder { get; set; }
+
+        /// <summary>
+        /// 身份证图像模糊告警功能的开关，默认false，可选值如下：  - true ：开启身份证图像模糊告警功能 - false : 关闭身份证图像模糊告警功能 
+        /// </summary>
+        [JsonProperty("detect_blur", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? DetectBlur { get; set; }
+
+        /// <summary>
+        /// 临时身份证告警功能开关，默认false，可选值如下：  - true ：开启临时身份证告警功能 - false : 关闭临时身份证告警功能 
+        /// </summary>
+        [JsonProperty("detect_interim", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? DetectInterim { get; set; }
+
+        /// <summary>
+        /// 身份证反光告警功能开关，默认false，可选值如下：  - true ：开启身份证反光告警功能  - false : 关闭身份证反光告警功能 
+        /// </summary>
+        [JsonProperty("detect_glare", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? DetectGlare { get; set; }
 
 
 
@@ -81,6 +117,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  detectReproduce: ").Append(DetectReproduce).Append("\n");
             sb.Append("  detectCopy: ").Append(DetectCopy).Append("\n");
             sb.Append("  returnPortraitLocation: ").Append(ReturnPortraitLocation).Append("\n");
+            sb.Append("  detectTampering: ").Append(DetectTampering).Append("\n");
+            sb.Append("  detectBorderIntegrity: ").Append(DetectBorderIntegrity).Append("\n");
+            sb.Append("  detectBlockingWithinBorder: ").Append(DetectBlockingWithinBorder).Append("\n");
+            sb.Append("  detectBlur: ").Append(DetectBlur).Append("\n");
+            sb.Append("  detectInterim: ").Append(DetectInterim).Append("\n");
+            sb.Append("  detectGlare: ").Append(DetectGlare).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -141,6 +183,36 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     this.ReturnPortraitLocation == input.ReturnPortraitLocation ||
                     (this.ReturnPortraitLocation != null &&
                     this.ReturnPortraitLocation.Equals(input.ReturnPortraitLocation))
+                ) && 
+                (
+                    this.DetectTampering == input.DetectTampering ||
+                    (this.DetectTampering != null &&
+                    this.DetectTampering.Equals(input.DetectTampering))
+                ) && 
+                (
+                    this.DetectBorderIntegrity == input.DetectBorderIntegrity ||
+                    (this.DetectBorderIntegrity != null &&
+                    this.DetectBorderIntegrity.Equals(input.DetectBorderIntegrity))
+                ) && 
+                (
+                    this.DetectBlockingWithinBorder == input.DetectBlockingWithinBorder ||
+                    (this.DetectBlockingWithinBorder != null &&
+                    this.DetectBlockingWithinBorder.Equals(input.DetectBlockingWithinBorder))
+                ) && 
+                (
+                    this.DetectBlur == input.DetectBlur ||
+                    (this.DetectBlur != null &&
+                    this.DetectBlur.Equals(input.DetectBlur))
+                ) && 
+                (
+                    this.DetectInterim == input.DetectInterim ||
+                    (this.DetectInterim != null &&
+                    this.DetectInterim.Equals(input.DetectInterim))
+                ) && 
+                (
+                    this.DetectGlare == input.DetectGlare ||
+                    (this.DetectGlare != null &&
+                    this.DetectGlare.Equals(input.DetectGlare))
                 );
         }
 
@@ -168,6 +240,18 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     hashCode = hashCode * 59 + this.DetectCopy.GetHashCode();
                 if (this.ReturnPortraitLocation != null)
                     hashCode = hashCode * 59 + this.ReturnPortraitLocation.GetHashCode();
+                if (this.DetectTampering != null)
+                    hashCode = hashCode * 59 + this.DetectTampering.GetHashCode();
+                if (this.DetectBorderIntegrity != null)
+                    hashCode = hashCode * 59 + this.DetectBorderIntegrity.GetHashCode();
+                if (this.DetectBlockingWithinBorder != null)
+                    hashCode = hashCode * 59 + this.DetectBlockingWithinBorder.GetHashCode();
+                if (this.DetectBlur != null)
+                    hashCode = hashCode * 59 + this.DetectBlur.GetHashCode();
+                if (this.DetectInterim != null)
+                    hashCode = hashCode * 59 + this.DetectInterim.GetHashCode();
+                if (this.DetectGlare != null)
+                    hashCode = hashCode * 59 + this.DetectGlare.GetHashCode();
                 return hashCode;
             }
         }

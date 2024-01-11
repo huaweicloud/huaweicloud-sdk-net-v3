@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public bool? SyncMessageFlush { get; set; }
 
         /// <summary>
-        /// topic分区数，设置消费的并发数。 取值范围：[1-100](tag:hws,hws_hk,otc,hws_ocb,ctc,sbc,hk_sbc,g42,tm,hk_g42,hk_tm)[1-20](tag:cmcc)。
+        /// topic分区数，设置消费的并发数。 取值范围：[1-100](tag:hws,hws_hk,dt,hws_ocb,ocb,ctc,sbc,hk_sbc,g42,tm,hk_g42,hk_tm)[1-20](tag:cmcc)。
         /// </summary>
         [JsonProperty("partition", NullValueHandling = NullValueHandling.Ignore)]
         public int? Partition { get; set; }
@@ -47,7 +47,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public bool? SyncReplication { get; set; }
 
         /// <summary>
-        /// 消息老化时间。默认值为72。 取值范围[1~168](tag:hws,hws_hk,hws_ocb,ctc,sbc,hk_sbc,hws_eu,g42,tm,hk_g42,hk_tm)[1-720](tag:ocb,otc)，单位小时。
+        /// 消息老化时间。默认值为72。 取值范围[1~168](tag:hws,hws_hk,ctc,sbc,hk_sbc,hws_eu,g42,tm,hk_g42,hk_tm)[1-720](tag:ocb,dt,hws_ocb)，单位小时。
         /// </summary>
         [JsonProperty("retention_time", NullValueHandling = NullValueHandling.Ignore)]
         public int? RetentionTime { get; set; }

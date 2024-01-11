@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
     public class ActionReq 
     {
         /// <summary>
-        /// 操作任务动作名称。取值： - network：测试连接源库/目标库。 - precheck：执行预检查。 - start：启动任务。 - stop：暂停任务。 - restart：重试任务。 - reset：重置任务。 - terminate：结束任务。 - skip_precheck：跳过预检查。 - create_compare：创建对比任务。 - cancel_compare：取消对比任务。
+        /// 操作任务动作名称。取值： - network：测试连接源库/目标库。 - precheck：执行预检查。 - start：启动任务。 - stop：暂停任务。 - restart：重试任务。 - reset：重置任务。 - terminate：结束任务。 - skip_precheck：跳过预检查。 - create_compare：创建对比任务。 - cancel_compare：取消对比任务。 - column_limit：字段过滤。 - reload_parameters：重新加载任务参数。
         /// </summary>
-        /// <value>操作任务动作名称。取值： - network：测试连接源库/目标库。 - precheck：执行预检查。 - start：启动任务。 - stop：暂停任务。 - restart：重试任务。 - reset：重置任务。 - terminate：结束任务。 - skip_precheck：跳过预检查。 - create_compare：创建对比任务。 - cancel_compare：取消对比任务。</value>
+        /// <value>操作任务动作名称。取值： - network：测试连接源库/目标库。 - precheck：执行预检查。 - start：启动任务。 - stop：暂停任务。 - restart：重试任务。 - reset：重置任务。 - terminate：结束任务。 - skip_precheck：跳过预检查。 - create_compare：创建对比任务。 - cancel_compare：取消对比任务。 - column_limit：字段过滤。 - reload_parameters：重新加载任务参数。</value>
         [JsonConverter(typeof(EnumClassConverter<ActionNameEnum>))]
         public class ActionNameEnum
         {
@@ -72,6 +72,16 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             /// </summary>
             public static readonly ActionNameEnum CANCEL_COMPARE = new ActionNameEnum("cancel_compare");
 
+            /// <summary>
+            /// Enum COLUMN_LIMIT for value: column_limit
+            /// </summary>
+            public static readonly ActionNameEnum COLUMN_LIMIT = new ActionNameEnum("column_limit");
+
+            /// <summary>
+            /// Enum RELOAD_PARAMETERS for value: reload_parameters
+            /// </summary>
+            public static readonly ActionNameEnum RELOAD_PARAMETERS = new ActionNameEnum("reload_parameters");
+
             private static readonly Dictionary<string, ActionNameEnum> StaticFields =
             new Dictionary<string, ActionNameEnum>()
             {
@@ -85,6 +95,8 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                 { "skip_precheck", SKIP_PRECHECK },
                 { "create_compare", CREATE_COMPARE },
                 { "cancel_compare", CANCEL_COMPARE },
+                { "column_limit", COLUMN_LIMIT },
+                { "reload_parameters", RELOAD_PARAMETERS },
             };
 
             private string _value;
@@ -186,7 +198,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         public string JobId { get; set; }
 
         /// <summary>
-        /// 操作任务动作名称。取值： - network：测试连接源库/目标库。 - precheck：执行预检查。 - start：启动任务。 - stop：暂停任务。 - restart：重试任务。 - reset：重置任务。 - terminate：结束任务。 - skip_precheck：跳过预检查。 - create_compare：创建对比任务。 - cancel_compare：取消对比任务。
+        /// 操作任务动作名称。取值： - network：测试连接源库/目标库。 - precheck：执行预检查。 - start：启动任务。 - stop：暂停任务。 - restart：重试任务。 - reset：重置任务。 - terminate：结束任务。 - skip_precheck：跳过预检查。 - create_compare：创建对比任务。 - cancel_compare：取消对比任务。 - column_limit：字段过滤。 - reload_parameters：重新加载任务参数。
         /// </summary>
         [JsonProperty("action_name", NullValueHandling = NullValueHandling.Ignore)]
         public ActionNameEnum ActionName { get; set; }

@@ -361,7 +361,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         /// <summary>
         /// 创建实例
         ///
-        /// [创建按需计费类型的Kafka实例。](tag:sbc,hk_sbc,cmcc)[创建kafka实例。](tag:otc)
+        /// 创建按需计费类型的Kafka实例。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -954,10 +954,9 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public ResetMessageOffsetWithEngineResponse ResetMessageOffsetWithEngine(ResetMessageOffsetWithEngineRequest resetMessageOffsetWithEngineRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", resetMessageOffsetWithEngineRequest.Engine.ToString());
             urlParam.Add("instance_id", resetMessageOffsetWithEngineRequest.InstanceId.ToString());
             urlParam.Add("group", resetMessageOffsetWithEngineRequest.Group.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/groups/{group}/reset-message-offset", urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/groups/{group}/reset-message-offset", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetMessageOffsetWithEngineRequest);
             var response = DoHttpRequestSync("PUT", request);
             return JsonUtils.DeSerializeNull<ResetMessageOffsetWithEngineResponse>(response);
@@ -966,10 +965,9 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<ResetMessageOffsetWithEngineResponse> ResetMessageOffsetWithEngineInvoker(ResetMessageOffsetWithEngineRequest resetMessageOffsetWithEngineRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", resetMessageOffsetWithEngineRequest.Engine.ToString());
             urlParam.Add("instance_id", resetMessageOffsetWithEngineRequest.InstanceId.ToString());
             urlParam.Add("group", resetMessageOffsetWithEngineRequest.Group.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/groups/{group}/reset-message-offset", urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/groups/{group}/reset-message-offset", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetMessageOffsetWithEngineRequest);
             return new SyncInvoker<ResetMessageOffsetWithEngineResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<ResetMessageOffsetWithEngineResponse>);
         }

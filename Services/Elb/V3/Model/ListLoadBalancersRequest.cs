@@ -157,7 +157,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<string> AvailabilityZoneList { get; set; }
 
         /// <summary>
-        /// 四层Flavor ID。  支持多值查询，查询条件格式：*l4_flavor_id&#x3D;xxx&amp;l4_flavor_id&#x3D;xxx*。  [不支持该字段，请勿使用。](tag:hcso,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b)
+        /// 网络型规格ID。  支持多值查询，查询条件格式：*l4_flavor_id&#x3D;xxx&amp;l4_flavor_id&#x3D;xxx*。  [不支持该字段，请勿使用。](tag:hcso,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b)
         /// </summary>
         [SDKProperty("l4_flavor_id", IsQuery = true)]
         [JsonProperty("l4_flavor_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -171,7 +171,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<string> L4ScaleFlavorId { get; set; }
 
         /// <summary>
-        /// 七层Flavor ID。  支持多值查询，查询条件格式：*l7_flavor_id&#x3D;xxx&amp;l7_flavor_id&#x3D;xxx*。  [不支持该字段，请勿使用。](tag:hcso,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b)
+        /// 应用型规格ID。  支持多值查询，查询条件格式：*l7_flavor_id&#x3D;xxx&amp;l7_flavor_id&#x3D;xxx*。  [不支持该字段，请勿使用。](tag:hcso,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b)
         /// </summary>
         [SDKProperty("l7_flavor_id", IsQuery = true)]
         [JsonProperty("l7_flavor_id", NullValueHandling = NullValueHandling.Ignore)]

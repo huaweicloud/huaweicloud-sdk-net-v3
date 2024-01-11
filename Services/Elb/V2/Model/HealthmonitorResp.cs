@@ -197,7 +197,7 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         public string DomainName { get; set; }
 
         /// <summary>
-        /// HTTP方法，可以为GET、HEAD、POST、PUT、DELETE、TRACE、OPTIONS、CONNECT、PATCH。仅当type为HTTP时生效。该字段为预留字段，暂未启用。
+        /// 健康检查请求的请求路径。以\&quot;/\&quot;开头，默认为\&quot;/\&quot;。 支持使用字母、数字和短划线（-）、正斜线（/）、半角句号（.）、百分号（%）、半角问号（?）、井号（#）和and（&amp;）以及扩展字符集_;~!()*[]@$^:&#39;,+  使用说明：当type为HTTP/HTTPS时生效。
         /// </summary>
         [JsonProperty("url_path", NullValueHandling = NullValueHandling.Ignore)]
         public string UrlPath { get; set; }
@@ -226,6 +226,12 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         [JsonProperty("pools", NullValueHandling = NullValueHandling.Ignore)]
         public List<ResourceList> Pools { get; set; }
 
+        /// <summary>
+        /// 健康检查连续失败多少次后，将后端服务器的健康检查状态由ONLINE判定为OFFLINE。取值范围：1-10。
+        /// </summary>
+        [JsonProperty("max_retries_down", NullValueHandling = NullValueHandling.Ignore)]
+        public int? MaxRetriesDown { get; set; }
+
 
 
         /// <summary>
@@ -250,6 +256,7 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
             sb.Append("  delay: ").Append(Delay).Append("\n");
             sb.Append("  maxRetries: ").Append(MaxRetries).Append("\n");
             sb.Append("  pools: ").Append(Pools).Append("\n");
+            sb.Append("  maxRetriesDown: ").Append(MaxRetriesDown).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -346,6 +353,11 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
                     this.Pools != null &&
                     input.Pools != null &&
                     this.Pools.SequenceEqual(input.Pools)
+                ) && 
+                (
+                    this.MaxRetriesDown == input.MaxRetriesDown ||
+                    (this.MaxRetriesDown != null &&
+                    this.MaxRetriesDown.Equals(input.MaxRetriesDown))
                 );
         }
 
@@ -387,6 +399,8 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
                     hashCode = hashCode * 59 + this.MaxRetries.GetHashCode();
                 if (this.Pools != null)
                     hashCode = hashCode * 59 + this.Pools.GetHashCode();
+                if (this.MaxRetriesDown != null)
+                    hashCode = hashCode * 59 + this.MaxRetriesDown.GetHashCode();
                 return hashCode;
             }
         }

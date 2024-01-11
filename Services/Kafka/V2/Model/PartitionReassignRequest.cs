@@ -28,6 +28,18 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         [JsonProperty("throttle", NullValueHandling = NullValueHandling.Ignore)]
         public int? Throttle { get; set; }
 
+        /// <summary>
+        /// 是否作为定时任务执行。若非定时执行，则is_schedule 和execute_at字段可为空；若为定时执行，is_schedule为true，execute_at字段非空。
+        /// </summary>
+        [JsonProperty("is_schedule", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsSchedule { get; set; }
+
+        /// <summary>
+        /// 定时时间，格式为Unix时间戳，单位为毫秒
+        /// </summary>
+        [JsonProperty("execute_at", NullValueHandling = NullValueHandling.Ignore)]
+        public long? ExecuteAt { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +51,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             sb.Append("class PartitionReassignRequest {\n");
             sb.Append("  reassignments: ").Append(Reassignments).Append("\n");
             sb.Append("  throttle: ").Append(Throttle).Append("\n");
+            sb.Append("  isSchedule: ").Append(IsSchedule).Append("\n");
+            sb.Append("  executeAt: ").Append(ExecuteAt).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -70,6 +84,16 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     this.Throttle == input.Throttle ||
                     (this.Throttle != null &&
                     this.Throttle.Equals(input.Throttle))
+                ) && 
+                (
+                    this.IsSchedule == input.IsSchedule ||
+                    (this.IsSchedule != null &&
+                    this.IsSchedule.Equals(input.IsSchedule))
+                ) && 
+                (
+                    this.ExecuteAt == input.ExecuteAt ||
+                    (this.ExecuteAt != null &&
+                    this.ExecuteAt.Equals(input.ExecuteAt))
                 );
         }
 
@@ -85,6 +109,10 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     hashCode = hashCode * 59 + this.Reassignments.GetHashCode();
                 if (this.Throttle != null)
                     hashCode = hashCode * 59 + this.Throttle.GetHashCode();
+                if (this.IsSchedule != null)
+                    hashCode = hashCode * 59 + this.IsSchedule.GetHashCode();
+                if (this.ExecuteAt != null)
+                    hashCode = hashCode * 59 + this.ExecuteAt.GetHashCode();
                 return hashCode;
             }
         }

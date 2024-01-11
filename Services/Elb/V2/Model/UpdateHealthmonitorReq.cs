@@ -53,7 +53,7 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         public string DomainName { get; set; }
 
         /// <summary>
-        /// HTTP方法，可以为GET、HEAD、POST、PUT、DELETE、TRACE、OPTIONS、CONNECT、PATCH。仅当type为HTTP时生效。该字段为预留字段，暂未启用。
+        /// 健康检查请求的请求路径。以\&quot;/\&quot;开头，默认为\&quot;/\&quot;。 支持使用字母、数字和短划线（-）、正斜线（/）、半角句号（.）、百分号（%）、半角问号（?）、井号（#）和and（&amp;）以及扩展字符集_;~!()*[]@$^:&#39;,+  使用说明：当type为HTTP/HTTPS时生效。
         /// </summary>
         [JsonProperty("url_path", NullValueHandling = NullValueHandling.Ignore)]
         public string UrlPath { get; set; }

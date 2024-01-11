@@ -412,6 +412,13 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         [JsonProperty("datastore_type", NullValueHandling = NullValueHandling.Ignore)]
         public DatastoreTypeEnum DatastoreType { get; set; }
         /// <summary>
+        /// 企业项目id。
+        /// </summary>
+        [SDKProperty("eps_id", IsQuery = true)]
+        [JsonProperty("eps_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string EpsId { get; set; }
+
+        /// <summary>
         /// 虚拟私有云ID。
         /// </summary>
         [SDKProperty("vpc_id", IsQuery = true)]
@@ -460,6 +467,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  datastoreType: ").Append(DatastoreType).Append("\n");
+            sb.Append("  epsId: ").Append(EpsId).Append("\n");
             sb.Append("  vpcId: ").Append(VpcId).Append("\n");
             sb.Append("  subnetId: ").Append(SubnetId).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
@@ -512,6 +520,11 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
                     this.DatastoreType.Equals(input.DatastoreType))
                 ) && 
                 (
+                    this.EpsId == input.EpsId ||
+                    (this.EpsId != null &&
+                    this.EpsId.Equals(input.EpsId))
+                ) && 
+                (
                     this.VpcId == input.VpcId ||
                     (this.VpcId != null &&
                     this.VpcId.Equals(input.VpcId))
@@ -556,6 +569,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
                     hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.DatastoreType != null)
                     hashCode = hashCode * 59 + this.DatastoreType.GetHashCode();
+                if (this.EpsId != null)
+                    hashCode = hashCode * 59 + this.EpsId.GetHashCode();
                 if (this.VpcId != null)
                     hashCode = hashCode * 59 + this.VpcId.GetHashCode();
                 if (this.SubnetId != null)
