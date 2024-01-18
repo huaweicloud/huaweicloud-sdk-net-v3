@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         public string PromHttpApiEndpoint { get; set; }
 
         /// <summary>
-        /// Prometheus实例关联dashboard的dashboard id。
+        /// Prometheus实例关联dashboard的dashboard id（目前未使用）。
         /// </summary>
         [JsonProperty("dashboard_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DashboardId { get; set; }

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using HuaweiCloud.SDK.Core;
 
 namespace HuaweiCloud.SDK.Classroom.V3
@@ -11,7 +12,7 @@ namespace HuaweiCloud.SDK.Classroom.V3
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("CLASSROOM");
 
-        private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>()
+        private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>
         {
                 { "cn-north-4", CN_NORTH_4 },
         };
@@ -34,7 +35,7 @@ namespace HuaweiCloud.SDK.Classroom.V3
                 return StaticFields[regionId];
             }
 
-            throw new ArgumentException("Unexpected regionId: ", regionId);
+            throw new ArgumentException($"region id '{regionId}' is not in the following supported regions of service 'Classroom': [{string.Join(", ", StaticFields.Keys.OrderBy(key => key))}]");
         }
     }
 }

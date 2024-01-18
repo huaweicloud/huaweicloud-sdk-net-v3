@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// Prometheus实例名称列表。
         /// </summary>
         [JsonProperty("prometheus", NullValueHandling = NullValueHandling.Ignore)]
-        public List<PromInstanceEpsModel> Prometheus { get; set; }
+        public List<PromInstanceEpsCreateModel> Prometheus { get; set; }
 
 
 

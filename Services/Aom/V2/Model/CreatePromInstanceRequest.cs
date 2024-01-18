@@ -21,7 +21,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public PromInstanceEpsModel Body { get; set; }
+        public PromInstanceRequestModel Body { get; set; }
 
 
 

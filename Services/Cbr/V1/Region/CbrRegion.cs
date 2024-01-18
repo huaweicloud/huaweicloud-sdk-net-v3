@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using HuaweiCloud.SDK.Core;
 
 namespace HuaweiCloud.SDK.Cbr.V1
@@ -55,7 +56,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("CBR");
 
-        private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>()
+        private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>
         {
                 { "eu-west-101", EU_WEST_101 },
                 { "cn-north-1", CN_NORTH_1 },
@@ -100,7 +101,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
                 return StaticFields[regionId];
             }
 
-            throw new ArgumentException("Unexpected regionId: ", regionId);
+            throw new ArgumentException($"region id '{regionId}' is not in the following supported regions of service 'CBR': [{string.Join(", ", StaticFields.Keys.OrderBy(key => key))}]");
         }
     }
 }

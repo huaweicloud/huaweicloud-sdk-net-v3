@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         public string ErrorMessage { get; set; }
 
         /// <summary>
-        /// 响应状态码。
+        /// 响应状态码（不再使用）。
         /// </summary>
         [JsonProperty("responseStatus", NullValueHandling = NullValueHandling.Ignore)]
         public int? ResponseStatus { get; set; }

@@ -378,6 +378,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public string Flavor { get; set; }
 
         /// <summary>
+        /// CCE Autopilot集群开关： - true：创建集群为CCE Autopilot集群 
+        /// </summary>
+        [JsonProperty("enableAutopilot", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnableAutopilot { get; set; }
+
+        /// <summary>
         /// 集群版本，与Kubernetes社区基线版本保持一致，建议选择最新版本。  在CCE控制台支持创建两种最新版本的集群。可登录CCE控制台创建集群，在“版本”处获取到集群版本。 其它集群版本，当前仍可通过api创建，但后续会逐渐下线，具体下线策略请关注CCE官方公告。  &gt;    - 若不配置，默认创建最新版本的集群。 &gt;    - 若指定集群基线版本但是不指定具体r版本，则系统默认选择对应集群版本的最新r版本。建议不指定具体r版本由系统选择最新版本。 [&gt;    - Turbo集群支持1.19及以上版本商用。](tag:hws,hws_hk,dt) [&gt;    - Turbo集群支持1.23及以上版本商用。](tag:hcs,g42,sbc)
         /// </summary>
         [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]
@@ -508,6 +514,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  category: ").Append(Category).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  flavor: ").Append(Flavor).Append("\n");
+            sb.Append("  enableAutopilot: ").Append(EnableAutopilot).Append("\n");
             sb.Append("  version: ").Append(Version).Append("\n");
             sb.Append("  platformVersion: ").Append(PlatformVersion).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
@@ -563,6 +570,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.Flavor == input.Flavor ||
                     (this.Flavor != null &&
                     this.Flavor.Equals(input.Flavor))
+                ) && 
+                (
+                    this.EnableAutopilot == input.EnableAutopilot ||
+                    (this.EnableAutopilot != null &&
+                    this.EnableAutopilot.Equals(input.EnableAutopilot))
                 ) && 
                 (
                     this.Version == input.Version ||
@@ -684,6 +696,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.Flavor != null)
                     hashCode = hashCode * 59 + this.Flavor.GetHashCode();
+                if (this.EnableAutopilot != null)
+                    hashCode = hashCode * 59 + this.EnableAutopilot.GetHashCode();
                 if (this.Version != null)
                     hashCode = hashCode * 59 + this.Version.GetHashCode();
                 if (this.PlatformVersion != null)

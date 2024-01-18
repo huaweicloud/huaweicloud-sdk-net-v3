@@ -29,10 +29,22 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         public string ErrorMessage { get; set; }
 
         /// <summary>
-        /// 响应状态码。
+        /// 响应状态码（不再使用）。
         /// </summary>
         [JsonProperty("responseStatus", NullValueHandling = NullValueHandling.Ignore)]
         public int? ResponseStatus { get; set; }
+
+        /// <summary>
+        /// 服务发现规则id列表，多AZ配置同步时使用。
+        /// </summary>
+        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> Id { get; set; }
+
+        /// <summary>
+        /// 服务发现规则详细信息列表。
+        /// </summary>
+        [JsonProperty("results", NullValueHandling = NullValueHandling.Ignore)]
+        public List<Dictionary<string, string>> Results { get; set; }
 
 
 
@@ -46,6 +58,8 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
             sb.Append("  errorCode: ").Append(ErrorCode).Append("\n");
             sb.Append("  errorMessage: ").Append(ErrorMessage).Append("\n");
             sb.Append("  responseStatus: ").Append(ResponseStatus).Append("\n");
+            sb.Append("  id: ").Append(Id).Append("\n");
+            sb.Append("  results: ").Append(Results).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -81,6 +95,18 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
                     this.ResponseStatus == input.ResponseStatus ||
                     (this.ResponseStatus != null &&
                     this.ResponseStatus.Equals(input.ResponseStatus))
+                ) && 
+                (
+                    this.Id == input.Id ||
+                    this.Id != null &&
+                    input.Id != null &&
+                    this.Id.SequenceEqual(input.Id)
+                ) && 
+                (
+                    this.Results == input.Results ||
+                    this.Results != null &&
+                    input.Results != null &&
+                    this.Results.SequenceEqual(input.Results)
                 );
         }
 
@@ -98,6 +124,10 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
                     hashCode = hashCode * 59 + this.ErrorMessage.GetHashCode();
                 if (this.ResponseStatus != null)
                     hashCode = hashCode * 59 + this.ResponseStatus.GetHashCode();
+                if (this.Id != null)
+                    hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Results != null)
+                    hashCode = hashCode * 59 + this.Results.GetHashCode();
                 return hashCode;
             }
         }

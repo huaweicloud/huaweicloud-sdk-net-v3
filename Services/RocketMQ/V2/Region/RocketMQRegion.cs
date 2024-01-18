@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using HuaweiCloud.SDK.Core;
 
 namespace HuaweiCloud.SDK.RocketMQ.V2
@@ -52,10 +53,12 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
             "https://dms.me-east-1.myhuaweicloud.com");
         public static readonly Region NA_MEXICO_1 = new Region("na-mexico-1",
             "https://dms.na-mexico-1.myhuaweicloud.com");
+        public static readonly Region CN_EAST_5 = new Region("cn-east-5",
+            "https://dms.cn-east-5.myhuaweicloud.com");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("ROCKETMQ");
 
-        private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>()
+        private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>
         {
                 { "eu-west-101", EU_WEST_101 },
                 { "cn-north-1", CN_NORTH_1 },
@@ -80,6 +83,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
                 { "eu-west-0", EU_WEST_0 },
                 { "me-east-1", ME_EAST_1 },
                 { "na-mexico-1", NA_MEXICO_1 },
+                { "cn-east-5", CN_EAST_5 },
         };
 
         public static Region ValueOf(string regionId)
@@ -100,7 +104,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
                 return StaticFields[regionId];
             }
 
-            throw new ArgumentException("Unexpected regionId: ", regionId);
+            throw new ArgumentException($"region id '{regionId}' is not in the following supported regions of service 'RocketMQ': [{string.Join(", ", StaticFields.Keys.OrderBy(key => key))}]");
         }
     }
 }

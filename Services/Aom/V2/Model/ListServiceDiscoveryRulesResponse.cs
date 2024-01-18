@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         public string ErrorMessage { get; set; }
 
         /// <summary>
-        /// 
+        /// 服务发现规则id列表，多AZ配置同步时使用。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Id { get; set; }

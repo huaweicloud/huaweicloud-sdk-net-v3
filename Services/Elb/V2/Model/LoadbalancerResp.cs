@@ -269,6 +269,121 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
             }
         }
 
+        /// <summary>
+        /// 修改保护状态, 取值： - nonProtection: 不保护，默认值为nonProtection - consoleProtection: 控制台修改保护
+        /// </summary>
+        /// <value>修改保护状态, 取值： - nonProtection: 不保护，默认值为nonProtection - consoleProtection: 控制台修改保护</value>
+        [JsonConverter(typeof(EnumClassConverter<ProtectionStatusEnum>))]
+        public class ProtectionStatusEnum
+        {
+            /// <summary>
+            /// Enum NONPROTECTION for value: nonProtection
+            /// </summary>
+            public static readonly ProtectionStatusEnum NONPROTECTION = new ProtectionStatusEnum("nonProtection");
+
+            /// <summary>
+            /// Enum CONSOLEPROTECTION for value: consoleProtection
+            /// </summary>
+            public static readonly ProtectionStatusEnum CONSOLEPROTECTION = new ProtectionStatusEnum("consoleProtection");
+
+            private static readonly Dictionary<string, ProtectionStatusEnum> StaticFields =
+            new Dictionary<string, ProtectionStatusEnum>()
+            {
+                { "nonProtection", NONPROTECTION },
+                { "consoleProtection", CONSOLEPROTECTION },
+            };
+
+            private string _value;
+
+            public ProtectionStatusEnum()
+            {
+
+            }
+
+            public ProtectionStatusEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static ProtectionStatusEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as ProtectionStatusEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(ProtectionStatusEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(ProtectionStatusEnum a, ProtectionStatusEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(ProtectionStatusEnum a, ProtectionStatusEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 负载均衡器ID
@@ -383,16 +498,33 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         public List<PublicIpInfo> Publicips { get; set; }
 
         /// <summary>
-        /// 收费模式。取值：  flavor：按规格计费 lcu：按使用量计费 说明：不影响弹性扩缩容实例、包周期实例的计费方式
+        /// 收费模式。取值：  flavor：按规格计费 lcu：按使用量计费 说明：弹性扩缩容实例该字段无效，按lcu收费；包周期实例该字段无效，预付费收费。
         /// </summary>
         [JsonProperty("charge_mode", NullValueHandling = NullValueHandling.Ignore)]
         public string ChargeMode { get; set; }
+
+        /// <summary>
+        /// 资源账单信息，取值：     - 空：按需计费。     - 非空：包周期计费，  包周期计费billing_info字段的格式为：order_id:product_id:region_id:project_id。
+        /// </summary>
+        [JsonProperty("billing_info", NullValueHandling = NullValueHandling.Ignore)]
+        public string BillingInfo { get; set; }
 
         /// <summary>
         /// 负载均衡器的冻结场景。若负载均衡器有多个冻结场景，用逗号分隔。取值：  POLICE：公安冻结场景。 ILLEGAL：违规冻结场景。 VERIFY：客户未实名认证冻结场景。 PARTNER：合作伙伴冻结（合作伙伴冻结子客户资源）。 AREAR：欠费冻结场景。
         /// </summary>
         [JsonProperty("frozen_scene", NullValueHandling = NullValueHandling.Ignore)]
         public string FrozenScene { get; set; }
+
+        /// <summary>
+        /// 修改保护状态, 取值： - nonProtection: 不保护，默认值为nonProtection - consoleProtection: 控制台修改保护
+        /// </summary>
+        [JsonProperty("protection_status", NullValueHandling = NullValueHandling.Ignore)]
+        public ProtectionStatusEnum ProtectionStatus { get; set; }
+        /// <summary>
+        /// 设置保护的原因 &gt;仅当protection_status为consoleProtection时有效。
+        /// </summary>
+        [JsonProperty("protection_reason", NullValueHandling = NullValueHandling.Ignore)]
+        public string ProtectionReason { get; set; }
 
 
 
@@ -423,7 +555,10 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
             sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  publicips: ").Append(Publicips).Append("\n");
             sb.Append("  chargeMode: ").Append(ChargeMode).Append("\n");
+            sb.Append("  billingInfo: ").Append(BillingInfo).Append("\n");
             sb.Append("  frozenScene: ").Append(FrozenScene).Append("\n");
+            sb.Append("  protectionStatus: ").Append(ProtectionStatus).Append("\n");
+            sb.Append("  protectionReason: ").Append(ProtectionReason).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -550,9 +685,24 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
                     this.ChargeMode.Equals(input.ChargeMode))
                 ) && 
                 (
+                    this.BillingInfo == input.BillingInfo ||
+                    (this.BillingInfo != null &&
+                    this.BillingInfo.Equals(input.BillingInfo))
+                ) && 
+                (
                     this.FrozenScene == input.FrozenScene ||
                     (this.FrozenScene != null &&
                     this.FrozenScene.Equals(input.FrozenScene))
+                ) && 
+                (
+                    this.ProtectionStatus == input.ProtectionStatus ||
+                    (this.ProtectionStatus != null &&
+                    this.ProtectionStatus.Equals(input.ProtectionStatus))
+                ) && 
+                (
+                    this.ProtectionReason == input.ProtectionReason ||
+                    (this.ProtectionReason != null &&
+                    this.ProtectionReason.Equals(input.ProtectionReason))
                 );
         }
 
@@ -604,8 +754,14 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
                     hashCode = hashCode * 59 + this.Publicips.GetHashCode();
                 if (this.ChargeMode != null)
                     hashCode = hashCode * 59 + this.ChargeMode.GetHashCode();
+                if (this.BillingInfo != null)
+                    hashCode = hashCode * 59 + this.BillingInfo.GetHashCode();
                 if (this.FrozenScene != null)
                     hashCode = hashCode * 59 + this.FrozenScene.GetHashCode();
+                if (this.ProtectionStatus != null)
+                    hashCode = hashCode * 59 + this.ProtectionStatus.GetHashCode();
+                if (this.ProtectionReason != null)
+                    hashCode = hashCode * 59 + this.ProtectionReason.GetHashCode();
                 return hashCode;
             }
         }

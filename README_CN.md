@@ -265,6 +265,7 @@ var httpConfig = HttpConfig.GetDefaultConfig()
     .WithProxyHost("proxy.huaweicloud.com")
     .WithProxyPort(8080)
     // 如果代理需要认证，请配置用户名和密码
+    // 本示例中的账号和密码保存在环境变量中，运行本示例前请先在本地环境中配置环境变量PROXY_USERNAME和PROXY_PASSWORD
     .WithIgnoreProxyUsername(Environment.GetEnvironmentVariable("PROXY_USERNAME"))
     .WithIgnoreProxyPassword(Environment.GetEnvironmentVariable("PROXY_PASSWORD"));
 
@@ -602,7 +603,22 @@ var credentials = new BasicCredentials(ak, sk).WithIamEndpoint(iamEndpoint);
 
 ##### 3.3.2 Region配置 [:top:](#用户手册-top)
 
-###### 3.3.2.1 环境变量 [:top:](#用户手册-top)
+###### 3.3.2.1 代码配置 [:top:](#用户手册-top)
+
+```csharp
+using HuaweiCloud.SDK.Core;
+using HuaweiCloud.SDK.Ecs.V2;
+
+// 使用自定义的regionId和endpoint创建一个region
+var region = new Region("cn-north-9", "https://ecs.cn-north-9.myhuaweicloud.com")
+
+var client = EcsClient.NewBuilder()
+    .WithCredential(auth)
+    .WithRegion(region)
+    .Build();
+```
+
+###### 3.3.2.2 环境变量 [:top:](#用户手册-top)
 
 通过环境变量配置，一个region可以对应多个endpoint，主要endpoint无法连接会自动切换到备用endpoint
 
@@ -618,7 +634,7 @@ export HUAWEICLOUD_SDK_REGION_ECS_CN_NORTH_9=https://ecs.cn-north-9.myhuaweiclou
 set HUAWEICLOUD_SDK_REGION_ECS_CN_NORTH_9=https://ecs.cn-north-9.myhuaweicloud.com,https://ecs.cn-north-9.myhuaweicloud.cn
 ```
 
-###### 3.3.2.2 文件配置 [:top:](#用户手册-top)
+###### 3.3.2.3 文件配置 [:top:](#用户手册-top)
 
 通过yaml文件配置，默认会从用户主目录下读取region配置文件，linux为`~/.huaweicloud/regions.yaml`，windows为`C:\Users\USER_NAME\.huaweicloud\regions.yaml`，默认配置文件可以不存在，但是如果配置文件存在且内容格式不对会解析错误抛出异常。
 
@@ -635,9 +651,9 @@ ECS:
       - 'https://ecs.cn-north-9.myhuaweicloud.cn'
 ```
 
-###### 3.3.2.3 Region提供链 [:top:](#用户手册-top)
+###### 3.3.2.4 Region提供链 [:top:](#用户手册-top)
 
-默认查找顺序为 **环境变量 -> 配置文件 -> SDK中已定义Region**，以上方式都找不到region会抛出异常，获取region示例：
+**Region.ValueOf(regionId)** 方法默认查找顺序为 **环境变量 -> 配置文件 -> SDK中已定义Region**，以上方式都找不到region会抛出异常 **ArgumentException**，获取region示例：
 
 ```csharp
 using HuaweiCloud.SDK.Ecs.V2;

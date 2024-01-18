@@ -861,6 +861,30 @@ namespace HuaweiCloud.SDK.Ocr.V1
         }
         
         /// <summary>
+        /// 印章识别
+        ///
+        /// 检测和识别合同文件或常用票据中的印章，并可擦除和提取图片中的印章，通过JSON格式返回印章检测、识别、擦除和提取的结果。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public RecognizeSealResponse RecognizeSeal(RecognizeSealRequest recognizeSealRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/seal", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeSealRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<RecognizeSealResponse>(response);
+        }
+
+        public SyncInvoker<RecognizeSealResponse> RecognizeSealInvoker(RecognizeSealRequest recognizeSealRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/seal", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeSealRequest);
+            return new SyncInvoker<RecognizeSealResponse>(this, "POST", request, JsonUtils.DeSerialize<RecognizeSealResponse>);
+        }
+        
+        /// <summary>
         /// 智能文档解析
         ///
         /// 对证件、票据、表单等任意版式文档进行键值对提取、文字识别、以及表格识别等任务，实现进阶高效的自动化结构化返回。该接口的使用限制请参见[约束与限制](https://support.huaweicloud.com/productdesc-ocr/ocr_01_0006.html#section11)，详细使用指导请参见[OCR服务使用简介](https://support.huaweicloud.com/qs-ocr/ocr_05_0001.html)章节。

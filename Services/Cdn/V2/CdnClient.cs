@@ -160,6 +160,36 @@ namespace HuaweiCloud.SDK.Cdn.V2
         }
         
         /// <summary>
+        /// 查询统计TOP100 referer数据明细
+        ///
+        /// - 查询TOP100 referer数据。
+        /// 
+        /// - 支持查询90天内的数据。
+        /// 
+        /// - 查询跨度不能超过31天。
+        /// 
+        /// - 单租户调用频率：2次/s。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListCdnDomainTopRefersResponse ListCdnDomainTopRefers(ListCdnDomainTopRefersRequest listCdnDomainTopRefersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/statistics/top-refers", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCdnDomainTopRefersRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListCdnDomainTopRefersResponse>(response);
+        }
+
+        public SyncInvoker<ListCdnDomainTopRefersResponse> ListCdnDomainTopRefersInvoker(ListCdnDomainTopRefersRequest listCdnDomainTopRefersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/statistics/top-refers", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCdnDomainTopRefersRequest);
+            return new SyncInvoker<ListCdnDomainTopRefersResponse>(this, "GET", request, JsonUtils.DeSerialize<ListCdnDomainTopRefersResponse>);
+        }
+        
+        /// <summary>
         /// 查询加速域名
         ///
         /// 查询加速域名。

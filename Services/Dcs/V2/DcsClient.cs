@@ -141,6 +141,32 @@ namespace HuaweiCloud.SDK.Dcs.V2
         }
         
         /// <summary>
+        /// 异步交换实例主备节点
+        ///
+        /// 异步交换实例主备节点
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ChangeMasterStandbyAsyncResponse ChangeMasterStandbyAsync(ChangeMasterStandbyAsyncRequest changeMasterStandbyAsyncRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", changeMasterStandbyAsyncRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/async-swap", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", changeMasterStandbyAsyncRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<ChangeMasterStandbyAsyncResponse>(response);
+        }
+
+        public SyncInvoker<ChangeMasterStandbyAsyncResponse> ChangeMasterStandbyAsyncInvoker(ChangeMasterStandbyAsyncRequest changeMasterStandbyAsyncRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", changeMasterStandbyAsyncRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/async-swap", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", changeMasterStandbyAsyncRequest);
+            return new SyncInvoker<ChangeMasterStandbyAsyncResponse>(this, "PUT", request, JsonUtils.DeSerialize<ChangeMasterStandbyAsyncResponse>);
+        }
+        
+        /// <summary>
         /// 备份指定实例
         ///
         /// 备份指定的缓存实例。
@@ -684,7 +710,7 @@ namespace HuaweiCloud.SDK.Dcs.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/hotkey-task/{hotkey_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteHotkeyScanTaskRequest);
             var response = DoHttpRequestSync("DELETE", request);
-            return JsonUtils.DeSerializeNull<DeleteHotkeyScanTaskResponse>(response);
+            return JsonUtils.DeSerialize<DeleteHotkeyScanTaskResponse>(response);
         }
 
         public SyncInvoker<DeleteHotkeyScanTaskResponse> DeleteHotkeyScanTaskInvoker(DeleteHotkeyScanTaskRequest deleteHotkeyScanTaskRequest)
@@ -694,7 +720,7 @@ namespace HuaweiCloud.SDK.Dcs.V2
             urlParam.Add("hotkey_id", deleteHotkeyScanTaskRequest.HotkeyId.ToString());
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/hotkey-task/{hotkey_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteHotkeyScanTaskRequest);
-            return new SyncInvoker<DeleteHotkeyScanTaskResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteHotkeyScanTaskResponse>);
+            return new SyncInvoker<DeleteHotkeyScanTaskResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteHotkeyScanTaskResponse>);
         }
         
         /// <summary>

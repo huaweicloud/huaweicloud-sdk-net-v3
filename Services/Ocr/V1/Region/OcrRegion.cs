@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using HuaweiCloud.SDK.Core;
 
 namespace HuaweiCloud.SDK.Ocr.V1
@@ -27,7 +28,7 @@ namespace HuaweiCloud.SDK.Ocr.V1
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("OCR");
 
-        private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>()
+        private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>
         {
                 { "cn-north-4", CN_NORTH_4 },
                 { "cn-south-1", CN_SOUTH_1 },
@@ -58,7 +59,7 @@ namespace HuaweiCloud.SDK.Ocr.V1
                 return StaticFields[regionId];
             }
 
-            throw new ArgumentException("Unexpected regionId: ", regionId);
+            throw new ArgumentException($"region id '{regionId}' is not in the following supported regions of service 'OCR': [{string.Join(", ", StaticFields.Keys.OrderBy(key => key))}]");
         }
     }
 }

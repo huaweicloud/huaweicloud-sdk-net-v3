@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using HuaweiCloud.SDK.Core;
 
 namespace HuaweiCloud.SDK.Cce.V3
@@ -52,10 +53,12 @@ namespace HuaweiCloud.SDK.Cce.V3
             "https://cce.ae-ad-1.myhuaweicloud.com");
         public static readonly Region EU_WEST_101 = new Region("eu-west-101",
             "https://cce.eu-west-101.myhuaweicloud.eu");
+        public static readonly Region CN_NORTH_11 = new Region("cn-north-11",
+            "https://cce.cn-north-11.myhuaweicloud.com");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("CCE");
 
-        private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>()
+        private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>
         {
                 { "cn-north-1", CN_NORTH_1 },
                 { "cn-north-2", CN_NORTH_2 },
@@ -80,6 +83,7 @@ namespace HuaweiCloud.SDK.Cce.V3
                 { "tr-west-1", TR_WEST_1 },
                 { "ae-ad-1", AE_AD_1 },
                 { "eu-west-101", EU_WEST_101 },
+                { "cn-north-11", CN_NORTH_11 },
         };
 
         public static Region ValueOf(string regionId)
@@ -100,7 +104,7 @@ namespace HuaweiCloud.SDK.Cce.V3
                 return StaticFields[regionId];
             }
 
-            throw new ArgumentException("Unexpected regionId: ", regionId);
+            throw new ArgumentException($"region id '{regionId}' is not in the following supported regions of service 'CCE': [{string.Join(", ", StaticFields.Keys.OrderBy(key => key))}]");
         }
     }
 }

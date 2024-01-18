@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
     public class ShowTopUrlRequest 
     {
         /// <summary>
-        /// mainland_china(中国大陆)，outside_mainland_china(中国大陆境外)，默认为mainland_china。
+        /// mainland_china(中国大陆)，outside_mainland_china(中国大陆境外)，默认为global(全球)。
         /// </summary>
-        /// <value>mainland_china(中国大陆)，outside_mainland_china(中国大陆境外)，默认为mainland_china。</value>
+        /// <value>mainland_china(中国大陆)，outside_mainland_china(中国大陆境外)，默认为global(全球)。</value>
         [JsonConverter(typeof(EnumClassConverter<ServiceAreaEnum>))]
         public class ServiceAreaEnum
         {
@@ -32,11 +32,17 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
             /// </summary>
             public static readonly ServiceAreaEnum OUTSIDE_MAINLAND_CHINA = new ServiceAreaEnum("outside_mainland_china");
 
+            /// <summary>
+            /// Enum GLOBAL for value: global
+            /// </summary>
+            public static readonly ServiceAreaEnum GLOBAL = new ServiceAreaEnum("global");
+
             private static readonly Dictionary<string, ServiceAreaEnum> StaticFields =
             new Dictionary<string, ServiceAreaEnum>()
             {
                 { "mainland_china", MAINLAND_CHINA },
                 { "outside_mainland_china", OUTSIDE_MAINLAND_CHINA },
+                { "global", GLOBAL },
             };
 
             private string _value;
@@ -275,7 +281,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public string DomainName { get; set; }
 
         /// <summary>
-        /// mainland_china(中国大陆)，outside_mainland_china(中国大陆境外)，默认为mainland_china。
+        /// mainland_china(中国大陆)，outside_mainland_china(中国大陆境外)，默认为global(全球)。
         /// </summary>
         [SDKProperty("service_area", IsQuery = true)]
         [JsonProperty("service_area", NullValueHandling = NullValueHandling.Ignore)]

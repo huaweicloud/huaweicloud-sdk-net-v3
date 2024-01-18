@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using HuaweiCloud.SDK.Core;
 
 namespace HuaweiCloud.SDK.Rds.V3
@@ -16,6 +17,8 @@ namespace HuaweiCloud.SDK.Rds.V3
             "https://rds.cn-east-2.myhuaweicloud.com");
         public static readonly Region CN_EAST_3 = new Region("cn-east-3",
             "https://rds.cn-east-3.myhuaweicloud.com");
+        public static readonly Region CN_EAST_5 = new Region("cn-east-5",
+            "https://rds.cn-east-5.myhuaweicloud.com");
         public static readonly Region CN_SOUTH_1 = new Region("cn-south-1",
             "https://rds.cn-south-1.myhuaweicloud.com");
         public static readonly Region CN_SOUTHWEST_2 = new Region("cn-southwest-2",
@@ -50,16 +53,19 @@ namespace HuaweiCloud.SDK.Rds.V3
             "https://rds.ae-ad-1.myhuaweicloud.com");
         public static readonly Region EU_WEST_101 = new Region("eu-west-101",
             "https://rds.eu-west-101.myhuaweicloud.eu");
+        public static readonly Region EU_WEST_0 = new Region("eu-west-0",
+            "https://rds.eu-west-0.myhuaweicloud.com");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("RDS");
 
-        private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>()
+        private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>
         {
                 { "af-south-1", AF_SOUTH_1 },
                 { "cn-north-4", CN_NORTH_4 },
                 { "cn-north-1", CN_NORTH_1 },
                 { "cn-east-2", CN_EAST_2 },
                 { "cn-east-3", CN_EAST_3 },
+                { "cn-east-5", CN_EAST_5 },
                 { "cn-south-1", CN_SOUTH_1 },
                 { "cn-southwest-2", CN_SOUTHWEST_2 },
                 { "ap-southeast-2", AP_SOUTHEAST_2 },
@@ -77,6 +83,7 @@ namespace HuaweiCloud.SDK.Rds.V3
                 { "ap-southeast-4", AP_SOUTHEAST_4 },
                 { "ae-ad-1", AE_AD_1 },
                 { "eu-west-101", EU_WEST_101 },
+                { "eu-west-0", EU_WEST_0 },
         };
 
         public static Region ValueOf(string regionId)
@@ -97,7 +104,7 @@ namespace HuaweiCloud.SDK.Rds.V3
                 return StaticFields[regionId];
             }
 
-            throw new ArgumentException("Unexpected regionId: ", regionId);
+            throw new ArgumentException($"region id '{regionId}' is not in the following supported regions of service 'RDS': [{string.Join(", ", StaticFields.Keys.OrderBy(key => key))}]");
         }
     }
 }

@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
     public class ListPromInstanceRequest 
     {
         /// <summary>
-        /// Prometheus实例类型。
+        /// Prometheus实例类型（暂时不支持VPC、KUBERNETES）。
         /// </summary>
-        /// <value>Prometheus实例类型。</value>
+        /// <value>Prometheus实例类型（暂时不支持VPC、KUBERNETES）。</value>
         [JsonConverter(typeof(EnumClassConverter<PromTypeEnum>))]
         public class PromTypeEnum
         {
@@ -289,20 +289,26 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         public class PromStatusEnum
         {
             /// <summary>
-            /// Enum TRUE for value: true
+            /// Enum DELETED for value: DELETED
             /// </summary>
-            public static readonly PromStatusEnum TRUE = new PromStatusEnum("true");
+            public static readonly PromStatusEnum DELETED = new PromStatusEnum("DELETED");
 
             /// <summary>
-            /// Enum FALSE for value: false
+            /// Enum NORMAL for value: NORMAL
             /// </summary>
-            public static readonly PromStatusEnum FALSE = new PromStatusEnum("false");
+            public static readonly PromStatusEnum NORMAL = new PromStatusEnum("NORMAL");
+
+            /// <summary>
+            /// Enum ALL for value: ALL
+            /// </summary>
+            public static readonly PromStatusEnum ALL = new PromStatusEnum("ALL");
 
             private static readonly Dictionary<string, PromStatusEnum> StaticFields =
             new Dictionary<string, PromStatusEnum>()
             {
-                { "true", TRUE },
-                { "false", FALSE },
+                { "DELETED", DELETED },
+                { "NORMAL", NORMAL },
+                { "ALL", ALL },
             };
 
             private string _value;
@@ -398,14 +404,14 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
 
 
         /// <summary>
-        /// Prometheus实例id。
+        /// Prometheus实例id(prom_id与prom_type同时存在时，仅prom_id生效)。
         /// </summary>
         [SDKProperty("prom_id", IsQuery = true)]
         [JsonProperty("prom_id", NullValueHandling = NullValueHandling.Ignore)]
         public string PromId { get; set; }
 
         /// <summary>
-        /// Prometheus实例类型。
+        /// Prometheus实例类型（暂时不支持VPC、KUBERNETES）。
         /// </summary>
         [SDKProperty("prom_type", IsQuery = true)]
         [JsonProperty("prom_type", NullValueHandling = NullValueHandling.Ignore)]

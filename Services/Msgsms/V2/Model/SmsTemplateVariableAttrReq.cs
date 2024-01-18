@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Msgsms.V2.Model
         public int? VariableIndex { get; set; }
 
         /// <summary>
-        /// 变量类型，目前支持：PHONE|CHARDIGIT|DATETIME|MONEY|TEXT|NEWTEXT
+        /// 变量类型，目前支持：PHONE|CHARDIGIT|DATETIME|MONEY|TEXT|NEWTEXT|LONGTEXT
         /// </summary>
         [JsonProperty("variable_type", NullValueHandling = NullValueHandling.Ignore)]
         public string VariableType { get; set; }

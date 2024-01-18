@@ -23,6 +23,12 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public string Group { get; set; }
 
         /// <summary>
+        /// 消息所属topic。
+        /// </summary>
+        [JsonProperty("topic", NullValueHandling = NullValueHandling.Ignore)]
+        public string Topic { get; set; }
+
+        /// <summary>
         /// 客户端ID。
         /// </summary>
         [JsonProperty("client_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -44,6 +50,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             var sb = new StringBuilder();
             sb.Append("class ResendReq {\n");
             sb.Append("  group: ").Append(Group).Append("\n");
+            sb.Append("  topic: ").Append(Topic).Append("\n");
             sb.Append("  clientId: ").Append(ClientId).Append("\n");
             sb.Append("  msgIdList: ").Append(MsgIdList).Append("\n");
             sb.Append("}\n");
@@ -73,6 +80,11 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                     this.Group.Equals(input.Group))
                 ) && 
                 (
+                    this.Topic == input.Topic ||
+                    (this.Topic != null &&
+                    this.Topic.Equals(input.Topic))
+                ) && 
+                (
                     this.ClientId == input.ClientId ||
                     (this.ClientId != null &&
                     this.ClientId.Equals(input.ClientId))
@@ -95,6 +107,8 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                 int hashCode = 41;
                 if (this.Group != null)
                     hashCode = hashCode * 59 + this.Group.GetHashCode();
+                if (this.Topic != null)
+                    hashCode = hashCode * 59 + this.Topic.GetHashCode();
                 if (this.ClientId != null)
                     hashCode = hashCode * 59 + this.ClientId.GetHashCode();
                 if (this.MsgIdList != null)

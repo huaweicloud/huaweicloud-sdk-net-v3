@@ -119,6 +119,48 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public string IssueDate { get; set; }
 
         /// <summary>
+        /// 增值税税额 
+        /// </summary>
+        [JsonProperty("tax", NullValueHandling = NullValueHandling.Ignore)]
+        public string Tax { get; set; }
+
+        /// <summary>
+        /// 增值税税率 
+        /// </summary>
+        [JsonProperty("tax_rate", NullValueHandling = NullValueHandling.Ignore)]
+        public string TaxRate { get; set; }
+
+        /// <summary>
+        /// 购买方名称 
+        /// </summary>
+        [JsonProperty("buyer_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string BuyerName { get; set; }
+
+        /// <summary>
+        /// 购买方纳税人识别号 
+        /// </summary>
+        [JsonProperty("buyer_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string BuyerId { get; set; }
+
+        /// <summary>
+        /// 发票号码 
+        /// </summary>
+        [JsonProperty("number", NullValueHandling = NullValueHandling.Ignore)]
+        public string Number { get; set; }
+
+        /// <summary>
+        /// 国内国际标签 
+        /// </summary>
+        [JsonProperty("international_flag", NullValueHandling = NullValueHandling.Ignore)]
+        public string InternationalFlag { get; set; }
+
+        /// <summary>
+        /// 开具状态 
+        /// </summary>
+        [JsonProperty("issue_status", NullValueHandling = NullValueHandling.Ignore)]
+        public string IssueStatus { get; set; }
+
+        /// <summary>
         /// 机票行程列表。 
         /// </summary>
         [JsonProperty("itinerary_list", NullValueHandling = NullValueHandling.Ignore)]
@@ -156,6 +198,13 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  agentCode: ").Append(AgentCode).Append("\n");
             sb.Append("  issueOrganization: ").Append(IssueOrganization).Append("\n");
             sb.Append("  issueDate: ").Append(IssueDate).Append("\n");
+            sb.Append("  tax: ").Append(Tax).Append("\n");
+            sb.Append("  taxRate: ").Append(TaxRate).Append("\n");
+            sb.Append("  buyerName: ").Append(BuyerName).Append("\n");
+            sb.Append("  buyerId: ").Append(BuyerId).Append("\n");
+            sb.Append("  number: ").Append(Number).Append("\n");
+            sb.Append("  internationalFlag: ").Append(InternationalFlag).Append("\n");
+            sb.Append("  issueStatus: ").Append(IssueStatus).Append("\n");
             sb.Append("  itineraryList: ").Append(ItineraryList).Append("\n");
             sb.Append("  confidence: ").Append(Confidence).Append("\n");
             sb.Append("}\n");
@@ -265,6 +314,41 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     this.IssueDate.Equals(input.IssueDate))
                 ) && 
                 (
+                    this.Tax == input.Tax ||
+                    (this.Tax != null &&
+                    this.Tax.Equals(input.Tax))
+                ) && 
+                (
+                    this.TaxRate == input.TaxRate ||
+                    (this.TaxRate != null &&
+                    this.TaxRate.Equals(input.TaxRate))
+                ) && 
+                (
+                    this.BuyerName == input.BuyerName ||
+                    (this.BuyerName != null &&
+                    this.BuyerName.Equals(input.BuyerName))
+                ) && 
+                (
+                    this.BuyerId == input.BuyerId ||
+                    (this.BuyerId != null &&
+                    this.BuyerId.Equals(input.BuyerId))
+                ) && 
+                (
+                    this.Number == input.Number ||
+                    (this.Number != null &&
+                    this.Number.Equals(input.Number))
+                ) && 
+                (
+                    this.InternationalFlag == input.InternationalFlag ||
+                    (this.InternationalFlag != null &&
+                    this.InternationalFlag.Equals(input.InternationalFlag))
+                ) && 
+                (
+                    this.IssueStatus == input.IssueStatus ||
+                    (this.IssueStatus != null &&
+                    this.IssueStatus.Equals(input.IssueStatus))
+                ) && 
+                (
                     this.ItineraryList == input.ItineraryList ||
                     this.ItineraryList != null &&
                     input.ItineraryList != null &&
@@ -319,6 +403,20 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     hashCode = hashCode * 59 + this.IssueOrganization.GetHashCode();
                 if (this.IssueDate != null)
                     hashCode = hashCode * 59 + this.IssueDate.GetHashCode();
+                if (this.Tax != null)
+                    hashCode = hashCode * 59 + this.Tax.GetHashCode();
+                if (this.TaxRate != null)
+                    hashCode = hashCode * 59 + this.TaxRate.GetHashCode();
+                if (this.BuyerName != null)
+                    hashCode = hashCode * 59 + this.BuyerName.GetHashCode();
+                if (this.BuyerId != null)
+                    hashCode = hashCode * 59 + this.BuyerId.GetHashCode();
+                if (this.Number != null)
+                    hashCode = hashCode * 59 + this.Number.GetHashCode();
+                if (this.InternationalFlag != null)
+                    hashCode = hashCode * 59 + this.InternationalFlag.GetHashCode();
+                if (this.IssueStatus != null)
+                    hashCode = hashCode * 59 + this.IssueStatus.GetHashCode();
                 if (this.ItineraryList != null)
                     hashCode = hashCode * 59 + this.ItineraryList.GetHashCode();
                 if (this.Confidence != null)

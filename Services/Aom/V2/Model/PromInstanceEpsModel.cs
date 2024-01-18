@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
     public class PromInstanceEpsModel 
     {
         /// <summary>
-        /// Prometheus实例类型。
+        /// Prometheus实例类型（暂时不支持VPC、KUBERNETES）。
         /// </summary>
-        /// <value>Prometheus实例类型。</value>
+        /// <value>Prometheus实例类型（暂时不支持VPC、KUBERNETES）。</value>
         [JsonConverter(typeof(EnumClassConverter<PromTypeEnum>))]
         public class PromTypeEnum
         {
@@ -166,6 +166,127 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
             }
         }
 
+        /// <summary>
+        /// Prometheus实例状态。
+        /// </summary>
+        /// <value>Prometheus实例状态。</value>
+        [JsonConverter(typeof(EnumClassConverter<PromStatusEnum>))]
+        public class PromStatusEnum
+        {
+            /// <summary>
+            /// Enum DELETED for value: DELETED
+            /// </summary>
+            public static readonly PromStatusEnum DELETED = new PromStatusEnum("DELETED");
+
+            /// <summary>
+            /// Enum NORMAL for value: NORMAL
+            /// </summary>
+            public static readonly PromStatusEnum NORMAL = new PromStatusEnum("NORMAL");
+
+            /// <summary>
+            /// Enum ALL for value: ALL
+            /// </summary>
+            public static readonly PromStatusEnum ALL = new PromStatusEnum("ALL");
+
+            private static readonly Dictionary<string, PromStatusEnum> StaticFields =
+            new Dictionary<string, PromStatusEnum>()
+            {
+                { "DELETED", DELETED },
+                { "NORMAL", NORMAL },
+                { "ALL", ALL },
+            };
+
+            private string _value;
+
+            public PromStatusEnum()
+            {
+
+            }
+
+            public PromStatusEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static PromStatusEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as PromStatusEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(PromStatusEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(PromStatusEnum a, PromStatusEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(PromStatusEnum a, PromStatusEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// Prometheus实例名称 名称不能以下划线或中划线开头结尾，只含有中文、英文、数字、下划线、中划线、长度1-100。
@@ -180,7 +301,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         public string PromId { get; set; }
 
         /// <summary>
-        /// Prometheus实例类型。
+        /// Prometheus实例类型（暂时不支持VPC、KUBERNETES）。
         /// </summary>
         [JsonProperty("prom_type", NullValueHandling = NullValueHandling.Ignore)]
         public PromTypeEnum PromType { get; set; }
@@ -189,18 +310,6 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// </summary>
         [JsonProperty("prom_version", NullValueHandling = NullValueHandling.Ignore)]
         public string PromVersion { get; set; }
-
-        /// <summary>
-        /// CCE场景特殊字段。
-        /// </summary>
-        [JsonProperty("cce_spec", NullValueHandling = NullValueHandling.Ignore)]
-        public string CceSpec { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("prom_config", NullValueHandling = NullValueHandling.Ignore)]
-        public PromConfigModel PromConfig { get; set; }
 
         /// <summary>
         /// Prometheus实例创建时间戳。
@@ -218,8 +327,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// Prometheus实例状态。
         /// </summary>
         [JsonProperty("prom_status", NullValueHandling = NullValueHandling.Ignore)]
-        public string PromStatus { get; set; }
-
+        public PromStatusEnum PromStatus { get; set; }
         /// <summary>
         /// Prometheus实例所属的企业项目。
         /// </summary>
@@ -256,12 +364,6 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         [JsonProperty("cce_spec_config", NullValueHandling = NullValueHandling.Ignore)]
         public string CceSpecConfig { get; set; }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("application", NullValueHandling = NullValueHandling.Ignore)]
-        public ApplicationModel Application { get; set; }
-
 
 
         /// <summary>
@@ -275,8 +377,6 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
             sb.Append("  promId: ").Append(PromId).Append("\n");
             sb.Append("  promType: ").Append(PromType).Append("\n");
             sb.Append("  promVersion: ").Append(PromVersion).Append("\n");
-            sb.Append("  cceSpec: ").Append(CceSpec).Append("\n");
-            sb.Append("  promConfig: ").Append(PromConfig).Append("\n");
             sb.Append("  promCreateTimestamp: ").Append(PromCreateTimestamp).Append("\n");
             sb.Append("  promUpdateTimestamp: ").Append(PromUpdateTimestamp).Append("\n");
             sb.Append("  promStatus: ").Append(PromStatus).Append("\n");
@@ -286,7 +386,6 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
             sb.Append("  deletedTime: ").Append(DeletedTime).Append("\n");
             sb.Append("  promSpecConfig: ").Append(PromSpecConfig).Append("\n");
             sb.Append("  cceSpecConfig: ").Append(CceSpecConfig).Append("\n");
-            sb.Append("  application: ").Append(Application).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -327,16 +426,6 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
                     this.PromVersion == input.PromVersion ||
                     (this.PromVersion != null &&
                     this.PromVersion.Equals(input.PromVersion))
-                ) && 
-                (
-                    this.CceSpec == input.CceSpec ||
-                    (this.CceSpec != null &&
-                    this.CceSpec.Equals(input.CceSpec))
-                ) && 
-                (
-                    this.PromConfig == input.PromConfig ||
-                    (this.PromConfig != null &&
-                    this.PromConfig.Equals(input.PromConfig))
                 ) && 
                 (
                     this.PromCreateTimestamp == input.PromCreateTimestamp ||
@@ -382,11 +471,6 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
                     this.CceSpecConfig == input.CceSpecConfig ||
                     (this.CceSpecConfig != null &&
                     this.CceSpecConfig.Equals(input.CceSpecConfig))
-                ) && 
-                (
-                    this.Application == input.Application ||
-                    (this.Application != null &&
-                    this.Application.Equals(input.Application))
                 );
         }
 
@@ -406,10 +490,6 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
                     hashCode = hashCode * 59 + this.PromType.GetHashCode();
                 if (this.PromVersion != null)
                     hashCode = hashCode * 59 + this.PromVersion.GetHashCode();
-                if (this.CceSpec != null)
-                    hashCode = hashCode * 59 + this.CceSpec.GetHashCode();
-                if (this.PromConfig != null)
-                    hashCode = hashCode * 59 + this.PromConfig.GetHashCode();
                 if (this.PromCreateTimestamp != null)
                     hashCode = hashCode * 59 + this.PromCreateTimestamp.GetHashCode();
                 if (this.PromUpdateTimestamp != null)
@@ -428,8 +508,6 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
                     hashCode = hashCode * 59 + this.PromSpecConfig.GetHashCode();
                 if (this.CceSpecConfig != null)
                     hashCode = hashCode * 59 + this.CceSpecConfig.GetHashCode();
-                if (this.Application != null)
-                    hashCode = hashCode * 59 + this.Application.GetHashCode();
                 return hashCode;
             }
         }

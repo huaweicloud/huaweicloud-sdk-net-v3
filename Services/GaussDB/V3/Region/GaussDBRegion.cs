@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using HuaweiCloud.SDK.Core;
 
 namespace HuaweiCloud.SDK.GaussDB.V3
@@ -35,7 +36,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("GAUSSDB");
 
-        private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>()
+        private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>
         {
                 { "cn-north-4", CN_NORTH_4 },
                 { "cn-southwest-2", CN_SOUTHWEST_2 },
@@ -70,7 +71,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
                 return StaticFields[regionId];
             }
 
-            throw new ArgumentException("Unexpected regionId: ", regionId);
+            throw new ArgumentException($"region id '{regionId}' is not in the following supported regions of service 'GaussDB': [{string.Join(", ", StaticFields.Keys.OrderBy(key => key))}]");
         }
     }
 }

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using HuaweiCloud.SDK.Core;
 
 namespace HuaweiCloud.SDK.Cts.V3
@@ -73,10 +74,12 @@ namespace HuaweiCloud.SDK.Cts.V3
             "https://cts.tr-west-1.myhuaweicloud.cn");
         public static readonly Region ME_EAST_1 = new Region("me-east-1",
             "https://cts.me-east-1.myhuaweicloud.com");
+        public static readonly Region EU_WEST_0 = new Region("eu-west-0",
+            "https://cts.eu-west-0.myhuaweicloud.com");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("CTS");
 
-        private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>()
+        private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>
         {
                 { "af-south-1", AF_SOUTH_1 },
                 { "cn-north-4", CN_NORTH_4 },
@@ -101,6 +104,7 @@ namespace HuaweiCloud.SDK.Cts.V3
                 { "ap-southeast-4", AP_SOUTHEAST_4 },
                 { "tr-west-1", TR_WEST_1 },
                 { "me-east-1", ME_EAST_1 },
+                { "eu-west-0", EU_WEST_0 },
         };
 
         public static Region ValueOf(string regionId)
@@ -121,7 +125,7 @@ namespace HuaweiCloud.SDK.Cts.V3
                 return StaticFields[regionId];
             }
 
-            throw new ArgumentException("Unexpected regionId: ", regionId);
+            throw new ArgumentException($"region id '{regionId}' is not in the following supported regions of service 'CTS': [{string.Join(", ", StaticFields.Keys.OrderBy(key => key))}]");
         }
     }
 }

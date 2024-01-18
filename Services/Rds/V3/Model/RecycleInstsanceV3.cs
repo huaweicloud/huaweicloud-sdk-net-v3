@@ -112,6 +112,12 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         [JsonProperty("recycle_status", NullValueHandling = NullValueHandling.Ignore)]
         public string RecycleStatus { get; set; }
 
+        /// <summary>
+        /// 是否为serverless实例 - false 不是serverless实例 - true 是serverless实例
+        /// </summary>
+        [JsonProperty("is_serverless", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsServerless { get; set; }
+
 
 
         /// <summary>
@@ -137,6 +143,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             sb.Append("  retainedUntil: ").Append(RetainedUntil).Append("\n");
             sb.Append("  recycleBackupId: ").Append(RecycleBackupId).Append("\n");
             sb.Append("  recycleStatus: ").Append(RecycleStatus).Append("\n");
+            sb.Append("  isServerless: ").Append(IsServerless).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -237,6 +244,11 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
                     this.RecycleStatus == input.RecycleStatus ||
                     (this.RecycleStatus != null &&
                     this.RecycleStatus.Equals(input.RecycleStatus))
+                ) && 
+                (
+                    this.IsServerless == input.IsServerless ||
+                    (this.IsServerless != null &&
+                    this.IsServerless.Equals(input.IsServerless))
                 );
         }
 
@@ -280,6 +292,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
                     hashCode = hashCode * 59 + this.RecycleBackupId.GetHashCode();
                 if (this.RecycleStatus != null)
                     hashCode = hashCode * 59 + this.RecycleStatus.GetHashCode();
+                if (this.IsServerless != null)
+                    hashCode = hashCode * 59 + this.IsServerless.GetHashCode();
                 return hashCode;
             }
         }

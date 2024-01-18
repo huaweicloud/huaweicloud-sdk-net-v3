@@ -281,6 +281,7 @@ var client = VpcClient.NewBuilder()
 var httpConfig = HttpConfig.GetDefaultConfig()
     .WithProxyHost("https://proxy.huaweicloud.com:8080")
     // Configure the username and password if the proxy requires authentication
+    // In this example, username and password are stored in environment variables. Please configure the environment variables PROXY_USERNAME and PROXY_PASSWORD before running this example.
     .WithIgnoreProxyUsername(Environment.GetEnvironmentVariable("PROXY_USERNAME"))
     .WithIgnoreProxyPassword(Environment.GetEnvironmentVariable("PROXY_PASSWORD"));
 
@@ -608,7 +609,22 @@ var credentials = new BasicCredentials(ak, sk).WithIamEndpoint(iamEndpoint);
 
 ##### 3.3.2 Region configuration [:top:](#user-manual-top)
 
-###### 3.3.2.1 Environment variable [:top:](#user-manual-top)
+###### 3.3.2.1 Code [:top:](#user-manual-top)
+
+```csharp
+using HuaweiCloud.SDK.Core;
+using HuaweiCloud.SDK.Ecs.V2;
+
+// Create a region with custom region id and endpoint
+var region = new Region("cn-north-9", "https://ecs.cn-north-9.myhuaweicloud.com")
+
+var client = EcsClient.NewBuilder()
+    .WithCredential(auth)
+    .WithRegion(region)
+    .Build();
+```
+
+###### 3.3.2.2 Environment variable [:top:](#user-manual-top)
 
 Specified by environment variable, a region can correspond to multiple endpoints.
 
@@ -626,7 +642,7 @@ export HUAWEICLOUD_SDK_REGION_ECS_CN_NORTH_9=https://ecs.cn-north-9.myhuaweiclou
 set HUAWEICLOUD_SDK_REGION_ECS_CN_NORTH_9=https://ecs.cn-north-9.myhuaweicloud.com,https://ecs.cn-north-9.myhuaweicloud.cn
 ```
 
-###### 3.3.2.2 Profile [:top:](#user-manual-top)
+###### 3.3.2.3 Profile [:top:](#user-manual-top)
 
 The profile will be read from the user's home directory by default, linux`~/.huaweicloud/regions.yaml`,windows`C:\Users\USER_NAME\.huaweicloud\regions.yaml`,the default file may not exist, but if the file exists and the content format is incorrect, an exception will be thrown for parsing errors.
 
@@ -637,7 +653,7 @@ A region can correspond to multiple endpoints, if the main endpoint cannot be co
 The file content format is as follows:
 
 ```yaml
-# Serivce name is case-insensitive
+# Service name is case-insensitive
 ECS:
   - id: 'cn-north-9'
     endpoints:
@@ -645,9 +661,9 @@ ECS:
       - 'https://ecs.cn-north-9.myhuaweicloud.cn'
 ```
 
-###### 3.3.2.3 Region supply chain [:top:](#user-manual-top)
+###### 3.3.2.4 Region supply chain [:top:](#user-manual-top)
 
-The default order is **environment variables -> profile -> region defined in SDK**, if the region is not found in the above ways, an exception will be thrown.
+The default lookup order is **environment variables -> profile -> region defined in SDK** of method **Region.ValueOf(regionId)**, if the region is not found in the above ways, an exception **ArgumentException** will be thrown.
 
 ```csharp
 using HuaweiCloud.SDK.Ecs.V2;
