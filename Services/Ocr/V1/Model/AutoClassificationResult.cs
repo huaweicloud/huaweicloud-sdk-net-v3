@@ -40,6 +40,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         [JsonProperty("location", NullValueHandling = NullValueHandling.Ignore)]
         public List<List<int?>> Location { get; set; }
 
+        /// <summary>
+        /// 对应票证中是否含有印章。可选值包括： -  true：该票证中含有印章。 -  false：该票证中不含有印章。 
+        /// </summary>
+        [JsonProperty("seal_mark", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? SealMark { get; set; }
+
 
 
         /// <summary>
@@ -53,6 +59,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  content: ").Append(Content).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  location: ").Append(Location).Append("\n");
+            sb.Append("  sealMark: ").Append(SealMark).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -94,6 +101,11 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     this.Location != null &&
                     input.Location != null &&
                     this.Location.SequenceEqual(input.Location)
+                ) && 
+                (
+                    this.SealMark == input.SealMark ||
+                    (this.SealMark != null &&
+                    this.SealMark.Equals(input.SealMark))
                 );
         }
 
@@ -113,6 +125,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.Location != null)
                     hashCode = hashCode * 59 + this.Location.GetHashCode();
+                if (this.SealMark != null)
+                    hashCode = hashCode * 59 + this.SealMark.GetHashCode();
                 return hashCode;
             }
         }

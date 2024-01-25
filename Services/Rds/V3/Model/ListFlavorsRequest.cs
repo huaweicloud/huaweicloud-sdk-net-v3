@@ -170,6 +170,13 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         [JsonProperty("spec_code", NullValueHandling = NullValueHandling.Ignore)]
         public string SpecCode { get; set; }
 
+        /// <summary>
+        /// 是否查询serverless规格。取值范围如下，区分大小写： true：查询serverless规格 false：查询非serverless规格 默认值 false。
+        /// </summary>
+        [SDKProperty("is_serverless", IsQuery = true)]
+        [JsonProperty("is_serverless", NullValueHandling = NullValueHandling.Ignore)]
+        public string IsServerless { get; set; }
+
 
 
         /// <summary>
@@ -183,6 +190,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             sb.Append("  databaseName: ").Append(DatabaseName).Append("\n");
             sb.Append("  versionName: ").Append(VersionName).Append("\n");
             sb.Append("  specCode: ").Append(SpecCode).Append("\n");
+            sb.Append("  isServerless: ").Append(IsServerless).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -223,6 +231,11 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
                     this.SpecCode == input.SpecCode ||
                     (this.SpecCode != null &&
                     this.SpecCode.Equals(input.SpecCode))
+                ) && 
+                (
+                    this.IsServerless == input.IsServerless ||
+                    (this.IsServerless != null &&
+                    this.IsServerless.Equals(input.IsServerless))
                 );
         }
 
@@ -242,6 +255,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
                     hashCode = hashCode * 59 + this.VersionName.GetHashCode();
                 if (this.SpecCode != null)
                     hashCode = hashCode * 59 + this.SpecCode.GetHashCode();
+                if (this.IsServerless != null)
+                    hashCode = hashCode * 59 + this.IsServerless.GetHashCode();
                 return hashCode;
             }
         }

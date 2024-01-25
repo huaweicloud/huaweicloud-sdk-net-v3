@@ -302,30 +302,6 @@ namespace HuaweiCloud.SDK.Aad.V1
         }
         
         /// <summary>
-        /// 上传/修改域名对应证书
-        ///
-        /// 上传/修改域名对应证书
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<CreateCertificateResponse> CreateCertificateAsync(CreateCertificateRequest createCertificateRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/aad/external/domains/certificate", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createCertificateRequest);
-            var response = await DoHttpRequestAsync("POST", request);
-            return JsonUtils.DeSerializeNull<CreateCertificateResponse>(response);
-        }
-
-        public AsyncInvoker<CreateCertificateResponse> CreateCertificateAsyncInvoker(CreateCertificateRequest createCertificateRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/aad/external/domains/certificate", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createCertificateRequest);
-            return new AsyncInvoker<CreateCertificateResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateCertificateResponse>);
-        }
-        
-        /// <summary>
         /// 创建策略
         ///
         /// 创建策略
@@ -749,6 +725,30 @@ namespace HuaweiCloud.SDK.Aad.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/aad/external/domains/switch", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyDomainWebSwitchRequest);
             return new AsyncInvoker<ModifyDomainWebSwitchResponse>(this, "POST", request, JsonUtils.DeSerializeNull<ModifyDomainWebSwitchResponse>);
+        }
+        
+        /// <summary>
+        /// 上传/修改域名对应证书
+        ///
+        /// 上传/修改域名对应证书
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<SetCertForDomainResponse> SetCertForDomainAsync(SetCertForDomainRequest setCertForDomainRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/aad/external/domains/certificate", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setCertForDomainRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<SetCertForDomainResponse>(response);
+        }
+
+        public AsyncInvoker<SetCertForDomainResponse> SetCertForDomainAsyncInvoker(SetCertForDomainRequest setCertForDomainRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/aad/external/domains/certificate", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setCertForDomainRequest);
+            return new AsyncInvoker<SetCertForDomainResponse>(this, "POST", request, JsonUtils.DeSerializeNull<SetCertForDomainResponse>);
         }
         
         /// <summary>

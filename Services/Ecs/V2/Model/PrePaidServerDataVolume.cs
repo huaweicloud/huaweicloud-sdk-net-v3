@@ -335,7 +335,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         [JsonProperty("cluster_type", NullValueHandling = NullValueHandling.Ignore)]
         public ClusterTypeEnum ClusterType { get; set; }
         /// <summary>
-        /// 数据镜像的ID，UUID格式。
+        /// 云服务器数据盘对应的存储池的ID。
         /// </summary>
         [JsonProperty("cluster_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ClusterId { get; set; }

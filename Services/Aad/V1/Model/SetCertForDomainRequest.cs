@@ -13,7 +13,7 @@ namespace HuaweiCloud.SDK.Aad.V1.Model
     /// <summary>
     /// Request Object
     /// </summary>
-    public class CreateCertificateRequest 
+    public class SetCertForDomainRequest 
     {
 
         /// <summary>
@@ -31,7 +31,7 @@ namespace HuaweiCloud.SDK.Aad.V1.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class CreateCertificateRequest {\n");
+            sb.Append("class SetCertForDomainRequest {\n");
             sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -42,13 +42,13 @@ namespace HuaweiCloud.SDK.Aad.V1.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CreateCertificateRequest);
+            return this.Equals(input as SetCertForDomainRequest);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(CreateCertificateRequest input)
+        public bool Equals(SetCertForDomainRequest input)
         {
             if (input == null)
                 return false;

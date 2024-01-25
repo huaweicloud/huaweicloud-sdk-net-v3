@@ -13,7 +13,7 @@ namespace HuaweiCloud.SDK.Aad.V1.Model
     /// <summary>
     /// Response Object
     /// </summary>
-    public class CreateCertificateResponse : SdkResponse
+    public class SetCertForDomainResponse : SdkResponse
     {
 
 

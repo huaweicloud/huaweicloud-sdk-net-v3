@@ -221,6 +221,18 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public List<ItemList> ItemList { get; set; }
 
         /// <summary>
+        /// 省。 
+        /// </summary>
+        [JsonProperty("province", NullValueHandling = NullValueHandling.Ignore)]
+        public string Province { get; set; }
+
+        /// <summary>
+        /// 市。 
+        /// </summary>
+        [JsonProperty("city", NullValueHandling = NullValueHandling.Ignore)]
+        public string City { get; set; }
+
+        /// <summary>
         /// 各个字段的置信度。 当“advanced_mode”设置为“true”时才返回。 
         /// </summary>
         [JsonProperty("confidence", NullValueHandling = NullValueHandling.Ignore)]
@@ -231,6 +243,102 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         [JsonProperty("text_location", NullValueHandling = NullValueHandling.Ignore)]
         public Object TextLocation { get; set; }
+
+        /// <summary>
+        /// 销货清单的购买方名称。 当传入图片为发票销货清单时返回此字段。 
+        /// </summary>
+        [JsonProperty("belong_buyer_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string BelongBuyerName { get; set; }
+
+        /// <summary>
+        /// 销货清单的销售方名称。 当传入图片为发票销货清单时返回此字段。 
+        /// </summary>
+        [JsonProperty("belong_seller_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string BelongSellerName { get; set; }
+
+        /// <summary>
+        /// 所属的增值税发票代码。 当传入图片为发票销货清单时返回此字段。 
+        /// </summary>
+        [JsonProperty("belong_vat_code", NullValueHandling = NullValueHandling.Ignore)]
+        public string BelongVatCode { get; set; }
+
+        /// <summary>
+        /// 销货清单的开票号码。 当传入图片为发票销货清单时返回此字段。 
+        /// </summary>
+        [JsonProperty("belong_number", NullValueHandling = NullValueHandling.Ignore)]
+        public string BelongNumber { get; set; }
+
+        /// <summary>
+        /// 销货清单的总页码数。 当传入图片为发票销货清单时返回此字段。 
+        /// </summary>
+        [JsonProperty("belong_pages", NullValueHandling = NullValueHandling.Ignore)]
+        public string BelongPages { get; set; }
+
+        /// <summary>
+        /// 销货清单的当前页码。 当传入图片为发票销货清单时返回此字段。 
+        /// </summary>
+        [JsonProperty("belong_current_page", NullValueHandling = NullValueHandling.Ignore)]
+        public string BelongCurrentPage { get; set; }
+
+        /// <summary>
+        /// 销货清单的备注。 当传入图片为发票销货清单时返回此字段。 
+        /// </summary>
+        [JsonProperty("belong_remarks", NullValueHandling = NullValueHandling.Ignore)]
+        public string BelongRemarks { get; set; }
+
+        /// <summary>
+        /// 销货清单的填开日期。 当传入图片为发票销货清单时返回此字段。 
+        /// </summary>
+        [JsonProperty("belong_issue_date", NullValueHandling = NullValueHandling.Ignore)]
+        public string BelongIssueDate { get; set; }
+
+        /// <summary>
+        /// 是否是销货清单，可选值为： - true：输入图片是销货清单。 - false：输入图片不是销货清单。 
+        /// </summary>
+        [JsonProperty("sales_mark", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? SalesMark { get; set; }
+
+        /// <summary>
+        /// 销货清单的小计金额。 当传入图片为发票销货清单时返回此字段。 
+        /// </summary>
+        [JsonProperty("belong_sum_amount", NullValueHandling = NullValueHandling.Ignore)]
+        public string BelongSumAmount { get; set; }
+
+        /// <summary>
+        /// 销货清单的小计税额。 当传入图片为发票销货清单时返回此字段。 
+        /// </summary>
+        [JsonProperty("belong_sum_tax", NullValueHandling = NullValueHandling.Ignore)]
+        public string BelongSumTax { get; set; }
+
+        /// <summary>
+        /// 销货清单的总计或者合计金额。 当传入图片为发票销货清单时返回此字段。 
+        /// </summary>
+        [JsonProperty("belong_subtotal_amount", NullValueHandling = NullValueHandling.Ignore)]
+        public string BelongSubtotalAmount { get; set; }
+
+        /// <summary>
+        /// 销货清单的总计税额。 当传入图片为发票销货清单时返回此字段。 
+        /// </summary>
+        [JsonProperty("belong_subtotal_tax", NullValueHandling = NullValueHandling.Ignore)]
+        public string BelongSubtotalTax { get; set; }
+
+        /// <summary>
+        /// 销货清单的折扣金额。 当传入图片为发票销货清单时返回此字段。 
+        /// </summary>
+        [JsonProperty("belong_discount_amount", NullValueHandling = NullValueHandling.Ignore)]
+        public string BelongDiscountAmount { get; set; }
+
+        /// <summary>
+        /// 销货清单的折扣税额。 当传入图片为发票销货清单时返回此字段。 
+        /// </summary>
+        [JsonProperty("belong_discount_tax", NullValueHandling = NullValueHandling.Ignore)]
+        public string BelongDiscountTax { get; set; }
+
+        /// <summary>
+        /// 销货清单的货物（劳务）名称列表。 当传入图片为发票销货清单时返回此字段。 
+        /// </summary>
+        [JsonProperty("belong_item_list", NullValueHandling = NullValueHandling.Ignore)]
+        public List<BelongItemList> BelongItemList { get; set; }
 
 
 
@@ -275,8 +383,26 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  issuer: ").Append(Issuer).Append("\n");
             sb.Append("  sellerSeal: ").Append(SellerSeal).Append("\n");
             sb.Append("  itemList: ").Append(ItemList).Append("\n");
+            sb.Append("  province: ").Append(Province).Append("\n");
+            sb.Append("  city: ").Append(City).Append("\n");
             sb.Append("  confidence: ").Append(Confidence).Append("\n");
             sb.Append("  textLocation: ").Append(TextLocation).Append("\n");
+            sb.Append("  belongBuyerName: ").Append(BelongBuyerName).Append("\n");
+            sb.Append("  belongSellerName: ").Append(BelongSellerName).Append("\n");
+            sb.Append("  belongVatCode: ").Append(BelongVatCode).Append("\n");
+            sb.Append("  belongNumber: ").Append(BelongNumber).Append("\n");
+            sb.Append("  belongPages: ").Append(BelongPages).Append("\n");
+            sb.Append("  belongCurrentPage: ").Append(BelongCurrentPage).Append("\n");
+            sb.Append("  belongRemarks: ").Append(BelongRemarks).Append("\n");
+            sb.Append("  belongIssueDate: ").Append(BelongIssueDate).Append("\n");
+            sb.Append("  salesMark: ").Append(SalesMark).Append("\n");
+            sb.Append("  belongSumAmount: ").Append(BelongSumAmount).Append("\n");
+            sb.Append("  belongSumTax: ").Append(BelongSumTax).Append("\n");
+            sb.Append("  belongSubtotalAmount: ").Append(BelongSubtotalAmount).Append("\n");
+            sb.Append("  belongSubtotalTax: ").Append(BelongSubtotalTax).Append("\n");
+            sb.Append("  belongDiscountAmount: ").Append(BelongDiscountAmount).Append("\n");
+            sb.Append("  belongDiscountTax: ").Append(BelongDiscountTax).Append("\n");
+            sb.Append("  belongItemList: ").Append(BelongItemList).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -472,6 +598,16 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     this.ItemList.SequenceEqual(input.ItemList)
                 ) && 
                 (
+                    this.Province == input.Province ||
+                    (this.Province != null &&
+                    this.Province.Equals(input.Province))
+                ) && 
+                (
+                    this.City == input.City ||
+                    (this.City != null &&
+                    this.City.Equals(input.City))
+                ) && 
+                (
                     this.Confidence == input.Confidence ||
                     (this.Confidence != null &&
                     this.Confidence.Equals(input.Confidence))
@@ -480,6 +616,87 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     this.TextLocation == input.TextLocation ||
                     (this.TextLocation != null &&
                     this.TextLocation.Equals(input.TextLocation))
+                ) && 
+                (
+                    this.BelongBuyerName == input.BelongBuyerName ||
+                    (this.BelongBuyerName != null &&
+                    this.BelongBuyerName.Equals(input.BelongBuyerName))
+                ) && 
+                (
+                    this.BelongSellerName == input.BelongSellerName ||
+                    (this.BelongSellerName != null &&
+                    this.BelongSellerName.Equals(input.BelongSellerName))
+                ) && 
+                (
+                    this.BelongVatCode == input.BelongVatCode ||
+                    (this.BelongVatCode != null &&
+                    this.BelongVatCode.Equals(input.BelongVatCode))
+                ) && 
+                (
+                    this.BelongNumber == input.BelongNumber ||
+                    (this.BelongNumber != null &&
+                    this.BelongNumber.Equals(input.BelongNumber))
+                ) && 
+                (
+                    this.BelongPages == input.BelongPages ||
+                    (this.BelongPages != null &&
+                    this.BelongPages.Equals(input.BelongPages))
+                ) && 
+                (
+                    this.BelongCurrentPage == input.BelongCurrentPage ||
+                    (this.BelongCurrentPage != null &&
+                    this.BelongCurrentPage.Equals(input.BelongCurrentPage))
+                ) && 
+                (
+                    this.BelongRemarks == input.BelongRemarks ||
+                    (this.BelongRemarks != null &&
+                    this.BelongRemarks.Equals(input.BelongRemarks))
+                ) && 
+                (
+                    this.BelongIssueDate == input.BelongIssueDate ||
+                    (this.BelongIssueDate != null &&
+                    this.BelongIssueDate.Equals(input.BelongIssueDate))
+                ) && 
+                (
+                    this.SalesMark == input.SalesMark ||
+                    (this.SalesMark != null &&
+                    this.SalesMark.Equals(input.SalesMark))
+                ) && 
+                (
+                    this.BelongSumAmount == input.BelongSumAmount ||
+                    (this.BelongSumAmount != null &&
+                    this.BelongSumAmount.Equals(input.BelongSumAmount))
+                ) && 
+                (
+                    this.BelongSumTax == input.BelongSumTax ||
+                    (this.BelongSumTax != null &&
+                    this.BelongSumTax.Equals(input.BelongSumTax))
+                ) && 
+                (
+                    this.BelongSubtotalAmount == input.BelongSubtotalAmount ||
+                    (this.BelongSubtotalAmount != null &&
+                    this.BelongSubtotalAmount.Equals(input.BelongSubtotalAmount))
+                ) && 
+                (
+                    this.BelongSubtotalTax == input.BelongSubtotalTax ||
+                    (this.BelongSubtotalTax != null &&
+                    this.BelongSubtotalTax.Equals(input.BelongSubtotalTax))
+                ) && 
+                (
+                    this.BelongDiscountAmount == input.BelongDiscountAmount ||
+                    (this.BelongDiscountAmount != null &&
+                    this.BelongDiscountAmount.Equals(input.BelongDiscountAmount))
+                ) && 
+                (
+                    this.BelongDiscountTax == input.BelongDiscountTax ||
+                    (this.BelongDiscountTax != null &&
+                    this.BelongDiscountTax.Equals(input.BelongDiscountTax))
+                ) && 
+                (
+                    this.BelongItemList == input.BelongItemList ||
+                    this.BelongItemList != null &&
+                    input.BelongItemList != null &&
+                    this.BelongItemList.SequenceEqual(input.BelongItemList)
                 );
         }
 
@@ -559,10 +776,46 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     hashCode = hashCode * 59 + this.SellerSeal.GetHashCode();
                 if (this.ItemList != null)
                     hashCode = hashCode * 59 + this.ItemList.GetHashCode();
+                if (this.Province != null)
+                    hashCode = hashCode * 59 + this.Province.GetHashCode();
+                if (this.City != null)
+                    hashCode = hashCode * 59 + this.City.GetHashCode();
                 if (this.Confidence != null)
                     hashCode = hashCode * 59 + this.Confidence.GetHashCode();
                 if (this.TextLocation != null)
                     hashCode = hashCode * 59 + this.TextLocation.GetHashCode();
+                if (this.BelongBuyerName != null)
+                    hashCode = hashCode * 59 + this.BelongBuyerName.GetHashCode();
+                if (this.BelongSellerName != null)
+                    hashCode = hashCode * 59 + this.BelongSellerName.GetHashCode();
+                if (this.BelongVatCode != null)
+                    hashCode = hashCode * 59 + this.BelongVatCode.GetHashCode();
+                if (this.BelongNumber != null)
+                    hashCode = hashCode * 59 + this.BelongNumber.GetHashCode();
+                if (this.BelongPages != null)
+                    hashCode = hashCode * 59 + this.BelongPages.GetHashCode();
+                if (this.BelongCurrentPage != null)
+                    hashCode = hashCode * 59 + this.BelongCurrentPage.GetHashCode();
+                if (this.BelongRemarks != null)
+                    hashCode = hashCode * 59 + this.BelongRemarks.GetHashCode();
+                if (this.BelongIssueDate != null)
+                    hashCode = hashCode * 59 + this.BelongIssueDate.GetHashCode();
+                if (this.SalesMark != null)
+                    hashCode = hashCode * 59 + this.SalesMark.GetHashCode();
+                if (this.BelongSumAmount != null)
+                    hashCode = hashCode * 59 + this.BelongSumAmount.GetHashCode();
+                if (this.BelongSumTax != null)
+                    hashCode = hashCode * 59 + this.BelongSumTax.GetHashCode();
+                if (this.BelongSubtotalAmount != null)
+                    hashCode = hashCode * 59 + this.BelongSubtotalAmount.GetHashCode();
+                if (this.BelongSubtotalTax != null)
+                    hashCode = hashCode * 59 + this.BelongSubtotalTax.GetHashCode();
+                if (this.BelongDiscountAmount != null)
+                    hashCode = hashCode * 59 + this.BelongDiscountAmount.GetHashCode();
+                if (this.BelongDiscountTax != null)
+                    hashCode = hashCode * 59 + this.BelongDiscountTax.GetHashCode();
+                if (this.BelongItemList != null)
+                    hashCode = hashCode * 59 + this.BelongItemList.GetHashCode();
                 return hashCode;
             }
         }

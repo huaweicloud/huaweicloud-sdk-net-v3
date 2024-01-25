@@ -167,6 +167,12 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         public UnchangeableParam UnchangeableParam { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("serverless_info", NullValueHandling = NullValueHandling.Ignore)]
+        public ServerlessInfo ServerlessInfo { get; set; }
+
+        /// <summary>
         /// 是否只预检此次请求，仅支持MySQL。 - true：发送参数检查请求，不会创建实例。   - 检查通过：返回202状态码。   - 检查不通过：返回对应错误码，详情请参考错误码。 - false：发送正常请求，通过检查后，并且执行创建实例的请求。
         /// </summary>
         [JsonProperty("dry_run", NullValueHandling = NullValueHandling.Ignore)]
@@ -206,6 +212,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             sb.Append("  collation: ").Append(Collation).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  unchangeableParam: ").Append(UnchangeableParam).Append("\n");
+            sb.Append("  serverlessInfo: ").Append(ServerlessInfo).Append("\n");
             sb.Append("  dryRun: ").Append(DryRun).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -355,6 +362,11 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
                     this.UnchangeableParam.Equals(input.UnchangeableParam))
                 ) && 
                 (
+                    this.ServerlessInfo == input.ServerlessInfo ||
+                    (this.ServerlessInfo != null &&
+                    this.ServerlessInfo.Equals(input.ServerlessInfo))
+                ) && 
+                (
                     this.DryRun == input.DryRun ||
                     (this.DryRun != null &&
                     this.DryRun.Equals(input.DryRun))
@@ -419,6 +431,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
                     hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 if (this.UnchangeableParam != null)
                     hashCode = hashCode * 59 + this.UnchangeableParam.GetHashCode();
+                if (this.ServerlessInfo != null)
+                    hashCode = hashCode * 59 + this.ServerlessInfo.GetHashCode();
                 if (this.DryRun != null)
                     hashCode = hashCode * 59 + this.DryRun.GetHashCode();
                 return hashCode;

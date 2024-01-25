@@ -15,6 +15,121 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
     /// </summary>
     public class AssetProcessReq 
     {
+        /// <summary>
+        /// hls的音视频流存储方式。  取值如下： - composite：存储在同一文件中。 - separate：存储在不同文件中。
+        /// </summary>
+        /// <value>hls的音视频流存储方式。  取值如下： - composite：存储在同一文件中。 - separate：存储在不同文件中。</value>
+        [JsonConverter(typeof(EnumClassConverter<HlsStorageTypeEnum>))]
+        public class HlsStorageTypeEnum
+        {
+            /// <summary>
+            /// Enum COMPOSITE for value: composite
+            /// </summary>
+            public static readonly HlsStorageTypeEnum COMPOSITE = new HlsStorageTypeEnum("composite");
+
+            /// <summary>
+            /// Enum SEPARATE for value: separate
+            /// </summary>
+            public static readonly HlsStorageTypeEnum SEPARATE = new HlsStorageTypeEnum("separate");
+
+            private static readonly Dictionary<string, HlsStorageTypeEnum> StaticFields =
+            new Dictionary<string, HlsStorageTypeEnum>()
+            {
+                { "composite", COMPOSITE },
+                { "separate", SEPARATE },
+            };
+
+            private string _value;
+
+            public HlsStorageTypeEnum()
+            {
+
+            }
+
+            public HlsStorageTypeEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static HlsStorageTypeEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as HlsStorageTypeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(HlsStorageTypeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(HlsStorageTypeEnum a, HlsStorageTypeEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(HlsStorageTypeEnum a, HlsStorageTypeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 媒资ID。
@@ -22,6 +137,11 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         [JsonProperty("asset_id", NullValueHandling = NullValueHandling.Ignore)]
         public string AssetId { get; set; }
 
+        /// <summary>
+        /// hls的音视频流存储方式。  取值如下： - composite：存储在同一文件中。 - separate：存储在不同文件中。
+        /// </summary>
+        [JsonProperty("hls_storage_type", NullValueHandling = NullValueHandling.Ignore)]
+        public HlsStorageTypeEnum HlsStorageType { get; set; }
         /// <summary>
         /// 转码模板组名称。   若不为空，则使用指定的转码模板对上传的音视频进行转码，您可以在视频点播控制台配置转码模板，具体请参见[转码设置](https://support.huaweicloud.com/usermanual-vod/vod_01_0072.html)。
         /// </summary>
@@ -56,6 +176,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
             var sb = new StringBuilder();
             sb.Append("class AssetProcessReq {\n");
             sb.Append("  assetId: ").Append(AssetId).Append("\n");
+            sb.Append("  hlsStorageType: ").Append(HlsStorageType).Append("\n");
             sb.Append("  templateGroupName: ").Append(TemplateGroupName).Append("\n");
             sb.Append("  autoEncrypt: ").Append(AutoEncrypt).Append("\n");
             sb.Append("  thumbnail: ").Append(Thumbnail).Append("\n");
@@ -85,6 +206,11 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
                     this.AssetId == input.AssetId ||
                     (this.AssetId != null &&
                     this.AssetId.Equals(input.AssetId))
+                ) && 
+                (
+                    this.HlsStorageType == input.HlsStorageType ||
+                    (this.HlsStorageType != null &&
+                    this.HlsStorageType.Equals(input.HlsStorageType))
                 ) && 
                 (
                     this.TemplateGroupName == input.TemplateGroupName ||
@@ -119,6 +245,8 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
                 int hashCode = 41;
                 if (this.AssetId != null)
                     hashCode = hashCode * 59 + this.AssetId.GetHashCode();
+                if (this.HlsStorageType != null)
+                    hashCode = hashCode * 59 + this.HlsStorageType.GetHashCode();
                 if (this.TemplateGroupName != null)
                     hashCode = hashCode * 59 + this.TemplateGroupName.GetHashCode();
                 if (this.AutoEncrypt != null)

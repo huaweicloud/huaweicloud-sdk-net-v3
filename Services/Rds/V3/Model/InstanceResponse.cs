@@ -262,6 +262,12 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         [JsonProperty("expiration_time", NullValueHandling = NullValueHandling.Ignore)]
         public string ExpirationTime { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("serverless_info", NullValueHandling = NullValueHandling.Ignore)]
+        public ServerlessInfoResponse ServerlessInfo { get; set; }
+
 
 
         /// <summary>
@@ -312,6 +318,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             sb.Append("  alias: ").Append(Alias).Append("\n");
             sb.Append("  maxIops: ").Append(MaxIops).Append("\n");
             sb.Append("  expirationTime: ").Append(ExpirationTime).Append("\n");
+            sb.Append("  serverlessInfo: ").Append(ServerlessInfo).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -544,6 +551,11 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
                     this.ExpirationTime == input.ExpirationTime ||
                     (this.ExpirationTime != null &&
                     this.ExpirationTime.Equals(input.ExpirationTime))
+                ) && 
+                (
+                    this.ServerlessInfo == input.ServerlessInfo ||
+                    (this.ServerlessInfo != null &&
+                    this.ServerlessInfo.Equals(input.ServerlessInfo))
                 );
         }
 
@@ -637,6 +649,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
                     hashCode = hashCode * 59 + this.MaxIops.GetHashCode();
                 if (this.ExpirationTime != null)
                     hashCode = hashCode * 59 + this.ExpirationTime.GetHashCode();
+                if (this.ServerlessInfo != null)
+                    hashCode = hashCode * 59 + this.ServerlessInfo.GetHashCode();
                 return hashCode;
             }
         }

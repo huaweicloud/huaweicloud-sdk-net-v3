@@ -178,6 +178,12 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         [JsonProperty("count", NullValueHandling = NullValueHandling.Ignore)]
         public int? Count { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("serverless_info", NullValueHandling = NullValueHandling.Ignore)]
+        public ServerlessInfo ServerlessInfo { get; set; }
+
 
 
         /// <summary>
@@ -214,6 +220,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             sb.Append("  unchangeableParam: ").Append(UnchangeableParam).Append("\n");
             sb.Append("  dryRun: ").Append(DryRun).Append("\n");
             sb.Append("  count: ").Append(Count).Append("\n");
+            sb.Append("  serverlessInfo: ").Append(ServerlessInfo).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -370,6 +377,11 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
                     this.Count == input.Count ||
                     (this.Count != null &&
                     this.Count.Equals(input.Count))
+                ) && 
+                (
+                    this.ServerlessInfo == input.ServerlessInfo ||
+                    (this.ServerlessInfo != null &&
+                    this.ServerlessInfo.Equals(input.ServerlessInfo))
                 );
         }
 
@@ -435,6 +447,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
                     hashCode = hashCode * 59 + this.DryRun.GetHashCode();
                 if (this.Count != null)
                     hashCode = hashCode * 59 + this.Count.GetHashCode();
+                if (this.ServerlessInfo != null)
+                    hashCode = hashCode * 59 + this.ServerlessInfo.GetHashCode();
                 return hashCode;
             }
         }
