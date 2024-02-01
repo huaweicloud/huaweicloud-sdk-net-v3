@@ -50,7 +50,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         /// 最大重试次数。
         /// </summary>
         [JsonProperty("retry_max_time", NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? RetryMaxTime { get; set; }
+        public int? RetryMaxTime { get; set; }
 
         /// <summary>
         /// 应用id。

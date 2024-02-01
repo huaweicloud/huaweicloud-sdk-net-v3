@@ -17,14 +17,14 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
     {
 
         /// <summary>
-        /// 集群id。
+        /// - 查询集群主机时，填写集群id。 - 查询用户自定义主机时，填写“apm”。
         /// </summary>
         [SDKProperty("cluster_id", IsPath = true)]
         [JsonProperty("cluster_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ClusterId { get; set; }
 
         /// <summary>
-        /// 命名空间。
+        /// - 查询集群主机时，填写命名空间。 - 查询用户自定义主机时，填写“apm”。
         /// </summary>
         [SDKProperty("namespace", IsPath = true)]
         [JsonProperty("namespace", NullValueHandling = NullValueHandling.Ignore)]

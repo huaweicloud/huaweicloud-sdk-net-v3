@@ -202,6 +202,12 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         [JsonProperty("proxies", NullValueHandling = NullValueHandling.Ignore)]
         public List<MysqlProxyInfo> Proxies { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("tde_info", NullValueHandling = NullValueHandling.Ignore)]
+        public MysqlTdeInfo TdeInfo { get; set; }
+
 
 
         /// <summary>
@@ -242,6 +248,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  dedicatedResourceId: ").Append(DedicatedResourceId).Append("\n");
             sb.Append("  proxies: ").Append(Proxies).Append("\n");
+            sb.Append("  tdeInfo: ").Append(TdeInfo).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -422,6 +429,11 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                     this.Proxies != null &&
                     input.Proxies != null &&
                     this.Proxies.SequenceEqual(input.Proxies)
+                ) && 
+                (
+                    this.TdeInfo == input.TdeInfo ||
+                    (this.TdeInfo != null &&
+                    this.TdeInfo.Equals(input.TdeInfo))
                 );
         }
 
@@ -495,6 +507,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                     hashCode = hashCode * 59 + this.DedicatedResourceId.GetHashCode();
                 if (this.Proxies != null)
                     hashCode = hashCode * 59 + this.Proxies.GetHashCode();
+                if (this.TdeInfo != null)
+                    hashCode = hashCode * 59 + this.TdeInfo.GetHashCode();
                 return hashCode;
             }
         }

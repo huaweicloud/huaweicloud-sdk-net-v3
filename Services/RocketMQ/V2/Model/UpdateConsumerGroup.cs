@@ -44,7 +44,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         /// 最大重试次数，取值范围为1~16。
         /// </summary>
         [JsonProperty("retry_max_time", NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? RetryMaxTime { get; set; }
+        public int? RetryMaxTime { get; set; }
 
         /// <summary>
         /// 是否重头消费。

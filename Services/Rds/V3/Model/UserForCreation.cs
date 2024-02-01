@@ -35,6 +35,12 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         public string Comment { get; set; }
 
         /// <summary>
+        /// 是否创建高权限用户。 • 若为true，则不用传hosts、databases参数。
+        /// </summary>
+        [JsonProperty("is_privilege", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsPrivilege { get; set; }
+
+        /// <summary>
         /// 授权用户登录主机IP列表 • 若IP地址为%，则表示允许所有地址访问MySQL实例。 • 若IP地址为“10.10.10.%”，则表示10.10.10.X的IP地址都可以访问该MySQL实例。 • 支持添加多个IP地址。
         /// </summary>
         [JsonProperty("hosts", NullValueHandling = NullValueHandling.Ignore)]
@@ -58,6 +64,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  password: ").Append(Password).Append("\n");
             sb.Append("  comment: ").Append(Comment).Append("\n");
+            sb.Append("  isPrivilege: ").Append(IsPrivilege).Append("\n");
             sb.Append("  hosts: ").Append(Hosts).Append("\n");
             sb.Append("  databases: ").Append(Databases).Append("\n");
             sb.Append("}\n");
@@ -97,6 +104,11 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
                     this.Comment.Equals(input.Comment))
                 ) && 
                 (
+                    this.IsPrivilege == input.IsPrivilege ||
+                    (this.IsPrivilege != null &&
+                    this.IsPrivilege.Equals(input.IsPrivilege))
+                ) && 
+                (
                     this.Hosts == input.Hosts ||
                     this.Hosts != null &&
                     input.Hosts != null &&
@@ -124,6 +136,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
                     hashCode = hashCode * 59 + this.Password.GetHashCode();
                 if (this.Comment != null)
                     hashCode = hashCode * 59 + this.Comment.GetHashCode();
+                if (this.IsPrivilege != null)
+                    hashCode = hashCode * 59 + this.IsPrivilege.GetHashCode();
                 if (this.Hosts != null)
                     hashCode = hashCode * 59 + this.Hosts.GetHashCode();
                 if (this.Databases != null)

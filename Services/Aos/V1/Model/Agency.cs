@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
     {
 
         /// <summary>
-        /// 用户使用的provider的名字。如果用户给与的provider_name含有重复的值，则返回400
+        /// 用户使用的provider的名字。如果用户给予的provider_name含有重复的值，则返回400
         /// </summary>
         [JsonProperty("provider_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ProviderName { get; set; }
@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         public string AgencyName { get; set; }
 
         /// <summary>
-        /// 委托URN  当用户定义Agency时，agency_name和agency_urn 必须有且只有一个存在。  推荐用户在使用v5委托时给与agency_urn，agency_name只支持接收普通委托名称，若给与了v5委托名称，则会在部署模板时失败。
+        /// 委托URN  当用户定义Agency时，agency_name和agency_urn 必须有且只有一个存在。  推荐用户在使用v5委托时给予agency_urn，agency_name只支持接收普通委托名称，若给予了v5委托名称，则会在部署模板时失败。
         /// </summary>
         [JsonProperty("agency_urn", NullValueHandling = NullValueHandling.Ignore)]
         public string AgencyUrn { get; set; }

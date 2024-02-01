@@ -148,6 +148,12 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         [JsonProperty("restore_point", NullValueHandling = NullValueHandling.Ignore)]
         public MysqlRestorePoint RestorePoint { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("tde_info", NullValueHandling = NullValueHandling.Ignore)]
+        public MysqlTdeInfo TdeInfo { get; set; }
+
 
 
         /// <summary>
@@ -179,6 +185,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  dedicatedResourceId: ").Append(DedicatedResourceId).Append("\n");
             sb.Append("  restorePoint: ").Append(RestorePoint).Append("\n");
+            sb.Append("  tdeInfo: ").Append(TdeInfo).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -310,6 +317,11 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                     this.RestorePoint == input.RestorePoint ||
                     (this.RestorePoint != null &&
                     this.RestorePoint.Equals(input.RestorePoint))
+                ) && 
+                (
+                    this.TdeInfo == input.TdeInfo ||
+                    (this.TdeInfo != null &&
+                    this.TdeInfo.Equals(input.TdeInfo))
                 );
         }
 
@@ -365,6 +377,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                     hashCode = hashCode * 59 + this.DedicatedResourceId.GetHashCode();
                 if (this.RestorePoint != null)
                     hashCode = hashCode * 59 + this.RestorePoint.GetHashCode();
+                if (this.TdeInfo != null)
+                    hashCode = hashCode * 59 + this.TdeInfo.GetHashCode();
                 return hashCode;
             }
         }

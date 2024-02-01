@@ -8,44 +8,50 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Kafka.V2.Model
+namespace HuaweiCloud.SDK.Rds.V3.Model
 {
     /// <summary>
-    /// Request Object
+    /// 
     /// </summary>
-    public class CreateShrinkageJobRequest 
+    public class MysqlProxyFlavorsResponseComputeFlavorGroups 
     {
         /// <summary>
-        /// 消息引擎。
+        /// 规格组类型，如x86、arm。
         /// </summary>
-        /// <value>消息引擎。</value>
-        [JsonConverter(typeof(EnumClassConverter<EngineEnum>))]
-        public class EngineEnum
+        /// <value>规格组类型，如x86、arm。</value>
+        [JsonConverter(typeof(EnumClassConverter<GroupTypeEnum>))]
+        public class GroupTypeEnum
         {
             /// <summary>
-            /// Enum KAFKA for value: kafka
+            /// Enum X86 for value: x86
             /// </summary>
-            public static readonly EngineEnum KAFKA = new EngineEnum("kafka");
+            public static readonly GroupTypeEnum X86 = new GroupTypeEnum("x86");
 
-            private static readonly Dictionary<string, EngineEnum> StaticFields =
-            new Dictionary<string, EngineEnum>()
+            /// <summary>
+            /// Enum ARM for value: arm
+            /// </summary>
+            public static readonly GroupTypeEnum ARM = new GroupTypeEnum("arm");
+
+            private static readonly Dictionary<string, GroupTypeEnum> StaticFields =
+            new Dictionary<string, GroupTypeEnum>()
             {
-                { "kafka", KAFKA },
+                { "x86", X86 },
+                { "arm", ARM },
             };
 
             private string _value;
 
-            public EngineEnum()
+            public GroupTypeEnum()
             {
 
             }
 
-            public EngineEnum(string value)
+            public GroupTypeEnum(string value)
             {
                 _value = value;
             }
 
-            public static EngineEnum FromValue(string value)
+            public static GroupTypeEnum FromValue(string value)
             {
                 if(value == null){
                     return null;
@@ -86,7 +92,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     return true;
                 }
 
-                if (this.Equals(obj as EngineEnum))
+                if (this.Equals(obj as GroupTypeEnum))
                 {
                     return true;
                 }
@@ -94,7 +100,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                 return false;
             }
 
-            public bool Equals(EngineEnum obj)
+            public bool Equals(GroupTypeEnum obj)
             {
                 if ((object)obj == null)
                 {
@@ -103,7 +109,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                 return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
-            public static bool operator ==(EngineEnum a, EngineEnum b)
+            public static bool operator ==(GroupTypeEnum a, GroupTypeEnum b)
             {
                 if (System.Object.ReferenceEquals(a, b))
                 {
@@ -118,7 +124,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                 return a.Equals(b);
             }
 
-            public static bool operator !=(EngineEnum a, EngineEnum b)
+            public static bool operator !=(GroupTypeEnum a, GroupTypeEnum b)
             {
                 return !(a == b);
             }
@@ -126,24 +132,15 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
 
 
         /// <summary>
-        /// 消息引擎。
+        /// 规格组类型，如x86、arm。
         /// </summary>
-        [SDKProperty("engine", IsPath = true)]
-        [JsonProperty("engine", NullValueHandling = NullValueHandling.Ignore)]
-        public EngineEnum Engine { get; set; }
+        [JsonProperty("group_type", NullValueHandling = NullValueHandling.Ignore)]
+        public GroupTypeEnum GroupType { get; set; }
         /// <summary>
-        /// 实例ID。
+        /// 规格信息。
         /// </summary>
-        [SDKProperty("instance_id", IsPath = true)]
-        [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string InstanceId { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [SDKProperty("body", IsBody = true)]
-        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public CreateShrinkageJobRequestBody Body { get; set; }
+        [JsonProperty("compute_flavors", NullValueHandling = NullValueHandling.Ignore)]
+        public List<MysqlProxyFlavorsResponseComputeFlavors> ComputeFlavors { get; set; }
 
 
 
@@ -153,10 +150,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class CreateShrinkageJobRequest {\n");
-            sb.Append("  engine: ").Append(Engine).Append("\n");
-            sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
-            sb.Append("  body: ").Append(Body).Append("\n");
+            sb.Append("class MysqlProxyFlavorsResponseComputeFlavorGroups {\n");
+            sb.Append("  groupType: ").Append(GroupType).Append("\n");
+            sb.Append("  computeFlavors: ").Append(ComputeFlavors).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -166,32 +162,28 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CreateShrinkageJobRequest);
+            return this.Equals(input as MysqlProxyFlavorsResponseComputeFlavorGroups);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(CreateShrinkageJobRequest input)
+        public bool Equals(MysqlProxyFlavorsResponseComputeFlavorGroups input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Engine == input.Engine ||
-                    (this.Engine != null &&
-                    this.Engine.Equals(input.Engine))
+                    this.GroupType == input.GroupType ||
+                    (this.GroupType != null &&
+                    this.GroupType.Equals(input.GroupType))
                 ) && 
                 (
-                    this.InstanceId == input.InstanceId ||
-                    (this.InstanceId != null &&
-                    this.InstanceId.Equals(input.InstanceId))
-                ) && 
-                (
-                    this.Body == input.Body ||
-                    (this.Body != null &&
-                    this.Body.Equals(input.Body))
+                    this.ComputeFlavors == input.ComputeFlavors ||
+                    this.ComputeFlavors != null &&
+                    input.ComputeFlavors != null &&
+                    this.ComputeFlavors.SequenceEqual(input.ComputeFlavors)
                 );
         }
 
@@ -203,12 +195,10 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Engine != null)
-                    hashCode = hashCode * 59 + this.Engine.GetHashCode();
-                if (this.InstanceId != null)
-                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.Body != null)
-                    hashCode = hashCode * 59 + this.Body.GetHashCode();
+                if (this.GroupType != null)
+                    hashCode = hashCode * 59 + this.GroupType.GetHashCode();
+                if (this.ComputeFlavors != null)
+                    hashCode = hashCode * 59 + this.ComputeFlavors.GetHashCode();
                 return hashCode;
             }
         }

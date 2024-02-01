@@ -238,6 +238,13 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         [SDKProperty("status", IsQuery = true)]
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
+        /// <summary>
+        /// 分页查询的起始资源ID，表示从指定资源的下一条记录开始查询。 - 若不传入marker和limit参数，查询结果返回第一页全部资源记录（默认2000条）。 - 若不传入marker参数，limit为10，查询结果返回第1~10条资源记录。 - 若marker为第10条记录的资源ID，limit为10，查询结果返回第11~20条资源记录。 - 若marker为第10条记录的资源ID，不传入limit参数，查询结果返回第11条及之后的资源记录（默认2000条）。
+        /// </summary>
+        [SDKProperty("marker", IsQuery = true)]
+        [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
+        public string Marker { get; set; }
+
 
 
         /// <summary>
@@ -259,6 +266,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
             sb.Append("  networkId: ").Append(NetworkId).Append("\n");
             sb.Append("  sourceType: ").Append(SourceType).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
+            sb.Append("  marker: ").Append(Marker).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -340,6 +348,11 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
                     this.Status == input.Status ||
                     (this.Status != null &&
                     this.Status.Equals(input.Status))
+                ) && 
+                (
+                    this.Marker == input.Marker ||
+                    (this.Marker != null &&
+                    this.Marker.Equals(input.Marker))
                 );
         }
 
@@ -375,6 +388,8 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
                     hashCode = hashCode * 59 + this.SourceType.GetHashCode();
                 if (this.Status != null)
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Marker != null)
+                    hashCode = hashCode * 59 + this.Marker.GetHashCode();
                 return hashCode;
             }
         }

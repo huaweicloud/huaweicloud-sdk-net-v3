@@ -174,11 +174,11 @@ namespace HuaweiCloud.SDK.Kafka.V2
         }
         
         /// <summary>
-        /// 创建实例的转储节点
+        /// 创建实例的Smart Connect节点
         ///
-        /// 创建实例的转储节点。
+        /// 创建Smart Connect节点。
         /// 
-        /// **当前通过调用API，只支持按需实例创建转储节点。**
+        /// **当前通过调用API，只支持按需实例创建Smart Connect节点。**
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -407,34 +407,6 @@ namespace HuaweiCloud.SDK.Kafka.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/reassign", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createReassignmentTaskRequest);
             return new AsyncInvoker<CreateReassignmentTaskResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateReassignmentTaskResponse>);
-        }
-        
-        /// <summary>
-        /// 实例缩容
-        ///
-        /// 实例缩容
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<CreateShrinkageJobResponse> CreateShrinkageJobAsync(CreateShrinkageJobRequest createShrinkageJobRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", createShrinkageJobRequest.Engine.ToString());
-            urlParam.Add("instance_id", createShrinkageJobRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/shrink", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createShrinkageJobRequest);
-            var response = await DoHttpRequestAsync("POST", request);
-            return JsonUtils.DeSerialize<CreateShrinkageJobResponse>(response);
-        }
-
-        public AsyncInvoker<CreateShrinkageJobResponse> CreateShrinkageJobAsyncInvoker(CreateShrinkageJobRequest createShrinkageJobRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", createShrinkageJobRequest.Engine.ToString());
-            urlParam.Add("instance_id", createShrinkageJobRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/shrink", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createShrinkageJobRequest);
-            return new AsyncInvoker<CreateShrinkageJobResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateShrinkageJobResponse>);
         }
         
         /// <summary>
@@ -1701,34 +1673,6 @@ namespace HuaweiCloud.SDK.Kafka.V2
         }
         
         /// <summary>
-        /// 实例缩容前置检查
-        ///
-        /// 实例缩容前置检查。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<ShowShrinkCheckResultResponse> ShowShrinkCheckResultAsync(ShowShrinkCheckResultRequest showShrinkCheckResultRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", showShrinkCheckResultRequest.Engine.ToString());
-            urlParam.Add("instance_id", showShrinkCheckResultRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/shrink-check", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showShrinkCheckResultRequest);
-            var response = await DoHttpRequestAsync("POST", request);
-            return JsonUtils.DeSerialize<ShowShrinkCheckResultResponse>(response);
-        }
-
-        public AsyncInvoker<ShowShrinkCheckResultResponse> ShowShrinkCheckResultAsyncInvoker(ShowShrinkCheckResultRequest showShrinkCheckResultRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", showShrinkCheckResultRequest.Engine.ToString());
-            urlParam.Add("instance_id", showShrinkCheckResultRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/shrink-check", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showShrinkCheckResultRequest);
-            return new AsyncInvoker<ShowShrinkCheckResultResponse>(this, "POST", request, JsonUtils.DeSerialize<ShowShrinkCheckResultResponse>);
-        }
-        
-        /// <summary>
         /// 查询单个转储任务
         ///
         /// 查询单个转储任务。
@@ -1974,34 +1918,6 @@ namespace HuaweiCloud.SDK.Kafka.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/kafka-user-client-quota", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateKafkaUserClientQuotaTaskRequest);
             return new AsyncInvoker<UpdateKafkaUserClientQuotaTaskResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateKafkaUserClientQuotaTaskResponse>);
-        }
-        
-        /// <summary>
-        /// 修改转储任务的配额
-        ///
-        /// 修改转储任务的配额。
-        /// 
-        /// 2022年9月前创建的实例支持调用此接口新增转储任务配额，2022年9月及以后创建的实例，转储任务配额默认为最大值，由于转储任务配额不支持减少，调用此接口修改转储任务配额会报错。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<UpdateSinkTaskQuotaResponse> UpdateSinkTaskQuotaAsync(UpdateSinkTaskQuotaRequest updateSinkTaskQuotaRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("connector_id", updateSinkTaskQuotaRequest.ConnectorId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/connectors/{connector_id}/sink-tasks", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSinkTaskQuotaRequest);
-            var response = await DoHttpRequestAsync("PUT", request);
-            return JsonUtils.DeSerializeNull<UpdateSinkTaskQuotaResponse>(response);
-        }
-
-        public AsyncInvoker<UpdateSinkTaskQuotaResponse> UpdateSinkTaskQuotaAsyncInvoker(UpdateSinkTaskQuotaRequest updateSinkTaskQuotaRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("connector_id", updateSinkTaskQuotaRequest.ConnectorId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/connectors/{connector_id}/sink-tasks", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSinkTaskQuotaRequest);
-            return new AsyncInvoker<UpdateSinkTaskQuotaResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateSinkTaskQuotaResponse>);
         }
         
         /// <summary>

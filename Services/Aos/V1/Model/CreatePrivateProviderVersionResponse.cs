@@ -8,12 +8,12 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Kafka.V2.Model
+namespace HuaweiCloud.SDK.Aos.V1.Model
 {
     /// <summary>
     /// Response Object
     /// </summary>
-    public class UpdateSinkTaskQuotaResponse : SdkResponse
+    public class CreatePrivateProviderVersionResponse : SdkResponse
     {
 
 

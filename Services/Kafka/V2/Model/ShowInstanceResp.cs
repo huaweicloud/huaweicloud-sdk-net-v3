@@ -440,7 +440,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string ResourceSpecCode { get; set; }
 
         /// <summary>
-        /// [付费模式，1表示按需计费，0表示包年/包月计费。](tag:hws,hws_hk,ctc,sbc,hk_sbc,cmcc,hws_eu)[付费模式，暂未使用。](tag:hws_ocb,ocb) [付费模式，1表示按需计费。](tag:dt,g42,tm,hk_g42,hk_tm)
+        /// [付费模式，1表示按需计费，0表示包年/包月计费。](tag:hws,hws_hk,ctc,sbc,hk_sbc,cmcc,hws_eu)[付费模式，暂未使用。](tag:hws_ocb,ocb) [付费模式，1表示按需计费。](tag:dt,g42,tm,hk_g42,hk_tm,hcs)
         /// </summary>
         [JsonProperty("charging_mode", NullValueHandling = NullValueHandling.Ignore)]
         public int? ChargingMode { get; set; }

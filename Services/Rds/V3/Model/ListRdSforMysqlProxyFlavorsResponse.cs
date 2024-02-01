@@ -8,19 +8,19 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Kafka.V2.Model
+namespace HuaweiCloud.SDK.Rds.V3.Model
 {
     /// <summary>
-    /// 
+    /// Response Object
     /// </summary>
-    public class CreateShrinkageJobRequestBody 
+    public class ListRdSforMysqlProxyFlavorsResponse : SdkResponse
     {
 
         /// <summary>
-        /// 缩容后集群节点数
+        /// 规格组信息。
         /// </summary>
-        [JsonProperty("new_broker_num", NullValueHandling = NullValueHandling.Ignore)]
-        public string NewBrokerNum { get; set; }
+        [JsonProperty("compute_flavor_groups", NullValueHandling = NullValueHandling.Ignore)]
+        public List<MysqlProxyFlavorsResponseComputeFlavorGroups> ComputeFlavorGroups { get; set; }
 
 
 
@@ -30,8 +30,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class CreateShrinkageJobRequestBody {\n");
-            sb.Append("  newBrokerNum: ").Append(NewBrokerNum).Append("\n");
+            sb.Append("class ListRdSforMysqlProxyFlavorsResponse {\n");
+            sb.Append("  computeFlavorGroups: ").Append(ComputeFlavorGroups).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -41,22 +41,23 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CreateShrinkageJobRequestBody);
+            return this.Equals(input as ListRdSforMysqlProxyFlavorsResponse);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(CreateShrinkageJobRequestBody input)
+        public bool Equals(ListRdSforMysqlProxyFlavorsResponse input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.NewBrokerNum == input.NewBrokerNum ||
-                    (this.NewBrokerNum != null &&
-                    this.NewBrokerNum.Equals(input.NewBrokerNum))
+                    this.ComputeFlavorGroups == input.ComputeFlavorGroups ||
+                    this.ComputeFlavorGroups != null &&
+                    input.ComputeFlavorGroups != null &&
+                    this.ComputeFlavorGroups.SequenceEqual(input.ComputeFlavorGroups)
                 );
         }
 
@@ -68,8 +69,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.NewBrokerNum != null)
-                    hashCode = hashCode * 59 + this.NewBrokerNum.GetHashCode();
+                if (this.ComputeFlavorGroups != null)
+                    hashCode = hashCode * 59 + this.ComputeFlavorGroups.GetHashCode();
                 return hashCode;
             }
         }

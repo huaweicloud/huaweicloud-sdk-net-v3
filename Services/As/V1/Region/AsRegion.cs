@@ -47,6 +47,8 @@ namespace HuaweiCloud.SDK.As.V1
             "https://as.tr-west-1.myhuaweicloud.com");
         public static readonly Region AP_SOUTHEAST_4 = new Region("ap-southeast-4",
             "https://as.ap-southeast-4.myhuaweicloud.com");
+        public static readonly Region EU_WEST_0 = new Region("eu-west-0",
+            "https://as.eu-west-0.myhuaweicloud.com");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("AS");
 
@@ -72,6 +74,7 @@ namespace HuaweiCloud.SDK.As.V1
                 { "cn-south-2", CN_SOUTH_2 },
                 { "tr-west-1", TR_WEST_1 },
                 { "ap-southeast-4", AP_SOUTHEAST_4 },
+                { "eu-west-0", EU_WEST_0 },
         };
 
         public static Region ValueOf(string regionId)

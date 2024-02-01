@@ -179,7 +179,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// [付费模式，1表示按需计费。](tag:hws_eu,g42,hk_g42,tm,hk_tm)[付费模式，1表示按需计费，0表示包年/包月计费。](tag:hws,hws_eu,hws_hk,ctc) [计费模式，参数暂未使用。](tag:ocb,hws_ocb)
+        /// [付费模式，1表示按需计费。](tag:hws_eu,g42,hk_g42,tm,hk_tm)[付费模式，1表示按需计费，0表示包年/包月计费。](tag:hws,hws_eu,hws_hk,ctc) [计费模式，参数暂未使用。](tag:ocb,hws_ocb,hcs)
         /// </summary>
         [JsonProperty("charging_mode", NullValueHandling = NullValueHandling.Ignore)]
         public int? ChargingMode { get; set; }
@@ -233,7 +233,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public string SubnetName { get; set; }
 
         /// <summary>
-        /// 子网路由。
+        /// 子网路由（仅RocketMQ 5.x版本会显示此字段）。
         /// </summary>
         [JsonProperty("subnet_cidr", NullValueHandling = NullValueHandling.Ignore)]
         public string SubnetCidr { get; set; }
@@ -389,7 +389,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public bool? EnableAcl { get; set; }
 
         /// <summary>
-        /// 节点数。
+        /// 节点数（仅RocketMQ 4.8.0版本会显示此字段）。
         /// </summary>
         [JsonProperty("broker_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? BrokerNum { get; set; }
@@ -419,13 +419,13 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public string PublicBrokerAddress { get; set; }
 
         /// <summary>
-        /// grpc连接地址。
+        /// grpc连接地址（仅RocketMQ 5.x版本会显示此字段）。
         /// </summary>
         [JsonProperty("grpc_address", NullValueHandling = NullValueHandling.Ignore)]
         public string GrpcAddress { get; set; }
 
         /// <summary>
-        /// 公网grpc连接地址。
+        /// 公网grpc连接地址（仅RocketMQ 5.x版本会显示此字段）。
         /// </summary>
         [JsonProperty("public_grpc_address", NullValueHandling = NullValueHandling.Ignore)]
         public string PublicGrpcAddress { get; set; }

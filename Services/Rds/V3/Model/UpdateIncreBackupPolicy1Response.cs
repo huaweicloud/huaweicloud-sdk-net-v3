@@ -8,16 +8,16 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Kafka.V2.Model
+namespace HuaweiCloud.SDK.Rds.V3.Model
 {
     /// <summary>
     /// Response Object
     /// </summary>
-    public class CreateShrinkageJobResponse : SdkResponse
+    public class UpdateIncreBackupPolicy1Response : SdkResponse
     {
 
         /// <summary>
-        /// 缩容变更任务ID
+        /// job id
         /// </summary>
         [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
         public string JobId { get; set; }
@@ -30,7 +30,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class CreateShrinkageJobResponse {\n");
+            sb.Append("class UpdateIncreBackupPolicy1Response {\n");
             sb.Append("  jobId: ").Append(JobId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -41,13 +41,13 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CreateShrinkageJobResponse);
+            return this.Equals(input as UpdateIncreBackupPolicy1Response);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(CreateShrinkageJobResponse input)
+        public bool Equals(UpdateIncreBackupPolicy1Response input)
         {
             if (input == null)
                 return false;

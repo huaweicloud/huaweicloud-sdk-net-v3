@@ -1,3 +1,155 @@
+# 3.1.79 2024-02-01
+
+### HuaweiCloud SDK AOM
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListEvents**
+    - changes of response param
+      - `* events.annotations: map<string, string> -> map<string, object>`
+      - `* events.attach_rule: map<string, string> -> map<string, object>`
+  - **PushEvents**
+    - changes of request param
+      - `* events.annotations: map<string, string> -> map<string, object>`
+      - `* events.attach_rule: map<string, string> -> map<string, object>`
+  - **CreatePromInstance**
+    - changes of request param
+      - `+ region`
+
+### HuaweiCloud SDK AOS
+
+- _Features_
+  - Support the APIs `CreatePrivateProvider`, `CreatePrivateProviderVersion`
+- _Bug Fix_
+  - None
+- _Change_
+  - **GetExecutionPlan**
+    - changes of response param
+      - `+ execution_plan_items.imported`
+  - **GetExecutionPlanMetadata**
+    - changes of response param
+      - `+ summary.resource_import`
+
+### HuaweiCloud SDK CDN
+
+- _Features_
+  - Support the API `ShowLogs`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK GaussDB
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateGaussMySqlInstance**
+    - changes of request param
+      - `+ tde_info`
+  - **ShowGaussMySqlInstanceInfoUnifyStatus**
+    - changes of response param
+      - `+ instance.tde_info`
+  - **ListGaussMySqlInstanceDetailInfoUnifyStatus**
+    - changes of response param
+      - `+ instances.tde_info`
+
+### HuaweiCloud SDK Kafka
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Remove the APIs `CreateShrinkageJob`, `ShowShrinkCheckResult`, `UpdateSinkTaskQuota`
+  - **CreateInstanceTopic**
+    - changes of response param
+      - `- id`
+
+### HuaweiCloud SDK NAT
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListNatGatewayDnatRules**
+    - changes of request param
+      - `+ marker`
+  - **ListNatGatewaySnatRules**
+    - changes of request param
+      - `+ marker`
+  - **ListNatGateways**
+    - changes of request param
+      - `+ marker`
+
+### HuaweiCloud SDK RDS
+
+- _Features_
+  - Support the following APIs:
+    - `StartInstanceReduceVolumeAction`
+    - `UpdateHostPrivilege`
+    - `ShowIncreBackupPolicy1`
+    - `UpdateIncreBackupPolicy1`
+    - `ListRdSforMySqlProxy`
+    - `DeleteRdSforMySqlProxy`
+    - `ModifyRdSforMySqlProxyRouteMode`
+    - `RestartRdSforMysqlProxy`
+    - `ListRdSforMysqlProxyFlavors`
+    - `CreateRdSforMySqlProxy`
+- _Bug Fix_
+  - None
+- _Change_
+  - **SetAuditlogPolicy**
+    - changes of request param
+      - `+ audit_types`
+  - **CreateDbUser**
+    - changes of request param
+      - `+ is_privilege`
+
+### HuaweiCloud SDK RocketMQ
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowGroup**
+    - changes of response param
+      - `* retry_max_time: number -> int32`
+  - **UpdateConsumerGroup**
+    - changes of request param
+      - `* retry_max_time: number -> int32`
+  - **ResetConsumeOffset**
+    - changes of request param
+      - `* timestamp: number -> string`
+  - **CreateConsumerGroupOrBatchDeleteConsumerGroup**
+    - changes of request param
+      - `+ createdAt`
+      - `+ permissions`
+      - `+ consume_orderly`
+      - `- from_beginning`
+      - `* retry_max_time: number -> int32`
+  - **ListInstanceConsumerGroups**
+    - changes of response param
+      - `+ groups.createdAt`
+      - `+ groups.permissions`
+      - `+ groups.consume_orderly`
+      - `- groups.from_beginning`
+      - `* groups.retry_max_time: number -> int32`
+  - **BatchUpdateConsumerGroup**
+    - changes of request param
+      - `+ groups.createdAt`
+      - `+ groups.permissions`
+      - `+ groups.consume_orderly`
+      - `- groups.from_beginning`
+      - `* groups.retry_max_time: number -> int32`
+
 # 3.1.78 2024-01-25
 
 ### HuaweiCloud SDK AOM

@@ -8,19 +8,19 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Kafka.V2.Model
+namespace HuaweiCloud.SDK.Rds.V3.Model
 {
     /// <summary>
-    /// 
+    /// Response Object
     /// </summary>
-    public class UpdateSinkTaskQuotaReq 
+    public class ModifyRdSforMySqlProxyRouteModeResponse : SdkResponse
     {
 
         /// <summary>
-        /// 转储任务的总个数。 
+        /// 修改数据库代理路由模式结果。 取值：     failed 失败     success 成功
         /// </summary>
-        [JsonProperty("sink_max_tasks", NullValueHandling = NullValueHandling.Ignore)]
-        public int? SinkMaxTasks { get; set; }
+        [JsonProperty("result", NullValueHandling = NullValueHandling.Ignore)]
+        public string Result { get; set; }
 
 
 
@@ -30,8 +30,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class UpdateSinkTaskQuotaReq {\n");
-            sb.Append("  sinkMaxTasks: ").Append(SinkMaxTasks).Append("\n");
+            sb.Append("class ModifyRdSforMySqlProxyRouteModeResponse {\n");
+            sb.Append("  result: ").Append(Result).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -41,22 +41,22 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as UpdateSinkTaskQuotaReq);
+            return this.Equals(input as ModifyRdSforMySqlProxyRouteModeResponse);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(UpdateSinkTaskQuotaReq input)
+        public bool Equals(ModifyRdSforMySqlProxyRouteModeResponse input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.SinkMaxTasks == input.SinkMaxTasks ||
-                    (this.SinkMaxTasks != null &&
-                    this.SinkMaxTasks.Equals(input.SinkMaxTasks))
+                    this.Result == input.Result ||
+                    (this.Result != null &&
+                    this.Result.Equals(input.Result))
                 );
         }
 
@@ -68,8 +68,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.SinkMaxTasks != null)
-                    hashCode = hashCode * 59 + this.SinkMaxTasks.GetHashCode();
+                if (this.Result != null)
+                    hashCode = hashCode * 59 + this.Result.GetHashCode();
                 return hashCode;
             }
         }

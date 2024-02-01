@@ -50,13 +50,25 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         /// 最大重试次数，取值范围为1~16。
         /// </summary>
         [JsonProperty("retry_max_time", NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? RetryMaxTime { get; set; }
+        public int? RetryMaxTime { get; set; }
 
         /// <summary>
-        /// 是否重头消费。
+        /// 创建时间戳。
         /// </summary>
-        [JsonProperty("from_beginning", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? FromBeginning { get; set; }
+        [JsonProperty("createdAt", NullValueHandling = NullValueHandling.Ignore)]
+        public string CreatedAt { get; set; }
+
+        /// <summary>
+        /// 权限集。
+        /// </summary>
+        [JsonProperty("permissions", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> Permissions { get; set; }
+
+        /// <summary>
+        /// 是否按序消费。
+        /// </summary>
+        [JsonProperty("consume_orderly", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? ConsumeOrderly { get; set; }
 
 
 
@@ -73,7 +85,9 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  groupDesc: ").Append(GroupDesc).Append("\n");
             sb.Append("  retryMaxTime: ").Append(RetryMaxTime).Append("\n");
-            sb.Append("  fromBeginning: ").Append(FromBeginning).Append("\n");
+            sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
+            sb.Append("  permissions: ").Append(Permissions).Append("\n");
+            sb.Append("  consumeOrderly: ").Append(ConsumeOrderly).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -127,9 +141,20 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                     this.RetryMaxTime.Equals(input.RetryMaxTime))
                 ) && 
                 (
-                    this.FromBeginning == input.FromBeginning ||
-                    (this.FromBeginning != null &&
-                    this.FromBeginning.Equals(input.FromBeginning))
+                    this.CreatedAt == input.CreatedAt ||
+                    (this.CreatedAt != null &&
+                    this.CreatedAt.Equals(input.CreatedAt))
+                ) && 
+                (
+                    this.Permissions == input.Permissions ||
+                    this.Permissions != null &&
+                    input.Permissions != null &&
+                    this.Permissions.SequenceEqual(input.Permissions)
+                ) && 
+                (
+                    this.ConsumeOrderly == input.ConsumeOrderly ||
+                    (this.ConsumeOrderly != null &&
+                    this.ConsumeOrderly.Equals(input.ConsumeOrderly))
                 );
         }
 
@@ -153,8 +178,12 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                     hashCode = hashCode * 59 + this.GroupDesc.GetHashCode();
                 if (this.RetryMaxTime != null)
                     hashCode = hashCode * 59 + this.RetryMaxTime.GetHashCode();
-                if (this.FromBeginning != null)
-                    hashCode = hashCode * 59 + this.FromBeginning.GetHashCode();
+                if (this.CreatedAt != null)
+                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.Permissions != null)
+                    hashCode = hashCode * 59 + this.Permissions.GetHashCode();
+                if (this.ConsumeOrderly != null)
+                    hashCode = hashCode * 59 + this.ConsumeOrderly.GetHashCode();
                 return hashCode;
             }
         }

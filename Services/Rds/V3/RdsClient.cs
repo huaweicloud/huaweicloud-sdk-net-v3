@@ -419,6 +419,32 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 开启数据库代理
+        ///
+        /// 开启数据库代理。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateRdSforMySqlProxyResponse CreateRdSforMySqlProxy(CreateRdSforMySqlProxyRequest createRdSforMySqlProxyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createRdSforMySqlProxyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/open", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRdSforMySqlProxyRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateRdSforMySqlProxyResponse>(response);
+        }
+
+        public SyncInvoker<CreateRdSforMySqlProxyResponse> CreateRdSforMySqlProxyInvoker(CreateRdSforMySqlProxyRequest createRdSforMySqlProxyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createRdSforMySqlProxyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/open", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRdSforMySqlProxyRequest);
+            return new SyncInvoker<CreateRdSforMySqlProxyResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateRdSforMySqlProxyResponse>);
+        }
+        
+        /// <summary>
         /// 恢复到新实例
         ///
         /// 恢复到新实例。
@@ -619,6 +645,34 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/hba-info", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePostgresqlHbaConfRequest);
             return new SyncInvoker<DeletePostgresqlHbaConfResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeletePostgresqlHbaConfResponse>);
+        }
+        
+        /// <summary>
+        /// 关闭数据库代理
+        ///
+        /// 关闭数据库代理。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteRdSforMySqlProxyResponse DeleteRdSforMySqlProxy(DeleteRdSforMySqlProxyRequest deleteRdSforMySqlProxyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteRdSforMySqlProxyRequest.InstanceId.ToString());
+            urlParam.Add("proxy_id", deleteRdSforMySqlProxyRequest.ProxyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRdSforMySqlProxyRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteRdSforMySqlProxyResponse>(response);
+        }
+
+        public SyncInvoker<DeleteRdSforMySqlProxyResponse> DeleteRdSforMySqlProxyInvoker(DeleteRdSforMySqlProxyRequest deleteRdSforMySqlProxyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteRdSforMySqlProxyRequest.InstanceId.ToString());
+            urlParam.Add("proxy_id", deleteRdSforMySqlProxyRequest.ProxyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRdSforMySqlProxyRequest);
+            return new SyncInvoker<DeleteRdSforMySqlProxyResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteRdSforMySqlProxyResponse>);
         }
         
         /// <summary>
@@ -1445,6 +1499,58 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 查询数据库代理信息列表
+        ///
+        /// 查询数据库代理信息列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListRdSforMySqlProxyResponse ListRdSforMySqlProxy(ListRdSforMySqlProxyRequest listRdSforMySqlProxyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listRdSforMySqlProxyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy-list", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRdSforMySqlProxyRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListRdSforMySqlProxyResponse>(response);
+        }
+
+        public SyncInvoker<ListRdSforMySqlProxyResponse> ListRdSforMySqlProxyInvoker(ListRdSforMySqlProxyRequest listRdSforMySqlProxyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listRdSforMySqlProxyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy-list", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRdSforMySqlProxyRequest);
+            return new SyncInvoker<ListRdSforMySqlProxyResponse>(this, "GET", request, JsonUtils.DeSerialize<ListRdSforMySqlProxyResponse>);
+        }
+        
+        /// <summary>
+        /// 查询数据库代理规格信息
+        ///
+        /// 查询数据库代理规格信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListRdSforMysqlProxyFlavorsResponse ListRdSforMysqlProxyFlavors(ListRdSforMysqlProxyFlavorsRequest listRdSforMysqlProxyFlavorsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listRdSforMysqlProxyFlavorsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/flavors", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRdSforMysqlProxyFlavorsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListRdSforMysqlProxyFlavorsResponse>(response);
+        }
+
+        public SyncInvoker<ListRdSforMysqlProxyFlavorsResponse> ListRdSforMysqlProxyFlavorsInvoker(ListRdSforMysqlProxyFlavorsRequest listRdSforMysqlProxyFlavorsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listRdSforMysqlProxyFlavorsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/flavors", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRdSforMysqlProxyFlavorsRequest);
+            return new SyncInvoker<ListRdSforMysqlProxyFlavorsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListRdSforMysqlProxyFlavorsResponse>);
+        }
+        
+        /// <summary>
         /// 查询回收站
         ///
         /// 查询回收站实例信息
@@ -1831,6 +1937,62 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/hba-info", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyPostgresqlHbaConfRequest);
             return new SyncInvoker<ModifyPostgresqlHbaConfResponse>(this, "PUT", request, JsonUtils.DeSerialize<ModifyPostgresqlHbaConfResponse>);
+        }
+        
+        /// <summary>
+        /// 设置读写分离路由模式
+        ///
+        /// 设置读写分离路由模式。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ModifyRdSforMySqlProxyRouteModeResponse ModifyRdSforMySqlProxyRouteMode(ModifyRdSforMySqlProxyRouteModeRequest modifyRdSforMySqlProxyRouteModeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", modifyRdSforMySqlProxyRouteModeRequest.InstanceId.ToString());
+            urlParam.Add("proxy_id", modifyRdSforMySqlProxyRouteModeRequest.ProxyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/route-mode", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyRdSforMySqlProxyRouteModeRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<ModifyRdSforMySqlProxyRouteModeResponse>(response);
+        }
+
+        public SyncInvoker<ModifyRdSforMySqlProxyRouteModeResponse> ModifyRdSforMySqlProxyRouteModeInvoker(ModifyRdSforMySqlProxyRouteModeRequest modifyRdSforMySqlProxyRouteModeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", modifyRdSforMySqlProxyRouteModeRequest.InstanceId.ToString());
+            urlParam.Add("proxy_id", modifyRdSforMySqlProxyRouteModeRequest.ProxyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/route-mode", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyRdSforMySqlProxyRouteModeRequest);
+            return new SyncInvoker<ModifyRdSforMySqlProxyRouteModeResponse>(this, "POST", request, JsonUtils.DeSerialize<ModifyRdSforMySqlProxyRouteModeResponse>);
+        }
+        
+        /// <summary>
+        /// 重启数据库代理
+        ///
+        /// 重启数据库代理。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public RestartRdSforMysqlProxyResponse RestartRdSforMysqlProxy(RestartRdSforMysqlProxyRequest restartRdSforMysqlProxyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", restartRdSforMysqlProxyRequest.InstanceId.ToString());
+            urlParam.Add("proxy_id", restartRdSforMysqlProxyRequest.ProxyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/restart", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restartRdSforMysqlProxyRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<RestartRdSforMysqlProxyResponse>(response);
+        }
+
+        public SyncInvoker<RestartRdSforMysqlProxyResponse> RestartRdSforMysqlProxyInvoker(RestartRdSforMysqlProxyRequest restartRdSforMysqlProxyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", restartRdSforMysqlProxyRequest.InstanceId.ToString());
+            urlParam.Add("proxy_id", restartRdSforMysqlProxyRequest.ProxyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/restart", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restartRdSforMysqlProxyRequest);
+            return new SyncInvoker<RestartRdSforMysqlProxyResponse>(this, "POST", request, JsonUtils.DeSerialize<RestartRdSforMysqlProxyResponse>);
         }
         
         /// <summary>
@@ -2458,6 +2620,32 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 获取增备策略
+        ///
+        /// 获取增备策略
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowIncreBackupPolicy1Response ShowIncreBackupPolicy1(ShowIncreBackupPolicy1Request showIncreBackupPolicy1Request)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showIncreBackupPolicy1Request.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/incre-backup/policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showIncreBackupPolicy1Request);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowIncreBackupPolicy1Response>(response);
+        }
+
+        public SyncInvoker<ShowIncreBackupPolicy1Response> ShowIncreBackupPolicy1Invoker(ShowIncreBackupPolicy1Request showIncreBackupPolicy1Request)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showIncreBackupPolicy1Request.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/incre-backup/policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showIncreBackupPolicy1Request);
+            return new SyncInvoker<ShowIncreBackupPolicy1Response>(this, "GET", request, JsonUtils.DeSerialize<ShowIncreBackupPolicy1Response>);
+        }
+        
+        /// <summary>
         /// 获取指定实例的参数模板
         ///
         /// 获取指定实例的参数模板。
@@ -2711,6 +2899,32 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", startInstanceEnlargeVolumeActionRequest);
             return new SyncInvoker<StartInstanceEnlargeVolumeActionResponse>(this, "POST", request, JsonUtils.DeSerialize<StartInstanceEnlargeVolumeActionResponse>);
+        }
+        
+        /// <summary>
+        /// 数据库实例的磁盘空间缩容
+        ///
+        /// 数据库实例的磁盘空间缩容。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public StartInstanceReduceVolumeActionResponse StartInstanceReduceVolumeAction(StartInstanceReduceVolumeActionRequest startInstanceReduceVolumeActionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", startInstanceReduceVolumeActionRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", startInstanceReduceVolumeActionRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<StartInstanceReduceVolumeActionResponse>(response);
+        }
+
+        public SyncInvoker<StartInstanceReduceVolumeActionResponse> StartInstanceReduceVolumeActionInvoker(StartInstanceReduceVolumeActionRequest startInstanceReduceVolumeActionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", startInstanceReduceVolumeActionRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", startInstanceReduceVolumeActionRequest);
+            return new SyncInvoker<StartInstanceReduceVolumeActionResponse>(this, "POST", request, JsonUtils.DeSerialize<StartInstanceReduceVolumeActionResponse>);
         }
         
         /// <summary>
@@ -2995,6 +3209,32 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/modify-dns", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDnsNameRequest);
             return new SyncInvoker<UpdateDnsNameResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateDnsNameResponse>);
+        }
+        
+        /// <summary>
+        /// 修改增备策略
+        ///
+        /// 修改增备策略
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateIncreBackupPolicy1Response UpdateIncreBackupPolicy1(UpdateIncreBackupPolicy1Request updateIncreBackupPolicy1Request)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateIncreBackupPolicy1Request.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/incre-backup/policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateIncreBackupPolicy1Request);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateIncreBackupPolicy1Response>(response);
+        }
+
+        public SyncInvoker<UpdateIncreBackupPolicy1Response> UpdateIncreBackupPolicy1Invoker(UpdateIncreBackupPolicy1Request updateIncreBackupPolicy1Request)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateIncreBackupPolicy1Request.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/incre-backup/policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateIncreBackupPolicy1Request);
+            return new SyncInvoker<UpdateIncreBackupPolicy1Response>(this, "PUT", request, JsonUtils.DeSerialize<UpdateIncreBackupPolicy1Response>);
         }
         
         /// <summary>
@@ -3725,6 +3965,32 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-users/{user_name}/comment", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDbUserCommentRequest);
             return new SyncInvoker<UpdateDbUserCommentResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateDbUserCommentResponse>);
+        }
+        
+        /// <summary>
+        /// 修改实例下用户host信息
+        ///
+        /// 修改实例下用户host信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateHostPrivilegeResponse UpdateHostPrivilege(UpdateHostPrivilegeRequest updateHostPrivilegeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateHostPrivilegeRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/host-privilege", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateHostPrivilegeRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateHostPrivilegeResponse>(response);
+        }
+
+        public SyncInvoker<UpdateHostPrivilegeResponse> UpdateHostPrivilegeInvoker(UpdateHostPrivilegeRequest updateHostPrivilegeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateHostPrivilegeRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/host-privilege", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateHostPrivilegeRequest);
+            return new SyncInvoker<UpdateHostPrivilegeResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateHostPrivilegeResponse>);
         }
         
         /// <summary>

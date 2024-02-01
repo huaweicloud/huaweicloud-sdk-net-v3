@@ -26,7 +26,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         /// 重置的时间。
         /// </summary>
         [JsonProperty("timestamp", NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? Timestamp { get; set; }
+        public string Timestamp { get; set; }
 
 
 

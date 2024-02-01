@@ -28,6 +28,12 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         [JsonProperty("reserve_auditlogs", NullValueHandling = NullValueHandling.Ignore)]
         public bool? ReserveAuditlogs { get; set; }
 
+        /// <summary>
+        /// 审计记录的操作类型，动态范围。空表示不过滤任何操作类型。
+        /// </summary>
+        [JsonProperty("audit_types", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> AuditTypes { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +45,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             sb.Append("class SetAuditlogPolicyRequestBody {\n");
             sb.Append("  keepDays: ").Append(KeepDays).Append("\n");
             sb.Append("  reserveAuditlogs: ").Append(ReserveAuditlogs).Append("\n");
+            sb.Append("  auditTypes: ").Append(AuditTypes).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -69,6 +76,12 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
                     this.ReserveAuditlogs == input.ReserveAuditlogs ||
                     (this.ReserveAuditlogs != null &&
                     this.ReserveAuditlogs.Equals(input.ReserveAuditlogs))
+                ) && 
+                (
+                    this.AuditTypes == input.AuditTypes ||
+                    this.AuditTypes != null &&
+                    input.AuditTypes != null &&
+                    this.AuditTypes.SequenceEqual(input.AuditTypes)
                 );
         }
 
@@ -84,6 +97,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
                     hashCode = hashCode * 59 + this.KeepDays.GetHashCode();
                 if (this.ReserveAuditlogs != null)
                     hashCode = hashCode * 59 + this.ReserveAuditlogs.GetHashCode();
+                if (this.AuditTypes != null)
+                    hashCode = hashCode * 59 + this.AuditTypes.GetHashCode();
                 return hashCode;
             }
         }

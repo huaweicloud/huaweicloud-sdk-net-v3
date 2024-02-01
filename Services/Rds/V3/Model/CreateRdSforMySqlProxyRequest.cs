@@ -8,27 +8,34 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Kafka.V2.Model
+namespace HuaweiCloud.SDK.Rds.V3.Model
 {
     /// <summary>
     /// Request Object
     /// </summary>
-    public class UpdateSinkTaskQuotaRequest 
+    public class CreateRdSforMySqlProxyRequest 
     {
 
         /// <summary>
-        /// 实例转储ID。  请参考[查询实例](ShowInstance.xml)返回的数据。
+        /// 实例ID，严格匹配UUID规则。
         /// </summary>
-        [SDKProperty("connector_id", IsPath = true)]
-        [JsonProperty("connector_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string ConnectorId { get; set; }
+        [SDKProperty("instance_id", IsPath = true)]
+        [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string InstanceId { get; set; }
+
+        /// <summary>
+        /// 语言。
+        /// </summary>
+        [SDKProperty("X-Language", IsHeader = true)]
+        [JsonProperty("X-Language", NullValueHandling = NullValueHandling.Ignore)]
+        public string XLanguage { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public UpdateSinkTaskQuotaReq Body { get; set; }
+        public CreateMysqlMultiProxyRequest Body { get; set; }
 
 
 
@@ -38,8 +45,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class UpdateSinkTaskQuotaRequest {\n");
-            sb.Append("  connectorId: ").Append(ConnectorId).Append("\n");
+            sb.Append("class CreateRdSforMySqlProxyRequest {\n");
+            sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
+            sb.Append("  xLanguage: ").Append(XLanguage).Append("\n");
             sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -50,22 +58,27 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as UpdateSinkTaskQuotaRequest);
+            return this.Equals(input as CreateRdSforMySqlProxyRequest);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(UpdateSinkTaskQuotaRequest input)
+        public bool Equals(CreateRdSforMySqlProxyRequest input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.ConnectorId == input.ConnectorId ||
-                    (this.ConnectorId != null &&
-                    this.ConnectorId.Equals(input.ConnectorId))
+                    this.InstanceId == input.InstanceId ||
+                    (this.InstanceId != null &&
+                    this.InstanceId.Equals(input.InstanceId))
+                ) && 
+                (
+                    this.XLanguage == input.XLanguage ||
+                    (this.XLanguage != null &&
+                    this.XLanguage.Equals(input.XLanguage))
                 ) && 
                 (
                     this.Body == input.Body ||
@@ -82,8 +95,10 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.ConnectorId != null)
-                    hashCode = hashCode * 59 + this.ConnectorId.GetHashCode();
+                if (this.InstanceId != null)
+                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.XLanguage != null)
+                    hashCode = hashCode * 59 + this.XLanguage.GetHashCode();
                 if (this.Body != null)
                     hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;

@@ -1,3 +1,155 @@
+# 3.1.79 2024-02-01
+
+### HuaweiCloud SDK AOM
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListEvents**
+    - 响应参数变更
+      - `* events.annotations: map<string, string> -> map<string, object>`
+      - `* events.attach_rule: map<string, string> -> map<string, object>`
+  - **PushEvents**
+    - 请求参数变更
+      - `* events.annotations: map<string, string> -> map<string, object>`
+      - `* events.attach_rule: map<string, string> -> map<string, object>`
+  - **CreatePromInstance**
+    - 请求参数变更
+      - `+ region`
+
+### HuaweiCloud SDK AOS
+
+- _新增特性_
+  - 支持接口`CreatePrivateProvider`、`CreatePrivateProviderVersion`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **GetExecutionPlan**
+    - 响应参数变更
+      - `+ execution_plan_items.imported`
+  - **GetExecutionPlanMetadata**
+    - 响应参数变更
+      - `+ summary.resource_import`
+
+### HuaweiCloud SDK CDN
+
+- _新增特性_
+  - 支持接口`ShowLogs`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK GaussDB
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateGaussMySqlInstance**
+    - 请求参数变更
+      - `+ tde_info`
+  - **ShowGaussMySqlInstanceInfoUnifyStatus**
+    - 响应参数变更
+      - `+ instance.tde_info`
+  - **ListGaussMySqlInstanceDetailInfoUnifyStatus**
+    - 响应参数变更
+      - `+ instances.tde_info`
+
+### HuaweiCloud SDK Kafka
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 移除接口`CreateShrinkageJob`、`ShowShrinkCheckResult`、`UpdateSinkTaskQuota`
+  - **CreateInstanceTopic**
+    - 响应参数变更
+      - `- id`
+
+### HuaweiCloud SDK NAT
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListNatGatewayDnatRules**
+    - 请求参数变更
+      - `+ marker`
+  - **ListNatGatewaySnatRules**
+    - 请求参数变更
+      - `+ marker`
+  - **ListNatGateways**
+    - 请求参数变更
+      - `+ marker`
+
+### HuaweiCloud SDK RDS
+
+- _新增特性_
+  - 支持以下接口：
+    - `StartInstanceReduceVolumeAction`
+    - `UpdateHostPrivilege`
+    - `ShowIncreBackupPolicy1`
+    - `UpdateIncreBackupPolicy1`
+    - `ListRdSforMySqlProxy`
+    - `DeleteRdSforMySqlProxy`
+    - `ModifyRdSforMySqlProxyRouteMode`
+    - `RestartRdSforMysqlProxy`
+    - `ListRdSforMysqlProxyFlavors`
+    - `CreateRdSforMySqlProxy`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **SetAuditlogPolicy**
+    - 请求参数变更
+      - `+ audit_types`
+  - **CreateDbUser**
+    - 请求参数变更
+      - `+ is_privilege`
+
+### HuaweiCloud SDK RocketMQ
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowGroup**
+    - 响应参数变更
+      - `* retry_max_time: number -> int32`
+  - **UpdateConsumerGroup**
+    - 请求参数变更
+      - `* retry_max_time: number -> int32`
+  - **ResetConsumeOffset**
+    - 请求参数变更
+      - `* timestamp: number -> string`
+  - **CreateConsumerGroupOrBatchDeleteConsumerGroup**
+    - 请求参数变更
+      - `+ createdAt`
+      - `+ permissions`
+      - `+ consume_orderly`
+      - `- from_beginning`
+      - `* retry_max_time: number -> int32`
+  - **ListInstanceConsumerGroups**
+    - 响应参数变更
+      - `+ groups.createdAt`
+      - `+ groups.permissions`
+      - `+ groups.consume_orderly`
+      - `- groups.from_beginning`
+      - `* groups.retry_max_time: number -> int32`
+  - **BatchUpdateConsumerGroup**
+    - 请求参数变更
+      - `+ groups.createdAt`
+      - `+ groups.permissions`
+      - `+ groups.consume_orderly`
+      - `- groups.from_beginning`
+      - `* groups.retry_max_time: number -> int32`
+
 # 3.1.78 2024-01-25
 
 ### HuaweiCloud SDK AOM

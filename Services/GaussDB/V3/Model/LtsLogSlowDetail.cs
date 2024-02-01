@@ -59,7 +59,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         public string Database { get; set; }
 
         /// <summary>
-        /// 帐号。
+        /// 账号。
         /// </summary>
         [JsonProperty("users", NullValueHandling = NullValueHandling.Ignore)]
         public string Users { get; set; }

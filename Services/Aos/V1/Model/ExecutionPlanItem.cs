@@ -317,6 +317,12 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         public bool? Drifted { get; set; }
 
         /// <summary>
+        /// 当前资源的变更是否是导入的。
+        /// </summary>
+        [JsonProperty("imported", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? Imported { get; set; }
+
+        /// <summary>
         /// 资源的物理id，是唯一id，由为该资源提供服务的provider、云服务或其他服务提供方在资源部署的时候生成
         /// </summary>
         [JsonProperty("resource_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -345,6 +351,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
             sb.Append("  providerName: ").Append(ProviderName).Append("\n");
             sb.Append("  mode: ").Append(Mode).Append("\n");
             sb.Append("  drifted: ").Append(Drifted).Append("\n");
+            sb.Append("  imported: ").Append(Imported).Append("\n");
             sb.Append("  resourceId: ").Append(ResourceId).Append("\n");
             sb.Append("  attributes: ").Append(Attributes).Append("\n");
             sb.Append("}\n");
@@ -409,6 +416,11 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
                     this.Drifted.Equals(input.Drifted))
                 ) && 
                 (
+                    this.Imported == input.Imported ||
+                    (this.Imported != null &&
+                    this.Imported.Equals(input.Imported))
+                ) && 
+                (
                     this.ResourceId == input.ResourceId ||
                     (this.ResourceId != null &&
                     this.ResourceId.Equals(input.ResourceId))
@@ -445,6 +457,8 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
                     hashCode = hashCode * 59 + this.Mode.GetHashCode();
                 if (this.Drifted != null)
                     hashCode = hashCode * 59 + this.Drifted.GetHashCode();
+                if (this.Imported != null)
+                    hashCode = hashCode * 59 + this.Imported.GetHashCode();
                 if (this.ResourceId != null)
                     hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
                 if (this.Attributes != null)

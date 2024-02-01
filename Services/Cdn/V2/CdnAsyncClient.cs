@@ -491,6 +491,30 @@ namespace HuaweiCloud.SDK.Cdn.V2
         }
         
         /// <summary>
+        /// 日志查询
+        ///
+        /// 查询日志下载链接，支持查询30天内的日志信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowLogsResponse> ShowLogsAsync(ShowLogsRequest showLogsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/logs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLogsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowLogsResponse>(response);
+        }
+
+        public AsyncInvoker<ShowLogsResponse> ShowLogsAsyncInvoker(ShowLogsRequest showLogsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/logs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLogsRequest);
+            return new AsyncInvoker<ShowLogsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowLogsResponse>);
+        }
+        
+        /// <summary>
         /// 查询TOP域名
         ///
         /// - 查询TOP域名。

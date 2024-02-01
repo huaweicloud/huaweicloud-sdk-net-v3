@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         public long? Timeout { get; set; }
 
         /// <summary>
-        /// 事件或者告警的详细信息，为键值对形式。必须字段为：  - event_name：事件或者告警名称,类型为String；  - event_severity：事件级别枚举值。类型为String，四种类型 \&quot;Critical\&quot;, \&quot;Major\&quot;, \&quot;Minor\&quot;, \&quot;Info\&quot;；  - event_type：事件类别枚举值。类型为String，event为普通告警，alarm为告警事件；  - resource_provider：事件对应云服务名称。类型为String；  - resource_type：事件对应资源类型。类型为String；  - resource_id：事件对应资源信息。类型为String。
+        /// 事件或者告警的详细信息，为键值对形式。必须字段为：  - event_name：事件或者告警名称,类型为String；  - event_severity：事件级别枚举值。类型为String，四种类型 \&quot;Critical\&quot;, \&quot;Major\&quot;, \&quot;Minor\&quot;, \&quot;Info\&quot;；  - event_type：事件类别枚举值。类型为String，event为告警事件，alarm为普通告警；  - resource_provider：事件对应云服务名称。类型为String；  - resource_type：事件对应资源类型。类型为String；  - resource_id：事件对应资源信息。类型为String。
         /// </summary>
         [JsonProperty("metadata", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, string> Metadata { get; set; }
@@ -44,13 +44,13 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// 事件或者告警附加字段，可以为空。
         /// </summary>
         [JsonProperty("annotations", NullValueHandling = NullValueHandling.Ignore)]
-        public Dictionary<string, string> Annotations { get; set; }
+        public Dictionary<string, Object> Annotations { get; set; }
 
         /// <summary>
         /// 事件或者告警预留字段，为空。
         /// </summary>
         [JsonProperty("attach_rule", NullValueHandling = NullValueHandling.Ignore)]
-        public Dictionary<string, string> AttachRule { get; set; }
+        public Dictionary<string, Object> AttachRule { get; set; }
 
         /// <summary>
         /// 事件或者告警id，系统会自动生成，上报无须填写该字段。

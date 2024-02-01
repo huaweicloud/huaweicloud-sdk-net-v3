@@ -34,6 +34,12 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         [JsonProperty("resource_delete", NullValueHandling = NullValueHandling.Ignore)]
         public int? ResourceDelete { get; set; }
 
+        /// <summary>
+        /// 导入资源数
+        /// </summary>
+        [JsonProperty("resource_import", NullValueHandling = NullValueHandling.Ignore)]
+        public int? ResourceImport { get; set; }
+
 
 
         /// <summary>
@@ -46,6 +52,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
             sb.Append("  resourceAdd: ").Append(ResourceAdd).Append("\n");
             sb.Append("  resourceUpdate: ").Append(ResourceUpdate).Append("\n");
             sb.Append("  resourceDelete: ").Append(ResourceDelete).Append("\n");
+            sb.Append("  resourceImport: ").Append(ResourceImport).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -81,6 +88,11 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
                     this.ResourceDelete == input.ResourceDelete ||
                     (this.ResourceDelete != null &&
                     this.ResourceDelete.Equals(input.ResourceDelete))
+                ) && 
+                (
+                    this.ResourceImport == input.ResourceImport ||
+                    (this.ResourceImport != null &&
+                    this.ResourceImport.Equals(input.ResourceImport))
                 );
         }
 
@@ -98,6 +110,8 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
                     hashCode = hashCode * 59 + this.ResourceUpdate.GetHashCode();
                 if (this.ResourceDelete != null)
                     hashCode = hashCode * 59 + this.ResourceDelete.GetHashCode();
+                if (this.ResourceImport != null)
+                    hashCode = hashCode * 59 + this.ResourceImport.GetHashCode();
                 return hashCode;
             }
         }
