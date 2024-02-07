@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string Status { get; set; }
 
         /// <summary>
-        /// 过期时间,即：响应头“Strict-Transport-Security”在客户端的缓存时间。单位:秒,取值范围:0~63072000。  &gt; status参数为on时，必传。
+        /// 过期时间,即：响应头“Strict-Transport-Security”在客户端的缓存时间。单位:秒,取值范围:0-63072000。  &gt; status参数为on时，必传。
         /// </summary>
         [JsonProperty("max_age", NullValueHandling = NullValueHandling.Ignore)]
         public int? MaxAge { get; set; }

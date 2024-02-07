@@ -13,7 +13,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
     /// <summary>
     /// Response Object
     /// </summary>
-    public class RestartRdSforMysqlProxyResponse : SdkResponse
+    public class SetInstancesProxyRestartResponse : SdkResponse
     {
 
         /// <summary>
@@ -30,7 +30,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class RestartRdSforMysqlProxyResponse {\n");
+            sb.Append("class SetInstancesProxyRestartResponse {\n");
             sb.Append("  jobId: ").Append(JobId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -41,13 +41,13 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as RestartRdSforMysqlProxyResponse);
+            return this.Equals(input as SetInstancesProxyRestartResponse);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(RestartRdSforMysqlProxyResponse input)
+        public bool Equals(SetInstancesProxyRestartResponse input)
         {
             if (input == null)
                 return false;

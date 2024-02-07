@@ -154,6 +154,18 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         [JsonProperty("ssl_option", NullValueHandling = NullValueHandling.Ignore)]
         public string SslOption { get; set; }
 
+        /// <summary>
+        /// 新增节点是否自动加入该Proxy。  取值范围： - ON：自动加入。 - OFF：不自动加入。
+        /// </summary>
+        [JsonProperty("new_node_auto_add_status", NullValueHandling = NullValueHandling.Ignore)]
+        public string NewNodeAutoAddStatus { get; set; }
+
+        /// <summary>
+        /// 新增节点的读权重。
+        /// </summary>
+        [JsonProperty("new_node_weight", NullValueHandling = NullValueHandling.Ignore)]
+        public int? NewNodeWeight { get; set; }
+
 
 
         /// <summary>
@@ -186,6 +198,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             sb.Append("  consistenceMode: ").Append(ConsistenceMode).Append("\n");
             sb.Append("  subnetId: ").Append(SubnetId).Append("\n");
             sb.Append("  sslOption: ").Append(SslOption).Append("\n");
+            sb.Append("  newNodeAutoAddStatus: ").Append(NewNodeAutoAddStatus).Append("\n");
+            sb.Append("  newNodeWeight: ").Append(NewNodeWeight).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -322,6 +336,16 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                     this.SslOption == input.SslOption ||
                     (this.SslOption != null &&
                     this.SslOption.Equals(input.SslOption))
+                ) && 
+                (
+                    this.NewNodeAutoAddStatus == input.NewNodeAutoAddStatus ||
+                    (this.NewNodeAutoAddStatus != null &&
+                    this.NewNodeAutoAddStatus.Equals(input.NewNodeAutoAddStatus))
+                ) && 
+                (
+                    this.NewNodeWeight == input.NewNodeWeight ||
+                    (this.NewNodeWeight != null &&
+                    this.NewNodeWeight.Equals(input.NewNodeWeight))
                 );
         }
 
@@ -379,6 +403,10 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                     hashCode = hashCode * 59 + this.SubnetId.GetHashCode();
                 if (this.SslOption != null)
                     hashCode = hashCode * 59 + this.SslOption.GetHashCode();
+                if (this.NewNodeAutoAddStatus != null)
+                    hashCode = hashCode * 59 + this.NewNodeAutoAddStatus.GetHashCode();
+                if (this.NewNodeWeight != null)
+                    hashCode = hashCode * 59 + this.NewNodeWeight.GetHashCode();
                 return hashCode;
             }
         }

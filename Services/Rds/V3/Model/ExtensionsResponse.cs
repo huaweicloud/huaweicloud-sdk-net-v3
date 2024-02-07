@@ -35,6 +35,12 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         public string Version { get; set; }
 
         /// <summary>
+        /// 可更新插件版本
+        /// </summary>
+        [JsonProperty("version_update", NullValueHandling = NullValueHandling.Ignore)]
+        public string VersionUpdate { get; set; }
+
+        /// <summary>
         /// 依赖预加载库。
         /// </summary>
         [JsonProperty("shared_preload_libraries", NullValueHandling = NullValueHandling.Ignore)]
@@ -64,6 +70,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  databaseName: ").Append(DatabaseName).Append("\n");
             sb.Append("  version: ").Append(Version).Append("\n");
+            sb.Append("  versionUpdate: ").Append(VersionUpdate).Append("\n");
             sb.Append("  sharedPreloadLibraries: ").Append(SharedPreloadLibraries).Append("\n");
             sb.Append("  created: ").Append(Created).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
@@ -104,6 +111,11 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
                     this.Version.Equals(input.Version))
                 ) && 
                 (
+                    this.VersionUpdate == input.VersionUpdate ||
+                    (this.VersionUpdate != null &&
+                    this.VersionUpdate.Equals(input.VersionUpdate))
+                ) && 
+                (
                     this.SharedPreloadLibraries == input.SharedPreloadLibraries ||
                     (this.SharedPreloadLibraries != null &&
                     this.SharedPreloadLibraries.Equals(input.SharedPreloadLibraries))
@@ -134,6 +146,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
                     hashCode = hashCode * 59 + this.DatabaseName.GetHashCode();
                 if (this.Version != null)
                     hashCode = hashCode * 59 + this.Version.GetHashCode();
+                if (this.VersionUpdate != null)
+                    hashCode = hashCode * 59 + this.VersionUpdate.GetHashCode();
                 if (this.SharedPreloadLibraries != null)
                     hashCode = hashCode * 59 + this.SharedPreloadLibraries.GetHashCode();
                 if (this.Created != null)

@@ -8,34 +8,27 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Rds.V3.Model
+namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
 {
     /// <summary>
     /// Request Object
     /// </summary>
-    public class RestartRdSforMysqlProxyRequest 
+    public class StopBackupRequest 
     {
 
         /// <summary>
-        /// 实例ID，严格匹配UUID规则。
-        /// </summary>
-        [SDKProperty("instance_id", IsPath = true)]
-        [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string InstanceId { get; set; }
-
-        /// <summary>
-        /// 数据库代理ID，严格匹配UUID规则。
-        /// </summary>
-        [SDKProperty("proxy_id", IsPath = true)]
-        [JsonProperty("proxy_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string ProxyId { get; set; }
-
-        /// <summary>
-        /// 语言。
+        /// 语言
         /// </summary>
         [SDKProperty("X-Language", IsHeader = true)]
         [JsonProperty("X-Language", NullValueHandling = NullValueHandling.Ignore)]
         public string XLanguage { get; set; }
+
+        /// <summary>
+        /// 实例ID。
+        /// </summary>
+        [SDKProperty("instance_id", IsPath = true)]
+        [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string InstanceId { get; set; }
 
 
 
@@ -45,10 +38,9 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class RestartRdSforMysqlProxyRequest {\n");
-            sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
-            sb.Append("  proxyId: ").Append(ProxyId).Append("\n");
+            sb.Append("class StopBackupRequest {\n");
             sb.Append("  xLanguage: ").Append(XLanguage).Append("\n");
+            sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -58,32 +50,27 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as RestartRdSforMysqlProxyRequest);
+            return this.Equals(input as StopBackupRequest);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(RestartRdSforMysqlProxyRequest input)
+        public bool Equals(StopBackupRequest input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.InstanceId == input.InstanceId ||
-                    (this.InstanceId != null &&
-                    this.InstanceId.Equals(input.InstanceId))
-                ) && 
-                (
-                    this.ProxyId == input.ProxyId ||
-                    (this.ProxyId != null &&
-                    this.ProxyId.Equals(input.ProxyId))
-                ) && 
-                (
                     this.XLanguage == input.XLanguage ||
                     (this.XLanguage != null &&
                     this.XLanguage.Equals(input.XLanguage))
+                ) && 
+                (
+                    this.InstanceId == input.InstanceId ||
+                    (this.InstanceId != null &&
+                    this.InstanceId.Equals(input.InstanceId))
                 );
         }
 
@@ -95,12 +82,10 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.InstanceId != null)
-                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.ProxyId != null)
-                    hashCode = hashCode * 59 + this.ProxyId.GetHashCode();
                 if (this.XLanguage != null)
                     hashCode = hashCode * 59 + this.XLanguage.GetHashCode();
+                if (this.InstanceId != null)
+                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
                 return hashCode;
             }
         }

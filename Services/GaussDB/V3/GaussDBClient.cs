@@ -2795,6 +2795,34 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         }
         
         /// <summary>
+        /// 开启或关闭新增节点自动加入该Proxy
+        ///
+        /// 开启或关闭新增节点自动加入该Proxy。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateNewNodeAutoAddSwitchResponse UpdateNewNodeAutoAddSwitch(UpdateNewNodeAutoAddSwitchRequest updateNewNodeAutoAddSwitchRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateNewNodeAutoAddSwitchRequest.InstanceId.ToString());
+            urlParam.Add("proxy_id", updateNewNodeAutoAddSwitchRequest.ProxyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/new-node-auto-add", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateNewNodeAutoAddSwitchRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<UpdateNewNodeAutoAddSwitchResponse>(response);
+        }
+
+        public SyncInvoker<UpdateNewNodeAutoAddSwitchResponse> UpdateNewNodeAutoAddSwitchInvoker(UpdateNewNodeAutoAddSwitchRequest updateNewNodeAutoAddSwitchRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateNewNodeAutoAddSwitchRequest.InstanceId.ToString());
+            urlParam.Add("proxy_id", updateNewNodeAutoAddSwitchRequest.ProxyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/new-node-auto-add", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateNewNodeAutoAddSwitchRequest);
+            return new SyncInvoker<UpdateNewNodeAutoAddSwitchResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateNewNodeAutoAddSwitchResponse>);
+        }
+        
+        /// <summary>
         /// 更改数据库代理连接池类型
         ///
         /// 更改数据库代理连接池类型。

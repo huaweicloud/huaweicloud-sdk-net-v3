@@ -1724,6 +1724,32 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
         }
         
         /// <summary>
+        /// 停止备份
+        ///
+        /// 停止进行中的备份，包括全备和差备。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<StopBackupResponse> StopBackupAsync(StopBackupRequest stopBackupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", stopBackupRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/stop", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopBackupRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<StopBackupResponse>(response);
+        }
+
+        public AsyncInvoker<StopBackupResponse> StopBackupAsyncInvoker(StopBackupRequest stopBackupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", stopBackupRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/stop", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopBackupRequest);
+            return new AsyncInvoker<StopBackupResponse>(this, "POST", request, JsonUtils.DeSerialize<StopBackupResponse>);
+        }
+        
+        /// <summary>
         /// 应用参数模板
         ///
         /// 指定实例变更参数模板。

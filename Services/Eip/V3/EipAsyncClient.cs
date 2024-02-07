@@ -210,6 +210,156 @@ namespace HuaweiCloud.SDK.Eip.V3
         }
         
         /// <summary>
+        /// 查询GEIP与实例绑定关系的租户列表
+        ///
+        /// 查询GEIP与实例绑定关系的租户列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListProjectGeipBindingsResponse> ListProjectGeipBindingsAsync(ListProjectGeipBindingsRequest listProjectGeipBindingsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/geip/bindings", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProjectGeipBindingsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListProjectGeipBindingsResponse>(response);
+        }
+
+        public AsyncInvoker<ListProjectGeipBindingsResponse> ListProjectGeipBindingsAsyncInvoker(ListProjectGeipBindingsRequest listProjectGeipBindingsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/geip/bindings", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProjectGeipBindingsRequest);
+            return new AsyncInvoker<ListProjectGeipBindingsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListProjectGeipBindingsResponse>);
+        }
+        
+        /// <summary>
+        /// 创建虚拟igw
+        ///
+        /// 创建虚拟igw
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateTenantVpcIgwResponse> CreateTenantVpcIgwAsync(CreateTenantVpcIgwRequest createTenantVpcIgwRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/geip/vpc-igws", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createTenantVpcIgwRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateTenantVpcIgwResponse>(response);
+        }
+
+        public AsyncInvoker<CreateTenantVpcIgwResponse> CreateTenantVpcIgwAsyncInvoker(CreateTenantVpcIgwRequest createTenantVpcIgwRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/geip/vpc-igws", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createTenantVpcIgwRequest);
+            return new AsyncInvoker<CreateTenantVpcIgwResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateTenantVpcIgwResponse>);
+        }
+        
+        /// <summary>
+        /// 删除虚拟igw
+        ///
+        /// 删除虚拟igw
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteTenantVpcIgwResponse> DeleteTenantVpcIgwAsync(DeleteTenantVpcIgwRequest deleteTenantVpcIgwRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("vpc_igw_id", deleteTenantVpcIgwRequest.VpcIgwId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/geip/vpc-igws/{vpc_igw_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTenantVpcIgwRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteTenantVpcIgwResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteTenantVpcIgwResponse> DeleteTenantVpcIgwAsyncInvoker(DeleteTenantVpcIgwRequest deleteTenantVpcIgwRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("vpc_igw_id", deleteTenantVpcIgwRequest.VpcIgwId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/geip/vpc-igws/{vpc_igw_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTenantVpcIgwRequest);
+            return new AsyncInvoker<DeleteTenantVpcIgwResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteTenantVpcIgwResponse>);
+        }
+        
+        /// <summary>
+        /// 查询指定租户下的虚拟igw列表
+        ///
+        /// 查询指定租户下的虚拟igw列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListTenantVpcIgwsResponse> ListTenantVpcIgwsAsync(ListTenantVpcIgwsRequest listTenantVpcIgwsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/geip/vpc-igws", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTenantVpcIgwsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListTenantVpcIgwsResponse>(response);
+        }
+
+        public AsyncInvoker<ListTenantVpcIgwsResponse> ListTenantVpcIgwsAsyncInvoker(ListTenantVpcIgwsRequest listTenantVpcIgwsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/geip/vpc-igws", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTenantVpcIgwsRequest);
+            return new AsyncInvoker<ListTenantVpcIgwsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListTenantVpcIgwsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询虚拟igw详情
+        ///
+        /// 查询虚拟igw详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowInternalVpcIgwResponse> ShowInternalVpcIgwAsync(ShowInternalVpcIgwRequest showInternalVpcIgwRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("vpc_igw_id", showInternalVpcIgwRequest.VpcIgwId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/geip/vpc-igws/{vpc_igw_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInternalVpcIgwRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowInternalVpcIgwResponse>(response);
+        }
+
+        public AsyncInvoker<ShowInternalVpcIgwResponse> ShowInternalVpcIgwAsyncInvoker(ShowInternalVpcIgwRequest showInternalVpcIgwRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("vpc_igw_id", showInternalVpcIgwRequest.VpcIgwId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/geip/vpc-igws/{vpc_igw_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInternalVpcIgwRequest);
+            return new AsyncInvoker<ShowInternalVpcIgwResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInternalVpcIgwResponse>);
+        }
+        
+        /// <summary>
+        /// 修改虚拟igw
+        ///
+        /// 修改虚拟igw
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateTenantVpcIgwResponse> UpdateTenantVpcIgwAsync(UpdateTenantVpcIgwRequest updateTenantVpcIgwRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("vpc_igw_id", updateTenantVpcIgwRequest.VpcIgwId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/geip/vpc-igws/{vpc_igw_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateTenantVpcIgwRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateTenantVpcIgwResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateTenantVpcIgwResponse> UpdateTenantVpcIgwAsyncInvoker(UpdateTenantVpcIgwRequest updateTenantVpcIgwRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("vpc_igw_id", updateTenantVpcIgwRequest.VpcIgwId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/geip/vpc-igws/{vpc_igw_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateTenantVpcIgwRequest);
+            return new AsyncInvoker<UpdateTenantVpcIgwResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateTenantVpcIgwResponse>);
+        }
+        
+        /// <summary>
         /// 绑定弹性公网IP
         ///
         /// 绑定弹性公网IP

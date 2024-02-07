@@ -156,6 +156,12 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string BusinessType { get; set; }
 
         /// <summary>
+        /// 域名所属用户的domain_id。
+        /// </summary>
+        [JsonProperty("user_domain_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string UserDomainId { get; set; }
+
+        /// <summary>
         /// 加速域名状态。取值意义： - online表示“已开启” - offline表示“已停用” - configuring表示“配置中” - configure_failed表示“配置失败” - checking表示“审核中” - check_failed表示“审核未通过” - deleting表示“删除中”。
         /// </summary>
         [JsonProperty("domain_status", NullValueHandling = NullValueHandling.Ignore)]
@@ -171,7 +177,13 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         /// 源站配置。
         /// </summary>
         [JsonProperty("sources", NullValueHandling = NullValueHandling.Ignore)]
-        public List<SourcesDomainConfig> Sources { get; set; }
+        public List<SourceWithPort> Sources { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("domain_origin_host", NullValueHandling = NullValueHandling.Ignore)]
+        public DomainOriginHost DomainOriginHost { get; set; }
 
         /// <summary>
         /// 是否开启HTTPS加速。 0：代表未开启HTTPS加速； 1：代表开启HTTPS加速，且回源方式为协议跟随； 2：代表开启HTTPS加速，且回源方式为HTTP； 3：代表开启HTTPS加速，且回源方式为HTTPS。
@@ -188,8 +200,8 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         /// <summary>
         /// 域名修改时间，相对于UTC 1970-01-01到当前时间相隔的毫秒数。
         /// </summary>
-        [JsonProperty("update_time", NullValueHandling = NullValueHandling.Ignore)]
-        public long? UpdateTime { get; set; }
+        [JsonProperty("modify_time", NullValueHandling = NullValueHandling.Ignore)]
+        public long? ModifyTime { get; set; }
 
         /// <summary>
         /// 封禁状态（0代表未禁用；1代表禁用）。
@@ -204,10 +216,52 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public int? Locked { get; set; }
 
         /// <summary>
+        /// 自动刷新预热（0代表关闭；1代表打开）。
+        /// </summary>
+        [JsonProperty("auto_refresh_preheat", NullValueHandling = NullValueHandling.Ignore)]
+        public int? AutoRefreshPreheat { get; set; }
+
+        /// <summary>
         /// 华为云CDN提供的加速服务范围，包含：mainland_china中国大陆、outside_mainland_china中国大陆境外、global全球。
         /// </summary>
         [JsonProperty("service_area", NullValueHandling = NullValueHandling.Ignore)]
         public ServiceAreaEnum ServiceArea { get; set; }
+        /// <summary>
+        /// Range回源状态（off代表关闭 on代表开启）。
+        /// </summary>
+        [JsonProperty("range_status", NullValueHandling = NullValueHandling.Ignore)]
+        public string RangeStatus { get; set; }
+
+        /// <summary>
+        /// 回源跟随状态（off代表关闭 on代表开启）。
+        /// </summary>
+        [JsonProperty("follow_status", NullValueHandling = NullValueHandling.Ignore)]
+        public string FollowStatus { get; set; }
+
+        /// <summary>
+        /// 是否暂停源站回源（off代表关闭 on代表开启）。
+        /// </summary>
+        [JsonProperty("origin_status", NullValueHandling = NullValueHandling.Ignore)]
+        public string OriginStatus { get; set; }
+
+        /// <summary>
+        /// 域名禁用原因。 1：该域名涉嫌违规内容（涉黄/涉赌/涉毒/涉政）已被禁用； 2：该域名因备案失效已被禁用； 3：该域名遭受攻击，已被禁用； 150：该域名涉嫌违规内容涉黄已被禁用； 151：该域名涉嫌违规内容涉政已被禁用； 152：该域名涉嫌违规内容涉暴已被禁用； 153：该域名涉嫌违规内容涉赌已被禁用。
+        /// </summary>
+        [JsonProperty("banned_reason", NullValueHandling = NullValueHandling.Ignore)]
+        public string BannedReason { get; set; }
+
+        /// <summary>
+        /// 域名锁定原因（Changing the config, please wait）。
+        /// </summary>
+        [JsonProperty("locked_reason", NullValueHandling = NullValueHandling.Ignore)]
+        public string LockedReason { get; set; }
+
+        /// <summary>
+        /// 当用户开启企业项目功能时，该参数生效，表示查询资源所属项目，不传表示查询默认项目。注意：当使用子帐号调用接口时，该参数必传。  您可以通过调用企业项目管理服务（EPS）的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id。
+        /// </summary>
+        [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string EnterpriseProjectId { get; set; }
+
 
 
         /// <summary>
@@ -220,15 +274,24 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  domainName: ").Append(DomainName).Append("\n");
             sb.Append("  businessType: ").Append(BusinessType).Append("\n");
+            sb.Append("  userDomainId: ").Append(UserDomainId).Append("\n");
             sb.Append("  domainStatus: ").Append(DomainStatus).Append("\n");
             sb.Append("  cname: ").Append(Cname).Append("\n");
             sb.Append("  sources: ").Append(Sources).Append("\n");
+            sb.Append("  domainOriginHost: ").Append(DomainOriginHost).Append("\n");
             sb.Append("  httpsStatus: ").Append(HttpsStatus).Append("\n");
             sb.Append("  createTime: ").Append(CreateTime).Append("\n");
-            sb.Append("  updateTime: ").Append(UpdateTime).Append("\n");
+            sb.Append("  modifyTime: ").Append(ModifyTime).Append("\n");
             sb.Append("  disabled: ").Append(Disabled).Append("\n");
             sb.Append("  locked: ").Append(Locked).Append("\n");
+            sb.Append("  autoRefreshPreheat: ").Append(AutoRefreshPreheat).Append("\n");
             sb.Append("  serviceArea: ").Append(ServiceArea).Append("\n");
+            sb.Append("  rangeStatus: ").Append(RangeStatus).Append("\n");
+            sb.Append("  followStatus: ").Append(FollowStatus).Append("\n");
+            sb.Append("  originStatus: ").Append(OriginStatus).Append("\n");
+            sb.Append("  bannedReason: ").Append(BannedReason).Append("\n");
+            sb.Append("  lockedReason: ").Append(LockedReason).Append("\n");
+            sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -266,6 +329,11 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     this.BusinessType.Equals(input.BusinessType))
                 ) && 
                 (
+                    this.UserDomainId == input.UserDomainId ||
+                    (this.UserDomainId != null &&
+                    this.UserDomainId.Equals(input.UserDomainId))
+                ) && 
+                (
                     this.DomainStatus == input.DomainStatus ||
                     (this.DomainStatus != null &&
                     this.DomainStatus.Equals(input.DomainStatus))
@@ -282,6 +350,11 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     this.Sources.SequenceEqual(input.Sources)
                 ) && 
                 (
+                    this.DomainOriginHost == input.DomainOriginHost ||
+                    (this.DomainOriginHost != null &&
+                    this.DomainOriginHost.Equals(input.DomainOriginHost))
+                ) && 
+                (
                     this.HttpsStatus == input.HttpsStatus ||
                     (this.HttpsStatus != null &&
                     this.HttpsStatus.Equals(input.HttpsStatus))
@@ -292,9 +365,9 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     this.CreateTime.Equals(input.CreateTime))
                 ) && 
                 (
-                    this.UpdateTime == input.UpdateTime ||
-                    (this.UpdateTime != null &&
-                    this.UpdateTime.Equals(input.UpdateTime))
+                    this.ModifyTime == input.ModifyTime ||
+                    (this.ModifyTime != null &&
+                    this.ModifyTime.Equals(input.ModifyTime))
                 ) && 
                 (
                     this.Disabled == input.Disabled ||
@@ -307,9 +380,44 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     this.Locked.Equals(input.Locked))
                 ) && 
                 (
+                    this.AutoRefreshPreheat == input.AutoRefreshPreheat ||
+                    (this.AutoRefreshPreheat != null &&
+                    this.AutoRefreshPreheat.Equals(input.AutoRefreshPreheat))
+                ) && 
+                (
                     this.ServiceArea == input.ServiceArea ||
                     (this.ServiceArea != null &&
                     this.ServiceArea.Equals(input.ServiceArea))
+                ) && 
+                (
+                    this.RangeStatus == input.RangeStatus ||
+                    (this.RangeStatus != null &&
+                    this.RangeStatus.Equals(input.RangeStatus))
+                ) && 
+                (
+                    this.FollowStatus == input.FollowStatus ||
+                    (this.FollowStatus != null &&
+                    this.FollowStatus.Equals(input.FollowStatus))
+                ) && 
+                (
+                    this.OriginStatus == input.OriginStatus ||
+                    (this.OriginStatus != null &&
+                    this.OriginStatus.Equals(input.OriginStatus))
+                ) && 
+                (
+                    this.BannedReason == input.BannedReason ||
+                    (this.BannedReason != null &&
+                    this.BannedReason.Equals(input.BannedReason))
+                ) && 
+                (
+                    this.LockedReason == input.LockedReason ||
+                    (this.LockedReason != null &&
+                    this.LockedReason.Equals(input.LockedReason))
+                ) && 
+                (
+                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
+                    (this.EnterpriseProjectId != null &&
+                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
                 );
         }
 
@@ -327,24 +435,42 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     hashCode = hashCode * 59 + this.DomainName.GetHashCode();
                 if (this.BusinessType != null)
                     hashCode = hashCode * 59 + this.BusinessType.GetHashCode();
+                if (this.UserDomainId != null)
+                    hashCode = hashCode * 59 + this.UserDomainId.GetHashCode();
                 if (this.DomainStatus != null)
                     hashCode = hashCode * 59 + this.DomainStatus.GetHashCode();
                 if (this.Cname != null)
                     hashCode = hashCode * 59 + this.Cname.GetHashCode();
                 if (this.Sources != null)
                     hashCode = hashCode * 59 + this.Sources.GetHashCode();
+                if (this.DomainOriginHost != null)
+                    hashCode = hashCode * 59 + this.DomainOriginHost.GetHashCode();
                 if (this.HttpsStatus != null)
                     hashCode = hashCode * 59 + this.HttpsStatus.GetHashCode();
                 if (this.CreateTime != null)
                     hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.UpdateTime != null)
-                    hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
+                if (this.ModifyTime != null)
+                    hashCode = hashCode * 59 + this.ModifyTime.GetHashCode();
                 if (this.Disabled != null)
                     hashCode = hashCode * 59 + this.Disabled.GetHashCode();
                 if (this.Locked != null)
                     hashCode = hashCode * 59 + this.Locked.GetHashCode();
+                if (this.AutoRefreshPreheat != null)
+                    hashCode = hashCode * 59 + this.AutoRefreshPreheat.GetHashCode();
                 if (this.ServiceArea != null)
                     hashCode = hashCode * 59 + this.ServiceArea.GetHashCode();
+                if (this.RangeStatus != null)
+                    hashCode = hashCode * 59 + this.RangeStatus.GetHashCode();
+                if (this.FollowStatus != null)
+                    hashCode = hashCode * 59 + this.FollowStatus.GetHashCode();
+                if (this.OriginStatus != null)
+                    hashCode = hashCode * 59 + this.OriginStatus.GetHashCode();
+                if (this.BannedReason != null)
+                    hashCode = hashCode * 59 + this.BannedReason.GetHashCode();
+                if (this.LockedReason != null)
+                    hashCode = hashCode * 59 + this.LockedReason.GetHashCode();
+                if (this.EnterpriseProjectId != null)
+                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 return hashCode;
             }
         }

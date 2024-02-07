@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string MatchPattern { get; set; }
 
         /// <summary>
-        /// 优先级取值范围为1~100，数值越大优先级越高。
+        /// 优先级取值范围为1-100，数值越大优先级越高。
         /// </summary>
         [JsonProperty("priority", NullValueHandling = NullValueHandling.Ignore)]
         public int? Priority { get; set; }

@@ -172,6 +172,18 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         [JsonProperty("subnet_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SubnetId { get; set; }
 
+        /// <summary>
+        /// 是否开启新增节点自动加入该Proxy。如果需要设置是否开启新增节点自动加入该Proxy，请联系客服人员添加白名单，加入白名单后，方可输入该字段。  取值范围： - ON：开启。 - OFF：关闭。
+        /// </summary>
+        [JsonProperty("new_node_auto_add_status", NullValueHandling = NullValueHandling.Ignore)]
+        public string NewNodeAutoAddStatus { get; set; }
+
+        /// <summary>
+        /// 新增节点的读权重：    - 如果路由模式为0，新增节点自动加入为ON，取值为0~1000。 - 如果路由模式不为0或新增节点自动加入为OFF，则可不输入读权重。
+        /// </summary>
+        [JsonProperty("new_node_weight", NullValueHandling = NullValueHandling.Ignore)]
+        public int? NewNodeWeight { get; set; }
+
 
 
         /// <summary>
@@ -188,6 +200,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             sb.Append("  routeMode: ").Append(RouteMode).Append("\n");
             sb.Append("  nodesReadWeight: ").Append(NodesReadWeight).Append("\n");
             sb.Append("  subnetId: ").Append(SubnetId).Append("\n");
+            sb.Append("  newNodeAutoAddStatus: ").Append(NewNodeAutoAddStatus).Append("\n");
+            sb.Append("  newNodeWeight: ").Append(NewNodeWeight).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -244,6 +258,16 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                     this.SubnetId == input.SubnetId ||
                     (this.SubnetId != null &&
                     this.SubnetId.Equals(input.SubnetId))
+                ) && 
+                (
+                    this.NewNodeAutoAddStatus == input.NewNodeAutoAddStatus ||
+                    (this.NewNodeAutoAddStatus != null &&
+                    this.NewNodeAutoAddStatus.Equals(input.NewNodeAutoAddStatus))
+                ) && 
+                (
+                    this.NewNodeWeight == input.NewNodeWeight ||
+                    (this.NewNodeWeight != null &&
+                    this.NewNodeWeight.Equals(input.NewNodeWeight))
                 );
         }
 
@@ -269,6 +293,10 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                     hashCode = hashCode * 59 + this.NodesReadWeight.GetHashCode();
                 if (this.SubnetId != null)
                     hashCode = hashCode * 59 + this.SubnetId.GetHashCode();
+                if (this.NewNodeAutoAddStatus != null)
+                    hashCode = hashCode * 59 + this.NewNodeAutoAddStatus.GetHashCode();
+                if (this.NewNodeWeight != null)
+                    hashCode = hashCode * 59 + this.NewNodeWeight.GetHashCode();
                 return hashCode;
             }
         }

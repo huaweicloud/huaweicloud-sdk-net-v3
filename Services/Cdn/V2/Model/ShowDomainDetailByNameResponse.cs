@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         /// 
         /// </summary>
         [JsonProperty("domain", NullValueHandling = NullValueHandling.Ignore)]
-        public DomainsWithPort Domain { get; set; }
+        public DomainsDetail Domain { get; set; }
 
 
 
