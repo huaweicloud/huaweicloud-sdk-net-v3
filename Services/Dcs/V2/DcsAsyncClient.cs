@@ -963,6 +963,58 @@ namespace HuaweiCloud.SDK.Dcs.V2
         }
         
         /// <summary>
+        /// kill指定的会话
+        ///
+        /// kill指定的会话
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<HangUpClientsResponse> HangUpClientsAsync(HangUpClientsRequest hangUpClientsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", hangUpClientsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/clients/kill", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", hangUpClientsRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<HangUpClientsResponse>(response);
+        }
+
+        public AsyncInvoker<HangUpClientsResponse> HangUpClientsAsyncInvoker(HangUpClientsRequest hangUpClientsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", hangUpClientsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/clients/kill", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", hangUpClientsRequest);
+            return new AsyncInvoker<HangUpClientsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<HangUpClientsResponse>);
+        }
+        
+        /// <summary>
+        /// 下发kill指定节点或实例的全部会话任务
+        ///
+        /// 下发kill指定节点或实例的全部会话任务
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<HangUpKillAllClientsResponse> HangUpKillAllClientsAsync(HangUpKillAllClientsRequest hangUpKillAllClientsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", hangUpKillAllClientsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/clients/kill-all", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", hangUpKillAllClientsRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<HangUpKillAllClientsResponse>(response);
+        }
+
+        public AsyncInvoker<HangUpKillAllClientsResponse> HangUpKillAllClientsAsyncInvoker(HangUpKillAllClientsRequest hangUpKillAllClientsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", hangUpKillAllClientsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/clients/kill-all", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", hangUpKillAllClientsRequest);
+            return new AsyncInvoker<HangUpKillAllClientsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<HangUpKillAllClientsResponse>);
+        }
+        
+        /// <summary>
         /// 查询ACL账户列表
         ///
         /// 查询ACL账户列表。
@@ -1140,6 +1192,32 @@ namespace HuaweiCloud.SDK.Dcs.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/tasks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCenterTaskRequest);
             return new AsyncInvoker<ListCenterTaskResponse>(this, "GET", request, JsonUtils.DeSerialize<ListCenterTaskResponse>);
+        }
+        
+        /// <summary>
+        /// 获取会话列表
+        ///
+        /// 获取会话列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListClientsResponse> ListClientsAsync(ListClientsRequest listClientsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listClientsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/clients", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listClientsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListClientsResponse>(response);
+        }
+
+        public AsyncInvoker<ListClientsResponse> ListClientsAsyncInvoker(ListClientsRequest listClientsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listClientsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/clients", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listClientsRequest);
+            return new AsyncInvoker<ListClientsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListClientsResponse>);
         }
         
         /// <summary>
@@ -1829,6 +1907,32 @@ namespace HuaweiCloud.SDK.Dcs.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/restores", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", restoreInstanceRequest);
             return new AsyncInvoker<RestoreInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<RestoreInstanceResponse>);
+        }
+        
+        /// <summary>
+        /// 下发查询会话列表任务
+        ///
+        /// 下发查询会话列表任务
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ScanClientsResponse> ScanClientsAsync(ScanClientsRequest scanClientsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", scanClientsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/clients", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", scanClientsRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<ScanClientsResponse>(response);
+        }
+
+        public AsyncInvoker<ScanClientsResponse> ScanClientsAsyncInvoker(ScanClientsRequest scanClientsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", scanClientsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/clients", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", scanClientsRequest);
+            return new AsyncInvoker<ScanClientsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<ScanClientsResponse>);
         }
         
         /// <summary>

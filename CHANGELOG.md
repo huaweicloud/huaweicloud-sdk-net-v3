@@ -1,3 +1,14 @@
+# 3.1.81 2024-02-20
+
+### HuaweiCloud SDK DCS
+
+- _Features_
+  - Support the APIs `ListClients`, `ScanClients`, `HangUpClients`, `HangUpKillAllClients`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.1.80 2024-02-07
 
 ### HuaweiCloud SDK GEIP
