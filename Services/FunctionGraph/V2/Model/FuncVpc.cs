@@ -11,10 +11,22 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
 {
     /// <summary>
-    /// 函数vpc配置。
+    /// 函数vpc配置。需同时为函数配置具有vpc权限的委托。
     /// </summary>
     public class FuncVpc 
     {
+
+        /// <summary>
+        /// 域名id。
+        /// </summary>
+        [JsonProperty("domain_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string DomainId { get; set; }
+
+        /// <summary>
+        /// 租户的project id。
+        /// </summary>
+        [JsonProperty("namespace", NullValueHandling = NullValueHandling.Ignore)]
+        public string Namespace { get; set; }
 
         /// <summary>
         /// 虚拟私有云名称。
@@ -67,6 +79,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class FuncVpc {\n");
+            sb.Append("  domainId: ").Append(DomainId).Append("\n");
+            sb.Append("  Namespace: ").Append(Namespace).Append("\n");
             sb.Append("  vpcName: ").Append(VpcName).Append("\n");
             sb.Append("  vpcId: ").Append(VpcId).Append("\n");
             sb.Append("  subnetName: ").Append(SubnetName).Append("\n");
@@ -95,6 +109,16 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                 return false;
 
             return 
+                (
+                    this.DomainId == input.DomainId ||
+                    (this.DomainId != null &&
+                    this.DomainId.Equals(input.DomainId))
+                ) && 
+                (
+                    this.Namespace == input.Namespace ||
+                    (this.Namespace != null &&
+                    this.Namespace.Equals(input.Namespace))
+                ) && 
                 (
                     this.VpcName == input.VpcName ||
                     (this.VpcName != null &&
@@ -141,6 +165,10 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.DomainId != null)
+                    hashCode = hashCode * 59 + this.DomainId.GetHashCode();
+                if (this.Namespace != null)
+                    hashCode = hashCode * 59 + this.Namespace.GetHashCode();
                 if (this.VpcName != null)
                     hashCode = hashCode * 59 + this.VpcName.GetHashCode();
                 if (this.VpcId != null)

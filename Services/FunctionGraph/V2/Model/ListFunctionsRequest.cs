@@ -31,7 +31,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public string Maxitems { get; set; }
 
         /// <summary>
-        /// 应用名称。
+        /// 自定义分组名称。
         /// </summary>
         [SDKProperty("package_name", IsQuery = true)]
         [JsonProperty("package_name", NullValueHandling = NullValueHandling.Ignore)]

@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
     public class CreateFunctionResponse : SdkResponse
     {
         /// <summary>
-        /// FunctionGraph函数的执行环境 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Python3.9: Python语言3.9版本。 Go1.8: Go语言1.8版本。 Go1.x: Go语言1.x版本。 Java8: Java语言8版本。 Java11: Java语言11版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 Node.js10.16: Nodejs语言10.16版本。 Node.js12.13: Nodejs语言12.13版本。 Node.js14.18: Nodejs语言14.18版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本。 http: HTTP函数。
+        /// FunctionGraph函数的执行环境 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Python3.9: Python语言3.9版本。 Go1.8: Go语言1.8版本。 Go1.x: Go语言1.x版本。 Java8: Java语言8版本。 Java11: Java语言11版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 Node.js10.16: Nodejs语言10.16版本。 Node.js12.13: Nodejs语言12.13版本。 Node.js14.18: Nodejs语言14.18版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本。 http: HTTP函数。 Custom Image: 自定义镜像函数。
         /// </summary>
-        /// <value>FunctionGraph函数的执行环境 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Python3.9: Python语言3.9版本。 Go1.8: Go语言1.8版本。 Go1.x: Go语言1.x版本。 Java8: Java语言8版本。 Java11: Java语言11版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 Node.js10.16: Nodejs语言10.16版本。 Node.js12.13: Nodejs语言12.13版本。 Node.js14.18: Nodejs语言14.18版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本。 http: HTTP函数。</value>
+        /// <value>FunctionGraph函数的执行环境 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Python3.9: Python语言3.9版本。 Go1.8: Go语言1.8版本。 Go1.x: Go语言1.x版本。 Java8: Java语言8版本。 Java11: Java语言11版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 Node.js10.16: Nodejs语言10.16版本。 Node.js12.13: Nodejs语言12.13版本。 Node.js14.18: Nodejs语言14.18版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本。 http: HTTP函数。 Custom Image: 自定义镜像函数。</value>
         [JsonConverter(typeof(EnumClassConverter<RuntimeEnum>))]
         public class RuntimeEnum
         {
@@ -112,6 +112,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             /// </summary>
             public static readonly RuntimeEnum HTTP = new RuntimeEnum("http");
 
+            /// <summary>
+            /// Enum CUSTOM_IMAGE for value: Custom Image
+            /// </summary>
+            public static readonly RuntimeEnum CUSTOM_IMAGE = new RuntimeEnum("Custom Image");
+
             private static readonly Dictionary<string, RuntimeEnum> StaticFields =
             new Dictionary<string, RuntimeEnum>()
             {
@@ -133,6 +138,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                 { "Python3.9", PYTHON3_9 },
                 { "Custom", CUSTOM },
                 { "http", HTTP },
+                { "Custom Image", CUSTOM_IMAGE },
             };
 
             private string _value;
@@ -227,9 +233,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         }
 
         /// <summary>
-        /// 函数代码类型，取值有4种。 inline: UI在线编辑代码。 zip: 函数代码为zip包。 obs: 函数代码来源于obs存储。 jar: 函数代码为jar包，主要针对Java函数。
+        /// 函数代码类型，取值有5种。 inline: UI在线编辑代码。 zip: 函数代码为zip包。 obs: 函数代码来源于obs存储。 jar: 函数代码为jar包，主要针对Java函数。 Custom-Image-Swr: 函数代码来源与SWR自定义镜像。
         /// </summary>
-        /// <value>函数代码类型，取值有4种。 inline: UI在线编辑代码。 zip: 函数代码为zip包。 obs: 函数代码来源于obs存储。 jar: 函数代码为jar包，主要针对Java函数。</value>
+        /// <value>函数代码类型，取值有5种。 inline: UI在线编辑代码。 zip: 函数代码为zip包。 obs: 函数代码来源于obs存储。 jar: 函数代码为jar包，主要针对Java函数。 Custom-Image-Swr: 函数代码来源与SWR自定义镜像。</value>
         [JsonConverter(typeof(EnumClassConverter<CodeTypeEnum>))]
         public class CodeTypeEnum
         {
@@ -253,6 +259,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             /// </summary>
             public static readonly CodeTypeEnum JAR = new CodeTypeEnum("jar");
 
+            /// <summary>
+            /// Enum CUSTOM_IMAGE_SWR for value: Custom-Image-Swr
+            /// </summary>
+            public static readonly CodeTypeEnum CUSTOM_IMAGE_SWR = new CodeTypeEnum("Custom-Image-Swr");
+
             private static readonly Dictionary<string, CodeTypeEnum> StaticFields =
             new Dictionary<string, CodeTypeEnum>()
             {
@@ -260,6 +271,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                 { "zip", ZIP },
                 { "obs", OBS },
                 { "jar", JAR },
+                { "Custom-Image-Swr", CUSTOM_IMAGE_SWR },
             };
 
             private string _value;
@@ -353,6 +365,127 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             }
         }
 
+        /// <summary>
+        /// v2表示为正式版本,v1为废弃版本。
+        /// </summary>
+        /// <value>v2表示为正式版本,v1为废弃版本。</value>
+        [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
+        public class TypeEnum
+        {
+            /// <summary>
+            /// Enum V1 for value: v1
+            /// </summary>
+            public static readonly TypeEnum V1 = new TypeEnum("v1");
+
+            /// <summary>
+            /// Enum V2 for value: v2
+            /// </summary>
+            public static readonly TypeEnum V2 = new TypeEnum("v2");
+
+            private static readonly Dictionary<string, TypeEnum> StaticFields =
+            new Dictionary<string, TypeEnum>()
+            {
+                { "v1", V1 },
+                { "v2", V2 },
+            };
+
+            private string _value;
+
+            public TypeEnum()
+            {
+
+            }
+
+            public TypeEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static TypeEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as TypeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(TypeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(TypeEnum a, TypeEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(TypeEnum a, TypeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+
+        /// <summary>
+        /// 函数id，唯一标识函数。
+        /// </summary>
+        [JsonProperty("func_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string FuncId { get; set; }
 
         /// <summary>
         /// 函数的URN（Uniform Resource Name），唯一标识函数。
@@ -391,12 +524,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public string Package { get; set; }
 
         /// <summary>
-        /// FunctionGraph函数的执行环境 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Python3.9: Python语言3.9版本。 Go1.8: Go语言1.8版本。 Go1.x: Go语言1.x版本。 Java8: Java语言8版本。 Java11: Java语言11版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 Node.js10.16: Nodejs语言10.16版本。 Node.js12.13: Nodejs语言12.13版本。 Node.js14.18: Nodejs语言14.18版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本。 http: HTTP函数。
+        /// FunctionGraph函数的执行环境 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Python3.9: Python语言3.9版本。 Go1.8: Go语言1.8版本。 Go1.x: Go语言1.x版本。 Java8: Java语言8版本。 Java11: Java语言11版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 Node.js10.16: Nodejs语言10.16版本。 Node.js12.13: Nodejs语言12.13版本。 Node.js14.18: Nodejs语言14.18版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本。 http: HTTP函数。 Custom Image: 自定义镜像函数。
         /// </summary>
         [JsonProperty("runtime", NullValueHandling = NullValueHandling.Ignore)]
         public RuntimeEnum Runtime { get; set; }
         /// <summary>
-        /// 函数执行超时时间，超时函数将被强行停止，范围3～900秒，可以通过白名单配置延长到12小时，具体可以咨询客服进行配置
+        /// 函数执行超时时间，超时函数将被强行停止，范围3～259200秒。
         /// </summary>
         [JsonProperty("timeout", NullValueHandling = NullValueHandling.Ignore)]
         public int? Timeout { get; set; }
@@ -426,7 +559,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public int? Cpu { get; set; }
 
         /// <summary>
-        /// 函数代码类型，取值有4种。 inline: UI在线编辑代码。 zip: 函数代码为zip包。 obs: 函数代码来源于obs存储。 jar: 函数代码为jar包，主要针对Java函数。
+        /// 函数代码类型，取值有5种。 inline: UI在线编辑代码。 zip: 函数代码为zip包。 obs: 函数代码来源于obs存储。 jar: 函数代码为jar包，主要针对Java函数。 Custom-Image-Swr: 函数代码来源与SWR自定义镜像。
         /// </summary>
         [JsonProperty("code_type", NullValueHandling = NullValueHandling.Ignore)]
         public CodeTypeEnum CodeType { get; set; }
@@ -449,6 +582,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public long? CodeSize { get; set; }
 
         /// <summary>
+        /// 函数配置的需要支持域名解析的内网域名。
+        /// </summary>
+        [JsonProperty("domain_names", NullValueHandling = NullValueHandling.Ignore)]
+        public string DomainNames { get; set; }
+
+        /// <summary>
         /// 用户自定义的name/value信息。 在函数中使用的参数。 举例：如函数要访问某个主机，可以设置自定义参数：Host&#x3D;{host_ip}，最多定义20个，总长度不超过4KB。
         /// </summary>
         [JsonProperty("user_data", NullValueHandling = NullValueHandling.Ignore)]
@@ -467,7 +606,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public string Digest { get; set; }
 
         /// <summary>
-        /// 函数版本号，由系统自动生成，规则：vYYYYMMDD-HHMMSS（v+年月日-时分秒）。
+        /// 函数版本号。
         /// </summary>
         [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]
         public string Version { get; set; }
@@ -515,6 +654,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public MountConfig MountConfig { get; set; }
 
         /// <summary>
+        /// 函数预留实例数量。
+        /// </summary>
+        [JsonProperty("reserved_instance_count", NullValueHandling = NullValueHandling.Ignore)]
+        public int? ReservedInstanceCount { get; set; }
+
+        /// <summary>
         /// 依赖id列表
         /// </summary>
         [JsonProperty("depend_list", NullValueHandling = NullValueHandling.Ignore)]
@@ -539,13 +684,19 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public string ExtendConfig { get; set; }
 
         /// <summary>
-        /// 函数初始化入口，规则：xx.xx，必须包含“. ”。 举例：对于node.js函数：myfunction.initializer，则表示函数的文件名为myfunction.js，初始化的入口函数名为initializer。
+        /// 函数依赖代码包列表。
+        /// </summary>
+        [JsonProperty("dependencies", NullValueHandling = NullValueHandling.Ignore)]
+        public List<Dependency> Dependencies { get; set; }
+
+        /// <summary>
+        /// 函数初始化入口，规则：xx.xx，必须包含“. ”。当配置初始化函数时，此参数必填。 举例：对于node.js函数：myfunction.initializer，则表示函数的文件名为myfunction.js，初始化的入口函数名为initializer。
         /// </summary>
         [JsonProperty("initializer_handler", NullValueHandling = NullValueHandling.Ignore)]
         public string InitializerHandler { get; set; }
 
         /// <summary>
-        /// 初始化超时时间，超时函数将被强行停止，范围1～300秒。
+        /// 初始化超时时间，超时函数将被强行停止，范围1～300秒。当配置初始化函数时，此参数必填。
         /// </summary>
         [JsonProperty("initializer_timeout", NullValueHandling = NullValueHandling.Ignore)]
         public int? InitializerTimeout { get; set; }
@@ -567,6 +718,35 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
+
+        /// <summary>
+        /// 是否允许进行长时间超时设置。
+        /// </summary>
+        [JsonProperty("long_time", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? LongTime { get; set; }
+
+        /// <summary>
+        /// 自定义日志查询组id
+        /// </summary>
+        [JsonProperty("log_group_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string LogGroupId { get; set; }
+
+        /// <summary>
+        /// 自定义日志查询流id
+        /// </summary>
+        [JsonProperty("log_stream_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string LogStreamId { get; set; }
+
+        /// <summary>
+        /// v2表示为正式版本,v1为废弃版本。
+        /// </summary>
+        [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
+        public TypeEnum Type { get; set; }
+        /// <summary>
+        /// 是否启用cloud debug功能
+        /// </summary>
+        [JsonProperty("enable_cloud_debug", NullValueHandling = NullValueHandling.Ignore)]
+        public string EnableCloudDebug { get; set; }
 
         /// <summary>
         /// 是否启动动态内存配置
@@ -592,6 +772,60 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         [JsonProperty("custom_image", NullValueHandling = NullValueHandling.Ignore)]
         public CustomImage CustomImage { get; set; }
 
+        /// <summary>
+        /// 是否为bridge函数
+        /// </summary>
+        [JsonProperty("is_bridge_function", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsBridgeFunction { get; set; }
+
+        /// <summary>
+        /// 是否配置下沉apig路由规则。
+        /// </summary>
+        [JsonProperty("apig_route_enable", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? ApigRouteEnable { get; set; }
+
+        /// <summary>
+        /// 心跳函数函数的入口，规则：xx.xx，必须包含“. ”，只支持JAVA运行时配置。 心跳函数入口需要与函数执行入口在同一文件下。在开启心跳函数配置时，此参数必填。
+        /// </summary>
+        [JsonProperty("heartbeat_handler", NullValueHandling = NullValueHandling.Ignore)]
+        public string HeartbeatHandler { get; set; }
+
+        /// <summary>
+        /// 类隔离开关，只支持JAVA运行时配置。开启类隔离后可以支持Kafka转储并提升类加载效率，但也可能会导致某些兼容性问题，请谨慎开启。
+        /// </summary>
+        [JsonProperty("enable_class_isolation", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnableClassIsolation { get; set; }
+
+        /// <summary>
+        /// 显卡类型。
+        /// </summary>
+        [JsonProperty("gpu_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string GpuType { get; set; }
+
+        /// <summary>
+        /// 是否支持配置临时存储。
+        /// </summary>
+        [JsonProperty("allow_ephemeral_storage", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? AllowEphemeralStorage { get; set; }
+
+        /// <summary>
+        /// 临时存储大小。默认情况下会为函数的/tmp目录分配512MB的空间。您可以通过临时存储设置将函数的/tmp目录大小调整为10G。
+        /// </summary>
+        [JsonProperty("ephemeral_storage", NullValueHandling = NullValueHandling.Ignore)]
+        public int? EphemeralStorage { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("network_controller", NullValueHandling = NullValueHandling.Ignore)]
+        public NetworkControlConfig NetworkController { get; set; }
+
+        /// <summary>
+        /// 资源id。
+        /// </summary>
+        [JsonProperty("resource_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ResourceId { get; set; }
+
 
 
         /// <summary>
@@ -601,6 +835,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class CreateFunctionResponse {\n");
+            sb.Append("  funcId: ").Append(FuncId).Append("\n");
             sb.Append("  funcUrn: ").Append(FuncUrn).Append("\n");
             sb.Append("  funcName: ").Append(FuncName).Append("\n");
             sb.Append("  domainId: ").Append(DomainId).Append("\n");
@@ -617,6 +852,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  codeUrl: ").Append(CodeUrl).Append("\n");
             sb.Append("  codeFilename: ").Append(CodeFilename).Append("\n");
             sb.Append("  codeSize: ").Append(CodeSize).Append("\n");
+            sb.Append("  domainNames: ").Append(DomainNames).Append("\n");
             sb.Append("  userData: ").Append(UserData).Append("\n");
             sb.Append("  encryptedUserData: ").Append(EncryptedUserData).Append("\n");
             sb.Append("  digest: ").Append(Digest).Append("\n");
@@ -628,19 +864,35 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  lastModified: ").Append(LastModified).Append("\n");
             sb.Append("  funcVpc: ").Append(FuncVpc).Append("\n");
             sb.Append("  mountConfig: ").Append(MountConfig).Append("\n");
+            sb.Append("  reservedInstanceCount: ").Append(ReservedInstanceCount).Append("\n");
             sb.Append("  dependList: ").Append(DependList).Append("\n");
             sb.Append("  dependVersionList: ").Append(DependVersionList).Append("\n");
             sb.Append("  strategyConfig: ").Append(StrategyConfig).Append("\n");
             sb.Append("  extendConfig: ").Append(ExtendConfig).Append("\n");
+            sb.Append("  dependencies: ").Append(Dependencies).Append("\n");
             sb.Append("  initializerHandler: ").Append(InitializerHandler).Append("\n");
             sb.Append("  initializerTimeout: ").Append(InitializerTimeout).Append("\n");
             sb.Append("  preStopHandler: ").Append(PreStopHandler).Append("\n");
             sb.Append("  preStopTimeout: ").Append(PreStopTimeout).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  longTime: ").Append(LongTime).Append("\n");
+            sb.Append("  logGroupId: ").Append(LogGroupId).Append("\n");
+            sb.Append("  logStreamId: ").Append(LogStreamId).Append("\n");
+            sb.Append("  type: ").Append(Type).Append("\n");
+            sb.Append("  enableCloudDebug: ").Append(EnableCloudDebug).Append("\n");
             sb.Append("  enableDynamicMemory: ").Append(EnableDynamicMemory).Append("\n");
             sb.Append("  isStatefulFunction: ").Append(IsStatefulFunction).Append("\n");
             sb.Append("  enableAuthInHeader: ").Append(EnableAuthInHeader).Append("\n");
             sb.Append("  customImage: ").Append(CustomImage).Append("\n");
+            sb.Append("  isBridgeFunction: ").Append(IsBridgeFunction).Append("\n");
+            sb.Append("  apigRouteEnable: ").Append(ApigRouteEnable).Append("\n");
+            sb.Append("  heartbeatHandler: ").Append(HeartbeatHandler).Append("\n");
+            sb.Append("  enableClassIsolation: ").Append(EnableClassIsolation).Append("\n");
+            sb.Append("  gpuType: ").Append(GpuType).Append("\n");
+            sb.Append("  allowEphemeralStorage: ").Append(AllowEphemeralStorage).Append("\n");
+            sb.Append("  ephemeralStorage: ").Append(EphemeralStorage).Append("\n");
+            sb.Append("  networkController: ").Append(NetworkController).Append("\n");
+            sb.Append("  resourceId: ").Append(ResourceId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -662,6 +914,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                 return false;
 
             return 
+                (
+                    this.FuncId == input.FuncId ||
+                    (this.FuncId != null &&
+                    this.FuncId.Equals(input.FuncId))
+                ) && 
                 (
                     this.FuncUrn == input.FuncUrn ||
                     (this.FuncUrn != null &&
@@ -743,6 +1000,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.CodeSize.Equals(input.CodeSize))
                 ) && 
                 (
+                    this.DomainNames == input.DomainNames ||
+                    (this.DomainNames != null &&
+                    this.DomainNames.Equals(input.DomainNames))
+                ) && 
+                (
                     this.UserData == input.UserData ||
                     (this.UserData != null &&
                     this.UserData.Equals(input.UserData))
@@ -798,6 +1060,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.MountConfig.Equals(input.MountConfig))
                 ) && 
                 (
+                    this.ReservedInstanceCount == input.ReservedInstanceCount ||
+                    (this.ReservedInstanceCount != null &&
+                    this.ReservedInstanceCount.Equals(input.ReservedInstanceCount))
+                ) && 
+                (
                     this.DependList == input.DependList ||
                     this.DependList != null &&
                     input.DependList != null &&
@@ -818,6 +1085,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.ExtendConfig == input.ExtendConfig ||
                     (this.ExtendConfig != null &&
                     this.ExtendConfig.Equals(input.ExtendConfig))
+                ) && 
+                (
+                    this.Dependencies == input.Dependencies ||
+                    this.Dependencies != null &&
+                    input.Dependencies != null &&
+                    this.Dependencies.SequenceEqual(input.Dependencies)
                 ) && 
                 (
                     this.InitializerHandler == input.InitializerHandler ||
@@ -845,6 +1118,31 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
                 ) && 
                 (
+                    this.LongTime == input.LongTime ||
+                    (this.LongTime != null &&
+                    this.LongTime.Equals(input.LongTime))
+                ) && 
+                (
+                    this.LogGroupId == input.LogGroupId ||
+                    (this.LogGroupId != null &&
+                    this.LogGroupId.Equals(input.LogGroupId))
+                ) && 
+                (
+                    this.LogStreamId == input.LogStreamId ||
+                    (this.LogStreamId != null &&
+                    this.LogStreamId.Equals(input.LogStreamId))
+                ) && 
+                (
+                    this.Type == input.Type ||
+                    (this.Type != null &&
+                    this.Type.Equals(input.Type))
+                ) && 
+                (
+                    this.EnableCloudDebug == input.EnableCloudDebug ||
+                    (this.EnableCloudDebug != null &&
+                    this.EnableCloudDebug.Equals(input.EnableCloudDebug))
+                ) && 
+                (
                     this.EnableDynamicMemory == input.EnableDynamicMemory ||
                     (this.EnableDynamicMemory != null &&
                     this.EnableDynamicMemory.Equals(input.EnableDynamicMemory))
@@ -863,6 +1161,51 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.CustomImage == input.CustomImage ||
                     (this.CustomImage != null &&
                     this.CustomImage.Equals(input.CustomImage))
+                ) && 
+                (
+                    this.IsBridgeFunction == input.IsBridgeFunction ||
+                    (this.IsBridgeFunction != null &&
+                    this.IsBridgeFunction.Equals(input.IsBridgeFunction))
+                ) && 
+                (
+                    this.ApigRouteEnable == input.ApigRouteEnable ||
+                    (this.ApigRouteEnable != null &&
+                    this.ApigRouteEnable.Equals(input.ApigRouteEnable))
+                ) && 
+                (
+                    this.HeartbeatHandler == input.HeartbeatHandler ||
+                    (this.HeartbeatHandler != null &&
+                    this.HeartbeatHandler.Equals(input.HeartbeatHandler))
+                ) && 
+                (
+                    this.EnableClassIsolation == input.EnableClassIsolation ||
+                    (this.EnableClassIsolation != null &&
+                    this.EnableClassIsolation.Equals(input.EnableClassIsolation))
+                ) && 
+                (
+                    this.GpuType == input.GpuType ||
+                    (this.GpuType != null &&
+                    this.GpuType.Equals(input.GpuType))
+                ) && 
+                (
+                    this.AllowEphemeralStorage == input.AllowEphemeralStorage ||
+                    (this.AllowEphemeralStorage != null &&
+                    this.AllowEphemeralStorage.Equals(input.AllowEphemeralStorage))
+                ) && 
+                (
+                    this.EphemeralStorage == input.EphemeralStorage ||
+                    (this.EphemeralStorage != null &&
+                    this.EphemeralStorage.Equals(input.EphemeralStorage))
+                ) && 
+                (
+                    this.NetworkController == input.NetworkController ||
+                    (this.NetworkController != null &&
+                    this.NetworkController.Equals(input.NetworkController))
+                ) && 
+                (
+                    this.ResourceId == input.ResourceId ||
+                    (this.ResourceId != null &&
+                    this.ResourceId.Equals(input.ResourceId))
                 );
         }
 
@@ -874,6 +1217,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.FuncId != null)
+                    hashCode = hashCode * 59 + this.FuncId.GetHashCode();
                 if (this.FuncUrn != null)
                     hashCode = hashCode * 59 + this.FuncUrn.GetHashCode();
                 if (this.FuncName != null)
@@ -906,6 +1251,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.CodeFilename.GetHashCode();
                 if (this.CodeSize != null)
                     hashCode = hashCode * 59 + this.CodeSize.GetHashCode();
+                if (this.DomainNames != null)
+                    hashCode = hashCode * 59 + this.DomainNames.GetHashCode();
                 if (this.UserData != null)
                     hashCode = hashCode * 59 + this.UserData.GetHashCode();
                 if (this.EncryptedUserData != null)
@@ -928,6 +1275,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.FuncVpc.GetHashCode();
                 if (this.MountConfig != null)
                     hashCode = hashCode * 59 + this.MountConfig.GetHashCode();
+                if (this.ReservedInstanceCount != null)
+                    hashCode = hashCode * 59 + this.ReservedInstanceCount.GetHashCode();
                 if (this.DependList != null)
                     hashCode = hashCode * 59 + this.DependList.GetHashCode();
                 if (this.DependVersionList != null)
@@ -936,6 +1285,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.StrategyConfig.GetHashCode();
                 if (this.ExtendConfig != null)
                     hashCode = hashCode * 59 + this.ExtendConfig.GetHashCode();
+                if (this.Dependencies != null)
+                    hashCode = hashCode * 59 + this.Dependencies.GetHashCode();
                 if (this.InitializerHandler != null)
                     hashCode = hashCode * 59 + this.InitializerHandler.GetHashCode();
                 if (this.InitializerTimeout != null)
@@ -946,6 +1297,16 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.PreStopTimeout.GetHashCode();
                 if (this.EnterpriseProjectId != null)
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.LongTime != null)
+                    hashCode = hashCode * 59 + this.LongTime.GetHashCode();
+                if (this.LogGroupId != null)
+                    hashCode = hashCode * 59 + this.LogGroupId.GetHashCode();
+                if (this.LogStreamId != null)
+                    hashCode = hashCode * 59 + this.LogStreamId.GetHashCode();
+                if (this.Type != null)
+                    hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.EnableCloudDebug != null)
+                    hashCode = hashCode * 59 + this.EnableCloudDebug.GetHashCode();
                 if (this.EnableDynamicMemory != null)
                     hashCode = hashCode * 59 + this.EnableDynamicMemory.GetHashCode();
                 if (this.IsStatefulFunction != null)
@@ -954,6 +1315,24 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.EnableAuthInHeader.GetHashCode();
                 if (this.CustomImage != null)
                     hashCode = hashCode * 59 + this.CustomImage.GetHashCode();
+                if (this.IsBridgeFunction != null)
+                    hashCode = hashCode * 59 + this.IsBridgeFunction.GetHashCode();
+                if (this.ApigRouteEnable != null)
+                    hashCode = hashCode * 59 + this.ApigRouteEnable.GetHashCode();
+                if (this.HeartbeatHandler != null)
+                    hashCode = hashCode * 59 + this.HeartbeatHandler.GetHashCode();
+                if (this.EnableClassIsolation != null)
+                    hashCode = hashCode * 59 + this.EnableClassIsolation.GetHashCode();
+                if (this.GpuType != null)
+                    hashCode = hashCode * 59 + this.GpuType.GetHashCode();
+                if (this.AllowEphemeralStorage != null)
+                    hashCode = hashCode * 59 + this.AllowEphemeralStorage.GetHashCode();
+                if (this.EphemeralStorage != null)
+                    hashCode = hashCode * 59 + this.EphemeralStorage.GetHashCode();
+                if (this.NetworkController != null)
+                    hashCode = hashCode * 59 + this.NetworkController.GetHashCode();
+                if (this.ResourceId != null)
+                    hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
                 return hashCode;
             }
         }

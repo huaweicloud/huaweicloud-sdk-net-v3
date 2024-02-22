@@ -15,6 +15,115 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
     /// </summary>
     public class MetricConfig 
     {
+        /// <summary>
+        /// 流量配置类型，当前只支持预留实例使用率一种类型
+        /// </summary>
+        /// <value>流量配置类型，当前只支持预留实例使用率一种类型</value>
+        [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
+        public class TypeEnum
+        {
+            /// <summary>
+            /// Enum CONCURRENCY for value: Concurrency
+            /// </summary>
+            public static readonly TypeEnum CONCURRENCY = new TypeEnum("Concurrency");
+
+            private static readonly Dictionary<string, TypeEnum> StaticFields =
+            new Dictionary<string, TypeEnum>()
+            {
+                { "Concurrency", CONCURRENCY },
+            };
+
+            private string _value;
+
+            public TypeEnum()
+            {
+
+            }
+
+            public TypeEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static TypeEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as TypeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(TypeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(TypeEnum a, TypeEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(TypeEnum a, TypeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 流量配置名称
@@ -23,11 +132,10 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 流量配置类型
+        /// 流量配置类型，当前只支持预留实例使用率一种类型
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
-        public string Type { get; set; }
-
+        public TypeEnum Type { get; set; }
         /// <summary>
         /// 流量阈值
         /// </summary>

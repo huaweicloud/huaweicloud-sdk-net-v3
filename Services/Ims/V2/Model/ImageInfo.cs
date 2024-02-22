@@ -1829,6 +1829,12 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         public string SupportAgentList { get; set; }
 
         /// <summary>
+        /// 对外展示名称。
+        /// </summary>
+        [JsonProperty("__image_displayname", NullValueHandling = NullValueHandling.Ignore)]
+        public string ImageDisplayname { get; set; }
+
+        /// <summary>
         /// 是否是AMD架构类型的镜像。取值为“true”或者“false”。
         /// </summary>
         [JsonProperty("__support_amd", NullValueHandling = NullValueHandling.Ignore)]
@@ -1901,6 +1907,7 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
             sb.Append("  sequenceNum: ").Append(SequenceNum).Append("\n");
             sb.Append("  activeAt: ").Append(ActiveAt).Append("\n");
             sb.Append("  supportAgentList: ").Append(SupportAgentList).Append("\n");
+            sb.Append("  imageDisplayname: ").Append(ImageDisplayname).Append("\n");
             sb.Append("  supportAmd: ").Append(SupportAmd).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -2215,6 +2222,11 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
                     this.SupportAgentList.Equals(input.SupportAgentList))
                 ) && 
                 (
+                    this.ImageDisplayname == input.ImageDisplayname ||
+                    (this.ImageDisplayname != null &&
+                    this.ImageDisplayname.Equals(input.ImageDisplayname))
+                ) && 
+                (
                     this.SupportAmd == input.SupportAmd ||
                     (this.SupportAmd != null &&
                     this.SupportAmd.Equals(input.SupportAmd))
@@ -2345,6 +2357,8 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
                     hashCode = hashCode * 59 + this.ActiveAt.GetHashCode();
                 if (this.SupportAgentList != null)
                     hashCode = hashCode * 59 + this.SupportAgentList.GetHashCode();
+                if (this.ImageDisplayname != null)
+                    hashCode = hashCode * 59 + this.ImageDisplayname.GetHashCode();
                 if (this.SupportAmd != null)
                     hashCode = hashCode * 59 + this.SupportAmd.GetHashCode();
                 return hashCode;

@@ -284,13 +284,13 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// 
         /// </summary>
         [JsonProperty("properties", NullValueHandling = NullValueHandling.Ignore)]
-        public BaseWidgetInfoProperties Properties { get; set; }
+        public UpdateWidgetInfoProperties Properties { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("location", NullValueHandling = NullValueHandling.Ignore)]
-        public BaseWidgetInfoLocation Location { get; set; }
+        public UpdateWidgetInfoLocation Location { get; set; }
 
         /// <summary>
         /// 单位

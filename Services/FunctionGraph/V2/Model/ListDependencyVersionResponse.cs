@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// 依赖包列表
         /// </summary>
         [JsonProperty("dependencies", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ListDependenciesResult> Dependencies { get; set; }
+        public List<ListDependencyVersionsResult> Dependencies { get; set; }
 
         /// <summary>
         /// 下次读取位置

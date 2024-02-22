@@ -621,6 +621,12 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         [JsonProperty("ha_mode", NullValueHandling = NullValueHandling.Ignore)]
         public HaModeEnum HaMode { get; set; }
         /// <summary>
+        /// 引擎名称
+        /// </summary>
+        [JsonProperty("engine_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string EngineName { get; set; }
+
+        /// <summary>
         /// 引擎版本号。
         /// </summary>
         [JsonProperty("engine_version", NullValueHandling = NullValueHandling.Ignore)]
@@ -649,6 +655,12 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         [JsonProperty("volume_type", NullValueHandling = NullValueHandling.Ignore)]
         public VolumeTypeEnum VolumeType { get; set; }
         /// <summary>
+        /// 磁盘大小
+        /// </summary>
+        [JsonProperty("volume_size", NullValueHandling = NullValueHandling.Ignore)]
+        public string VolumeSize { get; set; }
+
+        /// <summary>
         /// 数据vip。
         /// </summary>
         [JsonProperty("data_vip", NullValueHandling = NullValueHandling.Ignore)]
@@ -659,6 +671,18 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
+
+        /// <summary>
+        /// 企业项目名称
+        /// </summary>
+        [JsonProperty("enterprise_project_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string EnterpriseProjectName { get; set; }
+
+        /// <summary>
+        /// 备份级别
+        /// </summary>
+        [JsonProperty("backup_level", NullValueHandling = NullValueHandling.Ignore)]
+        public string BackupLevel { get; set; }
 
         /// <summary>
         /// 备份ID。（指删除实例时产生备份信息中的备份ID）。
@@ -688,13 +712,17 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  haMode: ").Append(HaMode).Append("\n");
+            sb.Append("  engineName: ").Append(EngineName).Append("\n");
             sb.Append("  engineVersion: ").Append(EngineVersion).Append("\n");
             sb.Append("  payModel: ").Append(PayModel).Append("\n");
             sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  deletedAt: ").Append(DeletedAt).Append("\n");
             sb.Append("  volumeType: ").Append(VolumeType).Append("\n");
+            sb.Append("  volumeSize: ").Append(VolumeSize).Append("\n");
             sb.Append("  dataVip: ").Append(DataVip).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  enterpriseProjectName: ").Append(EnterpriseProjectName).Append("\n");
+            sb.Append("  backupLevel: ").Append(BackupLevel).Append("\n");
             sb.Append("  recycleBackupId: ").Append(RecycleBackupId).Append("\n");
             sb.Append("  recycleStatus: ").Append(RecycleStatus).Append("\n");
             sb.Append("  mode: ").Append(Mode).Append("\n");
@@ -735,6 +763,11 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                     this.HaMode.Equals(input.HaMode))
                 ) && 
                 (
+                    this.EngineName == input.EngineName ||
+                    (this.EngineName != null &&
+                    this.EngineName.Equals(input.EngineName))
+                ) && 
+                (
                     this.EngineVersion == input.EngineVersion ||
                     (this.EngineVersion != null &&
                     this.EngineVersion.Equals(input.EngineVersion))
@@ -760,6 +793,11 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                     this.VolumeType.Equals(input.VolumeType))
                 ) && 
                 (
+                    this.VolumeSize == input.VolumeSize ||
+                    (this.VolumeSize != null &&
+                    this.VolumeSize.Equals(input.VolumeSize))
+                ) && 
+                (
                     this.DataVip == input.DataVip ||
                     (this.DataVip != null &&
                     this.DataVip.Equals(input.DataVip))
@@ -768,6 +806,16 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                     this.EnterpriseProjectId == input.EnterpriseProjectId ||
                     (this.EnterpriseProjectId != null &&
                     this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
+                ) && 
+                (
+                    this.EnterpriseProjectName == input.EnterpriseProjectName ||
+                    (this.EnterpriseProjectName != null &&
+                    this.EnterpriseProjectName.Equals(input.EnterpriseProjectName))
+                ) && 
+                (
+                    this.BackupLevel == input.BackupLevel ||
+                    (this.BackupLevel != null &&
+                    this.BackupLevel.Equals(input.BackupLevel))
                 ) && 
                 (
                     this.RecycleBackupId == input.RecycleBackupId ||
@@ -800,6 +848,8 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.HaMode != null)
                     hashCode = hashCode * 59 + this.HaMode.GetHashCode();
+                if (this.EngineName != null)
+                    hashCode = hashCode * 59 + this.EngineName.GetHashCode();
                 if (this.EngineVersion != null)
                     hashCode = hashCode * 59 + this.EngineVersion.GetHashCode();
                 if (this.PayModel != null)
@@ -810,10 +860,16 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                     hashCode = hashCode * 59 + this.DeletedAt.GetHashCode();
                 if (this.VolumeType != null)
                     hashCode = hashCode * 59 + this.VolumeType.GetHashCode();
+                if (this.VolumeSize != null)
+                    hashCode = hashCode * 59 + this.VolumeSize.GetHashCode();
                 if (this.DataVip != null)
                     hashCode = hashCode * 59 + this.DataVip.GetHashCode();
                 if (this.EnterpriseProjectId != null)
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.EnterpriseProjectName != null)
+                    hashCode = hashCode * 59 + this.EnterpriseProjectName.GetHashCode();
+                if (this.BackupLevel != null)
+                    hashCode = hashCode * 59 + this.BackupLevel.GetHashCode();
                 if (this.RecycleBackupId != null)
                     hashCode = hashCode * 59 + this.RecycleBackupId.GetHashCode();
                 if (this.RecycleStatus != null)

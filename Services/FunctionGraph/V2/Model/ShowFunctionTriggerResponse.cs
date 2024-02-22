@@ -347,10 +347,10 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         [JsonProperty("trigger_status", NullValueHandling = NullValueHandling.Ignore)]
         public TriggerStatusEnum TriggerStatus { get; set; }
         /// <summary>
-        /// 触发器源事件。
+        /// 
         /// </summary>
         [JsonProperty("event_data", NullValueHandling = NullValueHandling.Ignore)]
-        public Object EventData { get; set; }
+        public TriggerEventDataResponseBody EventData { get; set; }
 
         /// <summary>
         /// 最后更新时间。

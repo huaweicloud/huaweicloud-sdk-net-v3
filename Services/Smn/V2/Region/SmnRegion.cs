@@ -45,6 +45,12 @@ namespace HuaweiCloud.SDK.Smn.V2
             "https://smn.ap-southeast-4.myhuaweicloud.com");
         public static readonly Region TR_WEST_1 = new Region("tr-west-1",
             "https://smn.tr-west-1.myhuaweicloud.com");
+        public static readonly Region EU_WEST_101 = new Region("eu-west-101",
+            "https://smn.eu-west-101.myhuaweicloud.eu");
+        public static readonly Region EU_WEST_0 = new Region("eu-west-0",
+            "https://smn.eu-west-0.myhuaweicloud.com");
+        public static readonly Region MY_KUALALUMPUR_1 = new Region("my-kualalumpur-1",
+            "https://smn.my-kualalumpur-1.myhuaweicloud.com");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("SMN");
 
@@ -69,6 +75,9 @@ namespace HuaweiCloud.SDK.Smn.V2
                 { "cn-north-9", CN_NORTH_9 },
                 { "ap-southeast-4", AP_SOUTHEAST_4 },
                 { "tr-west-1", TR_WEST_1 },
+                { "eu-west-101", EU_WEST_101 },
+                { "eu-west-0", EU_WEST_0 },
+                { "my-kualalumpur-1", MY_KUALALUMPUR_1 },
         };
 
         public static Region ValueOf(string regionId)

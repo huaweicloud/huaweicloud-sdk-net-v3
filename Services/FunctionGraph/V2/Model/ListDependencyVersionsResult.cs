@@ -13,7 +13,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
     /// <summary>
     /// 
     /// </summary>
-    public class CreateDependencyRequestBody 
+    public class ListDependencyVersionsResult 
     {
         /// <summary>
         /// FunctionGraph函数的执行环境 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Python3.9: Python语言3.9版本。 Go1.8: Go语言1.8版本。 Go1.x: Go语言1.x版本。 Java8: Java语言8版本。 Java11: Java语言11版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 Node.js10.16: Nodejs语言10.16版本。 Node.js12.13: Nodejs语言12.13版本。 Node.js14.18: Nodejs语言14.18版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本。 http: HTTP函数。 Custom Image: 自定义镜像函数。
@@ -234,22 +234,22 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
 
 
         /// <summary>
-        /// depend_type为zip类型时必填，为文件流格式,需要base64编码zip文件。上传的文件大小限制为40M，如超过40M，请通过OBS上传。
+        /// 依赖包版本ID
         /// </summary>
-        [JsonProperty("depend_file", NullValueHandling = NullValueHandling.Ignore)]
-        public string DependFile { get; set; }
+        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
+        public string Id { get; set; }
 
         /// <summary>
-        /// depend_type为obs类型时，依赖包在obs的存储地址。
+        /// 依赖包拥有者，public标识为公共依赖包
         /// </summary>
-        [JsonProperty("depend_link", NullValueHandling = NullValueHandling.Ignore)]
-        public string DependLink { get; set; }
+        [JsonProperty("owner", NullValueHandling = NullValueHandling.Ignore)]
+        public string Owner { get; set; }
 
         /// <summary>
-        /// 导入类型，目前支持obs和zip。
+        /// 依赖包在obs的存储地址
         /// </summary>
-        [JsonProperty("depend_type", NullValueHandling = NullValueHandling.Ignore)]
-        public string DependType { get; set; }
+        [JsonProperty("link", NullValueHandling = NullValueHandling.Ignore)]
+        public string Link { get; set; }
 
         /// <summary>
         /// FunctionGraph函数的执行环境 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Python3.9: Python语言3.9版本。 Go1.8: Go语言1.8版本。 Go1.x: Go语言1.x版本。 Java8: Java语言8版本。 Java11: Java语言11版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 Node.js10.16: Nodejs语言10.16版本。 Node.js12.13: Nodejs语言12.13版本。 Node.js14.18: Nodejs语言14.18版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本。 http: HTTP函数。 Custom Image: 自定义镜像函数。
@@ -257,16 +257,52 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         [JsonProperty("runtime", NullValueHandling = NullValueHandling.Ignore)]
         public RuntimeEnum Runtime { get; set; }
         /// <summary>
-        /// 依赖包名称。必须以大、小写字母开头，以字母或数字结尾，只能由字母、数字、下划线、点和中划线组成，长度不超过96个字符。
+        /// 依赖包唯一标志（MD5校验值）
+        /// </summary>
+        [JsonProperty("etag", NullValueHandling = NullValueHandling.Ignore)]
+        public string Etag { get; set; }
+
+        /// <summary>
+        /// 依赖包大小
+        /// </summary>
+        [JsonProperty("size", NullValueHandling = NullValueHandling.Ignore)]
+        public long? Size { get; set; }
+
+        /// <summary>
+        /// 依赖包名
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 依赖包描述，不超过512个字符。
+        /// 依赖包文件名
+        /// </summary>
+        [JsonProperty("file_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string FileName { get; set; }
+
+        /// <summary>
+        /// 依赖包描述。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
+
+        /// <summary>
+        /// 依赖包版本号
+        /// </summary>
+        [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]
+        public long? Version { get; set; }
+
+        /// <summary>
+        /// 依赖包更新时间
+        /// </summary>
+        [JsonProperty("last_modified", NullValueHandling = NullValueHandling.Ignore)]
+        public long? LastModified { get; set; }
+
+        /// <summary>
+        /// 依赖包ID
+        /// </summary>
+        [JsonProperty("dep_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string DepId { get; set; }
 
 
 
@@ -276,13 +312,19 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class CreateDependencyRequestBody {\n");
-            sb.Append("  dependFile: ").Append(DependFile).Append("\n");
-            sb.Append("  dependLink: ").Append(DependLink).Append("\n");
-            sb.Append("  dependType: ").Append(DependType).Append("\n");
+            sb.Append("class ListDependencyVersionsResult {\n");
+            sb.Append("  id: ").Append(Id).Append("\n");
+            sb.Append("  owner: ").Append(Owner).Append("\n");
+            sb.Append("  link: ").Append(Link).Append("\n");
             sb.Append("  runtime: ").Append(Runtime).Append("\n");
+            sb.Append("  etag: ").Append(Etag).Append("\n");
+            sb.Append("  size: ").Append(Size).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
+            sb.Append("  fileName: ").Append(FileName).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
+            sb.Append("  version: ").Append(Version).Append("\n");
+            sb.Append("  lastModified: ").Append(LastModified).Append("\n");
+            sb.Append("  depId: ").Append(DepId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -292,32 +334,32 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CreateDependencyRequestBody);
+            return this.Equals(input as ListDependencyVersionsResult);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(CreateDependencyRequestBody input)
+        public bool Equals(ListDependencyVersionsResult input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.DependFile == input.DependFile ||
-                    (this.DependFile != null &&
-                    this.DependFile.Equals(input.DependFile))
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
                 ) && 
                 (
-                    this.DependLink == input.DependLink ||
-                    (this.DependLink != null &&
-                    this.DependLink.Equals(input.DependLink))
+                    this.Owner == input.Owner ||
+                    (this.Owner != null &&
+                    this.Owner.Equals(input.Owner))
                 ) && 
                 (
-                    this.DependType == input.DependType ||
-                    (this.DependType != null &&
-                    this.DependType.Equals(input.DependType))
+                    this.Link == input.Link ||
+                    (this.Link != null &&
+                    this.Link.Equals(input.Link))
                 ) && 
                 (
                     this.Runtime == input.Runtime ||
@@ -325,14 +367,44 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.Runtime.Equals(input.Runtime))
                 ) && 
                 (
+                    this.Etag == input.Etag ||
+                    (this.Etag != null &&
+                    this.Etag.Equals(input.Etag))
+                ) && 
+                (
+                    this.Size == input.Size ||
+                    (this.Size != null &&
+                    this.Size.Equals(input.Size))
+                ) && 
+                (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
                 ) && 
                 (
+                    this.FileName == input.FileName ||
+                    (this.FileName != null &&
+                    this.FileName.Equals(input.FileName))
+                ) && 
+                (
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
+                ) && 
+                (
+                    this.Version == input.Version ||
+                    (this.Version != null &&
+                    this.Version.Equals(input.Version))
+                ) && 
+                (
+                    this.LastModified == input.LastModified ||
+                    (this.LastModified != null &&
+                    this.LastModified.Equals(input.LastModified))
+                ) && 
+                (
+                    this.DepId == input.DepId ||
+                    (this.DepId != null &&
+                    this.DepId.Equals(input.DepId))
                 );
         }
 
@@ -344,18 +416,30 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.DependFile != null)
-                    hashCode = hashCode * 59 + this.DependFile.GetHashCode();
-                if (this.DependLink != null)
-                    hashCode = hashCode * 59 + this.DependLink.GetHashCode();
-                if (this.DependType != null)
-                    hashCode = hashCode * 59 + this.DependType.GetHashCode();
+                if (this.Id != null)
+                    hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Owner != null)
+                    hashCode = hashCode * 59 + this.Owner.GetHashCode();
+                if (this.Link != null)
+                    hashCode = hashCode * 59 + this.Link.GetHashCode();
                 if (this.Runtime != null)
                     hashCode = hashCode * 59 + this.Runtime.GetHashCode();
+                if (this.Etag != null)
+                    hashCode = hashCode * 59 + this.Etag.GetHashCode();
+                if (this.Size != null)
+                    hashCode = hashCode * 59 + this.Size.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.FileName != null)
+                    hashCode = hashCode * 59 + this.FileName.GetHashCode();
                 if (this.Description != null)
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.Version != null)
+                    hashCode = hashCode * 59 + this.Version.GetHashCode();
+                if (this.LastModified != null)
+                    hashCode = hashCode * 59 + this.LastModified.GetHashCode();
+                if (this.DepId != null)
+                    hashCode = hashCode * 59 + this.DepId.GetHashCode();
                 return hashCode;
             }
         }

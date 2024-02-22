@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
     public class UpdateFunctionMaxInstanceConfigResponse : SdkResponse
     {
         /// <summary>
-        /// FunctionGraph函数的执行环境 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Python3.9: Python语言3.9版本。 Go1.8: Go语言1.8版本。 Go1.x: Go语言1.x版本。 Java8: Java语言8版本。 Java11: Java语言11版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 Node.js10.16: Nodejs语言10.16版本。 Node.js12.13: Nodejs语言12.13版本。 Node.js14.18: Nodejs语言14.18版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本。 http: HTTP函数。
+        /// FunctionGraph函数的执行环境 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Python3.9: Python语言3.9版本。 Go1.8: Go语言1.8版本。 Go1.x: Go语言1.x版本。 Java8: Java语言8版本。 Java11: Java语言11版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 Node.js10.16: Nodejs语言10.16版本。 Node.js12.13: Nodejs语言12.13版本。 Node.js14.18: Nodejs语言14.18版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本。 http: HTTP函数。 Custom Image: 自定义镜像函数。
         /// </summary>
-        /// <value>FunctionGraph函数的执行环境 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Python3.9: Python语言3.9版本。 Go1.8: Go语言1.8版本。 Go1.x: Go语言1.x版本。 Java8: Java语言8版本。 Java11: Java语言11版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 Node.js10.16: Nodejs语言10.16版本。 Node.js12.13: Nodejs语言12.13版本。 Node.js14.18: Nodejs语言14.18版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本。 http: HTTP函数。</value>
+        /// <value>FunctionGraph函数的执行环境 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Python3.9: Python语言3.9版本。 Go1.8: Go语言1.8版本。 Go1.x: Go语言1.x版本。 Java8: Java语言8版本。 Java11: Java语言11版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 Node.js10.16: Nodejs语言10.16版本。 Node.js12.13: Nodejs语言12.13版本。 Node.js14.18: Nodejs语言14.18版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本。 http: HTTP函数。 Custom Image: 自定义镜像函数。</value>
         [JsonConverter(typeof(EnumClassConverter<RuntimeEnum>))]
         public class RuntimeEnum
         {
@@ -112,6 +112,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             /// </summary>
             public static readonly RuntimeEnum HTTP = new RuntimeEnum("http");
 
+            /// <summary>
+            /// Enum CUSTOM_IMAGE for value: Custom Image
+            /// </summary>
+            public static readonly RuntimeEnum CUSTOM_IMAGE = new RuntimeEnum("Custom Image");
+
             private static readonly Dictionary<string, RuntimeEnum> StaticFields =
             new Dictionary<string, RuntimeEnum>()
             {
@@ -133,6 +138,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                 { "Python3.9", PYTHON3_9 },
                 { "Custom", CUSTOM },
                 { "http", HTTP },
+                { "Custom Image", CUSTOM_IMAGE },
             };
 
             private string _value;
@@ -227,9 +233,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         }
 
         /// <summary>
-        /// 函数代码类型，取值有4种。 inline: UI在线编辑代码。 zip: 函数代码为zip包。 obs: 函数代码来源于obs存储。 jar: 函数代码为jar包，主要针对Java函数。
+        /// 函数代码类型，取值有5种。 inline: UI在线编辑代码。 zip: 函数代码为zip包。 obs: 函数代码来源于obs存储。 jar: 函数代码为jar包，主要针对Java函数。 Custom-Image-Swr: 函数代码来源与SWR自定义镜像。
         /// </summary>
-        /// <value>函数代码类型，取值有4种。 inline: UI在线编辑代码。 zip: 函数代码为zip包。 obs: 函数代码来源于obs存储。 jar: 函数代码为jar包，主要针对Java函数。</value>
+        /// <value>函数代码类型，取值有5种。 inline: UI在线编辑代码。 zip: 函数代码为zip包。 obs: 函数代码来源于obs存储。 jar: 函数代码为jar包，主要针对Java函数。 Custom-Image-Swr: 函数代码来源与SWR自定义镜像。</value>
         [JsonConverter(typeof(EnumClassConverter<CodeTypeEnum>))]
         public class CodeTypeEnum
         {
@@ -253,6 +259,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             /// </summary>
             public static readonly CodeTypeEnum JAR = new CodeTypeEnum("jar");
 
+            /// <summary>
+            /// Enum CUSTOM_IMAGE_SWR for value: Custom-Image-Swr
+            /// </summary>
+            public static readonly CodeTypeEnum CUSTOM_IMAGE_SWR = new CodeTypeEnum("Custom-Image-Swr");
+
             private static readonly Dictionary<string, CodeTypeEnum> StaticFields =
             new Dictionary<string, CodeTypeEnum>()
             {
@@ -260,6 +271,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                 { "zip", ZIP },
                 { "obs", OBS },
                 { "jar", JAR },
+                { "Custom-Image-Swr", CUSTOM_IMAGE_SWR },
             };
 
             private string _value;
@@ -354,9 +366,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         }
 
         /// <summary>
-        /// v2表示为公测版本,v1为原来版本。
+        /// v2表示为正式版本,v1为废弃版本。
         /// </summary>
-        /// <value>v2表示为公测版本,v1为原来版本。</value>
+        /// <value>v2表示为正式版本,v1为废弃版本。</value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -506,12 +518,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public string Package { get; set; }
 
         /// <summary>
-        /// FunctionGraph函数的执行环境 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Python3.9: Python语言3.9版本。 Go1.8: Go语言1.8版本。 Go1.x: Go语言1.x版本。 Java8: Java语言8版本。 Java11: Java语言11版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 Node.js10.16: Nodejs语言10.16版本。 Node.js12.13: Nodejs语言12.13版本。 Node.js14.18: Nodejs语言14.18版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本。 http: HTTP函数。
+        /// FunctionGraph函数的执行环境 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Python3.9: Python语言3.9版本。 Go1.8: Go语言1.8版本。 Go1.x: Go语言1.x版本。 Java8: Java语言8版本。 Java11: Java语言11版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 Node.js10.16: Nodejs语言10.16版本。 Node.js12.13: Nodejs语言12.13版本。 Node.js14.18: Nodejs语言14.18版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本。 http: HTTP函数。 Custom Image: 自定义镜像函数。
         /// </summary>
         [JsonProperty("runtime", NullValueHandling = NullValueHandling.Ignore)]
         public RuntimeEnum Runtime { get; set; }
         /// <summary>
-        /// 函数执行超时时间，超时函数将被强行停止，范围3～900秒，可以通过白名单配置延长到12小时，具体可以咨询客服进行配置
+        /// 函数执行超时时间，超时函数将被强行停止，范围3～259200秒。
         /// </summary>
         [JsonProperty("timeout", NullValueHandling = NullValueHandling.Ignore)]
         public int? Timeout { get; set; }
@@ -535,7 +547,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public int? Cpu { get; set; }
 
         /// <summary>
-        /// 函数代码类型，取值有4种。 inline: UI在线编辑代码。 zip: 函数代码为zip包。 obs: 函数代码来源于obs存储。 jar: 函数代码为jar包，主要针对Java函数。
+        /// 函数代码类型，取值有5种。 inline: UI在线编辑代码。 zip: 函数代码为zip包。 obs: 函数代码来源于obs存储。 jar: 函数代码为jar包，主要针对Java函数。 Custom-Image-Swr: 函数代码来源与SWR自定义镜像。
         /// </summary>
         [JsonProperty("code_type", NullValueHandling = NullValueHandling.Ignore)]
         public CodeTypeEnum CodeType { get; set; }
@@ -588,13 +600,13 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public string ImageName { get; set; }
 
         /// <summary>
-        /// 函数使用的权限委托名称，需要IAM支持，并在IAM界面创建委托，当函数需要访问其他服务时，必须提供该字段。
+        /// 函数配置委托。需要IAM支持，并在IAM界面创建委托，当函数需要访问其他服务时，必须提供该字段。配置后用户可以通过函数执行入口方法中的context参数获取具有委托中权限的token、ak、sk，用于访问其他云服务。如果用户函数不访问任何云服务，则不用提供委托名称。
         /// </summary>
         [JsonProperty("xrole", NullValueHandling = NullValueHandling.Ignore)]
         public string Xrole { get; set; }
 
         /// <summary>
-        /// 函数app使用的权限委托名称，需要IAM支持，并在IAM界面创建委托，当函数需要访问其他服务时，必须提供该字段。
+        /// 函数执行委托。可为函数执行单独配置执行委托，这将减小不必要的性能损耗；不单独配置执行委托时，函数执行和函数配置将使用同一委托。
         /// </summary>
         [JsonProperty("app_xrole", NullValueHandling = NullValueHandling.Ignore)]
         public string AppXrole { get; set; }
@@ -636,13 +648,13 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public List<Dependency> Dependencies { get; set; }
 
         /// <summary>
-        /// 函数初始化入口，规则：xx.xx，必须包含“. ”。 举例：对于node.js函数：myfunction.initializer，则表示函数的文件名为myfunction.js，初始化的入口函数名为initializer。
+        /// 函数初始化入口，规则：xx.xx，必须包含“. ”。当配置初始化函数时，此参数必填。 举例：对于node.js函数：myfunction.initializer，则表示函数的文件名为myfunction.js，初始化的入口函数名为initializer。
         /// </summary>
         [JsonProperty("initializer_handler", NullValueHandling = NullValueHandling.Ignore)]
         public string InitializerHandler { get; set; }
 
         /// <summary>
-        /// 初始化超时时间，超时函数将被强行停止，范围1～300秒。
+        /// 初始化超时时间，超时函数将被强行停止，范围1～300秒。当配置初始化函数时，此参数必填。
         /// </summary>
         [JsonProperty("initializer_timeout", NullValueHandling = NullValueHandling.Ignore)]
         public int? InitializerTimeout { get; set; }
@@ -684,7 +696,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public string LogStreamId { get; set; }
 
         /// <summary>
-        /// v2表示为公测版本,v1为原来版本。
+        /// v2表示为正式版本,v1为废弃版本。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }

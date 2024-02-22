@@ -52,6 +52,30 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         [JsonProperty("reject_count", NullValueHandling = NullValueHandling.Ignore)]
         public List<SlaReportsValue> RejectCount { get; set; }
 
+        /// <summary>
+        /// 函数错误次数
+        /// </summary>
+        [JsonProperty("function_error_count", NullValueHandling = NullValueHandling.Ignore)]
+        public List<SlaReportsValue> FunctionErrorCount { get; set; }
+
+        /// <summary>
+        /// 系统错误次数
+        /// </summary>
+        [JsonProperty("system_error_count", NullValueHandling = NullValueHandling.Ignore)]
+        public List<SlaReportsValue> SystemErrorCount { get; set; }
+
+        /// <summary>
+        /// 预留实例指标
+        /// </summary>
+        [JsonProperty("reserved_instance_num", NullValueHandling = NullValueHandling.Ignore)]
+        public List<SlaReportsValue> ReservedInstanceNum { get; set; }
+
+        /// <summary>
+        /// 弹性实例指标
+        /// </summary>
+        [JsonProperty("concurrency_num", NullValueHandling = NullValueHandling.Ignore)]
+        public List<SlaReportsValue> ConcurrencyNum { get; set; }
+
 
 
         /// <summary>
@@ -67,6 +91,10 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  maxDuration: ").Append(MaxDuration).Append("\n");
             sb.Append("  minDuration: ").Append(MinDuration).Append("\n");
             sb.Append("  rejectCount: ").Append(RejectCount).Append("\n");
+            sb.Append("  functionErrorCount: ").Append(FunctionErrorCount).Append("\n");
+            sb.Append("  systemErrorCount: ").Append(SystemErrorCount).Append("\n");
+            sb.Append("  reservedInstanceNum: ").Append(ReservedInstanceNum).Append("\n");
+            sb.Append("  concurrencyNum: ").Append(ConcurrencyNum).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -123,6 +151,30 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.RejectCount != null &&
                     input.RejectCount != null &&
                     this.RejectCount.SequenceEqual(input.RejectCount)
+                ) && 
+                (
+                    this.FunctionErrorCount == input.FunctionErrorCount ||
+                    this.FunctionErrorCount != null &&
+                    input.FunctionErrorCount != null &&
+                    this.FunctionErrorCount.SequenceEqual(input.FunctionErrorCount)
+                ) && 
+                (
+                    this.SystemErrorCount == input.SystemErrorCount ||
+                    this.SystemErrorCount != null &&
+                    input.SystemErrorCount != null &&
+                    this.SystemErrorCount.SequenceEqual(input.SystemErrorCount)
+                ) && 
+                (
+                    this.ReservedInstanceNum == input.ReservedInstanceNum ||
+                    this.ReservedInstanceNum != null &&
+                    input.ReservedInstanceNum != null &&
+                    this.ReservedInstanceNum.SequenceEqual(input.ReservedInstanceNum)
+                ) && 
+                (
+                    this.ConcurrencyNum == input.ConcurrencyNum ||
+                    this.ConcurrencyNum != null &&
+                    input.ConcurrencyNum != null &&
+                    this.ConcurrencyNum.SequenceEqual(input.ConcurrencyNum)
                 );
         }
 
@@ -146,6 +198,14 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.MinDuration.GetHashCode();
                 if (this.RejectCount != null)
                     hashCode = hashCode * 59 + this.RejectCount.GetHashCode();
+                if (this.FunctionErrorCount != null)
+                    hashCode = hashCode * 59 + this.FunctionErrorCount.GetHashCode();
+                if (this.SystemErrorCount != null)
+                    hashCode = hashCode * 59 + this.SystemErrorCount.GetHashCode();
+                if (this.ReservedInstanceNum != null)
+                    hashCode = hashCode * 59 + this.ReservedInstanceNum.GetHashCode();
+                if (this.ConcurrencyNum != null)
+                    hashCode = hashCode * 59 + this.ConcurrencyNum.GetHashCode();
                 return hashCode;
             }
         }

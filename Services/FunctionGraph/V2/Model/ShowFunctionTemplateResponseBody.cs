@@ -71,7 +71,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public string Code { get; set; }
 
         /// <summary>
-        /// 超时时间
+        /// 函数执行超时时间，超时函数将被强行停止，范围3～259200秒。
         /// </summary>
         [JsonProperty("timeout", NullValueHandling = NullValueHandling.Ignore)]
         public int? Timeout { get; set; }

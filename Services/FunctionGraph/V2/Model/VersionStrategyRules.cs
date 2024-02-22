@@ -8,44 +8,50 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Ces.V2.Model
+namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
 {
     /// <summary>
-    /// 额外信息，当view为bar时有效
+    /// 
     /// </summary>
-    public class BaseWidgetInfoProperties 
+    public class VersionStrategyRules 
     {
         /// <summary>
-        /// 聚合类型，目前只有TopN这一种类型
+        /// 参数类型。
         /// </summary>
-        /// <value>聚合类型，目前只有TopN这一种类型</value>
-        [JsonConverter(typeof(EnumClassConverter<FilterEnum>))]
-        public class FilterEnum
+        /// <value>参数类型。</value>
+        [JsonConverter(typeof(EnumClassConverter<RuleTypeEnum>))]
+        public class RuleTypeEnum
         {
             /// <summary>
-            /// Enum TOPN for value: topN
+            /// Enum HEADER for value: header
             /// </summary>
-            public static readonly FilterEnum TOPN = new FilterEnum("topN");
+            public static readonly RuleTypeEnum HEADER = new RuleTypeEnum("header");
 
-            private static readonly Dictionary<string, FilterEnum> StaticFields =
-            new Dictionary<string, FilterEnum>()
+            /// <summary>
+            /// Enum COOKIE for value: cookie
+            /// </summary>
+            public static readonly RuleTypeEnum COOKIE = new RuleTypeEnum("cookie");
+
+            private static readonly Dictionary<string, RuleTypeEnum> StaticFields =
+            new Dictionary<string, RuleTypeEnum>()
             {
-                { "topN", TOPN },
+                { "header", HEADER },
+                { "cookie", COOKIE },
             };
 
             private string _value;
 
-            public FilterEnum()
+            public RuleTypeEnum()
             {
 
             }
 
-            public FilterEnum(string value)
+            public RuleTypeEnum(string value)
             {
                 _value = value;
             }
 
-            public static FilterEnum FromValue(string value)
+            public static RuleTypeEnum FromValue(string value)
             {
                 if(value == null){
                     return null;
@@ -86,7 +92,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                     return true;
                 }
 
-                if (this.Equals(obj as FilterEnum))
+                if (this.Equals(obj as RuleTypeEnum))
                 {
                     return true;
                 }
@@ -94,7 +100,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                 return false;
             }
 
-            public bool Equals(FilterEnum obj)
+            public bool Equals(RuleTypeEnum obj)
             {
                 if ((object)obj == null)
                 {
@@ -103,7 +109,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                 return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
-            public static bool operator ==(FilterEnum a, FilterEnum b)
+            public static bool operator ==(RuleTypeEnum a, RuleTypeEnum b)
             {
                 if (System.Object.ReferenceEquals(a, b))
                 {
@@ -118,49 +124,49 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                 return a.Equals(b);
             }
 
-            public static bool operator !=(FilterEnum a, FilterEnum b)
+            public static bool operator !=(RuleTypeEnum a, RuleTypeEnum b)
             {
                 return !(a == b);
             }
         }
 
         /// <summary>
-        /// 排序字段，asc正序，desc倒序
+        /// 规则匹配操作符，目前仅需支持 &#x3D; 或者in。
         /// </summary>
-        /// <value>排序字段，asc正序，desc倒序</value>
-        [JsonConverter(typeof(EnumClassConverter<OrderEnum>))]
-        public class OrderEnum
+        /// <value>规则匹配操作符，目前仅需支持 &#x3D; 或者in。</value>
+        [JsonConverter(typeof(EnumClassConverter<OpEnum>))]
+        public class OpEnum
         {
             /// <summary>
-            /// Enum ASC for value: asc
+            /// Enum IN for value: in
             /// </summary>
-            public static readonly OrderEnum ASC = new OrderEnum("asc");
+            public static readonly OpEnum IN = new OpEnum("in");
 
             /// <summary>
-            /// Enum DESC for value: desc
+            /// Enum Equal for value: =
             /// </summary>
-            public static readonly OrderEnum DESC = new OrderEnum("desc");
+            public static readonly OpEnum Equal = new OpEnum("=");
 
-            private static readonly Dictionary<string, OrderEnum> StaticFields =
-            new Dictionary<string, OrderEnum>()
+            private static readonly Dictionary<string, OpEnum> StaticFields =
+            new Dictionary<string, OpEnum>()
             {
-                { "asc", ASC },
-                { "desc", DESC },
+                { "in", IN },
+                { "=", Equal },
             };
 
             private string _value;
 
-            public OrderEnum()
+            public OpEnum()
             {
 
             }
 
-            public OrderEnum(string value)
+            public OpEnum(string value)
             {
                 _value = value;
             }
 
-            public static OrderEnum FromValue(string value)
+            public static OpEnum FromValue(string value)
             {
                 if(value == null){
                     return null;
@@ -201,7 +207,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                     return true;
                 }
 
-                if (this.Equals(obj as OrderEnum))
+                if (this.Equals(obj as OpEnum))
                 {
                     return true;
                 }
@@ -209,7 +215,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                 return false;
             }
 
-            public bool Equals(OrderEnum obj)
+            public bool Equals(OpEnum obj)
             {
                 if ((object)obj == null)
                 {
@@ -218,7 +224,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                 return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
-            public static bool operator ==(OrderEnum a, OrderEnum b)
+            public static bool operator ==(OpEnum a, OpEnum b)
             {
                 if (System.Object.ReferenceEquals(a, b))
                 {
@@ -233,7 +239,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                 return a.Equals(b);
             }
 
-            public static bool operator !=(OrderEnum a, OrderEnum b)
+            public static bool operator !=(OpEnum a, OpEnum b)
             {
                 return !(a == b);
             }
@@ -241,21 +247,27 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
 
 
         /// <summary>
-        /// 聚合类型，目前只有TopN这一种类型
+        /// 参数类型。
         /// </summary>
-        [JsonProperty("filter", NullValueHandling = NullValueHandling.Ignore)]
-        public FilterEnum Filter { get; set; }
+        [JsonProperty("rule_type", NullValueHandling = NullValueHandling.Ignore)]
+        public RuleTypeEnum RuleType { get; set; }
         /// <summary>
-        /// Top值前N个
+        /// 规则参数名, 只支持大小写字母，数字，下划线，中划线。
         /// </summary>
-        [JsonProperty("topN", NullValueHandling = NullValueHandling.Ignore)]
-        public int? TopN { get; set; }
+        [JsonProperty("param", NullValueHandling = NullValueHandling.Ignore)]
+        public string Param { get; set; }
 
         /// <summary>
-        /// 排序字段，asc正序，desc倒序
+        /// 规则匹配操作符，目前仅需支持 &#x3D; 或者in。
         /// </summary>
-        [JsonProperty("order", NullValueHandling = NullValueHandling.Ignore)]
-        public OrderEnum Order { get; set; }
+        [JsonProperty("op", NullValueHandling = NullValueHandling.Ignore)]
+        public OpEnum Op { get; set; }
+        /// <summary>
+        /// 规则值，如果op为in，则为逗号分隔的多值字符串
+        /// </summary>
+        [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
+        public string Value { get; set; }
+
 
 
         /// <summary>
@@ -264,10 +276,11 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class BaseWidgetInfoProperties {\n");
-            sb.Append("  filter: ").Append(Filter).Append("\n");
-            sb.Append("  topN: ").Append(TopN).Append("\n");
-            sb.Append("  order: ").Append(Order).Append("\n");
+            sb.Append("class VersionStrategyRules {\n");
+            sb.Append("  ruleType: ").Append(RuleType).Append("\n");
+            sb.Append("  param: ").Append(Param).Append("\n");
+            sb.Append("  op: ").Append(Op).Append("\n");
+            sb.Append("  value: ").Append(Value).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -277,32 +290,37 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as BaseWidgetInfoProperties);
+            return this.Equals(input as VersionStrategyRules);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(BaseWidgetInfoProperties input)
+        public bool Equals(VersionStrategyRules input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Filter == input.Filter ||
-                    (this.Filter != null &&
-                    this.Filter.Equals(input.Filter))
+                    this.RuleType == input.RuleType ||
+                    (this.RuleType != null &&
+                    this.RuleType.Equals(input.RuleType))
                 ) && 
                 (
-                    this.TopN == input.TopN ||
-                    (this.TopN != null &&
-                    this.TopN.Equals(input.TopN))
+                    this.Param == input.Param ||
+                    (this.Param != null &&
+                    this.Param.Equals(input.Param))
                 ) && 
                 (
-                    this.Order == input.Order ||
-                    (this.Order != null &&
-                    this.Order.Equals(input.Order))
+                    this.Op == input.Op ||
+                    (this.Op != null &&
+                    this.Op.Equals(input.Op))
+                ) && 
+                (
+                    this.Value == input.Value ||
+                    (this.Value != null &&
+                    this.Value.Equals(input.Value))
                 );
         }
 
@@ -314,12 +332,14 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Filter != null)
-                    hashCode = hashCode * 59 + this.Filter.GetHashCode();
-                if (this.TopN != null)
-                    hashCode = hashCode * 59 + this.TopN.GetHashCode();
-                if (this.Order != null)
-                    hashCode = hashCode * 59 + this.Order.GetHashCode();
+                if (this.RuleType != null)
+                    hashCode = hashCode * 59 + this.RuleType.GetHashCode();
+                if (this.Param != null)
+                    hashCode = hashCode * 59 + this.Param.GetHashCode();
+                if (this.Op != null)
+                    hashCode = hashCode * 59 + this.Op.GetHashCode();
+                if (this.Value != null)
+                    hashCode = hashCode * 59 + this.Value.GetHashCode();
                 return hashCode;
             }
         }

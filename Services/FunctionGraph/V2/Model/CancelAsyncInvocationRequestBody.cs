@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
     public class CancelAsyncInvocationRequestBody 
     {
         /// <summary>
-        /// 停止的类型 支持recursive, force。 recursive: 停止正在调用的子函数。 force: 直接杀死runtime。
+        /// 停止的类型 支持recursive, force。 recursive: 停止正在调用的子函数。 force: 直接终止runtime。
         /// </summary>
-        /// <value>停止的类型 支持recursive, force。 recursive: 停止正在调用的子函数。 force: 直接杀死runtime。</value>
+        /// <value>停止的类型 支持recursive, force。 recursive: 停止正在调用的子函数。 force: 直接终止runtime。</value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -138,7 +138,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public string RequestId { get; set; }
 
         /// <summary>
-        /// 停止的类型 支持recursive, force。 recursive: 停止正在调用的子函数。 force: 直接杀死runtime。
+        /// 停止的类型 支持recursive, force。 recursive: 停止正在调用的子函数。 force: 直接终止runtime。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }

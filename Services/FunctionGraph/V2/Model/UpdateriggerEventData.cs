@@ -13,7 +13,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
     /// <summary>
     /// 
     /// </summary>
-    public class TriggerEventData 
+    public class UpdateriggerEventData 
     {
         /// <summary>
         /// 拉取周期单位
@@ -162,7 +162,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class TriggerEventData {\n");
+            sb.Append("class UpdateriggerEventData {\n");
             sb.Append("  isSerial: ").Append(IsSerial).Append("\n");
             sb.Append("  maxFetchBytes: ").Append(MaxFetchBytes).Append("\n");
             sb.Append("  pollingInterval: ").Append(PollingInterval).Append("\n");
@@ -176,13 +176,13 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as TriggerEventData);
+            return this.Equals(input as UpdateriggerEventData);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(TriggerEventData input)
+        public bool Equals(UpdateriggerEventData input)
         {
             if (input == null)
                 return false;

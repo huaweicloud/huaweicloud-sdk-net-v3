@@ -239,7 +239,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         [JsonProperty("runtime", NullValueHandling = NullValueHandling.Ignore)]
         public RuntimeEnum Runtime { get; set; }
         /// <summary>
-        /// 函数执行超时时间，超时函数将被强行停止，范围3～900秒，可以通过白名单配置延长到12小时，具体可以咨询客服进行配置
+        /// 函数执行超时时间，超时函数将被强行停止，范围3～259200秒。
         /// </summary>
         [JsonProperty("timeout", NullValueHandling = NullValueHandling.Ignore)]
         public int? Timeout { get; set; }
@@ -275,13 +275,13 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public string EncryptedUserData { get; set; }
 
         /// <summary>
-        /// 函数使用的权限委托名称，需要IAM支持，并在IAM界面创建委托，当函数需要访问其他服务时，必须提供该字段。
+        /// 函数配置委托。需要IAM支持，并在IAM界面创建委托，当函数需要访问其他服务时，必须提供该字段。配置后用户可以通过函数执行入口方法中的context参数获取具有委托中权限的token、ak、sk，用于访问其他云服务。如果用户函数不访问任何云服务，则不用提供委托名称。
         /// </summary>
         [JsonProperty("xrole", NullValueHandling = NullValueHandling.Ignore)]
         public string Xrole { get; set; }
 
         /// <summary>
-        /// 函数app使用的权限委托名称，需要IAM支持，并在IAM界面创建委托，当函数需要访问其他服务时，必须提供该字段。
+        /// 函数执行委托。可为函数执行单独配置执行委托，这将减小不必要的性能损耗；不单独配置执行委托时，函数执行和函数配置将使用同一委托。
         /// </summary>
         [JsonProperty("app_xrole", NullValueHandling = NullValueHandling.Ignore)]
         public string AppXrole { get; set; }
@@ -323,13 +323,13 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public string ExtendConfig { get; set; }
 
         /// <summary>
-        /// 函数初始化入口，规则：xx.xx，必须包含“. ”。 举例：对于node.js函数：myfunction.initializer，则表示函数的文件名为myfunction.js，初始化的入口函数名为initializer。
+        /// 函数初始化入口，规则：xx.xx，必须包含“. ”。当配置初始化函数时，此参数必填。 举例：对于node.js函数：myfunction.initializer，则表示函数的文件名为myfunction.js，初始化的入口函数名为initializer。
         /// </summary>
         [JsonProperty("initializer_handler", NullValueHandling = NullValueHandling.Ignore)]
         public string InitializerHandler { get; set; }
 
         /// <summary>
-        /// 初始化超时时间，超时函数将被强行停止，范围1～300秒。
+        /// 初始化超时时间，超时函数将被强行停止，范围1～300秒。当配置初始化函数时，此参数必填。
         /// </summary>
         [JsonProperty("initializer_timeout", NullValueHandling = NullValueHandling.Ignore)]
         public int? InitializerTimeout { get; set; }
@@ -347,7 +347,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public int? PreStopTimeout { get; set; }
 
         /// <summary>
-        /// 临时存储大小, 默认512M, 支持配置10G。
+        /// 临时存储大小。默认情况下会为函数的/tmp目录分配512MB的空间。您可以通过临时存储设置将函数的/tmp目录大小调整为10G。
         /// </summary>
         [JsonProperty("ephemeral_storage", NullValueHandling = NullValueHandling.Ignore)]
         public int? EphemeralStorage { get; set; }
@@ -406,6 +406,24 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         [JsonProperty("restore_hook_timeout", NullValueHandling = NullValueHandling.Ignore)]
         public int? RestoreHookTimeout { get; set; }
 
+        /// <summary>
+        /// 心跳函数函数的入口，规则：xx.xx，必须包含“. ”，只支持JAVA运行时配置。 心跳函数入口需要与函数执行入口在同一文件下。在开启心跳函数配置时，此参数必填。
+        /// </summary>
+        [JsonProperty("heartbeat_handler", NullValueHandling = NullValueHandling.Ignore)]
+        public string HeartbeatHandler { get; set; }
+
+        /// <summary>
+        /// 类隔离开关，只支持JAVA运行时配置。开启类隔离后可以支持Kafka转储并提升类加载效率，但也可能会导致某些兼容性问题，请谨慎开启。
+        /// </summary>
+        [JsonProperty("enable_class_isolation", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnableClassIsolation { get; set; }
+
+        /// <summary>
+        /// 显卡类型。
+        /// </summary>
+        [JsonProperty("gpu_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string GpuType { get; set; }
+
 
 
         /// <summary>
@@ -445,6 +463,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  domainNames: ").Append(DomainNames).Append("\n");
             sb.Append("  restoreHookHandler: ").Append(RestoreHookHandler).Append("\n");
             sb.Append("  restoreHookTimeout: ").Append(RestoreHookTimeout).Append("\n");
+            sb.Append("  heartbeatHandler: ").Append(HeartbeatHandler).Append("\n");
+            sb.Append("  enableClassIsolation: ").Append(EnableClassIsolation).Append("\n");
+            sb.Append("  gpuType: ").Append(GpuType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -615,6 +636,21 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.RestoreHookTimeout == input.RestoreHookTimeout ||
                     (this.RestoreHookTimeout != null &&
                     this.RestoreHookTimeout.Equals(input.RestoreHookTimeout))
+                ) && 
+                (
+                    this.HeartbeatHandler == input.HeartbeatHandler ||
+                    (this.HeartbeatHandler != null &&
+                    this.HeartbeatHandler.Equals(input.HeartbeatHandler))
+                ) && 
+                (
+                    this.EnableClassIsolation == input.EnableClassIsolation ||
+                    (this.EnableClassIsolation != null &&
+                    this.EnableClassIsolation.Equals(input.EnableClassIsolation))
+                ) && 
+                (
+                    this.GpuType == input.GpuType ||
+                    (this.GpuType != null &&
+                    this.GpuType.Equals(input.GpuType))
                 );
         }
 
@@ -686,6 +722,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.RestoreHookHandler.GetHashCode();
                 if (this.RestoreHookTimeout != null)
                     hashCode = hashCode * 59 + this.RestoreHookTimeout.GetHashCode();
+                if (this.HeartbeatHandler != null)
+                    hashCode = hashCode * 59 + this.HeartbeatHandler.GetHashCode();
+                if (this.EnableClassIsolation != null)
+                    hashCode = hashCode * 59 + this.EnableClassIsolation.GetHashCode();
+                if (this.GpuType != null)
+                    hashCode = hashCode * 59 + this.GpuType.GetHashCode();
                 return hashCode;
             }
         }

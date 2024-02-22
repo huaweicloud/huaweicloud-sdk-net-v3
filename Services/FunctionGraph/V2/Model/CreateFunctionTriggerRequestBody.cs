@@ -347,10 +347,10 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public string EventTypeCode { get; set; }
 
         /// <summary>
-        /// 事件结构体。
+        /// 
         /// </summary>
         [JsonProperty("event_data", NullValueHandling = NullValueHandling.Ignore)]
-        public Object EventData { get; set; }
+        public TriggerEventDataRequestBody EventData { get; set; }
 
 
 

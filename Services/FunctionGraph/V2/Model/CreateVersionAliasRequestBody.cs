@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
 {
     /// <summary>
-    /// 版本别名结构
+    /// 创建别名请求体
     /// </summary>
     public class CreateVersionAliasRequestBody 
     {
@@ -35,10 +35,16 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// 灰度版本信息
+        /// 百分比灰度配置信息
         /// </summary>
         [JsonProperty("additional_version_weights", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, int?> AdditionalVersionWeights { get; set; }
+
+        /// <summary>
+        /// 指定规则灰度策略信息
+        /// </summary>
+        [JsonProperty("additional_version_strategy", NullValueHandling = NullValueHandling.Ignore)]
+        public Dictionary<string, VersionStrategy> AdditionalVersionStrategy { get; set; }
 
 
 
@@ -53,6 +59,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  version: ").Append(Version).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  additionalVersionWeights: ").Append(AdditionalVersionWeights).Append("\n");
+            sb.Append("  additionalVersionStrategy: ").Append(AdditionalVersionStrategy).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -94,6 +101,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.AdditionalVersionWeights != null &&
                     input.AdditionalVersionWeights != null &&
                     this.AdditionalVersionWeights.SequenceEqual(input.AdditionalVersionWeights)
+                ) && 
+                (
+                    this.AdditionalVersionStrategy == input.AdditionalVersionStrategy ||
+                    this.AdditionalVersionStrategy != null &&
+                    input.AdditionalVersionStrategy != null &&
+                    this.AdditionalVersionStrategy.SequenceEqual(input.AdditionalVersionStrategy)
                 );
         }
 
@@ -113,6 +126,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.AdditionalVersionWeights != null)
                     hashCode = hashCode * 59 + this.AdditionalVersionWeights.GetHashCode();
+                if (this.AdditionalVersionStrategy != null)
+                    hashCode = hashCode * 59 + this.AdditionalVersionStrategy.GetHashCode();
                 return hashCode;
             }
         }

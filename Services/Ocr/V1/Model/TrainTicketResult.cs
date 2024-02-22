@@ -119,6 +119,114 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public string SaleLocation { get; set; }
 
         /// <summary>
+        /// 类型。包含以下几种类型： - paper：纸质火车票 - electronic：电子发票 - refund_old：旧版退票凭证 - refund_new：新版退票凭证 
+        /// </summary>
+        [JsonProperty("invoice_style", NullValueHandling = NullValueHandling.Ignore)]
+        public string InvoiceStyle { get; set; }
+
+        /// <summary>
+        /// 开票时间 
+        /// </summary>
+        [JsonProperty("issue_date", NullValueHandling = NullValueHandling.Ignore)]
+        public string IssueDate { get; set; }
+
+        /// <summary>
+        /// 打折标识 
+        /// </summary>
+        [JsonProperty("discount_mark", NullValueHandling = NullValueHandling.Ignore)]
+        public string DiscountMark { get; set; }
+
+        /// <summary>
+        /// 电子客票号 
+        /// </summary>
+        [JsonProperty("serial_number", NullValueHandling = NullValueHandling.Ignore)]
+        public string SerialNumber { get; set; }
+
+        /// <summary>
+        /// 税金价格 
+        /// </summary>
+        [JsonProperty("tax_amount", NullValueHandling = NullValueHandling.Ignore)]
+        public string TaxAmount { get; set; }
+
+        /// <summary>
+        /// 税率 
+        /// </summary>
+        [JsonProperty("tax_rate", NullValueHandling = NullValueHandling.Ignore)]
+        public string TaxRate { get; set; }
+
+        /// <summary>
+        /// 是否是空调车厢 
+        /// </summary>
+        [JsonProperty("air_conditioning", NullValueHandling = NullValueHandling.Ignore)]
+        public string AirConditioning { get; set; }
+
+        /// <summary>
+        /// 原发票号码 
+        /// </summary>
+        [JsonProperty("original_invoice_number", NullValueHandling = NullValueHandling.Ignore)]
+        public string OriginalInvoiceNumber { get; set; }
+
+        /// <summary>
+        /// 统一社会信用号码 
+        /// </summary>
+        [JsonProperty("unified_social_credit_code", NullValueHandling = NullValueHandling.Ignore)]
+        public string UnifiedSocialCreditCode { get; set; }
+
+        /// <summary>
+        /// 购买方名称 
+        /// </summary>
+        [JsonProperty("buyer_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string BuyerName { get; set; }
+
+        /// <summary>
+        /// 不含税价格 
+        /// </summary>
+        [JsonProperty("total_amount_excluding_tax", NullValueHandling = NullValueHandling.Ignore)]
+        public string TotalAmountExcludingTax { get; set; }
+
+        /// <summary>
+        /// 发票号码 
+        /// </summary>
+        [JsonProperty("invoice_number", NullValueHandling = NullValueHandling.Ignore)]
+        public string InvoiceNumber { get; set; }
+
+        /// <summary>
+        /// 是否有印章，True表示有印章，False表示不含印章，字段默认为False 
+        /// </summary>
+        [JsonProperty("seal_mark", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? SealMark { get; set; }
+
+        /// <summary>
+        /// 标题 
+        /// </summary>
+        [JsonProperty("title", NullValueHandling = NullValueHandling.Ignore)]
+        public string Title { get; set; }
+
+        /// <summary>
+        /// 地区 
+        /// </summary>
+        [JsonProperty("area", NullValueHandling = NullValueHandling.Ignore)]
+        public string Area { get; set; }
+
+        /// <summary>
+        /// 收据编码 
+        /// </summary>
+        [JsonProperty("receipt_number", NullValueHandling = NullValueHandling.Ignore)]
+        public string ReceiptNumber { get; set; }
+
+        /// <summary>
+        /// 小写票据金额 
+        /// </summary>
+        [JsonProperty("amount_in_figures", NullValueHandling = NullValueHandling.Ignore)]
+        public string AmountInFigures { get; set; }
+
+        /// <summary>
+        /// 大写票据金额 
+        /// </summary>
+        [JsonProperty("amount_in_words", NullValueHandling = NullValueHandling.Ignore)]
+        public string AmountInWords { get; set; }
+
+        /// <summary>
         /// 相关字段的置信度信息，置信度越大，表示本次识别的对应字段的可靠性越高，在统计意义上，置信度越大，准确率越高。 置信度由算法给出，不直接等价于对应字段的准确率。
         /// </summary>
         [JsonProperty("confidence", NullValueHandling = NullValueHandling.Ignore)]
@@ -156,6 +264,24 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  logId: ").Append(LogId).Append("\n");
             sb.Append("  saleLocation: ").Append(SaleLocation).Append("\n");
+            sb.Append("  invoiceStyle: ").Append(InvoiceStyle).Append("\n");
+            sb.Append("  issueDate: ").Append(IssueDate).Append("\n");
+            sb.Append("  discountMark: ").Append(DiscountMark).Append("\n");
+            sb.Append("  serialNumber: ").Append(SerialNumber).Append("\n");
+            sb.Append("  taxAmount: ").Append(TaxAmount).Append("\n");
+            sb.Append("  taxRate: ").Append(TaxRate).Append("\n");
+            sb.Append("  airConditioning: ").Append(AirConditioning).Append("\n");
+            sb.Append("  originalInvoiceNumber: ").Append(OriginalInvoiceNumber).Append("\n");
+            sb.Append("  unifiedSocialCreditCode: ").Append(UnifiedSocialCreditCode).Append("\n");
+            sb.Append("  buyerName: ").Append(BuyerName).Append("\n");
+            sb.Append("  totalAmountExcludingTax: ").Append(TotalAmountExcludingTax).Append("\n");
+            sb.Append("  invoiceNumber: ").Append(InvoiceNumber).Append("\n");
+            sb.Append("  sealMark: ").Append(SealMark).Append("\n");
+            sb.Append("  title: ").Append(Title).Append("\n");
+            sb.Append("  area: ").Append(Area).Append("\n");
+            sb.Append("  receiptNumber: ").Append(ReceiptNumber).Append("\n");
+            sb.Append("  amountInFigures: ").Append(AmountInFigures).Append("\n");
+            sb.Append("  amountInWords: ").Append(AmountInWords).Append("\n");
             sb.Append("  confidence: ").Append(Confidence).Append("\n");
             sb.Append("  textLocation: ").Append(TextLocation).Append("\n");
             sb.Append("}\n");
@@ -265,6 +391,96 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     this.SaleLocation.Equals(input.SaleLocation))
                 ) && 
                 (
+                    this.InvoiceStyle == input.InvoiceStyle ||
+                    (this.InvoiceStyle != null &&
+                    this.InvoiceStyle.Equals(input.InvoiceStyle))
+                ) && 
+                (
+                    this.IssueDate == input.IssueDate ||
+                    (this.IssueDate != null &&
+                    this.IssueDate.Equals(input.IssueDate))
+                ) && 
+                (
+                    this.DiscountMark == input.DiscountMark ||
+                    (this.DiscountMark != null &&
+                    this.DiscountMark.Equals(input.DiscountMark))
+                ) && 
+                (
+                    this.SerialNumber == input.SerialNumber ||
+                    (this.SerialNumber != null &&
+                    this.SerialNumber.Equals(input.SerialNumber))
+                ) && 
+                (
+                    this.TaxAmount == input.TaxAmount ||
+                    (this.TaxAmount != null &&
+                    this.TaxAmount.Equals(input.TaxAmount))
+                ) && 
+                (
+                    this.TaxRate == input.TaxRate ||
+                    (this.TaxRate != null &&
+                    this.TaxRate.Equals(input.TaxRate))
+                ) && 
+                (
+                    this.AirConditioning == input.AirConditioning ||
+                    (this.AirConditioning != null &&
+                    this.AirConditioning.Equals(input.AirConditioning))
+                ) && 
+                (
+                    this.OriginalInvoiceNumber == input.OriginalInvoiceNumber ||
+                    (this.OriginalInvoiceNumber != null &&
+                    this.OriginalInvoiceNumber.Equals(input.OriginalInvoiceNumber))
+                ) && 
+                (
+                    this.UnifiedSocialCreditCode == input.UnifiedSocialCreditCode ||
+                    (this.UnifiedSocialCreditCode != null &&
+                    this.UnifiedSocialCreditCode.Equals(input.UnifiedSocialCreditCode))
+                ) && 
+                (
+                    this.BuyerName == input.BuyerName ||
+                    (this.BuyerName != null &&
+                    this.BuyerName.Equals(input.BuyerName))
+                ) && 
+                (
+                    this.TotalAmountExcludingTax == input.TotalAmountExcludingTax ||
+                    (this.TotalAmountExcludingTax != null &&
+                    this.TotalAmountExcludingTax.Equals(input.TotalAmountExcludingTax))
+                ) && 
+                (
+                    this.InvoiceNumber == input.InvoiceNumber ||
+                    (this.InvoiceNumber != null &&
+                    this.InvoiceNumber.Equals(input.InvoiceNumber))
+                ) && 
+                (
+                    this.SealMark == input.SealMark ||
+                    (this.SealMark != null &&
+                    this.SealMark.Equals(input.SealMark))
+                ) && 
+                (
+                    this.Title == input.Title ||
+                    (this.Title != null &&
+                    this.Title.Equals(input.Title))
+                ) && 
+                (
+                    this.Area == input.Area ||
+                    (this.Area != null &&
+                    this.Area.Equals(input.Area))
+                ) && 
+                (
+                    this.ReceiptNumber == input.ReceiptNumber ||
+                    (this.ReceiptNumber != null &&
+                    this.ReceiptNumber.Equals(input.ReceiptNumber))
+                ) && 
+                (
+                    this.AmountInFigures == input.AmountInFigures ||
+                    (this.AmountInFigures != null &&
+                    this.AmountInFigures.Equals(input.AmountInFigures))
+                ) && 
+                (
+                    this.AmountInWords == input.AmountInWords ||
+                    (this.AmountInWords != null &&
+                    this.AmountInWords.Equals(input.AmountInWords))
+                ) && 
+                (
                     this.Confidence == input.Confidence ||
                     (this.Confidence != null &&
                     this.Confidence.Equals(input.Confidence))
@@ -318,6 +534,42 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     hashCode = hashCode * 59 + this.LogId.GetHashCode();
                 if (this.SaleLocation != null)
                     hashCode = hashCode * 59 + this.SaleLocation.GetHashCode();
+                if (this.InvoiceStyle != null)
+                    hashCode = hashCode * 59 + this.InvoiceStyle.GetHashCode();
+                if (this.IssueDate != null)
+                    hashCode = hashCode * 59 + this.IssueDate.GetHashCode();
+                if (this.DiscountMark != null)
+                    hashCode = hashCode * 59 + this.DiscountMark.GetHashCode();
+                if (this.SerialNumber != null)
+                    hashCode = hashCode * 59 + this.SerialNumber.GetHashCode();
+                if (this.TaxAmount != null)
+                    hashCode = hashCode * 59 + this.TaxAmount.GetHashCode();
+                if (this.TaxRate != null)
+                    hashCode = hashCode * 59 + this.TaxRate.GetHashCode();
+                if (this.AirConditioning != null)
+                    hashCode = hashCode * 59 + this.AirConditioning.GetHashCode();
+                if (this.OriginalInvoiceNumber != null)
+                    hashCode = hashCode * 59 + this.OriginalInvoiceNumber.GetHashCode();
+                if (this.UnifiedSocialCreditCode != null)
+                    hashCode = hashCode * 59 + this.UnifiedSocialCreditCode.GetHashCode();
+                if (this.BuyerName != null)
+                    hashCode = hashCode * 59 + this.BuyerName.GetHashCode();
+                if (this.TotalAmountExcludingTax != null)
+                    hashCode = hashCode * 59 + this.TotalAmountExcludingTax.GetHashCode();
+                if (this.InvoiceNumber != null)
+                    hashCode = hashCode * 59 + this.InvoiceNumber.GetHashCode();
+                if (this.SealMark != null)
+                    hashCode = hashCode * 59 + this.SealMark.GetHashCode();
+                if (this.Title != null)
+                    hashCode = hashCode * 59 + this.Title.GetHashCode();
+                if (this.Area != null)
+                    hashCode = hashCode * 59 + this.Area.GetHashCode();
+                if (this.ReceiptNumber != null)
+                    hashCode = hashCode * 59 + this.ReceiptNumber.GetHashCode();
+                if (this.AmountInFigures != null)
+                    hashCode = hashCode * 59 + this.AmountInFigures.GetHashCode();
+                if (this.AmountInWords != null)
+                    hashCode = hashCode * 59 + this.AmountInWords.GetHashCode();
                 if (this.Confidence != null)
                     hashCode = hashCode * 59 + this.Confidence.GetHashCode();
                 if (this.TextLocation != null)

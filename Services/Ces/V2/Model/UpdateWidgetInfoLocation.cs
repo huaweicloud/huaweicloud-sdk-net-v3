@@ -13,7 +13,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     /// <summary>
     /// 监控视图图表坐标
     /// </summary>
-    public class BaseWidgetInfoLocation 
+    public class UpdateWidgetInfoLocation 
     {
 
         /// <summary>
@@ -48,7 +48,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class BaseWidgetInfoLocation {\n");
+            sb.Append("class UpdateWidgetInfoLocation {\n");
             sb.Append("  top: ").Append(Top).Append("\n");
             sb.Append("  left: ").Append(Left).Append("\n");
             sb.Append("  width: ").Append(Width).Append("\n");
@@ -62,13 +62,13 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as BaseWidgetInfoLocation);
+            return this.Equals(input as UpdateWidgetInfoLocation);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(BaseWidgetInfoLocation input)
+        public bool Equals(UpdateWidgetInfoLocation input)
         {
             if (input == null)
                 return false;

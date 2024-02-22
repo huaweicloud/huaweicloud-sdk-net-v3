@@ -11,47 +11,47 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
 {
     /// <summary>
-    /// 
+    /// 灰度策略信息
     /// </summary>
-    public class UpdateTriggerRequestBody 
+    public class VersionStrategy 
     {
         /// <summary>
-        /// 触发器状态
+        /// 所有规则聚合方式。and：所有规则都满足，or：满足其中一个
         /// </summary>
-        /// <value>触发器状态</value>
-        [JsonConverter(typeof(EnumClassConverter<TriggerStatusEnum>))]
-        public class TriggerStatusEnum
+        /// <value>所有规则聚合方式。and：所有规则都满足，or：满足其中一个</value>
+        [JsonConverter(typeof(EnumClassConverter<CombineTypeEnum>))]
+        public class CombineTypeEnum
         {
             /// <summary>
-            /// Enum ACTIVE for value: ACTIVE
+            /// Enum AND for value: and
             /// </summary>
-            public static readonly TriggerStatusEnum ACTIVE = new TriggerStatusEnum("ACTIVE");
+            public static readonly CombineTypeEnum AND = new CombineTypeEnum("and");
 
             /// <summary>
-            /// Enum DISABLED for value: DISABLED
+            /// Enum OR for value: or
             /// </summary>
-            public static readonly TriggerStatusEnum DISABLED = new TriggerStatusEnum("DISABLED");
+            public static readonly CombineTypeEnum OR = new CombineTypeEnum("or");
 
-            private static readonly Dictionary<string, TriggerStatusEnum> StaticFields =
-            new Dictionary<string, TriggerStatusEnum>()
+            private static readonly Dictionary<string, CombineTypeEnum> StaticFields =
+            new Dictionary<string, CombineTypeEnum>()
             {
-                { "ACTIVE", ACTIVE },
-                { "DISABLED", DISABLED },
+                { "and", AND },
+                { "or", OR },
             };
 
             private string _value;
 
-            public TriggerStatusEnum()
+            public CombineTypeEnum()
             {
 
             }
 
-            public TriggerStatusEnum(string value)
+            public CombineTypeEnum(string value)
             {
                 _value = value;
             }
 
-            public static TriggerStatusEnum FromValue(string value)
+            public static CombineTypeEnum FromValue(string value)
             {
                 if(value == null){
                     return null;
@@ -92,7 +92,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     return true;
                 }
 
-                if (this.Equals(obj as TriggerStatusEnum))
+                if (this.Equals(obj as CombineTypeEnum))
                 {
                     return true;
                 }
@@ -100,7 +100,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                 return false;
             }
 
-            public bool Equals(TriggerStatusEnum obj)
+            public bool Equals(CombineTypeEnum obj)
             {
                 if ((object)obj == null)
                 {
@@ -109,7 +109,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                 return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
-            public static bool operator ==(TriggerStatusEnum a, TriggerStatusEnum b)
+            public static bool operator ==(CombineTypeEnum a, CombineTypeEnum b)
             {
                 if (System.Object.ReferenceEquals(a, b))
                 {
@@ -124,7 +124,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                 return a.Equals(b);
             }
 
-            public static bool operator !=(TriggerStatusEnum a, TriggerStatusEnum b)
+            public static bool operator !=(CombineTypeEnum a, CombineTypeEnum b)
             {
                 return !(a == b);
             }
@@ -132,16 +132,16 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
 
 
         /// <summary>
-        /// 触发器状态
+        /// 规则列表
         /// </summary>
-        [JsonProperty("trigger_status", NullValueHandling = NullValueHandling.Ignore)]
-        public TriggerStatusEnum TriggerStatus { get; set; }
-        /// <summary>
-        /// 触发器更新事件
-        /// </summary>
-        [JsonProperty("event_data", NullValueHandling = NullValueHandling.Ignore)]
-        public List<UpdateriggerEventData> EventData { get; set; }
+        [JsonProperty("rules", NullValueHandling = NullValueHandling.Ignore)]
+        public List<VersionStrategyRules> Rules { get; set; }
 
+        /// <summary>
+        /// 所有规则聚合方式。and：所有规则都满足，or：满足其中一个
+        /// </summary>
+        [JsonProperty("combine_type", NullValueHandling = NullValueHandling.Ignore)]
+        public CombineTypeEnum CombineType { get; set; }
 
 
         /// <summary>
@@ -150,9 +150,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class UpdateTriggerRequestBody {\n");
-            sb.Append("  triggerStatus: ").Append(TriggerStatus).Append("\n");
-            sb.Append("  eventData: ").Append(EventData).Append("\n");
+            sb.Append("class VersionStrategy {\n");
+            sb.Append("  rules: ").Append(Rules).Append("\n");
+            sb.Append("  combineType: ").Append(CombineType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -162,28 +162,28 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as UpdateTriggerRequestBody);
+            return this.Equals(input as VersionStrategy);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(UpdateTriggerRequestBody input)
+        public bool Equals(VersionStrategy input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.TriggerStatus == input.TriggerStatus ||
-                    (this.TriggerStatus != null &&
-                    this.TriggerStatus.Equals(input.TriggerStatus))
+                    this.Rules == input.Rules ||
+                    this.Rules != null &&
+                    input.Rules != null &&
+                    this.Rules.SequenceEqual(input.Rules)
                 ) && 
                 (
-                    this.EventData == input.EventData ||
-                    this.EventData != null &&
-                    input.EventData != null &&
-                    this.EventData.SequenceEqual(input.EventData)
+                    this.CombineType == input.CombineType ||
+                    (this.CombineType != null &&
+                    this.CombineType.Equals(input.CombineType))
                 );
         }
 
@@ -195,10 +195,10 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.TriggerStatus != null)
-                    hashCode = hashCode * 59 + this.TriggerStatus.GetHashCode();
-                if (this.EventData != null)
-                    hashCode = hashCode * 59 + this.EventData.GetHashCode();
+                if (this.Rules != null)
+                    hashCode = hashCode * 59 + this.Rules.GetHashCode();
+                if (this.CombineType != null)
+                    hashCode = hashCode * 59 + this.CombineType.GetHashCode();
                 return hashCode;
             }
         }

@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
     public class Dependency 
     {
         /// <summary>
-        /// FunctionGraph函数的执行环境 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Python3.9: Python语言3.9版本。 Go1.8: Go语言1.8版本。 Go1.x: Go语言1.x版本。 Java8: Java语言8版本。 Java11: Java语言11版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 Node.js10.16: Nodejs语言10.16版本。 Node.js12.13: Nodejs语言12.13版本。 Node.js14.18: Nodejs语言14.18版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本。 http: HTTP函数。
+        /// FunctionGraph函数的执行环境 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Python3.9: Python语言3.9版本。 Go1.8: Go语言1.8版本。 Go1.x: Go语言1.x版本。 Java8: Java语言8版本。 Java11: Java语言11版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 Node.js10.16: Nodejs语言10.16版本。 Node.js12.13: Nodejs语言12.13版本。 Node.js14.18: Nodejs语言14.18版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本。 http: HTTP函数。 Custom Image: 自定义镜像函数。
         /// </summary>
-        /// <value>FunctionGraph函数的执行环境 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Python3.9: Python语言3.9版本。 Go1.8: Go语言1.8版本。 Go1.x: Go语言1.x版本。 Java8: Java语言8版本。 Java11: Java语言11版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 Node.js10.16: Nodejs语言10.16版本。 Node.js12.13: Nodejs语言12.13版本。 Node.js14.18: Nodejs语言14.18版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本。 http: HTTP函数。</value>
+        /// <value>FunctionGraph函数的执行环境 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Python3.9: Python语言3.9版本。 Go1.8: Go语言1.8版本。 Go1.x: Go语言1.x版本。 Java8: Java语言8版本。 Java11: Java语言11版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 Node.js10.16: Nodejs语言10.16版本。 Node.js12.13: Nodejs语言12.13版本。 Node.js14.18: Nodejs语言14.18版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本。 http: HTTP函数。 Custom Image: 自定义镜像函数。</value>
         [JsonConverter(typeof(EnumClassConverter<RuntimeEnum>))]
         public class RuntimeEnum
         {
@@ -112,6 +112,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             /// </summary>
             public static readonly RuntimeEnum HTTP = new RuntimeEnum("http");
 
+            /// <summary>
+            /// Enum CUSTOM_IMAGE for value: Custom Image
+            /// </summary>
+            public static readonly RuntimeEnum CUSTOM_IMAGE = new RuntimeEnum("Custom Image");
+
             private static readonly Dictionary<string, RuntimeEnum> StaticFields =
             new Dictionary<string, RuntimeEnum>()
             {
@@ -133,6 +138,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                 { "Python3.9", PYTHON3_9 },
                 { "Custom", CUSTOM },
                 { "http", HTTP },
+                { "Custom Image", CUSTOM_IMAGE },
             };
 
             private string _value;
@@ -228,6 +234,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
 
 
         /// <summary>
+        /// 依赖包版本ID。
+        /// </summary>
+        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
         /// 依赖包属主的domainId。
         /// </summary>
         [JsonProperty("owner", NullValueHandling = NullValueHandling.Ignore)]
@@ -240,7 +252,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public string Link { get; set; }
 
         /// <summary>
-        /// FunctionGraph函数的执行环境 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Python3.9: Python语言3.9版本。 Go1.8: Go语言1.8版本。 Go1.x: Go语言1.x版本。 Java8: Java语言8版本。 Java11: Java语言11版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 Node.js10.16: Nodejs语言10.16版本。 Node.js12.13: Nodejs语言12.13版本。 Node.js14.18: Nodejs语言14.18版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本。 http: HTTP函数。
+        /// FunctionGraph函数的执行环境 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Python3.9: Python语言3.9版本。 Go1.8: Go语言1.8版本。 Go1.x: Go语言1.x版本。 Java8: Java语言8版本。 Java11: Java语言11版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 Node.js10.16: Nodejs语言10.16版本。 Node.js12.13: Nodejs语言12.13版本。 Node.js14.18: Nodejs语言14.18版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本。 http: HTTP函数。 Custom Image: 自定义镜像函数。
         /// </summary>
         [JsonProperty("runtime", NullValueHandling = NullValueHandling.Ignore)]
         public RuntimeEnum Runtime { get; set; }
@@ -274,6 +286,24 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         [JsonProperty("file_name", NullValueHandling = NullValueHandling.Ignore)]
         public string FileName { get; set; }
 
+        /// <summary>
+        /// 依赖包版本编号。
+        /// </summary>
+        [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]
+        public long? Version { get; set; }
+
+        /// <summary>
+        /// 依赖包ID
+        /// </summary>
+        [JsonProperty("dep_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string DepId { get; set; }
+
+        /// <summary>
+        /// 函数最后一次更新时间。
+        /// </summary>
+        [JsonProperty("last_modified", NullValueHandling = NullValueHandling.Ignore)]
+        public DateTime? LastModified { get; set; }
+
 
 
         /// <summary>
@@ -283,6 +313,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class Dependency {\n");
+            sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  owner: ").Append(Owner).Append("\n");
             sb.Append("  link: ").Append(Link).Append("\n");
             sb.Append("  runtime: ").Append(Runtime).Append("\n");
@@ -291,6 +322,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  fileName: ").Append(FileName).Append("\n");
+            sb.Append("  version: ").Append(Version).Append("\n");
+            sb.Append("  depId: ").Append(DepId).Append("\n");
+            sb.Append("  lastModified: ").Append(LastModified).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -312,6 +346,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                 return false;
 
             return 
+                (
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
+                ) && 
                 (
                     this.Owner == input.Owner ||
                     (this.Owner != null &&
@@ -351,6 +390,21 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.FileName == input.FileName ||
                     (this.FileName != null &&
                     this.FileName.Equals(input.FileName))
+                ) && 
+                (
+                    this.Version == input.Version ||
+                    (this.Version != null &&
+                    this.Version.Equals(input.Version))
+                ) && 
+                (
+                    this.DepId == input.DepId ||
+                    (this.DepId != null &&
+                    this.DepId.Equals(input.DepId))
+                ) && 
+                (
+                    this.LastModified == input.LastModified ||
+                    (this.LastModified != null &&
+                    this.LastModified.Equals(input.LastModified))
                 );
         }
 
@@ -362,6 +416,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.Id != null)
+                    hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Owner != null)
                     hashCode = hashCode * 59 + this.Owner.GetHashCode();
                 if (this.Link != null)
@@ -378,6 +434,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.FileName != null)
                     hashCode = hashCode * 59 + this.FileName.GetHashCode();
+                if (this.Version != null)
+                    hashCode = hashCode * 59 + this.Version.GetHashCode();
+                if (this.DepId != null)
+                    hashCode = hashCode * 59 + this.DepId.GetHashCode();
+                if (this.LastModified != null)
+                    hashCode = hashCode * 59 + this.LastModified.GetHashCode();
                 return hashCode;
             }
         }

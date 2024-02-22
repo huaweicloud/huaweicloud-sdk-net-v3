@@ -1411,7 +1411,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/recycle-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", setRecyclePolicyRequest);
             var response = await DoHttpRequestAsync("PUT", request);
-            return JsonUtils.DeSerializeNull<SetRecyclePolicyResponse>(response);
+            return JsonUtils.DeSerialize<SetRecyclePolicyResponse>(response);
         }
 
         public AsyncInvoker<SetRecyclePolicyResponse> SetRecyclePolicyAsyncInvoker(SetRecyclePolicyRequest setRecyclePolicyRequest)
@@ -1419,7 +1419,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
             var urlParam = new Dictionary<string, string>();
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/recycle-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", setRecyclePolicyRequest);
-            return new AsyncInvoker<SetRecyclePolicyResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<SetRecyclePolicyResponse>);
+            return new AsyncInvoker<SetRecyclePolicyResponse>(this, "PUT", request, JsonUtils.DeSerialize<SetRecyclePolicyResponse>);
         }
         
         /// <summary>
