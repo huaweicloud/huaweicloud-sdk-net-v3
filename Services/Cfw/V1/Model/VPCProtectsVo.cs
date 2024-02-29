@@ -52,6 +52,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         [JsonProperty("other_protect_vpcs", NullValueHandling = NullValueHandling.Ignore)]
         public List<VpcAttachmentDetail> OtherProtectVpcs { get; set; }
 
+        /// <summary>
+        /// 所有资产数量
+        /// </summary>
+        [JsonProperty("total_assets", NullValueHandling = NullValueHandling.Ignore)]
+        public int? TotalAssets { get; set; }
+
 
 
         /// <summary>
@@ -67,6 +73,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  protectVpcs: ").Append(ProtectVpcs).Append("\n");
             sb.Append("  selfProtectVpcs: ").Append(SelfProtectVpcs).Append("\n");
             sb.Append("  otherProtectVpcs: ").Append(OtherProtectVpcs).Append("\n");
+            sb.Append("  totalAssets: ").Append(TotalAssets).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -120,6 +127,11 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.OtherProtectVpcs != null &&
                     input.OtherProtectVpcs != null &&
                     this.OtherProtectVpcs.SequenceEqual(input.OtherProtectVpcs)
+                ) && 
+                (
+                    this.TotalAssets == input.TotalAssets ||
+                    (this.TotalAssets != null &&
+                    this.TotalAssets.Equals(input.TotalAssets))
                 );
         }
 
@@ -143,6 +155,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.SelfProtectVpcs.GetHashCode();
                 if (this.OtherProtectVpcs != null)
                     hashCode = hashCode * 59 + this.OtherProtectVpcs.GetHashCode();
+                if (this.TotalAssets != null)
+                    hashCode = hashCode * 59 + this.TotalAssets.GetHashCode();
                 return hashCode;
             }
         }

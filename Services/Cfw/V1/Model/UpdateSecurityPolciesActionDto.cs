@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string Action { get; set; }
 
         /// <summary>
-        /// 规则列表
+        /// 规则ID列表
         /// </summary>
         [JsonProperty("rule_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> RuleIds { get; set; }

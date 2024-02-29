@@ -34,6 +34,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
+        /// <summary>
+        /// 服务组类型，0表示自定义服务组，1表示预定义服务组
+        /// </summary>
+        [JsonProperty("service_set_type", NullValueHandling = NullValueHandling.Ignore)]
+        public int? ServiceSetType { get; set; }
+
 
 
         /// <summary>
@@ -46,6 +52,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
+            sb.Append("  serviceSetType: ").Append(ServiceSetType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -81,6 +88,11 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
+                ) && 
+                (
+                    this.ServiceSetType == input.ServiceSetType ||
+                    (this.ServiceSetType != null &&
+                    this.ServiceSetType.Equals(input.ServiceSetType))
                 );
         }
 
@@ -98,6 +110,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Description != null)
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.ServiceSetType != null)
+                    hashCode = hashCode * 59 + this.ServiceSetType.GetHashCode();
                 return hashCode;
             }
         }

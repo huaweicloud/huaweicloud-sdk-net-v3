@@ -55,6 +55,8 @@ namespace HuaweiCloud.SDK.Rds.V3
             "https://rds.eu-west-101.myhuaweicloud.eu");
         public static readonly Region EU_WEST_0 = new Region("eu-west-0",
             "https://rds.eu-west-0.myhuaweicloud.com");
+        public static readonly Region MY_KUALALUMPUR_1 = new Region("my-kualalumpur-1",
+            "https://rds.my-kualalumpur-1.myhuaweicloud.com");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("RDS");
 
@@ -84,6 +86,7 @@ namespace HuaweiCloud.SDK.Rds.V3
                 { "ae-ad-1", AE_AD_1 },
                 { "eu-west-101", EU_WEST_101 },
                 { "eu-west-0", EU_WEST_0 },
+                { "my-kualalumpur-1", MY_KUALALUMPUR_1 },
         };
 
         public static Region ValueOf(string regionId)

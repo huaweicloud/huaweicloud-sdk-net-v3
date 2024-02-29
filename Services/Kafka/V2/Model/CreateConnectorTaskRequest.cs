@@ -8,27 +8,27 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Dns.V2.Model
+namespace HuaweiCloud.SDK.Kafka.V2.Model
 {
     /// <summary>
     /// Request Object
     /// </summary>
-    public class DisassociateHealthCheckRequest 
+    public class CreateConnectorTaskRequest 
     {
 
         /// <summary>
-        /// Record Set关联健康检查。
+        /// 实例ID。
         /// </summary>
-        [SDKProperty("recordset_id", IsPath = true)]
-        [JsonProperty("recordset_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string RecordsetId { get; set; }
+        [SDKProperty("instance_id", IsPath = true)]
+        [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string InstanceId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public AssociateHealthCheckReq Body { get; set; }
+        public CreateSmartConnectTaskReq Body { get; set; }
 
 
 
@@ -38,8 +38,8 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class DisassociateHealthCheckRequest {\n");
-            sb.Append("  recordsetId: ").Append(RecordsetId).Append("\n");
+            sb.Append("class CreateConnectorTaskRequest {\n");
+            sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
             sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -50,22 +50,22 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as DisassociateHealthCheckRequest);
+            return this.Equals(input as CreateConnectorTaskRequest);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(DisassociateHealthCheckRequest input)
+        public bool Equals(CreateConnectorTaskRequest input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.RecordsetId == input.RecordsetId ||
-                    (this.RecordsetId != null &&
-                    this.RecordsetId.Equals(input.RecordsetId))
+                    this.InstanceId == input.InstanceId ||
+                    (this.InstanceId != null &&
+                    this.InstanceId.Equals(input.InstanceId))
                 ) && 
                 (
                     this.Body == input.Body ||
@@ -82,8 +82,8 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.RecordsetId != null)
-                    hashCode = hashCode * 59 + this.RecordsetId.GetHashCode();
+                if (this.InstanceId != null)
+                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
                 if (this.Body != null)
                     hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;

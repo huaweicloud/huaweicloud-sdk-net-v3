@@ -58,6 +58,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         [JsonProperty("protected_resource_mode", NullValueHandling = NullValueHandling.Ignore)]
         public string ProtectedResourceMode { get; set; }
 
+        /// <summary>
+        /// 防护VPC的防护状态，0表示已关联，1表示未关联。
+        /// </summary>
+        [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Status { get; set; }
+
 
 
         /// <summary>
@@ -74,6 +80,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  protectedResourceNatId: ").Append(ProtectedResourceNatId).Append("\n");
             sb.Append("  protectedResourceProjectId: ").Append(ProtectedResourceProjectId).Append("\n");
             sb.Append("  protectedResourceMode: ").Append(ProtectedResourceMode).Append("\n");
+            sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -129,6 +136,11 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.ProtectedResourceMode == input.ProtectedResourceMode ||
                     (this.ProtectedResourceMode != null &&
                     this.ProtectedResourceMode.Equals(input.ProtectedResourceMode))
+                ) && 
+                (
+                    this.Status == input.Status ||
+                    (this.Status != null &&
+                    this.Status.Equals(input.Status))
                 );
         }
 
@@ -154,6 +166,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.ProtectedResourceProjectId.GetHashCode();
                 if (this.ProtectedResourceMode != null)
                     hashCode = hashCode * 59 + this.ProtectedResourceMode.GetHashCode();
+                if (this.Status != null)
+                    hashCode = hashCode * 59 + this.Status.GetHashCode();
                 return hashCode;
             }
         }

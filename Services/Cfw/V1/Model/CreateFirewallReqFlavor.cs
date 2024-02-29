@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     public class CreateFirewallReqFlavor 
     {
         /// <summary>
-        /// 防火墙版本 “charge_mode”为“prePaid”时，仅支持专业版。 “charge_mode”为“postPaid”时，支持标准版、专业版。  Standard - 标准版 Professional - 专业版 Platinum - 铂金版，防火墙版本“charge_mode”为\&quot;postPaid\&quot;时，仅支持专业版。“charge_mode”为“prePaid”时，支持标准版、专业版。
+        /// 防火墙版本 “charge_mode”为“prePaid”时，仅支持专业版。 “charge_mode”为“postPaid”时，支持标准版、专业版。  Standard - 标准版 Professional - 专业版
         /// </summary>
-        /// <value>防火墙版本 “charge_mode”为“prePaid”时，仅支持专业版。 “charge_mode”为“postPaid”时，支持标准版、专业版。  Standard - 标准版 Professional - 专业版 Platinum - 铂金版，防火墙版本“charge_mode”为\&quot;postPaid\&quot;时，仅支持专业版。“charge_mode”为“prePaid”时，支持标准版、专业版。</value>
+        /// <value>防火墙版本 “charge_mode”为“prePaid”时，仅支持专业版。 “charge_mode”为“postPaid”时，支持标准版、专业版。  Standard - 标准版 Professional - 专业版</value>
         [JsonConverter(typeof(EnumClassConverter<VersionEnum>))]
         public class VersionEnum
         {
@@ -32,17 +32,11 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             /// </summary>
             public static readonly VersionEnum PROFESSIONAL = new VersionEnum("Professional");
 
-            /// <summary>
-            /// Enum PLATINUM for value: Platinum
-            /// </summary>
-            public static readonly VersionEnum PLATINUM = new VersionEnum("Platinum");
-
             private static readonly Dictionary<string, VersionEnum> StaticFields =
             new Dictionary<string, VersionEnum>()
             {
                 { "Standard", STANDARD },
                 { "Professional", PROFESSIONAL },
-                { "Platinum", PLATINUM },
             };
 
             private string _value;
@@ -138,7 +132,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
 
 
         /// <summary>
-        /// 防火墙版本 “charge_mode”为“prePaid”时，仅支持专业版。 “charge_mode”为“postPaid”时，支持标准版、专业版。  Standard - 标准版 Professional - 专业版 Platinum - 铂金版，防火墙版本“charge_mode”为\&quot;postPaid\&quot;时，仅支持专业版。“charge_mode”为“prePaid”时，支持标准版、专业版。
+        /// 防火墙版本 “charge_mode”为“prePaid”时，仅支持专业版。 “charge_mode”为“postPaid”时，支持标准版、专业版。  Standard - 标准版 Professional - 专业版
         /// </summary>
         [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]
         public VersionEnum Version { get; set; }

@@ -37,6 +37,13 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         [JsonProperty("fw_instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string FwInstanceId { get; set; }
 
+        /// <summary>
+        /// 查询地址组类型，0表示自定义地址组，1表示预定义地址组
+        /// </summary>
+        [SDKProperty("query_address_set_type", IsQuery = true)]
+        [JsonProperty("query_address_set_type", NullValueHandling = NullValueHandling.Ignore)]
+        public int? QueryAddressSetType { get; set; }
+
 
 
         /// <summary>
@@ -49,6 +56,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  setId: ").Append(SetId).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  fwInstanceId: ").Append(FwInstanceId).Append("\n");
+            sb.Append("  queryAddressSetType: ").Append(QueryAddressSetType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -84,6 +92,11 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.FwInstanceId == input.FwInstanceId ||
                     (this.FwInstanceId != null &&
                     this.FwInstanceId.Equals(input.FwInstanceId))
+                ) && 
+                (
+                    this.QueryAddressSetType == input.QueryAddressSetType ||
+                    (this.QueryAddressSetType != null &&
+                    this.QueryAddressSetType.Equals(input.QueryAddressSetType))
                 );
         }
 
@@ -101,6 +114,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.FwInstanceId != null)
                     hashCode = hashCode * 59 + this.FwInstanceId.GetHashCode();
+                if (this.QueryAddressSetType != null)
+                    hashCode = hashCode * 59 + this.QueryAddressSetType.GetHashCode();
                 return hashCode;
             }
         }

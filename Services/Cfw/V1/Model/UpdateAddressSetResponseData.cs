@@ -8,19 +8,19 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Dns.V2.Model
+namespace HuaweiCloud.SDK.Cfw.V1.Model
 {
     /// <summary>
-    /// Response Object
+    /// 
     /// </summary>
-    public class AssociateHealthCheckResponse : SdkResponse
+    public class UpdateAddressSetResponseData 
     {
 
         /// <summary>
-        /// 健康检查ID。 通过云解析服务的管理控制台，在健康检查的详情页面中获取。
+        /// Id
         /// </summary>
-        [JsonProperty("health_check_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string HealthCheckId { get; set; }
+        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
+        public string Id { get; set; }
 
 
 
@@ -30,8 +30,8 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class AssociateHealthCheckResponse {\n");
-            sb.Append("  healthCheckId: ").Append(HealthCheckId).Append("\n");
+            sb.Append("class UpdateAddressSetResponseData {\n");
+            sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -41,22 +41,22 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as AssociateHealthCheckResponse);
+            return this.Equals(input as UpdateAddressSetResponseData);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(AssociateHealthCheckResponse input)
+        public bool Equals(UpdateAddressSetResponseData input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.HealthCheckId == input.HealthCheckId ||
-                    (this.HealthCheckId != null &&
-                    this.HealthCheckId.Equals(input.HealthCheckId))
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
                 );
         }
 
@@ -68,8 +68,8 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.HealthCheckId != null)
-                    hashCode = hashCode * 59 + this.HealthCheckId.GetHashCode();
+                if (this.Id != null)
+                    hashCode = hashCode * 59 + this.Id.GetHashCode();
                 return hashCode;
             }
         }

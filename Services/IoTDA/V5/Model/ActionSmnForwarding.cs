@@ -47,7 +47,13 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public string MessageContent { get; set; }
 
         /// <summary>
-        /// **参数说明**：短信或邮件的主题。
+        /// **参数说明**：SMN服务对应的模板名称。
+        /// </summary>
+        [JsonProperty("message_template_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string MessageTemplateName { get; set; }
+
+        /// <summary>
+        /// **参数说明**：短信或邮件的主题。最大长度支持UTF-8编码后的521个字节。
         /// </summary>
         [JsonProperty("message_title", NullValueHandling = NullValueHandling.Ignore)]
         public string MessageTitle { get; set; }
@@ -66,6 +72,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             sb.Append("  themeName: ").Append(ThemeName).Append("\n");
             sb.Append("  topicUrn: ").Append(TopicUrn).Append("\n");
             sb.Append("  messageContent: ").Append(MessageContent).Append("\n");
+            sb.Append("  messageTemplateName: ").Append(MessageTemplateName).Append("\n");
             sb.Append("  messageTitle: ").Append(MessageTitle).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -114,6 +121,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.MessageContent.Equals(input.MessageContent))
                 ) && 
                 (
+                    this.MessageTemplateName == input.MessageTemplateName ||
+                    (this.MessageTemplateName != null &&
+                    this.MessageTemplateName.Equals(input.MessageTemplateName))
+                ) && 
+                (
                     this.MessageTitle == input.MessageTitle ||
                     (this.MessageTitle != null &&
                     this.MessageTitle.Equals(input.MessageTitle))
@@ -138,6 +150,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     hashCode = hashCode * 59 + this.TopicUrn.GetHashCode();
                 if (this.MessageContent != null)
                     hashCode = hashCode * 59 + this.MessageContent.GetHashCode();
+                if (this.MessageTemplateName != null)
+                    hashCode = hashCode * 59 + this.MessageTemplateName.GetHashCode();
                 if (this.MessageTitle != null)
                     hashCode = hashCode * 59 + this.MessageTitle.GetHashCode();
                 return hashCode;

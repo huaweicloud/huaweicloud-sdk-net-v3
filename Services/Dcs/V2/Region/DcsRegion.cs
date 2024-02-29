@@ -57,6 +57,8 @@ namespace HuaweiCloud.SDK.Dcs.V2
             "https://dcs.eu-west-0.myhuaweicloud.com");
         public static readonly Region CN_EAST_5 = new Region("cn-east-5",
             "https://dcs.cn-east-5.myhuaweicloud.com");
+        public static readonly Region MY_KUALALUMPUR_1 = new Region("my-kualalumpur-1",
+            "https://dcs.my-kualalumpur-1.myhuaweicloud.com");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("DCS");
 
@@ -87,6 +89,7 @@ namespace HuaweiCloud.SDK.Dcs.V2
                 { "me-east-1", ME_EAST_1 },
                 { "eu-west-0", EU_WEST_0 },
                 { "cn-east-5", CN_EAST_5 },
+                { "my-kualalumpur-1", MY_KUALALUMPUR_1 },
         };
 
         public static Region ValueOf(string regionId)

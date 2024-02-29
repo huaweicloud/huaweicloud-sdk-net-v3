@@ -353,6 +353,18 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }
         /// <summary>
+        /// 创建时间
+        /// </summary>
+        [JsonProperty("created_date", NullValueHandling = NullValueHandling.Ignore)]
+        public string CreatedDate { get; set; }
+
+        /// <summary>
+        /// 最后开启时间
+        /// </summary>
+        [JsonProperty("last_open_time", NullValueHandling = NullValueHandling.Ignore)]
+        public string LastOpenTime { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("tag", NullValueHandling = NullValueHandling.Ignore)]
@@ -384,6 +396,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  destination: ").Append(Destination).Append("\n");
             sb.Append("  service: ").Append(Service).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
+            sb.Append("  createdDate: ").Append(CreatedDate).Append("\n");
+            sb.Append("  lastOpenTime: ").Append(LastOpenTime).Append("\n");
             sb.Append("  tag: ").Append(Tag).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -492,6 +506,16 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.Type.Equals(input.Type))
                 ) && 
                 (
+                    this.CreatedDate == input.CreatedDate ||
+                    (this.CreatedDate != null &&
+                    this.CreatedDate.Equals(input.CreatedDate))
+                ) && 
+                (
+                    this.LastOpenTime == input.LastOpenTime ||
+                    (this.LastOpenTime != null &&
+                    this.LastOpenTime.Equals(input.LastOpenTime))
+                ) && 
+                (
                     this.Tag == input.Tag ||
                     (this.Tag != null &&
                     this.Tag.Equals(input.Tag))
@@ -540,6 +564,10 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.Service.GetHashCode();
                 if (this.Type != null)
                     hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.CreatedDate != null)
+                    hashCode = hashCode * 59 + this.CreatedDate.GetHashCode();
+                if (this.LastOpenTime != null)
+                    hashCode = hashCode * 59 + this.LastOpenTime.GetHashCode();
                 if (this.Tag != null)
                     hashCode = hashCode * 59 + this.Tag.GetHashCode();
                 return hashCode;

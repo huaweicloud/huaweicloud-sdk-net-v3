@@ -174,34 +174,6 @@ namespace HuaweiCloud.SDK.Kafka.V2
         }
         
         /// <summary>
-        /// 创建实例的Smart Connect节点
-        ///
-        /// 创建Smart Connect节点。
-        /// 
-        /// **当前通过调用API，只支持按需实例创建Smart Connect节点。**
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<CreateConnectorResponse> CreateConnectorAsync(CreateConnectorRequest createConnectorRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createConnectorRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createConnectorRequest);
-            var response = await DoHttpRequestAsync("POST", request);
-            return JsonUtils.DeSerialize<CreateConnectorResponse>(response);
-        }
-
-        public AsyncInvoker<CreateConnectorResponse> CreateConnectorAsyncInvoker(CreateConnectorRequest createConnectorRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createConnectorRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createConnectorRequest);
-            return new AsyncInvoker<CreateConnectorResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateConnectorResponse>);
-        }
-        
-        /// <summary>
         /// 创建关闭实例转储节点的订单
         ///
         /// 创建删除实例转储节点的订单。
@@ -461,32 +433,6 @@ namespace HuaweiCloud.SDK.Kafka.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/tasks/{task_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteBackgroundTaskRequest);
             return new AsyncInvoker<DeleteBackgroundTaskResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteBackgroundTaskResponse>);
-        }
-        
-        /// <summary>
-        /// 关闭Smart Connect（按需实例）
-        ///
-        /// 介绍按需实例如何关闭Smart Connect。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<DeleteConnectorResponse> DeleteConnectorAsync(DeleteConnectorRequest deleteConnectorRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteConnectorRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/delete-connector", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteConnectorRequest);
-            var response = await DoHttpRequestAsync("POST", request);
-            return JsonUtils.DeSerialize<DeleteConnectorResponse>(response);
-        }
-
-        public AsyncInvoker<DeleteConnectorResponse> DeleteConnectorAsyncInvoker(DeleteConnectorRequest deleteConnectorRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteConnectorRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/delete-connector", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteConnectorRequest);
-            return new AsyncInvoker<DeleteConnectorResponse>(this, "POST", request, JsonUtils.DeSerialize<DeleteConnectorResponse>);
         }
         
         /// <summary>
@@ -1974,6 +1920,252 @@ namespace HuaweiCloud.SDK.Kafka.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/management/topics/{topic}/replicas-reassignment", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTopicReplicaRequest);
             return new AsyncInvoker<UpdateTopicReplicaResponse>(this, "POST", request, JsonUtils.DeSerializeNull<UpdateTopicReplicaResponse>);
+        }
+        
+        /// <summary>
+        /// 开启Smart Connect（按需实例）
+        ///
+        /// 开启Smart Connect，提交创建Smart Connect节点任务。
+        /// 
+        /// **当前通过调用API，只支持按需实例创建Smart Connect节点。**
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateConnectorResponse> CreateConnectorAsync(CreateConnectorRequest createConnectorRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createConnectorRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createConnectorRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateConnectorResponse>(response);
+        }
+
+        public AsyncInvoker<CreateConnectorResponse> CreateConnectorAsyncInvoker(CreateConnectorRequest createConnectorRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createConnectorRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createConnectorRequest);
+            return new AsyncInvoker<CreateConnectorResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateConnectorResponse>);
+        }
+        
+        /// <summary>
+        /// 创建Smart Connect任务
+        ///
+        /// 创建Smart Connect任务。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateConnectorTaskResponse> CreateConnectorTaskAsync(CreateConnectorTaskRequest createConnectorTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createConnectorTaskRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector/tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createConnectorTaskRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateConnectorTaskResponse>(response);
+        }
+
+        public AsyncInvoker<CreateConnectorTaskResponse> CreateConnectorTaskAsyncInvoker(CreateConnectorTaskRequest createConnectorTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createConnectorTaskRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector/tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createConnectorTaskRequest);
+            return new AsyncInvoker<CreateConnectorTaskResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateConnectorTaskResponse>);
+        }
+        
+        /// <summary>
+        /// 关闭Smart Connect（按需实例）
+        ///
+        /// 介绍按需实例如何关闭Smart Connect。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteConnectorResponse> DeleteConnectorAsync(DeleteConnectorRequest deleteConnectorRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteConnectorRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/delete-connector", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteConnectorRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<DeleteConnectorResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteConnectorResponse> DeleteConnectorAsyncInvoker(DeleteConnectorRequest deleteConnectorRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteConnectorRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/delete-connector", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteConnectorRequest);
+            return new AsyncInvoker<DeleteConnectorResponse>(this, "POST", request, JsonUtils.DeSerialize<DeleteConnectorResponse>);
+        }
+        
+        /// <summary>
+        /// 删除Smart Connector任务
+        ///
+        /// 删除Smart Connector任务。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteConnectorTaskResponse> DeleteConnectorTaskAsync(DeleteConnectorTaskRequest deleteConnectorTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteConnectorTaskRequest.InstanceId.ToString());
+            urlParam.Add("task_id", deleteConnectorTaskRequest.TaskId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector/tasks/{task_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteConnectorTaskRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteConnectorTaskResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteConnectorTaskResponse> DeleteConnectorTaskAsyncInvoker(DeleteConnectorTaskRequest deleteConnectorTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteConnectorTaskRequest.InstanceId.ToString());
+            urlParam.Add("task_id", deleteConnectorTaskRequest.TaskId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector/tasks/{task_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteConnectorTaskRequest);
+            return new AsyncInvoker<DeleteConnectorTaskResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteConnectorTaskResponse>);
+        }
+        
+        /// <summary>
+        /// 查询Smart Connect任务列表
+        ///
+        /// 查询Smart Connect任务列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListConnectorTasksResponse> ListConnectorTasksAsync(ListConnectorTasksRequest listConnectorTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listConnectorTasksRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector/tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listConnectorTasksRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListConnectorTasksResponse>(response);
+        }
+
+        public AsyncInvoker<ListConnectorTasksResponse> ListConnectorTasksAsyncInvoker(ListConnectorTasksRequest listConnectorTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listConnectorTasksRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector/tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listConnectorTasksRequest);
+            return new AsyncInvoker<ListConnectorTasksResponse>(this, "GET", request, JsonUtils.DeSerialize<ListConnectorTasksResponse>);
+        }
+        
+        /// <summary>
+        /// 暂停Smart Connect任务
+        ///
+        /// 暂停Smart Connect任务。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<PauseConnectorTaskResponse> PauseConnectorTaskAsync(PauseConnectorTaskRequest pauseConnectorTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", pauseConnectorTaskRequest.InstanceId.ToString());
+            urlParam.Add("task_id", pauseConnectorTaskRequest.TaskId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector/tasks/{task_id}/pause", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", pauseConnectorTaskRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerializeNull<PauseConnectorTaskResponse>(response);
+        }
+
+        public AsyncInvoker<PauseConnectorTaskResponse> PauseConnectorTaskAsyncInvoker(PauseConnectorTaskRequest pauseConnectorTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", pauseConnectorTaskRequest.InstanceId.ToString());
+            urlParam.Add("task_id", pauseConnectorTaskRequest.TaskId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector/tasks/{task_id}/pause", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", pauseConnectorTaskRequest);
+            return new AsyncInvoker<PauseConnectorTaskResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<PauseConnectorTaskResponse>);
+        }
+        
+        /// <summary>
+        /// 启动未启动的Smart Connect任务/重启已暂停或者运行中的Smart Connect任务
+        ///
+        /// 用于**启动未启动的Smart Connect任务**以及**重启已暂停或者运行中的Smart Connect任务**。注意，重启Smart Connect任务将重置同步进度，并重新开始同步任务。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<RestartConnectorTaskResponse> RestartConnectorTaskAsync(RestartConnectorTaskRequest restartConnectorTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", restartConnectorTaskRequest.InstanceId.ToString());
+            urlParam.Add("task_id", restartConnectorTaskRequest.TaskId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/connector/tasks/{task_id}/restart", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restartConnectorTaskRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerializeNull<RestartConnectorTaskResponse>(response);
+        }
+
+        public AsyncInvoker<RestartConnectorTaskResponse> RestartConnectorTaskAsyncInvoker(RestartConnectorTaskRequest restartConnectorTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", restartConnectorTaskRequest.InstanceId.ToString());
+            urlParam.Add("task_id", restartConnectorTaskRequest.TaskId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/connector/tasks/{task_id}/restart", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restartConnectorTaskRequest);
+            return new AsyncInvoker<RestartConnectorTaskResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<RestartConnectorTaskResponse>);
+        }
+        
+        /// <summary>
+        /// 启动已暂停的Smart Connect任务
+        ///
+        /// 启动已暂停的Smart Connect任务。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ResumeConnectorTaskResponse> ResumeConnectorTaskAsync(ResumeConnectorTaskRequest resumeConnectorTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", resumeConnectorTaskRequest.InstanceId.ToString());
+            urlParam.Add("task_id", resumeConnectorTaskRequest.TaskId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector/tasks/{task_id}/resume", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resumeConnectorTaskRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerializeNull<ResumeConnectorTaskResponse>(response);
+        }
+
+        public AsyncInvoker<ResumeConnectorTaskResponse> ResumeConnectorTaskAsyncInvoker(ResumeConnectorTaskRequest resumeConnectorTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", resumeConnectorTaskRequest.InstanceId.ToString());
+            urlParam.Add("task_id", resumeConnectorTaskRequest.TaskId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector/tasks/{task_id}/resume", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resumeConnectorTaskRequest);
+            return new AsyncInvoker<ResumeConnectorTaskResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<ResumeConnectorTaskResponse>);
+        }
+        
+        /// <summary>
+        /// 查询Smart Connector任务详情
+        ///
+        /// 查询Smart Connector任务详情。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowConnectorTaskResponse> ShowConnectorTaskAsync(ShowConnectorTaskRequest showConnectorTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showConnectorTaskRequest.InstanceId.ToString());
+            urlParam.Add("task_id", showConnectorTaskRequest.TaskId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector/tasks/{task_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showConnectorTaskRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowConnectorTaskResponse>(response);
+        }
+
+        public AsyncInvoker<ShowConnectorTaskResponse> ShowConnectorTaskAsyncInvoker(ShowConnectorTaskRequest showConnectorTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showConnectorTaskRequest.InstanceId.ToString());
+            urlParam.Add("task_id", showConnectorTaskRequest.TaskId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector/tasks/{task_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showConnectorTaskRequest);
+            return new AsyncInvoker<ShowConnectorTaskResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowConnectorTaskResponse>);
         }
         
     }

@@ -35,6 +35,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string Description { get; set; }
 
         /// <summary>
+        /// 服务组类型，0表示自定义服务组，1表示预定义服务组
+        /// </summary>
+        [JsonProperty("service_set_type", NullValueHandling = NullValueHandling.Ignore)]
+        public int? ServiceSetType { get; set; }
+
+        /// <summary>
         /// 引用次数
         /// </summary>
         [JsonProperty("ref_count", NullValueHandling = NullValueHandling.Ignore)]
@@ -45,6 +51,18 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
+
+        /// <summary>
+        /// 项目id
+        /// </summary>
+        [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ProjectId { get; set; }
+
+        /// <summary>
+        /// 协议类型列表
+        /// </summary>
+        [JsonProperty("protocols", NullValueHandling = NullValueHandling.Ignore)]
+        public List<int?> Protocols { get; set; }
 
 
 
@@ -58,8 +76,11 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  setId: ").Append(SetId).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
+            sb.Append("  serviceSetType: ").Append(ServiceSetType).Append("\n");
             sb.Append("  refCount: ").Append(RefCount).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
+            sb.Append("  projectId: ").Append(ProjectId).Append("\n");
+            sb.Append("  protocols: ").Append(Protocols).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -97,6 +118,11 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.Description.Equals(input.Description))
                 ) && 
                 (
+                    this.ServiceSetType == input.ServiceSetType ||
+                    (this.ServiceSetType != null &&
+                    this.ServiceSetType.Equals(input.ServiceSetType))
+                ) && 
+                (
                     this.RefCount == input.RefCount ||
                     (this.RefCount != null &&
                     this.RefCount.Equals(input.RefCount))
@@ -105,6 +131,17 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.Status == input.Status ||
                     (this.Status != null &&
                     this.Status.Equals(input.Status))
+                ) && 
+                (
+                    this.ProjectId == input.ProjectId ||
+                    (this.ProjectId != null &&
+                    this.ProjectId.Equals(input.ProjectId))
+                ) && 
+                (
+                    this.Protocols == input.Protocols ||
+                    this.Protocols != null &&
+                    input.Protocols != null &&
+                    this.Protocols.SequenceEqual(input.Protocols)
                 );
         }
 
@@ -122,10 +159,16 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Description != null)
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.ServiceSetType != null)
+                    hashCode = hashCode * 59 + this.ServiceSetType.GetHashCode();
                 if (this.RefCount != null)
                     hashCode = hashCode * 59 + this.RefCount.GetHashCode();
                 if (this.Status != null)
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.ProjectId != null)
+                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.Protocols != null)
+                    hashCode = hashCode * 59 + this.Protocols.GetHashCode();
                 return hashCode;
             }
         }

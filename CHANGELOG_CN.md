@@ -1,3 +1,197 @@
+# 3.1.83 2024-02-29
+
+### HuaweiCloud SDK CFW
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListAddressSets**
+    - 请求参数变更
+      - `+ query_address_set_type`
+    - 响应参数变更
+      - `+ data.records.object_id`
+      - `+ data.records.address_set_type`
+  - **UpdateAclRuleOrder**
+    - 响应参数变更
+      - `+ data.name`
+  - **AddBlackWhiteList**
+    - 响应参数变更
+      - `+ data.name`
+  - **UpdateBlackWhiteList**
+    - 响应参数变更
+      - `+ data.name`
+  - **DeleteBlackWhiteList**
+    - 响应参数变更
+      - `+ data.name`
+  - **ChangeIpsProtectMode**
+    - 响应参数变更
+      - `+ data.name`
+  - **AddServiceSet**
+    - 响应参数变更
+      - `+ data.name`
+  - **ListServiceSetDetail**
+    - 响应参数变更
+      - `+ data.service_set_type`
+  - **UpdateServiceSet**
+    - 响应参数变更
+      - `+ data.name`
+  - **DeleteServiceSet**
+    - 响应参数变更
+      - `+ data.name`
+  - **DeleteServiceItem**
+    - 响应参数变更
+      - `+ data.name`
+  - **CreateFirewall**
+    - 请求参数变更
+      - `- flavor.version: enum value [Platinum]`
+    - 响应参数变更
+      - `- data.flavor.version: enum value [Platinum]`
+  - **ChangeEipStatus**
+    - 响应参数变更
+      - `+ data.id`
+  - **DeleteAddressItem**
+    - 响应参数变更
+      - `+ data.name`
+  - **AddAddressSet**
+    - 响应参数变更
+      - `+ data.name`
+  - **ListAddressSetDetail**
+    - 请求参数变更
+      - `+ query_address_set_type`
+    - 响应参数变更
+      - `+ data.address_set_type`
+  - **UpdateAddressSet**
+    - 响应参数变更
+      - `* data: object<IdObject> -> object<UpdateAddressSetResponseData>`
+  - **DeleteAddressSet**
+    - 响应参数变更
+      - `+ data.name`
+  - **CreateEastWestFirewall**
+    - 响应参数变更
+      - `+ data.name`
+  - **ListEastWestFirewall**
+    - 响应参数变更
+      - `+ data.protect_infos.status`
+  - **AddAclRule**
+    - 响应参数变更
+      - `+ data.rules.name`
+  - **DeleteAclRule**
+    - 响应参数变更
+      - `+ data.name`
+  - **UpdateAclRule**
+    - 响应参数变更
+      - `+ data.name`
+  - **ListAclRules**
+    - 响应参数变更
+      - `+ data.records.created_date`
+      - `+ data.records.last_open_time`
+  - **AddServiceItems**
+    - 响应参数变更
+      - `+ data.items.name`
+  - **AddAddressItem**
+    - 响应参数变更
+      - `+ data.items.name`
+  - **ListServiceSets**
+    - 响应参数变更
+      - `+ data.records.service_set_type`
+      - `+ data.records.project_id`
+      - `+ data.records.protocols`
+  - **ListProtectedVpcs**
+    - 响应参数变更
+      - `+ data.total_assets`
+  - **ListFirewallDetail**
+    - 响应参数变更
+      - `+ data.records.is_available_obs`
+      - `+ data.records.is_support_threat_tags`
+  - **ListFirewallList**
+    - 响应参数变更
+      - `+ is_support_postpaid`
+      - `+ is_support_buy_professional`
+      - `+ has_ndr`
+      - `+ is_support_basic_version`
+
+### HuaweiCloud SDK FunctionGraph
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateFunctionTrigger**
+    - 响应参数变更
+      - `+ event_data.triggerid`
+      - `+ event_data.api_id`
+      - `+ event_data.api_name`
+      - `+ event_data.invoke_url`
+      - `+ event_data.roma_app_id`
+      - `+ event_data.db_user`
+      - `+ event_data.instance_addrs`
+      - `+ event_data.mode`
+      - `* event_data: object<TriggerEventDataRequestBody> -> object<TriggerEventDataResponseBody>`
+
+### HuaweiCloud SDK IoTDA
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowRule**
+    - 响应参数变更
+      - `+ actions.smn_forwarding.message_template_name`
+  - **UpdateRule**
+    - 请求参数变更
+      - `+ actions.smn_forwarding.message_template_name`
+    - 响应参数变更
+      - `+ actions.smn_forwarding.message_template_name`
+  - **CreateRule**
+    - 请求参数变更
+      - `+ actions.smn_forwarding.message_template_name`
+    - 响应参数变更
+      - `+ actions.smn_forwarding.message_template_name`
+  - **ListRules**
+    - 响应参数变更
+      - `+ rules.actions.smn_forwarding.message_template_name`
+
+### HuaweiCloud SDK Kafka
+
+- _新增特性_
+  - 支持以下接口：
+    - `ListConnectorTasks`
+    - `CreateConnectorTask`
+    - `ShowConnectorTask`
+    - `DeleteConnectorTask`
+    - `PauseConnectorTask`
+    - `ResumeConnectorTask`
+    - `RestartConnectorTask`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowInstance**
+    - 响应参数变更
+      - `+ connector_node_num`
+  - **CreateSinkTask**
+    - 请求参数变更
+      - `+ obs_destination_descriptor.partition_format: enum value [yyyy,yyyy/MM,yyyy/MM/dd,yyyy/MM/dd/HH,yyyy/MM/dd/HH/mm]`
+  - **ListInstances**
+    - 响应参数变更
+      - `+ connector_node_num`
+      - `+ instances.connector_node_num`
+
+### HuaweiCloud SDK LTS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateLogStream**
+    - 请求参数变更
+      - `+ log_stream_name_alias`
+      - `+ enterprise_project_name`
+
 # 3.1.82 2024-02-22
 
 ### HuaweiCloud SDK CES

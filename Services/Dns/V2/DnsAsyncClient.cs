@@ -476,32 +476,6 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
-        /// Record Set关联健康检查
-        ///
-        /// Record Set关联健康检查。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<AssociateHealthCheckResponse> AssociateHealthCheckAsync(AssociateHealthCheckRequest associateHealthCheckRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("recordset_id", associateHealthCheckRequest.RecordsetId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.1/recordsets/{recordset_id}/associatehealthcheck", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateHealthCheckRequest);
-            var response = await DoHttpRequestAsync("POST", request);
-            return JsonUtils.DeSerialize<AssociateHealthCheckResponse>(response);
-        }
-
-        public AsyncInvoker<AssociateHealthCheckResponse> AssociateHealthCheckAsyncInvoker(AssociateHealthCheckRequest associateHealthCheckRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("recordset_id", associateHealthCheckRequest.RecordsetId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.1/recordsets/{recordset_id}/associatehealthcheck", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateHealthCheckRequest);
-            return new AsyncInvoker<AssociateHealthCheckResponse>(this, "POST", request, JsonUtils.DeSerialize<AssociateHealthCheckResponse>);
-        }
-        
-        /// <summary>
         /// 批量删除某个Zone下的Record Set资源
         ///
         /// 批量删除某个Zone下的Record Set资源，当删除的资源不存在时，则默认删除成功。
@@ -687,32 +661,6 @@ namespace HuaweiCloud.SDK.Dns.V2
             var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/recordsets/{recordset_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRecordSetsRequest);
             return new AsyncInvoker<DeleteRecordSetsResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteRecordSetsResponse>);
-        }
-        
-        /// <summary>
-        /// Record Set解关联健康检查
-        ///
-        /// Record Set解关联健康检查。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<DisassociateHealthCheckResponse> DisassociateHealthCheckAsync(DisassociateHealthCheckRequest disassociateHealthCheckRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("recordset_id", disassociateHealthCheckRequest.RecordsetId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.1/recordsets/{recordset_id}/disassociatehealthcheck", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disassociateHealthCheckRequest);
-            var response = await DoHttpRequestAsync("DELETE", request);
-            return JsonUtils.DeSerialize<DisassociateHealthCheckResponse>(response);
-        }
-
-        public AsyncInvoker<DisassociateHealthCheckResponse> DisassociateHealthCheckAsyncInvoker(DisassociateHealthCheckRequest disassociateHealthCheckRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("recordset_id", disassociateHealthCheckRequest.RecordsetId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.1/recordsets/{recordset_id}/disassociatehealthcheck", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disassociateHealthCheckRequest);
-            return new AsyncInvoker<DisassociateHealthCheckResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DisassociateHealthCheckResponse>);
         }
         
         /// <summary>

@@ -46,6 +46,18 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         [JsonProperty("address_type", NullValueHandling = NullValueHandling.Ignore)]
         public int? AddressType { get; set; }
 
+        /// <summary>
+        /// 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id，可通过调用查询防火墙实例接口获得，注意type为0的为互联网边界防护对象id，type为1的为VPC边界防护对象id。具体可参考APIExlorer和帮助中心FAQ。
+        /// </summary>
+        [JsonProperty("object_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ObjectId { get; set; }
+
+        /// <summary>
+        /// 地址组类型，0表示自定义地址组，1表示预定义地址组
+        /// </summary>
+        [JsonProperty("address_set_type", NullValueHandling = NullValueHandling.Ignore)]
+        public int? AddressSetType { get; set; }
+
 
 
         /// <summary>
@@ -60,6 +72,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  addressType: ").Append(AddressType).Append("\n");
+            sb.Append("  objectId: ").Append(ObjectId).Append("\n");
+            sb.Append("  addressSetType: ").Append(AddressSetType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -105,6 +119,16 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.AddressType == input.AddressType ||
                     (this.AddressType != null &&
                     this.AddressType.Equals(input.AddressType))
+                ) && 
+                (
+                    this.ObjectId == input.ObjectId ||
+                    (this.ObjectId != null &&
+                    this.ObjectId.Equals(input.ObjectId))
+                ) && 
+                (
+                    this.AddressSetType == input.AddressSetType ||
+                    (this.AddressSetType != null &&
+                    this.AddressSetType.Equals(input.AddressSetType))
                 );
         }
 
@@ -126,6 +150,10 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.AddressType != null)
                     hashCode = hashCode * 59 + this.AddressType.GetHashCode();
+                if (this.ObjectId != null)
+                    hashCode = hashCode * 59 + this.ObjectId.GetHashCode();
+                if (this.AddressSetType != null)
+                    hashCode = hashCode * 59 + this.AddressSetType.GetHashCode();
                 return hashCode;
             }
         }

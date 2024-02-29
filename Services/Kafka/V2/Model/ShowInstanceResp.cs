@@ -713,6 +713,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public bool? ConnectorEnable { get; set; }
 
         /// <summary>
+        /// connector节点数量。
+        /// </summary>
+        [JsonProperty("connector_node_num", NullValueHandling = NullValueHandling.Ignore)]
+        public int? ConnectorNodeNum { get; set; }
+
+        /// <summary>
         /// 转储任务ID。
         /// </summary>
         [JsonProperty("connector_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -906,6 +912,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             sb.Append("  ipv6Enable: ").Append(Ipv6Enable).Append("\n");
             sb.Append("  ipv6ConnectAddresses: ").Append(Ipv6ConnectAddresses).Append("\n");
             sb.Append("  connectorEnable: ").Append(ConnectorEnable).Append("\n");
+            sb.Append("  connectorNodeNum: ").Append(ConnectorNodeNum).Append("\n");
             sb.Append("  connectorId: ").Append(ConnectorId).Append("\n");
             sb.Append("  restEnable: ").Append(RestEnable).Append("\n");
             sb.Append("  restConnectAddress: ").Append(RestConnectAddress).Append("\n");
@@ -1247,6 +1254,11 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     this.ConnectorEnable.Equals(input.ConnectorEnable))
                 ) && 
                 (
+                    this.ConnectorNodeNum == input.ConnectorNodeNum ||
+                    (this.ConnectorNodeNum != null &&
+                    this.ConnectorNodeNum.Equals(input.ConnectorNodeNum))
+                ) && 
+                (
                     this.ConnectorId == input.ConnectorId ||
                     (this.ConnectorId != null &&
                     this.ConnectorId.Equals(input.ConnectorId))
@@ -1480,6 +1492,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     hashCode = hashCode * 59 + this.Ipv6ConnectAddresses.GetHashCode();
                 if (this.ConnectorEnable != null)
                     hashCode = hashCode * 59 + this.ConnectorEnable.GetHashCode();
+                if (this.ConnectorNodeNum != null)
+                    hashCode = hashCode * 59 + this.ConnectorNodeNum.GetHashCode();
                 if (this.ConnectorId != null)
                     hashCode = hashCode * 59 + this.ConnectorId.GetHashCode();
                 if (this.RestEnable != null)

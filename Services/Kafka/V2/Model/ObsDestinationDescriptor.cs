@@ -239,6 +239,139 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             }
         }
 
+        /// <summary>
+        ///  将转储文件的生成时间使用“yyyy/MM/dd/HH/mm”格式生成分区字符串，用来定义写到OBS的Object文件所在的目录层次结构。      - yyyy：年      - yyyy/MM：年/月      - yyyy/MM/dd：年/月/日      - yyyy/MM/dd/HH：年/月/日/时      - yyyy/MM/dd/HH/mm：年/月/日/时/分，例如：2017/11/10/14/49，目录结构就是“2017 &gt; 11 &gt; 10 &gt; 14 &gt; 49”，“2017”表示最外层文件夹。  &gt; 数据转储成功后，存储的目录结构为“obs_bucket_path/file_prefix/partition_format”。默认时间是GMT+8 时间 
+        /// </summary>
+        /// <value> 将转储文件的生成时间使用“yyyy/MM/dd/HH/mm”格式生成分区字符串，用来定义写到OBS的Object文件所在的目录层次结构。      - yyyy：年      - yyyy/MM：年/月      - yyyy/MM/dd：年/月/日      - yyyy/MM/dd/HH：年/月/日/时      - yyyy/MM/dd/HH/mm：年/月/日/时/分，例如：2017/11/10/14/49，目录结构就是“2017 &gt; 11 &gt; 10 &gt; 14 &gt; 49”，“2017”表示最外层文件夹。  &gt; 数据转储成功后，存储的目录结构为“obs_bucket_path/file_prefix/partition_format”。默认时间是GMT+8 时间 </value>
+        [JsonConverter(typeof(EnumClassConverter<PartitionFormatEnum>))]
+        public class PartitionFormatEnum
+        {
+            /// <summary>
+            /// Enum YYYY for value: yyyy
+            /// </summary>
+            public static readonly PartitionFormatEnum YYYY = new PartitionFormatEnum("yyyy");
+
+            /// <summary>
+            /// Enum YYYY_MM for value: yyyy/MM
+            /// </summary>
+            public static readonly PartitionFormatEnum YYYY_MM = new PartitionFormatEnum("yyyy/MM");
+
+            /// <summary>
+            /// Enum YYYY_MM_DD for value: yyyy/MM/dd
+            /// </summary>
+            public static readonly PartitionFormatEnum YYYY_MM_DD = new PartitionFormatEnum("yyyy/MM/dd");
+
+            /// <summary>
+            /// Enum YYYY_MM_DD_HH for value: yyyy/MM/dd/HH
+            /// </summary>
+            public static readonly PartitionFormatEnum YYYY_MM_DD_HH = new PartitionFormatEnum("yyyy/MM/dd/HH");
+
+            /// <summary>
+            /// Enum YYYY_MM_DD_HH_MM for value: yyyy/MM/dd/HH/mm
+            /// </summary>
+            public static readonly PartitionFormatEnum YYYY_MM_DD_HH_MM = new PartitionFormatEnum("yyyy/MM/dd/HH/mm");
+
+            private static readonly Dictionary<string, PartitionFormatEnum> StaticFields =
+            new Dictionary<string, PartitionFormatEnum>()
+            {
+                { "yyyy", YYYY },
+                { "yyyy/MM", YYYY_MM },
+                { "yyyy/MM/dd", YYYY_MM_DD },
+                { "yyyy/MM/dd/HH", YYYY_MM_DD_HH },
+                { "yyyy/MM/dd/HH/mm", YYYY_MM_DD_HH_MM },
+            };
+
+            private string _value;
+
+            public PartitionFormatEnum()
+            {
+
+            }
+
+            public PartitionFormatEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static PartitionFormatEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as PartitionFormatEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(PartitionFormatEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(PartitionFormatEnum a, PartitionFormatEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(PartitionFormatEnum a, PartitionFormatEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 转存的topic列表名称，支持输入多个topic，以逗号“,”分隔。同时支持正则表达式。
@@ -287,11 +420,10 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string ObsPath { get; set; }
 
         /// <summary>
-        ///  将转储文件的生成时间使用“yyyy/MM/dd/HH/mm”格式生成分区字符串，用来定义写到OBS的Object文件所在的目录层次结构。    - N/A：置空，不使用日期时间目录。      - yyyy：年      - yyyy/MM：年/月      - yyyy/MM/dd：年/月/日      - yyyy/MM/dd/HH：年/月/日/时      - yyyy/MM/dd/HH/mm：年/月/日/时/分，例如：2017/11/10/14/49，目录结构就是“2017 &gt; 11 &gt; 10 &gt; 14 &gt; 49”，“2017”表示最外层文件夹。  默认值：空  &gt; 数据转储成功后，存储的目录结构为“obs_bucket_path/file_prefix/partition_format”。默认时间是GMT+8 时间 
+        ///  将转储文件的生成时间使用“yyyy/MM/dd/HH/mm”格式生成分区字符串，用来定义写到OBS的Object文件所在的目录层次结构。      - yyyy：年      - yyyy/MM：年/月      - yyyy/MM/dd：年/月/日      - yyyy/MM/dd/HH：年/月/日/时      - yyyy/MM/dd/HH/mm：年/月/日/时/分，例如：2017/11/10/14/49，目录结构就是“2017 &gt; 11 &gt; 10 &gt; 14 &gt; 49”，“2017”表示最外层文件夹。  &gt; 数据转储成功后，存储的目录结构为“obs_bucket_path/file_prefix/partition_format”。默认时间是GMT+8 时间 
         /// </summary>
         [JsonProperty("partition_format", NullValueHandling = NullValueHandling.Ignore)]
-        public string PartitionFormat { get; set; }
-
+        public PartitionFormatEnum PartitionFormat { get; set; }
         /// <summary>
         ///  转储文件的记录分隔符，用于分隔写入转储文件的用户数据。  取值范围：   - 逗号“,”   - 分号“;”   - 竖线“|”   - 换行符“\\n”   - NULL  默认值：换行符“\\n”。 
         /// </summary>

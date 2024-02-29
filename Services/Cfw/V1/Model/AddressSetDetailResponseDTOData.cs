@@ -150,6 +150,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string Description { get; set; }
 
         /// <summary>
+        /// 地址组类型，0表示自定义地址组，1表示预定义地址组
+        /// </summary>
+        [JsonProperty("address_set_type", NullValueHandling = NullValueHandling.Ignore)]
+        public int? AddressSetType { get; set; }
+
+        /// <summary>
         /// 地址类型0 ipv4,1 ipv6
         /// </summary>
         [JsonProperty("address_type", NullValueHandling = NullValueHandling.Ignore)]
@@ -166,6 +172,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
+            sb.Append("  addressSetType: ").Append(AddressSetType).Append("\n");
             sb.Append("  addressType: ").Append(AddressType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -204,6 +211,11 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.Description.Equals(input.Description))
                 ) && 
                 (
+                    this.AddressSetType == input.AddressSetType ||
+                    (this.AddressSetType != null &&
+                    this.AddressSetType.Equals(input.AddressSetType))
+                ) && 
+                (
                     this.AddressType == input.AddressType ||
                     (this.AddressType != null &&
                     this.AddressType.Equals(input.AddressType))
@@ -224,6 +236,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Description != null)
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.AddressSetType != null)
+                    hashCode = hashCode * 59 + this.AddressSetType.GetHashCode();
                 if (this.AddressType != null)
                     hashCode = hashCode * 59 + this.AddressType.GetHashCode();
                 return hashCode;

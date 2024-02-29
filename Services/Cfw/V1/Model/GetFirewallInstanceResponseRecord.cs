@@ -257,6 +257,18 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public bool? IsOldFirewallInstance { get; set; }
 
         /// <summary>
+        /// 是否支持obs
+        /// </summary>
+        [JsonProperty("is_available_obs", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsAvailableObs { get; set; }
+
+        /// <summary>
+        /// 是否支持威胁标签
+        /// </summary>
+        [JsonProperty("is_support_threat_tags", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsSupportThreatTags { get; set; }
+
+        /// <summary>
         /// 是否支持ipv6，true表示是，false表示不是
         /// </summary>
         [JsonProperty("support_ipv6", NullValueHandling = NullValueHandling.Ignore)]
@@ -317,6 +329,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  protectObjects: ").Append(ProtectObjects).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  isOldFirewallInstance: ").Append(IsOldFirewallInstance).Append("\n");
+            sb.Append("  isAvailableObs: ").Append(IsAvailableObs).Append("\n");
+            sb.Append("  isSupportThreatTags: ").Append(IsSupportThreatTags).Append("\n");
             sb.Append("  supportIpv6: ").Append(SupportIpv6).Append("\n");
             sb.Append("  featureToggle: ").Append(FeatureToggle).Append("\n");
             sb.Append("  resources: ").Append(Resources).Append("\n");
@@ -397,6 +411,16 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.IsOldFirewallInstance.Equals(input.IsOldFirewallInstance))
                 ) && 
                 (
+                    this.IsAvailableObs == input.IsAvailableObs ||
+                    (this.IsAvailableObs != null &&
+                    this.IsAvailableObs.Equals(input.IsAvailableObs))
+                ) && 
+                (
+                    this.IsSupportThreatTags == input.IsSupportThreatTags ||
+                    (this.IsSupportThreatTags != null &&
+                    this.IsSupportThreatTags.Equals(input.IsSupportThreatTags))
+                ) && 
+                (
                     this.SupportIpv6 == input.SupportIpv6 ||
                     (this.SupportIpv6 != null &&
                     this.SupportIpv6.Equals(input.SupportIpv6))
@@ -463,6 +487,10 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.IsOldFirewallInstance != null)
                     hashCode = hashCode * 59 + this.IsOldFirewallInstance.GetHashCode();
+                if (this.IsAvailableObs != null)
+                    hashCode = hashCode * 59 + this.IsAvailableObs.GetHashCode();
+                if (this.IsSupportThreatTags != null)
+                    hashCode = hashCode * 59 + this.IsSupportThreatTags.GetHashCode();
                 if (this.SupportIpv6 != null)
                     hashCode = hashCode * 59 + this.SupportIpv6.GetHashCode();
                 if (this.FeatureToggle != null)

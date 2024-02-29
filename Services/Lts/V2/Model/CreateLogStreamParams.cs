@@ -34,6 +34,18 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<TagsBody> Tags { get; set; }
 
+        /// <summary>
+        /// 日志流名称别名
+        /// </summary>
+        [JsonProperty("log_stream_name_alias", NullValueHandling = NullValueHandling.Ignore)]
+        public string LogStreamNameAlias { get; set; }
+
+        /// <summary>
+        /// 企业项目名称 &gt;只能由中文、英文字母、数字、下划线、中划线组成，且不能使用任何大小写形式的“default”； 描述不超过512个字符。
+        /// </summary>
+        [JsonProperty("enterprise_project_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string EnterpriseProjectName { get; set; }
+
 
 
         /// <summary>
@@ -46,6 +58,8 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             sb.Append("  logStreamName: ").Append(LogStreamName).Append("\n");
             sb.Append("  ttlInDays: ").Append(TtlInDays).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
+            sb.Append("  logStreamNameAlias: ").Append(LogStreamNameAlias).Append("\n");
+            sb.Append("  enterpriseProjectName: ").Append(EnterpriseProjectName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -82,6 +96,16 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                     this.Tags != null &&
                     input.Tags != null &&
                     this.Tags.SequenceEqual(input.Tags)
+                ) && 
+                (
+                    this.LogStreamNameAlias == input.LogStreamNameAlias ||
+                    (this.LogStreamNameAlias != null &&
+                    this.LogStreamNameAlias.Equals(input.LogStreamNameAlias))
+                ) && 
+                (
+                    this.EnterpriseProjectName == input.EnterpriseProjectName ||
+                    (this.EnterpriseProjectName != null &&
+                    this.EnterpriseProjectName.Equals(input.EnterpriseProjectName))
                 );
         }
 
@@ -99,6 +123,10 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                     hashCode = hashCode * 59 + this.TtlInDays.GetHashCode();
                 if (this.Tags != null)
                     hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.LogStreamNameAlias != null)
+                    hashCode = hashCode * 59 + this.LogStreamNameAlias.GetHashCode();
+                if (this.EnterpriseProjectName != null)
+                    hashCode = hashCode * 59 + this.EnterpriseProjectName.GetHashCode();
                 return hashCode;
             }
         }

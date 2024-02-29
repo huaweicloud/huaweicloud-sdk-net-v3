@@ -28,6 +28,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         [JsonProperty("fail_eip_id_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> FailEipIdList { get; set; }
 
+        /// <summary>
+        /// ID
+        /// </summary>
+        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +45,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("class EIPSwitchStatusVO {\n");
             sb.Append("  objectId: ").Append(ObjectId).Append("\n");
             sb.Append("  failEipIdList: ").Append(FailEipIdList).Append("\n");
+            sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -70,6 +77,11 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.FailEipIdList != null &&
                     input.FailEipIdList != null &&
                     this.FailEipIdList.SequenceEqual(input.FailEipIdList)
+                ) && 
+                (
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
                 );
         }
 
@@ -85,6 +97,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.ObjectId.GetHashCode();
                 if (this.FailEipIdList != null)
                     hashCode = hashCode * 59 + this.FailEipIdList.GetHashCode();
+                if (this.Id != null)
+                    hashCode = hashCode * 59 + this.Id.GetHashCode();
                 return hashCode;
             }
         }
