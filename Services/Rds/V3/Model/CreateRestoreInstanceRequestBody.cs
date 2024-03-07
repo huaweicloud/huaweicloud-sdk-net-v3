@@ -83,7 +83,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         public Volume Volume { get; set; }
 
         /// <summary>
-        /// 区域ID。创建主实例时必选，其它场景不可选。 取值参见[地区和终端节点](https://developer.huaweicloud.com/endpoint)。
+        /// 区域ID。创建主实例时必选，其它场景不可选。 取值参见[地区和终端节点](https://developer.huaweicloud.com/endpoint)。 SQL Server数据库和PostgreSQL数据库备份恢复到新实例时为必填项。
         /// </summary>
         [JsonProperty("region", NullValueHandling = NullValueHandling.Ignore)]
         public string Region { get; set; }
@@ -95,13 +95,13 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         public string AvailabilityZone { get; set; }
 
         /// <summary>
-        /// 虚拟私有云ID。创建只读实例时不可选（只读实例的网络属性默认和主实例相同），其它场景必选。 获取方法如下： - 方法1：登录虚拟私有云服务的控制台界面，在虚拟私有云的详情页面查找VPC ID。 - 方法2：通过虚拟私有云服务的API接口查询，具体操作可参考[查询VPC列表](https://support.huaweicloud.com/api-vpc/vpc_api01_0003.html)。
+        /// 虚拟私有云ID。创建只读实例时不可选（只读实例的网络属性默认和主实例相同），其它场景必选。 获取方法如下： - 方法1：登录虚拟私有云服务的控制台界面，在虚拟私有云的详情页面查找VPC ID。 - 方法2：通过虚拟私有云服务的API接口查询，具体操作可参考[查询VPC列表](https://support.huaweicloud.com/api-vpc/vpc_api01_0003.html)。 SQL Server数据库和PostgreSQL数据库备份恢复到新实例时为必填项。
         /// </summary>
         [JsonProperty("vpc_id", NullValueHandling = NullValueHandling.Ignore)]
         public string VpcId { get; set; }
 
         /// <summary>
-        /// 子网的网络ID信息。创建只读实例时不可选（只读实例的网络属性默认和主实例相同），其它场景必选。 获取方法如下： - 方法1：登录虚拟私有云服务的控制台界面，单击VPC下的子网，进入子网详情页面，查找网络ID。 - 方法2：通过虚拟私有云服务的API接口查询，具体操作可参考[查询子网列表](https://support.huaweicloud.com/api-vpc/vpc_subnet01_0003.html)。
+        /// 子网的网络ID信息。创建只读实例时不可选（只读实例的网络属性默认和主实例相同），其它场景必选。 获取方法如下： - 方法1：登录虚拟私有云服务的控制台界面，单击VPC下的子网，进入子网详情页面，查找网络ID。 - 方法2：通过虚拟私有云服务的API接口查询，具体操作可参考[查询子网列表](https://support.huaweicloud.com/api-vpc/vpc_subnet01_0003.html)。 SQL Server数据库和PostgreSQL数据库备份恢复到新实例时为必填项。
         /// </summary>
         [JsonProperty("subnet_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SubnetId { get; set; }
@@ -113,7 +113,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         public string DataVip { get; set; }
 
         /// <summary>
-        /// 安全组ID。创建只读实例时不可选（只读实例的网络属性默认和主实例相同），其它场景必选。 获取方法如下： - 方法1：登录虚拟私有云服务的控制台界面，在安全组的详情页面查找安全组ID。 - 方法2：通过虚拟私有云服务的API接口查询，具体操作可参考[查询安全组列表](https://support.huaweicloud.com/api-vpc/vpc_sg01_0003.html)。
+        /// 安全组ID。创建只读实例时不可选（只读实例的网络属性默认和主实例相同），其它场景必选。 获取方法如下： - 方法1：登录虚拟私有云服务的控制台界面，在安全组的详情页面查找安全组ID。 - 方法2：通过虚拟私有云服务的API接口查询，具体操作可参考[查询安全组列表](https://support.huaweicloud.com/api-vpc/vpc_sg01_0003.html)。 SQL Server数据库和PostgreSQL数据库备份恢复到新实例时为必填项。
         /// </summary>
         [JsonProperty("security_group_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SecurityGroupId { get; set; }
@@ -137,12 +137,6 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         public string DsspoolId { get; set; }
 
         /// <summary>
-        /// 只读实例的主实例ID。创建只读实例时必选，其它场景不可选。
-        /// </summary>
-        [JsonProperty("replica_of_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string ReplicaOfId { get; set; }
-
-        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("restore_point", NullValueHandling = NullValueHandling.Ignore)]
@@ -159,12 +153,6 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<TagWithKeyValue> Tags { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("unchangeable_param", NullValueHandling = NullValueHandling.Ignore)]
-        public UnchangeableParam UnchangeableParam { get; set; }
 
         /// <summary>
         /// 
@@ -207,11 +195,9 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             sb.Append("  chargeInfo: ").Append(ChargeInfo).Append("\n");
             sb.Append("  timeZone: ").Append(TimeZone).Append("\n");
             sb.Append("  dsspoolId: ").Append(DsspoolId).Append("\n");
-            sb.Append("  replicaOfId: ").Append(ReplicaOfId).Append("\n");
             sb.Append("  restorePoint: ").Append(RestorePoint).Append("\n");
             sb.Append("  collation: ").Append(Collation).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
-            sb.Append("  unchangeableParam: ").Append(UnchangeableParam).Append("\n");
             sb.Append("  serverlessInfo: ").Append(ServerlessInfo).Append("\n");
             sb.Append("  dryRun: ").Append(DryRun).Append("\n");
             sb.Append("}\n");
@@ -336,11 +322,6 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
                     this.DsspoolId.Equals(input.DsspoolId))
                 ) && 
                 (
-                    this.ReplicaOfId == input.ReplicaOfId ||
-                    (this.ReplicaOfId != null &&
-                    this.ReplicaOfId.Equals(input.ReplicaOfId))
-                ) && 
-                (
                     this.RestorePoint == input.RestorePoint ||
                     (this.RestorePoint != null &&
                     this.RestorePoint.Equals(input.RestorePoint))
@@ -355,11 +336,6 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
                     this.Tags != null &&
                     input.Tags != null &&
                     this.Tags.SequenceEqual(input.Tags)
-                ) && 
-                (
-                    this.UnchangeableParam == input.UnchangeableParam ||
-                    (this.UnchangeableParam != null &&
-                    this.UnchangeableParam.Equals(input.UnchangeableParam))
                 ) && 
                 (
                     this.ServerlessInfo == input.ServerlessInfo ||
@@ -421,16 +397,12 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
                     hashCode = hashCode * 59 + this.TimeZone.GetHashCode();
                 if (this.DsspoolId != null)
                     hashCode = hashCode * 59 + this.DsspoolId.GetHashCode();
-                if (this.ReplicaOfId != null)
-                    hashCode = hashCode * 59 + this.ReplicaOfId.GetHashCode();
                 if (this.RestorePoint != null)
                     hashCode = hashCode * 59 + this.RestorePoint.GetHashCode();
                 if (this.Collation != null)
                     hashCode = hashCode * 59 + this.Collation.GetHashCode();
                 if (this.Tags != null)
                     hashCode = hashCode * 59 + this.Tags.GetHashCode();
-                if (this.UnchangeableParam != null)
-                    hashCode = hashCode * 59 + this.UnchangeableParam.GetHashCode();
                 if (this.ServerlessInfo != null)
                     hashCode = hashCode * 59 + this.ServerlessInfo.GetHashCode();
                 if (this.DryRun != null)

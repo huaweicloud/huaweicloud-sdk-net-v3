@@ -8,19 +8,19 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Kafka.V2.Model
+namespace HuaweiCloud.SDK.Rds.V3.Model
 {
     /// <summary>
     /// Response Object
     /// </summary>
-    public class CreateDeleteConnectorOrderResponse : SdkResponse
+    public class CreateSqlLimitResponse : SdkResponse
     {
 
         /// <summary>
-        /// 返回cbc生成的订单id。
+        /// 调用正常时，返回“successful”。
         /// </summary>
-        [JsonProperty("order_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string OrderId { get; set; }
+        [JsonProperty("resp", NullValueHandling = NullValueHandling.Ignore)]
+        public string Resp { get; set; }
 
 
 
@@ -30,8 +30,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class CreateDeleteConnectorOrderResponse {\n");
-            sb.Append("  orderId: ").Append(OrderId).Append("\n");
+            sb.Append("class CreateSqlLimitResponse {\n");
+            sb.Append("  resp: ").Append(Resp).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -41,22 +41,22 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CreateDeleteConnectorOrderResponse);
+            return this.Equals(input as CreateSqlLimitResponse);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(CreateDeleteConnectorOrderResponse input)
+        public bool Equals(CreateSqlLimitResponse input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.OrderId == input.OrderId ||
-                    (this.OrderId != null &&
-                    this.OrderId.Equals(input.OrderId))
+                    this.Resp == input.Resp ||
+                    (this.Resp != null &&
+                    this.Resp.Equals(input.Resp))
                 );
         }
 
@@ -68,8 +68,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.OrderId != null)
-                    hashCode = hashCode * 59 + this.OrderId.GetHashCode();
+                if (this.Resp != null)
+                    hashCode = hashCode * 59 + this.Resp.GetHashCode();
                 return hashCode;
             }
         }

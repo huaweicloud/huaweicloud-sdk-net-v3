@@ -948,6 +948,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         [JsonProperty("retention_policy", NullValueHandling = NullValueHandling.Ignore)]
         public RetentionPolicyEnum RetentionPolicy { get; set; }
         /// <summary>
+        /// 是否开启ipv6。仅在虚拟私有云支持ipv6时生效。
+        /// </summary>
+        [JsonProperty("ipv6_enable", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? Ipv6Enable { get; set; }
+
+        /// <summary>
         /// 是否开启磁盘加密。
         /// </summary>
         [JsonProperty("disk_encrypted_enable", NullValueHandling = NullValueHandling.Ignore)]
@@ -1023,6 +1029,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             sb.Append("  kafkaSecurityProtocol: ").Append(KafkaSecurityProtocol).Append("\n");
             sb.Append("  saslEnabledMechanisms: ").Append(SaslEnabledMechanisms).Append("\n");
             sb.Append("  retentionPolicy: ").Append(RetentionPolicy).Append("\n");
+            sb.Append("  ipv6Enable: ").Append(Ipv6Enable).Append("\n");
             sb.Append("  diskEncryptedEnable: ").Append(DiskEncryptedEnable).Append("\n");
             sb.Append("  diskEncryptedKey: ").Append(DiskEncryptedKey).Append("\n");
             sb.Append("  connectorEnable: ").Append(ConnectorEnable).Append("\n");
@@ -1184,6 +1191,11 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     this.RetentionPolicy.Equals(input.RetentionPolicy))
                 ) && 
                 (
+                    this.Ipv6Enable == input.Ipv6Enable ||
+                    (this.Ipv6Enable != null &&
+                    this.Ipv6Enable.Equals(input.Ipv6Enable))
+                ) && 
+                (
                     this.DiskEncryptedEnable == input.DiskEncryptedEnable ||
                     (this.DiskEncryptedEnable != null &&
                     this.DiskEncryptedEnable.Equals(input.DiskEncryptedEnable))
@@ -1281,6 +1293,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     hashCode = hashCode * 59 + this.SaslEnabledMechanisms.GetHashCode();
                 if (this.RetentionPolicy != null)
                     hashCode = hashCode * 59 + this.RetentionPolicy.GetHashCode();
+                if (this.Ipv6Enable != null)
+                    hashCode = hashCode * 59 + this.Ipv6Enable.GetHashCode();
                 if (this.DiskEncryptedEnable != null)
                     hashCode = hashCode * 59 + this.DiskEncryptedEnable.GetHashCode();
                 if (this.DiskEncryptedKey != null)

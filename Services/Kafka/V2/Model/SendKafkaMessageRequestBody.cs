@@ -32,7 +32,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// topic的分区信息等
         /// </summary>
         [JsonProperty("property_list", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Object> PropertyList { get; set; }
+        public List<SendKafkaMessageRequestBodyPropertyList> PropertyList { get; set; }
 
 
 

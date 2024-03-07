@@ -174,32 +174,6 @@ namespace HuaweiCloud.SDK.Kafka.V2
         }
         
         /// <summary>
-        /// 创建关闭实例转储节点的订单
-        ///
-        /// 创建删除实例转储节点的订单。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<CreateDeleteConnectorOrderResponse> CreateDeleteConnectorOrderAsync(CreateDeleteConnectorOrderRequest createDeleteConnectorOrderRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createDeleteConnectorOrderRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/delete-connector-order", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDeleteConnectorOrderRequest);
-            var response = await DoHttpRequestAsync("POST", request);
-            return JsonUtils.DeSerialize<CreateDeleteConnectorOrderResponse>(response);
-        }
-
-        public AsyncInvoker<CreateDeleteConnectorOrderResponse> CreateDeleteConnectorOrderAsyncInvoker(CreateDeleteConnectorOrderRequest createDeleteConnectorOrderRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createDeleteConnectorOrderRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/delete-connector-order", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDeleteConnectorOrderRequest);
-            return new AsyncInvoker<CreateDeleteConnectorOrderResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateDeleteConnectorOrderResponse>);
-        }
-        
-        /// <summary>
         /// 创建实例
         ///
         /// 创建实例。
@@ -382,32 +356,6 @@ namespace HuaweiCloud.SDK.Kafka.V2
         }
         
         /// <summary>
-        /// 创建转储任务
-        ///
-        /// 创建转储任务。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<CreateSinkTaskResponse> CreateSinkTaskAsync(CreateSinkTaskRequest createSinkTaskRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("connector_id", createSinkTaskRequest.ConnectorId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/connectors/{connector_id}/sink-tasks", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createSinkTaskRequest);
-            var response = await DoHttpRequestAsync("POST", request);
-            return JsonUtils.DeSerialize<CreateSinkTaskResponse>(response);
-        }
-
-        public AsyncInvoker<CreateSinkTaskResponse> CreateSinkTaskAsyncInvoker(CreateSinkTaskRequest createSinkTaskRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("connector_id", createSinkTaskRequest.ConnectorId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/connectors/{connector_id}/sink-tasks", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createSinkTaskRequest);
-            return new AsyncInvoker<CreateSinkTaskResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateSinkTaskResponse>);
-        }
-        
-        /// <summary>
         /// 删除后台任务管理中的指定记录
         ///
         /// 删除后台任务管理中的指定记录。
@@ -485,34 +433,6 @@ namespace HuaweiCloud.SDK.Kafka.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/kafka-user-client-quota", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteKafkaUserClientQuotaTaskRequest);
             return new AsyncInvoker<DeleteKafkaUserClientQuotaTaskResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteKafkaUserClientQuotaTaskResponse>);
-        }
-        
-        /// <summary>
-        /// 删除单个转储任务
-        ///
-        /// 删除单个转储任务。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<DeleteSinkTaskResponse> DeleteSinkTaskAsync(DeleteSinkTaskRequest deleteSinkTaskRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("connector_id", deleteSinkTaskRequest.ConnectorId.ToString());
-            urlParam.Add("task_id", deleteSinkTaskRequest.TaskId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/connectors/{connector_id}/sink-tasks/{task_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSinkTaskRequest);
-            var response = await DoHttpRequestAsync("DELETE", request);
-            return JsonUtils.DeSerializeNull<DeleteSinkTaskResponse>(response);
-        }
-
-        public AsyncInvoker<DeleteSinkTaskResponse> DeleteSinkTaskAsyncInvoker(DeleteSinkTaskRequest deleteSinkTaskRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("connector_id", deleteSinkTaskRequest.ConnectorId.ToString());
-            urlParam.Add("task_id", deleteSinkTaskRequest.TaskId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/connectors/{connector_id}/sink-tasks/{task_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSinkTaskRequest);
-            return new AsyncInvoker<DeleteSinkTaskResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteSinkTaskResponse>);
         }
         
         /// <summary>
@@ -695,32 +615,6 @@ namespace HuaweiCloud.SDK.Kafka.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/products", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProductsRequest);
             return new AsyncInvoker<ListProductsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListProductsResponse>);
-        }
-        
-        /// <summary>
-        /// 查询转储任务列表
-        ///
-        /// 查询转储任务列表。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<ListSinkTasksResponse> ListSinkTasksAsync(ListSinkTasksRequest listSinkTasksRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("connector_id", listSinkTasksRequest.ConnectorId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/connectors/{connector_id}/sink-tasks", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSinkTasksRequest);
-            var response = await DoHttpRequestAsync("GET", request);
-            return JsonUtils.DeSerialize<ListSinkTasksResponse>(response);
-        }
-
-        public AsyncInvoker<ListSinkTasksResponse> ListSinkTasksAsyncInvoker(ListSinkTasksRequest listSinkTasksRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("connector_id", listSinkTasksRequest.ConnectorId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/connectors/{connector_id}/sink-tasks", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSinkTasksRequest);
-            return new AsyncInvoker<ListSinkTasksResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSinkTasksResponse>);
         }
         
         /// <summary>
@@ -1616,34 +1510,6 @@ namespace HuaweiCloud.SDK.Kafka.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/management/topics/{topic}/partitions/{partition}/message", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPartitionMessageRequest);
             return new AsyncInvoker<ShowPartitionMessageResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPartitionMessageResponse>);
-        }
-        
-        /// <summary>
-        /// 查询单个转储任务
-        ///
-        /// 查询单个转储任务。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<ShowSinkTaskDetailResponse> ShowSinkTaskDetailAsync(ShowSinkTaskDetailRequest showSinkTaskDetailRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("connector_id", showSinkTaskDetailRequest.ConnectorId.ToString());
-            urlParam.Add("task_id", showSinkTaskDetailRequest.TaskId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/connectors/{connector_id}/sink-tasks/{task_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSinkTaskDetailRequest);
-            var response = await DoHttpRequestAsync("GET", request);
-            return JsonUtils.DeSerialize<ShowSinkTaskDetailResponse>(response);
-        }
-
-        public AsyncInvoker<ShowSinkTaskDetailResponse> ShowSinkTaskDetailAsyncInvoker(ShowSinkTaskDetailRequest showSinkTaskDetailRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("connector_id", showSinkTaskDetailRequest.ConnectorId.ToString());
-            urlParam.Add("task_id", showSinkTaskDetailRequest.TaskId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/connectors/{connector_id}/sink-tasks/{task_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSinkTaskDetailRequest);
-            return new AsyncInvoker<ShowSinkTaskDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSinkTaskDetailResponse>);
         }
         
         /// <summary>

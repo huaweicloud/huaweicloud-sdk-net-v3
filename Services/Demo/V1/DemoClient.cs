@@ -344,5 +344,28 @@ namespace HuaweiCloud.SDK.Demo.V1
             return new SyncInvoker<UploadMultipartResponse>(this, "POST", request, JsonUtils.DeSerialize<UploadMultipartResponse>);
         }
         
+        /// <summary>
+        /// Update Something
+        ///
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateWithUrlEncodedResponse UpdateWithUrlEncoded(UpdateWithUrlEncodedRequest updateWithUrlEncodedRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/x-www-form-urlencoded", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/x-www-form-urlencoded", updateWithUrlEncodedRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateWithUrlEncodedResponse>(response);
+        }
+
+        public SyncInvoker<UpdateWithUrlEncodedResponse> UpdateWithUrlEncodedInvoker(UpdateWithUrlEncodedRequest updateWithUrlEncodedRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/x-www-form-urlencoded", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/x-www-form-urlencoded", updateWithUrlEncodedRequest);
+            return new SyncInvoker<UpdateWithUrlEncodedResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateWithUrlEncodedResponse>);
+        }
+        
     }
 }

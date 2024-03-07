@@ -8,19 +8,19 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Kafka.V2.Model
+namespace HuaweiCloud.SDK.Rds.V3.Model
 {
     /// <summary>
     /// Response Object
     /// </summary>
-    public class CreateSinkTaskResponse : SdkResponse
+    public class UpdateSqlLimitResponse : SdkResponse
     {
 
         /// <summary>
-        /// 任务ID。 
+        /// 调用正常时，返回“successful”。
         /// </summary>
-        [JsonProperty("task_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string TaskId { get; set; }
+        [JsonProperty("resp", NullValueHandling = NullValueHandling.Ignore)]
+        public string Resp { get; set; }
 
 
 
@@ -30,8 +30,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class CreateSinkTaskResponse {\n");
-            sb.Append("  taskId: ").Append(TaskId).Append("\n");
+            sb.Append("class UpdateSqlLimitResponse {\n");
+            sb.Append("  resp: ").Append(Resp).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -41,22 +41,22 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CreateSinkTaskResponse);
+            return this.Equals(input as UpdateSqlLimitResponse);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(CreateSinkTaskResponse input)
+        public bool Equals(UpdateSqlLimitResponse input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.TaskId == input.TaskId ||
-                    (this.TaskId != null &&
-                    this.TaskId.Equals(input.TaskId))
+                    this.Resp == input.Resp ||
+                    (this.Resp != null &&
+                    this.Resp.Equals(input.Resp))
                 );
         }
 
@@ -68,8 +68,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.TaskId != null)
-                    hashCode = hashCode * 59 + this.TaskId.GetHashCode();
+                if (this.Resp != null)
+                    hashCode = hashCode * 59 + this.Resp.GetHashCode();
                 return hashCode;
             }
         }

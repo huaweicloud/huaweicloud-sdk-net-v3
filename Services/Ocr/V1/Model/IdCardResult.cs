@@ -83,6 +83,18 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public Object TextLocation { get; set; }
 
         /// <summary>
+        /// 身份证头像图片信息的base64码结果。  &gt; 说明： - 仅在输入参数return_portrait_image为true时，返回该字段。 - 当输入为身份证背面时返回为空字符串。 
+        /// </summary>
+        [JsonProperty("portrait_image", NullValueHandling = NullValueHandling.Ignore)]
+        public string PortraitImage { get; set; }
+
+        /// <summary>
+        /// 身份证卡面图片信息的base64码结果。  &gt; 说明： - 仅在输入参数return_adjusted_image为true时，返回该字段。 
+        /// </summary>
+        [JsonProperty("adjusted_image", NullValueHandling = NullValueHandling.Ignore)]
+        public string AdjustedImage { get; set; }
+
+        /// <summary>
         /// 身份证头像位置信息的结果。 仅在输入参数return_portrait_location为true时，返回该字段，当输入身份证背面时返回为空列表。 
         /// </summary>
         [JsonProperty("portrait_location", NullValueHandling = NullValueHandling.Ignore)]
@@ -174,6 +186,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  validTo: ").Append(ValidTo).Append("\n");
             sb.Append("  verificationResult: ").Append(VerificationResult).Append("\n");
             sb.Append("  textLocation: ").Append(TextLocation).Append("\n");
+            sb.Append("  portraitImage: ").Append(PortraitImage).Append("\n");
+            sb.Append("  adjustedImage: ").Append(AdjustedImage).Append("\n");
             sb.Append("  portraitLocation: ").Append(PortraitLocation).Append("\n");
             sb.Append("  detectReproduceResult: ").Append(DetectReproduceResult).Append("\n");
             sb.Append("  detectCopyResult: ").Append(DetectCopyResult).Append("\n");
@@ -261,6 +275,16 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     this.TextLocation == input.TextLocation ||
                     (this.TextLocation != null &&
                     this.TextLocation.Equals(input.TextLocation))
+                ) && 
+                (
+                    this.PortraitImage == input.PortraitImage ||
+                    (this.PortraitImage != null &&
+                    this.PortraitImage.Equals(input.PortraitImage))
+                ) && 
+                (
+                    this.AdjustedImage == input.AdjustedImage ||
+                    (this.AdjustedImage != null &&
+                    this.AdjustedImage.Equals(input.AdjustedImage))
                 ) && 
                 (
                     this.PortraitLocation == input.PortraitLocation ||
@@ -355,6 +379,10 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     hashCode = hashCode * 59 + this.VerificationResult.GetHashCode();
                 if (this.TextLocation != null)
                     hashCode = hashCode * 59 + this.TextLocation.GetHashCode();
+                if (this.PortraitImage != null)
+                    hashCode = hashCode * 59 + this.PortraitImage.GetHashCode();
+                if (this.AdjustedImage != null)
+                    hashCode = hashCode * 59 + this.AdjustedImage.GetHashCode();
                 if (this.PortraitLocation != null)
                     hashCode = hashCode * 59 + this.PortraitLocation.GetHashCode();
                 if (this.DetectReproduceResult != null)

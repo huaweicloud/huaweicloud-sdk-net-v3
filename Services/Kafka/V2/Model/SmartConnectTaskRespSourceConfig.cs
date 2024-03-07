@@ -116,13 +116,13 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// 副本数。（仅源端类型为Kafka时会显示）
         /// </summary>
         [JsonProperty("replication_factor", NullValueHandling = NullValueHandling.Ignore)]
-        public string ReplicationFactor { get; set; }
+        public int? ReplicationFactor { get; set; }
 
         /// <summary>
         /// 任务数。（仅源端类型为Kafka时会显示）
         /// </summary>
         [JsonProperty("task_num", NullValueHandling = NullValueHandling.Ignore)]
-        public string TaskNum { get; set; }
+        public int? TaskNum { get; set; }
 
         /// <summary>
         /// 是否重命名Topic。（仅源端类型为Kafka时会显示）

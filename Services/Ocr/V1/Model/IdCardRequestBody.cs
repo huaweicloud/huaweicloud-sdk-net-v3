@@ -65,6 +65,18 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public bool? ReturnPortraitLocation { get; set; }
 
         /// <summary>
+        /// 返回头像图片信息（base64码）的开关，默认false，可选值如下所示：  - true ：开启头像图片信息（base64码）的功能 - false : 关闭头像图片信息（base64码）的功能 
+        /// </summary>
+        [JsonProperty("return_portrait_image", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? ReturnPortraitImage { get; set; }
+
+        /// <summary>
+        /// 返回身份证卡面（base64码）的开关，默认false，可选值如下所示：  - true ：开启身份证卡面（base64码）的功能 - false : 关闭身份证卡面（base64码）的功能 
+        /// </summary>
+        [JsonProperty("return_adjusted_image", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? ReturnAdjustedImage { get; set; }
+
+        /// <summary>
         /// 身份证图像PS告警功能开关，默认false，可选值如下：  - true ：开启身份证图像PS告警功能 - false : 关闭身份证图像告警功能 
         /// </summary>
         [JsonProperty("detect_tampering", NullValueHandling = NullValueHandling.Ignore)]
@@ -117,6 +129,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  detectReproduce: ").Append(DetectReproduce).Append("\n");
             sb.Append("  detectCopy: ").Append(DetectCopy).Append("\n");
             sb.Append("  returnPortraitLocation: ").Append(ReturnPortraitLocation).Append("\n");
+            sb.Append("  returnPortraitImage: ").Append(ReturnPortraitImage).Append("\n");
+            sb.Append("  returnAdjustedImage: ").Append(ReturnAdjustedImage).Append("\n");
             sb.Append("  detectTampering: ").Append(DetectTampering).Append("\n");
             sb.Append("  detectBorderIntegrity: ").Append(DetectBorderIntegrity).Append("\n");
             sb.Append("  detectBlockingWithinBorder: ").Append(DetectBlockingWithinBorder).Append("\n");
@@ -185,6 +199,16 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     this.ReturnPortraitLocation.Equals(input.ReturnPortraitLocation))
                 ) && 
                 (
+                    this.ReturnPortraitImage == input.ReturnPortraitImage ||
+                    (this.ReturnPortraitImage != null &&
+                    this.ReturnPortraitImage.Equals(input.ReturnPortraitImage))
+                ) && 
+                (
+                    this.ReturnAdjustedImage == input.ReturnAdjustedImage ||
+                    (this.ReturnAdjustedImage != null &&
+                    this.ReturnAdjustedImage.Equals(input.ReturnAdjustedImage))
+                ) && 
+                (
                     this.DetectTampering == input.DetectTampering ||
                     (this.DetectTampering != null &&
                     this.DetectTampering.Equals(input.DetectTampering))
@@ -240,6 +264,10 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     hashCode = hashCode * 59 + this.DetectCopy.GetHashCode();
                 if (this.ReturnPortraitLocation != null)
                     hashCode = hashCode * 59 + this.ReturnPortraitLocation.GetHashCode();
+                if (this.ReturnPortraitImage != null)
+                    hashCode = hashCode * 59 + this.ReturnPortraitImage.GetHashCode();
+                if (this.ReturnAdjustedImage != null)
+                    hashCode = hashCode * 59 + this.ReturnAdjustedImage.GetHashCode();
                 if (this.DetectTampering != null)
                     hashCode = hashCode * 59 + this.DetectTampering.GetHashCode();
                 if (this.DetectBorderIntegrity != null)

@@ -2514,6 +2514,32 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         }
         
         /// <summary>
+        /// 操作GeminDB实例数据库
+        ///
+        /// 操作GeminDB实例数据库
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateDatabasesResponse> UpdateDatabasesAsync(UpdateDatabasesRequest updateDatabasesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateDatabasesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/databases", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDatabasesRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateDatabasesResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateDatabasesResponse> UpdateDatabasesAsyncInvoker(UpdateDatabasesRequest updateDatabasesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateDatabasesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/databases", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDatabasesRequest);
+            return new AsyncInvoker<UpdateDatabasesResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateDatabasesResponse>);
+        }
+        
+        /// <summary>
         /// 修改高危命令
         ///
         /// 批量修改高危命令

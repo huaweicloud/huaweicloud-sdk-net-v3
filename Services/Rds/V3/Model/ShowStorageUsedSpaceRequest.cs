@@ -8,20 +8,20 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Kafka.V2.Model
+namespace HuaweiCloud.SDK.Rds.V3.Model
 {
     /// <summary>
     /// Request Object
     /// </summary>
-    public class ListSinkTasksRequest 
+    public class ShowStorageUsedSpaceRequest 
     {
 
         /// <summary>
-        /// 实例转储ID。  请参考[查询实例](ShowInstance.xml)返回的数据。
+        /// 实例id
         /// </summary>
-        [SDKProperty("connector_id", IsPath = true)]
-        [JsonProperty("connector_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string ConnectorId { get; set; }
+        [SDKProperty("instance_id", IsPath = true)]
+        [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string InstanceId { get; set; }
 
 
 
@@ -31,8 +31,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ListSinkTasksRequest {\n");
-            sb.Append("  connectorId: ").Append(ConnectorId).Append("\n");
+            sb.Append("class ShowStorageUsedSpaceRequest {\n");
+            sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -42,22 +42,22 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ListSinkTasksRequest);
+            return this.Equals(input as ShowStorageUsedSpaceRequest);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ListSinkTasksRequest input)
+        public bool Equals(ShowStorageUsedSpaceRequest input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.ConnectorId == input.ConnectorId ||
-                    (this.ConnectorId != null &&
-                    this.ConnectorId.Equals(input.ConnectorId))
+                    this.InstanceId == input.InstanceId ||
+                    (this.InstanceId != null &&
+                    this.InstanceId.Equals(input.InstanceId))
                 );
         }
 
@@ -69,8 +69,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.ConnectorId != null)
-                    hashCode = hashCode * 59 + this.ConnectorId.GetHashCode();
+                if (this.InstanceId != null)
+                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
                 return hashCode;
             }
         }

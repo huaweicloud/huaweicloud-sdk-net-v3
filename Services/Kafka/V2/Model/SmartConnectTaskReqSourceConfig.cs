@@ -128,13 +128,13 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// 在对端实例中自动创建Topic时，指定Topic的副本数，此参数值不能超过对端实例的代理数。如果对端实例中设置了“default.replication.factor”，此参数的优先级高于“default.replication.factor”。（仅源端类型为Kafka时需要填写）
         /// </summary>
         [JsonProperty("replication_factor", NullValueHandling = NullValueHandling.Ignore)]
-        public string ReplicationFactor { get; set; }
+        public int? ReplicationFactor { get; set; }
 
         /// <summary>
         /// 数据复制的任务数。默认值为2，建议保持默认值。如果“同步方式”为“双向”，实际任务数&#x3D;设置的任务数*2。（仅源端类型为Kafka时需要填写）
         /// </summary>
         [JsonProperty("task_num", NullValueHandling = NullValueHandling.Ignore)]
-        public string TaskNum { get; set; }
+        public int? TaskNum { get; set; }
 
         /// <summary>
         /// 是否重命名Topic，在目标Topic名称前添加源端Kafka实例的别名，形成目标Topic新的名称。（仅源端类型为Kafka时需要填写）

@@ -35,6 +35,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public string ValidTo { get; set; }
 
         /// <summary>
+        /// 身份证卡面图片信息的base64码结果。  &gt; 说明： - 仅在输入参数return_adjusted_image为true时，返回该字段。 
+        /// </summary>
+        [JsonProperty("adjusted_image", NullValueHandling = NullValueHandling.Ignore)]
+        public string AdjustedImage { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("verification_result", NullValueHandling = NullValueHandling.Ignore)]
@@ -112,6 +118,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  issue: ").Append(Issue).Append("\n");
             sb.Append("  validFrom: ").Append(ValidFrom).Append("\n");
             sb.Append("  validTo: ").Append(ValidTo).Append("\n");
+            sb.Append("  adjustedImage: ").Append(AdjustedImage).Append("\n");
             sb.Append("  verificationResult: ").Append(VerificationResult).Append("\n");
             sb.Append("  textLocation: ").Append(TextLocation).Append("\n");
             sb.Append("  detectReproduceResult: ").Append(DetectReproduceResult).Append("\n");
@@ -158,6 +165,11 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     this.ValidTo == input.ValidTo ||
                     (this.ValidTo != null &&
                     this.ValidTo.Equals(input.ValidTo))
+                ) && 
+                (
+                    this.AdjustedImage == input.AdjustedImage ||
+                    (this.AdjustedImage != null &&
+                    this.AdjustedImage.Equals(input.AdjustedImage))
                 ) && 
                 (
                     this.VerificationResult == input.VerificationResult ||
@@ -230,6 +242,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     hashCode = hashCode * 59 + this.ValidFrom.GetHashCode();
                 if (this.ValidTo != null)
                     hashCode = hashCode * 59 + this.ValidTo.GetHashCode();
+                if (this.AdjustedImage != null)
+                    hashCode = hashCode * 59 + this.AdjustedImage.GetHashCode();
                 if (this.VerificationResult != null)
                     hashCode = hashCode * 59 + this.VerificationResult.GetHashCode();
                 if (this.TextLocation != null)

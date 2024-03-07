@@ -144,6 +144,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         public string Addr { get; set; }
 
         /// <summary>
+        /// 套接字所使用的文件描述符。
+        /// </summary>
+        [JsonProperty("fd", NullValueHandling = NullValueHandling.Ignore)]
+        public string Fd { get; set; }
+
+        /// <summary>
         /// 客户端的名称
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
@@ -232,6 +238,24 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         [JsonProperty("events", NullValueHandling = NullValueHandling.Ignore)]
         public EventsEnum Events { get; set; }
+        /// <summary>
+        /// 客户端所使用的网络类型。
+        /// </summary>
+        [JsonProperty("network", NullValueHandling = NullValueHandling.Ignore)]
+        public string Network { get; set; }
+
+        /// <summary>
+        /// 单机，主备和cluster实例地址和端口。
+        /// </summary>
+        [JsonProperty("peer", NullValueHandling = NullValueHandling.Ignore)]
+        public string Peer { get; set; }
+
+        /// <summary>
+        /// 客户端用户。
+        /// </summary>
+        [JsonProperty("user", NullValueHandling = NullValueHandling.Ignore)]
+        public string User { get; set; }
+
 
 
         /// <summary>
@@ -243,6 +267,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             sb.Append("class ClientInfo {\n");
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  addr: ").Append(Addr).Append("\n");
+            sb.Append("  fd: ").Append(Fd).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  cmd: ").Append(Cmd).Append("\n");
             sb.Append("  age: ").Append(Age).Append("\n");
@@ -258,6 +283,9 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             sb.Append("  oll: ").Append(Oll).Append("\n");
             sb.Append("  omem: ").Append(Omem).Append("\n");
             sb.Append("  events: ").Append(Events).Append("\n");
+            sb.Append("  network: ").Append(Network).Append("\n");
+            sb.Append("  peer: ").Append(Peer).Append("\n");
+            sb.Append("  user: ").Append(User).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -288,6 +316,11 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     this.Addr == input.Addr ||
                     (this.Addr != null &&
                     this.Addr.Equals(input.Addr))
+                ) && 
+                (
+                    this.Fd == input.Fd ||
+                    (this.Fd != null &&
+                    this.Fd.Equals(input.Fd))
                 ) && 
                 (
                     this.Name == input.Name ||
@@ -363,6 +396,21 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     this.Events == input.Events ||
                     (this.Events != null &&
                     this.Events.Equals(input.Events))
+                ) && 
+                (
+                    this.Network == input.Network ||
+                    (this.Network != null &&
+                    this.Network.Equals(input.Network))
+                ) && 
+                (
+                    this.Peer == input.Peer ||
+                    (this.Peer != null &&
+                    this.Peer.Equals(input.Peer))
+                ) && 
+                (
+                    this.User == input.User ||
+                    (this.User != null &&
+                    this.User.Equals(input.User))
                 );
         }
 
@@ -378,6 +426,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Addr != null)
                     hashCode = hashCode * 59 + this.Addr.GetHashCode();
+                if (this.Fd != null)
+                    hashCode = hashCode * 59 + this.Fd.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Cmd != null)
@@ -408,6 +458,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     hashCode = hashCode * 59 + this.Omem.GetHashCode();
                 if (this.Events != null)
                     hashCode = hashCode * 59 + this.Events.GetHashCode();
+                if (this.Network != null)
+                    hashCode = hashCode * 59 + this.Network.GetHashCode();
+                if (this.Peer != null)
+                    hashCode = hashCode * 59 + this.Peer.GetHashCode();
+                if (this.User != null)
+                    hashCode = hashCode * 59 + this.User.GetHashCode();
                 return hashCode;
             }
         }

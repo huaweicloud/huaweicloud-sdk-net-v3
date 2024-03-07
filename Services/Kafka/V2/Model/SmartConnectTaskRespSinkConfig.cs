@@ -38,7 +38,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// 目标数据库，默认为-1。（仅目标端类型为Redis时会显示）
         /// </summary>
         [JsonProperty("target_db", NullValueHandling = NullValueHandling.Ignore)]
-        public string TargetDb { get; set; }
+        public int? TargetDb { get; set; }
 
         /// <summary>
         /// 转储启动偏移量，latest为获取最新的数据，earliest为获取最早的数据。（仅目标端类型为OBS时会显示）

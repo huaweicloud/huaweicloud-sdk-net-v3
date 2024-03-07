@@ -8,12 +8,12 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Kafka.V2.Model
+namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
 {
     /// <summary>
     /// Request Object
     /// </summary>
-    public class CreateDeleteConnectorOrderRequest 
+    public class UpdateDatabasesRequest 
     {
 
         /// <summary>
@@ -28,7 +28,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public ConnectorOrderRequestBody Body { get; set; }
+        public UpdateDatabasesRequestBody Body { get; set; }
 
 
 
@@ -38,7 +38,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class CreateDeleteConnectorOrderRequest {\n");
+            sb.Append("class UpdateDatabasesRequest {\n");
             sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
             sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
@@ -50,13 +50,13 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CreateDeleteConnectorOrderRequest);
+            return this.Equals(input as UpdateDatabasesRequest);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(CreateDeleteConnectorOrderRequest input)
+        public bool Equals(UpdateDatabasesRequest input)
         {
             if (input == null)
                 return false;

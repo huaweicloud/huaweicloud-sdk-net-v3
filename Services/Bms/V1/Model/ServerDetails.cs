@@ -837,13 +837,13 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         /// 裸金属服务器启动时间。时间戳格式为ISO 8601，例如：2019-05-22T03:23:59.000000
         /// </summary>
         [JsonProperty("OS-SRV-USG:launched_at", NullValueHandling = NullValueHandling.Ignore)]
-        public DateTime? OSSRVUSGlaunchedAt { get; set; }
+        public string OSSRVUSGlaunchedAt { get; set; }
 
         /// <summary>
         /// 裸金属服务器删除时间。时间戳格式为ISO 8601，例如：2019-05-22T04:23:59.000000
         /// </summary>
         [JsonProperty("OS-SRV-USG:terminated_at", NullValueHandling = NullValueHandling.Ignore)]
-        public DateTime? OSSRVUSGterminatedAt { get; set; }
+        public string OSSRVUSGterminatedAt { get; set; }
 
         /// <summary>
         /// 挂载到裸金属服务器上的磁盘。详情请参见表9 os-extended-volumes:volumes_attached 数据结构说明。

@@ -176,7 +176,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// 
         /// </summary>
         [JsonProperty("volume", NullValueHandling = NullValueHandling.Ignore)]
-        public Volume Volume { get; set; }
+        public VolumeForInstanceResponse Volume { get; set; }
 
         /// <summary>
         /// 区域ID。

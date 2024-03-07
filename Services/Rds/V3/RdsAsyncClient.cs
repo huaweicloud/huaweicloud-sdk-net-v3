@@ -470,6 +470,32 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 新增SQL限流
+        ///
+        /// 新增SQL限流
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateSqlLimitResponse> CreateSqlLimitAsync(CreateSqlLimitRequest createSqlLimitRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createSqlLimitRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/sql-limit", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createSqlLimitRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateSqlLimitResponse>(response);
+        }
+
+        public AsyncInvoker<CreateSqlLimitResponse> CreateSqlLimitAsyncInvoker(CreateSqlLimitRequest createSqlLimitRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createSqlLimitRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/sql-limit", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createSqlLimitRequest);
+            return new AsyncInvoker<CreateSqlLimitResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateSqlLimitResponse>);
+        }
+        
+        /// <summary>
         /// 获取扩展日志下载信息
         ///
         /// 获取扩展日志下载信息
@@ -674,6 +700,32 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRdSforMySqlProxyRequest);
             return new AsyncInvoker<DeleteRdSforMySqlProxyResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteRdSforMySqlProxyResponse>);
+        }
+        
+        /// <summary>
+        /// 删除SQL限流
+        ///
+        /// 删除SQL限流
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteSqlLimitResponse> DeleteSqlLimitAsync(DeleteSqlLimitRequest deleteSqlLimitRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteSqlLimitRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/sql-limit", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSqlLimitRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteSqlLimitResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteSqlLimitResponse> DeleteSqlLimitAsyncInvoker(DeleteSqlLimitRequest deleteSqlLimitRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteSqlLimitRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/sql-limit", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSqlLimitRequest);
+            return new AsyncInvoker<DeleteSqlLimitResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteSqlLimitResponse>);
         }
         
         /// <summary>
@@ -1784,6 +1836,32 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 查询SQL限流列表
+        ///
+        /// 查询SQL限流列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListSqlLimitResponse> ListSqlLimitAsync(ListSqlLimitRequest listSqlLimitRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listSqlLimitRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/sql-limit", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSqlLimitRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListSqlLimitResponse>(response);
+        }
+
+        public AsyncInvoker<ListSqlLimitResponse> ListSqlLimitAsyncInvoker(ListSqlLimitRequest listSqlLimitRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listSqlLimitRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/sql-limit", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSqlLimitRequest);
+            return new AsyncInvoker<ListSqlLimitResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSqlLimitResponse>);
+        }
+        
+        /// <summary>
         /// 获取SSL证书下载地址
         ///
         /// 获取SSL证书下载地址
@@ -2799,6 +2877,32 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 查询实例磁盘空间使用量
+        ///
+        /// 查询实例磁盘空间使用量。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowStorageUsedSpaceResponse> ShowStorageUsedSpaceAsync(ShowStorageUsedSpaceRequest showStorageUsedSpaceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showStorageUsedSpaceRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/storage-used-space", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStorageUsedSpaceRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowStorageUsedSpaceResponse>(response);
+        }
+
+        public AsyncInvoker<ShowStorageUsedSpaceResponse> ShowStorageUsedSpaceAsyncInvoker(ShowStorageUsedSpaceRequest showStorageUsedSpaceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showStorageUsedSpaceRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/storage-used-space", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStorageUsedSpaceRequest);
+            return new AsyncInvoker<ShowStorageUsedSpaceResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowStorageUsedSpaceResponse>);
+        }
+        
+        /// <summary>
         /// 根据实例id查询sqlserver TDE状态
         ///
         /// 根据实例id查询sqlserver TDE状态
@@ -3109,6 +3213,32 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 开启/关闭/禁用所有SQL限流
+        ///
+        /// 开启/关闭/禁用所有SQL限流
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<SwitchSqlLimitResponse> SwitchSqlLimitAsync(SwitchSqlLimitRequest switchSqlLimitRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", switchSqlLimitRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/sql-limit/switch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchSqlLimitRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<SwitchSqlLimitResponse>(response);
+        }
+
+        public AsyncInvoker<SwitchSqlLimitResponse> SwitchSqlLimitAsyncInvoker(SwitchSqlLimitRequest switchSqlLimitRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", switchSqlLimitRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/sql-limit/switch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchSqlLimitRequest);
+            return new AsyncInvoker<SwitchSqlLimitResponse>(this, "PUT", request, JsonUtils.DeSerialize<SwitchSqlLimitResponse>);
+        }
+        
+        /// <summary>
         /// 设置SSL数据加密
         ///
         /// 设置SSL数据加密。
@@ -3366,6 +3496,32 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/alias", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePostgresqlInstanceAliasRequest);
             return new AsyncInvoker<UpdatePostgresqlInstanceAliasResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdatePostgresqlInstanceAliasResponse>);
+        }
+        
+        /// <summary>
+        /// 修改SQL限流
+        ///
+        /// 修改SQL限流
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateSqlLimitResponse> UpdateSqlLimitAsync(UpdateSqlLimitRequest updateSqlLimitRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateSqlLimitRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/sql-limit/update", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSqlLimitRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateSqlLimitResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateSqlLimitResponse> UpdateSqlLimitAsyncInvoker(UpdateSqlLimitRequest updateSqlLimitRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateSqlLimitRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/sql-limit/update", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSqlLimitRequest);
+            return new AsyncInvoker<UpdateSqlLimitResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateSqlLimitResponse>);
         }
         
         /// <summary>

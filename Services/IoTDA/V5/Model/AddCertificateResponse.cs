@@ -47,6 +47,18 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public string VerifyCode { get; set; }
 
         /// <summary>
+        /// 是否开启自注册能力，当为true时该功能必须配合自注册模板使用，true：是，false：否。
+        /// </summary>
+        [JsonProperty("provision_enable", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? ProvisionEnable { get; set; }
+
+        /// <summary>
+        /// 绑定的自注册模板ID。
+        /// </summary>
+        [JsonProperty("template_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string TemplateId { get; set; }
+
+        /// <summary>
         /// 创建证书日期。格式：yyyyMMdd&#39;T&#39;HHmmss&#39;Z&#39;，如20151212T121212Z。
         /// </summary>
         [JsonProperty("create_date", NullValueHandling = NullValueHandling.Ignore)]
@@ -78,6 +90,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             sb.Append("  owner: ").Append(Owner).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  verifyCode: ").Append(VerifyCode).Append("\n");
+            sb.Append("  provisionEnable: ").Append(ProvisionEnable).Append("\n");
+            sb.Append("  templateId: ").Append(TemplateId).Append("\n");
             sb.Append("  createDate: ").Append(CreateDate).Append("\n");
             sb.Append("  effectiveDate: ").Append(EffectiveDate).Append("\n");
             sb.Append("  expiryDate: ").Append(ExpiryDate).Append("\n");
@@ -128,6 +142,16 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.VerifyCode.Equals(input.VerifyCode))
                 ) && 
                 (
+                    this.ProvisionEnable == input.ProvisionEnable ||
+                    (this.ProvisionEnable != null &&
+                    this.ProvisionEnable.Equals(input.ProvisionEnable))
+                ) && 
+                (
+                    this.TemplateId == input.TemplateId ||
+                    (this.TemplateId != null &&
+                    this.TemplateId.Equals(input.TemplateId))
+                ) && 
+                (
                     this.CreateDate == input.CreateDate ||
                     (this.CreateDate != null &&
                     this.CreateDate.Equals(input.CreateDate))
@@ -162,6 +186,10 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.VerifyCode != null)
                     hashCode = hashCode * 59 + this.VerifyCode.GetHashCode();
+                if (this.ProvisionEnable != null)
+                    hashCode = hashCode * 59 + this.ProvisionEnable.GetHashCode();
+                if (this.TemplateId != null)
+                    hashCode = hashCode * 59 + this.TemplateId.GetHashCode();
                 if (this.CreateDate != null)
                     hashCode = hashCode * 59 + this.CreateDate.GetHashCode();
                 if (this.EffectiveDate != null)
