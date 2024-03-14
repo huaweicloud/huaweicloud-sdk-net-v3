@@ -1006,6 +1006,12 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         [JsonProperty("period_order", NullValueHandling = NullValueHandling.Ignore)]
         public PeriodOrderInfo PeriodOrder { get; set; }
 
+        /// <summary>
+        /// 指定公网IP的信息
+        /// </summary>
+        [JsonProperty("public_ip_list", NullValueHandling = NullValueHandling.Ignore)]
+        public List<PublicIpConfig> PublicIpList { get; set; }
+
 
 
         /// <summary>
@@ -1038,6 +1044,7 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
             sb.Append("  slaveAz: ").Append(SlaveAz).Append("\n");
             sb.Append("  chargingMode: ").Append(ChargingMode).Append("\n");
             sb.Append("  periodOrder: ").Append(PeriodOrder).Append("\n");
+            sb.Append("  publicIpList: ").Append(PublicIpList).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -1175,6 +1182,12 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
                     this.PeriodOrder == input.PeriodOrder ||
                     (this.PeriodOrder != null &&
                     this.PeriodOrder.Equals(input.PeriodOrder))
+                ) && 
+                (
+                    this.PublicIpList == input.PublicIpList ||
+                    this.PublicIpList != null &&
+                    input.PublicIpList != null &&
+                    this.PublicIpList.SequenceEqual(input.PublicIpList)
                 );
         }
 
@@ -1232,6 +1245,8 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
                     hashCode = hashCode * 59 + this.ChargingMode.GetHashCode();
                 if (this.PeriodOrder != null)
                     hashCode = hashCode * 59 + this.PeriodOrder.GetHashCode();
+                if (this.PublicIpList != null)
+                    hashCode = hashCode * 59 + this.PublicIpList.GetHashCode();
                 return hashCode;
             }
         }

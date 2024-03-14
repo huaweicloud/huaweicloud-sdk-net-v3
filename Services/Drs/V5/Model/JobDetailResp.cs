@@ -178,6 +178,24 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         [JsonProperty("connection_management", NullValueHandling = NullValueHandling.Ignore)]
         public ConnectionManagement ConnectionManagement { get; set; }
 
+        /// <summary>
+        /// 指定公网IP的信息
+        /// </summary>
+        [JsonProperty("public_ip_list", NullValueHandling = NullValueHandling.Ignore)]
+        public List<PublicIpConfig> PublicIpList { get; set; }
+
+        /// <summary>
+        /// 是否成功绑定公网IP
+        /// </summary>
+        [JsonProperty("bind_public_ip_state", NullValueHandling = NullValueHandling.Ignore)]
+        public string BindPublicIpState { get; set; }
+
+        /// <summary>
+        /// 多任务时，存在子任务绑定失败时，返回子任务的信息
+        /// </summary>
+        [JsonProperty("children", NullValueHandling = NullValueHandling.Ignore)]
+        public List<FailedToBindEipChildInfo> Children { get; set; }
+
 
 
         /// <summary>
@@ -214,6 +232,9 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             sb.Append("  instanceFeatures: ").Append(InstanceFeatures).Append("\n");
             sb.Append("  taskVersion: ").Append(TaskVersion).Append("\n");
             sb.Append("  connectionManagement: ").Append(ConnectionManagement).Append("\n");
+            sb.Append("  publicIpList: ").Append(PublicIpList).Append("\n");
+            sb.Append("  bindPublicIpState: ").Append(BindPublicIpState).Append("\n");
+            sb.Append("  children: ").Append(Children).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -375,6 +396,23 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                     this.ConnectionManagement == input.ConnectionManagement ||
                     (this.ConnectionManagement != null &&
                     this.ConnectionManagement.Equals(input.ConnectionManagement))
+                ) && 
+                (
+                    this.PublicIpList == input.PublicIpList ||
+                    this.PublicIpList != null &&
+                    input.PublicIpList != null &&
+                    this.PublicIpList.SequenceEqual(input.PublicIpList)
+                ) && 
+                (
+                    this.BindPublicIpState == input.BindPublicIpState ||
+                    (this.BindPublicIpState != null &&
+                    this.BindPublicIpState.Equals(input.BindPublicIpState))
+                ) && 
+                (
+                    this.Children == input.Children ||
+                    this.Children != null &&
+                    input.Children != null &&
+                    this.Children.SequenceEqual(input.Children)
                 );
         }
 
@@ -440,6 +478,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                     hashCode = hashCode * 59 + this.TaskVersion.GetHashCode();
                 if (this.ConnectionManagement != null)
                     hashCode = hashCode * 59 + this.ConnectionManagement.GetHashCode();
+                if (this.PublicIpList != null)
+                    hashCode = hashCode * 59 + this.PublicIpList.GetHashCode();
+                if (this.BindPublicIpState != null)
+                    hashCode = hashCode * 59 + this.BindPublicIpState.GetHashCode();
+                if (this.Children != null)
+                    hashCode = hashCode * 59 + this.Children.GetHashCode();
                 return hashCode;
             }
         }

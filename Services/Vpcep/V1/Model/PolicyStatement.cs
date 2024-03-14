@@ -15,13 +15,127 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
     /// </summary>
     public class PolicyStatement 
     {
+        /// <summary>
+        /// Allow允许或Refuse拒绝，控制访问权限
+        /// </summary>
+        /// <value>Allow允许或Refuse拒绝，控制访问权限</value>
+        [JsonConverter(typeof(EnumClassConverter<EffectEnum>))]
+        public class EffectEnum
+        {
+            /// <summary>
+            /// Enum ALLOW for value: Allow
+            /// </summary>
+            public static readonly EffectEnum ALLOW = new EffectEnum("Allow");
+
+            /// <summary>
+            /// Enum REFUSE for value: Refuse
+            /// </summary>
+            public static readonly EffectEnum REFUSE = new EffectEnum("Refuse");
+
+            private static readonly Dictionary<string, EffectEnum> StaticFields =
+            new Dictionary<string, EffectEnum>()
+            {
+                { "Allow", ALLOW },
+                { "Refuse", REFUSE },
+            };
+
+            private string _value;
+
+            public EffectEnum()
+            {
+
+            }
+
+            public EffectEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static EffectEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as EffectEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(EffectEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(EffectEnum a, EffectEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(EffectEnum a, EffectEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
-        /// 允许或拒绝，控制访问权限
+        /// Allow允许或Refuse拒绝，控制访问权限
         /// </summary>
         [JsonProperty("Effect", NullValueHandling = NullValueHandling.Ignore)]
-        public string Effect { get; set; }
-
+        public EffectEnum Effect { get; set; }
         /// <summary>
         /// obs访问权限
         /// </summary>

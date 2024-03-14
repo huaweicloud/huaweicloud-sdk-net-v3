@@ -15,145 +15,6 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
     /// </summary>
     public class ConnectionEndpoints 
     {
-        /// <summary>
-        /// 终端节点的连接状态。 ● pendingAcceptance：待接受 ● creating：创建中 ● accepted：已接受 ● rejected：已拒绝 ● failed：失败 ● deleting：删除中
-        /// </summary>
-        /// <value>终端节点的连接状态。 ● pendingAcceptance：待接受 ● creating：创建中 ● accepted：已接受 ● rejected：已拒绝 ● failed：失败 ● deleting：删除中</value>
-        [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
-        public class StatusEnum
-        {
-            /// <summary>
-            /// Enum PENDINGACCEPTANCE for value: pendingAcceptance
-            /// </summary>
-            public static readonly StatusEnum PENDINGACCEPTANCE = new StatusEnum("pendingAcceptance");
-
-            /// <summary>
-            /// Enum CREATING for value: creating
-            /// </summary>
-            public static readonly StatusEnum CREATING = new StatusEnum("creating");
-
-            /// <summary>
-            /// Enum ACCEPTED for value: accepted
-            /// </summary>
-            public static readonly StatusEnum ACCEPTED = new StatusEnum("accepted");
-
-            /// <summary>
-            /// Enum REJECTED for value: rejected
-            /// </summary>
-            public static readonly StatusEnum REJECTED = new StatusEnum("rejected");
-
-            /// <summary>
-            /// Enum FAILED for value: failed
-            /// </summary>
-            public static readonly StatusEnum FAILED = new StatusEnum("failed");
-
-            /// <summary>
-            /// Enum DELETING for value: deleting
-            /// </summary>
-            public static readonly StatusEnum DELETING = new StatusEnum("deleting");
-
-            private static readonly Dictionary<string, StatusEnum> StaticFields =
-            new Dictionary<string, StatusEnum>()
-            {
-                { "pendingAcceptance", PENDINGACCEPTANCE },
-                { "creating", CREATING },
-                { "accepted", ACCEPTED },
-                { "rejected", REJECTED },
-                { "failed", FAILED },
-                { "deleting", DELETING },
-            };
-
-            private string _value;
-
-            public StatusEnum()
-            {
-
-            }
-
-            public StatusEnum(string value)
-            {
-                _value = value;
-            }
-
-            public static StatusEnum FromValue(string value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public string GetValue()
-            {
-                return _value;
-            }
-
-            public override string ToString()
-            {
-                return $"{_value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this._value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as StatusEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(StatusEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
-            }
-
-            public static bool operator ==(StatusEnum a, StatusEnum b)
-            {
-                if (System.Object.ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(StatusEnum a, StatusEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
 
         /// <summary>
         /// 终端节点的ID，唯一标识。
@@ -171,13 +32,13 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         /// 终端节点的创建时间。 采用UTC时间格式，格式为：YYYY-MMDDTHH:MM:SSZ
         /// </summary>
         [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
-        public string CreatedAt { get; set; }
+        public DateTime? CreatedAt { get; set; }
 
         /// <summary>
         /// 终端节点的更新时间。 采用UTC时间格式，格式为：YYYY-MMDDTHH:MM:SSZ
         /// </summary>
         [JsonProperty("updated_at", NullValueHandling = NullValueHandling.Ignore)]
-        public string UpdatedAt { get; set; }
+        public DateTime? UpdatedAt { get; set; }
 
         /// <summary>
         /// 用户的Domain ID。
@@ -192,10 +53,11 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         public List<QueryError> Error { get; set; }
 
         /// <summary>
-        /// 终端节点的连接状态。 ● pendingAcceptance：待接受 ● creating：创建中 ● accepted：已接受 ● rejected：已拒绝 ● failed：失败 ● deleting：删除中
+        /// 终端节点的连接状态。  - pendingAcceptance：待接受  - creating：创建中  - accepted：已接受  - rejected：已拒绝  - failed：失败  - deleting：删除中
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
-        public StatusEnum Status { get; set; }
+        public string Status { get; set; }
+
         /// <summary>
         /// 终端节点连接描述。
         /// </summary>

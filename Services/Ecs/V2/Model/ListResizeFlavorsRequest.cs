@@ -131,9 +131,9 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         }
 
         /// <summary>
-        /// 排序字段。  key的取值范围：  - flavorid：表示规格ID。 - sort_key的默认值为“flavorid”。 - name：表示规格名称。 - memory_mb：表示内存大小。 - vcpus：表示CPU大小。 - root_gb：表示系统盘大小。
+        /// 排序字段。默认值为“flavorid”。  key的取值范围：  - flavorid：表示规格ID。 - name：表示规格名称。 - memory_mb：表示内存大小。 - vcpus：表示CPU大小。 - root_gb：表示系统盘大小。
         /// </summary>
-        /// <value>排序字段。  key的取值范围：  - flavorid：表示规格ID。 - sort_key的默认值为“flavorid”。 - name：表示规格名称。 - memory_mb：表示内存大小。 - vcpus：表示CPU大小。 - root_gb：表示系统盘大小。</value>
+        /// <value>排序字段。默认值为“flavorid”。  key的取值范围：  - flavorid：表示规格ID。 - name：表示规格名称。 - memory_mb：表示内存大小。 - vcpus：表示CPU大小。 - root_gb：表示系统盘大小。</value>
         [JsonConverter(typeof(EnumClassConverter<SortKeyEnum>))]
         public class SortKeyEnum
         {
@@ -298,7 +298,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         [JsonProperty("sort_dir", NullValueHandling = NullValueHandling.Ignore)]
         public SortDirEnum SortDir { get; set; }
         /// <summary>
-        /// 排序字段。  key的取值范围：  - flavorid：表示规格ID。 - sort_key的默认值为“flavorid”。 - name：表示规格名称。 - memory_mb：表示内存大小。 - vcpus：表示CPU大小。 - root_gb：表示系统盘大小。
+        /// 排序字段。默认值为“flavorid”。  key的取值范围：  - flavorid：表示规格ID。 - name：表示规格名称。 - memory_mb：表示内存大小。 - vcpus：表示CPU大小。 - root_gb：表示系统盘大小。
         /// </summary>
         [SDKProperty("sort_key", IsQuery = true)]
         [JsonProperty("sort_key", NullValueHandling = NullValueHandling.Ignore)]

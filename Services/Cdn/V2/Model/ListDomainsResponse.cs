@@ -28,6 +28,13 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         [JsonProperty("domains", NullValueHandling = NullValueHandling.Ignore)]
         public List<Domains> Domains { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("X-Request-Id", IsHeader = true)]
+        [JsonProperty("X-Request-Id", NullValueHandling = NullValueHandling.Ignore)]
+        public string XRequestId { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +46,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             sb.Append("class ListDomainsResponse {\n");
             sb.Append("  total: ").Append(Total).Append("\n");
             sb.Append("  domains: ").Append(Domains).Append("\n");
+            sb.Append("  xRequestId: ").Append(XRequestId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -70,6 +78,11 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     this.Domains != null &&
                     input.Domains != null &&
                     this.Domains.SequenceEqual(input.Domains)
+                ) && 
+                (
+                    this.XRequestId == input.XRequestId ||
+                    (this.XRequestId != null &&
+                    this.XRequestId.Equals(input.XRequestId))
                 );
         }
 
@@ -85,6 +98,8 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     hashCode = hashCode * 59 + this.Total.GetHashCode();
                 if (this.Domains != null)
                     hashCode = hashCode * 59 + this.Domains.GetHashCode();
+                if (this.XRequestId != null)
+                    hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
                 return hashCode;
             }
         }

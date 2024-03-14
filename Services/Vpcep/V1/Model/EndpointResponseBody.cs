@@ -13,262 +13,8 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
     /// <summary>
     /// 终端节接口响应结构体
     /// </summary>
-    public class EndpointResp 
+    public class EndpointResponseBody 
     {
-        /// <summary>
-        /// 终端节点连接的终端节点服务类型。 ● gataway：由运维人员配置。用户无需创建，可直接使用。 ● interface：包括运维人员配置的云服务和用户自己创建的私有服务。 其中，运维人员配置的云服务无需创建，用户可直接使用。 您可以通过查询公共终端节点服务列表， 查看由运维人员配置的所有用户可见且可连接的终端节点服务， 并通过创建终端节点服务创建Interface类型的终端节点服务。
-        /// </summary>
-        /// <value>终端节点连接的终端节点服务类型。 ● gataway：由运维人员配置。用户无需创建，可直接使用。 ● interface：包括运维人员配置的云服务和用户自己创建的私有服务。 其中，运维人员配置的云服务无需创建，用户可直接使用。 您可以通过查询公共终端节点服务列表， 查看由运维人员配置的所有用户可见且可连接的终端节点服务， 并通过创建终端节点服务创建Interface类型的终端节点服务。</value>
-        [JsonConverter(typeof(EnumClassConverter<ServiceTypeEnum>))]
-        public class ServiceTypeEnum
-        {
-            /// <summary>
-            /// Enum INTERFACE for value: interface
-            /// </summary>
-            public static readonly ServiceTypeEnum INTERFACE = new ServiceTypeEnum("interface");
-
-            /// <summary>
-            /// Enum GATEWAY for value: gateway
-            /// </summary>
-            public static readonly ServiceTypeEnum GATEWAY = new ServiceTypeEnum("gateway");
-
-            private static readonly Dictionary<string, ServiceTypeEnum> StaticFields =
-            new Dictionary<string, ServiceTypeEnum>()
-            {
-                { "interface", INTERFACE },
-                { "gateway", GATEWAY },
-            };
-
-            private string _value;
-
-            public ServiceTypeEnum()
-            {
-
-            }
-
-            public ServiceTypeEnum(string value)
-            {
-                _value = value;
-            }
-
-            public static ServiceTypeEnum FromValue(string value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public string GetValue()
-            {
-                return _value;
-            }
-
-            public override string ToString()
-            {
-                return $"{_value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this._value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as ServiceTypeEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(ServiceTypeEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
-            }
-
-            public static bool operator ==(ServiceTypeEnum a, ServiceTypeEnum b)
-            {
-                if (System.Object.ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(ServiceTypeEnum a, ServiceTypeEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
-        /// <summary>
-        /// 终端节点的连接状态。 ● pendingAcceptance：待接受 ● creating：创建中 ● accepted：已接受 ● failed：失败
-        /// </summary>
-        /// <value>终端节点的连接状态。 ● pendingAcceptance：待接受 ● creating：创建中 ● accepted：已接受 ● failed：失败</value>
-        [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
-        public class StatusEnum
-        {
-            /// <summary>
-            /// Enum PENDINGACCEPTANCE for value: pendingAcceptance
-            /// </summary>
-            public static readonly StatusEnum PENDINGACCEPTANCE = new StatusEnum("pendingAcceptance");
-
-            /// <summary>
-            /// Enum CREATING for value: creating
-            /// </summary>
-            public static readonly StatusEnum CREATING = new StatusEnum("creating");
-
-            /// <summary>
-            /// Enum ACCEPTED for value: accepted
-            /// </summary>
-            public static readonly StatusEnum ACCEPTED = new StatusEnum("accepted");
-
-            /// <summary>
-            /// Enum REJECTED for value: rejected
-            /// </summary>
-            public static readonly StatusEnum REJECTED = new StatusEnum("rejected");
-
-            /// <summary>
-            /// Enum FAILED for value: failed
-            /// </summary>
-            public static readonly StatusEnum FAILED = new StatusEnum("failed");
-
-            /// <summary>
-            /// Enum DELETING for value: deleting
-            /// </summary>
-            public static readonly StatusEnum DELETING = new StatusEnum("deleting");
-
-            private static readonly Dictionary<string, StatusEnum> StaticFields =
-            new Dictionary<string, StatusEnum>()
-            {
-                { "pendingAcceptance", PENDINGACCEPTANCE },
-                { "creating", CREATING },
-                { "accepted", ACCEPTED },
-                { "rejected", REJECTED },
-                { "failed", FAILED },
-                { "deleting", DELETING },
-            };
-
-            private string _value;
-
-            public StatusEnum()
-            {
-
-            }
-
-            public StatusEnum(string value)
-            {
-                _value = value;
-            }
-
-            public static StatusEnum FromValue(string value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public string GetValue()
-            {
-                return _value;
-            }
-
-            public override string ToString()
-            {
-                return $"{_value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this._value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as StatusEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(StatusEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
-            }
-
-            public static bool operator ==(StatusEnum a, StatusEnum b)
-            {
-                if (System.Object.ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(StatusEnum a, StatusEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
 
         /// <summary>
         /// 终端节点的ID，唯一标识。
@@ -277,17 +23,19 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         public string Id { get; set; }
 
         /// <summary>
-        /// 终端节点连接的终端节点服务类型。 ● gataway：由运维人员配置。用户无需创建，可直接使用。 ● interface：包括运维人员配置的云服务和用户自己创建的私有服务。 其中，运维人员配置的云服务无需创建，用户可直接使用。 您可以通过查询公共终端节点服务列表， 查看由运维人员配置的所有用户可见且可连接的终端节点服务， 并通过创建终端节点服务创建Interface类型的终端节点服务。
+        /// 终端节点连接的终端节点服务类型。  - gateway：由运维人员配置。用户无需创建，可直接使用。  - interface：包括运维人员配置的云服务和用户自己创建的私有服务。 其中，运维人员配置的云服务无需创建，用户可直接使用。 您可以通过查询公共终端节点服务列表， 查看由运维人员配置的所有用户可见且可连接的终端节点服务， 并通过创建终端节点服务创建Interface类型的终端节点服务。
         /// </summary>
         [JsonProperty("service_type", NullValueHandling = NullValueHandling.Ignore)]
-        public ServiceTypeEnum ServiceType { get; set; }
+        public string ServiceType { get; set; }
+
         /// <summary>
-        /// 终端节点的连接状态。 ● pendingAcceptance：待接受 ● creating：创建中 ● accepted：已接受 ● failed：失败
+        /// 终端节点的连接状态。  - pendingAcceptance：待接受  - creating：创建中  - accepted：已接受  - rejected：已拒绝  - failed：失败  - deleting：删除中
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
-        public StatusEnum Status { get; set; }
+        public string Status { get; set; }
+
         /// <summary>
-        /// 帐号状态。 ● frozen：冻结 ● active：解冻
+        /// 帐号状态。  - frozen：冻结  - active：解冻
         /// </summary>
         [JsonProperty("active_status", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> ActiveStatus { get; set; }
@@ -311,7 +59,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         public string EndpointServiceId { get; set; }
 
         /// <summary>
-        /// 是否创建域名。 ● true：创建域名 ● false：不创建域名 说明 当创建连接gateway类型终端节点服务的终端节点时， “enable_dns”设置为true或者false，均不创建域名。
+        /// 是否创建域名。  - true：创建域名  - false：不创建域名 说明 当创建连接gateway类型终端节点服务的终端节点时， “enable_dns”设置为true或者false，均不创建域名。
         /// </summary>
         [JsonProperty("enable_dns", NullValueHandling = NullValueHandling.Ignore)]
         public bool? EnableDns { get; set; }
@@ -344,13 +92,13 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         /// 终端节点的创建时间。 采用UTC时间格式，格式为：YYYY-MM-DDTHH:MM:SSZ
         /// </summary>
         [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
-        public string CreatedAt { get; set; }
+        public DateTime? CreatedAt { get; set; }
 
         /// <summary>
         /// 终端节点的更新时间。 采用UTC时间格式，格式为：YYYY-MM-DDTHH:MM:SSZ
         /// </summary>
         [JsonProperty("updated_at", NullValueHandling = NullValueHandling.Ignore)]
-        public string UpdatedAt { get; set; }
+        public DateTime? UpdatedAt { get; set; }
 
         /// <summary>
         /// 项目ID，获取方法请参见获取项目ID。
@@ -377,7 +125,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         public List<string> Whitelist { get; set; }
 
         /// <summary>
-        /// 是否开启网络ACL隔离。 ● true：开启网络ACL隔离 ● false：不开启网络ACL隔离 若未指定，则返回false。 创建连接Interface类型终端节点服务的终端节点时，显示此参数。
+        /// 是否开启网络ACL隔离。  - true：开启网络ACL隔离  - false：不开启网络ACL隔离 若未指定，则返回false。 创建连接Interface类型终端节点服务的终端节点时，显示此参数。
         /// </summary>
         [JsonProperty("enable_whitelist", NullValueHandling = NullValueHandling.Ignore)]
         public bool? EnableWhitelist { get; set; }
@@ -420,7 +168,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class EndpointResp {\n");
+            sb.Append("class EndpointResponseBody {\n");
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  serviceType: ").Append(ServiceType).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
@@ -454,13 +202,13 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as EndpointResp);
+            return this.Equals(input as EndpointResponseBody);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(EndpointResp input)
+        public bool Equals(EndpointResponseBody input)
         {
             if (input == null)
                 return false;

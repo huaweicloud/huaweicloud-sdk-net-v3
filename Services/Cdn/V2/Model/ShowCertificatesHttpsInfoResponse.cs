@@ -28,6 +28,13 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         [JsonProperty("https", NullValueHandling = NullValueHandling.Ignore)]
         public List<HttpsDetail> Https { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("X-Request-Id", IsHeader = true)]
+        [JsonProperty("X-Request-Id", NullValueHandling = NullValueHandling.Ignore)]
+        public string XRequestId { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +46,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             sb.Append("class ShowCertificatesHttpsInfoResponse {\n");
             sb.Append("  total: ").Append(Total).Append("\n");
             sb.Append("  https: ").Append(Https).Append("\n");
+            sb.Append("  xRequestId: ").Append(XRequestId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -70,6 +78,11 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     this.Https != null &&
                     input.Https != null &&
                     this.Https.SequenceEqual(input.Https)
+                ) && 
+                (
+                    this.XRequestId == input.XRequestId ||
+                    (this.XRequestId != null &&
+                    this.XRequestId.Equals(input.XRequestId))
                 );
         }
 
@@ -85,6 +98,8 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     hashCode = hashCode * 59 + this.Total.GetHashCode();
                 if (this.Https != null)
                     hashCode = hashCode * 59 + this.Https.GetHashCode();
+                if (this.XRequestId != null)
+                    hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
                 return hashCode;
             }
         }

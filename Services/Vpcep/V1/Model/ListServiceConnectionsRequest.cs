@@ -16,9 +16,136 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
     public class ListServiceConnectionsRequest 
     {
         /// <summary>
-        /// 查询结果中终端节点列表的排序字段，取值为： ● create_at：终端节点的创建时间 ● update_at：终端节点的更新时间 默认值为create_at。
+        /// 终端节点的连接状态。  - pendingAcceptance：待接受  - accepted：已接受  - rejected：已拒绝  - failed：失败
         /// </summary>
-        /// <value>查询结果中终端节点列表的排序字段，取值为： ● create_at：终端节点的创建时间 ● update_at：终端节点的更新时间 默认值为create_at。</value>
+        /// <value>终端节点的连接状态。  - pendingAcceptance：待接受  - accepted：已接受  - rejected：已拒绝  - failed：失败</value>
+        [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
+        public class StatusEnum
+        {
+            /// <summary>
+            /// Enum PENDINGACCEPTANCE for value: pendingAcceptance
+            /// </summary>
+            public static readonly StatusEnum PENDINGACCEPTANCE = new StatusEnum("pendingAcceptance");
+
+            /// <summary>
+            /// Enum ACCEPTED for value: accepted
+            /// </summary>
+            public static readonly StatusEnum ACCEPTED = new StatusEnum("accepted");
+
+            /// <summary>
+            /// Enum REJECTED for value: rejected
+            /// </summary>
+            public static readonly StatusEnum REJECTED = new StatusEnum("rejected");
+
+            /// <summary>
+            /// Enum FAILED for value: failed
+            /// </summary>
+            public static readonly StatusEnum FAILED = new StatusEnum("failed");
+
+            private static readonly Dictionary<string, StatusEnum> StaticFields =
+            new Dictionary<string, StatusEnum>()
+            {
+                { "pendingAcceptance", PENDINGACCEPTANCE },
+                { "accepted", ACCEPTED },
+                { "rejected", REJECTED },
+                { "failed", FAILED },
+            };
+
+            private string _value;
+
+            public StatusEnum()
+            {
+
+            }
+
+            public StatusEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static StatusEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as StatusEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(StatusEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(StatusEnum a, StatusEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(StatusEnum a, StatusEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+        /// <summary>
+        /// 查询结果中终端节点列表的排序字段，取值为：  - create_at：终端节点的创建时间  - update_at：终端节点的更新时间 默认值为create_at。
+        /// </summary>
+        /// <value>查询结果中终端节点列表的排序字段，取值为：  - create_at：终端节点的创建时间  - update_at：终端节点的更新时间 默认值为create_at。</value>
         [JsonConverter(typeof(EnumClassConverter<SortKeyEnum>))]
         public class SortKeyEnum
         {
@@ -131,9 +258,9 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         }
 
         /// <summary>
-        /// 查询结果中终端节点列表的排序方式，取值为： ● desc：降序排序 ● asc：升序排序 默认值为desc。
+        /// 查询结果中终端节点列表的排序方式，取值为：  - desc：降序排序  - asc：升序排序 默认值为desc。
         /// </summary>
-        /// <value>查询结果中终端节点列表的排序方式，取值为： ● desc：降序排序 ● asc：升序排序 默认值为desc。</value>
+        /// <value>查询结果中终端节点列表的排序方式，取值为：  - desc：降序排序  - asc：升序排序 默认值为desc。</value>
         [JsonConverter(typeof(EnumClassConverter<SortDirEnum>))]
         public class SortDirEnum
         {
@@ -268,20 +395,19 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         public string MarkerId { get; set; }
 
         /// <summary>
-        /// 终端节点的连接状态。 ● pendingAcceptance：待接受 ● accepted：已接受 ● rejected：已拒绝 ● failed：失败
+        /// 终端节点的连接状态。  - pendingAcceptance：待接受  - accepted：已接受  - rejected：已拒绝  - failed：失败
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
-        public string Status { get; set; }
-
+        public StatusEnum Status { get; set; }
         /// <summary>
-        /// 查询结果中终端节点列表的排序字段，取值为： ● create_at：终端节点的创建时间 ● update_at：终端节点的更新时间 默认值为create_at。
+        /// 查询结果中终端节点列表的排序字段，取值为：  - create_at：终端节点的创建时间  - update_at：终端节点的更新时间 默认值为create_at。
         /// </summary>
         [SDKProperty("sort_key", IsQuery = true)]
         [JsonProperty("sort_key", NullValueHandling = NullValueHandling.Ignore)]
         public SortKeyEnum SortKey { get; set; }
         /// <summary>
-        /// 查询结果中终端节点列表的排序方式，取值为： ● desc：降序排序 ● asc：升序排序 默认值为desc。
+        /// 查询结果中终端节点列表的排序方式，取值为：  - desc：降序排序  - asc：升序排序 默认值为desc。
         /// </summary>
         [SDKProperty("sort_dir", IsQuery = true)]
         [JsonProperty("sort_dir", NullValueHandling = NullValueHandling.Ignore)]

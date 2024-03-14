@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
     public class ListQuotaDetailsRequest 
     {
         /// <summary>
-        /// 资源类型。 ● endpoint_service：终端节点服务 ● endpoint：终端节点
+        /// 资源类型。  - endpoint_service：终端节点服务  - endpoint：终端节点
         /// </summary>
-        /// <value>资源类型。 ● endpoint_service：终端节点服务 ● endpoint：终端节点</value>
+        /// <value>资源类型。  - endpoint_service：终端节点服务  - endpoint：终端节点</value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -132,7 +132,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
 
 
         /// <summary>
-        /// 资源类型。 ● endpoint_service：终端节点服务 ● endpoint：终端节点
+        /// 资源类型。  - endpoint_service：终端节点服务  - endpoint：终端节点
         /// </summary>
         [SDKProperty("type", IsQuery = true)]
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]

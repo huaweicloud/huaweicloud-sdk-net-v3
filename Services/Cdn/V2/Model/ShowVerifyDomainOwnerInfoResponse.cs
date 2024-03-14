@@ -58,6 +58,13 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         [JsonProperty("verify_content", NullValueHandling = NullValueHandling.Ignore)]
         public string VerifyContent { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("X-Request-Id", IsHeader = true)]
+        [JsonProperty("X-Request-Id", NullValueHandling = NullValueHandling.Ignore)]
+        public string XRequestId { get; set; }
+
 
 
         /// <summary>
@@ -74,6 +81,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             sb.Append("  verifyDomainName: ").Append(VerifyDomainName).Append("\n");
             sb.Append("  fileVerifyFilename: ").Append(FileVerifyFilename).Append("\n");
             sb.Append("  verifyContent: ").Append(VerifyContent).Append("\n");
+            sb.Append("  xRequestId: ").Append(XRequestId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -129,6 +137,11 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     this.VerifyContent == input.VerifyContent ||
                     (this.VerifyContent != null &&
                     this.VerifyContent.Equals(input.VerifyContent))
+                ) && 
+                (
+                    this.XRequestId == input.XRequestId ||
+                    (this.XRequestId != null &&
+                    this.XRequestId.Equals(input.XRequestId))
                 );
         }
 
@@ -154,6 +167,8 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     hashCode = hashCode * 59 + this.FileVerifyFilename.GetHashCode();
                 if (this.VerifyContent != null)
                     hashCode = hashCode * 59 + this.VerifyContent.GetHashCode();
+                if (this.XRequestId != null)
+                    hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
                 return hashCode;
             }
         }

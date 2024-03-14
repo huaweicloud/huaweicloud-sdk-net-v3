@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         /// 
         /// </summary>
         [JsonProperty("quotas", NullValueHandling = NullValueHandling.Ignore)]
-        public ResourcesResp Quotas { get; set; }
+        public ResourcesResponseBody Quotas { get; set; }
 
 
 

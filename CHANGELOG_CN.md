@@ -1,3 +1,280 @@
+# 3.1.85 2024-03-14
+
+### HuaweiCloud SDK DRS
+
+- _新增特性_
+  - 支持接口`ListAvailableNodeTypes`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **BatchSetPolicy**
+    - 请求参数变更
+      - `+ jobs.ddl_topic`
+  - **BatchCreateJobs**
+    - 请求参数变更
+      - `+ jobs.public_ip_list`
+  - **ShowJobList**
+    - 响应参数变更
+      - `+ jobs.children.job_direction: enum value [non-dbs]`
+      - `- jobs.children.job_direction: enum value [no-dbs]`
+  - **BatchListJobDetails**
+    - 响应参数变更
+      - `+ results.public_ip_list`
+      - `+ results.bind_public_ip_state`
+      - `+ results.children`
+  - **ShowUpdateObjectSavingStatus**
+    - 响应参数变更
+      - `+ job_id`
+  - **CollectDbObjectsAsync**
+    - 响应参数变更
+      - `+ job_id`
+  - **ShowDataProcessingRulesResult**
+    - 响应参数变更
+      - `+ job_id`
+  - **CollectDbObjectsInfo**
+    - 响应参数变更
+      - `+ job_id`
+  - **CollectPositionAsync**
+    - 响应参数变更
+      - `+ job_id`
+  - **CollectColumns**
+    - 响应参数变更
+      - `+ job_id`
+  - **CreateJob**
+    - 请求参数变更
+      - `+ job.public_ip_list`
+  - **BatchCreateJobsAsync**
+    - 请求参数变更
+      - `+ jobs.public_ip_list`
+  - **UpdateDataProgress**
+    - 响应参数变更
+      - `+ job_id`
+  - **CheckDataFilter**
+    - 响应参数变更
+      - `+ job_id`
+  - **ListAsyncJobDetail**
+    - 响应参数变更
+      - `+ jobs.public_ip_list`
+      - `+ jobs.bind_public_ip_state`
+      - `+ jobs.children`
+  - **ShowJobDetail**
+    - 响应参数变更
+      - `+ job.public_ip_list`
+      - `+ job.bind_public_ip_state`
+      - `+ job.children`
+  - **ExecuteJobAction**
+    - 请求参数变更
+      - `+ job.action_name: enum value [bind_eip,unbind_eip]`
+      - `+ job.action_params.public_ip_config`
+  - **BatchExecuteJobActions**
+    - 请求参数变更
+      - `+ jobs.action_name: enum value [bind_eip,unbind_eip]`
+      - `+ jobs.action_params.public_ip_config`
+
+### HuaweiCloud SDK RDS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowBinlogClearPolicy**
+    - 响应参数变更
+      - `+ binlog_clear_type`
+
+### HuaweiCloud SDK VPCEP
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **AddOrRemoveServicePermissions**
+    - 响应参数变更
+      - `- permission_type: enum value [domainId,orgPath]`
+  - **ListServiceDescribeDetails**
+    - 响应参数变更
+      - `- service_type: enum value [interface]`
+      - `* created_at: string -> date-time`
+  - **ListServiceDetails**
+    - 响应参数变更
+      - `- server_type: enum value [VM,VIP,LB]`
+      - `- status: enum value [creating,available,failed]`
+      - `- service_type: enum value [gataway,interface]`
+      - `* created_at: string -> date-time`
+      - `* updated_at: string -> date-time`
+      - `- tcp_proxy: enum value [close,toa_open,proxy_open,open,proxy_vni]`
+  - **UpdateEndpointService**
+    - 响应参数变更
+      - `- server_type: enum value [VM,VIP,LB]`
+      - `- status: enum value [creating,available,failed]`
+      - `* created_at: string -> date-time`
+      - `* updated_at: string -> date-time`
+      - `- tcp_proxy: enum value [close,toa_open,proxy_open,open,proxy_vni]`
+  - **ListServicePermissionsDetails**
+    - 响应参数变更
+      - `- permissions.permission_type: enum value [domainId,orgPath]`
+      - `* permissions.created_at: string -> date-time`
+  - **ListServicePublicDetails**
+    - 响应参数变更
+      - `- endpoint_services.service_type: enum value [interface,gateway]`
+      - `* endpoint_services.created_at: string -> date-time`
+  - **ListEndpointInfoDetails**
+    - 响应参数变更
+      - `- service_type: enum value [interface,gateway]`
+      - `- status: enum value [pendingAcceptance,creating,accepted,rejected,failed,deleting]`
+      - `- enable_status: enum value [enable,disable]`
+      - `* created_at: string -> date-time`
+      - `* updated_at: string -> date-time`
+      - `* policy_statement: list<string> -> list<PolicyStatement>`
+  - **UpdateEndpointWhite**
+    - 响应参数变更
+      - `- service_type: enum value [interface,gateway]`
+      - `- status: enum value [pendingAcceptance,creating,accepted,rejected,failed,deleting]`
+      - `* created_at: string -> date-time`
+      - `* updated_at: string -> date-time`
+  - **BatchAddOrRemoveResourceInstance**
+    - 请求参数变更
+      - `+ resource_type: enum value [endpoint_service,endpoint]`
+      - `+ action: enum value [create,delete]`
+      - `* body: object<BatchAddOrRemoveResourceInstanceBody> -> object<BatchAddOrRemoveResourceInstanceRequestBody>`
+  - **ListQueryProjectResourceTags**
+    - 请求参数变更
+      - `+ resource_type: enum value [endpoint_service,endpoint]`
+  - **BatchAddEndpointServicePermissions**
+    - 请求参数变更
+      - `* body: object<BatchAddPermissionRequest> -> object<BatchAddEndpointServicePermissionsRequestBody>`
+    - 响应参数变更
+      - `* permissions.created_at: string -> date-time`
+  - **BatchRemoveEndpointServicePermissions**
+    - 请求参数变更
+      - `* body: object<BatchRemovePermissionRequest> -> object<BatchRemoveEndpointServicePermissionsRequestBody>`
+    - 响应参数变更
+      - `* permissions.created_at: string -> date-time`
+  - **UpdateEndpointServicePermissionDesc**
+    - 请求参数变更
+      - `* body: object<UpdatePermissionDescRequest> -> object<UpdateEndpointServicePermissionDescRequestBody>`
+    - 响应参数变更
+      - `* permissions.created_at: string -> date-time`
+  - **UpdateEndpointPolicy**
+    - 请求参数变更
+      - `+ policy_statement.Effect: enum value [Allow,Refuse]`
+    - 响应参数变更
+      - `- enable_dns`
+      - `- dns_names`
+      - `- subnet_id`
+      - `- service_type: enum value [interface,gateway]`
+      - `- status: enum value [pendingAcceptance,creating,accepted,rejected,failed,deleting]`
+      - `* created_at: string -> date-time`
+      - `* updated_at: string -> date-time`
+      - `+ policy_statement.Effect: enum value [Allow,Refuse]`
+  - **DeleteEndpointPolicy**
+    - 响应参数变更
+      - `- enable_dns`
+      - `- dns_names`
+      - `- subnet_id`
+      - `- service_type: enum value [interface,gateway]`
+      - `- status: enum value [pendingAcceptance,creating,accepted,rejected,failed,deleting]`
+      - `* created_at: string -> date-time`
+      - `* updated_at: string -> date-time`
+      - `+ policy_statement.Effect: enum value [Allow,Refuse]`
+  - **CreateEndpointService**
+    - 请求参数变更
+      - `+ service_type: enum value [gateway,interface]`
+    - 响应参数变更
+      - `- server_type: enum value [VM,VIP,LB]`
+      - `- status: enum value [creating,available,failed]`
+      - `* created_at: string -> date-time`
+      - `* updated_at: string -> date-time`
+      - `- tcp_proxy: enum value [close,toa_open,proxy_open,open,proxy_vni]`
+  - **ListEndpointService**
+    - 响应参数变更
+      - `- endpoint_services.status: enum value [creating,available,failed]`
+      - `- endpoint_services.service_type: enum value [VM,VIP,LB]`
+      - `* endpoint_services.created_at: string -> date-time`
+      - `* endpoint_services.updated_at: string -> date-time`
+      - `- endpoint_services.tcp_proxy: enum value [close,toa_open,proxy_open,open,proxy_vni]`
+  - **ListServiceConnections**
+    - 请求参数变更
+      - `+ status: enum value [pendingAcceptance,accepted,rejected,failed]`
+    - 响应参数变更
+      - `* connections.created_at: string -> date-time`
+      - `* connections.updated_at: string -> date-time`
+      - `- connections.status: enum value [pendingAcceptance,creating,accepted,rejected,failed,deleting]`
+  - **AcceptOrRejectEndpoint**
+    - 响应参数变更
+      - `* connections.created_at: string -> date-time`
+      - `* connections.updated_at: string -> date-time`
+      - `- connections.status: enum value [pendingAcceptance,creating,accepted,rejected,failed,deleting]`
+  - **CreateEndpoint**
+    - 响应参数变更
+      - `- dns_names`
+      - `- service_type: enum value [interface,gateway]`
+      - `- status: enum value [pendingAcceptance,creating,accepted,rejected,failed,deleting]`
+      - `* created_at: string -> date-time`
+      - `* updated_at: string -> date-time`
+      - `* policy_statement: list<string> -> list<PolicyStatement>`
+  - **ListEndpoints**
+    - 请求参数变更
+      - `+ sort_key: enum value [create_at,update_at]`
+      - `+ sort_dir: enum value [desc,asc]`
+    - 响应参数变更
+      - `- endpoint_pool_id`
+      - `- endpoint_service_id`
+      - `- vpc_id`
+      - `- created_at`
+      - `- description`
+      - `- error`
+      - `- updated_at`
+      - `- enable_whitelist`
+      - `- project_id`
+      - `- marker_id`
+      - `- id`
+      - `- public_border_group`
+      - `- policy_statement`
+      - `- routetables`
+      - `- endpoint_service_name`
+      - `- ip`
+      - `- whitelist`
+      - `- tags`
+      - `- enable_dns`
+      - `- service_type`
+      - `- active_status`
+      - `- dns_names`
+      - `- subnet_id`
+      - `- status`
+      - `- endpoints.service_type: enum value [interface,gateway]`
+      - `- endpoints.status: enum value [pendingAcceptance,creating,accepted,rejected,failed,deleting]`
+      - `* endpoints.created_at: string -> date-time`
+      - `* endpoints.updated_at: string -> date-time`
+      - `+ endpoints.policy_statement.Effect: enum value [Allow,Refuse]`
+      - `* endpoints: list<EndpointResp> -> list<EndpointResponseBody>`
+  - **ListQuotaDetails**
+    - 响应参数变更
+      - `- quotas.resources.type: enum value [endpoint_service,endpoint]`
+      - `* quotas: object<ResourcesResp> -> object<ResourcesResponseBody>`
+  - **ListVersionDetails**
+    - 响应参数变更
+      - `- versions.status: enum value [CURRENT,SUPPORT,DEPRECATED]`
+      - `- versions.id: enum value [v1]`
+      - `* versions.updated: string -> date-time`
+  - **ListSpecifiedVersionDetails**
+    - 响应参数变更
+      - `- version.status: enum value [CURRENT,SUPPORT,DEPRECATED]`
+      - `- version.id: enum value [v1]`
+      - `* version.updated: string -> date-time`
+  - **ListResourceInstances**
+    - 请求参数变更
+      - `+ resource_type: enum value [endpoint_service,endpoint]`
+      - `+ action: enum value [filter,count]`
+  - **UpdateEndpointConnectionsDesc**
+    - 请求参数变更
+      - `* body: object<UpdateEpConnections> -> object<UpdateEndpointConnectionsDescRequestBody>`
+    - 响应参数变更
+      - `* connections.created_at: string -> date-time`
+      - `* connections.updated_at: string -> date-time`
+      - `- connections.status: enum value [pendingAcceptance,creating,accepted,rejected,failed,deleting]`
+
 # 3.1.84 2024-03-07
 
 ### HuaweiCloud SDK BMS

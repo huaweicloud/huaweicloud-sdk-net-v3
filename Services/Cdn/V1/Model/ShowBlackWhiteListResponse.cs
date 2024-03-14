@@ -28,6 +28,13 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         [JsonProperty("ip_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> IpList { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("X-Request-Id", IsHeader = true)]
+        [JsonProperty("X-Request-Id", NullValueHandling = NullValueHandling.Ignore)]
+        public string XRequestId { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +46,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
             sb.Append("class ShowBlackWhiteListResponse {\n");
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  ipList: ").Append(IpList).Append("\n");
+            sb.Append("  xRequestId: ").Append(XRequestId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -70,6 +78,11 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
                     this.IpList != null &&
                     input.IpList != null &&
                     this.IpList.SequenceEqual(input.IpList)
+                ) && 
+                (
+                    this.XRequestId == input.XRequestId ||
+                    (this.XRequestId != null &&
+                    this.XRequestId.Equals(input.XRequestId))
                 );
         }
 
@@ -85,6 +98,8 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
                     hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.IpList != null)
                     hashCode = hashCode * 59 + this.IpList.GetHashCode();
+                if (this.XRequestId != null)
+                    hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
                 return hashCode;
             }
         }

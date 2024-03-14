@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
     public class BatchJobActionReq 
     {
         /// <summary>
-        /// 执行操作
+        /// 需要执行的特定操作。
         /// </summary>
-        /// <value>执行操作</value>
+        /// <value>需要执行的特定操作。</value>
         [JsonConverter(typeof(EnumClassConverter<ActionEnum>))]
         public class ActionEnum
         {
@@ -126,12 +126,12 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
 
 
         /// <summary>
-        /// 执行操作
+        /// 需要执行的特定操作。
         /// </summary>
         [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]
         public ActionEnum Action { get; set; }
         /// <summary>
-        /// 任务ID（集群模式 取父任务的任务id）
+        /// 任务ID（集群模式 取父任务的任务ID）。
         /// </summary>
         [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
         public string JobId { get; set; }

@@ -88,6 +88,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         [JsonProperty("node_info", NullValueHandling = NullValueHandling.Ignore)]
         public JobNodeInfo NodeInfo { get; set; }
 
+        /// <summary>
+        /// 指定公网IP的信息
+        /// </summary>
+        [JsonProperty("public_ip_list", NullValueHandling = NullValueHandling.Ignore)]
+        public List<PublicIpConfig> PublicIpList { get; set; }
+
 
 
         /// <summary>
@@ -109,6 +115,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             sb.Append("  tuningParams: ").Append(TuningParams).Append("\n");
             sb.Append("  periodOrder: ").Append(PeriodOrder).Append("\n");
             sb.Append("  nodeInfo: ").Append(NodeInfo).Append("\n");
+            sb.Append("  publicIpList: ").Append(PublicIpList).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -192,6 +199,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                     this.NodeInfo == input.NodeInfo ||
                     (this.NodeInfo != null &&
                     this.NodeInfo.Equals(input.NodeInfo))
+                ) && 
+                (
+                    this.PublicIpList == input.PublicIpList ||
+                    this.PublicIpList != null &&
+                    input.PublicIpList != null &&
+                    this.PublicIpList.SequenceEqual(input.PublicIpList)
                 );
         }
 
@@ -227,6 +240,8 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                     hashCode = hashCode * 59 + this.PeriodOrder.GetHashCode();
                 if (this.NodeInfo != null)
                     hashCode = hashCode * 59 + this.NodeInfo.GetHashCode();
+                if (this.PublicIpList != null)
+                    hashCode = hashCode * 59 + this.PublicIpList.GetHashCode();
                 return hashCode;
             }
         }

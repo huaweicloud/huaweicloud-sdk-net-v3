@@ -11,16 +11,16 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Vpcep.V1.Model
 {
     /// <summary>
-    /// 批量删除终端节点服务白名单列表。
+    /// 修改终端节点服务名称
     /// </summary>
-    public class BatchRemovePermissionRequest 
+    public class UpdateEndpointServiceNameRequestBody 
     {
 
         /// <summary>
-        /// 
+        /// 终端节点服务名称
         /// </summary>
-        [JsonProperty("permissions", NullValueHandling = NullValueHandling.Ignore)]
-        public List<EpsRemovePermissionRequest> Permissions { get; set; }
+        [JsonProperty("endpoint_service_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string EndpointServiceName { get; set; }
 
 
 
@@ -30,8 +30,8 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class BatchRemovePermissionRequest {\n");
-            sb.Append("  permissions: ").Append(Permissions).Append("\n");
+            sb.Append("class UpdateEndpointServiceNameRequestBody {\n");
+            sb.Append("  endpointServiceName: ").Append(EndpointServiceName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -41,23 +41,22 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as BatchRemovePermissionRequest);
+            return this.Equals(input as UpdateEndpointServiceNameRequestBody);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(BatchRemovePermissionRequest input)
+        public bool Equals(UpdateEndpointServiceNameRequestBody input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Permissions == input.Permissions ||
-                    this.Permissions != null &&
-                    input.Permissions != null &&
-                    this.Permissions.SequenceEqual(input.Permissions)
+                    this.EndpointServiceName == input.EndpointServiceName ||
+                    (this.EndpointServiceName != null &&
+                    this.EndpointServiceName.Equals(input.EndpointServiceName))
                 );
         }
 
@@ -69,8 +68,8 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Permissions != null)
-                    hashCode = hashCode * 59 + this.Permissions.GetHashCode();
+                if (this.EndpointServiceName != null)
+                    hashCode = hashCode * 59 + this.EndpointServiceName.GetHashCode();
                 return hashCode;
             }
         }

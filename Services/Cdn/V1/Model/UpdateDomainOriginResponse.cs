@@ -22,6 +22,13 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         [JsonProperty("origin", NullValueHandling = NullValueHandling.Ignore)]
         public ResourceBody Origin { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("X-Request-Id", IsHeader = true)]
+        [JsonProperty("X-Request-Id", NullValueHandling = NullValueHandling.Ignore)]
+        public string XRequestId { get; set; }
+
 
 
         /// <summary>
@@ -32,6 +39,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
             var sb = new StringBuilder();
             sb.Append("class UpdateDomainOriginResponse {\n");
             sb.Append("  origin: ").Append(Origin).Append("\n");
+            sb.Append("  xRequestId: ").Append(XRequestId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -57,6 +65,11 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
                     this.Origin == input.Origin ||
                     (this.Origin != null &&
                     this.Origin.Equals(input.Origin))
+                ) && 
+                (
+                    this.XRequestId == input.XRequestId ||
+                    (this.XRequestId != null &&
+                    this.XRequestId.Equals(input.XRequestId))
                 );
         }
 
@@ -70,6 +83,8 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
                 int hashCode = 41;
                 if (this.Origin != null)
                     hashCode = hashCode * 59 + this.Origin.GetHashCode();
+                if (this.XRequestId != null)
+                    hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
                 return hashCode;
             }
         }

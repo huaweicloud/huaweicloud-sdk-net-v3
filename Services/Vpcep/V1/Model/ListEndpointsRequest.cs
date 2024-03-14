@@ -15,6 +15,236 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
     /// </summary>
     public class ListEndpointsRequest 
     {
+        /// <summary>
+        /// 查询结果中终端节点列表的排序字段，取值为：  - create_at：终端节点的创建时间  - update_at：终端节点的更新时间 默认值为create_at。
+        /// </summary>
+        /// <value>查询结果中终端节点列表的排序字段，取值为：  - create_at：终端节点的创建时间  - update_at：终端节点的更新时间 默认值为create_at。</value>
+        [JsonConverter(typeof(EnumClassConverter<SortKeyEnum>))]
+        public class SortKeyEnum
+        {
+            /// <summary>
+            /// Enum CREATE_AT for value: create_at
+            /// </summary>
+            public static readonly SortKeyEnum CREATE_AT = new SortKeyEnum("create_at");
+
+            /// <summary>
+            /// Enum UPDATE_AT for value: update_at
+            /// </summary>
+            public static readonly SortKeyEnum UPDATE_AT = new SortKeyEnum("update_at");
+
+            private static readonly Dictionary<string, SortKeyEnum> StaticFields =
+            new Dictionary<string, SortKeyEnum>()
+            {
+                { "create_at", CREATE_AT },
+                { "update_at", UPDATE_AT },
+            };
+
+            private string _value;
+
+            public SortKeyEnum()
+            {
+
+            }
+
+            public SortKeyEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static SortKeyEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as SortKeyEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(SortKeyEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(SortKeyEnum a, SortKeyEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(SortKeyEnum a, SortKeyEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+        /// <summary>
+        /// 查询结果中终端节点列表的排序方式，取值为：  - desc：降序排序  - asc：升序排序 默认值为desc。
+        /// </summary>
+        /// <value>查询结果中终端节点列表的排序方式，取值为：  - desc：降序排序  - asc：升序排序 默认值为desc。</value>
+        [JsonConverter(typeof(EnumClassConverter<SortDirEnum>))]
+        public class SortDirEnum
+        {
+            /// <summary>
+            /// Enum DESC for value: desc
+            /// </summary>
+            public static readonly SortDirEnum DESC = new SortDirEnum("desc");
+
+            /// <summary>
+            /// Enum ASC for value: asc
+            /// </summary>
+            public static readonly SortDirEnum ASC = new SortDirEnum("asc");
+
+            private static readonly Dictionary<string, SortDirEnum> StaticFields =
+            new Dictionary<string, SortDirEnum>()
+            {
+                { "desc", DESC },
+                { "asc", ASC },
+            };
+
+            private string _value;
+
+            public SortDirEnum()
+            {
+
+            }
+
+            public SortDirEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static SortDirEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as SortDirEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(SortDirEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(SortDirEnum a, SortDirEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(SortDirEnum a, SortDirEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 终端节点服务的名称，支持大小写，前后模糊匹配。
@@ -52,19 +282,17 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 查询结果中终端节点列表的排序字段，取值为： ● create_at：终端节点的创建时间 ● update_at：终端节点的更新时间 默认值为create_at。
+        /// 查询结果中终端节点列表的排序字段，取值为：  - create_at：终端节点的创建时间  - update_at：终端节点的更新时间 默认值为create_at。
         /// </summary>
         [SDKProperty("sort_key", IsQuery = true)]
         [JsonProperty("sort_key", NullValueHandling = NullValueHandling.Ignore)]
-        public string SortKey { get; set; }
-
+        public SortKeyEnum SortKey { get; set; }
         /// <summary>
-        /// 查询结果中终端节点列表的排序方式，取值为： ● desc：降序排序 ● asc：升序排序 默认值为desc。
+        /// 查询结果中终端节点列表的排序方式，取值为：  - desc：降序排序  - asc：升序排序 默认值为desc。
         /// </summary>
         [SDKProperty("sort_dir", IsQuery = true)]
         [JsonProperty("sort_dir", NullValueHandling = NullValueHandling.Ignore)]
-        public string SortDir { get; set; }
-
+        public SortDirEnum SortDir { get; set; }
         /// <summary>
         /// 筛选结果中匹配边缘属性的EPS
         /// </summary>

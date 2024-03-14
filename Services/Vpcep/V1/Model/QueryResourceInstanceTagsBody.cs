@@ -15,6 +15,121 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
     /// </summary>
     public class QueryResourceInstanceTagsBody 
     {
+        /// <summary>
+        /// 操作标识（仅限于filter，count）：filter（过滤）， count(查询总条数)如果是filter就按照过滤条件查询， 如果是count，只需要返回总条数，禁止返回其他字段。
+        /// </summary>
+        /// <value>操作标识（仅限于filter，count）：filter（过滤）， count(查询总条数)如果是filter就按照过滤条件查询， 如果是count，只需要返回总条数，禁止返回其他字段。</value>
+        [JsonConverter(typeof(EnumClassConverter<ActionEnum>))]
+        public class ActionEnum
+        {
+            /// <summary>
+            /// Enum FILTER for value: filter
+            /// </summary>
+            public static readonly ActionEnum FILTER = new ActionEnum("filter");
+
+            /// <summary>
+            /// Enum COUNT for value: count
+            /// </summary>
+            public static readonly ActionEnum COUNT = new ActionEnum("count");
+
+            private static readonly Dictionary<string, ActionEnum> StaticFields =
+            new Dictionary<string, ActionEnum>()
+            {
+                { "filter", FILTER },
+                { "count", COUNT },
+            };
+
+            private string _value;
+
+            public ActionEnum()
+            {
+
+            }
+
+            public ActionEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static ActionEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as ActionEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(ActionEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(ActionEnum a, ActionEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(ActionEnum a, ActionEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 包含标签，最多包含10个key，每个key下面的value最多10个， 每个key对应的value可以为空数组但结构体不能缺失。Key不能重复， 同一个key中values不能重复。结果返回包含所有标签的资源列表， key之间是与的关系，key-value结构中value是或的关系。 无tag过滤条件时返回全量数据。
@@ -62,8 +177,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         /// 操作标识（仅限于filter，count）：filter（过滤）， count(查询总条数)如果是filter就按照过滤条件查询， 如果是count，只需要返回总条数，禁止返回其他字段。
         /// </summary>
         [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]
-        public string Action { get; set; }
-
+        public ActionEnum Action { get; set; }
         /// <summary>
         /// 搜索字段，key为要匹配的字段，如resource_name等。value为匹配的值。 key为固定字典值，不能包含重复的key或不支持的key。 根据key的值确认是否需要模糊匹配，如resource_name默认为模糊搜索（不区分大小写）， 如果value为空字符串精确匹配（多数服务不存在资源名称为空的情况， 因此此类情况返回空列表）。resource_id为精确匹配。 第一期只做resource_name，后续再扩展。
         /// </summary>

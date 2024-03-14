@@ -22,6 +22,12 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         [JsonProperty("binlog_retention_hours", NullValueHandling = NullValueHandling.Ignore)]
         public int? BinlogRetentionHours { get; set; }
 
+        /// <summary>
+        /// 二进制日志保留策略,取值：time、fast - time:表示按时长保留二进制文件 - fast:表示快速清理,不保留二进制文件
+        /// </summary>
+        [JsonProperty("binlog_clear_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string BinlogClearType { get; set; }
+
 
 
         /// <summary>
@@ -32,6 +38,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             var sb = new StringBuilder();
             sb.Append("class ShowBinlogClearPolicyResponse {\n");
             sb.Append("  binlogRetentionHours: ").Append(BinlogRetentionHours).Append("\n");
+            sb.Append("  binlogClearType: ").Append(BinlogClearType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -57,6 +64,11 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
                     this.BinlogRetentionHours == input.BinlogRetentionHours ||
                     (this.BinlogRetentionHours != null &&
                     this.BinlogRetentionHours.Equals(input.BinlogRetentionHours))
+                ) && 
+                (
+                    this.BinlogClearType == input.BinlogClearType ||
+                    (this.BinlogClearType != null &&
+                    this.BinlogClearType.Equals(input.BinlogClearType))
                 );
         }
 
@@ -70,6 +82,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
                 int hashCode = 41;
                 if (this.BinlogRetentionHours != null)
                     hashCode = hashCode * 59 + this.BinlogRetentionHours.GetHashCode();
+                if (this.BinlogClearType != null)
+                    hashCode = hashCode * 59 + this.BinlogClearType.GetHashCode();
                 return hashCode;
             }
         }

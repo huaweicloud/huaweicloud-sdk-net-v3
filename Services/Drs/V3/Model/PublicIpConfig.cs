@@ -8,50 +8,50 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Vpcep.V1.Model
+namespace HuaweiCloud.SDK.Drs.V3.Model
 {
     /// <summary>
-    /// 批量添加终端节点服务白名单列表。
+    /// 租户公网IP信息
     /// </summary>
-    public class BatchAddPermissionRequest 
+    public class PublicIpConfig 
     {
         /// <summary>
-        /// 终端节点服务白名单类型。 ● domainId：基于账户ID配置终端节点服务白名单。 ● orgPath：基于账户所在组织路径配置终端节点服务白名单。
+        /// 指定公网IP绑定任务的类型： - 主备任务：主是master，备是slave - 其他固定传master
         /// </summary>
-        /// <value>终端节点服务白名单类型。 ● domainId：基于账户ID配置终端节点服务白名单。 ● orgPath：基于账户所在组织路径配置终端节点服务白名单。</value>
-        [JsonConverter(typeof(EnumClassConverter<PermissionTypeEnum>))]
-        public class PermissionTypeEnum
+        /// <value>指定公网IP绑定任务的类型： - 主备任务：主是master，备是slave - 其他固定传master</value>
+        [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
+        public class TypeEnum
         {
             /// <summary>
-            /// Enum DOMAINID for value: domainId
+            /// Enum MASTER for value: master
             /// </summary>
-            public static readonly PermissionTypeEnum DOMAINID = new PermissionTypeEnum("domainId");
+            public static readonly TypeEnum MASTER = new TypeEnum("master");
 
             /// <summary>
-            /// Enum ORGPATH for value: orgPath
+            /// Enum SLAVE for value: slave
             /// </summary>
-            public static readonly PermissionTypeEnum ORGPATH = new PermissionTypeEnum("orgPath");
+            public static readonly TypeEnum SLAVE = new TypeEnum("slave");
 
-            private static readonly Dictionary<string, PermissionTypeEnum> StaticFields =
-            new Dictionary<string, PermissionTypeEnum>()
+            private static readonly Dictionary<string, TypeEnum> StaticFields =
+            new Dictionary<string, TypeEnum>()
             {
-                { "domainId", DOMAINID },
-                { "orgPath", ORGPATH },
+                { "master", MASTER },
+                { "slave", SLAVE },
             };
 
             private string _value;
 
-            public PermissionTypeEnum()
+            public TypeEnum()
             {
 
             }
 
-            public PermissionTypeEnum(string value)
+            public TypeEnum(string value)
             {
                 _value = value;
             }
 
-            public static PermissionTypeEnum FromValue(string value)
+            public static TypeEnum FromValue(string value)
             {
                 if(value == null){
                     return null;
@@ -92,7 +92,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                     return true;
                 }
 
-                if (this.Equals(obj as PermissionTypeEnum))
+                if (this.Equals(obj as TypeEnum))
                 {
                     return true;
                 }
@@ -100,7 +100,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                 return false;
             }
 
-            public bool Equals(PermissionTypeEnum obj)
+            public bool Equals(TypeEnum obj)
             {
                 if ((object)obj == null)
                 {
@@ -109,7 +109,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                 return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
             }
 
-            public static bool operator ==(PermissionTypeEnum a, PermissionTypeEnum b)
+            public static bool operator ==(TypeEnum a, TypeEnum b)
             {
                 if (System.Object.ReferenceEquals(a, b))
                 {
@@ -124,7 +124,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                 return a.Equals(b);
             }
 
-            public static bool operator !=(PermissionTypeEnum a, PermissionTypeEnum b)
+            public static bool operator !=(TypeEnum a, TypeEnum b)
             {
                 return !(a == b);
             }
@@ -132,16 +132,22 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
 
 
         /// <summary>
-        /// 终端节点服务白名单列表
+        /// 指定公网IP的ID
         /// </summary>
-        [JsonProperty("permissions", NullValueHandling = NullValueHandling.Ignore)]
-        public List<EpsAddPermissionRequest> Permissions { get; set; }
+        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
+        public string Id { get; set; }
 
         /// <summary>
-        /// 终端节点服务白名单类型。 ● domainId：基于账户ID配置终端节点服务白名单。 ● orgPath：基于账户所在组织路径配置终端节点服务白名单。
+        /// 指定公网IP
         /// </summary>
-        [JsonProperty("permission_type", NullValueHandling = NullValueHandling.Ignore)]
-        public PermissionTypeEnum PermissionType { get; set; }
+        [JsonProperty("public_ip", NullValueHandling = NullValueHandling.Ignore)]
+        public string PublicIp { get; set; }
+
+        /// <summary>
+        /// 指定公网IP绑定任务的类型： - 主备任务：主是master，备是slave - 其他固定传master
+        /// </summary>
+        [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
+        public TypeEnum Type { get; set; }
 
 
         /// <summary>
@@ -150,9 +156,10 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class BatchAddPermissionRequest {\n");
-            sb.Append("  permissions: ").Append(Permissions).Append("\n");
-            sb.Append("  permissionType: ").Append(PermissionType).Append("\n");
+            sb.Append("class PublicIpConfig {\n");
+            sb.Append("  id: ").Append(Id).Append("\n");
+            sb.Append("  publicIp: ").Append(PublicIp).Append("\n");
+            sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -162,28 +169,32 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as BatchAddPermissionRequest);
+            return this.Equals(input as PublicIpConfig);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(BatchAddPermissionRequest input)
+        public bool Equals(PublicIpConfig input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Permissions == input.Permissions ||
-                    this.Permissions != null &&
-                    input.Permissions != null &&
-                    this.Permissions.SequenceEqual(input.Permissions)
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
                 ) && 
                 (
-                    this.PermissionType == input.PermissionType ||
-                    (this.PermissionType != null &&
-                    this.PermissionType.Equals(input.PermissionType))
+                    this.PublicIp == input.PublicIp ||
+                    (this.PublicIp != null &&
+                    this.PublicIp.Equals(input.PublicIp))
+                ) && 
+                (
+                    this.Type == input.Type ||
+                    (this.Type != null &&
+                    this.Type.Equals(input.Type))
                 );
         }
 
@@ -195,10 +206,12 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Permissions != null)
-                    hashCode = hashCode * 59 + this.Permissions.GetHashCode();
-                if (this.PermissionType != null)
-                    hashCode = hashCode * 59 + this.PermissionType.GetHashCode();
+                if (this.Id != null)
+                    hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.PublicIp != null)
+                    hashCode = hashCode * 59 + this.PublicIp.GetHashCode();
+                if (this.Type != null)
+                    hashCode = hashCode * 59 + this.Type.GetHashCode();
                 return hashCode;
             }
         }

@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
     public class AcceptOrRejectEndpointRequestBody 
     {
         /// <summary>
-        /// 允许或拒绝连接。 ● receive：允许连接。 ● reject：拒绝连接。
+        /// 允许或拒绝连接。  - receive：允许连接。  - reject：拒绝连接。
         /// </summary>
-        /// <value>允许或拒绝连接。 ● receive：允许连接。 ● reject：拒绝连接。</value>
+        /// <value>允许或拒绝连接。  - receive：允许连接。  - reject：拒绝连接。</value>
         [JsonConverter(typeof(EnumClassConverter<ActionEnum>))]
         public class ActionEnum
         {
@@ -132,7 +132,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
 
 
         /// <summary>
-        /// 允许或拒绝连接。 ● receive：允许连接。 ● reject：拒绝连接。
+        /// 允许或拒绝连接。  - receive：允许连接。  - reject：拒绝连接。
         /// </summary>
         [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]
         public ActionEnum Action { get; set; }

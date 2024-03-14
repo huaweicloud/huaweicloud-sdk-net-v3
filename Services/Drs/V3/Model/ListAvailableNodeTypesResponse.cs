@@ -8,19 +8,19 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Vpcep.V1.Model
+namespace HuaweiCloud.SDK.Drs.V3.Model
 {
     /// <summary>
-    /// 
+    /// Response Object
     /// </summary>
-    public class UpdateEpConnections 
+    public class ListAvailableNodeTypesResponse : SdkResponse
     {
 
         /// <summary>
-        /// 连接管理描述字段列表
+        /// Node规格列表
         /// </summary>
-        [JsonProperty("connections", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ConnectionsDesc> Connections { get; set; }
+        [JsonProperty("node_types", NullValueHandling = NullValueHandling.Ignore)]
+        public List<QuerySupportNodeTypeBean> NodeTypes { get; set; }
 
 
 
@@ -30,8 +30,8 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class UpdateEpConnections {\n");
-            sb.Append("  connections: ").Append(Connections).Append("\n");
+            sb.Append("class ListAvailableNodeTypesResponse {\n");
+            sb.Append("  nodeTypes: ").Append(NodeTypes).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -41,23 +41,23 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as UpdateEpConnections);
+            return this.Equals(input as ListAvailableNodeTypesResponse);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(UpdateEpConnections input)
+        public bool Equals(ListAvailableNodeTypesResponse input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Connections == input.Connections ||
-                    this.Connections != null &&
-                    input.Connections != null &&
-                    this.Connections.SequenceEqual(input.Connections)
+                    this.NodeTypes == input.NodeTypes ||
+                    this.NodeTypes != null &&
+                    input.NodeTypes != null &&
+                    this.NodeTypes.SequenceEqual(input.NodeTypes)
                 );
         }
 
@@ -69,8 +69,8 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Connections != null)
-                    hashCode = hashCode * 59 + this.Connections.GetHashCode();
+                if (this.NodeTypes != null)
+                    hashCode = hashCode * 59 + this.NodeTypes.GetHashCode();
                 return hashCode;
             }
         }

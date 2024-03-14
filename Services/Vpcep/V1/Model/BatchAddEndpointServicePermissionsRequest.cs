@@ -28,7 +28,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public BatchAddPermissionRequest Body { get; set; }
+        public BatchAddEndpointServicePermissionsRequestBody Body { get; set; }
 
 
 

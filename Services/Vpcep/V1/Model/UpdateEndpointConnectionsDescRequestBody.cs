@@ -11,16 +11,16 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Vpcep.V1.Model
 {
     /// <summary>
-    /// 查询配额接口响应结构体
+    /// 
     /// </summary>
-    public class ResourcesResp 
+    public class UpdateEndpointConnectionsDescRequestBody 
     {
 
         /// <summary>
-        /// 资源列表
+        /// 连接管理描述字段列表
         /// </summary>
-        [JsonProperty("resources", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Quotas> Resources { get; set; }
+        [JsonProperty("connections", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ConnectionsDesc> Connections { get; set; }
 
 
 
@@ -30,8 +30,8 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ResourcesResp {\n");
-            sb.Append("  resources: ").Append(Resources).Append("\n");
+            sb.Append("class UpdateEndpointConnectionsDescRequestBody {\n");
+            sb.Append("  connections: ").Append(Connections).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -41,23 +41,23 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ResourcesResp);
+            return this.Equals(input as UpdateEndpointConnectionsDescRequestBody);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ResourcesResp input)
+        public bool Equals(UpdateEndpointConnectionsDescRequestBody input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Resources == input.Resources ||
-                    this.Resources != null &&
-                    input.Resources != null &&
-                    this.Resources.SequenceEqual(input.Resources)
+                    this.Connections == input.Connections ||
+                    this.Connections != null &&
+                    input.Connections != null &&
+                    this.Connections.SequenceEqual(input.Connections)
                 );
         }
 
@@ -69,8 +69,8 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Resources != null)
-                    hashCode = hashCode * 59 + this.Resources.GetHashCode();
+                if (this.Connections != null)
+                    hashCode = hashCode * 59 + this.Connections.GetHashCode();
                 return hashCode;
             }
         }

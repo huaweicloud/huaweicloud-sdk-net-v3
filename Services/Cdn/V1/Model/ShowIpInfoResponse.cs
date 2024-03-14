@@ -22,6 +22,13 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         [JsonProperty("cdn_ips", NullValueHandling = NullValueHandling.Ignore)]
         public List<CdnIps> CdnIps { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("X-Request-Id", IsHeader = true)]
+        [JsonProperty("X-Request-Id", NullValueHandling = NullValueHandling.Ignore)]
+        public string XRequestId { get; set; }
+
 
 
         /// <summary>
@@ -32,6 +39,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
             var sb = new StringBuilder();
             sb.Append("class ShowIpInfoResponse {\n");
             sb.Append("  cdnIps: ").Append(CdnIps).Append("\n");
+            sb.Append("  xRequestId: ").Append(XRequestId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -58,6 +66,11 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
                     this.CdnIps != null &&
                     input.CdnIps != null &&
                     this.CdnIps.SequenceEqual(input.CdnIps)
+                ) && 
+                (
+                    this.XRequestId == input.XRequestId ||
+                    (this.XRequestId != null &&
+                    this.XRequestId.Equals(input.XRequestId))
                 );
         }
 
@@ -71,6 +84,8 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
                 int hashCode = 41;
                 if (this.CdnIps != null)
                     hashCode = hashCode * 59 + this.CdnIps.GetHashCode();
+                if (this.XRequestId != null)
+                    hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
                 return hashCode;
             }
         }

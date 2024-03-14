@@ -390,7 +390,7 @@ namespace HuaweiCloud.SDK.Core
                 request.Header = headers;
             }
 
-            if (contentType == "multipart/form-data")
+            if (contentType == "multipart/form-data" || contentType == "application/x-www-form-urlencoded")
             {
                 var formData = GetFormData(data);
                 if (formData != null)

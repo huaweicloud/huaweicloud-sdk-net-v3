@@ -76,6 +76,13 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         [JsonProperty("file_type", NullValueHandling = NullValueHandling.Ignore)]
         public string FileType { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("X-Request-Id", IsHeader = true)]
+        [JsonProperty("X-Request-Id", NullValueHandling = NullValueHandling.Ignore)]
+        public string XRequestId { get; set; }
+
 
 
         /// <summary>
@@ -95,6 +102,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             sb.Append("  failed: ").Append(Failed).Append("\n");
             sb.Append("  total: ").Append(Total).Append("\n");
             sb.Append("  fileType: ").Append(FileType).Append("\n");
+            sb.Append("  xRequestId: ").Append(XRequestId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -166,6 +174,11 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     this.FileType == input.FileType ||
                     (this.FileType != null &&
                     this.FileType.Equals(input.FileType))
+                ) && 
+                (
+                    this.XRequestId == input.XRequestId ||
+                    (this.XRequestId != null &&
+                    this.XRequestId.Equals(input.XRequestId))
                 );
         }
 
@@ -197,6 +210,8 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     hashCode = hashCode * 59 + this.Total.GetHashCode();
                 if (this.FileType != null)
                     hashCode = hashCode * 59 + this.FileType.GetHashCode();
+                if (this.XRequestId != null)
+                    hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
                 return hashCode;
             }
         }

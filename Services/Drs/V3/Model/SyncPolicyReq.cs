@@ -712,6 +712,12 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         [JsonProperty("gtid_set", NullValueHandling = NullValueHandling.Ignore)]
         public string GtidSet { get; set; }
 
+        /// <summary>
+        /// 存储DDL的topic。Kafka为目标且ddl_trans为true时必填，取值：目标库已存在的topic名称，确保topic已存在。
+        /// </summary>
+        [JsonProperty("ddl_topic", NullValueHandling = NullValueHandling.Ignore)]
+        public string DdlTopic { get; set; }
+
 
 
         /// <summary>
@@ -738,6 +744,7 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
             sb.Append("  slotName: ").Append(SlotName).Append("\n");
             sb.Append("  fileAndPosition: ").Append(FileAndPosition).Append("\n");
             sb.Append("  gtidSet: ").Append(GtidSet).Append("\n");
+            sb.Append("  ddlTopic: ").Append(DdlTopic).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -843,6 +850,11 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
                     this.GtidSet == input.GtidSet ||
                     (this.GtidSet != null &&
                     this.GtidSet.Equals(input.GtidSet))
+                ) && 
+                (
+                    this.DdlTopic == input.DdlTopic ||
+                    (this.DdlTopic != null &&
+                    this.DdlTopic.Equals(input.DdlTopic))
                 );
         }
 
@@ -888,6 +900,8 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
                     hashCode = hashCode * 59 + this.FileAndPosition.GetHashCode();
                 if (this.GtidSet != null)
                     hashCode = hashCode * 59 + this.GtidSet.GetHashCode();
+                if (this.DdlTopic != null)
+                    hashCode = hashCode * 59 + this.DdlTopic.GetHashCode();
                 return hashCode;
             }
         }

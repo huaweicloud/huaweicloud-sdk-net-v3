@@ -673,6 +673,30 @@ namespace HuaweiCloud.SDK.Drs.V3
         }
         
         /// <summary>
+        /// 查询可用的Node规格
+        ///
+        /// 查询可用的Node规格
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListAvailableNodeTypesResponse> ListAvailableNodeTypesAsync(ListAvailableNodeTypesRequest listAvailableNodeTypesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/node-type", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAvailableNodeTypesRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListAvailableNodeTypesResponse>(response);
+        }
+
+        public AsyncInvoker<ListAvailableNodeTypesResponse> ListAvailableNodeTypesAsyncInvoker(ListAvailableNodeTypesRequest listAvailableNodeTypesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/node-type", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAvailableNodeTypesRequest);
+            return new AsyncInvoker<ListAvailableNodeTypesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAvailableNodeTypesResponse>);
+        }
+        
+        /// <summary>
         /// 查询规格未售罄的可用区
         ///
         /// 查询规格未售罄的可用区

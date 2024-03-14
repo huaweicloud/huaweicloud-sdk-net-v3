@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
     public class ListServicePermissionsDetailsRequest 
     {
         /// <summary>
-        /// 查询结果中白名单列表的排序字段，取值为create_at，表示白名单的添加时间。
+        /// 查询结果中终端节点服务列表的排序字段，取值为：  - create_at：终端节点服务的创建时间  - update_at：终端节点服务的更新时间 默认值为create_at。
         /// </summary>
-        /// <value>查询结果中白名单列表的排序字段，取值为create_at，表示白名单的添加时间。</value>
+        /// <value>查询结果中终端节点服务列表的排序字段，取值为：  - create_at：终端节点服务的创建时间  - update_at：终端节点服务的更新时间 默认值为create_at。</value>
         [JsonConverter(typeof(EnumClassConverter<SortKeyEnum>))]
         public class SortKeyEnum
         {
@@ -131,9 +131,9 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         }
 
         /// <summary>
-        /// 查询结果中白名单列表的排序方式，取值为： ● desc：降序排序 ● asc：升序排序 默认值为desc。
+        /// 查询结果中白名单列表的排序方式，取值为：  - desc：降序排序  - asc：升序排序 默认值为desc。
         /// </summary>
-        /// <value>查询结果中白名单列表的排序方式，取值为： ● desc：降序排序 ● asc：升序排序 默认值为desc。</value>
+        /// <value>查询结果中白名单列表的排序方式，取值为：  - desc：降序排序  - asc：升序排序 默认值为desc。</value>
         [JsonConverter(typeof(EnumClassConverter<SortDirEnum>))]
         public class SortDirEnum
         {
@@ -275,13 +275,13 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 查询结果中白名单列表的排序字段，取值为create_at，表示白名单的添加时间。
+        /// 查询结果中终端节点服务列表的排序字段，取值为：  - create_at：终端节点服务的创建时间  - update_at：终端节点服务的更新时间 默认值为create_at。
         /// </summary>
         [SDKProperty("sort_key", IsQuery = true)]
         [JsonProperty("sort_key", NullValueHandling = NullValueHandling.Ignore)]
         public SortKeyEnum SortKey { get; set; }
         /// <summary>
-        /// 查询结果中白名单列表的排序方式，取值为： ● desc：降序排序 ● asc：升序排序 默认值为desc。
+        /// 查询结果中白名单列表的排序方式，取值为：  - desc：降序排序  - asc：升序排序 默认值为desc。
         /// </summary>
         [SDKProperty("sort_dir", IsQuery = true)]
         [JsonProperty("sort_dir", NullValueHandling = NullValueHandling.Ignore)]

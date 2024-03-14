@@ -15,115 +15,6 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
     /// </summary>
     public class ListServiceDescribeDetailsResponse : SdkResponse
     {
-        /// <summary>
-        /// 终端节点服务类型。仅支持将用户私有服务创建为interface类型的终端节点服务。 ● gataway：由运维人员配置。用户无需创建，可直接使用。 ● interface：包括运维人员配置的云服务和用户自己创建的私有服务。 其中，运维人员配置的云服务无需创建，用户可直接使用。 您可以通过创建终端节点创建访问Gateway和Interface类型终端节点服务的终端节点。
-        /// </summary>
-        /// <value>终端节点服务类型。仅支持将用户私有服务创建为interface类型的终端节点服务。 ● gataway：由运维人员配置。用户无需创建，可直接使用。 ● interface：包括运维人员配置的云服务和用户自己创建的私有服务。 其中，运维人员配置的云服务无需创建，用户可直接使用。 您可以通过创建终端节点创建访问Gateway和Interface类型终端节点服务的终端节点。</value>
-        [JsonConverter(typeof(EnumClassConverter<ServiceTypeEnum>))]
-        public class ServiceTypeEnum
-        {
-            /// <summary>
-            /// Enum INTERFACE for value: interface
-            /// </summary>
-            public static readonly ServiceTypeEnum INTERFACE = new ServiceTypeEnum("interface");
-
-            private static readonly Dictionary<string, ServiceTypeEnum> StaticFields =
-            new Dictionary<string, ServiceTypeEnum>()
-            {
-                { "interface", INTERFACE },
-            };
-
-            private string _value;
-
-            public ServiceTypeEnum()
-            {
-
-            }
-
-            public ServiceTypeEnum(string value)
-            {
-                _value = value;
-            }
-
-            public static ServiceTypeEnum FromValue(string value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public string GetValue()
-            {
-                return _value;
-            }
-
-            public override string ToString()
-            {
-                return $"{_value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this._value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as ServiceTypeEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(ServiceTypeEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
-            }
-
-            public static bool operator ==(ServiceTypeEnum a, ServiceTypeEnum b)
-            {
-                if (System.Object.ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(ServiceTypeEnum a, ServiceTypeEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
 
         /// <summary>
         /// 终端节点服务的ID，唯一标识。
@@ -138,18 +29,19 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         public string ServiceName { get; set; }
 
         /// <summary>
-        /// 终端节点服务类型。仅支持将用户私有服务创建为interface类型的终端节点服务。 ● gataway：由运维人员配置。用户无需创建，可直接使用。 ● interface：包括运维人员配置的云服务和用户自己创建的私有服务。 其中，运维人员配置的云服务无需创建，用户可直接使用。 您可以通过创建终端节点创建访问Gateway和Interface类型终端节点服务的终端节点。
+        /// 终端节点服务类型。仅支持将用户私有服务创建为interface类型的终端节点服务。  - gateway：由运维人员配置。用户无需创建，可直接使用。  - interface：包括运维人员配置的云服务和用户自己创建的私有服务。 其中，运维人员配置的云服务无需创建，用户可直接使用。 您可以通过创建终端节点创建访问Gateway和Interface类型终端节点服务的终端节点。
         /// </summary>
         [JsonProperty("service_type", NullValueHandling = NullValueHandling.Ignore)]
-        public ServiceTypeEnum ServiceType { get; set; }
+        public string ServiceType { get; set; }
+
         /// <summary>
         /// 终端节点服务的创建时间。 采用UTC时间格式，格式为：YYYY-MMDDTHH:MM:SSZ
         /// </summary>
         [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
-        public string CreatedAt { get; set; }
+        public DateTime? CreatedAt { get; set; }
 
         /// <summary>
-        /// 连接该终端节点服务的终端节点是否计费。 ● true：计费 ● false：不计费
+        /// 连接该终端节点服务的终端节点是否计费。  - true：计费  - false：不计费
         /// </summary>
         [JsonProperty("is_charge", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsCharge { get; set; }
@@ -161,7 +53,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         public string PublicBorderGroup { get; set; }
 
         /// <summary>
-        /// 是否开启终端节点策略。 ● false：不支持设置终端节点策略 ● true：支持设置终端节点策略 默认为false 是否开启终端节点策略。 ● false：不支持设置终端节点策略 ● true：支持设置终端节点策略 默认为false
+        /// 是否开启终端节点策略。  - false：不支持设置终端节点策略  - true：支持设置终端节点策略 默认为false 是否开启终端节点策略。  - false：不支持设置终端节点策略  - true：支持设置终端节点策略 默认为false
         /// </summary>
         [JsonProperty("enable_policy", NullValueHandling = NullValueHandling.Ignore)]
         public bool? EnablePolicy { get; set; }

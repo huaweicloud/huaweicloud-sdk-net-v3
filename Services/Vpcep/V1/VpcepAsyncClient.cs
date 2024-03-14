@@ -718,7 +718,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         /// 批量添加或删除资源标签接口
         ///
         /// 为指定Endpoint Service或Endpoint批量添加或删除标签。
-        /// ● 一个资源上最多有10个标签。
+        ///  - 一个资源上最多有10个标签。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>

@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
     public class ListEndpointServiceRequest 
     {
         /// <summary>
-        /// 终端节点服务的状态。 ● creating：创建中 ● available：可连接 ● failed：失败 ● deleting：删除中
+        /// 终端节点服务的状态。  - creating：创建中  - available：可连接  - failed：失败  - deleting：删除中
         /// </summary>
-        /// <value>终端节点服务的状态。 ● creating：创建中 ● available：可连接 ● failed：失败 ● deleting：删除中</value>
+        /// <value>终端节点服务的状态。  - creating：创建中  - available：可连接  - failed：失败  - deleting：删除中</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -143,9 +143,9 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         }
 
         /// <summary>
-        /// 查询结果中终端节点服务列表的排序字段，取值为： ● create_at：终端节点服务的创建时间 ● update_at：终端节点服务的更新时间 默认值为create_at。
+        /// 查询结果中终端节点服务列表的排序字段，取值为：  - create_at：终端节点服务的创建时间  - update_at：终端节点服务的更新时间 默认值为create_at。
         /// </summary>
-        /// <value>查询结果中终端节点服务列表的排序字段，取值为： ● create_at：终端节点服务的创建时间 ● update_at：终端节点服务的更新时间 默认值为create_at。</value>
+        /// <value>查询结果中终端节点服务列表的排序字段，取值为：  - create_at：终端节点服务的创建时间  - update_at：终端节点服务的更新时间 默认值为create_at。</value>
         [JsonConverter(typeof(EnumClassConverter<SortKeyEnum>))]
         public class SortKeyEnum
         {
@@ -258,9 +258,9 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         }
 
         /// <summary>
-        /// 查询结果中终端节点服务列表的排序方式，取值为： ● desc：降序排序 ● asc：升序排序 默认值为desc。
+        /// 查询结果中终端节点服务列表的排序方式，取值为：  - desc：降序排序  - asc：升序排序 默认值为desc。
         /// </summary>
-        /// <value>查询结果中终端节点服务列表的排序方式，取值为： ● desc：降序排序 ● asc：升序排序 默认值为desc。</value>
+        /// <value>查询结果中终端节点服务列表的排序方式，取值为：  - desc：降序排序  - asc：升序排序 默认值为desc。</value>
         [JsonConverter(typeof(EnumClassConverter<SortDirEnum>))]
         public class SortDirEnum
         {
@@ -388,19 +388,19 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         public string Id { get; set; }
 
         /// <summary>
-        /// 终端节点服务的状态。 ● creating：创建中 ● available：可连接 ● failed：失败 ● deleting：删除中
+        /// 终端节点服务的状态。  - creating：创建中  - available：可连接  - failed：失败  - deleting：删除中
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
         /// <summary>
-        /// 查询结果中终端节点服务列表的排序字段，取值为： ● create_at：终端节点服务的创建时间 ● update_at：终端节点服务的更新时间 默认值为create_at。
+        /// 查询结果中终端节点服务列表的排序字段，取值为：  - create_at：终端节点服务的创建时间  - update_at：终端节点服务的更新时间 默认值为create_at。
         /// </summary>
         [SDKProperty("sort_key", IsQuery = true)]
         [JsonProperty("sort_key", NullValueHandling = NullValueHandling.Ignore)]
         public SortKeyEnum SortKey { get; set; }
         /// <summary>
-        /// 查询结果中终端节点服务列表的排序方式，取值为： ● desc：降序排序 ● asc：升序排序 默认值为desc。
+        /// 查询结果中终端节点服务列表的排序方式，取值为：  - desc：降序排序  - asc：升序排序 默认值为desc。
         /// </summary>
         [SDKProperty("sort_dir", IsQuery = true)]
         [JsonProperty("sort_dir", NullValueHandling = NullValueHandling.Ignore)]

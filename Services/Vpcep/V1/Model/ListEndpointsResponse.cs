@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         /// 终端节点列表。
         /// </summary>
         [JsonProperty("endpoints", NullValueHandling = NullValueHandling.Ignore)]
-        public List<EndpointResp> Endpoints { get; set; }
+        public List<EndpointResponseBody> Endpoints { get; set; }
 
         /// <summary>
         /// 满足查询条件的终端节点总条数，不受分页（即limit、offset参数）影响。

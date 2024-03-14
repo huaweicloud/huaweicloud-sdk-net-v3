@@ -22,6 +22,13 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Status { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("X-Request-Id", IsHeader = true)]
+        [JsonProperty("X-Request-Id", NullValueHandling = NullValueHandling.Ignore)]
+        public string XRequestId { get; set; }
+
 
 
         /// <summary>
@@ -32,6 +39,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
             var sb = new StringBuilder();
             sb.Append("class UpdatePrivateBucketAccessResponse {\n");
             sb.Append("  status: ").Append(Status).Append("\n");
+            sb.Append("  xRequestId: ").Append(XRequestId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -57,6 +65,11 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
                     this.Status == input.Status ||
                     (this.Status != null &&
                     this.Status.Equals(input.Status))
+                ) && 
+                (
+                    this.XRequestId == input.XRequestId ||
+                    (this.XRequestId != null &&
+                    this.XRequestId.Equals(input.XRequestId))
                 );
         }
 
@@ -70,6 +83,8 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
                 int hashCode = 41;
                 if (this.Status != null)
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.XRequestId != null)
+                    hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
                 return hashCode;
             }
         }

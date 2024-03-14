@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
     {
 
         /// <summary>
-        /// 说明： 创建Interface类型Client必选。 需要指定vpc_id对应VPC下已创建的网络（network）的ID，UUID格式。 详细内容请参考《虚拟私有云API参考》中的“查询子网”，详见响应消息中的“id”字段。 创建连接Interface类型终端节点服务的终端节点时，此参数必选。 说明 ● VPC的子网网段不能与198.19.128.0/17重叠 ● VPC路由表中自定义路由的目的地址不能与198.19.128.0/17重叠
+        /// 创建Interface类型Client必选。 需要指定vpc_id对应VPC下已创建的网络（network）的ID，UUID格式。 详细内容请参考《虚拟私有云API参考》中的“查询子网”，详见响应消息中的“id”字段。 创建连接Interface类型终端节点服务的终端节点时，此参数必选。 说明:  - VPC的子网网段不能与198.19.128.0/17重叠  - VPC路由表中自定义路由的目的地址不能与198.19.128.0/17重叠
         /// </summary>
         [JsonProperty("subnet_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SubnetId { get; set; }
@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         public string VpcId { get; set; }
 
         /// <summary>
-        /// 是否创建域名。 ● true：创建域名 ● false：不创建域名 默认值为false。 说明 当创建连接gateway类型终端节点服务的终端节点时， “enable_dns”设置为true或者false，均不创建域名。
+        /// 是否创建域名。  - true：创建域名  - false：不创建域名 默认值为false。 说明 当创建连接gateway类型终端节点服务的终端节点时， “enable_dns”设置为true或者false，均不创建域名。
         /// </summary>
         [JsonProperty("enable_dns", NullValueHandling = NullValueHandling.Ignore)]
         public bool? EnableDns { get; set; }

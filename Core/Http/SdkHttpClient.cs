@@ -121,8 +121,7 @@ namespace HuaweiCloud.SDK.Core
 
             if (request.FormData != null && request.FormData.Count != 0)
             {
-                var formDataContent = GetFormDataContent(request);
-                message.Content = formDataContent;
+                message.Content = request.ContentType == "application/x-www-form-urlencoded" ? GetFormUrlEncodedContent(request) : GetFormDataContent(request);
             }
 
             return message;
@@ -141,6 +140,12 @@ namespace HuaweiCloud.SDK.Core
             }
 
             return contentType;
+        }
+
+        private HttpContent GetFormUrlEncodedContent(HttpRequest request)
+        {
+            var pairs = request.FormData.Select(pair => new KeyValuePair<string, string>(pair.Key, pair.Value.ToString())).ToList();
+            return new FormUrlEncodedContent(pairs);
         }
 
         private HttpContent GetFormDataContent(HttpRequest request)

@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
     {
 
         /// <summary>
-        /// 
+        /// 终端节点服务白名单
         /// </summary>
         [JsonProperty("permissions", NullValueHandling = NullValueHandling.Ignore)]
         public List<EpsPermission> Permissions { get; set; }

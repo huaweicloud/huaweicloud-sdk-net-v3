@@ -1,3 +1,280 @@
+# 3.1.85 2024-03-14
+
+### HuaweiCloud SDK DRS
+
+- _Features_
+  - Support the API `ListAvailableNodeTypes`
+- _Bug Fix_
+  - None
+- _Change_
+  - **BatchSetPolicy**
+    - changes of request param
+      - `+ jobs.ddl_topic`
+  - **BatchCreateJobs**
+    - changes of request param
+      - `+ jobs.public_ip_list`
+  - **ShowJobList**
+    - changes of response param
+      - `+ jobs.children.job_direction: enum value [non-dbs]`
+      - `- jobs.children.job_direction: enum value [no-dbs]`
+  - **BatchListJobDetails**
+    - changes of response param
+      - `+ results.public_ip_list`
+      - `+ results.bind_public_ip_state`
+      - `+ results.children`
+  - **ShowUpdateObjectSavingStatus**
+    - changes of response param
+      - `+ job_id`
+  - **CollectDbObjectsAsync**
+    - changes of response param
+      - `+ job_id`
+  - **ShowDataProcessingRulesResult**
+    - changes of response param
+      - `+ job_id`
+  - **CollectDbObjectsInfo**
+    - changes of response param
+      - `+ job_id`
+  - **CollectPositionAsync**
+    - changes of response param
+      - `+ job_id`
+  - **CollectColumns**
+    - changes of response param
+      - `+ job_id`
+  - **CreateJob**
+    - changes of request param
+      - `+ job.public_ip_list`
+  - **BatchCreateJobsAsync**
+    - changes of request param
+      - `+ jobs.public_ip_list`
+  - **UpdateDataProgress**
+    - changes of response param
+      - `+ job_id`
+  - **CheckDataFilter**
+    - changes of response param
+      - `+ job_id`
+  - **ListAsyncJobDetail**
+    - changes of response param
+      - `+ jobs.public_ip_list`
+      - `+ jobs.bind_public_ip_state`
+      - `+ jobs.children`
+  - **ShowJobDetail**
+    - changes of response param
+      - `+ job.public_ip_list`
+      - `+ job.bind_public_ip_state`
+      - `+ job.children`
+  - **ExecuteJobAction**
+    - changes of request param
+      - `+ job.action_name: enum value [bind_eip,unbind_eip]`
+      - `+ job.action_params.public_ip_config`
+  - **BatchExecuteJobActions**
+    - changes of request param
+      - `+ jobs.action_name: enum value [bind_eip,unbind_eip]`
+      - `+ jobs.action_params.public_ip_config`
+
+### HuaweiCloud SDK RDS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowBinlogClearPolicy**
+    - changes of response param
+      - `+ binlog_clear_type`
+
+### HuaweiCloud SDK VPCEP
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **AddOrRemoveServicePermissions**
+    - changes of response param
+      - `- permission_type: enum value [domainId,orgPath]`
+  - **ListServiceDescribeDetails**
+    - changes of response param
+      - `- service_type: enum value [interface]`
+      - `* created_at: string -> date-time`
+  - **ListServiceDetails**
+    - changes of response param
+      - `- server_type: enum value [VM,VIP,LB]`
+      - `- status: enum value [creating,available,failed]`
+      - `- service_type: enum value [gataway,interface]`
+      - `* created_at: string -> date-time`
+      - `* updated_at: string -> date-time`
+      - `- tcp_proxy: enum value [close,toa_open,proxy_open,open,proxy_vni]`
+  - **UpdateEndpointService**
+    - changes of response param
+      - `- server_type: enum value [VM,VIP,LB]`
+      - `- status: enum value [creating,available,failed]`
+      - `* created_at: string -> date-time`
+      - `* updated_at: string -> date-time`
+      - `- tcp_proxy: enum value [close,toa_open,proxy_open,open,proxy_vni]`
+  - **ListServicePermissionsDetails**
+    - changes of response param
+      - `- permissions.permission_type: enum value [domainId,orgPath]`
+      - `* permissions.created_at: string -> date-time`
+  - **ListServicePublicDetails**
+    - changes of response param
+      - `- endpoint_services.service_type: enum value [interface,gateway]`
+      - `* endpoint_services.created_at: string -> date-time`
+  - **ListEndpointInfoDetails**
+    - changes of response param
+      - `- service_type: enum value [interface,gateway]`
+      - `- status: enum value [pendingAcceptance,creating,accepted,rejected,failed,deleting]`
+      - `- enable_status: enum value [enable,disable]`
+      - `* created_at: string -> date-time`
+      - `* updated_at: string -> date-time`
+      - `* policy_statement: list<string> -> list<PolicyStatement>`
+  - **UpdateEndpointWhite**
+    - changes of response param
+      - `- service_type: enum value [interface,gateway]`
+      - `- status: enum value [pendingAcceptance,creating,accepted,rejected,failed,deleting]`
+      - `* created_at: string -> date-time`
+      - `* updated_at: string -> date-time`
+  - **BatchAddOrRemoveResourceInstance**
+    - changes of request param
+      - `+ resource_type: enum value [endpoint_service,endpoint]`
+      - `+ action: enum value [create,delete]`
+      - `* body: object<BatchAddOrRemoveResourceInstanceBody> -> object<BatchAddOrRemoveResourceInstanceRequestBody>`
+  - **ListQueryProjectResourceTags**
+    - changes of request param
+      - `+ resource_type: enum value [endpoint_service,endpoint]`
+  - **BatchAddEndpointServicePermissions**
+    - changes of request param
+      - `* body: object<BatchAddPermissionRequest> -> object<BatchAddEndpointServicePermissionsRequestBody>`
+    - changes of response param
+      - `* permissions.created_at: string -> date-time`
+  - **BatchRemoveEndpointServicePermissions**
+    - changes of request param
+      - `* body: object<BatchRemovePermissionRequest> -> object<BatchRemoveEndpointServicePermissionsRequestBody>`
+    - changes of response param
+      - `* permissions.created_at: string -> date-time`
+  - **UpdateEndpointServicePermissionDesc**
+    - changes of request param
+      - `* body: object<UpdatePermissionDescRequest> -> object<UpdateEndpointServicePermissionDescRequestBody>`
+    - changes of response param
+      - `* permissions.created_at: string -> date-time`
+  - **UpdateEndpointPolicy**
+    - changes of request param
+      - `+ policy_statement.Effect: enum value [Allow,Refuse]`
+    - changes of response param
+      - `- enable_dns`
+      - `- dns_names`
+      - `- subnet_id`
+      - `- service_type: enum value [interface,gateway]`
+      - `- status: enum value [pendingAcceptance,creating,accepted,rejected,failed,deleting]`
+      - `* created_at: string -> date-time`
+      - `* updated_at: string -> date-time`
+      - `+ policy_statement.Effect: enum value [Allow,Refuse]`
+  - **DeleteEndpointPolicy**
+    - changes of response param
+      - `- enable_dns`
+      - `- dns_names`
+      - `- subnet_id`
+      - `- service_type: enum value [interface,gateway]`
+      - `- status: enum value [pendingAcceptance,creating,accepted,rejected,failed,deleting]`
+      - `* created_at: string -> date-time`
+      - `* updated_at: string -> date-time`
+      - `+ policy_statement.Effect: enum value [Allow,Refuse]`
+  - **CreateEndpointService**
+    - changes of request param
+      - `+ service_type: enum value [gateway,interface]`
+    - changes of response param
+      - `- server_type: enum value [VM,VIP,LB]`
+      - `- status: enum value [creating,available,failed]`
+      - `* created_at: string -> date-time`
+      - `* updated_at: string -> date-time`
+      - `- tcp_proxy: enum value [close,toa_open,proxy_open,open,proxy_vni]`
+  - **ListEndpointService**
+    - changes of response param
+      - `- endpoint_services.status: enum value [creating,available,failed]`
+      - `- endpoint_services.service_type: enum value [VM,VIP,LB]`
+      - `* endpoint_services.created_at: string -> date-time`
+      - `* endpoint_services.updated_at: string -> date-time`
+      - `- endpoint_services.tcp_proxy: enum value [close,toa_open,proxy_open,open,proxy_vni]`
+  - **ListServiceConnections**
+    - changes of request param
+      - `+ status: enum value [pendingAcceptance,accepted,rejected,failed]`
+    - changes of response param
+      - `* connections.created_at: string -> date-time`
+      - `* connections.updated_at: string -> date-time`
+      - `- connections.status: enum value [pendingAcceptance,creating,accepted,rejected,failed,deleting]`
+  - **AcceptOrRejectEndpoint**
+    - changes of response param
+      - `* connections.created_at: string -> date-time`
+      - `* connections.updated_at: string -> date-time`
+      - `- connections.status: enum value [pendingAcceptance,creating,accepted,rejected,failed,deleting]`
+  - **CreateEndpoint**
+    - changes of response param
+      - `- dns_names`
+      - `- service_type: enum value [interface,gateway]`
+      - `- status: enum value [pendingAcceptance,creating,accepted,rejected,failed,deleting]`
+      - `* created_at: string -> date-time`
+      - `* updated_at: string -> date-time`
+      - `* policy_statement: list<string> -> list<PolicyStatement>`
+  - **ListEndpoints**
+    - changes of request param
+      - `+ sort_key: enum value [create_at,update_at]`
+      - `+ sort_dir: enum value [desc,asc]`
+    - changes of response param
+      - `- endpoint_pool_id`
+      - `- endpoint_service_id`
+      - `- vpc_id`
+      - `- created_at`
+      - `- description`
+      - `- error`
+      - `- updated_at`
+      - `- enable_whitelist`
+      - `- project_id`
+      - `- marker_id`
+      - `- id`
+      - `- public_border_group`
+      - `- policy_statement`
+      - `- routetables`
+      - `- endpoint_service_name`
+      - `- ip`
+      - `- whitelist`
+      - `- tags`
+      - `- enable_dns`
+      - `- service_type`
+      - `- active_status`
+      - `- dns_names`
+      - `- subnet_id`
+      - `- status`
+      - `- endpoints.service_type: enum value [interface,gateway]`
+      - `- endpoints.status: enum value [pendingAcceptance,creating,accepted,rejected,failed,deleting]`
+      - `* endpoints.created_at: string -> date-time`
+      - `* endpoints.updated_at: string -> date-time`
+      - `+ endpoints.policy_statement.Effect: enum value [Allow,Refuse]`
+      - `* endpoints: list<EndpointResp> -> list<EndpointResponseBody>`
+  - **ListQuotaDetails**
+    - changes of response param
+      - `- quotas.resources.type: enum value [endpoint_service,endpoint]`
+      - `* quotas: object<ResourcesResp> -> object<ResourcesResponseBody>`
+  - **ListVersionDetails**
+    - changes of response param
+      - `- versions.status: enum value [CURRENT,SUPPORT,DEPRECATED]`
+      - `- versions.id: enum value [v1]`
+      - `* versions.updated: string -> date-time`
+  - **ListSpecifiedVersionDetails**
+    - changes of response param
+      - `- version.status: enum value [CURRENT,SUPPORT,DEPRECATED]`
+      - `- version.id: enum value [v1]`
+      - `* version.updated: string -> date-time`
+  - **ListResourceInstances**
+    - changes of request param
+      - `+ resource_type: enum value [endpoint_service,endpoint]`
+      - `+ action: enum value [filter,count]`
+  - **UpdateEndpointConnectionsDesc**
+    - changes of request param
+      - `* body: object<UpdateEpConnections> -> object<UpdateEndpointConnectionsDescRequestBody>`
+    - changes of response param
+      - `* connections.created_at: string -> date-time`
+      - `* connections.updated_at: string -> date-time`
+      - `- connections.status: enum value [pendingAcceptance,creating,accepted,rejected,failed,deleting]`
+
 # 3.1.84 2024-03-07
 
 ### HuaweiCloud SDK BMS

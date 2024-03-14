@@ -64,6 +64,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         [JsonProperty("force_delete", NullValueHandling = NullValueHandling.Ignore)]
         public bool? ForceDelete { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("public_ip_config", NullValueHandling = NullValueHandling.Ignore)]
+        public PublicIpConfig PublicIpConfig { get; set; }
+
 
 
         /// <summary>
@@ -81,6 +87,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             sb.Append("  compareTaskParam: ").Append(CompareTaskParam).Append("\n");
             sb.Append("  isSyncReEdit: ").Append(IsSyncReEdit).Append("\n");
             sb.Append("  forceDelete: ").Append(ForceDelete).Append("\n");
+            sb.Append("  publicIpConfig: ").Append(PublicIpConfig).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -142,6 +149,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                     this.ForceDelete == input.ForceDelete ||
                     (this.ForceDelete != null &&
                     this.ForceDelete.Equals(input.ForceDelete))
+                ) && 
+                (
+                    this.PublicIpConfig == input.PublicIpConfig ||
+                    (this.PublicIpConfig != null &&
+                    this.PublicIpConfig.Equals(input.PublicIpConfig))
                 );
         }
 
@@ -169,6 +181,8 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                     hashCode = hashCode * 59 + this.IsSyncReEdit.GetHashCode();
                 if (this.ForceDelete != null)
                     hashCode = hashCode * 59 + this.ForceDelete.GetHashCode();
+                if (this.PublicIpConfig != null)
+                    hashCode = hashCode * 59 + this.PublicIpConfig.GetHashCode();
                 return hashCode;
             }
         }

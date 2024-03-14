@@ -148,6 +148,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
+        /// <summary>
+        /// 任务ID
+        /// </summary>
+        [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string JobId { get; set; }
+
 
 
         /// <summary>
@@ -159,6 +165,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             sb.Append("class CollectDbObjectsAsyncResponse {\n");
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
+            sb.Append("  jobId: ").Append(JobId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -189,6 +196,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                     this.Status == input.Status ||
                     (this.Status != null &&
                     this.Status.Equals(input.Status))
+                ) && 
+                (
+                    this.JobId == input.JobId ||
+                    (this.JobId != null &&
+                    this.JobId.Equals(input.JobId))
                 );
         }
 
@@ -204,6 +216,8 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Status != null)
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.JobId != null)
+                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
                 return hashCode;
             }
         }

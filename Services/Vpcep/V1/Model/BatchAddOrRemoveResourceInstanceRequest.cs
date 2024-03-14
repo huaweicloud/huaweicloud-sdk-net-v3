@@ -15,16 +15,130 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
     /// </summary>
     public class BatchAddOrRemoveResourceInstanceRequest 
     {
+        /// <summary>
+        /// 资源类型。  - endpoint_service：终端节点服务  - endpoint：终端节点
+        /// </summary>
+        /// <value>资源类型。  - endpoint_service：终端节点服务  - endpoint：终端节点</value>
+        [JsonConverter(typeof(EnumClassConverter<ResourceTypeEnum>))]
+        public class ResourceTypeEnum
+        {
+            /// <summary>
+            /// Enum ENDPOINT_SERVICE for value: endpoint_service
+            /// </summary>
+            public static readonly ResourceTypeEnum ENDPOINT_SERVICE = new ResourceTypeEnum("endpoint_service");
+
+            /// <summary>
+            /// Enum ENDPOINT for value: endpoint
+            /// </summary>
+            public static readonly ResourceTypeEnum ENDPOINT = new ResourceTypeEnum("endpoint");
+
+            private static readonly Dictionary<string, ResourceTypeEnum> StaticFields =
+            new Dictionary<string, ResourceTypeEnum>()
+            {
+                { "endpoint_service", ENDPOINT_SERVICE },
+                { "endpoint", ENDPOINT },
+            };
+
+            private string _value;
+
+            public ResourceTypeEnum()
+            {
+
+            }
+
+            public ResourceTypeEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static ResourceTypeEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as ResourceTypeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(ResourceTypeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(ResourceTypeEnum a, ResourceTypeEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(ResourceTypeEnum a, ResourceTypeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
-        /// 资源类型，值为：endpoint_service或endpoint。
+        /// 资源类型。  - endpoint_service：终端节点服务  - endpoint：终端节点
         /// </summary>
         [SDKProperty("resource_type", IsPath = true)]
         [JsonProperty("resource_type", NullValueHandling = NullValueHandling.Ignore)]
-        public string ResourceType { get; set; }
-
+        public ResourceTypeEnum ResourceType { get; set; }
         /// <summary>
-        /// 资源ID，Endpoint ServiceID或Endpoint ID。
+        /// 资源ID，Endpoint Service ID或Endpoint ID。
         /// </summary>
         [SDKProperty("resource_id", IsPath = true)]
         [JsonProperty("resource_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -35,7 +149,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public BatchAddOrRemoveResourceInstanceBody Body { get; set; }
+        public BatchAddOrRemoveResourceInstanceRequestBody Body { get; set; }
 
 
 
