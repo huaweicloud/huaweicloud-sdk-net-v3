@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
     {
 
         /// <summary>
-        /// 租户ID
+        /// - 租户账号ID，获取租户账号ID请参见[租户账号ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)
         /// </summary>
         [JsonProperty("domain_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DomainId { get; set; }

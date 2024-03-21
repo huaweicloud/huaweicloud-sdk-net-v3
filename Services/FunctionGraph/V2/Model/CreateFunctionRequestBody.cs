@@ -558,6 +558,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public string UserData { get; set; }
 
         /// <summary>
+        /// 用户自定义的name/value信息，用于需要加密的配置。举例：如配置加密密码，可以设置自定义参数：password&#x3D;{1234}，最多定义20个，总长度不超过4KB。
+        /// </summary>
+        [JsonProperty("encrypted_user_data", NullValueHandling = NullValueHandling.Ignore)]
+        public string EncryptedUserData { get; set; }
+
+        /// <summary>
         /// 函数配置委托。需要IAM支持，并在IAM界面创建委托，当函数需要访问其他服务时，必须提供该字段。配置后用户可以通过函数执行入口方法中的context参数获取具有委托中权限的token、ak、sk，用于访问其他云服务。如果用户函数不访问任何云服务，则不用提供委托名称。
         /// </summary>
         [JsonProperty("xrole", NullValueHandling = NullValueHandling.Ignore)]
@@ -580,6 +586,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         [JsonProperty("func_code", NullValueHandling = NullValueHandling.Ignore)]
         public FuncCode FuncCode { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("mount_config", NullValueHandling = NullValueHandling.Ignore)]
+        public MountConfig MountConfig { get; set; }
 
         /// <summary>
         /// 函数初始化入口，规则：xx.xx，必须包含“. ”。当配置初始化函数时，此参数必填。 举例：对于node.js函数：myfunction.initializer，则表示函数的文件名为myfunction.js，初始化的入口函数名为initializer。
@@ -628,6 +640,18 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         [JsonProperty("network_controller", NullValueHandling = NullValueHandling.Ignore)]
         public NetworkControlConfig NetworkController { get; set; }
 
+        /// <summary>
+        /// 是否支持有状态，如果需要支持，需要固定传参为true，v2版本支持
+        /// </summary>
+        [JsonProperty("is_stateful_function", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsStatefulFunction { get; set; }
+
+        /// <summary>
+        /// 是否启动动态内存配置
+        /// </summary>
+        [JsonProperty("enable_dynamic_memory", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnableDynamicMemory { get; set; }
+
 
 
         /// <summary>
@@ -651,10 +675,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  codeFilename: ").Append(CodeFilename).Append("\n");
             sb.Append("  customImage: ").Append(CustomImage).Append("\n");
             sb.Append("  userData: ").Append(UserData).Append("\n");
+            sb.Append("  encryptedUserData: ").Append(EncryptedUserData).Append("\n");
             sb.Append("  xrole: ").Append(Xrole).Append("\n");
             sb.Append("  appXrole: ").Append(AppXrole).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  funcCode: ").Append(FuncCode).Append("\n");
+            sb.Append("  mountConfig: ").Append(MountConfig).Append("\n");
             sb.Append("  initializerHandler: ").Append(InitializerHandler).Append("\n");
             sb.Append("  initializerTimeout: ").Append(InitializerTimeout).Append("\n");
             sb.Append("  preStopHandler: ").Append(PreStopHandler).Append("\n");
@@ -663,6 +689,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  logConfig: ").Append(LogConfig).Append("\n");
             sb.Append("  networkController: ").Append(NetworkController).Append("\n");
+            sb.Append("  isStatefulFunction: ").Append(IsStatefulFunction).Append("\n");
+            sb.Append("  enableDynamicMemory: ").Append(EnableDynamicMemory).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -756,6 +784,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.UserData.Equals(input.UserData))
                 ) && 
                 (
+                    this.EncryptedUserData == input.EncryptedUserData ||
+                    (this.EncryptedUserData != null &&
+                    this.EncryptedUserData.Equals(input.EncryptedUserData))
+                ) && 
+                (
                     this.Xrole == input.Xrole ||
                     (this.Xrole != null &&
                     this.Xrole.Equals(input.Xrole))
@@ -774,6 +807,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.FuncCode == input.FuncCode ||
                     (this.FuncCode != null &&
                     this.FuncCode.Equals(input.FuncCode))
+                ) && 
+                (
+                    this.MountConfig == input.MountConfig ||
+                    (this.MountConfig != null &&
+                    this.MountConfig.Equals(input.MountConfig))
                 ) && 
                 (
                     this.InitializerHandler == input.InitializerHandler ||
@@ -814,6 +852,16 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.NetworkController == input.NetworkController ||
                     (this.NetworkController != null &&
                     this.NetworkController.Equals(input.NetworkController))
+                ) && 
+                (
+                    this.IsStatefulFunction == input.IsStatefulFunction ||
+                    (this.IsStatefulFunction != null &&
+                    this.IsStatefulFunction.Equals(input.IsStatefulFunction))
+                ) && 
+                (
+                    this.EnableDynamicMemory == input.EnableDynamicMemory ||
+                    (this.EnableDynamicMemory != null &&
+                    this.EnableDynamicMemory.Equals(input.EnableDynamicMemory))
                 );
         }
 
@@ -853,6 +901,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.CustomImage.GetHashCode();
                 if (this.UserData != null)
                     hashCode = hashCode * 59 + this.UserData.GetHashCode();
+                if (this.EncryptedUserData != null)
+                    hashCode = hashCode * 59 + this.EncryptedUserData.GetHashCode();
                 if (this.Xrole != null)
                     hashCode = hashCode * 59 + this.Xrole.GetHashCode();
                 if (this.AppXrole != null)
@@ -861,6 +911,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.FuncCode != null)
                     hashCode = hashCode * 59 + this.FuncCode.GetHashCode();
+                if (this.MountConfig != null)
+                    hashCode = hashCode * 59 + this.MountConfig.GetHashCode();
                 if (this.InitializerHandler != null)
                     hashCode = hashCode * 59 + this.InitializerHandler.GetHashCode();
                 if (this.InitializerTimeout != null)
@@ -877,6 +929,10 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.LogConfig.GetHashCode();
                 if (this.NetworkController != null)
                     hashCode = hashCode * 59 + this.NetworkController.GetHashCode();
+                if (this.IsStatefulFunction != null)
+                    hashCode = hashCode * 59 + this.IsStatefulFunction.GetHashCode();
+                if (this.EnableDynamicMemory != null)
+                    hashCode = hashCode * 59 + this.EnableDynamicMemory.GetHashCode();
                 return hashCode;
             }
         }

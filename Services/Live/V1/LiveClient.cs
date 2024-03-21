@@ -1328,5 +1328,221 @@ namespace HuaweiCloud.SDK.Live.V1
             return new SyncInvoker<UpdateObsBucketAuthorityPublicResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateObsBucketAuthorityPublicResponse>);
         }
         
+        /// <summary>
+        /// 新建OTT频道
+        ///
+        /// 创建频道接口，支持创建OTT频道。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateOttChannelInfoResponse CreateOttChannelInfo(CreateOttChannelInfoRequest createOttChannelInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ott/channels", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", createOttChannelInfoRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateOttChannelInfoResponse>(response);
+        }
+
+        public SyncInvoker<CreateOttChannelInfoResponse> CreateOttChannelInfoInvoker(CreateOttChannelInfoRequest createOttChannelInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ott/channels", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", createOttChannelInfoRequest);
+            return new SyncInvoker<CreateOttChannelInfoResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateOttChannelInfoResponse>);
+        }
+        
+        /// <summary>
+        /// 删除频道信息
+        ///
+        /// 删除频道信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteOttChannelInfoResponse DeleteOttChannelInfo(DeleteOttChannelInfoRequest deleteOttChannelInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ott/channels", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteOttChannelInfoRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteOttChannelInfoResponse>(response);
+        }
+
+        public SyncInvoker<DeleteOttChannelInfoResponse> DeleteOttChannelInfoInvoker(DeleteOttChannelInfoRequest deleteOttChannelInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ott/channels", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteOttChannelInfoRequest);
+            return new SyncInvoker<DeleteOttChannelInfoResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteOttChannelInfoResponse>);
+        }
+        
+        /// <summary>
+        /// 查询频道信息
+        ///
+        /// 查询频道信息，支持批量查询。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListOttChannelInfoResponse ListOttChannelInfo(ListOttChannelInfoRequest listOttChannelInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ott/channels", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listOttChannelInfoRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListOttChannelInfoResponse>(response);
+        }
+
+        public SyncInvoker<ListOttChannelInfoResponse> ListOttChannelInfoInvoker(ListOttChannelInfoRequest listOttChannelInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ott/channels", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listOttChannelInfoRequest);
+            return new SyncInvoker<ListOttChannelInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ListOttChannelInfoResponse>);
+        }
+        
+        /// <summary>
+        /// 修改频道转码模板信息
+        ///
+        /// 修改频道转码模板信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ModifyOttChannelInfoEncoderSettingsResponse ModifyOttChannelInfoEncoderSettings(ModifyOttChannelInfoEncoderSettingsRequest modifyOttChannelInfoEncoderSettingsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ott/channels/encorder-settings", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", modifyOttChannelInfoEncoderSettingsRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<ModifyOttChannelInfoEncoderSettingsResponse>(response);
+        }
+
+        public SyncInvoker<ModifyOttChannelInfoEncoderSettingsResponse> ModifyOttChannelInfoEncoderSettingsInvoker(ModifyOttChannelInfoEncoderSettingsRequest modifyOttChannelInfoEncoderSettingsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ott/channels/encorder-settings", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", modifyOttChannelInfoEncoderSettingsRequest);
+            return new SyncInvoker<ModifyOttChannelInfoEncoderSettingsResponse>(this, "PUT", request, JsonUtils.DeSerialize<ModifyOttChannelInfoEncoderSettingsResponse>);
+        }
+        
+        /// <summary>
+        /// 修改频道打包信息
+        ///
+        /// 修改频道打包信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ModifyOttChannelInfoEndPointsResponse ModifyOttChannelInfoEndPoints(ModifyOttChannelInfoEndPointsRequest modifyOttChannelInfoEndPointsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ott/channels/endpoints", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", modifyOttChannelInfoEndPointsRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<ModifyOttChannelInfoEndPointsResponse>(response);
+        }
+
+        public SyncInvoker<ModifyOttChannelInfoEndPointsResponse> ModifyOttChannelInfoEndPointsInvoker(ModifyOttChannelInfoEndPointsRequest modifyOttChannelInfoEndPointsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ott/channels/endpoints", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", modifyOttChannelInfoEndPointsRequest);
+            return new SyncInvoker<ModifyOttChannelInfoEndPointsResponse>(this, "PUT", request, JsonUtils.DeSerialize<ModifyOttChannelInfoEndPointsResponse>);
+        }
+        
+        /// <summary>
+        /// 修改频道通用信息
+        ///
+        /// 修改频道通用信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ModifyOttChannelInfoGeneralResponse ModifyOttChannelInfoGeneral(ModifyOttChannelInfoGeneralRequest modifyOttChannelInfoGeneralRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ott/channels/general", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", modifyOttChannelInfoGeneralRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<ModifyOttChannelInfoGeneralResponse>(response);
+        }
+
+        public SyncInvoker<ModifyOttChannelInfoGeneralResponse> ModifyOttChannelInfoGeneralInvoker(ModifyOttChannelInfoGeneralRequest modifyOttChannelInfoGeneralRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ott/channels/general", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", modifyOttChannelInfoGeneralRequest);
+            return new SyncInvoker<ModifyOttChannelInfoGeneralResponse>(this, "PUT", request, JsonUtils.DeSerialize<ModifyOttChannelInfoGeneralResponse>);
+        }
+        
+        /// <summary>
+        /// 修改频道入流信息
+        ///
+        /// 修改频道入流信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ModifyOttChannelInfoInputResponse ModifyOttChannelInfoInput(ModifyOttChannelInfoInputRequest modifyOttChannelInfoInputRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ott/channels/input", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", modifyOttChannelInfoInputRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<ModifyOttChannelInfoInputResponse>(response);
+        }
+
+        public SyncInvoker<ModifyOttChannelInfoInputResponse> ModifyOttChannelInfoInputInvoker(ModifyOttChannelInfoInputRequest modifyOttChannelInfoInputRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ott/channels/input", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", modifyOttChannelInfoInputRequest);
+            return new SyncInvoker<ModifyOttChannelInfoInputResponse>(this, "PUT", request, JsonUtils.DeSerialize<ModifyOttChannelInfoInputResponse>);
+        }
+        
+        /// <summary>
+        /// 修改频道录制信息
+        ///
+        /// 修改频道录制信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ModifyOttChannelInfoRecordSettingsResponse ModifyOttChannelInfoRecordSettings(ModifyOttChannelInfoRecordSettingsRequest modifyOttChannelInfoRecordSettingsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ott/channels/record-settings", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", modifyOttChannelInfoRecordSettingsRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<ModifyOttChannelInfoRecordSettingsResponse>(response);
+        }
+
+        public SyncInvoker<ModifyOttChannelInfoRecordSettingsResponse> ModifyOttChannelInfoRecordSettingsInvoker(ModifyOttChannelInfoRecordSettingsRequest modifyOttChannelInfoRecordSettingsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ott/channels/record-settings", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", modifyOttChannelInfoRecordSettingsRequest);
+            return new SyncInvoker<ModifyOttChannelInfoRecordSettingsResponse>(this, "PUT", request, JsonUtils.DeSerialize<ModifyOttChannelInfoRecordSettingsResponse>);
+        }
+        
+        /// <summary>
+        /// 修改频道状态
+        ///
+        /// 修改频道状态。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ModifyOttChannelInfoStatsResponse ModifyOttChannelInfoStats(ModifyOttChannelInfoStatsRequest modifyOttChannelInfoStatsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ott/channels/state", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", modifyOttChannelInfoStatsRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<ModifyOttChannelInfoStatsResponse>(response);
+        }
+
+        public SyncInvoker<ModifyOttChannelInfoStatsResponse> ModifyOttChannelInfoStatsInvoker(ModifyOttChannelInfoStatsRequest modifyOttChannelInfoStatsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ott/channels/state", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", modifyOttChannelInfoStatsRequest);
+            return new SyncInvoker<ModifyOttChannelInfoStatsResponse>(this, "PUT", request, JsonUtils.DeSerialize<ModifyOttChannelInfoStatsResponse>);
+        }
+        
     }
 }

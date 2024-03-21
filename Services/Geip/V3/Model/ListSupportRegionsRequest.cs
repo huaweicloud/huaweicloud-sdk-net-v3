@@ -474,7 +474,7 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         public bool? PageReverse { get; set; }
 
         /// <summary>
-        /// 只显示指定的字段
+        /// 
         /// </summary>
         [SDKProperty("fields", IsQuery = true)]
         [JsonProperty("fields", NullValueHandling = NullValueHandling.Ignore)]
@@ -492,49 +492,49 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         [JsonProperty("sort_dir", NullValueHandling = NullValueHandling.Ignore)]
         public List<SortDirEnum> SortDir { get; set; }
         /// <summary>
-        /// 根据ID过滤
+        /// 
         /// </summary>
         [SDKProperty("id", IsQuery = true)]
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Id { get; set; }
 
         /// <summary>
-        /// 根据实例类型过滤
+        /// 
         /// </summary>
         [SDKProperty("instance_type", IsQuery = true)]
         [JsonProperty("instance_type", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> InstanceType { get; set; }
 
         /// <summary>
-        /// 根据边缘信息过滤，中心站点or边缘站点
+        /// 
         /// </summary>
         [SDKProperty("public_border_group", IsQuery = true)]
         [JsonProperty("public_border_group", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> PublicBorderGroup { get; set; }
 
         /// <summary>
-        /// 根据接入点过滤
+        /// 
         /// </summary>
         [SDKProperty("access_site", IsQuery = true)]
         [JsonProperty("access_site", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> AccessSite { get; set; }
 
         /// <summary>
-        /// 根据region_id过滤
+        /// 
         /// </summary>
         [SDKProperty("region_id", IsQuery = true)]
         [JsonProperty("region_id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> RegionId { get; set; }
 
         /// <summary>
-        /// query by remote_endpoint
+        /// 
         /// </summary>
         [SDKProperty("remote_endpoint", IsQuery = true)]
         [JsonProperty("remote_endpoint", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> RemoteEndpoint { get; set; }
 
         /// <summary>
-        /// 根据资源状态过滤
+        /// 
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]

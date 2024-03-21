@@ -132,18 +132,18 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
 
 
         /// <summary>
-        /// 禁用/启用
-        /// </summary>
-        [SDKProperty("action", IsPath = true)]
-        [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]
-        public ActionEnum Action { get; set; }
-        /// <summary>
         /// 函数的URN，详细解释见FunctionGraph函数模型的描述。
         /// </summary>
         [SDKProperty("function_urn", IsPath = true)]
         [JsonProperty("function_urn", NullValueHandling = NullValueHandling.Ignore)]
         public string FunctionUrn { get; set; }
 
+        /// <summary>
+        /// 禁用/启用
+        /// </summary>
+        [SDKProperty("action", IsPath = true)]
+        [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]
+        public ActionEnum Action { get; set; }
 
 
         /// <summary>
@@ -153,8 +153,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class UpdateFuncSnapshotRequest {\n");
-            sb.Append("  action: ").Append(Action).Append("\n");
             sb.Append("  functionUrn: ").Append(FunctionUrn).Append("\n");
+            sb.Append("  action: ").Append(Action).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -177,14 +177,14 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
 
             return 
                 (
-                    this.Action == input.Action ||
-                    (this.Action != null &&
-                    this.Action.Equals(input.Action))
-                ) && 
-                (
                     this.FunctionUrn == input.FunctionUrn ||
                     (this.FunctionUrn != null &&
                     this.FunctionUrn.Equals(input.FunctionUrn))
+                ) && 
+                (
+                    this.Action == input.Action ||
+                    (this.Action != null &&
+                    this.Action.Equals(input.Action))
                 );
         }
 
@@ -196,10 +196,10 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Action != null)
-                    hashCode = hashCode * 59 + this.Action.GetHashCode();
                 if (this.FunctionUrn != null)
                     hashCode = hashCode * 59 + this.FunctionUrn.GetHashCode();
+                if (this.Action != null)
+                    hashCode = hashCode * 59 + this.Action.GetHashCode();
                 return hashCode;
             }
         }

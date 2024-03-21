@@ -26,7 +26,7 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         /// 系统标签
         /// </summary>
         [JsonProperty("sys_tags", NullValueHandling = NullValueHandling.Ignore)]
-        public List<BatchDeleteV2RequestBodySysTags> SysTags { get; set; }
+        public List<BatchDeleteV2RequestBodyTags> SysTags { get; set; }
 
 
 

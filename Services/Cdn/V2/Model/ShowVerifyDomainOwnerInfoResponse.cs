@@ -17,46 +17,52 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
     {
 
         /// <summary>
-        /// DNS探测类型
+        /// DNS解析类型。
         /// </summary>
         [JsonProperty("dns_verify_type", NullValueHandling = NullValueHandling.Ignore)]
         public string DnsVerifyType { get; set; }
 
         /// <summary>
-        /// DNS记录名称
+        /// DNS解析主机记录名称。
         /// </summary>
         [JsonProperty("dns_verify_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DnsVerifyName { get; set; }
 
         /// <summary>
-        /// 文件探测地址
+        /// 文件校验URL地址。
         /// </summary>
         [JsonProperty("file_verify_url", NullValueHandling = NullValueHandling.Ignore)]
         public string FileVerifyUrl { get; set; }
 
         /// <summary>
-        /// 域名
+        /// 加速域名。
         /// </summary>
         [JsonProperty("domain_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DomainName { get; set; }
 
         /// <summary>
-        /// 探测域名
+        /// 校验域名。
         /// </summary>
         [JsonProperty("verify_domain_name", NullValueHandling = NullValueHandling.Ignore)]
         public string VerifyDomainName { get; set; }
 
         /// <summary>
-        /// 探测文件名
+        /// 文件校验的校验文件名。
         /// </summary>
         [JsonProperty("file_verify_filename", NullValueHandling = NullValueHandling.Ignore)]
         public string FileVerifyFilename { get; set; }
 
         /// <summary>
-        /// 探测内容，DNS值或者文件内容，时间加uuid
+        /// 校验值，解析值或者文件内容。
         /// </summary>
         [JsonProperty("verify_content", NullValueHandling = NullValueHandling.Ignore)]
         public string VerifyContent { get; set; }
+
+        /// <summary>
+        /// 文件校验域名列表。
+        /// </summary>
+        [JsonProperty("file_verify_domains", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> FileVerifyDomains { get; set; }
 
         /// <summary>
         /// 
@@ -81,6 +87,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             sb.Append("  verifyDomainName: ").Append(VerifyDomainName).Append("\n");
             sb.Append("  fileVerifyFilename: ").Append(FileVerifyFilename).Append("\n");
             sb.Append("  verifyContent: ").Append(VerifyContent).Append("\n");
+            sb.Append("  fileVerifyDomains: ").Append(FileVerifyDomains).Append("\n");
             sb.Append("  xRequestId: ").Append(XRequestId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -139,6 +146,12 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     this.VerifyContent.Equals(input.VerifyContent))
                 ) && 
                 (
+                    this.FileVerifyDomains == input.FileVerifyDomains ||
+                    this.FileVerifyDomains != null &&
+                    input.FileVerifyDomains != null &&
+                    this.FileVerifyDomains.SequenceEqual(input.FileVerifyDomains)
+                ) && 
+                (
                     this.XRequestId == input.XRequestId ||
                     (this.XRequestId != null &&
                     this.XRequestId.Equals(input.XRequestId))
@@ -167,6 +180,8 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     hashCode = hashCode * 59 + this.FileVerifyFilename.GetHashCode();
                 if (this.VerifyContent != null)
                     hashCode = hashCode * 59 + this.VerifyContent.GetHashCode();
+                if (this.FileVerifyDomains != null)
+                    hashCode = hashCode * 59 + this.FileVerifyDomains.GetHashCode();
                 if (this.XRequestId != null)
                     hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
                 return hashCode;

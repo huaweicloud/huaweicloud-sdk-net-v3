@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
     {
 
         /// <summary>
-        /// Global Eip Count
+        /// 全域弹性公网IP个数
         /// </summary>
         [JsonProperty("count", NullValueHandling = NullValueHandling.Ignore)]
         public int? Count { get; set; }

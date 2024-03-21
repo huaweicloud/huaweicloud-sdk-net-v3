@@ -138,7 +138,7 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
 
 
         /// <summary>
-        /// 只显示指定的字段
+        /// 
         /// </summary>
         [SDKProperty("fields", IsQuery = true)]
         [JsonProperty("fields", NullValueHandling = NullValueHandling.Ignore)]

@@ -25,6 +25,8 @@ namespace HuaweiCloud.SDK.Ocr.V1
             "https://ocr.la-south-2.myhuaweicloud.com");
         public static readonly Region AF_SOUTH_1 = new Region("af-south-1",
             "https://ocr.af-south-1.myhuaweicloud.com");
+        public static readonly Region LA_NORTH_2 = new Region("la-north-2",
+            "https://ocr.la-north-2.myhuaweicloud.com");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("OCR");
 
@@ -39,6 +41,7 @@ namespace HuaweiCloud.SDK.Ocr.V1
                 { "ap-southeast-3", AP_SOUTHEAST_3 },
                 { "la-south-2", LA_SOUTH_2 },
                 { "af-south-1", AF_SOUTH_1 },
+                { "la-north-2", LA_NORTH_2 },
         };
 
         public static Region ValueOf(string regionId)

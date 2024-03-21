@@ -746,7 +746,7 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         public bool? PageReverse { get; set; }
 
         /// <summary>
-        /// 只显示指定的字段
+        /// 
         /// </summary>
         [SDKProperty("fields", IsQuery = true)]
         [JsonProperty("fields", NullValueHandling = NullValueHandling.Ignore)]
@@ -764,159 +764,159 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         [JsonProperty("sort_dir", NullValueHandling = NullValueHandling.Ignore)]
         public List<SortDirEnum> SortDir { get; set; }
         /// <summary>
-        /// 根据资源ID过滤
+        /// 
         /// </summary>
         [SDKProperty("id", IsQuery = true)]
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Id { get; set; }
 
         /// <summary>
-        /// 根据全域公网带宽的ID过滤
+        /// 
         /// </summary>
         [SDKProperty("internet_bandwidth_id", IsQuery = true)]
         [JsonProperty("internet_bandwidth_id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> InternetBandwidthId { get; set; }
 
         /// <summary>
-        /// 根据名称过滤
+        /// 
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Name { get; set; }
 
         /// <summary>
-        /// 根据名称模糊匹配
+        /// 
         /// </summary>
         [SDKProperty("name_like", IsQuery = true)]
         [JsonProperty("name_like", NullValueHandling = NullValueHandling.Ignore)]
         public string NameLike { get; set; }
 
         /// <summary>
-        /// 根据接入点过滤
+        /// 
         /// </summary>
         [SDKProperty("access_site", IsQuery = true)]
         [JsonProperty("access_site", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> AccessSite { get; set; }
 
         /// <summary>
-        /// 根据全域弹性公网IP池名称过滤
+        /// 
         /// </summary>
         [SDKProperty("geip_pool_name", IsQuery = true)]
         [JsonProperty("geip_pool_name", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> GeipPoolName { get; set; }
 
         /// <summary>
-        /// 根据运营商线路过滤
+        /// 
         /// </summary>
         [SDKProperty("isp", IsQuery = true)]
         [JsonProperty("isp", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Isp { get; set; }
 
         /// <summary>
-        /// 根据可分配的IP版本过滤
+        /// 
         /// </summary>
         [SDKProperty("ip_version", IsQuery = true)]
         [JsonProperty("ip_version", NullValueHandling = NullValueHandling.Ignore)]
         public List<IpVersionEnum> IpVersion { get; set; }
         /// <summary>
-        /// 根据分配的CIDR过滤
+        /// 
         /// </summary>
         [SDKProperty("cidr", IsQuery = true)]
         [JsonProperty("cidr", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Cidr { get; set; }
 
         /// <summary>
-        /// 根据分配的IPv6 CIDR过滤
+        /// 
         /// </summary>
         [SDKProperty("cidr_v6", IsQuery = true)]
         [JsonProperty("cidr_v6", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> CidrV6 { get; set; }
 
         /// <summary>
-        /// 根据是否冻结过滤
+        /// 
         /// </summary>
         [SDKProperty("freezen", IsQuery = true)]
         [JsonProperty("freezen", NullValueHandling = NullValueHandling.Ignore)]
         public List<bool?> Freezen { get; set; }
 
         /// <summary>
-        /// 根据是否绑定全域公网带宽过滤
+        /// 
         /// </summary>
         [SDKProperty("internet_bandwidth_is_null", IsQuery = true)]
         [JsonProperty("internet_bandwidth_is_null", NullValueHandling = NullValueHandling.Ignore)]
         public List<bool?> InternetBandwidthIsNull { get; set; }
 
         /// <summary>
-        /// 根据状态过滤
+        /// 
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public List<StatusEnum> Status { get; set; }
         /// <summary>
-        /// 根据绑定实例所属的局点过滤
+        /// 
         /// </summary>
         [SDKProperty("associate_instance.region", IsQuery = true)]
         [JsonProperty("associate_instance.region", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> AssociateInstanceRegion { get; set; }
 
         /// <summary>
-        /// 根据绑定实例的类型过滤
+        /// 
         /// </summary>
         [SDKProperty("associate_instance.instance_type", IsQuery = true)]
         [JsonProperty("associate_instance.instance_type", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> AssociateInstanceInstanceType { get; set; }
 
         /// <summary>
-        /// 根据绑定实例所属的边缘信息过滤
+        /// 
         /// </summary>
         [SDKProperty("associate_instance.public_border_group", IsQuery = true)]
         [JsonProperty("associate_instance.public_border_group", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> AssociateInstancePublicBorderGroup { get; set; }
 
         /// <summary>
-        /// 根据绑定实例所在的站点过滤
+        /// 
         /// </summary>
         [SDKProperty("associate_instance.instance_site", IsQuery = true)]
         [JsonProperty("associate_instance.instance_site", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> AssociateInstanceInstanceSite { get; set; }
 
         /// <summary>
-        /// 根据绑定实例的ID过滤
+        /// 
         /// </summary>
         [SDKProperty("associate_instance.instance_id", IsQuery = true)]
         [JsonProperty("associate_instance.instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> AssociateInstanceInstanceId { get; set; }
 
         /// <summary>
-        /// 根据绑定实例所属的项目ID过滤
+        /// 
         /// </summary>
         [SDKProperty("associate_instance.project_id", IsQuery = true)]
         [JsonProperty("associate_instance.project_id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> AssociateInstanceProjectId { get; set; }
 
         /// <summary>
-        /// 根据绑定实例所属的服务ID过滤
+        /// 
         /// </summary>
         [SDKProperty("associate_instance.service_id", IsQuery = true)]
         [JsonProperty("associate_instance.service_id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> AssociateInstanceServiceId { get; set; }
 
         /// <summary>
-        /// 根据绑定实例的服务类型过滤
+        /// 
         /// </summary>
         [SDKProperty("associate_instance.service_type", IsQuery = true)]
         [JsonProperty("associate_instance.service_type", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> AssociateInstanceServiceType { get; set; }
 
         /// <summary>
-        /// 根据企业项目ID过滤
+        /// 
         /// </summary>
         [SDKProperty("enterprise_project_id", IsQuery = true)]
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 根据标签过滤
+        /// 
         /// </summary>
         [SDKProperty("tags", IsQuery = true)]
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]

@@ -825,7 +825,7 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         public bool? PageReverse { get; set; }
 
         /// <summary>
-        /// 只显示指定的字段
+        /// 
         /// </summary>
         [SDKProperty("fields", IsQuery = true)]
         [JsonProperty("fields", NullValueHandling = NullValueHandling.Ignore)]
@@ -843,47 +843,47 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         [JsonProperty("sort_dir", NullValueHandling = NullValueHandling.Ignore)]
         public List<SortDirEnum> SortDir { get; set; }
         /// <summary>
-        /// 根据ID过滤
+        /// 
         /// </summary>
         [SDKProperty("id", IsQuery = true)]
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Id { get; set; }
 
         /// <summary>
-        /// 根据名称过滤
+        /// 
         /// </summary>
         [SDKProperty("code", IsQuery = true)]
         [JsonProperty("code", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Code { get; set; }
 
         /// <summary>
-        /// 根据接入点过滤
+        /// 
         /// </summary>
         [SDKProperty("access_site", IsQuery = true)]
         [JsonProperty("access_site", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> AccessSite { get; set; }
 
         /// <summary>
-        /// 根据运营商线路过滤
+        /// 
         /// </summary>
         [SDKProperty("isp", IsQuery = true)]
         [JsonProperty("isp", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Isp { get; set; }
 
         /// <summary>
-        /// 根据IP版本过滤
+        /// 
         /// </summary>
         [SDKProperty("ip_version", IsQuery = true)]
         [JsonProperty("ip_version", NullValueHandling = NullValueHandling.Ignore)]
         public List<IpVersionEnum> IpVersion { get; set; }
         /// <summary>
-        /// 根据池子状态过滤
+        /// 
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public List<StatusEnum> Status { get; set; }
         /// <summary>
-        /// 根据池子里存的内容过滤。取值：GEIP-用于分配全域弹性公网IP单地址；GEIP_SEGMENT-用于分配全域弹性公网IP段
+        /// 
         /// </summary>
         [SDKProperty("type", IsQuery = true)]
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]

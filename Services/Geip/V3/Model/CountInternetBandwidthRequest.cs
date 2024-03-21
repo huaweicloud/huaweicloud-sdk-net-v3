@@ -132,55 +132,55 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
 
 
         /// <summary>
-        /// 根据ID过滤
+        /// 
         /// </summary>
         [SDKProperty("id", IsQuery = true)]
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Id { get; set; }
 
         /// <summary>
-        /// 根据全域公网带宽大小过滤
+        /// 
         /// </summary>
         [SDKProperty("size", IsQuery = true)]
         [JsonProperty("size", NullValueHandling = NullValueHandling.Ignore)]
         public List<int?> Size { get; set; }
 
         /// <summary>
-        /// 根据名称过滤
+        /// 
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Name { get; set; }
 
         /// <summary>
-        /// 根据名称模糊匹配
+        /// 
         /// </summary>
         [SDKProperty("name_like", IsQuery = true)]
         [JsonProperty("name_like", NullValueHandling = NullValueHandling.Ignore)]
         public string NameLike { get; set; }
 
         /// <summary>
-        /// 根据接入点过滤
+        /// 
         /// </summary>
         [SDKProperty("access_site", IsQuery = true)]
         [JsonProperty("access_site", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> AccessSite { get; set; }
 
         /// <summary>
-        /// 根据资源状态过滤
+        /// 
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public List<StatusEnum> Status { get; set; }
         /// <summary>
-        /// 根据企业项目ID过滤
+        /// 
         /// </summary>
         [SDKProperty("enterprise_project_id", IsQuery = true)]
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 根据标签过滤
+        /// 
         /// </summary>
         [SDKProperty("tags", IsQuery = true)]
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]

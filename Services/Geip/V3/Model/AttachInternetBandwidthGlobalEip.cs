@@ -16,6 +16,121 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
     public class AttachInternetBandwidthGlobalEip 
     {
         /// <summary>
+        /// - 功能说明：全域弹性公网IP的版本 - 取值范围：4、6
+        /// </summary>
+        /// <value>- 功能说明：全域弹性公网IP的版本 - 取值范围：4、6</value>
+        [JsonConverter(typeof(EnumClassConverter<IpVersionEnum>))]
+        public class IpVersionEnum
+        {
+            /// <summary>
+            /// Enum NUMBER_4 for value: 4
+            /// </summary>
+            public static readonly IpVersionEnum NUMBER_4 = new IpVersionEnum(4);
+
+            /// <summary>
+            /// Enum NUMBER_6 for value: 6
+            /// </summary>
+            public static readonly IpVersionEnum NUMBER_6 = new IpVersionEnum(6);
+
+            private static readonly Dictionary<int?, IpVersionEnum> StaticFields =
+            new Dictionary<int?, IpVersionEnum>()
+            {
+                { 4, NUMBER_4 },
+                { 6, NUMBER_6 },
+            };
+
+            private int? _value;
+
+            public IpVersionEnum()
+            {
+
+            }
+
+            public IpVersionEnum(int? value)
+            {
+                _value = value;
+            }
+
+            public static IpVersionEnum FromValue(int? value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public int? GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as IpVersionEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(IpVersionEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(IpVersionEnum a, IpVersionEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(IpVersionEnum a, IpVersionEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+        /// <summary>
         /// 状态
         /// </summary>
         /// <value>状态</value>
@@ -144,25 +259,25 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
 
 
         /// <summary>
-        /// ID
+        /// 全域弹性公网IP的ID
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 资源名称
+        /// - 功能说明：全域弹性公网IP名称 - 取值范围：1-64，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 租户ID
+        /// - 租户账号ID，获取租户账号ID请参见[租户账号ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)
         /// </summary>
         [JsonProperty("domain_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DomainId { get; set; }
 
         /// <summary>
-        /// 用户自定义的资源描述
+        /// - 功能说明：用户自定义的资源描述 - 约束：   - 值的长度最大512字符，由数字、字母、中文、_(下划线)、-（中划线）、.（点）组成。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
@@ -180,17 +295,16 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         public string GeipPoolName { get; set; }
 
         /// <summary>
-        /// 线路
+        /// 全域弹性公网IP所属线路
         /// </summary>
         [JsonProperty("isp", NullValueHandling = NullValueHandling.Ignore)]
         public string Isp { get; set; }
 
         /// <summary>
-        /// IPv4或IPv6
+        /// - 功能说明：全域弹性公网IP的版本 - 取值范围：4、6
         /// </summary>
         [JsonProperty("ip_version", NullValueHandling = NullValueHandling.Ignore)]
-        public int? IpVersion { get; set; }
-
+        public IpVersionEnum IpVersion { get; set; }
         /// <summary>
         /// IPv4地址
         /// </summary>
@@ -275,7 +389,7 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         public List<Tag> SysTags { get; set; }
 
         /// <summary>
-        /// 资源的企业项目id
+        /// - 企业项目ID。最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。 - 创建全域弹性公网IP时，给全域弹性公网IP绑定企业项目ID。 - 不指定该参数时，默认值是 0 - 关于企业项目ID的获取及企业项目特性的详细信息，请参见[《企业管理用户指南》](https://support.huaweicloud.com/usermanual-em/zh-cn_topic_0126101490.html)。
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }

@@ -17,14 +17,14 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
     {
 
         /// <summary>
-        /// 全域弹性公网IP的id
+        /// 
         /// </summary>
         [SDKProperty("resource_id", IsPath = true)]
         [JsonProperty("resource_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceId { get; set; }
 
         /// <summary>
-        /// 待删除标签的key
+        /// 
         /// </summary>
         [SDKProperty("tag_key", IsPath = true)]
         [JsonProperty("tag_key", NullValueHandling = NullValueHandling.Ignore)]

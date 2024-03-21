@@ -437,6 +437,30 @@ namespace HuaweiCloud.SDK.Ocr.V1
         }
         
         /// <summary>
+        /// 户口本识别
+        ///
+        /// 识别户口本中的文字信息，并返回识别的结构化结果。该接口的使用限制请参见[约束与限制](https://support.huaweicloud.com/productdesc-ocr/ocr_01_0006.html#section11)，详细使用指导请参见[OCR服务使用简介](https://support.huaweicloud.com/qs-ocr/ocr_05_0001.html)章节。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public RecognizeHouseholdRegisterResponse RecognizeHouseholdRegister(RecognizeHouseholdRegisterRequest recognizeHouseholdRegisterRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/household-register", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeHouseholdRegisterRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<RecognizeHouseholdRegisterResponse>(response);
+        }
+
+        public SyncInvoker<RecognizeHouseholdRegisterResponse> RecognizeHouseholdRegisterInvoker(RecognizeHouseholdRegisterRequest recognizeHouseholdRegisterRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/household-register", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeHouseholdRegisterRequest);
+            return new SyncInvoker<RecognizeHouseholdRegisterResponse>(this, "POST", request, JsonUtils.DeSerialize<RecognizeHouseholdRegisterResponse>);
+        }
+        
+        /// <summary>
         /// 身份证识别
         ///
         /// 识别身份证图片中的文字内容，并将识别的结果返回给用户。该接口的使用限制请参见[约束与限制](https://support.huaweicloud.com/productdesc-ocr/ocr_01_0006.html#section5)，详细使用指导请参见[OCR服务使用简介](https://support.huaweicloud.com/qs-ocr/ocr_05_0001.html)章节。

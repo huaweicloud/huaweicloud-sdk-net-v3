@@ -2178,8 +2178,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public UpdateFuncSnapshotResponse UpdateFuncSnapshot(UpdateFuncSnapshotRequest updateFuncSnapshotRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("action", updateFuncSnapshotRequest.Action.ToString());
             urlParam.Add("function_urn", updateFuncSnapshotRequest.FunctionUrn.ToString());
+            urlParam.Add("action", updateFuncSnapshotRequest.Action.ToString());
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/snapshots/{action}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateFuncSnapshotRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -2189,8 +2189,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<UpdateFuncSnapshotResponse> UpdateFuncSnapshotInvoker(UpdateFuncSnapshotRequest updateFuncSnapshotRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("action", updateFuncSnapshotRequest.Action.ToString());
             urlParam.Add("function_urn", updateFuncSnapshotRequest.FunctionUrn.ToString());
+            urlParam.Add("action", updateFuncSnapshotRequest.Action.ToString());
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/snapshots/{action}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateFuncSnapshotRequest);
             return new SyncInvoker<UpdateFuncSnapshotResponse>(this, "POST", request, JsonUtils.DeSerializeNull<UpdateFuncSnapshotResponse>);

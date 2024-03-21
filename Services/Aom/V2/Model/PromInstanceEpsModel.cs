@@ -23,9 +23,9 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         public class PromTypeEnum
         {
             /// <summary>
-            /// Enum DEFAULT for value: DEFAULT
+            /// Enum DEFAULT for value: default
             /// </summary>
-            public static readonly PromTypeEnum DEFAULT = new PromTypeEnum("DEFAULT");
+            public static readonly PromTypeEnum DEFAULT = new PromTypeEnum("default");
 
             /// <summary>
             /// Enum ECS for value: ECS
@@ -65,7 +65,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
             private static readonly Dictionary<string, PromTypeEnum> StaticFields =
             new Dictionary<string, PromTypeEnum>()
             {
-                { "DEFAULT", DEFAULT },
+                { "default", DEFAULT },
                 { "ECS", ECS },
                 { "VPC", VPC },
                 { "CCE", CCE },

@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
     {
 
         /// <summary>
-        /// 全域公网带宽的ID
+        /// 
         /// </summary>
         [SDKProperty("internet_bandwidth_id", IsPath = true)]
         [JsonProperty("internet_bandwidth_id", NullValueHandling = NullValueHandling.Ignore)]

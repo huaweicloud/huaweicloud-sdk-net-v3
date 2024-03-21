@@ -132,7 +132,7 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
 
 
         /// <summary>
-        /// ID
+        /// 域弹性公网IP支持绑定的Region限制的ID
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
@@ -144,7 +144,7 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         public string InstanceType { get; set; }
 
         /// <summary>
-        /// 中心站点or边缘站点
+        /// - 功能说明：表示中心站点资源或者边缘站点资源 - 取值范围：center、边缘站点名称
         /// </summary>
         [JsonProperty("public_border_group", NullValueHandling = NullValueHandling.Ignore)]
         public string PublicBorderGroup { get; set; }

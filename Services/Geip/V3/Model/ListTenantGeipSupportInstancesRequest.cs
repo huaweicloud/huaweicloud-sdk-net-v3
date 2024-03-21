@@ -162,14 +162,14 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
 
 
         /// <summary>
-        /// 接入点信息
+        /// 
         /// </summary>
         [SDKProperty("access_site", IsPath = true)]
         [JsonProperty("access_site", NullValueHandling = NullValueHandling.Ignore)]
         public string AccessSite { get; set; }
 
         /// <summary>
-        /// 只显示指定的字段
+        /// 
         /// </summary>
         [SDKProperty("fields", IsQuery = true)]
         [JsonProperty("fields", NullValueHandling = NullValueHandling.Ignore)]

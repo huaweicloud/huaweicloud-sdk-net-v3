@@ -11,13 +11,14 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Geip.V3.Model
 {
     /// <summary>
-    /// 
+    /// 骨干带宽的信息
     /// </summary>
     public class AssociateInstanceGlobalEipRequestBodyGlobalEipGcBandwidthInfo 
     {
         /// <summary>
-        /// Defines type
+        /// 骨干带宽类型
         /// </summary>
+        /// <value>骨干带宽类型</value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -234,30 +235,30 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
 
 
         /// <summary>
-        /// ID
+        /// 骨干带宽的ID
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 资源名称
+        /// - 功能说明：骨干带宽的名称 - 取值范围：1-64，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 
+        /// 骨干带宽描述信息
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
         /// <summary>
-        /// 
+        /// 骨干带宽类型
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }
         /// <summary>
-        /// 资源的企业项目id
+        /// - 企业项目ID。最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。 - 创建全域弹性公网IP时，给全域弹性公网IP绑定企业项目ID。 - 不指定该参数时，默认值是 0 - 关于企业项目ID的获取及企业项目特性的详细信息，请参见[《企业管理用户指南》](https://support.huaweicloud.com/usermanual-em/zh-cn_topic_0126101490.html)。
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
@@ -268,13 +269,13 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         [JsonProperty("charge_mode", NullValueHandling = NullValueHandling.Ignore)]
         public ChargeModeEnum ChargeMode { get; set; }
         /// <summary>
-        /// 
+        /// 域间带宽值
         /// </summary>
         [JsonProperty("bandwidth", NullValueHandling = NullValueHandling.Ignore)]
         public int? Bandwidth { get; set; }
 
         /// <summary>
-        /// 大小
+        /// 域间带宽大小
         /// </summary>
         [JsonProperty("size", NullValueHandling = NullValueHandling.Ignore)]
         public int? Size { get; set; }
@@ -295,7 +296,7 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         /// 全域弹性公网IP标签
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
-        public List<AssociateInstanceGlobalEipRequestBodyGlobalEipGcBandwidthInfoTags> Tags { get; set; }
+        public List<CreateGlobalEipRequestBodyGlobalEipTags> Tags { get; set; }
 
 
 

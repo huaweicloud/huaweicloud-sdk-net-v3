@@ -246,14 +246,14 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
 
 
         /// <summary>
-        /// global_eip_segment_id
+        /// 
         /// </summary>
         [SDKProperty("global_eip_segment_id", IsPath = true)]
         [JsonProperty("global_eip_segment_id", NullValueHandling = NullValueHandling.Ignore)]
         public string GlobalEipSegmentId { get; set; }
 
         /// <summary>
-        /// 只显示指定的字段
+        /// 
         /// </summary>
         [SDKProperty("fields", IsQuery = true)]
         [JsonProperty("fields", NullValueHandling = NullValueHandling.Ignore)]

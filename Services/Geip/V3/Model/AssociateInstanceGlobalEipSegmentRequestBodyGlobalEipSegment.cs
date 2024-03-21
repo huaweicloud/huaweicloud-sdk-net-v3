@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// 项目ID
+        /// 项目ID，获取项目ID请参见[获取项目ID](https://support.huaweicloud.com/api-vpc/vpc_api_0011.html)
         /// </summary>
         [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProjectId { get; set; }

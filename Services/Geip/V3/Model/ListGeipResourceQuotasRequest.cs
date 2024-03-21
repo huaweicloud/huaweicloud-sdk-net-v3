@@ -172,14 +172,14 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         public bool? PageReverse { get; set; }
 
         /// <summary>
-        /// 只显示指定的字段
+        /// 
         /// </summary>
         [SDKProperty("fields", IsQuery = true)]
         [JsonProperty("fields", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Fields { get; set; }
 
         /// <summary>
-        /// 根据类型过滤
+        /// 
         /// </summary>
         [SDKProperty("type", IsQuery = true)]
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]

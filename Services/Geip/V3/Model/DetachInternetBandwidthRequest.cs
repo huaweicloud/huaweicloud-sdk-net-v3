@@ -17,14 +17,14 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
     {
 
         /// <summary>
-        /// global_eip_id
+        /// 
         /// </summary>
         [SDKProperty("global_eip_id", IsPath = true)]
         [JsonProperty("global_eip_id", NullValueHandling = NullValueHandling.Ignore)]
         public string GlobalEipId { get; set; }
 
         /// <summary>
-        /// 是否强制解绑
+        /// 
         /// </summary>
         [SDKProperty("force_unbind", IsQuery = true)]
         [JsonProperty("force_unbind", NullValueHandling = NullValueHandling.Ignore)]

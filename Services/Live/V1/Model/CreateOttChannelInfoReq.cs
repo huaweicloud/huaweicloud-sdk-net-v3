@@ -1,0 +1,305 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Linq;
+using System.Runtime.Serialization;
+
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using HuaweiCloud.SDK.Core;
+
+namespace HuaweiCloud.SDK.Live.V1.Model
+{
+    /// <summary>
+    /// OTT频道创建消息体
+    /// </summary>
+    public class CreateOttChannelInfoReq 
+    {
+        /// <summary>
+        /// 频道状态 - ON：频道下发成功后，自动启动拉流、转码、录制等功能 - OFF：仅保存频道信息，不启动频道
+        /// </summary>
+        /// <value>频道状态 - ON：频道下发成功后，自动启动拉流、转码、录制等功能 - OFF：仅保存频道信息，不启动频道</value>
+        [JsonConverter(typeof(EnumClassConverter<StateEnum>))]
+        public class StateEnum
+        {
+            /// <summary>
+            /// Enum ON for value: ON
+            /// </summary>
+            public static readonly StateEnum ON = new StateEnum("ON");
+
+            /// <summary>
+            /// Enum OFF for value: OFF
+            /// </summary>
+            public static readonly StateEnum OFF = new StateEnum("OFF");
+
+            private static readonly Dictionary<string, StateEnum> StaticFields =
+            new Dictionary<string, StateEnum>()
+            {
+                { "ON", ON },
+                { "OFF", OFF },
+            };
+
+            private string _value;
+
+            public StateEnum()
+            {
+
+            }
+
+            public StateEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static StateEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as StateEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(StateEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(StateEnum a, StateEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(StateEnum a, StateEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+
+        /// <summary>
+        /// 频道推流域名
+        /// </summary>
+        [JsonProperty("domain", NullValueHandling = NullValueHandling.Ignore)]
+        public string Domain { get; set; }
+
+        /// <summary>
+        /// 组名或应用名
+        /// </summary>
+        [JsonProperty("app_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string AppName { get; set; }
+
+        /// <summary>
+        /// 频道ID。频道唯一标识，为必填项。频道ID不建议输入下划线“_”，否则会影响转码和截图任务
+        /// </summary>
+        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// 频道名。可选配置
+        /// </summary>
+        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// 频道状态 - ON：频道下发成功后，自动启动拉流、转码、录制等功能 - OFF：仅保存频道信息，不启动频道
+        /// </summary>
+        [JsonProperty("state", NullValueHandling = NullValueHandling.Ignore)]
+        public StateEnum State { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("input", NullValueHandling = NullValueHandling.Ignore)]
+        public InputStreamInfo Input { get; set; }
+
+        /// <summary>
+        /// 转码模板配置
+        /// </summary>
+        [JsonProperty("encoder_settings", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ModifyOttChannelEncoderSettingsEncoderSettings> EncoderSettings { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("record_settings", NullValueHandling = NullValueHandling.Ignore)]
+        public CreateOttChannelInfoReqRecordSettings RecordSettings { get; set; }
+
+        /// <summary>
+        /// 频道出流信息
+        /// </summary>
+        [JsonProperty("endpoints", NullValueHandling = NullValueHandling.Ignore)]
+        public List<EndpointItem> Endpoints { get; set; }
+
+
+
+        /// <summary>
+        /// Get the string
+        /// </summary>
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class CreateOttChannelInfoReq {\n");
+            sb.Append("  domain: ").Append(Domain).Append("\n");
+            sb.Append("  appName: ").Append(AppName).Append("\n");
+            sb.Append("  id: ").Append(Id).Append("\n");
+            sb.Append("  name: ").Append(Name).Append("\n");
+            sb.Append("  state: ").Append(State).Append("\n");
+            sb.Append("  input: ").Append(Input).Append("\n");
+            sb.Append("  encoderSettings: ").Append(EncoderSettings).Append("\n");
+            sb.Append("  recordSettings: ").Append(RecordSettings).Append("\n");
+            sb.Append("  endpoints: ").Append(Endpoints).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public override bool Equals(object input)
+        {
+            return this.Equals(input as CreateOttChannelInfoReq);
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public bool Equals(CreateOttChannelInfoReq input)
+        {
+            if (input == null)
+                return false;
+
+            return 
+                (
+                    this.Domain == input.Domain ||
+                    (this.Domain != null &&
+                    this.Domain.Equals(input.Domain))
+                ) && 
+                (
+                    this.AppName == input.AppName ||
+                    (this.AppName != null &&
+                    this.AppName.Equals(input.AppName))
+                ) && 
+                (
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
+                ) && 
+                (
+                    this.Name == input.Name ||
+                    (this.Name != null &&
+                    this.Name.Equals(input.Name))
+                ) && 
+                (
+                    this.State == input.State ||
+                    (this.State != null &&
+                    this.State.Equals(input.State))
+                ) && 
+                (
+                    this.Input == input.Input ||
+                    (this.Input != null &&
+                    this.Input.Equals(input.Input))
+                ) && 
+                (
+                    this.EncoderSettings == input.EncoderSettings ||
+                    this.EncoderSettings != null &&
+                    input.EncoderSettings != null &&
+                    this.EncoderSettings.SequenceEqual(input.EncoderSettings)
+                ) && 
+                (
+                    this.RecordSettings == input.RecordSettings ||
+                    (this.RecordSettings != null &&
+                    this.RecordSettings.Equals(input.RecordSettings))
+                ) && 
+                (
+                    this.Endpoints == input.Endpoints ||
+                    this.Endpoints != null &&
+                    input.Endpoints != null &&
+                    this.Endpoints.SequenceEqual(input.Endpoints)
+                );
+        }
+
+        /// <summary>
+        /// Get hash code
+        /// </summary>
+        public override int GetHashCode()
+        {
+            unchecked // Overflow is fine, just wrap
+            {
+                int hashCode = 41;
+                if (this.Domain != null)
+                    hashCode = hashCode * 59 + this.Domain.GetHashCode();
+                if (this.AppName != null)
+                    hashCode = hashCode * 59 + this.AppName.GetHashCode();
+                if (this.Id != null)
+                    hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null)
+                    hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.State != null)
+                    hashCode = hashCode * 59 + this.State.GetHashCode();
+                if (this.Input != null)
+                    hashCode = hashCode * 59 + this.Input.GetHashCode();
+                if (this.EncoderSettings != null)
+                    hashCode = hashCode * 59 + this.EncoderSettings.GetHashCode();
+                if (this.RecordSettings != null)
+                    hashCode = hashCode * 59 + this.RecordSettings.GetHashCode();
+                if (this.Endpoints != null)
+                    hashCode = hashCode * 59 + this.Endpoints.GetHashCode();
+                return hashCode;
+            }
+        }
+    }
+}

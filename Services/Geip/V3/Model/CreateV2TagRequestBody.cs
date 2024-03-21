@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Geip.V3.Model
 {
     /// <summary>
-    /// 
+    /// 标签对象
     /// </summary>
     public class CreateV2TagRequestBody 
     {

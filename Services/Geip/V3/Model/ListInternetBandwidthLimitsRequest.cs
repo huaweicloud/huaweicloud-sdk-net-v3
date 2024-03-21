@@ -501,7 +501,7 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
 
 
         /// <summary>
-        /// 只显示指定的字段
+        /// 
         /// </summary>
         [SDKProperty("fields", IsQuery = true)]
         [JsonProperty("fields", NullValueHandling = NullValueHandling.Ignore)]
@@ -519,13 +519,13 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         [JsonProperty("sort_dir", NullValueHandling = NullValueHandling.Ignore)]
         public List<SortDirEnum> SortDir { get; set; }
         /// <summary>
-        /// 根据计费模式过滤
+        /// 
         /// </summary>
         [SDKProperty("charge_mode", IsQuery = true)]
         [JsonProperty("charge_mode", NullValueHandling = NullValueHandling.Ignore)]
         public List<ChargeModeEnum> ChargeMode { get; set; }
         /// <summary>
-        /// 根据全域公网带宽类型过滤
+        /// 
         /// </summary>
         [SDKProperty("type", IsQuery = true)]
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]

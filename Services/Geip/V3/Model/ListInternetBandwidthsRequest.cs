@@ -734,13 +734,13 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         public bool? PageReverse { get; set; }
 
         /// <summary>
-        /// 只显示指定的字段
+        /// 
         /// </summary>
         [SDKProperty("fields", IsQuery = true)]
         [JsonProperty("fields", NullValueHandling = NullValueHandling.Ignore)]
         public List<FieldsEnum> Fields { get; set; }
         /// <summary>
-        /// 在默认显示字段的基础上追加指定字段
+        /// 
         /// </summary>
         [SDKProperty("ext-fields", IsQuery = true)]
         [JsonProperty("ext-fields", NullValueHandling = NullValueHandling.Ignore)]
@@ -758,62 +758,62 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         [JsonProperty("sort_dir", NullValueHandling = NullValueHandling.Ignore)]
         public List<SortDirEnum> SortDir { get; set; }
         /// <summary>
-        /// 根据ID过滤
+        /// 
         /// </summary>
         [SDKProperty("id", IsQuery = true)]
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Id { get; set; }
 
         /// <summary>
-        /// 根据全域公网带宽大小过滤
+        /// 
         /// </summary>
         [SDKProperty("size", IsQuery = true)]
         [JsonProperty("size", NullValueHandling = NullValueHandling.Ignore)]
         public List<int?> Size { get; set; }
 
         /// <summary>
-        /// 根据名称过滤
+        /// 
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Name { get; set; }
 
         /// <summary>
-        /// 根据名称模糊匹配
+        /// 
         /// </summary>
         [SDKProperty("name_like", IsQuery = true)]
         [JsonProperty("name_like", NullValueHandling = NullValueHandling.Ignore)]
         public string NameLike { get; set; }
 
         /// <summary>
-        /// 根据接入点过滤
+        /// 
         /// </summary>
         [SDKProperty("access_site", IsQuery = true)]
         [JsonProperty("access_site", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> AccessSite { get; set; }
 
         /// <summary>
-        /// 根据资源状态过滤
+        /// 
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public List<StatusEnum> Status { get; set; }
         /// <summary>
-        /// 根据企业项目ID过滤
+        /// 
         /// </summary>
         [SDKProperty("enterprise_project_id", IsQuery = true)]
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 根据标签过滤
+        /// 
         /// </summary>
         [SDKProperty("tags", IsQuery = true)]
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Tags { get; set; }
 
         /// <summary>
-        /// 根据全域公网带宽类型过滤
+        /// 
         /// </summary>
         [SDKProperty("type", IsQuery = true)]
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]

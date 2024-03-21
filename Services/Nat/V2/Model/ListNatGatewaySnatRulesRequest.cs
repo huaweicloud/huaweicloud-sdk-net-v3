@@ -177,18 +177,18 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 功能说明：弹性公网IP，多个弹性公网IP使用逗号分隔。
+        /// 功能说明：弹性公网IP。
         /// </summary>
         [SDKProperty("floating_ip_address", IsQuery = true)]
         [JsonProperty("floating_ip_address", NullValueHandling = NullValueHandling.Ignore)]
-        public string FloatingIpAddress { get; set; }
+        public List<string> FloatingIpAddress { get; set; }
 
         /// <summary>
-        /// 功能说明：弹性公网IP的id，多个弹性公网IP使用逗号分隔。 取值范围：最大长度4096字节。
+        /// 功能说明：弹性公网IP的id。
         /// </summary>
         [SDKProperty("floating_ip_id", IsQuery = true)]
         [JsonProperty("floating_ip_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string FloatingIpId { get; set; }
+        public List<string> FloatingIpId { get; set; }
 
         /// <summary>
         /// SNAT规则的ID。
@@ -305,13 +305,15 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
                 ) && 
                 (
                     this.FloatingIpAddress == input.FloatingIpAddress ||
-                    (this.FloatingIpAddress != null &&
-                    this.FloatingIpAddress.Equals(input.FloatingIpAddress))
+                    this.FloatingIpAddress != null &&
+                    input.FloatingIpAddress != null &&
+                    this.FloatingIpAddress.SequenceEqual(input.FloatingIpAddress)
                 ) && 
                 (
                     this.FloatingIpId == input.FloatingIpId ||
-                    (this.FloatingIpId != null &&
-                    this.FloatingIpId.Equals(input.FloatingIpId))
+                    this.FloatingIpId != null &&
+                    input.FloatingIpId != null &&
+                    this.FloatingIpId.SequenceEqual(input.FloatingIpId)
                 ) && 
                 (
                     this.Id == input.Id ||

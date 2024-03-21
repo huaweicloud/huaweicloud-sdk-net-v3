@@ -8,25 +8,31 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Geip.V3.Model
+namespace HuaweiCloud.SDK.Live.V1.Model
 {
     /// <summary>
-    /// 
+    /// 从全量流中过滤出一个码率在[min, max]区间的流。如果不需要码率过滤可不选。
     /// </summary>
-    public class BatchDeleteV2RequestBodySysTags 
+    public class StreamSelectionItem 
     {
 
         /// <summary>
-        /// 标签键，最大长度128个unicode字符，格式为大小写字母，数字，中划线“-”，下划线“_”，中文。
+        /// 拉流URL中用于码率过滤的参数
         /// </summary>
         [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]
         public string Key { get; set; }
 
         /// <summary>
-        /// 标签值，最大长度255个unicode字符，格式为大小写字母，数字，中划线“-”，下划线“_”，点“.”，中文。
+        /// 最小码率，单位：bps 取值范围：0 - 104,857,600（100Mbps）
         /// </summary>
-        [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
-        public string Value { get; set; }
+        [JsonProperty("max_bandwidth", NullValueHandling = NullValueHandling.Ignore)]
+        public int? MaxBandwidth { get; set; }
+
+        /// <summary>
+        /// 最小码率，单位：bps 取值范围：0 - 104,857,600（100Mbps）
+        /// </summary>
+        [JsonProperty("min_bandwidth", NullValueHandling = NullValueHandling.Ignore)]
+        public int? MinBandwidth { get; set; }
 
 
 
@@ -36,9 +42,10 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class BatchDeleteV2RequestBodySysTags {\n");
+            sb.Append("class StreamSelectionItem {\n");
             sb.Append("  key: ").Append(Key).Append("\n");
-            sb.Append("  value: ").Append(Value).Append("\n");
+            sb.Append("  maxBandwidth: ").Append(MaxBandwidth).Append("\n");
+            sb.Append("  minBandwidth: ").Append(MinBandwidth).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -48,13 +55,13 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as BatchDeleteV2RequestBodySysTags);
+            return this.Equals(input as StreamSelectionItem);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(BatchDeleteV2RequestBodySysTags input)
+        public bool Equals(StreamSelectionItem input)
         {
             if (input == null)
                 return false;
@@ -66,9 +73,14 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
                     this.Key.Equals(input.Key))
                 ) && 
                 (
-                    this.Value == input.Value ||
-                    (this.Value != null &&
-                    this.Value.Equals(input.Value))
+                    this.MaxBandwidth == input.MaxBandwidth ||
+                    (this.MaxBandwidth != null &&
+                    this.MaxBandwidth.Equals(input.MaxBandwidth))
+                ) && 
+                (
+                    this.MinBandwidth == input.MinBandwidth ||
+                    (this.MinBandwidth != null &&
+                    this.MinBandwidth.Equals(input.MinBandwidth))
                 );
         }
 
@@ -82,8 +94,10 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
                 int hashCode = 41;
                 if (this.Key != null)
                     hashCode = hashCode * 59 + this.Key.GetHashCode();
-                if (this.Value != null)
-                    hashCode = hashCode * 59 + this.Value.GetHashCode();
+                if (this.MaxBandwidth != null)
+                    hashCode = hashCode * 59 + this.MaxBandwidth.GetHashCode();
+                if (this.MinBandwidth != null)
+                    hashCode = hashCode * 59 + this.MinBandwidth.GetHashCode();
                 return hashCode;
             }
         }

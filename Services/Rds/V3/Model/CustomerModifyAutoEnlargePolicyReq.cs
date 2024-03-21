@@ -154,6 +154,12 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         [JsonProperty("trigger_threshold", NullValueHandling = NullValueHandling.Ignore)]
         public TriggerThresholdEnum TriggerThreshold { get; set; }
+        /// <summary>
+        /// 每次自动扩容的百分比步长，取值范围5~50，开启自定义步长功能时必填
+        /// </summary>
+        [JsonProperty("step_percent", NullValueHandling = NullValueHandling.Ignore)]
+        public int? StepPercent { get; set; }
+
 
 
         /// <summary>
@@ -166,6 +172,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             sb.Append("  switchOption: ").Append(SwitchOption).Append("\n");
             sb.Append("  limitSize: ").Append(LimitSize).Append("\n");
             sb.Append("  triggerThreshold: ").Append(TriggerThreshold).Append("\n");
+            sb.Append("  stepPercent: ").Append(StepPercent).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -201,6 +208,11 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
                     this.TriggerThreshold == input.TriggerThreshold ||
                     (this.TriggerThreshold != null &&
                     this.TriggerThreshold.Equals(input.TriggerThreshold))
+                ) && 
+                (
+                    this.StepPercent == input.StepPercent ||
+                    (this.StepPercent != null &&
+                    this.StepPercent.Equals(input.StepPercent))
                 );
         }
 
@@ -218,6 +230,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
                     hashCode = hashCode * 59 + this.LimitSize.GetHashCode();
                 if (this.TriggerThreshold != null)
                     hashCode = hashCode * 59 + this.TriggerThreshold.GetHashCode();
+                if (this.StepPercent != null)
+                    hashCode = hashCode * 59 + this.StepPercent.GetHashCode();
                 return hashCode;
             }
         }

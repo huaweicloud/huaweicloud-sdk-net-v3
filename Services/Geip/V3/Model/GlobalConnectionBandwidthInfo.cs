@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
     {
 
         /// <summary>
-        /// 骨干带宽id
+        /// 骨干带宽的ID
         /// </summary>
         [JsonProperty("gcb_id", NullValueHandling = NullValueHandling.Ignore)]
         public string GcbId { get; set; }
 
         /// <summary>
-        /// 骨干带宽大小
+        /// 骨干带宽的大小
         /// </summary>
         [JsonProperty("size", NullValueHandling = NullValueHandling.Ignore)]
         public int? Size { get; set; }
@@ -35,13 +35,13 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         public string GcbType { get; set; }
 
         /// <summary>
-        /// 骨干带宽状态，取值：NORMAL 正常、FREEZED 冻结
+        /// - 功能说明：骨干带宽状态 - 取值范围：NORMAL 正常、FREEZED 冻结
         /// </summary>
         [JsonProperty("admin_state", NullValueHandling = NullValueHandling.Ignore)]
         public string AdminState { get; set; }
 
         /// <summary>
-        /// 网络服务等级。Pt - 铂金，Au - 金牌，Ag - 银牌，Cu - 铜牌
+        /// - 功能说明：网络服务等级 - 取值范围：Pt - 铂金，Au - 金牌，Ag - 银牌，Cu - 铜牌
         /// </summary>
         [JsonProperty("sla_level", NullValueHandling = NullValueHandling.Ignore)]
         public string SlaLevel { get; set; }

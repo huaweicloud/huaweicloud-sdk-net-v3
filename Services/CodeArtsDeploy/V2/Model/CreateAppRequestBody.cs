@@ -144,6 +144,12 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         public string Description { get; set; }
 
         /// <summary>
+        /// 分组id
+        /// </summary>
+        [JsonProperty("group_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string GroupId { get; set; }
+
+        /// <summary>
         /// 是否为草稿
         /// </summary>
         [JsonProperty("is_draft", NullValueHandling = NullValueHandling.Ignore)]
@@ -184,6 +190,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
             sb.Append("  projectId: ").Append(ProjectId).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
+            sb.Append("  groupId: ").Append(GroupId).Append("\n");
             sb.Append("  isDraft: ").Append(IsDraft).Append("\n");
             sb.Append("  createType: ").Append(CreateType).Append("\n");
             sb.Append("  slaveClusterId: ").Append(SlaveClusterId).Append("\n");
@@ -224,6 +231,11 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
+                ) && 
+                (
+                    this.GroupId == input.GroupId ||
+                    (this.GroupId != null &&
+                    this.GroupId.Equals(input.GroupId))
                 ) && 
                 (
                     this.IsDraft == input.IsDraft ||
@@ -267,6 +279,8 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Description != null)
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.GroupId != null)
+                    hashCode = hashCode * 59 + this.GroupId.GetHashCode();
                 if (this.IsDraft != null)
                     hashCode = hashCode * 59 + this.IsDraft.GetHashCode();
                 if (this.CreateType != null)

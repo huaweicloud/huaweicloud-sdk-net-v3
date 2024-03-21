@@ -11,13 +11,13 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Geip.V3.Model
 {
     /// <summary>
-    /// 
+    /// 全域公网带宽信息
     /// </summary>
     public class BatchCreateGlobalEipRequestBodyGlobalEipInternetBandwidthInfo 
     {
 
         /// <summary>
-        /// ID
+        /// 全域公网带宽的ID
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         public int? Size { get; set; }
 
         /// <summary>
-        /// 资源名称
+        /// - 功能说明：全域弹性公网IP名称 - 取值范围：1-64，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
@@ -50,7 +50,7 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         /// 全域弹性公网IP标签
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
-        public List<AssociateInstanceGlobalEipRequestBodyGlobalEipGcBandwidthInfoTags> Tags { get; set; }
+        public List<CreateGlobalEipRequestBodyGlobalEipTags> Tags { get; set; }
 
         /// <summary>
         /// 全域公网带宽类型

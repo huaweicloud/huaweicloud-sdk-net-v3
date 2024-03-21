@@ -707,7 +707,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public bool? EnableDynamicMemory { get; set; }
 
         /// <summary>
-        /// 是否支持有状态，如果需要支持，需要固定传参为true，v2版本支持
+        /// 是否支持有状态，v2版本支持
         /// </summary>
         [JsonProperty("is_stateful_function", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsStatefulFunction { get; set; }

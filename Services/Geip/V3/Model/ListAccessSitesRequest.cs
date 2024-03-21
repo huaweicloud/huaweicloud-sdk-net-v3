@@ -432,7 +432,7 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         public bool? PageReverse { get; set; }
 
         /// <summary>
-        /// 只显示指定的字段
+        /// 
         /// </summary>
         [SDKProperty("fields", IsQuery = true)]
         [JsonProperty("fields", NullValueHandling = NullValueHandling.Ignore)]
@@ -450,28 +450,28 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         [JsonProperty("sort_dir", NullValueHandling = NullValueHandling.Ignore)]
         public List<SortDirEnum> SortDir { get; set; }
         /// <summary>
-        /// 根据ID过滤
+        /// 
         /// </summary>
         [SDKProperty("id", IsQuery = true)]
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Id { get; set; }
 
         /// <summary>
-        /// 根据名称过滤
+        /// 
         /// </summary>
         [SDKProperty("code", IsQuery = true)]
         [JsonProperty("code", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Code { get; set; }
 
         /// <summary>
-        /// 根据proxy_region过滤
+        /// 
         /// </summary>
         [SDKProperty("proxy_region", IsQuery = true)]
         [JsonProperty("proxy_region", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> ProxyRegion { get; set; }
 
         /// <summary>
-        /// 根据iec_az_code过滤
+        /// 
         /// </summary>
         [SDKProperty("iec_az_code", IsQuery = true)]
         [JsonProperty("iec_az_code", NullValueHandling = NullValueHandling.Ignore)]

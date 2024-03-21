@@ -19,8 +19,8 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         /// <summary>
         /// 
         /// </summary>
-        [SDKProperty("x-request-id", IsHeader = true)]
-        [JsonProperty("x-request-id", NullValueHandling = NullValueHandling.Ignore)]
+        [SDKProperty("X-Request-Id", IsHeader = true)]
+        [JsonProperty("X-Request-Id", NullValueHandling = NullValueHandling.Ignore)]
         public string XRequestId { get; set; }
 
 

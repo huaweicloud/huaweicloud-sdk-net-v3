@@ -23,9 +23,9 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         public class PromTypeEnum
         {
             /// <summary>
-            /// Enum DEFAULT for value: DEFAULT
+            /// Enum DEFAULT for value: default
             /// </summary>
-            public static readonly PromTypeEnum DEFAULT = new PromTypeEnum("DEFAULT");
+            public static readonly PromTypeEnum DEFAULT = new PromTypeEnum("default");
 
             /// <summary>
             /// Enum ECS for value: ECS
@@ -65,7 +65,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
             private static readonly Dictionary<string, PromTypeEnum> StaticFields =
             new Dictionary<string, PromTypeEnum>()
             {
-                { "DEFAULT", DEFAULT },
+                { "default", DEFAULT },
                 { "ECS", ECS },
                 { "VPC", VPC },
                 { "CCE", CCE },
@@ -428,6 +428,13 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         [SDKProperty("prom_status", IsQuery = true)]
         [JsonProperty("prom_status", NullValueHandling = NullValueHandling.Ignore)]
         public PromStatusEnum PromStatus { get; set; }
+        /// <summary>
+        /// 企业项目id。 - 查询单个企业项目下实例，填写企业项目id。 - 查询所有企业项目下实例，填写“all_granted_eps”。
+        /// </summary>
+        [SDKProperty("Enterprise-Project-Id", IsHeader = true)]
+        [JsonProperty("Enterprise-Project-Id", NullValueHandling = NullValueHandling.Ignore)]
+        public string EnterpriseProjectId { get; set; }
+
 
 
         /// <summary>
@@ -441,6 +448,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
             sb.Append("  promType: ").Append(PromType).Append("\n");
             sb.Append("  cceClusterEnable: ").Append(CceClusterEnable).Append("\n");
             sb.Append("  promStatus: ").Append(PromStatus).Append("\n");
+            sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -481,6 +489,11 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
                     this.PromStatus == input.PromStatus ||
                     (this.PromStatus != null &&
                     this.PromStatus.Equals(input.PromStatus))
+                ) && 
+                (
+                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
+                    (this.EnterpriseProjectId != null &&
+                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
                 );
         }
 
@@ -500,6 +513,8 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
                     hashCode = hashCode * 59 + this.CceClusterEnable.GetHashCode();
                 if (this.PromStatus != null)
                     hashCode = hashCode * 59 + this.PromStatus.GetHashCode();
+                if (this.EnterpriseProjectId != null)
+                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 return hashCode;
             }
         }

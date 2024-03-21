@@ -20,13 +20,13 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         /// 全域弹性公网IP标签
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
-        public List<BatchCreateV2RequestBodyTags> Tags { get; set; }
+        public List<CreateGlobalEipRequestBodyGlobalEipTags> Tags { get; set; }
 
         /// <summary>
         /// 系统标签
         /// </summary>
         [JsonProperty("sys_tags", NullValueHandling = NullValueHandling.Ignore)]
-        public List<BatchCreateV2RequestBodySysTags> SysTags { get; set; }
+        public List<CreateGlobalEipRequestBodyGlobalEipTags> SysTags { get; set; }
 
 
 

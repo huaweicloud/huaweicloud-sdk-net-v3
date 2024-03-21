@@ -15,19 +15,133 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
     /// </summary>
     public class ListSupportMasks 
     {
+        /// <summary>
+        /// - 功能说明：全域弹性公网IP的版本 - 取值范围：4、6
+        /// </summary>
+        /// <value>- 功能说明：全域弹性公网IP的版本 - 取值范围：4、6</value>
+        [JsonConverter(typeof(EnumClassConverter<IpVersionEnum>))]
+        public class IpVersionEnum
+        {
+            /// <summary>
+            /// Enum NUMBER_4 for value: 4
+            /// </summary>
+            public static readonly IpVersionEnum NUMBER_4 = new IpVersionEnum(4);
+
+            /// <summary>
+            /// Enum NUMBER_6 for value: 6
+            /// </summary>
+            public static readonly IpVersionEnum NUMBER_6 = new IpVersionEnum(6);
+
+            private static readonly Dictionary<int?, IpVersionEnum> StaticFields =
+            new Dictionary<int?, IpVersionEnum>()
+            {
+                { 4, NUMBER_4 },
+                { 6, NUMBER_6 },
+            };
+
+            private int? _value;
+
+            public IpVersionEnum()
+            {
+
+            }
+
+            public IpVersionEnum(int? value)
+            {
+                _value = value;
+            }
+
+            public static IpVersionEnum FromValue(int? value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public int? GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as IpVersionEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(IpVersionEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(IpVersionEnum a, IpVersionEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(IpVersionEnum a, IpVersionEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
-        /// ID
+        /// 全域弹性公网IP段支持的掩码的ID
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// IPv4或IPv6
+        /// - 功能说明：全域弹性公网IP的版本 - 取值范围：4、6
         /// </summary>
         [JsonProperty("ip_version", NullValueHandling = NullValueHandling.Ignore)]
-        public int? IpVersion { get; set; }
-
+        public IpVersionEnum IpVersion { get; set; }
         /// <summary>
         /// 掩码长度
         /// </summary>

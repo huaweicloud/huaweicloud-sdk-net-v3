@@ -1,3 +1,187 @@
+# 3.1.86 2024-03-21
+
+### HuaweiCloud SDK AOM
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **DeletePromInstance**
+    - changes of request param
+      - `+ Enterprise-Project-Id`
+  - **ListPromInstance**
+    - changes of request param
+      - `+ Enterprise-Project-Id`
+      - `+ prom_type: enum value [default]`
+      - `+ prom_type: enum value [DEFAULT]`
+    - changes of response param
+      - `+ prometheus.prom_type: enum value [default]`
+      - `- prometheus.prom_type: enum value [DEFAULT]`
+
+### HuaweiCloud SDK CCE
+
+- _Features_
+  - Support the API `ShowNodePoolConfigurationDetails`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK CDN
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowVerifyDomainOwnerInfo**
+    - changes of response param
+      - `+ file_verify_domains`
+
+### HuaweiCloud SDK CodeArtsDeploy
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateApp**
+    - changes of request param
+      - `+ group_id`
+
+### HuaweiCloud SDK DRS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowPositionResult**
+    - changes of response param
+      - `+ status`
+
+### HuaweiCloud SDK FunctionGraph
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateFunction**
+    - changes of request param
+      - `+ encrypted_user_data`
+      - `+ mount_config`
+      - `+ is_stateful_function`
+      - `+ enable_dynamic_memory`
+  - **UpdateVersionAlias**
+    - changes of request param
+      - `+ additional_version_strategy`
+  - **DeleteFunctionTrigger**
+    - changes of request param
+      - `+ trigger_type_code: enum value [IOTDA]`
+  - **ShowFunctionTrigger**
+    - changes of request param
+      - `+ trigger_type_code: enum value [IOTDA]`
+  - **UpdateTrigger**
+    - changes of request param
+      - `+ trigger_type_code: enum value [IOTDA]`
+
+### HuaweiCloud SDK GEIP
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListSupportMasks**
+    - changes of response param
+      - `+ support_masks.ip_version: enum value [4,6]`
+  - **ListGlobalEips**
+    - changes of response param
+      - `+ global_eips.ip_version: enum value [4,6]`
+  - **DetachInternetBandwidth**
+    - changes of response param
+      - `+ global_eip.ip_version: enum value [4,6]`
+  - **BatchCreateGlobalEip**
+    - changes of response param
+      - `+ global_eip.ip_version: enum value [4,6]`
+  - **ShowGlobalEip**
+    - changes of response param
+      - `+ global_eip.ip_version: enum value [4,6]`
+  - **AttachInternetBandwidth**
+    - changes of response param
+      - `+ global_eip.ip_version: enum value [4,6]`
+  - **ListGlobalEipSegments**
+    - changes of response param
+      - `+ global_eip_segments.ip_version: enum value [4,6]`
+  - **ShowGlobalEipSegment**
+    - changes of response param
+      - `+ global_eip_segment.ip_version: enum value [4,6]`
+  - **ListGeipPools**
+    - changes of response param
+      - `+ geip_pools.ip_version: enum value [4,6]`
+
+### HuaweiCloud SDK Live
+
+- _Features_
+  - Support the following APIs:
+    - `ListOttChannelInfo`
+    - `CreateOttChannelInfo`
+    - `DeleteOttChannelInfo`
+    - `ModifyOttChannelInfoEndPoints`
+    - `ModifyOttChannelInfoInput`
+    - `ModifyOttChannelInfoRecordSettings`
+    - `ModifyOttChannelInfoGeneral`
+    - `ModifyOttChannelInfoStats`
+    - `ModifyOttChannelInfoEncoderSettings`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK NAT
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListNatGatewaySnatRules**
+    - changes of request param
+      - `* floating_ip_address: string -> list<string>`
+      - `* floating_ip_id: string -> list<string>`
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+  - Support the API `RecognizeHouseholdRegister`
+- _Bug Fix_
+  - None
+- _Change_
+  - **RecognizeSmartDocumentRecognizer**
+    - changes of request param
+      - `+ form`
+      - `+ kv_map`
+    - changes of response param
+      - `+ result.form_result`
+      - `+ result.layout_result.layout_block_list.table_id`
+      - `+ result.layout_result.layout_block_list.form_id`
+
+### HuaweiCloud SDK RDS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowAutoEnlargePolicy**
+    - changes of response param
+      - `+ step_percent`
+  - **SetAutoEnlargePolicy**
+    - changes of request param
+      - `+ step_percent`
+
 # 3.1.85 2024-03-14
 
 ### HuaweiCloud SDK DRS

@@ -102,6 +102,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             /// </summary>
             public static readonly TriggerTypeCodeEnum EVENTGRID = new TriggerTypeCodeEnum("EVENTGRID");
 
+            /// <summary>
+            /// Enum IOTDA for value: IOTDA
+            /// </summary>
+            public static readonly TriggerTypeCodeEnum IOTDA = new TriggerTypeCodeEnum("IOTDA");
+
             private static readonly Dictionary<string, TriggerTypeCodeEnum> StaticFields =
             new Dictionary<string, TriggerTypeCodeEnum>()
             {
@@ -121,6 +126,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                 { "APIC", APIC },
                 { "GAUSSMONGO", GAUSSMONGO },
                 { "EVENTGRID", EVENTGRID },
+                { "IOTDA", IOTDA },
             };
 
             private string _value;

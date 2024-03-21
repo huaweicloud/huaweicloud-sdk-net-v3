@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
     {
 
         /// <summary>
-        /// 验证是否通过，true:通过，false:不通过
+        /// 验证是否通过，true：通过，false：不通过。
         /// </summary>
         [JsonProperty("result", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Result { get; set; }

@@ -1587,6 +1587,34 @@ namespace HuaweiCloud.SDK.Cce.V3
         }
         
         /// <summary>
+        /// 查询指定节点池支持配置的参数列表
+        ///
+        /// 该API用于查询CCE服务下指定节点池支持配置的参数列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowNodePoolConfigurationDetailsResponse ShowNodePoolConfigurationDetails(ShowNodePoolConfigurationDetailsRequest showNodePoolConfigurationDetailsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", showNodePoolConfigurationDetailsRequest.ClusterId.ToString());
+            urlParam.Add("nodepool_id", showNodePoolConfigurationDetailsRequest.NodepoolId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodepools/{nodepool_id}/configuration/detail", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showNodePoolConfigurationDetailsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowNodePoolConfigurationDetailsResponse>(response);
+        }
+
+        public SyncInvoker<ShowNodePoolConfigurationDetailsResponse> ShowNodePoolConfigurationDetailsInvoker(ShowNodePoolConfigurationDetailsRequest showNodePoolConfigurationDetailsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", showNodePoolConfigurationDetailsRequest.ClusterId.ToString());
+            urlParam.Add("nodepool_id", showNodePoolConfigurationDetailsRequest.NodepoolId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodepools/{nodepool_id}/configuration/detail", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showNodePoolConfigurationDetailsRequest);
+            return new SyncInvoker<ShowNodePoolConfigurationDetailsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowNodePoolConfigurationDetailsResponse>);
+        }
+        
+        /// <summary>
         /// 查询指定节点池支持配置的参数内容
         ///
         /// 该API用于查询指定节点池支持配置的参数内容。

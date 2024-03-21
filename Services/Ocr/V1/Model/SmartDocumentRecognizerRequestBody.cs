@@ -52,6 +52,18 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         [JsonProperty("return_excel", NullValueHandling = NullValueHandling.Ignore)]
         public bool? ReturnExcel { get; set; }
 
+        /// <summary>
+        /// 是否进行有线表单识别。有线表单指关键信息以有线单元格形式进行呈现，例如户口本、机动车发票等。若是，结果会以\&quot;form_result\&quot;这一关键字返回。 
+        /// </summary>
+        [JsonProperty("form", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? Form { get; set; }
+
+        /// <summary>
+        /// 需要传入字典的json序列化后字符串，用于对kv_result中的特定key值进行归一化映射。例如，kv_result中包含{\&quot;名称\&quot;：\&quot;小明\&quot;}的键值对，若传入{\&quot;名称\&quot;：\&quot;姓名\&quot;}的kv_map，则返回结果为{“姓名”：“小明”}。  &gt; 参数传入示例： - \&quot;kv_map\&quot;:\&quot;{\\\&quot;名称\\\&quot;:\\\&quot;姓名\\\&quot;}\&quot; 
+        /// </summary>
+        [JsonProperty("kv_map", NullValueHandling = NullValueHandling.Ignore)]
+        public string KvMap { get; set; }
+
 
 
         /// <summary>
@@ -67,6 +79,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  table: ").Append(Table).Append("\n");
             sb.Append("  layout: ").Append(Layout).Append("\n");
             sb.Append("  returnExcel: ").Append(ReturnExcel).Append("\n");
+            sb.Append("  form: ").Append(Form).Append("\n");
+            sb.Append("  kvMap: ").Append(KvMap).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -117,6 +131,16 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     this.ReturnExcel == input.ReturnExcel ||
                     (this.ReturnExcel != null &&
                     this.ReturnExcel.Equals(input.ReturnExcel))
+                ) && 
+                (
+                    this.Form == input.Form ||
+                    (this.Form != null &&
+                    this.Form.Equals(input.Form))
+                ) && 
+                (
+                    this.KvMap == input.KvMap ||
+                    (this.KvMap != null &&
+                    this.KvMap.Equals(input.KvMap))
                 );
         }
 
@@ -140,6 +164,10 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     hashCode = hashCode * 59 + this.Layout.GetHashCode();
                 if (this.ReturnExcel != null)
                     hashCode = hashCode * 59 + this.ReturnExcel.GetHashCode();
+                if (this.Form != null)
+                    hashCode = hashCode * 59 + this.Form.GetHashCode();
+                if (this.KvMap != null)
+                    hashCode = hashCode * 59 + this.KvMap.GetHashCode();
                 return hashCode;
             }
         }

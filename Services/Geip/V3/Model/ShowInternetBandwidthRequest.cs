@@ -234,14 +234,14 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
 
 
         /// <summary>
-        /// 全域公网带宽的ID
+        /// 
         /// </summary>
         [SDKProperty("internet_bandwidth_id", IsPath = true)]
         [JsonProperty("internet_bandwidth_id", NullValueHandling = NullValueHandling.Ignore)]
         public string InternetBandwidthId { get; set; }
 
         /// <summary>
-        /// 只显示指定的字段
+        /// 
         /// </summary>
         [SDKProperty("fields", IsQuery = true)]
         [JsonProperty("fields", NullValueHandling = NullValueHandling.Ignore)]

@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public int? Concurrency { get; set; }
 
         /// <summary>
-        /// 单实例最大并发数，v2版本才支持，取值-1到1000
+        /// 单实例并发数，v2版本才支持，取值1到1000
         /// </summary>
         [JsonProperty("concurrent_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? ConcurrentNum { get; set; }
