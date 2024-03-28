@@ -947,6 +947,139 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         }
 
         /// <summary>
+        /// 是否删除LTS LogStream（日志流）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程，默认选项)
+        /// </summary>
+        /// <value>是否删除LTS LogStream（日志流）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程，默认选项)</value>
+        [JsonConverter(typeof(EnumClassConverter<LtsReclaimPolicyEnum>))]
+        public class LtsReclaimPolicyEnum
+        {
+            /// <summary>
+            /// Enum TRUE for value: true
+            /// </summary>
+            public static readonly LtsReclaimPolicyEnum TRUE = new LtsReclaimPolicyEnum("true");
+
+            /// <summary>
+            /// Enum BLOCK for value: block
+            /// </summary>
+            public static readonly LtsReclaimPolicyEnum BLOCK = new LtsReclaimPolicyEnum("block");
+
+            /// <summary>
+            /// Enum TRY for value: try
+            /// </summary>
+            public static readonly LtsReclaimPolicyEnum TRY = new LtsReclaimPolicyEnum("try");
+
+            /// <summary>
+            /// Enum FALSE for value: false
+            /// </summary>
+            public static readonly LtsReclaimPolicyEnum FALSE = new LtsReclaimPolicyEnum("false");
+
+            /// <summary>
+            /// Enum SKIP for value: skip
+            /// </summary>
+            public static readonly LtsReclaimPolicyEnum SKIP = new LtsReclaimPolicyEnum("skip");
+
+            private static readonly Dictionary<string, LtsReclaimPolicyEnum> StaticFields =
+            new Dictionary<string, LtsReclaimPolicyEnum>()
+            {
+                { "true", TRUE },
+                { "block", BLOCK },
+                { "try", TRY },
+                { "false", FALSE },
+                { "skip", SKIP },
+            };
+
+            private string _value;
+
+            public LtsReclaimPolicyEnum()
+            {
+
+            }
+
+            public LtsReclaimPolicyEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static LtsReclaimPolicyEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as LtsReclaimPolicyEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(LtsReclaimPolicyEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(LtsReclaimPolicyEnum a, LtsReclaimPolicyEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(LtsReclaimPolicyEnum a, LtsReclaimPolicyEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+        /// <summary>
         /// 是否使用包周期集群删除参数预置模式（仅对包周期集群生效）。  需要和其他删除选项参数一起使用，未指定的参数，则使用默认值。  使用该参数，集群不执行真正的删除，仅将本次请求的全部query参数都预置到集群数据库中，用于包周期集群退订时识别用户要删除的资源。  允许重复执行，覆盖预置的删除参数。  枚举取值： - true  (预置模式，仅预置query参数，不执行删除)
         /// </summary>
         /// <value>是否使用包周期集群删除参数预置模式（仅对包周期集群生效）。  需要和其他删除选项参数一起使用，未指定的参数，则使用默认值。  使用该参数，集群不执行真正的删除，仅将本次请求的全部query参数都预置到集群数据库中，用于包周期集群退订时识别用户要删除的资源。  允许重复执行，覆盖预置的删除参数。  枚举取值： - true  (预置模式，仅预置query参数，不执行删除)</value>
@@ -1342,6 +1475,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("delete_sfs30", NullValueHandling = NullValueHandling.Ignore)]
         public DeleteSfs30Enum DeleteSfs30 { get; set; }
         /// <summary>
+        /// 是否删除LTS LogStream（日志流）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程，默认选项)
+        /// </summary>
+        [SDKProperty("lts_reclaim_policy", IsQuery = true)]
+        [JsonProperty("lts_reclaim_policy", NullValueHandling = NullValueHandling.Ignore)]
+        public LtsReclaimPolicyEnum LtsReclaimPolicy { get; set; }
+        /// <summary>
         /// 是否使用包周期集群删除参数预置模式（仅对包周期集群生效）。  需要和其他删除选项参数一起使用，未指定的参数，则使用默认值。  使用该参数，集群不执行真正的删除，仅将本次请求的全部query参数都预置到集群数据库中，用于包周期集群退订时识别用户要删除的资源。  允许重复执行，覆盖预置的删除参数。  枚举取值： - true  (预置模式，仅预置query参数，不执行删除)
         /// </summary>
         [SDKProperty("tobedeleted", IsQuery = true)]
@@ -1376,6 +1515,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  deleteObs: ").Append(DeleteObs).Append("\n");
             sb.Append("  deleteSfs: ").Append(DeleteSfs).Append("\n");
             sb.Append("  deleteSfs30: ").Append(DeleteSfs30).Append("\n");
+            sb.Append("  ltsReclaimPolicy: ").Append(LtsReclaimPolicy).Append("\n");
             sb.Append("  tobedeleted: ").Append(Tobedeleted).Append("\n");
             sb.Append("  ondemandNodePolicy: ").Append(OndemandNodePolicy).Append("\n");
             sb.Append("  periodicNodePolicy: ").Append(PeriodicNodePolicy).Append("\n");
@@ -1441,6 +1581,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.DeleteSfs30.Equals(input.DeleteSfs30))
                 ) && 
                 (
+                    this.LtsReclaimPolicy == input.LtsReclaimPolicy ||
+                    (this.LtsReclaimPolicy != null &&
+                    this.LtsReclaimPolicy.Equals(input.LtsReclaimPolicy))
+                ) && 
+                (
                     this.Tobedeleted == input.Tobedeleted ||
                     (this.Tobedeleted != null &&
                     this.Tobedeleted.Equals(input.Tobedeleted))
@@ -1481,6 +1626,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     hashCode = hashCode * 59 + this.DeleteSfs.GetHashCode();
                 if (this.DeleteSfs30 != null)
                     hashCode = hashCode * 59 + this.DeleteSfs30.GetHashCode();
+                if (this.LtsReclaimPolicy != null)
+                    hashCode = hashCode * 59 + this.LtsReclaimPolicy.GetHashCode();
                 if (this.Tobedeleted != null)
                     hashCode = hashCode * 59 + this.Tobedeleted.GetHashCode();
                 if (this.OndemandNodePolicy != null)

@@ -141,7 +141,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// 参数默认值，不指定时按默认值生效, 参数类型以实际返回为准，可能为integer,string或者boolean
         /// </summary>
         [JsonProperty("default", NullValueHandling = NullValueHandling.Ignore)]
-        public string Default { get; set; }
+        public Object Default { get; set; }
 
         /// <summary>
         /// 参数生效方式  - static：节点创建时生效，后续不可修改 - immediately：节点运行中时可以修改，修改后生效 

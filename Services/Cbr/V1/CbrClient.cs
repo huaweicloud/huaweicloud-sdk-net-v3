@@ -274,6 +274,30 @@ namespace HuaweiCloud.SDK.Cbr.V1
         }
         
         /// <summary>
+        /// 创建组织策略
+        ///
+        /// 创建组织策略
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateOrganizationPolicyResponse CreateOrganizationPolicy(CreateOrganizationPolicyRequest createOrganizationPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/organization-policies", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createOrganizationPolicyRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateOrganizationPolicyResponse>(response);
+        }
+
+        public SyncInvoker<CreateOrganizationPolicyResponse> CreateOrganizationPolicyInvoker(CreateOrganizationPolicyRequest createOrganizationPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/organization-policies", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createOrganizationPolicyRequest);
+            return new SyncInvoker<CreateOrganizationPolicyResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateOrganizationPolicyResponse>);
+        }
+        
+        /// <summary>
         /// 创建策略
         ///
         /// 创建策略，策略分为备份策略和复制策略。
@@ -424,6 +448,32 @@ namespace HuaweiCloud.SDK.Cbr.V1
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups/{backup_id}/members/{member_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteMemberRequest);
             return new SyncInvoker<DeleteMemberResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteMemberResponse>);
+        }
+        
+        /// <summary>
+        /// 删除组织策略
+        ///
+        /// 删除组织策略
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteOrganizationPolicyResponse DeleteOrganizationPolicy(DeleteOrganizationPolicyRequest deleteOrganizationPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("organization_policy_id", deleteOrganizationPolicyRequest.OrganizationPolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/organization-policies/{organization_policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteOrganizationPolicyRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteOrganizationPolicyResponse>(response);
+        }
+
+        public SyncInvoker<DeleteOrganizationPolicyResponse> DeleteOrganizationPolicyInvoker(DeleteOrganizationPolicyRequest deleteOrganizationPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("organization_policy_id", deleteOrganizationPolicyRequest.OrganizationPolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/organization-policies/{organization_policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteOrganizationPolicyRequest);
+            return new SyncInvoker<DeleteOrganizationPolicyResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteOrganizationPolicyResponse>);
         }
         
         /// <summary>
@@ -700,6 +750,56 @@ namespace HuaweiCloud.SDK.Cbr.V1
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/operation-logs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listOpLogsRequest);
             return new SyncInvoker<ListOpLogsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListOpLogsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询组织策略列表
+        ///
+        /// 查询组织策略列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListOrganizationPoliciesResponse ListOrganizationPolicies(ListOrganizationPoliciesRequest listOrganizationPoliciesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/organization-policies", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listOrganizationPoliciesRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListOrganizationPoliciesResponse>(response);
+        }
+
+        public SyncInvoker<ListOrganizationPoliciesResponse> ListOrganizationPoliciesInvoker(ListOrganizationPoliciesRequest listOrganizationPoliciesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/organization-policies", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listOrganizationPoliciesRequest);
+            return new SyncInvoker<ListOrganizationPoliciesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListOrganizationPoliciesResponse>);
+        }
+        
+        /// <summary>
+        /// 查询组织策略部署状态列表
+        ///
+        /// 查询组织策略每个账号下策略部署状态列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListOrganizationPolicyDetailResponse ListOrganizationPolicyDetail(ListOrganizationPolicyDetailRequest listOrganizationPolicyDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("organization_policy_id", listOrganizationPolicyDetailRequest.OrganizationPolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/organization-policies/{organization_policy_id}/policy-detail", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listOrganizationPolicyDetailRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListOrganizationPolicyDetailResponse>(response);
+        }
+
+        public SyncInvoker<ListOrganizationPolicyDetailResponse> ListOrganizationPolicyDetailInvoker(ListOrganizationPolicyDetailRequest listOrganizationPolicyDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("organization_policy_id", listOrganizationPolicyDetailRequest.OrganizationPolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/organization-policies/{organization_policy_id}/policy-detail", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listOrganizationPolicyDetailRequest);
+            return new SyncInvoker<ListOrganizationPolicyDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ListOrganizationPolicyDetailResponse>);
         }
         
         /// <summary>
@@ -1220,6 +1320,32 @@ namespace HuaweiCloud.SDK.Cbr.V1
         }
         
         /// <summary>
+        /// 查询指定组织策略
+        ///
+        /// 查询指定组织策略
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowOrganizationPolicyResponse ShowOrganizationPolicy(ShowOrganizationPolicyRequest showOrganizationPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("organization_policy_id", showOrganizationPolicyRequest.OrganizationPolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/organization-policies/{organization_policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showOrganizationPolicyRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowOrganizationPolicyResponse>(response);
+        }
+
+        public SyncInvoker<ShowOrganizationPolicyResponse> ShowOrganizationPolicyInvoker(ShowOrganizationPolicyRequest showOrganizationPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("organization_policy_id", showOrganizationPolicyRequest.OrganizationPolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/organization-policies/{organization_policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showOrganizationPolicyRequest);
+            return new SyncInvoker<ShowOrganizationPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowOrganizationPolicyResponse>);
+        }
+        
+        /// <summary>
         /// 查询单个策略
         ///
         /// 查询单个策略
@@ -1578,6 +1704,32 @@ namespace HuaweiCloud.SDK.Cbr.V1
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/orders/{order_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateOrderRequest);
             return new SyncInvoker<UpdateOrderResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateOrderResponse>);
+        }
+        
+        /// <summary>
+        /// 更新组织策略
+        ///
+        /// 更新组织策略
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateOrganizationPolicyResponse UpdateOrganizationPolicy(UpdateOrganizationPolicyRequest updateOrganizationPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("organization_policy_id", updateOrganizationPolicyRequest.OrganizationPolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/organization-policies/{organization_policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateOrganizationPolicyRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateOrganizationPolicyResponse>(response);
+        }
+
+        public SyncInvoker<UpdateOrganizationPolicyResponse> UpdateOrganizationPolicyInvoker(UpdateOrganizationPolicyRequest updateOrganizationPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("organization_policy_id", updateOrganizationPolicyRequest.OrganizationPolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/organization-policies/{organization_policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateOrganizationPolicyRequest);
+            return new SyncInvoker<UpdateOrganizationPolicyResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateOrganizationPolicyResponse>);
         }
         
         /// <summary>

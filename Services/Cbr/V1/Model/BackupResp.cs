@@ -538,6 +538,12 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         [JsonProperty("children", NullValueHandling = NullValueHandling.Ignore)]
         public List<BackupResp> Children { get; set; }
 
+        /// <summary>
+        /// 是否是增备
+        /// </summary>
+        [JsonProperty("incremental", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? Incremental { get; set; }
+
 
 
         /// <summary>
@@ -570,6 +576,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  providerId: ").Append(ProviderId).Append("\n");
             sb.Append("  children: ").Append(Children).Append("\n");
+            sb.Append("  incremental: ").Append(Incremental).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -707,6 +714,11 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                     this.Children != null &&
                     input.Children != null &&
                     this.Children.SequenceEqual(input.Children)
+                ) && 
+                (
+                    this.Incremental == input.Incremental ||
+                    (this.Incremental != null &&
+                    this.Incremental.Equals(input.Incremental))
                 );
         }
 
@@ -764,6 +776,8 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                     hashCode = hashCode * 59 + this.ProviderId.GetHashCode();
                 if (this.Children != null)
                     hashCode = hashCode * 59 + this.Children.GetHashCode();
+                if (this.Incremental != null)
+                    hashCode = hashCode * 59 + this.Incremental.GetHashCode();
                 return hashCode;
             }
         }

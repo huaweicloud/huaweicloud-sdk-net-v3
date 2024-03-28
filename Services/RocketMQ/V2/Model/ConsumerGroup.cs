@@ -56,7 +56,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         /// 创建时间戳。
         /// </summary>
         [JsonProperty("createdAt", NullValueHandling = NullValueHandling.Ignore)]
-        public string CreatedAt { get; set; }
+        public long? CreatedAt { get; set; }
 
         /// <summary>
         /// 权限集。

@@ -8,19 +8,20 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Cce.V3.Model
+namespace HuaweiCloud.SDK.Cbr.V1.Model
 {
     /// <summary>
-    /// 获取指定节点池配置参数列表返回体
+    /// Request Object
     /// </summary>
-    public class ShowNodePoolConfigurationDetailsRespBody 
+    public class CreateOrganizationPolicyRequest 
     {
 
         /// <summary>
-        /// 配置参数，由key/value组成。
+        /// 
         /// </summary>
-        [JsonProperty("kubelet", NullValueHandling = NullValueHandling.Ignore)]
-        public List<PackageOptions> Kubelet { get; set; }
+        [SDKProperty("body", IsBody = true)]
+        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
+        public OrganizationPolicyCreateReq Body { get; set; }
 
 
 
@@ -30,9 +31,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ShowNodePoolConfigurationDetailsRespBody {\n");
-            sb.Append("  ").Append(base.ToString().Replace("\n", "\n  ")).Append("\n");
-            sb.Append("  kubelet: ").Append(Kubelet).Append("\n");
+            sb.Append("class CreateOrganizationPolicyRequest {\n");
+            sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -42,23 +42,22 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ShowNodePoolConfigurationDetailsRespBody);
+            return this.Equals(input as CreateOrganizationPolicyRequest);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ShowNodePoolConfigurationDetailsRespBody input)
+        public bool Equals(CreateOrganizationPolicyRequest input)
         {
             if (input == null)
                 return false;
 
-            return base.Equals(input) && 
+            return 
                 (
-                    this.Kubelet == input.Kubelet ||
-                    this.Kubelet != null &&
-                    input.Kubelet != null &&
-                    this.Kubelet.SequenceEqual(input.Kubelet)
+                    this.Body == input.Body ||
+                    (this.Body != null &&
+                    this.Body.Equals(input.Body))
                 );
         }
 
@@ -69,9 +68,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = base.GetHashCode();
-                if (this.Kubelet != null)
-                    hashCode = hashCode * 59 + this.Kubelet.GetHashCode();
+                int hashCode = 41;
+                if (this.Body != null)
+                    hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;
             }
         }

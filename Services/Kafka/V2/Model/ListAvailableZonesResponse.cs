@@ -26,7 +26,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// 可用区数组。
         /// </summary>
         [JsonProperty("available_zones", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ListAvailableZonesRespAvailableZones> AvailableZones { get; set; }
+        public List<AvailableZonesResp> AvailableZones { get; set; }
 
 
 

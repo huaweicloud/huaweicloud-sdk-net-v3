@@ -166,6 +166,30 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 批量停止实例
+        ///
+        /// 批量停止实例
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchStopInstanceResponse> BatchStopInstanceAsync(BatchStopInstanceRequest batchStopInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/batch/action/shutdown", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchStopInstanceRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<BatchStopInstanceResponse>(response);
+        }
+
+        public AsyncInvoker<BatchStopInstanceResponse> BatchStopInstanceAsyncInvoker(BatchStopInstanceRequest batchStopInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/batch/action/shutdown", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchStopInstanceRequest);
+            return new AsyncInvoker<BatchStopInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchStopInstanceResponse>);
+        }
+        
+        /// <summary>
         /// 批量添加标签
         ///
         /// 批量添加标签。

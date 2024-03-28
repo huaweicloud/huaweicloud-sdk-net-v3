@@ -150,12 +150,6 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         public bool? Bootable { get; set; }
 
         /// <summary>
-        /// 是否是增备
-        /// </summary>
-        [JsonProperty("incremental", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? Incremental { get; set; }
-
-        /// <summary>
         /// 卷备份副本的快照id
         /// </summary>
         [JsonProperty("snapshot_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -213,7 +207,6 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             sb.Append("class BackupExtendInfo {\n");
             sb.Append("  autoTrigger: ").Append(AutoTrigger).Append("\n");
             sb.Append("  bootable: ").Append(Bootable).Append("\n");
-            sb.Append("  incremental: ").Append(Incremental).Append("\n");
             sb.Append("  snapshotId: ").Append(SnapshotId).Append("\n");
             sb.Append("  supportLld: ").Append(SupportLld).Append("\n");
             sb.Append("  supportedRestoreMode: ").Append(SupportedRestoreMode).Append("\n");
@@ -252,11 +245,6 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                     this.Bootable == input.Bootable ||
                     (this.Bootable != null &&
                     this.Bootable.Equals(input.Bootable))
-                ) && 
-                (
-                    this.Incremental == input.Incremental ||
-                    (this.Incremental != null &&
-                    this.Incremental.Equals(input.Incremental))
                 ) && 
                 (
                     this.SnapshotId == input.SnapshotId ||
@@ -313,8 +301,6 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                     hashCode = hashCode * 59 + this.AutoTrigger.GetHashCode();
                 if (this.Bootable != null)
                     hashCode = hashCode * 59 + this.Bootable.GetHashCode();
-                if (this.Incremental != null)
-                    hashCode = hashCode * 59 + this.Incremental.GetHashCode();
                 if (this.SnapshotId != null)
                     hashCode = hashCode * 59 + this.SnapshotId.GetHashCode();
                 if (this.SupportLld != null)

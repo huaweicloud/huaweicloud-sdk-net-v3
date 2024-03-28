@@ -46,12 +46,6 @@ namespace HuaweiCloud.SDK.Image.V2.Model
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
-        /// <summary>
-        /// \&quot;true\&quot;：使用系统默认标签体系。  \&quot;false\&quot;：使用用户自定义标签体系（用户需预先调用接口进行自定义标签体系的构建）。  默认值为\&quot;true\&quot;。
-        /// </summary>
-        [JsonProperty("use_default_tags", NullValueHandling = NullValueHandling.Ignore)]
-        public string UseDefaultTags { get; set; }
-
 
 
         /// <summary>
@@ -66,7 +60,6 @@ namespace HuaweiCloud.SDK.Image.V2.Model
             sb.Append("  language: ").Append(Language).Append("\n");
             sb.Append("  threshold: ").Append(Threshold).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
-            sb.Append("  useDefaultTags: ").Append(UseDefaultTags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -112,11 +105,6 @@ namespace HuaweiCloud.SDK.Image.V2.Model
                     this.Limit == input.Limit ||
                     (this.Limit != null &&
                     this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.UseDefaultTags == input.UseDefaultTags ||
-                    (this.UseDefaultTags != null &&
-                    this.UseDefaultTags.Equals(input.UseDefaultTags))
                 );
         }
 
@@ -138,8 +126,6 @@ namespace HuaweiCloud.SDK.Image.V2.Model
                     hashCode = hashCode * 59 + this.Threshold.GetHashCode();
                 if (this.Limit != null)
                     hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.UseDefaultTags != null)
-                    hashCode = hashCode * 59 + this.UseDefaultTags.GetHashCode();
                 return hashCode;
             }
         }

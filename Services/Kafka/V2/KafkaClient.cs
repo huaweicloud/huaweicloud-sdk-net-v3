@@ -41,9 +41,9 @@ namespace HuaweiCloud.SDK.Kafka.V2
         }
         
         /// <summary>
-        /// Kafka实例批量删除Group
+        /// Kafka实例批量删除消费组
         ///
-        /// 该接口用于向Kafka实例批量删除Group。
+        /// 该接口用于向Kafka实例批量删除消费组。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -119,6 +119,32 @@ namespace HuaweiCloud.SDK.Kafka.V2
         }
         
         /// <summary>
+        /// 批量删除消息积压诊断报告
+        ///
+        /// 批量删除消息积压诊断报告
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public BatchDeleteMessageDiagnosisReportsResponse BatchDeleteMessageDiagnosisReports(BatchDeleteMessageDiagnosisReportsRequest batchDeleteMessageDiagnosisReportsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", batchDeleteMessageDiagnosisReportsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/message-diagnosis-tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteMessageDiagnosisReportsRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerialize<BatchDeleteMessageDiagnosisReportsResponse>(response);
+        }
+
+        public SyncInvoker<BatchDeleteMessageDiagnosisReportsResponse> BatchDeleteMessageDiagnosisReportsInvoker(BatchDeleteMessageDiagnosisReportsRequest batchDeleteMessageDiagnosisReportsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", batchDeleteMessageDiagnosisReportsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/message-diagnosis-tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteMessageDiagnosisReportsRequest);
+            return new SyncInvoker<BatchDeleteMessageDiagnosisReportsResponse>(this, "DELETE", request, JsonUtils.DeSerialize<BatchDeleteMessageDiagnosisReportsResponse>);
+        }
+        
+        /// <summary>
         /// 批量重启或删除实例
         ///
         /// 批量重启或删除实例。
@@ -177,7 +203,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         ///
         /// 创建实例。
         /// 
-        /// 该接口支持创建按需和包周期两种计费方式的实例。
+        /// [该接口支持创建按需和包周期两种计费方式的实例。](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,dt)
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -305,6 +331,32 @@ namespace HuaweiCloud.SDK.Kafka.V2
         }
         
         /// <summary>
+        /// 创建消息积压诊断任务
+        ///
+        /// 创建消息积压诊断任务
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateMessageDiagnosisTaskResponse CreateMessageDiagnosisTask(CreateMessageDiagnosisTaskRequest createMessageDiagnosisTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createMessageDiagnosisTaskRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/message-diagnosis-tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createMessageDiagnosisTaskRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateMessageDiagnosisTaskResponse>(response);
+        }
+
+        public SyncInvoker<CreateMessageDiagnosisTaskResponse> CreateMessageDiagnosisTaskInvoker(CreateMessageDiagnosisTaskRequest createMessageDiagnosisTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createMessageDiagnosisTaskRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/message-diagnosis-tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createMessageDiagnosisTaskRequest);
+            return new SyncInvoker<CreateMessageDiagnosisTaskResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateMessageDiagnosisTaskResponse>);
+        }
+        
+        /// <summary>
         /// 创建实例
         ///
         /// 创建按需计费类型的Kafka实例。
@@ -331,7 +383,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         /// <summary>
         /// Kafka实例开始分区重平衡任务
         ///
-        /// 该接口用于向Kafka实例提交分区重平衡任务，若成功则返回重平衡任务的job id。
+        /// 该接口用于向Kafka实例提交分区重平衡任务或计算重平衡预估时间。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -584,6 +636,32 @@ namespace HuaweiCloud.SDK.Kafka.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstancesRequest);
             return new SyncInvoker<ListInstancesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstancesResponse>);
+        }
+        
+        /// <summary>
+        /// 查询消息积压诊断报告列表
+        ///
+        /// 查询消息积压诊断报告列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListMessageDiagnosisReportsResponse ListMessageDiagnosisReports(ListMessageDiagnosisReportsRequest listMessageDiagnosisReportsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listMessageDiagnosisReportsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/message-diagnosis-tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listMessageDiagnosisReportsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListMessageDiagnosisReportsResponse>(response);
+        }
+
+        public SyncInvoker<ListMessageDiagnosisReportsResponse> ListMessageDiagnosisReportsInvoker(ListMessageDiagnosisReportsRequest listMessageDiagnosisReportsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listMessageDiagnosisReportsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/message-diagnosis-tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listMessageDiagnosisReportsRequest);
+            return new SyncInvoker<ListMessageDiagnosisReportsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListMessageDiagnosisReportsResponse>);
         }
         
         /// <summary>
@@ -1051,6 +1129,39 @@ namespace HuaweiCloud.SDK.Kafka.V2
         }
         
         /// <summary>
+        /// 消息积压诊断预检查
+        ///
+        /// 消息积压诊断预检查
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowDiagnosisPreCheckResponse ShowDiagnosisPreCheck(ShowDiagnosisPreCheckRequest showDiagnosisPreCheckRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showDiagnosisPreCheckRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/diagnosis-check", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDiagnosisPreCheckRequest);
+            var response = DoHttpRequestSync("GET", request);
+            var showDiagnosisPreCheckResponse = JsonUtils.DeSerializeNull<ShowDiagnosisPreCheckResponse>(response);
+            showDiagnosisPreCheckResponse.Body = JsonUtils.DeSerializeList<KafkaDiagnosisCheckEntity>(response);
+            return showDiagnosisPreCheckResponse;
+        }
+
+        public SyncInvoker<ShowDiagnosisPreCheckResponse> ShowDiagnosisPreCheckInvoker(ShowDiagnosisPreCheckRequest showDiagnosisPreCheckRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showDiagnosisPreCheckRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/diagnosis-check", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDiagnosisPreCheckRequest);
+            return new SyncInvoker<ShowDiagnosisPreCheckResponse>(this, "GET", request, response =>
+            {
+                var showDiagnosisPreCheckResponse = JsonUtils.DeSerializeNull<ShowDiagnosisPreCheckResponse>(response);
+                showDiagnosisPreCheckResponse.Body = JsonUtils.DeSerializeList<KafkaDiagnosisCheckEntity>(response);
+                return showDiagnosisPreCheckResponse;
+            });
+        }
+        
+        /// <summary>
         /// 查询实例的扩容规格列表
         ///
         /// 查询实例的扩容规格列表。
@@ -1391,6 +1502,34 @@ namespace HuaweiCloud.SDK.Kafka.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/instances/maintain-windows", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMaintainWindowsRequest);
             return new SyncInvoker<ShowMaintainWindowsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowMaintainWindowsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询诊断报告详情
+        ///
+        /// 查询诊断报告详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowMessageDiagnosisReportResponse ShowMessageDiagnosisReport(ShowMessageDiagnosisReportRequest showMessageDiagnosisReportRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showMessageDiagnosisReportRequest.InstanceId.ToString());
+            urlParam.Add("report_id", showMessageDiagnosisReportRequest.ReportId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/message-diagnosis/{report_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMessageDiagnosisReportRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowMessageDiagnosisReportResponse>(response);
+        }
+
+        public SyncInvoker<ShowMessageDiagnosisReportResponse> ShowMessageDiagnosisReportInvoker(ShowMessageDiagnosisReportRequest showMessageDiagnosisReportRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showMessageDiagnosisReportRequest.InstanceId.ToString());
+            urlParam.Add("report_id", showMessageDiagnosisReportRequest.ReportId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/message-diagnosis/{report_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMessageDiagnosisReportRequest);
+            return new SyncInvoker<ShowMessageDiagnosisReportResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowMessageDiagnosisReportResponse>);
         }
         
         /// <summary>

@@ -13,7 +13,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     /// <summary>
     /// 
     /// </summary>
-    public class ListAvailableZonesRespAvailableZones 
+    public class AvailableZonesResp 
     {
 
         /// <summary>
@@ -78,7 +78,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ListAvailableZonesRespAvailableZones {\n");
+            sb.Append("class AvailableZonesResp {\n");
             sb.Append("  soldOut: ").Append(SoldOut).Append("\n");
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  code: ").Append(Code).Append("\n");
@@ -97,13 +97,13 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ListAvailableZonesRespAvailableZones);
+            return this.Equals(input as AvailableZonesResp);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ListAvailableZonesRespAvailableZones input)
+        public bool Equals(AvailableZonesResp input)
         {
             if (input == null)
                 return false;

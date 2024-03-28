@@ -127,8 +127,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// <summary>
         /// 是否重命名Topic。（仅源端类型为Kafka时会显示）
         /// </summary>
-        [JsonProperty("rename_topic_enable", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? RenameTopicEnable { get; set; }
+        [JsonProperty("rename_topic_enabled", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? RenameTopicEnabled { get; set; }
 
         /// <summary>
         /// 是否添加来源header。（仅源端类型为Kafka时会显示）
@@ -181,7 +181,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             sb.Append("  syncConsumerOffsetsEnabled: ").Append(SyncConsumerOffsetsEnabled).Append("\n");
             sb.Append("  replicationFactor: ").Append(ReplicationFactor).Append("\n");
             sb.Append("  taskNum: ").Append(TaskNum).Append("\n");
-            sb.Append("  renameTopicEnable: ").Append(RenameTopicEnable).Append("\n");
+            sb.Append("  renameTopicEnabled: ").Append(RenameTopicEnabled).Append("\n");
             sb.Append("  provenanceHeaderEnabled: ").Append(ProvenanceHeaderEnabled).Append("\n");
             sb.Append("  consumerStrategy: ").Append(ConsumerStrategy).Append("\n");
             sb.Append("  compressionType: ").Append(CompressionType).Append("\n");
@@ -298,9 +298,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     this.TaskNum.Equals(input.TaskNum))
                 ) && 
                 (
-                    this.RenameTopicEnable == input.RenameTopicEnable ||
-                    (this.RenameTopicEnable != null &&
-                    this.RenameTopicEnable.Equals(input.RenameTopicEnable))
+                    this.RenameTopicEnabled == input.RenameTopicEnabled ||
+                    (this.RenameTopicEnabled != null &&
+                    this.RenameTopicEnabled.Equals(input.RenameTopicEnabled))
                 ) && 
                 (
                     this.ProvenanceHeaderEnabled == input.ProvenanceHeaderEnabled ||
@@ -368,8 +368,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     hashCode = hashCode * 59 + this.ReplicationFactor.GetHashCode();
                 if (this.TaskNum != null)
                     hashCode = hashCode * 59 + this.TaskNum.GetHashCode();
-                if (this.RenameTopicEnable != null)
-                    hashCode = hashCode * 59 + this.RenameTopicEnable.GetHashCode();
+                if (this.RenameTopicEnabled != null)
+                    hashCode = hashCode * 59 + this.RenameTopicEnabled.GetHashCode();
                 if (this.ProvenanceHeaderEnabled != null)
                     hashCode = hashCode * 59 + this.ProvenanceHeaderEnabled.GetHashCode();
                 if (this.ConsumerStrategy != null)

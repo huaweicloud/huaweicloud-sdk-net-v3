@@ -34,6 +34,12 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         [JsonProperty("object_key", NullValueHandling = NullValueHandling.Ignore)]
         public string ObjectKey { get; set; }
 
+        /// <summary>
+        /// **参数说明**：SHA256算法计算出的升级包签名值。添加该升级包完成，并创建升级任务后，物联网平台向设备下发升级通知时，会下发该签名给设备。 **取值范围**：长度为64，只允许大小写字母a到f、数字的组合。
+        /// </summary>
+        [JsonProperty("sign", NullValueHandling = NullValueHandling.Ignore)]
+        public string Sign { get; set; }
+
 
 
         /// <summary>
@@ -46,6 +52,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             sb.Append("  regionName: ").Append(RegionName).Append("\n");
             sb.Append("  bucketName: ").Append(BucketName).Append("\n");
             sb.Append("  objectKey: ").Append(ObjectKey).Append("\n");
+            sb.Append("  sign: ").Append(Sign).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -81,6 +88,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.ObjectKey == input.ObjectKey ||
                     (this.ObjectKey != null &&
                     this.ObjectKey.Equals(input.ObjectKey))
+                ) && 
+                (
+                    this.Sign == input.Sign ||
+                    (this.Sign != null &&
+                    this.Sign.Equals(input.Sign))
                 );
         }
 
@@ -98,6 +110,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     hashCode = hashCode * 59 + this.BucketName.GetHashCode();
                 if (this.ObjectKey != null)
                     hashCode = hashCode * 59 + this.ObjectKey.GetHashCode();
+                if (this.Sign != null)
+                    hashCode = hashCode * 59 + this.Sign.GetHashCode();
                 return hashCode;
             }
         }

@@ -28,15 +28,15 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
             public static readonly ProtocolEnum HTTP = new ProtocolEnum("http");
 
             /// <summary>
-            /// Enum HTTPS_ for value: https;
+            /// Enum HTTPS for value: https
             /// </summary>
-            public static readonly ProtocolEnum HTTPS_ = new ProtocolEnum("https;");
+            public static readonly ProtocolEnum HTTPS = new ProtocolEnum("https");
 
             private static readonly Dictionary<string, ProtocolEnum> StaticFields =
             new Dictionary<string, ProtocolEnum>()
             {
                 { "http", HTTP },
-                { "https;", HTTPS_ },
+                { "https", HTTPS },
             };
 
             private string _value;

@@ -40,6 +40,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         [JsonProperty("execute_at", NullValueHandling = NullValueHandling.Ignore)]
         public long? ExecuteAt { get; set; }
 
+        /// <summary>
+        /// 设为true表示执行时间预估任务，false为执行重平衡任务。
+        /// </summary>
+        [JsonProperty("time_estimate", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? TimeEstimate { get; set; }
+
 
 
         /// <summary>
@@ -53,6 +59,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             sb.Append("  throttle: ").Append(Throttle).Append("\n");
             sb.Append("  isSchedule: ").Append(IsSchedule).Append("\n");
             sb.Append("  executeAt: ").Append(ExecuteAt).Append("\n");
+            sb.Append("  timeEstimate: ").Append(TimeEstimate).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -94,6 +101,11 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     this.ExecuteAt == input.ExecuteAt ||
                     (this.ExecuteAt != null &&
                     this.ExecuteAt.Equals(input.ExecuteAt))
+                ) && 
+                (
+                    this.TimeEstimate == input.TimeEstimate ||
+                    (this.TimeEstimate != null &&
+                    this.TimeEstimate.Equals(input.TimeEstimate))
                 );
         }
 
@@ -113,6 +125,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     hashCode = hashCode * 59 + this.IsSchedule.GetHashCode();
                 if (this.ExecuteAt != null)
                     hashCode = hashCode * 59 + this.ExecuteAt.GetHashCode();
+                if (this.TimeEstimate != null)
+                    hashCode = hashCode * 59 + this.TimeEstimate.GetHashCode();
                 return hashCode;
             }
         }

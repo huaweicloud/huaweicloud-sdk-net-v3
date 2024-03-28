@@ -131,6 +131,115 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
         }
 
         /// <summary>
+        /// 云服务委托名称。 参数值为\&quot;cts_admin_trust\&quot;时，更新追踪器会自动创建一个云服务委托：cts_admin_trust。
+        /// </summary>
+        /// <value>云服务委托名称。 参数值为\&quot;cts_admin_trust\&quot;时，更新追踪器会自动创建一个云服务委托：cts_admin_trust。</value>
+        [JsonConverter(typeof(EnumClassConverter<AgencyNameEnum>))]
+        public class AgencyNameEnum
+        {
+            /// <summary>
+            /// Enum CTS_ADMIN_TRUST for value: cts_admin_trust
+            /// </summary>
+            public static readonly AgencyNameEnum CTS_ADMIN_TRUST = new AgencyNameEnum("cts_admin_trust");
+
+            private static readonly Dictionary<string, AgencyNameEnum> StaticFields =
+            new Dictionary<string, AgencyNameEnum>()
+            {
+                { "cts_admin_trust", CTS_ADMIN_TRUST },
+            };
+
+            private string _value;
+
+            public AgencyNameEnum()
+            {
+
+            }
+
+            public AgencyNameEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static AgencyNameEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as AgencyNameEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(AgencyNameEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(AgencyNameEnum a, AgencyNameEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(AgencyNameEnum a, AgencyNameEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+        /// <summary>
         /// 标识追踪器状态，该接口中可修改的状态包括正常（enabled）和停止（disabled）。如果选择修改状态为停止，则修改成功后追踪器停止记录事件。
         /// </summary>
         /// <value>标识追踪器状态，该接口中可修改的状态包括正常（enabled）和停止（disabled）。如果选择修改状态为停止，则修改成功后追踪器停止记录事件。</value>
@@ -258,6 +367,11 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
         public string TrackerName { get; set; }
 
         /// <summary>
+        /// 云服务委托名称。 参数值为\&quot;cts_admin_trust\&quot;时，更新追踪器会自动创建一个云服务委托：cts_admin_trust。
+        /// </summary>
+        [JsonProperty("agency_name", NullValueHandling = NullValueHandling.Ignore)]
+        public AgencyNameEnum AgencyName { get; set; }
+        /// <summary>
         /// 标识追踪器状态，该接口中可修改的状态包括正常（enabled）和停止（disabled）。如果选择修改状态为停止，则修改成功后追踪器停止记录事件。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
@@ -321,6 +435,7 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
             sb.Append("class UpdateTrackerRequestBody {\n");
             sb.Append("  trackerType: ").Append(TrackerType).Append("\n");
             sb.Append("  trackerName: ").Append(TrackerName).Append("\n");
+            sb.Append("  agencyName: ").Append(AgencyName).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  isOrganizationTracker: ").Append(IsOrganizationTracker).Append("\n");
             sb.Append("  managementEventSelector: ").Append(ManagementEventSelector).Append("\n");
@@ -360,6 +475,11 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
                     this.TrackerName == input.TrackerName ||
                     (this.TrackerName != null &&
                     this.TrackerName.Equals(input.TrackerName))
+                ) && 
+                (
+                    this.AgencyName == input.AgencyName ||
+                    (this.AgencyName != null &&
+                    this.AgencyName.Equals(input.AgencyName))
                 ) && 
                 (
                     this.Status == input.Status ||
@@ -420,6 +540,8 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
                     hashCode = hashCode * 59 + this.TrackerType.GetHashCode();
                 if (this.TrackerName != null)
                     hashCode = hashCode * 59 + this.TrackerName.GetHashCode();
+                if (this.AgencyName != null)
+                    hashCode = hashCode * 59 + this.AgencyName.GetHashCode();
                 if (this.Status != null)
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.IsOrganizationTracker != null)

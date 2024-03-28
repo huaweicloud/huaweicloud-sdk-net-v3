@@ -8,7 +8,7 @@ namespace HuaweiCloud.SDK.Elb.V3
     public class ElbRegion
     {
         public static readonly Region EU_WEST_101 = new Region("eu-west-101",
-            "https://elb.eu-west-101.myhuaweicloud.eu");
+            "https://elb.eu-west-101.myhuaweicloud.com");
         public static readonly Region AF_SOUTH_1 = new Region("af-south-1",
             "https://elb.af-south-1.myhuaweicloud.com");
         public static readonly Region CN_NORTH_4 = new Region("cn-north-4",

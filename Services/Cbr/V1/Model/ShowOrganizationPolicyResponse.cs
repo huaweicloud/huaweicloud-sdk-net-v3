@@ -8,19 +8,19 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Cce.V3.Model
+namespace HuaweiCloud.SDK.Cbr.V1.Model
 {
     /// <summary>
-    /// 获取指定集群配置项列表返回体
+    /// Response Object
     /// </summary>
-    public class ClusterConfigDetailRespBody 
+    public class ShowOrganizationPolicyResponse : SdkResponse
     {
 
         /// <summary>
-        /// 配置参数，由key/value组成。
+        /// 
         /// </summary>
-        [JsonProperty("kube-apiserver", NullValueHandling = NullValueHandling.Ignore)]
-        public List<PackageOptions> KubeApiserver { get; set; }
+        [JsonProperty("policy", NullValueHandling = NullValueHandling.Ignore)]
+        public OrganizationPolicy Policy { get; set; }
 
 
 
@@ -30,9 +30,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ClusterConfigDetailRespBody {\n");
-            sb.Append("  ").Append(base.ToString().Replace("\n", "\n  ")).Append("\n");
-            sb.Append("  kubeApiserver: ").Append(KubeApiserver).Append("\n");
+            sb.Append("class ShowOrganizationPolicyResponse {\n");
+            sb.Append("  policy: ").Append(Policy).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -42,23 +41,22 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ClusterConfigDetailRespBody);
+            return this.Equals(input as ShowOrganizationPolicyResponse);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ClusterConfigDetailRespBody input)
+        public bool Equals(ShowOrganizationPolicyResponse input)
         {
             if (input == null)
                 return false;
 
-            return base.Equals(input) && 
+            return 
                 (
-                    this.KubeApiserver == input.KubeApiserver ||
-                    this.KubeApiserver != null &&
-                    input.KubeApiserver != null &&
-                    this.KubeApiserver.SequenceEqual(input.KubeApiserver)
+                    this.Policy == input.Policy ||
+                    (this.Policy != null &&
+                    this.Policy.Equals(input.Policy))
                 );
         }
 
@@ -69,9 +67,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = base.GetHashCode();
-                if (this.KubeApiserver != null)
-                    hashCode = hashCode * 59 + this.KubeApiserver.GetHashCode();
+                int hashCode = 41;
+                if (this.Policy != null)
+                    hashCode = hashCode * 59 + this.Policy.GetHashCode();
                 return hashCode;
             }
         }

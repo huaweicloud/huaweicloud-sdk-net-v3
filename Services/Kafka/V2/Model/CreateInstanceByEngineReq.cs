@@ -355,9 +355,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         }
 
         /// <summary>
-        /// 存储IO规格。  取值范围：   - dms.physical.storage.high.v2：使用高IO的磁盘类型。   - dms.physical.storage.ultra.v2：使用超高IO的磁盘类型。  如何选择磁盘类型请参考《云硬盘 [产品介绍](tag:hws,hws_hk,hws_eu,cmcc)[用户指南](tag:dt,g42,hk_g42,ctc,tm,hk_tm,sbc,ocb,hws_ocb)》的“磁盘类型及性能介绍”。
+        /// 存储IO规格。  取值范围：   - dms.physical.storage.high.v2：使用高IO的磁盘类型。   - dms.physical.storage.ultra.v2：使用超高IO的磁盘类型。  [如何选择磁盘类型请参考《云硬盘 [产品介绍](tag:hws,hws_hk,hws_eu,cmcc)[用户指南](tag:dt,g42,hk_g42,ctc,tm,hk_tm,sbc,ocb,hws_ocb)》的“磁盘类型及性能介绍”。](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,dt)
         /// </summary>
-        /// <value>存储IO规格。  取值范围：   - dms.physical.storage.high.v2：使用高IO的磁盘类型。   - dms.physical.storage.ultra.v2：使用超高IO的磁盘类型。  如何选择磁盘类型请参考《云硬盘 [产品介绍](tag:hws,hws_hk,hws_eu,cmcc)[用户指南](tag:dt,g42,hk_g42,ctc,tm,hk_tm,sbc,ocb,hws_ocb)》的“磁盘类型及性能介绍”。</value>
+        /// <value>存储IO规格。  取值范围：   - dms.physical.storage.high.v2：使用高IO的磁盘类型。   - dms.physical.storage.ultra.v2：使用超高IO的磁盘类型。  [如何选择磁盘类型请参考《云硬盘 [产品介绍](tag:hws,hws_hk,hws_eu,cmcc)[用户指南](tag:dt,g42,hk_g42,ctc,tm,hk_tm,sbc,ocb,hws_ocb)》的“磁盘类型及性能介绍”。](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,dt)</value>
         [JsonConverter(typeof(EnumClassConverter<StorageSpecCodeEnum>))]
         public class StorageSpecCodeEnum
         {
@@ -477,7 +477,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 实例的描述信息。  长度不超过1024的字符串。  &gt; \\与\&quot;在json报文中属于特殊字符，如果参数值中需要显示\\或者\&quot;字符，请在字符前增加转义字符\\，比如\\\\或者\\\&quot;。
+        /// 实例的描述信息。  长度不超过1024的字符串。[且字符串不能包含\&quot;&gt;\&quot;与\&quot;&lt;\&quot;，字符串首字符不能为\&quot;&#x3D;\&quot;,\&quot;+\&quot;,\&quot;-\&quot;,\&quot;@\&quot;的全角和半角字符。](tag:hcs)  &gt; \\与\&quot;在json报文中属于特殊字符，如果参数值中需要显示\\或者\&quot;字符，请在字符前增加转义字符\\，比如\\\\或者\\\&quot;。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
@@ -488,7 +488,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         [JsonProperty("engine", NullValueHandling = NullValueHandling.Ignore)]
         public EngineEnum Engine { get; set; }
         /// <summary>
-        /// 消息引擎的版本。取值填写为：   - 1.1.0   [- 2.3.0](tag:g42,tm,hk_g42,ctc,hk_tm,dt)   - 2.7
+        /// 消息引擎的版本。取值填写为：   [- 1.1.0](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,dt)   [- 2.3.0](tag:g42,tm,hk_g42,ctc,hk_tm,dt)   - 2.7
         /// </summary>
         [JsonProperty("engine_version", NullValueHandling = NullValueHandling.Ignore)]
         public string EngineVersion { get; set; }
@@ -500,7 +500,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public int? BrokerNum { get; set; }
 
         /// <summary>
-        /// 消息存储空间，单位GB。   - Kafka实例规格为c6.2u4g.cluster时，存储空间取值范围300GB ~ 300000GB。   - Kafka实例规格为c6.4u8g.cluster时，存储空间取值范围300GB ~ 600000GB。   - Kafka实例规格为c6.8u16g.cluster时，存储空间取值范围300GB ~ [1500000](tag:hws,hws_hk,ocb,hws_ocb,ctc,dt,g42,hk_g42)[900000](tag:tm,hk_tm,hws_eu)GB。   - Kafka实例规格为c6.12u24g.cluster时，存储空间取值范围300GB ~ [1500000](tag:hws,hws_hk,ocb,hws_ocb,ctc,dt,g42,hk_g42)[900000](tag:tm,hk_tm,hws_eu)GB。   - Kafka实例规格为c6.16u32g.cluster时，存储空间取值范围300GB ~ [1500000](tag:hws,hws_hk,ocb,hws_ocb,ctc,dt,g42,hk_g42)[900000](tag:tm,hk_tm,hws_eu)GB。
+        /// 消息存储空间，单位GB。   [- Kafka实例规格为c6.2u4g.cluster时，存储空间取值范围300GB ~ 300000GB。   - Kafka实例规格为c6.4u8g.cluster时，存储空间取值范围300GB ~ 600000GB。   - Kafka实例规格为c6.8u16g.cluster时，存储空间取值范围300GB ~ [1500000](tag:hws,hws_hk,ocb,hws_ocb,ctc,dt)[900000](tag:g42,tm,hk_g42,hk_tm,hws_eu)GB。   - Kafka实例规格为c6.12u24g.cluster时，存储空间取值范围300GB ~ [1500000](tag:hws,hws_hk,ocb,hws_ocb,ctc,dt)[900000](tag:g42,tm,hk_g42,hk_tm,hws_eu)GB。   - Kafka实例规格为c6.16u32g.cluster时，存储空间取值范围300GB ~ [1500000](tag:hws,hws_hk,ocb,hws_ocb,ctc,dt)[900000](tag:g42,tm,hk_g42,hk_tm,hws_eu)GB。](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,dt)      [- Kafka实例规格为kafka.2u8g.single时，存储空间取值范围100GB~10000GB。   - Kafka实例规格为kafka.4u16g.cluster时，存储空间取值范围300GB~600000GB。   - Kafka实例规格为kafka.8u32g.cluster时，存储空间取值范围300GB~1500000GB。   - Kafka实例规格为kafka.16u64g.cluster时，存储空间取值范围300GB~1500000GB。   - Kafka实例规格为kafka.32u128g.cluster时，存储空间取值范围300GB~1500000GB。](tag:hcs)
         /// </summary>
         [JsonProperty("storage_space", NullValueHandling = NullValueHandling.Ignore)]
         public int? StorageSpace { get; set; }
@@ -606,6 +606,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         [JsonProperty("retention_policy", NullValueHandling = NullValueHandling.Ignore)]
         public RetentionPolicyEnum RetentionPolicy { get; set; }
         /// <summary>
+        /// 是否开启ipv6。仅在虚拟私有云支持ipv6时生效。
+        /// </summary>
+        [JsonProperty("ipv6_enable", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? Ipv6Enable { get; set; }
+
+        /// <summary>
         /// 是否开启磁盘加密。
         /// </summary>
         [JsonProperty("disk_encrypted_enable", NullValueHandling = NullValueHandling.Ignore)]
@@ -630,7 +636,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public bool? EnableAutoTopic { get; set; }
 
         /// <summary>
-        /// 存储IO规格。  取值范围：   - dms.physical.storage.high.v2：使用高IO的磁盘类型。   - dms.physical.storage.ultra.v2：使用超高IO的磁盘类型。  如何选择磁盘类型请参考《云硬盘 [产品介绍](tag:hws,hws_hk,hws_eu,cmcc)[用户指南](tag:dt,g42,hk_g42,ctc,tm,hk_tm,sbc,ocb,hws_ocb)》的“磁盘类型及性能介绍”。
+        /// 存储IO规格。  取值范围：   - dms.physical.storage.high.v2：使用高IO的磁盘类型。   - dms.physical.storage.ultra.v2：使用超高IO的磁盘类型。  [如何选择磁盘类型请参考《云硬盘 [产品介绍](tag:hws,hws_hk,hws_eu,cmcc)[用户指南](tag:dt,g42,hk_g42,ctc,tm,hk_tm,sbc,ocb,hws_ocb)》的“磁盘类型及性能介绍”。](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,dt)
         /// </summary>
         [JsonProperty("storage_spec_code", NullValueHandling = NullValueHandling.Ignore)]
         public StorageSpecCodeEnum StorageSpecCode { get; set; }
@@ -647,7 +653,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public List<TagEntity> Tags { get; set; }
 
         /// <summary>
-        /// CPU架构。当前只支持X86架构。  取值范围：   - X86
+        /// CPU架构。当前只支持X86架构[以及arm架构](tag:hcs)。  取值范围：   - X86   [- arm](tag:hcs)
         /// </summary>
         [JsonProperty("arch_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ArchType { get; set; }
@@ -696,6 +702,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             sb.Append("  kafkaSecurityProtocol: ").Append(KafkaSecurityProtocol).Append("\n");
             sb.Append("  saslEnabledMechanisms: ").Append(SaslEnabledMechanisms).Append("\n");
             sb.Append("  retentionPolicy: ").Append(RetentionPolicy).Append("\n");
+            sb.Append("  ipv6Enable: ").Append(Ipv6Enable).Append("\n");
             sb.Append("  diskEncryptedEnable: ").Append(DiskEncryptedEnable).Append("\n");
             sb.Append("  diskEncryptedKey: ").Append(DiskEncryptedKey).Append("\n");
             sb.Append("  connectorEnable: ").Append(ConnectorEnable).Append("\n");
@@ -845,6 +852,11 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     this.RetentionPolicy.Equals(input.RetentionPolicy))
                 ) && 
                 (
+                    this.Ipv6Enable == input.Ipv6Enable ||
+                    (this.Ipv6Enable != null &&
+                    this.Ipv6Enable.Equals(input.Ipv6Enable))
+                ) && 
+                (
                     this.DiskEncryptedEnable == input.DiskEncryptedEnable ||
                     (this.DiskEncryptedEnable != null &&
                     this.DiskEncryptedEnable.Equals(input.DiskEncryptedEnable))
@@ -951,6 +963,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     hashCode = hashCode * 59 + this.SaslEnabledMechanisms.GetHashCode();
                 if (this.RetentionPolicy != null)
                     hashCode = hashCode * 59 + this.RetentionPolicy.GetHashCode();
+                if (this.Ipv6Enable != null)
+                    hashCode = hashCode * 59 + this.Ipv6Enable.GetHashCode();
                 if (this.DiskEncryptedEnable != null)
                     hashCode = hashCode * 59 + this.DiskEncryptedEnable.GetHashCode();
                 if (this.DiskEncryptedKey != null)

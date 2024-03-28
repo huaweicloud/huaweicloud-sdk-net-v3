@@ -16,6 +16,115 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
     public class TrackerResponseBody 
     {
         /// <summary>
+        /// 云服务委托名称。
+        /// </summary>
+        /// <value>云服务委托名称。</value>
+        [JsonConverter(typeof(EnumClassConverter<AgencyNameEnum>))]
+        public class AgencyNameEnum
+        {
+            /// <summary>
+            /// Enum CTS_ADMIN_TRUST for value: cts_admin_trust
+            /// </summary>
+            public static readonly AgencyNameEnum CTS_ADMIN_TRUST = new AgencyNameEnum("cts_admin_trust");
+
+            private static readonly Dictionary<string, AgencyNameEnum> StaticFields =
+            new Dictionary<string, AgencyNameEnum>()
+            {
+                { "cts_admin_trust", CTS_ADMIN_TRUST },
+            };
+
+            private string _value;
+
+            public AgencyNameEnum()
+            {
+
+            }
+
+            public AgencyNameEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static AgencyNameEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as AgencyNameEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(AgencyNameEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(AgencyNameEnum a, AgencyNameEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(AgencyNameEnum a, AgencyNameEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+        /// <summary>
         /// 标识追踪器类型。 目前支持系统追踪器类型有管理类追踪器（system）和数据类追踪器（data）。
         /// </summary>
         /// <value>标识追踪器类型。 目前支持系统追踪器类型有管理类追踪器（system）和数据类追踪器（data）。</value>
@@ -277,6 +386,11 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
         public bool? IsOrganizationTracker { get; set; }
 
         /// <summary>
+        /// 云服务委托名称。
+        /// </summary>
+        [JsonProperty("agency_name", NullValueHandling = NullValueHandling.Ignore)]
+        public AgencyNameEnum AgencyName { get; set; }
+        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("management_event_selector", NullValueHandling = NullValueHandling.Ignore)]
@@ -366,6 +480,7 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
             sb.Append("  kmsId: ").Append(KmsId).Append("\n");
             sb.Append("  isSupportValidate: ").Append(IsSupportValidate).Append("\n");
             sb.Append("  isOrganizationTracker: ").Append(IsOrganizationTracker).Append("\n");
+            sb.Append("  agencyName: ").Append(AgencyName).Append("\n");
             sb.Append("  managementEventSelector: ").Append(ManagementEventSelector).Append("\n");
             sb.Append("  lts: ").Append(Lts).Append("\n");
             sb.Append("  trackerType: ").Append(TrackerType).Append("\n");
@@ -424,6 +539,11 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
                     this.IsOrganizationTracker == input.IsOrganizationTracker ||
                     (this.IsOrganizationTracker != null &&
                     this.IsOrganizationTracker.Equals(input.IsOrganizationTracker))
+                ) && 
+                (
+                    this.AgencyName == input.AgencyName ||
+                    (this.AgencyName != null &&
+                    this.AgencyName.Equals(input.AgencyName))
                 ) && 
                 (
                     this.ManagementEventSelector == input.ManagementEventSelector ||
@@ -510,6 +630,8 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
                     hashCode = hashCode * 59 + this.IsSupportValidate.GetHashCode();
                 if (this.IsOrganizationTracker != null)
                     hashCode = hashCode * 59 + this.IsOrganizationTracker.GetHashCode();
+                if (this.AgencyName != null)
+                    hashCode = hashCode * 59 + this.AgencyName.GetHashCode();
                 if (this.ManagementEventSelector != null)
                     hashCode = hashCode * 59 + this.ManagementEventSelector.GetHashCode();
                 if (this.Lts != null)

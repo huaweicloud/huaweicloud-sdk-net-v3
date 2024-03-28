@@ -52,7 +52,7 @@ namespace HuaweiCloud.SDK.Ims.V2
         public static readonly Region AE_AD_1 = new Region("ae-ad-1",
             "https://ims.ae-ad-1.myhuaweicloud.com");
         public static readonly Region EU_WEST_101 = new Region("eu-west-101",
-            "https://ims.eu-west-101.myhuaweicloud.eu");
+            "https://ims.eu-west-101.myhuaweicloud.com");
         public static readonly Region CN_EAST_5 = new Region("cn-east-5",
             "https://ims.cn-east-5.myhuaweicloud.com");
         public static readonly Region EU_WEST_0 = new Region("eu-west-0",

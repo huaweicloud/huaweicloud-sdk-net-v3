@@ -246,9 +246,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         }
 
         /// <summary>
-        /// 服务转发模式，支持以下两种实现：  - iptables：社区传统的kube-proxy模式，完全以iptables规则的方式来实现service负载均衡。该方式最主要的问题是在服务多的时候产生太多的iptables规则，非增量式更新会引入一定的时延，大规模情况下有明显的性能问题。 - ipvs：主导开发并在社区获得广泛支持的kube-proxy模式，采用增量式更新，吞吐更高，速度更快，并可以保证service更新期间连接保持不断开，适用于大规模场景。 
+        /// 服务转发模式，支持以下两种实现：  - iptables：社区传统的kube-proxy模式，完全以iptables规则的方式来实现service负载均衡。该方式最主要的问题是在服务多的时候产生太多的iptables规则，非增量式更新会引入一定的时延，大规模情况下有明显的性能问题。 - ipvs：主导开发并在社区获得广泛支持的kube-proxy模式，采用增量式更新，吞吐更高，速度更快，并可以保证service更新期间连接保持不断开，适用于大规模场景。  &gt; 默认使用iptables转发模式。 
         /// </summary>
-        /// <value>服务转发模式，支持以下两种实现：  - iptables：社区传统的kube-proxy模式，完全以iptables规则的方式来实现service负载均衡。该方式最主要的问题是在服务多的时候产生太多的iptables规则，非增量式更新会引入一定的时延，大规模情况下有明显的性能问题。 - ipvs：主导开发并在社区获得广泛支持的kube-proxy模式，采用增量式更新，吞吐更高，速度更快，并可以保证service更新期间连接保持不断开，适用于大规模场景。 </value>
+        /// <value>服务转发模式，支持以下两种实现：  - iptables：社区传统的kube-proxy模式，完全以iptables规则的方式来实现service负载均衡。该方式最主要的问题是在服务多的时候产生太多的iptables规则，非增量式更新会引入一定的时延，大规模情况下有明显的性能问题。 - ipvs：主导开发并在社区获得广泛支持的kube-proxy模式，采用增量式更新，吞吐更高，速度更快，并可以保证service更新期间连接保持不断开，适用于大规模场景。  &gt; 默认使用iptables转发模式。 </value>
         [JsonConverter(typeof(EnumClassConverter<KubeProxyModeEnum>))]
         public class KubeProxyModeEnum
         {
@@ -378,12 +378,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public string Flavor { get; set; }
 
         /// <summary>
-        /// CCE Autopilot集群开关： - true：创建集群为CCE Autopilot集群 
-        /// </summary>
-        [JsonProperty("enableAutopilot", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? EnableAutopilot { get; set; }
-
-        /// <summary>
         /// 集群版本，与Kubernetes社区基线版本保持一致，建议选择最新版本。  在CCE控制台支持创建两种最新版本的集群。可登录CCE控制台创建集群，在“版本”处获取到集群版本。 其它集群版本，当前仍可通过api创建，但后续会逐渐下线，具体下线策略请关注CCE官方公告。  &gt;    - 若不配置，默认创建最新版本的集群。 &gt;    - 若指定集群基线版本但是不指定具体r版本，则系统默认选择对应集群版本的最新r版本。建议不指定具体r版本由系统选择最新版本。 [&gt;    - Turbo集群支持1.19及以上版本商用。](tag:hws,hws_hk,dt) [&gt;    - Turbo集群支持1.23及以上版本商用。](tag:hcs,g42,sbc)
         /// </summary>
         [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]
@@ -468,7 +462,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public List<ResourceTag> ClusterTags { get; set; }
 
         /// <summary>
-        /// 服务转发模式，支持以下两种实现：  - iptables：社区传统的kube-proxy模式，完全以iptables规则的方式来实现service负载均衡。该方式最主要的问题是在服务多的时候产生太多的iptables规则，非增量式更新会引入一定的时延，大规模情况下有明显的性能问题。 - ipvs：主导开发并在社区获得广泛支持的kube-proxy模式，采用增量式更新，吞吐更高，速度更快，并可以保证service更新期间连接保持不断开，适用于大规模场景。 
+        /// 服务转发模式，支持以下两种实现：  - iptables：社区传统的kube-proxy模式，完全以iptables规则的方式来实现service负载均衡。该方式最主要的问题是在服务多的时候产生太多的iptables规则，非增量式更新会引入一定的时延，大规模情况下有明显的性能问题。 - ipvs：主导开发并在社区获得广泛支持的kube-proxy模式，采用增量式更新，吞吐更高，速度更快，并可以保证service更新期间连接保持不断开，适用于大规模场景。  &gt; 默认使用iptables转发模式。 
         /// </summary>
         [JsonProperty("kubeProxyMode", NullValueHandling = NullValueHandling.Ignore)]
         public KubeProxyModeEnum KubeProxyMode { get; set; }
@@ -514,7 +508,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  category: ").Append(Category).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  flavor: ").Append(Flavor).Append("\n");
-            sb.Append("  enableAutopilot: ").Append(EnableAutopilot).Append("\n");
             sb.Append("  version: ").Append(Version).Append("\n");
             sb.Append("  platformVersion: ").Append(PlatformVersion).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
@@ -570,11 +563,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.Flavor == input.Flavor ||
                     (this.Flavor != null &&
                     this.Flavor.Equals(input.Flavor))
-                ) && 
-                (
-                    this.EnableAutopilot == input.EnableAutopilot ||
-                    (this.EnableAutopilot != null &&
-                    this.EnableAutopilot.Equals(input.EnableAutopilot))
                 ) && 
                 (
                     this.Version == input.Version ||
@@ -696,8 +684,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.Flavor != null)
                     hashCode = hashCode * 59 + this.Flavor.GetHashCode();
-                if (this.EnableAutopilot != null)
-                    hashCode = hashCode * 59 + this.EnableAutopilot.GetHashCode();
                 if (this.Version != null)
                     hashCode = hashCode * 59 + this.Version.GetHashCode();
                 if (this.PlatformVersion != null)

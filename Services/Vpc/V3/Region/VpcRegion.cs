@@ -46,7 +46,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public static readonly Region TR_WEST_1 = new Region("tr-west-1",
             "https://vpc.tr-west-1.myhuaweicloud.com");
         public static readonly Region EU_WEST_101 = new Region("eu-west-101",
-            "https://vpc.eu-west-101.myhuaweicloud.eu");
+            "https://vpc.eu-west-101.myhuaweicloud.com");
         public static readonly Region ME_EAST_1 = new Region("me-east-1",
             "https://vpc.me-east-1.myhuaweicloud.com");
         public static readonly Region AE_AD_1 = new Region("ae-ad-1",

@@ -17,10 +17,16 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// 任务ID。
+        /// 任务ID（当执行重平衡任务时仅返回job_id）。
         /// </summary>
         [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
         public string JobId { get; set; }
+
+        /// <summary>
+        /// 预估时间，单位为秒（当执行预估时间任务时仅返回reassignment_time）。
+        /// </summary>
+        [JsonProperty("reassignment_time", NullValueHandling = NullValueHandling.Ignore)]
+        public int? ReassignmentTime { get; set; }
 
 
 
@@ -32,6 +38,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             var sb = new StringBuilder();
             sb.Append("class CreateReassignmentTaskResponse {\n");
             sb.Append("  jobId: ").Append(JobId).Append("\n");
+            sb.Append("  reassignmentTime: ").Append(ReassignmentTime).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -57,6 +64,11 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     this.JobId == input.JobId ||
                     (this.JobId != null &&
                     this.JobId.Equals(input.JobId))
+                ) && 
+                (
+                    this.ReassignmentTime == input.ReassignmentTime ||
+                    (this.ReassignmentTime != null &&
+                    this.ReassignmentTime.Equals(input.ReassignmentTime))
                 );
         }
 
@@ -70,6 +82,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                 int hashCode = 41;
                 if (this.JobId != null)
                     hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.ReassignmentTime != null)
+                    hashCode = hashCode * 59 + this.ReassignmentTime.GetHashCode();
                 return hashCode;
             }
         }

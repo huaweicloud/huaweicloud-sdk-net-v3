@@ -434,7 +434,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// 资源规格标识。   - dms.instance.kafka.cluster.c3.mini：Kafka实例的基准带宽为100MByte/秒。   - dms.instance.kafka.cluster.c3.small.2：Kafka实例的基准带宽为300MByte/秒。   - dms.instance.kafka.cluster.c3.middle.2：Kafka实例的基准带宽为600MByte/秒。   - dms.instance.kafka.cluster.c3.high.2：Kafka实例的基准带宽为1200MByte/秒。
+        /// 资源规格标识。   [- dms.instance.kafka.cluster.c3.mini：Kafka实例的基准带宽为100MByte/秒。   - dms.instance.kafka.cluster.c3.small.2：Kafka实例的基准带宽为300MByte/秒。   - dms.instance.kafka.cluster.c3.middle.2：Kafka实例的基准带宽为600MByte/秒。   - dms.instance.kafka.cluster.c3.high.2：Kafka实例的基准带宽为1200MByte/秒。](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,dt)
         /// </summary>
         [JsonProperty("resource_spec_code", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceSpecCode { get; set; }
@@ -530,6 +530,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public bool? SslEnable { get; set; }
 
         /// <summary>
+        /// 是否开启broker间副本加密传输。 - true：开启 - false：未开启
+        /// </summary>
+        [JsonProperty("broker_ssl_enable", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? BrokerSslEnable { get; set; }
+
+        /// <summary>
         /// 开启SASL后使用的安全协议。 - SASL_SSL: 采用SSL证书进行加密传输，支持账号密码认证，安全性更高。 - SASL_PLAINTEXT: 明文传输，支持账号密码认证，性能更好，建议使用SCRAM-SHA-512机制。  
         /// </summary>
         [JsonProperty("kafka_security_protocol", NullValueHandling = NullValueHandling.Ignore)]
@@ -618,6 +624,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public List<string> AvailableZones { get; set; }
 
         /// <summary>
+        /// 实例节点所在的可用区名称，返回“可用区名称”。
+        /// </summary>
+        [JsonProperty("available_zone_names", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> AvailableZoneNames { get; set; }
+
+        /// <summary>
         /// 总共消息存储空间，单位：GB。
         /// </summary>
         [JsonProperty("total_storage_space", NullValueHandling = NullValueHandling.Ignore)]
@@ -687,6 +699,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         [JsonProperty("enable_log_collection", NullValueHandling = NullValueHandling.Ignore)]
         public bool? EnableLogCollection { get; set; }
+
+        /// <summary>
+        /// 是否开启新证书。
+        /// </summary>
+        [JsonProperty("new_auth_cert", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? NewAuthCert { get; set; }
 
         /// <summary>
         /// 跨VPC访问信息。
@@ -881,6 +899,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             sb.Append("  enablePublicip: ").Append(EnablePublicip).Append("\n");
             sb.Append("  managementConnectAddress: ").Append(ManagementConnectAddress).Append("\n");
             sb.Append("  sslEnable: ").Append(SslEnable).Append("\n");
+            sb.Append("  brokerSslEnable: ").Append(BrokerSslEnable).Append("\n");
             sb.Append("  kafkaSecurityProtocol: ").Append(KafkaSecurityProtocol).Append("\n");
             sb.Append("  saslEnabledMechanisms: ").Append(SaslEnabledMechanisms).Append("\n");
             sb.Append("  sslTwoWayEnable: ").Append(SslTwoWayEnable).Append("\n");
@@ -896,6 +915,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             sb.Append("  securityGroupName: ").Append(SecurityGroupName).Append("\n");
             sb.Append("  subnetId: ").Append(SubnetId).Append("\n");
             sb.Append("  availableZones: ").Append(AvailableZones).Append("\n");
+            sb.Append("  availableZoneNames: ").Append(AvailableZoneNames).Append("\n");
             sb.Append("  totalStorageSpace: ").Append(TotalStorageSpace).Append("\n");
             sb.Append("  publicConnectAddress: ").Append(PublicConnectAddress).Append("\n");
             sb.Append("  storageResourceId: ").Append(StorageResourceId).Append("\n");
@@ -908,6 +928,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             sb.Append("  kafkaManagerEnable: ").Append(KafkaManagerEnable).Append("\n");
             sb.Append("  kafkaManagerUser: ").Append(KafkaManagerUser).Append("\n");
             sb.Append("  enableLogCollection: ").Append(EnableLogCollection).Append("\n");
+            sb.Append("  newAuthCert: ").Append(NewAuthCert).Append("\n");
             sb.Append("  crossVpcInfo: ").Append(CrossVpcInfo).Append("\n");
             sb.Append("  ipv6Enable: ").Append(Ipv6Enable).Append("\n");
             sb.Append("  ipv6ConnectAddresses: ").Append(Ipv6ConnectAddresses).Append("\n");
@@ -1096,6 +1117,11 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     this.SslEnable.Equals(input.SslEnable))
                 ) && 
                 (
+                    this.BrokerSslEnable == input.BrokerSslEnable ||
+                    (this.BrokerSslEnable != null &&
+                    this.BrokerSslEnable.Equals(input.BrokerSslEnable))
+                ) && 
+                (
                     this.KafkaSecurityProtocol == input.KafkaSecurityProtocol ||
                     (this.KafkaSecurityProtocol != null &&
                     this.KafkaSecurityProtocol.Equals(input.KafkaSecurityProtocol))
@@ -1173,6 +1199,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     this.AvailableZones.SequenceEqual(input.AvailableZones)
                 ) && 
                 (
+                    this.AvailableZoneNames == input.AvailableZoneNames ||
+                    this.AvailableZoneNames != null &&
+                    input.AvailableZoneNames != null &&
+                    this.AvailableZoneNames.SequenceEqual(input.AvailableZoneNames)
+                ) && 
+                (
                     this.TotalStorageSpace == input.TotalStorageSpace ||
                     (this.TotalStorageSpace != null &&
                     this.TotalStorageSpace.Equals(input.TotalStorageSpace))
@@ -1231,6 +1263,11 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     this.EnableLogCollection == input.EnableLogCollection ||
                     (this.EnableLogCollection != null &&
                     this.EnableLogCollection.Equals(input.EnableLogCollection))
+                ) && 
+                (
+                    this.NewAuthCert == input.NewAuthCert ||
+                    (this.NewAuthCert != null &&
+                    this.NewAuthCert.Equals(input.NewAuthCert))
                 ) && 
                 (
                     this.CrossVpcInfo == input.CrossVpcInfo ||
@@ -1430,6 +1467,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     hashCode = hashCode * 59 + this.ManagementConnectAddress.GetHashCode();
                 if (this.SslEnable != null)
                     hashCode = hashCode * 59 + this.SslEnable.GetHashCode();
+                if (this.BrokerSslEnable != null)
+                    hashCode = hashCode * 59 + this.BrokerSslEnable.GetHashCode();
                 if (this.KafkaSecurityProtocol != null)
                     hashCode = hashCode * 59 + this.KafkaSecurityProtocol.GetHashCode();
                 if (this.SaslEnabledMechanisms != null)
@@ -1460,6 +1499,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     hashCode = hashCode * 59 + this.SubnetId.GetHashCode();
                 if (this.AvailableZones != null)
                     hashCode = hashCode * 59 + this.AvailableZones.GetHashCode();
+                if (this.AvailableZoneNames != null)
+                    hashCode = hashCode * 59 + this.AvailableZoneNames.GetHashCode();
                 if (this.TotalStorageSpace != null)
                     hashCode = hashCode * 59 + this.TotalStorageSpace.GetHashCode();
                 if (this.PublicConnectAddress != null)
@@ -1484,6 +1525,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     hashCode = hashCode * 59 + this.KafkaManagerUser.GetHashCode();
                 if (this.EnableLogCollection != null)
                     hashCode = hashCode * 59 + this.EnableLogCollection.GetHashCode();
+                if (this.NewAuthCert != null)
+                    hashCode = hashCode * 59 + this.NewAuthCert.GetHashCode();
                 if (this.CrossVpcInfo != null)
                     hashCode = hashCode * 59 + this.CrossVpcInfo.GetHashCode();
                 if (this.Ipv6Enable != null)

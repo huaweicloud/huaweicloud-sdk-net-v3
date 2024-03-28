@@ -131,6 +131,115 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
         }
 
         /// <summary>
+        /// 云服务委托名称。
+        /// </summary>
+        /// <value>云服务委托名称。</value>
+        [JsonConverter(typeof(EnumClassConverter<AgencyNameEnum>))]
+        public class AgencyNameEnum
+        {
+            /// <summary>
+            /// Enum CTS_ADMIN_TRUST for value: cts_admin_trust
+            /// </summary>
+            public static readonly AgencyNameEnum CTS_ADMIN_TRUST = new AgencyNameEnum("cts_admin_trust");
+
+            private static readonly Dictionary<string, AgencyNameEnum> StaticFields =
+            new Dictionary<string, AgencyNameEnum>()
+            {
+                { "cts_admin_trust", CTS_ADMIN_TRUST },
+            };
+
+            private string _value;
+
+            public AgencyNameEnum()
+            {
+
+            }
+
+            public AgencyNameEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static AgencyNameEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as AgencyNameEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(AgencyNameEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(AgencyNameEnum a, AgencyNameEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(AgencyNameEnum a, AgencyNameEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+        /// <summary>
         /// 通知状态，启用和停用。
         /// </summary>
         /// <value>通知状态，启用和停用。</value>
@@ -385,6 +494,11 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
         public List<NotificationUsers> NotifyUserList { get; set; }
 
         /// <summary>
+        /// 云服务委托名称。
+        /// </summary>
+        [JsonProperty("agency_name", NullValueHandling = NullValueHandling.Ignore)]
+        public AgencyNameEnum AgencyName { get; set; }
+        /// <summary>
         /// 通知状态，启用和停用。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
@@ -437,6 +551,7 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
             sb.Append("  operationType: ").Append(OperationType).Append("\n");
             sb.Append("  operations: ").Append(Operations).Append("\n");
             sb.Append("  notifyUserList: ").Append(NotifyUserList).Append("\n");
+            sb.Append("  agencyName: ").Append(AgencyName).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  topicId: ").Append(TopicId).Append("\n");
             sb.Append("  notificationId: ").Append(NotificationId).Append("\n");
@@ -486,6 +601,11 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
                     this.NotifyUserList != null &&
                     input.NotifyUserList != null &&
                     this.NotifyUserList.SequenceEqual(input.NotifyUserList)
+                ) && 
+                (
+                    this.AgencyName == input.AgencyName ||
+                    (this.AgencyName != null &&
+                    this.AgencyName.Equals(input.AgencyName))
                 ) && 
                 (
                     this.Status == input.Status ||
@@ -540,6 +660,8 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
                     hashCode = hashCode * 59 + this.Operations.GetHashCode();
                 if (this.NotifyUserList != null)
                     hashCode = hashCode * 59 + this.NotifyUserList.GetHashCode();
+                if (this.AgencyName != null)
+                    hashCode = hashCode * 59 + this.AgencyName.GetHashCode();
                 if (this.Status != null)
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.TopicId != null)

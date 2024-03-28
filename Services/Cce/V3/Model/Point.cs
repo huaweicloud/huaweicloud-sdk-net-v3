@@ -16,7 +16,61 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     public class Point 
     {
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("taskType", NullValueHandling = NullValueHandling.Ignore)]
+        public TaskType TaskType { get; set; }
 
 
+        /// <summary>
+        /// Get the string
+        /// </summary>
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class Point {\n");
+            sb.Append("  taskType: ").Append(TaskType).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public override bool Equals(object input)
+        {
+            return this.Equals(input as Point);
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public bool Equals(Point input)
+        {
+            if (input == null)
+                return false;
+
+            return 
+                (
+                    this.TaskType == input.TaskType ||
+                    (this.TaskType != null &&
+                    this.TaskType.Equals(input.TaskType))
+                );
+        }
+
+        /// <summary>
+        /// Get hash code
+        /// </summary>
+        public override int GetHashCode()
+        {
+            unchecked // Overflow is fine, just wrap
+            {
+                int hashCode = 41;
+                if (this.TaskType != null)
+                    hashCode = hashCode * 59 + this.TaskType.GetHashCode();
+                return hashCode;
+            }
+        }
     }
 }

@@ -35,6 +35,18 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public string TaskType { get; set; }
 
         /// <summary>
+        /// **参数说明**：批量任务的模式，当前只支持网关模式，当task_type为firmwareUpgrade，softwareUpgrade支持该参数。软固件升级的场景下，若升级的设备为某个网关的子设备，则平台下发获取版本信息通知和平台下发升级通知将携带task_id（软固件升级批量任务的任务ID）和sub_device_count（批量任务中网关设备包含的升级子设备数量）字段。 **取值范围**：GATEWAY: 网关模式。
+        /// </summary>
+        [JsonProperty("task_mode", NullValueHandling = NullValueHandling.Ignore)]
+        public string TaskMode { get; set; }
+
+        /// <summary>
+        /// **参数说明**：批量任务额外扩展信息，当task_type为firmwareUpgrade，softwareUpgrade支持该参数。软固件升级的场景下，平台下发获取版本信息通知和平台下发升级通知将携带该字段。 **取值范围**：最长不超过512个字符。
+        /// </summary>
+        [JsonProperty("task_ext_info", NullValueHandling = NullValueHandling.Ignore)]
+        public Object TaskExtInfo { get; set; }
+
+        /// <summary>
         /// **参数说明**：执行批量任务的目标，此处填写device_id列表，且最多支持3万个device_id。当task_type为firmwareUpgrade，softwareUpgrade，deleteDevices，freezeDevices，unfreezeDevices，createCommands，createAsyncCommands，createMessages，updateDeviceShadows，支持该参数。同时使用targets、targets_filter、document_source参数时，只有一个参数会生效，且平台优先使用targets，其次是targets_filter，最后是document_source。 **取值范围**：device_id列表。device_id支持长度不超过128，只允许字母、数字、下划线（_）、连接符（-）的组合。
         /// </summary>
         [JsonProperty("targets", NullValueHandling = NullValueHandling.Ignore)]
@@ -76,6 +88,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             sb.Append("  appId: ").Append(AppId).Append("\n");
             sb.Append("  taskName: ").Append(TaskName).Append("\n");
             sb.Append("  taskType: ").Append(TaskType).Append("\n");
+            sb.Append("  taskMode: ").Append(TaskMode).Append("\n");
+            sb.Append("  taskExtInfo: ").Append(TaskExtInfo).Append("\n");
             sb.Append("  targets: ").Append(Targets).Append("\n");
             sb.Append("  targetsFilter: ").Append(TargetsFilter).Append("\n");
             sb.Append("  document: ").Append(Document).Append("\n");
@@ -116,6 +130,16 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     this.TaskType == input.TaskType ||
                     (this.TaskType != null &&
                     this.TaskType.Equals(input.TaskType))
+                ) && 
+                (
+                    this.TaskMode == input.TaskMode ||
+                    (this.TaskMode != null &&
+                    this.TaskMode.Equals(input.TaskMode))
+                ) && 
+                (
+                    this.TaskExtInfo == input.TaskExtInfo ||
+                    (this.TaskExtInfo != null &&
+                    this.TaskExtInfo.Equals(input.TaskExtInfo))
                 ) && 
                 (
                     this.Targets == input.Targets ||
@@ -160,6 +184,10 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                     hashCode = hashCode * 59 + this.TaskName.GetHashCode();
                 if (this.TaskType != null)
                     hashCode = hashCode * 59 + this.TaskType.GetHashCode();
+                if (this.TaskMode != null)
+                    hashCode = hashCode * 59 + this.TaskMode.GetHashCode();
+                if (this.TaskExtInfo != null)
+                    hashCode = hashCode * 59 + this.TaskExtInfo.GetHashCode();
                 if (this.Targets != null)
                     hashCode = hashCode * 59 + this.Targets.GetHashCode();
                 if (this.TargetsFilter != null)

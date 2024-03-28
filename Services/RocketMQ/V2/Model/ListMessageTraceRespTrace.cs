@@ -472,7 +472,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         /// 重试次数。
         /// </summary>
         [JsonProperty("retry_times", NullValueHandling = NullValueHandling.Ignore)]
-        public string RetryTimes { get; set; }
+        public int? RetryTimes { get; set; }
 
         /// <summary>
         /// 消息体长度。

@@ -20,12 +20,14 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// 
         /// </summary>
         [JsonProperty("startPoint", NullValueHandling = NullValueHandling.Ignore)]
-        public TaskType StartPoint { get; set; }
+        public Point StartPoint { get; set; }
+
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("endPoint", NullValueHandling = NullValueHandling.Ignore)]
-        public TaskType EndPoint { get; set; }
+        public Point EndPoint { get; set; }
+
         /// <summary>
         /// 表示是否为关键线路（关键线路未执行无法取消升级流程）
         /// </summary>

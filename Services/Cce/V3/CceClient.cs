@@ -1433,7 +1433,9 @@ namespace HuaweiCloud.SDK.Cce.V3
             var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/configuration/detail", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showClusterConfigurationDetailsRequest);
             var response = DoHttpRequestSync("GET", request);
-            return JsonUtils.DeSerialize<ShowClusterConfigurationDetailsResponse>(response);
+            var showClusterConfigurationDetailsResponse = JsonUtils.DeSerializeNull<ShowClusterConfigurationDetailsResponse>(response);
+            showClusterConfigurationDetailsResponse.Body = JsonUtils.DeSerializeMap<string, List<PackageOptions>>(response);
+            return showClusterConfigurationDetailsResponse;
         }
 
         public SyncInvoker<ShowClusterConfigurationDetailsResponse> ShowClusterConfigurationDetailsInvoker(ShowClusterConfigurationDetailsRequest showClusterConfigurationDetailsRequest)
@@ -1442,7 +1444,12 @@ namespace HuaweiCloud.SDK.Cce.V3
             urlParam.Add("cluster_id", showClusterConfigurationDetailsRequest.ClusterId.ToString());
             var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/configuration/detail", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showClusterConfigurationDetailsRequest);
-            return new SyncInvoker<ShowClusterConfigurationDetailsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowClusterConfigurationDetailsResponse>);
+            return new SyncInvoker<ShowClusterConfigurationDetailsResponse>(this, "GET", request, response =>
+            {
+                var showClusterConfigurationDetailsResponse = JsonUtils.DeSerializeNull<ShowClusterConfigurationDetailsResponse>(response);
+                showClusterConfigurationDetailsResponse.Body = JsonUtils.DeSerializeMap<string, List<PackageOptions>>(response);
+                return showClusterConfigurationDetailsResponse;
+            });
         }
         
         /// <summary>
@@ -1601,7 +1608,9 @@ namespace HuaweiCloud.SDK.Cce.V3
             var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodepools/{nodepool_id}/configuration/detail", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showNodePoolConfigurationDetailsRequest);
             var response = DoHttpRequestSync("GET", request);
-            return JsonUtils.DeSerialize<ShowNodePoolConfigurationDetailsResponse>(response);
+            var showNodePoolConfigurationDetailsResponse = JsonUtils.DeSerializeNull<ShowNodePoolConfigurationDetailsResponse>(response);
+            showNodePoolConfigurationDetailsResponse.Body = JsonUtils.DeSerializeMap<string, List<PackageOptions>>(response);
+            return showNodePoolConfigurationDetailsResponse;
         }
 
         public SyncInvoker<ShowNodePoolConfigurationDetailsResponse> ShowNodePoolConfigurationDetailsInvoker(ShowNodePoolConfigurationDetailsRequest showNodePoolConfigurationDetailsRequest)
@@ -1611,7 +1620,12 @@ namespace HuaweiCloud.SDK.Cce.V3
             urlParam.Add("nodepool_id", showNodePoolConfigurationDetailsRequest.NodepoolId.ToString());
             var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodepools/{nodepool_id}/configuration/detail", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showNodePoolConfigurationDetailsRequest);
-            return new SyncInvoker<ShowNodePoolConfigurationDetailsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowNodePoolConfigurationDetailsResponse>);
+            return new SyncInvoker<ShowNodePoolConfigurationDetailsResponse>(this, "GET", request, response =>
+            {
+                var showNodePoolConfigurationDetailsResponse = JsonUtils.DeSerializeNull<ShowNodePoolConfigurationDetailsResponse>(response);
+                showNodePoolConfigurationDetailsResponse.Body = JsonUtils.DeSerializeMap<string, List<PackageOptions>>(response);
+                return showNodePoolConfigurationDetailsResponse;
+            });
         }
         
         /// <summary>

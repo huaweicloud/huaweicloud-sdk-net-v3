@@ -34,6 +34,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         [JsonProperty("confidence", NullValueHandling = NullValueHandling.Ignore)]
         public float? Confidence { get; set; }
 
+        /// <summary>
+        /// 车牌所属府 
+        /// </summary>
+        [JsonProperty("province", NullValueHandling = NullValueHandling.Ignore)]
+        public string Province { get; set; }
+
 
 
         /// <summary>
@@ -46,6 +52,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  plateNumber: ").Append(PlateNumber).Append("\n");
             sb.Append("  plateLocation: ").Append(PlateLocation).Append("\n");
             sb.Append("  confidence: ").Append(Confidence).Append("\n");
+            sb.Append("  province: ").Append(Province).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -82,6 +89,11 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     this.Confidence == input.Confidence ||
                     (this.Confidence != null &&
                     this.Confidence.Equals(input.Confidence))
+                ) && 
+                (
+                    this.Province == input.Province ||
+                    (this.Province != null &&
+                    this.Province.Equals(input.Province))
                 );
         }
 
@@ -99,6 +111,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     hashCode = hashCode * 59 + this.PlateLocation.GetHashCode();
                 if (this.Confidence != null)
                     hashCode = hashCode * 59 + this.Confidence.GetHashCode();
+                if (this.Province != null)
+                    hashCode = hashCode * 59 + this.Province.GetHashCode();
                 return hashCode;
             }
         }

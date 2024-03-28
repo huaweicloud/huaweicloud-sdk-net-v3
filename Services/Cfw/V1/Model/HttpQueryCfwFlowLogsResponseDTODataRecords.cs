@@ -135,7 +135,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// 字节
         /// </summary>
         [JsonProperty("bytes", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Bytes { get; set; }
+        public double? Bytes { get; set; }
 
         /// <summary>
         /// 方向，有内到外和外到内两种

@@ -1,3 +1,272 @@
+# 3.1.87 2024-03-28
+
+### HuaweiCloud SDK CBR
+
+- _新增特性_
+  - 支持以下接口：
+    - `ListOrganizationPolicies`
+    - `CreateOrganizationPolicy`
+    - `ShowOrganizationPolicy`
+    - `UpdateOrganizationPolicy`
+    - `DeleteOrganizationPolicy`
+    - `ListOrganizationPolicyDetail`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowBackup**
+    - 响应参数变更
+      - `+ backup.incremental`
+      - `- backup.extend_info.incremental`
+  - **UpdateBackup**
+    - 响应参数变更
+      - `+ backup.incremental`
+      - `- backup.extend_info.incremental`
+  - **ListBackups**
+    - 响应参数变更
+      - `+ backups.incremental`
+      - `- backups.extend_info.incremental`
+  - **ListVault**
+    - 响应参数变更
+      - `- sys_lock_source_service`
+  - **CreateVault**
+    - 请求参数变更
+      - `+ vault.sys_lock_source_service`
+  - **ListExternalVault**
+    - 响应参数变更
+      - `- sys_lock_source_service`
+
+### HuaweiCloud SDK CCE
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowNodePoolConfigurationDetails**
+    - 响应参数变更
+      - `- kubelet`
+  - **ShowClusterConfigurationDetails**
+    - 响应参数变更
+      - `- kube-apiserver`
+  - **ShowCluster**
+    - 响应参数变更
+      - `- spec.enableAutopilot`
+  - **UpdateCluster**
+    - 响应参数变更
+      - `- spec.enableAutopilot`
+  - **DeleteCluster**
+    - 请求参数变更
+      - `+ lts_reclaim_policy`
+    - 响应参数变更
+      - `- spec.enableAutopilot`
+  - **CreateCluster**
+    - 请求参数变更
+      - `- spec.enableAutopilot`
+    - 响应参数变更
+      - `- spec.enableAutopilot`
+  - **ListClusters**
+    - 响应参数变更
+      - `- items.spec.enableAutopilot`
+
+### HuaweiCloud SDK CFW
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListFlowLogs**
+    - 响应参数变更
+      - `* data.records.bytes: int32 -> double`
+
+### HuaweiCloud SDK CTS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **UpdateTracker**
+    - 请求参数变更
+      - `+ agency_name`
+  - **CreateTracker**
+    - 请求参数变更
+      - `+ agency_name`
+    - 响应参数变更
+      - `+ agency_name`
+  - **ListTrackers**
+    - 响应参数变更
+      - `+ trackers.agency_name`
+  - **UpdateNotification**
+    - 请求参数变更
+      - `+ agency_name`
+    - 响应参数变更
+      - `+ agency_name`
+  - **CreateNotification**
+    - 请求参数变更
+      - `+ agency_name`
+    - 响应参数变更
+      - `+ agency_name`
+  - **ListNotifications**
+    - 响应参数变更
+      - `+ notifications.agency_name`
+
+### HuaweiCloud SDK Image
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **RunImageMediaTagging**
+    - 请求参数变更
+      - `- use_default_tags`
+
+### HuaweiCloud SDK IoTDA
+
+- _新增特性_
+  - 支持接口`UpdateApplication`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateBatchTask**
+    - 请求参数变更
+      - `+ task_mode`
+      - `+ task_ext_info`
+    - 响应参数变更
+      - `+ task_ext_info`
+      - `+ task_mode`
+  - **ListBatchTasks**
+    - 响应参数变更
+      - `+ task_ext_info`
+      - `+ task_mode`
+      - `+ batchtasks.task_mode`
+      - `+ batchtasks.task_ext_info`
+  - **ShowBatchTask**
+    - 响应参数变更
+      - `+ task_ext_info`
+      - `+ task_mode`
+      - `+ batchtask.task_mode`
+      - `+ batchtask.task_ext_info`
+  - **CreateOtaPackage**
+    - 请求参数变更
+      - `+ file_location.obs_location.sign`
+    - 响应参数变更
+      - `+ file_location.obs_location.sign`
+  - **ShowOtaPackage**
+    - 响应参数变更
+      - `+ file_location.obs_location.sign`
+
+### HuaweiCloud SDK Kafka
+
+- _新增特性_
+  - 支持以下接口：
+    - `ShowDiagnosisPreCheck`
+    - `ListMessageDiagnosisReports`
+    - `CreateMessageDiagnosisTask`
+    - `BatchDeleteMessageDiagnosisReports`
+    - `ShowMessageDiagnosisReport`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateInstanceByEngine**
+    - 请求参数变更
+      - `+ ipv6_enable`
+  - **ShowInstance**
+    - 响应参数变更
+      - `+ broker_ssl_enable`
+      - `+ new_auth_cert`
+      - `+ available_zone_names`
+  - **ShowConnectorTask**
+    - 响应参数变更
+      - `+ source_task.rename_topic_enabled`
+      - `- source_task.rename_topic_enable`
+  - **CreatePostPaidInstance**
+    - 请求参数变更
+      - `- ipv6_enable`
+  - **ListInstances**
+    - 响应参数变更
+      - `+ broker_ssl_enable`
+      - `+ new_auth_cert`
+      - `+ available_zone_names`
+      - `+ instances.broker_ssl_enable`
+      - `+ instances.available_zone_names`
+      - `+ instances.new_auth_cert`
+  - **CreateConnectorTask**
+    - 请求参数变更
+      - `+ source_task.rename_topic_enabled`
+      - `- source_task.rename_topic_enable`
+    - 响应参数变更
+      - `+ source_task.rename_topic_enabled`
+      - `- source_task.rename_topic_enable`
+  - **ListConnectorTasks**
+    - 响应参数变更
+      - `+ tasks.source_task.rename_topic_enabled`
+      - `- tasks.source_task.rename_topic_enable`
+  - **CreateReassignmentTask**
+    - 请求参数变更
+      - `+ time_estimate`
+    - 响应参数变更
+      - `+ reassignment_time`
+
+### HuaweiCloud SDK OCR
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **RecognizeMvsInvoice**
+    - 响应参数变更
+      - `+ result.reverse_issue`
+  - **RecognizeThailandLicensePlate**
+    - 响应参数变更
+      - `+ result.province`
+
+### HuaweiCloud SDK RDS
+
+- _新增特性_
+  - 支持接口`BatchStopInstance`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK RocketMQ
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListMessageTrace**
+    - 响应参数变更
+      - `* trace.retry_times: string -> int32`
+  - **CreateInstanceByEngine**
+    - 请求参数变更
+      - `+ engine_version: enum value [[4.8.0](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm)[5.x](tag:hcs)]`
+      - `- engine_version: enum value [4.8.0]`
+      - `+ product_id: enum value [[c6.4u8g.cluster.small](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm)[c6.2u8g.single.x86](tag:hcs),[c6.4u8g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm)[c6.4u16g.cluster.x86](tag:hcs),[c6.8u16g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm)[c6.8u32g.cluster.x86](tag:hcs),[c6.12u24g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm)[c6.16u64g.cluster.x86](tag:hcs),[c6.16u32g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm)[c6.32u128g.cluster.x86](tag:hcs),[c6.2u8g.single.arm](tag:hcs),[c6.4u16g.cluster.arm](tag:hcs),[c6.8u32g.cluster.arm](tag:hcs),[c6.16u64g.cluster.arm](tag:hcs),[c6.32u128g.cluster.arm](tag:hcs)]`
+      - `- product_id: enum value [c6.4u8g.cluster.small,c6.4u8g.cluster,c6.8u16g.cluster,c6.12u24g.cluster,c6.16u32g.cluster]`
+  - **CreateConsumerGroupOrBatchDeleteConsumerGroup**
+    - 请求参数变更
+      - `- createdAt`
+      - `- permissions`
+  - **ListInstanceConsumerGroups**
+    - 响应参数变更
+      - `* groups.createdAt: string -> int64`
+  - **BatchUpdateConsumerGroup**
+    - 请求参数变更
+      - `- groups.createdAt`
+      - `- groups.permissions`
+      - `* groups: list<ConsumerGroup> -> list<CreateOrUpdateConsumerGroup>`
+  - **CreatePostPaidInstance**
+    - 请求参数变更
+      - `+ engine_version: enum value [[4.8.0](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm)[5.x](tag:hcs)]`
+      - `- engine_version: enum value [4.8.0]`
+      - `+ product_id: enum value [[c6.4u8g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm)[c6.4u16g.cluster.x86](tag:hcs),[c6.8u16g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm)[c6.8u32g.cluster.x86](tag:hcs),[c6.12u24g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm)[c6.16u64g.cluster.x86](tag:hcs),[c6.16u32g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm)[c6.32u128g.cluster.x86](tag:hcs),[c6.4u16g.cluster.arm](tag:hcs),[c6.8u32g.cluster.arm](tag:hcs),[c6.16u64g.cluster.arm](tag:hcs),[c6.32u128g.cluster.arm](tag:hcs)]`
+      - `- product_id: enum value [c6.4u8g.cluster,c6.8u16g.cluster,c6.12u24g.cluster,c6.16u32g.cluster]`
+
 # 3.1.86 2024-03-21
 
 ### HuaweiCloud SDK AOM

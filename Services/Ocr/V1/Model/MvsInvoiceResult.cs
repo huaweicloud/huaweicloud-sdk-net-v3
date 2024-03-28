@@ -311,6 +311,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public string UsedVehicleMarketPhone { get; set; }
 
         /// <summary>
+        /// 二手车反向开具标识，True表示是反向开具发票，False表示不是反向开具发票。 当请求参数\&quot;type\&quot;设置为\&quot;auto\&quot;或\&quot;used\&quot;时才返回。 
+        /// </summary>
+        [JsonProperty("reverse_issue", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? ReverseIssue { get; set; }
+
+        /// <summary>
         /// 备注 
         /// </summary>
         [JsonProperty("remark", NullValueHandling = NullValueHandling.Ignore)]
@@ -398,6 +404,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  usedVehicleMarketAddress: ").Append(UsedVehicleMarketAddress).Append("\n");
             sb.Append("  usedVehicleMarketBankAccount: ").Append(UsedVehicleMarketBankAccount).Append("\n");
             sb.Append("  usedVehicleMarketPhone: ").Append(UsedVehicleMarketPhone).Append("\n");
+            sb.Append("  reverseIssue: ").Append(ReverseIssue).Append("\n");
             sb.Append("  remark: ").Append(Remark).Append("\n");
             sb.Append("  drawerName: ").Append(DrawerName).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
@@ -670,6 +677,11 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     this.UsedVehicleMarketPhone.Equals(input.UsedVehicleMarketPhone))
                 ) && 
                 (
+                    this.ReverseIssue == input.ReverseIssue ||
+                    (this.ReverseIssue != null &&
+                    this.ReverseIssue.Equals(input.ReverseIssue))
+                ) && 
+                (
                     this.Remark == input.Remark ||
                     (this.Remark != null &&
                     this.Remark.Equals(input.Remark))
@@ -802,6 +814,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     hashCode = hashCode * 59 + this.UsedVehicleMarketBankAccount.GetHashCode();
                 if (this.UsedVehicleMarketPhone != null)
                     hashCode = hashCode * 59 + this.UsedVehicleMarketPhone.GetHashCode();
+                if (this.ReverseIssue != null)
+                    hashCode = hashCode * 59 + this.ReverseIssue.GetHashCode();
                 if (this.Remark != null)
                     hashCode = hashCode * 59 + this.Remark.GetHashCode();
                 if (this.DrawerName != null)
