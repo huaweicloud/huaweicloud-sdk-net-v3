@@ -8,19 +8,20 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Bms.V1.Model
+namespace HuaweiCloud.SDK.Ecs.V2.Model
 {
     /// <summary>
-    /// image数据结构说明
+    /// Request Object
     /// </summary>
-    public class ImageInfo 
+    public class NovaShowVersionRequest 
     {
 
         /// <summary>
-        /// 镜像ID，格式为UUID。
+        /// API版本号。例如: v2
         /// </summary>
-        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
-        public Guid? Id { get; set; }
+        [SDKProperty("api_version", IsPath = true)]
+        [JsonProperty("api_version", NullValueHandling = NullValueHandling.Ignore)]
+        public string ApiVersion { get; set; }
 
 
 
@@ -30,8 +31,8 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ImageInfo {\n");
-            sb.Append("  id: ").Append(Id).Append("\n");
+            sb.Append("class NovaShowVersionRequest {\n");
+            sb.Append("  apiVersion: ").Append(ApiVersion).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -41,22 +42,22 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ImageInfo);
+            return this.Equals(input as NovaShowVersionRequest);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ImageInfo input)
+        public bool Equals(NovaShowVersionRequest input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
+                    this.ApiVersion == input.ApiVersion ||
+                    (this.ApiVersion != null &&
+                    this.ApiVersion.Equals(input.ApiVersion))
                 );
         }
 
@@ -68,8 +69,8 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.ApiVersion != null)
+                    hashCode = hashCode * 59 + this.ApiVersion.GetHashCode();
                 return hashCode;
             }
         }

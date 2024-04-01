@@ -1908,6 +1908,65 @@ namespace HuaweiCloud.SDK.Ecs.V2
         }
         
         /// <summary>
+        /// 查询API版本信息列表
+        ///
+        /// 返回Nova当前所有可用的版本。
+        /// 
+        /// 为了支持功能不断扩展，Nova API支持版本号区分。Nova中有两种形式的版本号：
+        /// 
+        /// - \&quot;主版本号\&quot;: 具有独立的url。
+        /// - \&quot;微版本号\&quot;: 通过Http请求头X-OpenStack-Nova-API-Version来使用，从2.27版本后更改为OpenStack-API-Version。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<NovaListVersionsResponse> NovaListVersionsAsync(NovaListVersionsRequest novaListVersionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", novaListVersionsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<NovaListVersionsResponse>(response);
+        }
+
+        public AsyncInvoker<NovaListVersionsResponse> NovaListVersionsAsyncInvoker(NovaListVersionsRequest novaListVersionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", novaListVersionsRequest);
+            return new AsyncInvoker<NovaListVersionsResponse>(this, "GET", request, JsonUtils.DeSerialize<NovaListVersionsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询指定API版本信息
+        ///
+        /// 返回指定版本的信息。
+        /// 为了支持功能不断扩展，Nova API支持版本号区分。Nova中有两种形式的版本号：
+        /// 
+        /// - \&quot;主版本号\&quot;: 具有独立的url。
+        /// - \&quot;微版本号\&quot;: 通过Http请求头X-OpenStack-Nova-API-Version来使用，从2.27版本后更改为OpenStack-API-Version。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<NovaShowVersionResponse> NovaShowVersionAsync(NovaShowVersionRequest novaShowVersionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("api_version", novaShowVersionRequest.ApiVersion.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/{api_version}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", novaShowVersionRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<NovaShowVersionResponse>(response);
+        }
+
+        public AsyncInvoker<NovaShowVersionResponse> NovaShowVersionAsyncInvoker(NovaShowVersionRequest novaShowVersionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("api_version", novaShowVersionRequest.ApiVersion.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/{api_version}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", novaShowVersionRequest);
+            return new AsyncInvoker<NovaShowVersionResponse>(this, "GET", request, JsonUtils.DeSerialize<NovaShowVersionResponse>);
+        }
+        
+        /// <summary>
         /// 查询任务的执行状态
         ///
         /// 查询Job的执行状态。

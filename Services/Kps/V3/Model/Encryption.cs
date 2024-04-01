@@ -137,10 +137,16 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }
         /// <summary>
-        /// kms密钥的名称。  - 若“type”为“kms”，则必须填入kms服务密钥名称。
+        /// kms密钥的名称。  - 若“type”为“kms”，则必须填入\&quot;kms_key_name\&quot;或\&quot;kms_key_id\&quot;。
         /// </summary>
         [JsonProperty("kms_key_name", NullValueHandling = NullValueHandling.Ignore)]
         public string KmsKeyName { get; set; }
+
+        /// <summary>
+        /// kms密钥的ID。  - 若“type”为“kms”，则必须填入\&quot;kms_key_name\&quot;或\&quot;kms_key_id\&quot;。
+        /// </summary>
+        [JsonProperty("kms_key_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string KmsKeyId { get; set; }
 
 
 
@@ -153,6 +159,7 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
             sb.Append("class Encryption {\n");
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  kmsKeyName: ").Append(KmsKeyName).Append("\n");
+            sb.Append("  kmsKeyId: ").Append(KmsKeyId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -183,6 +190,11 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
                     this.KmsKeyName == input.KmsKeyName ||
                     (this.KmsKeyName != null &&
                     this.KmsKeyName.Equals(input.KmsKeyName))
+                ) && 
+                (
+                    this.KmsKeyId == input.KmsKeyId ||
+                    (this.KmsKeyId != null &&
+                    this.KmsKeyId.Equals(input.KmsKeyId))
                 );
         }
 
@@ -198,6 +210,8 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
                     hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.KmsKeyName != null)
                     hashCode = hashCode * 59 + this.KmsKeyName.GetHashCode();
+                if (this.KmsKeyId != null)
+                    hashCode = hashCode * 59 + this.KmsKeyId.GetHashCode();
                 return hashCode;
             }
         }

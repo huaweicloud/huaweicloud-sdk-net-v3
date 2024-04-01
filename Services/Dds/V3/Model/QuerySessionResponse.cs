@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         public string Type { get; set; }
 
         /// <summary>
-        /// 运行时间，单位为 ms。
+        /// 运行时间，单位为 us。
         /// </summary>
         [JsonProperty("cost_time", NullValueHandling = NullValueHandling.Ignore)]
         public string CostTime { get; set; }
