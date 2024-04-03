@@ -202,6 +202,30 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         [JsonProperty("vpc_bandwith", NullValueHandling = NullValueHandling.Ignore)]
         public int? VpcBandwith { get; set; }
 
+        /// <summary>
+        /// 默认防火墙带宽
+        /// </summary>
+        [JsonProperty("default_bandwidth", NullValueHandling = NullValueHandling.Ignore)]
+        public int? DefaultBandwidth { get; set; }
+
+        /// <summary>
+        /// 默认eip数
+        /// </summary>
+        [JsonProperty("default_eip_count", NullValueHandling = NullValueHandling.Ignore)]
+        public int? DefaultEipCount { get; set; }
+
+        /// <summary>
+        /// 默认日志存储
+        /// </summary>
+        [JsonProperty("default_log_storage", NullValueHandling = NullValueHandling.Ignore)]
+        public int? DefaultLogStorage { get; set; }
+
+        /// <summary>
+        /// 默认vpc数
+        /// </summary>
+        [JsonProperty("default_vpc_count", NullValueHandling = NullValueHandling.Ignore)]
+        public int? DefaultVpcCount { get; set; }
+
 
 
         /// <summary>
@@ -221,6 +245,10 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  totalRuleCount: ").Append(TotalRuleCount).Append("\n");
             sb.Append("  usedRuleCount: ").Append(UsedRuleCount).Append("\n");
             sb.Append("  vpcBandwith: ").Append(VpcBandwith).Append("\n");
+            sb.Append("  defaultBandwidth: ").Append(DefaultBandwidth).Append("\n");
+            sb.Append("  defaultEipCount: ").Append(DefaultEipCount).Append("\n");
+            sb.Append("  defaultLogStorage: ").Append(DefaultLogStorage).Append("\n");
+            sb.Append("  defaultVpcCount: ").Append(DefaultVpcCount).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -291,6 +319,26 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.VpcBandwith == input.VpcBandwith ||
                     (this.VpcBandwith != null &&
                     this.VpcBandwith.Equals(input.VpcBandwith))
+                ) && 
+                (
+                    this.DefaultBandwidth == input.DefaultBandwidth ||
+                    (this.DefaultBandwidth != null &&
+                    this.DefaultBandwidth.Equals(input.DefaultBandwidth))
+                ) && 
+                (
+                    this.DefaultEipCount == input.DefaultEipCount ||
+                    (this.DefaultEipCount != null &&
+                    this.DefaultEipCount.Equals(input.DefaultEipCount))
+                ) && 
+                (
+                    this.DefaultLogStorage == input.DefaultLogStorage ||
+                    (this.DefaultLogStorage != null &&
+                    this.DefaultLogStorage.Equals(input.DefaultLogStorage))
+                ) && 
+                (
+                    this.DefaultVpcCount == input.DefaultVpcCount ||
+                    (this.DefaultVpcCount != null &&
+                    this.DefaultVpcCount.Equals(input.DefaultVpcCount))
                 );
         }
 
@@ -322,6 +370,14 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.UsedRuleCount.GetHashCode();
                 if (this.VpcBandwith != null)
                     hashCode = hashCode * 59 + this.VpcBandwith.GetHashCode();
+                if (this.DefaultBandwidth != null)
+                    hashCode = hashCode * 59 + this.DefaultBandwidth.GetHashCode();
+                if (this.DefaultEipCount != null)
+                    hashCode = hashCode * 59 + this.DefaultEipCount.GetHashCode();
+                if (this.DefaultLogStorage != null)
+                    hashCode = hashCode * 59 + this.DefaultLogStorage.GetHashCode();
+                if (this.DefaultVpcCount != null)
+                    hashCode = hashCode * 59 + this.DefaultVpcCount.GetHashCode();
                 return hashCode;
             }
         }

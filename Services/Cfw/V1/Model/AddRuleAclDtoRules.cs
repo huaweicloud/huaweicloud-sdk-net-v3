@@ -511,6 +511,18 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
         /// <summary>
+        /// 应用列表
+        /// </summary>
+        [JsonProperty("applications", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> Applications { get; set; }
+
+        /// <summary>
+        /// 应用列表转化json字符串
+        /// </summary>
+        [JsonProperty("applicationsJsonString", NullValueHandling = NullValueHandling.Ignore)]
+        public string ApplicationsJsonString { get; set; }
+
+        /// <summary>
         /// 长连接时长
         /// </summary>
         [JsonProperty("long_connect_time", NullValueHandling = NullValueHandling.Ignore)]
@@ -553,14 +565,20 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// <summary>
         /// 
         /// </summary>
+        [JsonProperty("profile", NullValueHandling = NullValueHandling.Ignore)]
+        public RuleProfileDto Profile { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [JsonProperty("source", NullValueHandling = NullValueHandling.Ignore)]
-        public RuleAddressDto Source { get; set; }
+        public RuleAddressDtoForRequest Source { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("destination", NullValueHandling = NullValueHandling.Ignore)]
-        public RuleAddressDto Destination { get; set; }
+        public RuleAddressDtoForRequest Destination { get; set; }
 
         /// <summary>
         /// 
@@ -588,6 +606,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  addressType: ").Append(AddressType).Append("\n");
             sb.Append("  actionType: ").Append(ActionType).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
+            sb.Append("  applications: ").Append(Applications).Append("\n");
+            sb.Append("  applicationsJsonString: ").Append(ApplicationsJsonString).Append("\n");
             sb.Append("  longConnectTime: ").Append(LongConnectTime).Append("\n");
             sb.Append("  longConnectTimeHour: ").Append(LongConnectTimeHour).Append("\n");
             sb.Append("  longConnectTimeMinute: ").Append(LongConnectTimeMinute).Append("\n");
@@ -595,6 +615,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  longConnectEnable: ").Append(LongConnectEnable).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  direction: ").Append(Direction).Append("\n");
+            sb.Append("  profile: ").Append(Profile).Append("\n");
             sb.Append("  source: ").Append(Source).Append("\n");
             sb.Append("  destination: ").Append(Destination).Append("\n");
             sb.Append("  service: ").Append(Service).Append("\n");
@@ -646,6 +667,17 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.Status.Equals(input.Status))
                 ) && 
                 (
+                    this.Applications == input.Applications ||
+                    this.Applications != null &&
+                    input.Applications != null &&
+                    this.Applications.SequenceEqual(input.Applications)
+                ) && 
+                (
+                    this.ApplicationsJsonString == input.ApplicationsJsonString ||
+                    (this.ApplicationsJsonString != null &&
+                    this.ApplicationsJsonString.Equals(input.ApplicationsJsonString))
+                ) && 
+                (
                     this.LongConnectTime == input.LongConnectTime ||
                     (this.LongConnectTime != null &&
                     this.LongConnectTime.Equals(input.LongConnectTime))
@@ -679,6 +711,11 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.Direction == input.Direction ||
                     (this.Direction != null &&
                     this.Direction.Equals(input.Direction))
+                ) && 
+                (
+                    this.Profile == input.Profile ||
+                    (this.Profile != null &&
+                    this.Profile.Equals(input.Profile))
                 ) && 
                 (
                     this.Source == input.Source ||
@@ -720,6 +757,10 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.ActionType.GetHashCode();
                 if (this.Status != null)
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Applications != null)
+                    hashCode = hashCode * 59 + this.Applications.GetHashCode();
+                if (this.ApplicationsJsonString != null)
+                    hashCode = hashCode * 59 + this.ApplicationsJsonString.GetHashCode();
                 if (this.LongConnectTime != null)
                     hashCode = hashCode * 59 + this.LongConnectTime.GetHashCode();
                 if (this.LongConnectTimeHour != null)
@@ -734,6 +775,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.Direction != null)
                     hashCode = hashCode * 59 + this.Direction.GetHashCode();
+                if (this.Profile != null)
+                    hashCode = hashCode * 59 + this.Profile.GetHashCode();
                 if (this.Source != null)
                     hashCode = hashCode * 59 + this.Source.GetHashCode();
                 if (this.Destination != null)

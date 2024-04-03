@@ -729,6 +729,13 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         [JsonProperty("service", NullValueHandling = NullValueHandling.Ignore)]
         public string Service { get; set; }
 
+        /// <summary>
+        /// 应用
+        /// </summary>
+        [SDKProperty("application", IsQuery = true)]
+        [JsonProperty("application", NullValueHandling = NullValueHandling.Ignore)]
+        public string Application { get; set; }
+
 
 
         /// <summary>
@@ -755,6 +762,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  source: ").Append(Source).Append("\n");
             sb.Append("  destination: ").Append(Destination).Append("\n");
             sb.Append("  service: ").Append(Service).Append("\n");
+            sb.Append("  application: ").Append(Application).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -860,6 +868,11 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.Service == input.Service ||
                     (this.Service != null &&
                     this.Service.Equals(input.Service))
+                ) && 
+                (
+                    this.Application == input.Application ||
+                    (this.Application != null &&
+                    this.Application.Equals(input.Application))
                 );
         }
 
@@ -905,6 +918,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.Destination.GetHashCode();
                 if (this.Service != null)
                     hashCode = hashCode * 59 + this.Service.GetHashCode();
+                if (this.Application != null)
+                    hashCode = hashCode * 59 + this.Application.GetHashCode();
                 return hashCode;
             }
         }

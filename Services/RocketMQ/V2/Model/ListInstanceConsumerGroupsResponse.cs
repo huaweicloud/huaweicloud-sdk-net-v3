@@ -32,25 +32,25 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         /// 最大可创建消费组数量。
         /// </summary>
         [JsonProperty("max", NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? Max { get; set; }
+        public int? Max { get; set; }
 
         /// <summary>
         /// 剩余可创建消费组数量。
         /// </summary>
         [JsonProperty("remaining", NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? Remaining { get; set; }
+        public int? Remaining { get; set; }
 
         /// <summary>
         /// 下个分页的offset。
         /// </summary>
         [JsonProperty("next_offset", NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? NextOffset { get; set; }
+        public int? NextOffset { get; set; }
 
         /// <summary>
         /// 上个分页的offset。
         /// </summary>
         [JsonProperty("previous_offset", NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? PreviousOffset { get; set; }
+        public int? PreviousOffset { get; set; }
 
 
 

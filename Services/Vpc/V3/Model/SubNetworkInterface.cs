@@ -100,6 +100,12 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// 功能说明：辅助弹性网卡安全使能标记，如果不使能则安全组不生效。 取值范围：true（使能），false（不使能）
+        /// </summary>
+        [JsonProperty("security_enabled", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? SecurityEnabled { get; set; }
+
 
 
         /// <summary>
@@ -123,6 +129,7 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
             sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  projectId: ").Append(ProjectId).Append("\n");
             sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
+            sb.Append("  securityEnabled: ").Append(SecurityEnabled).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -215,6 +222,11 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
                     this.CreatedAt == input.CreatedAt ||
                     (this.CreatedAt != null &&
                     this.CreatedAt.Equals(input.CreatedAt))
+                ) && 
+                (
+                    this.SecurityEnabled == input.SecurityEnabled ||
+                    (this.SecurityEnabled != null &&
+                    this.SecurityEnabled.Equals(input.SecurityEnabled))
                 );
         }
 
@@ -254,6 +266,8 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
                     hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
                 if (this.CreatedAt != null)
                     hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.SecurityEnabled != null)
+                    hashCode = hashCode * 59 + this.SecurityEnabled.GetHashCode();
                 return hashCode;
             }
         }

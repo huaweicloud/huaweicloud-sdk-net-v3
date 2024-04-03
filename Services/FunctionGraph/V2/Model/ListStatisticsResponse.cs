@@ -29,6 +29,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public List<MonthUsed> Gbs { get; set; }
 
         /// <summary>
+        /// 月度gpu资源用量
+        /// </summary>
+        [JsonProperty("gpu_gbs", NullValueHandling = NullValueHandling.Ignore)]
+        public List<MonthUsed> GpuGbs { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("statistics", NullValueHandling = NullValueHandling.Ignore)]
@@ -45,6 +51,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("class ListStatisticsResponse {\n");
             sb.Append("  count: ").Append(Count).Append("\n");
             sb.Append("  gbs: ").Append(Gbs).Append("\n");
+            sb.Append("  gpuGbs: ").Append(GpuGbs).Append("\n");
             sb.Append("  statistics: ").Append(Statistics).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -80,6 +87,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.Gbs.SequenceEqual(input.Gbs)
                 ) && 
                 (
+                    this.GpuGbs == input.GpuGbs ||
+                    this.GpuGbs != null &&
+                    input.GpuGbs != null &&
+                    this.GpuGbs.SequenceEqual(input.GpuGbs)
+                ) && 
+                (
                     this.Statistics == input.Statistics ||
                     (this.Statistics != null &&
                     this.Statistics.Equals(input.Statistics))
@@ -98,6 +111,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.Count.GetHashCode();
                 if (this.Gbs != null)
                     hashCode = hashCode * 59 + this.Gbs.GetHashCode();
+                if (this.GpuGbs != null)
+                    hashCode = hashCode * 59 + this.GpuGbs.GetHashCode();
                 if (this.Statistics != null)
                     hashCode = hashCode * 59 + this.Statistics.GetHashCode();
                 return hashCode;

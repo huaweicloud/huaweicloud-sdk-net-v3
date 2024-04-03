@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
     {
 
         /// <summary>
-        /// 全局IP段id
+        /// 全域弹性公网IP段ID
         /// </summary>
         [JsonProperty("global_eip_segment_id", NullValueHandling = NullValueHandling.Ignore)]
         public string GlobalEipSegmentId { get; set; }

@@ -269,6 +269,20 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]
         public string Action { get; set; }
 
+        /// <summary>
+        /// 源region名称
+        /// </summary>
+        [SDKProperty("src_region_name", IsQuery = true)]
+        [JsonProperty("src_region_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string SrcRegionName { get; set; }
+
+        /// <summary>
+        /// 目的region名称
+        /// </summary>
+        [SDKProperty("dst_region_name", IsQuery = true)]
+        [JsonProperty("dst_region_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string DstRegionName { get; set; }
+
 
 
         /// <summary>
@@ -297,6 +311,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  dstHost: ").Append(DstHost).Append("\n");
             sb.Append("  ruleName: ").Append(RuleName).Append("\n");
             sb.Append("  action: ").Append(Action).Append("\n");
+            sb.Append("  srcRegionName: ").Append(SrcRegionName).Append("\n");
+            sb.Append("  dstRegionName: ").Append(DstRegionName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -412,6 +428,16 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.Action == input.Action ||
                     (this.Action != null &&
                     this.Action.Equals(input.Action))
+                ) && 
+                (
+                    this.SrcRegionName == input.SrcRegionName ||
+                    (this.SrcRegionName != null &&
+                    this.SrcRegionName.Equals(input.SrcRegionName))
+                ) && 
+                (
+                    this.DstRegionName == input.DstRegionName ||
+                    (this.DstRegionName != null &&
+                    this.DstRegionName.Equals(input.DstRegionName))
                 );
         }
 
@@ -461,6 +487,10 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.RuleName.GetHashCode();
                 if (this.Action != null)
                     hashCode = hashCode * 59 + this.Action.GetHashCode();
+                if (this.SrcRegionName != null)
+                    hashCode = hashCode * 59 + this.SrcRegionName.GetHashCode();
+                if (this.DstRegionName != null)
+                    hashCode = hashCode * 59 + this.DstRegionName.GetHashCode();
                 return hashCode;
             }
         }

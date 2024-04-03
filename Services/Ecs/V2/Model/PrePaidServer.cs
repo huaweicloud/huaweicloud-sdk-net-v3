@@ -154,6 +154,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("cpu_options", NullValueHandling = NullValueHandling.Ignore)]
+        public CpuOptions CpuOptions { get; set; }
+
 
 
         /// <summary>
@@ -186,6 +192,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  serverTags: ").Append(ServerTags).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
+            sb.Append("  cpuOptions: ").Append(CpuOptions).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -327,6 +334,11 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
+                ) && 
+                (
+                    this.CpuOptions == input.CpuOptions ||
+                    (this.CpuOptions != null &&
+                    this.CpuOptions.Equals(input.CpuOptions))
                 );
         }
 
@@ -384,6 +396,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     hashCode = hashCode * 59 + this.ServerTags.GetHashCode();
                 if (this.Description != null)
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.CpuOptions != null)
+                    hashCode = hashCode * 59 + this.CpuOptions.GetHashCode();
                 return hashCode;
             }
         }

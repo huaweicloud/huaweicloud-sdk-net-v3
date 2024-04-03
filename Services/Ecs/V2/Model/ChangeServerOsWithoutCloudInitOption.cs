@@ -52,6 +52,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         [JsonProperty("metadata", NullValueHandling = NullValueHandling.Ignore)]
         public ChangeSeversOsMetadataWithoutCloudInitOption Metadata { get; set; }
 
+        /// <summary>
+        /// 下单订购后，是否自动从客户的账户中支付，而不需要客户手动去进行支付。
+        /// </summary>
+        [JsonProperty("isAutoPay", NullValueHandling = NullValueHandling.Ignore)]
+        public string IsAutoPay { get; set; }
+
 
 
         /// <summary>
@@ -67,6 +73,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             sb.Append("  imageid: ").Append(Imageid).Append("\n");
             sb.Append("  mode: ").Append(Mode).Append("\n");
             sb.Append("  metadata: ").Append(Metadata).Append("\n");
+            sb.Append("  isAutoPay: ").Append(IsAutoPay).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -117,6 +124,11 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     this.Metadata == input.Metadata ||
                     (this.Metadata != null &&
                     this.Metadata.Equals(input.Metadata))
+                ) && 
+                (
+                    this.IsAutoPay == input.IsAutoPay ||
+                    (this.IsAutoPay != null &&
+                    this.IsAutoPay.Equals(input.IsAutoPay))
                 );
         }
 
@@ -140,6 +152,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     hashCode = hashCode * 59 + this.Mode.GetHashCode();
                 if (this.Metadata != null)
                     hashCode = hashCode * 59 + this.Metadata.GetHashCode();
+                if (this.IsAutoPay != null)
+                    hashCode = hashCode * 59 + this.IsAutoPay.GetHashCode();
                 return hashCode;
             }
         }

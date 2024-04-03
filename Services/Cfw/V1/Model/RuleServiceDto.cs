@@ -29,6 +29,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public int? Protocol { get; set; }
 
         /// <summary>
+        /// 协议列表，协议类型:TCP为6, UDP为17,ICMP为1,ICMPV6为58,ANY为-1,手动类型不为空，自动类型为空
+        /// </summary>
+        [JsonProperty("protocols", NullValueHandling = NullValueHandling.Ignore)]
+        public List<int?> Protocols { get; set; }
+
+        /// <summary>
         /// 源端口
         /// </summary>
         [JsonProperty("source_port", NullValueHandling = NullValueHandling.Ignore)]
@@ -59,6 +65,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public List<ServiceItem> CustomService { get; set; }
 
         /// <summary>
+        /// 预定义服务组列表
+        /// </summary>
+        [JsonProperty("predefined_group", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> PredefinedGroup { get; set; }
+
+        /// <summary>
         /// 服务组列表
         /// </summary>
         [JsonProperty("service_group", NullValueHandling = NullValueHandling.Ignore)]
@@ -69,6 +81,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// </summary>
         [JsonProperty("service_group_names", NullValueHandling = NullValueHandling.Ignore)]
         public List<AddressGroupVO> ServiceGroupNames { get; set; }
+
+        /// <summary>
+        /// 服务组类型，0表示自定义服务组，1表示常用WEB服务，2表示常用远程登录和PING，3表示常用数据库
+        /// </summary>
+        [JsonProperty("service_set_type", NullValueHandling = NullValueHandling.Ignore)]
+        public int? ServiceSetType { get; set; }
 
 
 
@@ -81,13 +99,16 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("class RuleServiceDto {\n");
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  protocol: ").Append(Protocol).Append("\n");
+            sb.Append("  protocols: ").Append(Protocols).Append("\n");
             sb.Append("  sourcePort: ").Append(SourcePort).Append("\n");
             sb.Append("  destPort: ").Append(DestPort).Append("\n");
             sb.Append("  serviceSetId: ").Append(ServiceSetId).Append("\n");
             sb.Append("  serviceSetName: ").Append(ServiceSetName).Append("\n");
             sb.Append("  customService: ").Append(CustomService).Append("\n");
+            sb.Append("  predefinedGroup: ").Append(PredefinedGroup).Append("\n");
             sb.Append("  serviceGroup: ").Append(ServiceGroup).Append("\n");
             sb.Append("  serviceGroupNames: ").Append(ServiceGroupNames).Append("\n");
+            sb.Append("  serviceSetType: ").Append(ServiceSetType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -120,6 +141,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.Protocol.Equals(input.Protocol))
                 ) && 
                 (
+                    this.Protocols == input.Protocols ||
+                    this.Protocols != null &&
+                    input.Protocols != null &&
+                    this.Protocols.SequenceEqual(input.Protocols)
+                ) && 
+                (
                     this.SourcePort == input.SourcePort ||
                     (this.SourcePort != null &&
                     this.SourcePort.Equals(input.SourcePort))
@@ -146,6 +173,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.CustomService.SequenceEqual(input.CustomService)
                 ) && 
                 (
+                    this.PredefinedGroup == input.PredefinedGroup ||
+                    this.PredefinedGroup != null &&
+                    input.PredefinedGroup != null &&
+                    this.PredefinedGroup.SequenceEqual(input.PredefinedGroup)
+                ) && 
+                (
                     this.ServiceGroup == input.ServiceGroup ||
                     this.ServiceGroup != null &&
                     input.ServiceGroup != null &&
@@ -156,6 +189,11 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.ServiceGroupNames != null &&
                     input.ServiceGroupNames != null &&
                     this.ServiceGroupNames.SequenceEqual(input.ServiceGroupNames)
+                ) && 
+                (
+                    this.ServiceSetType == input.ServiceSetType ||
+                    (this.ServiceSetType != null &&
+                    this.ServiceSetType.Equals(input.ServiceSetType))
                 );
         }
 
@@ -171,6 +209,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.Protocol != null)
                     hashCode = hashCode * 59 + this.Protocol.GetHashCode();
+                if (this.Protocols != null)
+                    hashCode = hashCode * 59 + this.Protocols.GetHashCode();
                 if (this.SourcePort != null)
                     hashCode = hashCode * 59 + this.SourcePort.GetHashCode();
                 if (this.DestPort != null)
@@ -181,10 +221,14 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.ServiceSetName.GetHashCode();
                 if (this.CustomService != null)
                     hashCode = hashCode * 59 + this.CustomService.GetHashCode();
+                if (this.PredefinedGroup != null)
+                    hashCode = hashCode * 59 + this.PredefinedGroup.GetHashCode();
                 if (this.ServiceGroup != null)
                     hashCode = hashCode * 59 + this.ServiceGroup.GetHashCode();
                 if (this.ServiceGroupNames != null)
                     hashCode = hashCode * 59 + this.ServiceGroupNames.GetHashCode();
+                if (this.ServiceSetType != null)
+                    hashCode = hashCode * 59 + this.ServiceSetType.GetHashCode();
                 return hashCode;
             }
         }

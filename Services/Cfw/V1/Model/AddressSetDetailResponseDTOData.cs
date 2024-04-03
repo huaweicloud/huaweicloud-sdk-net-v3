@@ -150,7 +150,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// 地址组类型，0表示自定义地址组，1表示预定义地址组
+        /// 地址组类型，0表示自定义地址组，1表示WAF回源IP地址组，2表示DDoS回源IP地址组，3表示NAT64转换地址组
         /// </summary>
         [JsonProperty("address_set_type", NullValueHandling = NullValueHandling.Ignore)]
         public int? AddressSetType { get; set; }

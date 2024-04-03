@@ -8,27 +8,34 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Ecs.V2.Model
+namespace HuaweiCloud.SDK.PanguLargeModels.V2.Model
 {
     /// <summary>
     /// Request Object
     /// </summary>
-    public class RegisterServerAutoRecoveryRequest 
+    public class ExecuteTextCompletionRequest 
     {
 
         /// <summary>
-        /// 云服务器ID。
+        /// 资源池ID
         /// </summary>
-        [SDKProperty("server_id", IsPath = true)]
-        [JsonProperty("server_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string ServerId { get; set; }
+        [SDKProperty("pool_id", IsPath = true)]
+        [JsonProperty("pool_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string PoolId { get; set; }
+
+        /// <summary>
+        /// 模型的部署ID
+        /// </summary>
+        [SDKProperty("deployment_id", IsPath = true)]
+        [JsonProperty("deployment_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string DeploymentId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public RegisterServerAutoRecoveryRequestBody Body { get; set; }
+        public TextCompletionReq Body { get; set; }
 
 
 
@@ -38,8 +45,9 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class RegisterServerAutoRecoveryRequest {\n");
-            sb.Append("  serverId: ").Append(ServerId).Append("\n");
+            sb.Append("class ExecuteTextCompletionRequest {\n");
+            sb.Append("  poolId: ").Append(PoolId).Append("\n");
+            sb.Append("  deploymentId: ").Append(DeploymentId).Append("\n");
             sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -50,22 +58,27 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as RegisterServerAutoRecoveryRequest);
+            return this.Equals(input as ExecuteTextCompletionRequest);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(RegisterServerAutoRecoveryRequest input)
+        public bool Equals(ExecuteTextCompletionRequest input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.ServerId == input.ServerId ||
-                    (this.ServerId != null &&
-                    this.ServerId.Equals(input.ServerId))
+                    this.PoolId == input.PoolId ||
+                    (this.PoolId != null &&
+                    this.PoolId.Equals(input.PoolId))
+                ) && 
+                (
+                    this.DeploymentId == input.DeploymentId ||
+                    (this.DeploymentId != null &&
+                    this.DeploymentId.Equals(input.DeploymentId))
                 ) && 
                 (
                     this.Body == input.Body ||
@@ -82,8 +95,10 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.ServerId != null)
-                    hashCode = hashCode * 59 + this.ServerId.GetHashCode();
+                if (this.PoolId != null)
+                    hashCode = hashCode * 59 + this.PoolId.GetHashCode();
+                if (this.DeploymentId != null)
+                    hashCode = hashCode * 59 + this.DeploymentId.GetHashCode();
                 if (this.Body != null)
                     hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;

@@ -28,9 +28,14 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             public static readonly TraceTypeEnum PUB = new TraceTypeEnum("Pub");
 
             /// <summary>
-            /// Enum SUB for value: Sub
+            /// Enum SUBBEFORE for value: SubBefore
             /// </summary>
-            public static readonly TraceTypeEnum SUB = new TraceTypeEnum("Sub");
+            public static readonly TraceTypeEnum SUBBEFORE = new TraceTypeEnum("SubBefore");
+
+            /// <summary>
+            /// Enum SUBAFTER for value: SubAfter
+            /// </summary>
+            public static readonly TraceTypeEnum SUBAFTER = new TraceTypeEnum("SubAfter");
 
             /// <summary>
             /// Enum ENDTRANSACTION for value: EndTransaction
@@ -41,7 +46,8 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             new Dictionary<string, TraceTypeEnum>()
             {
                 { "Pub", PUB },
-                { "Sub", SUB },
+                { "SubBefore", SUBBEFORE },
+                { "SubAfter", SUBAFTER },
                 { "EndTransaction", ENDTRANSACTION },
             };
 
@@ -421,7 +427,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public string RequestId { get; set; }
 
         /// <summary>
-        /// 消费状态。
+        /// 消费状态。0-消费成功, 1-消费超时, 2-消费发生异常, 3-消费返回NULL, 5-消费失败。
         /// </summary>
         [JsonProperty("consume_status", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? ConsumeStatus { get; set; }

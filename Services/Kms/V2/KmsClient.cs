@@ -674,6 +674,30 @@ namespace HuaweiCloud.SDK.Kms.V2
         }
         
         /// <summary>
+        /// 生成消息验证码
+        ///
+        /// 功能介绍：生成消息验证码
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public GenerateMacResponse GenerateMac(GenerateMacRequest generateMacRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/generate-mac", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", generateMacRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<GenerateMacResponse>(response);
+        }
+
+        public SyncInvoker<GenerateMacResponse> GenerateMacInvoker(GenerateMacRequest generateMacRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/generate-mac", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", generateMacRequest);
+            return new SyncInvoker<GenerateMacResponse>(this, "POST", request, JsonUtils.DeSerialize<GenerateMacResponse>);
+        }
+        
+        /// <summary>
         /// 导入密钥材料
         ///
         /// - 功能介绍：导入密钥材料。
@@ -1139,6 +1163,30 @@ namespace HuaweiCloud.SDK.Kms.V2
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/verify", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", validateSignatureRequest);
             return new SyncInvoker<ValidateSignatureResponse>(this, "POST", request, JsonUtils.DeSerialize<ValidateSignatureResponse>);
+        }
+        
+        /// <summary>
+        /// 校验消息验证码
+        ///
+        /// 功能介绍：校验消息验证码
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public VerifyMacResponse VerifyMac(VerifyMacRequest verifyMacRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/verify-mac", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", verifyMacRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<VerifyMacResponse>(response);
+        }
+
+        public SyncInvoker<VerifyMacResponse> VerifyMacInvoker(VerifyMacRequest verifyMacRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/verify-mac", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", verifyMacRequest);
+            return new SyncInvoker<VerifyMacResponse>(this, "POST", request, JsonUtils.DeSerialize<VerifyMacResponse>);
         }
         
         /// <summary>

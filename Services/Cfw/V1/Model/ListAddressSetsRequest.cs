@@ -193,6 +193,13 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         [JsonProperty("query_address_set_type", NullValueHandling = NullValueHandling.Ignore)]
         public int? QueryAddressSetType { get; set; }
 
+        /// <summary>
+        /// 地址组类型，0表示自定义地址组，1表示WAF回源IP地址组，2表示DDoS回源IP地址组，3表示NAT64转换地址组
+        /// </summary>
+        [SDKProperty("address_set_type", IsQuery = true)]
+        [JsonProperty("address_set_type", NullValueHandling = NullValueHandling.Ignore)]
+        public int? AddressSetType { get; set; }
+
 
 
         /// <summary>
@@ -211,6 +218,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  fwInstanceId: ").Append(FwInstanceId).Append("\n");
             sb.Append("  queryAddressSetType: ").Append(QueryAddressSetType).Append("\n");
+            sb.Append("  addressSetType: ").Append(AddressSetType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -276,6 +284,11 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.QueryAddressSetType == input.QueryAddressSetType ||
                     (this.QueryAddressSetType != null &&
                     this.QueryAddressSetType.Equals(input.QueryAddressSetType))
+                ) && 
+                (
+                    this.AddressSetType == input.AddressSetType ||
+                    (this.AddressSetType != null &&
+                    this.AddressSetType.Equals(input.AddressSetType))
                 );
         }
 
@@ -305,6 +318,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.FwInstanceId.GetHashCode();
                 if (this.QueryAddressSetType != null)
                     hashCode = hashCode * 59 + this.QueryAddressSetType.GetHashCode();
+                if (this.AddressSetType != null)
+                    hashCode = hashCode * 59 + this.AddressSetType.GetHashCode();
                 return hashCode;
             }
         }

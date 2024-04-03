@@ -310,6 +310,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         [JsonProperty("support_url_filtering", NullValueHandling = NullValueHandling.Ignore)]
         public bool? SupportUrlFiltering { get; set; }
 
+        /// <summary>
+        /// 标签列表
+        /// </summary>
+        [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
+        public string Tags { get; set; }
+
 
 
         /// <summary>
@@ -338,6 +344,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  resourceId: ").Append(ResourceId).Append("\n");
             sb.Append("  supportUrlFiltering: ").Append(SupportUrlFiltering).Append("\n");
+            sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -456,6 +463,11 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.SupportUrlFiltering == input.SupportUrlFiltering ||
                     (this.SupportUrlFiltering != null &&
                     this.SupportUrlFiltering.Equals(input.SupportUrlFiltering))
+                ) && 
+                (
+                    this.Tags == input.Tags ||
+                    (this.Tags != null &&
+                    this.Tags.Equals(input.Tags))
                 );
         }
 
@@ -505,6 +517,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
                 if (this.SupportUrlFiltering != null)
                     hashCode = hashCode * 59 + this.SupportUrlFiltering.GetHashCode();
+                if (this.Tags != null)
+                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 return hashCode;
             }
         }

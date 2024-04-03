@@ -46,12 +46,6 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         [JsonProperty("retry_max_time", NullValueHandling = NullValueHandling.Ignore)]
         public int? RetryMaxTime { get; set; }
 
-        /// <summary>
-        /// 是否重头消费。
-        /// </summary>
-        [JsonProperty("from_beginning", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? FromBeginning { get; set; }
-
 
 
         /// <summary>
@@ -66,7 +60,6 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             sb.Append("  brokers: ").Append(Brokers).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  retryMaxTime: ").Append(RetryMaxTime).Append("\n");
-            sb.Append("  fromBeginning: ").Append(FromBeginning).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -113,11 +106,6 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                     this.RetryMaxTime == input.RetryMaxTime ||
                     (this.RetryMaxTime != null &&
                     this.RetryMaxTime.Equals(input.RetryMaxTime))
-                ) && 
-                (
-                    this.FromBeginning == input.FromBeginning ||
-                    (this.FromBeginning != null &&
-                    this.FromBeginning.Equals(input.FromBeginning))
                 );
         }
 
@@ -139,8 +127,6 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.RetryMaxTime != null)
                     hashCode = hashCode * 59 + this.RetryMaxTime.GetHashCode();
-                if (this.FromBeginning != null)
-                    hashCode = hashCode * 59 + this.FromBeginning.GetHashCode();
                 return hashCode;
             }
         }

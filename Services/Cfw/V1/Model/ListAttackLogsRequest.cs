@@ -373,9 +373,9 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         }
 
         /// <summary>
-        /// log_type
+        /// 日志类型
         /// </summary>
-        /// <value>log_type</value>
+        /// <value>日志类型</value>
         [JsonConverter(typeof(EnumClassConverter<LogTypeEnum>))]
         public class LogTypeEnum
         {
@@ -639,11 +639,32 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string DstHost { get; set; }
 
         /// <summary>
-        /// log_type
+        /// 日志类型
         /// </summary>
         [SDKProperty("log_type", IsQuery = true)]
         [JsonProperty("log_type", NullValueHandling = NullValueHandling.Ignore)]
         public LogTypeEnum LogType { get; set; }
+        /// <summary>
+        /// 入侵事件id
+        /// </summary>
+        [SDKProperty("attack_rule_id", IsQuery = true)]
+        [JsonProperty("attack_rule_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string AttackRuleId { get; set; }
+
+        /// <summary>
+        /// 源region名称
+        /// </summary>
+        [SDKProperty("src_region_name", IsQuery = true)]
+        [JsonProperty("src_region_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string SrcRegionName { get; set; }
+
+        /// <summary>
+        /// 目的region名称
+        /// </summary>
+        [SDKProperty("dst_region_name", IsQuery = true)]
+        [JsonProperty("dst_region_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string DstRegionName { get; set; }
+
 
 
         /// <summary>
@@ -675,6 +696,9 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  dstHost: ").Append(DstHost).Append("\n");
             sb.Append("  logType: ").Append(LogType).Append("\n");
+            sb.Append("  attackRuleId: ").Append(AttackRuleId).Append("\n");
+            sb.Append("  srcRegionName: ").Append(SrcRegionName).Append("\n");
+            sb.Append("  dstRegionName: ").Append(DstRegionName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -805,6 +829,21 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.LogType == input.LogType ||
                     (this.LogType != null &&
                     this.LogType.Equals(input.LogType))
+                ) && 
+                (
+                    this.AttackRuleId == input.AttackRuleId ||
+                    (this.AttackRuleId != null &&
+                    this.AttackRuleId.Equals(input.AttackRuleId))
+                ) && 
+                (
+                    this.SrcRegionName == input.SrcRegionName ||
+                    (this.SrcRegionName != null &&
+                    this.SrcRegionName.Equals(input.SrcRegionName))
+                ) && 
+                (
+                    this.DstRegionName == input.DstRegionName ||
+                    (this.DstRegionName != null &&
+                    this.DstRegionName.Equals(input.DstRegionName))
                 );
         }
 
@@ -860,6 +899,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.DstHost.GetHashCode();
                 if (this.LogType != null)
                     hashCode = hashCode * 59 + this.LogType.GetHashCode();
+                if (this.AttackRuleId != null)
+                    hashCode = hashCode * 59 + this.AttackRuleId.GetHashCode();
+                if (this.SrcRegionName != null)
+                    hashCode = hashCode * 59 + this.SrcRegionName.GetHashCode();
+                if (this.DstRegionName != null)
+                    hashCode = hashCode * 59 + this.DstRegionName.GetHashCode();
                 return hashCode;
             }
         }

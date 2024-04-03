@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     {
 
         /// <summary>
-        /// 源类型0手工输入,1关联IP地址组,2域名
+        /// 源类型0手工输入,1关联IP地址组,2域名，3地理位置，4域名组，5多对象，6域名组-DNS解析，7域名组-URL过滤。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public int? Type { get; set; }
@@ -94,6 +94,18 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         [JsonProperty("address_group_names", NullValueHandling = NullValueHandling.Ignore)]
         public List<AddressGroupVO> AddressGroupNames { get; set; }
 
+        /// <summary>
+        /// 地址组类型，0表示自定义地址组，1表示WAF回源IP地址组，2表示DDoS回源IP地址组，3表示NAT64转换地址组
+        /// </summary>
+        [JsonProperty("address_set_type", NullValueHandling = NullValueHandling.Ignore)]
+        public int? AddressSetType { get; set; }
+
+        /// <summary>
+        /// 预定义地址组列表
+        /// </summary>
+        [JsonProperty("predefined_group", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> PredefinedGroup { get; set; }
+
 
 
         /// <summary>
@@ -116,6 +128,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  ipAddress: ").Append(IpAddress).Append("\n");
             sb.Append("  addressGroup: ").Append(AddressGroup).Append("\n");
             sb.Append("  addressGroupNames: ").Append(AddressGroupNames).Append("\n");
+            sb.Append("  addressSetType: ").Append(AddressSetType).Append("\n");
+            sb.Append("  predefinedGroup: ").Append(PredefinedGroup).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -205,6 +219,17 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.AddressGroupNames != null &&
                     input.AddressGroupNames != null &&
                     this.AddressGroupNames.SequenceEqual(input.AddressGroupNames)
+                ) && 
+                (
+                    this.AddressSetType == input.AddressSetType ||
+                    (this.AddressSetType != null &&
+                    this.AddressSetType.Equals(input.AddressSetType))
+                ) && 
+                (
+                    this.PredefinedGroup == input.PredefinedGroup ||
+                    this.PredefinedGroup != null &&
+                    input.PredefinedGroup != null &&
+                    this.PredefinedGroup.SequenceEqual(input.PredefinedGroup)
                 );
         }
 
@@ -242,6 +267,10 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.AddressGroup.GetHashCode();
                 if (this.AddressGroupNames != null)
                     hashCode = hashCode * 59 + this.AddressGroupNames.GetHashCode();
+                if (this.AddressSetType != null)
+                    hashCode = hashCode * 59 + this.AddressSetType.GetHashCode();
+                if (this.PredefinedGroup != null)
+                    hashCode = hashCode * 59 + this.PredefinedGroup.GetHashCode();
                 return hashCode;
             }
         }

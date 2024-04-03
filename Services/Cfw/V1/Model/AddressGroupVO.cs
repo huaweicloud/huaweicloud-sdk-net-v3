@@ -28,6 +28,18 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
+        /// <summary>
+        /// 协议列表，协议类型:TCP为6, UDP为17,ICMP为1,ICMPV6为58,ANY为-1,手动类型不为空，自动类型为空
+        /// </summary>
+        [JsonProperty("protocols", NullValueHandling = NullValueHandling.Ignore)]
+        public List<int?> Protocols { get; set; }
+
+        /// <summary>
+        /// 服务组类型，0表示自定义服务组，1表示常用WEB服务，2表示常用远程登录和PING，3表示常用数据库
+        /// </summary>
+        [JsonProperty("service_set_type", NullValueHandling = NullValueHandling.Ignore)]
+        public int? ServiceSetType { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +51,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("class AddressGroupVO {\n");
             sb.Append("  setId: ").Append(SetId).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
+            sb.Append("  protocols: ").Append(Protocols).Append("\n");
+            sb.Append("  serviceSetType: ").Append(ServiceSetType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -69,6 +83,17 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
+                ) && 
+                (
+                    this.Protocols == input.Protocols ||
+                    this.Protocols != null &&
+                    input.Protocols != null &&
+                    this.Protocols.SequenceEqual(input.Protocols)
+                ) && 
+                (
+                    this.ServiceSetType == input.ServiceSetType ||
+                    (this.ServiceSetType != null &&
+                    this.ServiceSetType.Equals(input.ServiceSetType))
                 );
         }
 
@@ -84,6 +109,10 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.SetId.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Protocols != null)
+                    hashCode = hashCode * 59 + this.Protocols.GetHashCode();
+                if (this.ServiceSetType != null)
+                    hashCode = hashCode * 59 + this.ServiceSetType.GetHashCode();
                 return hashCode;
             }
         }

@@ -40,6 +40,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         [JsonProperty("mode", NullValueHandling = NullValueHandling.Ignore)]
         public string Mode { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("cpu_options", NullValueHandling = NullValueHandling.Ignore)]
+        public CpuOptions CpuOptions { get; set; }
+
 
 
         /// <summary>
@@ -53,6 +59,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             sb.Append("  dedicatedHostId: ").Append(DedicatedHostId).Append("\n");
             sb.Append("  extendparam: ").Append(Extendparam).Append("\n");
             sb.Append("  mode: ").Append(Mode).Append("\n");
+            sb.Append("  cpuOptions: ").Append(CpuOptions).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -93,6 +100,11 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     this.Mode == input.Mode ||
                     (this.Mode != null &&
                     this.Mode.Equals(input.Mode))
+                ) && 
+                (
+                    this.CpuOptions == input.CpuOptions ||
+                    (this.CpuOptions != null &&
+                    this.CpuOptions.Equals(input.CpuOptions))
                 );
         }
 
@@ -112,6 +124,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     hashCode = hashCode * 59 + this.Extendparam.GetHashCode();
                 if (this.Mode != null)
                     hashCode = hashCode * 59 + this.Mode.GetHashCode();
+                if (this.CpuOptions != null)
+                    hashCode = hashCode * 59 + this.CpuOptions.GetHashCode();
                 return hashCode;
             }
         }

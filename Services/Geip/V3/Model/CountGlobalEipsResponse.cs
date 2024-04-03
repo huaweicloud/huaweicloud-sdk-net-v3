@@ -23,16 +23,10 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         public string RequestId { get; set; }
 
         /// <summary>
-        /// 全域弹性公网IP列表
-        /// </summary>
-        [JsonProperty("global_eips", NullValueHandling = NullValueHandling.Ignore)]
-        public List<CountGlobalEips> GlobalEips { get; set; }
-
-        /// <summary>
         /// 
         /// </summary>
-        [JsonProperty("page_info", NullValueHandling = NullValueHandling.Ignore)]
-        public ListGlobalEipsResponseBodyPageInfo PageInfo { get; set; }
+        [JsonProperty("global_eip", NullValueHandling = NullValueHandling.Ignore)]
+        public CountGlobalEips GlobalEip { get; set; }
 
         /// <summary>
         /// 
@@ -51,8 +45,7 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
             var sb = new StringBuilder();
             sb.Append("class CountGlobalEipsResponse {\n");
             sb.Append("  requestId: ").Append(RequestId).Append("\n");
-            sb.Append("  globalEips: ").Append(GlobalEips).Append("\n");
-            sb.Append("  pageInfo: ").Append(PageInfo).Append("\n");
+            sb.Append("  globalEip: ").Append(GlobalEip).Append("\n");
             sb.Append("  xRequestId: ").Append(XRequestId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -81,15 +74,9 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
                     this.RequestId.Equals(input.RequestId))
                 ) && 
                 (
-                    this.GlobalEips == input.GlobalEips ||
-                    this.GlobalEips != null &&
-                    input.GlobalEips != null &&
-                    this.GlobalEips.SequenceEqual(input.GlobalEips)
-                ) && 
-                (
-                    this.PageInfo == input.PageInfo ||
-                    (this.PageInfo != null &&
-                    this.PageInfo.Equals(input.PageInfo))
+                    this.GlobalEip == input.GlobalEip ||
+                    (this.GlobalEip != null &&
+                    this.GlobalEip.Equals(input.GlobalEip))
                 ) && 
                 (
                     this.XRequestId == input.XRequestId ||
@@ -108,10 +95,8 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
                 int hashCode = 41;
                 if (this.RequestId != null)
                     hashCode = hashCode * 59 + this.RequestId.GetHashCode();
-                if (this.GlobalEips != null)
-                    hashCode = hashCode * 59 + this.GlobalEips.GetHashCode();
-                if (this.PageInfo != null)
-                    hashCode = hashCode * 59 + this.PageInfo.GetHashCode();
+                if (this.GlobalEip != null)
+                    hashCode = hashCode * 59 + this.GlobalEip.GetHashCode();
                 if (this.XRequestId != null)
                     hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
                 return hashCode;

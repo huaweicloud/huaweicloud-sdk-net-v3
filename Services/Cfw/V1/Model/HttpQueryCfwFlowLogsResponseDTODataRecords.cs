@@ -208,6 +208,30 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         [JsonProperty("dst_host", NullValueHandling = NullValueHandling.Ignore)]
         public string DstHost { get; set; }
 
+        /// <summary>
+        /// 目的地域id
+        /// </summary>
+        [JsonProperty("dst_region_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string DstRegionId { get; set; }
+
+        /// <summary>
+        /// 目的地域名称
+        /// </summary>
+        [JsonProperty("dst_region_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string DstRegionName { get; set; }
+
+        /// <summary>
+        /// 源地域id
+        /// </summary>
+        [JsonProperty("src_region_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string SrcRegionId { get; set; }
+
+        /// <summary>
+        /// 源地域名称
+        /// </summary>
+        [JsonProperty("src_region_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string SrcRegionName { get; set; }
+
 
 
         /// <summary>
@@ -230,6 +254,10 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  dstPort: ").Append(DstPort).Append("\n");
             sb.Append("  protocol: ").Append(Protocol).Append("\n");
             sb.Append("  dstHost: ").Append(DstHost).Append("\n");
+            sb.Append("  dstRegionId: ").Append(DstRegionId).Append("\n");
+            sb.Append("  dstRegionName: ").Append(DstRegionName).Append("\n");
+            sb.Append("  srcRegionId: ").Append(SrcRegionId).Append("\n");
+            sb.Append("  srcRegionName: ").Append(SrcRegionName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -315,6 +343,26 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.DstHost == input.DstHost ||
                     (this.DstHost != null &&
                     this.DstHost.Equals(input.DstHost))
+                ) && 
+                (
+                    this.DstRegionId == input.DstRegionId ||
+                    (this.DstRegionId != null &&
+                    this.DstRegionId.Equals(input.DstRegionId))
+                ) && 
+                (
+                    this.DstRegionName == input.DstRegionName ||
+                    (this.DstRegionName != null &&
+                    this.DstRegionName.Equals(input.DstRegionName))
+                ) && 
+                (
+                    this.SrcRegionId == input.SrcRegionId ||
+                    (this.SrcRegionId != null &&
+                    this.SrcRegionId.Equals(input.SrcRegionId))
+                ) && 
+                (
+                    this.SrcRegionName == input.SrcRegionName ||
+                    (this.SrcRegionName != null &&
+                    this.SrcRegionName.Equals(input.SrcRegionName))
                 );
         }
 
@@ -352,6 +400,14 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.Protocol.GetHashCode();
                 if (this.DstHost != null)
                     hashCode = hashCode * 59 + this.DstHost.GetHashCode();
+                if (this.DstRegionId != null)
+                    hashCode = hashCode * 59 + this.DstRegionId.GetHashCode();
+                if (this.DstRegionName != null)
+                    hashCode = hashCode * 59 + this.DstRegionName.GetHashCode();
+                if (this.SrcRegionId != null)
+                    hashCode = hashCode * 59 + this.SrcRegionId.GetHashCode();
+                if (this.SrcRegionName != null)
+                    hashCode = hashCode * 59 + this.SrcRegionName.GetHashCode();
                 return hashCode;
             }
         }

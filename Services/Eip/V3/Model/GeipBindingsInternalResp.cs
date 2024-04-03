@@ -49,26 +49,26 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         /// <summary>
         /// 绑定实例的类型
         /// </summary>
-        [JsonProperty("binding_instance_type", NullValueHandling = NullValueHandling.Ignore)]
-        public string BindingInstanceType { get; set; }
+        [JsonProperty("instance_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string InstanceType { get; set; }
 
         /// <summary>
         /// 绑定实例的id
         /// </summary>
-        [JsonProperty("binding_instance_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string BindingInstanceId { get; set; }
+        [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string InstanceId { get; set; }
 
         /// <summary>
-        /// 骨干带宽对象
+        /// 
         /// </summary>
         [JsonProperty("gcbandwidth", NullValueHandling = NullValueHandling.Ignore)]
-        public Object Gcbandwidth { get; set; }
+        public BackboneBandwidthResp Gcbandwidth { get; set; }
 
         /// <summary>
-        /// 实例port的信息
+        /// 
         /// </summary>
         [JsonProperty("vnic", NullValueHandling = NullValueHandling.Ignore)]
-        public Object Vnic { get; set; }
+        public InstanceVnicResp Vnic { get; set; }
 
         /// <summary>
         /// GEIP实例的vn信息
@@ -90,8 +90,8 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
             sb.Append("  publicBorderGroup: ").Append(PublicBorderGroup).Append("\n");
             sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  updatedAt: ").Append(UpdatedAt).Append("\n");
-            sb.Append("  bindingInstanceType: ").Append(BindingInstanceType).Append("\n");
-            sb.Append("  bindingInstanceId: ").Append(BindingInstanceId).Append("\n");
+            sb.Append("  instanceType: ").Append(InstanceType).Append("\n");
+            sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
             sb.Append("  gcbandwidth: ").Append(Gcbandwidth).Append("\n");
             sb.Append("  vnic: ").Append(Vnic).Append("\n");
             sb.Append("  vnList: ").Append(VnList).Append("\n");
@@ -142,14 +142,14 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
                     this.UpdatedAt.Equals(input.UpdatedAt))
                 ) && 
                 (
-                    this.BindingInstanceType == input.BindingInstanceType ||
-                    (this.BindingInstanceType != null &&
-                    this.BindingInstanceType.Equals(input.BindingInstanceType))
+                    this.InstanceType == input.InstanceType ||
+                    (this.InstanceType != null &&
+                    this.InstanceType.Equals(input.InstanceType))
                 ) && 
                 (
-                    this.BindingInstanceId == input.BindingInstanceId ||
-                    (this.BindingInstanceId != null &&
-                    this.BindingInstanceId.Equals(input.BindingInstanceId))
+                    this.InstanceId == input.InstanceId ||
+                    (this.InstanceId != null &&
+                    this.InstanceId.Equals(input.InstanceId))
                 ) && 
                 (
                     this.Gcbandwidth == input.Gcbandwidth ||
@@ -187,10 +187,10 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
                     hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
                 if (this.UpdatedAt != null)
                     hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
-                if (this.BindingInstanceType != null)
-                    hashCode = hashCode * 59 + this.BindingInstanceType.GetHashCode();
-                if (this.BindingInstanceId != null)
-                    hashCode = hashCode * 59 + this.BindingInstanceId.GetHashCode();
+                if (this.InstanceType != null)
+                    hashCode = hashCode * 59 + this.InstanceType.GetHashCode();
+                if (this.InstanceId != null)
+                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
                 if (this.Gcbandwidth != null)
                     hashCode = hashCode * 59 + this.Gcbandwidth.GetHashCode();
                 if (this.Vnic != null)

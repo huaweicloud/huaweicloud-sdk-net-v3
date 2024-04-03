@@ -165,6 +165,13 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         [JsonProperty("fw_instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string FwInstanceId { get; set; }
 
+        /// <summary>
+        /// 防火墙名称
+        /// </summary>
+        [SDKProperty("name", IsQuery = true)]
+        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
 
 
         /// <summary>
@@ -179,6 +186,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  serviceType: ").Append(ServiceType).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  fwInstanceId: ").Append(FwInstanceId).Append("\n");
+            sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -224,6 +232,11 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.FwInstanceId == input.FwInstanceId ||
                     (this.FwInstanceId != null &&
                     this.FwInstanceId.Equals(input.FwInstanceId))
+                ) && 
+                (
+                    this.Name == input.Name ||
+                    (this.Name != null &&
+                    this.Name.Equals(input.Name))
                 );
         }
 
@@ -245,6 +258,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.FwInstanceId != null)
                     hashCode = hashCode * 59 + this.FwInstanceId.GetHashCode();
+                if (this.Name != null)
+                    hashCode = hashCode * 59 + this.Name.GetHashCode();
                 return hashCode;
             }
         }

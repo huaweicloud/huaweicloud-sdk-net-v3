@@ -58,6 +58,13 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         [JsonProperty("fw_instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string FwInstanceId { get; set; }
 
+        /// <summary>
+        /// 查询服务组类型，0表示自定义服务组，1表示预定义服务组
+        /// </summary>
+        [SDKProperty("query_service_set_type", IsQuery = true)]
+        [JsonProperty("query_service_set_type", NullValueHandling = NullValueHandling.Ignore)]
+        public int? QueryServiceSetType { get; set; }
+
 
 
         /// <summary>
@@ -73,6 +80,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  fwInstanceId: ").Append(FwInstanceId).Append("\n");
+            sb.Append("  queryServiceSetType: ").Append(QueryServiceSetType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -123,6 +131,11 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.FwInstanceId == input.FwInstanceId ||
                     (this.FwInstanceId != null &&
                     this.FwInstanceId.Equals(input.FwInstanceId))
+                ) && 
+                (
+                    this.QueryServiceSetType == input.QueryServiceSetType ||
+                    (this.QueryServiceSetType != null &&
+                    this.QueryServiceSetType.Equals(input.QueryServiceSetType))
                 );
         }
 
@@ -146,6 +159,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.FwInstanceId != null)
                     hashCode = hashCode * 59 + this.FwInstanceId.GetHashCode();
+                if (this.QueryServiceSetType != null)
+                    hashCode = hashCode * 59 + this.QueryServiceSetType.GetHashCode();
                 return hashCode;
             }
         }

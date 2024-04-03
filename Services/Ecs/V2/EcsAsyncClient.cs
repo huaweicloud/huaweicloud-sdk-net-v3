@@ -1354,32 +1354,6 @@ namespace HuaweiCloud.SDK.Ecs.V2
         }
         
         /// <summary>
-        /// 管理云服务器自动恢复动作
-        ///
-        /// 配置、删除云服务器自动恢复动作。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<RegisterServerAutoRecoveryResponse> RegisterServerAutoRecoveryAsync(RegisterServerAutoRecoveryRequest registerServerAutoRecoveryRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("server_id", registerServerAutoRecoveryRequest.ServerId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/autorecovery", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", registerServerAutoRecoveryRequest);
-            var response = await DoHttpRequestAsync("PUT", request);
-            return JsonUtils.DeSerializeNull<RegisterServerAutoRecoveryResponse>(response);
-        }
-
-        public AsyncInvoker<RegisterServerAutoRecoveryResponse> RegisterServerAutoRecoveryAsyncInvoker(RegisterServerAutoRecoveryRequest registerServerAutoRecoveryRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("server_id", registerServerAutoRecoveryRequest.ServerId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/autorecovery", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", registerServerAutoRecoveryRequest);
-            return new AsyncInvoker<RegisterServerAutoRecoveryResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<RegisterServerAutoRecoveryResponse>);
-        }
-        
-        /// <summary>
         /// 注册云服务器监控
         ///
         /// 将云服务器添加到监控表中。
@@ -1605,32 +1579,6 @@ namespace HuaweiCloud.SDK.Ecs.V2
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showServerRequest);
             return new AsyncInvoker<ShowServerResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowServerResponse>);
-        }
-        
-        /// <summary>
-        /// 查询云服务器是否配置了自动恢复动作
-        ///
-        /// 查询云服务器是否配置了自动恢复动作。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<ShowServerAutoRecoveryResponse> ShowServerAutoRecoveryAsync(ShowServerAutoRecoveryRequest showServerAutoRecoveryRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("server_id", showServerAutoRecoveryRequest.ServerId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/autorecovery", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showServerAutoRecoveryRequest);
-            var response = await DoHttpRequestAsync("GET", request);
-            return JsonUtils.DeSerialize<ShowServerAutoRecoveryResponse>(response);
-        }
-
-        public AsyncInvoker<ShowServerAutoRecoveryResponse> ShowServerAutoRecoveryAsyncInvoker(ShowServerAutoRecoveryRequest showServerAutoRecoveryRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("server_id", showServerAutoRecoveryRequest.ServerId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/autorecovery", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showServerAutoRecoveryRequest);
-            return new AsyncInvoker<ShowServerAutoRecoveryResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowServerAutoRecoveryResponse>);
         }
         
         /// <summary>

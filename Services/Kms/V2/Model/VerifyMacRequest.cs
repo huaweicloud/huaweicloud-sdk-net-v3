@@ -8,19 +8,20 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Ecs.V2.Model
+namespace HuaweiCloud.SDK.Kms.V2.Model
 {
     /// <summary>
-    /// Response Object
+    /// Request Object
     /// </summary>
-    public class ShowServerAutoRecoveryResponse : SdkResponse
+    public class VerifyMacRequest 
     {
 
         /// <summary>
-        /// 云服务器是否配置了自动恢复动作。  - true：表示配置了自动恢复。 - false：表示没有配置自动恢复。
+        /// 
         /// </summary>
-        [JsonProperty("support_auto_recovery", NullValueHandling = NullValueHandling.Ignore)]
-        public string SupportAutoRecovery { get; set; }
+        [SDKProperty("body", IsBody = true)]
+        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
+        public VerifyMacRequestBody Body { get; set; }
 
 
 
@@ -30,8 +31,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ShowServerAutoRecoveryResponse {\n");
-            sb.Append("  supportAutoRecovery: ").Append(SupportAutoRecovery).Append("\n");
+            sb.Append("class VerifyMacRequest {\n");
+            sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -41,22 +42,22 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ShowServerAutoRecoveryResponse);
+            return this.Equals(input as VerifyMacRequest);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ShowServerAutoRecoveryResponse input)
+        public bool Equals(VerifyMacRequest input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.SupportAutoRecovery == input.SupportAutoRecovery ||
-                    (this.SupportAutoRecovery != null &&
-                    this.SupportAutoRecovery.Equals(input.SupportAutoRecovery))
+                    this.Body == input.Body ||
+                    (this.Body != null &&
+                    this.Body.Equals(input.Body))
                 );
         }
 
@@ -68,8 +69,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.SupportAutoRecovery != null)
-                    hashCode = hashCode * 59 + this.SupportAutoRecovery.GetHashCode();
+                if (this.Body != null)
+                    hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;
             }
         }

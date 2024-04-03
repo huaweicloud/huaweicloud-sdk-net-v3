@@ -8,20 +8,25 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Ecs.V2.Model
+namespace HuaweiCloud.SDK.Cfw.V1.Model
 {
     /// <summary>
-    /// Request Object
+    /// 
     /// </summary>
-    public class ShowServerAutoRecoveryRequest 
+    public class UseRuleVO 
     {
 
         /// <summary>
-        /// 云服务器ID。
+        /// 规则id
         /// </summary>
-        [SDKProperty("server_id", IsPath = true)]
-        [JsonProperty("server_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string ServerId { get; set; }
+        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// 规则名称
+        /// </summary>
+        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
+        public string Name { get; set; }
 
 
 
@@ -31,8 +36,9 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ShowServerAutoRecoveryRequest {\n");
-            sb.Append("  serverId: ").Append(ServerId).Append("\n");
+            sb.Append("class UseRuleVO {\n");
+            sb.Append("  id: ").Append(Id).Append("\n");
+            sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -42,22 +48,27 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ShowServerAutoRecoveryRequest);
+            return this.Equals(input as UseRuleVO);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ShowServerAutoRecoveryRequest input)
+        public bool Equals(UseRuleVO input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.ServerId == input.ServerId ||
-                    (this.ServerId != null &&
-                    this.ServerId.Equals(input.ServerId))
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
+                ) && 
+                (
+                    this.Name == input.Name ||
+                    (this.Name != null &&
+                    this.Name.Equals(input.Name))
                 );
         }
 
@@ -69,8 +80,10 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.ServerId != null)
-                    hashCode = hashCode * 59 + this.ServerId.GetHashCode();
+                if (this.Id != null)
+                    hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null)
+                    hashCode = hashCode * 59 + this.Name.GetHashCode();
                 return hashCode;
             }
         }

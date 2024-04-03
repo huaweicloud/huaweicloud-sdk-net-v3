@@ -58,6 +58,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         [JsonProperty("message", NullValueHandling = NullValueHandling.Ignore)]
         public string Message { get; set; }
 
+        /// <summary>
+        /// 使用规则id列表
+        /// </summary>
+        [JsonProperty("rules", NullValueHandling = NullValueHandling.Ignore)]
+        public List<UseRuleVO> Rules { get; set; }
+
 
 
         /// <summary>
@@ -74,6 +80,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  domainSetType: ").Append(DomainSetType).Append("\n");
             sb.Append("  configStatus: ").Append(ConfigStatus).Append("\n");
             sb.Append("  message: ").Append(Message).Append("\n");
+            sb.Append("  rules: ").Append(Rules).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -129,6 +136,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.Message == input.Message ||
                     (this.Message != null &&
                     this.Message.Equals(input.Message))
+                ) && 
+                (
+                    this.Rules == input.Rules ||
+                    this.Rules != null &&
+                    input.Rules != null &&
+                    this.Rules.SequenceEqual(input.Rules)
                 );
         }
 
@@ -154,6 +167,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.ConfigStatus.GetHashCode();
                 if (this.Message != null)
                     hashCode = hashCode * 59 + this.Message.GetHashCode();
+                if (this.Rules != null)
+                    hashCode = hashCode * 59 + this.Rules.GetHashCode();
                 return hashCode;
             }
         }

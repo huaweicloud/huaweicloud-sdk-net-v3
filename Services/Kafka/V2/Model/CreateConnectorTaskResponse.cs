@@ -29,6 +29,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string Topics { get; set; }
 
         /// <summary>
+        /// SmartConnect任务配置的Topic正则表达式。
+        /// </summary>
+        [JsonProperty("topics_regex", NullValueHandling = NullValueHandling.Ignore)]
+        public string TopicsRegex { get; set; }
+
+        /// <summary>
         /// SmartConnect任务的源端类型。
         /// </summary>
         [JsonProperty("source_type", NullValueHandling = NullValueHandling.Ignore)]
@@ -81,6 +87,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             sb.Append("class CreateConnectorTaskResponse {\n");
             sb.Append("  taskName: ").Append(TaskName).Append("\n");
             sb.Append("  topics: ").Append(Topics).Append("\n");
+            sb.Append("  topicsRegex: ").Append(TopicsRegex).Append("\n");
             sb.Append("  sourceType: ").Append(SourceType).Append("\n");
             sb.Append("  sourceTask: ").Append(SourceTask).Append("\n");
             sb.Append("  sinkType: ").Append(SinkType).Append("\n");
@@ -118,6 +125,11 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     this.Topics == input.Topics ||
                     (this.Topics != null &&
                     this.Topics.Equals(input.Topics))
+                ) && 
+                (
+                    this.TopicsRegex == input.TopicsRegex ||
+                    (this.TopicsRegex != null &&
+                    this.TopicsRegex.Equals(input.TopicsRegex))
                 ) && 
                 (
                     this.SourceType == input.SourceType ||
@@ -168,6 +180,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     hashCode = hashCode * 59 + this.TaskName.GetHashCode();
                 if (this.Topics != null)
                     hashCode = hashCode * 59 + this.Topics.GetHashCode();
+                if (this.TopicsRegex != null)
+                    hashCode = hashCode * 59 + this.TopicsRegex.GetHashCode();
                 if (this.SourceType != null)
                     hashCode = hashCode * 59 + this.SourceType.GetHashCode();
                 if (this.SourceTask != null)

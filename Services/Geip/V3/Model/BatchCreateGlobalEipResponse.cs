@@ -23,10 +23,10 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         public string RequestId { get; set; }
 
         /// <summary>
-        /// 
+        /// 响应对象
         /// </summary>
-        [JsonProperty("global_eip", NullValueHandling = NullValueHandling.Ignore)]
-        public BatchCreateGlobalEip GlobalEip { get; set; }
+        [JsonProperty("global_eips", NullValueHandling = NullValueHandling.Ignore)]
+        public List<BatchCreateGlobalEipJob> GlobalEips { get; set; }
 
         /// <summary>
         /// 
@@ -45,7 +45,7 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
             var sb = new StringBuilder();
             sb.Append("class BatchCreateGlobalEipResponse {\n");
             sb.Append("  requestId: ").Append(RequestId).Append("\n");
-            sb.Append("  globalEip: ").Append(GlobalEip).Append("\n");
+            sb.Append("  globalEips: ").Append(GlobalEips).Append("\n");
             sb.Append("  xRequestId: ").Append(XRequestId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -74,9 +74,10 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
                     this.RequestId.Equals(input.RequestId))
                 ) && 
                 (
-                    this.GlobalEip == input.GlobalEip ||
-                    (this.GlobalEip != null &&
-                    this.GlobalEip.Equals(input.GlobalEip))
+                    this.GlobalEips == input.GlobalEips ||
+                    this.GlobalEips != null &&
+                    input.GlobalEips != null &&
+                    this.GlobalEips.SequenceEqual(input.GlobalEips)
                 ) && 
                 (
                     this.XRequestId == input.XRequestId ||
@@ -95,8 +96,8 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
                 int hashCode = 41;
                 if (this.RequestId != null)
                     hashCode = hashCode * 59 + this.RequestId.GetHashCode();
-                if (this.GlobalEip != null)
-                    hashCode = hashCode * 59 + this.GlobalEip.GetHashCode();
+                if (this.GlobalEips != null)
+                    hashCode = hashCode * 59 + this.GlobalEips.GetHashCode();
                 if (this.XRequestId != null)
                     hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
                 return hashCode;

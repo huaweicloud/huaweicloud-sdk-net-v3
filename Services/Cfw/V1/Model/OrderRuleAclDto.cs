@@ -28,6 +28,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         [JsonProperty("top", NullValueHandling = NullValueHandling.Ignore)]
         public int? Top { get; set; }
 
+        /// <summary>
+        /// 是否置底，0代表非置底，1代表置底
+        /// </summary>
+        [JsonProperty("bottom", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Bottom { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +45,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("class OrderRuleAclDto {\n");
             sb.Append("  destRuleId: ").Append(DestRuleId).Append("\n");
             sb.Append("  top: ").Append(Top).Append("\n");
+            sb.Append("  bottom: ").Append(Bottom).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -69,6 +76,11 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.Top == input.Top ||
                     (this.Top != null &&
                     this.Top.Equals(input.Top))
+                ) && 
+                (
+                    this.Bottom == input.Bottom ||
+                    (this.Bottom != null &&
+                    this.Bottom.Equals(input.Bottom))
                 );
         }
 
@@ -84,6 +96,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.DestRuleId.GetHashCode();
                 if (this.Top != null)
                     hashCode = hashCode * 59 + this.Top.GetHashCode();
+                if (this.Bottom != null)
+                    hashCode = hashCode * 59 + this.Bottom.GetHashCode();
                 return hashCode;
             }
         }
