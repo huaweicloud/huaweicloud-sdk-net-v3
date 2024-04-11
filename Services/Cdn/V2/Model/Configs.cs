@@ -208,6 +208,24 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         [JsonProperty("error_code_redirect_rules", NullValueHandling = NullValueHandling.Ignore)]
         public List<ErrorCodeRedirectRules> ErrorCodeRedirectRules { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("sni", NullValueHandling = NullValueHandling.Ignore)]
+        public Sni Sni { get; set; }
+
+        /// <summary>
+        /// 访问URL重写。
+        /// </summary>
+        [JsonProperty("request_url_rewrite", NullValueHandling = NullValueHandling.Ignore)]
+        public List<RequestUrlRewrite> RequestUrlRewrite { get; set; }
+
+        /// <summary>
+        /// 浏览器缓存过期时间。
+        /// </summary>
+        [JsonProperty("browser_cache_rules", NullValueHandling = NullValueHandling.Ignore)]
+        public List<BrowserCacheRules> BrowserCacheRules { get; set; }
+
 
 
         /// <summary>
@@ -249,6 +267,9 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             sb.Append("  hsts: ").Append(Hsts).Append("\n");
             sb.Append("  quic: ").Append(Quic).Append("\n");
             sb.Append("  errorCodeRedirectRules: ").Append(ErrorCodeRedirectRules).Append("\n");
+            sb.Append("  sni: ").Append(Sni).Append("\n");
+            sb.Append("  requestUrlRewrite: ").Append(RequestUrlRewrite).Append("\n");
+            sb.Append("  browserCacheRules: ").Append(BrowserCacheRules).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -438,6 +459,23 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     this.ErrorCodeRedirectRules != null &&
                     input.ErrorCodeRedirectRules != null &&
                     this.ErrorCodeRedirectRules.SequenceEqual(input.ErrorCodeRedirectRules)
+                ) && 
+                (
+                    this.Sni == input.Sni ||
+                    (this.Sni != null &&
+                    this.Sni.Equals(input.Sni))
+                ) && 
+                (
+                    this.RequestUrlRewrite == input.RequestUrlRewrite ||
+                    this.RequestUrlRewrite != null &&
+                    input.RequestUrlRewrite != null &&
+                    this.RequestUrlRewrite.SequenceEqual(input.RequestUrlRewrite)
+                ) && 
+                (
+                    this.BrowserCacheRules == input.BrowserCacheRules ||
+                    this.BrowserCacheRules != null &&
+                    input.BrowserCacheRules != null &&
+                    this.BrowserCacheRules.SequenceEqual(input.BrowserCacheRules)
                 );
         }
 
@@ -513,6 +551,12 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     hashCode = hashCode * 59 + this.Quic.GetHashCode();
                 if (this.ErrorCodeRedirectRules != null)
                     hashCode = hashCode * 59 + this.ErrorCodeRedirectRules.GetHashCode();
+                if (this.Sni != null)
+                    hashCode = hashCode * 59 + this.Sni.GetHashCode();
+                if (this.RequestUrlRewrite != null)
+                    hashCode = hashCode * 59 + this.RequestUrlRewrite.GetHashCode();
+                if (this.BrowserCacheRules != null)
+                    hashCode = hashCode * 59 + this.BrowserCacheRules.GetHashCode();
                 return hashCode;
             }
         }

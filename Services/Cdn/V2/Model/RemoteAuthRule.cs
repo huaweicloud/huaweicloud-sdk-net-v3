@@ -13,7 +13,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
     /// <summary>
     /// 远程鉴权配置。
     /// </summary>
-    public class RemoteAuthRuleVo 
+    public class RemoteAuthRule 
     {
 
         /// <summary>
@@ -114,7 +114,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class RemoteAuthRuleVo {\n");
+            sb.Append("class RemoteAuthRule {\n");
             sb.Append("  authServer: ").Append(AuthServer).Append("\n");
             sb.Append("  requestMethod: ").Append(RequestMethod).Append("\n");
             sb.Append("  fileTypeSetting: ").Append(FileTypeSetting).Append("\n");
@@ -139,13 +139,13 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as RemoteAuthRuleVo);
+            return this.Equals(input as RemoteAuthRule);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(RemoteAuthRuleVo input)
+        public bool Equals(RemoteAuthRule input)
         {
             if (input == null)
                 return false;

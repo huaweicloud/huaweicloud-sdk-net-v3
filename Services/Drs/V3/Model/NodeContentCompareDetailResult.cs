@@ -1,0 +1,217 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Linq;
+using System.Runtime.Serialization;
+
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using HuaweiCloud.SDK.Core;
+
+namespace HuaweiCloud.SDK.Drs.V3.Model
+{
+    /// <summary>
+    /// 内容对比详情
+    /// </summary>
+    public class NodeContentCompareDetailResult 
+    {
+
+        /// <summary>
+        /// 源库名称。
+        /// </summary>
+        [JsonProperty("source_db", NullValueHandling = NullValueHandling.Ignore)]
+        public string SourceDb { get; set; }
+
+        /// <summary>
+        /// 目标库名称。
+        /// </summary>
+        [JsonProperty("target_db", NullValueHandling = NullValueHandling.Ignore)]
+        public string TargetDb { get; set; }
+
+        /// <summary>
+        /// 源库的表名称。
+        /// </summary>
+        [JsonProperty("source_table_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string SourceTableName { get; set; }
+
+        /// <summary>
+        /// 目标库名称。
+        /// </summary>
+        [JsonProperty("target_table_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string TargetTableName { get; set; }
+
+        /// <summary>
+        /// 源库表行数。
+        /// </summary>
+        [JsonProperty("source_row_num", NullValueHandling = NullValueHandling.Ignore)]
+        public long? SourceRowNum { get; set; }
+
+        /// <summary>
+        /// 目标库表行数。
+        /// </summary>
+        [JsonProperty("target_row_num", NullValueHandling = NullValueHandling.Ignore)]
+        public long? TargetRowNum { get; set; }
+
+        /// <summary>
+        /// 源库的表和目标库的表的差异值。
+        /// </summary>
+        [JsonProperty("difference_row_num", NullValueHandling = NullValueHandling.Ignore)]
+        public long? DifferenceRowNum { get; set; }
+
+        /// <summary>
+        /// 行对比结果。 - true：一致 - false：不一致
+        /// </summary>
+        [JsonProperty("line_compare_result", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? LineCompareResult { get; set; }
+
+        /// <summary>
+        /// 内容对比结果。 - true：一致 - false：不一致
+        /// </summary>
+        [JsonProperty("content_compare_result", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? ContentCompareResult { get; set; }
+
+        /// <summary>
+        /// 附加信息。
+        /// </summary>
+        [JsonProperty("message", NullValueHandling = NullValueHandling.Ignore)]
+        public string Message { get; set; }
+
+        /// <summary>
+        /// 行过滤配置条件
+        /// </summary>
+        [JsonProperty("compare_line_config_filter", NullValueHandling = NullValueHandling.Ignore)]
+        public string CompareLineConfigFilter { get; set; }
+
+
+
+        /// <summary>
+        /// Get the string
+        /// </summary>
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class NodeContentCompareDetailResult {\n");
+            sb.Append("  sourceDb: ").Append(SourceDb).Append("\n");
+            sb.Append("  targetDb: ").Append(TargetDb).Append("\n");
+            sb.Append("  sourceTableName: ").Append(SourceTableName).Append("\n");
+            sb.Append("  targetTableName: ").Append(TargetTableName).Append("\n");
+            sb.Append("  sourceRowNum: ").Append(SourceRowNum).Append("\n");
+            sb.Append("  targetRowNum: ").Append(TargetRowNum).Append("\n");
+            sb.Append("  differenceRowNum: ").Append(DifferenceRowNum).Append("\n");
+            sb.Append("  lineCompareResult: ").Append(LineCompareResult).Append("\n");
+            sb.Append("  contentCompareResult: ").Append(ContentCompareResult).Append("\n");
+            sb.Append("  message: ").Append(Message).Append("\n");
+            sb.Append("  compareLineConfigFilter: ").Append(CompareLineConfigFilter).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public override bool Equals(object input)
+        {
+            return this.Equals(input as NodeContentCompareDetailResult);
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public bool Equals(NodeContentCompareDetailResult input)
+        {
+            if (input == null)
+                return false;
+
+            return 
+                (
+                    this.SourceDb == input.SourceDb ||
+                    (this.SourceDb != null &&
+                    this.SourceDb.Equals(input.SourceDb))
+                ) && 
+                (
+                    this.TargetDb == input.TargetDb ||
+                    (this.TargetDb != null &&
+                    this.TargetDb.Equals(input.TargetDb))
+                ) && 
+                (
+                    this.SourceTableName == input.SourceTableName ||
+                    (this.SourceTableName != null &&
+                    this.SourceTableName.Equals(input.SourceTableName))
+                ) && 
+                (
+                    this.TargetTableName == input.TargetTableName ||
+                    (this.TargetTableName != null &&
+                    this.TargetTableName.Equals(input.TargetTableName))
+                ) && 
+                (
+                    this.SourceRowNum == input.SourceRowNum ||
+                    (this.SourceRowNum != null &&
+                    this.SourceRowNum.Equals(input.SourceRowNum))
+                ) && 
+                (
+                    this.TargetRowNum == input.TargetRowNum ||
+                    (this.TargetRowNum != null &&
+                    this.TargetRowNum.Equals(input.TargetRowNum))
+                ) && 
+                (
+                    this.DifferenceRowNum == input.DifferenceRowNum ||
+                    (this.DifferenceRowNum != null &&
+                    this.DifferenceRowNum.Equals(input.DifferenceRowNum))
+                ) && 
+                (
+                    this.LineCompareResult == input.LineCompareResult ||
+                    (this.LineCompareResult != null &&
+                    this.LineCompareResult.Equals(input.LineCompareResult))
+                ) && 
+                (
+                    this.ContentCompareResult == input.ContentCompareResult ||
+                    (this.ContentCompareResult != null &&
+                    this.ContentCompareResult.Equals(input.ContentCompareResult))
+                ) && 
+                (
+                    this.Message == input.Message ||
+                    (this.Message != null &&
+                    this.Message.Equals(input.Message))
+                ) && 
+                (
+                    this.CompareLineConfigFilter == input.CompareLineConfigFilter ||
+                    (this.CompareLineConfigFilter != null &&
+                    this.CompareLineConfigFilter.Equals(input.CompareLineConfigFilter))
+                );
+        }
+
+        /// <summary>
+        /// Get hash code
+        /// </summary>
+        public override int GetHashCode()
+        {
+            unchecked // Overflow is fine, just wrap
+            {
+                int hashCode = 41;
+                if (this.SourceDb != null)
+                    hashCode = hashCode * 59 + this.SourceDb.GetHashCode();
+                if (this.TargetDb != null)
+                    hashCode = hashCode * 59 + this.TargetDb.GetHashCode();
+                if (this.SourceTableName != null)
+                    hashCode = hashCode * 59 + this.SourceTableName.GetHashCode();
+                if (this.TargetTableName != null)
+                    hashCode = hashCode * 59 + this.TargetTableName.GetHashCode();
+                if (this.SourceRowNum != null)
+                    hashCode = hashCode * 59 + this.SourceRowNum.GetHashCode();
+                if (this.TargetRowNum != null)
+                    hashCode = hashCode * 59 + this.TargetRowNum.GetHashCode();
+                if (this.DifferenceRowNum != null)
+                    hashCode = hashCode * 59 + this.DifferenceRowNum.GetHashCode();
+                if (this.LineCompareResult != null)
+                    hashCode = hashCode * 59 + this.LineCompareResult.GetHashCode();
+                if (this.ContentCompareResult != null)
+                    hashCode = hashCode * 59 + this.ContentCompareResult.GetHashCode();
+                if (this.Message != null)
+                    hashCode = hashCode * 59 + this.Message.GetHashCode();
+                if (this.CompareLineConfigFilter != null)
+                    hashCode = hashCode * 59 + this.CompareLineConfigFilter.GetHashCode();
+                return hashCode;
+            }
+        }
+    }
+}

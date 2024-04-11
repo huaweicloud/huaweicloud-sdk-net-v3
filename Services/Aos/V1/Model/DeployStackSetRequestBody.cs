@@ -58,6 +58,12 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         [JsonProperty("var_overrides", NullValueHandling = NullValueHandling.Ignore)]
         public VarOverridesPrimitiveTypeHolderVarOverrides VarOverrides { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("operation_preferences", NullValueHandling = NullValueHandling.Ignore)]
+        public OperationPreferences OperationPreferences { get; set; }
+
 
 
         /// <summary>
@@ -74,6 +80,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
             sb.Append("  varsUri: ").Append(VarsUri).Append("\n");
             sb.Append("  varsBody: ").Append(VarsBody).Append("\n");
             sb.Append("  varOverrides: ").Append(VarOverrides).Append("\n");
+            sb.Append("  operationPreferences: ").Append(OperationPreferences).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -129,6 +136,11 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
                     this.VarOverrides == input.VarOverrides ||
                     (this.VarOverrides != null &&
                     this.VarOverrides.Equals(input.VarOverrides))
+                ) && 
+                (
+                    this.OperationPreferences == input.OperationPreferences ||
+                    (this.OperationPreferences != null &&
+                    this.OperationPreferences.Equals(input.OperationPreferences))
                 );
         }
 
@@ -154,6 +166,8 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
                     hashCode = hashCode * 59 + this.VarsBody.GetHashCode();
                 if (this.VarOverrides != null)
                     hashCode = hashCode * 59 + this.VarOverrides.GetHashCode();
+                if (this.OperationPreferences != null)
+                    hashCode = hashCode * 59 + this.OperationPreferences.GetHashCode();
                 return hashCode;
             }
         }

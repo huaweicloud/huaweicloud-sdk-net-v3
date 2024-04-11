@@ -329,13 +329,13 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]
         public ActionEnum Action { get; set; }
         /// <summary>
-        /// 管理委托名称  资源编排服务使用该委托获取成员账号委托给管理账号的权限。该委托中必须含有iam:tokens:assume权限，用以后续获取被管理委托凭证。如果不包含，则会在新增或者部署实例时报错。  当用户定义SELF_MANAGED权限类型时，administration_agency_name和administration_agency_urn 必须有且只有一个存在。  推荐用户在使用v5委托时给予administration_agency_urn，administration_agency_name只支持接收v3委托名称，若给予了v5委托名称，则会在部署模板时失败。  当用户使用SERVICE_MANAGED权限类型时，指定该参数将报错400。  [[创建委托及授权方式](https://support.huaweicloud.com/usermanual-iam/iam_06_0002.html)](tag:hws) [[创建委托及授权方式](https://support.huaweicloud.com/intl/zh-cn/usermanual-iam/iam_06_0002.html)](tag:hws_hk) [[创建委托及授权方式](https://support.huaweicloud.com/eu/usermanual-iam/iam_06_0002.html)](tag:hws_eu)
+        /// 管理委托名称  资源编排服务使用该委托获取成员账号委托给管理账号的权限。该委托中必须含有iam:tokens:assume权限，用以后续获取被管理委托凭证。如果不包含，则会在新增或者部署实例时报错。  当用户定义SELF_MANAGED权限类型时，administration_agency_name和administration_agency_urn 必须有且只有一个存在。  推荐用户在使用信任委托时给予administration_agency_urn，administration_agency_name只支持接收委托名称，若给予了信任委托名称，则会在部署模板时失败。  当用户使用SERVICE_MANAGED权限类型时，指定该参数将报错400。  [[创建委托及授权方式](https://support.huaweicloud.com/usermanual-iam/iam_06_0002.html)](tag:hws) [[创建委托及授权方式](https://support.huaweicloud.com/intl/zh-cn/usermanual-iam/iam_06_0002.html)](tag:hws_hk) [[创建委托及授权方式](https://support.huaweicloud.com/eu/usermanual-iam/iam_06_0002.html)](tag:hws_eu)
         /// </summary>
         [JsonProperty("administration_agency_name", NullValueHandling = NullValueHandling.Ignore)]
         public string AdministrationAgencyName { get; set; }
 
         /// <summary>
-        /// 管理委托URN  资源编排服务使用该委托获取成员账号委托给管理账号的权限。该委托中必须含有sts:tokens:assume权限，用以后续获取被管理委托凭证。如果不包含，则会在新增或者部署实例时报错。  当用户定义SELF_MANAGED权限类型时，administration_agency_name和administration_agency_urn 必须有且只有一个存在。  推荐用户在使用v5委托时给予administration_agency_urn，administration_agency_name只支持接收普通委托名称，若给予了v5委托名称，则会在部署模板时失败。  当用户使用SERVICE_MANAGED权限类型时，指定该参数将报错400。
+        /// 管理委托URN  资源编排服务使用该委托获取成员账号委托给管理账号的权限。该委托中必须含有sts:tokens:assume权限，用以后续获取被管理委托凭证。如果不包含，则会在新增或者部署实例时报错。  当用户定义SELF_MANAGED权限类型时，administration_agency_name和administration_agency_urn 必须有且只有一个存在。  推荐用户在使用信任委托时给予administration_agency_urn，administration_agency_name只支持接收委托名称，若给予了信任委托名称，则会在部署模板时失败。  当用户使用SERVICE_MANAGED权限类型时，指定该参数将报错400。
         /// </summary>
         [JsonProperty("administration_agency_urn", NullValueHandling = NullValueHandling.Ignore)]
         public string AdministrationAgencyUrn { get; set; }
@@ -364,6 +364,12 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         [JsonProperty("update_time", NullValueHandling = NullValueHandling.Ignore)]
         public string UpdateTime { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("operation_preferences", NullValueHandling = NullValueHandling.Ignore)]
+        public OperationPreferences OperationPreferences { get; set; }
+
 
 
         /// <summary>
@@ -385,6 +391,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
             sb.Append("  deploymentTargets: ").Append(DeploymentTargets).Append("\n");
             sb.Append("  createTime: ").Append(CreateTime).Append("\n");
             sb.Append("  updateTime: ").Append(UpdateTime).Append("\n");
+            sb.Append("  operationPreferences: ").Append(OperationPreferences).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -465,6 +472,11 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
                     this.UpdateTime == input.UpdateTime ||
                     (this.UpdateTime != null &&
                     this.UpdateTime.Equals(input.UpdateTime))
+                ) && 
+                (
+                    this.OperationPreferences == input.OperationPreferences ||
+                    (this.OperationPreferences != null &&
+                    this.OperationPreferences.Equals(input.OperationPreferences))
                 );
         }
 
@@ -500,6 +512,8 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
                     hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
                 if (this.UpdateTime != null)
                     hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
+                if (this.OperationPreferences != null)
+                    hashCode = hashCode * 59 + this.OperationPreferences.GetHashCode();
                 return hashCode;
             }
         }

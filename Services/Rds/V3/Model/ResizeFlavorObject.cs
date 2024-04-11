@@ -28,6 +28,12 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         [JsonProperty("is_auto_pay", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsAutoPay { get; set; }
 
+        /// <summary>
+        /// 是否定时变更。 - true，为定时在运维时间窗做变更。 - false，为立即变更，默认该方式。
+        /// </summary>
+        [JsonProperty("is_delay", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsDelay { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +45,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             sb.Append("class ResizeFlavorObject {\n");
             sb.Append("  specCode: ").Append(SpecCode).Append("\n");
             sb.Append("  isAutoPay: ").Append(IsAutoPay).Append("\n");
+            sb.Append("  isDelay: ").Append(IsDelay).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -69,6 +76,11 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
                     this.IsAutoPay == input.IsAutoPay ||
                     (this.IsAutoPay != null &&
                     this.IsAutoPay.Equals(input.IsAutoPay))
+                ) && 
+                (
+                    this.IsDelay == input.IsDelay ||
+                    (this.IsDelay != null &&
+                    this.IsDelay.Equals(input.IsDelay))
                 );
         }
 
@@ -84,6 +96,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
                     hashCode = hashCode * 59 + this.SpecCode.GetHashCode();
                 if (this.IsAutoPay != null)
                     hashCode = hashCode * 59 + this.IsAutoPay.GetHashCode();
+                if (this.IsDelay != null)
+                    hashCode = hashCode * 59 + this.IsDelay.GetHashCode();
                 return hashCode;
             }
         }

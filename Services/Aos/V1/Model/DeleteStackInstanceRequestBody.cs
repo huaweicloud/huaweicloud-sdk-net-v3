@@ -28,6 +28,12 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         [JsonProperty("deployment_targets", NullValueHandling = NullValueHandling.Ignore)]
         public DeploymentTargets DeploymentTargets { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("operation_preferences", NullValueHandling = NullValueHandling.Ignore)]
+        public OperationPreferences OperationPreferences { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +45,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
             sb.Append("class DeleteStackInstanceRequestBody {\n");
             sb.Append("  stackSetId: ").Append(StackSetId).Append("\n");
             sb.Append("  deploymentTargets: ").Append(DeploymentTargets).Append("\n");
+            sb.Append("  operationPreferences: ").Append(OperationPreferences).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -69,6 +76,11 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
                     this.DeploymentTargets == input.DeploymentTargets ||
                     (this.DeploymentTargets != null &&
                     this.DeploymentTargets.Equals(input.DeploymentTargets))
+                ) && 
+                (
+                    this.OperationPreferences == input.OperationPreferences ||
+                    (this.OperationPreferences != null &&
+                    this.OperationPreferences.Equals(input.OperationPreferences))
                 );
         }
 
@@ -84,6 +96,8 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
                     hashCode = hashCode * 59 + this.StackSetId.GetHashCode();
                 if (this.DeploymentTargets != null)
                     hashCode = hashCode * 59 + this.DeploymentTargets.GetHashCode();
+                if (this.OperationPreferences != null)
+                    hashCode = hashCode * 59 + this.OperationPreferences.GetHashCode();
                 return hashCode;
             }
         }

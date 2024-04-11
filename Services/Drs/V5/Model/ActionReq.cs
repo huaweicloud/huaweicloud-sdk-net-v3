@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
     public class ActionReq 
     {
         /// <summary>
-        /// 操作任务动作名称。取值： - network：测试连接源库/目标库。 - precheck：执行预检查。 - start：启动任务。 - stop：暂停任务。 - restart：重试任务。 - reset：重置任务。 - terminate：结束任务。 - skip_precheck：跳过预检查。 - create_compare：创建对比任务。 - cancel_compare：取消对比任务。 - column_limit：字段过滤。 - reload_parameters：重新加载任务参数。 - bind_eip：绑定公网IP。 - unbind_eip：解绑公网IP。
+        /// 操作任务动作名称。取值： - network：测试连接源库/目标库。 - precheck：执行预检查。 - start：启动任务。 - stop：暂停任务。 - restart：重试任务。 - reset：重置任务。 - terminate：结束任务。 - skip_precheck：跳过预检查。 - create_compare：创建对比任务。 - cancel_compare：取消对比任务。 - column_limit：字段过滤。 - reload_parameters：重新加载任务参数。 - bind_eip：绑定公网IP。 - unbind_eip：解绑公网IP。          
         /// </summary>
-        /// <value>操作任务动作名称。取值： - network：测试连接源库/目标库。 - precheck：执行预检查。 - start：启动任务。 - stop：暂停任务。 - restart：重试任务。 - reset：重置任务。 - terminate：结束任务。 - skip_precheck：跳过预检查。 - create_compare：创建对比任务。 - cancel_compare：取消对比任务。 - column_limit：字段过滤。 - reload_parameters：重新加载任务参数。 - bind_eip：绑定公网IP。 - unbind_eip：解绑公网IP。</value>
+        /// <value>操作任务动作名称。取值： - network：测试连接源库/目标库。 - precheck：执行预检查。 - start：启动任务。 - stop：暂停任务。 - restart：重试任务。 - reset：重置任务。 - terminate：结束任务。 - skip_precheck：跳过预检查。 - create_compare：创建对比任务。 - cancel_compare：取消对比任务。 - column_limit：字段过滤。 - reload_parameters：重新加载任务参数。 - bind_eip：绑定公网IP。 - unbind_eip：解绑公网IP。          </value>
         [JsonConverter(typeof(EnumClassConverter<ActionNameEnum>))]
         public class ActionNameEnum
         {
@@ -210,7 +210,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         public string JobId { get; set; }
 
         /// <summary>
-        /// 操作任务动作名称。取值： - network：测试连接源库/目标库。 - precheck：执行预检查。 - start：启动任务。 - stop：暂停任务。 - restart：重试任务。 - reset：重置任务。 - terminate：结束任务。 - skip_precheck：跳过预检查。 - create_compare：创建对比任务。 - cancel_compare：取消对比任务。 - column_limit：字段过滤。 - reload_parameters：重新加载任务参数。 - bind_eip：绑定公网IP。 - unbind_eip：解绑公网IP。
+        /// 操作任务动作名称。取值： - network：测试连接源库/目标库。 - precheck：执行预检查。 - start：启动任务。 - stop：暂停任务。 - restart：重试任务。 - reset：重置任务。 - terminate：结束任务。 - skip_precheck：跳过预检查。 - create_compare：创建对比任务。 - cancel_compare：取消对比任务。 - column_limit：字段过滤。 - reload_parameters：重新加载任务参数。 - bind_eip：绑定公网IP。 - unbind_eip：解绑公网IP。          
         /// </summary>
         [JsonProperty("action_name", NullValueHandling = NullValueHandling.Ignore)]
         public ActionNameEnum ActionName { get; set; }

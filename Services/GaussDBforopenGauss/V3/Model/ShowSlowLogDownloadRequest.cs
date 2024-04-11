@@ -8,20 +8,13 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Rds.V3.Model
+namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
 {
     /// <summary>
     /// Request Object
     /// </summary>
-    public class SwitchLogReplayRequest 
+    public class ShowSlowLogDownloadRequest 
     {
-
-        /// <summary>
-        /// 实例id
-        /// </summary>
-        [SDKProperty("instance_id", IsPath = true)]
-        [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string InstanceId { get; set; }
 
         /// <summary>
         /// 语言
@@ -31,11 +24,11 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         public string XLanguage { get; set; }
 
         /// <summary>
-        /// 
+        /// 实例ID，严格匹配UUID规则。
         /// </summary>
-        [SDKProperty("body", IsBody = true)]
-        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public SwitchLogReplayRequestBody Body { get; set; }
+        [SDKProperty("instance_id", IsPath = true)]
+        [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string InstanceId { get; set; }
 
 
 
@@ -45,10 +38,9 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class SwitchLogReplayRequest {\n");
-            sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
+            sb.Append("class ShowSlowLogDownloadRequest {\n");
             sb.Append("  xLanguage: ").Append(XLanguage).Append("\n");
-            sb.Append("  body: ").Append(Body).Append("\n");
+            sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -58,32 +50,27 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as SwitchLogReplayRequest);
+            return this.Equals(input as ShowSlowLogDownloadRequest);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(SwitchLogReplayRequest input)
+        public bool Equals(ShowSlowLogDownloadRequest input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.InstanceId == input.InstanceId ||
-                    (this.InstanceId != null &&
-                    this.InstanceId.Equals(input.InstanceId))
-                ) && 
-                (
                     this.XLanguage == input.XLanguage ||
                     (this.XLanguage != null &&
                     this.XLanguage.Equals(input.XLanguage))
                 ) && 
                 (
-                    this.Body == input.Body ||
-                    (this.Body != null &&
-                    this.Body.Equals(input.Body))
+                    this.InstanceId == input.InstanceId ||
+                    (this.InstanceId != null &&
+                    this.InstanceId.Equals(input.InstanceId))
                 );
         }
 
@@ -95,12 +82,10 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.InstanceId != null)
-                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
                 if (this.XLanguage != null)
                     hashCode = hashCode * 59 + this.XLanguage.GetHashCode();
-                if (this.Body != null)
-                    hashCode = hashCode * 59 + this.Body.GetHashCode();
+                if (this.InstanceId != null)
+                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
                 return hashCode;
             }
         }

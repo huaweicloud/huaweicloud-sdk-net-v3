@@ -59,7 +59,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public int? PageNumber { get; set; }
 
         /// <summary>
-        /// 展示标签标识 true：不展示 false：展示。
+        /// 展示标签标识 true：展示 false：不展示。
         /// </summary>
         [SDKProperty("show_tags", IsQuery = true)]
         [JsonProperty("show_tags", NullValueHandling = NullValueHandling.Ignore)]

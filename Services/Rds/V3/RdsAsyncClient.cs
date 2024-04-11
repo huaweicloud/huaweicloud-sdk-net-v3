@@ -4811,32 +4811,6 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
-        /// 获取wal日志延迟回放状态
-        ///
-        /// 获取wal日志延迟回放状态
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<ShowReplayDelayStatusResponse> ShowReplayDelayStatusAsync(ShowReplayDelayStatusRequest showReplayDelayStatusRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showReplayDelayStatusRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/replay-delay/show", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showReplayDelayStatusRequest);
-            var response = await DoHttpRequestAsync("GET", request);
-            return JsonUtils.DeSerialize<ShowReplayDelayStatusResponse>(response);
-        }
-
-        public AsyncInvoker<ShowReplayDelayStatusResponse> ShowReplayDelayStatusAsyncInvoker(ShowReplayDelayStatusRequest showReplayDelayStatusRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showReplayDelayStatusRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/replay-delay/show", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showReplayDelayStatusRequest);
-            return new AsyncInvoker<ShowReplayDelayStatusResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowReplayDelayStatusResponse>);
-        }
-        
-        /// <summary>
         /// 开启数据库代理
         ///
         /// 为指定实例开启数据库代理。
@@ -4886,32 +4860,6 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopDatabaseProxyRequest);
             return new AsyncInvoker<StopDatabaseProxyResponse>(this, "DELETE", request, JsonUtils.DeSerialize<StopDatabaseProxyResponse>);
-        }
-        
-        /// <summary>
-        /// 中止/恢复wal日志回放
-        ///
-        /// 中止/恢复wal日志回放
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<SwitchLogReplayResponse> SwitchLogReplayAsync(SwitchLogReplayRequest switchLogReplayRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", switchLogReplayRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/log-replay/update", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchLogReplayRequest);
-            var response = await DoHttpRequestAsync("PUT", request);
-            return JsonUtils.DeSerialize<SwitchLogReplayResponse>(response);
-        }
-
-        public AsyncInvoker<SwitchLogReplayResponse> SwitchLogReplayAsyncInvoker(SwitchLogReplayRequest switchLogReplayRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", switchLogReplayRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/log-replay/update", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchLogReplayRequest);
-            return new AsyncInvoker<SwitchLogReplayResponse>(this, "PUT", request, JsonUtils.DeSerialize<SwitchLogReplayResponse>);
         }
         
         /// <summary>

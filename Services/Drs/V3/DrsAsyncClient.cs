@@ -673,9 +673,63 @@ namespace HuaweiCloud.SDK.Drs.V3
         }
         
         /// <summary>
+        /// 创建数据级表对比任务
+        ///
+        /// 创建数据级表对比任务。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateDataLevelTableCompareJobResponse> CreateDataLevelTableCompareJobAsync(CreateDataLevelTableCompareJobRequest createDataLevelTableCompareJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", createDataLevelTableCompareJobRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/table/compare", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDataLevelTableCompareJobRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateDataLevelTableCompareJobResponse>(response);
+        }
+
+        public AsyncInvoker<CreateDataLevelTableCompareJobResponse> CreateDataLevelTableCompareJobAsyncInvoker(CreateDataLevelTableCompareJobRequest createDataLevelTableCompareJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", createDataLevelTableCompareJobRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/table/compare", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDataLevelTableCompareJobRequest);
+            return new AsyncInvoker<CreateDataLevelTableCompareJobResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateDataLevelTableCompareJobResponse>);
+        }
+        
+        /// <summary>
+        /// 取消对比任务
+        ///
+        /// 取消对比任务。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteCompareJobResponse> DeleteCompareJobAsync(DeleteCompareJobRequest deleteCompareJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", deleteCompareJobRequest.JobId.ToString());
+            urlParam.Add("compare_job_id", deleteCompareJobRequest.CompareJobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/compare/{compare_job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteCompareJobRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteCompareJobResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteCompareJobResponse> DeleteCompareJobAsyncInvoker(DeleteCompareJobRequest deleteCompareJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", deleteCompareJobRequest.JobId.ToString());
+            urlParam.Add("compare_job_id", deleteCompareJobRequest.CompareJobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/compare/{compare_job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteCompareJobRequest);
+            return new AsyncInvoker<DeleteCompareJobResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteCompareJobResponse>);
+        }
+        
+        /// <summary>
         /// 查询可用的Node规格
         ///
-        /// 查询可用的Node规格
+        /// 查询可用的Node规格。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -742,6 +796,144 @@ namespace HuaweiCloud.SDK.Drs.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/query-compare-result", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCompareResultRequest);
             return new AsyncInvoker<ListCompareResultResponse>(this, "POST", request, JsonUtils.DeSerialize<ListCompareResultResponse>);
+        }
+        
+        /// <summary>
+        /// 查询内容对比详情
+        ///
+        /// 查询内容对比详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListContentCompareDetailResponse> ListContentCompareDetailAsync(ListContentCompareDetailRequest listContentCompareDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", listContentCompareDetailRequest.JobId.ToString());
+            urlParam.Add("compare_job_id", listContentCompareDetailRequest.CompareJobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/compare/{compare_job_id}/content-detail", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listContentCompareDetailRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListContentCompareDetailResponse>(response);
+        }
+
+        public AsyncInvoker<ListContentCompareDetailResponse> ListContentCompareDetailAsyncInvoker(ListContentCompareDetailRequest listContentCompareDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", listContentCompareDetailRequest.JobId.ToString());
+            urlParam.Add("compare_job_id", listContentCompareDetailRequest.CompareJobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/compare/{compare_job_id}/content-detail", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listContentCompareDetailRequest);
+            return new AsyncInvoker<ListContentCompareDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ListContentCompareDetailResponse>);
+        }
+        
+        /// <summary>
+        /// 查询内容对比总览
+        ///
+        /// 查询内容对比总览。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListContentCompareOverviewResponse> ListContentCompareOverviewAsync(ListContentCompareOverviewRequest listContentCompareOverviewRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", listContentCompareOverviewRequest.JobId.ToString());
+            urlParam.Add("compare_job_id", listContentCompareOverviewRequest.CompareJobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/compare/{compare_job_id}/content-overview", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listContentCompareOverviewRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListContentCompareOverviewResponse>(response);
+        }
+
+        public AsyncInvoker<ListContentCompareOverviewResponse> ListContentCompareOverviewAsyncInvoker(ListContentCompareOverviewRequest listContentCompareOverviewRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", listContentCompareOverviewRequest.JobId.ToString());
+            urlParam.Add("compare_job_id", listContentCompareOverviewRequest.CompareJobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/compare/{compare_job_id}/content-overview", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listContentCompareOverviewRequest);
+            return new AsyncInvoker<ListContentCompareOverviewResponse>(this, "GET", request, JsonUtils.DeSerialize<ListContentCompareOverviewResponse>);
+        }
+        
+        /// <summary>
+        /// 查询行数对比详情
+        ///
+        /// 查询行数对比详情。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListDataCompareDetailResponse> ListDataCompareDetailAsync(ListDataCompareDetailRequest listDataCompareDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", listDataCompareDetailRequest.JobId.ToString());
+            urlParam.Add("compare_job_id", listDataCompareDetailRequest.CompareJobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/compare/{compare_job_id}/line-detail", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDataCompareDetailRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListDataCompareDetailResponse>(response);
+        }
+
+        public AsyncInvoker<ListDataCompareDetailResponse> ListDataCompareDetailAsyncInvoker(ListDataCompareDetailRequest listDataCompareDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", listDataCompareDetailRequest.JobId.ToString());
+            urlParam.Add("compare_job_id", listDataCompareDetailRequest.CompareJobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/compare/{compare_job_id}/line-detail", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDataCompareDetailRequest);
+            return new AsyncInvoker<ListDataCompareDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDataCompareDetailResponse>);
+        }
+        
+        /// <summary>
+        /// 查询行数对比总览
+        ///
+        /// 查询行数对比总览。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListDataCompareOverviewResponse> ListDataCompareOverviewAsync(ListDataCompareOverviewRequest listDataCompareOverviewRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", listDataCompareOverviewRequest.JobId.ToString());
+            urlParam.Add("compare_job_id", listDataCompareOverviewRequest.CompareJobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/compare/{compare_job_id}/line-overview", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDataCompareOverviewRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListDataCompareOverviewResponse>(response);
+        }
+
+        public AsyncInvoker<ListDataCompareOverviewResponse> ListDataCompareOverviewAsyncInvoker(ListDataCompareOverviewRequest listDataCompareOverviewRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", listDataCompareOverviewRequest.JobId.ToString());
+            urlParam.Add("compare_job_id", listDataCompareOverviewRequest.CompareJobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/compare/{compare_job_id}/line-overview", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDataCompareOverviewRequest);
+            return new AsyncInvoker<ListDataCompareOverviewResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDataCompareOverviewResponse>);
+        }
+        
+        /// <summary>
+        /// 查询数据级表对比任务列表
+        ///
+        /// 查询数据级表对比任务列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListDataLevelTableCompareJobsResponse> ListDataLevelTableCompareJobsAsync(ListDataLevelTableCompareJobsRequest listDataLevelTableCompareJobsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", listDataLevelTableCompareJobsRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/table/compare", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDataLevelTableCompareJobsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListDataLevelTableCompareJobsResponse>(response);
+        }
+
+        public AsyncInvoker<ListDataLevelTableCompareJobsResponse> ListDataLevelTableCompareJobsAsyncInvoker(ListDataLevelTableCompareJobsRequest listDataLevelTableCompareJobsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", listDataLevelTableCompareJobsRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/table/compare", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDataLevelTableCompareJobsRequest);
+            return new AsyncInvoker<ListDataLevelTableCompareJobsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDataLevelTableCompareJobsResponse>);
         }
         
         /// <summary>
@@ -840,6 +1032,34 @@ namespace HuaweiCloud.SDK.Drs.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/quotas", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showQuotasRequest);
             return new AsyncInvoker<ShowQuotasResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowQuotasResponse>);
+        }
+        
+        /// <summary>
+        /// 立即启动数据级表对比任务
+        ///
+        /// 立即启动数据级表对比任务。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<StartPromptlyDataLevelTableCompareJobResponse> StartPromptlyDataLevelTableCompareJobAsync(StartPromptlyDataLevelTableCompareJobRequest startPromptlyDataLevelTableCompareJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", startPromptlyDataLevelTableCompareJobRequest.JobId.ToString());
+            urlParam.Add("compare_job_id", startPromptlyDataLevelTableCompareJobRequest.CompareJobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/table/compare/{compare_job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", startPromptlyDataLevelTableCompareJobRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<StartPromptlyDataLevelTableCompareJobResponse>(response);
+        }
+
+        public AsyncInvoker<StartPromptlyDataLevelTableCompareJobResponse> StartPromptlyDataLevelTableCompareJobAsyncInvoker(StartPromptlyDataLevelTableCompareJobRequest startPromptlyDataLevelTableCompareJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", startPromptlyDataLevelTableCompareJobRequest.JobId.ToString());
+            urlParam.Add("compare_job_id", startPromptlyDataLevelTableCompareJobRequest.CompareJobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/table/compare/{compare_job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", startPromptlyDataLevelTableCompareJobRequest);
+            return new AsyncInvoker<StartPromptlyDataLevelTableCompareJobResponse>(this, "POST", request, JsonUtils.DeSerialize<StartPromptlyDataLevelTableCompareJobResponse>);
         }
         
         /// <summary>

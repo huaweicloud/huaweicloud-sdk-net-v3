@@ -15,6 +15,121 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
     /// </summary>
     public class DataProcessInfo 
     {
+        /// <summary>
+        /// 对比的来源 - job 表示数据同步时的过滤 - compare 表示数据对比的过滤
+        /// </summary>
+        /// <value>对比的来源 - job 表示数据同步时的过滤 - compare 表示数据对比的过滤</value>
+        [JsonConverter(typeof(EnumClassConverter<SourceEnum>))]
+        public class SourceEnum
+        {
+            /// <summary>
+            /// Enum JOB for value: job
+            /// </summary>
+            public static readonly SourceEnum JOB = new SourceEnum("job");
+
+            /// <summary>
+            /// Enum COMPARE for value: compare
+            /// </summary>
+            public static readonly SourceEnum COMPARE = new SourceEnum("compare");
+
+            private static readonly Dictionary<string, SourceEnum> StaticFields =
+            new Dictionary<string, SourceEnum>()
+            {
+                { "job", JOB },
+                { "compare", COMPARE },
+            };
+
+            private string _value;
+
+            public SourceEnum()
+            {
+
+            }
+
+            public SourceEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static SourceEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as SourceEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(SourceEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(SourceEnum a, SourceEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(SourceEnum a, SourceEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 指定任务数据加工规则请求体
@@ -70,6 +185,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         [JsonProperty("is_synchronized", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsSynchronized { get; set; }
 
+        /// <summary>
+        /// 对比的来源 - job 表示数据同步时的过滤 - compare 表示数据对比的过滤
+        /// </summary>
+        [JsonProperty("source", NullValueHandling = NullValueHandling.Ignore)]
+        public SourceEnum Source { get; set; }
 
 
         /// <summary>
@@ -88,6 +208,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             sb.Append("  dbOrTableRenameRule: ").Append(DbOrTableRenameRule).Append("\n");
             sb.Append("  dbObject: ").Append(DbObject).Append("\n");
             sb.Append("  isSynchronized: ").Append(IsSynchronized).Append("\n");
+            sb.Append("  source: ").Append(Source).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -156,6 +277,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                     this.IsSynchronized == input.IsSynchronized ||
                     (this.IsSynchronized != null &&
                     this.IsSynchronized.Equals(input.IsSynchronized))
+                ) && 
+                (
+                    this.Source == input.Source ||
+                    (this.Source != null &&
+                    this.Source.Equals(input.Source))
                 );
         }
 
@@ -185,6 +311,8 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                     hashCode = hashCode * 59 + this.DbObject.GetHashCode();
                 if (this.IsSynchronized != null)
                     hashCode = hashCode * 59 + this.IsSynchronized.GetHashCode();
+                if (this.Source != null)
+                    hashCode = hashCode * 59 + this.Source.GetHashCode();
                 return hashCode;
             }
         }

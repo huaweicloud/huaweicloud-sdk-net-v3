@@ -1,3 +1,205 @@
+# 3.1.90 2024-04-11
+
+### HuaweiCloud SDK AOS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowStackSetMetadata**
+    - changes of response param
+      - `+ managed_operation`
+  - **UpdateStackSet**
+    - changes of request param
+      - `+ managed_operation`
+  - **CreateStackSet**
+    - changes of request param
+      - `+ managed_operation`
+  - **CreateStackInstance**
+    - changes of request param
+      - `+ operation_preferences`
+  - **DeleteStackInstanceDeprecated**
+    - changes of request param
+      - `+ operation_preferences`
+  - **UpdateStackInstances**
+    - changes of request param
+      - `+ operation_preferences`
+  - **DeleteStackInstance**
+    - changes of request param
+      - `+ operation_preferences`
+  - **DeployStackSet**
+    - changes of request param
+      - `+ operation_preferences`
+  - **ShowStackSetOperationMetadata**
+    - changes of response param
+      - `+ operation_preferences`
+
+### HuaweiCloud SDK CDN
+
+- _Features_
+  - Support the API `ShowQuota`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowDomainFullConfig**
+    - changes of response param
+      - `+ configs.sni`
+      - `+ configs.request_url_rewrite`
+      - `+ configs.browser_cache_rules`
+  - **UpdateDomainFullConfig**
+    - changes of request param
+      - `+ configs.sni`
+      - `+ configs.request_url_rewrite`
+      - `+ configs.browser_cache_rules`
+
+### HuaweiCloud SDK DRS
+
+- _Features_
+  - Support the following APIs:
+    - `ListDataLevelTableCompareJobs`
+    - `CreateDataLevelTableCompareJob`
+    - `DeleteCompareJob`
+    - `StartPromptlyDataLevelTableCompareJob`
+    - `ListDataCompareOverview`
+    - `ListDataCompareDetail`
+    - `ListContentCompareOverview`
+    - `ListContentCompareDetail`
+    - `ListsAgencyPermissions`
+    - `ShowReplayResults`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowDataFilteringResult**
+    - changes of response param
+      - `+ db_object_filtering_result.source`
+      - `+ db_object_filtering_result.target_result`
+      - `+ db_object_filtering_result.source_result`
+      - `+ db_object_filtering_result.target_message`
+      - `+ db_object_filtering_result.source_message`
+  - **ShowDataProgress**
+    - changes of response param
+      - `+ data_process_info.source`
+  - **UpdateDataProgress**
+    - changes of request param
+      - `+ data_process_info.source`
+  - **CheckDataFilter**
+    - changes of request param
+      - `+ data_process_info.source`
+  - **ExecuteJobAction**
+    - changes of request param
+      - `+ job.action_params.compare_task_param.data_process_info`
+  - **BatchExecuteJobActions**
+    - changes of request param
+      - `+ jobs.action_params.compare_task_param.data_process_info`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _Features_
+  - Support the following APIs:
+    - `ShowInstancesStatistics`
+    - `ShowSlowLogDownload`
+    - `CreateSlowLogDownload`
+    - `UpgradeInstanceVersion`
+    - `SearchAutoEnlargePolicy`
+    - `ListCnInfosBeforeReduce`
+    - `StartInstance`
+    - `ShowUpgradeCandidateVersions`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK IoTDA
+
+- _Features_
+  - Support the following APIs:
+    - `ListRoutingBacklogPolicy`
+    - `CreateRoutingBacklogPolicy`
+    - `ShowRoutingBacklogPolicy`
+    - `UpdateRoutingBacklogPolicy`
+    - `DeleteRoutingBacklogPolicy`
+    - `ListRoutingFlowControlPolicy`
+    - `CreateRoutingFlowControlPolicy`
+    - `ShowRoutingFlowControlPolicy`
+    - `UpdateRoutingFlowControlPolicy`
+    - `DeleteRoutingFlowControlPolicy`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK Kafka
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListInstances**
+    - changes of request param
+      - `* engine: optional -> required`
+
+### HuaweiCloud SDK ProjectMan
+
+- _Features_
+  - Support the API `BatchListAssociatedIssues`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK RabbitMQ
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListInstancesDetails**
+    - changes of request param
+      - `* engine: optional -> required`
+      - `+ engine: enum value [rabbitmq]`
+
+### HuaweiCloud SDK RDS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Remove the APIs `ShowReplayDelayStatus`, `SwitchLogReplay`
+  - **StartResizeFlavorAction**
+    - changes of request param
+      - `+ resize_flavor.is_delay`
+  - **ListPostgresqlDatabases**
+    - changes of request param
+      - `+ db`
+
+### HuaweiCloud SDK RocketMQ
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListInstances**
+    - changes of request param
+      - `* engine: optional -> required`
+      - `+ engine: enum value [rocketmq]`
+      - `+ engine: enum value [reliability]`
+
+### HuaweiCloud SDK SWR
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListSharedReposDetails**
+    - changes of request param
+      - `* center: optional -> required`
+
 # 3.1.89 2024-04-03
 
 ### HuaweiCloud SDK CFW

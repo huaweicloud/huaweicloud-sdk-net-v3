@@ -322,6 +322,132 @@ namespace HuaweiCloud.SDK.IoTDA.V5
         }
         
         /// <summary>
+        /// 新建数据流转积压策略
+        ///
+        /// 应用服务器可调用此接口在物联网平台创建数据流转积压策略。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateRoutingBacklogPolicyResponse CreateRoutingBacklogPolicy(CreateRoutingBacklogPolicyRequest createRoutingBacklogPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/routing-rule/backlog-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createRoutingBacklogPolicyRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateRoutingBacklogPolicyResponse>(response);
+        }
+
+        public SyncInvoker<CreateRoutingBacklogPolicyResponse> CreateRoutingBacklogPolicyInvoker(CreateRoutingBacklogPolicyRequest createRoutingBacklogPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/routing-rule/backlog-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createRoutingBacklogPolicyRequest);
+            return new SyncInvoker<CreateRoutingBacklogPolicyResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateRoutingBacklogPolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 删除数据流转积压策略
+        ///
+        /// 应用服务器可调用此接口在物联网平台删除指定数据流转积压策略。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteRoutingBacklogPolicyResponse DeleteRoutingBacklogPolicy(DeleteRoutingBacklogPolicyRequest deleteRoutingBacklogPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("policy_id", deleteRoutingBacklogPolicyRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/routing-rule/backlog-policy/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRoutingBacklogPolicyRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteRoutingBacklogPolicyResponse>(response);
+        }
+
+        public SyncInvoker<DeleteRoutingBacklogPolicyResponse> DeleteRoutingBacklogPolicyInvoker(DeleteRoutingBacklogPolicyRequest deleteRoutingBacklogPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("policy_id", deleteRoutingBacklogPolicyRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/routing-rule/backlog-policy/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRoutingBacklogPolicyRequest);
+            return new SyncInvoker<DeleteRoutingBacklogPolicyResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteRoutingBacklogPolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 查询数据流转积压策略列表
+        ///
+        /// 应用服务器可调用此接口查询在物联网平台设置的数据流转积压策略列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListRoutingBacklogPolicyResponse ListRoutingBacklogPolicy(ListRoutingBacklogPolicyRequest listRoutingBacklogPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/routing-rule/backlog-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRoutingBacklogPolicyRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListRoutingBacklogPolicyResponse>(response);
+        }
+
+        public SyncInvoker<ListRoutingBacklogPolicyResponse> ListRoutingBacklogPolicyInvoker(ListRoutingBacklogPolicyRequest listRoutingBacklogPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/routing-rule/backlog-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRoutingBacklogPolicyRequest);
+            return new SyncInvoker<ListRoutingBacklogPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ListRoutingBacklogPolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 查询数据流转积压策略
+        ///
+        /// 应用服务器可调用此接口在物联网平台查询指定数据流转积压策略。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowRoutingBacklogPolicyResponse ShowRoutingBacklogPolicy(ShowRoutingBacklogPolicyRequest showRoutingBacklogPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("policy_id", showRoutingBacklogPolicyRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/routing-rule/backlog-policy/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRoutingBacklogPolicyRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowRoutingBacklogPolicyResponse>(response);
+        }
+
+        public SyncInvoker<ShowRoutingBacklogPolicyResponse> ShowRoutingBacklogPolicyInvoker(ShowRoutingBacklogPolicyRequest showRoutingBacklogPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("policy_id", showRoutingBacklogPolicyRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/routing-rule/backlog-policy/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRoutingBacklogPolicyRequest);
+            return new SyncInvoker<ShowRoutingBacklogPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRoutingBacklogPolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 修改数据流转积压策略
+        ///
+        /// 应用服务器可调用此接口在物联网平台修改指定数据流转积压策略。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateRoutingBacklogPolicyResponse UpdateRoutingBacklogPolicy(UpdateRoutingBacklogPolicyRequest updateRoutingBacklogPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("policy_id", updateRoutingBacklogPolicyRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/routing-rule/backlog-policy/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateRoutingBacklogPolicyRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateRoutingBacklogPolicyResponse>(response);
+        }
+
+        public SyncInvoker<UpdateRoutingBacklogPolicyResponse> UpdateRoutingBacklogPolicyInvoker(UpdateRoutingBacklogPolicyRequest updateRoutingBacklogPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("policy_id", updateRoutingBacklogPolicyRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/routing-rule/backlog-policy/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateRoutingBacklogPolicyRequest);
+            return new SyncInvoker<UpdateRoutingBacklogPolicyResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateRoutingBacklogPolicyResponse>);
+        }
+        
+        /// <summary>
         /// 创建批量任务
         ///
         /// 应用服务器可调用此接口为创建批量处理任务，对多个设备进行批量操作。当前支持批量软固件升级、批量创建设备、批量删除设备、批量冻结设备、批量解冻设备、批量创建命令、批量创建消息任务。
@@ -1334,6 +1460,132 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/devices/{device_id}/shadow", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDeviceShadowDesiredDataRequest);
             return new SyncInvoker<UpdateDeviceShadowDesiredDataResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateDeviceShadowDesiredDataResponse>);
+        }
+        
+        /// <summary>
+        /// 新建数据流转流控策略
+        ///
+        /// 应用服务器可调用此接口在物联网平台创建数据流转流控策略。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateRoutingFlowControlPolicyResponse CreateRoutingFlowControlPolicy(CreateRoutingFlowControlPolicyRequest createRoutingFlowControlPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/routing-rule/flowcontrol-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createRoutingFlowControlPolicyRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateRoutingFlowControlPolicyResponse>(response);
+        }
+
+        public SyncInvoker<CreateRoutingFlowControlPolicyResponse> CreateRoutingFlowControlPolicyInvoker(CreateRoutingFlowControlPolicyRequest createRoutingFlowControlPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/routing-rule/flowcontrol-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createRoutingFlowControlPolicyRequest);
+            return new SyncInvoker<CreateRoutingFlowControlPolicyResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateRoutingFlowControlPolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 删除数据流转流控策略
+        ///
+        /// 应用服务器可调用此接口在物联网平台删除指定数据流转流控策略。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteRoutingFlowControlPolicyResponse DeleteRoutingFlowControlPolicy(DeleteRoutingFlowControlPolicyRequest deleteRoutingFlowControlPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("policy_id", deleteRoutingFlowControlPolicyRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/routing-rule/flowcontrol-policy/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRoutingFlowControlPolicyRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteRoutingFlowControlPolicyResponse>(response);
+        }
+
+        public SyncInvoker<DeleteRoutingFlowControlPolicyResponse> DeleteRoutingFlowControlPolicyInvoker(DeleteRoutingFlowControlPolicyRequest deleteRoutingFlowControlPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("policy_id", deleteRoutingFlowControlPolicyRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/routing-rule/flowcontrol-policy/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRoutingFlowControlPolicyRequest);
+            return new SyncInvoker<DeleteRoutingFlowControlPolicyResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteRoutingFlowControlPolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 查询数据流转流控策略列表
+        ///
+        /// 应用服务器可调用此接口查询在物联网平台设置的数据流转流控策略列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListRoutingFlowControlPolicyResponse ListRoutingFlowControlPolicy(ListRoutingFlowControlPolicyRequest listRoutingFlowControlPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/routing-rule/flowcontrol-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRoutingFlowControlPolicyRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListRoutingFlowControlPolicyResponse>(response);
+        }
+
+        public SyncInvoker<ListRoutingFlowControlPolicyResponse> ListRoutingFlowControlPolicyInvoker(ListRoutingFlowControlPolicyRequest listRoutingFlowControlPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/routing-rule/flowcontrol-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRoutingFlowControlPolicyRequest);
+            return new SyncInvoker<ListRoutingFlowControlPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ListRoutingFlowControlPolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 查询数据流转流控策略
+        ///
+        /// 应用服务器可调用此接口在物联网平台查询指定数据流转流控策略。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowRoutingFlowControlPolicyResponse ShowRoutingFlowControlPolicy(ShowRoutingFlowControlPolicyRequest showRoutingFlowControlPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("policy_id", showRoutingFlowControlPolicyRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/routing-rule/flowcontrol-policy/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRoutingFlowControlPolicyRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowRoutingFlowControlPolicyResponse>(response);
+        }
+
+        public SyncInvoker<ShowRoutingFlowControlPolicyResponse> ShowRoutingFlowControlPolicyInvoker(ShowRoutingFlowControlPolicyRequest showRoutingFlowControlPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("policy_id", showRoutingFlowControlPolicyRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/routing-rule/flowcontrol-policy/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRoutingFlowControlPolicyRequest);
+            return new SyncInvoker<ShowRoutingFlowControlPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRoutingFlowControlPolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 修改数据流转流控策略
+        ///
+        /// 应用服务器可调用此接口在物联网平台修改指定数据流转流控策略。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateRoutingFlowControlPolicyResponse UpdateRoutingFlowControlPolicy(UpdateRoutingFlowControlPolicyRequest updateRoutingFlowControlPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("policy_id", updateRoutingFlowControlPolicyRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/routing-rule/flowcontrol-policy/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateRoutingFlowControlPolicyRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateRoutingFlowControlPolicyResponse>(response);
+        }
+
+        public SyncInvoker<UpdateRoutingFlowControlPolicyResponse> UpdateRoutingFlowControlPolicyInvoker(UpdateRoutingFlowControlPolicyRequest updateRoutingFlowControlPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("policy_id", updateRoutingFlowControlPolicyRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/routing-rule/flowcontrol-policy/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateRoutingFlowControlPolicyRequest);
+            return new SyncInvoker<UpdateRoutingFlowControlPolicyResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateRoutingFlowControlPolicyResponse>);
         }
         
         /// <summary>

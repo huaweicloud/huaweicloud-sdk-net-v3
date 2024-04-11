@@ -26,7 +26,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         /// 
         /// </summary>
         [JsonProperty("remote_auth_rules", NullValueHandling = NullValueHandling.Ignore)]
-        public RemoteAuthRuleVo RemoteAuthRules { get; set; }
+        public RemoteAuthRule RemoteAuthRules { get; set; }
 
 
 

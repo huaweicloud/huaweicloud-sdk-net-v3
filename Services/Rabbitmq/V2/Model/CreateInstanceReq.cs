@@ -361,9 +361,9 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         }
 
         /// <summary>
-        /// 存储IO规格。  取值范围：   - dms.physical.storage.high.v2   - dms.physical.storage.ultra.v2   - dms.physical.storage.high.dss.v2(专属云)   - dms.physical.storage.ultra.dss.v2(专属云)
+        /// 存储IO规格。  取值范围：   - dms.physical.storage.high.v2   - dms.physical.storage.ultra.v2   [- dms.physical.storage.high.dss.v2(专属云)](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm)   [- dms.physical.storage.ultra.dss.v2(专属云)](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm)
         /// </summary>
-        /// <value>存储IO规格。  取值范围：   - dms.physical.storage.high.v2   - dms.physical.storage.ultra.v2   - dms.physical.storage.high.dss.v2(专属云)   - dms.physical.storage.ultra.dss.v2(专属云)</value>
+        /// <value>存储IO规格。  取值范围：   - dms.physical.storage.high.v2   - dms.physical.storage.ultra.v2   [- dms.physical.storage.high.dss.v2(专属云)](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm)   [- dms.physical.storage.ultra.dss.v2(专属云)](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm)</value>
         [JsonConverter(typeof(EnumClassConverter<StorageSpecCodeEnum>))]
         public class StorageSpecCodeEnum
         {
@@ -495,7 +495,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 实例的描述信息。  长度不超过1024的字符串。  &gt; \\与\&quot;在json报文中属于特殊字符，如果参数值中需要显示\\或者\&quot;字符，请在字符前增加转义字符\\，比如\\\\或者\\\&quot;。
+        /// 实例的描述信息。  长度不超过1024的字符串。[且字符串不能包含\&quot;&gt;\&quot;与\&quot;&lt;\&quot;，字符串首字符不能为\&quot;&#x3D;\&quot;,\&quot;+\&quot;,\&quot;-\&quot;,\&quot;@\&quot;的全角和半角字符。](tag:hcs)  &gt; \\与\&quot;在json报文中属于特殊字符，如果参数值中需要显示\\或者\&quot;字符，请在字符前增加转义字符\\，比如\\\\或者\\\&quot;。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
@@ -511,7 +511,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         [JsonProperty("engine_version", NullValueHandling = NullValueHandling.Ignore)]
         public EngineVersionEnum EngineVersion { get; set; }
         /// <summary>
-        /// 消息存储空间，单位GB。   - 单机RabbitMQ实例的存储空间的取值范围100GB~90000GB。   - 集群RabbitMQ实例的存储空间的取值范围为100GB\\*节点数~90000GB、200GB\\*节点数~90000GB、300GB\\*节点数~90000GB。 
+        /// 消息存储空间，单位GB。   [- 单机RabbitMQ实例的存储空间的取值范围100GB~90000GB。](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm)      [- 单机RabbitMQ实例的存储空间的取值范围100GB~30000GB。](tag:hcs)      [- 集群RabbitMQ实例的存储空间的取值范围为100GB*节点数~90000GB、200GB*节点数~90000GB、300GB*节点数~90000GB。](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm)      [- 集群RabbitMQ实例的存储空间的取值范围为100GB乘以代理数~30000GB乘以代理数。](tag:hcs) 
         /// </summary>
         [JsonProperty("storage_space", NullValueHandling = NullValueHandling.Ignore)]
         public int? StorageSpace { get; set; }
@@ -553,7 +553,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public List<string> AvailableZones { get; set; }
 
         /// <summary>
-        /// 产品标识。  [产品ID可以从[查询产品规格列表](ListEngineProducts.xml)获取。](tag:hws,hws_hk,ctc,cmcc,hws_eu,g42,hk_g42,tm,hk_tm,ocb,hws_ocb,hcs) [产品ID可以从[查询产品规格列表](ListProducts.xml)获取。](tag:hk_sbc,sbc)  如果产品ID为集群类型（即对应的type为cluster），broker_num字段为必选。
+        /// 产品标识。  [产品ID可以从[查询产品规格列表](ListEngineProducts.xml)获取。](tag:hws,hws_hk,ctc,cmcc,hws_eu,g42,hk_g42,tm,hk_tm,ocb,hws_ocb) [产品ID可以从[查询产品规格列表](ListProducts.xml)获取。](tag:hk_sbc,sbc) [产品ID可以从“其他接口 &gt; 查询产品规格列表”获取。](tag:hcs)  如果产品ID为集群类型（即对应的type为cluster），broker_num字段为必选。
         /// </summary>
         [JsonProperty("product_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProductId { get; set; }
@@ -594,7 +594,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public bool? SslEnable { get; set; }
 
         /// <summary>
-        /// 存储IO规格。  取值范围：   - dms.physical.storage.high.v2   - dms.physical.storage.ultra.v2   - dms.physical.storage.high.dss.v2(专属云)   - dms.physical.storage.ultra.dss.v2(专属云)
+        /// 存储IO规格。  取值范围：   - dms.physical.storage.high.v2   - dms.physical.storage.ultra.v2   [- dms.physical.storage.high.dss.v2(专属云)](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm)   [- dms.physical.storage.ultra.dss.v2(专属云)](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm)
         /// </summary>
         [JsonProperty("storage_spec_code", NullValueHandling = NullValueHandling.Ignore)]
         public StorageSpecCodeEnum StorageSpecCode { get; set; }

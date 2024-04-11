@@ -31,6 +31,13 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         public string InstanceId { get; set; }
 
         /// <summary>
+        /// 数据库名称；忽略大小写模糊查询。
+        /// </summary>
+        [SDKProperty("db", IsQuery = true)]
+        [JsonProperty("db", NullValueHandling = NullValueHandling.Ignore)]
+        public string Db { get; set; }
+
+        /// <summary>
         /// 分页页码，从1开始。
         /// </summary>
         [SDKProperty("page", IsQuery = true)]
@@ -55,6 +62,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             sb.Append("class ListPostgresqlDatabasesRequest {\n");
             sb.Append("  xLanguage: ").Append(XLanguage).Append("\n");
             sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
+            sb.Append("  db: ").Append(Db).Append("\n");
             sb.Append("  page: ").Append(Page).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("}\n");
@@ -89,6 +97,11 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
                     this.InstanceId.Equals(input.InstanceId))
                 ) && 
                 (
+                    this.Db == input.Db ||
+                    (this.Db != null &&
+                    this.Db.Equals(input.Db))
+                ) && 
+                (
                     this.Page == input.Page ||
                     (this.Page != null &&
                     this.Page.Equals(input.Page))
@@ -112,6 +125,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
                     hashCode = hashCode * 59 + this.XLanguage.GetHashCode();
                 if (this.InstanceId != null)
                     hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.Db != null)
+                    hashCode = hashCode * 59 + this.Db.GetHashCode();
                 if (this.Page != null)
                     hashCode = hashCode * 59 + this.Page.GetHashCode();
                 if (this.Limit != null)

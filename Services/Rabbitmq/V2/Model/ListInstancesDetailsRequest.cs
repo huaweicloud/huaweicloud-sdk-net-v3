@@ -16,6 +16,115 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
     public class ListInstancesDetailsRequest 
     {
         /// <summary>
+        /// 引擎类型：rabbitmq。
+        /// </summary>
+        /// <value>引擎类型：rabbitmq。</value>
+        [JsonConverter(typeof(EnumClassConverter<EngineEnum>))]
+        public class EngineEnum
+        {
+            /// <summary>
+            /// Enum RABBITMQ for value: rabbitmq
+            /// </summary>
+            public static readonly EngineEnum RABBITMQ = new EngineEnum("rabbitmq");
+
+            private static readonly Dictionary<string, EngineEnum> StaticFields =
+            new Dictionary<string, EngineEnum>()
+            {
+                { "rabbitmq", RABBITMQ },
+            };
+
+            private string _value;
+
+            public EngineEnum()
+            {
+
+            }
+
+            public EngineEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static EngineEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as EngineEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(EngineEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(EngineEnum a, EngineEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(EngineEnum a, EngineEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+        /// <summary>
         /// 实例状态，[详细状态说明请参考[实例状态说明](rabbitmq-api-180514012.xml)](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,sbc,hk_sbc,g42,hk_g42,tm,hk_tm)[详细状态说明请参考[实例状态说明](kafka-api-180514012.xml)](tag:hcs)。
         /// </summary>
         /// <value>实例状态，[详细状态说明请参考[实例状态说明](rabbitmq-api-180514012.xml)](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,sbc,hk_sbc,g42,hk_g42,tm,hk_tm)[详细状态说明请参考[实例状态说明](kafka-api-180514012.xml)](tag:hcs)。</value>
@@ -440,12 +549,11 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
 
 
         /// <summary>
-        /// 引擎类型：rabbitmq，参数缺失查询所有实例。
+        /// 引擎类型：rabbitmq。
         /// </summary>
         [SDKProperty("engine", IsQuery = true)]
         [JsonProperty("engine", NullValueHandling = NullValueHandling.Ignore)]
-        public string Engine { get; set; }
-
+        public EngineEnum Engine { get; set; }
         /// <summary>
         /// 实例名称。
         /// </summary>

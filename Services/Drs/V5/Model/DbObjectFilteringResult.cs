@@ -15,6 +15,121 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
     /// </summary>
     public class DbObjectFilteringResult 
     {
+        /// <summary>
+        /// 对比的来源 - job 表示数据同步时的过滤 - compare 表示数据对比的过滤
+        /// </summary>
+        /// <value>对比的来源 - job 表示数据同步时的过滤 - compare 表示数据对比的过滤</value>
+        [JsonConverter(typeof(EnumClassConverter<SourceEnum>))]
+        public class SourceEnum
+        {
+            /// <summary>
+            /// Enum JOB for value: job
+            /// </summary>
+            public static readonly SourceEnum JOB = new SourceEnum("job");
+
+            /// <summary>
+            /// Enum COMPARE for value: compare
+            /// </summary>
+            public static readonly SourceEnum COMPARE = new SourceEnum("compare");
+
+            private static readonly Dictionary<string, SourceEnum> StaticFields =
+            new Dictionary<string, SourceEnum>()
+            {
+                { "job", JOB },
+                { "compare", COMPARE },
+            };
+
+            private string _value;
+
+            public SourceEnum()
+            {
+
+            }
+
+            public SourceEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static SourceEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as SourceEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(SourceEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(SourceEnum a, SourceEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(SourceEnum a, SourceEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 数据库库名。
@@ -46,6 +161,35 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         [JsonProperty("message", NullValueHandling = NullValueHandling.Ignore)]
         public string Message { get; set; }
 
+        /// <summary>
+        /// 对比的来源 - job 表示数据同步时的过滤 - compare 表示数据对比的过滤
+        /// </summary>
+        [JsonProperty("source", NullValueHandling = NullValueHandling.Ignore)]
+        public SourceEnum Source { get; set; }
+        /// <summary>
+        /// 校验目标库比对条件过滤的结果
+        /// </summary>
+        [JsonProperty("target_result", NullValueHandling = NullValueHandling.Ignore)]
+        public string TargetResult { get; set; }
+
+        /// <summary>
+        /// 校验源库比对条件过滤的结果
+        /// </summary>
+        [JsonProperty("source_result", NullValueHandling = NullValueHandling.Ignore)]
+        public string SourceResult { get; set; }
+
+        /// <summary>
+        /// 校验目标库比对条件过滤的失败原因
+        /// </summary>
+        [JsonProperty("target_message", NullValueHandling = NullValueHandling.Ignore)]
+        public string TargetMessage { get; set; }
+
+        /// <summary>
+        /// 校验源库比对条件过滤的失败原因
+        /// </summary>
+        [JsonProperty("source_message", NullValueHandling = NullValueHandling.Ignore)]
+        public string SourceMessage { get; set; }
+
 
 
         /// <summary>
@@ -60,6 +204,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             sb.Append("  tableName: ").Append(TableName).Append("\n");
             sb.Append("  isSuccess: ").Append(IsSuccess).Append("\n");
             sb.Append("  message: ").Append(Message).Append("\n");
+            sb.Append("  source: ").Append(Source).Append("\n");
+            sb.Append("  targetResult: ").Append(TargetResult).Append("\n");
+            sb.Append("  sourceResult: ").Append(SourceResult).Append("\n");
+            sb.Append("  targetMessage: ").Append(TargetMessage).Append("\n");
+            sb.Append("  sourceMessage: ").Append(SourceMessage).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -105,6 +254,31 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                     this.Message == input.Message ||
                     (this.Message != null &&
                     this.Message.Equals(input.Message))
+                ) && 
+                (
+                    this.Source == input.Source ||
+                    (this.Source != null &&
+                    this.Source.Equals(input.Source))
+                ) && 
+                (
+                    this.TargetResult == input.TargetResult ||
+                    (this.TargetResult != null &&
+                    this.TargetResult.Equals(input.TargetResult))
+                ) && 
+                (
+                    this.SourceResult == input.SourceResult ||
+                    (this.SourceResult != null &&
+                    this.SourceResult.Equals(input.SourceResult))
+                ) && 
+                (
+                    this.TargetMessage == input.TargetMessage ||
+                    (this.TargetMessage != null &&
+                    this.TargetMessage.Equals(input.TargetMessage))
+                ) && 
+                (
+                    this.SourceMessage == input.SourceMessage ||
+                    (this.SourceMessage != null &&
+                    this.SourceMessage.Equals(input.SourceMessage))
                 );
         }
 
@@ -126,6 +300,16 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                     hashCode = hashCode * 59 + this.IsSuccess.GetHashCode();
                 if (this.Message != null)
                     hashCode = hashCode * 59 + this.Message.GetHashCode();
+                if (this.Source != null)
+                    hashCode = hashCode * 59 + this.Source.GetHashCode();
+                if (this.TargetResult != null)
+                    hashCode = hashCode * 59 + this.TargetResult.GetHashCode();
+                if (this.SourceResult != null)
+                    hashCode = hashCode * 59 + this.SourceResult.GetHashCode();
+                if (this.TargetMessage != null)
+                    hashCode = hashCode * 59 + this.TargetMessage.GetHashCode();
+                if (this.SourceMessage != null)
+                    hashCode = hashCode * 59 + this.SourceMessage.GetHashCode();
                 return hashCode;
             }
         }

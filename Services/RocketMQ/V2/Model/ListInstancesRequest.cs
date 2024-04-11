@@ -16,21 +16,21 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     public class ListInstancesRequest 
     {
         /// <summary>
-        /// 消息引擎。
+        /// 消息引擎：rocketmq。
         /// </summary>
-        /// <value>消息引擎。</value>
+        /// <value>消息引擎：rocketmq。</value>
         [JsonConverter(typeof(EnumClassConverter<EngineEnum>))]
         public class EngineEnum
         {
             /// <summary>
-            /// Enum RELIABILITY for value: reliability
+            /// Enum ROCKETMQ for value: rocketmq
             /// </summary>
-            public static readonly EngineEnum RELIABILITY = new EngineEnum("reliability");
+            public static readonly EngineEnum ROCKETMQ = new EngineEnum("rocketmq");
 
             private static readonly Dictionary<string, EngineEnum> StaticFields =
             new Dictionary<string, EngineEnum>()
             {
-                { "reliability", RELIABILITY },
+                { "rocketmq", ROCKETMQ },
             };
 
             private string _value;
@@ -549,7 +549,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
 
 
         /// <summary>
-        /// 消息引擎。
+        /// 消息引擎：rocketmq。
         /// </summary>
         [SDKProperty("engine", IsQuery = true)]
         [JsonProperty("engine", NullValueHandling = NullValueHandling.Ignore)]

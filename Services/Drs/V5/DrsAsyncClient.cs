@@ -916,6 +916,30 @@ namespace HuaweiCloud.SDK.Drs.V5
         }
         
         /// <summary>
+        /// 查询委托的权限列表
+        ///
+        /// 根据源库类型，目标库类型，是否自建，获取委托所需要的权限
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListsAgencyPermissionsResponse> ListsAgencyPermissionsAsync(ListsAgencyPermissionsRequest listsAgencyPermissionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/agency/permissions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listsAgencyPermissionsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListsAgencyPermissionsResponse>(response);
+        }
+
+        public AsyncInvoker<ListsAgencyPermissionsResponse> ListsAgencyPermissionsAsyncInvoker(ListsAgencyPermissionsRequest listsAgencyPermissionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/agency/permissions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listsAgencyPermissionsRequest);
+            return new AsyncInvoker<ListsAgencyPermissionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListsAgencyPermissionsResponse>);
+        }
+        
+        /// <summary>
         /// 获取指定任务操作信息
         ///
         /// 获取指定任务允许、不允许、当前操作信息。
@@ -1467,6 +1491,32 @@ namespace HuaweiCloud.SDK.Drs.V5
             var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/progress-data/{type}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProgressDataRequest);
             return new AsyncInvoker<ShowProgressDataResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowProgressDataResponse>);
+        }
+        
+        /// <summary>
+        /// 查询录制回放结果
+        ///
+        /// 获取录制回放结果数据，包括：回放基于时间维度统计信息，异常SQL及统计结果、慢SQL及统计结果
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowReplayResultsResponse> ShowReplayResultsAsync(ShowReplayResultsRequest showReplayResultsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", showReplayResultsRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/replay-results", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showReplayResultsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowReplayResultsResponse>(response);
+        }
+
+        public AsyncInvoker<ShowReplayResultsResponse> ShowReplayResultsAsyncInvoker(ShowReplayResultsRequest showReplayResultsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", showReplayResultsRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/replay-results", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showReplayResultsRequest);
+            return new AsyncInvoker<ShowReplayResultsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowReplayResultsResponse>);
         }
         
         /// <summary>

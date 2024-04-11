@@ -8,19 +8,19 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Rds.V3.Model
+namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
 {
     /// <summary>
     /// Response Object
     /// </summary>
-    public class SwitchLogReplayResponse : SdkResponse
+    public class StartInstanceResponse : SdkResponse
     {
 
         /// <summary>
-        /// 提示信息
+        /// 启动数据库的异步任务ID。
         /// </summary>
-        [JsonProperty("message", NullValueHandling = NullValueHandling.Ignore)]
-        public string Message { get; set; }
+        [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string JobId { get; set; }
 
 
 
@@ -30,8 +30,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class SwitchLogReplayResponse {\n");
-            sb.Append("  message: ").Append(Message).Append("\n");
+            sb.Append("class StartInstanceResponse {\n");
+            sb.Append("  jobId: ").Append(JobId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -41,22 +41,22 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as SwitchLogReplayResponse);
+            return this.Equals(input as StartInstanceResponse);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(SwitchLogReplayResponse input)
+        public bool Equals(StartInstanceResponse input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Message == input.Message ||
-                    (this.Message != null &&
-                    this.Message.Equals(input.Message))
+                    this.JobId == input.JobId ||
+                    (this.JobId != null &&
+                    this.JobId.Equals(input.JobId))
                 );
         }
 
@@ -68,8 +68,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Message != null)
-                    hashCode = hashCode * 59 + this.Message.GetHashCode();
+                if (this.JobId != null)
+                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
                 return hashCode;
             }
         }

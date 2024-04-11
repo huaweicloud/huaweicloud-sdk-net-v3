@@ -166,6 +166,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         [JsonProperty("db_object", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, DatabaseObject> DbObject { get; set; }
 
+        /// <summary>
+        /// 更新数据加工规则请求体
+        /// </summary>
+        [JsonProperty("data_process_info", NullValueHandling = NullValueHandling.Ignore)]
+        public List<DataProcessInfo> DataProcessInfo { get; set; }
+
 
 
         /// <summary>
@@ -180,6 +186,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             sb.Append("  startTime: ").Append(StartTime).Append("\n");
             sb.Append("  option: ").Append(Option).Append("\n");
             sb.Append("  dbObject: ").Append(DbObject).Append("\n");
+            sb.Append("  dataProcessInfo: ").Append(DataProcessInfo).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -227,6 +234,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                     this.DbObject != null &&
                     input.DbObject != null &&
                     this.DbObject.SequenceEqual(input.DbObject)
+                ) && 
+                (
+                    this.DataProcessInfo == input.DataProcessInfo ||
+                    this.DataProcessInfo != null &&
+                    input.DataProcessInfo != null &&
+                    this.DataProcessInfo.SequenceEqual(input.DataProcessInfo)
                 );
         }
 
@@ -248,6 +261,8 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                     hashCode = hashCode * 59 + this.Option.GetHashCode();
                 if (this.DbObject != null)
                     hashCode = hashCode * 59 + this.DbObject.GetHashCode();
+                if (this.DataProcessInfo != null)
+                    hashCode = hashCode * 59 + this.DataProcessInfo.GetHashCode();
                 return hashCode;
             }
         }

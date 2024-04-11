@@ -8,19 +8,19 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Rds.V3.Model
+namespace HuaweiCloud.SDK.IoTDA.V5.Model
 {
     /// <summary>
-    /// 中止/恢复wal日志回放请求体
+    /// Response Object
     /// </summary>
-    public class SwitchLogReplayRequestBody 
+    public class DeleteRoutingBacklogPolicyResponse : SdkResponse
     {
 
         /// <summary>
-        /// “true”表示中止回放，“false”表示恢复回放，其他情况表示不做操作
+        /// 
         /// </summary>
-        [JsonProperty("pause_log_replay", NullValueHandling = NullValueHandling.Ignore)]
-        public string PauseLogReplay { get; set; }
+        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
+        public string Body { get; set; }
 
 
 
@@ -30,8 +30,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class SwitchLogReplayRequestBody {\n");
-            sb.Append("  pauseLogReplay: ").Append(PauseLogReplay).Append("\n");
+            sb.Append("class DeleteRoutingBacklogPolicyResponse {\n");
+            sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -41,22 +41,22 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as SwitchLogReplayRequestBody);
+            return this.Equals(input as DeleteRoutingBacklogPolicyResponse);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(SwitchLogReplayRequestBody input)
+        public bool Equals(DeleteRoutingBacklogPolicyResponse input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.PauseLogReplay == input.PauseLogReplay ||
-                    (this.PauseLogReplay != null &&
-                    this.PauseLogReplay.Equals(input.PauseLogReplay))
+                    this.Body == input.Body ||
+                    (this.Body != null &&
+                    this.Body.Equals(input.Body))
                 );
         }
 
@@ -68,8 +68,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.PauseLogReplay != null)
-                    hashCode = hashCode * 59 + this.PauseLogReplay.GetHashCode();
+                if (this.Body != null)
+                    hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;
             }
         }

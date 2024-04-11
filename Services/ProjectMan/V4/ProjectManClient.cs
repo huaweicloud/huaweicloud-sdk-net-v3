@@ -809,6 +809,32 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         }
         
         /// <summary>
+        /// 查询当前项目下已经关联的工作项
+        ///
+        /// 查询当前项目下已经关联的工作项
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public BatchListAssociatedIssuesResponse BatchListAssociatedIssues(BatchListAssociatedIssuesRequest batchListAssociatedIssuesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id", batchListAssociatedIssuesRequest.ProjectId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/issues/batch-associated-issues", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchListAssociatedIssuesRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<BatchListAssociatedIssuesResponse>(response);
+        }
+
+        public SyncInvoker<BatchListAssociatedIssuesResponse> BatchListAssociatedIssuesInvoker(BatchListAssociatedIssuesRequest batchListAssociatedIssuesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id", batchListAssociatedIssuesRequest.ProjectId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/issues/batch-associated-issues", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchListAssociatedIssuesRequest);
+            return new SyncInvoker<BatchListAssociatedIssuesResponse>(this, "GET", request, JsonUtils.DeSerialize<BatchListAssociatedIssuesResponse>);
+        }
+        
+        /// <summary>
         /// 取消领域与项目的关联关系
         ///
         /// 取消领域与项目的关联关系

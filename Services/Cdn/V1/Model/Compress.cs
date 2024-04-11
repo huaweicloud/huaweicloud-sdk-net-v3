@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public string Status { get; set; }
 
         /// <summary>
-        /// 智能压缩类型（gzip：gzip压缩，brotli：brotli压缩）。
+        /// 智能压缩类型（gzip：gzip压缩，br：brotli压缩）。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }

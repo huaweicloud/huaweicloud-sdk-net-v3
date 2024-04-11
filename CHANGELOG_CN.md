@@ -1,3 +1,205 @@
+# 3.1.90 2024-04-11
+
+### HuaweiCloud SDK AOS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowStackSetMetadata**
+    - 响应参数变更
+      - `+ managed_operation`
+  - **UpdateStackSet**
+    - 请求参数变更
+      - `+ managed_operation`
+  - **CreateStackSet**
+    - 请求参数变更
+      - `+ managed_operation`
+  - **CreateStackInstance**
+    - 请求参数变更
+      - `+ operation_preferences`
+  - **DeleteStackInstanceDeprecated**
+    - 请求参数变更
+      - `+ operation_preferences`
+  - **UpdateStackInstances**
+    - 请求参数变更
+      - `+ operation_preferences`
+  - **DeleteStackInstance**
+    - 请求参数变更
+      - `+ operation_preferences`
+  - **DeployStackSet**
+    - 请求参数变更
+      - `+ operation_preferences`
+  - **ShowStackSetOperationMetadata**
+    - 响应参数变更
+      - `+ operation_preferences`
+
+### HuaweiCloud SDK CDN
+
+- _新增特性_
+  - 支持接口`ShowQuota`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowDomainFullConfig**
+    - 响应参数变更
+      - `+ configs.sni`
+      - `+ configs.request_url_rewrite`
+      - `+ configs.browser_cache_rules`
+  - **UpdateDomainFullConfig**
+    - 请求参数变更
+      - `+ configs.sni`
+      - `+ configs.request_url_rewrite`
+      - `+ configs.browser_cache_rules`
+
+### HuaweiCloud SDK DRS
+
+- _新增特性_
+  - 支持以下接口：
+    - `ListDataLevelTableCompareJobs`
+    - `CreateDataLevelTableCompareJob`
+    - `DeleteCompareJob`
+    - `StartPromptlyDataLevelTableCompareJob`
+    - `ListDataCompareOverview`
+    - `ListDataCompareDetail`
+    - `ListContentCompareOverview`
+    - `ListContentCompareDetail`
+    - `ListsAgencyPermissions`
+    - `ShowReplayResults`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowDataFilteringResult**
+    - 响应参数变更
+      - `+ db_object_filtering_result.source`
+      - `+ db_object_filtering_result.target_result`
+      - `+ db_object_filtering_result.source_result`
+      - `+ db_object_filtering_result.target_message`
+      - `+ db_object_filtering_result.source_message`
+  - **ShowDataProgress**
+    - 响应参数变更
+      - `+ data_process_info.source`
+  - **UpdateDataProgress**
+    - 请求参数变更
+      - `+ data_process_info.source`
+  - **CheckDataFilter**
+    - 请求参数变更
+      - `+ data_process_info.source`
+  - **ExecuteJobAction**
+    - 请求参数变更
+      - `+ job.action_params.compare_task_param.data_process_info`
+  - **BatchExecuteJobActions**
+    - 请求参数变更
+      - `+ jobs.action_params.compare_task_param.data_process_info`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _新增特性_
+  - 支持以下接口：
+    - `ShowInstancesStatistics`
+    - `ShowSlowLogDownload`
+    - `CreateSlowLogDownload`
+    - `UpgradeInstanceVersion`
+    - `SearchAutoEnlargePolicy`
+    - `ListCnInfosBeforeReduce`
+    - `StartInstance`
+    - `ShowUpgradeCandidateVersions`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK IoTDA
+
+- _新增特性_
+  - 支持以下接口：
+    - `ListRoutingBacklogPolicy`
+    - `CreateRoutingBacklogPolicy`
+    - `ShowRoutingBacklogPolicy`
+    - `UpdateRoutingBacklogPolicy`
+    - `DeleteRoutingBacklogPolicy`
+    - `ListRoutingFlowControlPolicy`
+    - `CreateRoutingFlowControlPolicy`
+    - `ShowRoutingFlowControlPolicy`
+    - `UpdateRoutingFlowControlPolicy`
+    - `DeleteRoutingFlowControlPolicy`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK Kafka
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListInstances**
+    - 请求参数变更
+      - `* engine: optional -> required`
+
+### HuaweiCloud SDK ProjectMan
+
+- _新增特性_
+  - 支持接口`BatchListAssociatedIssues`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK RabbitMQ
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListInstancesDetails**
+    - 请求参数变更
+      - `* engine: optional -> required`
+      - `+ engine: enum value [rabbitmq]`
+
+### HuaweiCloud SDK RDS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 移除接口`ShowReplayDelayStatus`、`SwitchLogReplay`
+  - **StartResizeFlavorAction**
+    - 请求参数变更
+      - `+ resize_flavor.is_delay`
+  - **ListPostgresqlDatabases**
+    - 请求参数变更
+      - `+ db`
+
+### HuaweiCloud SDK RocketMQ
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListInstances**
+    - 请求参数变更
+      - `* engine: optional -> required`
+      - `+ engine: enum value [rocketmq]`
+      - `+ engine: enum value [reliability]`
+
+### HuaweiCloud SDK SWR
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListSharedReposDetails**
+    - 请求参数变更
+      - `* center: optional -> required`
+
 # 3.1.89 2024-04-03
 
 ### HuaweiCloud SDK CFW

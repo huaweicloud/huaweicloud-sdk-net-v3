@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
     public class ShowPositionResultResponse : SdkResponse
     {
         /// <summary>
-        /// 查询状态。
+        /// 查询状态
         /// </summary>
-        /// <value>查询状态。</value>
+        /// <value>查询状态</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -150,7 +150,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         public string Position { get; set; }
 
         /// <summary>
-        /// 查询状态。
+        /// 查询状态
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
