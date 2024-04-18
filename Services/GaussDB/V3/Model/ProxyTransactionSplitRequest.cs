@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         public string TransactionSplit { get; set; }
 
         /// <summary>
-        /// 实例的proxy列表
+        /// 实例的数据库代理列表，仅支持单proxy使用。
         /// </summary>
         [JsonProperty("proxy_id_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> ProxyIdList { get; set; }

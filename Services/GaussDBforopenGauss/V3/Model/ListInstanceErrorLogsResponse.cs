@@ -11,22 +11,22 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
 {
     /// <summary>
-    /// 
+    /// Response Object
     /// </summary>
-    public class InstancesStatisticsResponseBodyInstancesStatistics 
+    public class ListInstanceErrorLogsResponse : SdkResponse
     {
 
         /// <summary>
-        /// 实例状态
+        /// 总条数
         /// </summary>
-        [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
-        public string Status { get; set; }
+        [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Total { get; set; }
 
         /// <summary>
-        /// 实例数量
+        /// 日志文件列表
         /// </summary>
-        [JsonProperty("count", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Count { get; set; }
+        [JsonProperty("log_files", NullValueHandling = NullValueHandling.Ignore)]
+        public List<InstanceLogFile> LogFiles { get; set; }
 
 
 
@@ -36,9 +36,9 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class InstancesStatisticsResponseBodyInstancesStatistics {\n");
-            sb.Append("  status: ").Append(Status).Append("\n");
-            sb.Append("  count: ").Append(Count).Append("\n");
+            sb.Append("class ListInstanceErrorLogsResponse {\n");
+            sb.Append("  total: ").Append(Total).Append("\n");
+            sb.Append("  logFiles: ").Append(LogFiles).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -48,27 +48,28 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as InstancesStatisticsResponseBodyInstancesStatistics);
+            return this.Equals(input as ListInstanceErrorLogsResponse);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(InstancesStatisticsResponseBodyInstancesStatistics input)
+        public bool Equals(ListInstanceErrorLogsResponse input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
+                    this.Total == input.Total ||
+                    (this.Total != null &&
+                    this.Total.Equals(input.Total))
                 ) && 
                 (
-                    this.Count == input.Count ||
-                    (this.Count != null &&
-                    this.Count.Equals(input.Count))
+                    this.LogFiles == input.LogFiles ||
+                    this.LogFiles != null &&
+                    input.LogFiles != null &&
+                    this.LogFiles.SequenceEqual(input.LogFiles)
                 );
         }
 
@@ -80,10 +81,10 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.Count != null)
-                    hashCode = hashCode * 59 + this.Count.GetHashCode();
+                if (this.Total != null)
+                    hashCode = hashCode * 59 + this.Total.GetHashCode();
+                if (this.LogFiles != null)
+                    hashCode = hashCode * 59 + this.LogFiles.GetHashCode();
                 return hashCode;
             }
         }

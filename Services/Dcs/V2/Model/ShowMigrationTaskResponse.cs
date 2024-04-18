@@ -562,6 +562,60 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         [JsonProperty("updated_at", NullValueHandling = NullValueHandling.Ignore)]
         public string UpdatedAt { get; set; }
 
+        /// <summary>
+        /// 迁移机释放时间。
+        /// </summary>
+        [JsonProperty("released_at", NullValueHandling = NullValueHandling.Ignore)]
+        public string ReleasedAt { get; set; }
+
+        /// <summary>
+        /// 版本。
+        /// </summary>
+        [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]
+        public string Version { get; set; }
+
+        /// <summary>
+        /// 操作模式，分为auto和manual。
+        /// </summary>
+        [JsonProperty("resume_mode", NullValueHandling = NullValueHandling.Ignore)]
+        public string ResumeMode { get; set; }
+
+        /// <summary>
+        /// 支持的特性。
+        /// </summary>
+        [JsonProperty("supported_features", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> SupportedFeatures { get; set; }
+
+        /// <summary>
+        /// 租户VPC ID。
+        /// </summary>
+        [JsonProperty("tenant_vpc_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string TenantVpcId { get; set; }
+
+        /// <summary>
+        /// 租户子网ID。
+        /// </summary>
+        [JsonProperty("tenant_subnet_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string TenantSubnetId { get; set; }
+
+        /// <summary>
+        /// 租户安全组ID。
+        /// </summary>
+        [JsonProperty("tenant_security_group_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string TenantSecurityGroupId { get; set; }
+
+        /// <summary>
+        /// 带宽限制速度。
+        /// </summary>
+        [JsonProperty("bandwidth_limit_mb", NullValueHandling = NullValueHandling.Ignore)]
+        public string BandwidthLimitMb { get; set; }
+
+        /// <summary>
+        /// 任务状态。
+        /// </summary>
+        [JsonProperty("task_status", NullValueHandling = NullValueHandling.Ignore)]
+        public string TaskStatus { get; set; }
+
 
 
         /// <summary>
@@ -584,6 +638,15 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             sb.Append("  targetInstance: ").Append(TargetInstance).Append("\n");
             sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  updatedAt: ").Append(UpdatedAt).Append("\n");
+            sb.Append("  releasedAt: ").Append(ReleasedAt).Append("\n");
+            sb.Append("  version: ").Append(Version).Append("\n");
+            sb.Append("  resumeMode: ").Append(ResumeMode).Append("\n");
+            sb.Append("  supportedFeatures: ").Append(SupportedFeatures).Append("\n");
+            sb.Append("  tenantVpcId: ").Append(TenantVpcId).Append("\n");
+            sb.Append("  tenantSubnetId: ").Append(TenantSubnetId).Append("\n");
+            sb.Append("  tenantSecurityGroupId: ").Append(TenantSecurityGroupId).Append("\n");
+            sb.Append("  bandwidthLimitMb: ").Append(BandwidthLimitMb).Append("\n");
+            sb.Append("  taskStatus: ").Append(TaskStatus).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -669,6 +732,52 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     this.UpdatedAt == input.UpdatedAt ||
                     (this.UpdatedAt != null &&
                     this.UpdatedAt.Equals(input.UpdatedAt))
+                ) && 
+                (
+                    this.ReleasedAt == input.ReleasedAt ||
+                    (this.ReleasedAt != null &&
+                    this.ReleasedAt.Equals(input.ReleasedAt))
+                ) && 
+                (
+                    this.Version == input.Version ||
+                    (this.Version != null &&
+                    this.Version.Equals(input.Version))
+                ) && 
+                (
+                    this.ResumeMode == input.ResumeMode ||
+                    (this.ResumeMode != null &&
+                    this.ResumeMode.Equals(input.ResumeMode))
+                ) && 
+                (
+                    this.SupportedFeatures == input.SupportedFeatures ||
+                    this.SupportedFeatures != null &&
+                    input.SupportedFeatures != null &&
+                    this.SupportedFeatures.SequenceEqual(input.SupportedFeatures)
+                ) && 
+                (
+                    this.TenantVpcId == input.TenantVpcId ||
+                    (this.TenantVpcId != null &&
+                    this.TenantVpcId.Equals(input.TenantVpcId))
+                ) && 
+                (
+                    this.TenantSubnetId == input.TenantSubnetId ||
+                    (this.TenantSubnetId != null &&
+                    this.TenantSubnetId.Equals(input.TenantSubnetId))
+                ) && 
+                (
+                    this.TenantSecurityGroupId == input.TenantSecurityGroupId ||
+                    (this.TenantSecurityGroupId != null &&
+                    this.TenantSecurityGroupId.Equals(input.TenantSecurityGroupId))
+                ) && 
+                (
+                    this.BandwidthLimitMb == input.BandwidthLimitMb ||
+                    (this.BandwidthLimitMb != null &&
+                    this.BandwidthLimitMb.Equals(input.BandwidthLimitMb))
+                ) && 
+                (
+                    this.TaskStatus == input.TaskStatus ||
+                    (this.TaskStatus != null &&
+                    this.TaskStatus.Equals(input.TaskStatus))
                 );
         }
 
@@ -706,6 +815,24 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
                 if (this.UpdatedAt != null)
                     hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
+                if (this.ReleasedAt != null)
+                    hashCode = hashCode * 59 + this.ReleasedAt.GetHashCode();
+                if (this.Version != null)
+                    hashCode = hashCode * 59 + this.Version.GetHashCode();
+                if (this.ResumeMode != null)
+                    hashCode = hashCode * 59 + this.ResumeMode.GetHashCode();
+                if (this.SupportedFeatures != null)
+                    hashCode = hashCode * 59 + this.SupportedFeatures.GetHashCode();
+                if (this.TenantVpcId != null)
+                    hashCode = hashCode * 59 + this.TenantVpcId.GetHashCode();
+                if (this.TenantSubnetId != null)
+                    hashCode = hashCode * 59 + this.TenantSubnetId.GetHashCode();
+                if (this.TenantSecurityGroupId != null)
+                    hashCode = hashCode * 59 + this.TenantSecurityGroupId.GetHashCode();
+                if (this.BandwidthLimitMb != null)
+                    hashCode = hashCode * 59 + this.BandwidthLimitMb.GetHashCode();
+                if (this.TaskStatus != null)
+                    hashCode = hashCode * 59 + this.TaskStatus.GetHashCode();
                 return hashCode;
             }
         }

@@ -292,9 +292,9 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
             public static readonly PeriodEnum NUMBER_900000 = new PeriodEnum(900000);
 
             /// <summary>
-            /// Enum NUMBER_36000000 for value: 36000000
+            /// Enum NUMBER_3600000 for value: 3600000
             /// </summary>
-            public static readonly PeriodEnum NUMBER_36000000 = new PeriodEnum(36000000);
+            public static readonly PeriodEnum NUMBER_3600000 = new PeriodEnum(3600000);
 
             private static readonly Dictionary<int?, PeriodEnum> StaticFields =
             new Dictionary<int?, PeriodEnum>()
@@ -302,7 +302,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
                 { 60000, NUMBER_60000 },
                 { 300000, NUMBER_300000 },
                 { 900000, NUMBER_900000 },
-                { 36000000, NUMBER_36000000 },
+                { 3600000, NUMBER_3600000 },
             };
 
             private int? _value;

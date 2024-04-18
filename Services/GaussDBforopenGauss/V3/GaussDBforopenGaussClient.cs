@@ -423,6 +423,32 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
         }
         
         /// <summary>
+        /// 删除实例标签
+        ///
+        /// 删除实例标签
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteInstanceTagResponse DeleteInstanceTag(DeleteInstanceTagRequest deleteInstanceTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteInstanceTagRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/tag", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceTagRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteInstanceTagResponse>(response);
+        }
+
+        public SyncInvoker<DeleteInstanceTagResponse> DeleteInstanceTagInvoker(DeleteInstanceTagRequest deleteInstanceTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteInstanceTagRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/tag", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceTagRequest);
+            return new SyncInvoker<DeleteInstanceTagResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteInstanceTagResponse>);
+        }
+        
+        /// <summary>
         /// 删除任务记录
         ///
         /// 删除任务记录。
@@ -975,6 +1001,32 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
         }
         
         /// <summary>
+        /// 查询错误日志下载链接
+        ///
+        /// 查询数据库错误日志下载链接。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListInstanceErrorLogsResponse ListInstanceErrorLogs(ListInstanceErrorLogsRequest listInstanceErrorLogsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceErrorLogsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/error-log", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceErrorLogsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListInstanceErrorLogsResponse>(response);
+        }
+
+        public SyncInvoker<ListInstanceErrorLogsResponse> ListInstanceErrorLogsInvoker(ListInstanceErrorLogsRequest listInstanceErrorLogsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceErrorLogsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/error-log", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceErrorLogsRequest);
+            return new SyncInvoker<ListInstanceErrorLogsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceErrorLogsResponse>);
+        }
+        
+        /// <summary>
         /// 查询实例标签
         ///
         /// 查询指定实例的用户标签信息。
@@ -1241,6 +1293,32 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/tasks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTasksRequest);
             return new SyncInvoker<ListTasksResponse>(this, "GET", request, JsonUtils.DeSerialize<ListTasksResponse>);
+        }
+        
+        /// <summary>
+        /// 查询Top IO列表
+        ///
+        /// 查询实例数据库进程下的Top IO流量数据，返回与会话信息相关联后的结果
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListTopIoTrafficsResponse ListTopIoTraffics(ListTopIoTrafficsRequest listTopIoTrafficsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listTopIoTrafficsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/top-io-traffics", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTopIoTrafficsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListTopIoTrafficsResponse>(response);
+        }
+
+        public SyncInvoker<ListTopIoTrafficsResponse> ListTopIoTrafficsInvoker(ListTopIoTrafficsRequest listTopIoTrafficsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listTopIoTrafficsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/top-io-traffics", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTopIoTrafficsRequest);
+            return new SyncInvoker<ListTopIoTrafficsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListTopIoTrafficsResponse>);
         }
         
         /// <summary>
@@ -1602,6 +1680,32 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
         }
         
         /// <summary>
+        /// 查询错误日志采集开关状态
+        ///
+        /// 查询数据库错误日志采集的开关状态。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowErrorLogSwitchStatusResponse ShowErrorLogSwitchStatus(ShowErrorLogSwitchStatusRequest showErrorLogSwitchStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showErrorLogSwitchStatusRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/error-log/switch/status", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showErrorLogSwitchStatusRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowErrorLogSwitchStatusResponse>(response);
+        }
+
+        public SyncInvoker<ShowErrorLogSwitchStatusResponse> ShowErrorLogSwitchStatusInvoker(ShowErrorLogSwitchStatusRequest showErrorLogSwitchStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showErrorLogSwitchStatusRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/error-log/switch/status", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showErrorLogSwitchStatusRequest);
+            return new SyncInvoker<ShowErrorLogSwitchStatusResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowErrorLogSwitchStatusResponse>);
+        }
+        
+        /// <summary>
         /// 获取指定实例的参数模板
         ///
         /// 获取指定实例的参数模板。
@@ -1701,30 +1805,6 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instance-snapshot", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceSnapshotRequest);
             return new SyncInvoker<ShowInstanceSnapshotResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceSnapshotResponse>);
-        }
-        
-        /// <summary>
-        /// 实例统计
-        ///
-        /// 实例统计
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public ShowInstancesStatisticsResponse ShowInstancesStatistics(ShowInstancesStatisticsRequest showInstancesStatisticsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/instances-statistics", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstancesStatisticsRequest);
-            var response = DoHttpRequestSync("GET", request);
-            return JsonUtils.DeSerialize<ShowInstancesStatisticsResponse>(response);
-        }
-
-        public SyncInvoker<ShowInstancesStatisticsResponse> ShowInstancesStatisticsInvoker(ShowInstancesStatisticsRequest showInstancesStatisticsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/instances-statistics", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstancesStatisticsRequest);
-            return new SyncInvoker<ShowInstancesStatisticsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstancesStatisticsResponse>);
         }
         
         /// <summary>

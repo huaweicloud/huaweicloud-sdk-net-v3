@@ -22,6 +22,12 @@ namespace HuaweiCloud.SDK.Tms.V1.Model
         [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]
         public string Key { get; set; }
 
+        /// <summary>
+        ///   值。 最大长度43个字符，可以为空字符串。 字符集：A-Z，a-z ， 0-9，‘-’，‘_’，UNICODE字符（\\u4E00-\\u9FFF）。
+        /// </summary>
+        [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
+        public string Value { get; set; }
+
 
 
         /// <summary>
@@ -32,6 +38,7 @@ namespace HuaweiCloud.SDK.Tms.V1.Model
             var sb = new StringBuilder();
             sb.Append("class DeleteTagRequest {\n");
             sb.Append("  key: ").Append(Key).Append("\n");
+            sb.Append("  value: ").Append(Value).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -57,6 +64,11 @@ namespace HuaweiCloud.SDK.Tms.V1.Model
                     this.Key == input.Key ||
                     (this.Key != null &&
                     this.Key.Equals(input.Key))
+                ) && 
+                (
+                    this.Value == input.Value ||
+                    (this.Value != null &&
+                    this.Value.Equals(input.Value))
                 );
         }
 
@@ -70,6 +82,8 @@ namespace HuaweiCloud.SDK.Tms.V1.Model
                 int hashCode = 41;
                 if (this.Key != null)
                     hashCode = hashCode * 59 + this.Key.GetHashCode();
+                if (this.Value != null)
+                    hashCode = hashCode * 59 + this.Value.GetHashCode();
                 return hashCode;
             }
         }

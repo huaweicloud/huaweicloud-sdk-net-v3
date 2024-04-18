@@ -43,6 +43,7 @@ namespace HuaweiCloud.SDK.Core
         private HttpConfig _httpConfig;
 
         private SdkHttpClient _sdkHttpClient;
+        private IExceptionHandler _exceptionHandler = new DefaultExceptionHandler();
 
         internal Client WithCredential(ICredential credentials)
         {
@@ -94,7 +95,8 @@ namespace HuaweiCloud.SDK.Core
             try
             {
                 var response = await _sdkHttpClient.DoHttpRequest(message);
-                return GetResult(response);
+                _exceptionHandler.HandleException(request, response);
+                return response;
             }
             catch (AggregateException aggregateException)
             {
@@ -139,7 +141,8 @@ namespace HuaweiCloud.SDK.Core
             try
             {
                 var response = _sdkHttpClient.DoHttpRequest(message).Result;
-                return GetResult(response);
+                _exceptionHandler.HandleException(request, response);
+                return response;
             }
             catch (AggregateException aggregateException)
             {
@@ -156,16 +159,6 @@ namespace HuaweiCloud.SDK.Core
             }
 
             return endpoint.Insert(8, request.Cname + ".");
-        }
-
-        private HttpResponseMessage GetResult(HttpResponseMessage responseMessage)
-        {
-            if ((int)responseMessage.StatusCode < 400)
-            {
-                return responseMessage;
-            }
-
-            throw ExceptionUtils.GetException(responseMessage);
         }
 
         private HttpRequest GetHttpRequest(string url, string method, SdkRequest sdkRequest)
@@ -211,6 +204,7 @@ namespace HuaweiCloud.SDK.Core
             private HttpHandler _httpHandler;
             private LogLevel _logLevel = LogLevel.Information;
             private Region _region;
+            private IExceptionHandler _exceptionHandler;
 
             public ClientBuilder()
             {
@@ -278,6 +272,12 @@ namespace HuaweiCloud.SDK.Core
                 return this;
             }
 
+            public ClientBuilder<T> WithExceptionHandler(IExceptionHandler exceptionHandler)
+            {
+                _exceptionHandler = exceptionHandler;
+                return this;
+            }
+
             public T Build()
             {
                 Client client = Activator.CreateInstance<T>();
@@ -293,6 +293,10 @@ namespace HuaweiCloud.SDK.Core
                         $"credential type error, support credential type is {string.Join(",", CredentialType)}");
                 }
 
+                if (_exceptionHandler != null)
+                {
+                    client._exceptionHandler = _exceptionHandler;
+                }
                 client.WithHttpConfig(_httpConfig ?? HttpConfig.GetDefaultConfig())
                     .InitSdkHttpClient(_httpHandler, _enableLogging, _logLevel);
 

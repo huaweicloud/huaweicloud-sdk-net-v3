@@ -44,7 +44,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// 差量备份周期配置。自动差量备份将每隔周期分钟执行。
         /// </summary>
         [JsonProperty("differential_period", NullValueHandling = NullValueHandling.Ignore)]
-        public string DifferentialPeriod { get; set; }
+        public int? DifferentialPeriod { get; set; }
 
         /// <summary>
         /// 备份时备份数据上传OBS的速度，单位为MB/s。范围为0~1024MB/s，默认75MB/s，0MB/s表示不限速。

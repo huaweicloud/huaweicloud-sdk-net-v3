@@ -138,6 +138,13 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }
         /// <summary>
+        /// 企业项目id。 - 查询单个企业项目下实例，填写企业项目id。 - 查询所有企业项目下实例，填写“all_granted_eps”。
+        /// </summary>
+        [SDKProperty("Enterprise-Project-Id", IsHeader = true)]
+        [JsonProperty("Enterprise-Project-Id", NullValueHandling = NullValueHandling.Ignore)]
+        public string EnterpriseProjectId { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [SDKProperty("body", IsBody = true)]
@@ -154,6 +161,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
             var sb = new StringBuilder();
             sb.Append("class ListEventsRequest {\n");
             sb.Append("  type: ").Append(Type).Append("\n");
+            sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -182,6 +190,11 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
                     this.Type.Equals(input.Type))
                 ) && 
                 (
+                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
+                    (this.EnterpriseProjectId != null &&
+                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
+                ) && 
+                (
                     this.Body == input.Body ||
                     (this.Body != null &&
                     this.Body.Equals(input.Body))
@@ -198,6 +211,8 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
                 int hashCode = 41;
                 if (this.Type != null)
                     hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.EnterpriseProjectId != null)
+                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.Body != null)
                     hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;

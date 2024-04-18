@@ -1,3 +1,139 @@
+# 3.1.91 2024-04-18
+
+### HuaweiCloud SDK AOM
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListEvents**
+    - changes of request param
+      - `+ Enterprise-Project-Id`
+  - **CountEvents**
+    - changes of response param
+      - `+ summary`
+  - **UpdateAlarmRule**
+    - changes of request param
+      - `+ period: enum value [3600000]`
+      - `- period: enum value [36000000]`
+  - **AddAlarmRule**
+    - changes of request param
+      - `+ period: enum value [3600000]`
+      - `- period: enum value [36000000]`
+
+### HuaweiCloud SDK DCS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListMigrationTask**
+    - changes of response param
+      - `+ migration_tasks.description`
+      - `+ migration_tasks.source_instance_status`
+      - `+ migration_tasks.target_instance_status`
+      - `+ migration_tasks.source_instance_subnet_id`
+      - `+ migration_tasks.target_instance_subnet_id`
+      - `+ migration_tasks.source_instance_spec_code`
+      - `+ migration_tasks.target_instance_spec_code`
+      - `+ migration_tasks.error_message`
+      - `+ migration_tasks.released_at`
+      - `+ migration_tasks.version`
+      - `+ migration_tasks.resume_mode`
+      - `+ migration_tasks.supported_features`
+  - **ShowMigrationTask**
+    - changes of response param
+      - `+ task_status`
+      - `+ tenant_security_group_id`
+      - `+ tenant_vpc_id`
+      - `+ released_at`
+      - `+ version`
+      - `+ resume_mode`
+      - `+ supported_features`
+      - `+ bandwidth_limit_mb`
+      - `+ tenant_subnet_id`
+  - **StopMigrationTask**
+    - changes of response param
+      - `+ task_status`
+      - `+ tenant_security_group_id`
+      - `+ tenant_vpc_id`
+      - `+ released_at`
+      - `+ version`
+      - `+ resume_mode`
+      - `+ supported_features`
+      - `+ bandwidth_limit_mb`
+      - `+ tenant_subnet_id`
+  - **ListBackgroundTask**
+    - changes of response param
+      - `+ tasks.details.old_resource_spec_code`
+      - `+ tasks.details.new_resource_spec_code`
+      - `+ tasks.details.old_replica_num`
+      - `+ tasks.details.new_replica_num`
+      - `+ tasks.details.old_cache_type`
+      - `+ tasks.details.new_cache_type`
+      - `+ tasks.details.replica_ip`
+      - `+ tasks.details.replica_az`
+      - `+ tasks.details.group_name`
+      - `+ tasks.details.old_port`
+      - `+ tasks.details.new_port`
+      - `+ tasks.details.is_only_adjust_charging`
+      - `+ tasks.details.account_name`
+      - `+ tasks.details.source_ip`
+      - `+ tasks.details.target_ip`
+      - `+ tasks.details.node_name`
+      - `+ tasks.details.rename_commands`
+      - `+ tasks.details.updated_config_length`
+  - **ListCenterTask**
+    - changes of response param
+      - `+ tasks.details.old_resource_spec_code`
+      - `+ tasks.details.new_resource_spec_code`
+      - `+ tasks.details.old_replica_num`
+      - `+ tasks.details.new_replica_num`
+      - `+ tasks.details.old_cache_type`
+      - `+ tasks.details.new_cache_type`
+      - `+ tasks.details.replica_ip`
+      - `+ tasks.details.replica_az`
+      - `+ tasks.details.group_name`
+      - `+ tasks.details.old_port`
+      - `+ tasks.details.new_port`
+      - `+ tasks.details.is_only_adjust_charging`
+      - `+ tasks.details.account_name`
+      - `+ tasks.details.source_ip`
+      - `+ tasks.details.target_ip`
+      - `+ tasks.details.node_name`
+      - `+ tasks.details.rename_commands`
+      - `+ tasks.details.updated_config_length`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _Features_
+  - Support the APIs `ListTopIoTraffics`, `ShowErrorLogSwitchStatus`, `ListInstanceErrorLogs`, `DeleteInstanceTag`
+- _Bug Fix_
+  - None
+- _Change_
+  - Remove the API `ShowInstancesStatistics`
+  - **UpgradeInstanceVersion**
+    - changes of request param
+      - `+ upgrade_action`
+      - `- upgrde_action`
+      - `- is_parallel_upgrade`
+  - **ShowBackupPolicy**
+    - changes of response param
+      - `* backup_policy.differential_period: string -> int32`
+
+### HuaweiCloud SDK TMS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **DeleteResourceTag**
+    - changes of request param
+      - `+ tags.value`
+
 # 3.1.90 2024-04-11
 
 ### HuaweiCloud SDK AOS

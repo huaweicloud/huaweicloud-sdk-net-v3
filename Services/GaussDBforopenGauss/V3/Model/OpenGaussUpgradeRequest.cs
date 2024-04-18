@@ -25,8 +25,8 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// <summary>
         /// 实例升级操作，就地升级无需传值。灰度升级包括升级自动提交，升级待观察，提交升级，升级回退四种。热补丁升级包括升级自动提交，升级回退两种。详见接口描述。  upgradeAutoCommit 升级自动提交  upgrade 升级待观察  commit 提交升级  rollback 升级回退。
         /// </summary>
-        [JsonProperty("upgrde_action", NullValueHandling = NullValueHandling.Ignore)]
-        public string UpgrdeAction { get; set; }
+        [JsonProperty("upgrade_action", NullValueHandling = NullValueHandling.Ignore)]
+        public string UpgradeAction { get; set; }
 
         /// <summary>
         /// 实例升级目标版本，非必填。如果未传值则默认升级到当前实例的优选版本。仅热补丁升级方式下支持传入多个值，升级操作为升级自动提交，则实例版本从小到大批量升级，升级操作为升级回退，则实例版本从大到小批量回退。
@@ -46,12 +46,6 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         [JsonProperty("upgrade_az", NullValueHandling = NullValueHandling.Ignore)]
         public string UpgradeAz { get; set; }
 
-        /// <summary>
-        /// 支持AZ内并行升级，升级时先升级所有备DN，再并行升级各分片主DN，最后并行升级CN。仅在灰度升级下有效且需要数据库版本大于等于3.200。
-        /// </summary>
-        [JsonProperty("is_parallel_upgrade", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? IsParallelUpgrade { get; set; }
-
 
 
         /// <summary>
@@ -62,11 +56,10 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             var sb = new StringBuilder();
             sb.Append("class OpenGaussUpgradeRequest {\n");
             sb.Append("  upgradeType: ").Append(UpgradeType).Append("\n");
-            sb.Append("  upgrdeAction: ").Append(UpgrdeAction).Append("\n");
+            sb.Append("  upgradeAction: ").Append(UpgradeAction).Append("\n");
             sb.Append("  targetVersion: ").Append(TargetVersion).Append("\n");
             sb.Append("  upgradeShardNum: ").Append(UpgradeShardNum).Append("\n");
             sb.Append("  upgradeAz: ").Append(UpgradeAz).Append("\n");
-            sb.Append("  isParallelUpgrade: ").Append(IsParallelUpgrade).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -94,9 +87,9 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                     this.UpgradeType.Equals(input.UpgradeType))
                 ) && 
                 (
-                    this.UpgrdeAction == input.UpgrdeAction ||
-                    (this.UpgrdeAction != null &&
-                    this.UpgrdeAction.Equals(input.UpgrdeAction))
+                    this.UpgradeAction == input.UpgradeAction ||
+                    (this.UpgradeAction != null &&
+                    this.UpgradeAction.Equals(input.UpgradeAction))
                 ) && 
                 (
                     this.TargetVersion == input.TargetVersion ||
@@ -112,11 +105,6 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                     this.UpgradeAz == input.UpgradeAz ||
                     (this.UpgradeAz != null &&
                     this.UpgradeAz.Equals(input.UpgradeAz))
-                ) && 
-                (
-                    this.IsParallelUpgrade == input.IsParallelUpgrade ||
-                    (this.IsParallelUpgrade != null &&
-                    this.IsParallelUpgrade.Equals(input.IsParallelUpgrade))
                 );
         }
 
@@ -130,16 +118,14 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                 int hashCode = 41;
                 if (this.UpgradeType != null)
                     hashCode = hashCode * 59 + this.UpgradeType.GetHashCode();
-                if (this.UpgrdeAction != null)
-                    hashCode = hashCode * 59 + this.UpgrdeAction.GetHashCode();
+                if (this.UpgradeAction != null)
+                    hashCode = hashCode * 59 + this.UpgradeAction.GetHashCode();
                 if (this.TargetVersion != null)
                     hashCode = hashCode * 59 + this.TargetVersion.GetHashCode();
                 if (this.UpgradeShardNum != null)
                     hashCode = hashCode * 59 + this.UpgradeShardNum.GetHashCode();
                 if (this.UpgradeAz != null)
                     hashCode = hashCode * 59 + this.UpgradeAz.GetHashCode();
-                if (this.IsParallelUpgrade != null)
-                    hashCode = hashCode * 59 + this.IsParallelUpgrade.GetHashCode();
                 return hashCode;
             }
         }

@@ -47,7 +47,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         public int? Weight { get; set; }
 
         /// <summary>
-        /// 可用区信息。
+        /// 主实例所有节点的可用区信息。
         /// </summary>
         [JsonProperty("availability_zone", NullValueHandling = NullValueHandling.Ignore)]
         public List<MysqlProxyAvailable> AvailabilityZone { get; set; }

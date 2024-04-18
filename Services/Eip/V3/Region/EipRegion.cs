@@ -57,6 +57,8 @@ namespace HuaweiCloud.SDK.Eip.V3
             "https://vpc.ru-northwest-2.myhuaweicloud.com");
         public static readonly Region MY_KUALALUMPUR_1 = new Region("my-kualalumpur-1",
             "https://vpc.my-kualalumpur-1.myhuaweicloud.com");
+        public static readonly Region RU_MOSCOW_1 = new Region("ru-moscow-1",
+            "https://vpc.ru-moscow-1.myhuaweicloud.com");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("EIP");
 
@@ -87,6 +89,7 @@ namespace HuaweiCloud.SDK.Eip.V3
                 { "ae-ad-1", AE_AD_1 },
                 { "ru-northwest-2", RU_NORTHWEST_2 },
                 { "my-kualalumpur-1", MY_KUALALUMPUR_1 },
+                { "ru-moscow-1", RU_MOSCOW_1 },
         };
 
         public static Region ValueOf(string regionId)

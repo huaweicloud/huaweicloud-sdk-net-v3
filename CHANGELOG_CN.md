@@ -1,3 +1,139 @@
+# 3.1.91 2024-04-18
+
+### HuaweiCloud SDK AOM
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListEvents**
+    - 请求参数变更
+      - `+ Enterprise-Project-Id`
+  - **CountEvents**
+    - 响应参数变更
+      - `+ summary`
+  - **UpdateAlarmRule**
+    - 请求参数变更
+      - `+ period: enum value [3600000]`
+      - `- period: enum value [36000000]`
+  - **AddAlarmRule**
+    - 请求参数变更
+      - `+ period: enum value [3600000]`
+      - `- period: enum value [36000000]`
+
+### HuaweiCloud SDK DCS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListMigrationTask**
+    - 响应参数变更
+      - `+ migration_tasks.description`
+      - `+ migration_tasks.source_instance_status`
+      - `+ migration_tasks.target_instance_status`
+      - `+ migration_tasks.source_instance_subnet_id`
+      - `+ migration_tasks.target_instance_subnet_id`
+      - `+ migration_tasks.source_instance_spec_code`
+      - `+ migration_tasks.target_instance_spec_code`
+      - `+ migration_tasks.error_message`
+      - `+ migration_tasks.released_at`
+      - `+ migration_tasks.version`
+      - `+ migration_tasks.resume_mode`
+      - `+ migration_tasks.supported_features`
+  - **ShowMigrationTask**
+    - 响应参数变更
+      - `+ task_status`
+      - `+ tenant_security_group_id`
+      - `+ tenant_vpc_id`
+      - `+ released_at`
+      - `+ version`
+      - `+ resume_mode`
+      - `+ supported_features`
+      - `+ bandwidth_limit_mb`
+      - `+ tenant_subnet_id`
+  - **StopMigrationTask**
+    - 响应参数变更
+      - `+ task_status`
+      - `+ tenant_security_group_id`
+      - `+ tenant_vpc_id`
+      - `+ released_at`
+      - `+ version`
+      - `+ resume_mode`
+      - `+ supported_features`
+      - `+ bandwidth_limit_mb`
+      - `+ tenant_subnet_id`
+  - **ListBackgroundTask**
+    - 响应参数变更
+      - `+ tasks.details.old_resource_spec_code`
+      - `+ tasks.details.new_resource_spec_code`
+      - `+ tasks.details.old_replica_num`
+      - `+ tasks.details.new_replica_num`
+      - `+ tasks.details.old_cache_type`
+      - `+ tasks.details.new_cache_type`
+      - `+ tasks.details.replica_ip`
+      - `+ tasks.details.replica_az`
+      - `+ tasks.details.group_name`
+      - `+ tasks.details.old_port`
+      - `+ tasks.details.new_port`
+      - `+ tasks.details.is_only_adjust_charging`
+      - `+ tasks.details.account_name`
+      - `+ tasks.details.source_ip`
+      - `+ tasks.details.target_ip`
+      - `+ tasks.details.node_name`
+      - `+ tasks.details.rename_commands`
+      - `+ tasks.details.updated_config_length`
+  - **ListCenterTask**
+    - 响应参数变更
+      - `+ tasks.details.old_resource_spec_code`
+      - `+ tasks.details.new_resource_spec_code`
+      - `+ tasks.details.old_replica_num`
+      - `+ tasks.details.new_replica_num`
+      - `+ tasks.details.old_cache_type`
+      - `+ tasks.details.new_cache_type`
+      - `+ tasks.details.replica_ip`
+      - `+ tasks.details.replica_az`
+      - `+ tasks.details.group_name`
+      - `+ tasks.details.old_port`
+      - `+ tasks.details.new_port`
+      - `+ tasks.details.is_only_adjust_charging`
+      - `+ tasks.details.account_name`
+      - `+ tasks.details.source_ip`
+      - `+ tasks.details.target_ip`
+      - `+ tasks.details.node_name`
+      - `+ tasks.details.rename_commands`
+      - `+ tasks.details.updated_config_length`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _新增特性_
+  - 支持接口`ListTopIoTraffics`、`ShowErrorLogSwitchStatus`、`ListInstanceErrorLogs`、`DeleteInstanceTag`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 移除接口`ShowInstancesStatistics`
+  - **UpgradeInstanceVersion**
+    - 请求参数变更
+      - `+ upgrade_action`
+      - `- upgrde_action`
+      - `- is_parallel_upgrade`
+  - **ShowBackupPolicy**
+    - 响应参数变更
+      - `* backup_policy.differential_period: string -> int32`
+
+### HuaweiCloud SDK TMS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **DeleteResourceTag**
+    - 请求参数变更
+      - `+ tags.value`
+
 # 3.1.90 2024-04-11
 
 ### HuaweiCloud SDK AOS

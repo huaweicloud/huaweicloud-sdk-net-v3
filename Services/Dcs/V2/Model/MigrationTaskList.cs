@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
     public class MigrationTaskList 
     {
         /// <summary>
-        /// 迁移任务状态，这个字段的值包括：SUCCESS, FAILED, MIGRATING，TERMINATED
+        /// 迁移任务状态，这个字段的值包括：SUCCESS（成功）, FAILED（失败）, MIGRATING（迁移中），TERMINATED（已结束）。
         /// </summary>
-        /// <value>迁移任务状态，这个字段的值包括：SUCCESS, FAILED, MIGRATING，TERMINATED</value>
+        /// <value>迁移任务状态，这个字段的值包括：SUCCESS（成功）, FAILED（失败）, MIGRATING（迁移中），TERMINATED（已结束）。</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -143,9 +143,9 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         }
 
         /// <summary>
-        /// 迁移任务类型,包括备份文件导入和在线迁移两种类型。
+        /// 迁移任务类型，包括备份文件导入和在线迁移两种类型。
         /// </summary>
-        /// <value>迁移任务类型,包括备份文件导入和在线迁移两种类型。</value>
+        /// <value>迁移任务类型，包括备份文件导入和在线迁移两种类型。</value>
         [JsonConverter(typeof(EnumClassConverter<MigrationTypeEnum>))]
         public class MigrationTypeEnum
         {
@@ -386,12 +386,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         public string TaskName { get; set; }
 
         /// <summary>
-        /// 迁移任务状态，这个字段的值包括：SUCCESS, FAILED, MIGRATING，TERMINATED
+        /// 迁移任务状态，这个字段的值包括：SUCCESS（成功）, FAILED（失败）, MIGRATING（迁移中），TERMINATED（已结束）。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
         /// <summary>
-        /// 迁移任务类型,包括备份文件导入和在线迁移两种类型。
+        /// 迁移任务类型，包括备份文件导入和在线迁移两种类型。
         /// </summary>
         [JsonProperty("migration_type", NullValueHandling = NullValueHandling.Ignore)]
         public MigrationTypeEnum MigrationType { get; set; }
@@ -401,13 +401,13 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         [JsonProperty("migration_method", NullValueHandling = NullValueHandling.Ignore)]
         public MigrationMethodEnum MigrationMethod { get; set; }
         /// <summary>
-        /// 迁移机租户侧私有IP，与目的/源redis私有IP处于同VPC，可将此IP加入白名单
+        /// 迁移机租户侧私有IP，与目的/源redis私有IP处于同VPC，可将此IP加入白名单。
         /// </summary>
         [JsonProperty("ecs_tenant_private_ip", NullValueHandling = NullValueHandling.Ignore)]
         public string EcsTenantPrivateIp { get; set; }
 
         /// <summary>
-        /// 数据源，格式为ip:port或者桶名。
+        /// 源redis地址，格式为ip:port或者桶名。
         /// </summary>
         [JsonProperty("data_source", NullValueHandling = NullValueHandling.Ignore)]
         public string DataSource { get; set; }
@@ -443,10 +443,82 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         public string TargetInstanceId { get; set; }
 
         /// <summary>
-        /// 迁移任务创建时间
+        /// 迁移任务创建时间。
         /// </summary>
         [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
         public string CreatedAt { get; set; }
+
+        /// <summary>
+        /// 迁移任务描述。
+        /// </summary>
+        [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
+        public string Description { get; set; }
+
+        /// <summary>
+        /// 源实例状态，若自建redis则为空。
+        /// </summary>
+        [JsonProperty("source_instance_status", NullValueHandling = NullValueHandling.Ignore)]
+        public string SourceInstanceStatus { get; set; }
+
+        /// <summary>
+        /// 目标实例状态。
+        /// </summary>
+        [JsonProperty("target_instance_status", NullValueHandling = NullValueHandling.Ignore)]
+        public string TargetInstanceStatus { get; set; }
+
+        /// <summary>
+        /// 源实例子网ID，若自建redis则为空。
+        /// </summary>
+        [JsonProperty("source_instance_subnet_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string SourceInstanceSubnetId { get; set; }
+
+        /// <summary>
+        /// 目标实例子网ID。
+        /// </summary>
+        [JsonProperty("target_instance_subnet_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string TargetInstanceSubnetId { get; set; }
+
+        /// <summary>
+        /// 源实例规格编码，若自建redis则为空。
+        /// </summary>
+        [JsonProperty("source_instance_spec_code", NullValueHandling = NullValueHandling.Ignore)]
+        public string SourceInstanceSpecCode { get; set; }
+
+        /// <summary>
+        /// 目标实例规格编码。
+        /// </summary>
+        [JsonProperty("target_instance_spec_code", NullValueHandling = NullValueHandling.Ignore)]
+        public string TargetInstanceSpecCode { get; set; }
+
+        /// <summary>
+        /// 错误信息。
+        /// </summary>
+        [JsonProperty("error_message", NullValueHandling = NullValueHandling.Ignore)]
+        public string ErrorMessage { get; set; }
+
+        /// <summary>
+        /// 迁移机释放时间。
+        /// </summary>
+        [JsonProperty("released_at", NullValueHandling = NullValueHandling.Ignore)]
+        public string ReleasedAt { get; set; }
+
+        /// <summary>
+        /// 版本。
+        /// </summary>
+        [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]
+        public string Version { get; set; }
+
+        /// <summary>
+        /// 操作模式，分为auto和manual。
+        /// </summary>
+        [JsonProperty("resume_mode", NullValueHandling = NullValueHandling.Ignore)]
+        public string ResumeMode { get; set; }
+
+        /// <summary>
+        /// 支持的特性。
+        /// </summary>
+        [JsonProperty("supported_features", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> SupportedFeatures { get; set; }
 
 
 
@@ -470,6 +542,18 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             sb.Append("  targetInstanceName: ").Append(TargetInstanceName).Append("\n");
             sb.Append("  targetInstanceId: ").Append(TargetInstanceId).Append("\n");
             sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
+            sb.Append("  description: ").Append(Description).Append("\n");
+            sb.Append("  sourceInstanceStatus: ").Append(SourceInstanceStatus).Append("\n");
+            sb.Append("  targetInstanceStatus: ").Append(TargetInstanceStatus).Append("\n");
+            sb.Append("  sourceInstanceSubnetId: ").Append(SourceInstanceSubnetId).Append("\n");
+            sb.Append("  targetInstanceSubnetId: ").Append(TargetInstanceSubnetId).Append("\n");
+            sb.Append("  sourceInstanceSpecCode: ").Append(SourceInstanceSpecCode).Append("\n");
+            sb.Append("  targetInstanceSpecCode: ").Append(TargetInstanceSpecCode).Append("\n");
+            sb.Append("  errorMessage: ").Append(ErrorMessage).Append("\n");
+            sb.Append("  releasedAt: ").Append(ReleasedAt).Append("\n");
+            sb.Append("  version: ").Append(Version).Append("\n");
+            sb.Append("  resumeMode: ").Append(ResumeMode).Append("\n");
+            sb.Append("  supportedFeatures: ").Append(SupportedFeatures).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -555,6 +639,67 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     this.CreatedAt == input.CreatedAt ||
                     (this.CreatedAt != null &&
                     this.CreatedAt.Equals(input.CreatedAt))
+                ) && 
+                (
+                    this.Description == input.Description ||
+                    (this.Description != null &&
+                    this.Description.Equals(input.Description))
+                ) && 
+                (
+                    this.SourceInstanceStatus == input.SourceInstanceStatus ||
+                    (this.SourceInstanceStatus != null &&
+                    this.SourceInstanceStatus.Equals(input.SourceInstanceStatus))
+                ) && 
+                (
+                    this.TargetInstanceStatus == input.TargetInstanceStatus ||
+                    (this.TargetInstanceStatus != null &&
+                    this.TargetInstanceStatus.Equals(input.TargetInstanceStatus))
+                ) && 
+                (
+                    this.SourceInstanceSubnetId == input.SourceInstanceSubnetId ||
+                    (this.SourceInstanceSubnetId != null &&
+                    this.SourceInstanceSubnetId.Equals(input.SourceInstanceSubnetId))
+                ) && 
+                (
+                    this.TargetInstanceSubnetId == input.TargetInstanceSubnetId ||
+                    (this.TargetInstanceSubnetId != null &&
+                    this.TargetInstanceSubnetId.Equals(input.TargetInstanceSubnetId))
+                ) && 
+                (
+                    this.SourceInstanceSpecCode == input.SourceInstanceSpecCode ||
+                    (this.SourceInstanceSpecCode != null &&
+                    this.SourceInstanceSpecCode.Equals(input.SourceInstanceSpecCode))
+                ) && 
+                (
+                    this.TargetInstanceSpecCode == input.TargetInstanceSpecCode ||
+                    (this.TargetInstanceSpecCode != null &&
+                    this.TargetInstanceSpecCode.Equals(input.TargetInstanceSpecCode))
+                ) && 
+                (
+                    this.ErrorMessage == input.ErrorMessage ||
+                    (this.ErrorMessage != null &&
+                    this.ErrorMessage.Equals(input.ErrorMessage))
+                ) && 
+                (
+                    this.ReleasedAt == input.ReleasedAt ||
+                    (this.ReleasedAt != null &&
+                    this.ReleasedAt.Equals(input.ReleasedAt))
+                ) && 
+                (
+                    this.Version == input.Version ||
+                    (this.Version != null &&
+                    this.Version.Equals(input.Version))
+                ) && 
+                (
+                    this.ResumeMode == input.ResumeMode ||
+                    (this.ResumeMode != null &&
+                    this.ResumeMode.Equals(input.ResumeMode))
+                ) && 
+                (
+                    this.SupportedFeatures == input.SupportedFeatures ||
+                    this.SupportedFeatures != null &&
+                    input.SupportedFeatures != null &&
+                    this.SupportedFeatures.SequenceEqual(input.SupportedFeatures)
                 );
         }
 
@@ -592,6 +737,30 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     hashCode = hashCode * 59 + this.TargetInstanceId.GetHashCode();
                 if (this.CreatedAt != null)
                     hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.Description != null)
+                    hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.SourceInstanceStatus != null)
+                    hashCode = hashCode * 59 + this.SourceInstanceStatus.GetHashCode();
+                if (this.TargetInstanceStatus != null)
+                    hashCode = hashCode * 59 + this.TargetInstanceStatus.GetHashCode();
+                if (this.SourceInstanceSubnetId != null)
+                    hashCode = hashCode * 59 + this.SourceInstanceSubnetId.GetHashCode();
+                if (this.TargetInstanceSubnetId != null)
+                    hashCode = hashCode * 59 + this.TargetInstanceSubnetId.GetHashCode();
+                if (this.SourceInstanceSpecCode != null)
+                    hashCode = hashCode * 59 + this.SourceInstanceSpecCode.GetHashCode();
+                if (this.TargetInstanceSpecCode != null)
+                    hashCode = hashCode * 59 + this.TargetInstanceSpecCode.GetHashCode();
+                if (this.ErrorMessage != null)
+                    hashCode = hashCode * 59 + this.ErrorMessage.GetHashCode();
+                if (this.ReleasedAt != null)
+                    hashCode = hashCode * 59 + this.ReleasedAt.GetHashCode();
+                if (this.Version != null)
+                    hashCode = hashCode * 59 + this.Version.GetHashCode();
+                if (this.ResumeMode != null)
+                    hashCode = hashCode * 59 + this.ResumeMode.GetHashCode();
+                if (this.SupportedFeatures != null)
+                    hashCode = hashCode * 59 + this.SupportedFeatures.GetHashCode();
                 return hashCode;
             }
         }

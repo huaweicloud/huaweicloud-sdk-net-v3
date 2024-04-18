@@ -34,6 +34,12 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         [JsonProperty("series", NullValueHandling = NullValueHandling.Ignore)]
         public List<EventSeries> Series { get; set; }
 
+        /// <summary>
+        /// 各类告警信息的数量汇总
+        /// </summary>
+        [JsonProperty("summary", NullValueHandling = NullValueHandling.Ignore)]
+        public Dictionary<string, long?> Summary { get; set; }
+
 
 
         /// <summary>
@@ -46,6 +52,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
             sb.Append("  step: ").Append(Step).Append("\n");
             sb.Append("  timestamps: ").Append(Timestamps).Append("\n");
             sb.Append("  series: ").Append(Series).Append("\n");
+            sb.Append("  summary: ").Append(Summary).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -83,6 +90,12 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
                     this.Series != null &&
                     input.Series != null &&
                     this.Series.SequenceEqual(input.Series)
+                ) && 
+                (
+                    this.Summary == input.Summary ||
+                    this.Summary != null &&
+                    input.Summary != null &&
+                    this.Summary.SequenceEqual(input.Summary)
                 );
         }
 
@@ -100,6 +113,8 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
                     hashCode = hashCode * 59 + this.Timestamps.GetHashCode();
                 if (this.Series != null)
                     hashCode = hashCode * 59 + this.Series.GetHashCode();
+                if (this.Summary != null)
+                    hashCode = hashCode * 59 + this.Summary.GetHashCode();
                 return hashCode;
             }
         }
