@@ -160,6 +160,12 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         [JsonProperty("lb_port", NullValueHandling = NullValueHandling.Ignore)]
         public string LbPort { get; set; }
 
+        /// <summary>
+        /// 实例可用区。
+        /// </summary>
+        [JsonProperty("availability_zone", NullValueHandling = NullValueHandling.Ignore)]
+        public string AvailabilityZone { get; set; }
+
 
 
         /// <summary>
@@ -193,6 +199,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
             sb.Append("  actions: ").Append(Actions).Append("\n");
             sb.Append("  lbIpAddress: ").Append(LbIpAddress).Append("\n");
             sb.Append("  lbPort: ").Append(LbPort).Append("\n");
+            sb.Append("  availabilityZone: ").Append(AvailabilityZone).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -335,6 +342,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
                     this.LbPort == input.LbPort ||
                     (this.LbPort != null &&
                     this.LbPort.Equals(input.LbPort))
+                ) && 
+                (
+                    this.AvailabilityZone == input.AvailabilityZone ||
+                    (this.AvailabilityZone != null &&
+                    this.AvailabilityZone.Equals(input.AvailabilityZone))
                 );
         }
 
@@ -394,6 +406,8 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
                     hashCode = hashCode * 59 + this.LbIpAddress.GetHashCode();
                 if (this.LbPort != null)
                     hashCode = hashCode * 59 + this.LbPort.GetHashCode();
+                if (this.AvailabilityZone != null)
+                    hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
                 return hashCode;
             }
         }

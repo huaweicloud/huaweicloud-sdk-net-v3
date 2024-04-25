@@ -82,6 +82,12 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         [JsonProperty("destination_address_group_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DestinationAddressGroupId { get; set; }
 
+        /// <summary>
+        /// 功能说明：是否启用ACL规则。 取值范围：true，表示启用；false，表示停用。 默认值：true。
+        /// </summary>
+        [JsonProperty("enabled", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? Enabled { get; set; }
+
 
 
         /// <summary>
@@ -102,6 +108,7 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
             sb.Append("  destinationPort: ").Append(DestinationPort).Append("\n");
             sb.Append("  sourceAddressGroupId: ").Append(SourceAddressGroupId).Append("\n");
             sb.Append("  destinationAddressGroupId: ").Append(DestinationAddressGroupId).Append("\n");
+            sb.Append("  enabled: ").Append(Enabled).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -177,6 +184,11 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
                     this.DestinationAddressGroupId == input.DestinationAddressGroupId ||
                     (this.DestinationAddressGroupId != null &&
                     this.DestinationAddressGroupId.Equals(input.DestinationAddressGroupId))
+                ) && 
+                (
+                    this.Enabled == input.Enabled ||
+                    (this.Enabled != null &&
+                    this.Enabled.Equals(input.Enabled))
                 );
         }
 
@@ -210,6 +222,8 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
                     hashCode = hashCode * 59 + this.SourceAddressGroupId.GetHashCode();
                 if (this.DestinationAddressGroupId != null)
                     hashCode = hashCode * 59 + this.DestinationAddressGroupId.GetHashCode();
+                if (this.Enabled != null)
+                    hashCode = hashCode * 59 + this.Enabled.GetHashCode();
                 return hashCode;
             }
         }

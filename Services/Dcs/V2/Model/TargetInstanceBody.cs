@@ -34,6 +34,36 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         [JsonProperty("password", NullValueHandling = NullValueHandling.Ignore)]
         public string Password { get; set; }
 
+        /// <summary>
+        /// Redis IP地址。
+        /// </summary>
+        [JsonProperty("ip", NullValueHandling = NullValueHandling.Ignore)]
+        public string Ip { get; set; }
+
+        /// <summary>
+        /// Redis端口。
+        /// </summary>
+        [JsonProperty("port", NullValueHandling = NullValueHandling.Ignore)]
+        public string Port { get; set; }
+
+        /// <summary>
+        /// Redis实例地址。
+        /// </summary>
+        [JsonProperty("addrs", NullValueHandling = NullValueHandling.Ignore)]
+        public string Addrs { get; set; }
+
+        /// <summary>
+        /// proxy实例是否开启了多DB。
+        /// </summary>
+        [JsonProperty("proxy_multi_db", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? ProxyMultiDb { get; set; }
+
+        /// <summary>
+        /// Redis数据库。
+        /// </summary>
+        [JsonProperty("db", NullValueHandling = NullValueHandling.Ignore)]
+        public string Db { get; set; }
+
 
 
         /// <summary>
@@ -46,6 +76,11 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  password: ").Append(Password).Append("\n");
+            sb.Append("  ip: ").Append(Ip).Append("\n");
+            sb.Append("  port: ").Append(Port).Append("\n");
+            sb.Append("  addrs: ").Append(Addrs).Append("\n");
+            sb.Append("  proxyMultiDb: ").Append(ProxyMultiDb).Append("\n");
+            sb.Append("  db: ").Append(Db).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -81,6 +116,31 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     this.Password == input.Password ||
                     (this.Password != null &&
                     this.Password.Equals(input.Password))
+                ) && 
+                (
+                    this.Ip == input.Ip ||
+                    (this.Ip != null &&
+                    this.Ip.Equals(input.Ip))
+                ) && 
+                (
+                    this.Port == input.Port ||
+                    (this.Port != null &&
+                    this.Port.Equals(input.Port))
+                ) && 
+                (
+                    this.Addrs == input.Addrs ||
+                    (this.Addrs != null &&
+                    this.Addrs.Equals(input.Addrs))
+                ) && 
+                (
+                    this.ProxyMultiDb == input.ProxyMultiDb ||
+                    (this.ProxyMultiDb != null &&
+                    this.ProxyMultiDb.Equals(input.ProxyMultiDb))
+                ) && 
+                (
+                    this.Db == input.Db ||
+                    (this.Db != null &&
+                    this.Db.Equals(input.Db))
                 );
         }
 
@@ -98,6 +158,16 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Password != null)
                     hashCode = hashCode * 59 + this.Password.GetHashCode();
+                if (this.Ip != null)
+                    hashCode = hashCode * 59 + this.Ip.GetHashCode();
+                if (this.Port != null)
+                    hashCode = hashCode * 59 + this.Port.GetHashCode();
+                if (this.Addrs != null)
+                    hashCode = hashCode * 59 + this.Addrs.GetHashCode();
+                if (this.ProxyMultiDb != null)
+                    hashCode = hashCode * 59 + this.ProxyMultiDb.GetHashCode();
+                if (this.Db != null)
+                    hashCode = hashCode * 59 + this.Db.GetHashCode();
                 return hashCode;
             }
         }

@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
     {
 
         /// <summary>
-        ///   - 老版本营业执照对应注册号。  - 新三证合一版本营业执照对应社会保障号。 
+        /// - 老版本营业执照对应注册号。 - 新三证合一版本营业执照对应社会保障号。 
         /// </summary>
         [JsonProperty("registration_number", NullValueHandling = NullValueHandling.Ignore)]
         public string RegistrationNumber { get; set; }
@@ -29,31 +29,37 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 公司/企业类型/主体类型。 
+        /// 公司/企业类型/主体类型/类型。 
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
 
         /// <summary>
-        /// 住所/营业场所/企业住所。 
+        /// 住所/营业场所/企业住所/主要经营场所/经营场所。 
         /// </summary>
         [JsonProperty("address", NullValueHandling = NullValueHandling.Ignore)]
         public string Address { get; set; }
 
         /// <summary>
-        /// 法定代表人/负责人。 
+        /// 法定代表人/负责人/执行事务合伙人/投资人/经营者。 
         /// </summary>
         [JsonProperty("legal_representative", NullValueHandling = NullValueHandling.Ignore)]
         public string LegalRepresentative { get; set; }
 
         /// <summary>
-        /// 注册资本。 
+        /// 注册资本/出资额。 
         /// </summary>
         [JsonProperty("registered_capital", NullValueHandling = NullValueHandling.Ignore)]
         public string RegisteredCapital { get; set; }
 
         /// <summary>
-        /// 成立日期。 
+        /// 组成形式。 
+        /// </summary>
+        [JsonProperty("organization_form", NullValueHandling = NullValueHandling.Ignore)]
+        public string OrganizationForm { get; set; }
+
+        /// <summary>
+        /// 成立日期/注册日期。 
         /// </summary>
         [JsonProperty("found_date", NullValueHandling = NullValueHandling.Ignore)]
         public string FoundDate { get; set; }
@@ -97,6 +103,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  address: ").Append(Address).Append("\n");
             sb.Append("  legalRepresentative: ").Append(LegalRepresentative).Append("\n");
             sb.Append("  registeredCapital: ").Append(RegisteredCapital).Append("\n");
+            sb.Append("  organizationForm: ").Append(OrganizationForm).Append("\n");
             sb.Append("  foundDate: ").Append(FoundDate).Append("\n");
             sb.Append("  businessTerm: ").Append(BusinessTerm).Append("\n");
             sb.Append("  businessScope: ").Append(BusinessScope).Append("\n");
@@ -154,6 +161,11 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     this.RegisteredCapital.Equals(input.RegisteredCapital))
                 ) && 
                 (
+                    this.OrganizationForm == input.OrganizationForm ||
+                    (this.OrganizationForm != null &&
+                    this.OrganizationForm.Equals(input.OrganizationForm))
+                ) && 
+                (
                     this.FoundDate == input.FoundDate ||
                     (this.FoundDate != null &&
                     this.FoundDate.Equals(input.FoundDate))
@@ -200,6 +212,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     hashCode = hashCode * 59 + this.LegalRepresentative.GetHashCode();
                 if (this.RegisteredCapital != null)
                     hashCode = hashCode * 59 + this.RegisteredCapital.GetHashCode();
+                if (this.OrganizationForm != null)
+                    hashCode = hashCode * 59 + this.OrganizationForm.GetHashCode();
                 if (this.FoundDate != null)
                     hashCode = hashCode * 59 + this.FoundDate.GetHashCode();
                 if (this.BusinessTerm != null)

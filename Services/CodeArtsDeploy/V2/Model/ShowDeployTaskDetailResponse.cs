@@ -281,6 +281,12 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         public bool? CanManage { get; set; }
 
         /// <summary>
+        /// 是否有禁用应用的权限
+        /// </summary>
+        [JsonProperty("can_disable", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? CanDisable { get; set; }
+
+        /// <summary>
         /// 应用和AOM应用组件对应关系
         /// </summary>
         [JsonProperty("app_component_list", NullValueHandling = NullValueHandling.Ignore)]
@@ -303,6 +309,12 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         /// </summary>
         [JsonProperty("release_id", NullValueHandling = NullValueHandling.Ignore)]
         public int? ReleaseId { get; set; }
+
+        /// <summary>
+        /// 当前应用是否被禁用
+        /// </summary>
+        [JsonProperty("is_disable", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsDisable { get; set; }
 
         /// <summary>
         /// 部署时间
@@ -368,10 +380,12 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
             sb.Append("  canExecute: ").Append(CanExecute).Append("\n");
             sb.Append("  canCopy: ").Append(CanCopy).Append("\n");
             sb.Append("  canManage: ").Append(CanManage).Append("\n");
+            sb.Append("  canDisable: ").Append(CanDisable).Append("\n");
             sb.Append("  appComponentList: ").Append(AppComponentList).Append("\n");
             sb.Append("  roleId: ").Append(RoleId).Append("\n");
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  releaseId: ").Append(ReleaseId).Append("\n");
+            sb.Append("  isDisable: ").Append(IsDisable).Append("\n");
             sb.Append("  duration: ").Append(Duration).Append("\n");
             sb.Append("  executionState: ").Append(ExecutionState).Append("\n");
             sb.Append("  executorId: ").Append(ExecutorId).Append("\n");
@@ -524,6 +538,11 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
                     this.CanManage.Equals(input.CanManage))
                 ) && 
                 (
+                    this.CanDisable == input.CanDisable ||
+                    (this.CanDisable != null &&
+                    this.CanDisable.Equals(input.CanDisable))
+                ) && 
+                (
                     this.AppComponentList == input.AppComponentList ||
                     this.AppComponentList != null &&
                     input.AppComponentList != null &&
@@ -543,6 +562,11 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
                     this.ReleaseId == input.ReleaseId ||
                     (this.ReleaseId != null &&
                     this.ReleaseId.Equals(input.ReleaseId))
+                ) && 
+                (
+                    this.IsDisable == input.IsDisable ||
+                    (this.IsDisable != null &&
+                    this.IsDisable.Equals(input.IsDisable))
                 ) && 
                 (
                     this.Duration == input.Duration ||
@@ -630,6 +654,8 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
                     hashCode = hashCode * 59 + this.CanCopy.GetHashCode();
                 if (this.CanManage != null)
                     hashCode = hashCode * 59 + this.CanManage.GetHashCode();
+                if (this.CanDisable != null)
+                    hashCode = hashCode * 59 + this.CanDisable.GetHashCode();
                 if (this.AppComponentList != null)
                     hashCode = hashCode * 59 + this.AppComponentList.GetHashCode();
                 if (this.RoleId != null)
@@ -638,6 +664,8 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.ReleaseId != null)
                     hashCode = hashCode * 59 + this.ReleaseId.GetHashCode();
+                if (this.IsDisable != null)
+                    hashCode = hashCode * 59 + this.IsDisable.GetHashCode();
                 if (this.Duration != null)
                     hashCode = hashCode * 59 + this.Duration.GetHashCode();
                 if (this.ExecutionState != null)

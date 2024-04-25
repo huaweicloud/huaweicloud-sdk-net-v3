@@ -35,6 +35,12 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         public string Duration { get; set; }
 
         /// <summary>
+        /// 当前应用是否被禁用
+        /// </summary>
+        [JsonProperty("is_disable", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsDisable { get; set; }
+
+        /// <summary>
         /// 项目ID
         /// </summary>
         [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -93,6 +99,12 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         /// </summary>
         [JsonProperty("can_create_env", NullValueHandling = NullValueHandling.Ignore)]
         public bool? CanCreateEnv { get; set; }
+
+        /// <summary>
+        /// 是否有禁用应用的权限
+        /// </summary>
+        [JsonProperty("can_disable", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? CanDisable { get; set; }
 
         /// <summary>
         /// 部署类型模式，包括deployTemplate、ansible、shell
@@ -178,6 +190,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  duration: ").Append(Duration).Append("\n");
+            sb.Append("  isDisable: ").Append(IsDisable).Append("\n");
             sb.Append("  projectId: ").Append(ProjectId).Append("\n");
             sb.Append("  projectName: ").Append(ProjectName).Append("\n");
             sb.Append("  isCare: ").Append(IsCare).Append("\n");
@@ -188,6 +201,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
             sb.Append("  canCopy: ").Append(CanCopy).Append("\n");
             sb.Append("  canManage: ").Append(CanManage).Append("\n");
             sb.Append("  canCreateEnv: ").Append(CanCreateEnv).Append("\n");
+            sb.Append("  canDisable: ").Append(CanDisable).Append("\n");
             sb.Append("  deploySystem: ").Append(DeploySystem).Append("\n");
             sb.Append("  createUserId: ").Append(CreateUserId).Append("\n");
             sb.Append("  createTenantId: ").Append(CreateTenantId).Append("\n");
@@ -235,6 +249,11 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
                     this.Duration == input.Duration ||
                     (this.Duration != null &&
                     this.Duration.Equals(input.Duration))
+                ) && 
+                (
+                    this.IsDisable == input.IsDisable ||
+                    (this.IsDisable != null &&
+                    this.IsDisable.Equals(input.IsDisable))
                 ) && 
                 (
                     this.ProjectId == input.ProjectId ||
@@ -285,6 +304,11 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
                     this.CanCreateEnv == input.CanCreateEnv ||
                     (this.CanCreateEnv != null &&
                     this.CanCreateEnv.Equals(input.CanCreateEnv))
+                ) && 
+                (
+                    this.CanDisable == input.CanDisable ||
+                    (this.CanDisable != null &&
+                    this.CanDisable.Equals(input.CanDisable))
                 ) && 
                 (
                     this.DeploySystem == input.DeploySystem ||
@@ -363,6 +387,8 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Duration != null)
                     hashCode = hashCode * 59 + this.Duration.GetHashCode();
+                if (this.IsDisable != null)
+                    hashCode = hashCode * 59 + this.IsDisable.GetHashCode();
                 if (this.ProjectId != null)
                     hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
                 if (this.ProjectName != null)
@@ -383,6 +409,8 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
                     hashCode = hashCode * 59 + this.CanManage.GetHashCode();
                 if (this.CanCreateEnv != null)
                     hashCode = hashCode * 59 + this.CanCreateEnv.GetHashCode();
+                if (this.CanDisable != null)
+                    hashCode = hashCode * 59 + this.CanDisable.GetHashCode();
                 if (this.DeploySystem != null)
                     hashCode = hashCode * 59 + this.DeploySystem.GetHashCode();
                 if (this.CreateUserId != null)

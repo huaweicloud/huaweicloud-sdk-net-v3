@@ -46,6 +46,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         [JsonProperty("form_result", NullValueHandling = NullValueHandling.Ignore)]
         public SmartDocumentRecognizerFormResult FormResult { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("formula_result", NullValueHandling = NullValueHandling.Ignore)]
+        public SmartDocumentRecognizerFormulaResult FormulaResult { get; set; }
+
 
 
         /// <summary>
@@ -60,6 +66,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  tableResult: ").Append(TableResult).Append("\n");
             sb.Append("  layoutResult: ").Append(LayoutResult).Append("\n");
             sb.Append("  formResult: ").Append(FormResult).Append("\n");
+            sb.Append("  formulaResult: ").Append(FormulaResult).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -105,6 +112,11 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     this.FormResult == input.FormResult ||
                     (this.FormResult != null &&
                     this.FormResult.Equals(input.FormResult))
+                ) && 
+                (
+                    this.FormulaResult == input.FormulaResult ||
+                    (this.FormulaResult != null &&
+                    this.FormulaResult.Equals(input.FormulaResult))
                 );
         }
 
@@ -126,6 +138,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     hashCode = hashCode * 59 + this.LayoutResult.GetHashCode();
                 if (this.FormResult != null)
                     hashCode = hashCode * 59 + this.FormResult.GetHashCode();
+                if (this.FormulaResult != null)
+                    hashCode = hashCode * 59 + this.FormulaResult.GetHashCode();
                 return hashCode;
             }
         }

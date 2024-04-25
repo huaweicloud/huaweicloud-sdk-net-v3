@@ -41,6 +41,12 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         public string Description { get; set; }
 
         /// <summary>
+        /// 当前应用是否被禁用
+        /// </summary>
+        [JsonProperty("is_disable", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsDisable { get; set; }
+
+        /// <summary>
         /// 创建方式
         /// </summary>
         [JsonProperty("create_type", NullValueHandling = NullValueHandling.Ignore)]
@@ -113,6 +119,12 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         public bool? CanCreateEnv { get; set; }
 
         /// <summary>
+        /// 是否有禁用应用的权限
+        /// </summary>
+        [JsonProperty("can_disable", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? CanDisable { get; set; }
+
+        /// <summary>
         /// 应用所属人租户ID
         /// </summary>
         [JsonProperty("owner_tenant_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -167,6 +179,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  region: ").Append(Region).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
+            sb.Append("  isDisable: ").Append(IsDisable).Append("\n");
             sb.Append("  createType: ").Append(CreateType).Append("\n");
             sb.Append("  projectId: ").Append(ProjectId).Append("\n");
             sb.Append("  projectName: ").Append(ProjectName).Append("\n");
@@ -179,6 +192,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
             sb.Append("  canCopy: ").Append(CanCopy).Append("\n");
             sb.Append("  canManage: ").Append(CanManage).Append("\n");
             sb.Append("  canCreateEnv: ").Append(CanCreateEnv).Append("\n");
+            sb.Append("  canDisable: ").Append(CanDisable).Append("\n");
             sb.Append("  ownerTenantId: ").Append(OwnerTenantId).Append("\n");
             sb.Append("  createUserId: ").Append(CreateUserId).Append("\n");
             sb.Append("  createTenantId: ").Append(CreateTenantId).Append("\n");
@@ -226,6 +240,11 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
+                ) && 
+                (
+                    this.IsDisable == input.IsDisable ||
+                    (this.IsDisable != null &&
+                    this.IsDisable.Equals(input.IsDisable))
                 ) && 
                 (
                     this.CreateType == input.CreateType ||
@@ -288,6 +307,11 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
                     this.CanCreateEnv.Equals(input.CanCreateEnv))
                 ) && 
                 (
+                    this.CanDisable == input.CanDisable ||
+                    (this.CanDisable != null &&
+                    this.CanDisable.Equals(input.CanDisable))
+                ) && 
+                (
                     this.OwnerTenantId == input.OwnerTenantId ||
                     (this.OwnerTenantId != null &&
                     this.OwnerTenantId.Equals(input.OwnerTenantId))
@@ -341,6 +365,8 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
                     hashCode = hashCode * 59 + this.Region.GetHashCode();
                 if (this.Description != null)
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.IsDisable != null)
+                    hashCode = hashCode * 59 + this.IsDisable.GetHashCode();
                 if (this.CreateType != null)
                     hashCode = hashCode * 59 + this.CreateType.GetHashCode();
                 if (this.ProjectId != null)
@@ -365,6 +391,8 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
                     hashCode = hashCode * 59 + this.CanManage.GetHashCode();
                 if (this.CanCreateEnv != null)
                     hashCode = hashCode * 59 + this.CanCreateEnv.GetHashCode();
+                if (this.CanDisable != null)
+                    hashCode = hashCode * 59 + this.CanDisable.GetHashCode();
                 if (this.OwnerTenantId != null)
                     hashCode = hashCode * 59 + this.OwnerTenantId.GetHashCode();
                 if (this.CreateUserId != null)

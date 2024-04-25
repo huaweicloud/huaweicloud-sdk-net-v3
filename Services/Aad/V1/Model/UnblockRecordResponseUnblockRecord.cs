@@ -268,7 +268,7 @@ namespace HuaweiCloud.SDK.Aad.V1.Model
         /// 封堵id
         /// </summary>
         [JsonProperty("block_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string BlockId { get; set; }
+        public long? BlockId { get; set; }
 
         /// <summary>
         /// 封堵时间

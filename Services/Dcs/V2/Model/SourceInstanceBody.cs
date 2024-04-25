@@ -28,6 +28,48 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         [JsonProperty("password", NullValueHandling = NullValueHandling.Ignore)]
         public string Password { get; set; }
 
+        /// <summary>
+        /// 任务状态。
+        /// </summary>
+        [JsonProperty("task_status", NullValueHandling = NullValueHandling.Ignore)]
+        public string TaskStatus { get; set; }
+
+        /// <summary>
+        /// Redis实例ID。
+        /// </summary>
+        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Redis IP地址。
+        /// </summary>
+        [JsonProperty("ip", NullValueHandling = NullValueHandling.Ignore)]
+        public string Ip { get; set; }
+
+        /// <summary>
+        /// Redis端口。
+        /// </summary>
+        [JsonProperty("port", NullValueHandling = NullValueHandling.Ignore)]
+        public string Port { get; set; }
+
+        /// <summary>
+        /// Redis名称。
+        /// </summary>
+        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// proxy实例是否开启了多DB。
+        /// </summary>
+        [JsonProperty("proxy_multi_db", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? ProxyMultiDb { get; set; }
+
+        /// <summary>
+        /// Redis数据库。
+        /// </summary>
+        [JsonProperty("db", NullValueHandling = NullValueHandling.Ignore)]
+        public string Db { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +81,13 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             sb.Append("class SourceInstanceBody {\n");
             sb.Append("  addrs: ").Append(Addrs).Append("\n");
             sb.Append("  password: ").Append(Password).Append("\n");
+            sb.Append("  taskStatus: ").Append(TaskStatus).Append("\n");
+            sb.Append("  id: ").Append(Id).Append("\n");
+            sb.Append("  ip: ").Append(Ip).Append("\n");
+            sb.Append("  port: ").Append(Port).Append("\n");
+            sb.Append("  name: ").Append(Name).Append("\n");
+            sb.Append("  proxyMultiDb: ").Append(ProxyMultiDb).Append("\n");
+            sb.Append("  db: ").Append(Db).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -69,6 +118,41 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     this.Password == input.Password ||
                     (this.Password != null &&
                     this.Password.Equals(input.Password))
+                ) && 
+                (
+                    this.TaskStatus == input.TaskStatus ||
+                    (this.TaskStatus != null &&
+                    this.TaskStatus.Equals(input.TaskStatus))
+                ) && 
+                (
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
+                ) && 
+                (
+                    this.Ip == input.Ip ||
+                    (this.Ip != null &&
+                    this.Ip.Equals(input.Ip))
+                ) && 
+                (
+                    this.Port == input.Port ||
+                    (this.Port != null &&
+                    this.Port.Equals(input.Port))
+                ) && 
+                (
+                    this.Name == input.Name ||
+                    (this.Name != null &&
+                    this.Name.Equals(input.Name))
+                ) && 
+                (
+                    this.ProxyMultiDb == input.ProxyMultiDb ||
+                    (this.ProxyMultiDb != null &&
+                    this.ProxyMultiDb.Equals(input.ProxyMultiDb))
+                ) && 
+                (
+                    this.Db == input.Db ||
+                    (this.Db != null &&
+                    this.Db.Equals(input.Db))
                 );
         }
 
@@ -84,6 +168,20 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     hashCode = hashCode * 59 + this.Addrs.GetHashCode();
                 if (this.Password != null)
                     hashCode = hashCode * 59 + this.Password.GetHashCode();
+                if (this.TaskStatus != null)
+                    hashCode = hashCode * 59 + this.TaskStatus.GetHashCode();
+                if (this.Id != null)
+                    hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Ip != null)
+                    hashCode = hashCode * 59 + this.Ip.GetHashCode();
+                if (this.Port != null)
+                    hashCode = hashCode * 59 + this.Port.GetHashCode();
+                if (this.Name != null)
+                    hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.ProxyMultiDb != null)
+                    hashCode = hashCode * 59 + this.ProxyMultiDb.GetHashCode();
+                if (this.Db != null)
+                    hashCode = hashCode * 59 + this.Db.GetHashCode();
                 return hashCode;
             }
         }

@@ -1391,6 +1391,134 @@ namespace HuaweiCloud.SDK.IoTDA.V5
         }
         
         /// <summary>
+        /// 创建设备代理
+        ///
+        /// 应用服务器可调用此接口在物联网平台创建一个动态设备代理规则，用于子设备自主选择网关设备上线和上报消息，即代理组下的任意网关下的子设备均可以通过代理组里其他设备上线([[网关更新子设备状态](https://support.huaweicloud.com/api-iothub/iot_06_v5_3022.html)](tag:hws) [[网关更新子设备状态](https://support.huaweicloud.com/intl/zh-cn/api-iothub/iot_06_v5_3022.html)](tag:hws_hk))然后进行数据上报([[网关批量设备属性上报](https://support.huaweicloud.com/api-iothub/iot_06_v5_3006.html)](tag:hws) [[网关更新子设备状态](https://support.huaweicloud.com/intl/zh-cn/api-iothub/iot_06_v5_3006.html)](tag:hws_hk))。
+        /// - 单实例最多可以配置10个设备代理
+        /// - 单账号调用该接口的 TPS 限制最大为1/S(每秒1次请求数)
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateDeviceProxyResponse> CreateDeviceProxyAsync(CreateDeviceProxyRequest createDeviceProxyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-proxies", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDeviceProxyRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateDeviceProxyResponse>(response);
+        }
+
+        public AsyncInvoker<CreateDeviceProxyResponse> CreateDeviceProxyAsyncInvoker(CreateDeviceProxyRequest createDeviceProxyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-proxies", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDeviceProxyRequest);
+            return new AsyncInvoker<CreateDeviceProxyResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateDeviceProxyResponse>);
+        }
+        
+        /// <summary>
+        /// 删除设备代理
+        ///
+        /// 应用服务器可调用此接口在物联网平台上删除指定设备代理。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteDeviceProxyResponse> DeleteDeviceProxyAsync(DeleteDeviceProxyRequest deleteDeviceProxyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("proxy_id", deleteDeviceProxyRequest.ProxyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-proxies/{proxy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDeviceProxyRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteDeviceProxyResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteDeviceProxyResponse> DeleteDeviceProxyAsyncInvoker(DeleteDeviceProxyRequest deleteDeviceProxyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("proxy_id", deleteDeviceProxyRequest.ProxyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-proxies/{proxy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDeviceProxyRequest);
+            return new AsyncInvoker<DeleteDeviceProxyResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteDeviceProxyResponse>);
+        }
+        
+        /// <summary>
+        /// 查询设备代理列表
+        ///
+        /// 应用服务器可调用此接口查询物联网平台中的设备代理列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListDeviceProxiesResponse> ListDeviceProxiesAsync(ListDeviceProxiesRequest listDeviceProxiesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-proxies", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDeviceProxiesRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListDeviceProxiesResponse>(response);
+        }
+
+        public AsyncInvoker<ListDeviceProxiesResponse> ListDeviceProxiesAsyncInvoker(ListDeviceProxiesRequest listDeviceProxiesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-proxies", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDeviceProxiesRequest);
+            return new AsyncInvoker<ListDeviceProxiesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDeviceProxiesResponse>);
+        }
+        
+        /// <summary>
+        /// 查询设备代理详情
+        ///
+        /// 应用服务器可调用此接口查询物联网平台中指定设备代理的详细信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowDeviceProxyResponse> ShowDeviceProxyAsync(ShowDeviceProxyRequest showDeviceProxyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("proxy_id", showDeviceProxyRequest.ProxyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-proxies/{proxy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDeviceProxyRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowDeviceProxyResponse>(response);
+        }
+
+        public AsyncInvoker<ShowDeviceProxyResponse> ShowDeviceProxyAsyncInvoker(ShowDeviceProxyRequest showDeviceProxyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("proxy_id", showDeviceProxyRequest.ProxyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-proxies/{proxy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDeviceProxyRequest);
+            return new AsyncInvoker<ShowDeviceProxyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDeviceProxyResponse>);
+        }
+        
+        /// <summary>
+        /// 修改设备代理
+        ///
+        /// 应用服务器可调用此接口修改物联网平台中指定设备代理的基本信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateDeviceProxyResponse> UpdateDeviceProxyAsync(UpdateDeviceProxyRequest updateDeviceProxyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("proxy_id", updateDeviceProxyRequest.ProxyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-proxies/{proxy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDeviceProxyRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateDeviceProxyResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateDeviceProxyResponse> UpdateDeviceProxyAsyncInvoker(UpdateDeviceProxyRequest updateDeviceProxyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("proxy_id", updateDeviceProxyRequest.ProxyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-proxies/{proxy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDeviceProxyRequest);
+            return new AsyncInvoker<UpdateDeviceProxyResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateDeviceProxyResponse>);
+        }
+        
+        /// <summary>
         /// 查询设备影子数据
         ///
         /// 应用服务器可调用此接口查询指定设备的设备影子信息，包括对设备的期望属性信息（desired区）和设备最新上报的属性信息（reported区）。

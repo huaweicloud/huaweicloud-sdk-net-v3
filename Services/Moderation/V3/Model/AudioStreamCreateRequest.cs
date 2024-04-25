@@ -40,6 +40,12 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         [JsonProperty("callback", NullValueHandling = NullValueHandling.Ignore)]
         public string Callback { get; set; }
 
+        /// <summary>
+        /// 用于回调通知时校验请求由华为云内容安全服务发起，由您自定义。随机字符串，由英文字母、数字、下划线组成，不超过64个字符。 说明：当seed非空时，headers中将包含X-Auth-Signature字段，字段的值使用HmacSHA256算法生成，待加密字符串由create_time、job_id、request_id、seed按照顺序拼接而成，密钥为seed。
+        /// </summary>
+        [JsonProperty("seed", NullValueHandling = NullValueHandling.Ignore)]
+        public string Seed { get; set; }
+
 
 
         /// <summary>
@@ -53,6 +59,7 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
             sb.Append("  eventType: ").Append(EventType).Append("\n");
             sb.Append("  categories: ").Append(Categories).Append("\n");
             sb.Append("  callback: ").Append(Callback).Append("\n");
+            sb.Append("  seed: ").Append(Seed).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -94,6 +101,11 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
                     this.Callback == input.Callback ||
                     (this.Callback != null &&
                     this.Callback.Equals(input.Callback))
+                ) && 
+                (
+                    this.Seed == input.Seed ||
+                    (this.Seed != null &&
+                    this.Seed.Equals(input.Seed))
                 );
         }
 
@@ -113,6 +125,8 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
                     hashCode = hashCode * 59 + this.Categories.GetHashCode();
                 if (this.Callback != null)
                     hashCode = hashCode * 59 + this.Callback.GetHashCode();
+                if (this.Seed != null)
+                    hashCode = hashCode * 59 + this.Seed.GetHashCode();
                 return hashCode;
             }
         }

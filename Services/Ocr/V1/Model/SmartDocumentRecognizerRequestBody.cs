@@ -59,6 +59,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public bool? Form { get; set; }
 
         /// <summary>
+        /// 是否进行公式识别，识别结果为latex序列。若是，结果会以“formula_result”这一关键字返回。 当前仅支持文档（例如论文）中的公式识别，不支持公式切片图像。 
+        /// </summary>
+        [JsonProperty("formula", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? Formula { get; set; }
+
+        /// <summary>
         /// 需要传入字典的json序列化后字符串，用于对kv_result中的特定key值进行归一化映射。例如，kv_result中包含{\&quot;名称\&quot;：\&quot;小明\&quot;}的键值对，若传入{\&quot;名称\&quot;：\&quot;姓名\&quot;}的kv_map，则返回结果为{“姓名”：“小明”}。  &gt; 参数传入示例： - \&quot;kv_map\&quot;:\&quot;{\\\&quot;名称\\\&quot;:\\\&quot;姓名\\\&quot;}\&quot; 
         /// </summary>
         [JsonProperty("kv_map", NullValueHandling = NullValueHandling.Ignore)]
@@ -80,6 +86,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  layout: ").Append(Layout).Append("\n");
             sb.Append("  returnExcel: ").Append(ReturnExcel).Append("\n");
             sb.Append("  form: ").Append(Form).Append("\n");
+            sb.Append("  formula: ").Append(Formula).Append("\n");
             sb.Append("  kvMap: ").Append(KvMap).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -138,6 +145,11 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     this.Form.Equals(input.Form))
                 ) && 
                 (
+                    this.Formula == input.Formula ||
+                    (this.Formula != null &&
+                    this.Formula.Equals(input.Formula))
+                ) && 
+                (
                     this.KvMap == input.KvMap ||
                     (this.KvMap != null &&
                     this.KvMap.Equals(input.KvMap))
@@ -166,6 +178,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     hashCode = hashCode * 59 + this.ReturnExcel.GetHashCode();
                 if (this.Form != null)
                     hashCode = hashCode * 59 + this.Form.GetHashCode();
+                if (this.Formula != null)
+                    hashCode = hashCode * 59 + this.Formula.GetHashCode();
                 if (this.KvMap != null)
                     hashCode = hashCode * 59 + this.KvMap.GetHashCode();
                 return hashCode;

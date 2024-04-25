@@ -179,6 +179,12 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         public bool? CanCreateEnv { get; set; }
 
         /// <summary>
+        /// 是否有禁用应用的权限
+        /// </summary>
+        [JsonProperty("can_disable", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? CanDisable { get; set; }
+
+        /// <summary>
         /// 应用组件列表
         /// </summary>
         [JsonProperty("app_component_list", NullValueHandling = NullValueHandling.Ignore)]
@@ -195,6 +201,12 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         /// </summary>
         [JsonProperty("app_id", NullValueHandling = NullValueHandling.Ignore)]
         public string AppId { get; set; }
+
+        /// <summary>
+        /// 当前应用是否被禁用
+        /// </summary>
+        [JsonProperty("is_disable", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsDisable { get; set; }
 
 
 
@@ -232,9 +244,11 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
             sb.Append("  canCopy: ").Append(CanCopy).Append("\n");
             sb.Append("  canManage: ").Append(CanManage).Append("\n");
             sb.Append("  canCreateEnv: ").Append(CanCreateEnv).Append("\n");
+            sb.Append("  canDisable: ").Append(CanDisable).Append("\n");
             sb.Append("  appComponentList: ").Append(AppComponentList).Append("\n");
             sb.Append("  releaseId: ").Append(ReleaseId).Append("\n");
             sb.Append("  appId: ").Append(AppId).Append("\n");
+            sb.Append("  isDisable: ").Append(IsDisable).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -393,6 +407,11 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
                     this.CanCreateEnv.Equals(input.CanCreateEnv))
                 ) && 
                 (
+                    this.CanDisable == input.CanDisable ||
+                    (this.CanDisable != null &&
+                    this.CanDisable.Equals(input.CanDisable))
+                ) && 
+                (
                     this.AppComponentList == input.AppComponentList ||
                     this.AppComponentList != null &&
                     input.AppComponentList != null &&
@@ -407,6 +426,11 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
                     this.AppId == input.AppId ||
                     (this.AppId != null &&
                     this.AppId.Equals(input.AppId))
+                ) && 
+                (
+                    this.IsDisable == input.IsDisable ||
+                    (this.IsDisable != null &&
+                    this.IsDisable.Equals(input.IsDisable))
                 );
         }
 
@@ -472,12 +496,16 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
                     hashCode = hashCode * 59 + this.CanManage.GetHashCode();
                 if (this.CanCreateEnv != null)
                     hashCode = hashCode * 59 + this.CanCreateEnv.GetHashCode();
+                if (this.CanDisable != null)
+                    hashCode = hashCode * 59 + this.CanDisable.GetHashCode();
                 if (this.AppComponentList != null)
                     hashCode = hashCode * 59 + this.AppComponentList.GetHashCode();
                 if (this.ReleaseId != null)
                     hashCode = hashCode * 59 + this.ReleaseId.GetHashCode();
                 if (this.AppId != null)
                     hashCode = hashCode * 59 + this.AppId.GetHashCode();
+                if (this.IsDisable != null)
+                    hashCode = hashCode * 59 + this.IsDisable.GetHashCode();
                 return hashCode;
             }
         }

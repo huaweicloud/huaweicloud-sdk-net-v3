@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public List<List<int?>> Location { get; set; }
 
         /// <summary>
-        /// 文档区域类别，包含text、table、figure等类别。        
+        /// 文档区域类别，包含text、title、sub_title、image、image_caption、form、table、table_caption、header、footer、page_number、reference、formula、stamp、directory共15个类别。     
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
