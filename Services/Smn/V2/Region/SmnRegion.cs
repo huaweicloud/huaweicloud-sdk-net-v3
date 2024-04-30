@@ -51,6 +51,8 @@ namespace HuaweiCloud.SDK.Smn.V2
             "https://smn.eu-west-0.myhuaweicloud.com");
         public static readonly Region MY_KUALALUMPUR_1 = new Region("my-kualalumpur-1",
             "https://smn.my-kualalumpur-1.myhuaweicloud.com");
+        public static readonly Region RU_MOSCOW_1 = new Region("ru-moscow-1",
+            "https://smn.ru-moscow-1.myhuaweicloud.com");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("SMN");
 
@@ -78,6 +80,7 @@ namespace HuaweiCloud.SDK.Smn.V2
                 { "eu-west-101", EU_WEST_101 },
                 { "eu-west-0", EU_WEST_0 },
                 { "my-kualalumpur-1", MY_KUALALUMPUR_1 },
+                { "ru-moscow-1", RU_MOSCOW_1 },
         };
 
         public static Region ValueOf(string regionId)

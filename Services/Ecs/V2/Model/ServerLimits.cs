@@ -116,7 +116,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// 当前内存使用容量（单位：MB）。
         /// </summary>
         [JsonProperty("totalRAMUsed", NullValueHandling = NullValueHandling.Ignore)]
-        public int? TotalRAMUsed { get; set; }
+        public long? TotalRAMUsed { get; set; }
 
         /// <summary>
         /// 当前安全组使用个数。

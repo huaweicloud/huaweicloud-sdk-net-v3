@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         public string PrivateKey { get; set; }
 
         /// <summary>
-        /// 证书来源,1：华为云托管证书,0：自有证书, 默认值0。  &gt; 证书开启时必传
+        /// 证书来源,0：自有证书。  &gt; 证书开启时必传
         /// </summary>
         [JsonProperty("certificate_source", NullValueHandling = NullValueHandling.Ignore)]
         public int? CertificateSource { get; set; }

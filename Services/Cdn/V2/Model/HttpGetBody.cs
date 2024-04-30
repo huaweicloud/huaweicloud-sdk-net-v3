@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public long? ExpireTime { get; set; }
 
         /// <summary>
-        /// 证书来源,1：华为云托管证书,0：自有证书。
+        /// 证书来源,0：自有证书。
         /// </summary>
         [JsonProperty("certificate_source", NullValueHandling = NullValueHandling.Ignore)]
         public int? CertificateSource { get; set; }

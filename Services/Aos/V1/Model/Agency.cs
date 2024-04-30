@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         public string AgencyName { get; set; }
 
         /// <summary>
-        /// 委托URN  当用户定义Agency时，agency_name和agency_urn 必须有且只有一个存在。  推荐用户在使用信任委托时给予agency_urn，agency_name只支持接收普通委托名称，若给予了信任委托名称，则会在部署模板时失败。
+        /// 委托URN  当用户定义Agency时，agency_name和agency_urn 必须有且只有一个存在。  推荐用户在使用信任委托时给予agency_urn，agency_name只支持接收普通委托名称，如果给予了信任委托名称，则会在部署模板时失败。
         /// </summary>
         [JsonProperty("agency_urn", NullValueHandling = NullValueHandling.Ignore)]
         public string AgencyUrn { get; set; }

@@ -221,7 +221,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         public string UpdateTime { get; set; }
 
         /// <summary>
-        /// 该资源栈实例的参数覆盖内容  若用户通过CreateStackInstances或UpdateStackInstances API 对该资源栈实例设置了参数覆盖，该字段会返回资源栈实例记录的最新参数覆盖内容  若该字段未返回，用户使用资源栈集中记录的参数部署该实例
+        /// 该资源栈实例的参数覆盖内容  如果用户通过CreateStackInstances或UpdateStackInstances API 对该资源栈实例设置了参数覆盖，该字段会返回资源栈实例记录的最新参数覆盖内容  如果该字段未返回，用户使用资源栈集中记录的参数部署该实例
         /// </summary>
         [JsonProperty("var_overrides", NullValueHandling = NullValueHandling.Ignore)]
         public Object VarOverrides { get; set; }

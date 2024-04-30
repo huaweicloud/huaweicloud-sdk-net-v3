@@ -15,127 +15,13 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
     /// </summary>
     public class EstimateExecutionPlanPriceResponse : SdkResponse
     {
-        /// <summary>
-        /// 币种，枚举值   * &#x60;CNY&#x60; - 元，中国站返回的币种   * &#x60;USD&#x60; - 美元，国际站返回的币种
-        /// </summary>
-        /// <value>币种，枚举值   * &#x60;CNY&#x60; - 元，中国站返回的币种   * &#x60;USD&#x60; - 美元，国际站返回的币种</value>
-        [JsonConverter(typeof(EnumClassConverter<CurrencyEnum>))]
-        public class CurrencyEnum
-        {
-            /// <summary>
-            /// Enum CNY for value: CNY
-            /// </summary>
-            public static readonly CurrencyEnum CNY = new CurrencyEnum("CNY");
-
-            /// <summary>
-            /// Enum USD for value: USD
-            /// </summary>
-            public static readonly CurrencyEnum USD = new CurrencyEnum("USD");
-
-            private static readonly Dictionary<string, CurrencyEnum> StaticFields =
-            new Dictionary<string, CurrencyEnum>()
-            {
-                { "CNY", CNY },
-                { "USD", USD },
-            };
-
-            private string _value;
-
-            public CurrencyEnum()
-            {
-
-            }
-
-            public CurrencyEnum(string value)
-            {
-                _value = value;
-            }
-
-            public static CurrencyEnum FromValue(string value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public string GetValue()
-            {
-                return _value;
-            }
-
-            public override string ToString()
-            {
-                return $"{_value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this._value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as CurrencyEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(CurrencyEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
-            }
-
-            public static bool operator ==(CurrencyEnum a, CurrencyEnum b)
-            {
-                if (System.Object.ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(CurrencyEnum a, CurrencyEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
 
         /// <summary>
-        /// 币种，枚举值   * &#x60;CNY&#x60; - 元，中国站返回的币种   * &#x60;USD&#x60; - 美元，国际站返回的币种
+        /// 币种，枚举值   * [&#x60;CNY&#x60; - 元，中国站返回的币种](tag:hws)[&#x60;USD&#x60; - 美元，国际站返回的币种](tag:hws_hk)[&#x60;USD&#x60; - 美元，欧洲站返回的币种](tag:hws_eu)
         /// </summary>
         [JsonProperty("currency", NullValueHandling = NullValueHandling.Ignore)]
-        public CurrencyEnum Currency { get; set; }
+        public string Currency { get; set; }
+
         /// <summary>
         /// 执行计划中所有资源的询价结果
         /// </summary>

@@ -179,7 +179,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// [付费模式，1表示按需计费。](tag:hws_eu,g42,hk_g42,tm,hk_tm)[付费模式，1表示按需计费，0表示包年/包月计费。](tag:hws,hws_eu,hws_hk,ctc) [计费模式，参数暂未使用。](tag:ocb,hws_ocb,hcs)
+        /// [付费模式，1表示按需计费。](tag:hws_eu,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[付费模式，1表示按需计费，0表示包年/包月计费。](tag:hws,hws_eu,hws_hk,ctc) [计费模式，参数暂未使用。](tag:ocb,hws_ocb,hcs)
         /// </summary>
         [JsonProperty("charging_mode", NullValueHandling = NullValueHandling.Ignore)]
         public int? ChargingMode { get; set; }
@@ -239,10 +239,16 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public string SubnetCidr { get; set; }
 
         /// <summary>
-        /// IO未售罄的可用区列表。
+        /// 可用区ID列表。
         /// </summary>
         [JsonProperty("available_zones", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> AvailableZones { get; set; }
+
+        /// <summary>
+        /// 可用区名称列表。
+        /// </summary>
+        [JsonProperty("available_zone_names", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> AvailableZoneNames { get; set; }
 
         /// <summary>
         /// 用户ID。
@@ -431,6 +437,12 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public string PublicGrpcAddress { get; set; }
 
         /// <summary>
+        /// 企业项目ID。
+        /// </summary>
+        [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string EnterpriseProjectId { get; set; }
+
+        /// <summary>
         /// 标签列表。
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
@@ -476,6 +488,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             sb.Append("  subnetName: ").Append(SubnetName).Append("\n");
             sb.Append("  subnetCidr: ").Append(SubnetCidr).Append("\n");
             sb.Append("  availableZones: ").Append(AvailableZones).Append("\n");
+            sb.Append("  availableZoneNames: ").Append(AvailableZoneNames).Append("\n");
             sb.Append("  userId: ").Append(UserId).Append("\n");
             sb.Append("  userName: ").Append(UserName).Append("\n");
             sb.Append("  maintainBegin: ").Append(MaintainBegin).Append("\n");
@@ -507,6 +520,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             sb.Append("  publicBrokerAddress: ").Append(PublicBrokerAddress).Append("\n");
             sb.Append("  grpcAddress: ").Append(GrpcAddress).Append("\n");
             sb.Append("  publicGrpcAddress: ").Append(PublicGrpcAddress).Append("\n");
+            sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  totalStorageSpace: ").Append(TotalStorageSpace).Append("\n");
             sb.Append("  resourceSpecCode: ").Append(ResourceSpecCode).Append("\n");
@@ -626,6 +640,12 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                     this.AvailableZones != null &&
                     input.AvailableZones != null &&
                     this.AvailableZones.SequenceEqual(input.AvailableZones)
+                ) && 
+                (
+                    this.AvailableZoneNames == input.AvailableZoneNames ||
+                    this.AvailableZoneNames != null &&
+                    input.AvailableZoneNames != null &&
+                    this.AvailableZoneNames.SequenceEqual(input.AvailableZoneNames)
                 ) && 
                 (
                     this.UserId == input.UserId ||
@@ -783,6 +803,11 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                     this.PublicGrpcAddress.Equals(input.PublicGrpcAddress))
                 ) && 
                 (
+                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
+                    (this.EnterpriseProjectId != null &&
+                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
+                ) && 
+                (
                     this.Tags == input.Tags ||
                     this.Tags != null &&
                     input.Tags != null &&
@@ -846,6 +871,8 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                     hashCode = hashCode * 59 + this.SubnetCidr.GetHashCode();
                 if (this.AvailableZones != null)
                     hashCode = hashCode * 59 + this.AvailableZones.GetHashCode();
+                if (this.AvailableZoneNames != null)
+                    hashCode = hashCode * 59 + this.AvailableZoneNames.GetHashCode();
                 if (this.UserId != null)
                     hashCode = hashCode * 59 + this.UserId.GetHashCode();
                 if (this.UserName != null)
@@ -908,6 +935,8 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                     hashCode = hashCode * 59 + this.GrpcAddress.GetHashCode();
                 if (this.PublicGrpcAddress != null)
                     hashCode = hashCode * 59 + this.PublicGrpcAddress.GetHashCode();
+                if (this.EnterpriseProjectId != null)
+                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.Tags != null)
                     hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 if (this.TotalStorageSpace != null)

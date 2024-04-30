@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     public class CreateTopicOrBatchDeleteTopicReq 
     {
         /// <summary>
-        /// 权限。
+        /// 权限（仅RocketMQ实例4.8.0版本需要填写此参数）。 取值范围：   - pub（发布）   - sub（订阅）   - all（发布+订阅）
         /// </summary>
-        /// <value>权限。</value>
+        /// <value>权限（仅RocketMQ实例4.8.0版本需要填写此参数）。 取值范围：   - pub（发布）   - sub（订阅）   - all（发布+订阅）</value>
         [JsonConverter(typeof(EnumClassConverter<PermissionEnum>))]
         public class PermissionEnum
         {
@@ -137,9 +137,9 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         }
 
         /// <summary>
-        /// 消息类型（RocketMQ实例5.x版本才包含此参数）。
+        /// 消息类型（仅RocketMQ实例5.x版本需要填写此参数）。 取值范围：   - NORMAL（普通消息）   - FIFO（顺序消息）   - DELAY（定时消息）   - TRANSACTION（事务消息）
         /// </summary>
-        /// <value>消息类型（RocketMQ实例5.x版本才包含此参数）。</value>
+        /// <value>消息类型（仅RocketMQ实例5.x版本需要填写此参数）。 取值范围：   - NORMAL（普通消息）   - FIFO（顺序消息）   - DELAY（定时消息）   - TRANSACTION（事务消息）</value>
         [JsonConverter(typeof(EnumClassConverter<MessageTypeEnum>))]
         public class MessageTypeEnum
         {
@@ -271,7 +271,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 关联的代理。
+        /// 关联的代理（仅RocketMQ实例4.8.0版本需要填写此参数）。
         /// </summary>
         [JsonProperty("brokers", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Brokers { get; set; }
@@ -283,12 +283,18 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public decimal? QueueNum { get; set; }
 
         /// <summary>
-        /// 权限。
+        /// 队列（仅RocketMQ实例4.8.0版本需要填写此参数）。
+        /// </summary>
+        [JsonProperty("queues", NullValueHandling = NullValueHandling.Ignore)]
+        public List<CreateTopicReqQueues> Queues { get; set; }
+
+        /// <summary>
+        /// 权限（仅RocketMQ实例4.8.0版本需要填写此参数）。 取值范围：   - pub（发布）   - sub（订阅）   - all（发布+订阅）
         /// </summary>
         [JsonProperty("permission", NullValueHandling = NullValueHandling.Ignore)]
         public PermissionEnum Permission { get; set; }
         /// <summary>
-        /// 消息类型（RocketMQ实例5.x版本才包含此参数）。
+        /// 消息类型（仅RocketMQ实例5.x版本需要填写此参数）。 取值范围：   - NORMAL（普通消息）   - FIFO（顺序消息）   - DELAY（定时消息）   - TRANSACTION（事务消息）
         /// </summary>
         [JsonProperty("message_type", NullValueHandling = NullValueHandling.Ignore)]
         public MessageTypeEnum MessageType { get; set; }
@@ -310,6 +316,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  brokers: ").Append(Brokers).Append("\n");
             sb.Append("  queueNum: ").Append(QueueNum).Append("\n");
+            sb.Append("  queues: ").Append(Queues).Append("\n");
             sb.Append("  permission: ").Append(Permission).Append("\n");
             sb.Append("  messageType: ").Append(MessageType).Append("\n");
             sb.Append("  topics: ").Append(Topics).Append("\n");
@@ -351,6 +358,12 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                     this.QueueNum.Equals(input.QueueNum))
                 ) && 
                 (
+                    this.Queues == input.Queues ||
+                    this.Queues != null &&
+                    input.Queues != null &&
+                    this.Queues.SequenceEqual(input.Queues)
+                ) && 
+                (
                     this.Permission == input.Permission ||
                     (this.Permission != null &&
                     this.Permission.Equals(input.Permission))
@@ -382,6 +395,8 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                     hashCode = hashCode * 59 + this.Brokers.GetHashCode();
                 if (this.QueueNum != null)
                     hashCode = hashCode * 59 + this.QueueNum.GetHashCode();
+                if (this.Queues != null)
+                    hashCode = hashCode * 59 + this.Queues.GetHashCode();
                 if (this.Permission != null)
                     hashCode = hashCode * 59 + this.Permission.GetHashCode();
                 if (this.MessageType != null)
