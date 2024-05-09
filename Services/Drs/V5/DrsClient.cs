@@ -1249,6 +1249,34 @@ namespace HuaweiCloud.SDK.Drs.V5
         }
         
         /// <summary>
+        /// 查询健康对比任务详情
+        ///
+        /// 查询健康对比任务详情。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowHealthCompareJobDetailResponse ShowHealthCompareJobDetail(ShowHealthCompareJobDetailRequest showHealthCompareJobDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", showHealthCompareJobDetailRequest.JobId.ToString());
+            urlParam.Add("compare_job_id", showHealthCompareJobDetailRequest.CompareJobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/health-compare-jobs/{compare_job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showHealthCompareJobDetailRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowHealthCompareJobDetailResponse>(response);
+        }
+
+        public SyncInvoker<ShowHealthCompareJobDetailResponse> ShowHealthCompareJobDetailInvoker(ShowHealthCompareJobDetailRequest showHealthCompareJobDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", showHealthCompareJobDetailRequest.JobId.ToString());
+            urlParam.Add("compare_job_id", showHealthCompareJobDetailRequest.CompareJobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/health-compare-jobs/{compare_job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showHealthCompareJobDetailRequest);
+            return new SyncInvoker<ShowHealthCompareJobDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowHealthCompareJobDetailResponse>);
+        }
+        
+        /// <summary>
         /// 查询健康对比列表
         ///
         /// 查询健康对比列表。
@@ -1272,6 +1300,34 @@ namespace HuaweiCloud.SDK.Drs.V5
             var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/health-compare-jobs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showHealthCompareJobListRequest);
             return new SyncInvoker<ShowHealthCompareJobListResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowHealthCompareJobListResponse>);
+        }
+        
+        /// <summary>
+        /// 获取健康对比对象级对比概览
+        ///
+        /// 获取健康对比对象级对比概览。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowHealthObjectCompareJobOverviewResponse ShowHealthObjectCompareJobOverview(ShowHealthObjectCompareJobOverviewRequest showHealthObjectCompareJobOverviewRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", showHealthObjectCompareJobOverviewRequest.JobId.ToString());
+            urlParam.Add("compare_job_id", showHealthObjectCompareJobOverviewRequest.CompareJobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/health-compare-jobs/object/{compare_job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showHealthObjectCompareJobOverviewRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowHealthObjectCompareJobOverviewResponse>(response);
+        }
+
+        public SyncInvoker<ShowHealthObjectCompareJobOverviewResponse> ShowHealthObjectCompareJobOverviewInvoker(ShowHealthObjectCompareJobOverviewRequest showHealthObjectCompareJobOverviewRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", showHealthObjectCompareJobOverviewRequest.JobId.ToString());
+            urlParam.Add("compare_job_id", showHealthObjectCompareJobOverviewRequest.CompareJobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/health-compare-jobs/object/{compare_job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showHealthObjectCompareJobOverviewRequest);
+            return new SyncInvoker<ShowHealthObjectCompareJobOverviewResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowHealthObjectCompareJobOverviewResponse>);
         }
         
         /// <summary>
@@ -1646,6 +1702,32 @@ namespace HuaweiCloud.SDK.Drs.V5
             var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/batch-async-jobs/{async_job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateBatchAsyncJobsRequest);
             return new SyncInvoker<UpdateBatchAsyncJobsResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateBatchAsyncJobsResponse>);
+        }
+        
+        /// <summary>
+        /// 修改对比策略
+        ///
+        /// 修改周期性对比的对比策略，目前仅MySQL-&gt;MySQL、MySQL-&gt;GaussDB(for MySQL)、MySQL-&gt;GaussDB(DWS)、GaussDB(for MySQL)-&gt;MySQL同步任务，MySQL-&gt;MySQL、MySQL-&gt;GaussDB(for MySQL)迁移任务，MySQL-&gt;MySQL、MySQL-&gt;GaussDB(for MySQL)、GaussDB(for MySQL)-&gt;GaussDB(for MySQL)、DDM-&gt;DDM、DDS-DDS灾备任务支持对比策略设置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateComparePolicyResponse UpdateComparePolicy(UpdateComparePolicyRequest updateComparePolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", updateComparePolicyRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/compare-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateComparePolicyRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateComparePolicyResponse>(response);
+        }
+
+        public SyncInvoker<UpdateComparePolicyResponse> UpdateComparePolicyInvoker(UpdateComparePolicyRequest updateComparePolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", updateComparePolicyRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/compare-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateComparePolicyRequest);
+            return new SyncInvoker<UpdateComparePolicyResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateComparePolicyResponse>);
         }
         
         /// <summary>

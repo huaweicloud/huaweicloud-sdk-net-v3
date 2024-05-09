@@ -287,16 +287,16 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
             public static readonly JobDirectionEnum DOWN = new JobDirectionEnum("down");
 
             /// <summary>
-            /// Enum NON_DBS for value: non-dbs
+            /// Enum NO_DBS for value: no-dbs
             /// </summary>
-            public static readonly JobDirectionEnum NON_DBS = new JobDirectionEnum("non-dbs");
+            public static readonly JobDirectionEnum NO_DBS = new JobDirectionEnum("no-dbs");
 
             private static readonly Dictionary<string, JobDirectionEnum> StaticFields =
             new Dictionary<string, JobDirectionEnum>()
             {
                 { "up", UP },
                 { "down", DOWN },
-                { "non-dbs", NON_DBS },
+                { "no-dbs", NO_DBS },
             };
 
             private string _value;

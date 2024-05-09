@@ -70,6 +70,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         [JsonProperty("public_ip_config", NullValueHandling = NullValueHandling.Ignore)]
         public PublicIpConfig PublicIpConfig { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("replay_config", NullValueHandling = NullValueHandling.Ignore)]
+        public ReplayConfigInfo ReplayConfig { get; set; }
+
 
 
         /// <summary>
@@ -88,6 +94,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             sb.Append("  isSyncReEdit: ").Append(IsSyncReEdit).Append("\n");
             sb.Append("  forceDelete: ").Append(ForceDelete).Append("\n");
             sb.Append("  publicIpConfig: ").Append(PublicIpConfig).Append("\n");
+            sb.Append("  replayConfig: ").Append(ReplayConfig).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -154,6 +161,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                     this.PublicIpConfig == input.PublicIpConfig ||
                     (this.PublicIpConfig != null &&
                     this.PublicIpConfig.Equals(input.PublicIpConfig))
+                ) && 
+                (
+                    this.ReplayConfig == input.ReplayConfig ||
+                    (this.ReplayConfig != null &&
+                    this.ReplayConfig.Equals(input.ReplayConfig))
                 );
         }
 
@@ -183,6 +195,8 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                     hashCode = hashCode * 59 + this.ForceDelete.GetHashCode();
                 if (this.PublicIpConfig != null)
                     hashCode = hashCode * 59 + this.PublicIpConfig.GetHashCode();
+                if (this.ReplayConfig != null)
+                    hashCode = hashCode * 59 + this.ReplayConfig.GetHashCode();
                 return hashCode;
             }
         }

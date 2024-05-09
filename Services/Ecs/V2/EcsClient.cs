@@ -434,6 +434,32 @@ namespace HuaweiCloud.SDK.Ecs.V2
         }
         
         /// <summary>
+        /// 云服务器切换虚拟私有云
+        ///
+        /// 云服务器切换虚拟私有云。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ChangeVpcResponse ChangeVpc(ChangeVpcRequest changeVpcRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", changeVpcRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/changevpc", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", changeVpcRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<ChangeVpcResponse>(response);
+        }
+
+        public SyncInvoker<ChangeVpcResponse> ChangeVpcInvoker(ChangeVpcRequest changeVpcRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", changeVpcRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/changevpc", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", changeVpcRequest);
+            return new SyncInvoker<ChangeVpcResponse>(this, "POST", request, JsonUtils.DeSerialize<ChangeVpcResponse>);
+        }
+        
+        /// <summary>
         /// 创建云服务器(按需)
         ///
         /// 创建一台或多台[按需付费](https://support.huaweicloud.com/productdesc-ecs/ecs_01_0065.html)方式的云服务器。

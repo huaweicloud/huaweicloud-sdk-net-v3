@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         public string Id { get; set; }
 
         /// <summary>
-        /// 对比类型。 - object：对象对比 - lines：行对比 - contents：内容对比 - account：用户对比
+        /// 对比类型： - object_comparison：对象对比。 - lines：行对比。 - account：用户对比。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
@@ -35,13 +35,13 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         public string Status { get; set; }
 
         /// <summary>
-        /// 对比开始时间。
+        /// 对比开始时间，UTC时间。
         /// </summary>
         [JsonProperty("start_time", NullValueHandling = NullValueHandling.Ignore)]
         public string StartTime { get; set; }
 
         /// <summary>
-        /// 对比结束时间。
+        /// 对比结束时间，UTC时间。
         /// </summary>
         [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
         public string EndTime { get; set; }

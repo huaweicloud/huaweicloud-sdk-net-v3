@@ -145,7 +145,7 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         public string JobId { get; set; }
 
         /// <summary>
-        /// 每页显示的条目数量。
+        /// 每页显示的条目数量，最大值1000。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]

@@ -251,6 +251,121 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
             }
         }
 
+        /// <summary>
+        /// HLS切片类型。  取值如下所示： - mpegts：ts切片 - fmp4：fmp4切片  不设置默认为ts切片。 
+        /// </summary>
+        /// <value>HLS切片类型。  取值如下所示： - mpegts：ts切片 - fmp4：fmp4切片  不设置默认为ts切片。 </value>
+        [JsonConverter(typeof(EnumClassConverter<HlsSegmentTypeEnum>))]
+        public class HlsSegmentTypeEnum
+        {
+            /// <summary>
+            /// Enum MPEGTS for value: mpegts
+            /// </summary>
+            public static readonly HlsSegmentTypeEnum MPEGTS = new HlsSegmentTypeEnum("mpegts");
+
+            /// <summary>
+            /// Enum FMP4 for value: fmp4
+            /// </summary>
+            public static readonly HlsSegmentTypeEnum FMP4 = new HlsSegmentTypeEnum("fmp4");
+
+            private static readonly Dictionary<string, HlsSegmentTypeEnum> StaticFields =
+            new Dictionary<string, HlsSegmentTypeEnum>()
+            {
+                { "mpegts", MPEGTS },
+                { "fmp4", FMP4 },
+            };
+
+            private string _value;
+
+            public HlsSegmentTypeEnum()
+            {
+
+            }
+
+            public HlsSegmentTypeEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static HlsSegmentTypeEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as HlsSegmentTypeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(HlsSegmentTypeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(HlsSegmentTypeEnum a, HlsSegmentTypeEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(HlsSegmentTypeEnum a, HlsSegmentTypeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 需要单独设置时长的HLS起始分片数量。与hls_init_interval配合使用，设置前面hls_init_count个HLS分片时长。 为0表示不单独配置时长。 
@@ -286,6 +401,11 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         [JsonProperty("upsample", NullValueHandling = NullValueHandling.Ignore)]
         public int? Upsample { get; set; }
 
+        /// <summary>
+        /// HLS切片类型。  取值如下所示： - mpegts：ts切片 - fmp4：fmp4切片  不设置默认为ts切片。 
+        /// </summary>
+        [JsonProperty("hls_segment_type", NullValueHandling = NullValueHandling.Ignore)]
+        public HlsSegmentTypeEnum HlsSegmentType { get; set; }
 
 
         /// <summary>
@@ -301,6 +421,7 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
             sb.Append("  rotate: ").Append(Rotate).Append("\n");
             sb.Append("  adaptation: ").Append(Adaptation).Append("\n");
             sb.Append("  upsample: ").Append(Upsample).Append("\n");
+            sb.Append("  hlsSegmentType: ").Append(HlsSegmentType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -351,6 +472,11 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
                     this.Upsample == input.Upsample ||
                     (this.Upsample != null &&
                     this.Upsample.Equals(input.Upsample))
+                ) && 
+                (
+                    this.HlsSegmentType == input.HlsSegmentType ||
+                    (this.HlsSegmentType != null &&
+                    this.HlsSegmentType.Equals(input.HlsSegmentType))
                 );
         }
 
@@ -374,6 +500,8 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
                     hashCode = hashCode * 59 + this.Adaptation.GetHashCode();
                 if (this.Upsample != null)
                     hashCode = hashCode * 59 + this.Upsample.GetHashCode();
+                if (this.HlsSegmentType != null)
+                    hashCode = hashCode * 59 + this.HlsSegmentType.GetHashCode();
                 return hashCode;
             }
         }

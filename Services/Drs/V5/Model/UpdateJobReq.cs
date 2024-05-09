@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
     public class UpdateJobReq 
     {
         /// <summary>
-        /// 更新指定ID任务详情类型。  场景一：更新单个任务详情，取值： - name：更新该任务名称。 - description：更新该任务描述。 - re_create：配置中任务三天以后虚拟机删除后重建。 - expired_days：更新任务异常自动结束时间，单位为天。  场景二：更新批量异步任务详情，取值： - all：批量异步创建的任务，参数校验不通过，需要指定全部参数进行更新时。 - network：批量异步创建的任务，测试连接不通过，需要更新源库/目标库信息时。 - policy：批量异步创建的任务，需要更新任务配置时。 - db_object：批量异步创建的任务，需要更新对象信息时。 - precheck：批量异步创建的任务，需要重新预检查时。
+        /// 更新指定ID任务详情类型。  场景一：更新单个任务详情，取值： - name：更新该任务名称。 - description：更新该任务描述。 - re_create：配置中任务三天以后虚拟机删除后重建。 - expired_days：更新任务异常自动结束时间，单位为天。 - notify：更新任务异常通知信息。  场景二：更新批量异步任务详情，取值： - all：批量异步创建的任务，参数校验不通过，需要指定全部参数进行更新时。 - network：批量异步创建的任务，测试连接不通过，需要更新源库/目标库信息时。 - policy：批量异步创建的任务，需要更新任务配置时。 - db_object：批量异步创建的任务，需要更新对象信息时。 - precheck：批量异步创建的任务，需要重新预检查时。
         /// </summary>
-        /// <value>更新指定ID任务详情类型。  场景一：更新单个任务详情，取值： - name：更新该任务名称。 - description：更新该任务描述。 - re_create：配置中任务三天以后虚拟机删除后重建。 - expired_days：更新任务异常自动结束时间，单位为天。  场景二：更新批量异步任务详情，取值： - all：批量异步创建的任务，参数校验不通过，需要指定全部参数进行更新时。 - network：批量异步创建的任务，测试连接不通过，需要更新源库/目标库信息时。 - policy：批量异步创建的任务，需要更新任务配置时。 - db_object：批量异步创建的任务，需要更新对象信息时。 - precheck：批量异步创建的任务，需要重新预检查时。</value>
+        /// <value>更新指定ID任务详情类型。  场景一：更新单个任务详情，取值： - name：更新该任务名称。 - description：更新该任务描述。 - re_create：配置中任务三天以后虚拟机删除后重建。 - expired_days：更新任务异常自动结束时间，单位为天。 - notify：更新任务异常通知信息。  场景二：更新批量异步任务详情，取值： - all：批量异步创建的任务，参数校验不通过，需要指定全部参数进行更新时。 - network：批量异步创建的任务，测试连接不通过，需要更新源库/目标库信息时。 - policy：批量异步创建的任务，需要更新任务配置时。 - db_object：批量异步创建的任务，需要更新对象信息时。 - precheck：批量异步创建的任务，需要重新预检查时。</value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -67,6 +67,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             /// </summary>
             public static readonly TypeEnum EXPIRED_DAYS = new TypeEnum("expired_days");
 
+            /// <summary>
+            /// Enum NOTIFY for value: notify
+            /// </summary>
+            public static readonly TypeEnum NOTIFY = new TypeEnum("notify");
+
             private static readonly Dictionary<string, TypeEnum> StaticFields =
             new Dictionary<string, TypeEnum>()
             {
@@ -79,6 +84,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                 { "precheck", PRECHECK },
                 { "re_create", RE_CREATE },
                 { "expired_days", EXPIRED_DAYS },
+                { "notify", NOTIFY },
             };
 
             private string _value;
@@ -174,7 +180,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
 
 
         /// <summary>
-        /// 更新指定ID任务详情类型。  场景一：更新单个任务详情，取值： - name：更新该任务名称。 - description：更新该任务描述。 - re_create：配置中任务三天以后虚拟机删除后重建。 - expired_days：更新任务异常自动结束时间，单位为天。  场景二：更新批量异步任务详情，取值： - all：批量异步创建的任务，参数校验不通过，需要指定全部参数进行更新时。 - network：批量异步创建的任务，测试连接不通过，需要更新源库/目标库信息时。 - policy：批量异步创建的任务，需要更新任务配置时。 - db_object：批量异步创建的任务，需要更新对象信息时。 - precheck：批量异步创建的任务，需要重新预检查时。
+        /// 更新指定ID任务详情类型。  场景一：更新单个任务详情，取值： - name：更新该任务名称。 - description：更新该任务描述。 - re_create：配置中任务三天以后虚拟机删除后重建。 - expired_days：更新任务异常自动结束时间，单位为天。 - notify：更新任务异常通知信息。  场景二：更新批量异步任务详情，取值： - all：批量异步创建的任务，参数校验不通过，需要指定全部参数进行更新时。 - network：批量异步创建的任务，测试连接不通过，需要更新源库/目标库信息时。 - policy：批量异步创建的任务，需要更新任务配置时。 - db_object：批量异步创建的任务，需要更新对象信息时。 - precheck：批量异步创建的任务，需要重新预检查时。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }

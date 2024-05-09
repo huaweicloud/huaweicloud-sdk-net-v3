@@ -131,9 +131,9 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         }
 
         /// <summary>
-        /// 任务详情类型。取值： - overview：任务概览信息。 - detail：任务基本信息。 - network：测试连接结果信息，需配合query_id参数一起查询。 - precheck：预检查结果信息，需配合query_id参数一起查询。 - progress：任务进度信息。 - log：任务日志信息，支持分页查询参数offset与limit。 - compare：查询对比任务。 - file：对象导入信息
+        /// 任务详情类型。取值： - overview：任务概览信息。 - detail：任务基本信息。 - network：测试连接结果信息，需配合query_id参数一起查询。 - precheck：预检查结果信息，需配合query_id参数一起查询。 - progress：任务进度信息。 - log：任务日志信息，支持分页查询参数offset与limit。 - compare：查询对比任务。 - file：对象导入信息。 - is_writable：目标库解除只读结果。 - cloud_connection：录制回放他云连通性测试，需配合query_id参数一起查询。
         /// </summary>
-        /// <value>任务详情类型。取值： - overview：任务概览信息。 - detail：任务基本信息。 - network：测试连接结果信息，需配合query_id参数一起查询。 - precheck：预检查结果信息，需配合query_id参数一起查询。 - progress：任务进度信息。 - log：任务日志信息，支持分页查询参数offset与limit。 - compare：查询对比任务。 - file：对象导入信息</value>
+        /// <value>任务详情类型。取值： - overview：任务概览信息。 - detail：任务基本信息。 - network：测试连接结果信息，需配合query_id参数一起查询。 - precheck：预检查结果信息，需配合query_id参数一起查询。 - progress：任务进度信息。 - log：任务日志信息，支持分页查询参数offset与limit。 - compare：查询对比任务。 - file：对象导入信息。 - is_writable：目标库解除只读结果。 - cloud_connection：录制回放他云连通性测试，需配合query_id参数一起查询。</value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -177,6 +177,16 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             /// </summary>
             public static readonly TypeEnum FILE = new TypeEnum("file");
 
+            /// <summary>
+            /// Enum IS_WRITABLE for value: is_writable
+            /// </summary>
+            public static readonly TypeEnum IS_WRITABLE = new TypeEnum("is_writable");
+
+            /// <summary>
+            /// Enum CLOUD_CONNECTION for value: cloud_connection
+            /// </summary>
+            public static readonly TypeEnum CLOUD_CONNECTION = new TypeEnum("cloud_connection");
+
             private static readonly Dictionary<string, TypeEnum> StaticFields =
             new Dictionary<string, TypeEnum>()
             {
@@ -188,6 +198,8 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                 { "log", LOG },
                 { "compare", COMPARE },
                 { "file", FILE },
+                { "is_writable", IS_WRITABLE },
+                { "cloud_connection", CLOUD_CONNECTION },
             };
 
             private string _value;
@@ -786,7 +798,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         [JsonProperty("X-Language", NullValueHandling = NullValueHandling.Ignore)]
         public XLanguageEnum XLanguage { get; set; }
         /// <summary>
-        /// 任务详情类型。取值： - overview：任务概览信息。 - detail：任务基本信息。 - network：测试连接结果信息，需配合query_id参数一起查询。 - precheck：预检查结果信息，需配合query_id参数一起查询。 - progress：任务进度信息。 - log：任务日志信息，支持分页查询参数offset与limit。 - compare：查询对比任务。 - file：对象导入信息
+        /// 任务详情类型。取值： - overview：任务概览信息。 - detail：任务基本信息。 - network：测试连接结果信息，需配合query_id参数一起查询。 - precheck：预检查结果信息，需配合query_id参数一起查询。 - progress：任务进度信息。 - log：任务日志信息，支持分页查询参数offset与limit。 - compare：查询对比任务。 - file：对象导入信息。 - is_writable：目标库解除只读结果。 - cloud_connection：录制回放他云连通性测试，需配合query_id参数一起查询。
         /// </summary>
         [SDKProperty("type", IsQuery = true)]
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]

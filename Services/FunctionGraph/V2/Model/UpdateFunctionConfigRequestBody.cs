@@ -305,6 +305,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public int? GpuMemory { get; set; }
 
         /// <summary>
+        /// 显卡类型。
+        /// </summary>
+        [JsonProperty("gpu_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string GpuType { get; set; }
+
+        /// <summary>
         /// 用户自定义的name/value信息。 在函数中使用的参数。 举例：如函数要访问某个主机，可以设置自定义参数：Host&#x3D;{host_ip}，最多定义20个，总长度不超过4KB。
         /// </summary>
         [JsonProperty("user_data", NullValueHandling = NullValueHandling.Ignore)]
@@ -460,12 +466,6 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         [JsonProperty("enable_class_isolation", NullValueHandling = NullValueHandling.Ignore)]
         public bool? EnableClassIsolation { get; set; }
 
-        /// <summary>
-        /// 显卡类型。
-        /// </summary>
-        [JsonProperty("gpu_type", NullValueHandling = NullValueHandling.Ignore)]
-        public string GpuType { get; set; }
-
 
 
         /// <summary>
@@ -481,6 +481,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  handler: ").Append(Handler).Append("\n");
             sb.Append("  memorySize: ").Append(MemorySize).Append("\n");
             sb.Append("  gpuMemory: ").Append(GpuMemory).Append("\n");
+            sb.Append("  gpuType: ").Append(GpuType).Append("\n");
             sb.Append("  userData: ").Append(UserData).Append("\n");
             sb.Append("  encryptedUserData: ").Append(EncryptedUserData).Append("\n");
             sb.Append("  xrole: ").Append(Xrole).Append("\n");
@@ -507,7 +508,6 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  restoreHookTimeout: ").Append(RestoreHookTimeout).Append("\n");
             sb.Append("  heartbeatHandler: ").Append(HeartbeatHandler).Append("\n");
             sb.Append("  enableClassIsolation: ").Append(EnableClassIsolation).Append("\n");
-            sb.Append("  gpuType: ").Append(GpuType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -558,6 +558,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.GpuMemory == input.GpuMemory ||
                     (this.GpuMemory != null &&
                     this.GpuMemory.Equals(input.GpuMemory))
+                ) && 
+                (
+                    this.GpuType == input.GpuType ||
+                    (this.GpuType != null &&
+                    this.GpuType.Equals(input.GpuType))
                 ) && 
                 (
                     this.UserData == input.UserData ||
@@ -688,11 +693,6 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.EnableClassIsolation == input.EnableClassIsolation ||
                     (this.EnableClassIsolation != null &&
                     this.EnableClassIsolation.Equals(input.EnableClassIsolation))
-                ) && 
-                (
-                    this.GpuType == input.GpuType ||
-                    (this.GpuType != null &&
-                    this.GpuType.Equals(input.GpuType))
                 );
         }
 
@@ -716,6 +716,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.MemorySize.GetHashCode();
                 if (this.GpuMemory != null)
                     hashCode = hashCode * 59 + this.GpuMemory.GetHashCode();
+                if (this.GpuType != null)
+                    hashCode = hashCode * 59 + this.GpuType.GetHashCode();
                 if (this.UserData != null)
                     hashCode = hashCode * 59 + this.UserData.GetHashCode();
                 if (this.EncryptedUserData != null)
@@ -768,8 +770,6 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.HeartbeatHandler.GetHashCode();
                 if (this.EnableClassIsolation != null)
                     hashCode = hashCode * 59 + this.EnableClassIsolation.GetHashCode();
-                if (this.GpuType != null)
-                    hashCode = hashCode * 59 + this.GpuType.GetHashCode();
                 return hashCode;
             }
         }

@@ -161,7 +161,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         public string EndTime { get; set; }
 
         /// <summary>
-        /// 对比类型。 - object：对象对比 - lines：行对比 - contents：内容对比 - account：用户对比
+        /// 对比类型： - object_comparison：对象对比。 - lines：行对比。 - account：用户对比。
         /// </summary>
         [JsonProperty("compare_type", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> CompareType { get; set; }

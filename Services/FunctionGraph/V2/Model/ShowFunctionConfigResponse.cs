@@ -595,6 +595,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public int? GpuMemory { get; set; }
 
         /// <summary>
+        /// 显卡类型。
+        /// </summary>
+        [JsonProperty("gpu_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string GpuType { get; set; }
+
+        /// <summary>
         /// 函数占用的cpu资源。 单位为millicore（1 core&#x3D;1000 millicores）。 取值与MemorySize成比例，默认是128M内存占0.1个核（100 millicores）。
         /// </summary>
         [JsonProperty("cpu", NullValueHandling = NullValueHandling.Ignore)]
@@ -833,12 +839,6 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public bool? EnableClassIsolation { get; set; }
 
         /// <summary>
-        /// 显卡类型。
-        /// </summary>
-        [JsonProperty("gpu_type", NullValueHandling = NullValueHandling.Ignore)]
-        public string GpuType { get; set; }
-
-        /// <summary>
         /// 是否支持配置临时存储。
         /// </summary>
         [JsonProperty("allow_ephemeral_storage", NullValueHandling = NullValueHandling.Ignore)]
@@ -878,6 +878,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  handler: ").Append(Handler).Append("\n");
             sb.Append("  memorySize: ").Append(MemorySize).Append("\n");
             sb.Append("  gpuMemory: ").Append(GpuMemory).Append("\n");
+            sb.Append("  gpuType: ").Append(GpuType).Append("\n");
             sb.Append("  cpu: ").Append(Cpu).Append("\n");
             sb.Append("  codeType: ").Append(CodeType).Append("\n");
             sb.Append("  codeUrl: ").Append(CodeUrl).Append("\n");
@@ -918,7 +919,6 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  apigRouteEnable: ").Append(ApigRouteEnable).Append("\n");
             sb.Append("  heartbeatHandler: ").Append(HeartbeatHandler).Append("\n");
             sb.Append("  enableClassIsolation: ").Append(EnableClassIsolation).Append("\n");
-            sb.Append("  gpuType: ").Append(GpuType).Append("\n");
             sb.Append("  allowEphemeralStorage: ").Append(AllowEphemeralStorage).Append("\n");
             sb.Append("  networkController: ").Append(NetworkController).Append("\n");
             sb.Append("  isReturnStream: ").Append(IsReturnStream).Append("\n");
@@ -1007,6 +1007,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.GpuMemory == input.GpuMemory ||
                     (this.GpuMemory != null &&
                     this.GpuMemory.Equals(input.GpuMemory))
+                ) && 
+                (
+                    this.GpuType == input.GpuType ||
+                    (this.GpuType != null &&
+                    this.GpuType.Equals(input.GpuType))
                 ) && 
                 (
                     this.Cpu == input.Cpu ||
@@ -1212,11 +1217,6 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.EnableClassIsolation.Equals(input.EnableClassIsolation))
                 ) && 
                 (
-                    this.GpuType == input.GpuType ||
-                    (this.GpuType != null &&
-                    this.GpuType.Equals(input.GpuType))
-                ) && 
-                (
                     this.AllowEphemeralStorage == input.AllowEphemeralStorage ||
                     (this.AllowEphemeralStorage != null &&
                     this.AllowEphemeralStorage.Equals(input.AllowEphemeralStorage))
@@ -1267,6 +1267,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.MemorySize.GetHashCode();
                 if (this.GpuMemory != null)
                     hashCode = hashCode * 59 + this.GpuMemory.GetHashCode();
+                if (this.GpuType != null)
+                    hashCode = hashCode * 59 + this.GpuType.GetHashCode();
                 if (this.Cpu != null)
                     hashCode = hashCode * 59 + this.Cpu.GetHashCode();
                 if (this.CodeType != null)
@@ -1347,8 +1349,6 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.HeartbeatHandler.GetHashCode();
                 if (this.EnableClassIsolation != null)
                     hashCode = hashCode * 59 + this.EnableClassIsolation.GetHashCode();
-                if (this.GpuType != null)
-                    hashCode = hashCode * 59 + this.GpuType.GetHashCode();
                 if (this.AllowEphemeralStorage != null)
                     hashCode = hashCode * 59 + this.AllowEphemeralStorage.GetHashCode();
                 if (this.NetworkController != null)

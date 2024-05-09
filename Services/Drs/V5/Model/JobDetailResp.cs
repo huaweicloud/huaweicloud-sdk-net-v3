@@ -15,6 +15,121 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
     /// </summary>
     public class JobDetailResp 
     {
+        /// <summary>
+        /// 解除目标库只读操作后，目标库解除只读是否成功。 - pending：目标库解除操作进行中。 - success：目标库解除只读操作成功。
+        /// </summary>
+        /// <value>解除目标库只读操作后，目标库解除只读是否成功。 - pending：目标库解除操作进行中。 - success：目标库解除只读操作成功。</value>
+        [JsonConverter(typeof(EnumClassConverter<IsWritableEnum>))]
+        public class IsWritableEnum
+        {
+            /// <summary>
+            /// Enum PENDING for value: pending
+            /// </summary>
+            public static readonly IsWritableEnum PENDING = new IsWritableEnum("pending");
+
+            /// <summary>
+            /// Enum SUCCESS for value: success
+            /// </summary>
+            public static readonly IsWritableEnum SUCCESS = new IsWritableEnum("success");
+
+            private static readonly Dictionary<string, IsWritableEnum> StaticFields =
+            new Dictionary<string, IsWritableEnum>()
+            {
+                { "pending", PENDING },
+                { "success", SUCCESS },
+            };
+
+            private string _value;
+
+            public IsWritableEnum()
+            {
+
+            }
+
+            public IsWritableEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static IsWritableEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as IsWritableEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(IsWritableEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(IsWritableEnum a, IsWritableEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(IsWritableEnum a, IsWritableEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 任务ID。
@@ -196,6 +311,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         [JsonProperty("children", NullValueHandling = NullValueHandling.Ignore)]
         public List<FailedToBindEipChildInfo> Children { get; set; }
 
+        /// <summary>
+        /// 解除目标库只读操作后，目标库解除只读是否成功。 - pending：目标库解除操作进行中。 - success：目标库解除只读操作成功。
+        /// </summary>
+        [JsonProperty("is_writable", NullValueHandling = NullValueHandling.Ignore)]
+        public IsWritableEnum IsWritable { get; set; }
 
 
         /// <summary>
@@ -235,6 +355,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             sb.Append("  publicIpList: ").Append(PublicIpList).Append("\n");
             sb.Append("  bindPublicIpState: ").Append(BindPublicIpState).Append("\n");
             sb.Append("  children: ").Append(Children).Append("\n");
+            sb.Append("  isWritable: ").Append(IsWritable).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -413,6 +534,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                     this.Children != null &&
                     input.Children != null &&
                     this.Children.SequenceEqual(input.Children)
+                ) && 
+                (
+                    this.IsWritable == input.IsWritable ||
+                    (this.IsWritable != null &&
+                    this.IsWritable.Equals(input.IsWritable))
                 );
         }
 
@@ -484,6 +610,8 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                     hashCode = hashCode * 59 + this.BindPublicIpState.GetHashCode();
                 if (this.Children != null)
                     hashCode = hashCode * 59 + this.Children.GetHashCode();
+                if (this.IsWritable != null)
+                    hashCode = hashCode * 59 + this.IsWritable.GetHashCode();
                 return hashCode;
             }
         }

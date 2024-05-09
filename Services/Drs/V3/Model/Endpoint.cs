@@ -406,6 +406,12 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         [JsonProperty("cluster_mode", NullValueHandling = NullValueHandling.Ignore)]
         public ClusterModeEnum ClusterMode { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("kafka_security_config", NullValueHandling = NullValueHandling.Ignore)]
+        public KafkaSecurity KafkaSecurityConfig { get; set; }
+
 
 
         /// <summary>
@@ -438,6 +444,7 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
             sb.Append("  sslLink: ").Append(SslLink).Append("\n");
             sb.Append("  topic: ").Append(Topic).Append("\n");
             sb.Append("  clusterMode: ").Append(ClusterMode).Append("\n");
+            sb.Append("  kafkaSecurityConfig: ").Append(KafkaSecurityConfig).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -573,6 +580,11 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
                     this.ClusterMode == input.ClusterMode ||
                     (this.ClusterMode != null &&
                     this.ClusterMode.Equals(input.ClusterMode))
+                ) && 
+                (
+                    this.KafkaSecurityConfig == input.KafkaSecurityConfig ||
+                    (this.KafkaSecurityConfig != null &&
+                    this.KafkaSecurityConfig.Equals(input.KafkaSecurityConfig))
                 );
         }
 
@@ -630,6 +642,8 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
                     hashCode = hashCode * 59 + this.Topic.GetHashCode();
                 if (this.ClusterMode != null)
                     hashCode = hashCode * 59 + this.ClusterMode.GetHashCode();
+                if (this.KafkaSecurityConfig != null)
+                    hashCode = hashCode * 59 + this.KafkaSecurityConfig.GetHashCode();
                 return hashCode;
             }
         }

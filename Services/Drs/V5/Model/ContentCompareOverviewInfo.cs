@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
     public class ContentCompareOverviewInfo 
     {
         /// <summary>
-        /// 对比结果。取值： - CONSISTENT：一致。 - INCONSISTENT：不一致。 - COMPARING：正在对比。 - WAITING_FOR_COMPARISON：等待对比。 - FAILED_TO_COMPARE：对比失败。 - TARGET_DB_NOT_EXIST：目标库不存在。 - CAN_NOT_COMPARE：无法对比。
+        /// 对比结果。取值： - CONSISTENT：一致。 - INCONSISTENT：不一致。 - COMPARING：正在对比。 - WAITING_FOR_COMPARISON：等待对比。 - FAILED_TO_COMPARE：对比失败。 - TARGET_DB_NOT_EXIST：目标库不存在。 - CAN_NOT_COMPARE：无法对比。 - WAIT_FOR_COMPARE：命令已下发，等待对比结果 - CANCELED：已取消
         /// </summary>
-        /// <value>对比结果。取值： - CONSISTENT：一致。 - INCONSISTENT：不一致。 - COMPARING：正在对比。 - WAITING_FOR_COMPARISON：等待对比。 - FAILED_TO_COMPARE：对比失败。 - TARGET_DB_NOT_EXIST：目标库不存在。 - CAN_NOT_COMPARE：无法对比。</value>
+        /// <value>对比结果。取值： - CONSISTENT：一致。 - INCONSISTENT：不一致。 - COMPARING：正在对比。 - WAITING_FOR_COMPARISON：等待对比。 - FAILED_TO_COMPARE：对比失败。 - TARGET_DB_NOT_EXIST：目标库不存在。 - CAN_NOT_COMPARE：无法对比。 - WAIT_FOR_COMPARE：命令已下发，等待对比结果 - CANCELED：已取消</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -57,6 +57,16 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             /// </summary>
             public static readonly StatusEnum CAN_NOT_COMPARE = new StatusEnum("CAN_NOT_COMPARE");
 
+            /// <summary>
+            /// Enum WAIT_FOR_COMPARE for value: WAIT_FOR_COMPARE
+            /// </summary>
+            public static readonly StatusEnum WAIT_FOR_COMPARE = new StatusEnum("WAIT_FOR_COMPARE");
+
+            /// <summary>
+            /// Enum CANCELED for value: CANCELED
+            /// </summary>
+            public static readonly StatusEnum CANCELED = new StatusEnum("CANCELED");
+
             private static readonly Dictionary<string, StatusEnum> StaticFields =
             new Dictionary<string, StatusEnum>()
             {
@@ -67,6 +77,8 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                 { "FAILED_TO_COMPARE", FAILED_TO_COMPARE },
                 { "TARGET_DB_NOT_EXIST", TARGET_DB_NOT_EXIST },
                 { "CAN_NOT_COMPARE", CAN_NOT_COMPARE },
+                { "WAIT_FOR_COMPARE", WAIT_FOR_COMPARE },
+                { "CANCELED", CANCELED },
             };
 
             private string _value;
@@ -174,7 +186,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         public string TargetDb { get; set; }
 
         /// <summary>
-        /// 对比结果。取值： - CONSISTENT：一致。 - INCONSISTENT：不一致。 - COMPARING：正在对比。 - WAITING_FOR_COMPARISON：等待对比。 - FAILED_TO_COMPARE：对比失败。 - TARGET_DB_NOT_EXIST：目标库不存在。 - CAN_NOT_COMPARE：无法对比。
+        /// 对比结果。取值： - CONSISTENT：一致。 - INCONSISTENT：不一致。 - COMPARING：正在对比。 - WAITING_FOR_COMPARISON：等待对比。 - FAILED_TO_COMPARE：对比失败。 - TARGET_DB_NOT_EXIST：目标库不存在。 - CAN_NOT_COMPARE：无法对比。 - WAIT_FOR_COMPARE：命令已下发，等待对比结果 - CANCELED：已取消
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }

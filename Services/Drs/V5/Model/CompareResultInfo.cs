@@ -58,6 +58,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         [JsonProperty("content_compare_detail_infos", NullValueHandling = NullValueHandling.Ignore)]
         public List<ContentCompareDetailInfo> ContentCompareDetailInfos { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("content_diff_detail_info", NullValueHandling = NullValueHandling.Ignore)]
+        public ContentDiffDetailInfo ContentDiffDetailInfo { get; set; }
+
 
 
         /// <summary>
@@ -74,6 +80,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             sb.Append("  lineCompareDetailInfos: ").Append(LineCompareDetailInfos).Append("\n");
             sb.Append("  contentCompareOverviewInfos: ").Append(ContentCompareOverviewInfos).Append("\n");
             sb.Append("  contentCompareDetailInfos: ").Append(ContentCompareDetailInfos).Append("\n");
+            sb.Append("  contentDiffDetailInfo: ").Append(ContentDiffDetailInfo).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -135,6 +142,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                     this.ContentCompareDetailInfos != null &&
                     input.ContentCompareDetailInfos != null &&
                     this.ContentCompareDetailInfos.SequenceEqual(input.ContentCompareDetailInfos)
+                ) && 
+                (
+                    this.ContentDiffDetailInfo == input.ContentDiffDetailInfo ||
+                    (this.ContentDiffDetailInfo != null &&
+                    this.ContentDiffDetailInfo.Equals(input.ContentDiffDetailInfo))
                 );
         }
 
@@ -160,6 +172,8 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                     hashCode = hashCode * 59 + this.ContentCompareOverviewInfos.GetHashCode();
                 if (this.ContentCompareDetailInfos != null)
                     hashCode = hashCode * 59 + this.ContentCompareDetailInfos.GetHashCode();
+                if (this.ContentDiffDetailInfo != null)
+                    hashCode = hashCode * 59 + this.ContentDiffDetailInfo.GetHashCode();
                 return hashCode;
             }
         }

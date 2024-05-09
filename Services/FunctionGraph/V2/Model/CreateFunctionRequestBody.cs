@@ -571,6 +571,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public int? GpuMemory { get; set; }
 
         /// <summary>
+        /// 显卡类型。
+        /// </summary>
+        [JsonProperty("gpu_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string GpuType { get; set; }
+
+        /// <summary>
         /// 函数代码类型，取值有5种。 inline: UI在线编辑代码。 zip: 函数代码为zip包。 obs: 函数代码来源于obs存储。 jar: 函数代码为jar包，主要针对Java函数。 Custom-Image-Swr: 函数代码来源与SWR自定义镜像。
         /// </summary>
         [JsonProperty("code_type", NullValueHandling = NullValueHandling.Ignore)]
@@ -712,6 +718,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  funcVpc: ").Append(FuncVpc).Append("\n");
             sb.Append("  memorySize: ").Append(MemorySize).Append("\n");
             sb.Append("  gpuMemory: ").Append(GpuMemory).Append("\n");
+            sb.Append("  gpuType: ").Append(GpuType).Append("\n");
             sb.Append("  codeType: ").Append(CodeType).Append("\n");
             sb.Append("  codeUrl: ").Append(CodeUrl).Append("\n");
             sb.Append("  codeFilename: ").Append(CodeFilename).Append("\n");
@@ -799,6 +806,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.GpuMemory == input.GpuMemory ||
                     (this.GpuMemory != null &&
                     this.GpuMemory.Equals(input.GpuMemory))
+                ) && 
+                (
+                    this.GpuType == input.GpuType ||
+                    (this.GpuType != null &&
+                    this.GpuType.Equals(input.GpuType))
                 ) && 
                 (
                     this.CodeType == input.CodeType ||
@@ -933,6 +945,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.MemorySize.GetHashCode();
                 if (this.GpuMemory != null)
                     hashCode = hashCode * 59 + this.GpuMemory.GetHashCode();
+                if (this.GpuType != null)
+                    hashCode = hashCode * 59 + this.GpuType.GetHashCode();
                 if (this.CodeType != null)
                     hashCode = hashCode * 59 + this.CodeType.GetHashCode();
                 if (this.CodeUrl != null)
