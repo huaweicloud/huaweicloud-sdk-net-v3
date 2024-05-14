@@ -21,7 +21,7 @@
 
     <ItemGroup>
         <None Include="..\LICENSE" Pack="true" PackagePath="" />
-        <PackageReference Include="BouncyCastle.Cryptography" Version="2.2.1" />
+        <PackageReference Include="BouncyCastle.Cryptography" Version="2.3.1" />
         <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.5" />
         <PackageReference Include="Microsoft.Extensions.Http" Version="3.1.5" />
         <PackageReference Include="Microsoft.Extensions.Http.Polly" Version="3.1.5" />
