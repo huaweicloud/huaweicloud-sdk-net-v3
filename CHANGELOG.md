@@ -1,3 +1,125 @@
+# 3.1.95 2024-05-16
+
+### HuaweiCloud SDK CDN
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Deprecate the APIs `UpdateDomainFullConfig`, `ShowDomainFullConfig`
+  - **ShowDomainFullConfig**
+    - changes of response param
+      - `+ configs.https.enc_certificate_value`
+      - `+ configs.https.certificates`
+  - **UpdateDomainFullConfig**
+    - changes of request param
+      - `+ configs.https.enc_certificate_value`
+      - `+ configs.https.enc_private_key`
+      - `+ configs.https.certificates`
+
+### HuaweiCloud SDK DCS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListClients**
+    - changes of response param
+      - `* clients.idle: string -> int32`
+
+### HuaweiCloud SDK GaussDB
+
+- _Features_
+  - Support the following APIs:
+    - `CreateStarrocksInstance`
+    - `ListStarrocksInstanceInfo`
+    - `DeleteStarrocksInstance`
+    - `RestartStarrocksInstance`
+    - `RestartStarrocksNode`
+    - `CheckStarRocksResource`
+    - `ListHtapDataStore`
+    - `ListHtapStorageType`
+    - `ListHtapFlavor`
+    - `ListHtapInstanceInfo`
+    - `ShowStarRocksDatabaseUser`
+    - `CreateStarRocksDatabaseUser`
+    - `DeleteStarRocksDatabaseUser`
+    - `UpdateStarRocksDatabaseUserPassword`
+    - `UpdateStarRocksDatabaseUserPermission`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _Features_
+  - Support the API `RestoreInstance`
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateDbInstance**
+    - changes of request param
+      - `+ enable_single_float_ip`
+
+### HuaweiCloud SDK IAM
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListCustomPolicies**
+    - changes of response param
+      - `* roles.policy.Statement.Resource: list<string> -> object`
+  - **CreateCloudServiceCustomPolicy**
+    - changes of request param
+      - `* role.policy.Statement.Resource: list<string> -> object`
+    - changes of response param
+      - `* role.policy.Statement.Resource: list<string> -> object`
+  - **ShowCustomPolicy**
+    - changes of response param
+      - `* role.policy.Statement.Resource: list<string> -> object`
+  - **UpdateCloudServiceCustomPolicy**
+    - changes of request param
+      - `* role.policy.Statement.Resource: list<string> -> object`
+    - changes of response param
+      - `* role.policy.Statement.Resource: list<string> -> object`
+  - **CreateTemporaryAccessKeyByToken**
+    - changes of request param
+      - `* auth.identity.policy.Statement.Resource: list<string> -> object`
+  - **CreateTemporaryAccessKeyByAgency**
+    - changes of request param
+      - `* auth.identity.policy.Statement.Resource: list<string> -> object`
+
+### HuaweiCloud SDK LTS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListLogs**
+    - changes of request param
+      - `+ __time__`
+  - **ListStructuredLogsWithTimeRange**
+    - changes of request param
+      - `* time_range.start_time: string -> int64`
+      - `* time_range.end_time: string -> int64`
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **RecognizeSmartDocumentRecognizer**
+    - changes of request param
+      - `+ pdf_page_number`
+
 # 3.1.94 2024-05-09
 
 ### HuaweiCloud SDK DRS

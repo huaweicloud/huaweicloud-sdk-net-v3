@@ -171,7 +171,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// 空闲时长（单位：秒）
         /// </summary>
         [JsonProperty("idle", NullValueHandling = NullValueHandling.Ignore)]
-        public string Idle { get; set; }
+        public int? Idle { get; set; }
 
         /// <summary>
         /// 该客户端正在使用的数据库 ID

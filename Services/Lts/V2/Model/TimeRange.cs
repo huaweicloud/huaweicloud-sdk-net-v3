@@ -23,16 +23,16 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         public string SqlTimeZone { get; set; }
 
         /// <summary>
-        /// 搜索起始时间（UTC时间，毫秒级）。
+        /// 搜索起始时间（UTC时间，毫秒级）
         /// </summary>
         [JsonProperty("start_time", NullValueHandling = NullValueHandling.Ignore)]
-        public string StartTime { get; set; }
+        public long? StartTime { get; set; }
 
         /// <summary>
-        /// 搜索起始时间（UTC时间，毫秒级）。
+        /// 搜索结束时间（UTC时间，毫秒级）。
         /// </summary>
         [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
-        public string EndTime { get; set; }
+        public long? EndTime { get; set; }
 
         /// <summary>
         /// 搜索是否包含起始时间点，默认为false。

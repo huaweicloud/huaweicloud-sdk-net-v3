@@ -168,6 +168,12 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         public string LineNum { get; set; }
 
         /// <summary>
+        /// 若已开启自定义时间功能，需要使用该字段进行分页查询。
+        /// </summary>
+        [JsonProperty("__time__", NullValueHandling = NullValueHandling.Ignore)]
+        public string Time { get; set; }
+
+        /// <summary>
         /// 顺序或者倒序查询, 默认为false(顺序查询)
         /// </summary>
         [JsonProperty("is_desc", NullValueHandling = NullValueHandling.Ignore)]
@@ -211,6 +217,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             sb.Append("  isCount: ").Append(IsCount).Append("\n");
             sb.Append("  keywords: ").Append(Keywords).Append("\n");
             sb.Append("  lineNum: ").Append(LineNum).Append("\n");
+            sb.Append("  time: ").Append(Time).Append("\n");
             sb.Append("  isDesc: ").Append(IsDesc).Append("\n");
             sb.Append("  searchType: ").Append(SearchType).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
@@ -269,6 +276,11 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                     this.LineNum.Equals(input.LineNum))
                 ) && 
                 (
+                    this.Time == input.Time ||
+                    (this.Time != null &&
+                    this.Time.Equals(input.Time))
+                ) && 
+                (
                     this.IsDesc == input.IsDesc ||
                     (this.IsDesc != null &&
                     this.IsDesc.Equals(input.IsDesc))
@@ -315,6 +327,8 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                     hashCode = hashCode * 59 + this.Keywords.GetHashCode();
                 if (this.LineNum != null)
                     hashCode = hashCode * 59 + this.LineNum.GetHashCode();
+                if (this.Time != null)
+                    hashCode = hashCode * 59 + this.Time.GetHashCode();
                 if (this.IsDesc != null)
                     hashCode = hashCode * 59 + this.IsDesc.GetHashCode();
                 if (this.SearchType != null)

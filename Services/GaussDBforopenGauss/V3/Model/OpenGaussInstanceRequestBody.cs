@@ -262,6 +262,12 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         [JsonProperty("enable_force_switch", NullValueHandling = NullValueHandling.Ignore)]
         public bool? EnableForceSwitch { get; set; }
 
+        /// <summary>
+        /// 单浮动IP策略，仅主备版支持。默认值是false，表示不开启单浮动IP策略。 取值范围： true：开启单浮动IP策略，实例将只有一个浮动IP绑定主节点，如果发生主备倒换，浮动IP不会发生变化。 false：不开启单浮动IP策略，每个节点都会绑定一个浮动IP，如果发生主备倒换，浮动IP会发生变化。 说明： 仅支持3.206及以上版本的主备版实例。
+        /// </summary>
+        [JsonProperty("enable_single_float_ip", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnableSingleFloatIp { get; set; }
+
 
 
         /// <summary>
@@ -293,6 +299,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             sb.Append("  coordinatorNum: ").Append(CoordinatorNum).Append("\n");
             sb.Append("  replicaNum: ").Append(ReplicaNum).Append("\n");
             sb.Append("  enableForceSwitch: ").Append(EnableForceSwitch).Append("\n");
+            sb.Append("  enableSingleFloatIp: ").Append(EnableSingleFloatIp).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -423,6 +430,11 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                     this.EnableForceSwitch == input.EnableForceSwitch ||
                     (this.EnableForceSwitch != null &&
                     this.EnableForceSwitch.Equals(input.EnableForceSwitch))
+                ) && 
+                (
+                    this.EnableSingleFloatIp == input.EnableSingleFloatIp ||
+                    (this.EnableSingleFloatIp != null &&
+                    this.EnableSingleFloatIp.Equals(input.EnableSingleFloatIp))
                 );
         }
 
@@ -478,6 +490,8 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                     hashCode = hashCode * 59 + this.ReplicaNum.GetHashCode();
                 if (this.EnableForceSwitch != null)
                     hashCode = hashCode * 59 + this.EnableForceSwitch.GetHashCode();
+                if (this.EnableSingleFloatIp != null)
+                    hashCode = hashCode * 59 + this.EnableSingleFloatIp.GetHashCode();
                 return hashCode;
             }
         }

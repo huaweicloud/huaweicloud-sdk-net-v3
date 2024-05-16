@@ -152,7 +152,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// 资源。规则如下： &gt; - 可填 * 的五段式：&lt;service-name&gt;:&lt;region&gt;:&lt;account-id&gt;:&lt;resource-type&gt;:&lt;resource-path&gt;，例：\&quot;obs:*:*:bucket:*\&quot;。 &gt; - region字段为*或用户可访问的region。service必须存在且resource属于对应service。
         /// </summary>
         [JsonProperty("Resource", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> Resource { get; set; }
+        public Object Resource { get; set; }
 
 
 
@@ -207,9 +207,8 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
                 ) && 
                 (
                     this.Resource == input.Resource ||
-                    this.Resource != null &&
-                    input.Resource != null &&
-                    this.Resource.SequenceEqual(input.Resource)
+                    (this.Resource != null &&
+                    this.Resource.Equals(input.Resource))
                 );
         }
 

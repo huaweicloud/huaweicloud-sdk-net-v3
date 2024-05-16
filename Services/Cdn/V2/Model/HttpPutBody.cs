@@ -23,6 +23,18 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string HttpsStatus { get; set; }
 
         /// <summary>
+        /// 证书类型，server：国际证书；server_sm：国密证书。
+        /// </summary>
+        [JsonProperty("certificate_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string CertificateType { get; set; }
+
+        /// <summary>
+        /// 证书来源，0：自有证书，默认值0。  &gt; 证书开启时必传
+        /// </summary>
+        [JsonProperty("certificate_source", NullValueHandling = NullValueHandling.Ignore)]
+        public int? CertificateSource { get; set; }
+
+        /// <summary>
         /// 证书名字，长度限制为3-64字符。  &gt; 当证书开启时必传。
         /// </summary>
         [JsonProperty("certificate_name", NullValueHandling = NullValueHandling.Ignore)]
@@ -41,16 +53,22 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string PrivateKey { get; set; }
 
         /// <summary>
-        /// 证书来源,1：华为云托管证书,0：自有证书, 默认值0。  &gt; 证书开启时必传
+        /// 加密证书内容，证书类型为国密证书时必传。  &gt; PEM编码格式。
         /// </summary>
-        [JsonProperty("certificate_source", NullValueHandling = NullValueHandling.Ignore)]
-        public int? CertificateSource { get; set; }
+        [JsonProperty("enc_certificate_value", NullValueHandling = NullValueHandling.Ignore)]
+        public string EncCertificateValue { get; set; }
 
         /// <summary>
-        /// 证书类型，server：国际证书；server_sm：国密证书。
+        /// 加密私钥内容，证书类型为国密证书时必传。  &gt; PEM编码格式。
         /// </summary>
-        [JsonProperty("certificate_type", NullValueHandling = NullValueHandling.Ignore)]
-        public string CertificateType { get; set; }
+        [JsonProperty("enc_private_key", NullValueHandling = NullValueHandling.Ignore)]
+        public string EncPrivateKey { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("certificates", NullValueHandling = NullValueHandling.Ignore)]
+        public List<CertificatesPutBody> Certificates { get; set; }
 
         /// <summary>
         /// 是否使用HTTP2.0，on：是，off：否。  &gt; 默认关闭，https_status&#x3D;off时，该值不生效。
@@ -80,11 +98,14 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             var sb = new StringBuilder();
             sb.Append("class HttpPutBody {\n");
             sb.Append("  httpsStatus: ").Append(HttpsStatus).Append("\n");
+            sb.Append("  certificateType: ").Append(CertificateType).Append("\n");
+            sb.Append("  certificateSource: ").Append(CertificateSource).Append("\n");
             sb.Append("  certificateName: ").Append(CertificateName).Append("\n");
             sb.Append("  certificateValue: ").Append(CertificateValue).Append("\n");
             sb.Append("  privateKey: ").Append(PrivateKey).Append("\n");
-            sb.Append("  certificateSource: ").Append(CertificateSource).Append("\n");
-            sb.Append("  certificateType: ").Append(CertificateType).Append("\n");
+            sb.Append("  encCertificateValue: ").Append(EncCertificateValue).Append("\n");
+            sb.Append("  encPrivateKey: ").Append(EncPrivateKey).Append("\n");
+            sb.Append("  certificates: ").Append(Certificates).Append("\n");
             sb.Append("  http2Status: ").Append(Http2Status).Append("\n");
             sb.Append("  tlsVersion: ").Append(TlsVersion).Append("\n");
             sb.Append("  ocspStaplingStatus: ").Append(OcspStaplingStatus).Append("\n");
@@ -115,6 +136,16 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     this.HttpsStatus.Equals(input.HttpsStatus))
                 ) && 
                 (
+                    this.CertificateType == input.CertificateType ||
+                    (this.CertificateType != null &&
+                    this.CertificateType.Equals(input.CertificateType))
+                ) && 
+                (
+                    this.CertificateSource == input.CertificateSource ||
+                    (this.CertificateSource != null &&
+                    this.CertificateSource.Equals(input.CertificateSource))
+                ) && 
+                (
                     this.CertificateName == input.CertificateName ||
                     (this.CertificateName != null &&
                     this.CertificateName.Equals(input.CertificateName))
@@ -130,14 +161,20 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     this.PrivateKey.Equals(input.PrivateKey))
                 ) && 
                 (
-                    this.CertificateSource == input.CertificateSource ||
-                    (this.CertificateSource != null &&
-                    this.CertificateSource.Equals(input.CertificateSource))
+                    this.EncCertificateValue == input.EncCertificateValue ||
+                    (this.EncCertificateValue != null &&
+                    this.EncCertificateValue.Equals(input.EncCertificateValue))
                 ) && 
                 (
-                    this.CertificateType == input.CertificateType ||
-                    (this.CertificateType != null &&
-                    this.CertificateType.Equals(input.CertificateType))
+                    this.EncPrivateKey == input.EncPrivateKey ||
+                    (this.EncPrivateKey != null &&
+                    this.EncPrivateKey.Equals(input.EncPrivateKey))
+                ) && 
+                (
+                    this.Certificates == input.Certificates ||
+                    this.Certificates != null &&
+                    input.Certificates != null &&
+                    this.Certificates.SequenceEqual(input.Certificates)
                 ) && 
                 (
                     this.Http2Status == input.Http2Status ||
@@ -166,16 +203,22 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                 int hashCode = 41;
                 if (this.HttpsStatus != null)
                     hashCode = hashCode * 59 + this.HttpsStatus.GetHashCode();
+                if (this.CertificateType != null)
+                    hashCode = hashCode * 59 + this.CertificateType.GetHashCode();
+                if (this.CertificateSource != null)
+                    hashCode = hashCode * 59 + this.CertificateSource.GetHashCode();
                 if (this.CertificateName != null)
                     hashCode = hashCode * 59 + this.CertificateName.GetHashCode();
                 if (this.CertificateValue != null)
                     hashCode = hashCode * 59 + this.CertificateValue.GetHashCode();
                 if (this.PrivateKey != null)
                     hashCode = hashCode * 59 + this.PrivateKey.GetHashCode();
-                if (this.CertificateSource != null)
-                    hashCode = hashCode * 59 + this.CertificateSource.GetHashCode();
-                if (this.CertificateType != null)
-                    hashCode = hashCode * 59 + this.CertificateType.GetHashCode();
+                if (this.EncCertificateValue != null)
+                    hashCode = hashCode * 59 + this.EncCertificateValue.GetHashCode();
+                if (this.EncPrivateKey != null)
+                    hashCode = hashCode * 59 + this.EncPrivateKey.GetHashCode();
+                if (this.Certificates != null)
+                    hashCode = hashCode * 59 + this.Certificates.GetHashCode();
                 if (this.Http2Status != null)
                     hashCode = hashCode * 59 + this.Http2Status.GetHashCode();
                 if (this.TlsVersion != null)

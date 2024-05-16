@@ -3013,6 +3013,30 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         }
         
         /// <summary>
+        /// StarRocks资源检查
+        ///
+        /// StarRocks资源检查。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CheckStarRocksResourceResponse CheckStarRocksResource(CheckStarRocksResourceRequest checkStarRocksResourceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/starrocks/resource-check", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", checkStarRocksResourceRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CheckStarRocksResourceResponse>(response);
+        }
+
+        public SyncInvoker<CheckStarRocksResourceResponse> CheckStarRocksResourceInvoker(CheckStarRocksResourceRequest checkStarRocksResourceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/starrocks/resource-check", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", checkStarRocksResourceRequest);
+            return new SyncInvoker<CheckStarRocksResourceResponse>(this, "POST", request, JsonUtils.DeSerialize<CheckStarRocksResourceResponse>);
+        }
+        
+        /// <summary>
         /// HTAP数据同步表配置校验
         ///
         /// HTAP数据同步表配置校验。
@@ -3065,6 +3089,58 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         }
         
         /// <summary>
+        /// 创建数据库账号
+        ///
+        /// 创建StarRocks数据库账号。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateStarRocksDatabaseUserResponse CreateStarRocksDatabaseUser(CreateStarRocksDatabaseUserRequest createStarRocksDatabaseUserRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createStarRocksDatabaseUserRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/users", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createStarRocksDatabaseUserRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateStarRocksDatabaseUserResponse>(response);
+        }
+
+        public SyncInvoker<CreateStarRocksDatabaseUserResponse> CreateStarRocksDatabaseUserInvoker(CreateStarRocksDatabaseUserRequest createStarRocksDatabaseUserRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createStarRocksDatabaseUserRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/users", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createStarRocksDatabaseUserRequest);
+            return new SyncInvoker<CreateStarRocksDatabaseUserResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateStarRocksDatabaseUserResponse>);
+        }
+        
+        /// <summary>
+        /// 创建StarRocks实例
+        ///
+        /// 创建StarRocks实例。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateStarrocksInstanceResponse CreateStarrocksInstance(CreateStarrocksInstanceRequest createStarrocksInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createStarrocksInstanceRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createStarrocksInstanceRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateStarrocksInstanceResponse>(response);
+        }
+
+        public SyncInvoker<CreateStarrocksInstanceResponse> CreateStarrocksInstanceInvoker(CreateStarrocksInstanceRequest createStarrocksInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createStarrocksInstanceRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createStarrocksInstanceRequest);
+            return new SyncInvoker<CreateStarrocksInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateStarrocksInstanceResponse>);
+        }
+        
+        /// <summary>
         /// 删除StarRocks数据同步
         ///
         /// 删除StarRocks数据同步。
@@ -3088,6 +3164,164 @@ namespace HuaweiCloud.SDK.GaussDB.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/databases/replication", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteStarRocksDataReplicationRequest);
             return new SyncInvoker<DeleteStarRocksDataReplicationResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteStarRocksDataReplicationResponse>);
+        }
+        
+        /// <summary>
+        /// 删除数据库账户
+        ///
+        /// 删除StarRocks数据库账户。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteStarRocksDatabaseUserResponse DeleteStarRocksDatabaseUser(DeleteStarRocksDatabaseUserRequest deleteStarRocksDatabaseUserRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteStarRocksDatabaseUserRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/users", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteStarRocksDatabaseUserRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteStarRocksDatabaseUserResponse>(response);
+        }
+
+        public SyncInvoker<DeleteStarRocksDatabaseUserResponse> DeleteStarRocksDatabaseUserInvoker(DeleteStarRocksDatabaseUserRequest deleteStarRocksDatabaseUserRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteStarRocksDatabaseUserRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/users", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteStarRocksDatabaseUserRequest);
+            return new SyncInvoker<DeleteStarRocksDatabaseUserResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteStarRocksDatabaseUserResponse>);
+        }
+        
+        /// <summary>
+        /// 删除StarRocks实例
+        ///
+        /// 删除StarRocks实例。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteStarrocksInstanceResponse DeleteStarrocksInstance(DeleteStarrocksInstanceRequest deleteStarrocksInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteStarrocksInstanceRequest.InstanceId.ToString());
+            urlParam.Add("starrocks_instance_id", deleteStarrocksInstanceRequest.StarrocksInstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/{starrocks_instance_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteStarrocksInstanceRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteStarrocksInstanceResponse>(response);
+        }
+
+        public SyncInvoker<DeleteStarrocksInstanceResponse> DeleteStarrocksInstanceInvoker(DeleteStarrocksInstanceRequest deleteStarrocksInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteStarrocksInstanceRequest.InstanceId.ToString());
+            urlParam.Add("starrocks_instance_id", deleteStarrocksInstanceRequest.StarrocksInstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/{starrocks_instance_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteStarrocksInstanceRequest);
+            return new SyncInvoker<DeleteStarrocksInstanceResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteStarrocksInstanceResponse>);
+        }
+        
+        /// <summary>
+        /// HTAP引擎资源查询
+        ///
+        /// HTAP引擎资源查询。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListHtapDataStoreResponse ListHtapDataStore(ListHtapDataStoreRequest listHtapDataStoreRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine_name", listHtapDataStoreRequest.EngineName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/htap/datastores/{engine_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listHtapDataStoreRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListHtapDataStoreResponse>(response);
+        }
+
+        public SyncInvoker<ListHtapDataStoreResponse> ListHtapDataStoreInvoker(ListHtapDataStoreRequest listHtapDataStoreRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine_name", listHtapDataStoreRequest.EngineName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/htap/datastores/{engine_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listHtapDataStoreRequest);
+            return new SyncInvoker<ListHtapDataStoreResponse>(this, "GET", request, JsonUtils.DeSerialize<ListHtapDataStoreResponse>);
+        }
+        
+        /// <summary>
+        /// HTAP查询规格信息
+        ///
+        /// HTAP查询规格信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListHtapFlavorResponse ListHtapFlavor(ListHtapFlavorRequest listHtapFlavorRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine_name", listHtapFlavorRequest.EngineName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/htap/flavors/{engine_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listHtapFlavorRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListHtapFlavorResponse>(response);
+        }
+
+        public SyncInvoker<ListHtapFlavorResponse> ListHtapFlavorInvoker(ListHtapFlavorRequest listHtapFlavorRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine_name", listHtapFlavorRequest.EngineName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/htap/flavors/{engine_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listHtapFlavorRequest);
+            return new SyncInvoker<ListHtapFlavorResponse>(this, "GET", request, JsonUtils.DeSerialize<ListHtapFlavorResponse>);
+        }
+        
+        /// <summary>
+        /// 查询HTAP实例列表
+        ///
+        /// 查询HTAP实例列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListHtapInstanceInfoResponse ListHtapInstanceInfo(ListHtapInstanceInfoRequest listHtapInstanceInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listHtapInstanceInfoRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/htap", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listHtapInstanceInfoRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListHtapInstanceInfoResponse>(response);
+        }
+
+        public SyncInvoker<ListHtapInstanceInfoResponse> ListHtapInstanceInfoInvoker(ListHtapInstanceInfoRequest listHtapInstanceInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listHtapInstanceInfoRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/htap", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listHtapInstanceInfoRequest);
+            return new SyncInvoker<ListHtapInstanceInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ListHtapInstanceInfoResponse>);
+        }
+        
+        /// <summary>
+        /// 获取HTAP实例存储类型
+        ///
+        /// 获取HTAP实例存储类型。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListHtapStorageTypeResponse ListHtapStorageType(ListHtapStorageTypeRequest listHtapStorageTypeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("database", listHtapStorageTypeRequest.Database.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/htap/storage-type/{database}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listHtapStorageTypeRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListHtapStorageTypeResponse>(response);
+        }
+
+        public SyncInvoker<ListHtapStorageTypeResponse> ListHtapStorageTypeInvoker(ListHtapStorageTypeRequest listHtapStorageTypeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("database", listHtapStorageTypeRequest.Database.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/htap/storage-type/{database}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listHtapStorageTypeRequest);
+            return new SyncInvoker<ListHtapStorageTypeResponse>(this, "GET", request, JsonUtils.DeSerialize<ListHtapStorageTypeResponse>);
         }
         
         /// <summary>
@@ -3192,6 +3426,166 @@ namespace HuaweiCloud.SDK.GaussDB.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/databases/replication/database-parameters", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStarRocksDbParametersRequest);
             return new SyncInvoker<ListStarRocksDbParametersResponse>(this, "GET", request, JsonUtils.DeSerialize<ListStarRocksDbParametersResponse>);
+        }
+        
+        /// <summary>
+        /// 查询StarRocks实例
+        ///
+        /// 查询StarRocks实例。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListStarrocksInstanceInfoResponse ListStarrocksInstanceInfo(ListStarrocksInstanceInfoRequest listStarrocksInstanceInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listStarrocksInstanceInfoRequest.InstanceId.ToString());
+            urlParam.Add("starrocks_instance_id", listStarrocksInstanceInfoRequest.StarrocksInstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/{starrocks_instance_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStarrocksInstanceInfoRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListStarrocksInstanceInfoResponse>(response);
+        }
+
+        public SyncInvoker<ListStarrocksInstanceInfoResponse> ListStarrocksInstanceInfoInvoker(ListStarrocksInstanceInfoRequest listStarrocksInstanceInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listStarrocksInstanceInfoRequest.InstanceId.ToString());
+            urlParam.Add("starrocks_instance_id", listStarrocksInstanceInfoRequest.StarrocksInstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/{starrocks_instance_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStarrocksInstanceInfoRequest);
+            return new SyncInvoker<ListStarrocksInstanceInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ListStarrocksInstanceInfoResponse>);
+        }
+        
+        /// <summary>
+        /// 重启StarRocks实例
+        ///
+        /// 重启StarRocks实例。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public RestartStarrocksInstanceResponse RestartStarrocksInstance(RestartStarrocksInstanceRequest restartStarrocksInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("starrocks_instance_id", restartStarrocksInstanceRequest.StarrocksInstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{starrocks_instance_id}/starrocks/restart", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restartStarrocksInstanceRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<RestartStarrocksInstanceResponse>(response);
+        }
+
+        public SyncInvoker<RestartStarrocksInstanceResponse> RestartStarrocksInstanceInvoker(RestartStarrocksInstanceRequest restartStarrocksInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("starrocks_instance_id", restartStarrocksInstanceRequest.StarrocksInstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{starrocks_instance_id}/starrocks/restart", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restartStarrocksInstanceRequest);
+            return new SyncInvoker<RestartStarrocksInstanceResponse>(this, "PUT", request, JsonUtils.DeSerialize<RestartStarrocksInstanceResponse>);
+        }
+        
+        /// <summary>
+        /// 重启StarRocks节点
+        ///
+        /// 重启StarRocks节点。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public RestartStarrocksNodeResponse RestartStarrocksNode(RestartStarrocksNodeRequest restartStarrocksNodeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("starrocks_node_id", restartStarrocksNodeRequest.StarrocksNodeId.ToString());
+            urlParam.Add("starrocks_instance_id", restartStarrocksNodeRequest.StarrocksInstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{starrocks_instance_id}/starrocks/{starrocks_node_id}/restart", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restartStarrocksNodeRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<RestartStarrocksNodeResponse>(response);
+        }
+
+        public SyncInvoker<RestartStarrocksNodeResponse> RestartStarrocksNodeInvoker(RestartStarrocksNodeRequest restartStarrocksNodeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("starrocks_node_id", restartStarrocksNodeRequest.StarrocksNodeId.ToString());
+            urlParam.Add("starrocks_instance_id", restartStarrocksNodeRequest.StarrocksInstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{starrocks_instance_id}/starrocks/{starrocks_node_id}/restart", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restartStarrocksNodeRequest);
+            return new SyncInvoker<RestartStarrocksNodeResponse>(this, "PUT", request, JsonUtils.DeSerialize<RestartStarrocksNodeResponse>);
+        }
+        
+        /// <summary>
+        /// 查询数据库账户
+        ///
+        /// 查询StarRocks数据库账户。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowStarRocksDatabaseUserResponse ShowStarRocksDatabaseUser(ShowStarRocksDatabaseUserRequest showStarRocksDatabaseUserRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showStarRocksDatabaseUserRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/users", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStarRocksDatabaseUserRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowStarRocksDatabaseUserResponse>(response);
+        }
+
+        public SyncInvoker<ShowStarRocksDatabaseUserResponse> ShowStarRocksDatabaseUserInvoker(ShowStarRocksDatabaseUserRequest showStarRocksDatabaseUserRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showStarRocksDatabaseUserRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/users", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStarRocksDatabaseUserRequest);
+            return new SyncInvoker<ShowStarRocksDatabaseUserResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowStarRocksDatabaseUserResponse>);
+        }
+        
+        /// <summary>
+        /// 修改数据库账号密码
+        ///
+        /// 修改StarRocks数据库账号密码。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateStarRocksDatabaseUserPasswordResponse UpdateStarRocksDatabaseUserPassword(UpdateStarRocksDatabaseUserPasswordRequest updateStarRocksDatabaseUserPasswordRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateStarRocksDatabaseUserPasswordRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/users/password", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateStarRocksDatabaseUserPasswordRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateStarRocksDatabaseUserPasswordResponse>(response);
+        }
+
+        public SyncInvoker<UpdateStarRocksDatabaseUserPasswordResponse> UpdateStarRocksDatabaseUserPasswordInvoker(UpdateStarRocksDatabaseUserPasswordRequest updateStarRocksDatabaseUserPasswordRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateStarRocksDatabaseUserPasswordRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/users/password", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateStarRocksDatabaseUserPasswordRequest);
+            return new SyncInvoker<UpdateStarRocksDatabaseUserPasswordResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateStarRocksDatabaseUserPasswordResponse>);
+        }
+        
+        /// <summary>
+        /// 修改数据库账号权限
+        ///
+        /// 修改StarRocks数据库账号权限。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateStarRocksDatabaseUserPermissionResponse UpdateStarRocksDatabaseUserPermission(UpdateStarRocksDatabaseUserPermissionRequest updateStarRocksDatabaseUserPermissionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateStarRocksDatabaseUserPermissionRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/users/permission", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateStarRocksDatabaseUserPermissionRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateStarRocksDatabaseUserPermissionResponse>(response);
+        }
+
+        public SyncInvoker<UpdateStarRocksDatabaseUserPermissionResponse> UpdateStarRocksDatabaseUserPermissionInvoker(UpdateStarRocksDatabaseUserPermissionRequest updateStarRocksDatabaseUserPermissionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateStarRocksDatabaseUserPermissionRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/users/permission", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateStarRocksDatabaseUserPermissionRequest);
+            return new SyncInvoker<UpdateStarRocksDatabaseUserPermissionResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateStarRocksDatabaseUserPermissionResponse>);
         }
         
         /// <summary>

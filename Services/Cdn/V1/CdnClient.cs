@@ -346,6 +346,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public ShowDomainFullConfigResponse ShowDomainFullConfig(ShowDomainFullConfigRequest showDomainFullConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -356,6 +357,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
             return JsonUtils.DeSerialize<ShowDomainFullConfigResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<ShowDomainFullConfigResponse> ShowDomainFullConfigInvoker(ShowDomainFullConfigRequest showDomainFullConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -885,6 +887,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public UpdateDomainFullConfigResponse UpdateDomainFullConfig(UpdateDomainFullConfigRequest updateDomainFullConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -895,6 +898,7 @@ namespace HuaweiCloud.SDK.Cdn.V1
             return JsonUtils.DeSerializeNull<UpdateDomainFullConfigResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<UpdateDomainFullConfigResponse> UpdateDomainFullConfigInvoker(UpdateDomainFullConfigRequest updateDomainFullConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
