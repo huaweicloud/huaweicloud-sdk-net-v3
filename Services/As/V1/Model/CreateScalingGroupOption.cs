@@ -508,6 +508,12 @@ namespace HuaweiCloud.SDK.As.V1.Model
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
+        /// <summary>
+        /// 创建特定标签并将其添加到伸缩组。每个伸缩组最多添加10个标签。
+        /// </summary>
+        [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
+        public List<TagsSingleValue> Tags { get; set; }
+
 
 
         /// <summary>
@@ -540,6 +546,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
             sb.Append("  multiAzPriorityPolicy: ").Append(MultiAzPriorityPolicy).Append("\n");
             sb.Append("  iamAgencyName: ").Append(IamAgencyName).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
+            sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -680,6 +687,12 @@ namespace HuaweiCloud.SDK.As.V1.Model
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
+                ) && 
+                (
+                    this.Tags == input.Tags ||
+                    this.Tags != null &&
+                    input.Tags != null &&
+                    this.Tags.SequenceEqual(input.Tags)
                 );
         }
 
@@ -737,6 +750,8 @@ namespace HuaweiCloud.SDK.As.V1.Model
                     hashCode = hashCode * 59 + this.IamAgencyName.GetHashCode();
                 if (this.Description != null)
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.Tags != null)
+                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 return hashCode;
             }
         }

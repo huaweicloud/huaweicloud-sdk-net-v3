@@ -1,3 +1,51 @@
+# 3.1.96 2024-05-23
+
+### HuaweiCloud SDK Organizations
+
+- _新增特性_
+  - 支持组织服务
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK AS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateScalingGroup**
+    - 请求参数变更
+      - `+ tags`
+  - **ListScalingGroups**
+    - 响应参数变更
+      - `+ scaling_groups.tags`
+  - **ShowScalingGroup**
+    - 响应参数变更
+      - `+ scaling_group.tags`
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _新增特性_
+  - 支持接口`ShowRedisBigKeys`、`ShowPasswordlessConfig`、`UpdatePasswordlessConfig`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **OfflineNodes**
+    - 请求参数变更
+      - `* x-auth-token: optional -> required`
+
+### HuaweiCloud SDK RDS
+
+- _新增特性_
+  - 支持接口`DownloadErrorlog`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
 # 3.1.95 2024-05-16
 
 ### HuaweiCloud SDK CDN

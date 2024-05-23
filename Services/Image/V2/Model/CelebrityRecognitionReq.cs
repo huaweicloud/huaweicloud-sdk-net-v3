@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Image.V2.Model
         public string Url { get; set; }
 
         /// <summary>
-        /// 置信度的阈值（0~1），低于此置信数的标签，将不会返回。  默认值：0.48。 
+        /// 置信度的阈值（0~1），低于此置信数的标签，将不会返回。  默认值：0.9。 
         /// </summary>
         [JsonProperty("threshold", NullValueHandling = NullValueHandling.Ignore)]
         public float? Threshold { get; set; }

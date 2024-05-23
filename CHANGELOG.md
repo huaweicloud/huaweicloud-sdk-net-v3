@@ -1,3 +1,51 @@
+# 3.1.96 2024-05-23
+
+### HuaweiCloud SDK Organizations
+
+- _Features_
+  - Support `Organizations`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK AS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateScalingGroup**
+    - changes of request param
+      - `+ tags`
+  - **ListScalingGroups**
+    - changes of response param
+      - `+ scaling_groups.tags`
+  - **ShowScalingGroup**
+    - changes of response param
+      - `+ scaling_group.tags`
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _Features_
+  - Support the APIs `ShowRedisBigKeys`, `ShowPasswordlessConfig`, `UpdatePasswordlessConfig`
+- _Bug Fix_
+  - None
+- _Change_
+  - **OfflineNodes**
+    - changes of request param
+      - `* x-auth-token: optional -> required`
+
+### HuaweiCloud SDK RDS
+
+- _Features_
+  - Support the API `DownloadErrorlog`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.1.95 2024-05-16
 
 ### HuaweiCloud SDK CDN

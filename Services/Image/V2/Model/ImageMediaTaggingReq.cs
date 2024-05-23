@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.Image.V2.Model
         public float? Threshold { get; set; }
 
         /// <summary>
-        /// 最多返回的tag数（取值范围：1~150），默认值： 50
+        /// 最多返回的tag数（取值范围：1~150），默认值： 10。
         /// </summary>
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }

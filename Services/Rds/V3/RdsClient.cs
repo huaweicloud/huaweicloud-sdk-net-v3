@@ -752,6 +752,32 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 获取错误日志下载链接
+        ///
+        /// 获取错误日志下载链接。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DownloadErrorlogResponse DownloadErrorlog(DownloadErrorlogRequest downloadErrorlogRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", downloadErrorlogRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/errorlog-download", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadErrorlogRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<DownloadErrorlogResponse>(response);
+        }
+
+        public SyncInvoker<DownloadErrorlogResponse> DownloadErrorlogInvoker(DownloadErrorlogRequest downloadErrorlogRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", downloadErrorlogRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/errorlog-download", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadErrorlogRequest);
+            return new SyncInvoker<DownloadErrorlogResponse>(this, "POST", request, JsonUtils.DeSerialize<DownloadErrorlogResponse>);
+        }
+        
+        /// <summary>
         /// 获取慢日志下载链接
         ///
         /// 获取慢日志下载链接。

@@ -2179,6 +2179,32 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         }
         
         /// <summary>
+        /// 获取GeminiDB Redis的免密配置
+        ///
+        /// 获取GeminiDB Redis的免密配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowPasswordlessConfigResponse ShowPasswordlessConfig(ShowPasswordlessConfigRequest showPasswordlessConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showPasswordlessConfigRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/passwordless-config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPasswordlessConfigRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowPasswordlessConfigResponse>(response);
+        }
+
+        public SyncInvoker<ShowPasswordlessConfigResponse> ShowPasswordlessConfigInvoker(ShowPasswordlessConfigRequest showPasswordlessConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showPasswordlessConfigRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/passwordless-config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPasswordlessConfigRequest);
+            return new SyncInvoker<ShowPasswordlessConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPasswordlessConfigResponse>);
+        }
+        
+        /// <summary>
         /// 获取容灾实例数据同步状态
         ///
         /// 获取容灾实例数据同步状态，主备实例id，数据同步指标值，以及倒换和切换场景下的RPO，RTO指标值。
@@ -2250,6 +2276,32 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/recycle-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecyclePolicyRequest);
             return new SyncInvoker<ShowRecyclePolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRecyclePolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 查询Redis实例的大key
+        ///
+        /// 支持查询Redis实例的大key。value长度大于bigkeys-string-threshold参数的string类型的key或者元素数大于bigkeys-composite-threshold参数的hash/list/zset/set/stream类型key，会被判断为大key。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowRedisBigKeysResponse ShowRedisBigKeys(ShowRedisBigKeysRequest showRedisBigKeysRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showRedisBigKeysRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/big-keys", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRedisBigKeysRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<ShowRedisBigKeysResponse>(response);
+        }
+
+        public SyncInvoker<ShowRedisBigKeysResponse> ShowRedisBigKeysInvoker(ShowRedisBigKeysRequest showRedisBigKeysRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showRedisBigKeysRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/big-keys", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRedisBigKeysRequest);
+            return new SyncInvoker<ShowRedisBigKeysResponse>(this, "POST", request, JsonUtils.DeSerialize<ShowRedisBigKeysResponse>);
         }
         
         /// <summary>
@@ -2614,6 +2666,32 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/name", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceNameRequest);
             return new SyncInvoker<UpdateInstanceNameResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateInstanceNameResponse>);
+        }
+        
+        /// <summary>
+        /// 支持修改GeminiDB Redis的免密配置
+        ///
+        /// 支持修改GeminiDB Redis的免密配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdatePasswordlessConfigResponse UpdatePasswordlessConfig(UpdatePasswordlessConfigRequest updatePasswordlessConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updatePasswordlessConfigRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/passwordless-config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePasswordlessConfigRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdatePasswordlessConfigResponse>(response);
+        }
+
+        public SyncInvoker<UpdatePasswordlessConfigResponse> UpdatePasswordlessConfigInvoker(UpdatePasswordlessConfigRequest updatePasswordlessConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updatePasswordlessConfigRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/passwordless-config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePasswordlessConfigRequest);
+            return new SyncInvoker<UpdatePasswordlessConfigResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdatePasswordlessConfigResponse>);
         }
         
         /// <summary>
