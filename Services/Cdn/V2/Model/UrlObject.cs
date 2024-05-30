@@ -52,6 +52,18 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         [JsonProperty("task_type", NullValueHandling = NullValueHandling.Ignore)]
         public string TaskType { get; set; }
 
+        /// <summary>
+        /// 失败原因，url状态为failed时返回。   - ORIGIN_ERROR：源站错误。   - INNER_ERROR：内部错误。   - UNKNOWN_ERROR：未知错误。
+        /// </summary>
+        [JsonProperty("fail_classify", NullValueHandling = NullValueHandling.Ignore)]
+        public string FailClassify { get; set; }
+
+        /// <summary>
+        /// 刷新预热失败描述。
+        /// </summary>
+        [JsonProperty("fail_desc", NullValueHandling = NullValueHandling.Ignore)]
+        public string FailDesc { get; set; }
+
 
 
         /// <summary>
@@ -67,6 +79,8 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             sb.Append("  createTime: ").Append(CreateTime).Append("\n");
             sb.Append("  taskId: ").Append(TaskId).Append("\n");
             sb.Append("  taskType: ").Append(TaskType).Append("\n");
+            sb.Append("  failClassify: ").Append(FailClassify).Append("\n");
+            sb.Append("  failDesc: ").Append(FailDesc).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -117,6 +131,16 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     this.TaskType == input.TaskType ||
                     (this.TaskType != null &&
                     this.TaskType.Equals(input.TaskType))
+                ) && 
+                (
+                    this.FailClassify == input.FailClassify ||
+                    (this.FailClassify != null &&
+                    this.FailClassify.Equals(input.FailClassify))
+                ) && 
+                (
+                    this.FailDesc == input.FailDesc ||
+                    (this.FailDesc != null &&
+                    this.FailDesc.Equals(input.FailDesc))
                 );
         }
 
@@ -140,6 +164,10 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     hashCode = hashCode * 59 + this.TaskId.GetHashCode();
                 if (this.TaskType != null)
                     hashCode = hashCode * 59 + this.TaskType.GetHashCode();
+                if (this.FailClassify != null)
+                    hashCode = hashCode * 59 + this.FailClassify.GetHashCode();
+                if (this.FailDesc != null)
+                    hashCode = hashCode * 59 + this.FailDesc.GetHashCode();
                 return hashCode;
             }
         }

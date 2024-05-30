@@ -28,6 +28,11 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             public static readonly InstanceModeEnum HA = new InstanceModeEnum("ha");
 
             /// <summary>
+            /// Enum HA_READONLY for value: ha:readonly
+            /// </summary>
+            public static readonly InstanceModeEnum HA_READONLY = new InstanceModeEnum("ha:readonly");
+
+            /// <summary>
             /// Enum INDEPENDENT for value: independent
             /// </summary>
             public static readonly InstanceModeEnum INDEPENDENT = new InstanceModeEnum("independent");
@@ -36,6 +41,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             new Dictionary<string, InstanceModeEnum>()
             {
                 { "ha", HA },
+                { "ha:readonly", HA_READONLY },
                 { "independent", INDEPENDENT },
             };
 

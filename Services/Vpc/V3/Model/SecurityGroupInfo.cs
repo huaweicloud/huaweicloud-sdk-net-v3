@@ -59,6 +59,12 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
+        /// 功能描述：安全组的标签信息
+        /// </summary>
+        [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ResourceTag> Tags { get; set; }
+
+        /// <summary>
         /// 安全组规则
         /// </summary>
         [JsonProperty("security_group_rules", NullValueHandling = NullValueHandling.Ignore)]
@@ -80,6 +86,7 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
             sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  updatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  securityGroupRules: ").Append(SecurityGroupRules).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -138,6 +145,12 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
                     this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
                 ) && 
                 (
+                    this.Tags == input.Tags ||
+                    this.Tags != null &&
+                    input.Tags != null &&
+                    this.Tags.SequenceEqual(input.Tags)
+                ) && 
+                (
                     this.SecurityGroupRules == input.SecurityGroupRules ||
                     this.SecurityGroupRules != null &&
                     input.SecurityGroupRules != null &&
@@ -167,6 +180,8 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
                     hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
                 if (this.EnterpriseProjectId != null)
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.Tags != null)
+                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 if (this.SecurityGroupRules != null)
                     hashCode = hashCode * 59 + this.SecurityGroupRules.GetHashCode();
                 return hashCode;

@@ -53,6 +53,8 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1
             "https://antiddos.eu-west-0.myhuaweicloud.com");
         public static readonly Region MY_KUALALUMPUR_1 = new Region("my-kualalumpur-1",
             "https://antiddos.my-kualalumpur-1.myhuaweicloud.com");
+        public static readonly Region ME_EAST_1 = new Region("me-east-1",
+            "https://antiddos.me-east-1.myhuaweicloud.com");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("ANTIDDOS");
 
@@ -81,6 +83,7 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1
                 { "ae-ad-1", AE_AD_1 },
                 { "eu-west-0", EU_WEST_0 },
                 { "my-kualalumpur-1", MY_KUALALUMPUR_1 },
+                { "me-east-1", ME_EAST_1 },
         };
 
         public static Region ValueOf(string regionId)

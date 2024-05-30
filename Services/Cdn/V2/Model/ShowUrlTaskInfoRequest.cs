@@ -31,14 +31,14 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public long? EndTime { get; set; }
 
         /// <summary>
-        /// 偏移量：特定数据字段与起始数据字段位置的距离。
+        /// 偏移量：特定数据字段与起始数据字段位置的距离，默认为0。
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 单次查询数据条数，上限为100。
+        /// 单次查询数据条数，上限为100，默认为10。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]

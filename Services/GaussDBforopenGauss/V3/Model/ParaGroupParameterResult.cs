@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
     public class ParaGroupParameterResult 
     {
         /// <summary>
-        /// 参数类型，取值为“string”、“integer”、“boolean”、“list”或“float”之一。
+        /// 参数类型，取值为“string”、“integer”、“boolean”、“list”、\&quot;all\&quot;或“float”之一。
         /// </summary>
-        /// <value>参数类型，取值为“string”、“integer”、“boolean”、“list”或“float”之一。</value>
+        /// <value>参数类型，取值为“string”、“integer”、“boolean”、“list”、\&quot;all\&quot;或“float”之一。</value>
         [JsonConverter(typeof(EnumClassConverter<DataTypeEnum>))]
         public class DataTypeEnum
         {
@@ -180,7 +180,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         public string ValueRange { get; set; }
 
         /// <summary>
-        /// 参数类型，取值为“string”、“integer”、“boolean”、“list”或“float”之一。
+        /// 参数类型，取值为“string”、“integer”、“boolean”、“list”、\&quot;all\&quot;或“float”之一。
         /// </summary>
         [JsonProperty("data_type", NullValueHandling = NullValueHandling.Ignore)]
         public DataTypeEnum DataType { get; set; }

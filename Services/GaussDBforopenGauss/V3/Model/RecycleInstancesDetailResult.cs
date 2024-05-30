@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
     public class RecycleInstancesDetailResult 
     {
         /// <summary>
-        /// 部署形态。
+        /// 部署形态(Ha:主备版;Independent:独立部署;Combined:混合部署)。
         /// </summary>
-        /// <value>部署形态。</value>
+        /// <value>部署形态(Ha:主备版;Independent:独立部署;Combined:混合部署)。</value>
         [JsonConverter(typeof(EnumClassConverter<HaModeEnum>))]
         public class HaModeEnum
         {
@@ -482,9 +482,9 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         }
 
         /// <summary>
-        /// 实例类型（basic：基础版；standard：标准版；enterprise：企业版）。
+        /// 产品类型（basic：基础版；standard：标准版；enterprise：企业版）。
         /// </summary>
-        /// <value>实例类型（basic：基础版；standard：标准版；enterprise：企业版）。</value>
+        /// <value>产品类型（basic：基础版；standard：标准版；enterprise：企业版）。</value>
         [JsonConverter(typeof(EnumClassConverter<ModeEnum>))]
         public class ModeEnum
         {
@@ -616,7 +616,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 部署形态。
+        /// 部署形态(Ha:主备版;Independent:独立部署;Combined:混合部署)。
         /// </summary>
         [JsonProperty("ha_mode", NullValueHandling = NullValueHandling.Ignore)]
         public HaModeEnum HaMode { get; set; }
@@ -696,7 +696,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         [JsonProperty("recycle_status", NullValueHandling = NullValueHandling.Ignore)]
         public RecycleStatusEnum RecycleStatus { get; set; }
         /// <summary>
-        /// 实例类型（basic：基础版；standard：标准版；enterprise：企业版）。
+        /// 产品类型（basic：基础版；standard：标准版；enterprise：企业版）。
         /// </summary>
         [JsonProperty("mode", NullValueHandling = NullValueHandling.Ignore)]
         public ModeEnum Mode { get; set; }

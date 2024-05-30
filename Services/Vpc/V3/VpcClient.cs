@@ -1203,6 +1203,336 @@ namespace HuaweiCloud.SDK.Vpc.V3
         }
         
         /// <summary>
+        /// 添加Clouddcn子网标签
+        ///
+        /// 添加Clouddcn子网的标签
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public AddClouddcnSubnetsTagsResponse AddClouddcnSubnetsTags(AddClouddcnSubnetsTagsRequest addClouddcnSubnetsTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_id", addClouddcnSubnetsTagsRequest.ResourceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/clouddcn-subnets/{resource_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addClouddcnSubnetsTagsRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<AddClouddcnSubnetsTagsResponse>(response);
+        }
+
+        public SyncInvoker<AddClouddcnSubnetsTagsResponse> AddClouddcnSubnetsTagsInvoker(AddClouddcnSubnetsTagsRequest addClouddcnSubnetsTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_id", addClouddcnSubnetsTagsRequest.ResourceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/clouddcn-subnets/{resource_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addClouddcnSubnetsTagsRequest);
+            return new SyncInvoker<AddClouddcnSubnetsTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<AddClouddcnSubnetsTagsResponse>);
+        }
+        
+        /// <summary>
+        /// 批量添加Clouddcn子网标签
+        ///
+        /// 批量添加Clouddcn子网的标签
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public BatchCreateClouddcnSubnetsTagsResponse BatchCreateClouddcnSubnetsTags(BatchCreateClouddcnSubnetsTagsRequest batchCreateClouddcnSubnetsTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_id", batchCreateClouddcnSubnetsTagsRequest.ResourceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/clouddcn-subnets/{resource_id}/tags/create", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateClouddcnSubnetsTagsRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<BatchCreateClouddcnSubnetsTagsResponse>(response);
+        }
+
+        public SyncInvoker<BatchCreateClouddcnSubnetsTagsResponse> BatchCreateClouddcnSubnetsTagsInvoker(BatchCreateClouddcnSubnetsTagsRequest batchCreateClouddcnSubnetsTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_id", batchCreateClouddcnSubnetsTagsRequest.ResourceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/clouddcn-subnets/{resource_id}/tags/create", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateClouddcnSubnetsTagsRequest);
+            return new SyncInvoker<BatchCreateClouddcnSubnetsTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchCreateClouddcnSubnetsTagsResponse>);
+        }
+        
+        /// <summary>
+        /// 批量删除Clouddcn子网标签
+        ///
+        /// 批量删除Clouddcn子网的标签
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public BatchDeleteClouddcnSubnetsTagsResponse BatchDeleteClouddcnSubnetsTags(BatchDeleteClouddcnSubnetsTagsRequest batchDeleteClouddcnSubnetsTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_id", batchDeleteClouddcnSubnetsTagsRequest.ResourceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/clouddcn-subnets/{resource_id}/tags/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteClouddcnSubnetsTagsRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<BatchDeleteClouddcnSubnetsTagsResponse>(response);
+        }
+
+        public SyncInvoker<BatchDeleteClouddcnSubnetsTagsResponse> BatchDeleteClouddcnSubnetsTagsInvoker(BatchDeleteClouddcnSubnetsTagsRequest batchDeleteClouddcnSubnetsTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_id", batchDeleteClouddcnSubnetsTagsRequest.ResourceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/clouddcn-subnets/{resource_id}/tags/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteClouddcnSubnetsTagsRequest);
+            return new SyncInvoker<BatchDeleteClouddcnSubnetsTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchDeleteClouddcnSubnetsTagsResponse>);
+        }
+        
+        /// <summary>
+        /// 创建clouddcn子网
+        ///
+        /// 创建clouddcn子网。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateClouddcnSubnetResponse CreateClouddcnSubnet(CreateClouddcnSubnetRequest createClouddcnSubnetRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/clouddcn-subnets", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createClouddcnSubnetRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateClouddcnSubnetResponse>(response);
+        }
+
+        public SyncInvoker<CreateClouddcnSubnetResponse> CreateClouddcnSubnetInvoker(CreateClouddcnSubnetRequest createClouddcnSubnetRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/clouddcn-subnets", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createClouddcnSubnetRequest);
+            return new SyncInvoker<CreateClouddcnSubnetResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateClouddcnSubnetResponse>);
+        }
+        
+        /// <summary>
+        /// 删除clouddcn子网
+        ///
+        /// 删除clouddcn子网
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteClouddcnSubnetResponse DeleteClouddcnSubnet(DeleteClouddcnSubnetRequest deleteClouddcnSubnetRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("clouddcn_subnet_id", deleteClouddcnSubnetRequest.ClouddcnSubnetId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/clouddcn-subnets/{clouddcn_subnet_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteClouddcnSubnetRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteClouddcnSubnetResponse>(response);
+        }
+
+        public SyncInvoker<DeleteClouddcnSubnetResponse> DeleteClouddcnSubnetInvoker(DeleteClouddcnSubnetRequest deleteClouddcnSubnetRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("clouddcn_subnet_id", deleteClouddcnSubnetRequest.ClouddcnSubnetId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/clouddcn-subnets/{clouddcn_subnet_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteClouddcnSubnetRequest);
+            return new SyncInvoker<DeleteClouddcnSubnetResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteClouddcnSubnetResponse>);
+        }
+        
+        /// <summary>
+        /// 删除Clouddcn子网标签
+        ///
+        /// 删除Clouddcn子网的标签
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteClouddcnSubnetsTagResponse DeleteClouddcnSubnetsTag(DeleteClouddcnSubnetsTagRequest deleteClouddcnSubnetsTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_id", deleteClouddcnSubnetsTagRequest.ResourceId.ToString());
+            urlParam.Add("tag_key", deleteClouddcnSubnetsTagRequest.TagKey.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/clouddcn-subnets/{resource_id}/tags/{tag_key}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteClouddcnSubnetsTagRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteClouddcnSubnetsTagResponse>(response);
+        }
+
+        public SyncInvoker<DeleteClouddcnSubnetsTagResponse> DeleteClouddcnSubnetsTagInvoker(DeleteClouddcnSubnetsTagRequest deleteClouddcnSubnetsTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_id", deleteClouddcnSubnetsTagRequest.ResourceId.ToString());
+            urlParam.Add("tag_key", deleteClouddcnSubnetsTagRequest.TagKey.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/clouddcn-subnets/{resource_id}/tags/{tag_key}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteClouddcnSubnetsTagRequest);
+            return new SyncInvoker<DeleteClouddcnSubnetsTagResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteClouddcnSubnetsTagResponse>);
+        }
+        
+        /// <summary>
+        /// 查询clouddcn子网列表
+        ///
+        /// 查询clouddcn子网列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListClouddcnSubnetsResponse ListClouddcnSubnets(ListClouddcnSubnetsRequest listClouddcnSubnetsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/clouddcn-subnets", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listClouddcnSubnetsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListClouddcnSubnetsResponse>(response);
+        }
+
+        public SyncInvoker<ListClouddcnSubnetsResponse> ListClouddcnSubnetsInvoker(ListClouddcnSubnetsRequest listClouddcnSubnetsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/clouddcn-subnets", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listClouddcnSubnetsRequest);
+            return new SyncInvoker<ListClouddcnSubnetsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListClouddcnSubnetsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询资源实例列表数目
+        ///
+        /// 查询资源实例列表数目
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListClouddcnSubnetsCountFilterTagsResponse ListClouddcnSubnetsCountFilterTags(ListClouddcnSubnetsCountFilterTagsRequest listClouddcnSubnetsCountFilterTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/clouddcn-subnets/resource-instances/count", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listClouddcnSubnetsCountFilterTagsRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<ListClouddcnSubnetsCountFilterTagsResponse>(response);
+        }
+
+        public SyncInvoker<ListClouddcnSubnetsCountFilterTagsResponse> ListClouddcnSubnetsCountFilterTagsInvoker(ListClouddcnSubnetsCountFilterTagsRequest listClouddcnSubnetsCountFilterTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/clouddcn-subnets/resource-instances/count", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listClouddcnSubnetsCountFilterTagsRequest);
+            return new SyncInvoker<ListClouddcnSubnetsCountFilterTagsResponse>(this, "POST", request, JsonUtils.DeSerialize<ListClouddcnSubnetsCountFilterTagsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询资源实例列表
+        ///
+        /// 查询资源实例列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListClouddcnSubnetsFilterTagsResponse ListClouddcnSubnetsFilterTags(ListClouddcnSubnetsFilterTagsRequest listClouddcnSubnetsFilterTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/clouddcn-subnets/resource-instances/filter", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listClouddcnSubnetsFilterTagsRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<ListClouddcnSubnetsFilterTagsResponse>(response);
+        }
+
+        public SyncInvoker<ListClouddcnSubnetsFilterTagsResponse> ListClouddcnSubnetsFilterTagsInvoker(ListClouddcnSubnetsFilterTagsRequest listClouddcnSubnetsFilterTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/clouddcn-subnets/resource-instances/filter", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listClouddcnSubnetsFilterTagsRequest);
+            return new SyncInvoker<ListClouddcnSubnetsFilterTagsResponse>(this, "POST", request, JsonUtils.DeSerialize<ListClouddcnSubnetsFilterTagsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询Clouddcn子网项目标签
+        ///
+        /// 查询Clouddcn子网的项目标签
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListClouddcnSubnetsTagsResponse ListClouddcnSubnetsTags(ListClouddcnSubnetsTagsRequest listClouddcnSubnetsTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/clouddcn-subnets/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listClouddcnSubnetsTagsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListClouddcnSubnetsTagsResponse>(response);
+        }
+
+        public SyncInvoker<ListClouddcnSubnetsTagsResponse> ListClouddcnSubnetsTagsInvoker(ListClouddcnSubnetsTagsRequest listClouddcnSubnetsTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/clouddcn-subnets/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listClouddcnSubnetsTagsRequest);
+            return new SyncInvoker<ListClouddcnSubnetsTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListClouddcnSubnetsTagsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询clouddcn子网
+        ///
+        /// 查询clouddcn子网详情。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowClouddcnSubnetResponse ShowClouddcnSubnet(ShowClouddcnSubnetRequest showClouddcnSubnetRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("clouddcn_subnet_id", showClouddcnSubnetRequest.ClouddcnSubnetId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/clouddcn-subnets/{clouddcn_subnet_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showClouddcnSubnetRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowClouddcnSubnetResponse>(response);
+        }
+
+        public SyncInvoker<ShowClouddcnSubnetResponse> ShowClouddcnSubnetInvoker(ShowClouddcnSubnetRequest showClouddcnSubnetRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("clouddcn_subnet_id", showClouddcnSubnetRequest.ClouddcnSubnetId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/clouddcn-subnets/{clouddcn_subnet_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showClouddcnSubnetRequest);
+            return new SyncInvoker<ShowClouddcnSubnetResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowClouddcnSubnetResponse>);
+        }
+        
+        /// <summary>
+        /// 查询Clouddcn子网标签
+        ///
+        /// 查询Clouddcn子网的标签
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowClouddcnSubnetsTagsResponse ShowClouddcnSubnetsTags(ShowClouddcnSubnetsTagsRequest showClouddcnSubnetsTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_id", showClouddcnSubnetsTagsRequest.ResourceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/clouddcn-subnets/{resource_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showClouddcnSubnetsTagsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowClouddcnSubnetsTagsResponse>(response);
+        }
+
+        public SyncInvoker<ShowClouddcnSubnetsTagsResponse> ShowClouddcnSubnetsTagsInvoker(ShowClouddcnSubnetsTagsRequest showClouddcnSubnetsTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_id", showClouddcnSubnetsTagsRequest.ResourceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/clouddcn-subnets/{resource_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showClouddcnSubnetsTagsRequest);
+            return new SyncInvoker<ShowClouddcnSubnetsTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowClouddcnSubnetsTagsResponse>);
+        }
+        
+        /// <summary>
+        /// 更新clouddcn子网
+        ///
+        /// 更新clouddcn子网。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateClouddcnSubnetResponse UpdateClouddcnSubnet(UpdateClouddcnSubnetRequest updateClouddcnSubnetRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("clouddcn_subnet_id", updateClouddcnSubnetRequest.ClouddcnSubnetId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/clouddcn-subnets/{clouddcn_subnet_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateClouddcnSubnetRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateClouddcnSubnetResponse>(response);
+        }
+
+        public SyncInvoker<UpdateClouddcnSubnetResponse> UpdateClouddcnSubnetInvoker(UpdateClouddcnSubnetRequest updateClouddcnSubnetRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("clouddcn_subnet_id", updateClouddcnSubnetRequest.ClouddcnSubnetId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/clouddcn-subnets/{clouddcn_subnet_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateClouddcnSubnetRequest);
+            return new SyncInvoker<UpdateClouddcnSubnetResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateClouddcnSubnetResponse>);
+        }
+        
+        /// <summary>
         /// 创建地址组
         ///
         /// 创建地址组

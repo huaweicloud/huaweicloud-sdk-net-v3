@@ -59,7 +59,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string HostName { get; set; }
 
         /// <summary>
-        /// OBS桶源站类型： - “private” 私有桶； - “public” 公有桶，默认为公有桶。
+        /// OBS桶类型。   - private: 私有桶（除桶ACL授权外的其他用户无桶的访问权限）。   - public: 公有桶（任何用户都可以对桶内对象进行读操作）。
         /// </summary>
         [JsonProperty("obs_bucket_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ObsBucketType { get; set; }

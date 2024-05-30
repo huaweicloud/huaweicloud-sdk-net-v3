@@ -46,6 +46,18 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         [JsonProperty("size", NullValueHandling = NullValueHandling.Ignore)]
         public string Size { get; set; }
 
+        /// <summary>
+        /// 数据库使用的字符分类，例如en_US.UTF-8等。
+        /// </summary>
+        [JsonProperty("datctype", NullValueHandling = NullValueHandling.Ignore)]
+        public string Datctype { get; set; }
+
+        /// <summary>
+        /// 数据库兼容的类型，如GaussDB，M。
+        /// </summary>
+        [JsonProperty("compatibility_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string CompatibilityType { get; set; }
+
 
 
         /// <summary>
@@ -60,6 +72,8 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             sb.Append("  characterSet: ").Append(CharacterSet).Append("\n");
             sb.Append("  collateSet: ").Append(CollateSet).Append("\n");
             sb.Append("  size: ").Append(Size).Append("\n");
+            sb.Append("  datctype: ").Append(Datctype).Append("\n");
+            sb.Append("  compatibilityType: ").Append(CompatibilityType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -105,6 +119,16 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                     this.Size == input.Size ||
                     (this.Size != null &&
                     this.Size.Equals(input.Size))
+                ) && 
+                (
+                    this.Datctype == input.Datctype ||
+                    (this.Datctype != null &&
+                    this.Datctype.Equals(input.Datctype))
+                ) && 
+                (
+                    this.CompatibilityType == input.CompatibilityType ||
+                    (this.CompatibilityType != null &&
+                    this.CompatibilityType.Equals(input.CompatibilityType))
                 );
         }
 
@@ -126,6 +150,10 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                     hashCode = hashCode * 59 + this.CollateSet.GetHashCode();
                 if (this.Size != null)
                     hashCode = hashCode * 59 + this.Size.GetHashCode();
+                if (this.Datctype != null)
+                    hashCode = hashCode * 59 + this.Datctype.GetHashCode();
+                if (this.CompatibilityType != null)
+                    hashCode = hashCode * 59 + this.CompatibilityType.GetHashCode();
                 return hashCode;
             }
         }

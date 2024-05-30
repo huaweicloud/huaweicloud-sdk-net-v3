@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         public string SourceId { get; set; }
 
         /// <summary>
-        /// 需要进行比较的参数组模板ID。
+        /// 需要进行比较的参数组模板ID，需要与源参数组模板的部署形态相同才可比较。
         /// </summary>
         [JsonProperty("target_id", NullValueHandling = NullValueHandling.Ignore)]
         public string TargetId { get; set; }

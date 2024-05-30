@@ -49,6 +49,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
             "https://functiongraph.me-east-1.myhuaweicloud.com");
         public static readonly Region MY_KUALALUMPUR_1 = new Region("my-kualalumpur-1",
             "https://functiongraph.my-kualalumpur-1.myhuaweicloud.com");
+        public static readonly Region CN_SOUTH_4 = new Region("cn-south-4",
+            "https://functiongraph.cn-south-4.myhuaweicloud.com");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("FUNCTIONGRAPH");
 
@@ -75,6 +77,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
                 { "cn-north-11", CN_NORTH_11 },
                 { "me-east-1", ME_EAST_1 },
                 { "my-kualalumpur-1", MY_KUALALUMPUR_1 },
+                { "cn-south-4", CN_SOUTH_4 },
         };
 
         public static Region ValueOf(string regionId)

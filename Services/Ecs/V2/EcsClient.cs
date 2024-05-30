@@ -378,6 +378,34 @@ namespace HuaweiCloud.SDK.Ecs.V2
         }
         
         /// <summary>
+        /// 更新云服务器指定网卡属性
+        ///
+        /// 更新云服务器指定网卡属性，当前仅支持更新网卡IP。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ChangeServerNetworkInterfaceResponse ChangeServerNetworkInterface(ChangeServerNetworkInterfaceRequest changeServerNetworkInterfaceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("port_id", changeServerNetworkInterfaceRequest.PortId.ToString());
+            urlParam.Add("server_id", changeServerNetworkInterfaceRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/os-interface/{port_id}/change-network-interface", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", changeServerNetworkInterfaceRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<ChangeServerNetworkInterfaceResponse>(response);
+        }
+
+        public SyncInvoker<ChangeServerNetworkInterfaceResponse> ChangeServerNetworkInterfaceInvoker(ChangeServerNetworkInterfaceRequest changeServerNetworkInterfaceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("port_id", changeServerNetworkInterfaceRequest.PortId.ToString());
+            urlParam.Add("server_id", changeServerNetworkInterfaceRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/os-interface/{port_id}/change-network-interface", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", changeServerNetworkInterfaceRequest);
+            return new SyncInvoker<ChangeServerNetworkInterfaceResponse>(this, "POST", request, JsonUtils.DeSerialize<ChangeServerNetworkInterfaceResponse>);
+        }
+        
+        /// <summary>
         /// 切换弹性云服务器操作系统(安装Cloud init)
         ///
         /// 切换弹性云服务器操作系统。支持弹性云服务器数据盘不变的情况下，使用新镜像重装系统盘。

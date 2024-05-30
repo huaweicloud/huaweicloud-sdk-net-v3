@@ -35,6 +35,12 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
+        /// 功能描述：ACL资源标签
+        /// </summary>
+        [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ResourceTag> Tags { get; set; }
+
+        /// <summary>
         /// 功能说明：ACL是否开启，默认值true 取值范围：true表示ACL开启；false表示ACL关闭
         /// </summary>
         [JsonProperty("admin_state_up", NullValueHandling = NullValueHandling.Ignore)]
@@ -52,6 +58,7 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  adminStateUp: ").Append(AdminStateUp).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -90,6 +97,12 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
                     this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
                 ) && 
                 (
+                    this.Tags == input.Tags ||
+                    this.Tags != null &&
+                    input.Tags != null &&
+                    this.Tags.SequenceEqual(input.Tags)
+                ) && 
+                (
                     this.AdminStateUp == input.AdminStateUp ||
                     (this.AdminStateUp != null &&
                     this.AdminStateUp.Equals(input.AdminStateUp))
@@ -110,6 +123,8 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.EnterpriseProjectId != null)
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.Tags != null)
+                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 if (this.AdminStateUp != null)
                     hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
                 return hashCode;

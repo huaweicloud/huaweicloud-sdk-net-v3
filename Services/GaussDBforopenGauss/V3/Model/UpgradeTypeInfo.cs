@@ -154,6 +154,12 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         [JsonProperty("upgrade_action_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<UpgradeActionInfo> UpgradeActionList { get; set; }
 
+        /// <summary>
+        /// 是否正在进行AZ内并行升级。 -true：当前实例处于灰度升级的升级待观察升级方式中，已选择了AZ内并行升级方式，后续无法更改。 -false：当前实例处于升级流程中，未选择AZ内并行升级的方式，后续无法更改。null：当前实例尚未处于升级流程中。
+        /// </summary>
+        [JsonProperty("is_parallel_upgrade", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsParallelUpgrade { get; set; }
+
 
 
         /// <summary>
@@ -166,6 +172,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             sb.Append("  upgradeType: ").Append(UpgradeType).Append("\n");
             sb.Append("  enable: ").Append(Enable).Append("\n");
             sb.Append("  upgradeActionList: ").Append(UpgradeActionList).Append("\n");
+            sb.Append("  isParallelUpgrade: ").Append(IsParallelUpgrade).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -202,6 +209,11 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                     this.UpgradeActionList != null &&
                     input.UpgradeActionList != null &&
                     this.UpgradeActionList.SequenceEqual(input.UpgradeActionList)
+                ) && 
+                (
+                    this.IsParallelUpgrade == input.IsParallelUpgrade ||
+                    (this.IsParallelUpgrade != null &&
+                    this.IsParallelUpgrade.Equals(input.IsParallelUpgrade))
                 );
         }
 
@@ -219,6 +231,8 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                     hashCode = hashCode * 59 + this.Enable.GetHashCode();
                 if (this.UpgradeActionList != null)
                     hashCode = hashCode * 59 + this.UpgradeActionList.GetHashCode();
+                if (this.IsParallelUpgrade != null)
+                    hashCode = hashCode * 59 + this.IsParallelUpgrade.GetHashCode();
                 return hashCode;
             }
         }

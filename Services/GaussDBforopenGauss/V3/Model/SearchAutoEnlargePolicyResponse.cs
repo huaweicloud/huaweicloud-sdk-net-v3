@@ -52,6 +52,18 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         [JsonProperty("percents", NullValueHandling = NullValueHandling.Ignore)]
         public List<int?> Percents { get; set; }
 
+        /// <summary>
+        /// 扩容步长，固定大小扩容方式。
+        /// </summary>
+        [JsonProperty("step_size", NullValueHandling = NullValueHandling.Ignore)]
+        public int? StepSize { get; set; }
+
+        /// <summary>
+        /// 扩容步长，百分比扩容方式。
+        /// </summary>
+        [JsonProperty("step_percent", NullValueHandling = NullValueHandling.Ignore)]
+        public int? StepPercent { get; set; }
+
 
 
         /// <summary>
@@ -67,6 +79,8 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             sb.Append("  maxVolumeSize: ").Append(MaxVolumeSize).Append("\n");
             sb.Append("  triggerAvailablePercent: ").Append(TriggerAvailablePercent).Append("\n");
             sb.Append("  percents: ").Append(Percents).Append("\n");
+            sb.Append("  stepSize: ").Append(StepSize).Append("\n");
+            sb.Append("  stepPercent: ").Append(StepPercent).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -118,6 +132,16 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                     this.Percents != null &&
                     input.Percents != null &&
                     this.Percents.SequenceEqual(input.Percents)
+                ) && 
+                (
+                    this.StepSize == input.StepSize ||
+                    (this.StepSize != null &&
+                    this.StepSize.Equals(input.StepSize))
+                ) && 
+                (
+                    this.StepPercent == input.StepPercent ||
+                    (this.StepPercent != null &&
+                    this.StepPercent.Equals(input.StepPercent))
                 );
         }
 
@@ -141,6 +165,10 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                     hashCode = hashCode * 59 + this.TriggerAvailablePercent.GetHashCode();
                 if (this.Percents != null)
                     hashCode = hashCode * 59 + this.Percents.GetHashCode();
+                if (this.StepSize != null)
+                    hashCode = hashCode * 59 + this.StepSize.GetHashCode();
+                if (this.StepPercent != null)
+                    hashCode = hashCode * 59 + this.StepPercent.GetHashCode();
                 return hashCode;
             }
         }

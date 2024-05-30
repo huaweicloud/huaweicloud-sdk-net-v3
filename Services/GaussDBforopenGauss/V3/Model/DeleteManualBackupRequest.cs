@@ -24,7 +24,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         public string XLanguage { get; set; }
 
         /// <summary>
-        /// 备份ID。
+        /// 手动备份ID。
         /// </summary>
         [SDKProperty("backup_id", IsPath = true)]
         [JsonProperty("backup_id", NullValueHandling = NullValueHandling.Ignore)]

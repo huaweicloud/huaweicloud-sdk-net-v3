@@ -62,7 +62,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         /// 源站配置。
         /// </summary>
         [JsonProperty("sources", NullValueHandling = NullValueHandling.Ignore)]
-        public List<SourcesConfig> Sources { get; set; }
+        public List<SourcesConfigResponseBody> Sources { get; set; }
 
         /// <summary>
         /// 回源协议，follow：协议跟随回源，http：HTTP回源(默认)，https：https回源。
@@ -226,6 +226,12 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         [JsonProperty("browser_cache_rules", NullValueHandling = NullValueHandling.Ignore)]
         public List<BrowserCacheRules> BrowserCacheRules { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("access_area_filter", NullValueHandling = NullValueHandling.Ignore)]
+        public List<AccessAreaFilter> AccessAreaFilter { get; set; }
+
 
 
         /// <summary>
@@ -270,6 +276,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             sb.Append("  sni: ").Append(Sni).Append("\n");
             sb.Append("  requestUrlRewrite: ").Append(RequestUrlRewrite).Append("\n");
             sb.Append("  browserCacheRules: ").Append(BrowserCacheRules).Append("\n");
+            sb.Append("  accessAreaFilter: ").Append(AccessAreaFilter).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -476,6 +483,12 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     this.BrowserCacheRules != null &&
                     input.BrowserCacheRules != null &&
                     this.BrowserCacheRules.SequenceEqual(input.BrowserCacheRules)
+                ) && 
+                (
+                    this.AccessAreaFilter == input.AccessAreaFilter ||
+                    this.AccessAreaFilter != null &&
+                    input.AccessAreaFilter != null &&
+                    this.AccessAreaFilter.SequenceEqual(input.AccessAreaFilter)
                 );
         }
 
@@ -557,6 +570,8 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     hashCode = hashCode * 59 + this.RequestUrlRewrite.GetHashCode();
                 if (this.BrowserCacheRules != null)
                     hashCode = hashCode * 59 + this.BrowserCacheRules.GetHashCode();
+                if (this.AccessAreaFilter != null)
+                    hashCode = hashCode * 59 + this.AccessAreaFilter.GetHashCode();
                 return hashCode;
             }
         }

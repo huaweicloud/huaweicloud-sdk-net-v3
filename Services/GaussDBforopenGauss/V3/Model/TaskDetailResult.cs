@@ -47,6 +47,18 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         public string Process { get; set; }
 
         /// <summary>
+        /// 创建时间，格式为“yyyy-mm-ddThh:mm:ssZ”。其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
+        /// </summary>
+        [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
+        public string CreatedAt { get; set; }
+
+        /// <summary>
+        /// 结束时间，格式为“yyyy-mm-ddThh:mm:ssZ”。其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
+        /// </summary>
+        [JsonProperty("ended_at", NullValueHandling = NullValueHandling.Ignore)]
+        public string EndedAt { get; set; }
+
+        /// <summary>
         /// 失败原因。
         /// </summary>
         [JsonProperty("fail_reason", NullValueHandling = NullValueHandling.Ignore)]
@@ -66,6 +78,8 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  process: ").Append(Process).Append("\n");
+            sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
+            sb.Append("  endedAt: ").Append(EndedAt).Append("\n");
             sb.Append("  failReason: ").Append(FailReason).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -114,6 +128,16 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                     this.Process.Equals(input.Process))
                 ) && 
                 (
+                    this.CreatedAt == input.CreatedAt ||
+                    (this.CreatedAt != null &&
+                    this.CreatedAt.Equals(input.CreatedAt))
+                ) && 
+                (
+                    this.EndedAt == input.EndedAt ||
+                    (this.EndedAt != null &&
+                    this.EndedAt.Equals(input.EndedAt))
+                ) && 
+                (
                     this.FailReason == input.FailReason ||
                     (this.FailReason != null &&
                     this.FailReason.Equals(input.FailReason))
@@ -138,6 +162,10 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.Process != null)
                     hashCode = hashCode * 59 + this.Process.GetHashCode();
+                if (this.CreatedAt != null)
+                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.EndedAt != null)
+                    hashCode = hashCode * 59 + this.EndedAt.GetHashCode();
                 if (this.FailReason != null)
                     hashCode = hashCode * 59 + this.FailReason.GetHashCode();
                 return hashCode;

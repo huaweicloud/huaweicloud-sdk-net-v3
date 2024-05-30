@@ -685,6 +685,108 @@ namespace HuaweiCloud.SDK.IoTDA.V5
         }
         
         /// <summary>
+        /// 创建网桥
+        ///
+        /// 应用服务器可调用此接口在物联网平台创建一个网桥，仅在创建后的网桥才可以接入物联网平台。
+        /// - 一个实例最多支持20个网桥。
+        /// - 仅**标准版实例、企业版实例**支持该接口调用，基础版不支持。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<AddBridgeResponse> AddBridgeAsync(AddBridgeRequest addBridgeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/bridges", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addBridgeRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<AddBridgeResponse>(response);
+        }
+
+        public AsyncInvoker<AddBridgeResponse> AddBridgeAsyncInvoker(AddBridgeRequest addBridgeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/bridges", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addBridgeRequest);
+            return new AsyncInvoker<AddBridgeResponse>(this, "POST", request, JsonUtils.DeSerialize<AddBridgeResponse>);
+        }
+        
+        /// <summary>
+        /// 删除网桥
+        ///
+        /// 应用服务器可调用此接口在物联网平台上删除指定网桥。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteBridgeResponse> DeleteBridgeAsync(DeleteBridgeRequest deleteBridgeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("bridge_id", deleteBridgeRequest.BridgeId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/bridges/{bridge_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteBridgeRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteBridgeResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteBridgeResponse> DeleteBridgeAsyncInvoker(DeleteBridgeRequest deleteBridgeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("bridge_id", deleteBridgeRequest.BridgeId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/bridges/{bridge_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteBridgeRequest);
+            return new AsyncInvoker<DeleteBridgeResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteBridgeResponse>);
+        }
+        
+        /// <summary>
+        /// 查询网桥列表
+        ///
+        /// 应用服务器可调用此接口在物联网平台查询网桥列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListBridgesResponse> ListBridgesAsync(ListBridgesRequest listBridgesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/bridges", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBridgesRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListBridgesResponse>(response);
+        }
+
+        public AsyncInvoker<ListBridgesResponse> ListBridgesAsyncInvoker(ListBridgesRequest listBridgesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/bridges", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBridgesRequest);
+            return new AsyncInvoker<ListBridgesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListBridgesResponse>);
+        }
+        
+        /// <summary>
+        /// 重置网桥密钥
+        ///
+        /// 应用服务器可调用此接口在物联网平台上重置网桥密钥。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ResetBridgeSecretResponse> ResetBridgeSecretAsync(ResetBridgeSecretRequest resetBridgeSecretRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("bridge_id", resetBridgeSecretRequest.BridgeId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/bridges/{bridge_id}/reset-secret", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetBridgeSecretRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<ResetBridgeSecretResponse>(response);
+        }
+
+        public AsyncInvoker<ResetBridgeSecretResponse> ResetBridgeSecretAsyncInvoker(ResetBridgeSecretRequest resetBridgeSecretRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("bridge_id", resetBridgeSecretRequest.BridgeId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/bridges/{bridge_id}/reset-secret", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetBridgeSecretRequest);
+            return new AsyncInvoker<ResetBridgeSecretResponse>(this, "POST", request, JsonUtils.DeSerialize<ResetBridgeSecretResponse>);
+        }
+        
+        /// <summary>
         /// 下发广播消息
         ///
         /// 应用服务器可调用此接口向订阅了指定Topic的所有在线设备发布广播消息。应用将广播消息下发给平台后，平台会先返回应用响应结果，再将消息广播给设备。
@@ -808,6 +910,32 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/certificates", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCertificatesRequest);
             return new AsyncInvoker<ListCertificatesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListCertificatesResponse>);
+        }
+        
+        /// <summary>
+        /// 更新CA证书
+        ///
+        /// 应用服务器可调用此接口在物联网平台上更新CA证书。仅标准版实例、企业版实例支持该接口调用，基础版不支持。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateCertificateResponse> UpdateCertificateAsync(UpdateCertificateRequest updateCertificateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("certificate_id", updateCertificateRequest.CertificateId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/certificates/{certificate_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateCertificateRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateCertificateResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateCertificateResponse> UpdateCertificateAsyncInvoker(UpdateCertificateRequest updateCertificateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("certificate_id", updateCertificateRequest.CertificateId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/certificates/{certificate_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateCertificateRequest);
+            return new AsyncInvoker<UpdateCertificateResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateCertificateResponse>);
         }
         
         /// <summary>
@@ -1096,6 +1224,32 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/devices/{device_id}/freeze", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", freezeDeviceRequest);
             return new AsyncInvoker<FreezeDeviceResponse>(this, "POST", request, JsonUtils.DeSerializeNull<FreezeDeviceResponse>);
+        }
+        
+        /// <summary>
+        /// 查询指定设备加入的设备组列表
+        ///
+        /// 应用服务器可调用此接口查询物联网平台中的某个设备加入的设备组信息列表。仅标准版实例、企业版实例支持该接口调用，基础版不支持。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListDeviceGroupsByDeviceResponse> ListDeviceGroupsByDeviceAsync(ListDeviceGroupsByDeviceRequest listDeviceGroupsByDeviceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("device_id", listDeviceGroupsByDeviceRequest.DeviceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/devices/{device_id}/list-device-group", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDeviceGroupsByDeviceRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<ListDeviceGroupsByDeviceResponse>(response);
+        }
+
+        public AsyncInvoker<ListDeviceGroupsByDeviceResponse> ListDeviceGroupsByDeviceAsyncInvoker(ListDeviceGroupsByDeviceRequest listDeviceGroupsByDeviceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("device_id", listDeviceGroupsByDeviceRequest.DeviceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/devices/{device_id}/list-device-group", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDeviceGroupsByDeviceRequest);
+            return new AsyncInvoker<ListDeviceGroupsByDeviceResponse>(this, "POST", request, JsonUtils.DeSerialize<ListDeviceGroupsByDeviceResponse>);
         }
         
         /// <summary>

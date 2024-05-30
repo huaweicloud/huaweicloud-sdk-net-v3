@@ -40,6 +40,18 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         [JsonProperty("distributed_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DistributedId { get; set; }
 
+        /// <summary>
+        /// 节点类型，包括：DN, CN, GTM, CM, ETCD。
+        /// </summary>
+        [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
+        public string Type { get; set; }
+
+        /// <summary>
+        /// 详情。
+        /// </summary>
+        [JsonProperty("detail", NullValueHandling = NullValueHandling.Ignore)]
+        public string Detail { get; set; }
+
 
 
         /// <summary>
@@ -53,6 +65,8 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             sb.Append("  role: ").Append(Role).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  distributedId: ").Append(DistributedId).Append("\n");
+            sb.Append("  type: ").Append(Type).Append("\n");
+            sb.Append("  detail: ").Append(Detail).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -93,6 +107,16 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                     this.DistributedId == input.DistributedId ||
                     (this.DistributedId != null &&
                     this.DistributedId.Equals(input.DistributedId))
+                ) && 
+                (
+                    this.Type == input.Type ||
+                    (this.Type != null &&
+                    this.Type.Equals(input.Type))
+                ) && 
+                (
+                    this.Detail == input.Detail ||
+                    (this.Detail != null &&
+                    this.Detail.Equals(input.Detail))
                 );
         }
 
@@ -112,6 +136,10 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.DistributedId != null)
                     hashCode = hashCode * 59 + this.DistributedId.GetHashCode();
+                if (this.Type != null)
+                    hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Detail != null)
+                    hashCode = hashCode * 59 + this.Detail.GetHashCode();
                 return hashCode;
             }
         }

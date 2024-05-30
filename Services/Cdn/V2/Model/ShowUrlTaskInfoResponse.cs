@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public int? Total { get; set; }
 
         /// <summary>
-        /// 当前查询到的总页数。
+        /// 当前页查询到的总数。
         /// </summary>
         [JsonProperty("count", NullValueHandling = NullValueHandling.Ignore)]
         public int? Count { get; set; }

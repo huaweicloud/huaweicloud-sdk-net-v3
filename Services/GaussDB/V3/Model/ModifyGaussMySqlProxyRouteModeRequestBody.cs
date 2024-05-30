@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         public string NewNodeAutoAddStatus { get; set; }
 
         /// <summary>
-        /// 新增节点的读权重：    - 如果路由模式为0，新增节点自动加入为ON，取值为0~1000。 - 如果路由模式不为0或新增节点自动加入为OFF，则可不输入读权重。
+        /// 新增节点的读权重：    - 如果路由模式为0，新增节点自动加入为ON，取值为0~1000。 - 如果路由模式不为0或新增节点自动加入为OFF，则可不输入读权重。 - 如果路由模式不为0或新增节点自动加入为OFF，则可不输入读权重。
         /// </summary>
         [JsonProperty("new_node_weight", NullValueHandling = NullValueHandling.Ignore)]
         public int? NewNodeWeight { get; set; }

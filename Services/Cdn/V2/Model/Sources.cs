@@ -155,6 +155,12 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         [JsonProperty("origin_type", NullValueHandling = NullValueHandling.Ignore)]
         public OriginTypeEnum OriginType { get; set; }
         /// <summary>
+        /// OBS桶类型。   - private: 私有桶（除桶ACL授权外的其他用户无桶的访问权限）。   - public: 公有桶（任何用户都可以对桶内对象进行读操作）。
+        /// </summary>
+        [JsonProperty("obs_bucket_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string ObsBucketType { get; set; }
+
+        /// <summary>
         /// 主备状态，1代表主源站，0代表备源站。
         /// </summary>
         [JsonProperty("active_standby", NullValueHandling = NullValueHandling.Ignore)]
@@ -178,6 +184,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             sb.Append("  domainId: ").Append(DomainId).Append("\n");
             sb.Append("  ipOrDomain: ").Append(IpOrDomain).Append("\n");
             sb.Append("  originType: ").Append(OriginType).Append("\n");
+            sb.Append("  obsBucketType: ").Append(ObsBucketType).Append("\n");
             sb.Append("  activeStandby: ").Append(ActiveStandby).Append("\n");
             sb.Append("  enableObsWebHosting: ").Append(EnableObsWebHosting).Append("\n");
             sb.Append("}\n");
@@ -217,6 +224,11 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     this.OriginType.Equals(input.OriginType))
                 ) && 
                 (
+                    this.ObsBucketType == input.ObsBucketType ||
+                    (this.ObsBucketType != null &&
+                    this.ObsBucketType.Equals(input.ObsBucketType))
+                ) && 
+                (
                     this.ActiveStandby == input.ActiveStandby ||
                     (this.ActiveStandby != null &&
                     this.ActiveStandby.Equals(input.ActiveStandby))
@@ -242,6 +254,8 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     hashCode = hashCode * 59 + this.IpOrDomain.GetHashCode();
                 if (this.OriginType != null)
                     hashCode = hashCode * 59 + this.OriginType.GetHashCode();
+                if (this.ObsBucketType != null)
+                    hashCode = hashCode * 59 + this.ObsBucketType.GetHashCode();
                 if (this.ActiveStandby != null)
                     hashCode = hashCode * 59 + this.ActiveStandby.GetHashCode();
                 if (this.EnableObsWebHosting != null)

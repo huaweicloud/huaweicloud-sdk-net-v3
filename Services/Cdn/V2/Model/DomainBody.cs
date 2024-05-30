@@ -279,7 +279,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         /// 源站配置。
         /// </summary>
         [JsonProperty("sources", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Sources> Sources { get; set; }
+        public List<SourcesRequestBody> Sources { get; set; }
 
         /// <summary>
         /// 域名服务范围，若为mainland_china，则表示服务范围为中国大陆；若为outside_mainland_china，则表示服务范围为中国大陆境外；若为global，则表示服务范围为全球。

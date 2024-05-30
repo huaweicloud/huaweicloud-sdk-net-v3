@@ -22,6 +22,12 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         [JsonProperty("restart_required", NullValueHandling = NullValueHandling.Ignore)]
         public bool? RestartRequired { get; set; }
 
+        /// <summary>
+        /// 修改指定实例参数的任务ID。
+        /// </summary>
+        [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string JobId { get; set; }
+
 
 
         /// <summary>
@@ -32,6 +38,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             var sb = new StringBuilder();
             sb.Append("class UpdateInstanceConfigurationResponse {\n");
             sb.Append("  restartRequired: ").Append(RestartRequired).Append("\n");
+            sb.Append("  jobId: ").Append(JobId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -57,6 +64,11 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                     this.RestartRequired == input.RestartRequired ||
                     (this.RestartRequired != null &&
                     this.RestartRequired.Equals(input.RestartRequired))
+                ) && 
+                (
+                    this.JobId == input.JobId ||
+                    (this.JobId != null &&
+                    this.JobId.Equals(input.JobId))
                 );
         }
 
@@ -70,6 +82,8 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                 int hashCode = 41;
                 if (this.RestartRequired != null)
                     hashCode = hashCode * 59 + this.RestartRequired.GetHashCode();
+                if (this.JobId != null)
+                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
                 return hashCode;
             }
         }

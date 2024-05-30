@@ -2193,6 +2193,64 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         }
         
         /// <summary>
+        /// 查询代理实例访问控制
+        ///
+        /// 查询代理实例访问控制
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowProxyIpgroupResponse> ShowProxyIpgroupAsync(ShowProxyIpgroupRequest showProxyIpgroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showProxyIpgroupRequest.InstanceId.ToString());
+            urlParam.Add("proxy_id", showProxyIpgroupRequest.ProxyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/ipgroup", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProxyIpgroupRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowProxyIpgroupResponse>(response);
+        }
+
+        public AsyncInvoker<ShowProxyIpgroupResponse> ShowProxyIpgroupAsyncInvoker(ShowProxyIpgroupRequest showProxyIpgroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showProxyIpgroupRequest.InstanceId.ToString());
+            urlParam.Add("proxy_id", showProxyIpgroupRequest.ProxyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/ipgroup", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProxyIpgroupRequest);
+            return new AsyncInvoker<ShowProxyIpgroupResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowProxyIpgroupResponse>);
+        }
+        
+        /// <summary>
+        /// 查询代理实例小版本
+        ///
+        /// 查询代理实例小版本
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowProxyVersionResponse> ShowProxyVersionAsync(ShowProxyVersionRequest showProxyVersionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showProxyVersionRequest.InstanceId.ToString());
+            urlParam.Add("engine_name", showProxyVersionRequest.EngineName.ToString());
+            urlParam.Add("proxy_id", showProxyVersionRequest.ProxyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/{engine_name}/proxy-version", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProxyVersionRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowProxyVersionResponse>(response);
+        }
+
+        public AsyncInvoker<ShowProxyVersionResponse> ShowProxyVersionAsyncInvoker(ShowProxyVersionRequest showProxyVersionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showProxyVersionRequest.InstanceId.ToString());
+            urlParam.Add("engine_name", showProxyVersionRequest.EngineName.ToString());
+            urlParam.Add("proxy_id", showProxyVersionRequest.ProxyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/{engine_name}/proxy-version", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProxyVersionRequest);
+            return new AsyncInvoker<ShowProxyVersionResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowProxyVersionResponse>);
+        }
+        
+        /// <summary>
         /// 查询表级时间点恢复可选表
         ///
         /// 查询表级时间点恢复可选表。
@@ -2852,6 +2910,34 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         }
         
         /// <summary>
+        /// 修改代理实例名称
+        ///
+        /// 修改代理实例名称
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateProxyNameResponse> UpdateProxyNameAsync(UpdateProxyNameRequest updateProxyNameRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateProxyNameRequest.InstanceId.ToString());
+            urlParam.Add("proxy_id", updateProxyNameRequest.ProxyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/rename", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateProxyNameRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateProxyNameResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateProxyNameResponse> UpdateProxyNameAsyncInvoker(UpdateProxyNameRequest updateProxyNameRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateProxyNameRequest.InstanceId.ToString());
+            urlParam.Add("proxy_id", updateProxyNameRequest.ProxyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/rename", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateProxyNameRequest);
+            return new AsyncInvoker<UpdateProxyNameResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateProxyNameResponse>);
+        }
+        
+        /// <summary>
         /// 修改代理实例参数
         ///
         /// 修改数据库代理参数。
@@ -2985,6 +3071,34 @@ namespace HuaweiCloud.SDK.GaussDB.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-upgrade", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", upgradeGaussMySqlInstanceDatabaseRequest);
             return new AsyncInvoker<UpgradeGaussMySqlInstanceDatabaseResponse>(this, "POST", request, JsonUtils.DeSerialize<UpgradeGaussMySqlInstanceDatabaseResponse>);
+        }
+        
+        /// <summary>
+        /// 升级数据库代理实例内核版本
+        ///
+        /// 升级数据库代理实例内核版本。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpgradeProxyVersionResponse> UpgradeProxyVersionAsync(UpgradeProxyVersionRequest upgradeProxyVersionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", upgradeProxyVersionRequest.InstanceId.ToString());
+            urlParam.Add("proxy_id", upgradeProxyVersionRequest.ProxyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/upgrade-version", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", upgradeProxyVersionRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<UpgradeProxyVersionResponse>(response);
+        }
+
+        public AsyncInvoker<UpgradeProxyVersionResponse> UpgradeProxyVersionAsyncInvoker(UpgradeProxyVersionRequest upgradeProxyVersionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", upgradeProxyVersionRequest.InstanceId.ToString());
+            urlParam.Add("proxy_id", upgradeProxyVersionRequest.ProxyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/upgrade-version", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", upgradeProxyVersionRequest);
+            return new AsyncInvoker<UpgradeProxyVersionResponse>(this, "POST", request, JsonUtils.DeSerialize<UpgradeProxyVersionResponse>);
         }
         
         /// <summary>
