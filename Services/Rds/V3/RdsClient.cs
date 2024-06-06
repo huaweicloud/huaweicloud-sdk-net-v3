@@ -1704,6 +1704,30 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 查询共享备份列表
+        ///
+        /// 查询共享备份列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListShareBackupsResponse ListShareBackups(ListShareBackupsRequest listShareBackupsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/share-backups", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listShareBackupsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListShareBackupsResponse>(response);
+        }
+
+        public SyncInvoker<ListShareBackupsResponse> ListShareBackupsInvoker(ListShareBackupsRequest listShareBackupsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/share-backups", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listShareBackupsRequest);
+            return new SyncInvoker<ListShareBackupsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListShareBackupsResponse>);
+        }
+        
+        /// <summary>
         /// 
         ///
         /// 获取指定实例详情
@@ -4836,6 +4860,32 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 获取wal日志延迟回放状态
+        ///
+        /// 获取wal日志延迟回放状态
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowReplayDelayStatusResponse ShowReplayDelayStatus(ShowReplayDelayStatusRequest showReplayDelayStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showReplayDelayStatusRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/replay-delay/show", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showReplayDelayStatusRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowReplayDelayStatusResponse>(response);
+        }
+
+        public SyncInvoker<ShowReplayDelayStatusResponse> ShowReplayDelayStatusInvoker(ShowReplayDelayStatusRequest showReplayDelayStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showReplayDelayStatusRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/replay-delay/show", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showReplayDelayStatusRequest);
+            return new SyncInvoker<ShowReplayDelayStatusResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowReplayDelayStatusResponse>);
+        }
+        
+        /// <summary>
         /// 开启数据库代理
         ///
         /// 为指定实例开启数据库代理。
@@ -4885,6 +4935,32 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopDatabaseProxyRequest);
             return new SyncInvoker<StopDatabaseProxyResponse>(this, "DELETE", request, JsonUtils.DeSerialize<StopDatabaseProxyResponse>);
+        }
+        
+        /// <summary>
+        /// 中止/恢复wal日志回放
+        ///
+        /// 中止/恢复wal日志回放
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public SwitchLogReplayResponse SwitchLogReplay(SwitchLogReplayRequest switchLogReplayRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", switchLogReplayRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/log-replay/update", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchLogReplayRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<SwitchLogReplayResponse>(response);
+        }
+
+        public SyncInvoker<SwitchLogReplayResponse> SwitchLogReplayInvoker(SwitchLogReplayRequest switchLogReplayRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", switchLogReplayRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/log-replay/update", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchLogReplayRequest);
+            return new SyncInvoker<SwitchLogReplayResponse>(this, "PUT", request, JsonUtils.DeSerialize<SwitchLogReplayResponse>);
         }
         
         /// <summary>

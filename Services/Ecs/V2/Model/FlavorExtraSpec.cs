@@ -179,6 +179,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         public string Condstorage { get; set; }
 
         /// <summary>
+        /// 存储约束  - 支持磁盘特性，不配置时以UI配置为准。
+        /// </summary>
+        [JsonProperty("cond:storage:type", NullValueHandling = NullValueHandling.Ignore)]
+        public string Condstoragetype { get; set; }
+
+        /// <summary>
         /// 计算约束  - true，支持在线扩容。 - false或不存在该字段，不支持在线扩容。
         /// </summary>
         [JsonProperty("cond:compute:live_resizable", NullValueHandling = NullValueHandling.Ignore)]
@@ -262,6 +268,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             sb.Append("  condspotoperationstatus: ").Append(Condspotoperationstatus).Append("\n");
             sb.Append("  condnetwork: ").Append(Condnetwork).Append("\n");
             sb.Append("  condstorage: ").Append(Condstorage).Append("\n");
+            sb.Append("  condstoragetype: ").Append(Condstoragetype).Append("\n");
             sb.Append("  condcomputeliveResizable: ").Append(CondcomputeliveResizable).Append("\n");
             sb.Append("  condcompute: ").Append(Condcompute).Append("\n");
             sb.Append("  infogpuname: ").Append(Infogpuname).Append("\n");
@@ -427,6 +434,11 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     this.Condstorage.Equals(input.Condstorage))
                 ) && 
                 (
+                    this.Condstoragetype == input.Condstoragetype ||
+                    (this.Condstoragetype != null &&
+                    this.Condstoragetype.Equals(input.Condstoragetype))
+                ) && 
+                (
                     this.CondcomputeliveResizable == input.CondcomputeliveResizable ||
                     (this.CondcomputeliveResizable != null &&
                     this.CondcomputeliveResizable.Equals(input.CondcomputeliveResizable))
@@ -530,6 +542,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     hashCode = hashCode * 59 + this.Condnetwork.GetHashCode();
                 if (this.Condstorage != null)
                     hashCode = hashCode * 59 + this.Condstorage.GetHashCode();
+                if (this.Condstoragetype != null)
+                    hashCode = hashCode * 59 + this.Condstoragetype.GetHashCode();
                 if (this.CondcomputeliveResizable != null)
                     hashCode = hashCode * 59 + this.CondcomputeliveResizable.GetHashCode();
                 if (this.Condcompute != null)

@@ -17,12 +17,6 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
     {
 
         /// <summary>
-        /// 日志流ID
-        /// </summary>
-        [JsonProperty("logStreamId", NullValueHandling = NullValueHandling.Ignore)]
-        public string LogStreamId { get; set; }
-
-        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("fullTextIndex", NullValueHandling = NullValueHandling.Ignore)]
@@ -34,6 +28,18 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         [JsonProperty("fields", NullValueHandling = NullValueHandling.Ignore)]
         public List<LTSFieldsInfo> Fields { get; set; }
 
+        /// <summary>
+        /// 是否开启可视化
+        /// </summary>
+        [JsonProperty("sqlAnalysisEnable", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? SqlAnalysisEnable { get; set; }
+
+        /// <summary>
+        /// 日志流id
+        /// </summary>
+        [JsonProperty("logStreamId", NullValueHandling = NullValueHandling.Ignore)]
+        public string LogStreamId { get; set; }
+
 
 
         /// <summary>
@@ -43,9 +49,10 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class LTSIndexConfigInfo {\n");
-            sb.Append("  logStreamId: ").Append(LogStreamId).Append("\n");
             sb.Append("  fullTextIndex: ").Append(FullTextIndex).Append("\n");
             sb.Append("  fields: ").Append(Fields).Append("\n");
+            sb.Append("  sqlAnalysisEnable: ").Append(SqlAnalysisEnable).Append("\n");
+            sb.Append("  logStreamId: ").Append(LogStreamId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -68,11 +75,6 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
 
             return 
                 (
-                    this.LogStreamId == input.LogStreamId ||
-                    (this.LogStreamId != null &&
-                    this.LogStreamId.Equals(input.LogStreamId))
-                ) && 
-                (
                     this.FullTextIndex == input.FullTextIndex ||
                     (this.FullTextIndex != null &&
                     this.FullTextIndex.Equals(input.FullTextIndex))
@@ -82,6 +84,16 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                     this.Fields != null &&
                     input.Fields != null &&
                     this.Fields.SequenceEqual(input.Fields)
+                ) && 
+                (
+                    this.SqlAnalysisEnable == input.SqlAnalysisEnable ||
+                    (this.SqlAnalysisEnable != null &&
+                    this.SqlAnalysisEnable.Equals(input.SqlAnalysisEnable))
+                ) && 
+                (
+                    this.LogStreamId == input.LogStreamId ||
+                    (this.LogStreamId != null &&
+                    this.LogStreamId.Equals(input.LogStreamId))
                 );
         }
 
@@ -93,12 +105,14 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.LogStreamId != null)
-                    hashCode = hashCode * 59 + this.LogStreamId.GetHashCode();
                 if (this.FullTextIndex != null)
                     hashCode = hashCode * 59 + this.FullTextIndex.GetHashCode();
                 if (this.Fields != null)
                     hashCode = hashCode * 59 + this.Fields.GetHashCode();
+                if (this.SqlAnalysisEnable != null)
+                    hashCode = hashCode * 59 + this.SqlAnalysisEnable.GetHashCode();
+                if (this.LogStreamId != null)
+                    hashCode = hashCode * 59 + this.LogStreamId.GetHashCode();
                 return hashCode;
             }
         }

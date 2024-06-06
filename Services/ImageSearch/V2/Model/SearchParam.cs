@@ -33,6 +33,11 @@ namespace HuaweiCloud.SDK.ImageSearch.V2.Model
             public static readonly SearchTypeEnum KEYWORD = new SearchTypeEnum("KEYWORD");
 
             /// <summary>
+            /// Enum TEXT for value: TEXT
+            /// </summary>
+            public static readonly SearchTypeEnum TEXT = new SearchTypeEnum("TEXT");
+
+            /// <summary>
             /// Enum CATEGORY for value: CATEGORY
             /// </summary>
             public static readonly SearchTypeEnum CATEGORY = new SearchTypeEnum("CATEGORY");
@@ -42,6 +47,7 @@ namespace HuaweiCloud.SDK.ImageSearch.V2.Model
             {
                 { "IMAGE", IMAGE },
                 { "KEYWORD", KEYWORD },
+                { "TEXT", TEXT },
                 { "CATEGORY", CATEGORY },
             };
 
@@ -143,7 +149,7 @@ namespace HuaweiCloud.SDK.ImageSearch.V2.Model
         [JsonProperty("search_type", NullValueHandling = NullValueHandling.Ignore)]
         public SearchTypeEnum SearchType { get; set; }
         /// <summary>
-        /// 返回搜索结果的数量，默认为10，取值范围为[1, 100]。
+        /// 返回搜索结果的数量，默认为10，取值范围为[1, 1000]。
         /// </summary>
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
@@ -197,6 +203,12 @@ namespace HuaweiCloud.SDK.ImageSearch.V2.Model
         public List<string> Keywords { get; set; }
 
         /// <summary>
+        /// 文本字符串，字符长度范围为[1, 512]。
+        /// </summary>
+        [JsonProperty("text", NullValueHandling = NullValueHandling.Ignore)]
+        public string Text { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("optional_params", NullValueHandling = NullValueHandling.Ignore)]
@@ -221,6 +233,7 @@ namespace HuaweiCloud.SDK.ImageSearch.V2.Model
             sb.Append("  imageBase64: ").Append(ImageBase64).Append("\n");
             sb.Append("  imageUrl: ").Append(ImageUrl).Append("\n");
             sb.Append("  keywords: ").Append(Keywords).Append("\n");
+            sb.Append("  text: ").Append(Text).Append("\n");
             sb.Append("  optionalParams: ").Append(OptionalParams).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -297,6 +310,11 @@ namespace HuaweiCloud.SDK.ImageSearch.V2.Model
                     this.Keywords.SequenceEqual(input.Keywords)
                 ) && 
                 (
+                    this.Text == input.Text ||
+                    (this.Text != null &&
+                    this.Text.Equals(input.Text))
+                ) && 
+                (
                     this.OptionalParams == input.OptionalParams ||
                     (this.OptionalParams != null &&
                     this.OptionalParams.Equals(input.OptionalParams))
@@ -331,6 +349,8 @@ namespace HuaweiCloud.SDK.ImageSearch.V2.Model
                     hashCode = hashCode * 59 + this.ImageUrl.GetHashCode();
                 if (this.Keywords != null)
                     hashCode = hashCode * 59 + this.Keywords.GetHashCode();
+                if (this.Text != null)
+                    hashCode = hashCode * 59 + this.Text.GetHashCode();
                 if (this.OptionalParams != null)
                     hashCode = hashCode * 59 + this.OptionalParams.GetHashCode();
                 return hashCode;

@@ -15,6 +15,193 @@ namespace HuaweiCloud.SDK.ImageSearch.V2.Model
     /// </summary>
     public class SearchOptionalParam 
     {
+        /// <summary>
+        /// 文本字符串的语言类型枚举值。
+        /// </summary>
+        /// <value>文本字符串的语言类型枚举值。</value>
+        [JsonConverter(typeof(EnumClassConverter<TextLangEnum>))]
+        public class TextLangEnum
+        {
+            /// <summary>
+            /// Enum AR for value: ar
+            /// </summary>
+            public static readonly TextLangEnum AR = new TextLangEnum("ar");
+
+            /// <summary>
+            /// Enum DE for value: de
+            /// </summary>
+            public static readonly TextLangEnum DE = new TextLangEnum("de");
+
+            /// <summary>
+            /// Enum RU for value: ru
+            /// </summary>
+            public static readonly TextLangEnum RU = new TextLangEnum("ru");
+
+            /// <summary>
+            /// Enum FR for value: fr
+            /// </summary>
+            public static readonly TextLangEnum FR = new TextLangEnum("fr");
+
+            /// <summary>
+            /// Enum KO for value: ko
+            /// </summary>
+            public static readonly TextLangEnum KO = new TextLangEnum("ko");
+
+            /// <summary>
+            /// Enum PT for value: pt
+            /// </summary>
+            public static readonly TextLangEnum PT = new TextLangEnum("pt");
+
+            /// <summary>
+            /// Enum JA for value: ja
+            /// </summary>
+            public static readonly TextLangEnum JA = new TextLangEnum("ja");
+
+            /// <summary>
+            /// Enum TH for value: th
+            /// </summary>
+            public static readonly TextLangEnum TH = new TextLangEnum("th");
+
+            /// <summary>
+            /// Enum TR for value: tr
+            /// </summary>
+            public static readonly TextLangEnum TR = new TextLangEnum("tr");
+
+            /// <summary>
+            /// Enum ES for value: es
+            /// </summary>
+            public static readonly TextLangEnum ES = new TextLangEnum("es");
+
+            /// <summary>
+            /// Enum EN for value: en
+            /// </summary>
+            public static readonly TextLangEnum EN = new TextLangEnum("en");
+
+            /// <summary>
+            /// Enum VI for value: vi
+            /// </summary>
+            public static readonly TextLangEnum VI = new TextLangEnum("vi");
+
+            /// <summary>
+            /// Enum ZH for value: zh
+            /// </summary>
+            public static readonly TextLangEnum ZH = new TextLangEnum("zh");
+
+            /// <summary>
+            /// Enum ZHTW for value: zhTW
+            /// </summary>
+            public static readonly TextLangEnum ZHTW = new TextLangEnum("zhTW");
+
+            private static readonly Dictionary<string, TextLangEnum> StaticFields =
+            new Dictionary<string, TextLangEnum>()
+            {
+                { "ar", AR },
+                { "de", DE },
+                { "ru", RU },
+                { "fr", FR },
+                { "ko", KO },
+                { "pt", PT },
+                { "ja", JA },
+                { "th", TH },
+                { "tr", TR },
+                { "es", ES },
+                { "en", EN },
+                { "vi", VI },
+                { "zh", ZH },
+                { "zhTW", ZHTW },
+            };
+
+            private string _value;
+
+            public TextLangEnum()
+            {
+
+            }
+
+            public TextLangEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static TextLangEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as TextLangEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(TextLangEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(TextLangEnum a, TextLangEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(TextLangEnum a, TextLangEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 是否进行目标检测，默认为true。
@@ -58,6 +245,11 @@ namespace HuaweiCloud.SDK.ImageSearch.V2.Model
         [JsonProperty("nprobe", NullValueHandling = NullValueHandling.Ignore)]
         public int? Nprobe { get; set; }
 
+        /// <summary>
+        /// 文本字符串的语言类型枚举值。
+        /// </summary>
+        [JsonProperty("text_lang", NullValueHandling = NullValueHandling.Ignore)]
+        public TextLangEnum TextLang { get; set; }
 
 
         /// <summary>
@@ -74,6 +266,7 @@ namespace HuaweiCloud.SDK.ImageSearch.V2.Model
             sb.Append("  collapseKey: ").Append(CollapseKey).Append("\n");
             sb.Append("  maxScanNum: ").Append(MaxScanNum).Append("\n");
             sb.Append("  nprobe: ").Append(Nprobe).Append("\n");
+            sb.Append("  textLang: ").Append(TextLang).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -129,6 +322,11 @@ namespace HuaweiCloud.SDK.ImageSearch.V2.Model
                     this.Nprobe == input.Nprobe ||
                     (this.Nprobe != null &&
                     this.Nprobe.Equals(input.Nprobe))
+                ) && 
+                (
+                    this.TextLang == input.TextLang ||
+                    (this.TextLang != null &&
+                    this.TextLang.Equals(input.TextLang))
                 );
         }
 
@@ -154,6 +352,8 @@ namespace HuaweiCloud.SDK.ImageSearch.V2.Model
                     hashCode = hashCode * 59 + this.MaxScanNum.GetHashCode();
                 if (this.Nprobe != null)
                     hashCode = hashCode * 59 + this.Nprobe.GetHashCode();
+                if (this.TextLang != null)
+                    hashCode = hashCode * 59 + this.TextLang.GetHashCode();
                 return hashCode;
             }
         }

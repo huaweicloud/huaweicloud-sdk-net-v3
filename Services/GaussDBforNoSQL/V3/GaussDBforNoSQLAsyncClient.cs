@@ -1448,7 +1448,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/nodes", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", offlineNodesRequest);
             var response = await DoHttpRequestAsync("PUT", request);
-            return JsonUtils.DeSerializeNull<OfflineNodesResponse>(response);
+            return JsonUtils.DeSerialize<OfflineNodesResponse>(response);
         }
 
         public AsyncInvoker<OfflineNodesResponse> OfflineNodesAsyncInvoker(OfflineNodesRequest offlineNodesRequest)
@@ -1457,7 +1457,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
             urlParam.Add("instance_id", offlineNodesRequest.InstanceId.ToString());
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/nodes", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", offlineNodesRequest);
-            return new AsyncInvoker<OfflineNodesResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<OfflineNodesResponse>);
+            return new AsyncInvoker<OfflineNodesResponse>(this, "PUT", request, JsonUtils.DeSerialize<OfflineNodesResponse>);
         }
         
         /// <summary>

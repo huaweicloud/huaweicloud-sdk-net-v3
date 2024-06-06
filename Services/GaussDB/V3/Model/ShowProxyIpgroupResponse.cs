@@ -29,10 +29,10 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         public string Type { get; set; }
 
         /// <summary>
-        /// 白名单或黑名单详细信息
+        /// 
         /// </summary>
         [JsonProperty("ip_group", NullValueHandling = NullValueHandling.Ignore)]
-        public Object IpGroup { get; set; }
+        public ProxyIpGroupDetail IpGroup { get; set; }
 
 
 

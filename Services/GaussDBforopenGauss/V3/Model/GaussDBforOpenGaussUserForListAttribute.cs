@@ -13,7 +13,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
     /// <summary>
     /// 用户的权限属性。
     /// </summary>
-    public class GaussDBforOpenGaussUserForListAttributes 
+    public class GaussDBforOpenGaussUserForListAttribute 
     {
 
         /// <summary>
@@ -64,6 +64,12 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         [JsonProperty("rolbypassrls", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Rolbypassrls { get; set; }
 
+        /// <summary>
+        /// 用户密码过期时间。
+        /// </summary>
+        [JsonProperty("rolpassworddeadline", NullValueHandling = NullValueHandling.Ignore)]
+        public string Rolpassworddeadline { get; set; }
+
 
 
         /// <summary>
@@ -72,7 +78,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class GaussDBforOpenGaussUserForListAttributes {\n");
+            sb.Append("class GaussDBforOpenGaussUserForListAttribute {\n");
             sb.Append("  rolsuper: ").Append(Rolsuper).Append("\n");
             sb.Append("  rolinherit: ").Append(Rolinherit).Append("\n");
             sb.Append("  rolcreaterole: ").Append(Rolcreaterole).Append("\n");
@@ -81,6 +87,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             sb.Append("  rolconnlimit: ").Append(Rolconnlimit).Append("\n");
             sb.Append("  rolreplication: ").Append(Rolreplication).Append("\n");
             sb.Append("  rolbypassrls: ").Append(Rolbypassrls).Append("\n");
+            sb.Append("  rolpassworddeadline: ").Append(Rolpassworddeadline).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -90,13 +97,13 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as GaussDBforOpenGaussUserForListAttributes);
+            return this.Equals(input as GaussDBforOpenGaussUserForListAttribute);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(GaussDBforOpenGaussUserForListAttributes input)
+        public bool Equals(GaussDBforOpenGaussUserForListAttribute input)
         {
             if (input == null)
                 return false;
@@ -141,6 +148,11 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                     this.Rolbypassrls == input.Rolbypassrls ||
                     (this.Rolbypassrls != null &&
                     this.Rolbypassrls.Equals(input.Rolbypassrls))
+                ) && 
+                (
+                    this.Rolpassworddeadline == input.Rolpassworddeadline ||
+                    (this.Rolpassworddeadline != null &&
+                    this.Rolpassworddeadline.Equals(input.Rolpassworddeadline))
                 );
         }
 
@@ -168,6 +180,8 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                     hashCode = hashCode * 59 + this.Rolreplication.GetHashCode();
                 if (this.Rolbypassrls != null)
                     hashCode = hashCode * 59 + this.Rolbypassrls.GetHashCode();
+                if (this.Rolpassworddeadline != null)
+                    hashCode = hashCode * 59 + this.Rolpassworddeadline.GetHashCode();
                 return hashCode;
             }
         }

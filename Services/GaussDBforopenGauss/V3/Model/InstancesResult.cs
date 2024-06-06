@@ -280,7 +280,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// 实例版本信息。
         /// </summary>
         [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? Version { get; set; }
+        public string Version { get; set; }
 
         /// <summary>
         /// 部署形态。

@@ -64,6 +64,18 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         [JsonProperty("hotfix_rollback_candidate_versions", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> HotfixRollbackCandidateVersions { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("hotfix_upgrade_infos", NullValueHandling = NullValueHandling.Ignore)]
+        public HotfixUpgradeInfos HotfixUpgradeInfos { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("hotfix_rollback_infos", NullValueHandling = NullValueHandling.Ignore)]
+        public HotfixRollbackInfos HotfixRollbackInfos { get; set; }
+
 
 
         /// <summary>
@@ -81,6 +93,8 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             sb.Append("  upgradeCandidateVersions: ").Append(UpgradeCandidateVersions).Append("\n");
             sb.Append("  hotfixUpgradeCandidateVersions: ").Append(HotfixUpgradeCandidateVersions).Append("\n");
             sb.Append("  hotfixRollbackCandidateVersions: ").Append(HotfixRollbackCandidateVersions).Append("\n");
+            sb.Append("  hotfixUpgradeInfos: ").Append(HotfixUpgradeInfos).Append("\n");
+            sb.Append("  hotfixRollbackInfos: ").Append(HotfixRollbackInfos).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -145,6 +159,16 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                     this.HotfixRollbackCandidateVersions != null &&
                     input.HotfixRollbackCandidateVersions != null &&
                     this.HotfixRollbackCandidateVersions.SequenceEqual(input.HotfixRollbackCandidateVersions)
+                ) && 
+                (
+                    this.HotfixUpgradeInfos == input.HotfixUpgradeInfos ||
+                    (this.HotfixUpgradeInfos != null &&
+                    this.HotfixUpgradeInfos.Equals(input.HotfixUpgradeInfos))
+                ) && 
+                (
+                    this.HotfixRollbackInfos == input.HotfixRollbackInfos ||
+                    (this.HotfixRollbackInfos != null &&
+                    this.HotfixRollbackInfos.Equals(input.HotfixRollbackInfos))
                 );
         }
 
@@ -172,6 +196,10 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                     hashCode = hashCode * 59 + this.HotfixUpgradeCandidateVersions.GetHashCode();
                 if (this.HotfixRollbackCandidateVersions != null)
                     hashCode = hashCode * 59 + this.HotfixRollbackCandidateVersions.GetHashCode();
+                if (this.HotfixUpgradeInfos != null)
+                    hashCode = hashCode * 59 + this.HotfixUpgradeInfos.GetHashCode();
+                if (this.HotfixRollbackInfos != null)
+                    hashCode = hashCode * 59 + this.HotfixRollbackInfos.GetHashCode();
                 return hashCode;
             }
         }

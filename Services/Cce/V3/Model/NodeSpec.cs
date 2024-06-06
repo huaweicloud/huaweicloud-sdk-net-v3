@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public string Az { get; set; }
 
         /// <summary>
-        /// 节点的操作系统类型。具体支持的操作系统请参见[节点操作系统说明](node-os.xml)。 &gt; - 系统会根据集群版本自动选择支持的系统版本。当前集群版本不支持该系统类型，则会报错。 &gt; - 若在创建节点时指定了extendParam中的alpha.cce/NodeImageID参数，可以不填写此参数。 &gt; - 创建节点池时，该参数为必选。 
+        /// 节点的操作系统类型。具体支持的操作系统请参见[节点操作系统说明](node-os.xml)。 &gt; - 系统会根据集群版本自动选择支持的系统版本。当前集群版本不支持该系统类型，则会报错。 &gt; - 若在创建节点时指定了extendParam中的alpha.cce/NodeImageID参数，可以不填写此参数。 &gt; - 创建节点池时，该参数为必选。 &gt; - 若创建节点时使用共享磁盘空间，即磁盘初始化配置管理参数使用storage，且StorageGroups中virtualSpaces的name字段指定为share，该参数为必选。 
         /// </summary>
         [JsonProperty("os", NullValueHandling = NullValueHandling.Ignore)]
         public string Os { get; set; }
@@ -136,6 +136,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("hostnameConfig", NullValueHandling = NullValueHandling.Ignore)]
         public HostnameConfig HostnameConfig { get; set; }
 
+        /// <summary>
+        /// 服务器企业项目ID。CCE服务不实现EPS相关特性，该字段仅用于同步服务器企业项目ID。 创建节点/节点池场景：可指定已存在企业项目，当取值为空时，该字段继承集群企业项目属性。 更新节点池场景：配置修改后仅会对新增节点的服务器生效，存量节点需前往EPS界面迁移。 如果更新时不指定值，不会更新该字段。 当该字段为空时，返回集群企业项目。
+        /// </summary>
+        [JsonProperty("serverEnterpriseProjectID", NullValueHandling = NullValueHandling.Ignore)]
+        public string ServerEnterpriseProjectID { get; set; }
+
 
 
         /// <summary>
@@ -165,6 +171,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  initializedConditions: ").Append(InitializedConditions).Append("\n");
             sb.Append("  extendParam: ").Append(ExtendParam).Append("\n");
             sb.Append("  hostnameConfig: ").Append(HostnameConfig).Append("\n");
+            sb.Append("  serverEnterpriseProjectID: ").Append(ServerEnterpriseProjectID).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -290,6 +297,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.HostnameConfig == input.HostnameConfig ||
                     (this.HostnameConfig != null &&
                     this.HostnameConfig.Equals(input.HostnameConfig))
+                ) && 
+                (
+                    this.ServerEnterpriseProjectID == input.ServerEnterpriseProjectID ||
+                    (this.ServerEnterpriseProjectID != null &&
+                    this.ServerEnterpriseProjectID.Equals(input.ServerEnterpriseProjectID))
                 );
         }
 
@@ -341,6 +353,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     hashCode = hashCode * 59 + this.ExtendParam.GetHashCode();
                 if (this.HostnameConfig != null)
                     hashCode = hashCode * 59 + this.HostnameConfig.GetHashCode();
+                if (this.ServerEnterpriseProjectID != null)
+                    hashCode = hashCode * 59 + this.ServerEnterpriseProjectID.GetHashCode();
                 return hashCode;
             }
         }

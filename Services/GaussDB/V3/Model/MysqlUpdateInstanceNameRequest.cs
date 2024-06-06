@@ -22,6 +22,12 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
+        /// <summary>
+        /// 是否同步修改节点名称，取值：true或false, 默认值为true。
+        /// </summary>
+        [JsonProperty("is_modify_node_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string IsModifyNodeName { get; set; }
+
 
 
         /// <summary>
@@ -32,6 +38,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             var sb = new StringBuilder();
             sb.Append("class MysqlUpdateInstanceNameRequest {\n");
             sb.Append("  name: ").Append(Name).Append("\n");
+            sb.Append("  isModifyNodeName: ").Append(IsModifyNodeName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -57,6 +64,11 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
+                ) && 
+                (
+                    this.IsModifyNodeName == input.IsModifyNodeName ||
+                    (this.IsModifyNodeName != null &&
+                    this.IsModifyNodeName.Equals(input.IsModifyNodeName))
                 );
         }
 
@@ -70,6 +82,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                 int hashCode = 41;
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.IsModifyNodeName != null)
+                    hashCode = hashCode * 59 + this.IsModifyNodeName.GetHashCode();
                 return hashCode;
             }
         }

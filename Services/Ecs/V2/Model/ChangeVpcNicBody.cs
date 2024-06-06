@@ -29,10 +29,10 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         public string SubnetId { get; set; }
 
         /// <summary>
-        /// 
+        /// 添加网卡的安全组信息
         /// </summary>
         [JsonProperty("security_groups", NullValueHandling = NullValueHandling.Ignore)]
-        public ChangeVpcSecurityGroups SecurityGroups { get; set; }
+        public List<ChangeVpcSecurityGroups> SecurityGroups { get; set; }
 
         /// <summary>
         /// P地址，无该参数表示自动分配IP地址
@@ -86,8 +86,9 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                 ) && 
                 (
                     this.SecurityGroups == input.SecurityGroups ||
-                    (this.SecurityGroups != null &&
-                    this.SecurityGroups.Equals(input.SecurityGroups))
+                    this.SecurityGroups != null &&
+                    input.SecurityGroups != null &&
+                    this.SecurityGroups.SequenceEqual(input.SecurityGroups)
                 ) && 
                 (
                     this.IpAddress == input.IpAddress ||

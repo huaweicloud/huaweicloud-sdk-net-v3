@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// 安全组id
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
-        public Object Id { get; set; }
+        public string Id { get; set; }
 
 
 

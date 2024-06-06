@@ -25,14 +25,20 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// <summary>
         /// 
         /// </summary>
-        [JsonProperty("attributes", NullValueHandling = NullValueHandling.Ignore)]
-        public GaussDBforOpenGaussUserForListAttributes Attributes { get; set; }
+        [JsonProperty("attribute", NullValueHandling = NullValueHandling.Ignore)]
+        public GaussDBforOpenGaussUserForListAttribute Attribute { get; set; }
 
         /// <summary>
         /// 用户的默认权限。
         /// </summary>
         [JsonProperty("memberof", NullValueHandling = NullValueHandling.Ignore)]
         public string Memberof { get; set; }
+
+        /// <summary>
+        /// 用户是否被锁，取值为“true”或“false”。
+        /// </summary>
+        [JsonProperty("lock_status", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? LockStatus { get; set; }
 
 
 
@@ -44,8 +50,9 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             var sb = new StringBuilder();
             sb.Append("class GaussDBforOpenGaussUserForList {\n");
             sb.Append("  name: ").Append(Name).Append("\n");
-            sb.Append("  attributes: ").Append(Attributes).Append("\n");
+            sb.Append("  attribute: ").Append(Attribute).Append("\n");
             sb.Append("  memberof: ").Append(Memberof).Append("\n");
+            sb.Append("  lockStatus: ").Append(LockStatus).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -73,14 +80,19 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                     this.Name.Equals(input.Name))
                 ) && 
                 (
-                    this.Attributes == input.Attributes ||
-                    (this.Attributes != null &&
-                    this.Attributes.Equals(input.Attributes))
+                    this.Attribute == input.Attribute ||
+                    (this.Attribute != null &&
+                    this.Attribute.Equals(input.Attribute))
                 ) && 
                 (
                     this.Memberof == input.Memberof ||
                     (this.Memberof != null &&
                     this.Memberof.Equals(input.Memberof))
+                ) && 
+                (
+                    this.LockStatus == input.LockStatus ||
+                    (this.LockStatus != null &&
+                    this.LockStatus.Equals(input.LockStatus))
                 );
         }
 
@@ -94,10 +106,12 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                 int hashCode = 41;
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Attributes != null)
-                    hashCode = hashCode * 59 + this.Attributes.GetHashCode();
+                if (this.Attribute != null)
+                    hashCode = hashCode * 59 + this.Attribute.GetHashCode();
                 if (this.Memberof != null)
                     hashCode = hashCode * 59 + this.Memberof.GetHashCode();
+                if (this.LockStatus != null)
+                    hashCode = hashCode * 59 + this.LockStatus.GetHashCode();
                 return hashCode;
             }
         }

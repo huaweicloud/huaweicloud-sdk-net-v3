@@ -46,6 +46,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("login", NullValueHandling = NullValueHandling.Ignore)]
         public Login Login { get; set; }
 
+        /// <summary>
+        /// 服务器企业项目ID。CCE服务不实现EPS相关特性，该字段仅用于同步服务器企业项目ID。 创建节点/节点池场景：可指定已存在企业项目，当取值为空时，该字段继承集群企业项目属性。 更新节点池场景：配置修改后仅会对新增节点的服务器生效，存量节点需前往EPS界面迁移。 如果更新时不指定值，不会更新该字段。 当该字段为空时，返回集群企业项目。
+        /// </summary>
+        [JsonProperty("serverEnterpriseProjectID", NullValueHandling = NullValueHandling.Ignore)]
+        public string ServerEnterpriseProjectID { get; set; }
+
 
 
         /// <summary>
@@ -60,6 +66,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  userTags: ").Append(UserTags).Append("\n");
             sb.Append("  initializedConditions: ").Append(InitializedConditions).Append("\n");
             sb.Append("  login: ").Append(Login).Append("\n");
+            sb.Append("  serverEnterpriseProjectID: ").Append(ServerEnterpriseProjectID).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -109,6 +116,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.Login == input.Login ||
                     (this.Login != null &&
                     this.Login.Equals(input.Login))
+                ) && 
+                (
+                    this.ServerEnterpriseProjectID == input.ServerEnterpriseProjectID ||
+                    (this.ServerEnterpriseProjectID != null &&
+                    this.ServerEnterpriseProjectID.Equals(input.ServerEnterpriseProjectID))
                 );
         }
 
@@ -130,6 +142,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     hashCode = hashCode * 59 + this.InitializedConditions.GetHashCode();
                 if (this.Login != null)
                     hashCode = hashCode * 59 + this.Login.GetHashCode();
+                if (this.ServerEnterpriseProjectID != null)
+                    hashCode = hashCode * 59 + this.ServerEnterpriseProjectID.GetHashCode();
                 return hashCode;
             }
         }

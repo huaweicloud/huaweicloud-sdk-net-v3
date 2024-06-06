@@ -19,8 +19,8 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// <summary>
         /// 资源规格编码。
         /// </summary>
-        [JsonProperty("spec_cpde", NullValueHandling = NullValueHandling.Ignore)]
-        public string SpecCpde { get; set; }
+        [JsonProperty("spec_code", NullValueHandling = NullValueHandling.Ignore)]
+        public string SpecCode { get; set; }
 
         /// <summary>
         /// CPU核数。
@@ -49,7 +49,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class AvailableFlavorInfoResult {\n");
-            sb.Append("  specCpde: ").Append(SpecCpde).Append("\n");
+            sb.Append("  specCode: ").Append(SpecCode).Append("\n");
             sb.Append("  vcpus: ").Append(Vcpus).Append("\n");
             sb.Append("  ram: ").Append(Ram).Append("\n");
             sb.Append("  azStatus: ").Append(AzStatus).Append("\n");
@@ -75,9 +75,9 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
 
             return 
                 (
-                    this.SpecCpde == input.SpecCpde ||
-                    (this.SpecCpde != null &&
-                    this.SpecCpde.Equals(input.SpecCpde))
+                    this.SpecCode == input.SpecCode ||
+                    (this.SpecCode != null &&
+                    this.SpecCode.Equals(input.SpecCode))
                 ) && 
                 (
                     this.Vcpus == input.Vcpus ||
@@ -105,8 +105,8 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.SpecCpde != null)
-                    hashCode = hashCode * 59 + this.SpecCpde.GetHashCode();
+                if (this.SpecCode != null)
+                    hashCode = hashCode * 59 + this.SpecCode.GetHashCode();
                 if (this.Vcpus != null)
                     hashCode = hashCode * 59 + this.Vcpus.GetHashCode();
                 if (this.Ram != null)

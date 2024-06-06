@@ -1,3 +1,169 @@
+# 3.1.98 2024-06-06
+
+### HuaweiCloud SDK CCE
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowNode**
+    - 响应参数变更
+      - `+ spec.serverEnterpriseProjectID`
+  - **UpdateNode**
+    - 响应参数变更
+      - `+ spec.serverEnterpriseProjectID`
+  - **DeleteNode**
+    - 响应参数变更
+      - `+ spec.serverEnterpriseProjectID`
+  - **CreateNode**
+    - 请求参数变更
+      - `+ spec.serverEnterpriseProjectID`
+    - 响应参数变更
+      - `+ spec.serverEnterpriseProjectID`
+  - **ListNodes**
+    - 响应参数变更
+      - `+ items.spec.serverEnterpriseProjectID`
+  - **ShowNodePool**
+    - 响应参数变更
+      - `+ spec.nodeTemplate.serverEnterpriseProjectID`
+  - **UpdateNodePool**
+    - 请求参数变更
+      - `+ spec.nodeTemplate.serverEnterpriseProjectID`
+    - 响应参数变更
+      - `+ spec.nodeTemplate.serverEnterpriseProjectID`
+  - **DeleteNodePool**
+    - 响应参数变更
+      - `+ spec.nodeTemplate.serverEnterpriseProjectID`
+  - **CreateNodePool**
+    - 请求参数变更
+      - `+ spec.nodeTemplate.serverEnterpriseProjectID`
+    - 响应参数变更
+      - `+ spec.nodeTemplate.serverEnterpriseProjectID`
+  - **ListNodePools**
+    - 响应参数变更
+      - `+ items.spec.nodeTemplate.serverEnterpriseProjectID`
+
+### HuaweiCloud SDK ECS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ChangeVpc**
+    - 请求参数变更
+      - `* nic.security_groups: object<ChangeVpcSecurityGroups> -> list<ChangeVpcSecurityGroups>`
+  - **ListFlavors**
+    - 响应参数变更
+      - `+ flavors.os_extra_specs.cond:storage:type`
+  - **ListResizeFlavors**
+    - 响应参数变更
+      - `+ flavors.extra_specs.cond:storage:type`
+
+### HuaweiCloud SDK GaussDB
+
+- _新增特性_
+  - 支持以下接口：
+    - `ShowLtsConfigs`
+    - `CreateLtsConfigs`
+    - `DeleteLtsConfigs`
+    - `ShowRecyclePolicy`
+    - `SetRecyclePolicy`
+    - `ListRecycleInstances`
+    - `ShowSlowlogSensitiveStatus`
+    - `UpdateSlowlogSensitiveSwitch`
+    - `RestartProxyInstance`
+    - `RenameInstanceNode`
+    - `ShowAutoScalingHistory`
+    - `UpdateServerlessPolicy`
+    - `ModifyNodePriority`
+    - `ShowInstanceEip`
+    - `ListParamsTemplateApplyHistory`
+    - `ShowProxyConfigurations`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowProxyIpgroup**
+    - 响应参数变更
+      - `+ ip_group.id`
+      - `+ ip_group.name`
+      - `+ ip_group.ip_list`
+      - `* ip_group: object -> object<ProxyIpGroupDetail>`
+  - **UpdateGaussMySqlInstanceName**
+    - 请求参数变更
+      - `+ is_modify_node_name`
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **OfflineNodes**
+    - 响应参数变更
+      - `+ job_id`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListAvailableFlavors**
+    - 响应参数变更
+      - `+ flavors.spec_code`
+      - `- flavors.spec_cpde`
+  - **ListRestorableInstances**
+    - 响应参数变更
+      - `* instances.version: number -> string`
+  - **ListDbUsers**
+    - 响应参数变更
+      - `+ users.attribute`
+      - `+ users.lock_status`
+      - `- users.attributes`
+  - **ShowUpgradeCandidateVersions**
+    - 响应参数变更
+      - `+ hotfix_upgrade_infos`
+      - `+ hotfix_rollback_infos`
+
+### HuaweiCloud SDK ImageSearch
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **RunSearch**
+    - 请求参数变更
+      - `+ text`
+      - `+ search_type: enum value [TEXT]`
+      - `+ optional_params.text_lang`
+
+### HuaweiCloud SDK LTS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateLogStreamIndex**
+    - 请求参数变更
+      - `+ sqlAnalysisEnable`
+
+### HuaweiCloud SDK RDS
+
+- _新增特性_
+  - 支持接口`ShowReplayDelayStatus`、`SwitchLogReplay`、`ListShareBackups`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListBackups**
+    - 请求参数变更
+      - `+ status`
+
 # 3.1.97 2024-05-30
 
 ### HuaweiCloud SDK CDN
