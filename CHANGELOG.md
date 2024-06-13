@@ -1,3 +1,135 @@
+# 3.1.99 2024-06-13
+
+### HuaweiCloud SDK Core
+
+- _Features_
+  - Support retry for request.
+- _Bug Fix_
+  - None
+- _Change_
+  - Add non-null check to method SetAk/SetSk of Credentials.
+
+### HuaweiCloud SDK AS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateScalingV2Policy**
+    - changes of request param
+      - `+ interval_alarm_actions`
+  - **ListAllScalingV2Policies**
+    - changes of response param
+      - `+ scaling_policies.interval_alarm_actions`
+  - **UpdateScalingV2Policy**
+    - changes of request param
+      - `+ interval_alarm_actions`
+  - **ShowScalingV2Policy**
+    - changes of response param
+      - `+ scaling_policy.interval_alarm_actions`
+  - **ListScalingV2Policies**
+    - changes of response param
+      - `+ scaling_policies.interval_alarm_actions`
+
+### HuaweiCloud SDK DCS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateMigrationTask**
+    - changes of request param
+      - `+ target_instance.task_status`
+  - **ShowMigrationTask**
+    - changes of response param
+      - `+ target_instance.task_status`
+  - **StopMigrationTask**
+    - changes of response param
+      - `+ target_instance.task_status`
+
+### HuaweiCloud SDK ECS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowServer**
+    - changes of response param
+      - `- server.fault.code`
+      - `- server.fault.created`
+      - `- server.fault.message`
+      - `- server.fault.details`
+      - `* server.fault: object<ServerFault> -> object`
+  - **ListServersDetails**
+    - changes of response param
+      - `- servers.fault.code`
+      - `- servers.fault.created`
+      - `- servers.fault.message`
+      - `- servers.fault.details`
+      - `* servers.fault: object<ServerFault> -> object`
+
+### HuaweiCloud SDK EIP
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **DisassociatePublicips**
+    - changes of response param
+      - `- publicip.associate_instance_type: enum value [null]`
+  - **AssociatePublicips**
+    - changes of response param
+      - `- publicip.associate_instance_type: enum value [null]`
+  - **UpdatePublicip**
+    - changes of request param
+      - `+ publicip.associate_instance_type: enum value [VPN]`
+      - `- publicip.associate_instance_type: enum value []`
+    - changes of response param
+      - `- publicip.associate_instance_type: enum value [null]`
+
+### HuaweiCloud SDK GaussDB
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowDedicatedResourceInfo**
+    - changes of response param
+      - `+ resource_name`
+      - `- name`
+
+### HuaweiCloud SDK RDS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowReplayDelayStatus**
+    - changes of response param
+      - `+ delay_time_value_range`
+
+### HuaweiCloud SDK VPC
+
+- _Features_
+  - Support the following APIs:
+    - `ListSecurityGroupsByTags`
+    - `BatchCreateSecurityGroupTags`
+    - `BatchDeleteSecurityGroupTags`
+    - `ShowSecurityGroupTags`
+    - `CreateSecurityGroupTag`
+    - `DeleteSecurityGroupTag`
+    - `ListSecurityGroupTags`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.1.98 2024-06-06
 
 ### HuaweiCloud SDK CCE

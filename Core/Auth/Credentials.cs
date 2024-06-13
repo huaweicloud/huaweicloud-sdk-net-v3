@@ -37,8 +37,35 @@ namespace HuaweiCloud.SDK.Core.Auth
         internal string DerivedAuthServiceName;
         internal string RegionId;
 
-        public string Ak { set; get; }
-        public string Sk { set; get; }
+        private string _ak;
+        public string Ak
+        {
+            get => _ak;
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new ArgumentException("Input ak cannot be null or empty.");
+                }
+                _ak = value;
+            }
+        }
+
+        private string _sk;
+
+        public string Sk
+        {
+            get => _sk;
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new ArgumentException("Input sk cannot be null or empty.");
+                }
+                _sk = value;
+            }
+        }
+
         public string SecurityToken { set; get; }
         public string IamEndpoint { set; get; }
         public Func<HttpRequest, bool> DerivedPredicate { set; get; }

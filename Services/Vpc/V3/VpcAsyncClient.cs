@@ -1000,6 +1000,84 @@ namespace HuaweiCloud.SDK.Vpc.V3
         }
         
         /// <summary>
+        /// 批量添加ACL资源标签
+        ///
+        /// 为指定的IP地址组资源实例批量添加标签。
+        /// 此接口为幂等接口：创建时如果请求体中存在重复key则报错。创建时，不允许设置重复key数据，如果数据库已存在该key，就覆盖value的值。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchCreateFirewallTagsResponse> BatchCreateFirewallTagsAsync(BatchCreateFirewallTagsRequest batchCreateFirewallTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("firewall_id", batchCreateFirewallTagsRequest.FirewallId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/firewalls/{firewall_id}/tags/create", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateFirewallTagsRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<BatchCreateFirewallTagsResponse>(response);
+        }
+
+        public AsyncInvoker<BatchCreateFirewallTagsResponse> BatchCreateFirewallTagsAsyncInvoker(BatchCreateFirewallTagsRequest batchCreateFirewallTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("firewall_id", batchCreateFirewallTagsRequest.FirewallId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/firewalls/{firewall_id}/tags/create", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateFirewallTagsRequest);
+            return new AsyncInvoker<BatchCreateFirewallTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchCreateFirewallTagsResponse>);
+        }
+        
+        /// <summary>
+        /// 批量删除ACL资源标签
+        ///
+        /// 为指定的IP地址组资源实例批量删除标签。
+        /// 此接口为幂等接口：删除时，如果删除的标签不存在，默认处理成功；删除时不对标签字符集范围做校验。删除时tags结构体不能缺失，key不能为空，或者空字符串。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchDeleteFirewallTagsResponse> BatchDeleteFirewallTagsAsync(BatchDeleteFirewallTagsRequest batchDeleteFirewallTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("firewall_id", batchDeleteFirewallTagsRequest.FirewallId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/firewalls/{firewall_id}/tags/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteFirewallTagsRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<BatchDeleteFirewallTagsResponse>(response);
+        }
+
+        public AsyncInvoker<BatchDeleteFirewallTagsResponse> BatchDeleteFirewallTagsAsyncInvoker(BatchDeleteFirewallTagsRequest batchDeleteFirewallTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("firewall_id", batchDeleteFirewallTagsRequest.FirewallId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/firewalls/{firewall_id}/tags/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteFirewallTagsRequest);
+            return new AsyncInvoker<BatchDeleteFirewallTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchDeleteFirewallTagsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询ACL资源实例数量
+        ///
+        /// 使用标签过滤查询ACL实例数量。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CountFirewallsByTagsResponse> CountFirewallsByTagsAsync(CountFirewallsByTagsRequest countFirewallsByTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/firewalls/resource-instances/count", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", countFirewallsByTagsRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CountFirewallsByTagsResponse>(response);
+        }
+
+        public AsyncInvoker<CountFirewallsByTagsResponse> CountFirewallsByTagsAsyncInvoker(CountFirewallsByTagsRequest countFirewallsByTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/firewalls/resource-instances/count", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", countFirewallsByTagsRequest);
+            return new AsyncInvoker<CountFirewallsByTagsResponse>(this, "POST", request, JsonUtils.DeSerialize<CountFirewallsByTagsResponse>);
+        }
+        
+        /// <summary>
         /// 创建网络ACL
         ///
         /// 创建网络ACL
@@ -1021,6 +1099,33 @@ namespace HuaweiCloud.SDK.Vpc.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/firewalls", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createFirewallRequest);
             return new AsyncInvoker<CreateFirewallResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateFirewallResponse>);
+        }
+        
+        /// <summary>
+        /// 添加ACL资源标签
+        ///
+        /// 给指定IP地址组资源实例增加标签信息
+        /// 此接口为幂等接口：创建时，如果创建的标签已经存在（key相同），则覆盖。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateFirewallTagResponse> CreateFirewallTagAsync(CreateFirewallTagRequest createFirewallTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("firewall_id", createFirewallTagRequest.FirewallId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/firewalls/{firewall_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createFirewallTagRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<CreateFirewallTagResponse>(response);
+        }
+
+        public AsyncInvoker<CreateFirewallTagResponse> CreateFirewallTagAsyncInvoker(CreateFirewallTagRequest createFirewallTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("firewall_id", createFirewallTagRequest.FirewallId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/firewalls/{firewall_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createFirewallTagRequest);
+            return new AsyncInvoker<CreateFirewallTagResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateFirewallTagResponse>);
         }
         
         /// <summary>
@@ -1047,6 +1152,35 @@ namespace HuaweiCloud.SDK.Vpc.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/firewalls/{firewall_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteFirewallRequest);
             return new AsyncInvoker<DeleteFirewallResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteFirewallResponse>);
+        }
+        
+        /// <summary>
+        /// 删除ACL资源标签
+        ///
+        /// 删除指定IP地址组资源实例的标签信息
+        /// 该接口为幂等接口：删除的key不存在报404，key不能为空或者空字符串
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteFirewallTagResponse> DeleteFirewallTagAsync(DeleteFirewallTagRequest deleteFirewallTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("firewall_id", deleteFirewallTagRequest.FirewallId.ToString());
+            urlParam.Add("tag_key", deleteFirewallTagRequest.TagKey.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/firewalls/{firewall_id}/tags/{tag_key}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteFirewallTagRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteFirewallTagResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteFirewallTagResponse> DeleteFirewallTagAsyncInvoker(DeleteFirewallTagRequest deleteFirewallTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("firewall_id", deleteFirewallTagRequest.FirewallId.ToString());
+            urlParam.Add("tag_key", deleteFirewallTagRequest.TagKey.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/firewalls/{firewall_id}/tags/{tag_key}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteFirewallTagRequest);
+            return new AsyncInvoker<DeleteFirewallTagResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteFirewallTagResponse>);
         }
         
         /// <summary>
@@ -1100,6 +1234,54 @@ namespace HuaweiCloud.SDK.Vpc.V3
         }
         
         /// <summary>
+        /// 查询ACL项目标签
+        ///
+        /// 查询租户在指定Project中实例类型的所有资源标签集合
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListFirewallTagsResponse> ListFirewallTagsAsync(ListFirewallTagsRequest listFirewallTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/firewalls/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFirewallTagsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListFirewallTagsResponse>(response);
+        }
+
+        public AsyncInvoker<ListFirewallTagsResponse> ListFirewallTagsAsyncInvoker(ListFirewallTagsRequest listFirewallTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/firewalls/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFirewallTagsRequest);
+            return new AsyncInvoker<ListFirewallTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListFirewallTagsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询ACL资源实例列表
+        ///
+        /// 使用标签过滤查询ACL实例。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListFirewallsByTagsResponse> ListFirewallsByTagsAsync(ListFirewallsByTagsRequest listFirewallsByTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/firewalls/resource-instances/filter", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFirewallsByTagsRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<ListFirewallsByTagsResponse>(response);
+        }
+
+        public AsyncInvoker<ListFirewallsByTagsResponse> ListFirewallsByTagsAsyncInvoker(ListFirewallsByTagsRequest listFirewallsByTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/firewalls/resource-instances/filter", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFirewallsByTagsRequest);
+            return new AsyncInvoker<ListFirewallsByTagsResponse>(this, "POST", request, JsonUtils.DeSerialize<ListFirewallsByTagsResponse>);
+        }
+        
+        /// <summary>
         /// 网络ACL移除规则
         ///
         /// 网络ACL移除规则
@@ -1149,6 +1331,32 @@ namespace HuaweiCloud.SDK.Vpc.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/firewalls/{firewall_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFirewallRequest);
             return new AsyncInvoker<ShowFirewallResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowFirewallResponse>);
+        }
+        
+        /// <summary>
+        /// 查询ACL资源标签
+        ///
+        /// 查询指定ACL实例的标签信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowFirewallTagsResponse> ShowFirewallTagsAsync(ShowFirewallTagsRequest showFirewallTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("firewall_id", showFirewallTagsRequest.FirewallId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/firewalls/{firewall_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFirewallTagsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowFirewallTagsResponse>(response);
+        }
+
+        public AsyncInvoker<ShowFirewallTagsResponse> ShowFirewallTagsAsyncInvoker(ShowFirewallTagsRequest showFirewallTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("firewall_id", showFirewallTagsRequest.FirewallId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/firewalls/{firewall_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFirewallTagsRequest);
+            return new AsyncInvoker<ShowFirewallTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowFirewallTagsResponse>);
         }
         
         /// <summary>

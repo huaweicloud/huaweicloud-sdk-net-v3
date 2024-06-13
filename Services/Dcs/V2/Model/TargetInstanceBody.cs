@@ -35,6 +35,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         public string Password { get; set; }
 
         /// <summary>
+        /// 任务状态。
+        /// </summary>
+        [JsonProperty("task_status", NullValueHandling = NullValueHandling.Ignore)]
+        public string TaskStatus { get; set; }
+
+        /// <summary>
         /// Redis IP地址。
         /// </summary>
         [JsonProperty("ip", NullValueHandling = NullValueHandling.Ignore)]
@@ -76,6 +82,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  password: ").Append(Password).Append("\n");
+            sb.Append("  taskStatus: ").Append(TaskStatus).Append("\n");
             sb.Append("  ip: ").Append(Ip).Append("\n");
             sb.Append("  port: ").Append(Port).Append("\n");
             sb.Append("  addrs: ").Append(Addrs).Append("\n");
@@ -118,6 +125,11 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     this.Password.Equals(input.Password))
                 ) && 
                 (
+                    this.TaskStatus == input.TaskStatus ||
+                    (this.TaskStatus != null &&
+                    this.TaskStatus.Equals(input.TaskStatus))
+                ) && 
+                (
                     this.Ip == input.Ip ||
                     (this.Ip != null &&
                     this.Ip.Equals(input.Ip))
@@ -158,6 +170,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Password != null)
                     hashCode = hashCode * 59 + this.Password.GetHashCode();
+                if (this.TaskStatus != null)
+                    hashCode = hashCode * 59 + this.TaskStatus.GetHashCode();
                 if (this.Ip != null)
                     hashCode = hashCode * 59 + this.Ip.GetHashCode();
                 if (this.Port != null)

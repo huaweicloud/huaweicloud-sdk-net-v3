@@ -36,6 +36,8 @@ namespace HuaweiCloud.SDK.Core
 
         private const string XRequestAgent = "User-Agent";
         private const string CredentialsNull = "Credentials cannot be null.";
+        private const string ConstSdkExchange = "SDK_EXCHANGE";
+        
         private ICredential _credentials;
         private volatile int _endpointIndex;
 
@@ -75,12 +77,73 @@ namespace HuaweiCloud.SDK.Core
                 new SdkHttpClient(GetType().FullName, _httpConfig, httpHandler, enableLogging, logLevel);
         }
 
-        public async Task<HttpResponseMessage> DoHttpRequestAsync(string methodType, SdkRequest request)
+        public async Task<HttpResponseMessage> DoHttpRequestAsync(string methodType, SdkRequest request, SdkExchange sdkExchange = null)
         {
-            var url = GetRealEndpoint(request)
-                      + HttpUtils.AddUrlPath(request.Path, _credentials.GetPathParamDictionary())
-                      + (string.IsNullOrEmpty(request.QueryParams) ? "" : "?" + request.QueryParams);
-            return await _async_http(url, methodType.ToUpperInvariant(), request);
+            if (sdkExchange == null)
+            {
+                sdkExchange = new SdkExchange
+                {
+                    ApiReference = new ApiReference
+                    {
+                        Method = methodType,
+                        Uri = request.Path
+                    }
+                };
+            }
+            var exchangeId = SdkExchange.Cache.Put(sdkExchange);
+            if (!request.Header.ContainsKey(ConstSdkExchange))
+            {
+                request.Header.Add(ConstSdkExchange, exchangeId);
+            }
+
+            try
+            {
+                while (true)
+                {
+                    var url = GetRealEndpoint(request) + HttpUtils.AddUrlPath(request.Path, _credentials.GetPathParamDictionary())
+                                                       + (string.IsNullOrEmpty(request.QueryParams) ? "" : "?" + request.QueryParams);
+                    try
+                    {
+                        return await _async_http(url, methodType.ToUpperInvariant(), request);
+                    }
+                    catch (HostUnreachableException hostUnreachableException)
+                    {
+                        if (_endpointIndex < _endpoints.Count - 1)
+                        {
+                            Interlocked.Increment(ref _endpointIndex);
+                        }
+                        else
+                        {
+                            throw hostUnreachableException;
+                        }
+                    }
+                }
+            }
+            finally
+            {
+                SdkExchange.Cache.Remove(exchangeId);
+            }
+        }
+        
+        private  HttpResponseMessage _sync_http(string url, string method, SdkRequest sdkRequest)
+        {
+            var request = GetHttpRequest(url, method, sdkRequest);
+            if (string.IsNullOrEmpty(request.Headers.Get("Authorization")))
+            {
+                request = _credentials.SignAuthRequest(request).Result;
+            }
+
+            var message = _sdkHttpClient.InitHttpRequest(request, _httpConfig.IgnoreBodyForGetRequest);
+            try
+            {
+                var response = _sdkHttpClient.DoHttpRequest(message).Result;
+                _exceptionHandler.HandleException(request, response);
+                return response;
+            }
+            catch (AggregateException aggregateException)
+            {
+                throw ExceptionUtils.HandleException(aggregateException);
+            }
         }
 
         private async Task<HttpResponseMessage> _async_http(string url, string method, SdkRequest sdkRequest)
@@ -105,48 +168,51 @@ namespace HuaweiCloud.SDK.Core
         }
 
         [MethodImpl(MethodImplOptions.Synchronized)]
-        public HttpResponseMessage DoHttpRequestSync(string methodType, SdkRequest request)
+        public HttpResponseMessage DoHttpRequestSync(string methodType, SdkRequest request, SdkExchange sdkExchange = null)
         {
-            while (true)
+            if (sdkExchange == null)
             {
-                var url = GetRealEndpoint(request) + HttpUtils.AddUrlPath(request.Path, _credentials.GetPathParamDictionary())
-                                                   + (string.IsNullOrEmpty(request.QueryParams) ? "" : "?" + request.QueryParams);
-                try
+                sdkExchange = new SdkExchange
                 {
-                    return _sync_http(url, methodType.ToUpperInvariant(), request);
-                }
-                catch (HostUnreachableException hostUnreachableException)
-                {
-                    if (_endpointIndex < _endpoints.Count - 1)
+                    ApiReference = new ApiReference
                     {
-                        Interlocked.Increment(ref _endpointIndex);
+                        Method = methodType,
+                        Uri = request.Path
                     }
-                    else
-                    {
-                        throw hostUnreachableException;
-                    }
-                }
+                };
             }
-        }
-
-        private HttpResponseMessage _sync_http(string url, string method, SdkRequest sdkRequest)
-        {
-            var request = GetHttpRequest(url, method, sdkRequest);
-            if (string.IsNullOrEmpty(request.Headers.Get("Authorization")))
+            var exchangeId = SdkExchange.Cache.Put(sdkExchange);
+            if (!request.Header.ContainsKey(ConstSdkExchange))
             {
-                request = _credentials.SignAuthRequest(request).Result;
+                request.Header.Add(ConstSdkExchange, exchangeId);
             }
-
-            var message = _sdkHttpClient.InitHttpRequest(request, _httpConfig.IgnoreBodyForGetRequest);
+            
             try
             {
-                var response = _sdkHttpClient.DoHttpRequest(message).Result;
-                _exceptionHandler.HandleException(request, response);
-                return response;
+                while (true)
+                {
+                    var url = GetRealEndpoint(request) + HttpUtils.AddUrlPath(request.Path, _credentials.GetPathParamDictionary())
+                                                       + (string.IsNullOrEmpty(request.QueryParams) ? "" : "?" + request.QueryParams);
+                    try
+                    {
+                        return _sync_http(url, methodType.ToUpperInvariant(), request);
+                    }
+                    catch (HostUnreachableException hostUnreachableException)
+                    {
+                        if (_endpointIndex < _endpoints.Count - 1)
+                        {
+                            Interlocked.Increment(ref _endpointIndex);
+                        }
+                        else
+                        {
+                            throw hostUnreachableException;
+                        }
+                    }
+                }
             }
-            catch (AggregateException aggregateException)
+            finally
             {
-                throw ExceptionUtils.HandleException(aggregateException);
+                SdkExchange.Cache.Remove(exchangeId);
             }
         }
 

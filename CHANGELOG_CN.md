@@ -1,3 +1,135 @@
+# 3.1.99 2024-06-13
+
+### HuaweiCloud SDK Core
+
+- _新增特性_
+  - 支持请求重试
+- _解决问题_
+  - 无
+- _特性变更_
+  - Credentials的SetAk/SetSk方法添加非空检查
+
+### HuaweiCloud SDK AS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateScalingV2Policy**
+    - 请求参数变更
+      - `+ interval_alarm_actions`
+  - **ListAllScalingV2Policies**
+    - 响应参数变更
+      - `+ scaling_policies.interval_alarm_actions`
+  - **UpdateScalingV2Policy**
+    - 请求参数变更
+      - `+ interval_alarm_actions`
+  - **ShowScalingV2Policy**
+    - 响应参数变更
+      - `+ scaling_policy.interval_alarm_actions`
+  - **ListScalingV2Policies**
+    - 响应参数变更
+      - `+ scaling_policies.interval_alarm_actions`
+
+### HuaweiCloud SDK DCS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateMigrationTask**
+    - 请求参数变更
+      - `+ target_instance.task_status`
+  - **ShowMigrationTask**
+    - 响应参数变更
+      - `+ target_instance.task_status`
+  - **StopMigrationTask**
+    - 响应参数变更
+      - `+ target_instance.task_status`
+
+### HuaweiCloud SDK ECS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowServer**
+    - 响应参数变更
+      - `- server.fault.code`
+      - `- server.fault.created`
+      - `- server.fault.message`
+      - `- server.fault.details`
+      - `* server.fault: object<ServerFault> -> object`
+  - **ListServersDetails**
+    - 响应参数变更
+      - `- servers.fault.code`
+      - `- servers.fault.created`
+      - `- servers.fault.message`
+      - `- servers.fault.details`
+      - `* servers.fault: object<ServerFault> -> object`
+
+### HuaweiCloud SDK EIP
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **DisassociatePublicips**
+    - 响应参数变更
+      - `- publicip.associate_instance_type: enum value [null]`
+  - **AssociatePublicips**
+    - 响应参数变更
+      - `- publicip.associate_instance_type: enum value [null]`
+  - **UpdatePublicip**
+    - 请求参数变更
+      - `+ publicip.associate_instance_type: enum value [VPN]`
+      - `- publicip.associate_instance_type: enum value []`
+    - 响应参数变更
+      - `- publicip.associate_instance_type: enum value [null]`
+
+### HuaweiCloud SDK GaussDB
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowDedicatedResourceInfo**
+    - 响应参数变更
+      - `+ resource_name`
+      - `- name`
+
+### HuaweiCloud SDK RDS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowReplayDelayStatus**
+    - 响应参数变更
+      - `+ delay_time_value_range`
+
+### HuaweiCloud SDK VPC
+
+- _新增特性_
+  - 支持以下接口：
+    - `ListSecurityGroupsByTags`
+    - `BatchCreateSecurityGroupTags`
+    - `BatchDeleteSecurityGroupTags`
+    - `ShowSecurityGroupTags`
+    - `CreateSecurityGroupTag`
+    - `DeleteSecurityGroupTag`
+    - `ListSecurityGroupTags`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
 # 3.1.98 2024-06-06
 
 ### HuaweiCloud SDK CCE

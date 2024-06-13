@@ -15,6 +15,9 @@ namespace HuaweiCloud.SDK.Tms.V1
             "https://tms.ap-southeast-1.myhuaweicloud.cn");
         public static readonly Region EU_WEST_101 = new Region("eu-west-101",
             "https://tms.eu-west-101.myhuaweicloud.eu");
+        public static readonly Region RU_MOSCOW_1 = new Region("ru-moscow-1",
+            "https://tms.ru-moscow-1.myhuaweicloud.com",
+            "https://tms.ru-moscow-1.myhuaweicloud.cn");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("TMS");
 
@@ -23,6 +26,7 @@ namespace HuaweiCloud.SDK.Tms.V1
                 { "cn-north-4", CN_NORTH_4 },
                 { "ap-southeast-1", AP_SOUTHEAST_1 },
                 { "eu-west-101", EU_WEST_101 },
+                { "ru-moscow-1", RU_MOSCOW_1 },
         };
 
         public static Region ValueOf(string regionId)

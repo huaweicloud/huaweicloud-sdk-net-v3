@@ -31,6 +31,14 @@ namespace HuaweiCloud.SDK.Core
         protected readonly string Method;
         protected readonly SdkRequest Request;
         protected readonly Func<HttpResponseMessage, TResp> DeserializeMethod;
+        protected readonly SdkExchange SdkExchange;
+
+        // retry
+        private const int MaxRetriesLimit = 10;
+        protected int MaxRetries;
+        protected Func<TResp, SdkException, bool> RetryCondition;
+        protected IBackoffStrategy BackoffStrategy;
+
 
         public BaseInvoker(Client client, string method, SdkRequest request, Func<HttpResponseMessage, TResp> deserializeMethod)
         {
@@ -38,11 +46,40 @@ namespace HuaweiCloud.SDK.Core
             Method = method;
             Request = request;
             DeserializeMethod = deserializeMethod;
+
+            SdkExchange = new SdkExchange
+            {
+                ApiReference = new ApiReference
+                {
+                    Method = Method,
+                    Uri = request.Path
+                }
+            };
         }
 
         public TInvoker AddHeader(string key, string value)
         {
             Request.Header.Add(key, value);
+            return (TInvoker)this;
+        }
+
+        public TInvoker WithExchange(Action<SdkExchange> action)
+        {
+            action?.Invoke(SdkExchange);
+            return (TInvoker)this;
+        }
+
+        public TInvoker WithRetry(Func<TResp, SdkException, bool> retryCondition, int maxRetries, IBackoffStrategy backoffStrategy)
+        {
+            if (maxRetries > MaxRetriesLimit)
+            {
+                throw new ArgumentOutOfRangeException(nameof(maxRetries), "Retries exceeds the MaxRetriesLimit " + MaxRetriesLimit);
+            }
+            MaxRetries = maxRetries;
+
+            RetryCondition = retryCondition ?? throw new ArgumentNullException(nameof(retryCondition));
+            BackoffStrategy = backoffStrategy ?? throw new ArgumentNullException(nameof(backoffStrategy));
+
             return (TInvoker)this;
         }
 

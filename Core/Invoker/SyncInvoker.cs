@@ -21,6 +21,7 @@
 
 using System;
 using System.Net.Http;
+using System.Threading;
 
 namespace HuaweiCloud.SDK.Core
 {
@@ -32,8 +33,51 @@ namespace HuaweiCloud.SDK.Core
 
         public TResp Invoke()
         {
-            var responseMessage = Client.DoHttpRequestSync(Method, Request);
-            return DeserializeMethod.Invoke(responseMessage);
+            if (MaxRetries == 0 || RetryCondition == null)
+            {
+                var responseMessage = Client.DoHttpRequestSync(Method, Request, SdkExchange);
+                return DeserializeMethod.Invoke(responseMessage);
+            }
+
+            var execTimes = 0;
+            TResp resp;
+            SdkException exception;
+
+            while (true)
+            {
+                try
+                {
+                    var responseMessage = Client.DoHttpRequestSync(Method, Request, SdkExchange);
+                    resp = DeserializeMethod.Invoke(responseMessage);
+                    exception = null;
+                }
+                catch (SdkException sdkException)
+                {
+                    exception = sdkException;
+                    resp = null;
+                }
+                finally
+                {
+                    execTimes++;
+                }
+
+                if (execTimes > MaxRetries || !RetryCondition.Invoke(resp, exception))
+                {
+                    break;
+                }
+
+                var delay = BackoffStrategy.CalculateRetryDelayMillis(execTimes);
+                if (delay > 0)
+                {
+                    Thread.Sleep(delay);
+                }
+            }
+
+            if (exception != null)
+            {
+                throw exception;
+            }
+            return resp;
         }
     }
 }

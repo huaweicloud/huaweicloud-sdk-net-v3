@@ -293,6 +293,12 @@ namespace HuaweiCloud.SDK.As.V1.Model
         public ScalingPolicyActionV2 ScalingPolicyAction { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("interval_alarm_actions", NullValueHandling = NullValueHandling.Ignore)]
+        public List<IntervalAlarmActionsV2> IntervalAlarmActions { get; set; }
+
+        /// <summary>
         /// 冷却时间，取值范围0-86400，默认为300，单位是秒。
         /// </summary>
         [JsonProperty("cool_down_time", NullValueHandling = NullValueHandling.Ignore)]
@@ -320,6 +326,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
             sb.Append("  alarmId: ").Append(AlarmId).Append("\n");
             sb.Append("  scheduledPolicy: ").Append(ScheduledPolicy).Append("\n");
             sb.Append("  scalingPolicyAction: ").Append(ScalingPolicyAction).Append("\n");
+            sb.Append("  intervalAlarmActions: ").Append(IntervalAlarmActions).Append("\n");
             sb.Append("  coolDownTime: ").Append(CoolDownTime).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("}\n");
@@ -379,6 +386,12 @@ namespace HuaweiCloud.SDK.As.V1.Model
                     this.ScalingPolicyAction.Equals(input.ScalingPolicyAction))
                 ) && 
                 (
+                    this.IntervalAlarmActions == input.IntervalAlarmActions ||
+                    this.IntervalAlarmActions != null &&
+                    input.IntervalAlarmActions != null &&
+                    this.IntervalAlarmActions.SequenceEqual(input.IntervalAlarmActions)
+                ) && 
+                (
                     this.CoolDownTime == input.CoolDownTime ||
                     (this.CoolDownTime != null &&
                     this.CoolDownTime.Equals(input.CoolDownTime))
@@ -412,6 +425,8 @@ namespace HuaweiCloud.SDK.As.V1.Model
                     hashCode = hashCode * 59 + this.ScheduledPolicy.GetHashCode();
                 if (this.ScalingPolicyAction != null)
                     hashCode = hashCode * 59 + this.ScalingPolicyAction.GetHashCode();
+                if (this.IntervalAlarmActions != null)
+                    hashCode = hashCode * 59 + this.IntervalAlarmActions.GetHashCode();
                 if (this.CoolDownTime != null)
                     hashCode = hashCode * 59 + this.CoolDownTime.GetHashCode();
                 if (this.Description != null)

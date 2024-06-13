@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
     public class UpdatePublicipOption 
     {
         /// <summary>
-        /// 功能说明：端口所属实例类型 取值范围：PORT、NATGW、VPN、ELB、null 约束：associate_instance_type和associate_instance_id都不为空时表示绑定实例； associate_instance_type和associate_instance_id都为null时解绑实例 约束：双栈公网IP不允许修改绑定的实例
+        /// 功能说明：端口所属实例类型 取值范围：PORT、NATGW、VPN、ELB、null 约束：associate_instance_type和associate_instance_id都不为空时表示绑定实例。 约束：associate_instance_type和associate_instance_id都为null时表示解绑实例，通过APIE调用需要切换为文本输入方式输入null值，可参考解绑请求实例。 约束：双栈公网IP不允许修改绑定的实例。
         /// </summary>
-        /// <value>功能说明：端口所属实例类型 取值范围：PORT、NATGW、VPN、ELB、null 约束：associate_instance_type和associate_instance_id都不为空时表示绑定实例； associate_instance_type和associate_instance_id都为null时解绑实例 约束：双栈公网IP不允许修改绑定的实例</value>
+        /// <value>功能说明：端口所属实例类型 取值范围：PORT、NATGW、VPN、ELB、null 约束：associate_instance_type和associate_instance_id都不为空时表示绑定实例。 约束：associate_instance_type和associate_instance_id都为null时表示解绑实例，通过APIE调用需要切换为文本输入方式输入null值，可参考解绑请求实例。 约束：双栈公网IP不允许修改绑定的实例。</value>
         [JsonConverter(typeof(EnumClassConverter<AssociateInstanceTypeEnum>))]
         public class AssociateInstanceTypeEnum
         {
@@ -38,9 +38,9 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
             public static readonly AssociateInstanceTypeEnum ELB = new AssociateInstanceTypeEnum("ELB");
 
             /// <summary>
-            /// Enum EMPTY for value: 
+            /// Enum VPN for value: VPN
             /// </summary>
-            public static readonly AssociateInstanceTypeEnum EMPTY = new AssociateInstanceTypeEnum("");
+            public static readonly AssociateInstanceTypeEnum VPN = new AssociateInstanceTypeEnum("VPN");
 
             private static readonly Dictionary<string, AssociateInstanceTypeEnum> StaticFields =
             new Dictionary<string, AssociateInstanceTypeEnum>()
@@ -48,7 +48,7 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
                 { "PORT", PORT },
                 { "NATGW", NATGW },
                 { "ELB", ELB },
-                { "", EMPTY },
+                { "VPN", VPN },
             };
 
             private string _value;
@@ -156,12 +156,12 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// 功能说明：端口所属实例类型 取值范围：PORT、NATGW、VPN、ELB、null 约束：associate_instance_type和associate_instance_id都不为空时表示绑定实例； associate_instance_type和associate_instance_id都为null时解绑实例 约束：双栈公网IP不允许修改绑定的实例
+        /// 功能说明：端口所属实例类型 取值范围：PORT、NATGW、VPN、ELB、null 约束：associate_instance_type和associate_instance_id都不为空时表示绑定实例。 约束：associate_instance_type和associate_instance_id都为null时表示解绑实例，通过APIE调用需要切换为文本输入方式输入null值，可参考解绑请求实例。 约束：双栈公网IP不允许修改绑定的实例。
         /// </summary>
         [JsonProperty("associate_instance_type", NullValueHandling = NullValueHandling.Ignore)]
         public AssociateInstanceTypeEnum AssociateInstanceType { get; set; }
         /// <summary>
-        /// 功能说明：端口所属实例ID，例如RDS实例ID 约束：associate_instance_type和associate_instance_id都不为空时表示绑定实例； associate_instance_type和associate_instance_id都为null时解绑实例 约束：双栈公网IP不允许修改绑定的实例
+        /// 功能说明：端口所属实例ID，例如RDS实例ID 约束：associate_instance_type和associate_instance_id都不为空时表示绑定实例。 约束：associate_instance_type和associate_instance_id都为null时表示解绑实例，通过APIE调用需要切换为文本输入方式输入null值，可参考解绑请求实例。 约束：双栈公网IP不允许修改绑定的实例。
         /// </summary>
         [JsonProperty("associate_instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string AssociateInstanceId { get; set; }

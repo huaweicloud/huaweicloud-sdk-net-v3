@@ -25,8 +25,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// <summary>
         /// 专属资源池名称。
         /// </summary>
-        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
-        public string Name { get; set; }
+        [JsonProperty("resource_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string ResourceName { get; set; }
 
         /// <summary>
         /// 引擎名称。
@@ -74,7 +74,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             var sb = new StringBuilder();
             sb.Append("class ShowDedicatedResourceInfoResponse {\n");
             sb.Append("  id: ").Append(Id).Append("\n");
-            sb.Append("  name: ").Append(Name).Append("\n");
+            sb.Append("  resourceName: ").Append(ResourceName).Append("\n");
             sb.Append("  engineName: ").Append(EngineName).Append("\n");
             sb.Append("  availabilityZoneIds: ").Append(AvailabilityZoneIds).Append("\n");
             sb.Append("  architecture: ").Append(Architecture).Append("\n");
@@ -108,9 +108,9 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                     this.Id.Equals(input.Id))
                 ) && 
                 (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
+                    this.ResourceName == input.ResourceName ||
+                    (this.ResourceName != null &&
+                    this.ResourceName.Equals(input.ResourceName))
                 ) && 
                 (
                     this.EngineName == input.EngineName ||
@@ -155,8 +155,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                 int hashCode = 41;
                 if (this.Id != null)
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.ResourceName != null)
+                    hashCode = hashCode * 59 + this.ResourceName.GetHashCode();
                 if (this.EngineName != null)
                     hashCode = hashCode * 59 + this.EngineName.GetHashCode();
                 if (this.AvailabilityZoneIds != null)

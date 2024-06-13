@@ -68,6 +68,33 @@ namespace HuaweiCloud.SDK.Vpc.V2
         }
         
         /// <summary>
+        /// 批量创建安全组资源标签
+        ///
+        /// 为指定的安全组资源实例批量添加标签。
+        /// 此接口为幂等接口：创建时如果请求体中存在重复key则报错。创建时，不允许设置重复key数据，如果数据库已存在该key，就覆盖value的值。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchCreateSecurityGroupTagsResponse> BatchCreateSecurityGroupTagsAsync(BatchCreateSecurityGroupTagsRequest batchCreateSecurityGroupTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("security_group_id", batchCreateSecurityGroupTagsRequest.SecurityGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/security-groups/{security_group_id}/tags/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchCreateSecurityGroupTagsRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<BatchCreateSecurityGroupTagsResponse>(response);
+        }
+
+        public AsyncInvoker<BatchCreateSecurityGroupTagsResponse> BatchCreateSecurityGroupTagsAsyncInvoker(BatchCreateSecurityGroupTagsRequest batchCreateSecurityGroupTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("security_group_id", batchCreateSecurityGroupTagsRequest.SecurityGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/security-groups/{security_group_id}/tags/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchCreateSecurityGroupTagsRequest);
+            return new AsyncInvoker<BatchCreateSecurityGroupTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchCreateSecurityGroupTagsResponse>);
+        }
+        
+        /// <summary>
         /// 批量创建子网资源标签
         ///
         /// 为指定的子网资源实例批量添加标签。
@@ -92,6 +119,33 @@ namespace HuaweiCloud.SDK.Vpc.V2
             var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/subnets/{subnet_id}/tags/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchCreateSubnetTagsRequest);
             return new AsyncInvoker<BatchCreateSubnetTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchCreateSubnetTagsResponse>);
+        }
+        
+        /// <summary>
+        /// 批量删除安全组资源标签
+        ///
+        /// 为指定的安全组资源实例批量删除标签
+        /// 此接口为幂等接口：删除时，如果删除的标签不存在，默认处理成功；删除时不对标签字符集范围做校验。删除时tags结构体不能缺失，key不能为空，或者空字符串。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchDeleteSecurityGroupTagsResponse> BatchDeleteSecurityGroupTagsAsync(BatchDeleteSecurityGroupTagsRequest batchDeleteSecurityGroupTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("security_group_id", batchDeleteSecurityGroupTagsRequest.SecurityGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/security-groups/{security_group_id}/tags/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteSecurityGroupTagsRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<BatchDeleteSecurityGroupTagsResponse>(response);
+        }
+
+        public AsyncInvoker<BatchDeleteSecurityGroupTagsResponse> BatchDeleteSecurityGroupTagsAsyncInvoker(BatchDeleteSecurityGroupTagsRequest batchDeleteSecurityGroupTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("security_group_id", batchDeleteSecurityGroupTagsRequest.SecurityGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/security-groups/{security_group_id}/tags/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteSecurityGroupTagsRequest);
+            return new AsyncInvoker<BatchDeleteSecurityGroupTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchDeleteSecurityGroupTagsResponse>);
         }
         
         /// <summary>
@@ -241,6 +295,33 @@ namespace HuaweiCloud.SDK.Vpc.V2
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/security-group-rules", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createSecurityGroupRuleRequest);
             return new AsyncInvoker<CreateSecurityGroupRuleResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateSecurityGroupRuleResponse>);
+        }
+        
+        /// <summary>
+        /// 创建安全组资源标签
+        ///
+        /// 给指定安全组资源实例增加标签信息。
+        /// 此接口为幂等接口：创建时，如果创建的标签已经存在（key相同），则覆盖。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateSecurityGroupTagResponse> CreateSecurityGroupTagAsync(CreateSecurityGroupTagRequest createSecurityGroupTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("security_group_id", createSecurityGroupTagRequest.SecurityGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/security-groups/{security_group_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createSecurityGroupTagRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<CreateSecurityGroupTagResponse>(response);
+        }
+
+        public AsyncInvoker<CreateSecurityGroupTagResponse> CreateSecurityGroupTagAsyncInvoker(CreateSecurityGroupTagRequest createSecurityGroupTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("security_group_id", createSecurityGroupTagRequest.SecurityGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/security-groups/{security_group_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createSecurityGroupTagRequest);
+            return new AsyncInvoker<CreateSecurityGroupTagResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateSecurityGroupTagResponse>);
         }
         
         /// <summary>
@@ -446,6 +527,35 @@ namespace HuaweiCloud.SDK.Vpc.V2
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/security-group-rules/{security_group_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSecurityGroupRuleRequest);
             return new AsyncInvoker<DeleteSecurityGroupRuleResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteSecurityGroupRuleResponse>);
+        }
+        
+        /// <summary>
+        /// 删除安全组资源标签
+        ///
+        /// 删除指定安全组资源实例的标签信息。
+        /// 该接口为幂等接口：删除的key不存在报404，Key不能为空或者空字符串
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteSecurityGroupTagResponse> DeleteSecurityGroupTagAsync(DeleteSecurityGroupTagRequest deleteSecurityGroupTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("key", deleteSecurityGroupTagRequest.Key.ToString());
+            urlParam.Add("security_group_id", deleteSecurityGroupTagRequest.SecurityGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/security-groups/{security_group_id}/tags/{key}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSecurityGroupTagRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteSecurityGroupTagResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteSecurityGroupTagResponse> DeleteSecurityGroupTagAsyncInvoker(DeleteSecurityGroupTagRequest deleteSecurityGroupTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("key", deleteSecurityGroupTagRequest.Key.ToString());
+            urlParam.Add("security_group_id", deleteSecurityGroupTagRequest.SecurityGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/security-groups/{security_group_id}/tags/{key}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSecurityGroupTagRequest);
+            return new AsyncInvoker<DeleteSecurityGroupTagResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteSecurityGroupTagResponse>);
         }
         
         /// <summary>
@@ -655,6 +765,30 @@ namespace HuaweiCloud.SDK.Vpc.V2
         }
         
         /// <summary>
+        /// 查询安全组项目标签
+        ///
+        /// 查询租户在指定区域和实例类型的所有标签集合
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListSecurityGroupTagsResponse> ListSecurityGroupTagsAsync(ListSecurityGroupTagsRequest listSecurityGroupTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/security-groups/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSecurityGroupTagsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListSecurityGroupTagsResponse>(response);
+        }
+
+        public AsyncInvoker<ListSecurityGroupTagsResponse> ListSecurityGroupTagsAsyncInvoker(ListSecurityGroupTagsRequest listSecurityGroupTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/security-groups/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSecurityGroupTagsRequest);
+            return new AsyncInvoker<ListSecurityGroupTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSecurityGroupTagsResponse>);
+        }
+        
+        /// <summary>
         /// 查询安全组列表
         ///
         /// 查询安全组列表
@@ -676,6 +810,30 @@ namespace HuaweiCloud.SDK.Vpc.V2
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/security-groups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSecurityGroupsRequest);
             return new AsyncInvoker<ListSecurityGroupsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSecurityGroupsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询安全组资源实例
+        ///
+        /// 使用标签过滤实例
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListSecurityGroupsByTagsResponse> ListSecurityGroupsByTagsAsync(ListSecurityGroupsByTagsRequest listSecurityGroupsByTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/security-groups/resource_instances/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listSecurityGroupsByTagsRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<ListSecurityGroupsByTagsResponse>(response);
+        }
+
+        public AsyncInvoker<ListSecurityGroupsByTagsResponse> ListSecurityGroupsByTagsAsyncInvoker(ListSecurityGroupsByTagsRequest listSecurityGroupsByTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/security-groups/resource_instances/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listSecurityGroupsByTagsRequest);
+            return new AsyncInvoker<ListSecurityGroupsByTagsResponse>(this, "POST", request, JsonUtils.DeSerialize<ListSecurityGroupsByTagsResponse>);
         }
         
         /// <summary>
@@ -952,6 +1110,32 @@ namespace HuaweiCloud.SDK.Vpc.V2
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/security-group-rules/{security_group_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSecurityGroupRuleRequest);
             return new AsyncInvoker<ShowSecurityGroupRuleResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSecurityGroupRuleResponse>);
+        }
+        
+        /// <summary>
+        /// 查询安全组资源标签
+        ///
+        /// 查询指定安全组实例的标签信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowSecurityGroupTagsResponse> ShowSecurityGroupTagsAsync(ShowSecurityGroupTagsRequest showSecurityGroupTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("security_group_id", showSecurityGroupTagsRequest.SecurityGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/security-groups/{security_group_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSecurityGroupTagsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowSecurityGroupTagsResponse>(response);
+        }
+
+        public AsyncInvoker<ShowSecurityGroupTagsResponse> ShowSecurityGroupTagsAsyncInvoker(ShowSecurityGroupTagsRequest showSecurityGroupTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("security_group_id", showSecurityGroupTagsRequest.SecurityGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/security-groups/{security_group_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSecurityGroupTagsRequest);
+            return new AsyncInvoker<ShowSecurityGroupTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSecurityGroupTagsResponse>);
         }
         
         /// <summary>

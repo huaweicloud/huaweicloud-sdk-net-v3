@@ -155,10 +155,10 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         public string AccessIPv6 { get; set; }
 
         /// <summary>
-        /// 
+        /// 弹性云服务器故障信息。  可选参数，在弹性云服务器状态为ERROR且存在异常的情况下返回。
         /// </summary>
         [JsonProperty("fault", NullValueHandling = NullValueHandling.Ignore)]
-        public ServerFault Fault { get; set; }
+        public Object Fault { get; set; }
 
         /// <summary>
         /// 弹性云服务器进度。

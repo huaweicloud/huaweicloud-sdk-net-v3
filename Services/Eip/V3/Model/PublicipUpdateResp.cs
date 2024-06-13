@@ -464,11 +464,6 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
             /// </summary>
             public static readonly AssociateInstanceTypeEnum VPN = new AssociateInstanceTypeEnum("VPN");
 
-            /// <summary>
-            /// Enum NULL for value: null
-            /// </summary>
-            public static readonly AssociateInstanceTypeEnum NULL = new AssociateInstanceTypeEnum("null");
-
             private static readonly Dictionary<string, AssociateInstanceTypeEnum> StaticFields =
             new Dictionary<string, AssociateInstanceTypeEnum>()
             {
@@ -477,7 +472,6 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
                 { "ELB", ELB },
                 { "ELBV1", ELBV1 },
                 { "VPN", VPN },
-                { "null", NULL },
             };
 
             private string _value;

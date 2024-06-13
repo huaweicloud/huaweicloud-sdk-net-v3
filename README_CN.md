@@ -237,6 +237,7 @@ namespace ListVpcsSolution
     * [6.2 HTTP 监听器](#62-http-监听器-top)
 * [7. 接口调用器](#7-接口调用器-top)
     * [7.1 自定义请求头](#71-自定义请求头-top)
+    * [7.2 请求重试](#72-请求重试-top)
 * [8. 文件上传](#8-文件上传-top)
 * [9. FAQ](#9-faq-top)
 
@@ -836,6 +837,64 @@ var resp = await client.ListVpcsAsyncInvoker(req)
     .AddHeader("key2", "value2")
     .Invoke();
 Console.WriteLine(resp.HttpStatusCode);
+```
+
+#### 7.2 请求重试 [:top:](#用户手册-top)
+
+`v3.1.96`版本起支持请求重试，需要配置以下参数：
+
+- 重试条件：根据上一次请求的响应或异常来判断是否重试
+- 最大重试次数：当符合重试条件时的最大重试次数，指定范围[1, 10]
+- 重试策略：计算每次重试前的等待时间（毫秒）
+
+**同步调用**
+
+```csharp
+using System;
+using System.Net.Http;
+using HuaweiCloud.SDK.Core;
+using HuaweiCloud.SDK.Core.Auth;
+using HuaweiCloud.SDK.Vpc.V2;
+using HuaweiCloud.SDK.Vpc.V2.Model;
+
+var client = VpcClient.NewBuilder()
+    .WithCredential(auth)
+    .WithRegion(VpcRegion.ValueOf("cn-north-4"))
+    .Build();
+
+var req = new ListVpcsRequest();
+// 当发生连接异常的时候进行请求重试，最大重试3次，重试间隔的策略为立即重试
+var resp = client.ListVpcsInvoker(req)
+         .WithRetry((response, exception) => exception is ConnectionException, 3, BackoffStrategies.None).Invoke();
+
+// 当服务不可用时进行重试，最大重试3次，重试间隔的策略为等抖动指数退避
+// var resp = client.ListVpcsInvoker(req)
+//       .WithRetry((response, exception) => exception is ServerResponseException exc && exc.HttpStatusCode == 503, 3, BackoffStrategies.EqualJitter).Invoke();
+```
+
+**异步调用**
+
+```csharp
+using System;
+using System.Net.Http;
+using HuaweiCloud.SDK.Core;
+using HuaweiCloud.SDK.Core.Auth;
+using HuaweiCloud.SDK.Vpc.V2;
+using HuaweiCloud.SDK.Vpc.V2.Model;
+
+var client = VpcAsyncClient.NewBuilder()
+    .WithCredential(auth)
+    .WithRegion(VpcRegion.ValueOf("cn-north-4"))
+    .Build();
+
+var req = new ListVpcsRequest();
+// 当发生连接异常的时候进行请求重试，最大重试3次，重试间隔的策略为立即重试
+var resp = await client.ListVpcsAsyncInvoker(req)
+         .WithRetry((response, exception) => exception is ConnectionException, 3, BackoffStrategies.None).Invoke();
+
+// 当服务不可用时进行重试，最大重试3次，重试间隔的策略为等抖动指数退避
+// var resp = await client.ListVpcsAsyncInvoker(req)
+//       .WithRetry((response, exception) => exception is ServerResponseException exc && exc.HttpStatusCode == 503, 3, BackoffStrategies.EqualJitter).Invoke();
 ```
 
 ### 8. 文件上传 [](#用户手册-top)

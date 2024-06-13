@@ -239,6 +239,7 @@ the [CHANGELOG.md](https://github.com/huaweicloud/huaweicloud-sdk-net-v3/blob/ma
     * [6.2 Original HTTP Listener](#62-original-http-listener-top)
 * [7. API Invoker](#7-api-invoker-top)
     * [7.1 Custom request headers](#71-custom-request-headers-top)
+    * [7.2 Retry](#72-retry-top)
 * [8. Upload Files](#8-upload-files-top)
 * [9. FAQ](#9-faq-top)
 
@@ -849,6 +850,64 @@ var resp = await client.ListVpcsAsyncInvoker(req)
     .AddHeader("key2", "value2")
     .Invoke();
 Console.WriteLine(resp.HttpStatusCode);
+```
+
+#### 7.2 Retry [:top:](#user-manual-top)
+
+Retry feature is supported since `v3.1.96`, the following parameters is required:
+
+- retryCondition: whether to retry based on the last response or exception.
+- maxRetries: maximum number of retries when retry conditions are met, in range [1, 10].
+- backoffStrategy: calculate delay(milliseconds) before next retry.
+
+**Sync invoke**
+
+```csharp
+using System;
+using System.Net.Http;
+using HuaweiCloud.SDK.Core;
+using HuaweiCloud.SDK.Core.Auth;
+using HuaweiCloud.SDK.Vpc.V2;
+using HuaweiCloud.SDK.Vpc.V2.Model;
+
+var client = VpcClient.NewBuilder()
+    .WithCredential(auth)
+    .WithRegion(VpcRegion.ValueOf("cn-north-4"))
+    .Build();
+
+var req = new ListVpcsRequest();
+// Retry on connection exception, max retry times is 3, retry interval strategy is immediate retry.
+var resp = client.ListVpcsInvoker(req)
+         .WithRetry((response, exception) => exception is ConnectionException, 3, BackoffStrategies.None).Invoke();
+
+// Retry when the service is unavailable, max retry times is 3, retry interval strategy is EqualJitterBackoffStrategy.
+// var resp = client.ListVpcsInvoker(req)
+//       .WithRetry((response, exception) => exception is ServerResponseException exc && exc.HttpStatusCode == 503, 3, BackoffStrategies.EqualJitter).Invoke();
+```
+
+**Async invoke**
+
+```csharp
+using System;
+using System.Net.Http;
+using HuaweiCloud.SDK.Core;
+using HuaweiCloud.SDK.Core.Auth;
+using HuaweiCloud.SDK.Vpc.V2;
+using HuaweiCloud.SDK.Vpc.V2.Model;
+
+var client = VpcAsyncClient.NewBuilder()
+    .WithCredential(auth)
+    .WithRegion(VpcRegion.ValueOf("cn-north-4"))
+    .Build();
+
+var req = new ListVpcsRequest();
+// Retry on connection exception, max retry times is 3, retry interval strategy is immediate retry.
+var resp = await client.ListVpcsAsyncInvoker(req)
+         .WithRetry((response, exception) => exception is ConnectionException, 3, BackoffStrategies.None).Invoke();
+
+// Retry when the service is unavailable, max retry times is 3, retry interval strategy is EqualJitterBackoffStrategy.
+// var resp = await client.ListVpcsAsyncInvoker(req)
+//       .WithRetry((response, exception) => exception is ServerResponseException exc && exc.HttpStatusCode == 503, 3, BackoffStrategies.EqualJitter).Invoke();
 ```
 
 ### 8. Upload Files [:top:](#user-manual-top)
