@@ -825,7 +825,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         [JsonProperty("specification", NullValueHandling = NullValueHandling.Ignore)]
         public SpecificationEnum Specification { get; set; }
         /// <summary>
-        /// 代理个数。 [取值范围:  - 老规格实例此参数无需设置  - 新规格必须设置，取值范围：3 ~ 30。](tag:hws,hws_hk,g42,tm,hk_g42,hk_tm,ctc,dt,ocb,hws_ocb) [此参数无需设置](tag:sbc,hk_sbc,cmcc)
+        /// 代理个数。 [取值范围:  - 老规格实例此参数无需设置  - 新规格必须设置，取值范围：3 ~ 50。](tag:hws,hws_hk,g42,tm,hk_g42,hk_tm,ctc,dt,ocb,hws_ocb,sbc,hk_sbc) [此参数无需设置](tag:cmcc)
         /// </summary>
         [JsonProperty("broker_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? BrokerNum { get; set; }

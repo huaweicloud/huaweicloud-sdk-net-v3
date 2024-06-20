@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     public class KafkaMessageDiagnosisReportInfoEntity 
     {
         /// <summary>
-        /// 消息积压诊断任务状态。 - diagnosing：诊断中; - failed：诊断失败; - deleted：手动删除; - finished：诊断完成; - normal：诊断结果正常; - abnormal：诊断结果异常
+        /// 消息积压诊断任务状态。 - diagnosing：诊断中 - failed：诊断失败 - deleted：手动删除 - finished：诊断完成 - normal：诊断结果正常 - abnormal：诊断结果异常
         /// </summary>
-        /// <value>消息积压诊断任务状态。 - diagnosing：诊断中; - failed：诊断失败; - deleted：手动删除; - finished：诊断完成; - normal：诊断结果正常; - abnormal：诊断结果异常</value>
+        /// <value>消息积压诊断任务状态。 - diagnosing：诊断中 - failed：诊断失败 - deleted：手动删除 - finished：诊断完成 - normal：诊断结果正常 - abnormal：诊断结果异常</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -162,7 +162,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string ReportId { get; set; }
 
         /// <summary>
-        /// 消息积压诊断任务状态。 - diagnosing：诊断中; - failed：诊断失败; - deleted：手动删除; - finished：诊断完成; - normal：诊断结果正常; - abnormal：诊断结果异常
+        /// 消息积压诊断任务状态。 - diagnosing：诊断中 - failed：诊断失败 - deleted：手动删除 - finished：诊断完成 - normal：诊断结果正常 - abnormal：诊断结果异常
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }

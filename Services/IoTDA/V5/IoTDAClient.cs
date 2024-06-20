@@ -967,6 +967,134 @@ namespace HuaweiCloud.SDK.IoTDA.V5
         }
         
         /// <summary>
+        /// 创建自定义鉴权
+        ///
+        /// 应用服务器可调用此接口在物联网平台创建一个自定义鉴权。自定义鉴权是指用户可以通过函数服务自定义实现鉴权逻辑，以对接入平台的设备进行身份认证。
+        /// - 单个实例最大可配置10个自定义鉴权
+        /// - 仅标准版实例、企业版实例支持该接口调用，基础版不支持。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateDeviceAuthorizerResponse CreateDeviceAuthorizer(CreateDeviceAuthorizerRequest createDeviceAuthorizerRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-authorizers", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDeviceAuthorizerRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateDeviceAuthorizerResponse>(response);
+        }
+
+        public SyncInvoker<CreateDeviceAuthorizerResponse> CreateDeviceAuthorizerInvoker(CreateDeviceAuthorizerRequest createDeviceAuthorizerRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-authorizers", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDeviceAuthorizerRequest);
+            return new SyncInvoker<CreateDeviceAuthorizerResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateDeviceAuthorizerResponse>);
+        }
+        
+        /// <summary>
+        /// 删除自定义鉴权
+        ///
+        /// 应用服务器可调用此接口在物联网平台上删除指定自定义鉴权。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteDeviceAuthorizerResponse DeleteDeviceAuthorizer(DeleteDeviceAuthorizerRequest deleteDeviceAuthorizerRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("authorizer_id", deleteDeviceAuthorizerRequest.AuthorizerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-authorizers/{authorizer_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDeviceAuthorizerRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteDeviceAuthorizerResponse>(response);
+        }
+
+        public SyncInvoker<DeleteDeviceAuthorizerResponse> DeleteDeviceAuthorizerInvoker(DeleteDeviceAuthorizerRequest deleteDeviceAuthorizerRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("authorizer_id", deleteDeviceAuthorizerRequest.AuthorizerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-authorizers/{authorizer_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDeviceAuthorizerRequest);
+            return new SyncInvoker<DeleteDeviceAuthorizerResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteDeviceAuthorizerResponse>);
+        }
+        
+        /// <summary>
+        /// 查询自定义鉴权列表
+        ///
+        /// 应用服务器可调用此接口在物联网平台查询自定义鉴权列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListDeviceAuthorizersResponse ListDeviceAuthorizers(ListDeviceAuthorizersRequest listDeviceAuthorizersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-authorizers", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDeviceAuthorizersRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListDeviceAuthorizersResponse>(response);
+        }
+
+        public SyncInvoker<ListDeviceAuthorizersResponse> ListDeviceAuthorizersInvoker(ListDeviceAuthorizersRequest listDeviceAuthorizersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-authorizers", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDeviceAuthorizersRequest);
+            return new SyncInvoker<ListDeviceAuthorizersResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDeviceAuthorizersResponse>);
+        }
+        
+        /// <summary>
+        /// 查询自定义鉴权详情
+        ///
+        /// 应用服务器可调用此接口在物联网平台查询指定自定义鉴权ID的详细信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowDeviceAuthorizerResponse ShowDeviceAuthorizer(ShowDeviceAuthorizerRequest showDeviceAuthorizerRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("authorizer_id", showDeviceAuthorizerRequest.AuthorizerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-authorizers/{authorizer_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDeviceAuthorizerRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowDeviceAuthorizerResponse>(response);
+        }
+
+        public SyncInvoker<ShowDeviceAuthorizerResponse> ShowDeviceAuthorizerInvoker(ShowDeviceAuthorizerRequest showDeviceAuthorizerRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("authorizer_id", showDeviceAuthorizerRequest.AuthorizerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-authorizers/{authorizer_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDeviceAuthorizerRequest);
+            return new SyncInvoker<ShowDeviceAuthorizerResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDeviceAuthorizerResponse>);
+        }
+        
+        /// <summary>
+        /// 更新指定id的自定义鉴权
+        ///
+        /// 应用服务器可调用此接口在物联网平台更新指定id的自定义鉴权。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateDeviceAuthorizerResponse UpdateDeviceAuthorizer(UpdateDeviceAuthorizerRequest updateDeviceAuthorizerRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("authorizer_id", updateDeviceAuthorizerRequest.AuthorizerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-authorizers/{authorizer_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDeviceAuthorizerRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateDeviceAuthorizerResponse>(response);
+        }
+
+        public SyncInvoker<UpdateDeviceAuthorizerResponse> UpdateDeviceAuthorizerInvoker(UpdateDeviceAuthorizerRequest updateDeviceAuthorizerRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("authorizer_id", updateDeviceAuthorizerRequest.AuthorizerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-authorizers/{authorizer_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDeviceAuthorizerRequest);
+            return new SyncInvoker<UpdateDeviceAuthorizerResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateDeviceAuthorizerResponse>);
+        }
+        
+        /// <summary>
         /// 添加设备组
         ///
         /// 应用服务器可调用此接口新建设备组，一个华为云账号下最多可有1,000个设备组，包括父设备组和子设备组。设备组的最大层级关系不超过5层，即群组形成的关系树最大深度不超过5。
@@ -2058,6 +2186,212 @@ namespace HuaweiCloud.SDK.IoTDA.V5
         }
         
         /// <summary>
+        /// 绑定设备策略
+        ///
+        /// 应用服务器可调用此接口在物联网平台上为批量设备绑定目标策略，目前支持绑定目标类型为：设备、产品，当目标类型为产品时，该产品下所有设备都会生效。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public BindDevicePolicyResponse BindDevicePolicy(BindDevicePolicyRequest bindDevicePolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("policy_id", bindDevicePolicyRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-policies/{policy_id}/bind", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", bindDevicePolicyRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<BindDevicePolicyResponse>(response);
+        }
+
+        public SyncInvoker<BindDevicePolicyResponse> BindDevicePolicyInvoker(BindDevicePolicyRequest bindDevicePolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("policy_id", bindDevicePolicyRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-policies/{policy_id}/bind", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", bindDevicePolicyRequest);
+            return new SyncInvoker<BindDevicePolicyResponse>(this, "POST", request, JsonUtils.DeSerialize<BindDevicePolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 创建设备策略
+        ///
+        /// 应用服务器可调用此接口在物联网平台创建一个策略，该策略需要绑定到设备和产品下才能生效。
+        /// - 一个实例最多能创建50个设备策略。
+        /// - 仅**标准版实例、企业版实例**支持该接口调用，基础版不支持。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateDevicePolicyResponse CreateDevicePolicy(CreateDevicePolicyRequest createDevicePolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-policies", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDevicePolicyRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateDevicePolicyResponse>(response);
+        }
+
+        public SyncInvoker<CreateDevicePolicyResponse> CreateDevicePolicyInvoker(CreateDevicePolicyRequest createDevicePolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-policies", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDevicePolicyRequest);
+            return new SyncInvoker<CreateDevicePolicyResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateDevicePolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 删除设备策略
+        ///
+        /// 应用服务器可调用此接口在物联网平台上删除指定策略，注意：删除策略同时会解绑该策略下所有绑定对象。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteDevicePolicyResponse DeleteDevicePolicy(DeleteDevicePolicyRequest deleteDevicePolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("policy_id", deleteDevicePolicyRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-policies/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDevicePolicyRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteDevicePolicyResponse>(response);
+        }
+
+        public SyncInvoker<DeleteDevicePolicyResponse> DeleteDevicePolicyInvoker(DeleteDevicePolicyRequest deleteDevicePolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("policy_id", deleteDevicePolicyRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-policies/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDevicePolicyRequest);
+            return new SyncInvoker<DeleteDevicePolicyResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteDevicePolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 查询设备策略列表
+        ///
+        /// 应用服务器可调用此接口在物联网平台查询策略列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListDevicePoliciesResponse ListDevicePolicies(ListDevicePoliciesRequest listDevicePoliciesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-policies", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDevicePoliciesRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListDevicePoliciesResponse>(response);
+        }
+
+        public SyncInvoker<ListDevicePoliciesResponse> ListDevicePoliciesInvoker(ListDevicePoliciesRequest listDevicePoliciesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-policies", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDevicePoliciesRequest);
+            return new SyncInvoker<ListDevicePoliciesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDevicePoliciesResponse>);
+        }
+        
+        /// <summary>
+        /// 查询设备策略详情
+        ///
+        /// 应用服务器可调用此接口在物联网平台查询指定策略ID的详细信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowDevicePolicyResponse ShowDevicePolicy(ShowDevicePolicyRequest showDevicePolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("policy_id", showDevicePolicyRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-policies/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDevicePolicyRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowDevicePolicyResponse>(response);
+        }
+
+        public SyncInvoker<ShowDevicePolicyResponse> ShowDevicePolicyInvoker(ShowDevicePolicyRequest showDevicePolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("policy_id", showDevicePolicyRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-policies/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDevicePolicyRequest);
+            return new SyncInvoker<ShowDevicePolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDevicePolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 查询设备策略绑定的目标列表
+        ///
+        /// 应用服务器可调用此接口在物联网平台上查询指定策略ID下绑定的目标列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowTargetsInDevicePolicyResponse ShowTargetsInDevicePolicy(ShowTargetsInDevicePolicyRequest showTargetsInDevicePolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("policy_id", showTargetsInDevicePolicyRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-policies/{policy_id}/list-targets", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTargetsInDevicePolicyRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<ShowTargetsInDevicePolicyResponse>(response);
+        }
+
+        public SyncInvoker<ShowTargetsInDevicePolicyResponse> ShowTargetsInDevicePolicyInvoker(ShowTargetsInDevicePolicyRequest showTargetsInDevicePolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("policy_id", showTargetsInDevicePolicyRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-policies/{policy_id}/list-targets", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTargetsInDevicePolicyRequest);
+            return new SyncInvoker<ShowTargetsInDevicePolicyResponse>(this, "POST", request, JsonUtils.DeSerialize<ShowTargetsInDevicePolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 解绑设备策略
+        ///
+        /// 应用服务器可调用此接口在物联网平台上解除指定策略下绑定的目标对象。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UnbindDevicePolicyResponse UnbindDevicePolicy(UnbindDevicePolicyRequest unbindDevicePolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("policy_id", unbindDevicePolicyRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-policies/{policy_id}/unbind", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", unbindDevicePolicyRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<UnbindDevicePolicyResponse>(response);
+        }
+
+        public SyncInvoker<UnbindDevicePolicyResponse> UnbindDevicePolicyInvoker(UnbindDevicePolicyRequest unbindDevicePolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("policy_id", unbindDevicePolicyRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-policies/{policy_id}/unbind", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", unbindDevicePolicyRequest);
+            return new SyncInvoker<UnbindDevicePolicyResponse>(this, "POST", request, JsonUtils.DeSerialize<UnbindDevicePolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 更新设备策略信息
+        ///
+        /// 应用服务器可调用此接口在物联网平台更新策略。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateDevicePolicyResponse UpdateDevicePolicy(UpdateDevicePolicyRequest updateDevicePolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("policy_id", updateDevicePolicyRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-policies/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDevicePolicyRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateDevicePolicyResponse>(response);
+        }
+
+        public SyncInvoker<UpdateDevicePolicyResponse> UpdateDevicePolicyInvoker(UpdateDevicePolicyRequest updateDevicePolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("policy_id", updateDevicePolicyRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-policies/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDevicePolicyRequest);
+            return new SyncInvoker<UpdateDevicePolicyResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateDevicePolicyResponse>);
+        }
+        
+        /// <summary>
         /// 创建产品
         ///
         /// 应用服务器可调用此接口创建产品。此接口仅创建了产品，没有创建和安装插件，如果需要对数据进行编解码，还需要在平台开发和安装插件。
@@ -2235,6 +2569,135 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/devices/{device_id}/properties", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePropertiesRequest);
             return new SyncInvoker<UpdatePropertiesResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdatePropertiesResponse>);
+        }
+        
+        /// <summary>
+        /// 创建预调配模板
+        ///
+        /// 应用服务器可调用此接口在物联网平台创建一个预调配模板。用户的设备未在平台注册时，可以通过预调配模板在设备首次接入物联网平台时将设备信息自动注册到物联网平台。
+        /// - 该预调配模板至少需要绑定到一个设备CA证书下才能生效。
+        /// - 一个实例最多可有10个预调配模板。
+        /// - 仅标准版实例、企业版实例支持该接口调用，基础版不支持。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateProvisioningTemplateResponse CreateProvisioningTemplate(CreateProvisioningTemplateRequest createProvisioningTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/provisioning-templates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createProvisioningTemplateRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateProvisioningTemplateResponse>(response);
+        }
+
+        public SyncInvoker<CreateProvisioningTemplateResponse> CreateProvisioningTemplateInvoker(CreateProvisioningTemplateRequest createProvisioningTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/provisioning-templates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createProvisioningTemplateRequest);
+            return new SyncInvoker<CreateProvisioningTemplateResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateProvisioningTemplateResponse>);
+        }
+        
+        /// <summary>
+        /// 删除预调配模板
+        ///
+        /// 应用服务器可调用此接口在物联网平台上删除指定预调配模板。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteProvisioningTemplateResponse DeleteProvisioningTemplate(DeleteProvisioningTemplateRequest deleteProvisioningTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("template_id", deleteProvisioningTemplateRequest.TemplateId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/provisioning-templates/{template_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteProvisioningTemplateRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteProvisioningTemplateResponse>(response);
+        }
+
+        public SyncInvoker<DeleteProvisioningTemplateResponse> DeleteProvisioningTemplateInvoker(DeleteProvisioningTemplateRequest deleteProvisioningTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("template_id", deleteProvisioningTemplateRequest.TemplateId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/provisioning-templates/{template_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteProvisioningTemplateRequest);
+            return new SyncInvoker<DeleteProvisioningTemplateResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteProvisioningTemplateResponse>);
+        }
+        
+        /// <summary>
+        /// 查询预调配模板列表
+        ///
+        /// 应用服务器可调用此接口在物联网平台查询预调配模板列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListProvisioningTemplatesResponse ListProvisioningTemplates(ListProvisioningTemplatesRequest listProvisioningTemplatesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/provisioning-templates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProvisioningTemplatesRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListProvisioningTemplatesResponse>(response);
+        }
+
+        public SyncInvoker<ListProvisioningTemplatesResponse> ListProvisioningTemplatesInvoker(ListProvisioningTemplatesRequest listProvisioningTemplatesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/provisioning-templates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProvisioningTemplatesRequest);
+            return new SyncInvoker<ListProvisioningTemplatesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListProvisioningTemplatesResponse>);
+        }
+        
+        /// <summary>
+        /// 查询预调配模板详情
+        ///
+        /// 应用服务器可调用此接口在物联网平台查询指定预调配模板ID的详细信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowProvisioningTemplateResponse ShowProvisioningTemplate(ShowProvisioningTemplateRequest showProvisioningTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("template_id", showProvisioningTemplateRequest.TemplateId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/provisioning-templates/{template_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProvisioningTemplateRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowProvisioningTemplateResponse>(response);
+        }
+
+        public SyncInvoker<ShowProvisioningTemplateResponse> ShowProvisioningTemplateInvoker(ShowProvisioningTemplateRequest showProvisioningTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("template_id", showProvisioningTemplateRequest.TemplateId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/provisioning-templates/{template_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProvisioningTemplateRequest);
+            return new SyncInvoker<ShowProvisioningTemplateResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowProvisioningTemplateResponse>);
+        }
+        
+        /// <summary>
+        /// 更新指定id的预调配模板信息
+        ///
+        /// 应用服务器可调用此接口在物联网平台更新指定id的预调配模板。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateProvisioningTemplateResponse UpdateProvisioningTemplate(UpdateProvisioningTemplateRequest updateProvisioningTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("template_id", updateProvisioningTemplateRequest.TemplateId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/provisioning-templates/{template_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateProvisioningTemplateRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateProvisioningTemplateResponse>(response);
+        }
+
+        public SyncInvoker<UpdateProvisioningTemplateResponse> UpdateProvisioningTemplateInvoker(UpdateProvisioningTemplateRequest updateProvisioningTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("template_id", updateProvisioningTemplateRequest.TemplateId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/provisioning-templates/{template_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateProvisioningTemplateRequest);
+            return new SyncInvoker<UpdateProvisioningTemplateResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateProvisioningTemplateResponse>);
         }
         
         /// <summary>

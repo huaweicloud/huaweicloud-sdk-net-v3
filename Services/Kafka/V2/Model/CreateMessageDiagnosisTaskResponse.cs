@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// 诊断报告id。
+        /// 诊断报告ID。
         /// </summary>
         [JsonProperty("report_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ReportId { get; set; }

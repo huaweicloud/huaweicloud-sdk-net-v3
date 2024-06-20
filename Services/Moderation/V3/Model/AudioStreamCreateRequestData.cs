@@ -22,6 +22,12 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         [JsonProperty("url", NullValueHandling = NullValueHandling.Ignore)]
         public string Url { get; set; }
 
+        /// <summary>
+        /// 指定音频流中语种类型 zh: 中文,默认值为zh
+        /// </summary>
+        [JsonProperty("language", NullValueHandling = NullValueHandling.Ignore)]
+        public string Language { get; set; }
+
 
 
         /// <summary>
@@ -32,6 +38,7 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
             var sb = new StringBuilder();
             sb.Append("class AudioStreamCreateRequestData {\n");
             sb.Append("  url: ").Append(Url).Append("\n");
+            sb.Append("  language: ").Append(Language).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -57,6 +64,11 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
                     this.Url == input.Url ||
                     (this.Url != null &&
                     this.Url.Equals(input.Url))
+                ) && 
+                (
+                    this.Language == input.Language ||
+                    (this.Language != null &&
+                    this.Language.Equals(input.Language))
                 );
         }
 
@@ -70,6 +82,8 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
                 int hashCode = 41;
                 if (this.Url != null)
                     hashCode = hashCode * 59 + this.Url.GetHashCode();
+                if (this.Language != null)
+                    hashCode = hashCode * 59 + this.Language.GetHashCode();
                 return hashCode;
             }
         }

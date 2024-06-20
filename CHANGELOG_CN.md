@@ -1,3 +1,69 @@
+# 3.1.100 2024-06-20
+
+### HuaweiCloud SDK IoTDA
+
+- _新增特性_
+  - 支持以下接口：
+    - `ListProvisioningTemplates`
+    - `CreateProvisioningTemplate`
+    - `ShowProvisioningTemplate`
+    - `UpdateProvisioningTemplate`
+    - `DeleteProvisioningTemplate`
+    - `ListDeviceAuthorizers`
+    - `CreateDeviceAuthorizer`
+    - `ShowDeviceAuthorizer`
+    - `UpdateDeviceAuthorizer`
+    - `DeleteDeviceAuthorizer`
+    - `ListDevicePolicies`
+    - `CreateDevicePolicy`
+    - `ShowDevicePolicy`
+    - `UpdateDevicePolicy`
+    - `DeleteDevicePolicy`
+    - `BindDevicePolicy`
+    - `UnbindDevicePolicy`
+    - `ShowTargetsInDevicePolicy`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK Kafka
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowConnectorTask**
+    - 响应参数变更
+      - `- sink_task.connector_class`
+      - `- sink_task.storage_class`
+      - `- sink_task.format_class`
+  - **CreateConnectorTask**
+    - 响应参数变更
+      - `- sink_task.connector_class`
+      - `- sink_task.storage_class`
+      - `- sink_task.format_class`
+  - **ListConnectorTasks**
+    - 响应参数变更
+      - `- tasks.sink_task.connector_class`
+      - `- tasks.sink_task.storage_class`
+      - `- tasks.sink_task.format_class`
+
+### HuaweiCloud SDK Moderation
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **RunCreateAudioStreamModerationJob**
+    - 请求参数变更
+      - `+ data.language`
+  - **RunCreateAudioModerationJob**
+    - 请求参数变更
+      - `+ data.language`
+
 # 3.1.99 2024-06-13
 
 ### HuaweiCloud SDK Core

@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// 待删除report id 列表
+        /// 待删除report id列表
         /// </summary>
         [JsonProperty("report_id_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> ReportIdList { get; set; }

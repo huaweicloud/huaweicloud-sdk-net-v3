@@ -1,3 +1,69 @@
+# 3.1.100 2024-06-20
+
+### HuaweiCloud SDK IoTDA
+
+- _Features_
+  - Support the following APIs:
+    - `ListProvisioningTemplates`
+    - `CreateProvisioningTemplate`
+    - `ShowProvisioningTemplate`
+    - `UpdateProvisioningTemplate`
+    - `DeleteProvisioningTemplate`
+    - `ListDeviceAuthorizers`
+    - `CreateDeviceAuthorizer`
+    - `ShowDeviceAuthorizer`
+    - `UpdateDeviceAuthorizer`
+    - `DeleteDeviceAuthorizer`
+    - `ListDevicePolicies`
+    - `CreateDevicePolicy`
+    - `ShowDevicePolicy`
+    - `UpdateDevicePolicy`
+    - `DeleteDevicePolicy`
+    - `BindDevicePolicy`
+    - `UnbindDevicePolicy`
+    - `ShowTargetsInDevicePolicy`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK Kafka
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowConnectorTask**
+    - changes of response param
+      - `- sink_task.connector_class`
+      - `- sink_task.storage_class`
+      - `- sink_task.format_class`
+  - **CreateConnectorTask**
+    - changes of response param
+      - `- sink_task.connector_class`
+      - `- sink_task.storage_class`
+      - `- sink_task.format_class`
+  - **ListConnectorTasks**
+    - changes of response param
+      - `- tasks.sink_task.connector_class`
+      - `- tasks.sink_task.storage_class`
+      - `- tasks.sink_task.format_class`
+
+### HuaweiCloud SDK Moderation
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **RunCreateAudioStreamModerationJob**
+    - changes of request param
+      - `+ data.language`
+  - **RunCreateAudioModerationJob**
+    - changes of request param
+      - `+ data.language`
+
 # 3.1.99 2024-06-13
 
 ### HuaweiCloud SDK Core

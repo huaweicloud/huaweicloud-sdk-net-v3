@@ -107,24 +107,6 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string Timezone { get; set; }
 
         /// <summary>
-        /// connector类，默认为\&quot;com.huawei.dms.connector.obs.OBSSinkConnector\&quot;。（仅目标端类型为OBS时会显示）
-        /// </summary>
-        [JsonProperty("connector_class", NullValueHandling = NullValueHandling.Ignore)]
-        public string ConnectorClass { get; set; }
-
-        /// <summary>
-        /// storage类，默认为com.huawei.dms.connector.obs.storage.OBSStorage\&quot;。（仅目标端类型为OBS时会显示）
-        /// </summary>
-        [JsonProperty("storage_class", NullValueHandling = NullValueHandling.Ignore)]
-        public string StorageClass { get; set; }
-
-        /// <summary>
-        /// format类，默认为\&quot;com.huawei.dms.connector.obs.format.bytearray.ByteArrayFormat\&quot;。（仅目标端类型为OBS时会显示）
-        /// </summary>
-        [JsonProperty("format_class", NullValueHandling = NullValueHandling.Ignore)]
-        public string FormatClass { get; set; }
-
-        /// <summary>
         /// schema_generator类，默认为\&quot;io.confluent.connect.storage.hive.schema.DefaultSchemaGenerator\&quot;。（仅目标端类型为OBS时会显示）
         /// </summary>
         [JsonProperty("schema_generator_class", NullValueHandling = NullValueHandling.Ignore)]
@@ -178,9 +160,6 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             sb.Append("  obsPartSize: ").Append(ObsPartSize).Append("\n");
             sb.Append("  flushSize: ").Append(FlushSize).Append("\n");
             sb.Append("  timezone: ").Append(Timezone).Append("\n");
-            sb.Append("  connectorClass: ").Append(ConnectorClass).Append("\n");
-            sb.Append("  storageClass: ").Append(StorageClass).Append("\n");
-            sb.Append("  formatClass: ").Append(FormatClass).Append("\n");
             sb.Append("  schemaGeneratorClass: ").Append(SchemaGeneratorClass).Append("\n");
             sb.Append("  partitionerClass: ").Append(PartitionerClass).Append("\n");
             sb.Append("  valueConverter: ").Append(ValueConverter).Append("\n");
@@ -283,21 +262,6 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     this.Timezone.Equals(input.Timezone))
                 ) && 
                 (
-                    this.ConnectorClass == input.ConnectorClass ||
-                    (this.ConnectorClass != null &&
-                    this.ConnectorClass.Equals(input.ConnectorClass))
-                ) && 
-                (
-                    this.StorageClass == input.StorageClass ||
-                    (this.StorageClass != null &&
-                    this.StorageClass.Equals(input.StorageClass))
-                ) && 
-                (
-                    this.FormatClass == input.FormatClass ||
-                    (this.FormatClass != null &&
-                    this.FormatClass.Equals(input.FormatClass))
-                ) && 
-                (
                     this.SchemaGeneratorClass == input.SchemaGeneratorClass ||
                     (this.SchemaGeneratorClass != null &&
                     this.SchemaGeneratorClass.Equals(input.SchemaGeneratorClass))
@@ -362,12 +326,6 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     hashCode = hashCode * 59 + this.FlushSize.GetHashCode();
                 if (this.Timezone != null)
                     hashCode = hashCode * 59 + this.Timezone.GetHashCode();
-                if (this.ConnectorClass != null)
-                    hashCode = hashCode * 59 + this.ConnectorClass.GetHashCode();
-                if (this.StorageClass != null)
-                    hashCode = hashCode * 59 + this.StorageClass.GetHashCode();
-                if (this.FormatClass != null)
-                    hashCode = hashCode * 59 + this.FormatClass.GetHashCode();
                 if (this.SchemaGeneratorClass != null)
                     hashCode = hashCode * 59 + this.SchemaGeneratorClass.GetHashCode();
                 if (this.PartitionerClass != null)

@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// kafka消息积压诊断预检查返回对象
+        /// Kafka消息积压诊断预检查返回对象
         /// </summary>
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
         public List<KafkaDiagnosisCheckEntity> Body { get; set; }

@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public bool? Result { get; set; }
 
         /// <summary>
-        /// 报告id
+        /// 报告ID
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
