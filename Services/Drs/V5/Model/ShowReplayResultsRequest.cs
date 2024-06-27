@@ -131,9 +131,9 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         }
 
         /// <summary>
-        /// 结果类型。取值： - shard_statistics：回放概览基于时间维度统计信息。 - slow_sql：慢SQL详情。 - error_sql： 回放异常SQL详情。 - slow_sql_template：慢SQL统计信息。  - error_sql_template：异常SQL统计信息。 - replaying_sql：正在回放SQL详情。
+        /// 结果类型。取值： - shard_statistics：回放概览基于时间维度统计信息。 - slow_sql：慢SQL详情。 - error_sql： 回放异常SQL详情。 - slow_sql_template：慢SQL统计信息。  - error_sql_template：异常SQL统计信息。 - replaying_sql：正在回放SQL详情。 - error_classification：回放异常SQL分类。
         /// </summary>
-        /// <value>结果类型。取值： - shard_statistics：回放概览基于时间维度统计信息。 - slow_sql：慢SQL详情。 - error_sql： 回放异常SQL详情。 - slow_sql_template：慢SQL统计信息。  - error_sql_template：异常SQL统计信息。 - replaying_sql：正在回放SQL详情。</value>
+        /// <value>结果类型。取值： - shard_statistics：回放概览基于时间维度统计信息。 - slow_sql：慢SQL详情。 - error_sql： 回放异常SQL详情。 - slow_sql_template：慢SQL统计信息。  - error_sql_template：异常SQL统计信息。 - replaying_sql：正在回放SQL详情。 - error_classification：回放异常SQL分类。</value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -167,6 +167,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             /// </summary>
             public static readonly TypeEnum REPLAYING_SQL = new TypeEnum("replaying_sql");
 
+            /// <summary>
+            /// Enum ERROR_CLASSIFICATION for value: error_classification
+            /// </summary>
+            public static readonly TypeEnum ERROR_CLASSIFICATION = new TypeEnum("error_classification");
+
             private static readonly Dictionary<string, TypeEnum> StaticFields =
             new Dictionary<string, TypeEnum>()
             {
@@ -176,6 +181,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                 { "slow_sql_template", SLOW_SQL_TEMPLATE },
                 { "error_sql_template", ERROR_SQL_TEMPLATE },
                 { "replaying_sql", REPLAYING_SQL },
+                { "error_classification", ERROR_CLASSIFICATION },
             };
 
             private string _value;
@@ -514,7 +520,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         [JsonProperty("X-Language", NullValueHandling = NullValueHandling.Ignore)]
         public XLanguageEnum XLanguage { get; set; }
         /// <summary>
-        /// 结果类型。取值： - shard_statistics：回放概览基于时间维度统计信息。 - slow_sql：慢SQL详情。 - error_sql： 回放异常SQL详情。 - slow_sql_template：慢SQL统计信息。  - error_sql_template：异常SQL统计信息。 - replaying_sql：正在回放SQL详情。
+        /// 结果类型。取值： - shard_statistics：回放概览基于时间维度统计信息。 - slow_sql：慢SQL详情。 - error_sql： 回放异常SQL详情。 - slow_sql_template：慢SQL统计信息。  - error_sql_template：异常SQL统计信息。 - replaying_sql：正在回放SQL详情。 - error_classification：回放异常SQL分类。
         /// </summary>
         [SDKProperty("type", IsQuery = true)]
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
@@ -566,6 +572,27 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         [SDKProperty("target_name", IsQuery = true)]
         [JsonProperty("target_name", NullValueHandling = NullValueHandling.Ignore)]
         public TargetNameEnum TargetName { get; set; }
+        /// <summary>
+        /// 是否查询样例true/false，type&#x3D;slow_sql/error_sql时生效，值为true时只查询一条样例数据。
+        /// </summary>
+        [SDKProperty("is_sample", IsQuery = true)]
+        [JsonProperty("is_sample", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsSample { get; set; }
+
+        /// <summary>
+        /// 错误分类，type&#x3D;error_sql/error_sql_template时生效，根据错误分类过滤数据。
+        /// </summary>
+        [SDKProperty("error_type", IsQuery = true)]
+        [JsonProperty("error_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string ErrorType { get; set; }
+
+        /// <summary>
+        /// sql模板md5，type&#x3D;slow_sql/error_sql时生效，根据模板过滤对应的异常SQL和慢SQL，该值为本接口type&#x3D;slow_sql_template/error_sql_template时的返回字段。
+        /// </summary>
+        [SDKProperty("sql_template_md5", IsQuery = true)]
+        [JsonProperty("sql_template_md5", NullValueHandling = NullValueHandling.Ignore)]
+        public string SqlTemplateMd5 { get; set; }
+
 
 
         /// <summary>
@@ -585,6 +612,9 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             sb.Append("  sortKey: ").Append(SortKey).Append("\n");
             sb.Append("  sortDir: ").Append(SortDir).Append("\n");
             sb.Append("  targetName: ").Append(TargetName).Append("\n");
+            sb.Append("  isSample: ").Append(IsSample).Append("\n");
+            sb.Append("  errorType: ").Append(ErrorType).Append("\n");
+            sb.Append("  sqlTemplateMd5: ").Append(SqlTemplateMd5).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -655,6 +685,21 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                     this.TargetName == input.TargetName ||
                     (this.TargetName != null &&
                     this.TargetName.Equals(input.TargetName))
+                ) && 
+                (
+                    this.IsSample == input.IsSample ||
+                    (this.IsSample != null &&
+                    this.IsSample.Equals(input.IsSample))
+                ) && 
+                (
+                    this.ErrorType == input.ErrorType ||
+                    (this.ErrorType != null &&
+                    this.ErrorType.Equals(input.ErrorType))
+                ) && 
+                (
+                    this.SqlTemplateMd5 == input.SqlTemplateMd5 ||
+                    (this.SqlTemplateMd5 != null &&
+                    this.SqlTemplateMd5.Equals(input.SqlTemplateMd5))
                 );
         }
 
@@ -686,6 +731,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                     hashCode = hashCode * 59 + this.SortDir.GetHashCode();
                 if (this.TargetName != null)
                     hashCode = hashCode * 59 + this.TargetName.GetHashCode();
+                if (this.IsSample != null)
+                    hashCode = hashCode * 59 + this.IsSample.GetHashCode();
+                if (this.ErrorType != null)
+                    hashCode = hashCode * 59 + this.ErrorType.GetHashCode();
+                if (this.SqlTemplateMd5 != null)
+                    hashCode = hashCode * 59 + this.SqlTemplateMd5.GetHashCode();
                 return hashCode;
             }
         }

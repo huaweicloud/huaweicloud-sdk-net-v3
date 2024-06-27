@@ -8,19 +8,19 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Cfw.V1.Model
+namespace HuaweiCloud.SDK.Vpc.V3.Model
 {
     /// <summary>
-    /// 
+    /// This is a auto create Body Object
     /// </summary>
-    public class RuleProfileDto 
+    public class CreatePortTagRequestBody 
     {
 
         /// <summary>
-        /// 域名url
+        /// 
         /// </summary>
-        [JsonProperty("url", NullValueHandling = NullValueHandling.Ignore)]
-        public string Url { get; set; }
+        [JsonProperty("tag", NullValueHandling = NullValueHandling.Ignore)]
+        public ResourceTag Tag { get; set; }
 
 
 
@@ -30,8 +30,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class RuleProfileDto {\n");
-            sb.Append("  url: ").Append(Url).Append("\n");
+            sb.Append("class CreatePortTagRequestBody {\n");
+            sb.Append("  tag: ").Append(Tag).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -41,22 +41,22 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as RuleProfileDto);
+            return this.Equals(input as CreatePortTagRequestBody);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(RuleProfileDto input)
+        public bool Equals(CreatePortTagRequestBody input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Url == input.Url ||
-                    (this.Url != null &&
-                    this.Url.Equals(input.Url))
+                    this.Tag == input.Tag ||
+                    (this.Tag != null &&
+                    this.Tag.Equals(input.Tag))
                 );
         }
 
@@ -68,8 +68,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Url != null)
-                    hashCode = hashCode * 59 + this.Url.GetHashCode();
+                if (this.Tag != null)
+                    hashCode = hashCode * 59 + this.Tag.GetHashCode();
                 return hashCode;
             }
         }

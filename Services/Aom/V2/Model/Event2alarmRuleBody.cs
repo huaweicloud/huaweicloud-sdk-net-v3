@@ -153,13 +153,13 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// 创建时间
         /// </summary>
         [JsonProperty("create_time", NullValueHandling = NullValueHandling.Ignore)]
-        public int? CreateTime { get; set; }
+        public long? CreateTime { get; set; }
 
         /// <summary>
         /// 更新时间
         /// </summary>
         [JsonProperty("update_time", NullValueHandling = NullValueHandling.Ignore)]
-        public int? UpdateTime { get; set; }
+        public long? UpdateTime { get; set; }
 
         /// <summary>
         /// 事件源

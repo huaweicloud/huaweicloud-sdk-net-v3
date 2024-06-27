@@ -15,124 +15,9 @@ namespace HuaweiCloud.SDK.Aom.V3.Model
     /// </summary>
     public class ComponentParam 
     {
-        /// <summary>
-        /// 应用、子应用，取值：APPLICATION、SUB_APPLICATION ，不区分大小写
-        /// </summary>
-        /// <value>应用、子应用，取值：APPLICATION、SUB_APPLICATION ，不区分大小写</value>
-        [JsonConverter(typeof(EnumClassConverter<ModelTypeEnum>))]
-        public class ModelTypeEnum
-        {
-            /// <summary>
-            /// Enum APPLICATION for value: APPLICATION
-            /// </summary>
-            public static readonly ModelTypeEnum APPLICATION = new ModelTypeEnum("APPLICATION");
-
-            /// <summary>
-            /// Enum SUB_APPLICATION for value: SUB_APPLICATION
-            /// </summary>
-            public static readonly ModelTypeEnum SUB_APPLICATION = new ModelTypeEnum("SUB_APPLICATION");
-
-            private static readonly Dictionary<string, ModelTypeEnum> StaticFields =
-            new Dictionary<string, ModelTypeEnum>()
-            {
-                { "APPLICATION", APPLICATION },
-                { "SUB_APPLICATION", SUB_APPLICATION },
-            };
-
-            private string _value;
-
-            public ModelTypeEnum()
-            {
-
-            }
-
-            public ModelTypeEnum(string value)
-            {
-                _value = value;
-            }
-
-            public static ModelTypeEnum FromValue(string value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public string GetValue()
-            {
-                return _value;
-            }
-
-            public override string ToString()
-            {
-                return $"{_value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this._value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as ModelTypeEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(ModelTypeEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
-            }
-
-            public static bool operator ==(ModelTypeEnum a, ModelTypeEnum b)
-            {
-                if (System.Object.ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(ModelTypeEnum a, ModelTypeEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
 
         /// <summary>
-        /// 组件描述：最大255字符
+        /// 组件描述
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
@@ -147,7 +32,8 @@ namespace HuaweiCloud.SDK.Aom.V3.Model
         /// 应用、子应用，取值：APPLICATION、SUB_APPLICATION ，不区分大小写
         /// </summary>
         [JsonProperty("model_type", NullValueHandling = NullValueHandling.Ignore)]
-        public ModelTypeEnum ModelType { get; set; }
+        public string ModelType { get; set; }
+
         /// <summary>
         /// 组件名称
         /// </summary>

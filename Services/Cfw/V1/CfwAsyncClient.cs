@@ -258,6 +258,30 @@ namespace HuaweiCloud.SDK.Cfw.V1
         }
         
         /// <summary>
+        /// 取消抓包任务
+        ///
+        /// 取消抓包任务
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CancelCaptureTaskResponse> CancelCaptureTaskAsync(CancelCaptureTaskRequest cancelCaptureTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/capture-task/stop", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", cancelCaptureTaskRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CancelCaptureTaskResponse>(response);
+        }
+
+        public AsyncInvoker<CancelCaptureTaskResponse> CancelCaptureTaskAsyncInvoker(CancelCaptureTaskRequest cancelCaptureTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/capture-task/stop", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", cancelCaptureTaskRequest);
+            return new AsyncInvoker<CancelCaptureTaskResponse>(this, "POST", request, JsonUtils.DeSerialize<CancelCaptureTaskResponse>);
+        }
+        
+        /// <summary>
         /// 修改东西向防火墙防护状态
         ///
         /// 东西向防护资源防护开启/关闭
@@ -279,6 +303,30 @@ namespace HuaweiCloud.SDK.Cfw.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/firewall/east-west/protect", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", changeEastWestFirewallStatusRequest);
             return new AsyncInvoker<ChangeEastWestFirewallStatusResponse>(this, "POST", request, JsonUtils.DeSerialize<ChangeEastWestFirewallStatusResponse>);
+        }
+        
+        /// <summary>
+        /// 创建抓包任务
+        ///
+        /// 创建抓包任务
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateCaptureTaskResponse> CreateCaptureTaskAsync(CreateCaptureTaskRequest createCaptureTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/capture-task", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createCaptureTaskRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateCaptureTaskResponse>(response);
+        }
+
+        public AsyncInvoker<CreateCaptureTaskResponse> CreateCaptureTaskAsyncInvoker(CreateCaptureTaskRequest createCaptureTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/capture-task", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createCaptureTaskRequest);
+            return new AsyncInvoker<CreateCaptureTaskResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateCaptureTaskResponse>);
         }
         
         /// <summary>
@@ -327,6 +375,32 @@ namespace HuaweiCloud.SDK.Cfw.V1
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/firewall", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createFirewallRequest);
             return new AsyncInvoker<CreateFirewallResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateFirewallResponse>);
+        }
+        
+        /// <summary>
+        /// 标签创建接口
+        ///
+        /// 创建标签
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateTagResponse> CreateTagAsync(CreateTagRequest createTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("fw_instance_id", createTagRequest.FwInstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cfw-cfw/{fw_instance_id}/tags/create", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTagRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<CreateTagResponse>(response);
+        }
+
+        public AsyncInvoker<CreateTagResponse> CreateTagAsyncInvoker(CreateTagRequest createTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("fw_instance_id", createTagRequest.FwInstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cfw-cfw/{fw_instance_id}/tags/create", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTagRequest);
+            return new AsyncInvoker<CreateTagResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateTagResponse>);
         }
         
         /// <summary>
@@ -405,6 +479,30 @@ namespace HuaweiCloud.SDK.Cfw.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/black-white-list/{list_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteBlackWhiteListRequest);
             return new AsyncInvoker<DeleteBlackWhiteListResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteBlackWhiteListResponse>);
+        }
+        
+        /// <summary>
+        /// 删除抓包任务
+        ///
+        /// 删除抓包任务
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteCaptureTaskResponse> DeleteCaptureTaskAsync(DeleteCaptureTaskRequest deleteCaptureTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/capture-task/batch-delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteCaptureTaskRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<DeleteCaptureTaskResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteCaptureTaskResponse> DeleteCaptureTaskAsyncInvoker(DeleteCaptureTaskRequest deleteCaptureTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/capture-task/batch-delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteCaptureTaskRequest);
+            return new AsyncInvoker<DeleteCaptureTaskResponse>(this, "POST", request, JsonUtils.DeSerialize<DeleteCaptureTaskResponse>);
         }
         
         /// <summary>
@@ -535,6 +633,32 @@ namespace HuaweiCloud.SDK.Cfw.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/service-sets/{set_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteServiceSetRequest);
             return new AsyncInvoker<DeleteServiceSetResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteServiceSetResponse>);
+        }
+        
+        /// <summary>
+        /// 删除标签
+        ///
+        /// 删除标签
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteTagResponse> DeleteTagAsync(DeleteTagRequest deleteTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("fw_instance_id", deleteTagRequest.FwInstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cfw-cfw/{fw_instance_id}/tags/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTagRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteTagResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteTagResponse> DeleteTagAsyncInvoker(DeleteTagRequest deleteTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("fw_instance_id", deleteTagRequest.FwInstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cfw-cfw/{fw_instance_id}/tags/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTagRequest);
+            return new AsyncInvoker<DeleteTagResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteTagResponse>);
         }
         
         /// <summary>
@@ -681,6 +805,54 @@ namespace HuaweiCloud.SDK.Cfw.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/black-white-lists", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBlackWhiteListsRequest);
             return new AsyncInvoker<ListBlackWhiteListsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListBlackWhiteListsResponse>);
+        }
+        
+        /// <summary>
+        /// 获取抓包任务结果
+        ///
+        /// 获取抓包任务结果
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListCaptureResultResponse> ListCaptureResultAsync(ListCaptureResultRequest listCaptureResultRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/capture-task/capture-result", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCaptureResultRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListCaptureResultResponse>(response);
+        }
+
+        public AsyncInvoker<ListCaptureResultResponse> ListCaptureResultAsyncInvoker(ListCaptureResultRequest listCaptureResultRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/capture-task/capture-result", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCaptureResultRequest);
+            return new AsyncInvoker<ListCaptureResultResponse>(this, "GET", request, JsonUtils.DeSerialize<ListCaptureResultResponse>);
+        }
+        
+        /// <summary>
+        /// 查询抓包任务
+        ///
+        /// 查询抓包任务
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListCaptureTaskResponse> ListCaptureTaskAsync(ListCaptureTaskRequest listCaptureTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/capture-task", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCaptureTaskRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListCaptureTaskResponse>(response);
+        }
+
+        public AsyncInvoker<ListCaptureTaskResponse> ListCaptureTaskAsyncInvoker(ListCaptureTaskRequest listCaptureTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/capture-task", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCaptureTaskRequest);
+            return new AsyncInvoker<ListCaptureTaskResponse>(this, "GET", request, JsonUtils.DeSerialize<ListCaptureTaskResponse>);
         }
         
         /// <summary>

@@ -45,7 +45,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         ///
         /// 批量添加或移除当前用户下终端节点服务的白名单。
         /// 说明
-        /// 本帐号默认在自身用户的终端节点服务的白名单中。
+        /// 本账号默认在自身用户的终端节点服务的白名单中。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -73,7 +73,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         ///
         /// 批量添加当前用户下终端节点服务的白名单，支持添加描述信息。
         /// 说明
-        /// 本帐号默认在自身用户的终端节点服务的白名单中。
+        /// 本账号默认在自身用户的终端节点服务的白名单中。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -431,7 +431,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         ///
         /// 查询当前用户下终端节点服务的白名单列表。
         /// 说明
-        /// 本帐号默认在当前用户下终端节点服务的白名单中。
+        /// 本账号默认在当前用户下终端节点服务的白名单中。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>

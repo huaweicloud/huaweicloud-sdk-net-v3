@@ -1,6 +1,6 @@
 ﻿/*
  * Copyright 2020 Huawei Technologies Co.,Ltd.
- * 
+ *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -211,7 +211,7 @@ namespace HuaweiCloud.SDK.Core
         {
             var signedHeaders = (from key in request.Headers.AllKeys
                                  let keyLower = key.ToLowerInvariant()
-                                 where !_unsignedHeaders.Contains(keyLower)
+                                 where !(_unsignedHeaders.Contains(keyLower) || key.Contains("_"))
                                  select key.ToLowerInvariant()).ToList();
 
             signedHeaders.Sort(CompareOrdinal);

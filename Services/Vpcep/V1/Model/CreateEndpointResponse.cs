@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         public string Id { get; set; }
 
         /// <summary>
-        /// 终端节点连接的终端节点服务类型。  - gateway：由运维人员配置。用户无需创建，可直接使用。  - interface：包括运维人员配置的云服务和用户自己创建的私有服务。 其中，运维人员配置的云服务无需创建，用户可直接使用。您可以通过查询公共终端节点服务列表， 查看由运维人员配置的所有用户可见且可连接的终端节点服务， 并通过创建终端节点服务创建Interface类型的终端节点服务。
+        /// 终端节点连接的终端节点服务类型。   - gateway：由运维人员配置。用户无需创建，可直接使用。   - interface：包括运维人员配置的云服务和用户自己创建的私有服务。 其中，运维人员配置的云服务无需创建，用户可直接使用。 您可以通过\&quot;查询公共终端节点服务列表\&quot;查看由运维人员配置的所有用户可见且可连接的终端节点服务，并通过创建终端节点服务创建Interface类型的终端节点服务。
         /// </summary>
         [JsonProperty("service_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ServiceType { get; set; }
@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         public string Ip { get; set; }
 
         /// <summary>
-        /// 帐号状态。  - frozen：冻结  - active：解冻
+        /// 账号状态。  - frozen：冻结  - active：解冻
         /// </summary>
         [JsonProperty("active_status", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> ActiveStatus { get; set; }
@@ -65,7 +65,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         public string EndpointServiceId { get; set; }
 
         /// <summary>
-        /// 是否创建域名。  - true：创建域名  - false：不创建域名 说明 当创建连接gateway类型终端节点服务的终端节点时， “enable_dns”设置为true或者false，均不创建域名。
+        /// 是否创建域名。  - true：创建域名  - false：不创建域名 说明 当创建gateway类型终端节点服务的终端节点时， “enable_dns”设置为true或者false，均不创建域名。
         /// </summary>
         [JsonProperty("enable_dns", NullValueHandling = NullValueHandling.Ignore)]
         public bool? EnableDns { get; set; }
@@ -119,7 +119,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         public bool? EnableWhitelist { get; set; }
 
         /// <summary>
-        /// 路由表ID列表。 若未指定，返回默认VPC下路由表ID。 创建连接Gateway类型终端节点服务的终端节点时，显示此参数。
+        /// 路由表ID列表。 若未指定，返回默认VPC下路由表ID。 创建gateway类型终端节点服务的终端节点时，显示此参数。
         /// </summary>
         [JsonProperty("routetables", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Routetables { get; set; }
@@ -137,7 +137,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// 只涉及开启双端固定的网关型终端节点，响应体展示此字段
+        /// 终端节点策略信息
         /// </summary>
         [JsonProperty("policy_statement", NullValueHandling = NullValueHandling.Ignore)]
         public List<PolicyStatement> PolicyStatement { get; set; }
@@ -159,6 +159,12 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         /// </summary>
         [JsonProperty("public_border_group", NullValueHandling = NullValueHandling.Ignore)]
         public string PublicBorderGroup { get; set; }
+
+        /// <summary>
+        /// 终端节点的IPv6地址,仅专业型终端节点支持此参数
+        /// </summary>
+        [JsonProperty("ipv6_address", NullValueHandling = NullValueHandling.Ignore)]
+        public string Ipv6Address { get; set; }
 
 
 
@@ -193,6 +199,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
             sb.Append("  enableStatus: ").Append(EnableStatus).Append("\n");
             sb.Append("  endpointPoolId: ").Append(EndpointPoolId).Append("\n");
             sb.Append("  publicBorderGroup: ").Append(PublicBorderGroup).Append("\n");
+            sb.Append("  ipv6Address: ").Append(Ipv6Address).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -338,6 +345,11 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                     this.PublicBorderGroup == input.PublicBorderGroup ||
                     (this.PublicBorderGroup != null &&
                     this.PublicBorderGroup.Equals(input.PublicBorderGroup))
+                ) && 
+                (
+                    this.Ipv6Address == input.Ipv6Address ||
+                    (this.Ipv6Address != null &&
+                    this.Ipv6Address.Equals(input.Ipv6Address))
                 );
         }
 
@@ -397,6 +409,8 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                     hashCode = hashCode * 59 + this.EndpointPoolId.GetHashCode();
                 if (this.PublicBorderGroup != null)
                     hashCode = hashCode * 59 + this.PublicBorderGroup.GetHashCode();
+                if (this.Ipv6Address != null)
+                    hashCode = hashCode * 59 + this.Ipv6Address.GetHashCode();
                 return hashCode;
             }
         }

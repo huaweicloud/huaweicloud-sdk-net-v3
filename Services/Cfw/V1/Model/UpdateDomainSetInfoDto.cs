@@ -28,18 +28,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
-        /// <summary>
-        /// 域名组id
-        /// </summary>
-        [JsonProperty("set_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string SetId { get; set; }
-
-        /// <summary>
-        /// 域名组类型，0表示URL过滤，1表示地址解析
-        /// </summary>
-        [JsonProperty("domain_set_type", NullValueHandling = NullValueHandling.Ignore)]
-        public int? DomainSetType { get; set; }
-
 
 
         /// <summary>
@@ -51,8 +39,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("class UpdateDomainSetInfoDto {\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
-            sb.Append("  setId: ").Append(SetId).Append("\n");
-            sb.Append("  domainSetType: ").Append(DomainSetType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -83,16 +69,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.SetId == input.SetId ||
-                    (this.SetId != null &&
-                    this.SetId.Equals(input.SetId))
-                ) && 
-                (
-                    this.DomainSetType == input.DomainSetType ||
-                    (this.DomainSetType != null &&
-                    this.DomainSetType.Equals(input.DomainSetType))
                 );
         }
 
@@ -108,10 +84,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Description != null)
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.SetId != null)
-                    hashCode = hashCode * 59 + this.SetId.GetHashCode();
-                if (this.DomainSetType != null)
-                    hashCode = hashCode * 59 + this.DomainSetType.GetHashCode();
                 return hashCode;
             }
         }

@@ -16,366 +16,9 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     public class ListAttackLogsRequest 
     {
         /// <summary>
-        /// 协议类型:TCP为6, UDP为17,ICMP为1,ICMPV6为58,ANY为-1,手动类型不为空，自动类型为空
+        /// 日志类型包括：internet，vpc，nat
         /// </summary>
-        /// <value>协议类型:TCP为6, UDP为17,ICMP为1,ICMPV6为58,ANY为-1,手动类型不为空，自动类型为空</value>
-        [JsonConverter(typeof(EnumClassConverter<ProtocolEnum>))]
-        public class ProtocolEnum
-        {
-            /// <summary>
-            /// Enum _6 for value: 6
-            /// </summary>
-            public static readonly ProtocolEnum _6 = new ProtocolEnum("6");
-
-            /// <summary>
-            /// Enum _17 for value: 17
-            /// </summary>
-            public static readonly ProtocolEnum _17 = new ProtocolEnum("17");
-
-            /// <summary>
-            /// Enum _1 for value: 1
-            /// </summary>
-            public static readonly ProtocolEnum _1 = new ProtocolEnum("1");
-
-            /// <summary>
-            /// Enum _58 for value: 58
-            /// </summary>
-            public static readonly ProtocolEnum _58 = new ProtocolEnum("58");
-
-            private static readonly Dictionary<string, ProtocolEnum> StaticFields =
-            new Dictionary<string, ProtocolEnum>()
-            {
-                { "6", _6 },
-                { "17", _17 },
-                { "1", _1 },
-                { "58", _58 },
-            };
-
-            private string _value;
-
-            public ProtocolEnum()
-            {
-
-            }
-
-            public ProtocolEnum(string value)
-            {
-                _value = value;
-            }
-
-            public static ProtocolEnum FromValue(string value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public string GetValue()
-            {
-                return _value;
-            }
-
-            public override string ToString()
-            {
-                return $"{_value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this._value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as ProtocolEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(ProtocolEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
-            }
-
-            public static bool operator ==(ProtocolEnum a, ProtocolEnum b)
-            {
-                if (System.Object.ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(ProtocolEnum a, ProtocolEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
-        /// <summary>
-        /// 动作0：permit,1：deny
-        /// </summary>
-        /// <value>动作0：permit,1：deny</value>
-        [JsonConverter(typeof(EnumClassConverter<ActionEnum>))]
-        public class ActionEnum
-        {
-            /// <summary>
-            /// Enum _0 for value: 0
-            /// </summary>
-            public static readonly ActionEnum _0 = new ActionEnum("0");
-
-            /// <summary>
-            /// Enum _1 for value: 1
-            /// </summary>
-            public static readonly ActionEnum _1 = new ActionEnum("1");
-
-            private static readonly Dictionary<string, ActionEnum> StaticFields =
-            new Dictionary<string, ActionEnum>()
-            {
-                { "0", _0 },
-                { "1", _1 },
-            };
-
-            private string _value;
-
-            public ActionEnum()
-            {
-
-            }
-
-            public ActionEnum(string value)
-            {
-                _value = value;
-            }
-
-            public static ActionEnum FromValue(string value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public string GetValue()
-            {
-                return _value;
-            }
-
-            public override string ToString()
-            {
-                return $"{_value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this._value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as ActionEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(ActionEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
-            }
-
-            public static bool operator ==(ActionEnum a, ActionEnum b)
-            {
-                if (System.Object.ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(ActionEnum a, ActionEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
-        /// <summary>
-        /// 方向0：外到内1：内到外
-        /// </summary>
-        /// <value>方向0：外到内1：内到外</value>
-        [JsonConverter(typeof(EnumClassConverter<DirectionEnum>))]
-        public class DirectionEnum
-        {
-            /// <summary>
-            /// Enum _0 for value: 0
-            /// </summary>
-            public static readonly DirectionEnum _0 = new DirectionEnum("0");
-
-            /// <summary>
-            /// Enum _1 for value: 1
-            /// </summary>
-            public static readonly DirectionEnum _1 = new DirectionEnum("1");
-
-            private static readonly Dictionary<string, DirectionEnum> StaticFields =
-            new Dictionary<string, DirectionEnum>()
-            {
-                { "0", _0 },
-                { "1", _1 },
-            };
-
-            private string _value;
-
-            public DirectionEnum()
-            {
-
-            }
-
-            public DirectionEnum(string value)
-            {
-                _value = value;
-            }
-
-            public static DirectionEnum FromValue(string value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public string GetValue()
-            {
-                return _value;
-            }
-
-            public override string ToString()
-            {
-                return $"{_value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this._value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as DirectionEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(DirectionEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
-            }
-
-            public static bool operator ==(DirectionEnum a, DirectionEnum b)
-            {
-                if (System.Object.ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(DirectionEnum a, DirectionEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
-        /// <summary>
-        /// 日志类型
-        /// </summary>
-        /// <value>日志类型</value>
+        /// <value>日志类型包括：internet，vpc，nat</value>
         [JsonConverter(typeof(EnumClassConverter<LogTypeEnum>))]
         public class LogTypeEnum
         {
@@ -495,14 +138,14 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
 
 
         /// <summary>
-        /// 开始时间
+        /// 开始时间，以毫秒为单位的时间戳，如1718936272648
         /// </summary>
         [SDKProperty("start_time", IsQuery = true)]
         [JsonProperty("start_time", NullValueHandling = NullValueHandling.Ignore)]
         public long? StartTime { get; set; }
 
         /// <summary>
-        /// 结束时间
+        /// 结束时间，以毫秒为单位的时间戳，如1718936272648
         /// </summary>
         [SDKProperty("end_time", IsQuery = true)]
         [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
@@ -537,11 +180,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public int? DstPort { get; set; }
 
         /// <summary>
-        /// 协议类型:TCP为6, UDP为17,ICMP为1,ICMPV6为58,ANY为-1,手动类型不为空，自动类型为空
+        /// 协议类型，包含TCP, UDP,ICMP,ICMPV6等。
         /// </summary>
         [SDKProperty("protocol", IsQuery = true)]
         [JsonProperty("protocol", NullValueHandling = NullValueHandling.Ignore)]
-        public ProtocolEnum Protocol { get; set; }
+        public string Protocol { get; set; }
+
         /// <summary>
         /// 应用协议
         /// </summary>
@@ -550,21 +194,21 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string App { get; set; }
 
         /// <summary>
-        /// 日志ID，当是第一页时为空，不是第一页时不为空
+        /// 文档ID,第一页为空，其他页不为空，其他页可取上一次查询最后一条数据的log_id
         /// </summary>
         [SDKProperty("log_id", IsQuery = true)]
         [JsonProperty("log_id", NullValueHandling = NullValueHandling.Ignore)]
         public string LogId { get; set; }
 
         /// <summary>
-        /// 下个日期，当是第一页时为空，不是第一页时不为空
+        /// 下个日期，当是第一页时为空，不是第一页时不为空，其他页可取上一次查询最后一条数据的event_time
         /// </summary>
         [SDKProperty("next_date", IsQuery = true)]
         [JsonProperty("next_date", NullValueHandling = NullValueHandling.Ignore)]
         public long? NextDate { get; set; }
 
         /// <summary>
-        /// 偏移量：指定返回记录的开始位置，必须为数字，取值范围为大于或等于0，默认0
+        /// 偏移量：指定返回记录的开始位置，必须为数字，取值范围为大于0，首页时为空，非首页时不为空
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
@@ -578,24 +222,26 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用查询防火墙实例接口获得。具体可参考APIExlorer和帮助中心FAQ。
+        /// 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)。
         /// </summary>
         [SDKProperty("fw_instance_id", IsQuery = true)]
         [JsonProperty("fw_instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string FwInstanceId { get; set; }
 
         /// <summary>
-        /// 动作0：permit,1：deny
+        /// 动作包含permit，deny
         /// </summary>
         [SDKProperty("action", IsQuery = true)]
         [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]
-        public ActionEnum Action { get; set; }
+        public string Action { get; set; }
+
         /// <summary>
-        /// 方向0：外到内1：内到外
+        /// 方向，包含in2out，out2in
         /// </summary>
         [SDKProperty("direction", IsQuery = true)]
         [JsonProperty("direction", NullValueHandling = NullValueHandling.Ignore)]
-        public DirectionEnum Direction { get; set; }
+        public string Direction { get; set; }
+
         /// <summary>
         /// 入侵事件类型
         /// </summary>
@@ -611,18 +257,11 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string AttackRule { get; set; }
 
         /// <summary>
-        /// 威胁等级
+        /// 威胁等级，包括CRITICAL、HIGH、MEDIUM、LOW
         /// </summary>
         [SDKProperty("level", IsQuery = true)]
         [JsonProperty("level", NullValueHandling = NullValueHandling.Ignore)]
         public string Level { get; set; }
-
-        /// <summary>
-        /// 判断来源
-        /// </summary>
-        [SDKProperty("source", IsQuery = true)]
-        [JsonProperty("source", NullValueHandling = NullValueHandling.Ignore)]
-        public string Source { get; set; }
 
         /// <summary>
         /// 企业项目id，用户支持企业项目后，由企业项目生成的id。
@@ -639,7 +278,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string DstHost { get; set; }
 
         /// <summary>
-        /// 日志类型
+        /// 日志类型包括：internet，vpc，nat
         /// </summary>
         [SDKProperty("log_type", IsQuery = true)]
         [JsonProperty("log_type", NullValueHandling = NullValueHandling.Ignore)]
@@ -664,6 +303,34 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         [SDKProperty("dst_region_name", IsQuery = true)]
         [JsonProperty("dst_region_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DstRegionName { get; set; }
+
+        /// <summary>
+        /// 源省份名称
+        /// </summary>
+        [SDKProperty("src_province_name", IsQuery = true)]
+        [JsonProperty("src_province_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string SrcProvinceName { get; set; }
+
+        /// <summary>
+        /// 目的省份名称
+        /// </summary>
+        [SDKProperty("dst_province_name", IsQuery = true)]
+        [JsonProperty("dst_province_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string DstProvinceName { get; set; }
+
+        /// <summary>
+        /// 源城市名称
+        /// </summary>
+        [SDKProperty("src_city_name", IsQuery = true)]
+        [JsonProperty("src_city_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string SrcCityName { get; set; }
+
+        /// <summary>
+        /// 目的城市名称
+        /// </summary>
+        [SDKProperty("dst_city_name", IsQuery = true)]
+        [JsonProperty("dst_city_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string DstCityName { get; set; }
 
 
 
@@ -692,13 +359,16 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  attackType: ").Append(AttackType).Append("\n");
             sb.Append("  attackRule: ").Append(AttackRule).Append("\n");
             sb.Append("  level: ").Append(Level).Append("\n");
-            sb.Append("  source: ").Append(Source).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  dstHost: ").Append(DstHost).Append("\n");
             sb.Append("  logType: ").Append(LogType).Append("\n");
             sb.Append("  attackRuleId: ").Append(AttackRuleId).Append("\n");
             sb.Append("  srcRegionName: ").Append(SrcRegionName).Append("\n");
             sb.Append("  dstRegionName: ").Append(DstRegionName).Append("\n");
+            sb.Append("  srcProvinceName: ").Append(SrcProvinceName).Append("\n");
+            sb.Append("  dstProvinceName: ").Append(DstProvinceName).Append("\n");
+            sb.Append("  srcCityName: ").Append(SrcCityName).Append("\n");
+            sb.Append("  dstCityName: ").Append(DstCityName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -811,11 +481,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.Level.Equals(input.Level))
                 ) && 
                 (
-                    this.Source == input.Source ||
-                    (this.Source != null &&
-                    this.Source.Equals(input.Source))
-                ) && 
-                (
                     this.EnterpriseProjectId == input.EnterpriseProjectId ||
                     (this.EnterpriseProjectId != null &&
                     this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
@@ -844,6 +509,26 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.DstRegionName == input.DstRegionName ||
                     (this.DstRegionName != null &&
                     this.DstRegionName.Equals(input.DstRegionName))
+                ) && 
+                (
+                    this.SrcProvinceName == input.SrcProvinceName ||
+                    (this.SrcProvinceName != null &&
+                    this.SrcProvinceName.Equals(input.SrcProvinceName))
+                ) && 
+                (
+                    this.DstProvinceName == input.DstProvinceName ||
+                    (this.DstProvinceName != null &&
+                    this.DstProvinceName.Equals(input.DstProvinceName))
+                ) && 
+                (
+                    this.SrcCityName == input.SrcCityName ||
+                    (this.SrcCityName != null &&
+                    this.SrcCityName.Equals(input.SrcCityName))
+                ) && 
+                (
+                    this.DstCityName == input.DstCityName ||
+                    (this.DstCityName != null &&
+                    this.DstCityName.Equals(input.DstCityName))
                 );
         }
 
@@ -891,8 +576,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.AttackRule.GetHashCode();
                 if (this.Level != null)
                     hashCode = hashCode * 59 + this.Level.GetHashCode();
-                if (this.Source != null)
-                    hashCode = hashCode * 59 + this.Source.GetHashCode();
                 if (this.EnterpriseProjectId != null)
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.DstHost != null)
@@ -905,6 +588,14 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.SrcRegionName.GetHashCode();
                 if (this.DstRegionName != null)
                     hashCode = hashCode * 59 + this.DstRegionName.GetHashCode();
+                if (this.SrcProvinceName != null)
+                    hashCode = hashCode * 59 + this.SrcProvinceName.GetHashCode();
+                if (this.DstProvinceName != null)
+                    hashCode = hashCode * 59 + this.DstProvinceName.GetHashCode();
+                if (this.SrcCityName != null)
+                    hashCode = hashCode * 59 + this.SrcCityName.GetHashCode();
+                if (this.DstCityName != null)
+                    hashCode = hashCode * 59 + this.DstCityName.GetHashCode();
                 return hashCode;
             }
         }

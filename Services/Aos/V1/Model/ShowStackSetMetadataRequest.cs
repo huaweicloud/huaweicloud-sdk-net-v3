@@ -15,6 +15,121 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
     /// </summary>
     public class ShowStackSetMetadataRequest 
     {
+        /// <summary>
+        /// 仅支持资源栈集权限模式为SERVICE_MANAGED时指定该参数。用于指定用户是以组织管理账号还是成员帐户中的服务委托管理员身份调用资源栈集。默认为SELF。 * 无论指定何种用户身份，创建或部署的资源栈集始终在组织管理账号名下。*   * &#x60;SELF&#x60; - 以组织管理账号身份调用。   * &#x60;DELEGATED_ADMIN&#x60; - 以服务委托管理员身份调用。用户的华为云账号必须在组织中已经被注册为”资源编排资源栈集服务“的委托管理员。
+        /// </summary>
+        /// <value>仅支持资源栈集权限模式为SERVICE_MANAGED时指定该参数。用于指定用户是以组织管理账号还是成员帐户中的服务委托管理员身份调用资源栈集。默认为SELF。 * 无论指定何种用户身份，创建或部署的资源栈集始终在组织管理账号名下。*   * &#x60;SELF&#x60; - 以组织管理账号身份调用。   * &#x60;DELEGATED_ADMIN&#x60; - 以服务委托管理员身份调用。用户的华为云账号必须在组织中已经被注册为”资源编排资源栈集服务“的委托管理员。</value>
+        [JsonConverter(typeof(EnumClassConverter<CallIdentityEnum>))]
+        public class CallIdentityEnum
+        {
+            /// <summary>
+            /// Enum SELF for value: SELF
+            /// </summary>
+            public static readonly CallIdentityEnum SELF = new CallIdentityEnum("SELF");
+
+            /// <summary>
+            /// Enum DELEGATED_ADMIN for value: DELEGATED_ADMIN
+            /// </summary>
+            public static readonly CallIdentityEnum DELEGATED_ADMIN = new CallIdentityEnum("DELEGATED_ADMIN");
+
+            private static readonly Dictionary<string, CallIdentityEnum> StaticFields =
+            new Dictionary<string, CallIdentityEnum>()
+            {
+                { "SELF", SELF },
+                { "DELEGATED_ADMIN", DELEGATED_ADMIN },
+            };
+
+            private string _value;
+
+            public CallIdentityEnum()
+            {
+
+            }
+
+            public CallIdentityEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static CallIdentityEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as CallIdentityEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(CallIdentityEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(CallIdentityEnum a, CallIdentityEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(CallIdentityEnum a, CallIdentityEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 用户指定的，对于此请求的唯一ID，用于定位某个请求，推荐使用UUID
@@ -37,6 +152,12 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         [JsonProperty("stack_set_id", NullValueHandling = NullValueHandling.Ignore)]
         public string StackSetId { get; set; }
 
+        /// <summary>
+        /// 仅支持资源栈集权限模式为SERVICE_MANAGED时指定该参数。用于指定用户是以组织管理账号还是成员帐户中的服务委托管理员身份调用资源栈集。默认为SELF。 * 无论指定何种用户身份，创建或部署的资源栈集始终在组织管理账号名下。*   * &#x60;SELF&#x60; - 以组织管理账号身份调用。   * &#x60;DELEGATED_ADMIN&#x60; - 以服务委托管理员身份调用。用户的华为云账号必须在组织中已经被注册为”资源编排资源栈集服务“的委托管理员。
+        /// </summary>
+        [SDKProperty("call_identity", IsQuery = true)]
+        [JsonProperty("call_identity", NullValueHandling = NullValueHandling.Ignore)]
+        public CallIdentityEnum CallIdentity { get; set; }
 
 
         /// <summary>
@@ -49,6 +170,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
             sb.Append("  clientRequestId: ").Append(ClientRequestId).Append("\n");
             sb.Append("  stackSetName: ").Append(StackSetName).Append("\n");
             sb.Append("  stackSetId: ").Append(StackSetId).Append("\n");
+            sb.Append("  callIdentity: ").Append(CallIdentity).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -84,6 +206,11 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
                     this.StackSetId == input.StackSetId ||
                     (this.StackSetId != null &&
                     this.StackSetId.Equals(input.StackSetId))
+                ) && 
+                (
+                    this.CallIdentity == input.CallIdentity ||
+                    (this.CallIdentity != null &&
+                    this.CallIdentity.Equals(input.CallIdentity))
                 );
         }
 
@@ -101,6 +228,8 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
                     hashCode = hashCode * 59 + this.StackSetName.GetHashCode();
                 if (this.StackSetId != null)
                     hashCode = hashCode * 59 + this.StackSetId.GetHashCode();
+                if (this.CallIdentity != null)
+                    hashCode = hashCode * 59 + this.CallIdentity.GetHashCode();
                 return hashCode;
             }
         }

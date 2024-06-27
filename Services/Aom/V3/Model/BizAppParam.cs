@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Aom.V3.Model
     public class BizAppParam 
     {
         /// <summary>
-        /// 前端默认是CONSOLE，不需要传参。rest接口无参数是API，有参数只能是：SERVICE_DISCOVERY。创建应用必填，修改应用非必填
+        /// 前端默认是CONSOLE，不需要传参。rest接口无参数是API，有参数只能是：SERVICE_DISCOVERY
         /// </summary>
-        /// <value>前端默认是CONSOLE，不需要传参。rest接口无参数是API，有参数只能是：SERVICE_DISCOVERY。创建应用必填，修改应用非必填</value>
+        /// <value>前端默认是CONSOLE，不需要传参。rest接口无参数是API，有参数只能是：SERVICE_DISCOVERY</value>
         [JsonConverter(typeof(EnumClassConverter<RegisterTypeEnum>))]
         public class RegisterTypeEnum
         {
@@ -28,21 +28,15 @@ namespace HuaweiCloud.SDK.Aom.V3.Model
             public static readonly RegisterTypeEnum API = new RegisterTypeEnum("API");
 
             /// <summary>
-            /// Enum CONSOLE for value: CONSOLE
+            /// Enum CONSOLESERVICE_DISCOVERY for value: CONSOLESERVICE_DISCOVERY
             /// </summary>
-            public static readonly RegisterTypeEnum CONSOLE = new RegisterTypeEnum("CONSOLE");
-
-            /// <summary>
-            /// Enum SERVICE_DISCOVERY for value: SERVICE_DISCOVERY
-            /// </summary>
-            public static readonly RegisterTypeEnum SERVICE_DISCOVERY = new RegisterTypeEnum("SERVICE_DISCOVERY");
+            public static readonly RegisterTypeEnum CONSOLESERVICE_DISCOVERY = new RegisterTypeEnum("CONSOLESERVICE_DISCOVERY");
 
             private static readonly Dictionary<string, RegisterTypeEnum> StaticFields =
             new Dictionary<string, RegisterTypeEnum>()
             {
                 { "API", API },
-                { "CONSOLE", CONSOLE },
-                { "SERVICE_DISCOVERY", SERVICE_DISCOVERY },
+                { "CONSOLESERVICE_DISCOVERY", CONSOLESERVICE_DISCOVERY },
             };
 
             private string _value;
@@ -138,13 +132,13 @@ namespace HuaweiCloud.SDK.Aom.V3.Model
 
 
         /// <summary>
-        /// 描述：最大255字符
+        /// 应用描述
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
         /// <summary>
-        /// 显示名：字符集长度2-64，仅支持字符集：中文字符、英文字母、数字、下划线、中划线、点
+        /// 应用名称.字符集长度2-64，仅支持字符集：中文字符、英文字母、数字、下划线、中划线、点
         /// </summary>
         [JsonProperty("display_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DisplayName { get; set; }
@@ -156,13 +150,13 @@ namespace HuaweiCloud.SDK.Aom.V3.Model
         public string EpsId { get; set; }
 
         /// <summary>
-        /// 名称：字符集长度2-64，仅支持字符集：英文字母、数字、下划线、中划线、点
+        /// 唯一标识.字符集长度2-64，仅支持字符集：英文字母、数字、下划线、中划线、点
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 前端默认是CONSOLE，不需要传参。rest接口无参数是API，有参数只能是：SERVICE_DISCOVERY。创建应用必填，修改应用非必填
+        /// 前端默认是CONSOLE，不需要传参。rest接口无参数是API，有参数只能是：SERVICE_DISCOVERY
         /// </summary>
         [JsonProperty("register_type", NullValueHandling = NullValueHandling.Ignore)]
         public RegisterTypeEnum RegisterType { get; set; }

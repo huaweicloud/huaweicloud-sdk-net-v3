@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         public string Status { get; set; }
 
         /// <summary>
-        /// 帐号状态。  - frozen：冻结  - active：解冻
+        /// 账号状态。  - frozen：冻结  - active：解冻
         /// </summary>
         [JsonProperty("active_status", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> ActiveStatus { get; set; }
@@ -71,7 +71,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         public string EndpointServiceId { get; set; }
 
         /// <summary>
-        /// 是否创建域名。  - true：创建域名  - false：不创建域名 说明 当创建连接gateway类型终端节点服务的终端节点时， “enable_dns”设置为true或者false，均不创建域名。
+        /// 是否创建域名。  - true：创建域名  - false：不创建域名 说明 当创建gateway类型终端节点服务的终端节点时， “enable_dns”设置为true或者false，均不创建域名。
         /// </summary>
         [JsonProperty("enable_dns", NullValueHandling = NullValueHandling.Ignore)]
         public bool? EnableDns { get; set; }
@@ -143,7 +143,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         public bool? EnableWhitelist { get; set; }
 
         /// <summary>
-        /// 路由表ID列表。 若未指定，返回默认VPC下路由表ID。 创建连接Gateway类型终端节点服务的终端节点时，显示此参数。
+        /// 路由表ID列表。 若未指定，返回默认VPC下路由表ID。 创建gateway类型终端节点服务的终端节点时，显示此参数。
         /// </summary>
         [JsonProperty("routetables", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Routetables { get; set; }
@@ -155,7 +155,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// 只涉及开启双端固定的网关型终端节点，响应体展示此字段
+        /// 终端节点策略信息
         /// </summary>
         [JsonProperty("policy_statement", NullValueHandling = NullValueHandling.Ignore)]
         public List<PolicyStatement> PolicyStatement { get; set; }
@@ -171,6 +171,12 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         /// </summary>
         [JsonProperty("public_border_group", NullValueHandling = NullValueHandling.Ignore)]
         public string PublicBorderGroup { get; set; }
+
+        /// <summary>
+        /// 访问所连接的终端节点服务的IPv6的地址。 创建终端节点时，可以指定访问所连接的终端节点服务的IP，不指定的情况下，会使用系统生成的一个地址。 仅专业型终端节点支持此参数。
+        /// </summary>
+        [JsonProperty("ipv6_address", NullValueHandling = NullValueHandling.Ignore)]
+        public string Ipv6Address { get; set; }
 
 
 
@@ -207,6 +213,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
             sb.Append("  policyStatement: ").Append(PolicyStatement).Append("\n");
             sb.Append("  endpointPoolId: ").Append(EndpointPoolId).Append("\n");
             sb.Append("  publicBorderGroup: ").Append(PublicBorderGroup).Append("\n");
+            sb.Append("  ipv6Address: ").Append(Ipv6Address).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -363,6 +370,11 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                     this.PublicBorderGroup == input.PublicBorderGroup ||
                     (this.PublicBorderGroup != null &&
                     this.PublicBorderGroup.Equals(input.PublicBorderGroup))
+                ) && 
+                (
+                    this.Ipv6Address == input.Ipv6Address ||
+                    (this.Ipv6Address != null &&
+                    this.Ipv6Address.Equals(input.Ipv6Address))
                 );
         }
 
@@ -426,6 +438,8 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                     hashCode = hashCode * 59 + this.EndpointPoolId.GetHashCode();
                 if (this.PublicBorderGroup != null)
                     hashCode = hashCode * 59 + this.PublicBorderGroup.GetHashCode();
+                if (this.Ipv6Address != null)
+                    hashCode = hashCode * 59 + this.Ipv6Address.GetHashCode();
                 return hashCode;
             }
         }

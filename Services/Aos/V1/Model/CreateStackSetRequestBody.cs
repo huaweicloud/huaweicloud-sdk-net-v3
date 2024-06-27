@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
     public class CreateStackSetRequestBody 
     {
         /// <summary>
-        /// 权限模型，定义了RFS操作资源栈集时所需委托的创建方式，枚举值    * &#x60;SELF_MANAGED&#x60; - 基于部署需求，用户需要提前手动创建委托，既包含管理账号给RFS的委托，也包含成员账号创建给管理账号的委托。如果委托不存在或错误，创建资源栈集不会失败，部署资源栈集或部署资源栈实例的时候才会报错。
+        /// 权限模型，定义了RFS操作资源栈集时所需委托的创建方式，枚举值，默认为SELF_MANAGED。用户可以使用创建资源栈集（CreateStackSet）API 指定该参数。该参数暂不支持更新。用户如果想要更新权限模型，可以通过先删除再创建同名资源栈集实现。   * &#x60;SELF_MANAGED&#x60; - 自我管理，基于部署需求，用户需要提前手动创建委托，既包含管理账号授权给RFS的委托，也包含成员账号授权给管理账号的委托。如果委托不存在或权限不足，创建资源栈集不会失败，创建资源栈实例时才会报错。   * &#x60;SERVICE_MANAGED&#x60; - 服务管理，基于Organization服务，RFS会自动创建部署Organization 成员账号时所需的全部 IAM 委托。用户需要提前在Organization可信服务列表中将”资源编排资源栈集服务“启用，且只有Organization的管理账号或”资源编排资源栈集服务“的委托管理员，才允许指定SERVICE_MANAGED创建资源栈集，否则会报错。
         /// </summary>
-        /// <value>权限模型，定义了RFS操作资源栈集时所需委托的创建方式，枚举值    * &#x60;SELF_MANAGED&#x60; - 基于部署需求，用户需要提前手动创建委托，既包含管理账号给RFS的委托，也包含成员账号创建给管理账号的委托。如果委托不存在或错误，创建资源栈集不会失败，部署资源栈集或部署资源栈实例的时候才会报错。</value>
+        /// <value>权限模型，定义了RFS操作资源栈集时所需委托的创建方式，枚举值，默认为SELF_MANAGED。用户可以使用创建资源栈集（CreateStackSet）API 指定该参数。该参数暂不支持更新。用户如果想要更新权限模型，可以通过先删除再创建同名资源栈集实现。   * &#x60;SELF_MANAGED&#x60; - 自我管理，基于部署需求，用户需要提前手动创建委托，既包含管理账号授权给RFS的委托，也包含成员账号授权给管理账号的委托。如果委托不存在或权限不足，创建资源栈集不会失败，创建资源栈实例时才会报错。   * &#x60;SERVICE_MANAGED&#x60; - 服务管理，基于Organization服务，RFS会自动创建部署Organization 成员账号时所需的全部 IAM 委托。用户需要提前在Organization可信服务列表中将”资源编排资源栈集服务“启用，且只有Organization的管理账号或”资源编排资源栈集服务“的委托管理员，才允许指定SERVICE_MANAGED创建资源栈集，否则会报错。</value>
         [JsonConverter(typeof(EnumClassConverter<PermissionModelEnum>))]
         public class PermissionModelEnum
         {
@@ -27,10 +27,16 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
             /// </summary>
             public static readonly PermissionModelEnum SELF_MANAGED = new PermissionModelEnum("SELF_MANAGED");
 
+            /// <summary>
+            /// Enum SERVICE_MANAGED for value: SERVICE_MANAGED
+            /// </summary>
+            public static readonly PermissionModelEnum SERVICE_MANAGED = new PermissionModelEnum("SERVICE_MANAGED");
+
             private static readonly Dictionary<string, PermissionModelEnum> StaticFields =
             new Dictionary<string, PermissionModelEnum>()
             {
                 { "SELF_MANAGED", SELF_MANAGED },
+                { "SERVICE_MANAGED", SERVICE_MANAGED },
             };
 
             private string _value;
@@ -124,6 +130,121 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
             }
         }
 
+        /// <summary>
+        /// 仅支持资源栈集权限模式为SERVICE_MANAGED时指定该参数。用于指定用户是以组织管理账号还是成员帐户中的服务委托管理员身份调用资源栈集。默认为SELF。 当资源栈集权限模式为SELF_MANAGED时，默认为SELF。 * 无论指定何种用户身份，涉及操作的资源栈集始终在组织管理账号名下。*   * &#x60;SELF&#x60; - 以组织管理账号身份调用。   * &#x60;DELEGATED_ADMIN&#x60; - 以服务委托管理员身份调用。用户的华为云账号必须在组织中已经被注册为”资源编排资源栈集服务“的委托管理员。
+        /// </summary>
+        /// <value>仅支持资源栈集权限模式为SERVICE_MANAGED时指定该参数。用于指定用户是以组织管理账号还是成员帐户中的服务委托管理员身份调用资源栈集。默认为SELF。 当资源栈集权限模式为SELF_MANAGED时，默认为SELF。 * 无论指定何种用户身份，涉及操作的资源栈集始终在组织管理账号名下。*   * &#x60;SELF&#x60; - 以组织管理账号身份调用。   * &#x60;DELEGATED_ADMIN&#x60; - 以服务委托管理员身份调用。用户的华为云账号必须在组织中已经被注册为”资源编排资源栈集服务“的委托管理员。</value>
+        [JsonConverter(typeof(EnumClassConverter<CallIdentityEnum>))]
+        public class CallIdentityEnum
+        {
+            /// <summary>
+            /// Enum SELF for value: SELF
+            /// </summary>
+            public static readonly CallIdentityEnum SELF = new CallIdentityEnum("SELF");
+
+            /// <summary>
+            /// Enum DELEGATED_ADMIN for value: DELEGATED_ADMIN
+            /// </summary>
+            public static readonly CallIdentityEnum DELEGATED_ADMIN = new CallIdentityEnum("DELEGATED_ADMIN");
+
+            private static readonly Dictionary<string, CallIdentityEnum> StaticFields =
+            new Dictionary<string, CallIdentityEnum>()
+            {
+                { "SELF", SELF },
+                { "DELEGATED_ADMIN", DELEGATED_ADMIN },
+            };
+
+            private string _value;
+
+            public CallIdentityEnum()
+            {
+
+            }
+
+            public CallIdentityEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static CallIdentityEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as CallIdentityEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(CallIdentityEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(CallIdentityEnum a, CallIdentityEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(CallIdentityEnum a, CallIdentityEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 资源栈集（stack_set）的名字。此名字在domain_id+region下应唯一，可以使用中文、大小写英文、数字、下划线、中划线。首字符需为中文或者英文，区分大小写。
@@ -138,7 +259,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         public string StackSetDescription { get; set; }
 
         /// <summary>
-        /// 权限模型，定义了RFS操作资源栈集时所需委托的创建方式，枚举值    * &#x60;SELF_MANAGED&#x60; - 基于部署需求，用户需要提前手动创建委托，既包含管理账号给RFS的委托，也包含成员账号创建给管理账号的委托。如果委托不存在或错误，创建资源栈集不会失败，部署资源栈集或部署资源栈实例的时候才会报错。
+        /// 权限模型，定义了RFS操作资源栈集时所需委托的创建方式，枚举值，默认为SELF_MANAGED。用户可以使用创建资源栈集（CreateStackSet）API 指定该参数。该参数暂不支持更新。用户如果想要更新权限模型，可以通过先删除再创建同名资源栈集实现。   * &#x60;SELF_MANAGED&#x60; - 自我管理，基于部署需求，用户需要提前手动创建委托，既包含管理账号授权给RFS的委托，也包含成员账号授权给管理账号的委托。如果委托不存在或权限不足，创建资源栈集不会失败，创建资源栈实例时才会报错。   * &#x60;SERVICE_MANAGED&#x60; - 服务管理，基于Organization服务，RFS会自动创建部署Organization 成员账号时所需的全部 IAM 委托。用户需要提前在Organization可信服务列表中将”资源编排资源栈集服务“启用，且只有Organization的管理账号或”资源编排资源栈集服务“的委托管理员，才允许指定SERVICE_MANAGED创建资源栈集，否则会报错。
         /// </summary>
         [JsonProperty("permission_model", NullValueHandling = NullValueHandling.Ignore)]
         public PermissionModelEnum PermissionModel { get; set; }
@@ -196,6 +317,11 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         [JsonProperty("managed_operation", NullValueHandling = NullValueHandling.Ignore)]
         public ManagedOperation ManagedOperation { get; set; }
 
+        /// <summary>
+        /// 仅支持资源栈集权限模式为SERVICE_MANAGED时指定该参数。用于指定用户是以组织管理账号还是成员帐户中的服务委托管理员身份调用资源栈集。默认为SELF。 当资源栈集权限模式为SELF_MANAGED时，默认为SELF。 * 无论指定何种用户身份，涉及操作的资源栈集始终在组织管理账号名下。*   * &#x60;SELF&#x60; - 以组织管理账号身份调用。   * &#x60;DELEGATED_ADMIN&#x60; - 以服务委托管理员身份调用。用户的华为云账号必须在组织中已经被注册为”资源编排资源栈集服务“的委托管理员。
+        /// </summary>
+        [JsonProperty("call_identity", NullValueHandling = NullValueHandling.Ignore)]
+        public CallIdentityEnum CallIdentity { get; set; }
 
 
         /// <summary>
@@ -217,6 +343,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
             sb.Append("  initialStackDescription: ").Append(InitialStackDescription).Append("\n");
             sb.Append("  administrationAgencyUrn: ").Append(AdministrationAgencyUrn).Append("\n");
             sb.Append("  managedOperation: ").Append(ManagedOperation).Append("\n");
+            sb.Append("  callIdentity: ").Append(CallIdentity).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -297,6 +424,11 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
                     this.ManagedOperation == input.ManagedOperation ||
                     (this.ManagedOperation != null &&
                     this.ManagedOperation.Equals(input.ManagedOperation))
+                ) && 
+                (
+                    this.CallIdentity == input.CallIdentity ||
+                    (this.CallIdentity != null &&
+                    this.CallIdentity.Equals(input.CallIdentity))
                 );
         }
 
@@ -332,6 +464,8 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
                     hashCode = hashCode * 59 + this.AdministrationAgencyUrn.GetHashCode();
                 if (this.ManagedOperation != null)
                     hashCode = hashCode * 59 + this.ManagedOperation.GetHashCode();
+                if (this.CallIdentity != null)
+                    hashCode = hashCode * 59 + this.CallIdentity.GetHashCode();
                 return hashCode;
             }
         }

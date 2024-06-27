@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         /// 标签列表
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ResourceTag> Tags { get; set; }
+        public List<DeleteResourceTagRequestBody> Tags { get; set; }
 
 
 

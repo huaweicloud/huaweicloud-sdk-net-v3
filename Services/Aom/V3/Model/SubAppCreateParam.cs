@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Aom.V3.Model
     public class SubAppCreateParam 
     {
         /// <summary>
-        /// 应用、子应用，取值：APPLICATION、SUB_APPLICATION，不区分大小写
+        /// 应用、子应用，取值：APPLICATION、SUB_APPLICATION
         /// </summary>
-        /// <value>应用、子应用，取值：APPLICATION、SUB_APPLICATION，不区分大小写</value>
+        /// <value>应用、子应用，取值：APPLICATION、SUB_APPLICATION</value>
         [JsonConverter(typeof(EnumClassConverter<ModelTypeEnum>))]
         public class ModelTypeEnum
         {
@@ -132,30 +132,30 @@ namespace HuaweiCloud.SDK.Aom.V3.Model
 
 
         /// <summary>
-        /// 子应用名称：字符集长度2-64，仅支持字符集：英文字母、数字、下划线、中划线、点
+        /// 子应用唯一标识
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 子应用节点显示名：字符集长度2-64，仅支持字符集：中文字符、英文字母、数字、下划线、中划线、点
+        /// 子应用节点显示名称
         /// </summary>
         [JsonProperty("display_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DisplayName { get; set; }
 
         /// <summary>
-        /// 应用Id、子应用Id,id长度不能超过36位，由大小写字母、数字组成
+        /// 应用Id、子应用Id
         /// </summary>
         [JsonProperty("model_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ModelId { get; set; }
 
         /// <summary>
-        /// 应用、子应用，取值：APPLICATION、SUB_APPLICATION，不区分大小写
+        /// 应用、子应用，取值：APPLICATION、SUB_APPLICATION
         /// </summary>
         [JsonProperty("model_type", NullValueHandling = NullValueHandling.Ignore)]
         public ModelTypeEnum ModelType { get; set; }
         /// <summary>
-        /// 描述：最大255字符
+        /// 子应用描述
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }

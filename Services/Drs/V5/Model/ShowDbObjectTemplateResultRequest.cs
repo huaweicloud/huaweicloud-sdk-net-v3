@@ -271,6 +271,13 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         [SDKProperty("type", IsQuery = true)]
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }
+        /// <summary>
+        /// 默认为空。当进行列加工导入时，查询列加工导入进度，取值column。
+        /// </summary>
+        [SDKProperty("file_export_object_level", IsQuery = true)]
+        [JsonProperty("file_export_object_level", NullValueHandling = NullValueHandling.Ignore)]
+        public string FileExportObjectLevel { get; set; }
+
 
 
         /// <summary>
@@ -283,6 +290,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             sb.Append("  jobId: ").Append(JobId).Append("\n");
             sb.Append("  xLanguage: ").Append(XLanguage).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
+            sb.Append("  fileExportObjectLevel: ").Append(FileExportObjectLevel).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -318,6 +326,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                     this.Type == input.Type ||
                     (this.Type != null &&
                     this.Type.Equals(input.Type))
+                ) && 
+                (
+                    this.FileExportObjectLevel == input.FileExportObjectLevel ||
+                    (this.FileExportObjectLevel != null &&
+                    this.FileExportObjectLevel.Equals(input.FileExportObjectLevel))
                 );
         }
 
@@ -335,6 +348,8 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                     hashCode = hashCode * 59 + this.XLanguage.GetHashCode();
                 if (this.Type != null)
                     hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.FileExportObjectLevel != null)
+                    hashCode = hashCode * 59 + this.FileExportObjectLevel.GetHashCode();
                 return hashCode;
             }
         }

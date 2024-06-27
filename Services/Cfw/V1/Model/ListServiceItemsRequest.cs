@@ -52,14 +52,14 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用查询防火墙实例接口获得。具体可参考APIExlorer和帮助中心FAQ。默认情况下，fw_instance_Id为空时，返回帐号下第一个墙的信息；fw_instance_Id非空时，返回与fw_instance_Id对应墙的信息。
+        /// 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)，默认情况下，fw_instance_Id为空时，返回账号下第一个墙的信息；fw_instance_Id非空时，返回与fw_instance_Id对应墙的信息。
         /// </summary>
         [SDKProperty("fw_instance_id", IsQuery = true)]
         [JsonProperty("fw_instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string FwInstanceId { get; set; }
 
         /// <summary>
-        /// 查询服务组类型，0表示自定义服务组，1表示预定义服务组
+        /// 查询服务组类型，0表示自定义服务组，1表示预定义服务组。仅当set_id为预定义服务组id时生效
         /// </summary>
         [SDKProperty("query_service_set_type", IsQuery = true)]
         [JsonProperty("query_service_set_type", NullValueHandling = NullValueHandling.Ignore)]

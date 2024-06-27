@@ -565,12 +565,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// <summary>
         /// 
         /// </summary>
-        [JsonProperty("profile", NullValueHandling = NullValueHandling.Ignore)]
-        public RuleProfileDto Profile { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [JsonProperty("source", NullValueHandling = NullValueHandling.Ignore)]
         public RuleAddressDtoForRequest Source { get; set; }
 
@@ -615,7 +609,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  longConnectEnable: ").Append(LongConnectEnable).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  direction: ").Append(Direction).Append("\n");
-            sb.Append("  profile: ").Append(Profile).Append("\n");
             sb.Append("  source: ").Append(Source).Append("\n");
             sb.Append("  destination: ").Append(Destination).Append("\n");
             sb.Append("  service: ").Append(Service).Append("\n");
@@ -713,11 +706,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.Direction.Equals(input.Direction))
                 ) && 
                 (
-                    this.Profile == input.Profile ||
-                    (this.Profile != null &&
-                    this.Profile.Equals(input.Profile))
-                ) && 
-                (
                     this.Source == input.Source ||
                     (this.Source != null &&
                     this.Source.Equals(input.Source))
@@ -775,8 +763,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.Direction != null)
                     hashCode = hashCode * 59 + this.Direction.GetHashCode();
-                if (this.Profile != null)
-                    hashCode = hashCode * 59 + this.Profile.GetHashCode();
                 if (this.Source != null)
                     hashCode = hashCode * 59 + this.Source.GetHashCode();
                 if (this.Destination != null)

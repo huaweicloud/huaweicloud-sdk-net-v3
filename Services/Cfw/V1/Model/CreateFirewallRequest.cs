@@ -26,13 +26,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// <summary>
         /// 
         /// </summary>
-        [SDKProperty("X-Trace-Id", IsHeader = true)]
-        [JsonProperty("X-Trace-Id", NullValueHandling = NullValueHandling.Ignore)]
-        public string XTraceId { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
         public CreateFirewallReq Body { get; set; }
@@ -47,7 +40,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             var sb = new StringBuilder();
             sb.Append("class CreateFirewallRequest {\n");
             sb.Append("  xClientToken: ").Append(XClientToken).Append("\n");
-            sb.Append("  xTraceId: ").Append(XTraceId).Append("\n");
             sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -76,11 +68,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.XClientToken.Equals(input.XClientToken))
                 ) && 
                 (
-                    this.XTraceId == input.XTraceId ||
-                    (this.XTraceId != null &&
-                    this.XTraceId.Equals(input.XTraceId))
-                ) && 
-                (
                     this.Body == input.Body ||
                     (this.Body != null &&
                     this.Body.Equals(input.Body))
@@ -97,8 +84,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                 int hashCode = 41;
                 if (this.XClientToken != null)
                     hashCode = hashCode * 59 + this.XClientToken.GetHashCode();
-                if (this.XTraceId != null)
-                    hashCode = hashCode * 59 + this.XTraceId.GetHashCode();
                 if (this.Body != null)
                     hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;

@@ -26,7 +26,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// smn的订阅的状态
         /// </summary>
         [JsonProperty("smn_subscription_status", NullValueHandling = NullValueHandling.Ignore)]
-        public string SmnSubscriptionStatus { get; set; }
+        public int? SmnSubscriptionStatus { get; set; }
 
         /// <summary>
         /// smn的订阅类型

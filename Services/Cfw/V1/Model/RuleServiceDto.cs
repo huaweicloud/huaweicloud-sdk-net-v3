@@ -80,7 +80,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// 服务组名称列表
         /// </summary>
         [JsonProperty("service_group_names", NullValueHandling = NullValueHandling.Ignore)]
-        public List<AddressGroupVO> ServiceGroupNames { get; set; }
+        public List<ServiceGroupVO> ServiceGroupNames { get; set; }
 
         /// <summary>
         /// 服务组类型，0表示自定义服务组，1表示常用WEB服务，2表示常用远程登录和PING，3表示常用数据库

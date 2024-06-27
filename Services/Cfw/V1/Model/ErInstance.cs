@@ -52,6 +52,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         [JsonProperty("enable_ipv6", NullValueHandling = NullValueHandling.Ignore)]
         public string EnableIpv6 { get; set; }
 
+        /// <summary>
+        /// 连接id
+        /// </summary>
+        [JsonProperty("attachment_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string AttachmentId { get; set; }
+
 
 
         /// <summary>
@@ -67,6 +73,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  projectId: ").Append(ProjectId).Append("\n");
             sb.Append("  enableIpv6: ").Append(EnableIpv6).Append("\n");
+            sb.Append("  attachmentId: ").Append(AttachmentId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -117,6 +124,11 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.EnableIpv6 == input.EnableIpv6 ||
                     (this.EnableIpv6 != null &&
                     this.EnableIpv6.Equals(input.EnableIpv6))
+                ) && 
+                (
+                    this.AttachmentId == input.AttachmentId ||
+                    (this.AttachmentId != null &&
+                    this.AttachmentId.Equals(input.AttachmentId))
                 );
         }
 
@@ -140,6 +152,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
                 if (this.EnableIpv6 != null)
                     hashCode = hashCode * 59 + this.EnableIpv6.GetHashCode();
+                if (this.AttachmentId != null)
+                    hashCode = hashCode * 59 + this.AttachmentId.GetHashCode();
                 return hashCode;
             }
         }

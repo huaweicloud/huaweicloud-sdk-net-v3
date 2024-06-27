@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
     public class Resources 
     {
         /// <summary>
-        /// “资源类型”
+        /// 资源类型。 fgs_func_scale_down_timeout：v1版本函数的实例闲置释放时间 fgs_func_occurs：v1版本函数为实例数配额, v2版本函数为预留实例配额 fgs_func_pat_idle_time：vpc函数的pat闲置释放时间 fgs_func_num：用户函数数量配额 fgs_func_code_size：用户函数总代码大小配额 fgs_workflow_num：用户函数流数量配额 fgs_on_demand_instance_limit：v2版本函数单函数最大实例数配额 fgs_func_qos_limit 用户函数实例数配额
         /// </summary>
-        /// <value>“资源类型”</value>
+        /// <value>资源类型。 fgs_func_scale_down_timeout：v1版本函数的实例闲置释放时间 fgs_func_occurs：v1版本函数为实例数配额, v2版本函数为预留实例配额 fgs_func_pat_idle_time：vpc函数的pat闲置释放时间 fgs_func_num：用户函数数量配额 fgs_func_code_size：用户函数总代码大小配额 fgs_workflow_num：用户函数流数量配额 fgs_on_demand_instance_limit：v2版本函数单函数最大实例数配额 fgs_func_qos_limit 用户函数实例数配额</value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -52,6 +52,16 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             /// </summary>
             public static readonly TypeEnum FGS_WORKFLOW_NUM = new TypeEnum("fgs_workflow_num");
 
+            /// <summary>
+            /// Enum FGS_ON_DEMAND_INSTANCE_LIMIT for value: fgs_on_demand_instance_limit
+            /// </summary>
+            public static readonly TypeEnum FGS_ON_DEMAND_INSTANCE_LIMIT = new TypeEnum("fgs_on_demand_instance_limit");
+
+            /// <summary>
+            /// Enum FGS_FUNC_QOS_LIMIT for value: fgs_func_qos_limit
+            /// </summary>
+            public static readonly TypeEnum FGS_FUNC_QOS_LIMIT = new TypeEnum("fgs_func_qos_limit");
+
             private static readonly Dictionary<string, TypeEnum> StaticFields =
             new Dictionary<string, TypeEnum>()
             {
@@ -61,6 +71,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                 { "fgs_func_num", FGS_FUNC_NUM },
                 { "fgs_func_code_size", FGS_FUNC_CODE_SIZE },
                 { "fgs_workflow_num", FGS_WORKFLOW_NUM },
+                { "fgs_on_demand_instance_limit", FGS_ON_DEMAND_INSTANCE_LIMIT },
+                { "fgs_func_qos_limit", FGS_FUNC_QOS_LIMIT },
             };
 
             private string _value;
@@ -168,7 +180,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public int? Used { get; set; }
 
         /// <summary>
-        /// “资源类型”
+        /// 资源类型。 fgs_func_scale_down_timeout：v1版本函数的实例闲置释放时间 fgs_func_occurs：v1版本函数为实例数配额, v2版本函数为预留实例配额 fgs_func_pat_idle_time：vpc函数的pat闲置释放时间 fgs_func_num：用户函数数量配额 fgs_func_code_size：用户函数总代码大小配额 fgs_workflow_num：用户函数流数量配额 fgs_on_demand_instance_limit：v2版本函数单函数最大实例数配额 fgs_func_qos_limit 用户函数实例数配额
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }

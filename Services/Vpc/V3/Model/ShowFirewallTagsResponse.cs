@@ -17,22 +17,16 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
     {
 
         /// <summary>
-        /// 
+        /// tag对象列表
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
-        public ResourceTag Tags { get; set; }
+        public List<ResourceTag> Tags { get; set; }
 
         /// <summary>
         /// 请求ID
         /// </summary>
         [JsonProperty("request_id", NullValueHandling = NullValueHandling.Ignore)]
         public string RequestId { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("sys_tags", NullValueHandling = NullValueHandling.Ignore)]
-        public ResourceTag SysTags { get; set; }
 
 
 
@@ -45,7 +39,6 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
             sb.Append("class ShowFirewallTagsResponse {\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  requestId: ").Append(RequestId).Append("\n");
-            sb.Append("  sysTags: ").Append(SysTags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -69,18 +62,14 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
             return 
                 (
                     this.Tags == input.Tags ||
-                    (this.Tags != null &&
-                    this.Tags.Equals(input.Tags))
+                    this.Tags != null &&
+                    input.Tags != null &&
+                    this.Tags.SequenceEqual(input.Tags)
                 ) && 
                 (
                     this.RequestId == input.RequestId ||
                     (this.RequestId != null &&
                     this.RequestId.Equals(input.RequestId))
-                ) && 
-                (
-                    this.SysTags == input.SysTags ||
-                    (this.SysTags != null &&
-                    this.SysTags.Equals(input.SysTags))
                 );
         }
 
@@ -96,8 +85,6 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
                     hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 if (this.RequestId != null)
                     hashCode = hashCode * 59 + this.RequestId.GetHashCode();
-                if (this.SysTags != null)
-                    hashCode = hashCode * 59 + this.SysTags.GetHashCode();
                 return hashCode;
             }
         }

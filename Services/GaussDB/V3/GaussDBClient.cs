@@ -3511,6 +3511,58 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         }
         
         /// <summary>
+        /// 数据同步库配置校验
+        ///
+        /// 数据同步库配置校验。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CheckClickHouseDataBaseConfigResponse CheckClickHouseDataBaseConfig(CheckClickHouseDataBaseConfigRequest checkClickHouseDataBaseConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", checkClickHouseDataBaseConfigRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/replication/database-check", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", checkClickHouseDataBaseConfigRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CheckClickHouseDataBaseConfigResponse>(response);
+        }
+
+        public SyncInvoker<CheckClickHouseDataBaseConfigResponse> CheckClickHouseDataBaseConfigInvoker(CheckClickHouseDataBaseConfigRequest checkClickHouseDataBaseConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", checkClickHouseDataBaseConfigRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/replication/database-check", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", checkClickHouseDataBaseConfigRequest);
+            return new SyncInvoker<CheckClickHouseDataBaseConfigResponse>(this, "POST", request, JsonUtils.DeSerialize<CheckClickHouseDataBaseConfigResponse>);
+        }
+        
+        /// <summary>
+        /// 数据同步表配置校验
+        ///
+        /// 数据同步表配置校验。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CheckClickHouseTableConfigResponse CheckClickHouseTableConfig(CheckClickHouseTableConfigRequest checkClickHouseTableConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", checkClickHouseTableConfigRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/replication/table-check", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", checkClickHouseTableConfigRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CheckClickHouseTableConfigResponse>(response);
+        }
+
+        public SyncInvoker<CheckClickHouseTableConfigResponse> CheckClickHouseTableConfigInvoker(CheckClickHouseTableConfigRequest checkClickHouseTableConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", checkClickHouseTableConfigRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/replication/table-check", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", checkClickHouseTableConfigRequest);
+            return new SyncInvoker<CheckClickHouseTableConfigResponse>(this, "POST", request, JsonUtils.DeSerialize<CheckClickHouseTableConfigResponse>);
+        }
+        
+        /// <summary>
         /// HTAP数据同步库配置校验
         ///
         /// HTAP数据同步库配置校验。
@@ -3584,6 +3636,84 @@ namespace HuaweiCloud.SDK.GaussDB.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/databases/replication/table-config-check", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", checkTableConfigRequest);
             return new SyncInvoker<CheckTableConfigResponse>(this, "POST", request, JsonUtils.DeSerialize<CheckTableConfigResponse>);
+        }
+        
+        /// <summary>
+        /// 创建数据同步
+        ///
+        /// 创建数据同步。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateClickHouseDataBaseReplicationResponse CreateClickHouseDataBaseReplication(CreateClickHouseDataBaseReplicationRequest createClickHouseDataBaseReplicationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createClickHouseDataBaseReplicationRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/replication", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createClickHouseDataBaseReplicationRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateClickHouseDataBaseReplicationResponse>(response);
+        }
+
+        public SyncInvoker<CreateClickHouseDataBaseReplicationResponse> CreateClickHouseDataBaseReplicationInvoker(CreateClickHouseDataBaseReplicationRequest createClickHouseDataBaseReplicationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createClickHouseDataBaseReplicationRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/replication", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createClickHouseDataBaseReplicationRequest);
+            return new SyncInvoker<CreateClickHouseDataBaseReplicationResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateClickHouseDataBaseReplicationResponse>);
+        }
+        
+        /// <summary>
+        /// 创建数据库账号
+        ///
+        /// 创建数据库账号。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateClickHouseDatabaseUserResponse CreateClickHouseDatabaseUser(CreateClickHouseDatabaseUserRequest createClickHouseDatabaseUserRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createClickHouseDatabaseUserRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/users", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createClickHouseDatabaseUserRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateClickHouseDatabaseUserResponse>(response);
+        }
+
+        public SyncInvoker<CreateClickHouseDatabaseUserResponse> CreateClickHouseDatabaseUserInvoker(CreateClickHouseDatabaseUserRequest createClickHouseDatabaseUserRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createClickHouseDatabaseUserRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/users", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createClickHouseDatabaseUserRequest);
+            return new SyncInvoker<CreateClickHouseDatabaseUserResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateClickHouseDatabaseUserResponse>);
+        }
+        
+        /// <summary>
+        /// 创建实例
+        ///
+        /// 创建实例。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateClickHouseInstanceResponse CreateClickHouseInstance(CreateClickHouseInstanceRequest createClickHouseInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createClickHouseInstanceRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createClickHouseInstanceRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateClickHouseInstanceResponse>(response);
+        }
+
+        public SyncInvoker<CreateClickHouseInstanceResponse> CreateClickHouseInstanceInvoker(CreateClickHouseInstanceRequest createClickHouseInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createClickHouseInstanceRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createClickHouseInstanceRequest);
+            return new SyncInvoker<CreateClickHouseInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateClickHouseInstanceResponse>);
         }
         
         /// <summary>
@@ -3665,6 +3795,140 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         }
         
         /// <summary>
+        /// 停止修改数据同步
+        ///
+        /// 停止修改数据同步。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteClickHouseDataBaseConfigResponse DeleteClickHouseDataBaseConfig(DeleteClickHouseDataBaseConfigRequest deleteClickHouseDataBaseConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteClickHouseDataBaseConfigRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/databases/replication/config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteClickHouseDataBaseConfigRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteClickHouseDataBaseConfigResponse>(response);
+        }
+
+        public SyncInvoker<DeleteClickHouseDataBaseConfigResponse> DeleteClickHouseDataBaseConfigInvoker(DeleteClickHouseDataBaseConfigRequest deleteClickHouseDataBaseConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteClickHouseDataBaseConfigRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/databases/replication/config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteClickHouseDataBaseConfigRequest);
+            return new SyncInvoker<DeleteClickHouseDataBaseConfigResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteClickHouseDataBaseConfigResponse>);
+        }
+        
+        /// <summary>
+        /// 删除数据同步
+        ///
+        /// 删除数据同步。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteClickHouseDataBaseReplicationResponse DeleteClickHouseDataBaseReplication(DeleteClickHouseDataBaseReplicationRequest deleteClickHouseDataBaseReplicationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteClickHouseDataBaseReplicationRequest.InstanceId.ToString());
+            urlParam.Add("database_name", deleteClickHouseDataBaseReplicationRequest.DatabaseName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/replication/{database_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteClickHouseDataBaseReplicationRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteClickHouseDataBaseReplicationResponse>(response);
+        }
+
+        public SyncInvoker<DeleteClickHouseDataBaseReplicationResponse> DeleteClickHouseDataBaseReplicationInvoker(DeleteClickHouseDataBaseReplicationRequest deleteClickHouseDataBaseReplicationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteClickHouseDataBaseReplicationRequest.InstanceId.ToString());
+            urlParam.Add("database_name", deleteClickHouseDataBaseReplicationRequest.DatabaseName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/replication/{database_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteClickHouseDataBaseReplicationRequest);
+            return new SyncInvoker<DeleteClickHouseDataBaseReplicationResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteClickHouseDataBaseReplicationResponse>);
+        }
+        
+        /// <summary>
+        /// 删除数据库账户
+        ///
+        /// 删除数据库账户。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteClickHouseDatabaseUserResponse DeleteClickHouseDatabaseUser(DeleteClickHouseDatabaseUserRequest deleteClickHouseDatabaseUserRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteClickHouseDatabaseUserRequest.InstanceId.ToString());
+            urlParam.Add("user_name", deleteClickHouseDatabaseUserRequest.UserName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/users/{user_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteClickHouseDatabaseUserRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteClickHouseDatabaseUserResponse>(response);
+        }
+
+        public SyncInvoker<DeleteClickHouseDatabaseUserResponse> DeleteClickHouseDatabaseUserInvoker(DeleteClickHouseDatabaseUserRequest deleteClickHouseDatabaseUserRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteClickHouseDatabaseUserRequest.InstanceId.ToString());
+            urlParam.Add("user_name", deleteClickHouseDatabaseUserRequest.UserName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/users/{user_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteClickHouseDatabaseUserRequest);
+            return new SyncInvoker<DeleteClickHouseDatabaseUserResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteClickHouseDatabaseUserResponse>);
+        }
+        
+        /// <summary>
+        /// 删除实例
+        ///
+        /// 删除实例。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteClickHouseInstanceResponse DeleteClickHouseInstance(DeleteClickHouseInstanceRequest deleteClickHouseInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteClickHouseInstanceRequest.InstanceId.ToString());
+            urlParam.Add("clickhouse_instance_id", deleteClickHouseInstanceRequest.ClickhouseInstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/{clickhouse_instance_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteClickHouseInstanceRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteClickHouseInstanceResponse>(response);
+        }
+
+        public SyncInvoker<DeleteClickHouseInstanceResponse> DeleteClickHouseInstanceInvoker(DeleteClickHouseInstanceRequest deleteClickHouseInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteClickHouseInstanceRequest.InstanceId.ToString());
+            urlParam.Add("clickhouse_instance_id", deleteClickHouseInstanceRequest.ClickhouseInstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/{clickhouse_instance_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteClickHouseInstanceRequest);
+            return new SyncInvoker<DeleteClickHouseInstanceResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteClickHouseInstanceResponse>);
+        }
+        
+        /// <summary>
+        /// 批量解除LTS日志配置
+        ///
+        /// 批量解除LTS日志配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteClickHouseLtsConfigResponse DeleteClickHouseLtsConfig(DeleteClickHouseLtsConfigRequest deleteClickHouseLtsConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/clickhouse/instances/logs/lts-configs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteClickHouseLtsConfigRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteClickHouseLtsConfigResponse>(response);
+        }
+
+        public SyncInvoker<DeleteClickHouseLtsConfigResponse> DeleteClickHouseLtsConfigInvoker(DeleteClickHouseLtsConfigRequest deleteClickHouseLtsConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/clickhouse/instances/logs/lts-configs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteClickHouseLtsConfigRequest);
+            return new SyncInvoker<DeleteClickHouseLtsConfigResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteClickHouseLtsConfigResponse>);
+        }
+        
+        /// <summary>
         /// 删除StarRocks数据同步
         ///
         /// 删除StarRocks数据同步。
@@ -3742,6 +4006,164 @@ namespace HuaweiCloud.SDK.GaussDB.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/{starrocks_instance_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteStarrocksInstanceRequest);
             return new SyncInvoker<DeleteStarrocksInstanceResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteStarrocksInstanceResponse>);
+        }
+        
+        /// <summary>
+        /// 查询数据库列表
+        ///
+        /// 查询数据库列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListClickHouseDataBaseResponse ListClickHouseDataBase(ListClickHouseDataBaseRequest listClickHouseDataBaseRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listClickHouseDataBaseRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/databases", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listClickHouseDataBaseRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListClickHouseDataBaseResponse>(response);
+        }
+
+        public SyncInvoker<ListClickHouseDataBaseResponse> ListClickHouseDataBaseInvoker(ListClickHouseDataBaseRequest listClickHouseDataBaseRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listClickHouseDataBaseRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/databases", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listClickHouseDataBaseRequest);
+            return new SyncInvoker<ListClickHouseDataBaseResponse>(this, "GET", request, JsonUtils.DeSerialize<ListClickHouseDataBaseResponse>);
+        }
+        
+        /// <summary>
+        /// 查询数据同步的库参数配置
+        ///
+        /// 查询数据同步的库参数配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListClickHouseDataBaseParameterResponse ListClickHouseDataBaseParameter(ListClickHouseDataBaseParameterRequest listClickHouseDataBaseParameterRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listClickHouseDataBaseParameterRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/replication/database-parameter", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listClickHouseDataBaseParameterRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListClickHouseDataBaseParameterResponse>(response);
+        }
+
+        public SyncInvoker<ListClickHouseDataBaseParameterResponse> ListClickHouseDataBaseParameterInvoker(ListClickHouseDataBaseParameterRequest listClickHouseDataBaseParameterRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listClickHouseDataBaseParameterRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/replication/database-parameter", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listClickHouseDataBaseParameterRequest);
+            return new SyncInvoker<ListClickHouseDataBaseParameterResponse>(this, "GET", request, JsonUtils.DeSerialize<ListClickHouseDataBaseParameterResponse>);
+        }
+        
+        /// <summary>
+        /// 查询数据同步信息
+        ///
+        /// 查询数据同步信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListClickHouseDataBaseReplicationResponse ListClickHouseDataBaseReplication(ListClickHouseDataBaseReplicationRequest listClickHouseDataBaseReplicationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listClickHouseDataBaseReplicationRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/replication", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listClickHouseDataBaseReplicationRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListClickHouseDataBaseReplicationResponse>(response);
+        }
+
+        public SyncInvoker<ListClickHouseDataBaseReplicationResponse> ListClickHouseDataBaseReplicationInvoker(ListClickHouseDataBaseReplicationRequest listClickHouseDataBaseReplicationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listClickHouseDataBaseReplicationRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/replication", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listClickHouseDataBaseReplicationRequest);
+            return new SyncInvoker<ListClickHouseDataBaseReplicationResponse>(this, "GET", request, JsonUtils.DeSerialize<ListClickHouseDataBaseReplicationResponse>);
+        }
+        
+        /// <summary>
+        /// 查看数据同步配置
+        ///
+        /// 查看数据同步配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListClickHouseDataBaseReplicationConfigResponse ListClickHouseDataBaseReplicationConfig(ListClickHouseDataBaseReplicationConfigRequest listClickHouseDataBaseReplicationConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listClickHouseDataBaseReplicationConfigRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/replication/config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listClickHouseDataBaseReplicationConfigRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListClickHouseDataBaseReplicationConfigResponse>(response);
+        }
+
+        public SyncInvoker<ListClickHouseDataBaseReplicationConfigResponse> ListClickHouseDataBaseReplicationConfigInvoker(ListClickHouseDataBaseReplicationConfigRequest listClickHouseDataBaseReplicationConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listClickHouseDataBaseReplicationConfigRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/replication/config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listClickHouseDataBaseReplicationConfigRequest);
+            return new SyncInvoker<ListClickHouseDataBaseReplicationConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ListClickHouseDataBaseReplicationConfigResponse>);
+        }
+        
+        /// <summary>
+        /// 查询实例详情
+        ///
+        /// 查询实例详情。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListClickHouseInstanceResponse ListClickHouseInstance(ListClickHouseInstanceRequest listClickHouseInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listClickHouseInstanceRequest.InstanceId.ToString());
+            urlParam.Add("clickhouse_instance_id", listClickHouseInstanceRequest.ClickhouseInstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/{clickhouse_instance_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listClickHouseInstanceRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListClickHouseInstanceResponse>(response);
+        }
+
+        public SyncInvoker<ListClickHouseInstanceResponse> ListClickHouseInstanceInvoker(ListClickHouseInstanceRequest listClickHouseInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listClickHouseInstanceRequest.InstanceId.ToString());
+            urlParam.Add("clickhouse_instance_id", listClickHouseInstanceRequest.ClickhouseInstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/{clickhouse_instance_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listClickHouseInstanceRequest);
+            return new SyncInvoker<ListClickHouseInstanceResponse>(this, "GET", request, JsonUtils.DeSerialize<ListClickHouseInstanceResponse>);
+        }
+        
+        /// <summary>
+        /// 查询错误日志、慢日志节点信息
+        ///
+        /// 查询错误日志、慢日志节点信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListClickHouseInstanceNodeResponse ListClickHouseInstanceNode(ListClickHouseInstanceNodeRequest listClickHouseInstanceNodeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listClickHouseInstanceNodeRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/nodes", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listClickHouseInstanceNodeRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListClickHouseInstanceNodeResponse>(response);
+        }
+
+        public SyncInvoker<ListClickHouseInstanceNodeResponse> ListClickHouseInstanceNodeInvoker(ListClickHouseInstanceNodeRequest listClickHouseInstanceNodeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listClickHouseInstanceNodeRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/nodes", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listClickHouseInstanceNodeRequest);
+            return new SyncInvoker<ListClickHouseInstanceNodeResponse>(this, "GET", request, JsonUtils.DeSerialize<ListClickHouseInstanceNodeResponse>);
         }
         
         /// <summary>
@@ -3981,6 +4403,110 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         }
         
         /// <summary>
+        /// 暂停StarRocks数据同步
+        ///
+        /// 暂停StarRocks数据同步。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public PauseStarRocksDataReplicationResponse PauseStarRocksDataReplication(PauseStarRocksDataReplicationRequest pauseStarRocksDataReplicationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", pauseStarRocksDataReplicationRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/databases/replication/pause", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", pauseStarRocksDataReplicationRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<PauseStarRocksDataReplicationResponse>(response);
+        }
+
+        public SyncInvoker<PauseStarRocksDataReplicationResponse> PauseStarRocksDataReplicationInvoker(PauseStarRocksDataReplicationRequest pauseStarRocksDataReplicationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", pauseStarRocksDataReplicationRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/databases/replication/pause", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", pauseStarRocksDataReplicationRequest);
+            return new SyncInvoker<PauseStarRocksDataReplicationResponse>(this, "POST", request, JsonUtils.DeSerialize<PauseStarRocksDataReplicationResponse>);
+        }
+        
+        /// <summary>
+        /// 重启实例
+        ///
+        /// 重启实例。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public RebootClickHouseInstanceResponse RebootClickHouseInstance(RebootClickHouseInstanceRequest rebootClickHouseInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", rebootClickHouseInstanceRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/restart", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", rebootClickHouseInstanceRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<RebootClickHouseInstanceResponse>(response);
+        }
+
+        public SyncInvoker<RebootClickHouseInstanceResponse> RebootClickHouseInstanceInvoker(RebootClickHouseInstanceRequest rebootClickHouseInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", rebootClickHouseInstanceRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/restart", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", rebootClickHouseInstanceRequest);
+            return new SyncInvoker<RebootClickHouseInstanceResponse>(this, "PUT", request, JsonUtils.DeSerialize<RebootClickHouseInstanceResponse>);
+        }
+        
+        /// <summary>
+        /// 实例规格变更
+        ///
+        /// 实例规格变更。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ResizeClickHouseFlavorResponse ResizeClickHouseFlavor(ResizeClickHouseFlavorRequest resizeClickHouseFlavorRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", resizeClickHouseFlavorRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/resize-flavor", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", resizeClickHouseFlavorRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<ResizeClickHouseFlavorResponse>(response);
+        }
+
+        public SyncInvoker<ResizeClickHouseFlavorResponse> ResizeClickHouseFlavorInvoker(ResizeClickHouseFlavorRequest resizeClickHouseFlavorRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", resizeClickHouseFlavorRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/resize-flavor", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", resizeClickHouseFlavorRequest);
+            return new SyncInvoker<ResizeClickHouseFlavorResponse>(this, "POST", request, JsonUtils.DeSerialize<ResizeClickHouseFlavorResponse>);
+        }
+        
+        /// <summary>
+        /// 实例磁盘扩容
+        ///
+        /// 实例磁盘扩容。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ResizeClickHouseInstanceResponse ResizeClickHouseInstance(ResizeClickHouseInstanceRequest resizeClickHouseInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", resizeClickHouseInstanceRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/resize", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", resizeClickHouseInstanceRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<ResizeClickHouseInstanceResponse>(response);
+        }
+
+        public SyncInvoker<ResizeClickHouseInstanceResponse> ResizeClickHouseInstanceInvoker(ResizeClickHouseInstanceRequest resizeClickHouseInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", resizeClickHouseInstanceRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/resize", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", resizeClickHouseInstanceRequest);
+            return new SyncInvoker<ResizeClickHouseInstanceResponse>(this, "PUT", request, JsonUtils.DeSerialize<ResizeClickHouseInstanceResponse>);
+        }
+        
+        /// <summary>
         /// 重启StarRocks实例
         ///
         /// 重启StarRocks实例。
@@ -4035,6 +4561,134 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         }
         
         /// <summary>
+        /// 恢复StarRocks数据同步
+        ///
+        /// 恢复StarRocks数据同步。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ResumeStarRocksDataReplicationResponse ResumeStarRocksDataReplication(ResumeStarRocksDataReplicationRequest resumeStarRocksDataReplicationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", resumeStarRocksDataReplicationRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/databases/replication/resume", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", resumeStarRocksDataReplicationRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<ResumeStarRocksDataReplicationResponse>(response);
+        }
+
+        public SyncInvoker<ResumeStarRocksDataReplicationResponse> ResumeStarRocksDataReplicationInvoker(ResumeStarRocksDataReplicationRequest resumeStarRocksDataReplicationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", resumeStarRocksDataReplicationRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/databases/replication/resume", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", resumeStarRocksDataReplicationRequest);
+            return new SyncInvoker<ResumeStarRocksDataReplicationResponse>(this, "POST", request, JsonUtils.DeSerialize<ResumeStarRocksDataReplicationResponse>);
+        }
+        
+        /// <summary>
+        /// 查询数据库账户
+        ///
+        /// 查询数据库账户。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowClickHouseDatabaseUserResponse ShowClickHouseDatabaseUser(ShowClickHouseDatabaseUserRequest showClickHouseDatabaseUserRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showClickHouseDatabaseUserRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/users", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showClickHouseDatabaseUserRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowClickHouseDatabaseUserResponse>(response);
+        }
+
+        public SyncInvoker<ShowClickHouseDatabaseUserResponse> ShowClickHouseDatabaseUserInvoker(ShowClickHouseDatabaseUserRequest showClickHouseDatabaseUserRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showClickHouseDatabaseUserRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/users", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showClickHouseDatabaseUserRequest);
+            return new SyncInvoker<ShowClickHouseDatabaseUserResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowClickHouseDatabaseUserResponse>);
+        }
+        
+        /// <summary>
+        /// 查询实例LTS日志配置列表
+        ///
+        /// 查询实例LTS日志配置列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowClickHouseLtsConfigResponse ShowClickHouseLtsConfig(ShowClickHouseLtsConfigRequest showClickHouseLtsConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/clickhouse/instances/logs/lts-configs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showClickHouseLtsConfigRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowClickHouseLtsConfigResponse>(response);
+        }
+
+        public SyncInvoker<ShowClickHouseLtsConfigResponse> ShowClickHouseLtsConfigInvoker(ShowClickHouseLtsConfigRequest showClickHouseLtsConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/clickhouse/instances/logs/lts-configs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showClickHouseLtsConfigRequest);
+            return new SyncInvoker<ShowClickHouseLtsConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowClickHouseLtsConfigResponse>);
+        }
+        
+        /// <summary>
+        /// 查询慢日志
+        ///
+        /// 获取内核慢日志信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowClickHouseSlowLogDetailResponse ShowClickHouseSlowLogDetail(ShowClickHouseSlowLogDetailRequest showClickHouseSlowLogDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showClickHouseSlowLogDetailRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/slow-logs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", showClickHouseSlowLogDetailRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<ShowClickHouseSlowLogDetailResponse>(response);
+        }
+
+        public SyncInvoker<ShowClickHouseSlowLogDetailResponse> ShowClickHouseSlowLogDetailInvoker(ShowClickHouseSlowLogDetailRequest showClickHouseSlowLogDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showClickHouseSlowLogDetailRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/slow-logs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", showClickHouseSlowLogDetailRequest);
+            return new SyncInvoker<ShowClickHouseSlowLogDetailResponse>(this, "POST", request, JsonUtils.DeSerialize<ShowClickHouseSlowLogDetailResponse>);
+        }
+        
+        /// <summary>
+        /// 查询慢日志脱敏状态
+        ///
+        /// 查询慢日志脱敏状态。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowClickHouseSlowLogSensitiveStatusResponse ShowClickHouseSlowLogSensitiveStatus(ShowClickHouseSlowLogSensitiveStatusRequest showClickHouseSlowLogSensitiveStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showClickHouseSlowLogSensitiveStatusRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/slowlog-sensitive", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showClickHouseSlowLogSensitiveStatusRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowClickHouseSlowLogSensitiveStatusResponse>(response);
+        }
+
+        public SyncInvoker<ShowClickHouseSlowLogSensitiveStatusResponse> ShowClickHouseSlowLogSensitiveStatusInvoker(ShowClickHouseSlowLogSensitiveStatusRequest showClickHouseSlowLogSensitiveStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showClickHouseSlowLogSensitiveStatusRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/slowlog-sensitive", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showClickHouseSlowLogSensitiveStatusRequest);
+            return new SyncInvoker<ShowClickHouseSlowLogSensitiveStatusResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowClickHouseSlowLogSensitiveStatusResponse>);
+        }
+        
+        /// <summary>
         /// 查询数据库账户
         ///
         /// 查询StarRocks数据库账户。
@@ -4058,6 +4712,134 @@ namespace HuaweiCloud.SDK.GaussDB.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/users", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStarRocksDatabaseUserRequest);
             return new SyncInvoker<ShowStarRocksDatabaseUserResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowStarRocksDatabaseUserResponse>);
+        }
+        
+        /// <summary>
+        /// 修改数据同步
+        ///
+        /// 修改数据同步。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateClickHouseDataBaseConfigResponse UpdateClickHouseDataBaseConfig(UpdateClickHouseDataBaseConfigRequest updateClickHouseDataBaseConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateClickHouseDataBaseConfigRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/databases/replication/config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateClickHouseDataBaseConfigRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateClickHouseDataBaseConfigResponse>(response);
+        }
+
+        public SyncInvoker<UpdateClickHouseDataBaseConfigResponse> UpdateClickHouseDataBaseConfigInvoker(UpdateClickHouseDataBaseConfigRequest updateClickHouseDataBaseConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateClickHouseDataBaseConfigRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/databases/replication/config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateClickHouseDataBaseConfigRequest);
+            return new SyncInvoker<UpdateClickHouseDataBaseConfigResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateClickHouseDataBaseConfigResponse>);
+        }
+        
+        /// <summary>
+        /// 修改数据库账号密码
+        ///
+        /// 修改数据库账号密码。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateClickHouseDatabaseUserPasswordResponse UpdateClickHouseDatabaseUserPassword(UpdateClickHouseDatabaseUserPasswordRequest updateClickHouseDatabaseUserPasswordRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateClickHouseDatabaseUserPasswordRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/users/password", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateClickHouseDatabaseUserPasswordRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateClickHouseDatabaseUserPasswordResponse>(response);
+        }
+
+        public SyncInvoker<UpdateClickHouseDatabaseUserPasswordResponse> UpdateClickHouseDatabaseUserPasswordInvoker(UpdateClickHouseDatabaseUserPasswordRequest updateClickHouseDatabaseUserPasswordRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateClickHouseDatabaseUserPasswordRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/users/password", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateClickHouseDatabaseUserPasswordRequest);
+            return new SyncInvoker<UpdateClickHouseDatabaseUserPasswordResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateClickHouseDatabaseUserPasswordResponse>);
+        }
+        
+        /// <summary>
+        /// 修改数据库账号权限
+        ///
+        /// 修改数据库账号权限。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateClickHouseDatabaseUserPermissionResponse UpdateClickHouseDatabaseUserPermission(UpdateClickHouseDatabaseUserPermissionRequest updateClickHouseDatabaseUserPermissionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateClickHouseDatabaseUserPermissionRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/users/permission", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateClickHouseDatabaseUserPermissionRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateClickHouseDatabaseUserPermissionResponse>(response);
+        }
+
+        public SyncInvoker<UpdateClickHouseDatabaseUserPermissionResponse> UpdateClickHouseDatabaseUserPermissionInvoker(UpdateClickHouseDatabaseUserPermissionRequest updateClickHouseDatabaseUserPermissionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateClickHouseDatabaseUserPermissionRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/users/permission", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateClickHouseDatabaseUserPermissionRequest);
+            return new SyncInvoker<UpdateClickHouseDatabaseUserPermissionResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateClickHouseDatabaseUserPermissionResponse>);
+        }
+        
+        /// <summary>
+        /// 批量创建LTS日志配置
+        ///
+        /// 批量创建LTS日志配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateClickHouseLtsConfigResponse UpdateClickHouseLtsConfig(UpdateClickHouseLtsConfigRequest updateClickHouseLtsConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/clickhouse/instances/logs/lts-configs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateClickHouseLtsConfigRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<UpdateClickHouseLtsConfigResponse>(response);
+        }
+
+        public SyncInvoker<UpdateClickHouseLtsConfigResponse> UpdateClickHouseLtsConfigInvoker(UpdateClickHouseLtsConfigRequest updateClickHouseLtsConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/clickhouse/instances/logs/lts-configs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateClickHouseLtsConfigRequest);
+            return new SyncInvoker<UpdateClickHouseLtsConfigResponse>(this, "POST", request, JsonUtils.DeSerializeNull<UpdateClickHouseLtsConfigResponse>);
+        }
+        
+        /// <summary>
+        /// 修改慢日志脱敏状态
+        ///
+        /// 修改慢日志脱敏状态。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateClickHouseSlowLogSensitiveStatusResponse UpdateClickHouseSlowLogSensitiveStatus(UpdateClickHouseSlowLogSensitiveStatusRequest updateClickHouseSlowLogSensitiveStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateClickHouseSlowLogSensitiveStatusRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/slowlog-sensitive", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateClickHouseSlowLogSensitiveStatusRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateClickHouseSlowLogSensitiveStatusResponse>(response);
+        }
+
+        public SyncInvoker<UpdateClickHouseSlowLogSensitiveStatusResponse> UpdateClickHouseSlowLogSensitiveStatusInvoker(UpdateClickHouseSlowLogSensitiveStatusRequest updateClickHouseSlowLogSensitiveStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateClickHouseSlowLogSensitiveStatusRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/slowlog-sensitive", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateClickHouseSlowLogSensitiveStatusRequest);
+            return new SyncInvoker<UpdateClickHouseSlowLogSensitiveStatusResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateClickHouseSlowLogSensitiveStatusResponse>);
         }
         
         /// <summary>

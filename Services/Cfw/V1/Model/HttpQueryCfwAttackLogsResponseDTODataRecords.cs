@@ -143,7 +143,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string Action { get; set; }
 
         /// <summary>
-        /// 事件时间
+        /// 事件时间，以毫秒为单位的时间戳，如1718936272648
         /// </summary>
         [JsonProperty("event_time", NullValueHandling = NullValueHandling.Ignore)]
         public long? EventTime { get; set; }
@@ -185,10 +185,10 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string AttackRuleId { get; set; }
 
         /// <summary>
-        /// 命中时间
+        /// 命中时间，以毫秒为单位的时间戳，如1718936272648
         /// </summary>
         [JsonProperty("hit_time", NullValueHandling = NullValueHandling.Ignore)]
-        public int? HitTime { get; set; }
+        public long? HitTime { get; set; }
 
         /// <summary>
         /// 日志ID
@@ -245,12 +245,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public List<PacketMessage> PacketMessages { get; set; }
 
         /// <summary>
-        /// 目标主机
-        /// </summary>
-        [JsonProperty("dst_host", NullValueHandling = NullValueHandling.Ignore)]
-        public string DstHost { get; set; }
-
-        /// <summary>
         /// 源区域id
         /// </summary>
         [JsonProperty("src_region_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -273,6 +267,54 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// </summary>
         [JsonProperty("dst_region_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DstRegionName { get; set; }
+
+        /// <summary>
+        /// 源省份id
+        /// </summary>
+        [JsonProperty("src_province_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string SrcProvinceId { get; set; }
+
+        /// <summary>
+        /// 源省份名称
+        /// </summary>
+        [JsonProperty("src_province_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string SrcProvinceName { get; set; }
+
+        /// <summary>
+        /// 源城市id
+        /// </summary>
+        [JsonProperty("src_city_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string SrcCityId { get; set; }
+
+        /// <summary>
+        /// 源城市名称
+        /// </summary>
+        [JsonProperty("src_city_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string SrcCityName { get; set; }
+
+        /// <summary>
+        /// 目的省份id
+        /// </summary>
+        [JsonProperty("dst_province_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string DstProvinceId { get; set; }
+
+        /// <summary>
+        /// 目的省份名称
+        /// </summary>
+        [JsonProperty("dst_province_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string DstProvinceName { get; set; }
+
+        /// <summary>
+        /// 目的城市id
+        /// </summary>
+        [JsonProperty("dst_city_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string DstCityId { get; set; }
+
+        /// <summary>
+        /// 目的城市名称
+        /// </summary>
+        [JsonProperty("dst_city_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string DstCityName { get; set; }
 
 
 
@@ -302,11 +344,18 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  packet: ").Append(Packet).Append("\n");
             sb.Append("  app: ").Append(App).Append("\n");
             sb.Append("  packetMessages: ").Append(PacketMessages).Append("\n");
-            sb.Append("  dstHost: ").Append(DstHost).Append("\n");
             sb.Append("  srcRegionId: ").Append(SrcRegionId).Append("\n");
             sb.Append("  srcRegionName: ").Append(SrcRegionName).Append("\n");
             sb.Append("  dstRegionId: ").Append(DstRegionId).Append("\n");
             sb.Append("  dstRegionName: ").Append(DstRegionName).Append("\n");
+            sb.Append("  srcProvinceId: ").Append(SrcProvinceId).Append("\n");
+            sb.Append("  srcProvinceName: ").Append(SrcProvinceName).Append("\n");
+            sb.Append("  srcCityId: ").Append(SrcCityId).Append("\n");
+            sb.Append("  srcCityName: ").Append(SrcCityName).Append("\n");
+            sb.Append("  dstProvinceId: ").Append(DstProvinceId).Append("\n");
+            sb.Append("  dstProvinceName: ").Append(DstProvinceName).Append("\n");
+            sb.Append("  dstCityId: ").Append(DstCityId).Append("\n");
+            sb.Append("  dstCityName: ").Append(DstCityName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -425,11 +474,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.PacketMessages.SequenceEqual(input.PacketMessages)
                 ) && 
                 (
-                    this.DstHost == input.DstHost ||
-                    (this.DstHost != null &&
-                    this.DstHost.Equals(input.DstHost))
-                ) && 
-                (
                     this.SrcRegionId == input.SrcRegionId ||
                     (this.SrcRegionId != null &&
                     this.SrcRegionId.Equals(input.SrcRegionId))
@@ -448,6 +492,46 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.DstRegionName == input.DstRegionName ||
                     (this.DstRegionName != null &&
                     this.DstRegionName.Equals(input.DstRegionName))
+                ) && 
+                (
+                    this.SrcProvinceId == input.SrcProvinceId ||
+                    (this.SrcProvinceId != null &&
+                    this.SrcProvinceId.Equals(input.SrcProvinceId))
+                ) && 
+                (
+                    this.SrcProvinceName == input.SrcProvinceName ||
+                    (this.SrcProvinceName != null &&
+                    this.SrcProvinceName.Equals(input.SrcProvinceName))
+                ) && 
+                (
+                    this.SrcCityId == input.SrcCityId ||
+                    (this.SrcCityId != null &&
+                    this.SrcCityId.Equals(input.SrcCityId))
+                ) && 
+                (
+                    this.SrcCityName == input.SrcCityName ||
+                    (this.SrcCityName != null &&
+                    this.SrcCityName.Equals(input.SrcCityName))
+                ) && 
+                (
+                    this.DstProvinceId == input.DstProvinceId ||
+                    (this.DstProvinceId != null &&
+                    this.DstProvinceId.Equals(input.DstProvinceId))
+                ) && 
+                (
+                    this.DstProvinceName == input.DstProvinceName ||
+                    (this.DstProvinceName != null &&
+                    this.DstProvinceName.Equals(input.DstProvinceName))
+                ) && 
+                (
+                    this.DstCityId == input.DstCityId ||
+                    (this.DstCityId != null &&
+                    this.DstCityId.Equals(input.DstCityId))
+                ) && 
+                (
+                    this.DstCityName == input.DstCityName ||
+                    (this.DstCityName != null &&
+                    this.DstCityName.Equals(input.DstCityName))
                 );
         }
 
@@ -497,8 +581,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.App.GetHashCode();
                 if (this.PacketMessages != null)
                     hashCode = hashCode * 59 + this.PacketMessages.GetHashCode();
-                if (this.DstHost != null)
-                    hashCode = hashCode * 59 + this.DstHost.GetHashCode();
                 if (this.SrcRegionId != null)
                     hashCode = hashCode * 59 + this.SrcRegionId.GetHashCode();
                 if (this.SrcRegionName != null)
@@ -507,6 +589,22 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.DstRegionId.GetHashCode();
                 if (this.DstRegionName != null)
                     hashCode = hashCode * 59 + this.DstRegionName.GetHashCode();
+                if (this.SrcProvinceId != null)
+                    hashCode = hashCode * 59 + this.SrcProvinceId.GetHashCode();
+                if (this.SrcProvinceName != null)
+                    hashCode = hashCode * 59 + this.SrcProvinceName.GetHashCode();
+                if (this.SrcCityId != null)
+                    hashCode = hashCode * 59 + this.SrcCityId.GetHashCode();
+                if (this.SrcCityName != null)
+                    hashCode = hashCode * 59 + this.SrcCityName.GetHashCode();
+                if (this.DstProvinceId != null)
+                    hashCode = hashCode * 59 + this.DstProvinceId.GetHashCode();
+                if (this.DstProvinceName != null)
+                    hashCode = hashCode * 59 + this.DstProvinceName.GetHashCode();
+                if (this.DstCityId != null)
+                    hashCode = hashCode * 59 + this.DstCityId.GetHashCode();
+                if (this.DstCityName != null)
+                    hashCode = hashCode * 59 + this.DstCityName.GetHashCode();
                 return hashCode;
             }
         }

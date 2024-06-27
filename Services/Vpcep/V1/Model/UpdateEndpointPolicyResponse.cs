@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         public string Status { get; set; }
 
         /// <summary>
-        /// 帐号状态。  - frozen：冻结  - active：解冻
+        /// 账号状态。  - frozen：冻结  - active：解冻
         /// </summary>
         [JsonProperty("active_status", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> ActiveStatus { get; set; }
@@ -113,7 +113,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         public bool? EnableWhitelist { get; set; }
 
         /// <summary>
-        /// 路由表ID列表。 若未指定，返回默认VPC下路由表ID。 创建连接Gateway类型终端节点服务的终端节点时，显示此参数。
+        /// 路由表ID列表。 若未指定，返回默认VPC下路由表ID。 创建gateway类型终端节点服务的终端节点时，显示此参数。
         /// </summary>
         [JsonProperty("routetables", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Routetables { get; set; }
@@ -125,7 +125,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// 只涉及开启双端固定的网关型终端节点，响应体展示此字段
+        /// 终端节点策略信息
         /// </summary>
         [JsonProperty("policy_statement", NullValueHandling = NullValueHandling.Ignore)]
         public List<PolicyStatement> PolicyStatement { get; set; }

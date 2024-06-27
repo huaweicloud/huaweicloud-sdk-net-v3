@@ -271,12 +271,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("sequence", NullValueHandling = NullValueHandling.Ignore)]
-        public OrderRuleAclDto Sequence { get; set; }
-
-        /// <summary>
         /// 规则方向0：外到内1：内到外
         /// </summary>
         [JsonProperty("direction", NullValueHandling = NullValueHandling.Ignore)]
@@ -300,6 +294,18 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string Description { get; set; }
 
         /// <summary>
+        /// 长连接时长
+        /// </summary>
+        [JsonProperty("long_connect_time", NullValueHandling = NullValueHandling.Ignore)]
+        public long? LongConnectTime { get; set; }
+
+        /// <summary>
+        /// 长连接支持
+        /// </summary>
+        [JsonProperty("long_connect_enable", NullValueHandling = NullValueHandling.Ignore)]
+        public int? LongConnectEnable { get; set; }
+
+        /// <summary>
         /// 长连接时长小时
         /// </summary>
         [JsonProperty("long_connect_time_hour", NullValueHandling = NullValueHandling.Ignore)]
@@ -318,34 +324,22 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public long? LongConnectTimeSecond { get; set; }
 
         /// <summary>
-        /// 长连接时长
-        /// </summary>
-        [JsonProperty("long_connect_time", NullValueHandling = NullValueHandling.Ignore)]
-        public long? LongConnectTime { get; set; }
-
-        /// <summary>
-        /// 长连接支持
-        /// </summary>
-        [JsonProperty("long_connect_enable", NullValueHandling = NullValueHandling.Ignore)]
-        public int? LongConnectEnable { get; set; }
-
-        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("source", NullValueHandling = NullValueHandling.Ignore)]
-        public RuleAddressDto Source { get; set; }
+        public RuleAddressDtoForResponse Source { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("destination", NullValueHandling = NullValueHandling.Ignore)]
-        public RuleAddressDto Destination { get; set; }
+        public RuleAddressDtoForResponse Destination { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("service", NullValueHandling = NullValueHandling.Ignore)]
-        public RuleServiceDto Service { get; set; }
+        public RuleServiceDtoForResponse Service { get; set; }
 
         /// <summary>
         /// 规则type，0：互联网规则，1：vpc规则，2：nat规则
@@ -382,16 +376,15 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  ruleId: ").Append(RuleId).Append("\n");
             sb.Append("  addressType: ").Append(AddressType).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
-            sb.Append("  sequence: ").Append(Sequence).Append("\n");
             sb.Append("  direction: ").Append(Direction).Append("\n");
             sb.Append("  actionType: ").Append(ActionType).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
+            sb.Append("  longConnectTime: ").Append(LongConnectTime).Append("\n");
+            sb.Append("  longConnectEnable: ").Append(LongConnectEnable).Append("\n");
             sb.Append("  longConnectTimeHour: ").Append(LongConnectTimeHour).Append("\n");
             sb.Append("  longConnectTimeMinute: ").Append(LongConnectTimeMinute).Append("\n");
             sb.Append("  longConnectTimeSecond: ").Append(LongConnectTimeSecond).Append("\n");
-            sb.Append("  longConnectTime: ").Append(LongConnectTime).Append("\n");
-            sb.Append("  longConnectEnable: ").Append(LongConnectEnable).Append("\n");
             sb.Append("  source: ").Append(Source).Append("\n");
             sb.Append("  destination: ").Append(Destination).Append("\n");
             sb.Append("  service: ").Append(Service).Append("\n");
@@ -436,11 +429,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.Name.Equals(input.Name))
                 ) && 
                 (
-                    this.Sequence == input.Sequence ||
-                    (this.Sequence != null &&
-                    this.Sequence.Equals(input.Sequence))
-                ) && 
-                (
                     this.Direction == input.Direction ||
                     (this.Direction != null &&
                     this.Direction.Equals(input.Direction))
@@ -461,6 +449,16 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.Description.Equals(input.Description))
                 ) && 
                 (
+                    this.LongConnectTime == input.LongConnectTime ||
+                    (this.LongConnectTime != null &&
+                    this.LongConnectTime.Equals(input.LongConnectTime))
+                ) && 
+                (
+                    this.LongConnectEnable == input.LongConnectEnable ||
+                    (this.LongConnectEnable != null &&
+                    this.LongConnectEnable.Equals(input.LongConnectEnable))
+                ) && 
+                (
                     this.LongConnectTimeHour == input.LongConnectTimeHour ||
                     (this.LongConnectTimeHour != null &&
                     this.LongConnectTimeHour.Equals(input.LongConnectTimeHour))
@@ -474,16 +472,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.LongConnectTimeSecond == input.LongConnectTimeSecond ||
                     (this.LongConnectTimeSecond != null &&
                     this.LongConnectTimeSecond.Equals(input.LongConnectTimeSecond))
-                ) && 
-                (
-                    this.LongConnectTime == input.LongConnectTime ||
-                    (this.LongConnectTime != null &&
-                    this.LongConnectTime.Equals(input.LongConnectTime))
-                ) && 
-                (
-                    this.LongConnectEnable == input.LongConnectEnable ||
-                    (this.LongConnectEnable != null &&
-                    this.LongConnectEnable.Equals(input.LongConnectEnable))
                 ) && 
                 (
                     this.Source == input.Source ||
@@ -536,8 +524,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.AddressType.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Sequence != null)
-                    hashCode = hashCode * 59 + this.Sequence.GetHashCode();
                 if (this.Direction != null)
                     hashCode = hashCode * 59 + this.Direction.GetHashCode();
                 if (this.ActionType != null)
@@ -546,16 +532,16 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.Description != null)
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.LongConnectTime != null)
+                    hashCode = hashCode * 59 + this.LongConnectTime.GetHashCode();
+                if (this.LongConnectEnable != null)
+                    hashCode = hashCode * 59 + this.LongConnectEnable.GetHashCode();
                 if (this.LongConnectTimeHour != null)
                     hashCode = hashCode * 59 + this.LongConnectTimeHour.GetHashCode();
                 if (this.LongConnectTimeMinute != null)
                     hashCode = hashCode * 59 + this.LongConnectTimeMinute.GetHashCode();
                 if (this.LongConnectTimeSecond != null)
                     hashCode = hashCode * 59 + this.LongConnectTimeSecond.GetHashCode();
-                if (this.LongConnectTime != null)
-                    hashCode = hashCode * 59 + this.LongConnectTime.GetHashCode();
-                if (this.LongConnectEnable != null)
-                    hashCode = hashCode * 59 + this.LongConnectEnable.GetHashCode();
                 if (this.Source != null)
                     hashCode = hashCode * 59 + this.Source.GetHashCode();
                 if (this.Destination != null)

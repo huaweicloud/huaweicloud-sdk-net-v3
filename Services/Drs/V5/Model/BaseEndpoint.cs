@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
     public class BaseEndpoint 
     {
         /// <summary>
-        /// 数据库场景类型。取值： - oracle：云下自建Oracle数据库。 - ecs_oracle：华为云ECS自建Oracle数据库。 - cloud_gaussdbv5：华为云数据库GaussDB分布式。 - mysql：他云/本地自建MySQL数据库。 - ecs_mysql：华为云ECS自建MySQL数据库。 - cloud_mysql：华为云数据库RDS for MySQL。 - redis：云下自建Redis数据。 - ecs_redis：华为云ECS自建Redis数据。 - rediscluster：云下自建Redis集群数据库。 - ecs_rediscluster：华为云ECS自建Redis集群数据库。 - cloud_gaussdb_redis：华为云数据库GeminiDB Redis。
+        /// 数据库场景类型。取值： - oracle：云下自建Oracle数据库。 - ecs_oracle：华为云ECS自建Oracle数据库。 - cloud_gaussdbv5：华为云数据库GaussDB分布式。 - mysql：他云/本地自建MySQL数据库。 - ecs_mysql：华为云ECS自建MySQL数据库。 - cloud_mysql：华为云数据库RDS for MySQL。 - redis：云下自建Redis数据。 - ecs_redis：华为云ECS自建Redis数据。 - rediscluster：云下自建Redis集群数据库。 - ecs_rediscluster：华为云ECS自建Redis集群数据库。 - cloud_gaussdb_redis：华为云数据库GeminiDB Redis。 - postgresql: 云下自建PostgreSQL数据库。 - ecs_postgresql: 华为云ECS自建PostgreSQL数据库。 - cloud_postgresql: 华为云数据库RDS for PostgreSQL。 - mongodb: 云下自建MongoDB数据库。 - ecs_mongodb: 华为云ECS自建MongoDB数据库。 - cloud_mongodb: 华为云文档数据库服务DDS。
         /// </summary>
-        /// <value>数据库场景类型。取值： - oracle：云下自建Oracle数据库。 - ecs_oracle：华为云ECS自建Oracle数据库。 - cloud_gaussdbv5：华为云数据库GaussDB分布式。 - mysql：他云/本地自建MySQL数据库。 - ecs_mysql：华为云ECS自建MySQL数据库。 - cloud_mysql：华为云数据库RDS for MySQL。 - redis：云下自建Redis数据。 - ecs_redis：华为云ECS自建Redis数据。 - rediscluster：云下自建Redis集群数据库。 - ecs_rediscluster：华为云ECS自建Redis集群数据库。 - cloud_gaussdb_redis：华为云数据库GeminiDB Redis。</value>
+        /// <value>数据库场景类型。取值： - oracle：云下自建Oracle数据库。 - ecs_oracle：华为云ECS自建Oracle数据库。 - cloud_gaussdbv5：华为云数据库GaussDB分布式。 - mysql：他云/本地自建MySQL数据库。 - ecs_mysql：华为云ECS自建MySQL数据库。 - cloud_mysql：华为云数据库RDS for MySQL。 - redis：云下自建Redis数据。 - ecs_redis：华为云ECS自建Redis数据。 - rediscluster：云下自建Redis集群数据库。 - ecs_rediscluster：华为云ECS自建Redis集群数据库。 - cloud_gaussdb_redis：华为云数据库GeminiDB Redis。 - postgresql: 云下自建PostgreSQL数据库。 - ecs_postgresql: 华为云ECS自建PostgreSQL数据库。 - cloud_postgresql: 华为云数据库RDS for PostgreSQL。 - mongodb: 云下自建MongoDB数据库。 - ecs_mongodb: 华为云ECS自建MongoDB数据库。 - cloud_mongodb: 华为云文档数据库服务DDS。</value>
         [JsonConverter(typeof(EnumClassConverter<EndpointNameEnum>))]
         public class EndpointNameEnum
         {
@@ -77,6 +77,36 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             /// </summary>
             public static readonly EndpointNameEnum CLOUD_GAUSSDB_REDIS = new EndpointNameEnum("cloud_gaussdb_redis");
 
+            /// <summary>
+            /// Enum POSTGRESQL for value: postgresql
+            /// </summary>
+            public static readonly EndpointNameEnum POSTGRESQL = new EndpointNameEnum("postgresql");
+
+            /// <summary>
+            /// Enum ECS_POSTGRESQL for value: ecs_postgresql
+            /// </summary>
+            public static readonly EndpointNameEnum ECS_POSTGRESQL = new EndpointNameEnum("ecs_postgresql");
+
+            /// <summary>
+            /// Enum CLOUD_POSTGRESQL for value: cloud_postgresql
+            /// </summary>
+            public static readonly EndpointNameEnum CLOUD_POSTGRESQL = new EndpointNameEnum("cloud_postgresql");
+
+            /// <summary>
+            /// Enum MONGODB for value: mongodb
+            /// </summary>
+            public static readonly EndpointNameEnum MONGODB = new EndpointNameEnum("mongodb");
+
+            /// <summary>
+            /// Enum ECS_MONGODB for value: ecs_mongodb
+            /// </summary>
+            public static readonly EndpointNameEnum ECS_MONGODB = new EndpointNameEnum("ecs_mongodb");
+
+            /// <summary>
+            /// Enum CLOUD_MONGODB for value: cloud_mongodb
+            /// </summary>
+            public static readonly EndpointNameEnum CLOUD_MONGODB = new EndpointNameEnum("cloud_mongodb");
+
             private static readonly Dictionary<string, EndpointNameEnum> StaticFields =
             new Dictionary<string, EndpointNameEnum>()
             {
@@ -91,6 +121,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                 { "rediscluster", REDISCLUSTER },
                 { "ecs_rediscluster", ECS_REDISCLUSTER },
                 { "cloud_gaussdb_redis", CLOUD_GAUSSDB_REDIS },
+                { "postgresql", POSTGRESQL },
+                { "ecs_postgresql", ECS_POSTGRESQL },
+                { "cloud_postgresql", CLOUD_POSTGRESQL },
+                { "mongodb", MONGODB },
+                { "ecs_mongodb", ECS_MONGODB },
+                { "cloud_mongodb", CLOUD_MONGODB },
             };
 
             private string _value;
@@ -192,7 +228,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         public string Id { get; set; }
 
         /// <summary>
-        /// 数据库场景类型。取值： - oracle：云下自建Oracle数据库。 - ecs_oracle：华为云ECS自建Oracle数据库。 - cloud_gaussdbv5：华为云数据库GaussDB分布式。 - mysql：他云/本地自建MySQL数据库。 - ecs_mysql：华为云ECS自建MySQL数据库。 - cloud_mysql：华为云数据库RDS for MySQL。 - redis：云下自建Redis数据。 - ecs_redis：华为云ECS自建Redis数据。 - rediscluster：云下自建Redis集群数据库。 - ecs_rediscluster：华为云ECS自建Redis集群数据库。 - cloud_gaussdb_redis：华为云数据库GeminiDB Redis。
+        /// 数据库场景类型。取值： - oracle：云下自建Oracle数据库。 - ecs_oracle：华为云ECS自建Oracle数据库。 - cloud_gaussdbv5：华为云数据库GaussDB分布式。 - mysql：他云/本地自建MySQL数据库。 - ecs_mysql：华为云ECS自建MySQL数据库。 - cloud_mysql：华为云数据库RDS for MySQL。 - redis：云下自建Redis数据。 - ecs_redis：华为云ECS自建Redis数据。 - rediscluster：云下自建Redis集群数据库。 - ecs_rediscluster：华为云ECS自建Redis集群数据库。 - cloud_gaussdb_redis：华为云数据库GeminiDB Redis。 - postgresql: 云下自建PostgreSQL数据库。 - ecs_postgresql: 华为云ECS自建PostgreSQL数据库。 - cloud_postgresql: 华为云数据库RDS for PostgreSQL。 - mongodb: 云下自建MongoDB数据库。 - ecs_mongodb: 华为云ECS自建MongoDB数据库。 - cloud_mongodb: 华为云文档数据库服务DDS。
         /// </summary>
         [JsonProperty("endpoint_name", NullValueHandling = NullValueHandling.Ignore)]
         public EndpointNameEnum EndpointName { get; set; }

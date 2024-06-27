@@ -53,7 +53,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         public bool? IsCharge { get; set; }
 
         /// <summary>
-        /// 是否开启终端节点策略。  - false：不支持设置终端节点策略  - true：支持设置终端节点策略 默认为false 是否开启终端节点策略。  - false：不支持设置终端节点策略  - true：支持设置终端节点策略 默认为false
+        /// 是否允许自定义终端节点策略。  - false：不支持设置终端节点策略  - true：支持设置终端节点策略 默认为false
         /// </summary>
         [JsonProperty("enable_policy", NullValueHandling = NullValueHandling.Ignore)]
         public bool? EnablePolicy { get; set; }

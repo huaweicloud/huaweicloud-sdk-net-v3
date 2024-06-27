@@ -15,133 +15,6 @@ namespace HuaweiCloud.SDK.Aom.V3.Model
     /// </summary>
     public class PageResourceListParam 
     {
-        /// <summary>
-        /// 节点类型，取值：application、sub_application、component、environment
-        /// </summary>
-        /// <value>节点类型，取值：application、sub_application、component、environment</value>
-        [JsonConverter(typeof(EnumClassConverter<CiTypeEnum>))]
-        public class CiTypeEnum
-        {
-            /// <summary>
-            /// Enum APPLICATION for value: APPLICATION
-            /// </summary>
-            public static readonly CiTypeEnum APPLICATION = new CiTypeEnum("APPLICATION");
-
-            /// <summary>
-            /// Enum SUB_APPLICATION for value: SUB_APPLICATION
-            /// </summary>
-            public static readonly CiTypeEnum SUB_APPLICATION = new CiTypeEnum("SUB_APPLICATION");
-
-            /// <summary>
-            /// Enum COMPONENT for value: COMPONENT
-            /// </summary>
-            public static readonly CiTypeEnum COMPONENT = new CiTypeEnum("COMPONENT");
-
-            /// <summary>
-            /// Enum ENVIRONMENT for value: ENVIRONMENT
-            /// </summary>
-            public static readonly CiTypeEnum ENVIRONMENT = new CiTypeEnum("ENVIRONMENT");
-
-            private static readonly Dictionary<string, CiTypeEnum> StaticFields =
-            new Dictionary<string, CiTypeEnum>()
-            {
-                { "APPLICATION", APPLICATION },
-                { "SUB_APPLICATION", SUB_APPLICATION },
-                { "COMPONENT", COMPONENT },
-                { "ENVIRONMENT", ENVIRONMENT },
-            };
-
-            private string _value;
-
-            public CiTypeEnum()
-            {
-
-            }
-
-            public CiTypeEnum(string value)
-            {
-                _value = value;
-            }
-
-            public static CiTypeEnum FromValue(string value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public string GetValue()
-            {
-                return _value;
-            }
-
-            public override string ToString()
-            {
-                return $"{_value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this._value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as CiTypeEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(CiTypeEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
-            }
-
-            public static bool operator ==(CiTypeEnum a, CiTypeEnum b)
-            {
-                if (System.Object.ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(CiTypeEnum a, CiTypeEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
 
         /// <summary>
         /// 页面的分页标志位,为分页的最后一条记录的id
@@ -171,7 +44,8 @@ namespace HuaweiCloud.SDK.Aom.V3.Model
         /// 节点类型，取值：application、sub_application、component、environment
         /// </summary>
         [JsonProperty("ci_type", NullValueHandling = NullValueHandling.Ignore)]
-        public CiTypeEnum CiType { get; set; }
+        public string CiType { get; set; }
+
         /// <summary>
         /// 环境的region信息，若没有值，代表全部
         /// </summary>

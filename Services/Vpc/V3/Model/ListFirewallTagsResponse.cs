@@ -17,16 +17,22 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
     {
 
         /// <summary>
-        /// 
+        /// tag对象列表
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
-        public ListTag Tags { get; set; }
+        public List<ListTag> Tags { get; set; }
 
         /// <summary>
         /// 请求ID
         /// </summary>
         [JsonProperty("request_id", NullValueHandling = NullValueHandling.Ignore)]
         public string RequestId { get; set; }
+
+        /// <summary>
+        /// 资源数量
+        /// </summary>
+        [JsonProperty("total_count", NullValueHandling = NullValueHandling.Ignore)]
+        public int? TotalCount { get; set; }
 
 
 
@@ -39,6 +45,7 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
             sb.Append("class ListFirewallTagsResponse {\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  requestId: ").Append(RequestId).Append("\n");
+            sb.Append("  totalCount: ").Append(TotalCount).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -62,13 +69,19 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
             return 
                 (
                     this.Tags == input.Tags ||
-                    (this.Tags != null &&
-                    this.Tags.Equals(input.Tags))
+                    this.Tags != null &&
+                    input.Tags != null &&
+                    this.Tags.SequenceEqual(input.Tags)
                 ) && 
                 (
                     this.RequestId == input.RequestId ||
                     (this.RequestId != null &&
                     this.RequestId.Equals(input.RequestId))
+                ) && 
+                (
+                    this.TotalCount == input.TotalCount ||
+                    (this.TotalCount != null &&
+                    this.TotalCount.Equals(input.TotalCount))
                 );
         }
 
@@ -84,6 +97,8 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
                     hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 if (this.RequestId != null)
                     hashCode = hashCode * 59 + this.RequestId.GetHashCode();
+                if (this.TotalCount != null)
+                    hashCode = hashCode * 59 + this.TotalCount.GetHashCode();
                 return hashCode;
             }
         }

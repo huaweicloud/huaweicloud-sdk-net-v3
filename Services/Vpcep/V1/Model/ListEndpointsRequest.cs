@@ -293,13 +293,6 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         [SDKProperty("sort_dir", IsQuery = true)]
         [JsonProperty("sort_dir", NullValueHandling = NullValueHandling.Ignore)]
         public SortDirEnum SortDir { get; set; }
-        /// <summary>
-        /// 筛选结果中匹配边缘属性的EPS
-        /// </summary>
-        [SDKProperty("public_border_group", IsQuery = true)]
-        [JsonProperty("public_border_group", NullValueHandling = NullValueHandling.Ignore)]
-        public string PublicBorderGroup { get; set; }
-
 
 
         /// <summary>
@@ -316,7 +309,6 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  sortKey: ").Append(SortKey).Append("\n");
             sb.Append("  sortDir: ").Append(SortDir).Append("\n");
-            sb.Append("  publicBorderGroup: ").Append(PublicBorderGroup).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -372,11 +364,6 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                     this.SortDir == input.SortDir ||
                     (this.SortDir != null &&
                     this.SortDir.Equals(input.SortDir))
-                ) && 
-                (
-                    this.PublicBorderGroup == input.PublicBorderGroup ||
-                    (this.PublicBorderGroup != null &&
-                    this.PublicBorderGroup.Equals(input.PublicBorderGroup))
                 );
         }
 
@@ -402,8 +389,6 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                     hashCode = hashCode * 59 + this.SortKey.GetHashCode();
                 if (this.SortDir != null)
                     hashCode = hashCode * 59 + this.SortDir.GetHashCode();
-                if (this.PublicBorderGroup != null)
-                    hashCode = hashCode * 59 + this.PublicBorderGroup.GetHashCode();
                 return hashCode;
             }
         }

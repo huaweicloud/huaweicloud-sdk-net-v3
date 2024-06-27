@@ -252,9 +252,9 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         }
 
         /// <summary>
-        /// 用于控制将哪些信息（如客户端的源IP、源端口、marker_id等）携带到服务端。 支持携带的客户端信息包括如下两种类型：  - TCP TOA：表示将客户端信息插入到tcp option字段中携带至服务端。 说明：仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。  - Proxy Protocol：表示将客户端信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 该参数的取值包括：  - close：表示关闭代理协议。  - toa_open：表示开启代理协议“tcp_toa”。  - proxy_open：表示开启代理协议“proxy_protocol”。  - open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。  - proxy_vni: 关闭toa，开启proxy和vni。 默认值为“close”。
+        /// 用于控制将哪些信息（如客户端的源IP、源端口、marker_id等）携带到服务端。 支持携带的客户端信息包括如下两种类型：  - TCP TOA：表示将客户端信息插入到tcp option字段中携带至服务端。 说明：仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。  - Proxy Protocol：表示将客户端信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 该参数的取值包括：  - close：表示关闭代理协议。  - toa_open：表示开启代理协议“tcp_toa”。  - proxy_open：表示开启代理协议“proxy_protocol”。  - open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。 默认值为“close”。
         /// </summary>
-        /// <value>用于控制将哪些信息（如客户端的源IP、源端口、marker_id等）携带到服务端。 支持携带的客户端信息包括如下两种类型：  - TCP TOA：表示将客户端信息插入到tcp option字段中携带至服务端。 说明：仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。  - Proxy Protocol：表示将客户端信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 该参数的取值包括：  - close：表示关闭代理协议。  - toa_open：表示开启代理协议“tcp_toa”。  - proxy_open：表示开启代理协议“proxy_protocol”。  - open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。  - proxy_vni: 关闭toa，开启proxy和vni。 默认值为“close”。</value>
+        /// <value>用于控制将哪些信息（如客户端的源IP、源端口、marker_id等）携带到服务端。 支持携带的客户端信息包括如下两种类型：  - TCP TOA：表示将客户端信息插入到tcp option字段中携带至服务端。 说明：仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。  - Proxy Protocol：表示将客户端信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 该参数的取值包括：  - close：表示关闭代理协议。  - toa_open：表示开启代理协议“tcp_toa”。  - proxy_open：表示开启代理协议“proxy_protocol”。  - open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。 默认值为“close”。</value>
         [JsonConverter(typeof(EnumClassConverter<TcpProxyEnum>))]
         public class TcpProxyEnum
         {
@@ -384,6 +384,121 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
             }
         }
 
+        /// <summary>
+        /// 指定终端节点服务的IP版本，仅专业型终端节点服务支持此参数 ● ipv4,  IPv4 ● ipv6,  IPv6
+        /// </summary>
+        /// <value>指定终端节点服务的IP版本，仅专业型终端节点服务支持此参数 ● ipv4,  IPv4 ● ipv6,  IPv6</value>
+        [JsonConverter(typeof(EnumClassConverter<IpVersionEnum>))]
+        public class IpVersionEnum
+        {
+            /// <summary>
+            /// Enum IPV4 for value: ipv4
+            /// </summary>
+            public static readonly IpVersionEnum IPV4 = new IpVersionEnum("ipv4");
+
+            /// <summary>
+            /// Enum IPV6 for value: ipv6
+            /// </summary>
+            public static readonly IpVersionEnum IPV6 = new IpVersionEnum("ipv6");
+
+            private static readonly Dictionary<string, IpVersionEnum> StaticFields =
+            new Dictionary<string, IpVersionEnum>()
+            {
+                { "ipv4", IPV4 },
+                { "ipv6", IPV6 },
+            };
+
+            private string _value;
+
+            public IpVersionEnum()
+            {
+
+            }
+
+            public IpVersionEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static IpVersionEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as IpVersionEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(IpVersionEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(IpVersionEnum a, IpVersionEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(IpVersionEnum a, IpVersionEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 标识终端节点服务后端资源的ID， 格式为通用唯一识别码（Universally Unique Identifier，下文简称UUID）。 取值为： - LB类型：负载均衡器内网IP对应的端口ID。 详细内容请参考《弹性负载均衡API参考》中的“查询负载均衡详情”。 - VM类型：弹性云服务器IP地址对应的网卡ID。 详细内容请参考《弹性云服务器API参考》中的“查询云服务器网卡信息”， 详见响应消息中的“port_id”字段。 - VIP类型：虚拟IP所在虚拟机的网卡ID（VIP类型业务已不支持，该取值类型已废弃） 说明： - 创建终端节点服务时，VPC的子网网段不能与198.19.128.0/17重叠。 - VPC路由表中自定义路由的目的地址不能与198.19.128.0/17重叠。
@@ -398,7 +513,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         public string ServiceName { get; set; }
 
         /// <summary>
-        /// 终端节点服务对应后端资源所在的VPC的ID。 详细内容请参考《虚拟私有云API参考》中的“查询VPC”，详见响应消息中的“id”字段。
+        /// 终端节点服务对应后端资源所在的VPC的ID。
         /// </summary>
         [JsonProperty("vpc_id", NullValueHandling = NullValueHandling.Ignore)]
         public string VpcId { get; set; }
@@ -426,7 +541,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         public List<PortList> Ports { get; set; }
 
         /// <summary>
-        /// 用于控制将哪些信息（如客户端的源IP、源端口、marker_id等）携带到服务端。 支持携带的客户端信息包括如下两种类型：  - TCP TOA：表示将客户端信息插入到tcp option字段中携带至服务端。 说明：仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。  - Proxy Protocol：表示将客户端信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 该参数的取值包括：  - close：表示关闭代理协议。  - toa_open：表示开启代理协议“tcp_toa”。  - proxy_open：表示开启代理协议“proxy_protocol”。  - open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。  - proxy_vni: 关闭toa，开启proxy和vni。 默认值为“close”。
+        /// 用于控制将哪些信息（如客户端的源IP、源端口、marker_id等）携带到服务端。 支持携带的客户端信息包括如下两种类型：  - TCP TOA：表示将客户端信息插入到tcp option字段中携带至服务端。 说明：仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。  - Proxy Protocol：表示将客户端信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 该参数的取值包括：  - close：表示关闭代理协议。  - toa_open：表示开启代理协议“tcp_toa”。  - proxy_open：表示开启代理协议“proxy_protocol”。  - open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。 默认值为“close”。
         /// </summary>
         [JsonProperty("tcp_proxy", NullValueHandling = NullValueHandling.Ignore)]
         public TcpProxyEnum TcpProxy { get; set; }
@@ -443,11 +558,10 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// 是否开启终端节点策略。  - false：不支持设置终端节点策略  - true：支持设置终端节点策略 默认为false
+        /// 指定终端节点服务的IP版本，仅专业型终端节点服务支持此参数 ● ipv4,  IPv4 ● ipv6,  IPv6
         /// </summary>
-        [JsonProperty("enable_policy", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? EnablePolicy { get; set; }
-
+        [JsonProperty("ip_version", NullValueHandling = NullValueHandling.Ignore)]
+        public IpVersionEnum IpVersion { get; set; }
 
 
         /// <summary>
@@ -467,7 +581,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
             sb.Append("  tcpProxy: ").Append(TcpProxy).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
-            sb.Append("  enablePolicy: ").Append(EnablePolicy).Append("\n");
+            sb.Append("  ipVersion: ").Append(IpVersion).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -542,9 +656,9 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                     this.Description.Equals(input.Description))
                 ) && 
                 (
-                    this.EnablePolicy == input.EnablePolicy ||
-                    (this.EnablePolicy != null &&
-                    this.EnablePolicy.Equals(input.EnablePolicy))
+                    this.IpVersion == input.IpVersion ||
+                    (this.IpVersion != null &&
+                    this.IpVersion.Equals(input.IpVersion))
                 );
         }
 
@@ -576,8 +690,8 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                     hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 if (this.Description != null)
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.EnablePolicy != null)
-                    hashCode = hashCode * 59 + this.EnablePolicy.GetHashCode();
+                if (this.IpVersion != null)
+                    hashCode = hashCode * 59 + this.IpVersion.GetHashCode();
                 return hashCode;
             }
         }

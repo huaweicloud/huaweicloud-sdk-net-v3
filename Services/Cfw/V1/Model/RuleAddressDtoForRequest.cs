@@ -94,6 +94,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         [JsonProperty("predefined_group", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> PredefinedGroup { get; set; }
 
+        /// <summary>
+        /// 地址组列表
+        /// </summary>
+        [JsonProperty("address_group", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> AddressGroup { get; set; }
+
 
 
         /// <summary>
@@ -116,6 +122,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  ipAddress: ").Append(IpAddress).Append("\n");
             sb.Append("  addressSetType: ").Append(AddressSetType).Append("\n");
             sb.Append("  predefinedGroup: ").Append(PredefinedGroup).Append("\n");
+            sb.Append("  addressGroup: ").Append(AddressGroup).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -204,6 +211,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.PredefinedGroup != null &&
                     input.PredefinedGroup != null &&
                     this.PredefinedGroup.SequenceEqual(input.PredefinedGroup)
+                ) && 
+                (
+                    this.AddressGroup == input.AddressGroup ||
+                    this.AddressGroup != null &&
+                    input.AddressGroup != null &&
+                    this.AddressGroup.SequenceEqual(input.AddressGroup)
                 );
         }
 
@@ -241,6 +254,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.AddressSetType.GetHashCode();
                 if (this.PredefinedGroup != null)
                     hashCode = hashCode * 59 + this.PredefinedGroup.GetHashCode();
+                if (this.AddressGroup != null)
+                    hashCode = hashCode * 59 + this.AddressGroup.GetHashCode();
                 return hashCode;
             }
         }

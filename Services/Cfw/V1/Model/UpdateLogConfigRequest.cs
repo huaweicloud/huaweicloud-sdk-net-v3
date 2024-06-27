@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     {
 
         /// <summary>
-        /// 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用查询防火墙实例接口获得。具体可参考APIExlorer和帮助中心FAQ。
+        /// 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)。
         /// </summary>
         [SDKProperty("fw_instance_id", IsQuery = true)]
         [JsonProperty("fw_instance_id", NullValueHandling = NullValueHandling.Ignore)]

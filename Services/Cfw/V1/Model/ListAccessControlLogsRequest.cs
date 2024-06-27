@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     public class ListAccessControlLogsRequest 
     {
         /// <summary>
-        /// 日志类型
+        /// 日志类型包括：internet，vpc，nat
         /// </summary>
-        /// <value>日志类型</value>
+        /// <value>日志类型包括：internet，vpc，nat</value>
         [JsonConverter(typeof(EnumClassConverter<LogTypeEnum>))]
         public class LogTypeEnum
         {
@@ -138,7 +138,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
 
 
         /// <summary>
-        /// 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用查询防火墙实例接口获得。具体可参考APIExlorer和帮助中心FAQ。
+        /// 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)。
         /// </summary>
         [SDKProperty("fw_instance_id", IsQuery = true)]
         [JsonProperty("fw_instance_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -152,14 +152,14 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string RuleId { get; set; }
 
         /// <summary>
-        /// 开始时间
+        /// 开始时间，以毫秒为单位的时间戳，如1718936272648
         /// </summary>
         [SDKProperty("start_time", IsQuery = true)]
         [JsonProperty("start_time", NullValueHandling = NullValueHandling.Ignore)]
         public long? StartTime { get; set; }
 
         /// <summary>
-        /// 结束时间
+        /// 结束时间，以毫秒为单位的时间戳，如1718936272648
         /// </summary>
         [SDKProperty("end_time", IsQuery = true)]
         [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
@@ -194,7 +194,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public int? DstPort { get; set; }
 
         /// <summary>
-        /// 协议
+        /// 协议类型，包含TCP, UDP,ICMP,ICMPV6等。
         /// </summary>
         [SDKProperty("protocol", IsQuery = true)]
         [JsonProperty("protocol", NullValueHandling = NullValueHandling.Ignore)]
@@ -208,21 +208,21 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string App { get; set; }
 
         /// <summary>
-        /// 文档ID,第一页为空，其他页不为空
+        /// 文档ID,第一页为空，其他页不为空，其他页可取上一次查询最后一条数据的log_id
         /// </summary>
         [SDKProperty("log_id", IsQuery = true)]
         [JsonProperty("log_id", NullValueHandling = NullValueHandling.Ignore)]
         public string LogId { get; set; }
 
         /// <summary>
-        /// 日期,第一页为空，其他页不为空
+        /// 下个日期，当是第一页时为空，不是第一页时不为空，其他页可取上一次查询最后一条数据的start_time
         /// </summary>
         [SDKProperty("next_date", IsQuery = true)]
         [JsonProperty("next_date", NullValueHandling = NullValueHandling.Ignore)]
         public int? NextDate { get; set; }
 
         /// <summary>
-        /// 偏移量：指定返回记录的开始位置，必须为数字，取值范围为大于或等于0，默认0
+        /// 偏移量：指定返回记录的开始位置，必须为数字，取值范围为大于0，首页时为空，非首页时不为空
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
@@ -236,7 +236,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 日志类型
+        /// 日志类型包括：internet，vpc，nat
         /// </summary>
         [SDKProperty("log_type", IsQuery = true)]
         [JsonProperty("log_type", NullValueHandling = NullValueHandling.Ignore)]
@@ -263,7 +263,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string RuleName { get; set; }
 
         /// <summary>
-        /// 动作0：permit,1：deny
+        /// 动作包含permit，deny
         /// </summary>
         [SDKProperty("action", IsQuery = true)]
         [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]
@@ -282,6 +282,34 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         [SDKProperty("dst_region_name", IsQuery = true)]
         [JsonProperty("dst_region_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DstRegionName { get; set; }
+
+        /// <summary>
+        /// 源省份名称
+        /// </summary>
+        [SDKProperty("src_province_name", IsQuery = true)]
+        [JsonProperty("src_province_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string SrcProvinceName { get; set; }
+
+        /// <summary>
+        /// 目的省份名称
+        /// </summary>
+        [SDKProperty("dst_province_name", IsQuery = true)]
+        [JsonProperty("dst_province_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string DstProvinceName { get; set; }
+
+        /// <summary>
+        /// 源城市名称
+        /// </summary>
+        [SDKProperty("src_city_name", IsQuery = true)]
+        [JsonProperty("src_city_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string SrcCityName { get; set; }
+
+        /// <summary>
+        /// 目的城市名称
+        /// </summary>
+        [SDKProperty("dst_city_name", IsQuery = true)]
+        [JsonProperty("dst_city_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string DstCityName { get; set; }
 
 
 
@@ -313,6 +341,10 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  action: ").Append(Action).Append("\n");
             sb.Append("  srcRegionName: ").Append(SrcRegionName).Append("\n");
             sb.Append("  dstRegionName: ").Append(DstRegionName).Append("\n");
+            sb.Append("  srcProvinceName: ").Append(SrcProvinceName).Append("\n");
+            sb.Append("  dstProvinceName: ").Append(DstProvinceName).Append("\n");
+            sb.Append("  srcCityName: ").Append(SrcCityName).Append("\n");
+            sb.Append("  dstCityName: ").Append(DstCityName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -438,6 +470,26 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.DstRegionName == input.DstRegionName ||
                     (this.DstRegionName != null &&
                     this.DstRegionName.Equals(input.DstRegionName))
+                ) && 
+                (
+                    this.SrcProvinceName == input.SrcProvinceName ||
+                    (this.SrcProvinceName != null &&
+                    this.SrcProvinceName.Equals(input.SrcProvinceName))
+                ) && 
+                (
+                    this.DstProvinceName == input.DstProvinceName ||
+                    (this.DstProvinceName != null &&
+                    this.DstProvinceName.Equals(input.DstProvinceName))
+                ) && 
+                (
+                    this.SrcCityName == input.SrcCityName ||
+                    (this.SrcCityName != null &&
+                    this.SrcCityName.Equals(input.SrcCityName))
+                ) && 
+                (
+                    this.DstCityName == input.DstCityName ||
+                    (this.DstCityName != null &&
+                    this.DstCityName.Equals(input.DstCityName))
                 );
         }
 
@@ -491,6 +543,14 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.SrcRegionName.GetHashCode();
                 if (this.DstRegionName != null)
                     hashCode = hashCode * 59 + this.DstRegionName.GetHashCode();
+                if (this.SrcProvinceName != null)
+                    hashCode = hashCode * 59 + this.SrcProvinceName.GetHashCode();
+                if (this.DstProvinceName != null)
+                    hashCode = hashCode * 59 + this.DstProvinceName.GetHashCode();
+                if (this.SrcCityName != null)
+                    hashCode = hashCode * 59 + this.SrcCityName.GetHashCode();
+                if (this.DstCityName != null)
+                    hashCode = hashCode * 59 + this.DstCityName.GetHashCode();
                 return hashCode;
             }
         }

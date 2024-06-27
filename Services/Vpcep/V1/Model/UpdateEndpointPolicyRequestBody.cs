@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
     {
 
         /// <summary>
-        /// 只涉及开启双端固定的网关型终端节点
+        /// 终端节点策略信息
         /// </summary>
         [JsonProperty("policy_statement", NullValueHandling = NullValueHandling.Ignore)]
         public List<PolicyStatement> PolicyStatement { get; set; }

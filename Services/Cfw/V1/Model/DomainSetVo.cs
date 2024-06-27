@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public int? RefCount { get; set; }
 
         /// <summary>
-        /// 域名组类型，0表示URL过滤，1表示地址解析
+        /// 域名组类型，0表示应用域名组，1表示网络域名组
         /// </summary>
         [JsonProperty("domain_set_type", NullValueHandling = NullValueHandling.Ignore)]
         public int? DomainSetType { get; set; }

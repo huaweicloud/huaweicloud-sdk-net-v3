@@ -68,6 +68,33 @@ namespace HuaweiCloud.SDK.Vpc.V3
         }
         
         /// <summary>
+        /// 批量添加端口资源标签
+        ///
+        /// 为指定的端口批量添加标签。
+        /// 此接口为幂等接口：创建时如果请求体中存在重复key则报错。创建时，不允许设置重复key数据，如果数据库已存在该key，就覆盖value的值。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchCreatePortTagsResponse> BatchCreatePortTagsAsync(BatchCreatePortTagsRequest batchCreatePortTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("port_id", batchCreatePortTagsRequest.PortId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ports/{port_id}/tags/create", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreatePortTagsRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<BatchCreatePortTagsResponse>(response);
+        }
+
+        public AsyncInvoker<BatchCreatePortTagsResponse> BatchCreatePortTagsAsyncInvoker(BatchCreatePortTagsRequest batchCreatePortTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("port_id", batchCreatePortTagsRequest.PortId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ports/{port_id}/tags/create", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreatePortTagsRequest);
+            return new AsyncInvoker<BatchCreatePortTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchCreatePortTagsResponse>);
+        }
+        
+        /// <summary>
         /// 批量创建安全组规则
         ///
         /// 在特定安全组下批量创建安全组规则
@@ -115,6 +142,84 @@ namespace HuaweiCloud.SDK.Vpc.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/sub-network-interfaces/batch-create", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateSubNetworkInterfaceRequest);
             return new AsyncInvoker<BatchCreateSubNetworkInterfaceResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchCreateSubNetworkInterfaceResponse>);
+        }
+        
+        /// <summary>
+        /// 批量删除端口资源标签
+        ///
+        /// 为指定的端口资源实例批量删除标签。
+        /// 此接口为幂等接口：删除时，如果删除的标签不存在，默认处理成功；删除时不对标签字符集范围做校验。删除时tags结构体不能缺失，key不能为空，或者空字符串。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchDeletePortTagsResponse> BatchDeletePortTagsAsync(BatchDeletePortTagsRequest batchDeletePortTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("port_id", batchDeletePortTagsRequest.PortId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ports/{port_id}/tags/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeletePortTagsRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<BatchDeletePortTagsResponse>(response);
+        }
+
+        public AsyncInvoker<BatchDeletePortTagsResponse> BatchDeletePortTagsAsyncInvoker(BatchDeletePortTagsRequest batchDeletePortTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("port_id", batchDeletePortTagsRequest.PortId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ports/{port_id}/tags/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeletePortTagsRequest);
+            return new AsyncInvoker<BatchDeletePortTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchDeletePortTagsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询端口资源实例数量
+        ///
+        /// 使用标签过滤查询端口实例数量。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CountPortsByTagsResponse> CountPortsByTagsAsync(CountPortsByTagsRequest countPortsByTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ports/resource-instances/count", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", countPortsByTagsRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CountPortsByTagsResponse>(response);
+        }
+
+        public AsyncInvoker<CountPortsByTagsResponse> CountPortsByTagsAsyncInvoker(CountPortsByTagsRequest countPortsByTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ports/resource-instances/count", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", countPortsByTagsRequest);
+            return new AsyncInvoker<CountPortsByTagsResponse>(this, "POST", request, JsonUtils.DeSerialize<CountPortsByTagsResponse>);
+        }
+        
+        /// <summary>
+        /// 添加端口资源标签
+        ///
+        /// 给指定端口资源实例增加标签信息
+        /// 此接口为幂等接口：创建时，如果创建的标签已经存在（key相同），则覆盖。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreatePortTagResponse> CreatePortTagAsync(CreatePortTagRequest createPortTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("port_id", createPortTagRequest.PortId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ports/{port_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPortTagRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<CreatePortTagResponse>(response);
+        }
+
+        public AsyncInvoker<CreatePortTagResponse> CreatePortTagAsyncInvoker(CreatePortTagRequest createPortTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("port_id", createPortTagRequest.PortId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ports/{port_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPortTagRequest);
+            return new AsyncInvoker<CreatePortTagResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreatePortTagResponse>);
         }
         
         /// <summary>
@@ -259,6 +364,35 @@ namespace HuaweiCloud.SDK.Vpc.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/traffic-mirror-sessions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTrafficMirrorSessionRequest);
             return new AsyncInvoker<CreateTrafficMirrorSessionResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateTrafficMirrorSessionResponse>);
+        }
+        
+        /// <summary>
+        /// 删除端口资源标签
+        ///
+        /// 删除指定端口的标签信息
+        /// 该接口为幂等接口：删除的key不存在报404，key不能为空或者空字符串
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeletePortTagResponse> DeletePortTagAsync(DeletePortTagRequest deletePortTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("port_id", deletePortTagRequest.PortId.ToString());
+            urlParam.Add("tag_key", deletePortTagRequest.TagKey.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ports/{port_id}/tags/{tag_key}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePortTagRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeletePortTagResponse>(response);
+        }
+
+        public AsyncInvoker<DeletePortTagResponse> DeletePortTagAsyncInvoker(DeletePortTagRequest deletePortTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("port_id", deletePortTagRequest.PortId.ToString());
+            urlParam.Add("tag_key", deletePortTagRequest.TagKey.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ports/{port_id}/tags/{tag_key}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePortTagRequest);
+            return new AsyncInvoker<DeletePortTagResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeletePortTagResponse>);
         }
         
         /// <summary>
@@ -415,6 +549,54 @@ namespace HuaweiCloud.SDK.Vpc.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/traffic-mirror-sessions/{traffic_mirror_session_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTrafficMirrorSessionRequest);
             return new AsyncInvoker<DeleteTrafficMirrorSessionResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteTrafficMirrorSessionResponse>);
+        }
+        
+        /// <summary>
+        /// 查询端口项目标签
+        ///
+        /// 查询租户在指定Project中实例类型的所有资源标签集合
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListPortTagsResponse> ListPortTagsAsync(ListPortTagsRequest listPortTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ports/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPortTagsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListPortTagsResponse>(response);
+        }
+
+        public AsyncInvoker<ListPortTagsResponse> ListPortTagsAsyncInvoker(ListPortTagsRequest listPortTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ports/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPortTagsRequest);
+            return new AsyncInvoker<ListPortTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListPortTagsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询端口资源实例列表
+        ///
+        /// 使用标签过滤查询端口。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListPortsByTagsResponse> ListPortsByTagsAsync(ListPortsByTagsRequest listPortsByTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ports/resource-instances/filter", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPortsByTagsRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<ListPortsByTagsResponse>(response);
+        }
+
+        public AsyncInvoker<ListPortsByTagsResponse> ListPortsByTagsAsyncInvoker(ListPortsByTagsRequest listPortsByTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ports/resource-instances/filter", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPortsByTagsRequest);
+            return new AsyncInvoker<ListPortsByTagsResponse>(this, "POST", request, JsonUtils.DeSerialize<ListPortsByTagsResponse>);
         }
         
         /// <summary>
@@ -635,6 +817,32 @@ namespace HuaweiCloud.SDK.Vpc.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/traffic-mirror-sessions/{traffic_mirror_session_id}/remove-sources", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", removeSourcesFromTrafficMirrorSessionRequest);
             return new AsyncInvoker<RemoveSourcesFromTrafficMirrorSessionResponse>(this, "PUT", request, JsonUtils.DeSerialize<RemoveSourcesFromTrafficMirrorSessionResponse>);
+        }
+        
+        /// <summary>
+        /// 查询端口资源标签
+        ///
+        /// 查询指定端口的标签信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowPortTagsResponse> ShowPortTagsAsync(ShowPortTagsRequest showPortTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("port_id", showPortTagsRequest.PortId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ports/{port_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPortTagsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowPortTagsResponse>(response);
+        }
+
+        public AsyncInvoker<ShowPortTagsResponse> ShowPortTagsAsyncInvoker(ShowPortTagsRequest showPortTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("port_id", showPortTagsRequest.PortId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ports/{port_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPortTagsRequest);
+            return new AsyncInvoker<ShowPortTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPortTagsResponse>);
         }
         
         /// <summary>
@@ -1002,7 +1210,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         /// <summary>
         /// 批量添加ACL资源标签
         ///
-        /// 为指定的IP地址组资源实例批量添加标签。
+        /// 为指定的网络ACL资源实例批量添加标签。
         /// 此接口为幂等接口：创建时如果请求体中存在重复key则报错。创建时，不允许设置重复key数据，如果数据库已存在该key，就覆盖value的值。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
@@ -1029,7 +1237,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         /// <summary>
         /// 批量删除ACL资源标签
         ///
-        /// 为指定的IP地址组资源实例批量删除标签。
+        /// 为指定的网络ACL资源实例批量删除标签。
         /// 此接口为幂等接口：删除时，如果删除的标签不存在，默认处理成功；删除时不对标签字符集范围做校验。删除时tags结构体不能缺失，key不能为空，或者空字符串。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.

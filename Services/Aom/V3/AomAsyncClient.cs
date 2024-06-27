@@ -18,7 +18,7 @@ namespace HuaweiCloud.SDK.Aom.V3
         /// <summary>
         /// 新增应用
         ///
-        /// 新增应用。
+        /// 该接口用于新增应用。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -42,7 +42,7 @@ namespace HuaweiCloud.SDK.Aom.V3
         /// <summary>
         /// 新增组件
         ///
-        /// 新增组件。
+        /// 该接口用于新增组件。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -66,7 +66,7 @@ namespace HuaweiCloud.SDK.Aom.V3
         /// <summary>
         /// 创建环境
         ///
-        /// 创建环境。
+        /// 该接口用于创建环境。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -90,7 +90,7 @@ namespace HuaweiCloud.SDK.Aom.V3
         /// <summary>
         /// 新增子应用
         ///
-        /// 新增子应用
+        /// 该接口用于新增子应用。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -114,7 +114,7 @@ namespace HuaweiCloud.SDK.Aom.V3
         /// <summary>
         /// 删除应用
         ///
-        /// 删除应用。
+        /// 该接口用于删除应用。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -140,7 +140,7 @@ namespace HuaweiCloud.SDK.Aom.V3
         /// <summary>
         /// 删除组件
         ///
-        /// 删除组件。
+        /// 该接口用于删除组件。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -166,7 +166,7 @@ namespace HuaweiCloud.SDK.Aom.V3
         /// <summary>
         /// 删除环境
         ///
-        /// 删除环境。
+        /// 该接口用于删除环境。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -192,7 +192,7 @@ namespace HuaweiCloud.SDK.Aom.V3
         /// <summary>
         /// 删除子应用
         ///
-        /// 删除子应用
+        /// 该接口用于删除子应用。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -218,7 +218,7 @@ namespace HuaweiCloud.SDK.Aom.V3
         /// <summary>
         /// 查询绑定在节点上的资源列表
         ///
-        /// 查询绑定在节点上的资源列表。
+        /// 该接口用于查询绑定在节点上的资源列表。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -246,7 +246,7 @@ namespace HuaweiCloud.SDK.Aom.V3
         /// <summary>
         /// 查询应用详情
         ///
-        /// 查询应用详情。
+        /// 该接口用于查询应用详情。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -272,7 +272,7 @@ namespace HuaweiCloud.SDK.Aom.V3
         /// <summary>
         /// 根据应用名称查询应用详情
         ///
-        /// 查询应用详情。
+        /// 该接口用于查询应用详情。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -296,7 +296,7 @@ namespace HuaweiCloud.SDK.Aom.V3
         /// <summary>
         /// 查询组件详情
         ///
-        /// 查询组件详情。
+        /// 该接口用于查询组件详情。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -322,7 +322,7 @@ namespace HuaweiCloud.SDK.Aom.V3
         /// <summary>
         /// 根据组件名称查询组件详情
         ///
-        /// 查询组件详情。
+        /// 该接口用于查询组件详情。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -350,7 +350,7 @@ namespace HuaweiCloud.SDK.Aom.V3
         /// <summary>
         /// 查询环境详情
         ///
-        /// 查询环境详情。
+        /// 该接口用于查询环境详情。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -376,7 +376,7 @@ namespace HuaweiCloud.SDK.Aom.V3
         /// <summary>
         /// 根据环境名称查询环境详情
         ///
-        /// 查询环境详情。
+        /// 该接口用于查询环境详情。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -402,7 +402,7 @@ namespace HuaweiCloud.SDK.Aom.V3
         /// <summary>
         /// 修改应用
         ///
-        /// 修改应用。
+        /// 该接口用于修改应用。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -428,7 +428,7 @@ namespace HuaweiCloud.SDK.Aom.V3
         /// <summary>
         /// 修改组件
         ///
-        /// 修改组件。
+        /// 该接口用于修改组件。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -454,7 +454,7 @@ namespace HuaweiCloud.SDK.Aom.V3
         /// <summary>
         /// 修改环境
         ///
-        /// 修改环境。
+        /// 该接口用于修改环境。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -480,7 +480,7 @@ namespace HuaweiCloud.SDK.Aom.V3
         /// <summary>
         /// 修改子应用
         ///
-        /// 修改子应用
+        /// 该接口用于修改子应用。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>

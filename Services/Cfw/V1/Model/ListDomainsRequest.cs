@@ -31,7 +31,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用查询防火墙实例接口获得。具体可参考APIExlorer和帮助中心FAQ。默认情况下，fw_instance_Id为空时，返回帐号下第一个墙的信息；fw_instance_Id非空时，返回与fw_instance_Id对应墙的信息。
+        /// 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)，默认情况下，fw_instance_Id为空时，返回账号下第一个墙的信息；fw_instance_Id非空时，返回与fw_instance_Id对应墙的信息。
         /// </summary>
         [SDKProperty("fw_instance_id", IsQuery = true)]
         [JsonProperty("fw_instance_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -59,21 +59,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string DomainName { get; set; }
 
         /// <summary>
-        /// 描述
-        /// </summary>
-        [SDKProperty("description", IsQuery = true)]
-        [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
-        public string Description { get; set; }
-
-        /// <summary>
-        /// 域名组id
-        /// </summary>
-        [SDKProperty("set_id", IsQuery = true)]
-        [JsonProperty("set_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string SetId { get; set; }
-
-        /// <summary>
-        /// 防护对象id,是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id,可通过调用查询防火墙实例接口获得,注意type为0的为互联网边界防护对象id,type为1的为VPC边界防护对象id。具体可参考APIExlorer和帮助中心FAQ。
+        /// 互联网边界防护对象id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)，type为0的为互联网边界防护对象id。
         /// </summary>
         [SDKProperty("object_Id", IsQuery = true)]
         [JsonProperty("object_Id", NullValueHandling = NullValueHandling.Ignore)]
@@ -94,8 +80,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  domainName: ").Append(DomainName).Append("\n");
-            sb.Append("  description: ").Append(Description).Append("\n");
-            sb.Append("  setId: ").Append(SetId).Append("\n");
             sb.Append("  objectId: ").Append(ObjectId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -149,16 +133,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.DomainName.Equals(input.DomainName))
                 ) && 
                 (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.SetId == input.SetId ||
-                    (this.SetId != null &&
-                    this.SetId.Equals(input.SetId))
-                ) && 
-                (
                     this.ObjectId == input.ObjectId ||
                     (this.ObjectId != null &&
                     this.ObjectId.Equals(input.ObjectId))
@@ -185,10 +159,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.DomainName != null)
                     hashCode = hashCode * 59 + this.DomainName.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.SetId != null)
-                    hashCode = hashCode * 59 + this.SetId.GetHashCode();
                 if (this.ObjectId != null)
                     hashCode = hashCode * 59 + this.ObjectId.GetHashCode();
                 return hashCode;

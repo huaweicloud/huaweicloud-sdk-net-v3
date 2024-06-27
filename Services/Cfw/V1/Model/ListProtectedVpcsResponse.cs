@@ -17,12 +17,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     {
 
         /// <summary>
-        /// 调用链id
-        /// </summary>
-        [JsonProperty("trace_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string TraceId { get; set; }
-
-        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("data", NullValueHandling = NullValueHandling.Ignore)]
@@ -37,7 +31,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListProtectedVpcsResponse {\n");
-            sb.Append("  traceId: ").Append(TraceId).Append("\n");
             sb.Append("  data: ").Append(Data).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -61,11 +54,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
 
             return 
                 (
-                    this.TraceId == input.TraceId ||
-                    (this.TraceId != null &&
-                    this.TraceId.Equals(input.TraceId))
-                ) && 
-                (
                     this.Data == input.Data ||
                     (this.Data != null &&
                     this.Data.Equals(input.Data))
@@ -80,8 +68,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.TraceId != null)
-                    hashCode = hashCode * 59 + this.TraceId.GetHashCode();
                 if (this.Data != null)
                     hashCode = hashCode * 59 + this.Data.GetHashCode();
                 return hashCode;

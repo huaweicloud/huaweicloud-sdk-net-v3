@@ -17,12 +17,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     {
 
         /// <summary>
-        /// 服务成员id
-        /// </summary>
-        [JsonProperty("item_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string ItemId { get; set; }
-
-        /// <summary>
         /// 协议类型:TCP为6，UDP为17，ICMP为1，ICMPV6为58，ANY为-1，手动类型不为空，自动类型为空
         /// </summary>
         [JsonProperty("protocol", NullValueHandling = NullValueHandling.Ignore)]
@@ -41,12 +35,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string DestPort { get; set; }
 
         /// <summary>
-        /// 服务成员名称
-        /// </summary>
-        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
-        public string Name { get; set; }
-
-        /// <summary>
         /// 服务成员描述
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
@@ -61,11 +49,9 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class AddServiceItemsUsingPOSTRequestBodyServiceItems {\n");
-            sb.Append("  itemId: ").Append(ItemId).Append("\n");
             sb.Append("  protocol: ").Append(Protocol).Append("\n");
             sb.Append("  sourcePort: ").Append(SourcePort).Append("\n");
             sb.Append("  destPort: ").Append(DestPort).Append("\n");
-            sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -89,11 +75,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
 
             return 
                 (
-                    this.ItemId == input.ItemId ||
-                    (this.ItemId != null &&
-                    this.ItemId.Equals(input.ItemId))
-                ) && 
-                (
                     this.Protocol == input.Protocol ||
                     (this.Protocol != null &&
                     this.Protocol.Equals(input.Protocol))
@@ -107,11 +88,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.DestPort == input.DestPort ||
                     (this.DestPort != null &&
                     this.DestPort.Equals(input.DestPort))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
                 ) && 
                 (
                     this.Description == input.Description ||
@@ -128,16 +104,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.ItemId != null)
-                    hashCode = hashCode * 59 + this.ItemId.GetHashCode();
                 if (this.Protocol != null)
                     hashCode = hashCode * 59 + this.Protocol.GetHashCode();
                 if (this.SourcePort != null)
                     hashCode = hashCode * 59 + this.SourcePort.GetHashCode();
                 if (this.DestPort != null)
                     hashCode = hashCode * 59 + this.DestPort.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Description != null)
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
                 return hashCode;

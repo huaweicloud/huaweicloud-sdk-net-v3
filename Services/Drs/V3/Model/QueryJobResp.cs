@@ -1469,28 +1469,34 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         public GetDataTransformationResp DataTransformation { get; set; }
 
         /// <summary>
-        /// DRS任务标签
+        /// DRS任务标签。
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<Tag> Tags { get; set; }
 
         /// <summary>
-        /// 指定公网Ip的信息
+        /// 指定公网Ip的信息。
         /// </summary>
         [JsonProperty("public_ip_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<PublicIpConfig> PublicIpList { get; set; }
 
         /// <summary>
-        /// 是否成功绑定公网IP
+        /// 是否成功绑定公网IP。
         /// </summary>
         [JsonProperty("bind_public_ip_state", NullValueHandling = NullValueHandling.Ignore)]
         public string BindPublicIpState { get; set; }
 
         /// <summary>
-        /// 多任务时，存在子任务绑定失败时，返回子任务的信息
+        /// 多任务时，存在子任务绑定失败时，返回子任务的信息。
         /// </summary>
         [JsonProperty("children", NullValueHandling = NullValueHandling.Ignore)]
         public List<FailedToBindEipChildInfo> Children { get; set; }
+
+        /// <summary>
+        /// 是否开启云数据库RDS for MySQL/MariaDB的binlog快速清理。
+        /// </summary>
+        [JsonProperty("is_open_fast_clean", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsOpenFastClean { get; set; }
 
 
 
@@ -1561,6 +1567,7 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
             sb.Append("  publicIpList: ").Append(PublicIpList).Append("\n");
             sb.Append("  bindPublicIpState: ").Append(BindPublicIpState).Append("\n");
             sb.Append("  children: ").Append(Children).Append("\n");
+            sb.Append("  isOpenFastClean: ").Append(IsOpenFastClean).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -1887,6 +1894,11 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
                     this.Children != null &&
                     input.Children != null &&
                     this.Children.SequenceEqual(input.Children)
+                ) && 
+                (
+                    this.IsOpenFastClean == input.IsOpenFastClean ||
+                    (this.IsOpenFastClean != null &&
+                    this.IsOpenFastClean.Equals(input.IsOpenFastClean))
                 );
         }
 
@@ -2018,6 +2030,8 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
                     hashCode = hashCode * 59 + this.BindPublicIpState.GetHashCode();
                 if (this.Children != null)
                     hashCode = hashCode * 59 + this.Children.GetHashCode();
+                if (this.IsOpenFastClean != null)
+                    hashCode = hashCode * 59 + this.IsOpenFastClean.GetHashCode();
                 return hashCode;
             }
         }

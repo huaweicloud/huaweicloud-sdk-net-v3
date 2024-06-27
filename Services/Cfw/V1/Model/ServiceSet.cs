@@ -47,12 +47,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public int? RefCount { get; set; }
 
         /// <summary>
-        /// 状态
-        /// </summary>
-        [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
-        public string Status { get; set; }
-
-        /// <summary>
         /// 项目id
         /// </summary>
         [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -78,7 +72,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  serviceSetType: ").Append(ServiceSetType).Append("\n");
             sb.Append("  refCount: ").Append(RefCount).Append("\n");
-            sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  projectId: ").Append(ProjectId).Append("\n");
             sb.Append("  protocols: ").Append(Protocols).Append("\n");
             sb.Append("}\n");
@@ -128,11 +121,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.RefCount.Equals(input.RefCount))
                 ) && 
                 (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
                     this.ProjectId == input.ProjectId ||
                     (this.ProjectId != null &&
                     this.ProjectId.Equals(input.ProjectId))
@@ -163,8 +151,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.ServiceSetType.GetHashCode();
                 if (this.RefCount != null)
                     hashCode = hashCode * 59 + this.RefCount.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.ProjectId != null)
                     hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
                 if (this.Protocols != null)

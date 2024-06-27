@@ -16,17 +16,12 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
     public class OpenGaussInstanceRequestBody 
     {
         /// <summary>
-        /// 实例副本数，支持取值3。不填默认为3。仅支持1.3.0及以上版本的实例。  说明： 2副本选项仅针对特定用户开放，如需配置白名单权限，您可以在管理控制台右上角，选择“[工单 &gt; 新建工单](https://auth.huaweicloud.com/authui/login.html?service&#x3D;https%3A%2F%2Fconsole.huaweicloud.com%2Fticket%2F%3Fregion%3Dcn-north-1%26locale%3Dzh-cn%26cloud_route_state%3D%2Fticketindex%2FcreateIndex#/login)”，提交开通白名单的申请。
+        /// 实例副本数，支持取值3。不填默认为3。仅支持1.3.0及以上版本的实例。
         /// </summary>
-        /// <value>实例副本数，支持取值3。不填默认为3。仅支持1.3.0及以上版本的实例。  说明： 2副本选项仅针对特定用户开放，如需配置白名单权限，您可以在管理控制台右上角，选择“[工单 &gt; 新建工单](https://auth.huaweicloud.com/authui/login.html?service&#x3D;https%3A%2F%2Fconsole.huaweicloud.com%2Fticket%2F%3Fregion%3Dcn-north-1%26locale%3Dzh-cn%26cloud_route_state%3D%2Fticketindex%2FcreateIndex#/login)”，提交开通白名单的申请。</value>
+        /// <value>实例副本数，支持取值3。不填默认为3。仅支持1.3.0及以上版本的实例。</value>
         [JsonConverter(typeof(EnumClassConverter<ReplicaNumEnum>))]
         public class ReplicaNumEnum
         {
-            /// <summary>
-            /// Enum NUMBER_2 for value: 2
-            /// </summary>
-            public static readonly ReplicaNumEnum NUMBER_2 = new ReplicaNumEnum(2);
-
             /// <summary>
             /// Enum NUMBER_3 for value: 3
             /// </summary>
@@ -35,7 +30,6 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             private static readonly Dictionary<int?, ReplicaNumEnum> StaticFields =
             new Dictionary<int?, ReplicaNumEnum>()
             {
-                { 2, NUMBER_2 },
                 { 3, NUMBER_3 },
             };
 
@@ -252,7 +246,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         public int? CoordinatorNum { get; set; }
 
         /// <summary>
-        /// 实例副本数，支持取值3。不填默认为3。仅支持1.3.0及以上版本的实例。  说明： 2副本选项仅针对特定用户开放，如需配置白名单权限，您可以在管理控制台右上角，选择“[工单 &gt; 新建工单](https://auth.huaweicloud.com/authui/login.html?service&#x3D;https%3A%2F%2Fconsole.huaweicloud.com%2Fticket%2F%3Fregion%3Dcn-north-1%26locale%3Dzh-cn%26cloud_route_state%3D%2Fticketindex%2FcreateIndex#/login)”，提交开通白名单的申请。
+        /// 实例副本数，支持取值3。不填默认为3。仅支持1.3.0及以上版本的实例。
         /// </summary>
         [JsonProperty("replica_num", NullValueHandling = NullValueHandling.Ignore)]
         public ReplicaNumEnum ReplicaNum { get; set; }

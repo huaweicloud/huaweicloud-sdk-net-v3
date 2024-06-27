@@ -49,6 +49,10 @@ namespace HuaweiCloud.SDK.Kms.V2
             "https://kms.tr-west-1.myhuaweicloud.com");
         public static readonly Region AE_AD_1 = new Region("ae-ad-1",
             "https://kms.ae-ad-1.myhuaweicloud.com");
+        public static readonly Region MY_KUALALUMPUR_1 = new Region("my-kualalumpur-1",
+            "https://kms.my-kualalumpur-1.myhuaweicloud.com");
+        public static readonly Region RU_MOSCOW_1 = new Region("ru-moscow-1",
+            "https://kms.ru-moscow-1.myhuaweicloud.com");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("KMS");
 
@@ -75,6 +79,8 @@ namespace HuaweiCloud.SDK.Kms.V2
                 { "ap-southeast-4", AP_SOUTHEAST_4 },
                 { "tr-west-1", TR_WEST_1 },
                 { "ae-ad-1", AE_AD_1 },
+                { "my-kualalumpur-1", MY_KUALALUMPUR_1 },
+                { "ru-moscow-1", RU_MOSCOW_1 },
         };
 
         public static Region ValueOf(string regionId)

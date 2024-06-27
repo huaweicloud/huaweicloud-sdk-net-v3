@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// 用户标签。默认为空。
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
-        public List<SrCreateInstanceRspInstanceTagsInfoTags> Tags { get; set; }
+        public List<CreateChInstanceInfoTagsInfoTags> Tags { get; set; }
 
         /// <summary>
         /// 系统标签。

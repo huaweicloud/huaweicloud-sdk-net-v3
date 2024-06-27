@@ -173,36 +173,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public int? LogStorage { get; set; }
 
         /// <summary>
-        /// 目前的会话数
-        /// </summary>
-        [JsonProperty("session_concurrent", NullValueHandling = NullValueHandling.Ignore)]
-        public int? SessionConcurrent { get; set; }
-
-        /// <summary>
-        /// 创建会话数
-        /// </summary>
-        [JsonProperty("session_create", NullValueHandling = NullValueHandling.Ignore)]
-        public int? SessionCreate { get; set; }
-
-        /// <summary>
-        /// 总计规则数
-        /// </summary>
-        [JsonProperty("total_rule_count", NullValueHandling = NullValueHandling.Ignore)]
-        public int? TotalRuleCount { get; set; }
-
-        /// <summary>
-        /// 已使用规则数
-        /// </summary>
-        [JsonProperty("used_rule_count", NullValueHandling = NullValueHandling.Ignore)]
-        public int? UsedRuleCount { get; set; }
-
-        /// <summary>
-        /// vpc间带宽
-        /// </summary>
-        [JsonProperty("vpc_bandwith", NullValueHandling = NullValueHandling.Ignore)]
-        public int? VpcBandwith { get; set; }
-
-        /// <summary>
         /// 默认防火墙带宽
         /// </summary>
         [JsonProperty("default_bandwidth", NullValueHandling = NullValueHandling.Ignore)]
@@ -240,11 +210,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  vpcCount: ").Append(VpcCount).Append("\n");
             sb.Append("  bandwidth: ").Append(Bandwidth).Append("\n");
             sb.Append("  logStorage: ").Append(LogStorage).Append("\n");
-            sb.Append("  sessionConcurrent: ").Append(SessionConcurrent).Append("\n");
-            sb.Append("  sessionCreate: ").Append(SessionCreate).Append("\n");
-            sb.Append("  totalRuleCount: ").Append(TotalRuleCount).Append("\n");
-            sb.Append("  usedRuleCount: ").Append(UsedRuleCount).Append("\n");
-            sb.Append("  vpcBandwith: ").Append(VpcBandwith).Append("\n");
             sb.Append("  defaultBandwidth: ").Append(DefaultBandwidth).Append("\n");
             sb.Append("  defaultEipCount: ").Append(DefaultEipCount).Append("\n");
             sb.Append("  defaultLogStorage: ").Append(DefaultLogStorage).Append("\n");
@@ -296,31 +261,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.LogStorage.Equals(input.LogStorage))
                 ) && 
                 (
-                    this.SessionConcurrent == input.SessionConcurrent ||
-                    (this.SessionConcurrent != null &&
-                    this.SessionConcurrent.Equals(input.SessionConcurrent))
-                ) && 
-                (
-                    this.SessionCreate == input.SessionCreate ||
-                    (this.SessionCreate != null &&
-                    this.SessionCreate.Equals(input.SessionCreate))
-                ) && 
-                (
-                    this.TotalRuleCount == input.TotalRuleCount ||
-                    (this.TotalRuleCount != null &&
-                    this.TotalRuleCount.Equals(input.TotalRuleCount))
-                ) && 
-                (
-                    this.UsedRuleCount == input.UsedRuleCount ||
-                    (this.UsedRuleCount != null &&
-                    this.UsedRuleCount.Equals(input.UsedRuleCount))
-                ) && 
-                (
-                    this.VpcBandwith == input.VpcBandwith ||
-                    (this.VpcBandwith != null &&
-                    this.VpcBandwith.Equals(input.VpcBandwith))
-                ) && 
-                (
                     this.DefaultBandwidth == input.DefaultBandwidth ||
                     (this.DefaultBandwidth != null &&
                     this.DefaultBandwidth.Equals(input.DefaultBandwidth))
@@ -360,16 +300,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.Bandwidth.GetHashCode();
                 if (this.LogStorage != null)
                     hashCode = hashCode * 59 + this.LogStorage.GetHashCode();
-                if (this.SessionConcurrent != null)
-                    hashCode = hashCode * 59 + this.SessionConcurrent.GetHashCode();
-                if (this.SessionCreate != null)
-                    hashCode = hashCode * 59 + this.SessionCreate.GetHashCode();
-                if (this.TotalRuleCount != null)
-                    hashCode = hashCode * 59 + this.TotalRuleCount.GetHashCode();
-                if (this.UsedRuleCount != null)
-                    hashCode = hashCode * 59 + this.UsedRuleCount.GetHashCode();
-                if (this.VpcBandwith != null)
-                    hashCode = hashCode * 59 + this.VpcBandwith.GetHashCode();
                 if (this.DefaultBandwidth != null)
                     hashCode = hashCode * 59 + this.DefaultBandwidth.GetHashCode();
                 if (this.DefaultEipCount != null)

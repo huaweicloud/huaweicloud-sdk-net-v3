@@ -715,7 +715,7 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// name或id
+        /// Name或ID。支持传入多个任务ID，逗号分隔，最多100个。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }

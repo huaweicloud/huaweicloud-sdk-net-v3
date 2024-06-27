@@ -58,6 +58,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         [JsonProperty("replaying_sqls", NullValueHandling = NullValueHandling.Ignore)]
         public List<ReplayingSqlResp> ReplayingSqls { get; set; }
 
+        /// <summary>
+        /// 回放异常SQL分类信息，在type为error_classification时返回
+        /// </summary>
+        [JsonProperty("error_classifications", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ReplayErrorClassification> ErrorClassifications { get; set; }
+
 
 
         /// <summary>
@@ -74,6 +80,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             sb.Append("  errorSqls: ").Append(ErrorSqls).Append("\n");
             sb.Append("  errorSqlTemplates: ").Append(ErrorSqlTemplates).Append("\n");
             sb.Append("  replayingSqls: ").Append(ReplayingSqls).Append("\n");
+            sb.Append("  errorClassifications: ").Append(ErrorClassifications).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -135,6 +142,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                     this.ReplayingSqls != null &&
                     input.ReplayingSqls != null &&
                     this.ReplayingSqls.SequenceEqual(input.ReplayingSqls)
+                ) && 
+                (
+                    this.ErrorClassifications == input.ErrorClassifications ||
+                    this.ErrorClassifications != null &&
+                    input.ErrorClassifications != null &&
+                    this.ErrorClassifications.SequenceEqual(input.ErrorClassifications)
                 );
         }
 
@@ -160,6 +173,8 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                     hashCode = hashCode * 59 + this.ErrorSqlTemplates.GetHashCode();
                 if (this.ReplayingSqls != null)
                     hashCode = hashCode * 59 + this.ReplayingSqls.GetHashCode();
+                if (this.ErrorClassifications != null)
+                    hashCode = hashCode * 59 + this.ErrorClassifications.GetHashCode();
                 return hashCode;
             }
         }

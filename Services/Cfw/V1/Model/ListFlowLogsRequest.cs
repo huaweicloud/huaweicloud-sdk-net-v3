@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     public class ListFlowLogsRequest 
     {
         /// <summary>
-        /// 日志类型
+        /// 日志类型包括：internet，vpc，nat
         /// </summary>
-        /// <value>日志类型</value>
+        /// <value>日志类型包括：internet，vpc，nat</value>
         [JsonConverter(typeof(EnumClassConverter<LogTypeEnum>))]
         public class LogTypeEnum
         {
@@ -136,163 +136,36 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             }
         }
 
-        /// <summary>
-        /// 协议类型:TCP为6, UDP为17,ICMP为1,ICMPV6为58,ANY为-1,手动类型不为空，自动类型为空
-        /// </summary>
-        /// <value>协议类型:TCP为6, UDP为17,ICMP为1,ICMPV6为58,ANY为-1,手动类型不为空，自动类型为空</value>
-        [JsonConverter(typeof(EnumClassConverter<ProtocolEnum>))]
-        public class ProtocolEnum
-        {
-            /// <summary>
-            /// Enum _6 for value: 6
-            /// </summary>
-            public static readonly ProtocolEnum _6 = new ProtocolEnum("6");
-
-            /// <summary>
-            /// Enum _17 for value: 17
-            /// </summary>
-            public static readonly ProtocolEnum _17 = new ProtocolEnum("17");
-
-            /// <summary>
-            /// Enum _1 for value: 1
-            /// </summary>
-            public static readonly ProtocolEnum _1 = new ProtocolEnum("1");
-
-            /// <summary>
-            /// Enum _58 for value: 58
-            /// </summary>
-            public static readonly ProtocolEnum _58 = new ProtocolEnum("58");
-
-            private static readonly Dictionary<string, ProtocolEnum> StaticFields =
-            new Dictionary<string, ProtocolEnum>()
-            {
-                { "6", _6 },
-                { "17", _17 },
-                { "1", _1 },
-                { "58", _58 },
-            };
-
-            private string _value;
-
-            public ProtocolEnum()
-            {
-
-            }
-
-            public ProtocolEnum(string value)
-            {
-                _value = value;
-            }
-
-            public static ProtocolEnum FromValue(string value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public string GetValue()
-            {
-                return _value;
-            }
-
-            public override string ToString()
-            {
-                return $"{_value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this._value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as ProtocolEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(ProtocolEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
-            }
-
-            public static bool operator ==(ProtocolEnum a, ProtocolEnum b)
-            {
-                if (System.Object.ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(ProtocolEnum a, ProtocolEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
 
         /// <summary>
-        /// 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用查询防火墙实例接口获得。具体可参考APIExlorer和帮助中心FAQ。
+        /// 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)。
         /// </summary>
         [SDKProperty("fw_instance_id", IsQuery = true)]
         [JsonProperty("fw_instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string FwInstanceId { get; set; }
 
         /// <summary>
-        /// 方向
+        /// 方向，包含in2out，out2in
         /// </summary>
         [SDKProperty("direction", IsQuery = true)]
         [JsonProperty("direction", NullValueHandling = NullValueHandling.Ignore)]
         public string Direction { get; set; }
 
         /// <summary>
-        /// 日志类型
+        /// 日志类型包括：internet，vpc，nat
         /// </summary>
         [SDKProperty("log_type", IsQuery = true)]
         [JsonProperty("log_type", NullValueHandling = NullValueHandling.Ignore)]
         public LogTypeEnum LogType { get; set; }
         /// <summary>
-        /// 开始时间
+        /// 开始时间，以毫秒为单位的时间戳，如1718936272648
         /// </summary>
         [SDKProperty("start_time", IsQuery = true)]
         [JsonProperty("start_time", NullValueHandling = NullValueHandling.Ignore)]
         public long? StartTime { get; set; }
 
         /// <summary>
-        /// 结束时间
+        /// 结束时间，以毫秒为单位的时间戳，如1718936272648
         /// </summary>
         [SDKProperty("end_time", IsQuery = true)]
         [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
@@ -327,11 +200,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public int? DstPort { get; set; }
 
         /// <summary>
-        /// 协议类型:TCP为6, UDP为17,ICMP为1,ICMPV6为58,ANY为-1,手动类型不为空，自动类型为空
+        /// 协议类型，包含TCP, UDP,ICMP,ICMPV6等。
         /// </summary>
         [SDKProperty("protocol", IsQuery = true)]
         [JsonProperty("protocol", NullValueHandling = NullValueHandling.Ignore)]
-        public ProtocolEnum Protocol { get; set; }
+        public string Protocol { get; set; }
+
         /// <summary>
         /// 应用协议
         /// </summary>
@@ -340,21 +214,21 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string App { get; set; }
 
         /// <summary>
-        /// 文档ID，首页时为null，非首页时不为null
+        /// 文档ID,第一页为空，其他页不为空，其他页可取上一次查询最后一条数据的log_id
         /// </summary>
         [SDKProperty("log_id", IsQuery = true)]
         [JsonProperty("log_id", NullValueHandling = NullValueHandling.Ignore)]
         public string LogId { get; set; }
 
         /// <summary>
-        /// 日期，首页时为null，非首页时不为null
+        /// 下个日期，当是第一页时为空，不是第一页时不为空，其他页可取上一次查询最后一条数据的start_time
         /// </summary>
         [SDKProperty("next_date", IsQuery = true)]
         [JsonProperty("next_date", NullValueHandling = NullValueHandling.Ignore)]
         public long? NextDate { get; set; }
 
         /// <summary>
-        /// 偏移量：指定返回记录的开始位置，必须为数字，取值范围为大于或等于0，默认0
+        /// 偏移量：指定返回记录的开始位置，必须为数字，取值范围为大于0，首页时为空，非首页时不为空
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
@@ -395,6 +269,34 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         [JsonProperty("dst_region_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DstRegionName { get; set; }
 
+        /// <summary>
+        /// 源省份名称
+        /// </summary>
+        [SDKProperty("src_province_name", IsQuery = true)]
+        [JsonProperty("src_province_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string SrcProvinceName { get; set; }
+
+        /// <summary>
+        /// 目的省份名称
+        /// </summary>
+        [SDKProperty("dst_province_name", IsQuery = true)]
+        [JsonProperty("dst_province_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string DstProvinceName { get; set; }
+
+        /// <summary>
+        /// 源城市名称
+        /// </summary>
+        [SDKProperty("src_city_name", IsQuery = true)]
+        [JsonProperty("src_city_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string SrcCityName { get; set; }
+
+        /// <summary>
+        /// 目的城市名称
+        /// </summary>
+        [SDKProperty("dst_city_name", IsQuery = true)]
+        [JsonProperty("dst_city_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string DstCityName { get; set; }
+
 
 
         /// <summary>
@@ -423,6 +325,10 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  dstHost: ").Append(DstHost).Append("\n");
             sb.Append("  srcRegionName: ").Append(SrcRegionName).Append("\n");
             sb.Append("  dstRegionName: ").Append(DstRegionName).Append("\n");
+            sb.Append("  srcProvinceName: ").Append(SrcProvinceName).Append("\n");
+            sb.Append("  dstProvinceName: ").Append(DstProvinceName).Append("\n");
+            sb.Append("  srcCityName: ").Append(SrcCityName).Append("\n");
+            sb.Append("  dstCityName: ").Append(DstCityName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -538,6 +444,26 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.DstRegionName == input.DstRegionName ||
                     (this.DstRegionName != null &&
                     this.DstRegionName.Equals(input.DstRegionName))
+                ) && 
+                (
+                    this.SrcProvinceName == input.SrcProvinceName ||
+                    (this.SrcProvinceName != null &&
+                    this.SrcProvinceName.Equals(input.SrcProvinceName))
+                ) && 
+                (
+                    this.DstProvinceName == input.DstProvinceName ||
+                    (this.DstProvinceName != null &&
+                    this.DstProvinceName.Equals(input.DstProvinceName))
+                ) && 
+                (
+                    this.SrcCityName == input.SrcCityName ||
+                    (this.SrcCityName != null &&
+                    this.SrcCityName.Equals(input.SrcCityName))
+                ) && 
+                (
+                    this.DstCityName == input.DstCityName ||
+                    (this.DstCityName != null &&
+                    this.DstCityName.Equals(input.DstCityName))
                 );
         }
 
@@ -587,6 +513,14 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     hashCode = hashCode * 59 + this.SrcRegionName.GetHashCode();
                 if (this.DstRegionName != null)
                     hashCode = hashCode * 59 + this.DstRegionName.GetHashCode();
+                if (this.SrcProvinceName != null)
+                    hashCode = hashCode * 59 + this.SrcProvinceName.GetHashCode();
+                if (this.DstProvinceName != null)
+                    hashCode = hashCode * 59 + this.DstProvinceName.GetHashCode();
+                if (this.SrcCityName != null)
+                    hashCode = hashCode * 59 + this.SrcCityName.GetHashCode();
+                if (this.DstCityName != null)
+                    hashCode = hashCode * 59 + this.DstCityName.GetHashCode();
                 return hashCode;
             }
         }

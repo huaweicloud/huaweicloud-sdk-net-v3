@@ -130,130 +130,9 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             }
         }
 
-        /// <summary>
-        /// IP地址类型0：ipv4,1:ipv6,2:domain
-        /// </summary>
-        /// <value>IP地址类型0：ipv4,1:ipv6,2:domain</value>
-        [JsonConverter(typeof(EnumClassConverter<AddressTypeEnum>))]
-        public class AddressTypeEnum
-        {
-            /// <summary>
-            /// Enum NUMBER_0 for value: 0
-            /// </summary>
-            public static readonly AddressTypeEnum NUMBER_0 = new AddressTypeEnum(0);
-
-            /// <summary>
-            /// Enum NUMBER_1 for value: 1
-            /// </summary>
-            public static readonly AddressTypeEnum NUMBER_1 = new AddressTypeEnum(1);
-
-            /// <summary>
-            /// Enum NUMBER_2 for value: 2
-            /// </summary>
-            public static readonly AddressTypeEnum NUMBER_2 = new AddressTypeEnum(2);
-
-            private static readonly Dictionary<int?, AddressTypeEnum> StaticFields =
-            new Dictionary<int?, AddressTypeEnum>()
-            {
-                { 0, NUMBER_0 },
-                { 1, NUMBER_1 },
-                { 2, NUMBER_2 },
-            };
-
-            private int? _value;
-
-            public AddressTypeEnum()
-            {
-
-            }
-
-            public AddressTypeEnum(int? value)
-            {
-                _value = value;
-            }
-
-            public static AddressTypeEnum FromValue(int? value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public int? GetValue()
-            {
-                return _value;
-            }
-
-            public override string ToString()
-            {
-                return $"{_value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this._value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as AddressTypeEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(AddressTypeEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
-            }
-
-            public static bool operator ==(AddressTypeEnum a, AddressTypeEnum b)
-            {
-                if (System.Object.ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(AddressTypeEnum a, AddressTypeEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
 
         /// <summary>
-        /// 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id，可通过调用查询防火墙实例接口获得，注意type为0的为互联网边界防护对象id，type为1的为VPC边界防护对象id。具体可参考APIExlorer和帮助中心FAQ。
+        /// 互联网边界防护对象id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)，type为0的为互联网边界防护对象id。
         /// </summary>
         [SDKProperty("object_id", IsQuery = true)]
         [JsonProperty("object_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -266,11 +145,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         [JsonProperty("list_type", NullValueHandling = NullValueHandling.Ignore)]
         public ListTypeEnum ListType { get; set; }
         /// <summary>
-        /// IP地址类型0：ipv4,1:ipv6,2:domain
+        /// IP地址类型0：ipv4,1:ipv6
         /// </summary>
         [SDKProperty("address_type", IsQuery = true)]
         [JsonProperty("address_type", NullValueHandling = NullValueHandling.Ignore)]
-        public AddressTypeEnum AddressType { get; set; }
+        public int? AddressType { get; set; }
+
         /// <summary>
         /// ip地址
         /// </summary>
@@ -307,7 +187,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用查询防火墙实例接口获得。具体可参考APIExlorer和帮助中心FAQ。默认情况下，fw_instance_Id为空时，返回帐号下第一个墙的信息；fw_instance_Id非空时，返回与fw_instance_Id对应墙的信息。
+        /// 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)，默认情况下，fw_instance_Id为空时，返回账号下第一个墙的信息；fw_instance_Id非空时，返回与fw_instance_Id对应墙的信息。
         /// </summary>
         [SDKProperty("fw_instance_id", IsQuery = true)]
         [JsonProperty("fw_instance_id", NullValueHandling = NullValueHandling.Ignore)]

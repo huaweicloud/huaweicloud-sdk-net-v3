@@ -95,6 +95,32 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
         }
         
         /// <summary>
+        /// 备份恢复到目标实例数据后执行数据确认
+        ///
+        /// 确认备份恢复到目标实例的数据正常。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ConfirmRestoredDataResponse ConfirmRestoredData(ConfirmRestoredDataRequest confirmRestoredDataRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", confirmRestoredDataRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/confirm-restore-data", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", confirmRestoredDataRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<ConfirmRestoredDataResponse>(response);
+        }
+
+        public SyncInvoker<ConfirmRestoredDataResponse> ConfirmRestoredDataInvoker(ConfirmRestoredDataRequest confirmRestoredDataRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", confirmRestoredDataRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/confirm-restore-data", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", confirmRestoredDataRequest);
+            return new SyncInvoker<ConfirmRestoredDataResponse>(this, "POST", request, JsonUtils.DeSerialize<ConfirmRestoredDataResponse>);
+        }
+        
+        /// <summary>
         /// 复制参数模板
         ///
         /// 复制参数模板。
@@ -1001,6 +1027,30 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
         }
         
         /// <summary>
+        /// 查询数据库实例列表/查询实例详情
+        ///
+        /// 查询数据库实例列表/查询实例详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListInstanceDetailsResponse ListInstanceDetails(ListInstanceDetailsRequest listInstanceDetailsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3.2/{project_id}/instances", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceDetailsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListInstanceDetailsResponse>(response);
+        }
+
+        public SyncInvoker<ListInstanceDetailsResponse> ListInstanceDetailsInvoker(ListInstanceDetailsRequest listInstanceDetailsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3.2/{project_id}/instances", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceDetailsRequest);
+            return new SyncInvoker<ListInstanceDetailsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceDetailsResponse>);
+        }
+        
+        /// <summary>
         /// 查询错误日志下载链接
         ///
         /// 查询数据库错误日志下载链接。
@@ -1578,6 +1628,32 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
         }
         
         /// <summary>
+        /// 设置自动备份策略
+        ///
+        /// 设置自动备份策略
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public SetNewBackupPolicyResponse SetNewBackupPolicy(SetNewBackupPolicyRequest setNewBackupPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", setNewBackupPolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/instances/{instance_id}/backups/policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", setNewBackupPolicyRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerializeNull<SetNewBackupPolicyResponse>(response);
+        }
+
+        public SyncInvoker<SetNewBackupPolicyResponse> SetNewBackupPolicyInvoker(SetNewBackupPolicyRequest setNewBackupPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", setNewBackupPolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/instances/{instance_id}/backups/policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", setNewBackupPolicyRequest);
+            return new SyncInvoker<SetNewBackupPolicyResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<SetNewBackupPolicyResponse>);
+        }
+        
+        /// <summary>
         /// 设置回收站策略
         ///
         /// 设置回收站策略。
@@ -1651,6 +1727,30 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/balance", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBalanceStatusRequest);
             return new SyncInvoker<ShowBalanceStatusResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowBalanceStatusResponse>);
+        }
+        
+        /// <summary>
+        /// 查询批量实例可升级的版本和升级类型
+        ///
+        /// 查询批量实例可升级的版本和升级类型
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowBatchUpgradeCandidateVersionsResponse ShowBatchUpgradeCandidateVersions(ShowBatchUpgradeCandidateVersionsRequest showBatchUpgradeCandidateVersionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/db-upgrade/candidate-versions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", showBatchUpgradeCandidateVersionsRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<ShowBatchUpgradeCandidateVersionsResponse>(response);
+        }
+
+        public SyncInvoker<ShowBatchUpgradeCandidateVersionsResponse> ShowBatchUpgradeCandidateVersionsInvoker(ShowBatchUpgradeCandidateVersionsRequest showBatchUpgradeCandidateVersionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/db-upgrade/candidate-versions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", showBatchUpgradeCandidateVersionsRequest);
+            return new SyncInvoker<ShowBatchUpgradeCandidateVersionsResponse>(this, "POST", request, JsonUtils.DeSerialize<ShowBatchUpgradeCandidateVersionsResponse>);
         }
         
         /// <summary>
@@ -2170,6 +2270,41 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
             var urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/instances/{instance_id}/db-upgrade", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", upgradeInstanceVersionRequest);
             return new SyncInvoker<UpgradeInstanceVersionResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpgradeInstanceVersionResponse>);
+        }
+        
+        /// <summary>
+        /// 批量实例内核版本升级
+        ///
+        /// GaussDB批量实例版本升级。包括灰度升级，就地升级、热补丁升级三种升级方式。 
+        /// 就地升级：
+        /// 就地升级需要停止业务进行，会一次性升级集群中所有节点。就地升级需要暂停业务30分钟来升级。 
+        /// 灰度升级： 
+        /// 升级自动提交：所有节点进程一起升级，在升级过程中有大概10秒的业务中断，不阻塞其他业务操作。 
+        /// 升级待观察：升级待观察，将数据库升级过程细分为升级，提交两个阶段。升级阶段可以根据部署方式细分为按分片或者按az的滚动升级，提交阶段可以对升级完成后的实例进行业务测试，根据需要可以选择提交升级，或者升级回退。每个主dn或者cn组件升级就有一次10秒业务中断。升级过程均是先管理面，再数据面，由备到主的升级方式。 分布式实例：根据分片数滚动升级，每次滚动升级可以根据选择的分片数进行指定分片数量的节点进行升级。 主备版实例：根据AZ数进行滚动升级，每次滚动升级可以根据选择的AZ进行1个分区或者多个分区进行升级。 
+        /// 热补丁升级： 
+        /// 升级自动提交：热补丁自动升级并提交，中间无业务中断，仅修复产品bug。 
+        /// 提交升级：提交升级。在升级完成，进入提交阶段时。业务测试正常后提交升级，完成本次升级流程。
+        /// 升级回退：升级回退，在升级完成，进入提交阶段时。可以根据需要回退本次升级，回退到升级前的版本。
+        /// 批量实例可升级版本大于当前所有实例的引擎版本，且选择的所有实例，其升级方式和操作方式要保持一致。
+        /// 若批量实例升级方式是灰度升级，默认升级所有az和分片。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpgradeInstancesVersionResponse UpgradeInstancesVersion(UpgradeInstancesVersionRequest upgradeInstancesVersionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/db-upgrade", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", upgradeInstancesVersionRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpgradeInstancesVersionResponse>(response);
+        }
+
+        public SyncInvoker<UpgradeInstancesVersionResponse> UpgradeInstancesVersionInvoker(UpgradeInstancesVersionRequest upgradeInstancesVersionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/db-upgrade", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", upgradeInstancesVersionRequest);
+            return new SyncInvoker<UpgradeInstancesVersionResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpgradeInstancesVersionResponse>);
         }
         
         /// <summary>

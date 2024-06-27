@@ -808,6 +808,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<ResourceTag> Tags { get; set; }
 
+        /// <summary>
+        /// 是否开启云数据库RDS for MySQL/MariaDB的binlog快速清理。
+        /// </summary>
+        [JsonProperty("is_open_fast_clean", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsOpenFastClean { get; set; }
+
 
 
         /// <summary>
@@ -830,6 +836,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             sb.Append("  startTime: ").Append(StartTime).Append("\n");
             sb.Append("  expiredDays: ").Append(ExpiredDays).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
+            sb.Append("  isOpenFastClean: ").Append(IsOpenFastClean).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -916,6 +923,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                     this.Tags != null &&
                     input.Tags != null &&
                     this.Tags.SequenceEqual(input.Tags)
+                ) && 
+                (
+                    this.IsOpenFastClean == input.IsOpenFastClean ||
+                    (this.IsOpenFastClean != null &&
+                    this.IsOpenFastClean.Equals(input.IsOpenFastClean))
                 );
         }
 
@@ -953,6 +965,8 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                     hashCode = hashCode * 59 + this.ExpiredDays.GetHashCode();
                 if (this.Tags != null)
                     hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.IsOpenFastClean != null)
+                    hashCode = hashCode * 59 + this.IsOpenFastClean.GetHashCode();
                 return hashCode;
             }
         }

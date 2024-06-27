@@ -82,6 +82,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         [JsonProperty("import_level", NullValueHandling = NullValueHandling.Ignore)]
         public string ImportLevel { get; set; }
 
+        /// <summary>
+        /// 取值： - true： 当前任务上次选择列加工方式为导入方式 - false 或者 空：当前任务上次选择列加工方式为手动选择方式
+        /// </summary>
+        [JsonProperty("is_import_cloumn", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsImportCloumn { get; set; }
+
 
 
         /// <summary>
@@ -102,6 +108,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             sb.Append("  fileSize: ").Append(FileSize).Append("\n");
             sb.Append("  previousSelect: ").Append(PreviousSelect).Append("\n");
             sb.Append("  importLevel: ").Append(ImportLevel).Append("\n");
+            sb.Append("  isImportCloumn: ").Append(IsImportCloumn).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -178,6 +185,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                     this.ImportLevel == input.ImportLevel ||
                     (this.ImportLevel != null &&
                     this.ImportLevel.Equals(input.ImportLevel))
+                ) && 
+                (
+                    this.IsImportCloumn == input.IsImportCloumn ||
+                    (this.IsImportCloumn != null &&
+                    this.IsImportCloumn.Equals(input.IsImportCloumn))
                 );
         }
 
@@ -211,6 +223,8 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                     hashCode = hashCode * 59 + this.PreviousSelect.GetHashCode();
                 if (this.ImportLevel != null)
                     hashCode = hashCode * 59 + this.ImportLevel.GetHashCode();
+                if (this.IsImportCloumn != null)
+                    hashCode = hashCode * 59 + this.IsImportCloumn.GetHashCode();
                 return hashCode;
             }
         }

@@ -17,10 +17,10 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     {
 
         /// <summary>
-        /// 地址组id
+        /// 地址组类型，0表示自定义地址组，1表示WAF回源IP地址组，2表示DDoS回源IP地址组，3表示NAT64转换地址组
         /// </summary>
-        [JsonProperty("set_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string SetId { get; set; }
+        [JsonProperty("address_set_type", NullValueHandling = NullValueHandling.Ignore)]
+        public int? AddressSetType { get; set; }
 
         /// <summary>
         /// 地址组名称
@@ -29,16 +29,10 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 协议列表，协议类型:TCP为6, UDP为17,ICMP为1,ICMPV6为58,ANY为-1,手动类型不为空，自动类型为空
+        /// 地址组id
         /// </summary>
-        [JsonProperty("protocols", NullValueHandling = NullValueHandling.Ignore)]
-        public List<int?> Protocols { get; set; }
-
-        /// <summary>
-        /// 服务组类型，0表示自定义服务组，1表示常用WEB服务，2表示常用远程登录和PING，3表示常用数据库
-        /// </summary>
-        [JsonProperty("service_set_type", NullValueHandling = NullValueHandling.Ignore)]
-        public int? ServiceSetType { get; set; }
+        [JsonProperty("set_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string SetId { get; set; }
 
 
 
@@ -49,10 +43,9 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class AddressGroupVO {\n");
-            sb.Append("  setId: ").Append(SetId).Append("\n");
+            sb.Append("  addressSetType: ").Append(AddressSetType).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
-            sb.Append("  protocols: ").Append(Protocols).Append("\n");
-            sb.Append("  serviceSetType: ").Append(ServiceSetType).Append("\n");
+            sb.Append("  setId: ").Append(SetId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -75,9 +68,9 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
 
             return 
                 (
-                    this.SetId == input.SetId ||
-                    (this.SetId != null &&
-                    this.SetId.Equals(input.SetId))
+                    this.AddressSetType == input.AddressSetType ||
+                    (this.AddressSetType != null &&
+                    this.AddressSetType.Equals(input.AddressSetType))
                 ) && 
                 (
                     this.Name == input.Name ||
@@ -85,15 +78,9 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                     this.Name.Equals(input.Name))
                 ) && 
                 (
-                    this.Protocols == input.Protocols ||
-                    this.Protocols != null &&
-                    input.Protocols != null &&
-                    this.Protocols.SequenceEqual(input.Protocols)
-                ) && 
-                (
-                    this.ServiceSetType == input.ServiceSetType ||
-                    (this.ServiceSetType != null &&
-                    this.ServiceSetType.Equals(input.ServiceSetType))
+                    this.SetId == input.SetId ||
+                    (this.SetId != null &&
+                    this.SetId.Equals(input.SetId))
                 );
         }
 
@@ -105,14 +92,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.SetId != null)
-                    hashCode = hashCode * 59 + this.SetId.GetHashCode();
+                if (this.AddressSetType != null)
+                    hashCode = hashCode * 59 + this.AddressSetType.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Protocols != null)
-                    hashCode = hashCode * 59 + this.Protocols.GetHashCode();
-                if (this.ServiceSetType != null)
-                    hashCode = hashCode * 59 + this.ServiceSetType.GetHashCode();
+                if (this.SetId != null)
+                    hashCode = hashCode * 59 + this.SetId.GetHashCode();
                 return hashCode;
             }
         }

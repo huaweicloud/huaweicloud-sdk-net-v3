@@ -23,6 +23,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         public string SqlTemplate { get; set; }
 
         /// <summary>
+        /// SQL语句模板MD5
+        /// </summary>
+        [JsonProperty("sql_template_md5", NullValueHandling = NullValueHandling.Ignore)]
+        public string SqlTemplateMd5 { get; set; }
+
+        /// <summary>
         /// 目标库别名
         /// </summary>
         [JsonProperty("target_name", NullValueHandling = NullValueHandling.Ignore)]
@@ -86,6 +92,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             var sb = new StringBuilder();
             sb.Append("class ReplaySlowSqlTemplateResp {\n");
             sb.Append("  sqlTemplate: ").Append(SqlTemplate).Append("\n");
+            sb.Append("  sqlTemplateMd5: ").Append(SqlTemplateMd5).Append("\n");
             sb.Append("  targetName: ").Append(TargetName).Append("\n");
             sb.Append("  schemaName: ").Append(SchemaName).Append("\n");
             sb.Append("  queryType: ").Append(QueryType).Append("\n");
@@ -120,6 +127,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                     this.SqlTemplate == input.SqlTemplate ||
                     (this.SqlTemplate != null &&
                     this.SqlTemplate.Equals(input.SqlTemplate))
+                ) && 
+                (
+                    this.SqlTemplateMd5 == input.SqlTemplateMd5 ||
+                    (this.SqlTemplateMd5 != null &&
+                    this.SqlTemplateMd5.Equals(input.SqlTemplateMd5))
                 ) && 
                 (
                     this.TargetName == input.TargetName ||
@@ -178,6 +190,8 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                 int hashCode = 41;
                 if (this.SqlTemplate != null)
                     hashCode = hashCode * 59 + this.SqlTemplate.GetHashCode();
+                if (this.SqlTemplateMd5 != null)
+                    hashCode = hashCode * 59 + this.SqlTemplateMd5.GetHashCode();
                 if (this.TargetName != null)
                     hashCode = hashCode * 59 + this.TargetName.GetHashCode();
                 if (this.SchemaName != null)

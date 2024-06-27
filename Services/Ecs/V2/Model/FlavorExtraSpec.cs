@@ -232,6 +232,18 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         [JsonProperty("ecs:instance_architecture", NullValueHandling = NullValueHandling.Ignore)]
         public string EcsinstanceArchitecture { get; set; }
 
+        /// <summary>
+        /// 该规格是否支持流量镜像。
+        /// </summary>
+        [JsonProperty("network_interface:traffic_mirroring_supported", NullValueHandling = NullValueHandling.Ignore)]
+        public string NetworkInterfacetrafficMirroringSupported { get; set; }
+
+        /// <summary>
+        /// 该规格是否支持QingTian Enclave。
+        /// </summary>
+        [JsonProperty("security:enclave_supported", NullValueHandling = NullValueHandling.Ignore)]
+        public string SecurityenclaveSupported { get; set; }
+
 
 
         /// <summary>
@@ -277,6 +289,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             sb.Append("  quotavifMaxNum: ").Append(QuotavifMaxNum).Append("\n");
             sb.Append("  quotasubNetworkInterfaceMaxNum: ").Append(QuotasubNetworkInterfaceMaxNum).Append("\n");
             sb.Append("  ecsinstanceArchitecture: ").Append(EcsinstanceArchitecture).Append("\n");
+            sb.Append("  networkInterfacetrafficMirroringSupported: ").Append(NetworkInterfacetrafficMirroringSupported).Append("\n");
+            sb.Append("  securityenclaveSupported: ").Append(SecurityenclaveSupported).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -477,6 +491,16 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     this.EcsinstanceArchitecture == input.EcsinstanceArchitecture ||
                     (this.EcsinstanceArchitecture != null &&
                     this.EcsinstanceArchitecture.Equals(input.EcsinstanceArchitecture))
+                ) && 
+                (
+                    this.NetworkInterfacetrafficMirroringSupported == input.NetworkInterfacetrafficMirroringSupported ||
+                    (this.NetworkInterfacetrafficMirroringSupported != null &&
+                    this.NetworkInterfacetrafficMirroringSupported.Equals(input.NetworkInterfacetrafficMirroringSupported))
+                ) && 
+                (
+                    this.SecurityenclaveSupported == input.SecurityenclaveSupported ||
+                    (this.SecurityenclaveSupported != null &&
+                    this.SecurityenclaveSupported.Equals(input.SecurityenclaveSupported))
                 );
         }
 
@@ -560,6 +584,10 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     hashCode = hashCode * 59 + this.QuotasubNetworkInterfaceMaxNum.GetHashCode();
                 if (this.EcsinstanceArchitecture != null)
                     hashCode = hashCode * 59 + this.EcsinstanceArchitecture.GetHashCode();
+                if (this.NetworkInterfacetrafficMirroringSupported != null)
+                    hashCode = hashCode * 59 + this.NetworkInterfacetrafficMirroringSupported.GetHashCode();
+                if (this.SecurityenclaveSupported != null)
+                    hashCode = hashCode * 59 + this.SecurityenclaveSupported.GetHashCode();
                 return hashCode;
             }
         }

@@ -13,7 +13,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
     /// <summary>
     /// 
     /// </summary>
-    public class SrCreateInstanceRspInstanceTagsInfoTags 
+    public class CreateChInstanceRequestBodyTagsInfoSysTags 
     {
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class SrCreateInstanceRspInstanceTagsInfoTags {\n");
+            sb.Append("class CreateChInstanceRequestBodyTagsInfoSysTags {\n");
             sb.Append("  key: ").Append(Key).Append("\n");
             sb.Append("  value: ").Append(Value).Append("\n");
             sb.Append("}\n");
@@ -48,13 +48,13 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as SrCreateInstanceRspInstanceTagsInfoTags);
+            return this.Equals(input as CreateChInstanceRequestBodyTagsInfoSysTags);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(SrCreateInstanceRspInstanceTagsInfoTags input)
+        public bool Equals(CreateChInstanceRequestBodyTagsInfoSysTags input)
         {
             if (input == null)
                 return false;

@@ -37,6 +37,20 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         [JsonProperty("stack_id", NullValueHandling = NullValueHandling.Ignore)]
         public string StackId { get; set; }
 
+        /// <summary>
+        /// 允许访问资源栈模板的source ip列表，source ip应是具有CIDR表示法且带有子网掩码的IPv4地址。
+        /// </summary>
+        [SDKProperty("access_control_source_ips", IsQuery = true)]
+        [JsonProperty("access_control_source_ips", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> AccessControlSourceIps { get; set; }
+
+        /// <summary>
+        /// 允许访问资源栈模板的source vpc id列表， source vpc id应仅包含小写字母、数字或中划线。
+        /// </summary>
+        [SDKProperty("access_control_source_vpc_ids", IsQuery = true)]
+        [JsonProperty("access_control_source_vpc_ids", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> AccessControlSourceVpcIds { get; set; }
+
 
 
         /// <summary>
@@ -49,6 +63,8 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
             sb.Append("  clientRequestId: ").Append(ClientRequestId).Append("\n");
             sb.Append("  stackName: ").Append(StackName).Append("\n");
             sb.Append("  stackId: ").Append(StackId).Append("\n");
+            sb.Append("  accessControlSourceIps: ").Append(AccessControlSourceIps).Append("\n");
+            sb.Append("  accessControlSourceVpcIds: ").Append(AccessControlSourceVpcIds).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -84,6 +100,18 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
                     this.StackId == input.StackId ||
                     (this.StackId != null &&
                     this.StackId.Equals(input.StackId))
+                ) && 
+                (
+                    this.AccessControlSourceIps == input.AccessControlSourceIps ||
+                    this.AccessControlSourceIps != null &&
+                    input.AccessControlSourceIps != null &&
+                    this.AccessControlSourceIps.SequenceEqual(input.AccessControlSourceIps)
+                ) && 
+                (
+                    this.AccessControlSourceVpcIds == input.AccessControlSourceVpcIds ||
+                    this.AccessControlSourceVpcIds != null &&
+                    input.AccessControlSourceVpcIds != null &&
+                    this.AccessControlSourceVpcIds.SequenceEqual(input.AccessControlSourceVpcIds)
                 );
         }
 
@@ -101,6 +129,10 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
                     hashCode = hashCode * 59 + this.StackName.GetHashCode();
                 if (this.StackId != null)
                     hashCode = hashCode * 59 + this.StackId.GetHashCode();
+                if (this.AccessControlSourceIps != null)
+                    hashCode = hashCode * 59 + this.AccessControlSourceIps.GetHashCode();
+                if (this.AccessControlSourceVpcIds != null)
+                    hashCode = hashCode * 59 + this.AccessControlSourceVpcIds.GetHashCode();
                 return hashCode;
             }
         }
