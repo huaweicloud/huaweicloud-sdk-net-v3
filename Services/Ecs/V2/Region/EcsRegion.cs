@@ -51,6 +51,8 @@ namespace HuaweiCloud.SDK.Ecs.V2
             "https://ecs.me-east-1.myhuaweicloud.com");
         public static readonly Region AE_AD_1 = new Region("ae-ad-1",
             "https://ecs.ae-ad-1.myhuaweicloud.com");
+        public static readonly Region CN_EAST_4 = new Region("cn-east-4",
+            "https://ecs.cn-east-4.myhuaweicloud.com");
         public static readonly Region EU_WEST_101 = new Region("eu-west-101",
             "https://ecs.eu-west-101.myhuaweicloud.com");
         public static readonly Region CN_EAST_5 = new Region("cn-east-5",
@@ -88,6 +90,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
                 { "tr-west-1", TR_WEST_1 },
                 { "me-east-1", ME_EAST_1 },
                 { "ae-ad-1", AE_AD_1 },
+                { "cn-east-4", CN_EAST_4 },
                 { "eu-west-101", EU_WEST_101 },
                 { "cn-east-5", CN_EAST_5 },
                 { "eu-west-0", EU_WEST_0 },

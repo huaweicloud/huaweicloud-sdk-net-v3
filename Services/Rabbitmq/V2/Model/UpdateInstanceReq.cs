@@ -64,6 +64,12 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
+        /// <summary>
+        /// ACL访问控制（仅AMQP版本支持此参数）。
+        /// </summary>
+        [JsonProperty("enable_acl", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnableAcl { get; set; }
+
 
 
         /// <summary>
@@ -81,6 +87,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
             sb.Append("  enablePublicip: ").Append(EnablePublicip).Append("\n");
             sb.Append("  publicipId: ").Append(PublicipId).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  enableAcl: ").Append(EnableAcl).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -141,6 +148,11 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
                     this.EnterpriseProjectId == input.EnterpriseProjectId ||
                     (this.EnterpriseProjectId != null &&
                     this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
+                ) && 
+                (
+                    this.EnableAcl == input.EnableAcl ||
+                    (this.EnableAcl != null &&
+                    this.EnableAcl.Equals(input.EnableAcl))
                 );
         }
 
@@ -168,6 +180,8 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
                     hashCode = hashCode * 59 + this.PublicipId.GetHashCode();
                 if (this.EnterpriseProjectId != null)
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.EnableAcl != null)
+                    hashCode = hashCode * 59 + this.EnableAcl.GetHashCode();
                 return hashCode;
             }
         }

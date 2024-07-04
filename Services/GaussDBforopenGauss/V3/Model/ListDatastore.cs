@@ -40,6 +40,18 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         [JsonProperty("hotfix_versions", NullValueHandling = NullValueHandling.Ignore)]
         public string HotfixVersions { get; set; }
 
+        /// <summary>
+        /// 数据库正在升级的目标版本。
+        /// </summary>
+        [JsonProperty("target_version", NullValueHandling = NullValueHandling.Ignore)]
+        public string TargetVersion { get; set; }
+
+        /// <summary>
+        /// 热补丁升级完成时间列表。  热补丁升级完成时间，格式为“yyyy-mm-dd hh:mm:ss timezone”。  其中timezone是指时区。 
+        /// </summary>
+        [JsonProperty("hotfix_finished_times", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> HotfixFinishedTimes { get; set; }
+
 
 
         /// <summary>
@@ -53,6 +65,8 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             sb.Append("  version: ").Append(Version).Append("\n");
             sb.Append("  completeVersion: ").Append(CompleteVersion).Append("\n");
             sb.Append("  hotfixVersions: ").Append(HotfixVersions).Append("\n");
+            sb.Append("  targetVersion: ").Append(TargetVersion).Append("\n");
+            sb.Append("  hotfixFinishedTimes: ").Append(HotfixFinishedTimes).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -93,6 +107,17 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                     this.HotfixVersions == input.HotfixVersions ||
                     (this.HotfixVersions != null &&
                     this.HotfixVersions.Equals(input.HotfixVersions))
+                ) && 
+                (
+                    this.TargetVersion == input.TargetVersion ||
+                    (this.TargetVersion != null &&
+                    this.TargetVersion.Equals(input.TargetVersion))
+                ) && 
+                (
+                    this.HotfixFinishedTimes == input.HotfixFinishedTimes ||
+                    this.HotfixFinishedTimes != null &&
+                    input.HotfixFinishedTimes != null &&
+                    this.HotfixFinishedTimes.SequenceEqual(input.HotfixFinishedTimes)
                 );
         }
 
@@ -112,6 +137,10 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                     hashCode = hashCode * 59 + this.CompleteVersion.GetHashCode();
                 if (this.HotfixVersions != null)
                     hashCode = hashCode * 59 + this.HotfixVersions.GetHashCode();
+                if (this.TargetVersion != null)
+                    hashCode = hashCode * 59 + this.TargetVersion.GetHashCode();
+                if (this.HotfixFinishedTimes != null)
+                    hashCode = hashCode * 59 + this.HotfixFinishedTimes.GetHashCode();
                 return hashCode;
             }
         }

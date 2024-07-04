@@ -35,13 +35,13 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public List<ShowCeshierarchyRespNodes> Nodes { get; set; }
 
         /// <summary>
-        /// 队列信息。
+        /// Queue信息。
         /// </summary>
         [JsonProperty("queues", NullValueHandling = NullValueHandling.Ignore)]
         public List<ShowCeshierarchyRespQueues> Queues { get; set; }
 
         /// <summary>
-        /// vhost信息
+        /// Vhost信息
         /// </summary>
         [JsonProperty("vhosts", NullValueHandling = NullValueHandling.Ignore)]
         public List<ShowCeshierarchyRespVhosts> Vhosts { get; set; }

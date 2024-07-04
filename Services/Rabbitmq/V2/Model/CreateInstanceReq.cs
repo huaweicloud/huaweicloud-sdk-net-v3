@@ -125,115 +125,6 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         }
 
         /// <summary>
-        /// 消息引擎的版本。   - RabbitMQ版本有：3.8.35[和3.7.17](tag:tm,hk_tm,hk_sbc,sbc)。 
-        /// </summary>
-        /// <value>消息引擎的版本。   - RabbitMQ版本有：3.8.35[和3.7.17](tag:tm,hk_tm,hk_sbc,sbc)。 </value>
-        [JsonConverter(typeof(EnumClassConverter<EngineVersionEnum>))]
-        public class EngineVersionEnum
-        {
-            /// <summary>
-            /// Enum _3_8_35 for value: 3.8.35
-            /// </summary>
-            public static readonly EngineVersionEnum _3_8_35 = new EngineVersionEnum("3.8.35");
-
-            private static readonly Dictionary<string, EngineVersionEnum> StaticFields =
-            new Dictionary<string, EngineVersionEnum>()
-            {
-                { "3.8.35", _3_8_35 },
-            };
-
-            private string _value;
-
-            public EngineVersionEnum()
-            {
-
-            }
-
-            public EngineVersionEnum(string value)
-            {
-                _value = value;
-            }
-
-            public static EngineVersionEnum FromValue(string value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public string GetValue()
-            {
-                return _value;
-            }
-
-            public override string ToString()
-            {
-                return $"{_value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this._value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as EngineVersionEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(EngineVersionEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
-            }
-
-            public static bool operator ==(EngineVersionEnum a, EngineVersionEnum b)
-            {
-                if (System.Object.ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(EngineVersionEnum a, EngineVersionEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
-        /// <summary>
         /// 代理个数。  当产品为单机类型，代理个数只能为1；当产品为集群类型，可选3、5、7个代理个数。  产品类型为single时:   - 1  产品类型为cluster时:   - 3   - 5   - 7
         /// </summary>
         /// <value>代理个数。  当产品为单机类型，代理个数只能为1；当产品为集群类型，可选3、5、7个代理个数。  产品类型为single时:   - 1  产品类型为cluster时:   - 3   - 5   - 7</value>
@@ -506,12 +397,13 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         [JsonProperty("engine", NullValueHandling = NullValueHandling.Ignore)]
         public EngineEnum Engine { get; set; }
         /// <summary>
-        /// 消息引擎的版本。   - RabbitMQ版本有：3.8.35[和3.7.17](tag:tm,hk_tm,hk_sbc,sbc)。 
+        /// 消息引擎的版本。   - RabbitMQ版本有：3.8.35[、AMQP-0-9-1](tag:hws,hws_hk)[和3.7.17](tag:tm,hk_tm,hk_sbc,sbc)。 
         /// </summary>
         [JsonProperty("engine_version", NullValueHandling = NullValueHandling.Ignore)]
-        public EngineVersionEnum EngineVersion { get; set; }
+        public string EngineVersion { get; set; }
+
         /// <summary>
-        /// 消息存储空间，单位GB。   [- 单机RabbitMQ实例的存储空间的取值范围100GB~90000GB。](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm)      [- 单机RabbitMQ实例的存储空间的取值范围100GB~30000GB。](tag:hcs)      [- 集群RabbitMQ实例的存储空间的取值范围为100GB*节点数~90000GB、200GB*节点数~90000GB、300GB*节点数~90000GB。](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm)      [- 集群RabbitMQ实例的存储空间的取值范围为100GB乘以代理数~30000GB乘以代理数。](tag:hcs) 
+        /// 消息存储空间，单位GB。   [- 单机RabbitMQ实例的存储空间的取值范围100GB~90000GB。](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm)    [- 单机RabbitMQ实例的存储空间的取值范围100GB~30000GB。](tag:hcs)    [- 集群RabbitMQ实例的存储空间的取值范围为100GB*节点数~90000GB、200GB*节点数~90000GB、300GB*节点数~90000GB。](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm)    [- 集群RabbitMQ实例的存储空间的取值范围为100GB乘以代理数~30000GB乘以代理数。](tag:hcs) 
         /// </summary>
         [JsonProperty("storage_space", NullValueHandling = NullValueHandling.Ignore)]
         public int? StorageSpace { get; set; }

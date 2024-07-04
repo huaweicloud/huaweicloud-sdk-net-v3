@@ -113,10 +113,52 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public List<List<int?>> PortraitLocation { get; set; }
 
         /// <summary>
-        /// 身份证的类型。当输入参数“ idcard_type ”为“true”时，才返回该参数。取值如下所示： - normal：身份证原件 - copy：复印的身份证 
+        /// 身份证的类型。当输入参数\&quot;idcard_type \&quot;为\&quot;true\&quot;时，才返回该参数。取值如下所示： - normal：身份证原件 - copy：复印的身份证 
         /// </summary>
         [JsonProperty("idcard_type", NullValueHandling = NullValueHandling.Ignore)]
         public string IdcardType { get; set; }
+
+        /// <summary>
+        /// 身份证原图的base64编码。 当输入参数\&quot;return_adjusted_image\&quot;为\&quot;true\&quot;时，才返回该参数。 
+        /// </summary>
+        [JsonProperty("adjusted_image", NullValueHandling = NullValueHandling.Ignore)]
+        public string AdjustedImage { get; set; }
+
+        /// <summary>
+        /// 身份证图片边框完整性告警结果，\&quot;true\&quot;表示边框不完整，\&quot;false\&quot;表示边框完整。仅在输入参数detect_border_integrity为true时，返回该字段。 
+        /// </summary>
+        [JsonProperty("detect_border_integrity_result", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? DetectBorderIntegrityResult { get; set; }
+
+        /// <summary>
+        /// 身份证图像框内是否存在遮挡的告警结果，\&quot;true\&quot;表示边框内部存在遮挡，\&quot;false\&quot;表示边框内部完整。仅在输入参数detect_blocking_within_border为true时，返回该字段。 
+        /// </summary>
+        [JsonProperty("detect_blocking_within_border_result", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? DetectBlockingWithinBorderResult { get; set; }
+
+        /// <summary>
+        /// 身份证模糊告警结果，\&quot;true\&quot;表示图片模糊，\&quot;false\&quot;表示身份证清晰。仅在输入参数detect_blur为true时，返回该字段。 
+        /// </summary>
+        [JsonProperty("detect_blur_result", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? DetectBlurResult { get; set; }
+
+        /// <summary>
+        /// 身份证反光告警结果，\&quot;true\&quot;表示身份证反光，\&quot;false\&quot;表示是身份证无反光。仅在输入参数detect_glare为true时，返回该字段。 
+        /// </summary>
+        [JsonProperty("detect_glare_result", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? DetectGlareResult { get; set; }
+
+        /// <summary>
+        /// 身份证人像被篡改的告警结果，\&quot;true\&quot;表示身份证人像被篡改，\&quot;false\&quot;表示是身份证人像未被篡改。仅在输入参数detect_tampering为true时，返回该字段。 
+        /// </summary>
+        [JsonProperty("detect_tampering_result", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? DetectTamperingResult { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("score_info", NullValueHandling = NullValueHandling.Ignore)]
+        public CambodianIdCardScoreInformationResult ScoreInfo { get; set; }
 
         /// <summary>
         /// 相关字段的置信度信息，置信度越大，表示本次识别的对应字段的可靠性越高，在统计意义上，置信度越大，准确率越高。 置信度由算法给出，不直接等价于对应字段的准确率。 
@@ -150,6 +192,13 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  portraitImage: ").Append(PortraitImage).Append("\n");
             sb.Append("  portraitLocation: ").Append(PortraitLocation).Append("\n");
             sb.Append("  idcardType: ").Append(IdcardType).Append("\n");
+            sb.Append("  adjustedImage: ").Append(AdjustedImage).Append("\n");
+            sb.Append("  detectBorderIntegrityResult: ").Append(DetectBorderIntegrityResult).Append("\n");
+            sb.Append("  detectBlockingWithinBorderResult: ").Append(DetectBlockingWithinBorderResult).Append("\n");
+            sb.Append("  detectBlurResult: ").Append(DetectBlurResult).Append("\n");
+            sb.Append("  detectGlareResult: ").Append(DetectGlareResult).Append("\n");
+            sb.Append("  detectTamperingResult: ").Append(DetectTamperingResult).Append("\n");
+            sb.Append("  scoreInfo: ").Append(ScoreInfo).Append("\n");
             sb.Append("  confidence: ").Append(Confidence).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -259,6 +308,41 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     this.IdcardType.Equals(input.IdcardType))
                 ) && 
                 (
+                    this.AdjustedImage == input.AdjustedImage ||
+                    (this.AdjustedImage != null &&
+                    this.AdjustedImage.Equals(input.AdjustedImage))
+                ) && 
+                (
+                    this.DetectBorderIntegrityResult == input.DetectBorderIntegrityResult ||
+                    (this.DetectBorderIntegrityResult != null &&
+                    this.DetectBorderIntegrityResult.Equals(input.DetectBorderIntegrityResult))
+                ) && 
+                (
+                    this.DetectBlockingWithinBorderResult == input.DetectBlockingWithinBorderResult ||
+                    (this.DetectBlockingWithinBorderResult != null &&
+                    this.DetectBlockingWithinBorderResult.Equals(input.DetectBlockingWithinBorderResult))
+                ) && 
+                (
+                    this.DetectBlurResult == input.DetectBlurResult ||
+                    (this.DetectBlurResult != null &&
+                    this.DetectBlurResult.Equals(input.DetectBlurResult))
+                ) && 
+                (
+                    this.DetectGlareResult == input.DetectGlareResult ||
+                    (this.DetectGlareResult != null &&
+                    this.DetectGlareResult.Equals(input.DetectGlareResult))
+                ) && 
+                (
+                    this.DetectTamperingResult == input.DetectTamperingResult ||
+                    (this.DetectTamperingResult != null &&
+                    this.DetectTamperingResult.Equals(input.DetectTamperingResult))
+                ) && 
+                (
+                    this.ScoreInfo == input.ScoreInfo ||
+                    (this.ScoreInfo != null &&
+                    this.ScoreInfo.Equals(input.ScoreInfo))
+                ) && 
+                (
                     this.Confidence == input.Confidence ||
                     (this.Confidence != null &&
                     this.Confidence.Equals(input.Confidence))
@@ -307,6 +391,20 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     hashCode = hashCode * 59 + this.PortraitLocation.GetHashCode();
                 if (this.IdcardType != null)
                     hashCode = hashCode * 59 + this.IdcardType.GetHashCode();
+                if (this.AdjustedImage != null)
+                    hashCode = hashCode * 59 + this.AdjustedImage.GetHashCode();
+                if (this.DetectBorderIntegrityResult != null)
+                    hashCode = hashCode * 59 + this.DetectBorderIntegrityResult.GetHashCode();
+                if (this.DetectBlockingWithinBorderResult != null)
+                    hashCode = hashCode * 59 + this.DetectBlockingWithinBorderResult.GetHashCode();
+                if (this.DetectBlurResult != null)
+                    hashCode = hashCode * 59 + this.DetectBlurResult.GetHashCode();
+                if (this.DetectGlareResult != null)
+                    hashCode = hashCode * 59 + this.DetectGlareResult.GetHashCode();
+                if (this.DetectTamperingResult != null)
+                    hashCode = hashCode * 59 + this.DetectTamperingResult.GetHashCode();
+                if (this.ScoreInfo != null)
+                    hashCode = hashCode * 59 + this.ScoreInfo.GetHashCode();
                 if (this.Confidence != null)
                     hashCode = hashCode * 59 + this.Confidence.GetHashCode();
                 return hashCode;

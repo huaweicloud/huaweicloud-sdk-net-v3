@@ -76,6 +76,12 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         [JsonProperty("time_format", NullValueHandling = NullValueHandling.Ignore)]
         public string TimeFormat { get; set; }
 
+        /// <summary>
+        /// 时间参数。
+        /// </summary>
+        [JsonProperty("time_arg", NullValueHandling = NullValueHandling.Ignore)]
+        public string TimeArg { get; set; }
+
 
 
         /// <summary>
@@ -95,6 +101,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             sb.Append("  backupKey: ").Append(BackupKey).Append("\n");
             sb.Append("  signArg: ").Append(SignArg).Append("\n");
             sb.Append("  timeFormat: ").Append(TimeFormat).Append("\n");
+            sb.Append("  timeArg: ").Append(TimeArg).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -165,6 +172,11 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     this.TimeFormat == input.TimeFormat ||
                     (this.TimeFormat != null &&
                     this.TimeFormat.Equals(input.TimeFormat))
+                ) && 
+                (
+                    this.TimeArg == input.TimeArg ||
+                    (this.TimeArg != null &&
+                    this.TimeArg.Equals(input.TimeArg))
                 );
         }
 
@@ -196,6 +208,8 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     hashCode = hashCode * 59 + this.SignArg.GetHashCode();
                 if (this.TimeFormat != null)
                     hashCode = hashCode * 59 + this.TimeFormat.GetHashCode();
+                if (this.TimeArg != null)
+                    hashCode = hashCode * 59 + this.TimeArg.GetHashCode();
                 return hashCode;
             }
         }

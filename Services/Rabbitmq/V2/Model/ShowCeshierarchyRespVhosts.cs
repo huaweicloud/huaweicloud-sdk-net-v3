@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
     {
 
         /// <summary>
-        /// vhost名称。
+        /// Vhost名称。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }

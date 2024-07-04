@@ -419,6 +419,30 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 创建数据库实例V5接口，仅支持IAM5的新平面认证方式（AK/SK认证方式）
+        ///
+        /// 创建数据库实例V5接口，仅支持IAM5的新平面认证方式（AK/SK认证方式）
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateInstanceIam5Response CreateInstanceIam5(CreateInstanceIam5Request createInstanceIam5Request)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/instances", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceIam5Request);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateInstanceIam5Response>(response);
+        }
+
+        public SyncInvoker<CreateInstanceIam5Response> CreateInstanceIam5Invoker(CreateInstanceIam5Request createInstanceIam5Request)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/instances", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceIam5Request);
+            return new SyncInvoker<CreateInstanceIam5Response>(this, "POST", request, JsonUtils.DeSerialize<CreateInstanceIam5Response>);
+        }
+        
+        /// <summary>
         /// 创建手动备份
         ///
         /// 创建手动备份。
@@ -568,6 +592,32 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteConfigurationRequest);
             return new SyncInvoker<DeleteConfigurationResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteConfigurationResponse>);
+        }
+        
+        /// <summary>
+        /// 解除实例容灾关系接口
+        ///
+        /// 解除实例容灾关系接口
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteDisasterRecoveryResponse DeleteDisasterRecovery(DeleteDisasterRecoveryRequest deleteDisasterRecoveryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteDisasterRecoveryRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/delete-disaster-recovery", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDisasterRecoveryRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteDisasterRecoveryResponse>(response);
+        }
+
+        public SyncInvoker<DeleteDisasterRecoveryResponse> DeleteDisasterRecoveryInvoker(DeleteDisasterRecoveryRequest deleteDisasterRecoveryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteDisasterRecoveryRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/delete-disaster-recovery", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDisasterRecoveryRequest);
+            return new SyncInvoker<DeleteDisasterRecoveryResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteDisasterRecoveryResponse>);
         }
         
         /// <summary>
@@ -1105,6 +1155,32 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/flavors/{database_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFlavorsRequest);
             return new SyncInvoker<ListFlavorsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListFlavorsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询数据库可变更规格接口
+        ///
+        /// 查询数据库可变更规格接口
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListFlavorsResizeResponse ListFlavorsResize(ListFlavorsResizeRequest listFlavorsResizeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listFlavorsResizeRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/flavors-resize", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFlavorsResizeRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListFlavorsResizeResponse>(response);
+        }
+
+        public SyncInvoker<ListFlavorsResizeResponse> ListFlavorsResizeInvoker(ListFlavorsResizeRequest listFlavorsResizeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listFlavorsResizeRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/flavors-resize", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFlavorsResizeRequest);
+            return new SyncInvoker<ListFlavorsResizeResponse>(this, "GET", request, JsonUtils.DeSerialize<ListFlavorsResizeResponse>);
         }
         
         /// <summary>
@@ -3335,6 +3411,32 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/ssl", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchSslRequest);
             return new SyncInvoker<SwitchSslResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<SwitchSslResponse>);
+        }
+        
+        /// <summary>
+        /// 解除节点只读状态接口
+        ///
+        /// 解除节点只读状态接口
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UnlockNodeReadonlyStatusResponse UnlockNodeReadonlyStatus(UnlockNodeReadonlyStatusRequest unlockNodeReadonlyStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", unlockNodeReadonlyStatusRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/unlock-node-readonly-status", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", unlockNodeReadonlyStatusRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UnlockNodeReadonlyStatusResponse>(response);
+        }
+
+        public SyncInvoker<UnlockNodeReadonlyStatusResponse> UnlockNodeReadonlyStatusInvoker(UnlockNodeReadonlyStatusRequest unlockNodeReadonlyStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", unlockNodeReadonlyStatusRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/unlock-node-readonly-status", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", unlockNodeReadonlyStatusRequest);
+            return new SyncInvoker<UnlockNodeReadonlyStatusResponse>(this, "PUT", request, JsonUtils.DeSerialize<UnlockNodeReadonlyStatusResponse>);
         }
         
         /// <summary>

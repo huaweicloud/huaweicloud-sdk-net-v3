@@ -3614,6 +3614,30 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         }
         
         /// <summary>
+        /// 参数对比
+        ///
+        /// 对比实例参数和默认模板的差异
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CheckStarrocksParamsResponse> CheckStarrocksParamsAsync(CheckStarrocksParamsRequest checkStarrocksParamsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/starrocks/comparison", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", checkStarrocksParamsRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CheckStarrocksParamsResponse>(response);
+        }
+
+        public AsyncInvoker<CheckStarrocksParamsResponse> CheckStarrocksParamsAsyncInvoker(CheckStarrocksParamsRequest checkStarrocksParamsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/starrocks/comparison", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", checkStarrocksParamsRequest);
+            return new AsyncInvoker<CheckStarrocksParamsResponse>(this, "POST", request, JsonUtils.DeSerialize<CheckStarrocksParamsResponse>);
+        }
+        
+        /// <summary>
         /// HTAP数据同步表配置校验
         ///
         /// HTAP数据同步表配置校验。
@@ -4508,6 +4532,32 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         }
         
         /// <summary>
+        /// StarRocks实例规格变更
+        ///
+        /// StarRocks实例规格变更。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ResizeStarRocksFlavorResponse> ResizeStarRocksFlavorAsync(ResizeStarRocksFlavorRequest resizeStarRocksFlavorRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", resizeStarRocksFlavorRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/resize-flavor", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", resizeStarRocksFlavorRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<ResizeStarRocksFlavorResponse>(response);
+        }
+
+        public AsyncInvoker<ResizeStarRocksFlavorResponse> ResizeStarRocksFlavorAsyncInvoker(ResizeStarRocksFlavorRequest resizeStarRocksFlavorRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", resizeStarRocksFlavorRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/resize-flavor", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", resizeStarRocksFlavorRequest);
+            return new AsyncInvoker<ResizeStarRocksFlavorResponse>(this, "POST", request, JsonUtils.DeSerialize<ResizeStarRocksFlavorResponse>);
+        }
+        
+        /// <summary>
         /// 重启StarRocks实例
         ///
         /// 重启StarRocks实例。
@@ -4716,6 +4766,58 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         }
         
         /// <summary>
+        /// 查询参数
+        ///
+        /// 按节点类型查询参数
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowStarrocksParamsResponse> ShowStarrocksParamsAsync(ShowStarrocksParamsRequest showStarrocksParamsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showStarrocksParamsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/configurations", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStarrocksParamsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowStarrocksParamsResponse>(response);
+        }
+
+        public AsyncInvoker<ShowStarrocksParamsResponse> ShowStarrocksParamsAsyncInvoker(ShowStarrocksParamsRequest showStarrocksParamsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showStarrocksParamsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/configurations", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStarrocksParamsRequest);
+            return new AsyncInvoker<ShowStarrocksParamsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowStarrocksParamsResponse>);
+        }
+        
+        /// <summary>
+        /// StarRocks实例开启行列分流
+        ///
+        /// StarRocks实例开启行列分流。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<SyncStarRocksUsersResponse> SyncStarRocksUsersAsync(SyncStarRocksUsersRequest syncStarRocksUsersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", syncStarRocksUsersRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/users/sync", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", syncStarRocksUsersRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<SyncStarRocksUsersResponse>(response);
+        }
+
+        public AsyncInvoker<SyncStarRocksUsersResponse> SyncStarRocksUsersAsyncInvoker(SyncStarRocksUsersRequest syncStarRocksUsersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", syncStarRocksUsersRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/users/sync", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", syncStarRocksUsersRequest);
+            return new AsyncInvoker<SyncStarRocksUsersResponse>(this, "POST", request, JsonUtils.DeSerialize<SyncStarRocksUsersResponse>);
+        }
+        
+        /// <summary>
         /// 修改数据同步
         ///
         /// 修改数据同步。
@@ -4893,6 +4995,32 @@ namespace HuaweiCloud.SDK.GaussDB.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/users/permission", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateStarRocksDatabaseUserPermissionRequest);
             return new AsyncInvoker<UpdateStarRocksDatabaseUserPermissionResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateStarRocksDatabaseUserPermissionResponse>);
+        }
+        
+        /// <summary>
+        /// 修改参数
+        ///
+        /// 按节点类型修改节点参数
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateStarrocksParamsResponse> UpdateStarrocksParamsAsync(UpdateStarrocksParamsRequest updateStarrocksParamsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateStarrocksParamsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/configurations", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateStarrocksParamsRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateStarrocksParamsResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateStarrocksParamsResponse> UpdateStarrocksParamsAsyncInvoker(UpdateStarrocksParamsRequest updateStarrocksParamsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateStarrocksParamsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/configurations", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateStarrocksParamsRequest);
+            return new AsyncInvoker<UpdateStarrocksParamsResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateStarrocksParamsResponse>);
         }
         
         /// <summary>

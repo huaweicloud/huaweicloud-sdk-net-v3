@@ -1,3 +1,134 @@
+# 3.1.102 2024-07-04
+
+### HuaweiCloud SDK CDN
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowDomainFullConfig**
+    - 响应参数变更
+      - `+ configs.url_auth.time_arg`
+  - **UpdateDomainFullConfig**
+    - 请求参数变更
+      - `+ configs.url_auth.time_arg`
+
+### HuaweiCloud SDK GaussDB
+
+- _新增特性_
+  - 支持以下接口：
+    - `ResizeStarRocksFlavor`
+    - `ShowStarrocksParams`
+    - `UpdateStarrocksParams`
+    - `SyncStarRocksUsers`
+    - `CheckStarrocksParams`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListInstances**
+    - 响应参数变更
+      - `+ instances.datastore.target_version`
+      - `+ instances.datastore.hotfix_finished_times`
+  - **ListInstancesDetails**
+    - 响应参数变更
+      - `+ instances.datastore.target_version`
+      - `+ instances.datastore.hotfix_finished_times`
+
+### HuaweiCloud SDK KMS
+
+- _新增特性_
+  - 支持接口`UpdatePrimaryRegion`、`ReplicateKey`、`ListSupportRegions`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListKeys**
+    - 响应参数变更
+      - `- key_details.partition_type`
+  - **ListKeyDetail**
+    - 响应参数变更
+      - `- key_info.partition_type`
+  - **ListKmsByTags**
+    - 响应参数变更
+      - `- resources.resource_detail.partition_type`
+
+### HuaweiCloud SDK OCR
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **RecognizeCambodianIdCard**
+    - 请求参数变更
+      - `+ detect_border_integrity`
+      - `+ detect_blocking_within_border`
+      - `+ detect_blur`
+      - `+ detect_glare`
+      - `+ return_adjusted_image`
+      - `+ detect_tampering`
+    - 响应参数变更
+      - `+ result.adjusted_image`
+      - `+ result.detect_border_integrity_result`
+      - `+ result.detect_blocking_within_border_result`
+      - `+ result.detect_blur_result`
+      - `+ result.detect_glare_result`
+      - `+ result.detect_tampering_result`
+      - `+ result.score_info`
+
+### HuaweiCloud SDK RabbitMQ
+
+- _新增特性_
+  - 支持以下接口：
+    - `ListVhosts`
+    - `CreateVhost`
+    - `BatchDeleteVhosts`
+    - `ListExchanges`
+    - `CreateExchange`
+    - `BatchDeleteExchanges`
+    - `ListQueues`
+    - `CreateQueue`
+    - `BatchDeleteQueues`
+    - `ShowQueueDetails`
+    - `DeleteQueueInfo`
+    - `ListBindings`
+    - `CreateBinding`
+    - `DeleteBinding`
+    - `ListUser`
+    - `CreateUser`
+    - `UpdateUser`
+    - `DeleteUser`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreatePostPaidInstanceByEngine**
+    - 请求参数变更
+      - `- engine_version: enum value [3.8.35]`
+  - **UpdateInstance**
+    - 请求参数变更
+      - `+ enable_acl`
+  - **CreatePostPaidInstance**
+    - 请求参数变更
+      - `- engine_version: enum value [3.8.35]`
+
+### HuaweiCloud SDK RDS
+
+- _新增特性_
+  - 支持接口`CreateInstanceIam5`、`UnlockNodeReadonlyStatus`、`DeleteDisasterRecovery`、`ListFlavorsResize`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
 # 3.1.101 2024-06-27
 
 ### HuaweiCloud SDK Core

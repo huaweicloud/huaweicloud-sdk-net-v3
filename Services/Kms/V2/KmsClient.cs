@@ -892,6 +892,56 @@ namespace HuaweiCloud.SDK.Kms.V2
         }
         
         /// <summary>
+        /// 查询跨区域密钥所支持的区域
+        ///
+        /// - 功能介绍：查询跨区域密钥所支持的区域。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListSupportRegionsResponse ListSupportRegions(ListSupportRegionsRequest listSupportRegionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kms/regions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSupportRegionsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListSupportRegionsResponse>(response);
+        }
+
+        public SyncInvoker<ListSupportRegionsResponse> ListSupportRegionsInvoker(ListSupportRegionsRequest listSupportRegionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kms/regions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSupportRegionsRequest);
+            return new SyncInvoker<ListSupportRegionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSupportRegionsResponse>);
+        }
+        
+        /// <summary>
+        /// 复制密钥到指定区域
+        ///
+        /// 将本区域的密钥复制到指定区域。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ReplicateKeyResponse ReplicateKey(ReplicateKeyRequest replicateKeyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("key_id", replicateKeyRequest.KeyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kms/keys/{key_id}/replicate", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", replicateKeyRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<ReplicateKeyResponse>(response);
+        }
+
+        public SyncInvoker<ReplicateKeyResponse> ReplicateKeyInvoker(ReplicateKeyRequest replicateKeyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("key_id", replicateKeyRequest.KeyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kms/keys/{key_id}/replicate", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", replicateKeyRequest);
+            return new SyncInvoker<ReplicateKeyResponse>(this, "POST", request, JsonUtils.DeSerialize<ReplicateKeyResponse>);
+        }
+        
+        /// <summary>
         /// 查询密钥轮换状态
         ///
         /// - 功能介绍：查询用户主密钥轮换状态。
@@ -1139,6 +1189,32 @@ namespace HuaweiCloud.SDK.Kms.V2
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/update-key-rotation-interval", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateKeyRotationIntervalRequest);
             return new SyncInvoker<UpdateKeyRotationIntervalResponse>(this, "POST", request, JsonUtils.DeSerializeNull<UpdateKeyRotationIntervalResponse>);
+        }
+        
+        /// <summary>
+        /// 修改密钥所属的主区域
+        ///
+        /// 修改密钥所属的主区域。修改后当前区域会变为副本区域。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdatePrimaryRegionResponse UpdatePrimaryRegion(UpdatePrimaryRegionRequest updatePrimaryRegionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("key_id", updatePrimaryRegionRequest.KeyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kms/keys/{key_id}/update-primary-region", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updatePrimaryRegionRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdatePrimaryRegionResponse>(response);
+        }
+
+        public SyncInvoker<UpdatePrimaryRegionResponse> UpdatePrimaryRegionInvoker(UpdatePrimaryRegionRequest updatePrimaryRegionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("key_id", updatePrimaryRegionRequest.KeyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kms/keys/{key_id}/update-primary-region", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updatePrimaryRegionRequest);
+            return new SyncInvoker<UpdatePrimaryRegionResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdatePrimaryRegionResponse>);
         }
         
         /// <summary>

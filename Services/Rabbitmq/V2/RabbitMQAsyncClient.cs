@@ -118,6 +118,32 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         }
         
         /// <summary>
+        /// 创建用户
+        ///
+        /// 创建用户（仅AMQP版本支持）。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateUserResponse> CreateUserAsync(CreateUserRequest createUserRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createUserRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/users", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createUserRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateUserResponse>(response);
+        }
+
+        public AsyncInvoker<CreateUserResponse> CreateUserAsyncInvoker(CreateUserRequest createUserRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createUserRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/users", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createUserRequest);
+            return new AsyncInvoker<CreateUserResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateUserResponse>);
+        }
+        
+        /// <summary>
         /// 删除后台任务管理中的指定记录
         ///
         /// 删除后台任务管理中的指定记录。
@@ -169,6 +195,34 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceRequest);
             return new AsyncInvoker<DeleteInstanceResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteInstanceResponse>);
+        }
+        
+        /// <summary>
+        /// 删除用户
+        ///
+        /// 删除用户（仅AMQP版本支持）。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteUserResponse> DeleteUserAsync(DeleteUserRequest deleteUserRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteUserRequest.InstanceId.ToString());
+            urlParam.Add("user_name", deleteUserRequest.UserName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/users/{user_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteUserRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteUserResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteUserResponse> DeleteUserAsyncInvoker(DeleteUserRequest deleteUserRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteUserRequest.InstanceId.ToString());
+            urlParam.Add("user_name", deleteUserRequest.UserName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/users/{user_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteUserRequest);
+            return new AsyncInvoker<DeleteUserResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteUserResponse>);
         }
         
         /// <summary>
@@ -319,6 +373,32 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/products", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProductsRequest);
             return new AsyncInvoker<ListProductsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListProductsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询用户列表
+        ///
+        /// 查询用户列表（仅AMQP版本支持）。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListUserResponse> ListUserAsync(ListUserRequest listUserRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listUserRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/users", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listUserRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListUserResponse>(response);
+        }
+
+        public AsyncInvoker<ListUserResponse> ListUserAsyncInvoker(ListUserRequest listUserRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listUserRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/users", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listUserRequest);
+            return new AsyncInvoker<ListUserResponse>(this, "GET", request, JsonUtils.DeSerialize<ListUserResponse>);
         }
         
         /// <summary>
@@ -665,6 +745,436 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/rabbitmq/plugins", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePluginsRequest);
             return new AsyncInvoker<UpdatePluginsResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdatePluginsResponse>);
+        }
+        
+        /// <summary>
+        /// 修改用户参数
+        ///
+        /// 修改用户参数（仅AMQP版本支持）。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateUserResponse> UpdateUserAsync(UpdateUserRequest updateUserRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateUserRequest.InstanceId.ToString());
+            urlParam.Add("user_name", updateUserRequest.UserName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/users/{user_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateUserRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateUserResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateUserResponse> UpdateUserAsyncInvoker(UpdateUserRequest updateUserRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateUserRequest.InstanceId.ToString());
+            urlParam.Add("user_name", updateUserRequest.UserName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/users/{user_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateUserRequest);
+            return new AsyncInvoker<UpdateUserResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateUserResponse>);
+        }
+        
+        /// <summary>
+        /// 添加绑定
+        ///
+        /// 添加绑定。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateBindingResponse> CreateBindingAsync(CreateBindingRequest createBindingRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createBindingRequest.InstanceId.ToString());
+            urlParam.Add("vhost", createBindingRequest.Vhost.ToString());
+            urlParam.Add("exchange", createBindingRequest.Exchange.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts/{vhost}/exchanges/{exchange}/binding", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createBindingRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateBindingResponse>(response);
+        }
+
+        public AsyncInvoker<CreateBindingResponse> CreateBindingAsyncInvoker(CreateBindingRequest createBindingRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createBindingRequest.InstanceId.ToString());
+            urlParam.Add("vhost", createBindingRequest.Vhost.ToString());
+            urlParam.Add("exchange", createBindingRequest.Exchange.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts/{vhost}/exchanges/{exchange}/binding", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createBindingRequest);
+            return new AsyncInvoker<CreateBindingResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateBindingResponse>);
+        }
+        
+        /// <summary>
+        /// 删除绑定
+        ///
+        /// 删除绑定。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteBindingResponse> DeleteBindingAsync(DeleteBindingRequest deleteBindingRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteBindingRequest.InstanceId.ToString());
+            urlParam.Add("vhost", deleteBindingRequest.Vhost.ToString());
+            urlParam.Add("exchange", deleteBindingRequest.Exchange.ToString());
+            urlParam.Add("destination_type", deleteBindingRequest.DestinationType.ToString());
+            urlParam.Add("destination", deleteBindingRequest.Destination.ToString());
+            urlParam.Add("properties_key", deleteBindingRequest.PropertiesKey.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts/{vhost}/exchanges/{exchange}/destination-type/{destination_type}/destination/{destination}/properties-key/{properties_key}/unbinding", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteBindingRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteBindingResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteBindingResponse> DeleteBindingAsyncInvoker(DeleteBindingRequest deleteBindingRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteBindingRequest.InstanceId.ToString());
+            urlParam.Add("vhost", deleteBindingRequest.Vhost.ToString());
+            urlParam.Add("exchange", deleteBindingRequest.Exchange.ToString());
+            urlParam.Add("destination_type", deleteBindingRequest.DestinationType.ToString());
+            urlParam.Add("destination", deleteBindingRequest.Destination.ToString());
+            urlParam.Add("properties_key", deleteBindingRequest.PropertiesKey.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts/{vhost}/exchanges/{exchange}/destination-type/{destination_type}/destination/{destination}/properties-key/{properties_key}/unbinding", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteBindingRequest);
+            return new AsyncInvoker<DeleteBindingResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteBindingResponse>);
+        }
+        
+        /// <summary>
+        /// 查询Exchange绑定信息列表
+        ///
+        /// 查询Exchange绑定信息列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListBindingsResponse> ListBindingsAsync(ListBindingsRequest listBindingsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listBindingsRequest.InstanceId.ToString());
+            urlParam.Add("vhost", listBindingsRequest.Vhost.ToString());
+            urlParam.Add("exchange", listBindingsRequest.Exchange.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts/{vhost}/exchanges/{exchange}/binding", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBindingsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListBindingsResponse>(response);
+        }
+
+        public AsyncInvoker<ListBindingsResponse> ListBindingsAsyncInvoker(ListBindingsRequest listBindingsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listBindingsRequest.InstanceId.ToString());
+            urlParam.Add("vhost", listBindingsRequest.Vhost.ToString());
+            urlParam.Add("exchange", listBindingsRequest.Exchange.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts/{vhost}/exchanges/{exchange}/binding", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBindingsRequest);
+            return new AsyncInvoker<ListBindingsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListBindingsResponse>);
+        }
+        
+        /// <summary>
+        /// 批量删除指定Exchange
+        ///
+        /// 批量删除指定Exchange。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchDeleteExchangesResponse> BatchDeleteExchangesAsync(BatchDeleteExchangesRequest batchDeleteExchangesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", batchDeleteExchangesRequest.InstanceId.ToString());
+            urlParam.Add("vhost", batchDeleteExchangesRequest.Vhost.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts/{vhost}/exchanges", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteExchangesRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<BatchDeleteExchangesResponse>(response);
+        }
+
+        public AsyncInvoker<BatchDeleteExchangesResponse> BatchDeleteExchangesAsyncInvoker(BatchDeleteExchangesRequest batchDeleteExchangesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", batchDeleteExchangesRequest.InstanceId.ToString());
+            urlParam.Add("vhost", batchDeleteExchangesRequest.Vhost.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts/{vhost}/exchanges", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteExchangesRequest);
+            return new AsyncInvoker<BatchDeleteExchangesResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchDeleteExchangesResponse>);
+        }
+        
+        /// <summary>
+        /// 创建Exchange
+        ///
+        /// 创建Exchange。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateExchangeResponse> CreateExchangeAsync(CreateExchangeRequest createExchangeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createExchangeRequest.InstanceId.ToString());
+            urlParam.Add("vhost", createExchangeRequest.Vhost.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts/{vhost}/exchanges", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createExchangeRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<CreateExchangeResponse>(response);
+        }
+
+        public AsyncInvoker<CreateExchangeResponse> CreateExchangeAsyncInvoker(CreateExchangeRequest createExchangeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createExchangeRequest.InstanceId.ToString());
+            urlParam.Add("vhost", createExchangeRequest.Vhost.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts/{vhost}/exchanges", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createExchangeRequest);
+            return new AsyncInvoker<CreateExchangeResponse>(this, "PUT", request, JsonUtils.DeSerialize<CreateExchangeResponse>);
+        }
+        
+        /// <summary>
+        /// 查询Exchange列表
+        ///
+        /// 查询Exchange列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListExchangesResponse> ListExchangesAsync(ListExchangesRequest listExchangesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listExchangesRequest.InstanceId.ToString());
+            urlParam.Add("vhost", listExchangesRequest.Vhost.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts/{vhost}/exchanges", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listExchangesRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListExchangesResponse>(response);
+        }
+
+        public AsyncInvoker<ListExchangesResponse> ListExchangesAsyncInvoker(ListExchangesRequest listExchangesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listExchangesRequest.InstanceId.ToString());
+            urlParam.Add("vhost", listExchangesRequest.Vhost.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts/{vhost}/exchanges", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listExchangesRequest);
+            return new AsyncInvoker<ListExchangesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListExchangesResponse>);
+        }
+        
+        /// <summary>
+        /// 批量删除指定Queue
+        ///
+        /// 批量删除指定Queue。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchDeleteQueuesResponse> BatchDeleteQueuesAsync(BatchDeleteQueuesRequest batchDeleteQueuesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", batchDeleteQueuesRequest.InstanceId.ToString());
+            urlParam.Add("vhost", batchDeleteQueuesRequest.Vhost.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts/{vhost}/queues", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteQueuesRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<BatchDeleteQueuesResponse>(response);
+        }
+
+        public AsyncInvoker<BatchDeleteQueuesResponse> BatchDeleteQueuesAsyncInvoker(BatchDeleteQueuesRequest batchDeleteQueuesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", batchDeleteQueuesRequest.InstanceId.ToString());
+            urlParam.Add("vhost", batchDeleteQueuesRequest.Vhost.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts/{vhost}/queues", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteQueuesRequest);
+            return new AsyncInvoker<BatchDeleteQueuesResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchDeleteQueuesResponse>);
+        }
+        
+        /// <summary>
+        /// 创建Queue
+        ///
+        /// 创建Queue。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateQueueResponse> CreateQueueAsync(CreateQueueRequest createQueueRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createQueueRequest.InstanceId.ToString());
+            urlParam.Add("vhost", createQueueRequest.Vhost.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts/{vhost}/queues", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createQueueRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<CreateQueueResponse>(response);
+        }
+
+        public AsyncInvoker<CreateQueueResponse> CreateQueueAsyncInvoker(CreateQueueRequest createQueueRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createQueueRequest.InstanceId.ToString());
+            urlParam.Add("vhost", createQueueRequest.Vhost.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts/{vhost}/queues", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createQueueRequest);
+            return new AsyncInvoker<CreateQueueResponse>(this, "PUT", request, JsonUtils.DeSerialize<CreateQueueResponse>);
+        }
+        
+        /// <summary>
+        /// 清空Queue消息
+        ///
+        /// 清空Queue消息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteQueueInfoResponse> DeleteQueueInfoAsync(DeleteQueueInfoRequest deleteQueueInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteQueueInfoRequest.InstanceId.ToString());
+            urlParam.Add("vhost", deleteQueueInfoRequest.Vhost.ToString());
+            urlParam.Add("queue", deleteQueueInfoRequest.Queue.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts/{vhost}/queues/{queue}/contents", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteQueueInfoRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteQueueInfoResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteQueueInfoResponse> DeleteQueueInfoAsyncInvoker(DeleteQueueInfoRequest deleteQueueInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteQueueInfoRequest.InstanceId.ToString());
+            urlParam.Add("vhost", deleteQueueInfoRequest.Vhost.ToString());
+            urlParam.Add("queue", deleteQueueInfoRequest.Queue.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts/{vhost}/queues/{queue}/contents", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteQueueInfoRequest);
+            return new AsyncInvoker<DeleteQueueInfoResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteQueueInfoResponse>);
+        }
+        
+        /// <summary>
+        /// 查询所属Vhost下Queue的列表
+        ///
+        /// 查询所属Vhost下Queue的列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListQueuesResponse> ListQueuesAsync(ListQueuesRequest listQueuesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listQueuesRequest.InstanceId.ToString());
+            urlParam.Add("vhost", listQueuesRequest.Vhost.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts/{vhost}/queues", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listQueuesRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListQueuesResponse>(response);
+        }
+
+        public AsyncInvoker<ListQueuesResponse> ListQueuesAsyncInvoker(ListQueuesRequest listQueuesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listQueuesRequest.InstanceId.ToString());
+            urlParam.Add("vhost", listQueuesRequest.Vhost.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts/{vhost}/queues", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listQueuesRequest);
+            return new AsyncInvoker<ListQueuesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListQueuesResponse>);
+        }
+        
+        /// <summary>
+        /// 查询指定Queue详情
+        ///
+        /// 查询指定Queue详情。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowQueueDetailsResponse> ShowQueueDetailsAsync(ShowQueueDetailsRequest showQueueDetailsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showQueueDetailsRequest.InstanceId.ToString());
+            urlParam.Add("vhost", showQueueDetailsRequest.Vhost.ToString());
+            urlParam.Add("queue", showQueueDetailsRequest.Queue.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts/{vhost}/queues/{queue}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showQueueDetailsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowQueueDetailsResponse>(response);
+        }
+
+        public AsyncInvoker<ShowQueueDetailsResponse> ShowQueueDetailsAsyncInvoker(ShowQueueDetailsRequest showQueueDetailsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showQueueDetailsRequest.InstanceId.ToString());
+            urlParam.Add("vhost", showQueueDetailsRequest.Vhost.ToString());
+            urlParam.Add("queue", showQueueDetailsRequest.Queue.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts/{vhost}/queues/{queue}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showQueueDetailsRequest);
+            return new AsyncInvoker<ShowQueueDetailsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowQueueDetailsResponse>);
+        }
+        
+        /// <summary>
+        /// 批量删除指定Vhost
+        ///
+        /// 批量删除指定Vhost。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchDeleteVhostsResponse> BatchDeleteVhostsAsync(BatchDeleteVhostsRequest batchDeleteVhostsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", batchDeleteVhostsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteVhostsRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<BatchDeleteVhostsResponse>(response);
+        }
+
+        public AsyncInvoker<BatchDeleteVhostsResponse> BatchDeleteVhostsAsyncInvoker(BatchDeleteVhostsRequest batchDeleteVhostsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", batchDeleteVhostsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteVhostsRequest);
+            return new AsyncInvoker<BatchDeleteVhostsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchDeleteVhostsResponse>);
+        }
+        
+        /// <summary>
+        /// 创建Vhost
+        ///
+        /// 创建Vhost。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateVhostResponse> CreateVhostAsync(CreateVhostRequest createVhostRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createVhostRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createVhostRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerializeNull<CreateVhostResponse>(response);
+        }
+
+        public AsyncInvoker<CreateVhostResponse> CreateVhostAsyncInvoker(CreateVhostRequest createVhostRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createVhostRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createVhostRequest);
+            return new AsyncInvoker<CreateVhostResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<CreateVhostResponse>);
+        }
+        
+        /// <summary>
+        /// 查询Vhost列表
+        ///
+        /// 查询Vhost列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListVhostsResponse> ListVhostsAsync(ListVhostsRequest listVhostsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listVhostsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listVhostsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListVhostsResponse>(response);
+        }
+
+        public AsyncInvoker<ListVhostsResponse> ListVhostsAsyncInvoker(ListVhostsRequest listVhostsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listVhostsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listVhostsRequest);
+            return new AsyncInvoker<ListVhostsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListVhostsResponse>);
         }
         
     }

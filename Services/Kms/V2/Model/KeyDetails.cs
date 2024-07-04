@@ -502,12 +502,6 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         [JsonProperty("key_label", NullValueHandling = NullValueHandling.Ignore)]
         public string KeyLabel { get; set; }
 
-        /// <summary>
-        /// 分区类型，枚举如下：  - 1为专业版
-        /// </summary>
-        [JsonProperty("partition_type", NullValueHandling = NullValueHandling.Ignore)]
-        public string PartitionType { get; set; }
-
 
 
         /// <summary>
@@ -535,7 +529,6 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
             sb.Append("  sysEnterpriseProjectId: ").Append(SysEnterpriseProjectId).Append("\n");
             sb.Append("  keystoreId: ").Append(KeystoreId).Append("\n");
             sb.Append("  keyLabel: ").Append(KeyLabel).Append("\n");
-            sb.Append("  partitionType: ").Append(PartitionType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -646,11 +639,6 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
                     this.KeyLabel == input.KeyLabel ||
                     (this.KeyLabel != null &&
                     this.KeyLabel.Equals(input.KeyLabel))
-                ) && 
-                (
-                    this.PartitionType == input.PartitionType ||
-                    (this.PartitionType != null &&
-                    this.PartitionType.Equals(input.PartitionType))
                 );
         }
 
@@ -698,8 +686,6 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
                     hashCode = hashCode * 59 + this.KeystoreId.GetHashCode();
                 if (this.KeyLabel != null)
                     hashCode = hashCode * 59 + this.KeyLabel.GetHashCode();
-                if (this.PartitionType != null)
-                    hashCode = hashCode * 59 + this.PartitionType.GetHashCode();
                 return hashCode;
             }
         }
