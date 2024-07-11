@@ -17,6 +17,8 @@ namespace HuaweiCloud.SDK.Ocr.V1
             "https://ocr.cn-north-1.myhuaweicloud.com");
         public static readonly Region AP_SOUTHEAST_2 = new Region("ap-southeast-2",
             "https://ocr.ap-southeast-2.myhuaweicloud.com");
+        public static readonly Region CN_SOUTHWEST_2 = new Region("cn-southwest-2",
+            "https://ocr.cn-southwest-2.myhuaweicloud.com");
         public static readonly Region AP_SOUTHEAST_1 = new Region("ap-southeast-1",
             "https://ocr.ap-southeast-1.myhuaweicloud.com");
         public static readonly Region AP_SOUTHEAST_3 = new Region("ap-southeast-3",
@@ -37,6 +39,7 @@ namespace HuaweiCloud.SDK.Ocr.V1
                 { "cn-east-3", CN_EAST_3 },
                 { "cn-north-1", CN_NORTH_1 },
                 { "ap-southeast-2", AP_SOUTHEAST_2 },
+                { "cn-southwest-2", CN_SOUTHWEST_2 },
                 { "ap-southeast-1", AP_SOUTHEAST_1 },
                 { "ap-southeast-3", AP_SOUTHEAST_3 },
                 { "la-south-2", LA_SOUTH_2 },

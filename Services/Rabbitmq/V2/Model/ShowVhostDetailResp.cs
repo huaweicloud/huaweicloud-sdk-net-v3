@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 是否开启消息轨迹（AMQP版本不涉及此字段）
+        /// 是否开启消息轨迹[（AMQP版本不涉及此字段）](tag:hws,hws_hk)。
         /// </summary>
         [JsonProperty("tracing", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Tracing { get; set; }

@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     public class RocketMQConfigReq 
     {
         /// <summary>
-        /// RocketMQ配置名称
+        /// RocketMQ配置名称。
         /// </summary>
-        /// <value>RocketMQ配置名称</value>
+        /// <value>RocketMQ配置名称。</value>
         [JsonConverter(typeof(EnumClassConverter<NameEnum>))]
         public class NameEnum
         {
@@ -126,12 +126,12 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
 
 
         /// <summary>
-        /// RocketMQ配置名称
+        /// RocketMQ配置名称。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public NameEnum Name { get; set; }
         /// <summary>
-        /// RocketMQ配置目标值
+        /// RocketMQ配置目标值。
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public string Value { get; set; }

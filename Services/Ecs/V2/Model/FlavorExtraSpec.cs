@@ -244,6 +244,18 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         [JsonProperty("security:enclave_supported", NullValueHandling = NullValueHandling.Ignore)]
         public string SecurityenclaveSupported { get; set; }
 
+        /// <summary>
+        /// 该规格的GPU卡信息。  name：GPU名称 memory_mb：GPU显存大小 count：GPU显卡数量 alias_prefix：GPU显卡内部别名
+        /// </summary>
+        [JsonProperty("info:gpus", NullValueHandling = NullValueHandling.Ignore)]
+        public string Infogpus { get; set; }
+
+        /// <summary>
+        /// 该规格的加速器信息。  name：加速器名称 memory_mb：加速器显存大小 count：加速器显卡数量 alias_prefix：加速器显卡内部别名
+        /// </summary>
+        [JsonProperty("info:asic_accelerators", NullValueHandling = NullValueHandling.Ignore)]
+        public string InfoasicAccelerators { get; set; }
+
 
 
         /// <summary>
@@ -291,6 +303,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             sb.Append("  ecsinstanceArchitecture: ").Append(EcsinstanceArchitecture).Append("\n");
             sb.Append("  networkInterfacetrafficMirroringSupported: ").Append(NetworkInterfacetrafficMirroringSupported).Append("\n");
             sb.Append("  securityenclaveSupported: ").Append(SecurityenclaveSupported).Append("\n");
+            sb.Append("  infogpus: ").Append(Infogpus).Append("\n");
+            sb.Append("  infoasicAccelerators: ").Append(InfoasicAccelerators).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -501,6 +515,16 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     this.SecurityenclaveSupported == input.SecurityenclaveSupported ||
                     (this.SecurityenclaveSupported != null &&
                     this.SecurityenclaveSupported.Equals(input.SecurityenclaveSupported))
+                ) && 
+                (
+                    this.Infogpus == input.Infogpus ||
+                    (this.Infogpus != null &&
+                    this.Infogpus.Equals(input.Infogpus))
+                ) && 
+                (
+                    this.InfoasicAccelerators == input.InfoasicAccelerators ||
+                    (this.InfoasicAccelerators != null &&
+                    this.InfoasicAccelerators.Equals(input.InfoasicAccelerators))
                 );
         }
 
@@ -588,6 +612,10 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     hashCode = hashCode * 59 + this.NetworkInterfacetrafficMirroringSupported.GetHashCode();
                 if (this.SecurityenclaveSupported != null)
                     hashCode = hashCode * 59 + this.SecurityenclaveSupported.GetHashCode();
+                if (this.Infogpus != null)
+                    hashCode = hashCode * 59 + this.Infogpus.GetHashCode();
+                if (this.InfoasicAccelerators != null)
+                    hashCode = hashCode * 59 + this.InfoasicAccelerators.GetHashCode();
                 return hashCode;
             }
         }

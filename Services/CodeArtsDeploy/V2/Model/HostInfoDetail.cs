@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
     {
 
         /// <summary>
-        /// 主机ID
+        /// 主机id
         /// </summary>
         [JsonProperty("host_id", NullValueHandling = NullValueHandling.Ignore)]
         public string HostId { get; set; }
@@ -71,7 +71,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         public bool? AsProxy { get; set; }
 
         /// <summary>
-        /// 代理机ID
+        /// 代理机id
         /// </summary>
         [JsonProperty("proxy_host_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProxyHostId { get; set; }

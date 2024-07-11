@@ -28,6 +28,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         [JsonProperty("url", NullValueHandling = NullValueHandling.Ignore)]
         public string Url { get; set; }
 
+        /// <summary>
+        /// 指定PDF页码识别。传入该参数时，则识别指定页码的内容。如果不传该参数，则默认识别第1页，该参数仅在文件为PDF格式时有效。 
+        /// </summary>
+        [JsonProperty("page_num", NullValueHandling = NullValueHandling.Ignore)]
+        public int? PageNum { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +45,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("class BankReceiptRequestBody {\n");
             sb.Append("  data: ").Append(Data).Append("\n");
             sb.Append("  url: ").Append(Url).Append("\n");
+            sb.Append("  pageNum: ").Append(PageNum).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -69,6 +76,11 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     this.Url == input.Url ||
                     (this.Url != null &&
                     this.Url.Equals(input.Url))
+                ) && 
+                (
+                    this.PageNum == input.PageNum ||
+                    (this.PageNum != null &&
+                    this.PageNum.Equals(input.PageNum))
                 );
         }
 
@@ -84,6 +96,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     hashCode = hashCode * 59 + this.Data.GetHashCode();
                 if (this.Url != null)
                     hashCode = hashCode * 59 + this.Url.GetHashCode();
+                if (this.PageNum != null)
+                    hashCode = hashCode * 59 + this.PageNum.GetHashCode();
                 return hashCode;
             }
         }

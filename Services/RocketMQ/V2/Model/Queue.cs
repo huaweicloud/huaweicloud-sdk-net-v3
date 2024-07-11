@@ -17,31 +17,31 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     {
 
         /// <summary>
-        /// 队列ID
+        /// 队列ID。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public int? Id { get; set; }
 
         /// <summary>
-        /// 队列消费堆积总数
+        /// 队列消费堆积总数。
         /// </summary>
         [JsonProperty("lag", NullValueHandling = NullValueHandling.Ignore)]
         public long? Lag { get; set; }
 
         /// <summary>
-        /// 队列消息总数
+        /// 队列消息总数。
         /// </summary>
         [JsonProperty("broker_offset", NullValueHandling = NullValueHandling.Ignore)]
         public long? BrokerOffset { get; set; }
 
         /// <summary>
-        /// 已消费消息数
+        /// 已消费消息数。
         /// </summary>
         [JsonProperty("consumer_offset", NullValueHandling = NullValueHandling.Ignore)]
         public long? ConsumerOffset { get; set; }
 
         /// <summary>
-        /// 最新消费消息的存储时间，unix毫秒时间戳格式
+        /// 最新消费消息的存储时间，unix毫秒时间戳格式。
         /// </summary>
         [JsonProperty("last_message_time", NullValueHandling = NullValueHandling.Ignore)]
         public long? LastMessageTime { get; set; }

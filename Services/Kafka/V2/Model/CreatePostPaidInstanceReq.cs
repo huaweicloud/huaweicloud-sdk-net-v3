@@ -803,7 +803,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 实例的描述信息。  长度不超过1024的字符串。[且字符串不能包含\&quot;&gt;\&quot;与\&quot;&lt;\&quot;，字符串首字符不能为\&quot;&#x3D;\&quot;,\&quot;+\&quot;,\&quot;-\&quot;,\&quot;@\&quot;的全角和半角字符。](tag:hcs)  &gt; \\与\&quot;在json报文中属于特殊字符，如果参数值中需要显示\\或者\&quot;字符，请在字符前增加转义字符\\，比如\\\\或者\\\&quot;。
+        /// 实例的描述信息。  长度不超过1024的字符串。[且字符串不能包含\&quot;&gt;\&quot;与\&quot;&lt;\&quot;，字符串首字符不能为\&quot;&#x3D;\&quot;,\&quot;+\&quot;,\&quot;-\&quot;,\&quot;@\&quot;的全角和半角字符。](tag:hcs,fcs)  &gt; \\与\&quot;在json报文中属于特殊字符，如果参数值中需要显示\\或者\&quot;字符，请在字符前增加转义字符\\，比如\\\\或者\\\&quot;。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
@@ -814,7 +814,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         [JsonProperty("engine", NullValueHandling = NullValueHandling.Ignore)]
         public EngineEnum Engine { get; set; }
         /// <summary>
-        /// 消息引擎的版本。取值填写为：   - 1.1.0   [- 2.3.0](tag:ocb,hws_ocb,sbc,hk_sbc,cmcc,hws_eu,dt,ctc,g42,hk_g42,tm,hk_tm)   - 2.7
+        /// 消息引擎的版本。取值填写为：   - 1.1.0   [- 2.3.0](tag:ocb,hws_ocb,sbc,hk_sbc,cmcc,hws_eu,dt,ctc,g42,hk_g42,tm,hk_tm)   - 2.7   - 3.x
         /// </summary>
         [JsonProperty("engine_version", NullValueHandling = NullValueHandling.Ignore)]
         public string EngineVersion { get; set; }
@@ -882,18 +882,6 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         [JsonProperty("product_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProductId { get; set; }
-
-        /// <summary>
-        /// 表示登录Kafka Manager的用户名。只能由英文字母、数字、中划线组成，长度为4~64的字符。
-        /// </summary>
-        [JsonProperty("kafka_manager_user", NullValueHandling = NullValueHandling.Ignore)]
-        public string KafkaManagerUser { get; set; }
-
-        /// <summary>
-        /// 表示登录Kafka Manager的密码。  复杂度要求：   - 输入长度为8到32位的字符串。   - 必须包含如下四种字符中的三种组合：       - 小写字母       - 大写字母       - 数字       - 特殊字符包括（&#x60;~!@#$%^&amp;*()-_&#x3D;+\\|[{}]:&#39;\&quot;,&lt;.&gt;/?）和空格，并且不能以-开头
-        /// </summary>
-        [JsonProperty("kafka_manager_password", NullValueHandling = NullValueHandling.Ignore)]
-        public string KafkaManagerPassword { get; set; }
 
         /// <summary>
         /// 维护时间窗开始时间，格式为HH:mm。
@@ -1012,8 +1000,6 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             sb.Append("  subnetId: ").Append(SubnetId).Append("\n");
             sb.Append("  availableZones: ").Append(AvailableZones).Append("\n");
             sb.Append("  productId: ").Append(ProductId).Append("\n");
-            sb.Append("  kafkaManagerUser: ").Append(KafkaManagerUser).Append("\n");
-            sb.Append("  kafkaManagerPassword: ").Append(KafkaManagerPassword).Append("\n");
             sb.Append("  maintainBegin: ").Append(MaintainBegin).Append("\n");
             sb.Append("  maintainEnd: ").Append(MaintainEnd).Append("\n");
             sb.Append("  enablePublicip: ").Append(EnablePublicip).Append("\n");
@@ -1126,16 +1112,6 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     this.ProductId == input.ProductId ||
                     (this.ProductId != null &&
                     this.ProductId.Equals(input.ProductId))
-                ) && 
-                (
-                    this.KafkaManagerUser == input.KafkaManagerUser ||
-                    (this.KafkaManagerUser != null &&
-                    this.KafkaManagerUser.Equals(input.KafkaManagerUser))
-                ) && 
-                (
-                    this.KafkaManagerPassword == input.KafkaManagerPassword ||
-                    (this.KafkaManagerPassword != null &&
-                    this.KafkaManagerPassword.Equals(input.KafkaManagerPassword))
                 ) && 
                 (
                     this.MaintainBegin == input.MaintainBegin ||
@@ -1259,10 +1235,6 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                     hashCode = hashCode * 59 + this.AvailableZones.GetHashCode();
                 if (this.ProductId != null)
                     hashCode = hashCode * 59 + this.ProductId.GetHashCode();
-                if (this.KafkaManagerUser != null)
-                    hashCode = hashCode * 59 + this.KafkaManagerUser.GetHashCode();
-                if (this.KafkaManagerPassword != null)
-                    hashCode = hashCode * 59 + this.KafkaManagerPassword.GetHashCode();
                 if (this.MaintainBegin != null)
                     hashCode = hashCode * 59 + this.MaintainBegin.GetHashCode();
                 if (this.MaintainEnd != null)

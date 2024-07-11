@@ -551,6 +551,32 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
         }
         
         /// <summary>
+        /// 安装插件
+        ///
+        /// 安装插件
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public InstallKernelPluginResponse InstallKernelPlugin(InstallKernelPluginRequest installKernelPluginRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", installKernelPluginRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/kernel-plugin", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", installKernelPluginRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<InstallKernelPluginResponse>(response);
+        }
+
+        public SyncInvoker<InstallKernelPluginResponse> InstallKernelPluginInvoker(InstallKernelPluginRequest installKernelPluginRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", installKernelPluginRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/kernel-plugin", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", installKernelPluginRequest);
+            return new SyncInvoker<InstallKernelPluginResponse>(this, "POST", request, JsonUtils.DeSerialize<InstallKernelPluginResponse>);
+        }
+        
+        /// <summary>
         /// 查询可应用实例列表
         ///
         /// 查询可应用当前参数组模板的实例列表。
@@ -1151,6 +1177,39 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
         }
         
         /// <summary>
+        /// 查询实例已安装的插件列表
+        ///
+        /// 查询实例已安装的插件列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListKernelPluginsResponse ListKernelPlugins(ListKernelPluginsRequest listKernelPluginsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listKernelPluginsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/kernel-plugins", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listKernelPluginsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            var listKernelPluginsResponse = JsonUtils.DeSerializeNull<ListKernelPluginsResponse>(response);
+            listKernelPluginsResponse.Body = JsonUtils.DeSerializeList<string>(response);
+            return listKernelPluginsResponse;
+        }
+
+        public SyncInvoker<ListKernelPluginsResponse> ListKernelPluginsInvoker(ListKernelPluginsRequest listKernelPluginsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listKernelPluginsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/kernel-plugins", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listKernelPluginsRequest);
+            return new SyncInvoker<ListKernelPluginsResponse>(this, "GET", request, response =>
+            {
+                var listKernelPluginsResponse = JsonUtils.DeSerializeNull<ListKernelPluginsResponse>(response);
+                listKernelPluginsResponse.Body = JsonUtils.DeSerializeList<string>(response);
+                return listKernelPluginsResponse;
+            });
+        }
+        
+        /// <summary>
         /// 获取参数模板列表
         ///
         /// 获取参数模板列表，包括所有数据库的默认参数模板和用户创建的参数模板。
@@ -1172,6 +1231,39 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
             var urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/configurations", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listParamGroupTemplatesRequest);
             return new SyncInvoker<ListParamGroupTemplatesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListParamGroupTemplatesResponse>);
+        }
+        
+        /// <summary>
+        /// 查询实例插件拓展信息
+        ///
+        /// 查询实例插件拓展信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListPluginExtensionsResponse ListPluginExtensions(ListPluginExtensionsRequest listPluginExtensionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listPluginExtensionsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/plugin-extensions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listPluginExtensionsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            var listPluginExtensionsResponse = JsonUtils.DeSerializeNull<ListPluginExtensionsResponse>(response);
+            listPluginExtensionsResponse.Body = JsonUtils.DeSerializeList<PluginExtensions>(response);
+            return listPluginExtensionsResponse;
+        }
+
+        public SyncInvoker<ListPluginExtensionsResponse> ListPluginExtensionsInvoker(ListPluginExtensionsRequest listPluginExtensionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listPluginExtensionsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/plugin-extensions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listPluginExtensionsRequest);
+            return new SyncInvoker<ListPluginExtensionsResponse>(this, "GET", request, response =>
+            {
+                var listPluginExtensionsResponse = JsonUtils.DeSerializeNull<ListPluginExtensionsResponse>(response);
+                listPluginExtensionsResponse.Body = JsonUtils.DeSerializeList<PluginExtensions>(response);
+                return listPluginExtensionsResponse;
+            });
         }
         
         /// <summary>
@@ -1319,6 +1411,37 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/storage-type", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStorageTypesRequest);
             return new SyncInvoker<ListStorageTypesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListStorageTypesResponse>);
+        }
+        
+        /// <summary>
+        /// 查询支持的插件列表
+        ///
+        /// 查询支持的插件列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListSupportKernelPluginsResponse ListSupportKernelPlugins(ListSupportKernelPluginsRequest listSupportKernelPluginsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/kernel-plugins", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSupportKernelPluginsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            var listSupportKernelPluginsResponse = JsonUtils.DeSerializeNull<ListSupportKernelPluginsResponse>(response);
+            listSupportKernelPluginsResponse.Body = JsonUtils.DeSerializeList<string>(response);
+            return listSupportKernelPluginsResponse;
+        }
+
+        public SyncInvoker<ListSupportKernelPluginsResponse> ListSupportKernelPluginsInvoker(ListSupportKernelPluginsRequest listSupportKernelPluginsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/kernel-plugins", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSupportKernelPluginsRequest);
+            return new SyncInvoker<ListSupportKernelPluginsResponse>(this, "GET", request, response =>
+            {
+                var listSupportKernelPluginsResponse = JsonUtils.DeSerializeNull<ListSupportKernelPluginsResponse>(response);
+                listSupportKernelPluginsResponse.Body = JsonUtils.DeSerializeList<string>(response);
+                return listSupportKernelPluginsResponse;
+            });
         }
         
         /// <summary>
@@ -1524,6 +1647,32 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
         }
         
         /// <summary>
+        /// 配置插件拓展能力
+        ///
+        /// 配置插件拓展能力
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ResumePluginExtensionsResponse ResumePluginExtensions(ResumePluginExtensionsRequest resumePluginExtensionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", resumePluginExtensionsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/config-plugin-extensions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", resumePluginExtensionsRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<ResumePluginExtensionsResponse>(response);
+        }
+
+        public SyncInvoker<ResumePluginExtensionsResponse> ResumePluginExtensionsInvoker(ResumePluginExtensionsRequest resumePluginExtensionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", resumePluginExtensionsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/config-plugin-extensions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", resumePluginExtensionsRequest);
+            return new SyncInvoker<ResumePluginExtensionsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<ResumePluginExtensionsResponse>);
+        }
+        
+        /// <summary>
         /// CN横向扩容/DN分片扩容/磁盘扩容
         ///
         /// CN横向扩容/DN分片扩容/磁盘扩容
@@ -1625,6 +1774,32 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-user/password", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", setDbUserPwdRequest);
             return new SyncInvoker<SetDbUserPwdResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<SetDbUserPwdResponse>);
+        }
+        
+        /// <summary>
+        /// 配置插件license
+        ///
+        /// 配置插件license
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public SetKernelPluginLicenseResponse SetKernelPluginLicense(SetKernelPluginLicenseRequest setKernelPluginLicenseRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", setKernelPluginLicenseRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/kernel-plugin-license", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", setKernelPluginLicenseRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerializeNull<SetKernelPluginLicenseResponse>(response);
+        }
+
+        public SyncInvoker<SetKernelPluginLicenseResponse> SetKernelPluginLicenseInvoker(SetKernelPluginLicenseRequest setKernelPluginLicenseRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", setKernelPluginLicenseRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/kernel-plugin-license", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", setKernelPluginLicenseRequest);
+            return new SyncInvoker<SetKernelPluginLicenseResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<SetKernelPluginLicenseResponse>);
         }
         
         /// <summary>

@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public string Group { get; set; }
 
         /// <summary>
-        /// 消息所属topic。
+        /// 消息所属Topic。
         /// </summary>
         [JsonProperty("topic", NullValueHandling = NullValueHandling.Ignore)]
         public string Topic { get; set; }

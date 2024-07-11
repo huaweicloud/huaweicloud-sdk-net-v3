@@ -247,7 +247,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
 
 
         /// <summary>
-        /// 项目ID
+        /// 项目id
         /// </summary>
         [SDKProperty("project_id", IsQuery = true)]
         [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]

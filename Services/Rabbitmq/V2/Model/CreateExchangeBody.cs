@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public string Type { get; set; }
 
         /// <summary>
-        /// 是否持久化（AMQP版本默认持久化，不涉及此参数）。
+        /// 是否持久化[（AMQP版本默认持久化，不涉及此参数）](tag:hws,hws_hk)。
         /// </summary>
         [JsonProperty("durable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Durable { get; set; }
@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public bool? AutoDelete { get; set; }
 
         /// <summary>
-        /// 内部Exchange（AMQP版本不支持内部Exchange，不涉及此参数）。
+        /// 内部Exchange[（AMQP版本不支持内部Exchange，不涉及此参数）](tag:hws,hws_hk)。
         /// </summary>
         [JsonProperty("internal", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Internal { get; set; }

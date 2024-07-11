@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     public class CreateRocketMqMigrationTaskRequest 
     {
         /// <summary>
-        /// true开启同名覆盖，会对已有的同名元数据的配置进行修改，false时当topic或group已存在则会报错。
+        /// true开启同名覆盖，会对已有的同名元数据的配置进行修改，false时当Topic或group已存在则会报错。
         /// </summary>
-        /// <value>true开启同名覆盖，会对已有的同名元数据的配置进行修改，false时当topic或group已存在则会报错。</value>
+        /// <value>true开启同名覆盖，会对已有的同名元数据的配置进行修改，false时当Topic或group已存在则会报错。</value>
         [JsonConverter(typeof(EnumClassConverter<OverwriteEnum>))]
         public class OverwriteEnum
         {
@@ -254,13 +254,13 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// true开启同名覆盖，会对已有的同名元数据的配置进行修改，false时当topic或group已存在则会报错。
+        /// true开启同名覆盖，会对已有的同名元数据的配置进行修改，false时当Topic或group已存在则会报错。
         /// </summary>
         [SDKProperty("overwrite", IsQuery = true)]
         [JsonProperty("overwrite", NullValueHandling = NullValueHandling.Ignore)]
         public OverwriteEnum Overwrite { get; set; }
         /// <summary>
-        /// 迁移任务名称，名称规则参考创建实例
+        /// 迁移任务名称，名称规则参考创建实例。
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]

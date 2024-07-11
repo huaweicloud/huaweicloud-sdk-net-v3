@@ -310,6 +310,12 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         [JsonProperty("event_type", NullValueHandling = NullValueHandling.Ignore)]
         public string EventType { get; set; }
 
+        /// <summary>
+        /// 一个或者多个资源维度。
+        /// </summary>
+        [JsonProperty("dimensions", NullValueHandling = NullValueHandling.Ignore)]
+        public List<MetricsDimension> Dimensions { get; set; }
+
 
 
         /// <summary>
@@ -327,6 +333,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
             sb.Append("  eventLevel: ").Append(EventLevel).Append("\n");
             sb.Append("  eventUser: ").Append(EventUser).Append("\n");
             sb.Append("  eventType: ").Append(EventType).Append("\n");
+            sb.Append("  dimensions: ").Append(Dimensions).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -387,6 +394,12 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
                     this.EventType == input.EventType ||
                     (this.EventType != null &&
                     this.EventType.Equals(input.EventType))
+                ) && 
+                (
+                    this.Dimensions == input.Dimensions ||
+                    this.Dimensions != null &&
+                    input.Dimensions != null &&
+                    this.Dimensions.SequenceEqual(input.Dimensions)
                 );
         }
 
@@ -414,6 +427,8 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
                     hashCode = hashCode * 59 + this.EventUser.GetHashCode();
                 if (this.EventType != null)
                     hashCode = hashCode * 59 + this.EventType.GetHashCode();
+                if (this.Dimensions != null)
+                    hashCode = hashCode * 59 + this.Dimensions.GetHashCode();
                 return hashCode;
             }
         }

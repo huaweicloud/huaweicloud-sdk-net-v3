@@ -53,7 +53,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         public Dictionary<string, Step> Steps { get; set; }
 
         /// <summary>
-        /// 项目ID
+        /// 项目id
         /// </summary>
         [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProjectId { get; set; }
@@ -83,7 +83,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         public string UpdateTime { get; set; }
 
         /// <summary>
-        /// 角色ID
+        /// 角色id
         /// </summary>
         [JsonProperty("role_id", NullValueHandling = NullValueHandling.Ignore)]
         public int? RoleId { get; set; }
@@ -107,13 +107,13 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         public string NickName { get; set; }
 
         /// <summary>
-        /// 应用创建者用户ID
+        /// 应用创建者用户id
         /// </summary>
         [JsonProperty("owner_id", NullValueHandling = NullValueHandling.Ignore)]
         public string OwnerId { get; set; }
 
         /// <summary>
-        /// 应用创建者租户ID
+        /// 应用创建者租户id
         /// </summary>
         [JsonProperty("tenant_id", NullValueHandling = NullValueHandling.Ignore)]
         public string TenantId { get; set; }

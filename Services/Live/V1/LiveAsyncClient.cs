@@ -404,6 +404,30 @@ namespace HuaweiCloud.SDK.Live.V1
         }
         
         /// <summary>
+        /// 删除Referer防盗链黑白名单
+        ///
+        /// 删除Referer防盗链黑白名单
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteRefererChainResponse> DeleteRefererChainAsync(DeleteRefererChainRequest deleteRefererChainRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/guard/referer-chain", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRefererChainRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteRefererChainResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteRefererChainResponse> DeleteRefererChainAsyncInvoker(DeleteRefererChainRequest deleteRefererChainRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/guard/referer-chain", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRefererChainRequest);
+            return new AsyncInvoker<DeleteRefererChainResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteRefererChainResponse>);
+        }
+        
+        /// <summary>
         /// 删除直播截图配置
         ///
         /// 删除直播截图配置接口
@@ -521,6 +545,30 @@ namespace HuaweiCloud.SDK.Live.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/domain/geo-blocking", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listGeoBlockingConfigRequest);
             return new AsyncInvoker<ListGeoBlockingConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ListGeoBlockingConfigResponse>);
+        }
+        
+        /// <summary>
+        /// 查询域名HLS配置
+        ///
+        /// 查询域名HLS配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListHlsConfigResponse> ListHlsConfigAsync(ListHlsConfigRequest listHlsConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/domain/hls", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listHlsConfigRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListHlsConfigResponse>(response);
+        }
+
+        public AsyncInvoker<ListHlsConfigResponse> ListHlsConfigAsyncInvoker(ListHlsConfigRequest listHlsConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/domain/hls", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listHlsConfigRequest);
+            return new AsyncInvoker<ListHlsConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ListHlsConfigResponse>);
         }
         
         /// <summary>
@@ -767,6 +815,30 @@ namespace HuaweiCloud.SDK.Live.V1
         }
         
         /// <summary>
+        /// 设置Referer防盗链黑白名单
+        ///
+        /// 设置Referer黑白名单，直播服务会根据配置的referer黑白名单，对访问者的身份进行识别和过滤，符合规则的可以顺利访问到该内容。如果不符合规则，该访问请求将会被禁止。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<SetRefererChainResponse> SetRefererChainAsync(SetRefererChainRequest setRefererChainRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/guard/referer-chain", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", setRefererChainRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerializeNull<SetRefererChainResponse>(response);
+        }
+
+        public AsyncInvoker<SetRefererChainResponse> SetRefererChainAsyncInvoker(SetRefererChainRequest setRefererChainRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/guard/referer-chain", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", setRefererChainRequest);
+            return new AsyncInvoker<SetRefererChainResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<SetRefererChainResponse>);
+        }
+        
+        /// <summary>
         /// 查询直播域名
         ///
         /// 查询直播域名
@@ -888,6 +960,30 @@ namespace HuaweiCloud.SDK.Live.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/record/rules/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecordRuleRequest);
             return new AsyncInvoker<ShowRecordRuleResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRecordRuleResponse>);
+        }
+        
+        /// <summary>
+        /// 查询Referer防盗链黑白名单
+        ///
+        /// 查询Referer防盗链黑白名单
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowRefererChainResponse> ShowRefererChainAsync(ShowRefererChainRequest showRefererChainRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/guard/referer-chain", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRefererChainRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowRefererChainResponse>(response);
+        }
+
+        public AsyncInvoker<ShowRefererChainResponse> ShowRefererChainAsyncInvoker(ShowRefererChainRequest showRefererChainRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/guard/referer-chain", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRefererChainRequest);
+            return new AsyncInvoker<ShowRefererChainResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRefererChainResponse>);
         }
         
         /// <summary>
@@ -1032,6 +1128,30 @@ namespace HuaweiCloud.SDK.Live.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/domain/geo-blocking", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", updateGeoBlockingConfigRequest);
             return new AsyncInvoker<UpdateGeoBlockingConfigResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateGeoBlockingConfigResponse>);
+        }
+        
+        /// <summary>
+        /// 修改域名HLS配置
+        ///
+        /// 修改域名HLS配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateHlsConfigResponse> UpdateHlsConfigAsync(UpdateHlsConfigRequest updateHlsConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/domain/hls", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", updateHlsConfigRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateHlsConfigResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateHlsConfigResponse> UpdateHlsConfigAsyncInvoker(UpdateHlsConfigRequest updateHlsConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/domain/hls", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", updateHlsConfigRequest);
+            return new AsyncInvoker<UpdateHlsConfigResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateHlsConfigResponse>);
         }
         
         /// <summary>

@@ -144,7 +144,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 项目ID
+        /// 项目id
         /// </summary>
         [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProjectId { get; set; }
@@ -215,13 +215,13 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         public string NickName { get; set; }
 
         /// <summary>
-        /// 应用创建者用户ID
+        /// 应用创建者用户id
         /// </summary>
         [JsonProperty("owner_id", NullValueHandling = NullValueHandling.Ignore)]
         public string OwnerId { get; set; }
 
         /// <summary>
-        /// 应用创建者租户ID
+        /// 应用创建者租户id
         /// </summary>
         [JsonProperty("tenant_id", NullValueHandling = NullValueHandling.Ignore)]
         public string TenantId { get; set; }
@@ -293,7 +293,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         public List<AppComponentDao> AppComponentList { get; set; }
 
         /// <summary>
-        /// 角色ID,0：应用创建者，-1：项目创建者，3：项目经理，4：开发人员，5：测试经理，6：测试人员，7：参与者，8：浏览者
+        /// 角色id,0：应用创建者，-1：项目创建者，3：项目经理，4：开发人员，5：测试经理，6：测试人员，7：参与者，8：浏览者
         /// </summary>
         [JsonProperty("role_id", NullValueHandling = NullValueHandling.Ignore)]
         public int? RoleId { get; set; }

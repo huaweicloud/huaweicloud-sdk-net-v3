@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         public string GroupId { get; set; }
 
         /// <summary>
-        /// 要导入的主机ids
+        /// 要导入的主机id列表
         /// </summary>
         [JsonProperty("host_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> HostIds { get; set; }

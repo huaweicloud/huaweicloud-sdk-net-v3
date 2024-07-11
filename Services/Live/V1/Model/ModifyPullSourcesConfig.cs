@@ -276,6 +276,12 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         public List<string> SourcesIp { get; set; }
 
         /// <summary>
+        /// 回源端口。 
+        /// </summary>
+        [JsonProperty("source_port", NullValueHandling = NullValueHandling.Ignore)]
+        public int? SourcePort { get; set; }
+
+        /// <summary>
         /// 回源协议，回源方式非“huawei”时必选。  包含如下取值： - http - rtmp
         /// </summary>
         [JsonProperty("scheme", NullValueHandling = NullValueHandling.Ignore)]
@@ -299,6 +305,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
             sb.Append("  sourceType: ").Append(SourceType).Append("\n");
             sb.Append("  sources: ").Append(Sources).Append("\n");
             sb.Append("  sourcesIp: ").Append(SourcesIp).Append("\n");
+            sb.Append("  sourcePort: ").Append(SourcePort).Append("\n");
             sb.Append("  scheme: ").Append(Scheme).Append("\n");
             sb.Append("  additionalArgs: ").Append(AdditionalArgs).Append("\n");
             sb.Append("}\n");
@@ -345,6 +352,11 @@ namespace HuaweiCloud.SDK.Live.V1.Model
                     this.SourcesIp.SequenceEqual(input.SourcesIp)
                 ) && 
                 (
+                    this.SourcePort == input.SourcePort ||
+                    (this.SourcePort != null &&
+                    this.SourcePort.Equals(input.SourcePort))
+                ) && 
+                (
                     this.Scheme == input.Scheme ||
                     (this.Scheme != null &&
                     this.Scheme.Equals(input.Scheme))
@@ -373,6 +385,8 @@ namespace HuaweiCloud.SDK.Live.V1.Model
                     hashCode = hashCode * 59 + this.Sources.GetHashCode();
                 if (this.SourcesIp != null)
                     hashCode = hashCode * 59 + this.SourcesIp.GetHashCode();
+                if (this.SourcePort != null)
+                    hashCode = hashCode * 59 + this.SourcePort.GetHashCode();
                 if (this.Scheme != null)
                     hashCode = hashCode * 59 + this.Scheme.GetHashCode();
                 if (this.AdditionalArgs != null)

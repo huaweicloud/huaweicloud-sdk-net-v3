@@ -38,7 +38,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public string Exchange { get; set; }
 
         /// <summary>
-        /// 绑定目标端类型，Exchange或Queue（AMQP版本只支持Queue绑定类型）
+        /// 绑定目标端类型，Exchange或Queue。[（AMQP版本只支持Queue绑定类型）](tag:hws,hws_hk)
         /// </summary>
         [SDKProperty("destination_type", IsPath = true)]
         [JsonProperty("destination_type", NullValueHandling = NullValueHandling.Ignore)]

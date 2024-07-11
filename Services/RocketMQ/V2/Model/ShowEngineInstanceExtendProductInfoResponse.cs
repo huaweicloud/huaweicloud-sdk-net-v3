@@ -17,19 +17,19 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     {
 
         /// <summary>
-        /// 消息引擎类型
+        /// 消息引擎类型。
         /// </summary>
         [JsonProperty("engine", NullValueHandling = NullValueHandling.Ignore)]
         public string Engine { get; set; }
 
         /// <summary>
-        /// 消息引擎支持的版本
+        /// 消息引擎支持的版本。
         /// </summary>
         [JsonProperty("versions", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Versions { get; set; }
 
         /// <summary>
-        /// 规格变更的产品信息
+        /// 规格变更的产品信息。
         /// </summary>
         [JsonProperty("products", NullValueHandling = NullValueHandling.Ignore)]
         public List<RocketMQExtendProductInfoEntity> Products { get; set; }

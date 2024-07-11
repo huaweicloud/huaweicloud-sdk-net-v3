@@ -173,6 +173,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public List<SecurityID> PodSecurityGroups { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("extensionScaleGroups", NullValueHandling = NullValueHandling.Ignore)]
+        public ExtensionScaleGroup ExtensionScaleGroups { get; set; }
+
+        /// <summary>
         /// 节点池自定义安全组相关配置。支持节点池新扩容节点绑定指定的安全组。  - 未指定安全组ID，新建节点将添加Node节点默认安全组。  - 指定有效安全组ID，新建节点将使用指定安全组。  - 指定安全组，应避免对CCE运行依赖的端口规则进行修改。[详细设置请参考[集群安全组规则配置](https://support.huaweicloud.com/cce_faq/cce_faq_00265.html)。](tag:hws)[详细设置请参考[集群安全组规则配置](https://support.huaweicloud.com/intl/zh-cn/cce_faq/cce_faq_00265.html)。](tag:hws_hk) 
         /// </summary>
         [JsonProperty("customSecurityGroups", NullValueHandling = NullValueHandling.Ignore)]
@@ -193,6 +199,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  autoscaling: ").Append(Autoscaling).Append("\n");
             sb.Append("  nodeManagement: ").Append(NodeManagement).Append("\n");
             sb.Append("  podSecurityGroups: ").Append(PodSecurityGroups).Append("\n");
+            sb.Append("  extensionScaleGroups: ").Append(ExtensionScaleGroups).Append("\n");
             sb.Append("  customSecurityGroups: ").Append(CustomSecurityGroups).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -247,6 +254,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.PodSecurityGroups.SequenceEqual(input.PodSecurityGroups)
                 ) && 
                 (
+                    this.ExtensionScaleGroups == input.ExtensionScaleGroups ||
+                    (this.ExtensionScaleGroups != null &&
+                    this.ExtensionScaleGroups.Equals(input.ExtensionScaleGroups))
+                ) && 
+                (
                     this.CustomSecurityGroups == input.CustomSecurityGroups ||
                     this.CustomSecurityGroups != null &&
                     input.CustomSecurityGroups != null &&
@@ -274,6 +286,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     hashCode = hashCode * 59 + this.NodeManagement.GetHashCode();
                 if (this.PodSecurityGroups != null)
                     hashCode = hashCode * 59 + this.PodSecurityGroups.GetHashCode();
+                if (this.ExtensionScaleGroups != null)
+                    hashCode = hashCode * 59 + this.ExtensionScaleGroups.GetHashCode();
                 if (this.CustomSecurityGroups != null)
                     hashCode = hashCode * 59 + this.CustomSecurityGroups.GetHashCode();
                 return hashCode;

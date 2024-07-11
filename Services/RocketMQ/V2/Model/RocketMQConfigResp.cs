@@ -17,37 +17,37 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     {
 
         /// <summary>
-        /// RocketMQ配置名称
+        /// RocketMQ配置名称。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// RocketMQ配置当前值
+        /// RocketMQ配置当前值。
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public string Value { get; set; }
 
         /// <summary>
-        /// RocketMQ配置的类型
+        /// RocketMQ配置的类型。
         /// </summary>
         [JsonProperty("config_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ConfigType { get; set; }
 
         /// <summary>
-        /// RocketMQ配置的默认值
+        /// RocketMQ配置的默认值。
         /// </summary>
         [JsonProperty("default_value", NullValueHandling = NullValueHandling.Ignore)]
         public string DefaultValue { get; set; }
 
         /// <summary>
-        /// RocketMQ配置取值的范围
+        /// RocketMQ配置取值的范围。
         /// </summary>
         [JsonProperty("valid_values", NullValueHandling = NullValueHandling.Ignore)]
         public string ValidValues { get; set; }
 
         /// <summary>
-        /// RocketMQ配置值的类型
+        /// RocketMQ配置值的类型。
         /// </summary>
         [JsonProperty("value_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ValueType { get; set; }

@@ -132,7 +132,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
 
 
         /// <summary>
-        /// 项目ID
+        /// 项目id
         /// </summary>
         [SDKProperty("group_id", IsPath = true)]
         [JsonProperty("group_id", NullValueHandling = NullValueHandling.Ignore)]

@@ -427,7 +427,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public string RequestId { get; set; }
 
         /// <summary>
-        /// 消费状态。0-消费成功, 1-消费超时, 2-消费发生异常, 3-消费返回NULL, 5-消费失败。
+        /// 消费状态：  - 0-消费成功  - 1-消费超时  - 2-消费发生异常   - 3-消费返回NULL  - 5-消费失败
         /// </summary>
         [JsonProperty("consume_status", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? ConsumeStatus { get; set; }

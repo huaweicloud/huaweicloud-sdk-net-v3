@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     public class ShowEngineInstanceExtendProductInfoRequest 
     {
         /// <summary>
-        /// 产品的类型。 advanced：专享版
+        /// 产品的类型。 advanced：专享版。
         /// </summary>
-        /// <value>产品的类型。 advanced：专享版</value>
+        /// <value>产品的类型。 advanced：专享版。</value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -140,7 +140,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// 产品的类型。 advanced：专享版
+        /// 产品的类型。 advanced：专享版。
         /// </summary>
         [SDKProperty("type", IsQuery = true)]
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]

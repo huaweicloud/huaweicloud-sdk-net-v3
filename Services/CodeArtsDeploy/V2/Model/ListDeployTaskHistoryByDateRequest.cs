@@ -17,14 +17,14 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
     {
 
         /// <summary>
-        /// 项目ID
+        /// 项目id
         /// </summary>
         [SDKProperty("project_id", IsPath = true)]
         [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProjectId { get; set; }
 
         /// <summary>
-        /// 任务ID
+        /// 任务id
         /// </summary>
         [SDKProperty("id", IsPath = true)]
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]

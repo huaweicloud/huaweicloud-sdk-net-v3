@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
 {
     /// <summary>
-    /// 
+    /// 部署任务触发场景配置
     /// </summary>
     public class TaskTriggerVO 
     {

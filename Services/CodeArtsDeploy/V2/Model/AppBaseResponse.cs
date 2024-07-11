@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         public string Region { get; set; }
 
         /// <summary>
-        /// 部署任务列表
+        /// 部署任务列表信息
         /// </summary>
         [JsonProperty("arrange_infos", NullValueHandling = NullValueHandling.Ignore)]
         public List<TaskBaseBody> ArrangeInfos { get; set; }

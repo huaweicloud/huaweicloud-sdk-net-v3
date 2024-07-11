@@ -17,6 +17,12 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
     {
 
         /// <summary>
+        /// 步骤id
+        /// </summary>
+        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
         /// 步骤名称
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
@@ -35,7 +41,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         public string Code { get; set; }
 
         /// <summary>
-        /// 参数
+        /// 步骤详细定义
         /// </summary>
         [JsonProperty("params", NullValueHandling = NullValueHandling.Ignore)]
         public string Params { get; set; }
@@ -67,6 +73,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class DeployV2OperationsDO {\n");
+            sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  code: ").Append(Code).Append("\n");
@@ -95,6 +102,11 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
                 return false;
 
             return 
+                (
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
+                ) && 
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
@@ -140,6 +152,8 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.Id != null)
+                    hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Description != null)

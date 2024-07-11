@@ -17,43 +17,43 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     {
 
         /// <summary>
-        /// 消费组名称
+        /// 消费组名称。
         /// </summary>
         [JsonProperty("group_name", NullValueHandling = NullValueHandling.Ignore)]
         public string GroupName { get; set; }
 
         /// <summary>
-        /// 消费组是否在线
+        /// 消费组是否在线。
         /// </summary>
         [JsonProperty("online", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Online { get; set; }
 
         /// <summary>
-        /// 订阅关系是否一致
+        /// 订阅关系是否一致。
         /// </summary>
         [JsonProperty("subscription_consistency", NullValueHandling = NullValueHandling.Ignore)]
         public bool? SubscriptionConsistency { get; set; }
 
         /// <summary>
-        /// 消费者总数
+        /// 消费者总数。
         /// </summary>
         [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
         public int? Total { get; set; }
 
         /// <summary>
-        /// 下个分页的offset
+        /// 下个分页的offset。
         /// </summary>
         [JsonProperty("next_offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? NextOffset { get; set; }
 
         /// <summary>
-        /// 上个分页的offset
+        /// 上个分页的offset。
         /// </summary>
         [JsonProperty("previous_offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? PreviousOffset { get; set; }
 
         /// <summary>
-        /// 消费者订阅详情列表
+        /// 消费者订阅详情列表。
         /// </summary>
         [JsonProperty("clients", NullValueHandling = NullValueHandling.Ignore)]
         public List<ClientData> Clients { get; set; }

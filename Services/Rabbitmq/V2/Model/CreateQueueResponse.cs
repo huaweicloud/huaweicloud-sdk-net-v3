@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public bool? AutoDelete { get; set; }
 
         /// <summary>
-        /// 是否持久化（AMQP版本默认持久化，不涉及此字段）
+        /// 是否持久化[（AMQP版本默认持久化，不涉及此字段）](tag:hws,hws_hk)
         /// </summary>
         [JsonProperty("durable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Durable { get; set; }
@@ -53,7 +53,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public long? MessageTtl { get; set; }
 
         /// <summary>
-        /// 若设置惰性队列，请输入lazy。惰性队列模式会在磁盘上存储尽可能多的消息以减少内存使用；若不设置，队列将消息存储在内存缓存以尽可能快地传递消息。（AMQP版本默认将消息存储到磁盘，不涉及此字段）
+        /// 若设置惰性队列，请输入lazy。惰性队列模式会在磁盘上存储尽可能多的消息以减少内存使用；若不设置，队列将消息存储在内存缓存以尽可能快地传递消息。[（AMQP版本默认将消息存储到磁盘，不涉及此字段）](tag:hws,hws_hk)
         /// </summary>
         [JsonProperty("lazy_mode", NullValueHandling = NullValueHandling.Ignore)]
         public string LazyMode { get; set; }

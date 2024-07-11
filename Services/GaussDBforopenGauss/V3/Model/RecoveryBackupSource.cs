@@ -15,127 +15,6 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
     /// </summary>
     public class RecoveryBackupSource 
     {
-        /// <summary>
-        /// 备份级别取值, 默认值：INSTANCE
-        /// </summary>
-        /// <value>备份级别取值, 默认值：INSTANCE</value>
-        [JsonConverter(typeof(EnumClassConverter<SchemaTypeEnum>))]
-        public class SchemaTypeEnum
-        {
-            /// <summary>
-            /// Enum INSTANCE_ for value: INSTANCE 实例级备份
-            /// </summary>
-            public static readonly SchemaTypeEnum INSTANCE_ = new SchemaTypeEnum("INSTANCE 实例级备份");
-
-            /// <summary>
-            /// Enum DATABASE_ for value: DATABASE 库级备份
-            /// </summary>
-            public static readonly SchemaTypeEnum DATABASE_ = new SchemaTypeEnum("DATABASE 库级备份");
-
-            /// <summary>
-            /// Enum DATABASE_TABLE_ for value: DATABASE_TABLE 表级备份
-            /// </summary>
-            public static readonly SchemaTypeEnum DATABASE_TABLE_ = new SchemaTypeEnum("DATABASE_TABLE 表级备份");
-
-            private static readonly Dictionary<string, SchemaTypeEnum> StaticFields =
-            new Dictionary<string, SchemaTypeEnum>()
-            {
-                { "INSTANCE 实例级备份", INSTANCE_ },
-                { "DATABASE 库级备份", DATABASE_ },
-                { "DATABASE_TABLE 表级备份", DATABASE_TABLE_ },
-            };
-
-            private string _value;
-
-            public SchemaTypeEnum()
-            {
-
-            }
-
-            public SchemaTypeEnum(string value)
-            {
-                _value = value;
-            }
-
-            public static SchemaTypeEnum FromValue(string value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public string GetValue()
-            {
-                return _value;
-            }
-
-            public override string ToString()
-            {
-                return $"{_value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this._value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as SchemaTypeEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(SchemaTypeEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
-            }
-
-            public static bool operator ==(SchemaTypeEnum a, SchemaTypeEnum b)
-            {
-                if (System.Object.ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(SchemaTypeEnum a, SchemaTypeEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
 
         /// <summary>
         /// 实例ID
@@ -161,17 +40,6 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         [JsonProperty("restore_time", NullValueHandling = NullValueHandling.Ignore)]
         public string RestoreTime { get; set; }
 
-        /// <summary>
-        /// 表基础信息。
-        /// </summary>
-        [JsonProperty("table_list", NullValueHandling = NullValueHandling.Ignore)]
-        public List<RestoreTableListDetail> TableList { get; set; }
-
-        /// <summary>
-        /// 备份级别取值, 默认值：INSTANCE
-        /// </summary>
-        [JsonProperty("schema_type", NullValueHandling = NullValueHandling.Ignore)]
-        public SchemaTypeEnum SchemaType { get; set; }
 
 
         /// <summary>
@@ -185,8 +53,6 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  backupId: ").Append(BackupId).Append("\n");
             sb.Append("  restoreTime: ").Append(RestoreTime).Append("\n");
-            sb.Append("  tableList: ").Append(TableList).Append("\n");
-            sb.Append("  schemaType: ").Append(SchemaType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -227,17 +93,6 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                     this.RestoreTime == input.RestoreTime ||
                     (this.RestoreTime != null &&
                     this.RestoreTime.Equals(input.RestoreTime))
-                ) && 
-                (
-                    this.TableList == input.TableList ||
-                    this.TableList != null &&
-                    input.TableList != null &&
-                    this.TableList.SequenceEqual(input.TableList)
-                ) && 
-                (
-                    this.SchemaType == input.SchemaType ||
-                    (this.SchemaType != null &&
-                    this.SchemaType.Equals(input.SchemaType))
                 );
         }
 
@@ -257,10 +112,6 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                     hashCode = hashCode * 59 + this.BackupId.GetHashCode();
                 if (this.RestoreTime != null)
                     hashCode = hashCode * 59 + this.RestoreTime.GetHashCode();
-                if (this.TableList != null)
-                    hashCode = hashCode * 59 + this.TableList.GetHashCode();
-                if (this.SchemaType != null)
-                    hashCode = hashCode * 59 + this.SchemaType.GetHashCode();
                 return hashCode;
             }
         }

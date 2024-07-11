@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         public bool? IsDisable { get; set; }
 
         /// <summary>
-        /// 项目ID
+        /// 项目id
         /// </summary>
         [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProjectId { get; set; }
@@ -113,13 +113,13 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         public string DeploySystem { get; set; }
 
         /// <summary>
-        /// 应用创建者用户ID
+        /// 应用创建者用户id
         /// </summary>
         [JsonProperty("create_user_id", NullValueHandling = NullValueHandling.Ignore)]
         public string CreateUserId { get; set; }
 
         /// <summary>
-        /// 应用创建者租户ID
+        /// 应用创建者租户id
         /// </summary>
         [JsonProperty("create_tenant_id", NullValueHandling = NullValueHandling.Ignore)]
         public string CreateTenantId { get; set; }

@@ -144,7 +144,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         public string RegionName { get; set; }
 
         /// <summary>
-        /// 项目ID
+        /// 项目id
         /// </summary>
         [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProjectId { get; set; }

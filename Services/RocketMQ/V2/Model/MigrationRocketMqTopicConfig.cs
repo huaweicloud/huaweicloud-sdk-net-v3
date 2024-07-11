@@ -11,13 +11,13 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.RocketMQ.V2.Model
 {
     /// <summary>
-    /// RocketMQ元数据迁移，RocketMQ topic元数据。
+    /// RocketMQ元数据迁移，RocketMQ Topic元数据。
     /// </summary>
     public class MigrationRocketMqTopicConfig 
     {
 
         /// <summary>
-        /// topic名称。
+        /// Topic名称。
         /// </summary>
         [JsonProperty("topicName", NullValueHandling = NullValueHandling.Ignore)]
         public string TopicName { get; set; }
@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public bool? Order { get; set; }
 
         /// <summary>
-        /// topic权限。
+        /// Topic权限。
         /// </summary>
         [JsonProperty("perm", NullValueHandling = NullValueHandling.Ignore)]
         public int? Perm { get; set; }
@@ -47,13 +47,13 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public int? WriteQueueNums { get; set; }
 
         /// <summary>
-        /// topic过滤类型。   - SINGLE_TAG：单标签   - MULTI_TAG：多标签
+        /// Topic过滤类型。   - SINGLE_TAG：单标签   - MULTI_TAG：多标签
         /// </summary>
         [JsonProperty("topicFilterType", NullValueHandling = NullValueHandling.Ignore)]
         public string TopicFilterType { get; set; }
 
         /// <summary>
-        /// topic系统标志位。
+        /// Topic系统标志位。
         /// </summary>
         [JsonProperty("topicSysFlag", NullValueHandling = NullValueHandling.Ignore)]
         public int? TopicSysFlag { get; set; }

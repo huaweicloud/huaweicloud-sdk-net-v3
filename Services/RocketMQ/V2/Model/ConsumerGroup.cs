@@ -65,7 +65,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public List<string> Permissions { get; set; }
 
         /// <summary>
-        /// 是否按序消费。
+        /// 是否按顺序消费。
         /// </summary>
         [JsonProperty("consume_orderly", NullValueHandling = NullValueHandling.Ignore)]
         public bool? ConsumeOrderly { get; set; }

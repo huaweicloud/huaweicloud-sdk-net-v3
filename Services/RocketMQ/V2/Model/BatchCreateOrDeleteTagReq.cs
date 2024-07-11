@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     public class BatchCreateOrDeleteTagReq 
     {
         /// <summary>
-        /// 操作标识（仅支持小写）: - create（创建） - delete（删除）
+        /// 操作标识（仅支持小写）： - create（创建） - delete（删除）
         /// </summary>
-        /// <value>操作标识（仅支持小写）: - create（创建） - delete（删除）</value>
+        /// <value>操作标识（仅支持小写）： - create（创建） - delete（删除）</value>
         [JsonConverter(typeof(EnumClassConverter<ActionEnum>))]
         public class ActionEnum
         {
@@ -132,7 +132,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
 
 
         /// <summary>
-        /// 操作标识（仅支持小写）: - create（创建） - delete（删除）
+        /// 操作标识（仅支持小写）： - create（创建） - delete（删除）
         /// </summary>
         [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]
         public ActionEnum Action { get; set; }

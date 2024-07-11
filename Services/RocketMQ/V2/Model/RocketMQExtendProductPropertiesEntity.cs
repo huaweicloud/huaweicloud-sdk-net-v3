@@ -53,13 +53,13 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public string EngineVersions { get; set; }
 
         /// <summary>
-        /// 每个节点的最小存储。单位为GB
+        /// 每个节点的最小存储。单位为GB。
         /// </summary>
         [JsonProperty("min_storage_per_node", NullValueHandling = NullValueHandling.Ignore)]
         public string MinStoragePerNode { get; set; }
 
         /// <summary>
-        /// product_id的别名
+        /// product_id的别名。
         /// </summary>
         [JsonProperty("product_alias", NullValueHandling = NullValueHandling.Ignore)]
         public string ProductAlias { get; set; }

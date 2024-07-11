@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public string XDeadLetterRoutingKey { get; set; }
 
         /// <summary>
-        /// 惰性队列（AMQP版本默认持久化所有消息，不涉及此参数）
+        /// 惰性队列[（AMQP版本默认持久化所有消息，不涉及此参数）](tag:hws,hws_hk)
         /// </summary>
         [JsonProperty("x-queue-mode", NullValueHandling = NullValueHandling.Ignore)]
         public string XQueueMode { get; set; }

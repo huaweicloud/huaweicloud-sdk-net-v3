@@ -28,12 +28,6 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public long? Value { get; set; }
 
-        /// <summary>
-        /// 该referer的流量(或请求数)占当前查询条件下总流量(或请求数)的比例。保留4位小数
-        /// </summary>
-        [JsonProperty("ratio", NullValueHandling = NullValueHandling.Ignore)]
-        public double? Ratio { get; set; }
-
 
 
         /// <summary>
@@ -45,7 +39,6 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             sb.Append("class TopReferSummary {\n");
             sb.Append("  refer: ").Append(Refer).Append("\n");
             sb.Append("  value: ").Append(Value).Append("\n");
-            sb.Append("  ratio: ").Append(Ratio).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -76,11 +69,6 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     this.Value == input.Value ||
                     (this.Value != null &&
                     this.Value.Equals(input.Value))
-                ) && 
-                (
-                    this.Ratio == input.Ratio ||
-                    (this.Ratio != null &&
-                    this.Ratio.Equals(input.Ratio))
                 );
         }
 
@@ -96,8 +84,6 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     hashCode = hashCode * 59 + this.Refer.GetHashCode();
                 if (this.Value != null)
                     hashCode = hashCode * 59 + this.Value.GetHashCode();
-                if (this.Ratio != null)
-                    hashCode = hashCode * 59 + this.Ratio.GetHashCode();
                 return hashCode;
             }
         }

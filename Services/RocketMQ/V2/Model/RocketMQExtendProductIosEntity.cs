@@ -11,31 +11,31 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.RocketMQ.V2.Model
 {
     /// <summary>
-    /// 磁盘IO信息
+    /// 磁盘IO信息。
     /// </summary>
     public class RocketMQExtendProductIosEntity 
     {
 
         /// <summary>
-        /// 存储IO规格
+        /// 存储IO规格。
         /// </summary>
         [JsonProperty("io_spec", NullValueHandling = NullValueHandling.Ignore)]
         public string IoSpec { get; set; }
 
         /// <summary>
-        /// 有可用资源的可用区列表
+        /// 有可用资源的可用区列表。
         /// </summary>
         [JsonProperty("available_zones", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> AvailableZones { get; set; }
 
         /// <summary>
-        /// IO类型
+        /// IO类型。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
 
         /// <summary>
-        /// 资源售罄的可用区列表
+        /// 资源售罄的可用区列表。
         /// </summary>
         [JsonProperty("unavailable_zones", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> UnavailableZones { get; set; }

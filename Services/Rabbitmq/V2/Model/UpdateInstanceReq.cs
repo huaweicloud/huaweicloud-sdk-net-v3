@@ -65,7 +65,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// ACL访问控制（仅AMQP版本支持此参数）。
+        /// ACL访问控制[（仅AMQP版本支持此参数）](tag:hws,hws_hk)。
         /// </summary>
         [JsonProperty("enable_acl", NullValueHandling = NullValueHandling.Ignore)]
         public bool? EnableAcl { get; set; }

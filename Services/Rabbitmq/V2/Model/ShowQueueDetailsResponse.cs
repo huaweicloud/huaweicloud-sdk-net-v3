@@ -53,7 +53,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public int? Consumers { get; set; }
 
         /// <summary>
-        /// 策略（AMQP版本不支持policy，不涉及此参数）
+        /// 策略[（AMQP版本不支持policy，不涉及此参数）](tag:hws,hws_hk)
         /// </summary>
         [JsonProperty("policy", NullValueHandling = NullValueHandling.Ignore)]
         public string Policy { get; set; }

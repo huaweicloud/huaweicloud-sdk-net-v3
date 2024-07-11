@@ -52,6 +52,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("updateTimestamp", NullValueHandling = NullValueHandling.Ignore)]
         public string UpdateTimestamp { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("ownerReference", NullValueHandling = NullValueHandling.Ignore)]
+        public NodeOwnerReference OwnerReference { get; set; }
+
 
 
         /// <summary>
@@ -67,6 +73,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  annotations: ").Append(Annotations).Append("\n");
             sb.Append("  creationTimestamp: ").Append(CreationTimestamp).Append("\n");
             sb.Append("  updateTimestamp: ").Append(UpdateTimestamp).Append("\n");
+            sb.Append("  ownerReference: ").Append(OwnerReference).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -119,6 +126,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.UpdateTimestamp == input.UpdateTimestamp ||
                     (this.UpdateTimestamp != null &&
                     this.UpdateTimestamp.Equals(input.UpdateTimestamp))
+                ) && 
+                (
+                    this.OwnerReference == input.OwnerReference ||
+                    (this.OwnerReference != null &&
+                    this.OwnerReference.Equals(input.OwnerReference))
                 );
         }
 
@@ -142,6 +154,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     hashCode = hashCode * 59 + this.CreationTimestamp.GetHashCode();
                 if (this.UpdateTimestamp != null)
                     hashCode = hashCode * 59 + this.UpdateTimestamp.GetHashCode();
+                if (this.OwnerReference != null)
+                    hashCode = hashCode * 59 + this.OwnerReference.GetHashCode();
                 return hashCode;
             }
         }

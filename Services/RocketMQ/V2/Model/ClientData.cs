@@ -17,31 +17,31 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     {
 
         /// <summary>
-        /// 客户端语言
+        /// 客户端语言。
         /// </summary>
         [JsonProperty("language", NullValueHandling = NullValueHandling.Ignore)]
         public string Language { get; set; }
 
         /// <summary>
-        /// 客户端版本
+        /// 客户端版本。
         /// </summary>
         [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]
         public string Version { get; set; }
 
         /// <summary>
-        /// 客户端ID
+        /// 客户端ID。
         /// </summary>
         [JsonProperty("client_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ClientId { get; set; }
 
         /// <summary>
-        /// 客户端地址
+        /// 客户端地址。
         /// </summary>
         [JsonProperty("client_addr", NullValueHandling = NullValueHandling.Ignore)]
         public string ClientAddr { get; set; }
 
         /// <summary>
-        /// 订阅关系列表
+        /// 订阅关系列表。
         /// </summary>
         [JsonProperty("subscriptions", NullValueHandling = NullValueHandling.Ignore)]
         public List<Subscription> Subscriptions { get; set; }

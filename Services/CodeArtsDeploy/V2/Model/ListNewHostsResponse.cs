@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         public int? Total { get; set; }
 
         /// <summary>
-        /// 请求状态
+        /// 请求成功失败状态
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }

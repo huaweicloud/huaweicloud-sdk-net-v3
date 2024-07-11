@@ -17,37 +17,37 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     {
 
         /// <summary>
-        /// Topic列表（当查询topic消费“列表”时才显示此参数）。
+        /// Topic列表（当查询Topic消费“列表”时才显示此参数）。
         /// </summary>
         [JsonProperty("topics", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Topics { get; set; }
 
         /// <summary>
-        /// Topic总数（当查询topic消费“列表”时才显示此参数）。
+        /// Topic总数（当查询Topic消费“列表”时才显示此参数）。
         /// </summary>
         [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
         public int? Total { get; set; }
 
         /// <summary>
-        /// 消费堆积总数
+        /// 消费堆积总数。
         /// </summary>
         [JsonProperty("lag", NullValueHandling = NullValueHandling.Ignore)]
         public long? Lag { get; set; }
 
         /// <summary>
-        /// 消息总数
+        /// 消息总数。
         /// </summary>
         [JsonProperty("max_offset", NullValueHandling = NullValueHandling.Ignore)]
         public long? MaxOffset { get; set; }
 
         /// <summary>
-        /// 已消费消息数
+        /// 已消费消息数。
         /// </summary>
         [JsonProperty("consumer_offset", NullValueHandling = NullValueHandling.Ignore)]
         public long? ConsumerOffset { get; set; }
 
         /// <summary>
-        /// Topic关联代理（当查询topic消费“详情”才显示此参数）。
+        /// Topic关联代理（当查询Topic消费“详情”才显示此参数）。
         /// </summary>
         [JsonProperty("brokers", NullValueHandling = NullValueHandling.Ignore)]
         public List<Brokers> Brokers { get; set; }

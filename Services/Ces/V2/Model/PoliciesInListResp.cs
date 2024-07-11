@@ -86,6 +86,12 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         [JsonProperty("alarm_level", NullValueHandling = NullValueHandling.Ignore)]
         public int? AlarmLevel { get; set; }
 
+        /// <summary>
+        /// 用户在页面中选择的指标单位， 用于后续指标数据回显和计算
+        /// </summary>
+        [JsonProperty("selected_unit", NullValueHandling = NullValueHandling.Ignore)]
+        public string SelectedUnit { get; set; }
+
 
 
         /// <summary>
@@ -107,6 +113,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  suppressDuration: ").Append(SuppressDuration).Append("\n");
             sb.Append("  alarmLevel: ").Append(AlarmLevel).Append("\n");
+            sb.Append("  selectedUnit: ").Append(SelectedUnit).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -187,6 +194,11 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                     this.AlarmLevel == input.AlarmLevel ||
                     (this.AlarmLevel != null &&
                     this.AlarmLevel.Equals(input.AlarmLevel))
+                ) && 
+                (
+                    this.SelectedUnit == input.SelectedUnit ||
+                    (this.SelectedUnit != null &&
+                    this.SelectedUnit.Equals(input.SelectedUnit))
                 );
         }
 
@@ -222,6 +234,8 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                     hashCode = hashCode * 59 + this.SuppressDuration.GetHashCode();
                 if (this.AlarmLevel != null)
                     hashCode = hashCode * 59 + this.AlarmLevel.GetHashCode();
+                if (this.SelectedUnit != null)
+                    hashCode = hashCode * 59 + this.SelectedUnit.GetHashCode();
                 return hashCode;
             }
         }

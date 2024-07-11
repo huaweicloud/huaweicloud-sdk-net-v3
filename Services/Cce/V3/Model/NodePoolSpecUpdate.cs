@@ -34,6 +34,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("autoscaling", NullValueHandling = NullValueHandling.Ignore)]
         public NodePoolNodeAutoscaling Autoscaling { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("extensionScaleGroups", NullValueHandling = NullValueHandling.Ignore)]
+        public ExtensionScaleGroup ExtensionScaleGroups { get; set; }
+
 
 
         /// <summary>
@@ -46,6 +52,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  nodeTemplate: ").Append(NodeTemplate).Append("\n");
             sb.Append("  initialNodeCount: ").Append(InitialNodeCount).Append("\n");
             sb.Append("  autoscaling: ").Append(Autoscaling).Append("\n");
+            sb.Append("  extensionScaleGroups: ").Append(ExtensionScaleGroups).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -81,6 +88,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.Autoscaling == input.Autoscaling ||
                     (this.Autoscaling != null &&
                     this.Autoscaling.Equals(input.Autoscaling))
+                ) && 
+                (
+                    this.ExtensionScaleGroups == input.ExtensionScaleGroups ||
+                    (this.ExtensionScaleGroups != null &&
+                    this.ExtensionScaleGroups.Equals(input.ExtensionScaleGroups))
                 );
         }
 
@@ -98,6 +110,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     hashCode = hashCode * 59 + this.InitialNodeCount.GetHashCode();
                 if (this.Autoscaling != null)
                     hashCode = hashCode * 59 + this.Autoscaling.GetHashCode();
+                if (this.ExtensionScaleGroups != null)
+                    hashCode = hashCode * 59 + this.ExtensionScaleGroups.GetHashCode();
                 return hashCode;
             }
         }

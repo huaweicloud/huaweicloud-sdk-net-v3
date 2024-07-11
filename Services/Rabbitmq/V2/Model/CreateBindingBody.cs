@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public string RoutingKey { get; set; }
 
         /// <summary>
-        /// 绑定目标端类型，Exchange或Queue（AMQP版本只支持绑定Queue）
+        /// 绑定目标端类型，Exchange或Queue。[（AMQP版本只支持绑定Queue）](tag:hws,hws_hk)
         /// </summary>
         [JsonProperty("destination_type", NullValueHandling = NullValueHandling.Ignore)]
         public string DestinationType { get; set; }

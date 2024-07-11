@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     public class BatchDeleteInstanceReq 
     {
         /// <summary>
-        /// 对实例的操作：delete
+        /// 对实例的操作：delete。
         /// </summary>
-        /// <value>对实例的操作：delete</value>
+        /// <value>对实例的操作：delete。</value>
         [JsonConverter(typeof(EnumClassConverter<ActionEnum>))]
         public class ActionEnum
         {
@@ -241,7 +241,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public List<string> Instances { get; set; }
 
         /// <summary>
-        /// 对实例的操作：delete
+        /// 对实例的操作：delete。
         /// </summary>
         [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]
         public ActionEnum Action { get; set; }

@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         public string Operator { get; set; }
 
         /// <summary>
-        /// 部署记录ID
+        /// 部署记录id
         /// </summary>
         [JsonProperty("execution_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ExecutionId { get; set; }

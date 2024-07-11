@@ -31,7 +31,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public string Group { get; set; }
 
         /// <summary>
-        /// 待查询的topic，不指定时查询topic列表，指定时查询详情。
+        /// 待查询的Topic，不指定时查询Topic列表，指定时查询详情。
         /// </summary>
         [SDKProperty("topic", IsQuery = true)]
         [JsonProperty("topic", NullValueHandling = NullValueHandling.Ignore)]

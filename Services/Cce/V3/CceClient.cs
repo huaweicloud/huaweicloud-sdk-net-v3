@@ -1289,6 +1289,35 @@ namespace HuaweiCloud.SDK.Cce.V3
         }
         
         /// <summary>
+        /// 伸缩节点池
+        ///
+        /// 该API用于伸缩指定的节点池
+        /// &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ScaleNodePoolResponse ScaleNodePool(ScaleNodePoolRequest scaleNodePoolRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", scaleNodePoolRequest.ClusterId.ToString());
+            urlParam.Add("nodepool_id", scaleNodePoolRequest.NodepoolId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodepools/{nodepool_id}/operation/scale", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", scaleNodePoolRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<ScaleNodePoolResponse>(response);
+        }
+
+        public SyncInvoker<ScaleNodePoolResponse> ScaleNodePoolInvoker(ScaleNodePoolRequest scaleNodePoolRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", scaleNodePoolRequest.ClusterId.ToString());
+            urlParam.Add("nodepool_id", scaleNodePoolRequest.NodepoolId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodepools/{nodepool_id}/operation/scale", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", scaleNodePoolRequest);
+            return new SyncInvoker<ScaleNodePoolResponse>(this, "POST", request, JsonUtils.DeSerializeNull<ScaleNodePoolResponse>);
+        }
+        
+        /// <summary>
         /// 获取AddonInstance详情
         ///
         /// 获取插件实例详情。

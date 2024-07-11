@@ -17,19 +17,19 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     {
 
         /// <summary>
-        /// 订阅的topic名称
+        /// 订阅的Topic名称。
         /// </summary>
         [JsonProperty("topic", NullValueHandling = NullValueHandling.Ignore)]
         public string Topic { get; set; }
 
         /// <summary>
-        /// 订阅类型，取值如下：TAG和SQL92
+        /// 订阅类型，取值如下：TAG和SQL92。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
 
         /// <summary>
-        /// 订阅tag字符
+        /// 订阅tag字符。
         /// </summary>
         [JsonProperty("expression", NullValueHandling = NullValueHandling.Ignore)]
         public string Expression { get; set; }

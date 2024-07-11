@@ -1,3 +1,241 @@
+# 3.1.103 2024-07-11
+
+### HuaweiCloud SDK CCE
+
+- _Features_
+  - Support the API `ScaleNodePool`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowNode**
+    - changes of response param
+      - `+ metadata.ownerReference`
+  - **UpdateNode**
+    - changes of response param
+      - `+ metadata.ownerReference`
+  - **DeleteNode**
+    - changes of response param
+      - `+ metadata.ownerReference`
+  - **CreateNode**
+    - changes of request param
+      - `+ metadata.ownerReference`
+    - changes of response param
+      - `+ metadata.ownerReference`
+  - **ListNodes**
+    - changes of response param
+      - `+ items.metadata.ownerReference`
+  - **ShowNodePool**
+    - changes of response param
+      - `+ spec.extensionScaleGroups`
+  - **UpdateNodePool**
+    - changes of request param
+      - `+ spec.extensionScaleGroups`
+    - changes of response param
+      - `+ spec.extensionScaleGroups`
+  - **DeleteNodePool**
+    - changes of response param
+      - `+ spec.extensionScaleGroups`
+  - **CreateNodePool**
+    - changes of request param
+      - `+ spec.extensionScaleGroups`
+    - changes of response param
+      - `+ spec.extensionScaleGroups`
+  - **ListNodePools**
+    - changes of response param
+      - `+ items.spec.extensionScaleGroups`
+
+### HuaweiCloud SDK CDN
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Deprecate the following APIs:
+    - `ShowBlackWhiteList`
+    - `UpdateBlackWhiteList`
+    - `UpdatePrivateBucketAccess`
+    - `BatchDeleteTags`
+    - `ShowOriginHost`
+    - `UpdateOriginHost`
+    - `UpdateRangeSwitch`
+    - `UpdateFollow302Switch`
+    - `ShowRefer`
+    - `UpdateRefer`
+    - `ShowIpInfo`
+    - `ShowResponseHeader`
+    - `UpdateResponseHeader`
+    - `CreateRefreshTasks`
+    - `CreatePreheatingTasks`
+    - `ShowHistoryTasks`
+    - `ShowHistoryTaskDetails`
+    - `ShowUrlTaskInfo`
+    - `ShowQuota`
+    - `ShowTags`
+    - `CreateTags`
+    - `CreateDomain`
+    - `ShowDomainDetail`
+    - `DeleteDomain`
+    - `EnableDomain`
+    - `DisableDomain`
+    - `UpdateDomainOrigin`
+    - `ShowHttpInfo`
+    - `UpdateHttpsInfo`
+    - `UpdateDomainMultiCertificates`
+    - `ShowCertificatesHttpsInfo`
+    - `ShowCacheRules`
+    - `UpdateCacheRules`
+  - **ListCdnDomainTopRefers**
+    - changes of response param
+      - `- top_refer_summary.ratio`
+
+### HuaweiCloud SDK CES
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateEvents**
+    - changes of request param
+      - `+ detail.dimensions`
+  - **ListNotificationMasks**
+    - changes of response param
+      - `+ notification_masks.policies.selected_unit`
+
+### HuaweiCloud SDK CodeArtsDeploy
+
+- _Features_
+  - Support the following APIs:
+    - `ListHostGroupPermissions`
+    - `UpdateHostGroupPermissions`
+    - `CheckWhetherHostGroupCanBeCreated`
+    - `ListEnvironmentPermissions`
+    - `UpdateEnvironmentPermission`
+    - `CopyHostsToTarget`
+    - `BatchDeleteHosts`
+    - `ListAssociateEnvironmentsInfos`
+    - `ListHostGroupBaseInfos`
+    - `ListEnvironmentHosts`
+    - `CopyApplication`
+    - `BatchDeleteApp`
+    - `ListApplicationPermissions`
+    - `BatchUpdateApplicationPermissions`
+    - `BatchUpdatePermissionLevel`
+    - `ListAppGroups`
+    - `CreateAppGroups`
+    - `UpdateAppGroups`
+    - `DeleteAppGroups`
+    - `MoveAppGroups`
+    - `MoveAppToGroup`
+    - `CheckIsDuplicateAppName`
+    - `CheckCanCreate`
+    - `UpdateAppDisableStatus`
+    - `UpdateHostCluster`
+    - `DeleteHostCluster`
+    - `UpdateHostInfo`
+    - `DeleteHost`
+    - `UpdateEnvironment`
+    - `UpdateAppInfo`
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateApp**
+    - changes of request param
+      - `+ arrange_infos.operation_list.id`
+
+### HuaweiCloud SDK ECS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListFlavors**
+    - changes of response param
+      - `+ flavors.os_extra_specs.info:gpus`
+      - `+ flavors.os_extra_specs.info:asic_accelerators`
+  - **ListResizeFlavors**
+    - changes of response param
+      - `+ flavors.extra_specs.info:gpus`
+      - `+ flavors.extra_specs.info:asic_accelerators`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _Features_
+  - Support the following APIs:
+    - `ListSupportKernelPlugins`
+    - `ListKernelPlugins`
+    - `SetKernelPluginLicense`
+    - `InstallKernelPlugin`
+    - `ListPluginExtensions`
+    - `ResumePluginExtensions`
+- _Bug Fix_
+  - None
+- _Change_
+  - **RestoreInstance**
+    - changes of request param
+      - `- source.table_list`
+      - `- source.schema_type`
+
+### HuaweiCloud SDK Kafka
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreatePostPaidInstance**
+    - changes of request param
+      - `- kafka_manager_user`
+      - `- kafka_manager_password`
+
+### HuaweiCloud SDK Live
+
+- _Features_
+  - Support the following APIs:
+    - `ShowRefererChain`
+    - `SetRefererChain`
+    - `DeleteRefererChain`
+    - `ListHlsConfig`
+    - `UpdateHlsConfig`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowPullSourcesConfig**
+    - changes of response param
+      - `+ source_port`
+  - **UpdatePullSourcesConfig**
+    - changes of request param
+      - `+ source_port`
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **RecognizeBankReceipt**
+    - changes of request param
+      - `+ page_num`
+
+### HuaweiCloud SDK RocketMQ
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateInstanceByEngine**
+    - changes of request param
+      - `+ product_id: enum value [[c6.4u8g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.4u16g.cluster.x86](tag:hcs,fcs),[c6.8u16g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.8u32g.cluster.x86](tag:hcs,fcs),[c6.12u24g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.16u64g.cluster.x86](tag:hcs,fcs),[c6.16u32g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.32u128g.cluster.x86](tag:hcs,fcs),[c6.4u16g.cluster.arm](tag:hcs,fcs),[c6.8u32g.cluster.arm](tag:hcs,fcs),[c6.16u64g.cluster.arm](tag:hcs,fcs),[c6.32u128g.cluster.arm](tag:hcs,fcs)]`
+      - `- product_id: enum value [[c6.4u8g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.4u16g.cluster.x86](tag:hcs),[c6.8u16g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.8u32g.cluster.x86](tag:hcs),[c6.12u24g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.16u64g.cluster.x86](tag:hcs),[c6.16u32g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.32u128g.cluster.x86](tag:hcs),[c6.4u16g.cluster.arm](tag:hcs),[c6.8u32g.cluster.arm](tag:hcs),[c6.16u64g.cluster.arm](tag:hcs),[c6.32u128g.cluster.arm](tag:hcs)]`
+  - **CreatePostPaidInstance**
+    - changes of request param
+      - `+ product_id: enum value [[c6.4u8g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.4u16g.cluster.x86](tag:hcs,fcs),[c6.8u16g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.8u32g.cluster.x86](tag:hcs,fcs),[c6.12u24g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.16u64g.cluster.x86](tag:hcs,fcs),[c6.16u32g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.32u128g.cluster.x86](tag:hcs,fcs),[c6.4u16g.cluster.arm](tag:hcs,fcs),[c6.8u32g.cluster.arm](tag:hcs,fcs),[c6.16u64g.cluster.arm](tag:hcs,fcs),[c6.32u128g.cluster.arm](tag:hcs,fcs)]`
+      - `- product_id: enum value [[c6.4u8g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.4u16g.cluster.x86](tag:hcs),[c6.8u16g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.8u32g.cluster.x86](tag:hcs),[c6.12u24g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.16u64g.cluster.x86](tag:hcs),[c6.16u32g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.32u128g.cluster.x86](tag:hcs),[c6.4u16g.cluster.arm](tag:hcs),[c6.8u32g.cluster.arm](tag:hcs),[c6.16u64g.cluster.arm](tag:hcs),[c6.32u128g.cluster.arm](tag:hcs)]`
+
 # 3.1.102 2024-07-04
 
 ### HuaweiCloud SDK CDN

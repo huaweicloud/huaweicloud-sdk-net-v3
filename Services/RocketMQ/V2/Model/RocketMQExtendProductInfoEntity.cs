@@ -17,19 +17,19 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     {
 
         /// <summary>
-        /// 实例类型
+        /// 实例类型。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
 
         /// <summary>
-        /// 产品ID
+        /// 产品ID。
         /// </summary>
         [JsonProperty("product_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProductId { get; set; }
 
         /// <summary>
-        /// 该产品使用的ECS规格
+        /// 该产品使用的ECS规格。
         /// </summary>
         [JsonProperty("ecs_flavor_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EcsFlavorId { get; set; }
@@ -41,19 +41,19 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public string BillingCode { get; set; }
 
         /// <summary>
-        /// 支持的CPU架构类型
+        /// 支持的CPU架构类型。
         /// </summary>
         [JsonProperty("arch_types", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> ArchTypes { get; set; }
 
         /// <summary>
-        /// 支持的计费模式类型
+        /// 支持的计费模式类型。
         /// </summary>
         [JsonProperty("charging_mode", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> ChargingMode { get; set; }
 
         /// <summary>
-        /// 磁盘IO信息
+        /// 磁盘IO信息。
         /// </summary>
         [JsonProperty("ios", NullValueHandling = NullValueHandling.Ignore)]
         public List<RocketMQExtendProductIosEntity> Ios { get; set; }
@@ -65,19 +65,19 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public RocketMQExtendProductPropertiesEntity Properties { get; set; }
 
         /// <summary>
-        /// 有可用资源的可用区列表
+        /// 有可用资源的可用区列表。
         /// </summary>
         [JsonProperty("available_zones", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> AvailableZones { get; set; }
 
         /// <summary>
-        /// 资源售罄的可用区列表
+        /// 资源售罄的可用区列表。
         /// </summary>
         [JsonProperty("unavailable_zones", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> UnavailableZones { get; set; }
 
         /// <summary>
-        /// 支持的特性功能
+        /// 支持的特性功能。
         /// </summary>
         [JsonProperty("support_features", NullValueHandling = NullValueHandling.Ignore)]
         public List<RocketMQProductSupportFeaturesEntity> SupportFeatures { get; set; }

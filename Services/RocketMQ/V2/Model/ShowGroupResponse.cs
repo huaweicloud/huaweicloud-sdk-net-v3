@@ -53,7 +53,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public int? RetryMaxTime { get; set; }
 
         /// <summary>
-        /// 应用id。
+        /// 应用ID。
         /// </summary>
         [JsonProperty("app_id", NullValueHandling = NullValueHandling.Ignore)]
         public string AppId { get; set; }

@@ -47,7 +47,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         public string CompName { get; set; }
 
         /// <summary>
-        /// 租户ID
+        /// 租户id
         /// </summary>
         [JsonProperty("domain_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DomainId { get; set; }

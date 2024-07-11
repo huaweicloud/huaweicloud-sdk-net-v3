@@ -160,7 +160,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public string Offset { get; set; }
 
         /// <summary>
-        /// 消息的key
+        /// 消息的key。
         /// </summary>
         [SDKProperty("key", IsQuery = true)]
         [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]
