@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public IpGroup Ipgroup { get; set; }
 
         /// <summary>
-        /// 请求ID。  注：自动生成 。
+        /// 参数解释：请求ID。  注：自动生成 。
         /// </summary>
         [JsonProperty("request_id", NullValueHandling = NullValueHandling.Ignore)]
         public string RequestId { get; set; }

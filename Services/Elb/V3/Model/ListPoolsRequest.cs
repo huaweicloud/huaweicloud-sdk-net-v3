@@ -24,7 +24,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string Marker { get; set; }
 
         /// <summary>
-        /// 每页返回的个数。
+        /// 参数解释：每页返回的个数。  取值范围：0-2000  默认取值：2000
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
@@ -45,7 +45,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<string> Description { get; set; }
 
         /// <summary>
-        /// 后端云服务器组的管理状态。  不支持该字段，请勿使用。
+        /// 后端云服务器组的管理状态。  [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
         /// </summary>
         [SDKProperty("admin_state_up", IsQuery = true)]
         [JsonProperty("admin_state_up", NullValueHandling = NullValueHandling.Ignore)]
@@ -80,14 +80,14 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<string> LoadbalancerId { get; set; }
 
         /// <summary>
-        /// 后端云服务器组的后端协议。  取值：TCP、UDP、HTTP、HTTPS、QUIC和TCPSSL。  支持多值查询，查询条件格式：*protocol&#x3D;xxx&amp;protocol&#x3D;xxx*。  [不支持QUIC协议。](tag:hws_eu,g42,hk_g42,hcso_dt)  [荷兰region不支持QUIC。](tag:dt,dt_test)
+        /// 后端云服务器组的后端协议。  取值：TCP、UDP、[IP、](tag:hws_eu)TLS、HTTP、HTTPS、QUIC和GRPC。  支持多值查询，查询条件格式：*protocol&#x3D;xxx&amp;protocol&#x3D;xxx*。  [不支持QUIC协议。](tag:hws_eu,g42,hk_g42,hcso_dt)  [荷兰region不支持QUIC。](tag:dt,dt_test)
         /// </summary>
         [SDKProperty("protocol", IsQuery = true)]
         [JsonProperty("protocol", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Protocol { get; set; }
 
         /// <summary>
-        /// 后端云服务器组的负载均衡算法。  取值： - ROUND_ROBIN：加权轮询算法。 - LEAST_CONNECTIONS：加权最少连接算法。 - SOURCE_IP：源IP算法。 - QUIC_CID：连接ID算法。  支持多值查询，查询条件格式：*lb_algorithm&#x3D;xxx&amp;lb_algorithm&#x3D;xxx*。  [不支持QUIC_CID。](tag:hws_eu,g42,hk_g42,hcso_dt)  [荷兰region不支持QUIC_CID。](tag:dt,dt_test)
+        /// 后端云服务器组的负载均衡算法。  取值： - ROUND_ROBIN：加权轮询算法。 - LEAST_CONNECTIONS：加权最少连接算法。 - SOURCE_IP：源IP算法。 - QUIC_CID：连接ID算法。 [- 2_TUPLE_HASH：二元组hash算法，仅IP类型的pool支持。 - 3_TUPLE_HASH：三元组hash算法，仅IP类型的pool支持。 - 4_TUPLE_HASH：五元组hash算法，仅IP类型的pool支持。](tag:hws_eu)  支持多值查询，查询条件格式：*lb_algorithm&#x3D;xxx&amp;lb_algorithm&#x3D;xxx*。  [不支持QUIC_CID。](tag:hws_eu,g42,hk_g42,hcso_dt)  [荷兰region不支持QUIC_CID。](tag:dt,dt_test)
         /// </summary>
         [SDKProperty("lb_algorithm", IsQuery = true)]
         [JsonProperty("lb_algorithm", NullValueHandling = NullValueHandling.Ignore)]
@@ -122,7 +122,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<string> MemberDeviceId { get; set; }
 
         /// <summary>
-        /// 是否开启删除保护，false不开启，true开启，不传查询全部。 [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42)  [荷兰region不支持该字段，请勿使用。](tag:dt)
+        /// 是否开启删除保护，false不开启，true开启，不传查询全部。 [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42)  [荷兰region不支持该字段，请勿使用。](tag:dt,dt_test)
         /// </summary>
         [SDKProperty("member_deletion_protection_enable", IsQuery = true)]
         [JsonProperty("member_deletion_protection_enable", NullValueHandling = NullValueHandling.Ignore)]
@@ -170,6 +170,27 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         [JsonProperty("connection_drain", NullValueHandling = NullValueHandling.Ignore)]
         public bool? ConnectionDrain { get; set; }
 
+        /// <summary>
+        /// 查询是否开启后端全下线转发功能，查询条件格式：*pool_health&#x3D;minimum_healthy_member_count&#x3D;0或者*pool_health&#x3D;minimum_healthy_member_count&#x3D;1
+        /// </summary>
+        [SDKProperty("pool_health", IsQuery = true)]
+        [JsonProperty("pool_health", NullValueHandling = NullValueHandling.Ignore)]
+        public string PoolHealth { get; set; }
+
+        /// <summary>
+        /// 后端是否开启端口透传。开启后，后端服务器端口与前端监听器端口保持一致。取值：false不开启，true开启。
+        /// </summary>
+        [SDKProperty("any_port_enable", IsQuery = true)]
+        [JsonProperty("any_port_enable", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? AnyPortEnable { get; set; }
+
+        /// <summary>
+        /// 可用区组
+        /// </summary>
+        [SDKProperty("public_border_group", IsQuery = true)]
+        [JsonProperty("public_border_group", NullValueHandling = NullValueHandling.Ignore)]
+        public string PublicBorderGroup { get; set; }
+
 
 
         /// <summary>
@@ -201,6 +222,9 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  protectionStatus: ").Append(ProtectionStatus).Append("\n");
             sb.Append("  connectionDrain: ").Append(ConnectionDrain).Append("\n");
+            sb.Append("  poolHealth: ").Append(PoolHealth).Append("\n");
+            sb.Append("  anyPortEnable: ").Append(AnyPortEnable).Append("\n");
+            sb.Append("  publicBorderGroup: ").Append(PublicBorderGroup).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -347,6 +371,21 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.ConnectionDrain == input.ConnectionDrain ||
                     (this.ConnectionDrain != null &&
                     this.ConnectionDrain.Equals(input.ConnectionDrain))
+                ) && 
+                (
+                    this.PoolHealth == input.PoolHealth ||
+                    (this.PoolHealth != null &&
+                    this.PoolHealth.Equals(input.PoolHealth))
+                ) && 
+                (
+                    this.AnyPortEnable == input.AnyPortEnable ||
+                    (this.AnyPortEnable != null &&
+                    this.AnyPortEnable.Equals(input.AnyPortEnable))
+                ) && 
+                (
+                    this.PublicBorderGroup == input.PublicBorderGroup ||
+                    (this.PublicBorderGroup != null &&
+                    this.PublicBorderGroup.Equals(input.PublicBorderGroup))
                 );
         }
 
@@ -402,6 +441,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     hashCode = hashCode * 59 + this.ProtectionStatus.GetHashCode();
                 if (this.ConnectionDrain != null)
                     hashCode = hashCode * 59 + this.ConnectionDrain.GetHashCode();
+                if (this.PoolHealth != null)
+                    hashCode = hashCode * 59 + this.PoolHealth.GetHashCode();
+                if (this.AnyPortEnable != null)
+                    hashCode = hashCode * 59 + this.AnyPortEnable.GetHashCode();
+                if (this.PublicBorderGroup != null)
+                    hashCode = hashCode * 59 + this.PublicBorderGroup.GetHashCode();
                 return hashCode;
             }
         }

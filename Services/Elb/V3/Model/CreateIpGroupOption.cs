@@ -17,31 +17,31 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// IP地址组所在的项目ID。
+        /// 参数解释：IP地址组所在的项目ID。
         /// </summary>
         [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProjectId { get; set; }
 
         /// <summary>
-        /// IP地址组的描述。
+        /// 参数解释：IP地址组的描述。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
         /// <summary>
-        /// IP地址组的名称。
+        /// 参数解释：IP地址组的名称。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// IP地址组中包含的IP或网段列表。[]表示任意IP。
+        /// 参数解释：IP地址组中包含的IP或网段列表。[]表示任意IP。
         /// </summary>
         [JsonProperty("ip_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<CreateIpGroupIpOption> IpList { get; set; }
 
         /// <summary>
-        /// IP地址组所在的企业项目ID。  [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
+        /// 参数解释：IP地址组所在的企业项目ID。  [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }

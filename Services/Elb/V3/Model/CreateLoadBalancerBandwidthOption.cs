@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     public class CreateLoadBalancerBandwidthOption 
     {
         /// <summary>
-        /// 计费模式。  [取值：bandwidth表示按带宽计费，traffic表示按流量计费。 ](tag:hws,hws_hk,ocb,ctc,hcs,tm,cmcc,hws_ocb,fcs)  [当前仅支持traffic按流量计费](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt)  使用说明：当id字段为null时，charge_mode是必须的。
+        /// 参数解释：计费模式。bandwidth 按带宽计费；traffic 按流量计费。  约束限制：当id字段为null时，charge_mode是必须的。  [当前仅支持traffic按流量计费。](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt)  取值范围：  - bandwidth：按带宽计费。  - traffic： 按流量计费。
         /// </summary>
-        /// <value>计费模式。  [取值：bandwidth表示按带宽计费，traffic表示按流量计费。 ](tag:hws,hws_hk,ocb,ctc,hcs,tm,cmcc,hws_ocb,fcs)  [当前仅支持traffic按流量计费](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt)  使用说明：当id字段为null时，charge_mode是必须的。</value>
+        /// <value>参数解释：计费模式。bandwidth 按带宽计费；traffic 按流量计费。  约束限制：当id字段为null时，charge_mode是必须的。  [当前仅支持traffic按流量计费。](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt)  取值范围：  - bandwidth：按带宽计费。  - traffic： 按流量计费。</value>
         [JsonConverter(typeof(EnumClassConverter<ChargeModeEnum>))]
         public class ChargeModeEnum
         {
@@ -131,9 +131,9 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         }
 
         /// <summary>
-        /// 带宽类型。  取值： - PER：独享带宽。 - WHOLE：共享带宽。  使用说明： - 当id字段为null时，share_type是必须的。当id不为null时，该字段被忽略。 - 该字段为WHOLE时,必须指定带宽ID。 - IPv6的EIP不支持WHOLE类型带宽。
+        /// 参数解释：带宽类型。  取值范围： - PER：独享带宽。 - WHOLE：共享带宽。
         /// </summary>
-        /// <value>带宽类型。  取值： - PER：独享带宽。 - WHOLE：共享带宽。  使用说明： - 当id字段为null时，share_type是必须的。当id不为null时，该字段被忽略。 - 该字段为WHOLE时,必须指定带宽ID。 - IPv6的EIP不支持WHOLE类型带宽。</value>
+        /// <value>参数解释：带宽类型。  取值范围： - PER：独享带宽。 - WHOLE：共享带宽。</value>
         [JsonConverter(typeof(EnumClassConverter<ShareTypeEnum>))]
         public class ShareTypeEnum
         {
@@ -247,35 +247,35 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
 
 
         /// <summary>
-        /// 带宽名称。  取值：1-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）  使用说明： - 如果share_type是PER，该字段是必选。 - 如果bandwidth对象的id有值，该字段被忽略。
+        /// 参数解释：带宽名称。  约束限制： - 如果share_type是PER，该字段是必选。 - 如果bandwidth对象的id有值，该字段被忽略。  取值范围：1-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 带宽大小 取值范围:默认1Mbit/s~2000Mbit/s(具体范围以各区域配置为准,请参见控制台对应页面显示)。  注意:调整带宽时的最小单位会根据带宽范围不同存在差异。 小于等于300Mbit/s:默认最小单位为1Mbit/s。 300Mbit/s~1000Mbit/s:默认最小单位为50Mbit/s。 大于1000Mbit/s:默认最小单位为500Mbit/s。  使用说明：当id字段为null时，size是必须的。
+        /// 参数解释：带宽大小  约束限制：当id字段为null时，size是必须的。 注意，调整带宽时的最小单位会根据带宽范围不同存在差异。 - 小于等于300Mbit/s: 默认最小单位为1Mbit/s。 - 300Mbit/s~1000Mbit/s: 默认最小单位为50Mbit/s。 - 大于1000Mbit/s: 默认最小单位为500Mbit/s。  取值范围:默认1Mbit/s~2000Mbit/s(具体范围以各区域配置为准,请参见控制台对应页面显示)。
         /// </summary>
         [JsonProperty("size", NullValueHandling = NullValueHandling.Ignore)]
         public int? Size { get; set; }
 
         /// <summary>
-        /// 计费模式。  [取值：bandwidth表示按带宽计费，traffic表示按流量计费。 ](tag:hws,hws_hk,ocb,ctc,hcs,tm,cmcc,hws_ocb,fcs)  [当前仅支持traffic按流量计费](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt)  使用说明：当id字段为null时，charge_mode是必须的。
+        /// 参数解释：计费模式。bandwidth 按带宽计费；traffic 按流量计费。  约束限制：当id字段为null时，charge_mode是必须的。  [当前仅支持traffic按流量计费。](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt)  取值范围：  - bandwidth：按带宽计费。  - traffic： 按流量计费。
         /// </summary>
         [JsonProperty("charge_mode", NullValueHandling = NullValueHandling.Ignore)]
         public ChargeModeEnum ChargeMode { get; set; }
         /// <summary>
-        /// 带宽类型。  取值： - PER：独享带宽。 - WHOLE：共享带宽。  使用说明： - 当id字段为null时，share_type是必须的。当id不为null时，该字段被忽略。 - 该字段为WHOLE时,必须指定带宽ID。 - IPv6的EIP不支持WHOLE类型带宽。
+        /// 参数解释：带宽类型。  取值范围： - PER：独享带宽。 - WHOLE：共享带宽。
         /// </summary>
         [JsonProperty("share_type", NullValueHandling = NullValueHandling.Ignore)]
         public ShareTypeEnum ShareType { get; set; }
         /// <summary>
-        /// 资源账单信息。  [如果billing_info不为空，说明是包周期计费的带宽，否则为按需计费的带宽 ](tag:hws,hws_hk,tlf,ctc,hcso,sbc,cmcc)  [不支持该字段，请勿使用](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt,fcs)
+        /// 参数解释：资源计费信息。  约束限制： [如果billing_info不为空，说明是包周期计费的带宽，否则为按需计费的带宽。](tag:hws,hws_hk,tlf,ctc,hcso,sbc,cmcc)  [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt,hk_vdf,fcs)
         /// </summary>
         [JsonProperty("billing_info", NullValueHandling = NullValueHandling.Ignore)]
         public string BillingInfo { get; set; }
 
         /// <summary>
-        /// 功能说明：使用已有的共享带宽创建IP 取值范围：共享带宽ID 使用说明： WHOLE类型的带宽ID； 在预付费的情况下，不填该值。该字段取空字符串时，会被忽略。
+        /// 参数解释：共享带宽ID。使用已存在的共享带宽。  约束限制：必须是已存在共享带宽ID。在预付费的情况下，不填该字段。该字段取空字符串时，会被忽略。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }

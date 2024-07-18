@@ -24,7 +24,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string Marker { get; set; }
 
         /// <summary>
-        /// 每页返回的个数。
+        /// 参数解释：每页返回的个数。  取值范围：0-2000  默认取值：2000
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
@@ -101,14 +101,14 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public int? Timeout { get; set; }
 
         /// <summary>
-        /// 健康检查请求协议。  取值：TCP、UDP_CONNECT、HTTP、HTTPS。  支持多值查询，查询条件格式：*****type&#x3D;xxx&amp;type&#x3D;xxx*****。
+        /// 健康检查请求协议。  取值：TCP、UDP_CONNECT、HTTP、HTTPS、TLS和GRPC。  支持多值查询，查询条件格式：*****type&#x3D;xxx&amp;type&#x3D;xxx*****。
         /// </summary>
         [SDKProperty("type", IsQuery = true)]
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Type { get; set; }
 
         /// <summary>
-        /// 期望响应状态码。  取值： - 单值：单个返回码，例如200。 - 列表：多个特定返回码，例如200，202。 - 区间：一个返回码区间，例如200-204。   默认值：200。  仅支持HTTP/HTTPS设置该字段，其他协议设置不会生效。  支持多值查询，查询条件格式：****expected_codes&#x3D;xxx&amp;expected_codes&#x3D;xxx****。
+        /// 期望响应状态码。  取值： - 单值：单个返回码，例如200。 - 列表：多个特定返回码，例如200，202。 - 区间：一个返回码区间，例如200-204。   默认值：200。  仅支持HTTP/HTTPS/GRPC设置该字段，其他协议设置不会生效。  支持多值查询，查询条件格式：****expected_codes&#x3D;xxx&amp;expected_codes&#x3D;xxx****。
         /// </summary>
         [SDKProperty("expected_codes", IsQuery = true)]
         [JsonProperty("expected_codes", NullValueHandling = NullValueHandling.Ignore)]
@@ -122,7 +122,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<string> UrlPath { get; set; }
 
         /// <summary>
-        /// HTTP请求方法。  取值：GET、HEAD、POST、PUT、DELETE、TRACE、OPTIONS、CONNECT、PATCH。  支持多值查询，查询条件格式：**http_method&#x3D;xxx&amp;http_method&#x3D;xxx**。  不支持该字段，请勿使用。
+        /// HTTP请求方法。  取值：GET、HEAD、POST。  支持多值查询，查询条件格式：**http_method&#x3D;xxx&amp;http_method&#x3D;xxx**。
         /// </summary>
         [SDKProperty("http_method", IsQuery = true)]
         [JsonProperty("http_method", NullValueHandling = NullValueHandling.Ignore)]

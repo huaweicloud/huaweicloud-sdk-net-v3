@@ -348,6 +348,20 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
         [SDKProperty("trace_rating", IsQuery = true)]
         [JsonProperty("trace_rating", NullValueHandling = NullValueHandling.Ignore)]
         public TraceRatingEnum TraceRating { get; set; }
+        /// <summary>
+        /// 标示查询事件列表对应的访问密钥ID。包含临时访问凭证和永久访问密钥。
+        /// </summary>
+        [SDKProperty("access_key_id", IsQuery = true)]
+        [JsonProperty("access_key_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string AccessKeyId { get; set; }
+
+        /// <summary>
+        /// 标示查询事件列表对应的企业项目ID。
+        /// </summary>
+        [SDKProperty("enterprise_project_id", IsQuery = true)]
+        [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string EnterpriseProjectId { get; set; }
+
 
 
         /// <summary>
@@ -371,6 +385,8 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
             sb.Append("  traceId: ").Append(TraceId).Append("\n");
             sb.Append("  traceName: ").Append(TraceName).Append("\n");
             sb.Append("  traceRating: ").Append(TraceRating).Append("\n");
+            sb.Append("  accessKeyId: ").Append(AccessKeyId).Append("\n");
+            sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -461,6 +477,16 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
                     this.TraceRating == input.TraceRating ||
                     (this.TraceRating != null &&
                     this.TraceRating.Equals(input.TraceRating))
+                ) && 
+                (
+                    this.AccessKeyId == input.AccessKeyId ||
+                    (this.AccessKeyId != null &&
+                    this.AccessKeyId.Equals(input.AccessKeyId))
+                ) && 
+                (
+                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
+                    (this.EnterpriseProjectId != null &&
+                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
                 );
         }
 
@@ -500,6 +526,10 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
                     hashCode = hashCode * 59 + this.TraceName.GetHashCode();
                 if (this.TraceRating != null)
                     hashCode = hashCode * 59 + this.TraceRating.GetHashCode();
+                if (this.AccessKeyId != null)
+                    hashCode = hashCode * 59 + this.AccessKeyId.GetHashCode();
+                if (this.EnterpriseProjectId != null)
+                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 return hashCode;
             }
         }

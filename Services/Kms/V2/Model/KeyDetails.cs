@@ -496,12 +496,6 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         [JsonProperty("keystore_id", NullValueHandling = NullValueHandling.Ignore)]
         public string KeystoreId { get; set; }
 
-        /// <summary>
-        /// 密钥在加密机中的标签
-        /// </summary>
-        [JsonProperty("key_label", NullValueHandling = NullValueHandling.Ignore)]
-        public string KeyLabel { get; set; }
-
 
 
         /// <summary>
@@ -528,7 +522,6 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
             sb.Append("  keyRotationEnabled: ").Append(KeyRotationEnabled).Append("\n");
             sb.Append("  sysEnterpriseProjectId: ").Append(SysEnterpriseProjectId).Append("\n");
             sb.Append("  keystoreId: ").Append(KeystoreId).Append("\n");
-            sb.Append("  keyLabel: ").Append(KeyLabel).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -634,11 +627,6 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
                     this.KeystoreId == input.KeystoreId ||
                     (this.KeystoreId != null &&
                     this.KeystoreId.Equals(input.KeystoreId))
-                ) && 
-                (
-                    this.KeyLabel == input.KeyLabel ||
-                    (this.KeyLabel != null &&
-                    this.KeyLabel.Equals(input.KeyLabel))
                 );
         }
 
@@ -684,8 +672,6 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
                     hashCode = hashCode * 59 + this.SysEnterpriseProjectId.GetHashCode();
                 if (this.KeystoreId != null)
                     hashCode = hashCode * 59 + this.KeystoreId.GetHashCode();
-                if (this.KeyLabel != null)
-                    hashCode = hashCode * 59 + this.KeyLabel.GetHashCode();
                 return hashCode;
             }
         }

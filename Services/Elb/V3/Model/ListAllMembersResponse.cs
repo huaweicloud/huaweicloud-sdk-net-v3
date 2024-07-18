@@ -32,7 +32,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// 后端服务器对象列表。
         /// </summary>
         [JsonProperty("members", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Member> Members { get; set; }
+        public List<MemberInfo> Members { get; set; }
 
 
 

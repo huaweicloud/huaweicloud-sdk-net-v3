@@ -24,7 +24,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string Marker { get; set; }
 
         /// <summary>
-        /// 每页返回的个数。
+        /// 参数解释：每页返回的个数。  取值范围：0-2000  默认取值：2000
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
@@ -79,6 +79,20 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Type { get; set; }
 
+        /// <summary>
+        /// 证书的主域名。  支持多值查询，查询条件格式：common_name&#x3D;xxx&amp;common_name&#x3D;xxx。
+        /// </summary>
+        [SDKProperty("common_name", IsQuery = true)]
+        [JsonProperty("common_name", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> CommonName { get; set; }
+
+        /// <summary>
+        /// 证书的指纹。  支持多值查询，查询条件格式：fingerprint&#x3D;xxx&amp;fingerprint&#x3D;xxx。
+        /// </summary>
+        [SDKProperty("fingerprint", IsQuery = true)]
+        [JsonProperty("fingerprint", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> Fingerprint { get; set; }
+
 
 
         /// <summary>
@@ -97,6 +111,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  adminStateUp: ").Append(AdminStateUp).Append("\n");
             sb.Append("  domain: ").Append(Domain).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
+            sb.Append("  commonName: ").Append(CommonName).Append("\n");
+            sb.Append("  fingerprint: ").Append(Fingerprint).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -167,6 +183,18 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.Type != null &&
                     input.Type != null &&
                     this.Type.SequenceEqual(input.Type)
+                ) && 
+                (
+                    this.CommonName == input.CommonName ||
+                    this.CommonName != null &&
+                    input.CommonName != null &&
+                    this.CommonName.SequenceEqual(input.CommonName)
+                ) && 
+                (
+                    this.Fingerprint == input.Fingerprint ||
+                    this.Fingerprint != null &&
+                    input.Fingerprint != null &&
+                    this.Fingerprint.SequenceEqual(input.Fingerprint)
                 );
         }
 
@@ -196,6 +224,10 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     hashCode = hashCode * 59 + this.Domain.GetHashCode();
                 if (this.Type != null)
                     hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.CommonName != null)
+                    hashCode = hashCode * 59 + this.CommonName.GetHashCode();
+                if (this.Fingerprint != null)
+                    hashCode = hashCode * 59 + this.Fingerprint.GetHashCode();
                 return hashCode;
             }
         }

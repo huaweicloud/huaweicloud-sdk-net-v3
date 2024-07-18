@@ -17,19 +17,19 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// IP地址组的名称
+        /// 参数解释：IP地址组的名称
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// IP地址组中包含的IP列表。
+        /// 参数解释：IP地址组中包含的IP列表。
         /// </summary>
         [JsonProperty("ip_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<UpadateIpGroupIpOption> IpList { get; set; }
 
         /// <summary>
-        /// IP地址组的描述信息
+        /// 参数解释：IP地址组的描述信息
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }

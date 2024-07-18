@@ -59,7 +59,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public int? Position { get; set; }
 
         /// <summary>
-        /// 转发策略的优先级。数字越小表示优先级越高，同一监听器下不允许重复。  当监听器的高级转发策略功能（enhance_l7policy_enable）开启后才会生效，未开启传入该字段会报错。  当action为REDIRECT_TO_LISTENER时，仅支持指定为0，优先级最高。 当关联的listener没有开启enhance_l7policy_enable，按原有policy的排序逻辑，自动排序。 各域名之间优先级独立，相同域名下，按path的compare_type排序，精确&gt;前缀&gt;正则， 匹配类型相同时，path的长度越长优先级越高。若policy下只有域名rule，没有路径rule，默认path为前缀匹配/。  当关联的listener开启了enhance_l7policy_enable，且不传该字段，则新创建的转发策略的优先级的值为： 同一监听器下已有转发策略的优先级的最大值+1。 因此，若当前已有转发策略的优先级的最大值是10000，新创建会因超出取值范围10000而失败。 此时可通过传入指定priority，或调整原有policy的优先级来避免错误。若监听器下没有转发策略，则新建的转发策略的优先级为1。  [共享型负载均衡器下的转发策略不支持该字段。 ](tag:hws,hws_hk,ocb,ctc,g42,tm,cmcc,hk_g42,hws_ocb,fcs,dt,hk_tm)  [不支持该字段，请勿使用。](tag:hcso_dt)  [荷兰region不支持该字段，请勿使用。](tag:dt)
+        /// 转发策略的优先级。数字越小表示优先级越高，同一监听器下不允许重复。  当监听器的高级转发策略功能（enhance_l7policy_enable）开启后才会生效，未开启传入该字段会报错。  当action为REDIRECT_TO_LISTENER时，仅支持指定为0，优先级最高。 当关联的listener没有开启enhance_l7policy_enable，按原有policy的排序逻辑，自动排序。 各域名之间优先级独立，相同域名下，按path的compare_type排序，精确&gt;前缀&gt;正则， 匹配类型相同时，path的长度越长优先级越高。若policy下只有域名rule，没有路径rule，默认path为前缀匹配/。  当关联的listener开启了enhance_l7policy_enable，且不传该字段，则新创建的转发策略的优先级的值为： 同一监听器下已有转发策略的优先级的最大值+1。 因此，若当前已有转发策略的优先级的最大值是10000，新创建会因超出取值范围10000而失败。 此时可通过传入指定priority，或调整原有policy的优先级来避免错误。若监听器下没有转发策略，则新建的转发策略的优先级为1。  [共享型负载均衡器下的转发策略不支持该字段。 ](tag:hws,hws_hk,ocb,ctc,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,fcs,dt,hk_tm)  [不支持该字段，请勿使用。](tag:hcso_dt)  [荷兰region不支持该字段，请勿使用。](tag:dt,dt_test)
         /// </summary>
         [JsonProperty("priority", NullValueHandling = NullValueHandling.Ignore)]
         public int? Priority { get; set; }
@@ -71,7 +71,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string ProjectId { get; set; }
 
         /// <summary>
-        /// 转发策略的配置状态。  取值范围： - ACTIVE: 默认值，表示正常。 [- ERROR: 表示当前策略与同一监听器下的其他策略存在相同的规则配置。 ](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,fcs)
+        /// 转发策略的配置状态。  取值范围： - ACTIVE: 默认值，表示正常。 [- ERROR: 表示当前策略与同一监听器下的其他策略存在相同的规则配置。 ](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,fcs)
         /// </summary>
         [JsonProperty("provisioning_status", NullValueHandling = NullValueHandling.Ignore)]
         public string ProvisioningStatus { get; set; }
@@ -107,6 +107,18 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public RedirectUrlConfig RedirectUrlConfig { get; set; }
 
         /// <summary>
+        /// 转发到多个主机组列表。一个policy最多配置5个pool。
+        /// </summary>
+        [JsonProperty("redirect_pools_config", NullValueHandling = NullValueHandling.Ignore)]
+        public List<RedirectPoolsConfig> RedirectPoolsConfig { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("redirect_pools_sticky_session_config", NullValueHandling = NullValueHandling.Ignore)]
+        public RedirectPoolsStickySessionConfig RedirectPoolsStickySessionConfig { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("redirect_pools_extend_config", NullValueHandling = NullValueHandling.Ignore)]
@@ -119,13 +131,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public FixtedResponseConfig FixedResponseConfig { get; set; }
 
         /// <summary>
-        /// 创建时间。格式：yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;，UTC时区。  [注意：独享型实例的历史数据以及共享型实例下的资源，不返回该字段。 ](tag:hws,hws_hk,ocb,ctc,g42,tm,cmcc,hk_g42,hws_ocb,fcs,dt,hk_tm)
+        /// 创建时间。格式：yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;，UTC时区。  [注意：独享型实例的历史数据以及共享型实例下的资源，不返回该字段。 ](tag:hws,hws_hk,ocb,ctc,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,fcs,dt,hk_tm)
         /// </summary>
         [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
         public string CreatedAt { get; set; }
 
         /// <summary>
-        /// 更新时间。格式：yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;，UTC时区。  [注意：独享型实例的历史数据以及共享型实例下的资源，不返回该字段。 ](tag:hws,hws_hk,ocb,ctc,g42,tm,cmcc,hk_g42,hws_ocb,fcs,dt,hk_tm)
+        /// 更新时间。格式：yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;，UTC时区。  [注意：独享型实例的历史数据以及共享型实例下的资源，不返回该字段。 ](tag:hws,hws_hk,ocb,ctc,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,fcs,dt,hk_tm)
         /// </summary>
         [JsonProperty("updated_at", NullValueHandling = NullValueHandling.Ignore)]
         public string UpdatedAt { get; set; }
@@ -154,6 +166,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  redirectUrl: ").Append(RedirectUrl).Append("\n");
             sb.Append("  rules: ").Append(Rules).Append("\n");
             sb.Append("  redirectUrlConfig: ").Append(RedirectUrlConfig).Append("\n");
+            sb.Append("  redirectPoolsConfig: ").Append(RedirectPoolsConfig).Append("\n");
+            sb.Append("  redirectPoolsStickySessionConfig: ").Append(RedirectPoolsStickySessionConfig).Append("\n");
             sb.Append("  redirectPoolsExtendConfig: ").Append(RedirectPoolsExtendConfig).Append("\n");
             sb.Append("  fixedResponseConfig: ").Append(FixedResponseConfig).Append("\n");
             sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
@@ -256,6 +270,17 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.RedirectUrlConfig.Equals(input.RedirectUrlConfig))
                 ) && 
                 (
+                    this.RedirectPoolsConfig == input.RedirectPoolsConfig ||
+                    this.RedirectPoolsConfig != null &&
+                    input.RedirectPoolsConfig != null &&
+                    this.RedirectPoolsConfig.SequenceEqual(input.RedirectPoolsConfig)
+                ) && 
+                (
+                    this.RedirectPoolsStickySessionConfig == input.RedirectPoolsStickySessionConfig ||
+                    (this.RedirectPoolsStickySessionConfig != null &&
+                    this.RedirectPoolsStickySessionConfig.Equals(input.RedirectPoolsStickySessionConfig))
+                ) && 
+                (
                     this.RedirectPoolsExtendConfig == input.RedirectPoolsExtendConfig ||
                     (this.RedirectPoolsExtendConfig != null &&
                     this.RedirectPoolsExtendConfig.Equals(input.RedirectPoolsExtendConfig))
@@ -315,6 +340,10 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     hashCode = hashCode * 59 + this.Rules.GetHashCode();
                 if (this.RedirectUrlConfig != null)
                     hashCode = hashCode * 59 + this.RedirectUrlConfig.GetHashCode();
+                if (this.RedirectPoolsConfig != null)
+                    hashCode = hashCode * 59 + this.RedirectPoolsConfig.GetHashCode();
+                if (this.RedirectPoolsStickySessionConfig != null)
+                    hashCode = hashCode * 59 + this.RedirectPoolsStickySessionConfig.GetHashCode();
                 if (this.RedirectPoolsExtendConfig != null)
                     hashCode = hashCode * 59 + this.RedirectPoolsExtendConfig.GetHashCode();
                 if (this.FixedResponseConfig != null)

@@ -137,21 +137,51 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         }
 
         /// <summary>
-        /// node规格类型，测试连接之后修改调用时必填。
+        /// node规格类型，测试连接之后修改调用时必填。取值： - micro：极小规格。 - small：小规格。 - medium：中规格。 - high：大规格。 - xlarge：超大规格。 - 2xlarge：极大规格。
         /// </summary>
-        /// <value>node规格类型，测试连接之后修改调用时必填。</value>
+        /// <value>node规格类型，测试连接之后修改调用时必填。取值： - micro：极小规格。 - small：小规格。 - medium：中规格。 - high：大规格。 - xlarge：超大规格。 - 2xlarge：极大规格。</value>
         [JsonConverter(typeof(EnumClassConverter<NodeTypeEnum>))]
         public class NodeTypeEnum
         {
+            /// <summary>
+            /// Enum MICRO for value: micro
+            /// </summary>
+            public static readonly NodeTypeEnum MICRO = new NodeTypeEnum("micro");
+
+            /// <summary>
+            /// Enum SMALL for value: small
+            /// </summary>
+            public static readonly NodeTypeEnum SMALL = new NodeTypeEnum("small");
+
+            /// <summary>
+            /// Enum MEDIUM for value: medium
+            /// </summary>
+            public static readonly NodeTypeEnum MEDIUM = new NodeTypeEnum("medium");
+
             /// <summary>
             /// Enum HIGH for value: high
             /// </summary>
             public static readonly NodeTypeEnum HIGH = new NodeTypeEnum("high");
 
+            /// <summary>
+            /// Enum XLARGE for value: xlarge
+            /// </summary>
+            public static readonly NodeTypeEnum XLARGE = new NodeTypeEnum("xlarge");
+
+            /// <summary>
+            /// Enum _2XLARGE for value: 2xlarge
+            /// </summary>
+            public static readonly NodeTypeEnum _2XLARGE = new NodeTypeEnum("2xlarge");
+
             private static readonly Dictionary<string, NodeTypeEnum> StaticFields =
             new Dictionary<string, NodeTypeEnum>()
             {
+                { "micro", MICRO },
+                { "small", SMALL },
+                { "medium", MEDIUM },
                 { "high", HIGH },
+                { "xlarge", XLARGE },
+                { "2xlarge", _2XLARGE },
             };
 
             private string _value;
@@ -802,7 +832,7 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         public Endpoint TargetEndpoint { get; set; }
 
         /// <summary>
-        /// node规格类型，测试连接之后修改调用时必填。
+        /// node规格类型，测试连接之后修改调用时必填。取值： - micro：极小规格。 - small：小规格。 - medium：中规格。 - high：大规格。 - xlarge：超大规格。 - 2xlarge：极大规格。
         /// </summary>
         [JsonProperty("node_type", NullValueHandling = NullValueHandling.Ignore)]
         public NodeTypeEnum NodeType { get; set; }

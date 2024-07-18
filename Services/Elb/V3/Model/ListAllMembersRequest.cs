@@ -24,7 +24,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string Marker { get; set; }
 
         /// <summary>
-        /// 每页返回的个数。
+        /// 参数解释：每页返回的个数。  取值范围：0-2000  默认取值：2000
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]

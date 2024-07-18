@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// IP地址，可以是具体的IP地址或者IP地址段。
+        /// 参数解释：IP地址，可以是具体的IP地址或者IP地址段。
         /// </summary>
         [JsonProperty("ip", NullValueHandling = NullValueHandling.Ignore)]
         public string Ip { get; set; }

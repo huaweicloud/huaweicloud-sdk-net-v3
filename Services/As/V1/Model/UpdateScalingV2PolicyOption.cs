@@ -152,12 +152,18 @@ namespace HuaweiCloud.SDK.As.V1.Model
             /// </summary>
             public static readonly ScalingPolicyTypeEnum RECURRENCE = new ScalingPolicyTypeEnum("RECURRENCE");
 
+            /// <summary>
+            /// Enum INTERVAL_ALARM for value: INTERVAL_ALARM
+            /// </summary>
+            public static readonly ScalingPolicyTypeEnum INTERVAL_ALARM = new ScalingPolicyTypeEnum("INTERVAL_ALARM");
+
             private static readonly Dictionary<string, ScalingPolicyTypeEnum> StaticFields =
             new Dictionary<string, ScalingPolicyTypeEnum>()
             {
                 { "ALARM", ALARM },
                 { "SCHEDULED", SCHEDULED },
                 { "RECURRENCE", RECURRENCE },
+                { "INTERVAL_ALARM", INTERVAL_ALARM },
             };
 
             private string _value;

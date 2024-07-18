@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// IP列表。
+        /// 参数解释：IP列表。
         /// </summary>
         [JsonProperty("ip_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<IpGroupIp> IpList { get; set; }

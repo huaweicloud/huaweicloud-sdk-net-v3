@@ -23,7 +23,19 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         public float? Storage { get; set; }
 
         /// <summary>
-        /// 转码时长。  单位：秒。
+        /// 低频存储空间。  单位：GB。
+        /// </summary>
+        [JsonProperty("storage_warm", NullValueHandling = NullValueHandling.Ignore)]
+        public float? StorageWarm { get; set; }
+
+        /// <summary>
+        /// 归档存储空间。  单位：GB。
+        /// </summary>
+        [JsonProperty("storage_cold", NullValueHandling = NullValueHandling.Ignore)]
+        public float? StorageCold { get; set; }
+
+        /// <summary>
+        /// 转码时长。  单位：分钟。
         /// </summary>
         [JsonProperty("transcode", NullValueHandling = NullValueHandling.Ignore)]
         public long? Transcode { get; set; }
@@ -38,6 +50,8 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
             var sb = new StringBuilder();
             sb.Append("class VodSampleData {\n");
             sb.Append("  storage: ").Append(Storage).Append("\n");
+            sb.Append("  storageWarm: ").Append(StorageWarm).Append("\n");
+            sb.Append("  storageCold: ").Append(StorageCold).Append("\n");
             sb.Append("  transcode: ").Append(Transcode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -66,6 +80,16 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
                     this.Storage.Equals(input.Storage))
                 ) && 
                 (
+                    this.StorageWarm == input.StorageWarm ||
+                    (this.StorageWarm != null &&
+                    this.StorageWarm.Equals(input.StorageWarm))
+                ) && 
+                (
+                    this.StorageCold == input.StorageCold ||
+                    (this.StorageCold != null &&
+                    this.StorageCold.Equals(input.StorageCold))
+                ) && 
+                (
                     this.Transcode == input.Transcode ||
                     (this.Transcode != null &&
                     this.Transcode.Equals(input.Transcode))
@@ -82,6 +106,10 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
                 int hashCode = 41;
                 if (this.Storage != null)
                     hashCode = hashCode * 59 + this.Storage.GetHashCode();
+                if (this.StorageWarm != null)
+                    hashCode = hashCode * 59 + this.StorageWarm.GetHashCode();
+                if (this.StorageCold != null)
+                    hashCode = hashCode * 59 + this.StorageCold.GetHashCode();
                 if (this.Transcode != null)
                     hashCode = hashCode * 59 + this.Transcode.GetHashCode();
                 return hashCode;

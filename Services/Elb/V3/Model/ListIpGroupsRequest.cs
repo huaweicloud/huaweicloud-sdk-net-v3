@@ -17,53 +17,60 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// 上一页最后一条记录的ID。  使用说明： - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
+        /// 参数解释：上一页最后一条记录的ID。  使用说明： - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
         /// </summary>
         [SDKProperty("marker", IsQuery = true)]
         [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
         public string Marker { get; set; }
 
         /// <summary>
-        /// 每页返回的个数。
+        /// 参数解释：每页返回的个数。  取值范围：0-2000  默认取值：2000
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 是否反向查询。  取值： - true：查询上一页。 - false：查询下一页，默认。  使用说明： - 必须与limit一起使用。 - 当page_reverse&#x3D;true时，若要查询上一页，marker取值为当前页返回值的previous_marker。
+        /// 参数解释：是否反向查询。  取值： - true：查询上一页。 - false：查询下一页，默认。  使用说明： - 必须与limit一起使用。 - 当page_reverse&#x3D;true时，若要查询上一页，marker取值为当前页返回值的previous_marker。
         /// </summary>
         [SDKProperty("page_reverse", IsQuery = true)]
         [JsonProperty("page_reverse", NullValueHandling = NullValueHandling.Ignore)]
         public bool? PageReverse { get; set; }
 
         /// <summary>
-        /// IP地址组的ID。
+        /// 参数解释：IP地址组的ID。
         /// </summary>
         [SDKProperty("id", IsQuery = true)]
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Id { get; set; }
 
         /// <summary>
-        /// IP地址组的名称。
+        /// 参数解释：IP地址组的名称。
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Name { get; set; }
 
         /// <summary>
-        /// IP地址组的描述信息。
+        /// 参数解释：IP地址组的描述信息。
         /// </summary>
         [SDKProperty("description", IsQuery = true)]
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Description { get; set; }
 
         /// <summary>
-        /// IP地址，多个用逗号分隔。
+        /// 参数解释：IP地址，多个用逗号分隔。
         /// </summary>
         [SDKProperty("ip_list", IsQuery = true)]
         [JsonProperty("ip_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> IpList { get; set; }
+
+        /// <summary>
+        /// 参数解释：企业项目ID。
+        /// </summary>
+        [SDKProperty("enterprise_project_id", IsQuery = true)]
+        [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> EnterpriseProjectId { get; set; }
 
 
 
@@ -81,6 +88,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  ipList: ").Append(IpList).Append("\n");
+            sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -140,6 +148,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.IpList != null &&
                     input.IpList != null &&
                     this.IpList.SequenceEqual(input.IpList)
+                ) && 
+                (
+                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
+                    this.EnterpriseProjectId != null &&
+                    input.EnterpriseProjectId != null &&
+                    this.EnterpriseProjectId.SequenceEqual(input.EnterpriseProjectId)
                 );
         }
 
@@ -165,6 +179,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.IpList != null)
                     hashCode = hashCode * 59 + this.IpList.GetHashCode();
+                if (this.EnterpriseProjectId != null)
+                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 return hashCode;
             }
         }

@@ -17,49 +17,49 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// 上一页最后一条记录的ID。  使用说明： - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
+        /// 参数解释：上一页最后一条记录的ID。  使用说明： - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
         /// </summary>
         [SDKProperty("marker", IsQuery = true)]
         [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
         public string Marker { get; set; }
 
         /// <summary>
-        /// 每页返回的个数。
+        /// 参数解释：每页返回的个数。  取值范围：0-2000  默认取值：2000
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 是否反向查询。  取值： - true：查询上一页。 - false：查询下一页，默认。  使用说明： - 必须与limit一起使用。 - 当page_reverse&#x3D;true时，若要查询上一页，marker取值为当前页返回值的previous_marker。
+        /// 参数解释：是否反向查询。  取值： - true：查询上一页。 - false：查询下一页，默认。  使用说明： - 必须与limit一起使用。 - 当page_reverse&#x3D;true时，若要查询上一页，marker取值为当前页返回值的previous_marker。
         /// </summary>
         [SDKProperty("page_reverse", IsQuery = true)]
         [JsonProperty("page_reverse", NullValueHandling = NullValueHandling.Ignore)]
         public bool? PageReverse { get; set; }
 
         /// <summary>
-        /// 规格ID。  支持多值查询，查询条件格式：*id&#x3D;xxx&amp;id&#x3D;xxx*。
+        /// 参数解释：规格ID。  支持多值查询，查询条件格式：*id&#x3D;xxx&amp;id&#x3D;xxx*。
         /// </summary>
         [SDKProperty("id", IsQuery = true)]
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Id { get; set; }
 
         /// <summary>
-        /// 规格名称。   支持多值查询，查询条件格式：*name&#x3D;xxx&amp;name&#x3D;xxx*。
+        /// 参数解释：规格名称。   支持多值查询，查询条件格式：*name&#x3D;xxx&amp;name&#x3D;xxx*。
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Name { get; set; }
 
         /// <summary>
-        /// 规格类别。  取值： - L4和L7 表示四层网络型和七层应用型flavor。 - L4_elastic和L7_elastic 表示弹性扩缩容实例的下限规格。 - L4_elastic_max和L7_elastic_max 表示弹性扩缩容实例的上限规格。  支持多值查询，查询条件格式：*type&#x3D;xxx&amp;type&#x3D;xxx*。
+        /// 参数解释：规格类别。  取值： - L4和L7 表示四层网络型和七层应用型flavor。 [- gateway 表示网关型LB的flavor，目前只支持弹性计费类型。当前仅支持欧洲局点。](tag:hws_eu) - L4_elastic和L7_elastic 表示弹性扩缩容实例的下限规格。 - L4_elastic_max、L7_elastic_max[和gateway_elastic_max](tag:hws_eu) 表示弹性扩缩容实例的上限规格。  支持多值查询，查询条件格式：*type&#x3D;xxx&amp;type&#x3D;xxx*。
         /// </summary>
         [SDKProperty("type", IsQuery = true)]
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Type { get; set; }
 
         /// <summary>
-        /// 是否查询公共规格。true表示公共规格，所有租户可见。false表示私有规格，为当前租户所有。
+        /// 参数解释：是否查询公共规格。  取值范围：true表示公共规格，所有租户可见。false表示私有规格，为当前租户所有。
         /// </summary>
         [SDKProperty("shared", IsQuery = true)]
         [JsonProperty("shared", NullValueHandling = NullValueHandling.Ignore)]

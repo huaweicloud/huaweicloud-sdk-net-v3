@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     public class UpdateListenerIpGroupOption 
     {
         /// <summary>
-        /// 访问控制组的类型。 white:白名单，只允许指定ip访问； black:黑名单，不允许指定ip访问； 
+        /// 访问控制组的类型。 white:白名单，只允许指定ip访问； black:黑名单，不允许指定ip访问；
         /// </summary>
-        /// <value>访问控制组的类型。 white:白名单，只允许指定ip访问； black:黑名单，不允许指定ip访问； </value>
+        /// <value>访问控制组的类型。 white:白名单，只允许指定ip访问； black:黑名单，不允许指定ip访问；</value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -132,7 +132,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
 
 
         /// <summary>
-        /// 监听器关联的访问控制组的id。 创建时必选，更新时非必选。 指定的ipgroup必须已存在，不能指定为null，否则与enable_ipgroup冲突。 
+        /// 监听器关联的访问控制组的id。 创建时必选，更新时非必选。 指定的ipgroup必须已存在，不能指定为null，否则与enable_ipgroup冲突。
         /// </summary>
         [JsonProperty("ipgroup_id", NullValueHandling = NullValueHandling.Ignore)]
         public string IpgroupId { get; set; }
@@ -144,7 +144,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public bool? EnableIpgroup { get; set; }
 
         /// <summary>
-        /// 访问控制组的类型。 white:白名单，只允许指定ip访问； black:黑名单，不允许指定ip访问； 
+        /// 访问控制组的类型。 white:白名单，只允许指定ip访问； black:黑名单，不允许指定ip访问；
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }

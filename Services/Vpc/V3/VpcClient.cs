@@ -71,6 +71,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         ///
         /// 为指定的端口批量添加标签。
         /// 此接口为幂等接口：创建时如果请求体中存在重复key则报错。创建时，不允许设置重复key数据，如果数据库已存在该key，就覆盖value的值。
+        /// 该接口在华南-深圳上线。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -174,6 +175,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         /// 查询端口资源实例数量
         ///
         /// 使用标签过滤查询端口实例数量。
+        /// 该接口在华南-深圳上线。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -199,6 +201,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         ///
         /// 给指定端口资源实例增加标签信息
         /// 此接口为幂等接口：创建时，如果创建的标签已经存在（key相同），则覆盖。
+        /// 该接口在华南-深圳上线。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -369,7 +372,8 @@ namespace HuaweiCloud.SDK.Vpc.V3
         /// 删除端口资源标签
         ///
         /// 删除指定端口的标签信息
-        /// 该接口为幂等接口：删除的key不存在报404，key不能为空或者空字符串
+        /// 该接口为幂等接口：删除的key不存在报404，key不能为空或者空字符串。
+        /// 该接口在华南-深圳上线。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -553,7 +557,8 @@ namespace HuaweiCloud.SDK.Vpc.V3
         /// <summary>
         /// 查询端口项目标签
         ///
-        /// 查询租户在指定Project中实例类型的所有资源标签集合
+        /// 查询租户在指定Project中实例类型的所有资源标签集合。
+        /// 该接口在华南-深圳上线。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -578,6 +583,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         /// 查询端口资源实例列表
         ///
         /// 使用标签过滤查询端口。
+        /// 该接口在华南-深圳上线。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -821,7 +827,8 @@ namespace HuaweiCloud.SDK.Vpc.V3
         /// <summary>
         /// 查询端口资源标签
         ///
-        /// 查询指定端口的标签信息
+        /// 查询指定端口的标签信息。
+        /// 该接口在华南-深圳上线。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>

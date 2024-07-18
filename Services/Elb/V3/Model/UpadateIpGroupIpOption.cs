@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// IP地址。支持IPv4、IPv6。若传入IP地址不存在，则新增；否则更新已有IP地址的描述信息。  [不支持IPv6，请勿设置为IPv6地址。](tag:dt,dt_test)
+        /// 参数解释：IP地址。支持IPv4、IPv6。若传入IP地址不存在，则新增；否则更新已有IP地址的描述信息。  [不支持IPv6，请勿设置为IPv6地址。](tag:dt,dt_test)
         /// </summary>
         [JsonProperty("ip", NullValueHandling = NullValueHandling.Ignore)]
         public string Ip { get; set; }
 
         /// <summary>
-        /// 备注信息。
+        /// 参数解释：备注信息。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }

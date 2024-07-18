@@ -46,6 +46,18 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         [JsonProperty("ram", NullValueHandling = NullValueHandling.Ignore)]
         public string Ram { get; set; }
 
+        /// <summary>
+        /// 该裸金属服务器规格对应的GPU设备。
+        /// </summary>
+        [JsonProperty("gpus", NullValueHandling = NullValueHandling.Ignore)]
+        public List<GpuInfo> Gpus { get; set; }
+
+        /// <summary>
+        /// 该裸金属服务器规格对应的ASIC设备。
+        /// </summary>
+        [JsonProperty("asic_accelerators", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ASICAcceleratorInfo> AsicAccelerators { get; set; }
+
 
 
         /// <summary>
@@ -60,6 +72,8 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
             sb.Append("  disk: ").Append(Disk).Append("\n");
             sb.Append("  vcpus: ").Append(Vcpus).Append("\n");
             sb.Append("  ram: ").Append(Ram).Append("\n");
+            sb.Append("  gpus: ").Append(Gpus).Append("\n");
+            sb.Append("  asicAccelerators: ").Append(AsicAccelerators).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -105,6 +119,18 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
                     this.Ram == input.Ram ||
                     (this.Ram != null &&
                     this.Ram.Equals(input.Ram))
+                ) && 
+                (
+                    this.Gpus == input.Gpus ||
+                    this.Gpus != null &&
+                    input.Gpus != null &&
+                    this.Gpus.SequenceEqual(input.Gpus)
+                ) && 
+                (
+                    this.AsicAccelerators == input.AsicAccelerators ||
+                    this.AsicAccelerators != null &&
+                    input.AsicAccelerators != null &&
+                    this.AsicAccelerators.SequenceEqual(input.AsicAccelerators)
                 );
         }
 
@@ -126,6 +152,10 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
                     hashCode = hashCode * 59 + this.Vcpus.GetHashCode();
                 if (this.Ram != null)
                     hashCode = hashCode * 59 + this.Ram.GetHashCode();
+                if (this.Gpus != null)
+                    hashCode = hashCode * 59 + this.Gpus.GetHashCode();
+                if (this.AsicAccelerators != null)
+                    hashCode = hashCode * 59 + this.AsicAccelerators.GetHashCode();
                 return hashCode;
             }
         }

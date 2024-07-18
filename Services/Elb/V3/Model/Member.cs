@@ -35,19 +35,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string ProjectId { get; set; }
 
         /// <summary>
-        /// 所在后端服务器组ID。  不支持该字段，请勿使用。
-        /// </summary>
-        [JsonProperty("pool_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string PoolId { get; set; }
-
-        /// <summary>
         /// 后端云服务器的管理状态。  取值：true、false。  虽然创建、更新请求支持该字段，但实际取值决定于后端云服务器对应的弹性云服务器是否存在。若存在，该值为true，否则，该值为false。
         /// </summary>
         [JsonProperty("admin_state_up", NullValueHandling = NullValueHandling.Ignore)]
         public bool? AdminStateUp { get; set; }
 
         /// <summary>
-        /// 后端云服务器所在子网的IPv4子网ID或IPv6子网ID。  若所属的LB的跨VPC后端转发特性已开启，则该字段可以不传，表示添加跨VPC的后端服务器。 此时address必须为IPv4地址，所在的pool的协议必须为TCP/HTTP/HTTPS。  使用说明：该子网和关联的负载均衡器的子网必须在同一VPC下。  [不支持IPv6，请勿设置为IPv6子网ID。](tag:dt,dt_test)
+        /// 后端云服务器所在的子网，可以是IPv4或IPv6子网。若是IPv4子网，使用对应子网的子网ID（neutron_subnet_id）；若是IPv6子网，使用对应子网的网络ID（neutron_network_id）。  ipv4子网的子网ID可以通过GET https://{VPC_Endpoint}/v1/{project_id}/subnets 响应参数中的neutron_subnet_id得到  ipv6子网的网络ID可以通过GET https://{VPC_Endpoint}/v1/{project_id}/subnets 响应参数中的neutron_network_id得到  使用说明： - 该子网和关联的负载均衡器的子网必须在同一VPC下。 - 若所属LB的跨VPC后端转发特性已开启，则该字段可以不传，表示添加跨VPC的后端服务器。 此时address必须为IPv4地址，所在的pool的协议必须为TCP/HTTP/HTTPS。  [不支持IPv6，请勿设置为IPv6子网ID。](tag:dt,dt_test)
         /// </summary>
         [JsonProperty("subnet_cidr_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SubnetCidrId { get; set; }
@@ -65,7 +59,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public int? Weight { get; set; }
 
         /// <summary>
-        /// 后端服务器对应的IP地址。  使用说明： - 若subnet_cidr_id为空，表示添加跨VPC后端，此时address必须为IPv4地址。 - 若subnet_cidr_id不为空，表示是一个关联到ECS的后端服务器。该IP地址可以是IPv4或IPv6。 但必须在subnet_cidr_id对应的子网网段中。且只能指定为关联ECS的主网卡内网IP。  [不支持IPv6，请勿设置为IPv6地址。](tag:dt,dt_test)
+        /// 后端服务器对应的IP地址。  使用说明： - 若subnet_cidr_id为空，表示添加跨VPC后端，此时address必须为IPv4地址。 - 若subnet_cidr_id不为空，表示是一个关联到ECS的后端服务器。该IP地址可以是私网IPv4或IPv6。 但必须在subnet_cidr_id对应的子网网段中。且只能指定为关联ECS的主网卡内网IP。  [不支持IPv6，请勿设置为IPv6地址。](tag:dt,dt_test)
         /// </summary>
         [JsonProperty("address", NullValueHandling = NullValueHandling.Ignore)]
         public string Address { get; set; }
@@ -75,18 +69,6 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         [JsonProperty("ip_version", NullValueHandling = NullValueHandling.Ignore)]
         public string IpVersion { get; set; }
-
-        /// <summary>
-        /// 设备所有者。  取值： - 空，表示后端服务器未关联到ECS。 - compute:{az_name}，表示关联到ECS，其中{az_name}表示ECS所在可用区名。  不支持该字段，请勿使用。
-        /// </summary>
-        [JsonProperty("device_owner", NullValueHandling = NullValueHandling.Ignore)]
-        public string DeviceOwner { get; set; }
-
-        /// <summary>
-        /// 关联的ECS ID，为空表示后端服务器未关联到ECS。  不支持该字段，请勿使用。
-        /// </summary>
-        [JsonProperty("device_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string DeviceId { get; set; }
 
         /// <summary>
         /// 后端云服务器的健康状态。当status非空时，以status字段中监听器粒度的健康检查状态优先。  取值： - ONLINE：后端云服务器正常。 - NO_MONITOR：后端云服务器所在的服务器组没有健康检查器。 - OFFLINE：后端云服务器关联的ECS服务器不存在或已关机。
@@ -101,25 +83,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<MemberStatus> Status { get; set; }
 
         /// <summary>
-        /// 所属负载均衡器ID。  不支持该字段，请勿使用。
-        /// </summary>
-        [JsonProperty("loadbalancer_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string LoadbalancerId { get; set; }
-
-        /// <summary>
-        /// 后端云服务器关联的负载均衡器ID列表。  不支持该字段，请勿使用。
-        /// </summary>
-        [JsonProperty("loadbalancers", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ResourceID> Loadbalancers { get; set; }
-
-        /// <summary>
-        /// 创建时间。格式：yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;，UTC时区。  [注意：独享型实例的历史数据以及共享型实例下的资源，不返回该字段。 ](tag:hws,hws_hk,ocb,ctc,g42,tm,cmcc,hk_g42,hws_ocb,fcs,dt,hk_tm)
+        /// 创建时间。格式：yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;，UTC时区。  [注意：独享型实例的历史数据以及共享型实例下的资源，不返回该字段。 ](tag:hws,hws_hk,ocb,ctc,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,fcs,dt,hk_tm)
         /// </summary>
         [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
         public string CreatedAt { get; set; }
 
         /// <summary>
-        /// 更新时间。格式：yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;，UTC时区。  [注意：独享型实例的历史数据以及共享型实例下的资源，不返回该字段。 ](tag:hws,hws_hk,ocb,ctc,g42,tm,cmcc,hk_g42,hws_ocb,fcs,dt,hk_tm)
+        /// 更新时间。格式：yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;，UTC时区。  [注意：独享型实例的历史数据以及共享型实例下的资源，不返回该字段。 ](tag:hws,hws_hk,ocb,ctc,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,fcs,dt,hk_tm)
         /// </summary>
         [JsonProperty("updated_at", NullValueHandling = NullValueHandling.Ignore)]
         public string UpdatedAt { get; set; }
@@ -148,19 +118,14 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  projectId: ").Append(ProjectId).Append("\n");
-            sb.Append("  poolId: ").Append(PoolId).Append("\n");
             sb.Append("  adminStateUp: ").Append(AdminStateUp).Append("\n");
             sb.Append("  subnetCidrId: ").Append(SubnetCidrId).Append("\n");
             sb.Append("  protocolPort: ").Append(ProtocolPort).Append("\n");
             sb.Append("  weight: ").Append(Weight).Append("\n");
             sb.Append("  address: ").Append(Address).Append("\n");
             sb.Append("  ipVersion: ").Append(IpVersion).Append("\n");
-            sb.Append("  deviceOwner: ").Append(DeviceOwner).Append("\n");
-            sb.Append("  deviceId: ").Append(DeviceId).Append("\n");
             sb.Append("  operatingStatus: ").Append(OperatingStatus).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
-            sb.Append("  loadbalancerId: ").Append(LoadbalancerId).Append("\n");
-            sb.Append("  loadbalancers: ").Append(Loadbalancers).Append("\n");
             sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  updatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("  memberType: ").Append(MemberType).Append("\n");
@@ -202,11 +167,6 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.ProjectId.Equals(input.ProjectId))
                 ) && 
                 (
-                    this.PoolId == input.PoolId ||
-                    (this.PoolId != null &&
-                    this.PoolId.Equals(input.PoolId))
-                ) && 
-                (
                     this.AdminStateUp == input.AdminStateUp ||
                     (this.AdminStateUp != null &&
                     this.AdminStateUp.Equals(input.AdminStateUp))
@@ -237,16 +197,6 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.IpVersion.Equals(input.IpVersion))
                 ) && 
                 (
-                    this.DeviceOwner == input.DeviceOwner ||
-                    (this.DeviceOwner != null &&
-                    this.DeviceOwner.Equals(input.DeviceOwner))
-                ) && 
-                (
-                    this.DeviceId == input.DeviceId ||
-                    (this.DeviceId != null &&
-                    this.DeviceId.Equals(input.DeviceId))
-                ) && 
-                (
                     this.OperatingStatus == input.OperatingStatus ||
                     (this.OperatingStatus != null &&
                     this.OperatingStatus.Equals(input.OperatingStatus))
@@ -256,17 +206,6 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.Status != null &&
                     input.Status != null &&
                     this.Status.SequenceEqual(input.Status)
-                ) && 
-                (
-                    this.LoadbalancerId == input.LoadbalancerId ||
-                    (this.LoadbalancerId != null &&
-                    this.LoadbalancerId.Equals(input.LoadbalancerId))
-                ) && 
-                (
-                    this.Loadbalancers == input.Loadbalancers ||
-                    this.Loadbalancers != null &&
-                    input.Loadbalancers != null &&
-                    this.Loadbalancers.SequenceEqual(input.Loadbalancers)
                 ) && 
                 (
                     this.CreatedAt == input.CreatedAt ||
@@ -304,8 +243,6 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.ProjectId != null)
                     hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.PoolId != null)
-                    hashCode = hashCode * 59 + this.PoolId.GetHashCode();
                 if (this.AdminStateUp != null)
                     hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
                 if (this.SubnetCidrId != null)
@@ -318,18 +255,10 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     hashCode = hashCode * 59 + this.Address.GetHashCode();
                 if (this.IpVersion != null)
                     hashCode = hashCode * 59 + this.IpVersion.GetHashCode();
-                if (this.DeviceOwner != null)
-                    hashCode = hashCode * 59 + this.DeviceOwner.GetHashCode();
-                if (this.DeviceId != null)
-                    hashCode = hashCode * 59 + this.DeviceId.GetHashCode();
                 if (this.OperatingStatus != null)
                     hashCode = hashCode * 59 + this.OperatingStatus.GetHashCode();
                 if (this.Status != null)
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.LoadbalancerId != null)
-                    hashCode = hashCode * 59 + this.LoadbalancerId.GetHashCode();
-                if (this.Loadbalancers != null)
-                    hashCode = hashCode * 59 + this.Loadbalancers.GetHashCode();
                 if (this.CreatedAt != null)
                     hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
                 if (this.UpdatedAt != null)

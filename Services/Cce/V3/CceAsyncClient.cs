@@ -2301,5 +2301,1325 @@ namespace HuaweiCloud.SDK.Cce.V3
             return new AsyncInvoker<ShowVersionResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowVersionResponse>);
         }
         
+        /// <summary>
+        /// 批量添加指定集群的资源标签
+        ///
+        /// 该API用于批量添加指定集群的资源标签。
+        /// &gt; - 每个集群支持最多20个资源标签。
+        /// &gt; - 此接口为幂等接口：创建时，如果创建的标签已经存在（key/value均相同视为重复），默认处理成功；key相同，value不同时会覆盖原有标签。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchCreateAutopilotClusterTagsResponse> BatchCreateAutopilotClusterTagsAsync(BatchCreateAutopilotClusterTagsRequest batchCreateAutopilotClusterTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", batchCreateAutopilotClusterTagsRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/tags/create", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateAutopilotClusterTagsRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<BatchCreateAutopilotClusterTagsResponse>(response);
+        }
+
+        public AsyncInvoker<BatchCreateAutopilotClusterTagsResponse> BatchCreateAutopilotClusterTagsAsyncInvoker(BatchCreateAutopilotClusterTagsRequest batchCreateAutopilotClusterTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", batchCreateAutopilotClusterTagsRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/tags/create", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateAutopilotClusterTagsRequest);
+            return new AsyncInvoker<BatchCreateAutopilotClusterTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchCreateAutopilotClusterTagsResponse>);
+        }
+        
+        /// <summary>
+        /// 批量删除指定集群的资源标签
+        ///
+        /// 该API用于批量删除指定集群的资源标签。
+        /// &gt; - 此接口为幂等接口：删除时，如果删除的标签key不存在，默认处理成功。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchDeleteAutopilotClusterTagsResponse> BatchDeleteAutopilotClusterTagsAsync(BatchDeleteAutopilotClusterTagsRequest batchDeleteAutopilotClusterTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", batchDeleteAutopilotClusterTagsRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/tags/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteAutopilotClusterTagsRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<BatchDeleteAutopilotClusterTagsResponse>(response);
+        }
+
+        public AsyncInvoker<BatchDeleteAutopilotClusterTagsResponse> BatchDeleteAutopilotClusterTagsAsyncInvoker(BatchDeleteAutopilotClusterTagsRequest batchDeleteAutopilotClusterTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", batchDeleteAutopilotClusterTagsRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/tags/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteAutopilotClusterTagsRequest);
+            return new AsyncInvoker<BatchDeleteAutopilotClusterTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchDeleteAutopilotClusterTagsResponse>);
+        }
+        
+        /// <summary>
+        /// 创建AddonInstance
+        ///
+        /// 根据提供的插件模板，安装插件实例。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateAutopilotAddonInstanceResponse> CreateAutopilotAddonInstanceAsync(CreateAutopilotAddonInstanceRequest createAutopilotAddonInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/addons", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAutopilotAddonInstanceRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateAutopilotAddonInstanceResponse>(response);
+        }
+
+        public AsyncInvoker<CreateAutopilotAddonInstanceResponse> CreateAutopilotAddonInstanceAsyncInvoker(CreateAutopilotAddonInstanceRequest createAutopilotAddonInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/addons", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAutopilotAddonInstanceRequest);
+            return new AsyncInvoker<CreateAutopilotAddonInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateAutopilotAddonInstanceResponse>);
+        }
+        
+        /// <summary>
+        /// 创建集群
+        ///
+        /// 该API用于创建一个空集群（即只有控制节点Master，没有工作节点Node）。请在调用本接口完成集群创建之后，通过[创建节点](cce_02_0242.xml)添加节点。
+        /// 
+        /// 
+        /// &gt;   - 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+        /// &gt;   - 调用该接口创建集群时，默认不安装ICAgent，若需安装ICAgent，可在请求Body参数的annotations中加入\&quot;cluster.install.addons.external/install\&quot;:\&quot;[{\&quot;addonTemplateName\&quot;:\&quot;icagent\&quot;}]\&quot;的集群注解，将在创建集群时自动安装ICAgent。ICAgent是应用性能管理APM的采集代理，运行在应用所在的服务器上，用于实时采集探针所获取的数据，安装ICAgent是使用应用性能管理APM的前提。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateAutopilotClusterResponse> CreateAutopilotClusterAsync(CreateAutopilotClusterRequest createAutopilotClusterRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAutopilotClusterRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateAutopilotClusterResponse>(response);
+        }
+
+        public AsyncInvoker<CreateAutopilotClusterResponse> CreateAutopilotClusterAsyncInvoker(CreateAutopilotClusterRequest createAutopilotClusterRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAutopilotClusterRequest);
+            return new AsyncInvoker<CreateAutopilotClusterResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateAutopilotClusterResponse>);
+        }
+        
+        /// <summary>
+        /// 集群备份
+        ///
+        /// 集群备份
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateAutopilotClusterMasterSnapshotResponse> CreateAutopilotClusterMasterSnapshotAsync(CreateAutopilotClusterMasterSnapshotRequest createAutopilotClusterMasterSnapshotRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", createAutopilotClusterMasterSnapshotRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3.1/projects/{project_id}/clusters/{cluster_id}/operation/snapshot", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAutopilotClusterMasterSnapshotRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateAutopilotClusterMasterSnapshotResponse>(response);
+        }
+
+        public AsyncInvoker<CreateAutopilotClusterMasterSnapshotResponse> CreateAutopilotClusterMasterSnapshotAsyncInvoker(CreateAutopilotClusterMasterSnapshotRequest createAutopilotClusterMasterSnapshotRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", createAutopilotClusterMasterSnapshotRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3.1/projects/{project_id}/clusters/{cluster_id}/operation/snapshot", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAutopilotClusterMasterSnapshotRequest);
+            return new AsyncInvoker<CreateAutopilotClusterMasterSnapshotResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateAutopilotClusterMasterSnapshotResponse>);
+        }
+        
+        /// <summary>
+        /// 获取集群证书
+        ///
+        /// 该API用于获取指定集群的证书信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateAutopilotKubernetesClusterCertResponse> CreateAutopilotKubernetesClusterCertAsync(CreateAutopilotKubernetesClusterCertRequest createAutopilotKubernetesClusterCertRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", createAutopilotKubernetesClusterCertRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/clustercert", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAutopilotKubernetesClusterCertRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateAutopilotKubernetesClusterCertResponse>(response);
+        }
+
+        public AsyncInvoker<CreateAutopilotKubernetesClusterCertResponse> CreateAutopilotKubernetesClusterCertAsyncInvoker(CreateAutopilotKubernetesClusterCertRequest createAutopilotKubernetesClusterCertRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", createAutopilotKubernetesClusterCertRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/clustercert", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAutopilotKubernetesClusterCertRequest);
+            return new AsyncInvoker<CreateAutopilotKubernetesClusterCertResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateAutopilotKubernetesClusterCertResponse>);
+        }
+        
+        /// <summary>
+        /// 集群升级后确认
+        ///
+        /// 集群升级后确认，该接口建议配合Console使用，主要用于升级步骤完成后，客户确认集群状态和业务正常后做反馈。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateAutopilotPostCheckResponse> CreateAutopilotPostCheckAsync(CreateAutopilotPostCheckRequest createAutopilotPostCheckRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", createAutopilotPostCheckRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/operation/postcheck", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAutopilotPostCheckRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateAutopilotPostCheckResponse>(response);
+        }
+
+        public AsyncInvoker<CreateAutopilotPostCheckResponse> CreateAutopilotPostCheckAsyncInvoker(CreateAutopilotPostCheckRequest createAutopilotPostCheckRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", createAutopilotPostCheckRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/operation/postcheck", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAutopilotPostCheckRequest);
+            return new AsyncInvoker<CreateAutopilotPostCheckResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateAutopilotPostCheckResponse>);
+        }
+        
+        /// <summary>
+        /// 集群升级前检查
+        ///
+        /// 集群升级前检查
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateAutopilotPreCheckResponse> CreateAutopilotPreCheckAsync(CreateAutopilotPreCheckRequest createAutopilotPreCheckRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", createAutopilotPreCheckRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/operation/precheck", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAutopilotPreCheckRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateAutopilotPreCheckResponse>(response);
+        }
+
+        public AsyncInvoker<CreateAutopilotPreCheckResponse> CreateAutopilotPreCheckAsyncInvoker(CreateAutopilotPreCheckRequest createAutopilotPreCheckRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", createAutopilotPreCheckRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/operation/precheck", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAutopilotPreCheckRequest);
+            return new AsyncInvoker<CreateAutopilotPreCheckResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateAutopilotPreCheckResponse>);
+        }
+        
+        /// <summary>
+        /// 创建模板实例
+        ///
+        /// 创建模板实例
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateAutopilotReleaseResponse> CreateAutopilotReleaseAsync(CreateAutopilotReleaseRequest createAutopilotReleaseRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", createAutopilotReleaseRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/cam/v3/clusters/{cluster_id}/releases", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAutopilotReleaseRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateAutopilotReleaseResponse>(response);
+        }
+
+        public AsyncInvoker<CreateAutopilotReleaseResponse> CreateAutopilotReleaseAsyncInvoker(CreateAutopilotReleaseRequest createAutopilotReleaseRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", createAutopilotReleaseRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/cam/v3/clusters/{cluster_id}/releases", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAutopilotReleaseRequest);
+            return new AsyncInvoker<CreateAutopilotReleaseResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateAutopilotReleaseResponse>);
+        }
+        
+        /// <summary>
+        /// 开启集群升级流程引导任务
+        ///
+        /// 该API用于创建一个集群升级流程引导任务。请在调用本接口完成引导任务创建之后，通过集群升级前检查开始检查任务。
+        /// 升级流程任务用于控制集群升级任务的执行流程，执行流程为 升级前检查 &#x3D;&gt; 集群升级 &#x3D;&gt; 升级后检查。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateAutopilotUpgradeWorkFlowResponse> CreateAutopilotUpgradeWorkFlowAsync(CreateAutopilotUpgradeWorkFlowRequest createAutopilotUpgradeWorkFlowRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", createAutopilotUpgradeWorkFlowRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgradeworkflows", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAutopilotUpgradeWorkFlowRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateAutopilotUpgradeWorkFlowResponse>(response);
+        }
+
+        public AsyncInvoker<CreateAutopilotUpgradeWorkFlowResponse> CreateAutopilotUpgradeWorkFlowAsyncInvoker(CreateAutopilotUpgradeWorkFlowRequest createAutopilotUpgradeWorkFlowRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", createAutopilotUpgradeWorkFlowRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgradeworkflows", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAutopilotUpgradeWorkFlowRequest);
+            return new AsyncInvoker<CreateAutopilotUpgradeWorkFlowResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateAutopilotUpgradeWorkFlowResponse>);
+        }
+        
+        /// <summary>
+        /// 删除AddonInstance
+        ///
+        /// 删除插件实例的功能。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteAutopilotAddonInstanceResponse> DeleteAutopilotAddonInstanceAsync(DeleteAutopilotAddonInstanceRequest deleteAutopilotAddonInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("id", deleteAutopilotAddonInstanceRequest.Id.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/addons/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAutopilotAddonInstanceRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteAutopilotAddonInstanceResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteAutopilotAddonInstanceResponse> DeleteAutopilotAddonInstanceAsyncInvoker(DeleteAutopilotAddonInstanceRequest deleteAutopilotAddonInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("id", deleteAutopilotAddonInstanceRequest.Id.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/addons/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAutopilotAddonInstanceRequest);
+            return new AsyncInvoker<DeleteAutopilotAddonInstanceResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteAutopilotAddonInstanceResponse>);
+        }
+        
+        /// <summary>
+        /// 删除模板
+        ///
+        /// 删除模板
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteAutopilotChartResponse> DeleteAutopilotChartAsync(DeleteAutopilotChartRequest deleteAutopilotChartRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("chart_id", deleteAutopilotChartRequest.ChartId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v2/charts/{chart_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAutopilotChartRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteAutopilotChartResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteAutopilotChartResponse> DeleteAutopilotChartAsyncInvoker(DeleteAutopilotChartRequest deleteAutopilotChartRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("chart_id", deleteAutopilotChartRequest.ChartId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v2/charts/{chart_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAutopilotChartRequest);
+            return new AsyncInvoker<DeleteAutopilotChartResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteAutopilotChartResponse>);
+        }
+        
+        /// <summary>
+        /// 删除集群
+        ///
+        /// 该API用于删除一个指定的集群。
+        /// &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteAutopilotClusterResponse> DeleteAutopilotClusterAsync(DeleteAutopilotClusterRequest deleteAutopilotClusterRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", deleteAutopilotClusterRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAutopilotClusterRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteAutopilotClusterResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteAutopilotClusterResponse> DeleteAutopilotClusterAsyncInvoker(DeleteAutopilotClusterRequest deleteAutopilotClusterRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", deleteAutopilotClusterRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAutopilotClusterRequest);
+            return new AsyncInvoker<DeleteAutopilotClusterResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteAutopilotClusterResponse>);
+        }
+        
+        /// <summary>
+        /// 删除指定模板实例
+        ///
+        /// 删除指定模板实例
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteAutopilotReleaseResponse> DeleteAutopilotReleaseAsync(DeleteAutopilotReleaseRequest deleteAutopilotReleaseRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("name", deleteAutopilotReleaseRequest.Name.ToString());
+            urlParam.Add("namespace", deleteAutopilotReleaseRequest.Namespace.ToString());
+            urlParam.Add("cluster_id", deleteAutopilotReleaseRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/cam/v3/clusters/{cluster_id}/namespace/{namespace}/releases/{name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAutopilotReleaseRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteAutopilotReleaseResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteAutopilotReleaseResponse> DeleteAutopilotReleaseAsyncInvoker(DeleteAutopilotReleaseRequest deleteAutopilotReleaseRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("name", deleteAutopilotReleaseRequest.Name.ToString());
+            urlParam.Add("namespace", deleteAutopilotReleaseRequest.Namespace.ToString());
+            urlParam.Add("cluster_id", deleteAutopilotReleaseRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/cam/v3/clusters/{cluster_id}/namespace/{namespace}/releases/{name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAutopilotReleaseRequest);
+            return new AsyncInvoker<DeleteAutopilotReleaseResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteAutopilotReleaseResponse>);
+        }
+        
+        /// <summary>
+        /// 下载模板
+        ///
+        /// 下载模板
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DownloadAutopilotChartResponse> DownloadAutopilotChartAsync(DownloadAutopilotChartRequest downloadAutopilotChartRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("chart_id", downloadAutopilotChartRequest.ChartId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v2/charts/{chart_id}/archive", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadAutopilotChartRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<DownloadAutopilotChartResponse>(response);
+        }
+
+        public AsyncInvoker<DownloadAutopilotChartResponse> DownloadAutopilotChartAsyncInvoker(DownloadAutopilotChartRequest downloadAutopilotChartRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("chart_id", downloadAutopilotChartRequest.ChartId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v2/charts/{chart_id}/archive", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadAutopilotChartRequest);
+            return new AsyncInvoker<DownloadAutopilotChartResponse>(this, "GET", request, JsonUtils.DeSerialize<DownloadAutopilotChartResponse>);
+        }
+        
+        /// <summary>
+        /// 获取AddonInstance列表
+        ///
+        /// 获取集群所有已安装插件实例
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListAutopilotAddonInstancesResponse> ListAutopilotAddonInstancesAsync(ListAutopilotAddonInstancesRequest listAutopilotAddonInstancesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/addons", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAutopilotAddonInstancesRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListAutopilotAddonInstancesResponse>(response);
+        }
+
+        public AsyncInvoker<ListAutopilotAddonInstancesResponse> ListAutopilotAddonInstancesAsyncInvoker(ListAutopilotAddonInstancesRequest listAutopilotAddonInstancesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/addons", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAutopilotAddonInstancesRequest);
+            return new AsyncInvoker<ListAutopilotAddonInstancesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAutopilotAddonInstancesResponse>);
+        }
+        
+        /// <summary>
+        /// 查询AddonTemplates列表
+        ///
+        /// 插件模板查询接口，查询插件信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListAutopilotAddonTemplatesResponse> ListAutopilotAddonTemplatesAsync(ListAutopilotAddonTemplatesRequest listAutopilotAddonTemplatesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/addontemplates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAutopilotAddonTemplatesRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListAutopilotAddonTemplatesResponse>(response);
+        }
+
+        public AsyncInvoker<ListAutopilotAddonTemplatesResponse> ListAutopilotAddonTemplatesAsyncInvoker(ListAutopilotAddonTemplatesRequest listAutopilotAddonTemplatesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/addontemplates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAutopilotAddonTemplatesRequest);
+            return new AsyncInvoker<ListAutopilotAddonTemplatesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAutopilotAddonTemplatesResponse>);
+        }
+        
+        /// <summary>
+        /// 获取模板列表
+        ///
+        /// 获取模板列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListAutopilotChartsResponse> ListAutopilotChartsAsync(ListAutopilotChartsRequest listAutopilotChartsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v2/charts", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAutopilotChartsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            var listAutopilotChartsResponse = JsonUtils.DeSerializeNull<ListAutopilotChartsResponse>(response);
+            listAutopilotChartsResponse.Body = JsonUtils.DeSerializeList<ChartResp>(response);
+            return listAutopilotChartsResponse;
+        }
+
+        public AsyncInvoker<ListAutopilotChartsResponse> ListAutopilotChartsAsyncInvoker(ListAutopilotChartsRequest listAutopilotChartsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v2/charts", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAutopilotChartsRequest);
+            return new AsyncInvoker<ListAutopilotChartsResponse>(this, "GET", request, response =>
+            {
+                var listAutopilotChartsResponse = JsonUtils.DeSerializeNull<ListAutopilotChartsResponse>(response);
+                listAutopilotChartsResponse.Body = JsonUtils.DeSerializeList<ChartResp>(response);
+                return listAutopilotChartsResponse;
+            });
+        }
+        
+        /// <summary>
+        /// 获取集群备份任务详情列表
+        ///
+        /// 获取集群备份任务详情列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListAutopilotClusterMasterSnapshotTasksResponse> ListAutopilotClusterMasterSnapshotTasksAsync(ListAutopilotClusterMasterSnapshotTasksRequest listAutopilotClusterMasterSnapshotTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", listAutopilotClusterMasterSnapshotTasksRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3.1/projects/{project_id}/clusters/{cluster_id}/operation/snapshot/tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAutopilotClusterMasterSnapshotTasksRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListAutopilotClusterMasterSnapshotTasksResponse>(response);
+        }
+
+        public AsyncInvoker<ListAutopilotClusterMasterSnapshotTasksResponse> ListAutopilotClusterMasterSnapshotTasksAsyncInvoker(ListAutopilotClusterMasterSnapshotTasksRequest listAutopilotClusterMasterSnapshotTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", listAutopilotClusterMasterSnapshotTasksRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3.1/projects/{project_id}/clusters/{cluster_id}/operation/snapshot/tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAutopilotClusterMasterSnapshotTasksRequest);
+            return new AsyncInvoker<ListAutopilotClusterMasterSnapshotTasksResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAutopilotClusterMasterSnapshotTasksResponse>);
+        }
+        
+        /// <summary>
+        /// 获取集群升级特性开关配置
+        ///
+        /// 获取集群升级特性开关配置
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListAutopilotClusterUpgradeFeatureGatesResponse> ListAutopilotClusterUpgradeFeatureGatesAsync(ListAutopilotClusterUpgradeFeatureGatesRequest listAutopilotClusterUpgradeFeatureGatesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/clusterupgradefeaturegates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAutopilotClusterUpgradeFeatureGatesRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListAutopilotClusterUpgradeFeatureGatesResponse>(response);
+        }
+
+        public AsyncInvoker<ListAutopilotClusterUpgradeFeatureGatesResponse> ListAutopilotClusterUpgradeFeatureGatesAsyncInvoker(ListAutopilotClusterUpgradeFeatureGatesRequest listAutopilotClusterUpgradeFeatureGatesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/clusterupgradefeaturegates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAutopilotClusterUpgradeFeatureGatesRequest);
+            return new AsyncInvoker<ListAutopilotClusterUpgradeFeatureGatesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAutopilotClusterUpgradeFeatureGatesResponse>);
+        }
+        
+        /// <summary>
+        /// 获取集群升级路径
+        ///
+        /// 获取集群升级路径
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListAutopilotClusterUpgradePathsResponse> ListAutopilotClusterUpgradePathsAsync(ListAutopilotClusterUpgradePathsRequest listAutopilotClusterUpgradePathsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/clusterupgradepaths", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAutopilotClusterUpgradePathsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListAutopilotClusterUpgradePathsResponse>(response);
+        }
+
+        public AsyncInvoker<ListAutopilotClusterUpgradePathsResponse> ListAutopilotClusterUpgradePathsAsyncInvoker(ListAutopilotClusterUpgradePathsRequest listAutopilotClusterUpgradePathsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/clusterupgradepaths", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAutopilotClusterUpgradePathsRequest);
+            return new AsyncInvoker<ListAutopilotClusterUpgradePathsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAutopilotClusterUpgradePathsResponse>);
+        }
+        
+        /// <summary>
+        /// 获取指定项目下的集群
+        ///
+        /// 该API用于获取指定项目下所有集群的详细信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListAutopilotClustersResponse> ListAutopilotClustersAsync(ListAutopilotClustersRequest listAutopilotClustersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAutopilotClustersRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListAutopilotClustersResponse>(response);
+        }
+
+        public AsyncInvoker<ListAutopilotClustersResponse> ListAutopilotClustersAsyncInvoker(ListAutopilotClustersRequest listAutopilotClustersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAutopilotClustersRequest);
+            return new AsyncInvoker<ListAutopilotClustersResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAutopilotClustersResponse>);
+        }
+        
+        /// <summary>
+        /// 获取集群升级前检查任务详情列表
+        ///
+        /// 获取集群升级前检查任务详情列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListAutopilotPreCheckTasksResponse> ListAutopilotPreCheckTasksAsync(ListAutopilotPreCheckTasksRequest listAutopilotPreCheckTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", listAutopilotPreCheckTasksRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/operation/precheck/tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAutopilotPreCheckTasksRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListAutopilotPreCheckTasksResponse>(response);
+        }
+
+        public AsyncInvoker<ListAutopilotPreCheckTasksResponse> ListAutopilotPreCheckTasksAsyncInvoker(ListAutopilotPreCheckTasksRequest listAutopilotPreCheckTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", listAutopilotPreCheckTasksRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/operation/precheck/tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAutopilotPreCheckTasksRequest);
+            return new AsyncInvoker<ListAutopilotPreCheckTasksResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAutopilotPreCheckTasksResponse>);
+        }
+        
+        /// <summary>
+        /// 获取模板实例列表
+        ///
+        /// 获取模板实例列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListAutopilotReleasesResponse> ListAutopilotReleasesAsync(ListAutopilotReleasesRequest listAutopilotReleasesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", listAutopilotReleasesRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/cam/v3/clusters/{cluster_id}/releases", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAutopilotReleasesRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            var listAutopilotReleasesResponse = JsonUtils.DeSerializeNull<ListAutopilotReleasesResponse>(response);
+            listAutopilotReleasesResponse.Body = JsonUtils.DeSerializeList<ReleaseResp>(response);
+            return listAutopilotReleasesResponse;
+        }
+
+        public AsyncInvoker<ListAutopilotReleasesResponse> ListAutopilotReleasesAsyncInvoker(ListAutopilotReleasesRequest listAutopilotReleasesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", listAutopilotReleasesRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/cam/v3/clusters/{cluster_id}/releases", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAutopilotReleasesRequest);
+            return new AsyncInvoker<ListAutopilotReleasesResponse>(this, "GET", request, response =>
+            {
+                var listAutopilotReleasesResponse = JsonUtils.DeSerializeNull<ListAutopilotReleasesResponse>(response);
+                listAutopilotReleasesResponse.Body = JsonUtils.DeSerializeList<ReleaseResp>(response);
+                return listAutopilotReleasesResponse;
+            });
+        }
+        
+        /// <summary>
+        /// 获取集群升级任务详情列表
+        ///
+        /// 获取集群升级任务详情列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListAutopilotUpgradeClusterTasksResponse> ListAutopilotUpgradeClusterTasksAsync(ListAutopilotUpgradeClusterTasksRequest listAutopilotUpgradeClusterTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", listAutopilotUpgradeClusterTasksRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgrade/tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAutopilotUpgradeClusterTasksRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListAutopilotUpgradeClusterTasksResponse>(response);
+        }
+
+        public AsyncInvoker<ListAutopilotUpgradeClusterTasksResponse> ListAutopilotUpgradeClusterTasksAsyncInvoker(ListAutopilotUpgradeClusterTasksRequest listAutopilotUpgradeClusterTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", listAutopilotUpgradeClusterTasksRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgrade/tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAutopilotUpgradeClusterTasksRequest);
+            return new AsyncInvoker<ListAutopilotUpgradeClusterTasksResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAutopilotUpgradeClusterTasksResponse>);
+        }
+        
+        /// <summary>
+        /// 获取UpgradeWorkFlows列表
+        ///
+        /// 获取历史集群升级引导任务列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListAutopilotUpgradeWorkFlowsResponse> ListAutopilotUpgradeWorkFlowsAsync(ListAutopilotUpgradeWorkFlowsRequest listAutopilotUpgradeWorkFlowsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", listAutopilotUpgradeWorkFlowsRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgradeworkflows", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAutopilotUpgradeWorkFlowsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListAutopilotUpgradeWorkFlowsResponse>(response);
+        }
+
+        public AsyncInvoker<ListAutopilotUpgradeWorkFlowsResponse> ListAutopilotUpgradeWorkFlowsAsyncInvoker(ListAutopilotUpgradeWorkFlowsRequest listAutopilotUpgradeWorkFlowsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", listAutopilotUpgradeWorkFlowsRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgradeworkflows", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAutopilotUpgradeWorkFlowsRequest);
+            return new AsyncInvoker<ListAutopilotUpgradeWorkFlowsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAutopilotUpgradeWorkFlowsResponse>);
+        }
+        
+        /// <summary>
+        /// 重试集群升级任务
+        ///
+        /// 重新执行失败的集群升级任务。
+        /// &gt; - 集群升级涉及多维度的组件升级操作，强烈建议统一通过CCE控制台执行交互式升级，降低集群升级过程的业务意外受损风险；
+        /// &gt; - 当前集群升级相关接口受限开放。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<RetryAutopilotUpgradeClusterTaskResponse> RetryAutopilotUpgradeClusterTaskAsync(RetryAutopilotUpgradeClusterTaskRequest retryAutopilotUpgradeClusterTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", retryAutopilotUpgradeClusterTaskRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgrade/retry", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", retryAutopilotUpgradeClusterTaskRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<RetryAutopilotUpgradeClusterTaskResponse>(response);
+        }
+
+        public AsyncInvoker<RetryAutopilotUpgradeClusterTaskResponse> RetryAutopilotUpgradeClusterTaskAsyncInvoker(RetryAutopilotUpgradeClusterTaskRequest retryAutopilotUpgradeClusterTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", retryAutopilotUpgradeClusterTaskRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgrade/retry", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", retryAutopilotUpgradeClusterTaskRequest);
+            return new AsyncInvoker<RetryAutopilotUpgradeClusterTaskResponse>(this, "POST", request, JsonUtils.DeSerializeNull<RetryAutopilotUpgradeClusterTaskResponse>);
+        }
+        
+        /// <summary>
+        /// 回滚AddonInstance
+        ///
+        /// 将插件实例回滚到升级前的版本。只有在当前插件实例版本支持回滚到升级前的版本（status.isRollbackable为true），且插件实例状态为running（运行中）、available（可用）、abnormal（不可用）、upgradeFailed（升级失败）、rollbackFailed（回滚失败）时支持回滚。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<RollbackAutopilotAddonInstanceResponse> RollbackAutopilotAddonInstanceAsync(RollbackAutopilotAddonInstanceRequest rollbackAutopilotAddonInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("id", rollbackAutopilotAddonInstanceRequest.Id.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/addons/{id}/operation/rollback", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", rollbackAutopilotAddonInstanceRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<RollbackAutopilotAddonInstanceResponse>(response);
+        }
+
+        public AsyncInvoker<RollbackAutopilotAddonInstanceResponse> RollbackAutopilotAddonInstanceAsyncInvoker(RollbackAutopilotAddonInstanceRequest rollbackAutopilotAddonInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("id", rollbackAutopilotAddonInstanceRequest.Id.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/addons/{id}/operation/rollback", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", rollbackAutopilotAddonInstanceRequest);
+            return new AsyncInvoker<RollbackAutopilotAddonInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<RollbackAutopilotAddonInstanceResponse>);
+        }
+        
+        /// <summary>
+        /// 获取AddonInstance详情
+        ///
+        /// 获取插件实例详情。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowAutopilotAddonInstanceResponse> ShowAutopilotAddonInstanceAsync(ShowAutopilotAddonInstanceRequest showAutopilotAddonInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("id", showAutopilotAddonInstanceRequest.Id.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/addons/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutopilotAddonInstanceRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowAutopilotAddonInstanceResponse>(response);
+        }
+
+        public AsyncInvoker<ShowAutopilotAddonInstanceResponse> ShowAutopilotAddonInstanceAsyncInvoker(ShowAutopilotAddonInstanceRequest showAutopilotAddonInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("id", showAutopilotAddonInstanceRequest.Id.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/addons/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutopilotAddonInstanceRequest);
+            return new AsyncInvoker<ShowAutopilotAddonInstanceResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAutopilotAddonInstanceResponse>);
+        }
+        
+        /// <summary>
+        /// 获取模板
+        ///
+        /// 获取模板
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowAutopilotChartResponse> ShowAutopilotChartAsync(ShowAutopilotChartRequest showAutopilotChartRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("chart_id", showAutopilotChartRequest.ChartId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v2/charts/{chart_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutopilotChartRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowAutopilotChartResponse>(response);
+        }
+
+        public AsyncInvoker<ShowAutopilotChartResponse> ShowAutopilotChartAsyncInvoker(ShowAutopilotChartRequest showAutopilotChartRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("chart_id", showAutopilotChartRequest.ChartId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v2/charts/{chart_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutopilotChartRequest);
+            return new AsyncInvoker<ShowAutopilotChartResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAutopilotChartResponse>);
+        }
+        
+        /// <summary>
+        /// 获取模板Values
+        ///
+        /// 获取模板Values
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowAutopilotChartValuesResponse> ShowAutopilotChartValuesAsync(ShowAutopilotChartValuesRequest showAutopilotChartValuesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("chart_id", showAutopilotChartValuesRequest.ChartId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v2/charts/{chart_id}/values", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutopilotChartValuesRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowAutopilotChartValuesResponse>(response);
+        }
+
+        public AsyncInvoker<ShowAutopilotChartValuesResponse> ShowAutopilotChartValuesAsyncInvoker(ShowAutopilotChartValuesRequest showAutopilotChartValuesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("chart_id", showAutopilotChartValuesRequest.ChartId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v2/charts/{chart_id}/values", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutopilotChartValuesRequest);
+            return new AsyncInvoker<ShowAutopilotChartValuesResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAutopilotChartValuesResponse>);
+        }
+        
+        /// <summary>
+        /// 获取指定的集群
+        ///
+        /// 该API用于获取指定集群的详细信息。
+        /// &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowAutopilotClusterResponse> ShowAutopilotClusterAsync(ShowAutopilotClusterRequest showAutopilotClusterRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", showAutopilotClusterRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutopilotClusterRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowAutopilotClusterResponse>(response);
+        }
+
+        public AsyncInvoker<ShowAutopilotClusterResponse> ShowAutopilotClusterAsyncInvoker(ShowAutopilotClusterRequest showAutopilotClusterRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", showAutopilotClusterRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutopilotClusterRequest);
+            return new AsyncInvoker<ShowAutopilotClusterResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAutopilotClusterResponse>);
+        }
+        
+        /// <summary>
+        /// 获取集群访问的地址
+        ///
+        /// 该API用于通过集群ID获取集群访问的地址，包括PrivateIP(HA集群返回VIP)与PublicIP
+        /// &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowAutopilotClusterEndpointsResponse> ShowAutopilotClusterEndpointsAsync(ShowAutopilotClusterEndpointsRequest showAutopilotClusterEndpointsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", showAutopilotClusterEndpointsRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/openapi", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutopilotClusterEndpointsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowAutopilotClusterEndpointsResponse>(response);
+        }
+
+        public AsyncInvoker<ShowAutopilotClusterEndpointsResponse> ShowAutopilotClusterEndpointsAsyncInvoker(ShowAutopilotClusterEndpointsRequest showAutopilotClusterEndpointsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", showAutopilotClusterEndpointsRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/openapi", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutopilotClusterEndpointsRequest);
+            return new AsyncInvoker<ShowAutopilotClusterEndpointsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAutopilotClusterEndpointsResponse>);
+        }
+        
+        /// <summary>
+        /// 获取集群升级相关信息
+        ///
+        /// 获取集群升级相关信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowAutopilotClusterUpgradeInfoResponse> ShowAutopilotClusterUpgradeInfoAsync(ShowAutopilotClusterUpgradeInfoRequest showAutopilotClusterUpgradeInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", showAutopilotClusterUpgradeInfoRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/upgradeinfo", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutopilotClusterUpgradeInfoRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowAutopilotClusterUpgradeInfoResponse>(response);
+        }
+
+        public AsyncInvoker<ShowAutopilotClusterUpgradeInfoResponse> ShowAutopilotClusterUpgradeInfoAsyncInvoker(ShowAutopilotClusterUpgradeInfoRequest showAutopilotClusterUpgradeInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", showAutopilotClusterUpgradeInfoRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/upgradeinfo", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutopilotClusterUpgradeInfoRequest);
+            return new AsyncInvoker<ShowAutopilotClusterUpgradeInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAutopilotClusterUpgradeInfoResponse>);
+        }
+        
+        /// <summary>
+        /// 获取任务信息
+        ///
+        /// 该API用于获取任务信息。通过某一任务请求下发后返回的jobID来查询指定任务的进度。
+        /// &gt; - 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径
+        /// &gt; - 该接口通常使用场景为：
+        /// &gt;   - 创建、删除集群时，查询相应任务的进度。
+        /// &gt;   - 创建、删除节点时，查询相应任务的进度。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowAutopilotJobResponse> ShowAutopilotJobAsync(ShowAutopilotJobRequest showAutopilotJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", showAutopilotJobRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/jobs/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutopilotJobRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowAutopilotJobResponse>(response);
+        }
+
+        public AsyncInvoker<ShowAutopilotJobResponse> ShowAutopilotJobAsyncInvoker(ShowAutopilotJobRequest showAutopilotJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", showAutopilotJobRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/jobs/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutopilotJobRequest);
+            return new AsyncInvoker<ShowAutopilotJobResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAutopilotJobResponse>);
+        }
+        
+        /// <summary>
+        /// 获取集群升级前检查任务详情
+        ///
+        /// 获取集群升级前检查任务详情，任务ID由调用集群检查API后从响应体中uid字段获取。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowAutopilotPreCheckResponse> ShowAutopilotPreCheckAsync(ShowAutopilotPreCheckRequest showAutopilotPreCheckRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", showAutopilotPreCheckRequest.ClusterId.ToString());
+            urlParam.Add("task_id", showAutopilotPreCheckRequest.TaskId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/operation/precheck/tasks/{task_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutopilotPreCheckRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowAutopilotPreCheckResponse>(response);
+        }
+
+        public AsyncInvoker<ShowAutopilotPreCheckResponse> ShowAutopilotPreCheckAsyncInvoker(ShowAutopilotPreCheckRequest showAutopilotPreCheckRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", showAutopilotPreCheckRequest.ClusterId.ToString());
+            urlParam.Add("task_id", showAutopilotPreCheckRequest.TaskId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/operation/precheck/tasks/{task_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutopilotPreCheckRequest);
+            return new AsyncInvoker<ShowAutopilotPreCheckResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAutopilotPreCheckResponse>);
+        }
+        
+        /// <summary>
+        /// 查询CCE服务下的资源配额
+        ///
+        /// 该API用于查询CCE服务下的资源配额。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowAutopilotQuotasResponse> ShowAutopilotQuotasAsync(ShowAutopilotQuotasRequest showAutopilotQuotasRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/quotas", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutopilotQuotasRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowAutopilotQuotasResponse>(response);
+        }
+
+        public AsyncInvoker<ShowAutopilotQuotasResponse> ShowAutopilotQuotasAsyncInvoker(ShowAutopilotQuotasRequest showAutopilotQuotasRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/quotas", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutopilotQuotasRequest);
+            return new AsyncInvoker<ShowAutopilotQuotasResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAutopilotQuotasResponse>);
+        }
+        
+        /// <summary>
+        /// 获取指定模板实例
+        ///
+        /// 获取指定模板实例
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowAutopilotReleaseResponse> ShowAutopilotReleaseAsync(ShowAutopilotReleaseRequest showAutopilotReleaseRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("name", showAutopilotReleaseRequest.Name.ToString());
+            urlParam.Add("namespace", showAutopilotReleaseRequest.Namespace.ToString());
+            urlParam.Add("cluster_id", showAutopilotReleaseRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/cam/v3/clusters/{cluster_id}/namespace/{namespace}/releases/{name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutopilotReleaseRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowAutopilotReleaseResponse>(response);
+        }
+
+        public AsyncInvoker<ShowAutopilotReleaseResponse> ShowAutopilotReleaseAsyncInvoker(ShowAutopilotReleaseRequest showAutopilotReleaseRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("name", showAutopilotReleaseRequest.Name.ToString());
+            urlParam.Add("namespace", showAutopilotReleaseRequest.Namespace.ToString());
+            urlParam.Add("cluster_id", showAutopilotReleaseRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/cam/v3/clusters/{cluster_id}/namespace/{namespace}/releases/{name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutopilotReleaseRequest);
+            return new AsyncInvoker<ShowAutopilotReleaseResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAutopilotReleaseResponse>);
+        }
+        
+        /// <summary>
+        /// 查询指定模板实例历史记录
+        ///
+        /// 查询指定模板实例历史记录
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowAutopilotReleaseHistoryResponse> ShowAutopilotReleaseHistoryAsync(ShowAutopilotReleaseHistoryRequest showAutopilotReleaseHistoryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("name", showAutopilotReleaseHistoryRequest.Name.ToString());
+            urlParam.Add("namespace", showAutopilotReleaseHistoryRequest.Namespace.ToString());
+            urlParam.Add("cluster_id", showAutopilotReleaseHistoryRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/cam/v3/clusters/{cluster_id}/namespace/{namespace}/releases/{name}/history", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutopilotReleaseHistoryRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            var showAutopilotReleaseHistoryResponse = JsonUtils.DeSerializeNull<ShowAutopilotReleaseHistoryResponse>(response);
+            showAutopilotReleaseHistoryResponse.Body = JsonUtils.DeSerializeList<ReleaseResp>(response);
+            return showAutopilotReleaseHistoryResponse;
+        }
+
+        public AsyncInvoker<ShowAutopilotReleaseHistoryResponse> ShowAutopilotReleaseHistoryAsyncInvoker(ShowAutopilotReleaseHistoryRequest showAutopilotReleaseHistoryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("name", showAutopilotReleaseHistoryRequest.Name.ToString());
+            urlParam.Add("namespace", showAutopilotReleaseHistoryRequest.Namespace.ToString());
+            urlParam.Add("cluster_id", showAutopilotReleaseHistoryRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/cam/v3/clusters/{cluster_id}/namespace/{namespace}/releases/{name}/history", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutopilotReleaseHistoryRequest);
+            return new AsyncInvoker<ShowAutopilotReleaseHistoryResponse>(this, "GET", request, response =>
+            {
+                var showAutopilotReleaseHistoryResponse = JsonUtils.DeSerializeNull<ShowAutopilotReleaseHistoryResponse>(response);
+                showAutopilotReleaseHistoryResponse.Body = JsonUtils.DeSerializeList<ReleaseResp>(response);
+                return showAutopilotReleaseHistoryResponse;
+            });
+        }
+        
+        /// <summary>
+        /// 获取集群升级任务详情
+        ///
+        /// 获取集群升级任务详情，任务ID由调用集群升级API后从响应体中uid字段获取。
+        /// &gt; - 集群升级涉及多维度的组件升级操作，强烈建议统一通过CCE控制台执行交互式升级，降低集群升级过程的业务意外受损风险；
+        /// &gt; - 当前集群升级相关接口受限开放。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowAutopilotUpgradeClusterTaskResponse> ShowAutopilotUpgradeClusterTaskAsync(ShowAutopilotUpgradeClusterTaskRequest showAutopilotUpgradeClusterTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", showAutopilotUpgradeClusterTaskRequest.ClusterId.ToString());
+            urlParam.Add("task_id", showAutopilotUpgradeClusterTaskRequest.TaskId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgrade/tasks/{task_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutopilotUpgradeClusterTaskRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowAutopilotUpgradeClusterTaskResponse>(response);
+        }
+
+        public AsyncInvoker<ShowAutopilotUpgradeClusterTaskResponse> ShowAutopilotUpgradeClusterTaskAsyncInvoker(ShowAutopilotUpgradeClusterTaskRequest showAutopilotUpgradeClusterTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", showAutopilotUpgradeClusterTaskRequest.ClusterId.ToString());
+            urlParam.Add("task_id", showAutopilotUpgradeClusterTaskRequest.TaskId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgrade/tasks/{task_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutopilotUpgradeClusterTaskRequest);
+            return new AsyncInvoker<ShowAutopilotUpgradeClusterTaskResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAutopilotUpgradeClusterTaskResponse>);
+        }
+        
+        /// <summary>
+        /// 获取指定集群升级引导任务详情
+        ///
+        /// 该API用于通过升级引导任务ID获取任务的详细信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowAutopilotUpgradeWorkFlowResponse> ShowAutopilotUpgradeWorkFlowAsync(ShowAutopilotUpgradeWorkFlowRequest showAutopilotUpgradeWorkFlowRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", showAutopilotUpgradeWorkFlowRequest.ClusterId.ToString());
+            urlParam.Add("upgrade_workflow_id", showAutopilotUpgradeWorkFlowRequest.UpgradeWorkflowId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgradeworkflows/{upgrade_workflow_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutopilotUpgradeWorkFlowRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowAutopilotUpgradeWorkFlowResponse>(response);
+        }
+
+        public AsyncInvoker<ShowAutopilotUpgradeWorkFlowResponse> ShowAutopilotUpgradeWorkFlowAsyncInvoker(ShowAutopilotUpgradeWorkFlowRequest showAutopilotUpgradeWorkFlowRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", showAutopilotUpgradeWorkFlowRequest.ClusterId.ToString());
+            urlParam.Add("upgrade_workflow_id", showAutopilotUpgradeWorkFlowRequest.UpgradeWorkflowId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgradeworkflows/{upgrade_workflow_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutopilotUpgradeWorkFlowRequest);
+            return new AsyncInvoker<ShowAutopilotUpgradeWorkFlowResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAutopilotUpgradeWorkFlowResponse>);
+        }
+        
+        /// <summary>
+        /// 获取用户模板配额
+        ///
+        /// 获取用户模板配额
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowAutopilotUserChartsQuotasResponse> ShowAutopilotUserChartsQuotasAsync(ShowAutopilotUserChartsQuotasRequest showAutopilotUserChartsQuotasRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v2/charts/{project_id}/quotas", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutopilotUserChartsQuotasRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowAutopilotUserChartsQuotasResponse>(response);
+        }
+
+        public AsyncInvoker<ShowAutopilotUserChartsQuotasResponse> ShowAutopilotUserChartsQuotasAsyncInvoker(ShowAutopilotUserChartsQuotasRequest showAutopilotUserChartsQuotasRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v2/charts/{project_id}/quotas", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutopilotUserChartsQuotasRequest);
+            return new AsyncInvoker<ShowAutopilotUserChartsQuotasResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAutopilotUserChartsQuotasResponse>);
+        }
+        
+        /// <summary>
+        /// 更新AddonInstance
+        ///
+        /// 更新插件实例的功能。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateAutopilotAddonInstanceResponse> UpdateAutopilotAddonInstanceAsync(UpdateAutopilotAddonInstanceRequest updateAutopilotAddonInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("id", updateAutopilotAddonInstanceRequest.Id.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/addons/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAutopilotAddonInstanceRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateAutopilotAddonInstanceResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateAutopilotAddonInstanceResponse> UpdateAutopilotAddonInstanceAsyncInvoker(UpdateAutopilotAddonInstanceRequest updateAutopilotAddonInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("id", updateAutopilotAddonInstanceRequest.Id.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/addons/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAutopilotAddonInstanceRequest);
+            return new AsyncInvoker<UpdateAutopilotAddonInstanceResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateAutopilotAddonInstanceResponse>);
+        }
+        
+        /// <summary>
+        /// 更新模板
+        ///
+        /// 更新模板
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateAutopilotChartResponse> UpdateAutopilotChartAsync(UpdateAutopilotChartRequest updateAutopilotChartRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("chart_id", updateAutopilotChartRequest.ChartId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v2/charts/{chart_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", updateAutopilotChartRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateAutopilotChartResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateAutopilotChartResponse> UpdateAutopilotChartAsyncInvoker(UpdateAutopilotChartRequest updateAutopilotChartRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("chart_id", updateAutopilotChartRequest.ChartId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v2/charts/{chart_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", updateAutopilotChartRequest);
+            return new AsyncInvoker<UpdateAutopilotChartResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateAutopilotChartResponse>);
+        }
+        
+        /// <summary>
+        /// 更新指定的集群
+        ///
+        /// 该API用于更新指定的集群。
+        /// &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateAutopilotClusterResponse> UpdateAutopilotClusterAsync(UpdateAutopilotClusterRequest updateAutopilotClusterRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", updateAutopilotClusterRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAutopilotClusterRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateAutopilotClusterResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateAutopilotClusterResponse> UpdateAutopilotClusterAsyncInvoker(UpdateAutopilotClusterRequest updateAutopilotClusterRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", updateAutopilotClusterRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAutopilotClusterRequest);
+            return new AsyncInvoker<UpdateAutopilotClusterResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateAutopilotClusterResponse>);
+        }
+        
+        /// <summary>
+        /// 更新指定模板实例
+        ///
+        /// 更新指定模板实例
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateAutopilotReleaseResponse> UpdateAutopilotReleaseAsync(UpdateAutopilotReleaseRequest updateAutopilotReleaseRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("name", updateAutopilotReleaseRequest.Name.ToString());
+            urlParam.Add("namespace", updateAutopilotReleaseRequest.Namespace.ToString());
+            urlParam.Add("cluster_id", updateAutopilotReleaseRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/cam/v3/clusters/{cluster_id}/namespace/{namespace}/releases/{name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAutopilotReleaseRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateAutopilotReleaseResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateAutopilotReleaseResponse> UpdateAutopilotReleaseAsyncInvoker(UpdateAutopilotReleaseRequest updateAutopilotReleaseRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("name", updateAutopilotReleaseRequest.Name.ToString());
+            urlParam.Add("namespace", updateAutopilotReleaseRequest.Namespace.ToString());
+            urlParam.Add("cluster_id", updateAutopilotReleaseRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/cam/v3/clusters/{cluster_id}/namespace/{namespace}/releases/{name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAutopilotReleaseRequest);
+            return new AsyncInvoker<UpdateAutopilotReleaseResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateAutopilotReleaseResponse>);
+        }
+        
+        /// <summary>
+        /// 集群升级
+        ///
+        /// 集群升级。
+        /// &gt; - 集群升级涉及多维度的组件升级操作，强烈建议统一通过CCE控制台执行交互式升级，降低集群升级过程的业务意外受损风险；
+        /// &gt; - 当前集群升级相关接口受限开放。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpgradeAutopilotClusterResponse> UpgradeAutopilotClusterAsync(UpgradeAutopilotClusterRequest upgradeAutopilotClusterRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", upgradeAutopilotClusterRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgrade", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", upgradeAutopilotClusterRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<UpgradeAutopilotClusterResponse>(response);
+        }
+
+        public AsyncInvoker<UpgradeAutopilotClusterResponse> UpgradeAutopilotClusterAsyncInvoker(UpgradeAutopilotClusterRequest upgradeAutopilotClusterRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", upgradeAutopilotClusterRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgrade", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", upgradeAutopilotClusterRequest);
+            return new AsyncInvoker<UpgradeAutopilotClusterResponse>(this, "POST", request, JsonUtils.DeSerialize<UpgradeAutopilotClusterResponse>);
+        }
+        
+        /// <summary>
+        /// 更新指定集群升级引导任务状态
+        ///
+        /// 该API用于更新指定集群升级引导任务状态，当前仅适用于取消升级流程
+        /// 调用该API时升级流程引导任务状态不能为进行中(running) 已完成(success) 已取消(cancel),升级子任务状态不能为running(进行中) init(已初始化) pause(任务被暂停) queue(队列中)
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpgradeAutopilotWorkFlowUpdateResponse> UpgradeAutopilotWorkFlowUpdateAsync(UpgradeAutopilotWorkFlowUpdateRequest upgradeAutopilotWorkFlowUpdateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", upgradeAutopilotWorkFlowUpdateRequest.ClusterId.ToString());
+            urlParam.Add("upgrade_workflow_id", upgradeAutopilotWorkFlowUpdateRequest.UpgradeWorkflowId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgradeworkflows/{upgrade_workflow_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", upgradeAutopilotWorkFlowUpdateRequest);
+            var response = await DoHttpRequestAsync("PATCH", request);
+            return JsonUtils.DeSerialize<UpgradeAutopilotWorkFlowUpdateResponse>(response);
+        }
+
+        public AsyncInvoker<UpgradeAutopilotWorkFlowUpdateResponse> UpgradeAutopilotWorkFlowUpdateAsyncInvoker(UpgradeAutopilotWorkFlowUpdateRequest upgradeAutopilotWorkFlowUpdateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", upgradeAutopilotWorkFlowUpdateRequest.ClusterId.ToString());
+            urlParam.Add("upgrade_workflow_id", upgradeAutopilotWorkFlowUpdateRequest.UpgradeWorkflowId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgradeworkflows/{upgrade_workflow_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", upgradeAutopilotWorkFlowUpdateRequest);
+            return new AsyncInvoker<UpgradeAutopilotWorkFlowUpdateResponse>(this, "PATCH", request, JsonUtils.DeSerialize<UpgradeAutopilotWorkFlowUpdateResponse>);
+        }
+        
+        /// <summary>
+        /// 上传模板
+        ///
+        /// 上传模板
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UploadAutopilotChartResponse> UploadAutopilotChartAsync(UploadAutopilotChartRequest uploadAutopilotChartRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v2/charts", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", uploadAutopilotChartRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<UploadAutopilotChartResponse>(response);
+        }
+
+        public AsyncInvoker<UploadAutopilotChartResponse> UploadAutopilotChartAsyncInvoker(UploadAutopilotChartRequest uploadAutopilotChartRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v2/charts", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", uploadAutopilotChartRequest);
+            return new AsyncInvoker<UploadAutopilotChartResponse>(this, "POST", request, JsonUtils.DeSerialize<UploadAutopilotChartResponse>);
+        }
+        
     }
 }

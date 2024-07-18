@@ -262,6 +262,18 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
         [JsonProperty("resource_url", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceUrl { get; set; }
 
+        /// <summary>
+        /// 标识资源所在的企业项目ID。
+        /// </summary>
+        [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string EnterpriseProjectId { get; set; }
+
+        /// <summary>
+        /// 标识资源所在的账号ID。仅在跨租户操作资源时有值。
+        /// </summary>
+        [JsonProperty("resource_account_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ResourceAccountId { get; set; }
+
 
 
         /// <summary>
@@ -292,6 +304,8 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
             sb.Append("  locationInfo: ").Append(LocationInfo).Append("\n");
             sb.Append("  endpoint: ").Append(Endpoint).Append("\n");
             sb.Append("  resourceUrl: ").Append(ResourceUrl).Append("\n");
+            sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  resourceAccountId: ").Append(ResourceAccountId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -417,6 +431,16 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
                     this.ResourceUrl == input.ResourceUrl ||
                     (this.ResourceUrl != null &&
                     this.ResourceUrl.Equals(input.ResourceUrl))
+                ) && 
+                (
+                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
+                    (this.EnterpriseProjectId != null &&
+                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
+                ) && 
+                (
+                    this.ResourceAccountId == input.ResourceAccountId ||
+                    (this.ResourceAccountId != null &&
+                    this.ResourceAccountId.Equals(input.ResourceAccountId))
                 );
         }
 
@@ -470,6 +494,10 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
                     hashCode = hashCode * 59 + this.Endpoint.GetHashCode();
                 if (this.ResourceUrl != null)
                     hashCode = hashCode * 59 + this.ResourceUrl.GetHashCode();
+                if (this.EnterpriseProjectId != null)
+                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.ResourceAccountId != null)
+                    hashCode = hashCode * 59 + this.ResourceAccountId.GetHashCode();
                 return hashCode;
             }
         }

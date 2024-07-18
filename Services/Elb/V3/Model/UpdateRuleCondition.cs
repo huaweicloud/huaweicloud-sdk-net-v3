@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 
+    /// 转发到主机组配置
     /// </summary>
     public class UpdateRuleCondition 
     {

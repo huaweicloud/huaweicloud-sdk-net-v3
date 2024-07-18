@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     public class UpdateHealthMonitorOption 
     {
         /// <summary>
-        /// HTTP请求方法。  取值：GET、HEAD、POST、PUT、DELETE、TRACE、OPTIONS、CONNECT、PATCH，默认GET。  使用说明：当type为HTTP/HTTPS时生效。  不支持该字段，请勿使用。
+        /// HTTP请求方法。  取值：GET、HEAD、POST，默认GET。  使用说明：当type为HTTP/HTTPS时生效。
         /// </summary>
-        /// <value>HTTP请求方法。  取值：GET、HEAD、POST、PUT、DELETE、TRACE、OPTIONS、CONNECT、PATCH，默认GET。  使用说明：当type为HTTP/HTTPS时生效。  不支持该字段，请勿使用。</value>
+        /// <value>HTTP请求方法。  取值：GET、HEAD、POST，默认GET。  使用说明：当type为HTTP/HTTPS时生效。</value>
         [JsonConverter(typeof(EnumClassConverter<HttpMethodEnum>))]
         public class HttpMethodEnum
         {
@@ -37,48 +37,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             /// </summary>
             public static readonly HttpMethodEnum POST = new HttpMethodEnum("POST");
 
-            /// <summary>
-            /// Enum PUT for value: PUT
-            /// </summary>
-            public static readonly HttpMethodEnum PUT = new HttpMethodEnum("PUT");
-
-            /// <summary>
-            /// Enum DELETE for value: DELETE
-            /// </summary>
-            public static readonly HttpMethodEnum DELETE = new HttpMethodEnum("DELETE");
-
-            /// <summary>
-            /// Enum TRACE for value: TRACE
-            /// </summary>
-            public static readonly HttpMethodEnum TRACE = new HttpMethodEnum("TRACE");
-
-            /// <summary>
-            /// Enum OPTIONS for value: OPTIONS
-            /// </summary>
-            public static readonly HttpMethodEnum OPTIONS = new HttpMethodEnum("OPTIONS");
-
-            /// <summary>
-            /// Enum CONNECT for value: CONNECT
-            /// </summary>
-            public static readonly HttpMethodEnum CONNECT = new HttpMethodEnum("CONNECT");
-
-            /// <summary>
-            /// Enum PATCH for value: PATCH
-            /// </summary>
-            public static readonly HttpMethodEnum PATCH = new HttpMethodEnum("PATCH");
-
             private static readonly Dictionary<string, HttpMethodEnum> StaticFields =
             new Dictionary<string, HttpMethodEnum>()
             {
                 { "GET", GET },
                 { "HEAD", HEAD },
                 { "POST", POST },
-                { "PUT", PUT },
-                { "DELETE", DELETE },
-                { "TRACE", TRACE },
-                { "OPTIONS", OPTIONS },
-                { "CONNECT", CONNECT },
-                { "PATCH", PATCH },
             };
 
             private string _value;
@@ -192,13 +156,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string DomainName { get; set; }
 
         /// <summary>
-        /// 期望响应状态码。  取值： - 单值：单个返回码，例如200。 - 列表：多个特定返回码，例如200，202。 - 区间：一个返回码区间，例如200-204。   默认值：200。  仅支持HTTP/HTTPS设置该字段，其他协议设置不会生效。
+        /// 期望响应状态码。  取值： - 单值：单个返回码，例如200。 - 列表：多个特定返回码，例如200，202。 - 区间：一个返回码区间，例如200-204。  仅支持HTTP/HTTPS/GRPC设置该字段，其他协议设置不会生效。
         /// </summary>
         [JsonProperty("expected_codes", NullValueHandling = NullValueHandling.Ignore)]
         public string ExpectedCodes { get; set; }
 
         /// <summary>
-        /// HTTP请求方法。  取值：GET、HEAD、POST、PUT、DELETE、TRACE、OPTIONS、CONNECT、PATCH，默认GET。  使用说明：当type为HTTP/HTTPS时生效。  不支持该字段，请勿使用。
+        /// HTTP请求方法。  取值：GET、HEAD、POST，默认GET。  使用说明：当type为HTTP/HTTPS时生效。
         /// </summary>
         [JsonProperty("http_method", NullValueHandling = NullValueHandling.Ignore)]
         public HttpMethodEnum HttpMethod { get; set; }
@@ -239,7 +203,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string UrlPath { get; set; }
 
         /// <summary>
-        /// 健康检查请求协议。  取值：TCP、UDP_CONNECT、HTTP、HTTPS。  使用说明： - 若pool的protocol为QUIC，则type只能是UDP_CONNECT。 - 若pool的protocol为UDP，则type只能UDP_CONNECT。 - 若pool的protocol为TCP，则type可以是TCP、HTTP、HTTPS。 - 若pool的protocol为HTTP，则type可以是TCP、HTTP、HTTPS。 - 若pool的protocol为HTTPS，则type可以是TCP、HTTP、HTTPS。  [不支持QUIC。](tag:tm,hws_eu,g42,hk_g42,hcso_dt)  [荷兰region不支持QUIC。](tag:dt,dt_test)
+        /// 健康检查请求协议。  取值：TCP、UDP_CONNECT、HTTP、HTTPS、TLS和GRPC。  使用说明： - 若pool的protocol为QUIC，则type只能是UDP_CONNECT。 - 若pool的protocol为UDP，则type只能UDP_CONNECT。 - 若pool的protocol为TCP，则type可以是TCP、HTTP、HTTPS。 - 若pool的protocol为HTTP，则type可以是TCP、HTTP、HTTPS、TLS、GRPC。 - 若pool的protocol为HTTPS，则type可以是TCP、HTTP、HTTPS、TLS、GRPC。 - 若pool的protocol为GRPC，则type可以是TCP、HTTP、HTTPS、TLS、GRPC。 - 若pool的protocol为TLS，则type可以是TCP、HTTP、HTTPS、TLS、GRPC。  [不支持QUIC。](tag:tm,hws_eu,g42,hk_g42,hcso_dt)  [荷兰region不支持QUIC。](tag:dt,dt_test)
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }

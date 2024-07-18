@@ -35,12 +35,6 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public string DomainId { get; set; }
 
         /// <summary>
-        /// 委托的期限。取值为\&quot;FOREVER\&quot;或“null”表示委托的期限为永久，取值为\&quot;ONEDAY\&quot;表示委托的期限为一天。
-        /// </summary>
-        [JsonProperty("duration", NullValueHandling = NullValueHandling.Ignore)]
-        public string Duration { get; set; }
-
-        /// <summary>
         /// 委托过期时间。“null”表示不过期。
         /// </summary>
         [JsonProperty("expire_time", NullValueHandling = NullValueHandling.Ignore)]
@@ -82,7 +76,6 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             sb.Append("  createTime: ").Append(CreateTime).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  domainId: ").Append(DomainId).Append("\n");
-            sb.Append("  duration: ").Append(Duration).Append("\n");
             sb.Append("  expireTime: ").Append(ExpireTime).Append("\n");
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
@@ -125,11 +118,6 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
                     this.DomainId.Equals(input.DomainId))
                 ) && 
                 (
-                    this.Duration == input.Duration ||
-                    (this.Duration != null &&
-                    this.Duration.Equals(input.Duration))
-                ) && 
-                (
                     this.ExpireTime == input.ExpireTime ||
                     (this.ExpireTime != null &&
                     this.ExpireTime.Equals(input.ExpireTime))
@@ -170,8 +158,6 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.DomainId != null)
                     hashCode = hashCode * 59 + this.DomainId.GetHashCode();
-                if (this.Duration != null)
-                    hashCode = hashCode * 59 + this.Duration.GetHashCode();
                 if (this.ExpireTime != null)
                     hashCode = hashCode * 59 + this.ExpireTime.GetHashCode();
                 if (this.Id != null)

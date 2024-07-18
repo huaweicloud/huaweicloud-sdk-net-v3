@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 固定返回页面的配置。  当监听器的高级转发策略功能（enhance_l7policy_enable）开启后才会生效，未开启传入该字段会报错。  当action为FIXED_RESPONSE时生效，且为必选字段，其他action不可指定，否则报错。  [共享型负载均衡器下的转发策略不支持该字段，传入会报错。 ](tag:hws,hws_hk,ocb,ctc,g42,tm,cmcc,hk_g42,hws_ocb,fcs,dt,hk_tm)  [不支持该字段，请勿使用。](tag:hcso_dt)  [荷兰region不支持该字段，请勿使用。](tag:dt)
+    /// 固定返回页面的配置。  当监听器的高级转发策略功能（enhance_l7policy_enable）开启后才会生效，未开启传入该字段会报错。  当action为FIXED_RESPONSE时生效，且为必选字段，其他action不可指定，否则报错。  [共享型负载均衡器下的转发策略不支持该字段，传入会报错。 ](tag:hws,hws_hk,ocb,ctc,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,fcs,dt,hk_tm)  [不支持该字段，请勿使用。](tag:hcso_dt)  [荷兰region不支持该字段，请勿使用。](tag:dt,dt_test)
     /// </summary>
     public class CreateFixtedResponseConfig 
     {
@@ -166,6 +166,24 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         [JsonProperty("message_body", NullValueHandling = NullValueHandling.Ignore)]
         public string MessageBody { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("insert_headers_config", NullValueHandling = NullValueHandling.Ignore)]
+        public CreateInsertHeadersConfig InsertHeadersConfig { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("remove_headers_config", NullValueHandling = NullValueHandling.Ignore)]
+        public CreateRemoveHeadersConfig RemoveHeadersConfig { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("traffic_limit_config", NullValueHandling = NullValueHandling.Ignore)]
+        public CreateTrafficLimitConfig TrafficLimitConfig { get; set; }
+
 
 
         /// <summary>
@@ -178,6 +196,9 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  statusCode: ").Append(StatusCode).Append("\n");
             sb.Append("  contentType: ").Append(ContentType).Append("\n");
             sb.Append("  messageBody: ").Append(MessageBody).Append("\n");
+            sb.Append("  insertHeadersConfig: ").Append(InsertHeadersConfig).Append("\n");
+            sb.Append("  removeHeadersConfig: ").Append(RemoveHeadersConfig).Append("\n");
+            sb.Append("  trafficLimitConfig: ").Append(TrafficLimitConfig).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -213,6 +234,21 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.MessageBody == input.MessageBody ||
                     (this.MessageBody != null &&
                     this.MessageBody.Equals(input.MessageBody))
+                ) && 
+                (
+                    this.InsertHeadersConfig == input.InsertHeadersConfig ||
+                    (this.InsertHeadersConfig != null &&
+                    this.InsertHeadersConfig.Equals(input.InsertHeadersConfig))
+                ) && 
+                (
+                    this.RemoveHeadersConfig == input.RemoveHeadersConfig ||
+                    (this.RemoveHeadersConfig != null &&
+                    this.RemoveHeadersConfig.Equals(input.RemoveHeadersConfig))
+                ) && 
+                (
+                    this.TrafficLimitConfig == input.TrafficLimitConfig ||
+                    (this.TrafficLimitConfig != null &&
+                    this.TrafficLimitConfig.Equals(input.TrafficLimitConfig))
                 );
         }
 
@@ -230,6 +266,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     hashCode = hashCode * 59 + this.ContentType.GetHashCode();
                 if (this.MessageBody != null)
                     hashCode = hashCode * 59 + this.MessageBody.GetHashCode();
+                if (this.InsertHeadersConfig != null)
+                    hashCode = hashCode * 59 + this.InsertHeadersConfig.GetHashCode();
+                if (this.RemoveHeadersConfig != null)
+                    hashCode = hashCode * 59 + this.RemoveHeadersConfig.GetHashCode();
+                if (this.TrafficLimitConfig != null)
+                    hashCode = hashCode * 59 + this.TrafficLimitConfig.GetHashCode();
                 return hashCode;
             }
         }

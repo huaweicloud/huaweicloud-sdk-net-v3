@@ -38,13 +38,19 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// 
         /// </summary>
         [JsonProperty("lower_bound", NullValueHandling = NullValueHandling.Ignore)]
-        public int? LowerBound { get; set; }
+        public double? LowerBound { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("upper_bound", NullValueHandling = NullValueHandling.Ignore)]
-        public int? UpperBound { get; set; }
+        public double? UpperBound { get; set; }
+
+        /// <summary>
+        /// 操作百分比，取值为0到20000的整数。当scaling_resource_type为SCALING_GROUP时，size和instance_percentage参数均无配置，则size默认为1。当scaling_resource_type为BANDWIDTH时，不支持配置instance_percentage参数。
+        /// </summary>
+        [JsonProperty("percentage", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Percentage { get; set; }
 
 
 
@@ -60,6 +66,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
             sb.Append("  size: ").Append(Size).Append("\n");
             sb.Append("  lowerBound: ").Append(LowerBound).Append("\n");
             sb.Append("  upperBound: ").Append(UpperBound).Append("\n");
+            sb.Append("  percentage: ").Append(Percentage).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -105,6 +112,11 @@ namespace HuaweiCloud.SDK.As.V1.Model
                     this.UpperBound == input.UpperBound ||
                     (this.UpperBound != null &&
                     this.UpperBound.Equals(input.UpperBound))
+                ) && 
+                (
+                    this.Percentage == input.Percentage ||
+                    (this.Percentage != null &&
+                    this.Percentage.Equals(input.Percentage))
                 );
         }
 
@@ -126,6 +138,8 @@ namespace HuaweiCloud.SDK.As.V1.Model
                     hashCode = hashCode * 59 + this.LowerBound.GetHashCode();
                 if (this.UpperBound != null)
                     hashCode = hashCode * 59 + this.UpperBound.GetHashCode();
+                if (this.Percentage != null)
+                    hashCode = hashCode * 59 + this.Percentage.GetHashCode();
                 return hashCode;
             }
         }

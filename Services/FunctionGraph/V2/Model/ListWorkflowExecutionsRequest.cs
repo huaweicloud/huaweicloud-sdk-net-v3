@@ -164,6 +164,13 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public int? Limit { get; set; }
 
         /// <summary>
+        /// 分页查询，分页的偏移量，默认值为0 offset小于0时，按照0处理
+        /// </summary>
+        [SDKProperty("offset", IsQuery = true)]
+        [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Offset { get; set; }
+
+        /// <summary>
         /// 需要过滤的流程实例状态
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
@@ -194,6 +201,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("class ListWorkflowExecutionsRequest {\n");
             sb.Append("  workflowId: ").Append(WorkflowId).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
+            sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  startTime: ").Append(StartTime).Append("\n");
             sb.Append("  endTime: ").Append(EndTime).Append("\n");
@@ -229,6 +237,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.Limit.Equals(input.Limit))
                 ) && 
                 (
+                    this.Offset == input.Offset ||
+                    (this.Offset != null &&
+                    this.Offset.Equals(input.Offset))
+                ) && 
+                (
                     this.Status == input.Status ||
                     (this.Status != null &&
                     this.Status.Equals(input.Status))
@@ -257,6 +270,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.WorkflowId.GetHashCode();
                 if (this.Limit != null)
                     hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Offset != null)
+                    hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.Status != null)
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.StartTime != null)

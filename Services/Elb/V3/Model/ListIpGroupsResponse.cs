@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// IP地址组列表返回对象。
+        /// 参数解释：IP地址组列表返回对象。
         /// </summary>
         [JsonProperty("ipgroups", NullValueHandling = NullValueHandling.Ignore)]
         public List<IpGroup> Ipgroups { get; set; }
 
         /// <summary>
-        /// 请求ID。  注：自动生成 。
+        /// 参数解释：请求ID。  注：自动生成 。
         /// </summary>
         [JsonProperty("request_id", NullValueHandling = NullValueHandling.Ignore)]
         public string RequestId { get; set; }

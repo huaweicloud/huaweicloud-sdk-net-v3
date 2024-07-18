@@ -502,6 +502,30 @@ namespace HuaweiCloud.SDK.Vod.V1
         }
         
         /// <summary>
+        /// 删除转码产物
+        ///
+        /// 删除转码产物。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteTranscodeProductResponse> DeleteTranscodeProductAsync(DeleteTranscodeProductRequest deleteTranscodeProductRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/transcode-product", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTranscodeProductRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteTranscodeProductResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteTranscodeProductResponse> DeleteTranscodeProductAsyncInvoker(DeleteTranscodeProductRequest deleteTranscodeProductRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/transcode-product", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTranscodeProductRequest);
+            return new AsyncInvoker<DeleteTranscodeProductResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteTranscodeProductResponse>);
+        }
+        
+        /// <summary>
         /// 删除自定义模板
         ///
         /// 删除自定义模板
@@ -777,6 +801,30 @@ namespace HuaweiCloud.SDK.Vod.V1
         }
         
         /// <summary>
+        /// 多字幕封装
+        ///
+        /// 多字幕封装，仅支持 HLS VTT格式
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ModifySubtitleResponse> ModifySubtitleAsync(ModifySubtitleRequest modifySubtitleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/subtitles", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifySubtitleRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<ModifySubtitleResponse>(response);
+        }
+
+        public AsyncInvoker<ModifySubtitleResponse> ModifySubtitleAsyncInvoker(ModifySubtitleRequest modifySubtitleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/subtitles", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifySubtitleRequest);
+            return new AsyncInvoker<ModifySubtitleResponse>(this, "PUT", request, JsonUtils.DeSerialize<ModifySubtitleResponse>);
+        }
+        
+        /// <summary>
         /// 创建媒资：OBS转存方式
         ///
         /// 若您在使用点播服务前，已经在OBS桶中存储了音视频文件，您可以使用该接口将存储在OBS桶中的音视频文件转存到点播服务中，使用点播服务的音视频管理功能。调用该接口前，您需要调用[桶授权](https://support.huaweicloud.com/api-vod/vod_04_0199.html)接口，将存储音视频文件的OBS桶授权给点播服务。
@@ -975,6 +1023,34 @@ namespace HuaweiCloud.SDK.Vod.V1
         }
         
         /// <summary>
+        /// 查询取回数据信息
+        ///
+        /// ## 典型场景 ##
+        ///  用于查询点播低频和归档取回量统计数据。&lt;br/&gt;
+        /// 
+        /// ## 接口功能 ##
+        ///  用于查询点播低频和归档取回量统计数据。&lt;br/&gt;
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowVodRetrievalResponse> ShowVodRetrievalAsync(ShowVodRetrievalRequest showVodRetrievalRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/vod-retrieval", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVodRetrievalRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowVodRetrievalResponse>(response);
+        }
+
+        public AsyncInvoker<ShowVodRetrievalResponse> ShowVodRetrievalAsyncInvoker(ShowVodRetrievalRequest showVodRetrievalRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/vod-retrieval", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVodRetrievalRequest);
+            return new AsyncInvoker<ShowVodRetrievalResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowVodRetrievalResponse>);
+        }
+        
+        /// <summary>
         /// 查询源站统计信息
         ///
         /// 查询点播源站的统计数据，包括流量、存储空间、转码时长。
@@ -1146,6 +1222,31 @@ namespace HuaweiCloud.SDK.Vod.V1
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/cover", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateCoverByThumbnailRequest);
             return new AsyncInvoker<UpdateCoverByThumbnailResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateCoverByThumbnailResponse>);
+        }
+        
+        /// <summary>
+        /// 修改媒资文件在obs的存储模式
+        ///
+        /// ## 接口功能 ##
+        ///   修改媒资文件在obs的存储模式&lt;br/&gt;
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateStorageModeResponse> UpdateStorageModeAsync(UpdateStorageModeRequest updateStorageModeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/storage-mode", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateStorageModeRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateStorageModeResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateStorageModeResponse> UpdateStorageModeAsyncInvoker(UpdateStorageModeRequest updateStorageModeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/storage-mode", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateStorageModeRequest);
+            return new AsyncInvoker<UpdateStorageModeResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateStorageModeResponse>);
         }
         
         /// <summary>
@@ -1338,83 +1439,6 @@ namespace HuaweiCloud.SDK.Vod.V1
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/obs/host/stock/task/details", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTakeOverTaskDetailsRequest);
             return new AsyncInvoker<ShowTakeOverTaskDetailsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTakeOverTaskDetailsResponse>);
-        }
-        
-        /// <summary>
-        /// 查询取回数据信息
-        ///
-        /// ## 典型场景 ##
-        ///  用于查询点播低频和归档取回量统计数据。&lt;br/&gt;
-        /// 
-        /// ## 接口功能 ##
-        ///  用于查询点播低频和归档取回量统计数据。&lt;br/&gt;
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<ShowVodRetrievalResponse> ShowVodRetrievalAsync(ShowVodRetrievalRequest showVodRetrievalRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/vod-retrieval", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVodRetrievalRequest);
-            var response = await DoHttpRequestAsync("GET", request);
-            return JsonUtils.DeSerialize<ShowVodRetrievalResponse>(response);
-        }
-
-        public AsyncInvoker<ShowVodRetrievalResponse> ShowVodRetrievalAsyncInvoker(ShowVodRetrievalRequest showVodRetrievalRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/vod-retrieval", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVodRetrievalRequest);
-            return new AsyncInvoker<ShowVodRetrievalResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowVodRetrievalResponse>);
-        }
-        
-        /// <summary>
-        /// 多字幕封装
-        ///
-        /// 多字幕封装，仅支持 HLS VTT格式
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<ModifySubtitleResponse> ModifySubtitleAsync(ModifySubtitleRequest modifySubtitleRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/subtitles", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifySubtitleRequest);
-            var response = await DoHttpRequestAsync("PUT", request);
-            return JsonUtils.DeSerialize<ModifySubtitleResponse>(response);
-        }
-
-        public AsyncInvoker<ModifySubtitleResponse> ModifySubtitleAsyncInvoker(ModifySubtitleRequest modifySubtitleRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/subtitles", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifySubtitleRequest);
-            return new AsyncInvoker<ModifySubtitleResponse>(this, "PUT", request, JsonUtils.DeSerialize<ModifySubtitleResponse>);
-        }
-        
-        /// <summary>
-        /// 修改媒资文件在obs的存储模式
-        ///
-        /// ## 接口功能 ##
-        ///   修改媒资文件在obs的存储模式&lt;br/&gt;
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<UpdateStorageModeResponse> UpdateStorageModeAsync(UpdateStorageModeRequest updateStorageModeRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/storage-mode", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateStorageModeRequest);
-            var response = await DoHttpRequestAsync("PUT", request);
-            return JsonUtils.DeSerialize<UpdateStorageModeResponse>(response);
-        }
-
-        public AsyncInvoker<UpdateStorageModeResponse> UpdateStorageModeAsyncInvoker(UpdateStorageModeRequest updateStorageModeRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/storage-mode", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateStorageModeRequest);
-            return new AsyncInvoker<UpdateStorageModeResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateStorageModeResponse>);
         }
         
     }

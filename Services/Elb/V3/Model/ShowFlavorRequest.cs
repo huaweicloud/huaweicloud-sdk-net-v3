@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// 规格ID。
+        /// 参数解释：规格ID。
         /// </summary>
         [SDKProperty("flavor_id", IsPath = true)]
         [JsonProperty("flavor_id", NullValueHandling = NullValueHandling.Ignore)]

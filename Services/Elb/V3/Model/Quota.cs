@@ -47,7 +47,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public int? L7policy { get; set; }
 
         /// <summary>
-        /// 转发策略配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+        /// 单个转发策略下所有转发规则的condition总数配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
         /// </summary>
         [JsonProperty("condition_per_policy", NullValueHandling = NullValueHandling.Ignore)]
         public int? ConditionPerPolicy { get; set; }
@@ -77,7 +77,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public int? MembersPerPool { get; set; }
 
         /// <summary>
-        /// 单个pool下的member的配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+        /// 单个监听器下的pool的配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
         /// </summary>
         [JsonProperty("listeners_per_pool", NullValueHandling = NullValueHandling.Ignore)]
         public int? ListenersPerPool { get; set; }
@@ -89,13 +89,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public int? Ipgroup { get; set; }
 
         /// <summary>
-        /// IP地址组配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。  [不支持该字段，请勿使用。](tag:hcso_dt)
+        /// 单个IP地址组可以关联的监听器数量配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。  [不支持该字段，请勿使用。](tag:hcso_dt)
         /// </summary>
         [JsonProperty("ipgroup_bindings", NullValueHandling = NullValueHandling.Ignore)]
         public int? IpgroupBindings { get; set; }
 
         /// <summary>
-        /// IP地址组配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。  [不支持该字段，请勿使用。](tag:hcso_dt)
+        /// 单个监听器下关联的所有IP地址组的ip列表中的IP总数不能超过ipgroup_max_length。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。  [不支持该字段，请勿使用。](tag:hcso_dt)
         /// </summary>
         [JsonProperty("ipgroup_max_length", NullValueHandling = NullValueHandling.Ignore)]
         public int? IpgroupMaxLength { get; set; }

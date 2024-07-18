@@ -53,7 +53,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string ProjectId { get; set; }
 
         /// <summary>
-        /// 后端云服务器组的后端协议。  取值：TCP、UDP、QUIC。  使用说明： - listener的protocol为UDP时，pool的protocol必须为UDP或QUIC。 - listener的protocol为TCP时pool的protocol必须为TCP。  [不支持QUIC。](tag:tm,hws_eu,g42,hk_g42,hcso_dt)  [荷兰region不支持QUIC。](tag:dt,dt_test)
+        /// 后端云服务器组的后端协议。  取值：TCP、UDP、QUIC、TLS。  使用说明： - listener的protocol为UDP时，pool的protocol必须为UDP或QUIC。 - listener的protocol为TCP时，pool的protocol必须为TCP。 - listener的protocol为TLS时，pool的protocol必须为TLS或TCP（且只能使用ip_version为v4的TCP pool）。 - 其他协议监听器不支持主备后端服务器组。  [不支持QUIC。](tag:tm,hws_eu,g42,hk_g42,hcso_dt)  [荷兰region不支持QUIC。](tag:dt,dt_test)
         /// </summary>
         [JsonProperty("protocol", NullValueHandling = NullValueHandling.Ignore)]
         public string Protocol { get; set; }
@@ -95,7 +95,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public CreateMasterSlaveHealthMonitorOption Healthmonitor { get; set; }
 
         /// <summary>
-        /// 后端是否开启端口透传，开启后，后端服务器端口与前端监听器端口保持一致。取值：false不开启，true开启，默认false。 &gt; 关闭端口透传后，请求会转发给后端服务器protocol_port字段指定端口。
+        /// 后端是否开启端口透传。开启后，后端服务器端口与前端监听器端口保持一致。关闭后，请求会转发给后端服务器protocol_port字段指定端口。取值：false不开启，true开启。  使用说明： - 仅QUIC,TCP,UDP的pool支持。
         /// </summary>
         [JsonProperty("any_port_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? AnyPortEnable { get; set; }
