@@ -45,6 +45,8 @@ namespace HuaweiCloud.SDK.Cfw.V1
             "https://cfw.me-east-1.myhuaweicloud.com");
         public static readonly Region CN_NORTH_11 = new Region("cn-north-11",
             "https://cfw.cn-north-11.myhuaweicloud.com");
+        public static readonly Region CN_SOUTH_2 = new Region("cn-south-2",
+            "https://cfw.cn-south-2.myhuaweicloud.com");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("CFW");
 
@@ -69,6 +71,7 @@ namespace HuaweiCloud.SDK.Cfw.V1
                 { "tr-west-1", TR_WEST_1 },
                 { "me-east-1", ME_EAST_1 },
                 { "cn-north-11", CN_NORTH_11 },
+                { "cn-south-2", CN_SOUTH_2 },
         };
 
         public static Region ValueOf(string regionId)

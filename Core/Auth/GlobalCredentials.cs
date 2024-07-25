@@ -116,7 +116,14 @@ namespace HuaweiCloud.SDK.Core.Auth
             request = SignAuthRequest(request).Result;
             try
             {
-                DomainId = IamService.KeystoneListAuthDomains(client, request);
+                var response = IamService.InternalKeystoneListAuthDomains(client, request);
+                if (response.Domains == null || response.Domains.Count == 0)
+                {
+                    throw new SdkException(string.Format("Failed to get domain id automatically, X-IAM-Trace-Id={}. " +
+                                                         "Please confirm that you have 'iam:users:getUser' permission, " +
+                                                         "or specify domain id manually: new GlobalCredentials(ak, sk, domainId);", response.TraceId));
+                }
+                DomainId = response.Domains[0].Id;
                 logger.LogInformation("Success to obtain domain id: {}", DomainId);
                 AuthCache.Value[Ak] = DomainId;
                 DerivedPredicate = derivedFunc;

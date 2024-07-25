@@ -1450,7 +1450,7 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/{engine}/instances/logs/lts-configs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listLogLtsConfigsRequest);
             var response = await DoHttpRequestAsync("GET", request);
-            return JsonUtils.DeSerializeNull<ListLogLtsConfigsResponse>(response);
+            return JsonUtils.DeSerialize<ListLogLtsConfigsResponse>(response);
         }
 
         public AsyncInvoker<ListLogLtsConfigsResponse> ListLogLtsConfigsAsyncInvoker(ListLogLtsConfigsRequest listLogLtsConfigsRequest)
@@ -1459,7 +1459,7 @@ namespace HuaweiCloud.SDK.Rds.V3
             urlParam.Add("engine", listLogLtsConfigsRequest.Engine.ToString());
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/{engine}/instances/logs/lts-configs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listLogLtsConfigsRequest);
-            return new AsyncInvoker<ListLogLtsConfigsResponse>(this, "GET", request, JsonUtils.DeSerializeNull<ListLogLtsConfigsResponse>);
+            return new AsyncInvoker<ListLogLtsConfigsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListLogLtsConfigsResponse>);
         }
         
         /// <summary>

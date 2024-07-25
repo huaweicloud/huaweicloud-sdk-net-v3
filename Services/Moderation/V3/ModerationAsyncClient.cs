@@ -16,6 +16,30 @@ namespace HuaweiCloud.SDK.Moderation.V3
 
         
         /// <summary>
+        /// 图像审核批量同步接口
+        ///
+        /// 图像审核批量同步接口
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchCheckImageSyncResponse> BatchCheckImageSyncAsync(BatchCheckImageSyncRequest batchCheckImageSyncRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/image/batch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCheckImageSyncRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<BatchCheckImageSyncResponse>(response);
+        }
+
+        public AsyncInvoker<BatchCheckImageSyncResponse> BatchCheckImageSyncAsyncInvoker(BatchCheckImageSyncRequest batchCheckImageSyncRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/image/batch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCheckImageSyncRequest);
+            return new AsyncInvoker<BatchCheckImageSyncResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchCheckImageSyncResponse>);
+        }
+        
+        /// <summary>
         /// 图像内容审核
         ///
         /// 分析并识别用户上传的图像内容是否有敏感内容（如涉及暴恐元素、涉黄内容等），并将识别结果返回给用户。

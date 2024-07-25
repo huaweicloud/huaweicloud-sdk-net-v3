@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public string DeviceType { get; set; }
 
         /// <summary>
-        /// **参数说明**：设备使用的协议类型。 **取值范围**：MQTT，CoAP，HTTP，HTTPS，Modbus，ONVIF，OPC-UA，OPC-DA，Other。
+        /// **参数说明**：设备使用的协议类型。 **取值范围**：MQTT，CoAP，HTTP，HTTPS，Modbus，ONVIF，OPC-UA，OPC-DA，Other，TCP，UDP。
         /// </summary>
         [JsonProperty("protocol_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ProtocolType { get; set; }

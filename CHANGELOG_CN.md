@@ -1,3 +1,50 @@
+# 3.1.105 2024-07-25
+
+### HuaweiCloud SDK CCE
+
+- _新增特性_
+  - 支持以下接口：
+    - `SyncNodePool`
+    - `UpgradeNodePool`
+    - `ShowClusterSupportConfiguration`
+    - `ShowResourceInstances`
+    - `BatchCreateDeleteResourceTags`
+    - `ShowResourceTags`
+    - `ShowCustomizeClusterTagsByProjectId`
+    - `UpdateAutopilotClusterEip`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK Moderation
+
+- _新增特性_
+  - 支持接口`BatchCheckImageSync`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **RunTextModeration**
+    - 请求参数变更
+      - `+ Enterprise-Project-Id`
+  - **CheckImageModeration**
+    - 请求参数变更
+      - `+ Enterprise-Project-Id`
+
+### HuaweiCloud SDK OCR
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **RecognizeCambodianIdCard**
+    - 请求参数变更
+      - `+ detect_reproduce`
+    - 响应参数变更
+      - `+ result.detect_reproduce_result`
+      - `+ result.score_info.reproduce_score`
+
 # 3.1.104 2024-07-18
 
 ### HuaweiCloud SDK AS

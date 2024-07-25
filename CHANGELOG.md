@@ -1,3 +1,50 @@
+# 3.1.105 2024-07-25
+
+### HuaweiCloud SDK CCE
+
+- _Features_
+  - Support the following APIs:
+    - `SyncNodePool`
+    - `UpgradeNodePool`
+    - `ShowClusterSupportConfiguration`
+    - `ShowResourceInstances`
+    - `BatchCreateDeleteResourceTags`
+    - `ShowResourceTags`
+    - `ShowCustomizeClusterTagsByProjectId`
+    - `UpdateAutopilotClusterEip`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK Moderation
+
+- _Features_
+  - Support the API `BatchCheckImageSync`
+- _Bug Fix_
+  - None
+- _Change_
+  - **RunTextModeration**
+    - changes of request param
+      - `+ Enterprise-Project-Id`
+  - **CheckImageModeration**
+    - changes of request param
+      - `+ Enterprise-Project-Id`
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **RecognizeCambodianIdCard**
+    - changes of request param
+      - `+ detect_reproduce`
+    - changes of response param
+      - `+ result.detect_reproduce_result`
+      - `+ result.score_info.reproduce_score`
+
 # 3.1.104 2024-07-18
 
 ### HuaweiCloud SDK AS

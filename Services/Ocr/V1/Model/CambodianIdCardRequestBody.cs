@@ -82,6 +82,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         [JsonProperty("detect_tampering", NullValueHandling = NullValueHandling.Ignore)]
         public bool? DetectTampering { get; set; }
 
+        /// <summary>
+        /// 返回判断身份证图像是否经过翻拍告警的开关，可选值如下所示 - true:打开判断身份证图像是否经过翻拍告警的功能  - false:关闭判断身份证图像是否经过翻拍告警的功能 
+        /// </summary>
+        [JsonProperty("detect_reproduce", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? DetectReproduce { get; set; }
+
 
 
         /// <summary>
@@ -102,6 +108,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  detectGlare: ").Append(DetectGlare).Append("\n");
             sb.Append("  returnAdjustedImage: ").Append(ReturnAdjustedImage).Append("\n");
             sb.Append("  detectTampering: ").Append(DetectTampering).Append("\n");
+            sb.Append("  detectReproduce: ").Append(DetectReproduce).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -177,6 +184,11 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     this.DetectTampering == input.DetectTampering ||
                     (this.DetectTampering != null &&
                     this.DetectTampering.Equals(input.DetectTampering))
+                ) && 
+                (
+                    this.DetectReproduce == input.DetectReproduce ||
+                    (this.DetectReproduce != null &&
+                    this.DetectReproduce.Equals(input.DetectReproduce))
                 );
         }
 
@@ -210,6 +222,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     hashCode = hashCode * 59 + this.ReturnAdjustedImage.GetHashCode();
                 if (this.DetectTampering != null)
                     hashCode = hashCode * 59 + this.DetectTampering.GetHashCode();
+                if (this.DetectReproduce != null)
+                    hashCode = hashCode * 59 + this.DetectReproduce.GetHashCode();
                 return hashCode;
             }
         }

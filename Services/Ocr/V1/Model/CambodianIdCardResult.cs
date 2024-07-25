@@ -155,6 +155,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public bool? DetectTamperingResult { get; set; }
 
         /// <summary>
+        /// 身份证是否经过翻拍的告警结果，“true”表示身份证经过翻拍，“false”表示身份证未经过翻拍。仅在输入参数detect_reproduce为true时，返回该字段。 
+        /// </summary>
+        [JsonProperty("detect_reproduce_result", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? DetectReproduceResult { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("score_info", NullValueHandling = NullValueHandling.Ignore)]
@@ -198,6 +204,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  detectBlurResult: ").Append(DetectBlurResult).Append("\n");
             sb.Append("  detectGlareResult: ").Append(DetectGlareResult).Append("\n");
             sb.Append("  detectTamperingResult: ").Append(DetectTamperingResult).Append("\n");
+            sb.Append("  detectReproduceResult: ").Append(DetectReproduceResult).Append("\n");
             sb.Append("  scoreInfo: ").Append(ScoreInfo).Append("\n");
             sb.Append("  confidence: ").Append(Confidence).Append("\n");
             sb.Append("}\n");
@@ -338,6 +345,11 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     this.DetectTamperingResult.Equals(input.DetectTamperingResult))
                 ) && 
                 (
+                    this.DetectReproduceResult == input.DetectReproduceResult ||
+                    (this.DetectReproduceResult != null &&
+                    this.DetectReproduceResult.Equals(input.DetectReproduceResult))
+                ) && 
+                (
                     this.ScoreInfo == input.ScoreInfo ||
                     (this.ScoreInfo != null &&
                     this.ScoreInfo.Equals(input.ScoreInfo))
@@ -403,6 +415,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     hashCode = hashCode * 59 + this.DetectGlareResult.GetHashCode();
                 if (this.DetectTamperingResult != null)
                     hashCode = hashCode * 59 + this.DetectTamperingResult.GetHashCode();
+                if (this.DetectReproduceResult != null)
+                    hashCode = hashCode * 59 + this.DetectReproduceResult.GetHashCode();
                 if (this.ScoreInfo != null)
                     hashCode = hashCode * 59 + this.ScoreInfo.GetHashCode();
                 if (this.Confidence != null)

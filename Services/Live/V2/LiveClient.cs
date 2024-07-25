@@ -195,6 +195,32 @@ namespace HuaweiCloud.SDK.Live.V2
         }
         
         /// <summary>
+        /// 查询播放域名下的流数据
+        ///
+        /// 查询播放域名下的监控数据，根据输入时间点，返回查询该时间点所有流的带宽、在线人数、协议。
+        /// 返回的数据粒度为1分钟。
+        /// 最大查询周期7天，数据延迟5分钟。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListPlayDomainStreamInfoResponse ListPlayDomainStreamInfo(ListPlayDomainStreamInfoRequest listPlayDomainStreamInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/stats/stream/play-info", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPlayDomainStreamInfoRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListPlayDomainStreamInfoResponse>(response);
+        }
+
+        public SyncInvoker<ListPlayDomainStreamInfoResponse> ListPlayDomainStreamInfoInvoker(ListPlayDomainStreamInfoRequest listPlayDomainStreamInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/stats/stream/play-info", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPlayDomainStreamInfoRequest);
+            return new SyncInvoker<ListPlayDomainStreamInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ListPlayDomainStreamInfoResponse>);
+        }
+        
+        /// <summary>
         /// 查询直播拉流HTTP状态码接口
         ///
         /// 查询直播拉流HTTP状态码接口。  获取加速域名1分钟粒度的HTTP返回码  最大查询跨度不能超过24小时，最大查询周期7天。
@@ -385,34 +411,6 @@ namespace HuaweiCloud.SDK.Live.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/stats/up-bandwidth/detail", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUpBandwidthRequest);
             return new SyncInvoker<ShowUpBandwidthResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowUpBandwidthResponse>);
-        }
-        
-        /// <summary>
-        /// 查询播放域名下的流数据
-        ///
-        /// 查询播放域名下的监控数据，根据输入时间点，返回查询该时间点所有流的带宽、在线人数、协议。
-        /// 
-        /// 返回的数据粒度为1分钟。
-        /// 
-        /// 最大查询周期7天，数据延迟5分钟。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public ListPlayDomainStreamInfoResponse ListPlayDomainStreamInfo(ListPlayDomainStreamInfoRequest listPlayDomainStreamInfoRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/stats/stream/play-info", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPlayDomainStreamInfoRequest);
-            var response = DoHttpRequestSync("GET", request);
-            return JsonUtils.DeSerialize<ListPlayDomainStreamInfoResponse>(response);
-        }
-
-        public SyncInvoker<ListPlayDomainStreamInfoResponse> ListPlayDomainStreamInfoInvoker(ListPlayDomainStreamInfoRequest listPlayDomainStreamInfoRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/stats/stream/play-info", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPlayDomainStreamInfoRequest);
-            return new SyncInvoker<ListPlayDomainStreamInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ListPlayDomainStreamInfoResponse>);
         }
         
         /// <summary>

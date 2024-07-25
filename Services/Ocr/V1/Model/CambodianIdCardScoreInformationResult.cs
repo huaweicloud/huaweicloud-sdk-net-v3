@@ -52,6 +52,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         [JsonProperty("tampering_score", NullValueHandling = NullValueHandling.Ignore)]
         public int? TamperingScore { get; set; }
 
+        /// <summary>
+        /// 告警分数，字段取值范围[0, 99]值大于50表示身份证经过翻拍，小于50表示身份证未经过翻拍，值越靠近99，表示身份证图像被翻拍过的可能性越大，值越靠近0，表示身份证图像未被翻拍的可能性越大。 仅在传入参数detect_reproduce为true时，返回该字段。 
+        /// </summary>
+        [JsonProperty("reproduce_score", NullValueHandling = NullValueHandling.Ignore)]
+        public int? ReproduceScore { get; set; }
+
 
 
         /// <summary>
@@ -67,6 +73,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  blurScore: ").Append(BlurScore).Append("\n");
             sb.Append("  glareScore: ").Append(GlareScore).Append("\n");
             sb.Append("  tamperingScore: ").Append(TamperingScore).Append("\n");
+            sb.Append("  reproduceScore: ").Append(ReproduceScore).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -117,6 +124,11 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     this.TamperingScore == input.TamperingScore ||
                     (this.TamperingScore != null &&
                     this.TamperingScore.Equals(input.TamperingScore))
+                ) && 
+                (
+                    this.ReproduceScore == input.ReproduceScore ||
+                    (this.ReproduceScore != null &&
+                    this.ReproduceScore.Equals(input.ReproduceScore))
                 );
         }
 
@@ -140,6 +152,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     hashCode = hashCode * 59 + this.GlareScore.GetHashCode();
                 if (this.TamperingScore != null)
                     hashCode = hashCode * 59 + this.TamperingScore.GetHashCode();
+                if (this.ReproduceScore != null)
+                    hashCode = hashCode * 59 + this.ReproduceScore.GetHashCode();
                 return hashCode;
             }
         }

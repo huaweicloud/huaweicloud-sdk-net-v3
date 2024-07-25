@@ -21,6 +21,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 
@@ -118,7 +119,20 @@ namespace HuaweiCloud.SDK.Core.Auth
             request = SignAuthRequest(request).Result;
             try
             {
-                ProjectId = IamService.KeystoneListProjects(client, request);
+                var response = IamService.InternalKeystoneListProjects(client, request);
+                if (response.Projects == null || response.Projects.Count == 0)
+                {
+                    throw new SdkException(string.Format("Failed to get project id of region '{}', automatically, X-IAM-Trace-Id={}. " +
+                                                         "Confirm that the project exists in your account, or set project id manually: " +
+                                                         "new BasicCredentials(ak, sk, projectId);", regionId, response.TraceId));
+                }
+                if (response.Projects.Count > 1)
+                {
+                    var projectIds = string.Join(",", response.Projects.Select(project => project.Id).ToList());
+                    throw new Exception(string.Format("Multiple project ids found: [{}], X-IAM-Trace-Id={}. " +
+                                                      "Please select one when initializing the credentials: new BasicCredentials(ak, sk, projectId);", projectIds, response.TraceId));
+                }
+                ProjectId = response.Projects[0].Id;
                 logger.LogInformation("Success to obtain project id of region '{}': {}", regionId, ProjectId);
                 AuthCache.Value[akWithName] = ProjectId;
                 DerivedPredicate = derivedFunc;
@@ -126,7 +140,7 @@ namespace HuaweiCloud.SDK.Core.Auth
             }
             catch (ServiceResponseException e)
             {
-                throw new ArgumentException("Failed to get project id, " + e.ErrorMsg);
+                throw new SdkException(string.Format("Failed to get project id of region '{}', {}", regionId, e.ErrorMsg));
             }
         }
     }

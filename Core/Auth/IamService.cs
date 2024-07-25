@@ -36,7 +36,13 @@ namespace HuaweiCloud.SDK.Core.Auth
         public string Name { get; set; }
     }
 
-    internal class KeystoneListProjectsResponse : SdkResponse
+    internal class IamResponse : SdkResponse
+    {
+        [SDKProperty(propertyName: "X-IAM-Trace-Id", IsHeader = true)]
+        public string TraceId { get; set;}
+    }
+
+    internal class KeystoneListProjectsResponse : IamResponse
     {
         [JsonProperty("projects", NullValueHandling = NullValueHandling.Ignore)]
         public List<Project> Projects { get; set; }
@@ -51,7 +57,7 @@ namespace HuaweiCloud.SDK.Core.Auth
         public string Name { get; set; }
     }
 
-    internal class KeystoneListAuthDomainsResponse : SdkResponse
+    internal class KeystoneListAuthDomainsResponse : IamResponse
     {
         [JsonProperty("domains", NullValueHandling = NullValueHandling.Ignore)]
         public List<Domains> Domains { get; set; }
@@ -95,7 +101,8 @@ namespace HuaweiCloud.SDK.Core.Auth
 
             return request;
         }
-
+    
+        [Obsolete("This method is for internal use only and is deprecated. It will be removed in a future release.")]
         public static string KeystoneListProjects(SdkHttpClient client, HttpRequest request)
         {
             var message = client.InitHttpRequest(request, true);
@@ -108,7 +115,6 @@ namespace HuaweiCloud.SDK.Core.Auth
                 }
 
                 var data = JsonUtils.DeSerialize<KeystoneListProjectsResponse>(response);
-                // TODO support create new project id here
                 if (data?.Projects == null || data.Projects?.Count == 0)
                 {
                     throw new ArgumentException(NoProjectIdFound);
@@ -120,6 +126,25 @@ namespace HuaweiCloud.SDK.Core.Auth
                 }
 
                 return data.Projects?[0].Id;
+            }
+            catch (AggregateException aggregateException)
+            {
+                throw ExceptionUtils.HandleException(aggregateException);
+            }
+        }
+        
+        internal static KeystoneListProjectsResponse InternalKeystoneListProjects(SdkHttpClient client, HttpRequest request)
+        {
+            var message = client.InitHttpRequest(request, true);
+            try
+            {
+                var response = TaskUtils.RunSync(() => client.DoHttpRequest(message));
+                if ((int)response.StatusCode >= 400)
+                {
+                    throw ExceptionUtils.GetException(response);
+                }
+
+                return JsonUtils.DeSerialize<KeystoneListProjectsResponse>(response);
             }
             catch (AggregateException aggregateException)
             {
@@ -148,7 +173,8 @@ namespace HuaweiCloud.SDK.Core.Auth
 
             return request;
         }
-
+        
+        [Obsolete("This method is for internal use only and is deprecated. It will be removed in a future release.")]
         public static string KeystoneListAuthDomains(SdkHttpClient client, HttpRequest request)
         {
             var message = client.InitHttpRequest(request, true);
@@ -167,6 +193,25 @@ namespace HuaweiCloud.SDK.Core.Auth
                 }
 
                 throw new ArgumentException(NoDomainIdFound);
+            }
+            catch (AggregateException aggregateException)
+            {
+                throw ExceptionUtils.HandleException(aggregateException);
+            }
+        }
+        
+        internal static KeystoneListAuthDomainsResponse InternalKeystoneListAuthDomains(SdkHttpClient client, HttpRequest request)
+        {
+            var message = client.InitHttpRequest(request, true);
+            try
+            {
+                var response = TaskUtils.RunSync(() => client.DoHttpRequest(message));
+                if ((int)response.StatusCode >= 400)
+                {
+                    throw ExceptionUtils.GetException(response);
+                }
+
+                return JsonUtils.DeSerialize<KeystoneListAuthDomainsResponse>(response);
             }
             catch (AggregateException aggregateException)
             {
