@@ -1978,6 +1978,291 @@ namespace HuaweiCloud.SDK.Lts.V2
         }
         
         /// <summary>
+        /// 消费者发送心跳到服务端
+        ///
+        /// 消费者发送心跳到服务端
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ConsumerGroupHeartBeatResponse ConsumerGroupHeartBeat(ConsumerGroupHeartBeatRequest consumerGroupHeartBeatRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("group_id", consumerGroupHeartBeatRequest.GroupId.ToString());
+            urlParam.Add("stream_id", consumerGroupHeartBeatRequest.StreamId.ToString());
+            urlParam.Add("consumer_group_name", consumerGroupHeartBeatRequest.ConsumerGroupName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/groups/{group_id}/streams/{stream_id}/consumer-groups/{consumer_group_name}/heartbeat", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", consumerGroupHeartBeatRequest);
+            var response = DoHttpRequestSync("POST", request);
+            var consumerGroupHeartBeatResponse = JsonUtils.DeSerializeNull<ConsumerGroupHeartBeatResponse>(response);
+            consumerGroupHeartBeatResponse.Body = JsonUtils.DeSerializeList<string>(response);
+            return consumerGroupHeartBeatResponse;
+        }
+
+        public SyncInvoker<ConsumerGroupHeartBeatResponse> ConsumerGroupHeartBeatInvoker(ConsumerGroupHeartBeatRequest consumerGroupHeartBeatRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("group_id", consumerGroupHeartBeatRequest.GroupId.ToString());
+            urlParam.Add("stream_id", consumerGroupHeartBeatRequest.StreamId.ToString());
+            urlParam.Add("consumer_group_name", consumerGroupHeartBeatRequest.ConsumerGroupName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/groups/{group_id}/streams/{stream_id}/consumer-groups/{consumer_group_name}/heartbeat", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", consumerGroupHeartBeatRequest);
+            return new SyncInvoker<ConsumerGroupHeartBeatResponse>(this, "POST", request, response =>
+            {
+                var consumerGroupHeartBeatResponse = JsonUtils.DeSerializeNull<ConsumerGroupHeartBeatResponse>(response);
+                consumerGroupHeartBeatResponse.Body = JsonUtils.DeSerializeList<string>(response);
+                return consumerGroupHeartBeatResponse;
+            });
+        }
+        
+        /// <summary>
+        /// 创建消费组
+        ///
+        /// 创建消费组
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateConsumerGroupResponse CreateConsumerGroup(CreateConsumerGroupRequest createConsumerGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("group_id", createConsumerGroupRequest.GroupId.ToString());
+            urlParam.Add("stream_id", createConsumerGroupRequest.StreamId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/groups/{group_id}/streams/{stream_id}/consumer-groups", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createConsumerGroupRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateConsumerGroupResponse>(response);
+        }
+
+        public SyncInvoker<CreateConsumerGroupResponse> CreateConsumerGroupInvoker(CreateConsumerGroupRequest createConsumerGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("group_id", createConsumerGroupRequest.GroupId.ToString());
+            urlParam.Add("stream_id", createConsumerGroupRequest.StreamId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/groups/{group_id}/streams/{stream_id}/consumer-groups", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createConsumerGroupRequest);
+            return new SyncInvoker<CreateConsumerGroupResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateConsumerGroupResponse>);
+        }
+        
+        /// <summary>
+        /// 删除消费组
+        ///
+        /// 删除消费组
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteConsumerGroupResponse DeleteConsumerGroup(DeleteConsumerGroupRequest deleteConsumerGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("group_id", deleteConsumerGroupRequest.GroupId.ToString());
+            urlParam.Add("stream_id", deleteConsumerGroupRequest.StreamId.ToString());
+            urlParam.Add("consumer_group_name", deleteConsumerGroupRequest.ConsumerGroupName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/groups/{group_id}/streams/{stream_id}/consumer-groups/{consumer_group_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteConsumerGroupRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteConsumerGroupResponse>(response);
+        }
+
+        public SyncInvoker<DeleteConsumerGroupResponse> DeleteConsumerGroupInvoker(DeleteConsumerGroupRequest deleteConsumerGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("group_id", deleteConsumerGroupRequest.GroupId.ToString());
+            urlParam.Add("stream_id", deleteConsumerGroupRequest.StreamId.ToString());
+            urlParam.Add("consumer_group_name", deleteConsumerGroupRequest.ConsumerGroupName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/groups/{group_id}/streams/{stream_id}/consumer-groups/{consumer_group_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteConsumerGroupRequest);
+            return new SyncInvoker<DeleteConsumerGroupResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteConsumerGroupResponse>);
+        }
+        
+        /// <summary>
+        /// 查询消费组列表
+        ///
+        /// 查询消费组列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListConsumerGroupResponse ListConsumerGroup(ListConsumerGroupRequest listConsumerGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("group_id", listConsumerGroupRequest.GroupId.ToString());
+            urlParam.Add("stream_id", listConsumerGroupRequest.StreamId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/groups/{group_id}/streams/{stream_id}/consumer-groups", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listConsumerGroupRequest);
+            var response = DoHttpRequestSync("GET", request);
+            var listConsumerGroupResponse = JsonUtils.DeSerializeNull<ListConsumerGroupResponse>(response);
+            listConsumerGroupResponse.Body = JsonUtils.DeSerializeList<ConsumerGroupInfo>(response);
+            return listConsumerGroupResponse;
+        }
+
+        public SyncInvoker<ListConsumerGroupResponse> ListConsumerGroupInvoker(ListConsumerGroupRequest listConsumerGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("group_id", listConsumerGroupRequest.GroupId.ToString());
+            urlParam.Add("stream_id", listConsumerGroupRequest.StreamId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/groups/{group_id}/streams/{stream_id}/consumer-groups", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listConsumerGroupRequest);
+            return new SyncInvoker<ListConsumerGroupResponse>(this, "GET", request, response =>
+            {
+                var listConsumerGroupResponse = JsonUtils.DeSerializeNull<ListConsumerGroupResponse>(response);
+                listConsumerGroupResponse.Body = JsonUtils.DeSerializeList<ConsumerGroupInfo>(response);
+                return listConsumerGroupResponse;
+            });
+        }
+        
+        /// <summary>
+        /// 查询消费组详情
+        ///
+        /// 查询消费组详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListDetailsConsumerGroupResponse ListDetailsConsumerGroup(ListDetailsConsumerGroupRequest listDetailsConsumerGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("group_id", listDetailsConsumerGroupRequest.GroupId.ToString());
+            urlParam.Add("stream_id", listDetailsConsumerGroupRequest.StreamId.ToString());
+            urlParam.Add("consumer_group_name", listDetailsConsumerGroupRequest.ConsumerGroupName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/groups/{group_id}/streams/{stream_id}/consumer-groups/{consumer_group_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDetailsConsumerGroupRequest);
+            var response = DoHttpRequestSync("GET", request);
+            var listDetailsConsumerGroupResponse = JsonUtils.DeSerializeNull<ListDetailsConsumerGroupResponse>(response);
+            listDetailsConsumerGroupResponse.Body = JsonUtils.DeSerializeList<ConsumerCheckpointInfo>(response);
+            return listDetailsConsumerGroupResponse;
+        }
+
+        public SyncInvoker<ListDetailsConsumerGroupResponse> ListDetailsConsumerGroupInvoker(ListDetailsConsumerGroupRequest listDetailsConsumerGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("group_id", listDetailsConsumerGroupRequest.GroupId.ToString());
+            urlParam.Add("stream_id", listDetailsConsumerGroupRequest.StreamId.ToString());
+            urlParam.Add("consumer_group_name", listDetailsConsumerGroupRequest.ConsumerGroupName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/groups/{group_id}/streams/{stream_id}/consumer-groups/{consumer_group_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDetailsConsumerGroupRequest);
+            return new SyncInvoker<ListDetailsConsumerGroupResponse>(this, "GET", request, response =>
+            {
+                var listDetailsConsumerGroupResponse = JsonUtils.DeSerializeNull<ListDetailsConsumerGroupResponse>(response);
+                listDetailsConsumerGroupResponse.Body = JsonUtils.DeSerializeList<ConsumerCheckpointInfo>(response);
+                return listDetailsConsumerGroupResponse;
+            });
+        }
+        
+        /// <summary>
+        /// 通过时间获取消费游标
+        ///
+        /// 通过时间查询cursor
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowCursorByTimeResponse ShowCursorByTime(ShowCursorByTimeRequest showCursorByTimeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("group_id", showCursorByTimeRequest.GroupId.ToString());
+            urlParam.Add("stream_id", showCursorByTimeRequest.StreamId.ToString());
+            urlParam.Add("shard_id", showCursorByTimeRequest.ShardId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/groups/{group_id}/streams/{stream_id}/shards/{shard_id}/cursor", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCursorByTimeRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowCursorByTimeResponse>(response);
+        }
+
+        public SyncInvoker<ShowCursorByTimeResponse> ShowCursorByTimeInvoker(ShowCursorByTimeRequest showCursorByTimeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("group_id", showCursorByTimeRequest.GroupId.ToString());
+            urlParam.Add("stream_id", showCursorByTimeRequest.StreamId.ToString());
+            urlParam.Add("shard_id", showCursorByTimeRequest.ShardId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/groups/{group_id}/streams/{stream_id}/shards/{shard_id}/cursor", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCursorByTimeRequest);
+            return new SyncInvoker<ShowCursorByTimeResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowCursorByTimeResponse>);
+        }
+        
+        /// <summary>
+        /// 通过消费游标获取时间
+        ///
+        /// 通过cursor查询服务端时间
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowCursorTimeResponse ShowCursorTime(ShowCursorTimeRequest showCursorTimeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("group_id", showCursorTimeRequest.GroupId.ToString());
+            urlParam.Add("stream_id", showCursorTimeRequest.StreamId.ToString());
+            urlParam.Add("shard_id", showCursorTimeRequest.ShardId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/groups/{group_id}/streams/{stream_id}/shards/{shard_id}/time", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCursorTimeRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowCursorTimeResponse>(response);
+        }
+
+        public SyncInvoker<ShowCursorTimeResponse> ShowCursorTimeInvoker(ShowCursorTimeRequest showCursorTimeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("group_id", showCursorTimeRequest.GroupId.ToString());
+            urlParam.Add("stream_id", showCursorTimeRequest.StreamId.ToString());
+            urlParam.Add("shard_id", showCursorTimeRequest.ShardId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/groups/{group_id}/streams/{stream_id}/shards/{shard_id}/time", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCursorTimeRequest);
+            return new SyncInvoker<ShowCursorTimeResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowCursorTimeResponse>);
+        }
+        
+        /// <summary>
+        /// 流消费获取Shards
+        ///
+        /// 流消费获取所有的query shards
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowLogStreamShardsResponse ShowLogStreamShards(ShowLogStreamShardsRequest showLogStreamShardsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("group_id", showLogStreamShardsRequest.GroupId.ToString());
+            urlParam.Add("stream_id", showLogStreamShardsRequest.StreamId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/groups/{group_id}/streams/{stream_id}/shards", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLogStreamShardsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowLogStreamShardsResponse>(response);
+        }
+
+        public SyncInvoker<ShowLogStreamShardsResponse> ShowLogStreamShardsInvoker(ShowLogStreamShardsRequest showLogStreamShardsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("group_id", showLogStreamShardsRequest.GroupId.ToString());
+            urlParam.Add("stream_id", showLogStreamShardsRequest.StreamId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/groups/{group_id}/streams/{stream_id}/shards", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLogStreamShardsRequest);
+            return new SyncInvoker<ShowLogStreamShardsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowLogStreamShardsResponse>);
+        }
+        
+        /// <summary>
+        /// 更新消费组位点
+        ///
+        /// 更新消费组位点
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateCheckPointResponse UpdateCheckPoint(UpdateCheckPointRequest updateCheckPointRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("group_id", updateCheckPointRequest.GroupId.ToString());
+            urlParam.Add("stream_id", updateCheckPointRequest.StreamId.ToString());
+            urlParam.Add("consumer_group_name", updateCheckPointRequest.ConsumerGroupName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/groups/{group_id}/streams/{stream_id}/consumer-groups/{consumer_group_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateCheckPointRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<UpdateCheckPointResponse>(response);
+        }
+
+        public SyncInvoker<UpdateCheckPointResponse> UpdateCheckPointInvoker(UpdateCheckPointRequest updateCheckPointRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("group_id", updateCheckPointRequest.GroupId.ToString());
+            urlParam.Add("stream_id", updateCheckPointRequest.StreamId.ToString());
+            urlParam.Add("consumer_group_name", updateCheckPointRequest.ConsumerGroupName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/groups/{group_id}/streams/{stream_id}/consumer-groups/{consumer_group_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateCheckPointRequest);
+            return new SyncInvoker<UpdateCheckPointResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateCheckPointResponse>);
+        }
+        
+        /// <summary>
         /// 创建SQL告警规则
         ///
         /// 该接口用于创建SQL告警，目前每个帐户最多可以创建共200个关键词告警与SQL告警

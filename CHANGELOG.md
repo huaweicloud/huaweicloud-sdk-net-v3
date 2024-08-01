@@ -1,3 +1,53 @@
+# 3.1.106 2024-08-01
+
+### HuaweiCloud SDK LTS
+
+- _Features_
+  - Support the following APIs:
+    - `ListConsumerGroup`
+    - `CreateConsumerGroup`
+    - `ConsumerGroupHeartBeat`
+    - `ShowLogStreamShards`
+    - `ListDetailsConsumerGroup`
+    - `UpdateCheckPoint`
+    - `DeleteConsumerGroup`
+    - `ShowCursorByTime`
+    - `ShowCursorTime`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK VPCEP
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListEndpointInfoDetails**
+    - changes of response param
+      - `+ policy_document`
+  - **UpdateEndpointWhite**
+    - changes of response param
+      - `+ policy_document`
+  - **UpdateEndpointPolicy**
+    - changes of request param
+      - `+ policy_document`
+    - changes of response param
+      - `+ policy_document`
+  - **DeleteEndpointPolicy**
+    - changes of response param
+      - `+ policy_document`
+  - **CreateEndpoint**
+    - changes of request param
+      - `+ policy_document`
+    - changes of response param
+      - `+ policy_document`
+  - **ListEndpoints**
+    - changes of response param
+      - `+ endpoints.policy_document`
+
 # 3.1.105 2024-07-25
 
 ### HuaweiCloud SDK CCE

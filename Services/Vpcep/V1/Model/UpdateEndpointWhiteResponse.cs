@@ -124,6 +124,12 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         [JsonProperty("enable_whitelist", NullValueHandling = NullValueHandling.Ignore)]
         public bool? EnableWhitelist { get; set; }
 
+        /// <summary>
+        /// iam 5.0 策略
+        /// </summary>
+        [JsonProperty("policy_document", NullValueHandling = NullValueHandling.Ignore)]
+        public Object PolicyDocument { get; set; }
+
 
 
         /// <summary>
@@ -151,6 +157,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
             sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  whitelist: ").Append(Whitelist).Append("\n");
             sb.Append("  enableWhitelist: ").Append(EnableWhitelist).Append("\n");
+            sb.Append("  policyDocument: ").Append(PolicyDocument).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -265,6 +272,11 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                     this.EnableWhitelist == input.EnableWhitelist ||
                     (this.EnableWhitelist != null &&
                     this.EnableWhitelist.Equals(input.EnableWhitelist))
+                ) && 
+                (
+                    this.PolicyDocument == input.PolicyDocument ||
+                    (this.PolicyDocument != null &&
+                    this.PolicyDocument.Equals(input.PolicyDocument))
                 );
         }
 
@@ -312,6 +324,8 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                     hashCode = hashCode * 59 + this.Whitelist.GetHashCode();
                 if (this.EnableWhitelist != null)
                     hashCode = hashCode * 59 + this.EnableWhitelist.GetHashCode();
+                if (this.PolicyDocument != null)
+                    hashCode = hashCode * 59 + this.PolicyDocument.GetHashCode();
                 return hashCode;
             }
         }

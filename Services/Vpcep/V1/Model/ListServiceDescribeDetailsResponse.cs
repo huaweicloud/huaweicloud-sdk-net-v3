@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         public string ServiceType { get; set; }
 
         /// <summary>
-        /// 终端节点服务的创建时间。 采用UTC时间格式，格式为：YYYY-MMDDTHH:MM:SSZ
+        /// 终端节点服务的创建时间。 采用UTC时间格式，格式为：YYYY-MM-DDTHH:MM:SSZ
         /// </summary>
         [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
         public DateTime? CreatedAt { get; set; }

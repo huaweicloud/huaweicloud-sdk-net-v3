@@ -131,13 +131,19 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         public List<PolicyStatement> PolicyStatement { get; set; }
 
         /// <summary>
+        /// iam 5.0 策略
+        /// </summary>
+        [JsonProperty("policy_document", NullValueHandling = NullValueHandling.Ignore)]
+        public Object PolicyDocument { get; set; }
+
+        /// <summary>
         /// 待废弃，实例相关联的集群ID
         /// </summary>
         [JsonProperty("endpoint_pool_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EndpointPoolId { get; set; }
 
         /// <summary>
-        /// 终端节点关联的Public Border Group信息，只有当终端节点和边缘Pool相关联时才会返回改字段
+        /// 终端节点关联的Public Border Group信息，只有当终端节点和边缘Pool相关联时才会返回该字段
         /// </summary>
         [JsonProperty("public_border_group", NullValueHandling = NullValueHandling.Ignore)]
         public string PublicBorderGroup { get; set; }
@@ -170,6 +176,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
             sb.Append("  routetables: ").Append(Routetables).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  policyStatement: ").Append(PolicyStatement).Append("\n");
+            sb.Append("  policyDocument: ").Append(PolicyDocument).Append("\n");
             sb.Append("  endpointPoolId: ").Append(EndpointPoolId).Append("\n");
             sb.Append("  publicBorderGroup: ").Append(PublicBorderGroup).Append("\n");
             sb.Append("}\n");
@@ -295,6 +302,11 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                     this.PolicyStatement.SequenceEqual(input.PolicyStatement)
                 ) && 
                 (
+                    this.PolicyDocument == input.PolicyDocument ||
+                    (this.PolicyDocument != null &&
+                    this.PolicyDocument.Equals(input.PolicyDocument))
+                ) && 
+                (
                     this.EndpointPoolId == input.EndpointPoolId ||
                     (this.EndpointPoolId != null &&
                     this.EndpointPoolId.Equals(input.EndpointPoolId))
@@ -352,6 +364,8 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.PolicyStatement != null)
                     hashCode = hashCode * 59 + this.PolicyStatement.GetHashCode();
+                if (this.PolicyDocument != null)
+                    hashCode = hashCode * 59 + this.PolicyDocument.GetHashCode();
                 if (this.EndpointPoolId != null)
                     hashCode = hashCode * 59 + this.EndpointPoolId.GetHashCode();
                 if (this.PublicBorderGroup != null)

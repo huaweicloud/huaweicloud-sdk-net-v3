@@ -1,3 +1,53 @@
+# 3.1.106 2024-08-01
+
+### HuaweiCloud SDK LTS
+
+- _新增特性_
+  - 支持以下接口：
+    - `ListConsumerGroup`
+    - `CreateConsumerGroup`
+    - `ConsumerGroupHeartBeat`
+    - `ShowLogStreamShards`
+    - `ListDetailsConsumerGroup`
+    - `UpdateCheckPoint`
+    - `DeleteConsumerGroup`
+    - `ShowCursorByTime`
+    - `ShowCursorTime`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK VPCEP
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListEndpointInfoDetails**
+    - 响应参数变更
+      - `+ policy_document`
+  - **UpdateEndpointWhite**
+    - 响应参数变更
+      - `+ policy_document`
+  - **UpdateEndpointPolicy**
+    - 请求参数变更
+      - `+ policy_document`
+    - 响应参数变更
+      - `+ policy_document`
+  - **DeleteEndpointPolicy**
+    - 响应参数变更
+      - `+ policy_document`
+  - **CreateEndpoint**
+    - 请求参数变更
+      - `+ policy_document`
+    - 响应参数变更
+      - `+ policy_document`
+  - **ListEndpoints**
+    - 响应参数变更
+      - `+ endpoints.policy_document`
+
 # 3.1.105 2024-07-25
 
 ### HuaweiCloud SDK CCE

@@ -22,6 +22,12 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         [JsonProperty("policy_statement", NullValueHandling = NullValueHandling.Ignore)]
         public List<PolicyStatement> PolicyStatement { get; set; }
 
+        /// <summary>
+        /// iam 5.0 策略
+        /// </summary>
+        [JsonProperty("policy_document", NullValueHandling = NullValueHandling.Ignore)]
+        public Object PolicyDocument { get; set; }
+
 
 
         /// <summary>
@@ -32,6 +38,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
             var sb = new StringBuilder();
             sb.Append("class UpdateEndpointPolicyRequestBody {\n");
             sb.Append("  policyStatement: ").Append(PolicyStatement).Append("\n");
+            sb.Append("  policyDocument: ").Append(PolicyDocument).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -58,6 +65,11 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                     this.PolicyStatement != null &&
                     input.PolicyStatement != null &&
                     this.PolicyStatement.SequenceEqual(input.PolicyStatement)
+                ) && 
+                (
+                    this.PolicyDocument == input.PolicyDocument ||
+                    (this.PolicyDocument != null &&
+                    this.PolicyDocument.Equals(input.PolicyDocument))
                 );
         }
 
@@ -71,6 +83,8 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                 int hashCode = 41;
                 if (this.PolicyStatement != null)
                     hashCode = hashCode * 59 + this.PolicyStatement.GetHashCode();
+                if (this.PolicyDocument != null)
+                    hashCode = hashCode * 59 + this.PolicyDocument.GetHashCode();
                 return hashCode;
             }
         }

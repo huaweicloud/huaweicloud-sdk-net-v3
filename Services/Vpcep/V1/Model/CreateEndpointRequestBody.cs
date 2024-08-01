@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
     public class CreateEndpointRequestBody 
     {
         /// <summary>
-        /// 指定终端节点的IP版本，仅专业型终端节点支持此参数。 ● ipv4,  IPv4 ● dualstack, 双栈
+        /// 指定终端节点的IP版本，仅专业型终端节点支持此参数。  - ipv4,  IPv4 - dualstack, 双栈
         /// </summary>
-        /// <value>指定终端节点的IP版本，仅专业型终端节点支持此参数。 ● ipv4,  IPv4 ● dualstack, 双栈</value>
+        /// <value>指定终端节点的IP版本，仅专业型终端节点支持此参数。  - ipv4,  IPv4 - dualstack, 双栈</value>
         [JsonConverter(typeof(EnumClassConverter<IpVersionEnum>))]
         public class IpVersionEnum
         {
@@ -198,12 +198,18 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         public List<PolicyStatement> PolicyStatement { get; set; }
 
         /// <summary>
-        /// 指定终端节点的IP版本，仅专业型终端节点支持此参数。 ● ipv4,  IPv4 ● dualstack, 双栈
+        /// iam 5.0 策略
+        /// </summary>
+        [JsonProperty("policy_document", NullValueHandling = NullValueHandling.Ignore)]
+        public Object PolicyDocument { get; set; }
+
+        /// <summary>
+        /// 指定终端节点的IP版本，仅专业型终端节点支持此参数。  - ipv4,  IPv4 - dualstack, 双栈
         /// </summary>
         [JsonProperty("ip_version", NullValueHandling = NullValueHandling.Ignore)]
         public IpVersionEnum IpVersion { get; set; }
         /// <summary>
-        /// 访问所连接的终端节点服务的IPv6的地址。 创建终端节点时，可以指定访问所连接的终端节点服务的IP，不指定的情况下，会使用系统生成的一个地址。 仅专业型终端节点支持此参数。
+        /// 访问所连接的终端节点服务的IPv6的地址。  创建终端节点时，可以指定访问所连接的终端节点服务的IP，不指定的情况下，会使用系统生成的一个地址。  仅专业型终端节点支持此参数。
         /// </summary>
         [JsonProperty("ipv6_address", NullValueHandling = NullValueHandling.Ignore)]
         public string Ipv6Address { get; set; }
@@ -228,6 +234,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
             sb.Append("  enableWhitelist: ").Append(EnableWhitelist).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  policyStatement: ").Append(PolicyStatement).Append("\n");
+            sb.Append("  policyDocument: ").Append(PolicyDocument).Append("\n");
             sb.Append("  ipVersion: ").Append(IpVersion).Append("\n");
             sb.Append("  ipv6Address: ").Append(Ipv6Address).Append("\n");
             sb.Append("}\n");
@@ -311,6 +318,11 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                     this.PolicyStatement.SequenceEqual(input.PolicyStatement)
                 ) && 
                 (
+                    this.PolicyDocument == input.PolicyDocument ||
+                    (this.PolicyDocument != null &&
+                    this.PolicyDocument.Equals(input.PolicyDocument))
+                ) && 
+                (
                     this.IpVersion == input.IpVersion ||
                     (this.IpVersion != null &&
                     this.IpVersion.Equals(input.IpVersion))
@@ -352,6 +364,8 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.PolicyStatement != null)
                     hashCode = hashCode * 59 + this.PolicyStatement.GetHashCode();
+                if (this.PolicyDocument != null)
+                    hashCode = hashCode * 59 + this.PolicyDocument.GetHashCode();
                 if (this.IpVersion != null)
                     hashCode = hashCode * 59 + this.IpVersion.GetHashCode();
                 if (this.Ipv6Address != null)
