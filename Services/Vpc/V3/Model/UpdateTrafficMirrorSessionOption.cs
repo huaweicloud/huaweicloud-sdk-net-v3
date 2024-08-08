@@ -70,12 +70,6 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         [JsonProperty("enabled", NullValueHandling = NullValueHandling.Ignore)]
         public string Enabled { get; set; }
 
-        /// <summary>
-        /// 功能说明：支持的镜像源类型 取值范围：     eni：弹性网卡
-        /// </summary>
-        [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
-        public string Type { get; set; }
-
 
 
         /// <summary>
@@ -94,7 +88,6 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
             sb.Append("  packetLength: ").Append(PacketLength).Append("\n");
             sb.Append("  priority: ").Append(Priority).Append("\n");
             sb.Append("  enabled: ").Append(Enabled).Append("\n");
-            sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -160,11 +153,6 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
                     this.Enabled == input.Enabled ||
                     (this.Enabled != null &&
                     this.Enabled.Equals(input.Enabled))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
                 );
         }
 
@@ -194,8 +182,6 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
                     hashCode = hashCode * 59 + this.Priority.GetHashCode();
                 if (this.Enabled != null)
                     hashCode = hashCode * 59 + this.Enabled.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
                 return hashCode;
             }
         }

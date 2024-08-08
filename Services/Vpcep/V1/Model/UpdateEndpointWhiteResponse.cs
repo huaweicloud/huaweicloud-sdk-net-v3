@@ -125,10 +125,16 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         public bool? EnableWhitelist { get; set; }
 
         /// <summary>
-        /// iam 5.0 策略
+        /// Gateway类型终端节点策略信息，仅限OBS、SFS的终端节点服务的enable_policy值为true时支持该参数。
+        /// </summary>
+        [JsonProperty("policy_statement", NullValueHandling = NullValueHandling.Ignore)]
+        public List<PolicyStatement> PolicyStatement { get; set; }
+
+        /// <summary>
+        /// 终端节点策略信息，仅当终端节点服务的enable_policy值为true时支持该参数，默认值为完全访问权限。（OBS、SFS的终端节点服务暂不支持该参数）
         /// </summary>
         [JsonProperty("policy_document", NullValueHandling = NullValueHandling.Ignore)]
-        public Object PolicyDocument { get; set; }
+        public string PolicyDocument { get; set; }
 
 
 
@@ -157,6 +163,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
             sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  whitelist: ").Append(Whitelist).Append("\n");
             sb.Append("  enableWhitelist: ").Append(EnableWhitelist).Append("\n");
+            sb.Append("  policyStatement: ").Append(PolicyStatement).Append("\n");
             sb.Append("  policyDocument: ").Append(PolicyDocument).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -274,6 +281,12 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                     this.EnableWhitelist.Equals(input.EnableWhitelist))
                 ) && 
                 (
+                    this.PolicyStatement == input.PolicyStatement ||
+                    this.PolicyStatement != null &&
+                    input.PolicyStatement != null &&
+                    this.PolicyStatement.SequenceEqual(input.PolicyStatement)
+                ) && 
+                (
                     this.PolicyDocument == input.PolicyDocument ||
                     (this.PolicyDocument != null &&
                     this.PolicyDocument.Equals(input.PolicyDocument))
@@ -324,6 +337,8 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                     hashCode = hashCode * 59 + this.Whitelist.GetHashCode();
                 if (this.EnableWhitelist != null)
                     hashCode = hashCode * 59 + this.EnableWhitelist.GetHashCode();
+                if (this.PolicyStatement != null)
+                    hashCode = hashCode * 59 + this.PolicyStatement.GetHashCode();
                 if (this.PolicyDocument != null)
                     hashCode = hashCode * 59 + this.PolicyDocument.GetHashCode();
                 return hashCode;

@@ -112,7 +112,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         }
         
         /// <summary>
-        /// application/json
+        /// 基于委托为企业项目授权
         ///
         /// 该接口可以基于委托为企业项目授权
         /// 
@@ -1528,34 +1528,6 @@ namespace HuaweiCloud.SDK.Iam.V3
         }
         
         /// <summary>
-        /// 管理员查询用户组所包含的IAM用户
-        ///
-        /// 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询用户组中所包含的IAM用户。
-        /// 
-        /// 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<KeystoneListUsersForGroupByAdminResponse> KeystoneListUsersForGroupByAdminAsync(KeystoneListUsersForGroupByAdminRequest keystoneListUsersForGroupByAdminRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", keystoneListUsersForGroupByAdminRequest.GroupId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/groups/{group_id}/users", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneListUsersForGroupByAdminRequest);
-            var response = await DoHttpRequestAsync("GET", request);
-            return JsonUtils.DeSerialize<KeystoneListUsersForGroupByAdminResponse>(response);
-        }
-
-        public AsyncInvoker<KeystoneListUsersForGroupByAdminResponse> KeystoneListUsersForGroupByAdminAsyncInvoker(KeystoneListUsersForGroupByAdminRequest keystoneListUsersForGroupByAdminRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", keystoneListUsersForGroupByAdminRequest.GroupId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/groups/{group_id}/users", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneListUsersForGroupByAdminRequest);
-            return new AsyncInvoker<KeystoneListUsersForGroupByAdminResponse>(this, "GET", request, JsonUtils.DeSerialize<KeystoneListUsersForGroupByAdminResponse>);
-        }
-        
-        /// <summary>
         /// 查询版本信息列表
         ///
         /// 该接口用于查询Keystone API的版本信息。
@@ -2590,7 +2562,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         }
         
         /// <summary>
-        /// 
+        /// 删除企业项目关联委托的权限
         ///
         /// 该接口可以删除企业项目委托上的授权
         /// 
@@ -3777,6 +3749,34 @@ namespace HuaweiCloud.SDK.Iam.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/users", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneListUsersRequest);
             return new AsyncInvoker<KeystoneListUsersResponse>(this, "GET", request, JsonUtils.DeSerialize<KeystoneListUsersResponse>);
+        }
+        
+        /// <summary>
+        /// 管理员查询用户组所包含的IAM用户
+        ///
+        /// 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询用户组中所包含的IAM用户。
+        /// 
+        /// 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<KeystoneListUsersForGroupByAdminResponse> KeystoneListUsersForGroupByAdminAsync(KeystoneListUsersForGroupByAdminRequest keystoneListUsersForGroupByAdminRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("group_id", keystoneListUsersForGroupByAdminRequest.GroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/groups/{group_id}/users", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneListUsersForGroupByAdminRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<KeystoneListUsersForGroupByAdminResponse>(response);
+        }
+
+        public AsyncInvoker<KeystoneListUsersForGroupByAdminResponse> KeystoneListUsersForGroupByAdminAsyncInvoker(KeystoneListUsersForGroupByAdminRequest keystoneListUsersForGroupByAdminRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("group_id", keystoneListUsersForGroupByAdminRequest.GroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/groups/{group_id}/users", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneListUsersForGroupByAdminRequest);
+            return new AsyncInvoker<KeystoneListUsersForGroupByAdminResponse>(this, "GET", request, JsonUtils.DeSerialize<KeystoneListUsersForGroupByAdminResponse>);
         }
         
         /// <summary>

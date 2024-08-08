@@ -29,6 +29,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public string Url { get; set; }
 
         /// <summary>
+        /// 单朝向模式开关。可选值包括： - true：打开单朝向模式 - false：关闭单朝向模式  未传入该参数时默认为false，既默认图片中的字段为多朝向 
+        /// </summary>
+        [JsonProperty("single_orientation_mode", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? SingleOrientationMode { get; set; }
+
+        /// <summary>
         /// 是否进行键值对（key-value）提取。若是，结果会以“kv_result”这一关键字返回。 
         /// </summary>
         [JsonProperty("kv", NullValueHandling = NullValueHandling.Ignore)]
@@ -87,6 +93,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("class SmartDocumentRecognizerRequestBody {\n");
             sb.Append("  data: ").Append(Data).Append("\n");
             sb.Append("  url: ").Append(Url).Append("\n");
+            sb.Append("  singleOrientationMode: ").Append(SingleOrientationMode).Append("\n");
             sb.Append("  kv: ").Append(Kv).Append("\n");
             sb.Append("  table: ").Append(Table).Append("\n");
             sb.Append("  layout: ").Append(Layout).Append("\n");
@@ -125,6 +132,11 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     this.Url == input.Url ||
                     (this.Url != null &&
                     this.Url.Equals(input.Url))
+                ) && 
+                (
+                    this.SingleOrientationMode == input.SingleOrientationMode ||
+                    (this.SingleOrientationMode != null &&
+                    this.SingleOrientationMode.Equals(input.SingleOrientationMode))
                 ) && 
                 (
                     this.Kv == input.Kv ||
@@ -180,6 +192,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     hashCode = hashCode * 59 + this.Data.GetHashCode();
                 if (this.Url != null)
                     hashCode = hashCode * 59 + this.Url.GetHashCode();
+                if (this.SingleOrientationMode != null)
+                    hashCode = hashCode * 59 + this.SingleOrientationMode.GetHashCode();
                 if (this.Kv != null)
                     hashCode = hashCode * 59 + this.Kv.GetHashCode();
                 if (this.Table != null)

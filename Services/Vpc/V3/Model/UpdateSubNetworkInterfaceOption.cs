@@ -28,6 +28,12 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         [JsonProperty("security_groups", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> SecurityGroups { get; set; }
 
+        /// <summary>
+        /// 1. 扩展属性：IP/Mac对列表，allowed_address_pair参见“allowed_address_pair对象” 2. 使用说明: IP地址不允许为 “0.0.0.0”如果allowed_address_pairs配置地址池较大的CIDR（掩码小于24位），建议为该port配置一个单独的安全组硬件SDN环境不支持ip_address属性配置为CIDR格式。
+        /// </summary>
+        [JsonProperty("allowed_address_pairs", NullValueHandling = NullValueHandling.Ignore)]
+        public List<AllowedAddressPair> AllowedAddressPairs { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +45,7 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
             sb.Append("class UpdateSubNetworkInterfaceOption {\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  securityGroups: ").Append(SecurityGroups).Append("\n");
+            sb.Append("  allowedAddressPairs: ").Append(AllowedAddressPairs).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -70,6 +77,12 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
                     this.SecurityGroups != null &&
                     input.SecurityGroups != null &&
                     this.SecurityGroups.SequenceEqual(input.SecurityGroups)
+                ) && 
+                (
+                    this.AllowedAddressPairs == input.AllowedAddressPairs ||
+                    this.AllowedAddressPairs != null &&
+                    input.AllowedAddressPairs != null &&
+                    this.AllowedAddressPairs.SequenceEqual(input.AllowedAddressPairs)
                 );
         }
 
@@ -85,6 +98,8 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.SecurityGroups != null)
                     hashCode = hashCode * 59 + this.SecurityGroups.GetHashCode();
+                if (this.AllowedAddressPairs != null)
+                    hashCode = hashCode * 59 + this.AllowedAddressPairs.GetHashCode();
                 return hashCode;
             }
         }

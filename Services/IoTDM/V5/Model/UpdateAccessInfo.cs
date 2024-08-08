@@ -1,0 +1,119 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Linq;
+using System.Runtime.Serialization;
+
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using HuaweiCloud.SDK.Core;
+
+namespace HuaweiCloud.SDK.IoTDM.V5.Model
+{
+    /// <summary>
+    /// 设备接入实例的接入信息。用户可以使用该结构体中的信息将应用服务器和设备接入到物联网平台。 约束：只有企业版实例支持自定义接入信息。 
+    /// </summary>
+    public class UpdateAccessInfo 
+    {
+
+        /// <summary>
+        /// **参数说明**：接入地址的类型，如应用接入的HTTPS协议的取值为：APP_HTTPS，设备接入的MQTT协议的取值为：DEVICE_MQTT **取值范围**： - APP_HTTPS：应用接入HTTPS协议 - APP_AMQP：应用接入AMQP协议 - APP_MQTT：应用接入MQTT协议 - DEVICE_COAP：设备接入COAP协议 - DEVICE_MQTT：设备接入MQTT协议 - DEVICE_HTTPS：设备接入HTTPS协议 
+        /// </summary>
+        [JsonProperty("access_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string AccessType { get; set; }
+
+        /// <summary>
+        /// **参数说明**：接入域名，如果需要更新域名，则携带该字段。 
+        /// </summary>
+        [JsonProperty("domain_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string DomainName { get; set; }
+
+        /// <summary>
+        /// **参数说明**：是否配置公网接入地址，true，false **取值范围**： - true：配置公网接入地址，平台将自动分配公网接入地址。约束：分配地址后将不能修改或删除。 
+        /// </summary>
+        [JsonProperty("public_addresses_enable", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? PublicAddressesEnable { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("ip_whitelist", NullValueHandling = NullValueHandling.Ignore)]
+        public IPWhiteList IpWhitelist { get; set; }
+
+
+
+        /// <summary>
+        /// Get the string
+        /// </summary>
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class UpdateAccessInfo {\n");
+            sb.Append("  accessType: ").Append(AccessType).Append("\n");
+            sb.Append("  domainName: ").Append(DomainName).Append("\n");
+            sb.Append("  publicAddressesEnable: ").Append(PublicAddressesEnable).Append("\n");
+            sb.Append("  ipWhitelist: ").Append(IpWhitelist).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public override bool Equals(object input)
+        {
+            return this.Equals(input as UpdateAccessInfo);
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public bool Equals(UpdateAccessInfo input)
+        {
+            if (input == null)
+                return false;
+
+            return 
+                (
+                    this.AccessType == input.AccessType ||
+                    (this.AccessType != null &&
+                    this.AccessType.Equals(input.AccessType))
+                ) && 
+                (
+                    this.DomainName == input.DomainName ||
+                    (this.DomainName != null &&
+                    this.DomainName.Equals(input.DomainName))
+                ) && 
+                (
+                    this.PublicAddressesEnable == input.PublicAddressesEnable ||
+                    (this.PublicAddressesEnable != null &&
+                    this.PublicAddressesEnable.Equals(input.PublicAddressesEnable))
+                ) && 
+                (
+                    this.IpWhitelist == input.IpWhitelist ||
+                    (this.IpWhitelist != null &&
+                    this.IpWhitelist.Equals(input.IpWhitelist))
+                );
+        }
+
+        /// <summary>
+        /// Get hash code
+        /// </summary>
+        public override int GetHashCode()
+        {
+            unchecked // Overflow is fine, just wrap
+            {
+                int hashCode = 41;
+                if (this.AccessType != null)
+                    hashCode = hashCode * 59 + this.AccessType.GetHashCode();
+                if (this.DomainName != null)
+                    hashCode = hashCode * 59 + this.DomainName.GetHashCode();
+                if (this.PublicAddressesEnable != null)
+                    hashCode = hashCode * 59 + this.PublicAddressesEnable.GetHashCode();
+                if (this.IpWhitelist != null)
+                    hashCode = hashCode * 59 + this.IpWhitelist.GetHashCode();
+                return hashCode;
+            }
+        }
+    }
+}

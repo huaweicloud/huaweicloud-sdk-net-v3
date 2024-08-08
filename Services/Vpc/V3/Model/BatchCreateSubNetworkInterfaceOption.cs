@@ -52,6 +52,30 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProjectId { get; set; }
 
+        /// <summary>
+        /// 1. 扩展属性：IP/Mac对列表，allowed_address_pair参见“allowed_address_pair对象” 2. 使用说明: IP地址不允许为 “0.0.0.0”如果allowed_address_pairs配置地址池较大的CIDR（掩码小于24位），建议为该port配置一个单独的安全组硬件SDN环境不支持ip_address属性配置为CIDR格式。
+        /// </summary>
+        [JsonProperty("allowed_address_pairs", NullValueHandling = NullValueHandling.Ignore)]
+        public List<AllowedAddressPair> AllowedAddressPairs { get; set; }
+
+        /// <summary>
+        /// 功能说明：辅助弹性网卡所属实例ID，例如RDS实例ID 约束： 1-64个字符
+        /// </summary>
+        [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string InstanceId { get; set; }
+
+        /// <summary>
+        /// 功能说明：辅助弹性网卡所属实例类型，例如“RDS” 约束：1-64个字符
+        /// </summary>
+        [JsonProperty("instance_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string InstanceType { get; set; }
+
+        /// <summary>
+        /// 辅助弹性网卡资源标签
+        /// </summary>
+        [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ResourceTag> Tags { get; set; }
+
 
 
         /// <summary>
@@ -67,6 +91,10 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  ipv6Enable: ").Append(Ipv6Enable).Append("\n");
             sb.Append("  projectId: ").Append(ProjectId).Append("\n");
+            sb.Append("  allowedAddressPairs: ").Append(AllowedAddressPairs).Append("\n");
+            sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
+            sb.Append("  instanceType: ").Append(InstanceType).Append("\n");
+            sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -118,6 +146,28 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
                     this.ProjectId == input.ProjectId ||
                     (this.ProjectId != null &&
                     this.ProjectId.Equals(input.ProjectId))
+                ) && 
+                (
+                    this.AllowedAddressPairs == input.AllowedAddressPairs ||
+                    this.AllowedAddressPairs != null &&
+                    input.AllowedAddressPairs != null &&
+                    this.AllowedAddressPairs.SequenceEqual(input.AllowedAddressPairs)
+                ) && 
+                (
+                    this.InstanceId == input.InstanceId ||
+                    (this.InstanceId != null &&
+                    this.InstanceId.Equals(input.InstanceId))
+                ) && 
+                (
+                    this.InstanceType == input.InstanceType ||
+                    (this.InstanceType != null &&
+                    this.InstanceType.Equals(input.InstanceType))
+                ) && 
+                (
+                    this.Tags == input.Tags ||
+                    this.Tags != null &&
+                    input.Tags != null &&
+                    this.Tags.SequenceEqual(input.Tags)
                 );
         }
 
@@ -141,6 +191,14 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
                     hashCode = hashCode * 59 + this.Ipv6Enable.GetHashCode();
                 if (this.ProjectId != null)
                     hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.AllowedAddressPairs != null)
+                    hashCode = hashCode * 59 + this.AllowedAddressPairs.GetHashCode();
+                if (this.InstanceId != null)
+                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.InstanceType != null)
+                    hashCode = hashCode * 59 + this.InstanceType.GetHashCode();
+                if (this.Tags != null)
+                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 return hashCode;
             }
         }
