@@ -35,10 +35,10 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public NodePoolNodeAutoscaling Autoscaling { get; set; }
 
         /// <summary>
-        /// 
+        /// 节点池扩展伸缩组配置列表，详情参见ExtensionScaleGroup类型定义
         /// </summary>
         [JsonProperty("extensionScaleGroups", NullValueHandling = NullValueHandling.Ignore)]
-        public ExtensionScaleGroup ExtensionScaleGroups { get; set; }
+        public List<ExtensionScaleGroup> ExtensionScaleGroups { get; set; }
 
 
 
@@ -91,8 +91,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 ) && 
                 (
                     this.ExtensionScaleGroups == input.ExtensionScaleGroups ||
-                    (this.ExtensionScaleGroups != null &&
-                    this.ExtensionScaleGroups.Equals(input.ExtensionScaleGroups))
+                    this.ExtensionScaleGroups != null &&
+                    input.ExtensionScaleGroups != null &&
+                    this.ExtensionScaleGroups.SequenceEqual(input.ExtensionScaleGroups)
                 );
         }
 

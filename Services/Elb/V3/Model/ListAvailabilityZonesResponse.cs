@@ -17,16 +17,22 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// 请求ID。  注：自动生成。
+        /// 参数解释：请求ID。  注：自动生成。
         /// </summary>
         [JsonProperty("request_id", NullValueHandling = NullValueHandling.Ignore)]
         public string RequestId { get; set; }
 
         /// <summary>
-        /// 返回创建LB时可使用的可用区集合列表。如：[[az1,az2],[az2,az3]] , 则在创建LB时，只能从其中的一个子列表中选择一个或多个可用区，不能跨列表选择。在上述例子中，不能选择az1和az3。
+        /// 参数解释：返回创建LB时可使用的可用区集合列表。如：[[az1,az2],[az2,az3]] ,则在创建LB时，只能从其中的一个子列表中选择一个或多个可用区，不能跨列表选择。在上述例子中，不能选择az1和az3。
         /// </summary>
         [JsonProperty("availability_zones", NullValueHandling = NullValueHandling.Ignore)]
         public List<List<AvailabilityZone>> AvailabilityZones { get; set; }
+
+        /// <summary>
+        /// 可用区的产品编码，仅边缘场景有效。
+        /// </summary>
+        [JsonProperty("spec_code", NullValueHandling = NullValueHandling.Ignore)]
+        public string SpecCode { get; set; }
 
 
 
@@ -39,6 +45,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("class ListAvailabilityZonesResponse {\n");
             sb.Append("  requestId: ").Append(RequestId).Append("\n");
             sb.Append("  availabilityZones: ").Append(AvailabilityZones).Append("\n");
+            sb.Append("  specCode: ").Append(SpecCode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -70,6 +77,11 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     this.AvailabilityZones != null &&
                     input.AvailabilityZones != null &&
                     this.AvailabilityZones.SequenceEqual(input.AvailabilityZones)
+                ) && 
+                (
+                    this.SpecCode == input.SpecCode ||
+                    (this.SpecCode != null &&
+                    this.SpecCode.Equals(input.SpecCode))
                 );
         }
 
@@ -85,6 +97,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                     hashCode = hashCode * 59 + this.RequestId.GetHashCode();
                 if (this.AvailabilityZones != null)
                     hashCode = hashCode * 59 + this.AvailabilityZones.GetHashCode();
+                if (this.SpecCode != null)
+                    hashCode = hashCode * 59 + this.SpecCode.GetHashCode();
                 return hashCode;
             }
         }

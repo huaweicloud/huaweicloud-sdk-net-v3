@@ -11,13 +11,13 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 转发到的后端主机组的配置。当action为REDIRECT_TO_POOL时生效。
+    /// 参数解释：转发到的后端主机组的配置。  约束限制：当action为REDIRECT_TO_POOL时生效。
     /// </summary>
     public class RedirectPoolsExtendConfig 
     {
 
         /// <summary>
-        /// 是否开启url重定向。
+        /// 参数解释：是否开启url重定向。
         /// </summary>
         [JsonProperty("rewrite_url_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? RewriteUrlEnable { get; set; }

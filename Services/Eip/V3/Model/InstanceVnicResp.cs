@@ -62,7 +62,7 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         /// port的vni
         /// </summary>
         [JsonProperty("vni", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Vni { get; set; }
+        public string Vni { get; set; }
 
         /// <summary>
         /// port的实例id

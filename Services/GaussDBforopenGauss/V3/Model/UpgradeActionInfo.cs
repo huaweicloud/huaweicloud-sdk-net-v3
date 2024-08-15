@@ -11,14 +11,14 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
 {
     /// <summary>
-    /// 升级操作信息
+    /// 升级操作信息。
     /// </summary>
     public class UpgradeActionInfo 
     {
         /// <summary>
-        /// 升级操作,upgrade&#x3D;升级,upgradeAutoCommit&#x3D;升级自动提交,commit&#x3D;提交,rollback&#x3D;回滚
+        /// 升级操作,upgrade&#x3D;升级,upgradeAutoCommit&#x3D;升级自动提交,commit&#x3D;提交,rollback&#x3D;回滚。
         /// </summary>
-        /// <value>升级操作,upgrade&#x3D;升级,upgradeAutoCommit&#x3D;升级自动提交,commit&#x3D;提交,rollback&#x3D;回滚</value>
+        /// <value>升级操作,upgrade&#x3D;升级,upgradeAutoCommit&#x3D;升级自动提交,commit&#x3D;提交,rollback&#x3D;回滚。</value>
         [JsonConverter(typeof(EnumClassConverter<UpgradeActionEnum>))]
         public class UpgradeActionEnum
         {
@@ -144,12 +144,12 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
 
 
         /// <summary>
-        /// 升级操作,upgrade&#x3D;升级,upgradeAutoCommit&#x3D;升级自动提交,commit&#x3D;提交,rollback&#x3D;回滚
+        /// 升级操作,upgrade&#x3D;升级,upgradeAutoCommit&#x3D;升级自动提交,commit&#x3D;提交,rollback&#x3D;回滚。
         /// </summary>
         [JsonProperty("upgrade_action", NullValueHandling = NullValueHandling.Ignore)]
         public UpgradeActionEnum UpgradeAction { get; set; }
         /// <summary>
-        /// 可用，不可用
+        /// 可用，不可用。
         /// </summary>
         [JsonProperty("enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Enable { get; set; }

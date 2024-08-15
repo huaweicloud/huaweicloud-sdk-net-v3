@@ -202,6 +202,18 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         [JsonProperty("is_iterative", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsIterative { get; set; }
 
+        /// <summary>
+        /// 使用带管道符的sql分析语句进行查询，需要query参数is_analysis_query为true时生效。
+        /// </summary>
+        [JsonProperty("query", NullValueHandling = NullValueHandling.Ignore)]
+        public string Query { get; set; }
+
+        /// <summary>
+        /// 是否为带管道符的sql分析语句。当该参数为true时，将依照body体中的query参数内容进行查询，且body体中除start_time与end_time以外的参数失效，分页、排序、查询结果条数等功能请依照sql语法规则实现。查询结果的响应体不同于未启用时的查询方式，将以默认列存的形式返回查询结果。当前仅对内测用户开放。响应示例：{\&quot;analysisLogs\&quot;:[{\&quot;field1\&quot;:\&quot;1\&quot;,\&quot;field2\&quot;:\&quot;2\&quot;,\&quot;field3\&quot;:\&quot;3\&quot;},{\&quot;field1\&quot;:\&quot;1\&quot;,\&quot;field2\&quot;:\&quot;2\&quot;,\&quot;field3\&quot;:\&quot;3\&quot;},{\&quot;field1\&quot;:\&quot;1\&quot;,\&quot;field2\&quot;:\&quot;2\&quot;,\&quot;field3\&quot;:\&quot;3\&quot;}]}
+        /// </summary>
+        [JsonProperty("is_analysis_query", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsAnalysisQuery { get; set; }
+
 
 
         /// <summary>
@@ -223,6 +235,8 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  highlight: ").Append(Highlight).Append("\n");
             sb.Append("  isIterative: ").Append(IsIterative).Append("\n");
+            sb.Append("  query: ").Append(Query).Append("\n");
+            sb.Append("  isAnalysisQuery: ").Append(IsAnalysisQuery).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -304,6 +318,16 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                     this.IsIterative == input.IsIterative ||
                     (this.IsIterative != null &&
                     this.IsIterative.Equals(input.IsIterative))
+                ) && 
+                (
+                    this.Query == input.Query ||
+                    (this.Query != null &&
+                    this.Query.Equals(input.Query))
+                ) && 
+                (
+                    this.IsAnalysisQuery == input.IsAnalysisQuery ||
+                    (this.IsAnalysisQuery != null &&
+                    this.IsAnalysisQuery.Equals(input.IsAnalysisQuery))
                 );
         }
 
@@ -339,6 +363,10 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                     hashCode = hashCode * 59 + this.Highlight.GetHashCode();
                 if (this.IsIterative != null)
                     hashCode = hashCode * 59 + this.IsIterative.GetHashCode();
+                if (this.Query != null)
+                    hashCode = hashCode * 59 + this.Query.GetHashCode();
+                if (this.IsAnalysisQuery != null)
+                    hashCode = hashCode * 59 + this.IsAnalysisQuery.GetHashCode();
                 return hashCode;
             }
         }

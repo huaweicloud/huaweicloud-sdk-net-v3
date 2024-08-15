@@ -23,25 +23,25 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         public List<string> JobIds { get; set; }
 
         /// <summary>
-        /// 下发成功的实例数量
+        /// 下发成功的实例数量。
         /// </summary>
         [JsonProperty("succeeded_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? SucceededNum { get; set; }
 
         /// <summary>
-        /// 下发失败的实例数量
+        /// 下发失败的实例数量。
         /// </summary>
         [JsonProperty("failed_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? FailedNum { get; set; }
 
         /// <summary>
-        /// 下发失败的实例ID列表
+        /// 下发失败的实例ID列表。
         /// </summary>
         [JsonProperty("failed_instance_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> FailedInstanceIds { get; set; }
 
         /// <summary>
-        /// 下发失败错误信息列表
+        /// 下发失败错误信息列表。
         /// </summary>
         [JsonProperty("error_messages", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> ErrorMessages { get; set; }

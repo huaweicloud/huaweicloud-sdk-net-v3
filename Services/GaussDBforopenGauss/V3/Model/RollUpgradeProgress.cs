@@ -11,37 +11,37 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
 {
     /// <summary>
-    /// 滚动升级信息
+    /// 滚动升级信息。
     /// </summary>
     public class RollUpgradeProgress 
     {
 
         /// <summary>
-        /// 已升级分片数，非独立部署返回null
+        /// 已升级分片数，非独立部署返回null。
         /// </summary>
         [JsonProperty("upgraded_dn_group_numbers", NullValueHandling = NullValueHandling.Ignore)]
         public string UpgradedDnGroupNumbers { get; set; }
 
         /// <summary>
-        /// 总分片数，非独立部署返回null
+        /// 总分片数，非独立部署返回null。
         /// </summary>
         [JsonProperty("total_dn_group_numbers", NullValueHandling = NullValueHandling.Ignore)]
         public string TotalDnGroupNumbers { get; set; }
 
         /// <summary>
-        /// 未完成升级的az，以“,”隔开，独立部署返回null
+        /// 未完成升级的az，以“,”隔开，独立部署返回null。
         /// </summary>
         [JsonProperty("not_fully_upgraded_az", NullValueHandling = NullValueHandling.Ignore)]
         public string NotFullyUpgradedAz { get; set; }
 
         /// <summary>
-        /// 已升级az，以“,”隔开，独立部署返回null
+        /// 已升级az，以“,”隔开，独立部署返回null。
         /// </summary>
         [JsonProperty("already_upgraded_az", NullValueHandling = NullValueHandling.Ignore)]
         public string AlreadyUpgradedAz { get; set; }
 
         /// <summary>
-        /// az描述键值对Map&lt;String,String&gt;
+        /// az描述键值对Map&lt;String,String&gt;。
         /// </summary>
         [JsonProperty("az_description_map", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, string> AzDescriptionMap { get; set; }

@@ -73,7 +73,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public bool? Invert { get; set; }
 
         /// <summary>
-        /// 转发规则的管理状态，默认为true。  不支持该字段，请勿使用。
+        /// 转发规则的管理状态。  不支持该字段，请勿使用。
         /// </summary>
         [SDKProperty("admin_state_up", IsQuery = true)]
         [JsonProperty("admin_state_up", NullValueHandling = NullValueHandling.Ignore)]

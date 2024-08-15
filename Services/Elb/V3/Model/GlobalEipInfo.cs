@@ -17,19 +17,19 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// global eip的id
+        /// 参数解释：global eip的id
         /// </summary>
         [JsonProperty("global_eip_id", NullValueHandling = NullValueHandling.Ignore)]
         public string GlobalEipId { get; set; }
 
         /// <summary>
-        /// global eip的ip地址
+        /// 参数解释：global eip的ip地址
         /// </summary>
         [JsonProperty("global_eip_address", NullValueHandling = NullValueHandling.Ignore)]
         public string GlobalEipAddress { get; set; }
 
         /// <summary>
-        /// IP版本信息。 取值范围：4和6 4：IPv4 6：IPv6 [不支持IPv6，请勿设置为6。](tag:dt,dt_test)
+        /// 参数解释：IP版本信息。  取值范围： - 4，表示IPv4 - 6，表示IPv6  [不支持IPv6，请勿设置为6。](tag:dt,dt_test)
         /// </summary>
         [JsonProperty("ip_version", NullValueHandling = NullValueHandling.Ignore)]
         public int? IpVersion { get; set; }

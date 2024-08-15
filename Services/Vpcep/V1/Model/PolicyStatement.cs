@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
     public class PolicyStatement 
     {
         /// <summary>
-        /// Allow允许或Refuse拒绝，控制访问权限
+        /// Allow允许或Deny拒绝，控制访问权限
         /// </summary>
-        /// <value>Allow允许或Refuse拒绝，控制访问权限</value>
+        /// <value>Allow允许或Deny拒绝，控制访问权限</value>
         [JsonConverter(typeof(EnumClassConverter<EffectEnum>))]
         public class EffectEnum
         {
@@ -28,15 +28,15 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
             public static readonly EffectEnum ALLOW = new EffectEnum("Allow");
 
             /// <summary>
-            /// Enum REFUSE for value: Refuse
+            /// Enum DENY for value: Deny
             /// </summary>
-            public static readonly EffectEnum REFUSE = new EffectEnum("Refuse");
+            public static readonly EffectEnum DENY = new EffectEnum("Deny");
 
             private static readonly Dictionary<string, EffectEnum> StaticFields =
             new Dictionary<string, EffectEnum>()
             {
                 { "Allow", ALLOW },
-                { "Refuse", REFUSE },
+                { "Deny", DENY },
             };
 
             private string _value;
@@ -132,7 +132,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
 
 
         /// <summary>
-        /// Allow允许或Refuse拒绝，控制访问权限
+        /// Allow允许或Deny拒绝，控制访问权限
         /// </summary>
         [JsonProperty("Effect", NullValueHandling = NullValueHandling.Ignore)]
         public EffectEnum Effect { get; set; }

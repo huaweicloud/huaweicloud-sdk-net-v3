@@ -77,7 +77,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public string InspectionRecord { get; set; }
 
         /// <summary>
-        /// 条码号。           
+        /// 条码号。 
         /// </summary>
         [JsonProperty("code_number", NullValueHandling = NullValueHandling.Ignore)]
         public string CodeNumber { get; set; }

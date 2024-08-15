@@ -142,6 +142,18 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         [JsonProperty("task_id", NullValueHandling = NullValueHandling.Ignore)]
         public string TaskId { get; set; }
 
+        /// <summary>
+        /// 错误信息
+        /// </summary>
+        [JsonProperty("error_msg", NullValueHandling = NullValueHandling.Ignore)]
+        public string ErrorMsg { get; set; }
+
+        /// <summary>
+        /// 错误码
+        /// </summary>
+        [JsonProperty("error_code", NullValueHandling = NullValueHandling.Ignore)]
+        public string ErrorCode { get; set; }
+
 
 
         /// <summary>
@@ -153,6 +165,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             sb.Append("class StopMigrationTaskResult {\n");
             sb.Append("  result: ").Append(Result).Append("\n");
             sb.Append("  taskId: ").Append(TaskId).Append("\n");
+            sb.Append("  errorMsg: ").Append(ErrorMsg).Append("\n");
+            sb.Append("  errorCode: ").Append(ErrorCode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -183,6 +197,16 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     this.TaskId == input.TaskId ||
                     (this.TaskId != null &&
                     this.TaskId.Equals(input.TaskId))
+                ) && 
+                (
+                    this.ErrorMsg == input.ErrorMsg ||
+                    (this.ErrorMsg != null &&
+                    this.ErrorMsg.Equals(input.ErrorMsg))
+                ) && 
+                (
+                    this.ErrorCode == input.ErrorCode ||
+                    (this.ErrorCode != null &&
+                    this.ErrorCode.Equals(input.ErrorCode))
                 );
         }
 
@@ -198,6 +222,10 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                     hashCode = hashCode * 59 + this.Result.GetHashCode();
                 if (this.TaskId != null)
                     hashCode = hashCode * 59 + this.TaskId.GetHashCode();
+                if (this.ErrorMsg != null)
+                    hashCode = hashCode * 59 + this.ErrorMsg.GetHashCode();
+                if (this.ErrorCode != null)
+                    hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
                 return hashCode;
             }
         }

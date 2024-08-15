@@ -11,13 +11,13 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 要移除的请求头参数列表。
+    /// 参数解释：要移除的请求头参数列表。
     /// </summary>
     public class RemoveHeadersConfig 
     {
 
         /// <summary>
-        /// 要移除的请求头参数列表。
+        /// 参数解释：要移除的请求头参数列表。
         /// </summary>
         [JsonProperty("configs", NullValueHandling = NullValueHandling.Ignore)]
         public List<RemoveHeaderConfig> Configs { get; set; }

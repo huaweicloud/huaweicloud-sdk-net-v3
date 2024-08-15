@@ -346,6 +346,32 @@ namespace HuaweiCloud.SDK.Iam.V3
         }
         
         /// <summary>
+        /// 绑定MFA设备
+        ///
+        /// 该接口可以用于绑定MFA设备。
+        /// 
+        /// 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateBindingDeviceResponse CreateBindingDevice(CreateBindingDeviceRequest createBindingDeviceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-MFA/mfa-devices/bind", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createBindingDeviceRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerializeNull<CreateBindingDeviceResponse>(response);
+        }
+
+        public SyncInvoker<CreateBindingDeviceResponse> CreateBindingDeviceInvoker(CreateBindingDeviceRequest createBindingDeviceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-MFA/mfa-devices/bind", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createBindingDeviceRequest);
+            return new SyncInvoker<CreateBindingDeviceResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<CreateBindingDeviceResponse>);
+        }
+        
+        /// <summary>
         /// 创建云服务自定义策略
         ///
         /// 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)创建云服务自定义策略。
@@ -429,6 +455,32 @@ namespace HuaweiCloud.SDK.Iam.V3
             var urlPath = HttpUtils.AddUrlPath("/v3-ext/OS-FEDERATION/identity_providers/{idp_id}/protocols/{protocol_id}/metadata", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createMetadataRequest);
             return new SyncInvoker<CreateMetadataResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateMetadataResponse>);
+        }
+        
+        /// <summary>
+        /// 创建MFA设备
+        ///
+        /// 该接口可以用于创建MFA设备。
+        /// 
+        /// 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateMfaDeviceResponse CreateMfaDevice(CreateMfaDeviceRequest createMfaDeviceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-MFA/virtual-mfa-devices", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createMfaDeviceRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateMfaDeviceResponse>(response);
+        }
+
+        public SyncInvoker<CreateMfaDeviceResponse> CreateMfaDeviceInvoker(CreateMfaDeviceRequest createMfaDeviceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-MFA/virtual-mfa-devices", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createMfaDeviceRequest);
+            return new SyncInvoker<CreateMfaDeviceResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateMfaDeviceResponse>);
         }
         
         /// <summary>
@@ -538,6 +590,32 @@ namespace HuaweiCloud.SDK.Iam.V3
         }
         
         /// <summary>
+        /// 解绑MFA设备
+        ///
+        /// 该接口可以用于解绑MFA设备
+        /// 
+        /// 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteBindingDeviceResponse DeleteBindingDevice(DeleteBindingDeviceRequest deleteBindingDeviceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-MFA/mfa-devices/unbind", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteBindingDeviceRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerializeNull<DeleteBindingDeviceResponse>(response);
+        }
+
+        public SyncInvoker<DeleteBindingDeviceResponse> DeleteBindingDeviceInvoker(DeleteBindingDeviceRequest deleteBindingDeviceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-MFA/mfa-devices/unbind", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteBindingDeviceRequest);
+            return new SyncInvoker<DeleteBindingDeviceResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<DeleteBindingDeviceResponse>);
+        }
+        
+        /// <summary>
         /// 删除自定义策略
         ///
         /// 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)删除自定义策略。
@@ -595,6 +673,32 @@ namespace HuaweiCloud.SDK.Iam.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/OS-INHERIT/domains/{domain_id}/groups/{group_id}/roles/{role_id}/inherited_to_projects", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDomainGroupInheritedRoleRequest);
             return new SyncInvoker<DeleteDomainGroupInheritedRoleResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteDomainGroupInheritedRoleResponse>);
+        }
+        
+        /// <summary>
+        /// 删除MFA设备
+        ///
+        /// 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)删除MFA设备。
+        /// 
+        /// 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteMfaDeviceResponse DeleteMfaDevice(DeleteMfaDeviceRequest deleteMfaDeviceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-MFA/virtual-mfa-devices", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteMfaDeviceRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteMfaDeviceResponse>(response);
+        }
+
+        public SyncInvoker<DeleteMfaDeviceResponse> DeleteMfaDeviceInvoker(DeleteMfaDeviceRequest deleteMfaDeviceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-MFA/virtual-mfa-devices", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteMfaDeviceRequest);
+            return new SyncInvoker<DeleteMfaDeviceResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteMfaDeviceResponse>);
         }
         
         /// <summary>
@@ -2293,7 +2397,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         }
         
         /// <summary>
-        /// 查询用户关联的企业项目
+        /// 查询用户直接关联的企业项目
         ///
         /// 该接口可用于查询用户所关联的企业项目。
         /// 
@@ -2379,7 +2483,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         }
         
         /// <summary>
-        /// 查询企业项目已关联用户组的权限
+        /// 查询企业项目关联用户组的权限
         ///
         /// 该接口可用于查询企业项目已关联用户组的权限。
         /// 
@@ -3513,58 +3617,6 @@ namespace HuaweiCloud.SDK.Iam.V3
         }
         
         /// <summary>
-        /// 绑定MFA设备
-        ///
-        /// 该接口可以用于绑定MFA设备。
-        /// 
-        /// 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public CreateBindingDeviceResponse CreateBindingDevice(CreateBindingDeviceRequest createBindingDeviceRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-MFA/mfa-devices/bind", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createBindingDeviceRequest);
-            var response = DoHttpRequestSync("PUT", request);
-            return JsonUtils.DeSerializeNull<CreateBindingDeviceResponse>(response);
-        }
-
-        public SyncInvoker<CreateBindingDeviceResponse> CreateBindingDeviceInvoker(CreateBindingDeviceRequest createBindingDeviceRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-MFA/mfa-devices/bind", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createBindingDeviceRequest);
-            return new SyncInvoker<CreateBindingDeviceResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<CreateBindingDeviceResponse>);
-        }
-        
-        /// <summary>
-        /// 创建MFA设备
-        ///
-        /// 该接口可以用于创建MFA设备。
-        /// 
-        /// 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public CreateMfaDeviceResponse CreateMfaDevice(CreateMfaDeviceRequest createMfaDeviceRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-MFA/virtual-mfa-devices", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createMfaDeviceRequest);
-            var response = DoHttpRequestSync("POST", request);
-            return JsonUtils.DeSerialize<CreateMfaDeviceResponse>(response);
-        }
-
-        public SyncInvoker<CreateMfaDeviceResponse> CreateMfaDeviceInvoker(CreateMfaDeviceRequest createMfaDeviceRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-MFA/virtual-mfa-devices", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createMfaDeviceRequest);
-            return new SyncInvoker<CreateMfaDeviceResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateMfaDeviceResponse>);
-        }
-        
-        /// <summary>
         /// 管理员创建IAM用户（推荐）
         ///
         /// 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)创建IAM用户。
@@ -3588,58 +3640,6 @@ namespace HuaweiCloud.SDK.Iam.V3
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-USER/users", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createUserRequest);
             return new SyncInvoker<CreateUserResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateUserResponse>);
-        }
-        
-        /// <summary>
-        /// 解绑MFA设备
-        ///
-        /// 该接口可以用于解绑MFA设备
-        /// 
-        /// 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public DeleteBindingDeviceResponse DeleteBindingDevice(DeleteBindingDeviceRequest deleteBindingDeviceRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-MFA/mfa-devices/unbind", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteBindingDeviceRequest);
-            var response = DoHttpRequestSync("PUT", request);
-            return JsonUtils.DeSerializeNull<DeleteBindingDeviceResponse>(response);
-        }
-
-        public SyncInvoker<DeleteBindingDeviceResponse> DeleteBindingDeviceInvoker(DeleteBindingDeviceRequest deleteBindingDeviceRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-MFA/mfa-devices/unbind", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteBindingDeviceRequest);
-            return new SyncInvoker<DeleteBindingDeviceResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<DeleteBindingDeviceResponse>);
-        }
-        
-        /// <summary>
-        /// 删除MFA设备
-        ///
-        /// 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)删除MFA设备。
-        /// 
-        /// 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public DeleteMfaDeviceResponse DeleteMfaDevice(DeleteMfaDeviceRequest deleteMfaDeviceRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-MFA/virtual-mfa-devices", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteMfaDeviceRequest);
-            var response = DoHttpRequestSync("DELETE", request);
-            return JsonUtils.DeSerializeNull<DeleteMfaDeviceResponse>(response);
-        }
-
-        public SyncInvoker<DeleteMfaDeviceResponse> DeleteMfaDeviceInvoker(DeleteMfaDeviceRequest deleteMfaDeviceRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-MFA/virtual-mfa-devices", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteMfaDeviceRequest);
-            return new SyncInvoker<DeleteMfaDeviceResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteMfaDeviceResponse>);
         }
         
         /// <summary>
@@ -3889,7 +3889,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         }
         
         /// <summary>
-        /// 该接口可以用于获取MFA设备。
+        /// 查询IAM用户的MFA绑定信息列表
         ///
         /// 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询IAM用户的MFA绑定信息列表。
         /// 

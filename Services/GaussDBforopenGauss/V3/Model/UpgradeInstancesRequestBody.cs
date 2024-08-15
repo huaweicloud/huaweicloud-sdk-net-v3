@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
     {
 
         /// <summary>
-        /// 批量实例ID
+        /// 批量实例ID。
         /// </summary>
         [JsonProperty("instance_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> InstanceIds { get; set; }

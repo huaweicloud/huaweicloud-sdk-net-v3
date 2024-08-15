@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
     {
 
         /// <summary>
-        /// 代表检测识别出来的文字块数目。 \&quot;segment_digit\&quot; 和\&quot;segment\&quot;默认为1。       
+        /// 代表检测识别出来的文字块数目。 \&quot;segment_digit\&quot; 和\&quot;segment\&quot;默认为1。 
         /// </summary>
         [JsonProperty("words_block_count", NullValueHandling = NullValueHandling.Ignore)]
         public int? WordsBlockCount { get; set; }

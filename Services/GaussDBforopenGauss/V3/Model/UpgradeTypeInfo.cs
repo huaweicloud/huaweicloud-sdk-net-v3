@@ -11,14 +11,14 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
 {
     /// <summary>
-    /// 升级类型信息
+    /// 升级类型信息。
     /// </summary>
     public class UpgradeTypeInfo 
     {
         /// <summary>
-        /// 升级类型,grey&#x3D;灰度升级,inplace&#x3D;就地升级,hotfix&#x3D;热补丁升级
+        /// 升级类型,grey&#x3D;灰度升级,inplace&#x3D;就地升级,hotfix&#x3D;热补丁升级。
         /// </summary>
-        /// <value>升级类型,grey&#x3D;灰度升级,inplace&#x3D;就地升级,hotfix&#x3D;热补丁升级</value>
+        /// <value>升级类型,grey&#x3D;灰度升级,inplace&#x3D;就地升级,hotfix&#x3D;热补丁升级。</value>
         [JsonConverter(typeof(EnumClassConverter<UpgradeTypeEnum>))]
         public class UpgradeTypeEnum
         {
@@ -138,18 +138,18 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
 
 
         /// <summary>
-        /// 升级类型,grey&#x3D;灰度升级,inplace&#x3D;就地升级,hotfix&#x3D;热补丁升级
+        /// 升级类型,grey&#x3D;灰度升级,inplace&#x3D;就地升级,hotfix&#x3D;热补丁升级。
         /// </summary>
         [JsonProperty("upgrade_type", NullValueHandling = NullValueHandling.Ignore)]
         public UpgradeTypeEnum UpgradeType { get; set; }
         /// <summary>
-        /// 可用，不可用
+        /// 可用，不可用。
         /// </summary>
         [JsonProperty("enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Enable { get; set; }
 
         /// <summary>
-        /// 升级操作列表
+        /// 升级操作列表。
         /// </summary>
         [JsonProperty("upgrade_action_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<UpgradeActionInfo> UpgradeActionList { get; set; }

@@ -11,14 +11,14 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
 {
     /// <summary>
-    /// 热补丁信息
+    /// 热补丁信息。
     /// </summary>
     public class HotfixInfo 
     {
         /// <summary>
-        /// 通用非通用信息,common&#x3D;通用补丁,certain&#x3D;定制补丁
+        /// 通用非通用信息,common&#x3D;通用补丁,certain&#x3D;定制补丁。
         /// </summary>
-        /// <value>通用非通用信息,common&#x3D;通用补丁,certain&#x3D;定制补丁</value>
+        /// <value>通用非通用信息,common&#x3D;通用补丁,certain&#x3D;定制补丁。</value>
         [JsonConverter(typeof(EnumClassConverter<CommonPatchEnum>))]
         public class CommonPatchEnum
         {
@@ -132,24 +132,24 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
 
 
         /// <summary>
-        /// 热补丁版本
+        /// 热补丁版本。
         /// </summary>
         [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]
         public string Version { get; set; }
 
         /// <summary>
-        /// 通用非通用信息,common&#x3D;通用补丁,certain&#x3D;定制补丁
+        /// 通用非通用信息,common&#x3D;通用补丁,certain&#x3D;定制补丁。
         /// </summary>
         [JsonProperty("common_patch", NullValueHandling = NullValueHandling.Ignore)]
         public CommonPatchEnum CommonPatch { get; set; }
         /// <summary>
-        /// 是否和备份相关
+        /// 是否和备份相关。
         /// </summary>
         [JsonProperty("backup_sensitive", NullValueHandling = NullValueHandling.Ignore)]
         public bool? BackupSensitive { get; set; }
 
         /// <summary>
-        /// 补丁的描述信息
+        /// 补丁的描述信息。
         /// </summary>
         [JsonProperty("descripition", NullValueHandling = NullValueHandling.Ignore)]
         public string Descripition { get; set; }

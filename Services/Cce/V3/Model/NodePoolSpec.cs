@@ -173,10 +173,10 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public List<SecurityID> PodSecurityGroups { get; set; }
 
         /// <summary>
-        /// 
+        /// 节点池扩展伸缩组配置列表，详情参见ExtensionScaleGroup类型定义
         /// </summary>
         [JsonProperty("extensionScaleGroups", NullValueHandling = NullValueHandling.Ignore)]
-        public ExtensionScaleGroup ExtensionScaleGroups { get; set; }
+        public List<ExtensionScaleGroup> ExtensionScaleGroups { get; set; }
 
         /// <summary>
         /// 节点池自定义安全组相关配置。支持节点池新扩容节点绑定指定的安全组。  - 未指定安全组ID，新建节点将添加Node节点默认安全组。  - 指定有效安全组ID，新建节点将使用指定安全组。  - 指定安全组，应避免对CCE运行依赖的端口规则进行修改。[详细设置请参考[集群安全组规则配置](https://support.huaweicloud.com/cce_faq/cce_faq_00265.html)。](tag:hws)[详细设置请参考[集群安全组规则配置](https://support.huaweicloud.com/intl/zh-cn/cce_faq/cce_faq_00265.html)。](tag:hws_hk) 
@@ -255,8 +255,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 ) && 
                 (
                     this.ExtensionScaleGroups == input.ExtensionScaleGroups ||
-                    (this.ExtensionScaleGroups != null &&
-                    this.ExtensionScaleGroups.Equals(input.ExtensionScaleGroups))
+                    this.ExtensionScaleGroups != null &&
+                    input.ExtensionScaleGroups != null &&
+                    this.ExtensionScaleGroups.SequenceEqual(input.ExtensionScaleGroups)
                 ) && 
                 (
                     this.CustomSecurityGroups == input.CustomSecurityGroups ||

@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
     public class ShowUpgradeCandidateVersionsRequest 
     {
         /// <summary>
-        /// 语言[zh-cn, en-us]
+        /// 语言[zh-cn, en-us]。
         /// </summary>
-        /// <value>语言[zh-cn, en-us]</value>
+        /// <value>语言[zh-cn, en-us]。</value>
         [JsonConverter(typeof(EnumClassConverter<XLanguageEnum>))]
         public class XLanguageEnum
         {
@@ -139,7 +139,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// 语言[zh-cn, en-us]
+        /// 语言[zh-cn, en-us]。
         /// </summary>
         [SDKProperty("X-Language", IsHeader = true)]
         [JsonProperty("X-Language", NullValueHandling = NullValueHandling.Ignore)]

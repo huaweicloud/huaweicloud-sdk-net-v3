@@ -218,7 +218,7 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         /// - 功能说明：用户所属项目ID
         /// </summary>
         [JsonProperty("tenant_id", NullValueHandling = NullValueHandling.Ignore)]
-        public Guid? TenantId { get; set; }
+        public string TenantId { get; set; }
 
         /// <summary>
         /// - 功能说明：\&quot;公网EIP标签\&quot;

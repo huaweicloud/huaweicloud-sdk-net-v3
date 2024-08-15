@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         public List<UpgradeTypeInfo> UpgradeTypeList { get; set; }
 
         /// <summary>
-        /// 是否可以回滚，true可以回滚，false不可以回滚
+        /// 是否可以回滚，true可以回滚，false不可以回滚。
         /// </summary>
         [JsonProperty("rollback_enabled", NullValueHandling = NullValueHandling.Ignore)]
         public bool? RollbackEnabled { get; set; }
@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         public string SourceVersion { get; set; }
 
         /// <summary>
-        /// 升级目标版本，没有在滚动升级中返回null
+        /// 升级目标版本，没有在滚动升级中返回null。
         /// </summary>
         [JsonProperty("target_version", NullValueHandling = NullValueHandling.Ignore)]
         public string TargetVersion { get; set; }
@@ -47,19 +47,19 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         public RollUpgradeProgress RollUpgradeProgress { get; set; }
 
         /// <summary>
-        /// 可以升级的版本，包括大小版本，滚动升级中返回空数组
+        /// 可以升级的版本，包括大小版本，滚动升级中返回空数组。
         /// </summary>
         [JsonProperty("upgrade_candidate_versions", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> UpgradeCandidateVersions { get; set; }
 
         /// <summary>
-        /// 可以升级的热补丁版本，滚动升级中返回空数组
+        /// 可以升级的热补丁版本，滚动升级中返回空数组。
         /// </summary>
         [JsonProperty("hotfix_upgrade_candidate_versions", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> HotfixUpgradeCandidateVersions { get; set; }
 
         /// <summary>
-        /// 可以回滚的热补丁版本，滚动升级中返回空数组
+        /// 可以回滚的热补丁版本，滚动升级中返回空数组。
         /// </summary>
         [JsonProperty("hotfix_rollback_candidate_versions", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> HotfixRollbackCandidateVersions { get; set; }

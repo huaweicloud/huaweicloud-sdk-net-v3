@@ -65,6 +65,30 @@ namespace HuaweiCloud.SDK.Dcs.V2
         }
         
         /// <summary>
+        /// 批量重启在线迁移任务
+        ///
+        /// 批量重启在线迁移任务，接口响应成功，返回重启在线迁移任务下发结果。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public BatchRestartOnlineMigrationTasksResponse BatchRestartOnlineMigrationTasks(BatchRestartOnlineMigrationTasksRequest batchRestartOnlineMigrationTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/migration-tasks/batch-restart", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchRestartOnlineMigrationTasksRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<BatchRestartOnlineMigrationTasksResponse>(response);
+        }
+
+        public SyncInvoker<BatchRestartOnlineMigrationTasksResponse> BatchRestartOnlineMigrationTasksInvoker(BatchRestartOnlineMigrationTasksRequest batchRestartOnlineMigrationTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/migration-tasks/batch-restart", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchRestartOnlineMigrationTasksRequest);
+            return new SyncInvoker<BatchRestartOnlineMigrationTasksResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchRestartOnlineMigrationTasksResponse>);
+        }
+        
+        /// <summary>
         /// 批量查询实例节点信息
         ///
         /// 批量查询指定项目所有实例的节点信息、有效实例个数及节点个数。

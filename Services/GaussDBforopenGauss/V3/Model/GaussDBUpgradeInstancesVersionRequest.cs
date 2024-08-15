@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
     public class GaussDBUpgradeInstancesVersionRequest 
     {
         /// <summary>
-        /// 实例升级类型，包括就地升级，灰度升级、热补丁升级三种
+        /// 实例升级类型，包括就地升级，灰度升级、热补丁升级三种。
         /// </summary>
-        /// <value>实例升级类型，包括就地升级，灰度升级、热补丁升级三种</value>
+        /// <value>实例升级类型，包括就地升级，灰度升级、热补丁升级三种。</value>
         [JsonConverter(typeof(EnumClassConverter<UpgradeTypeEnum>))]
         public class UpgradeTypeEnum
         {
@@ -265,13 +265,13 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
 
 
         /// <summary>
-        /// 批量实例ID
+        /// 批量实例ID。
         /// </summary>
         [JsonProperty("instance_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> InstanceIds { get; set; }
 
         /// <summary>
-        /// 实例升级类型，包括就地升级，灰度升级、热补丁升级三种
+        /// 实例升级类型，包括就地升级，灰度升级、热补丁升级三种。
         /// </summary>
         [JsonProperty("upgrade_type", NullValueHandling = NullValueHandling.Ignore)]
         public UpgradeTypeEnum UpgradeType { get; set; }

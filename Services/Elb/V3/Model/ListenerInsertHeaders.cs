@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// X-Forwarded-ELB-IP设为true可以将ELB实例的eip地址从报文的http头中带到后端云服务器。
+        /// 参数解释：X-Forwarded-ELB-IP设为true可以将ELB实例的eip地址从报文的http头中带到后端云服务器。
         /// </summary>
         [JsonProperty("X-Forwarded-ELB-IP", NullValueHandling = NullValueHandling.Ignore)]
         public bool? XForwardedELBIP { get; set; }
 
         /// <summary>
-        /// X-Forwarded-Port设为true可以将ELB实例的监听端口从报文的http头中带到后端云服务器。
+        /// 参数解释：X-Forwarded-Port设为true可以将ELB实例的监听端口从报文的http头中带到后端云服务器。
         /// </summary>
         [JsonProperty("X-Forwarded-Port", NullValueHandling = NullValueHandling.Ignore)]
         public bool? XForwardedPort { get; set; }
@@ -35,43 +35,43 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public bool? XForwardedForPort { get; set; }
 
         /// <summary>
-        /// X-Forwarded-Host设为true可以将客户请求头的X-Forwarded-Host设置为请求头的Host带到后端云服务器。
+        /// 参数解释：X-Forwarded-Host设为true可以将客户请求头的X-Forwarded-Host设置为请求头的Host带到后端云服务器。
         /// </summary>
         [JsonProperty("X-Forwarded-Host", NullValueHandling = NullValueHandling.Ignore)]
         public bool? XForwardedHost { get; set; }
 
         /// <summary>
-        /// X-Forwarded-Proto设为true可以将负载均衡器实例的监听协议通过报文的http头带到后端云服务器。
+        /// 参数解释：X-Forwarded-Proto设为true可以将负载均衡器实例的监听协议通过报文的http头带到后端云服务器。
         /// </summary>
         [JsonProperty("X-Forwarded-Proto", NullValueHandling = NullValueHandling.Ignore)]
         public bool? XForwardedProto { get; set; }
 
         /// <summary>
-        /// X-Real-IP设为true可以将客户端的IP通过报文的http头带到后端云服务器。
+        /// 参数解释：X-Real-IP设为true可以将客户端的IP通过报文的http头带到后端云服务器。
         /// </summary>
         [JsonProperty("X-Real-IP", NullValueHandling = NullValueHandling.Ignore)]
         public bool? XRealIP { get; set; }
 
         /// <summary>
-        /// X-Forwarded-ELB-ID设为true可以将负载均衡器实例的ID通过报文的http头带到后端云服务器。
+        /// 参数解释：X-Forwarded-ELB-ID设为true可以将负载均衡器实例的ID通过报文的http头带到后端云服务器。
         /// </summary>
         [JsonProperty("X-Forwarded-ELB-ID", NullValueHandling = NullValueHandling.Ignore)]
         public bool? XForwardedELBID { get; set; }
 
         /// <summary>
-        /// X-Forwarded-TLS-Certificate-ID设为true可以将负载均衡器实例的证书ID通过报文的http头带到后端云服务器。
+        /// 参数解释：X-Forwarded-TLS-Certificate-ID设为true可以将负载均衡器实例的证书ID通过报文的http头带到后端云服务器。
         /// </summary>
         [JsonProperty("X-Forwarded-TLS-Certificate-ID", NullValueHandling = NullValueHandling.Ignore)]
         public bool? XForwardedTLSCertificateID { get; set; }
 
         /// <summary>
-        /// X-Forwarded-TLS-Protocol设为true可以将负载均衡器实例的算法协议通过报文的http头带到后端云服务器。
+        /// 参数解释：X-Forwarded-TLS-Protocol设为true可以将负载均衡器实例的算法协议通过报文的http头带到后端云服务器。
         /// </summary>
         [JsonProperty("X-Forwarded-TLS-Protocol", NullValueHandling = NullValueHandling.Ignore)]
         public bool? XForwardedTLSProtocol { get; set; }
 
         /// <summary>
-        /// X-Forwarded-TLS-Cipher设为true可以将负载均衡器实例的算法套件通过报文的http头带到后端云服务器。
+        /// 参数解释：X-Forwarded-TLS-Cipher设为true可以将负载均衡器实例的算法套件通过报文的http头带到后端云服务器。
         /// </summary>
         [JsonProperty("X-Forwarded-TLS-Cipher", NullValueHandling = NullValueHandling.Ignore)]
         public bool? XForwardedTLSCipher { get; set; }

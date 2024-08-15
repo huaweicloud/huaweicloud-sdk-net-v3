@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// 是否开启url重定向
+        /// 参数解释：是否开启url重定向
         /// </summary>
         [JsonProperty("rewrite_url_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? RewriteUrlEnable { get; set; }

@@ -35,6 +35,12 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         public string Index { get; set; }
 
         /// <summary>
+        /// 该资源的模块地址
+        /// </summary>
+        [JsonProperty("module_address", NullValueHandling = NullValueHandling.Ignore)]
+        public string ModuleAddress { get; set; }
+
+        /// <summary>
         /// 该资源或该资源当前所给予的参数是否支持进行询价
         /// </summary>
         [JsonProperty("supported", NullValueHandling = NullValueHandling.Ignore)]
@@ -64,6 +70,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
             sb.Append("  resourceType: ").Append(ResourceType).Append("\n");
             sb.Append("  resourceName: ").Append(ResourceName).Append("\n");
             sb.Append("  index: ").Append(Index).Append("\n");
+            sb.Append("  moduleAddress: ").Append(ModuleAddress).Append("\n");
             sb.Append("  supported: ").Append(Supported).Append("\n");
             sb.Append("  unsupportedMessage: ").Append(UnsupportedMessage).Append("\n");
             sb.Append("  resourcePrice: ").Append(ResourcePrice).Append("\n");
@@ -104,6 +111,11 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
                     this.Index.Equals(input.Index))
                 ) && 
                 (
+                    this.ModuleAddress == input.ModuleAddress ||
+                    (this.ModuleAddress != null &&
+                    this.ModuleAddress.Equals(input.ModuleAddress))
+                ) && 
+                (
                     this.Supported == input.Supported ||
                     (this.Supported != null &&
                     this.Supported.Equals(input.Supported))
@@ -135,6 +147,8 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
                     hashCode = hashCode * 59 + this.ResourceName.GetHashCode();
                 if (this.Index != null)
                     hashCode = hashCode * 59 + this.Index.GetHashCode();
+                if (this.ModuleAddress != null)
+                    hashCode = hashCode * 59 + this.ModuleAddress.GetHashCode();
                 if (this.Supported != null)
                     hashCode = hashCode * 59 + this.Supported.GetHashCode();
                 if (this.UnsupportedMessage != null)

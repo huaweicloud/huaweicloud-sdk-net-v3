@@ -53,40 +53,58 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public string VehicleSize { get; set; }
 
         /// <summary>
-        /// 核发机关（非必有，依赖对应运输证板式）。 
+        /// 核发机关。 
         /// </summary>
         [JsonProperty("issuing_authority", NullValueHandling = NullValueHandling.Ignore)]
         public string IssuingAuthority { get; set; }
 
         /// <summary>
-        /// 发证日期（非必有，依赖对应运输证板式）。 
+        /// 发证日期。 
         /// </summary>
         [JsonProperty("issue_date", NullValueHandling = NullValueHandling.Ignore)]
         public string IssueDate { get; set; }
 
         /// <summary>
-        /// 业户地址（非必有，依赖对应运输证板式）。 
+        /// 业户地址。 
         /// </summary>
         [JsonProperty("owner_address", NullValueHandling = NullValueHandling.Ignore)]
         public string OwnerAddress { get; set; }
 
         /// <summary>
-        /// 经济类型（非必有，依赖对应运输证板式）。 
+        /// 经济类型。 
         /// </summary>
         [JsonProperty("economic_type", NullValueHandling = NullValueHandling.Ignore)]
         public string EconomicType { get; set; }
 
         /// <summary>
-        /// 经营许可证号（非必有，依赖对应运输证板式）。 
+        /// 经营许可证号。 
         /// </summary>
         [JsonProperty("business_certificate", NullValueHandling = NullValueHandling.Ignore)]
         public string BusinessCertificate { get; set; }
 
         /// <summary>
-        /// 经营范围（非必有，依赖对应运输证板式）。 
+        /// 经营范围。 
         /// </summary>
         [JsonProperty("business_scope", NullValueHandling = NullValueHandling.Ignore)]
         public string BusinessScope { get; set; }
+
+        /// <summary>
+        /// 有效期。 
+        /// </summary>
+        [JsonProperty("expiry_date", NullValueHandling = NullValueHandling.Ignore)]
+        public string ExpiryDate { get; set; }
+
+        /// <summary>
+        /// 审验有效期。 
+        /// </summary>
+        [JsonProperty("review_expiry_date", NullValueHandling = NullValueHandling.Ignore)]
+        public string ReviewExpiryDate { get; set; }
+
+        /// <summary>
+        /// 技术等级评定。 
+        /// </summary>
+        [JsonProperty("assessed_technical_level", NullValueHandling = NullValueHandling.Ignore)]
+        public string AssessedTechnicalLevel { get; set; }
 
         /// <summary>
         /// 相关字段的置信度信息，置信度越大，表示本次识别的对应字段的可靠性越高，在统计意义上，置信度越大，准确率越高。 置信度由算法给出，不直接等价于对应字段的准确率。 
@@ -115,6 +133,9 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  economicType: ").Append(EconomicType).Append("\n");
             sb.Append("  businessCertificate: ").Append(BusinessCertificate).Append("\n");
             sb.Append("  businessScope: ").Append(BusinessScope).Append("\n");
+            sb.Append("  expiryDate: ").Append(ExpiryDate).Append("\n");
+            sb.Append("  reviewExpiryDate: ").Append(ReviewExpiryDate).Append("\n");
+            sb.Append("  assessedTechnicalLevel: ").Append(AssessedTechnicalLevel).Append("\n");
             sb.Append("  confidence: ").Append(Confidence).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -198,6 +219,21 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     this.BusinessScope.Equals(input.BusinessScope))
                 ) && 
                 (
+                    this.ExpiryDate == input.ExpiryDate ||
+                    (this.ExpiryDate != null &&
+                    this.ExpiryDate.Equals(input.ExpiryDate))
+                ) && 
+                (
+                    this.ReviewExpiryDate == input.ReviewExpiryDate ||
+                    (this.ReviewExpiryDate != null &&
+                    this.ReviewExpiryDate.Equals(input.ReviewExpiryDate))
+                ) && 
+                (
+                    this.AssessedTechnicalLevel == input.AssessedTechnicalLevel ||
+                    (this.AssessedTechnicalLevel != null &&
+                    this.AssessedTechnicalLevel.Equals(input.AssessedTechnicalLevel))
+                ) && 
+                (
                     this.Confidence == input.Confidence ||
                     (this.Confidence != null &&
                     this.Confidence.Equals(input.Confidence))
@@ -236,6 +272,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                     hashCode = hashCode * 59 + this.BusinessCertificate.GetHashCode();
                 if (this.BusinessScope != null)
                     hashCode = hashCode * 59 + this.BusinessScope.GetHashCode();
+                if (this.ExpiryDate != null)
+                    hashCode = hashCode * 59 + this.ExpiryDate.GetHashCode();
+                if (this.ReviewExpiryDate != null)
+                    hashCode = hashCode * 59 + this.ReviewExpiryDate.GetHashCode();
+                if (this.AssessedTechnicalLevel != null)
+                    hashCode = hashCode * 59 + this.AssessedTechnicalLevel.GetHashCode();
                 if (this.Confidence != null)
                     hashCode = hashCode * 59 + this.Confidence.GetHashCode();
                 return hashCode;

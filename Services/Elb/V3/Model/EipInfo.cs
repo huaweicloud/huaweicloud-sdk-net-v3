@@ -11,25 +11,25 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 弹性ip，同publicips
+    /// 参数解释：弹性IP，同publicips。
     /// </summary>
     public class EipInfo 
     {
 
         /// <summary>
-        /// eip_id
+        /// 参数解释：弹性IP的ID。
         /// </summary>
         [JsonProperty("eip_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EipId { get; set; }
 
         /// <summary>
-        /// eip_address
+        /// 参数解释：弹性IP的IP地址。
         /// </summary>
         [JsonProperty("eip_address", NullValueHandling = NullValueHandling.Ignore)]
         public string EipAddress { get; set; }
 
         /// <summary>
-        /// IP版本号。  取值：4表示IPv4,6表示IPv6。  [不支持IPv6，请勿设置为6。](tag:dt,dt_test)
+        /// 参数解释：IP版本号。  取值范围： - 4表示IPv4。 - 6表示IPv6。  [不支持IPv6，请勿设置为6。](tag:dt,dt_test)
         /// </summary>
         [JsonProperty("ip_version", NullValueHandling = NullValueHandling.Ignore)]
         public int? IpVersion { get; set; }

@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// 请求ID。  注：自动生成 。
+        /// 参数解释：请求ID。  注：自动生成 。
         /// </summary>
         [JsonProperty("request_id", NullValueHandling = NullValueHandling.Ignore)]
         public string RequestId { get; set; }
@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public PageInfo PageInfo { get; set; }
 
         /// <summary>
-        /// 转发策略对象列表。
+        /// 参数解释：转发策略对象列表。
         /// </summary>
         [JsonProperty("l7policies", NullValueHandling = NullValueHandling.Ignore)]
         public List<L7Policy> L7policies { get; set; }

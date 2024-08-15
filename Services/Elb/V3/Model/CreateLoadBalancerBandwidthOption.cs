@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 带宽信息
+    /// 参数解释：带宽信息
     /// </summary>
     public class CreateLoadBalancerBandwidthOption 
     {
@@ -131,9 +131,9 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         }
 
         /// <summary>
-        /// 参数解释：带宽类型。  取值范围： - PER：独享带宽。 - WHOLE：共享带宽。
+        /// 参数解释：带宽类型。  约束限制： - 当id字段为null时，share_type是必须的。当id不为null时，该字段被忽略。 - 该字段为WHOLE时,必须指定带宽ID。 - IPv6的EIP不支持WHOLE类型带宽。  取值范围： - PER：独享带宽。 - WHOLE：共享带宽。
         /// </summary>
-        /// <value>参数解释：带宽类型。  取值范围： - PER：独享带宽。 - WHOLE：共享带宽。</value>
+        /// <value>参数解释：带宽类型。  约束限制： - 当id字段为null时，share_type是必须的。当id不为null时，该字段被忽略。 - 该字段为WHOLE时,必须指定带宽ID。 - IPv6的EIP不支持WHOLE类型带宽。  取值范围： - PER：独享带宽。 - WHOLE：共享带宽。</value>
         [JsonConverter(typeof(EnumClassConverter<ShareTypeEnum>))]
         public class ShareTypeEnum
         {
@@ -253,7 +253,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 参数解释：带宽大小  约束限制：当id字段为null时，size是必须的。 注意，调整带宽时的最小单位会根据带宽范围不同存在差异。 - 小于等于300Mbit/s: 默认最小单位为1Mbit/s。 - 300Mbit/s~1000Mbit/s: 默认最小单位为50Mbit/s。 - 大于1000Mbit/s: 默认最小单位为500Mbit/s。  取值范围:默认1Mbit/s~2000Mbit/s(具体范围以各区域配置为准,请参见控制台对应页面显示)。
+        /// 参数解释：带宽大小。  约束限制：当id字段为null时，size是必须的。 注意，调整带宽时的最小单位会根据带宽范围不同存在差异。 - 小于等于300Mbit/s: 默认最小单位为1Mbit/s。 - 300Mbit/s~1000Mbit/s: 默认最小单位为50Mbit/s。 - 大于1000Mbit/s: 默认最小单位为500Mbit/s。  取值范围：默认1Mbit/s~2000Mbit/s(具体范围以各区域配置为准,请参见控制台对应页面显示)。
         /// </summary>
         [JsonProperty("size", NullValueHandling = NullValueHandling.Ignore)]
         public int? Size { get; set; }
@@ -264,7 +264,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         [JsonProperty("charge_mode", NullValueHandling = NullValueHandling.Ignore)]
         public ChargeModeEnum ChargeMode { get; set; }
         /// <summary>
-        /// 参数解释：带宽类型。  取值范围： - PER：独享带宽。 - WHOLE：共享带宽。
+        /// 参数解释：带宽类型。  约束限制： - 当id字段为null时，share_type是必须的。当id不为null时，该字段被忽略。 - 该字段为WHOLE时,必须指定带宽ID。 - IPv6的EIP不支持WHOLE类型带宽。  取值范围： - PER：独享带宽。 - WHOLE：共享带宽。
         /// </summary>
         [JsonProperty("share_type", NullValueHandling = NullValueHandling.Ignore)]
         public ShareTypeEnum ShareType { get; set; }

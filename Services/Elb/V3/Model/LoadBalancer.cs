@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     public class LoadBalancer 
     {
         /// <summary>
-        /// 下联面子网类型 - ipv4：ipv4 - dualstack：双栈
+        /// 参数解释：下联面子网类型。  取值范围： - ipv4：ipv4 - dualstack：双栈
         /// </summary>
-        /// <value>下联面子网类型 - ipv4：ipv4 - dualstack：双栈</value>
+        /// <value>参数解释：下联面子网类型。  取值范围： - ipv4：ipv4 - dualstack：双栈</value>
         [JsonConverter(typeof(EnumClassConverter<ElbVirsubnetTypeEnum>))]
         public class ElbVirsubnetTypeEnum
         {
@@ -131,9 +131,9 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         }
 
         /// <summary>
-        /// 修改保护状态, 取值： - nonProtection: 不保护，默认值为nonProtection - consoleProtection: 控制台修改保护
+        /// 参数解释：修改保护状态。  取值范围： - nonProtection: 不保护。 - consoleProtection: 控制台修改保护。  默认取值：nonProtection
         /// </summary>
-        /// <value>修改保护状态, 取值： - nonProtection: 不保护，默认值为nonProtection - consoleProtection: 控制台修改保护</value>
+        /// <value>参数解释：修改保护状态。  取值范围： - nonProtection: 不保护。 - consoleProtection: 控制台修改保护。  默认取值：nonProtection</value>
         [JsonConverter(typeof(EnumClassConverter<ProtectionStatusEnum>))]
         public class ProtectionStatusEnum
         {
@@ -247,210 +247,210 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
 
 
         /// <summary>
-        /// 负载均衡器ID。
+        /// 参数解释：负载均衡器ID。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 负载均衡器描述信息。
+        /// 参数解释：负载均衡器描述信息。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
         /// <summary>
-        /// 负载均衡器的配置状态。  取值： - ACTIVE：使用中。 - PENDING_DELETE：删除中。
+        /// 参数解释：负载均衡器的配置状态。  取值范围： - ACTIVE：使用中。 - PENDING_DELETE：删除中。
         /// </summary>
         [JsonProperty("provisioning_status", NullValueHandling = NullValueHandling.Ignore)]
         public string ProvisioningStatus { get; set; }
 
         /// <summary>
-        /// 负载均衡器的启用状态。取值：false停用，true启用。
+        /// 参数解释：负载均衡器的启用状态。  取值范围： - true ：启用。 - false：停用。  [不支持该字段，请勿使用。](tag:dt,dt_test)
         /// </summary>
         [JsonProperty("admin_state_up", NullValueHandling = NullValueHandling.Ignore)]
         public bool? AdminStateUp { get; set; }
 
         /// <summary>
-        /// 负载均衡器的生产者名称。固定为vlb。
+        /// 参数解释：负载均衡器的生产者名称。固定为vlb。
         /// </summary>
         [JsonProperty("provider", NullValueHandling = NullValueHandling.Ignore)]
         public string Provider { get; set; }
 
         /// <summary>
-        /// 负载均衡器直接关联的后端云服务器组的ID列表。
+        /// 参数解释：负载均衡器直接关联的后端云服务器组的ID列表。
         /// </summary>
         [JsonProperty("pools", NullValueHandling = NullValueHandling.Ignore)]
         public List<PoolRef> Pools { get; set; }
 
         /// <summary>
-        /// 负载均衡器关联的监听器的ID列表。
+        /// 参数解释：负载均衡器关联的监听器的ID列表。
         /// </summary>
         [JsonProperty("listeners", NullValueHandling = NullValueHandling.Ignore)]
         public List<ListenerRef> Listeners { get; set; }
 
         /// <summary>
-        /// 负载均衡器的操作状态。  取值： - ONLINE：在线。
+        /// 参数解释：负载均衡器的操作状态。  取值范围： - ONLINE：在线。 - FROZEN：已冻结。
         /// </summary>
         [JsonProperty("operating_status", NullValueHandling = NullValueHandling.Ignore)]
         public string OperatingStatus { get; set; }
 
         /// <summary>
-        /// 负载均衡器的名称。
+        /// 参数解释：负载均衡器的名称。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 负载均衡器所属的项目ID。
+        /// 参数解释：负载均衡器所属的项目ID。
         /// </summary>
         [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProjectId { get; set; }
 
         /// <summary>
-        /// 负载均衡器所在子网的IPv4子网ID，也称为该负载均衡器实例的前端子网。
+        /// 参数解释：负载均衡器所在子网的IPv4子网ID，也称为该负载均衡器实例的前端子网。
         /// </summary>
         [JsonProperty("vip_subnet_cidr_id", NullValueHandling = NullValueHandling.Ignore)]
         public string VipSubnetCidrId { get; set; }
 
         /// <summary>
-        /// 负载均衡器的IPv4虚拟IP地址。
+        /// 参数解释：负载均衡器的IPv4虚拟IP地址。
         /// </summary>
         [JsonProperty("vip_address", NullValueHandling = NullValueHandling.Ignore)]
         public string VipAddress { get; set; }
 
         /// <summary>
-        /// 负载均衡器的IPv4对应的port ID。 [创建弹性负载均衡时，会自动为负载均衡创建一个port并关联一个默认的安全组，这个安全组对所有流量不生效。 ](tag:dt,dt_test,hcso_dt)
+        /// 参数解释：负载均衡器的IPv4对应的port ID。 [创建弹性负载均衡时，会自动为负载均衡创建一个port并关联一个默认的安全组，这个安全组对所有流量不生效。 ](tag:dt,dt_test,hcso_dt)
         /// </summary>
         [JsonProperty("vip_port_id", NullValueHandling = NullValueHandling.Ignore)]
         public string VipPortId { get; set; }
 
         /// <summary>
-        /// 负载均衡的标签列表。
+        /// 参数解释：负载均衡的标签列表。
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<Tag> Tags { get; set; }
 
         /// <summary>
-        /// 负载均衡器的创建时间。格式：yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;
+        /// 参数解释：负载均衡器的创建时间。  取值范围： 格式：yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;
         /// </summary>
         [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
         public string CreatedAt { get; set; }
 
         /// <summary>
-        /// 负载均衡器的更新时间。格式：yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;
+        /// 参数解释：负载均衡器的更新时间。  取值范围; 格式：yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;
         /// </summary>
         [JsonProperty("updated_at", NullValueHandling = NullValueHandling.Ignore)]
         public string UpdatedAt { get; set; }
 
         /// <summary>
-        /// 是否独享型LB。  取值： - false：共享型。 - true：独享型。
+        /// 参数解释：是否独享型LB。  取值范围： - false：共享型。 - true：独享型。
         /// </summary>
         [JsonProperty("guaranteed", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Guaranteed { get; set; }
 
         /// <summary>
-        /// 负载均衡器所在VPC ID。
+        /// 参数解释：负载均衡器所在VPC ID。
         /// </summary>
         [JsonProperty("vpc_id", NullValueHandling = NullValueHandling.Ignore)]
         public string VpcId { get; set; }
 
         /// <summary>
-        /// 负载均衡器绑定的EIP。只支持绑定一个EIP。  注：该字段与publicips一致。
+        /// 参数解释：负载均衡器绑定的EIP。  约束限制：只支持绑定一个EIP。  注：该字段与publicips一致。
         /// </summary>
         [JsonProperty("eips", NullValueHandling = NullValueHandling.Ignore)]
         public List<EipInfo> Eips { get; set; }
 
         /// <summary>
-        /// 双栈类型负载均衡器的IPv6地址。  [不支持IPv6，请勿使用。](tag:dt,dt_test)
+        /// 参数解释：双栈类型负载均衡器的IPv6地址。  [不支持IPv6，请勿使用。](tag:dt,dt_test)
         /// </summary>
         [JsonProperty("ipv6_vip_address", NullValueHandling = NullValueHandling.Ignore)]
         public string Ipv6VipAddress { get; set; }
 
         /// <summary>
-        /// 双栈类型负载均衡器所在子网的IPv6网络ID，也称为该负载均衡器实例的前端子网。  [不支持IPv6，请勿使用。](tag:dt,dt_test)
+        /// 参数解释：双栈类型负载均衡器所在子网的IPv6网络ID，也称为该负载均衡器实例的前端子网。  [不支持IPv6，请勿使用。](tag:dt,dt_test)
         /// </summary>
         [JsonProperty("ipv6_vip_virsubnet_id", NullValueHandling = NullValueHandling.Ignore)]
         public string Ipv6VipVirsubnetId { get; set; }
 
         /// <summary>
-        /// 双栈类型负载均衡器的IPv6对应的port ID。  [不支持IPv6，请勿使用。](tag:dt,dt_test)
+        /// 参数解释：双栈类型负载均衡器的IPv6对应的port ID。  [不支持IPv6，请勿使用。](tag:dt,dt_test)
         /// </summary>
         [JsonProperty("ipv6_vip_port_id", NullValueHandling = NullValueHandling.Ignore)]
         public string Ipv6VipPortId { get; set; }
 
         /// <summary>
-        /// 负载均衡器所在的可用区列表。
+        /// 参数解释：负载均衡器所在的可用区列表。
         /// </summary>
         [JsonProperty("availability_zone_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> AvailabilityZoneList { get; set; }
 
         /// <summary>
-        /// 企业项目ID。创建时不传则返回\&quot;0\&quot;，表示资源属于default企业项目。  注：\&quot;0\&quot;并不是真实存在的企业项目ID，在创建、更新和查询时不能作为请求参数传入。  [不支持该字段，请勿使用](tag:dt,dt_test,hcso_dt)
+        /// 参数解释：企业项目ID。创建时不传则返回\&quot;0\&quot;，表示资源属于default企业项目。  注意：\&quot;0\&quot;并不是真实存在的企业项目ID，在创建、更新和查询时不能作为请求参数传入。  [不支持该字段，请勿使用](tag:dt,dt_test,hcso_dt)
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 资源账单信息。  取值： - 空：按需计费。 [- 非空：包周期计费，  包周期计费billing_info字段的格式为：order_id:product_id:region_id:project_id，如：  CS2107161019CDJZZ:OFFI569702121789763584: az:057ef081eb00d2732fd1c01a9be75e6f  不支持该字段，请勿使用](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt,hcso,hk_vdf,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b)
+        /// 参数解释：资源账单信息。  取值范围： - 空：按需计费。 [- 非空：包周期计费，  包周期计费billing_info字段的格式为：order_id:product_id:region_id:project_id，如：  CS2107161019CDJZZ:OFFI569702121789763584: az:057ef081eb00d2732fd1c01a9be75e6f  不支持该字段，请勿使用](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt,hcso,hk_vdf,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b)
         /// </summary>
         [JsonProperty("billing_info", NullValueHandling = NullValueHandling.Ignore)]
         public string BillingInfo { get; set; }
 
         /// <summary>
-        /// 网络型规格ID。  对于弹性扩缩容实例，表示上限规格。  当传入的规格类型为L4，表示该实例为固定规格实例，按规格计费； 当传入的规格类型为L4_elastic_max，表示该实例为弹性实例，按LCU计费  [hsco场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:hcso,hk_vdf,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b)
+        /// 参数解释：网络型规格ID。  对于弹性扩缩容实例，表示上限规格。  约束限制： - 当传入的规格类型为L4，表示该实例为固定规格实例，按规格计费； - 当传入的规格类型为L4_elastic_max，表示该实例为弹性实例，按LCU计费  [hsco场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:hcso,hk_vdf,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b)
         /// </summary>
         [JsonProperty("l4_flavor_id", NullValueHandling = NullValueHandling.Ignore)]
         public string L4FlavorId { get; set; }
 
         /// <summary>
-        /// 四层弹性Flavor ID。  不支持该字段，请勿使用。
+        /// 参数解释：四层弹性Flavor ID。  不支持该字段，请勿使用。
         /// </summary>
         [JsonProperty("l4_scale_flavor_id", NullValueHandling = NullValueHandling.Ignore)]
         public string L4ScaleFlavorId { get; set; }
 
         /// <summary>
-        /// 应用型ID。 对于弹性扩缩容实例，表示上限规格ID。  当传入的规格类型为L7，表示该实例为固定规格实例，按规格计费； 当传入的规格类型为L7_elastic_max，表示该实例为弹性实例，按LCU计费  [hsco场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:hcso,hk_vdf,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b)
+        /// 参数解释：应用型ID。 对于弹性扩缩容实例，表示上限规格ID。  约束限制： - 当传入的规格类型为L7，表示该实例为固定规格实例，按规格计费； - 当传入的规格类型为L7_elastic_max，表示该实例为弹性实例，按LCU计费  [hsco场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:hcso,hk_vdf,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b)
         /// </summary>
         [JsonProperty("l7_flavor_id", NullValueHandling = NullValueHandling.Ignore)]
         public string L7FlavorId { get; set; }
 
         /// <summary>
-        /// 七层弹性Flavor ID。  不支持该字段，请勿使用。
+        /// 参数解释：七层弹性Flavor ID。  不支持该字段，请勿使用。
         /// </summary>
         [JsonProperty("l7_scale_flavor_id", NullValueHandling = NullValueHandling.Ignore)]
         public string L7ScaleFlavorId { get; set; }
 
         /// <summary>
-        /// 负载均衡器绑定的公网IP。只支持绑定一个公网IP。  注：该字段与eips一致。
+        /// 参数解释：负载均衡器绑定的公网IP。只支持绑定一个公网IP。  注：该字段与eips一致。
         /// </summary>
         [JsonProperty("publicips", NullValueHandling = NullValueHandling.Ignore)]
         public List<PublicIpInfo> Publicips { get; set; }
 
         /// <summary>
-        /// 负载均衡器绑定的global eip。只支持绑定一个globaleip。  [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt,hk_vdf,fcs,ctc,ocb,hws_ocb)
+        /// 参数解释：负载均衡器绑定的global eip。  约束限制：只支持绑定一个globaleip。  [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt,hk_vdf,fcs,ctc,ocb,hws_ocb)
         /// </summary>
         [JsonProperty("global_eips", NullValueHandling = NullValueHandling.Ignore)]
         public List<GlobalEipInfo> GlobalEips { get; set; }
 
         /// <summary>
-        /// 下联面子网的网络ID列表。
+        /// 参数解释：下联面子网的网络ID列表。
         /// </summary>
         [JsonProperty("elb_virsubnet_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> ElbVirsubnetIds { get; set; }
 
         /// <summary>
-        /// 下联面子网类型 - ipv4：ipv4 - dualstack：双栈
+        /// 参数解释：下联面子网类型。  取值范围： - ipv4：ipv4 - dualstack：双栈
         /// </summary>
         [JsonProperty("elb_virsubnet_type", NullValueHandling = NullValueHandling.Ignore)]
         public ElbVirsubnetTypeEnum ElbVirsubnetType { get; set; }
         /// <summary>
-        /// 是否启用跨VPC后端转发。  开启跨VPC后端转发后，后端服务器组不仅支持添加云上VPC内的服务器，还支持添加其他VPC、其他公有云、云下数据中心的服务器。  使用共享VPC的实例使用此特性时，需确保共享资源所有者已开通VPC对等连接，否则通信异常。 [仅独享型负载均衡器支持该特性。 ](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,fcs,dt)  取值： - true：开启。 - false：不开启。  使用说明： - 开启不能关闭。  [荷兰region不支持该字段，请勿使用。](tag:dt,dt_test)
+        /// 参数解释：是否启用跨VPC后端转发。 开启跨VPC后端转发后，后端服务器组不仅支持添加云上VPC内的服务器，还支持添加其他VPC、其他公有云、云下数据中心的服务器。  约束限制： - 开启后不能关闭。 - 使用共享VPC的实例使用此特性时，需确保共享资源所有者已开通VPC对等连接，否则通信异常。 [- 仅独享型负载均衡器支持该特性。 ](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,fcs,dt)  取值范围： - true：开启。 - false：不开启。  [荷兰region不支持该字段，请勿使用。](tag:dt,dt_test)
         /// </summary>
         [JsonProperty("ip_target_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IpTargetEnable { get; set; }
 
         /// <summary>
-        /// 负载均衡器的冻结场景。 [若负载均衡器有多个冻结场景，用逗号分隔。  取值： - POLICE：公安冻结场景。 - ILLEGAL：违规冻结场景。 - VERIFY：客户未实名认证冻结场景。 - PARTNER：合作伙伴冻结（合作伙伴冻结子客户资源）。 - AREAR：欠费冻结场景。](tag:hws,hws_hk)  [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt,ocb,hws_ocb)
+        /// 参数解释：负载均衡器的冻结场景。 [若负载均衡器有多个冻结场景，用逗号分隔。  取值范围： - POLICE：公安冻结场景。 - ILLEGAL：违规冻结场景。 - VERIFY：客户未实名认证冻结场景。 - PARTNER：合作伙伴冻结（合作伙伴冻结子客户资源）。 - AREAR：欠费冻结场景。](tag:hws,hws_hk)  [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt,ocb,hws_ocb)
         /// </summary>
         [JsonProperty("frozen_scene", NullValueHandling = NullValueHandling.Ignore)]
         public string FrozenScene { get; set; }
@@ -462,7 +462,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public BandwidthRef Ipv6Bandwidth { get; set; }
 
         /// <summary>
-        /// 是否开启删除保护。  取值： - false：不开启。 - true：开启。 &gt;退场时需要先关闭所有资源的删除保护开关。  仅当前局点启用删除保护特性后才会返回该字段。  [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42)  [荷兰region不支持该字段，请勿使用。](tag:dt,dt_test)
+        /// 参数解释：是否开启删除保护。  约束限制： - 仅当前局点启用删除保护特性后才会返回该字段。 - 退场时需要先关闭所有资源的删除保护开关。  取值范围： - false：不开启。 - true：开启。 &gt;退场时需要先关闭所有资源的删除保护开关。  [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42)  [荷兰region不支持该字段，请勿使用。](tag:dt,dt_test)
         /// </summary>
         [JsonProperty("deletion_protection_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? DeletionProtectionEnable { get; set; }
@@ -474,42 +474,42 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public AutoscalingRef Autoscaling { get; set; }
 
         /// <summary>
-        /// LB所属AZ组
+        /// 参数解释：LB所属AZ组。
         /// </summary>
         [JsonProperty("public_border_group", NullValueHandling = NullValueHandling.Ignore)]
         public string PublicBorderGroup { get; set; }
 
         /// <summary>
-        /// 收费模式。取值： - flavor：按规格计费 - lcu：按使用量计费
+        /// 参数解释：负载均衡器实例的计费模式。  取值范围： - flavor：按规格计费 - lcu：按使用量计费 - 空值：若是共享型表示免费实例。若是独享型则与flavor模式一致，都是按规格计费。
         /// </summary>
         [JsonProperty("charge_mode", NullValueHandling = NullValueHandling.Ignore)]
         public string ChargeMode { get; set; }
 
         /// <summary>
-        /// WAF故障时的流量处理策略。discard:丢弃，forward: 转发到后端（默认）  使用说明：只有绑定了waf的LB实例，该字段才会生效。  [不支持该字段，请勿使用。](tag:hws_hk,hws_eu,hws_test,hcs,hcs_sm,hcso,hk_vdf,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b,hcso_dt,dt,dt_test,ocb,ctc,cmcc,tm,sbc,g42,hws_ocb,hk_sbc,hk_tm,hk_g42)
+        /// 参数解释：WAF故障时的流量处理策略。  约束限制：只有绑定了waf的LB实例，该字段才会生效。  取值范围：discard:丢弃，forward: 转发到后端。  默认取值：forward  [不支持该字段，请勿使用。](tag:hws_hk,hws_eu,hws_test,hcs,hcs_sm,hcso,hk_vdf,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b,hcso_dt,dt,dt_test,ocb,ctc,cmcc,tm,sbc,g42,hws_ocb,hk_sbc,hk_tm,hk_g42)
         /// </summary>
         [JsonProperty("waf_failure_action", NullValueHandling = NullValueHandling.Ignore)]
         public string WafFailureAction { get; set; }
 
         /// <summary>
-        /// 修改保护状态, 取值： - nonProtection: 不保护，默认值为nonProtection - consoleProtection: 控制台修改保护
+        /// 参数解释：修改保护状态。  取值范围： - nonProtection: 不保护。 - consoleProtection: 控制台修改保护。  默认取值：nonProtection
         /// </summary>
         [JsonProperty("protection_status", NullValueHandling = NullValueHandling.Ignore)]
         public ProtectionStatusEnum ProtectionStatus { get; set; }
         /// <summary>
-        /// 设置保护的原因 &gt;仅当protection_status为consoleProtection时有效。
+        /// 参数解释：设置保护的原因   约束限制：仅当protection_status为consoleProtection时有效。
         /// </summary>
         [JsonProperty("protection_reason", NullValueHandling = NullValueHandling.Ignore)]
         public string ProtectionReason { get; set; }
 
         /// <summary>
-        /// LB所绑定的logtank对应的group id
+        /// 参数解释：LB所绑定的logtank对应的group id
         /// </summary>
         [JsonProperty("log_group_id", NullValueHandling = NullValueHandling.Ignore)]
         public string LogGroupId { get; set; }
 
         /// <summary>
-        /// LB所绑定的logtank对应的topic id
+        /// 参数解释：LB所绑定的logtank对应的topic id
         /// </summary>
         [JsonProperty("log_topic_id", NullValueHandling = NullValueHandling.Ignore)]
         public string LogTopicId { get; set; }

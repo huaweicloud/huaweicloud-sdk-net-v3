@@ -1032,9 +1032,9 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         }
 
         /// <summary>
-        /// 是否被其他租户可见，取值为private或public
+        /// 是否被其他租户可见，取值为private、public或shared
         /// </summary>
-        /// <value>是否被其他租户可见，取值为private或public</value>
+        /// <value>是否被其他租户可见，取值为private、public或shared</value>
         [JsonConverter(typeof(EnumClassConverter<VisibilityEnum>))]
         public class VisibilityEnum
         {
@@ -1048,11 +1048,17 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
             /// </summary>
             public static readonly VisibilityEnum PUBLIC = new VisibilityEnum("public");
 
+            /// <summary>
+            /// Enum SHARED for value: shared
+            /// </summary>
+            public static readonly VisibilityEnum SHARED = new VisibilityEnum("shared");
+
             private static readonly Dictionary<string, VisibilityEnum> StaticFields =
             new Dictionary<string, VisibilityEnum>()
             {
                 { "private", PRIVATE },
                 { "public", PUBLIC },
+                { "shared", SHARED },
             };
 
             private string _value;
@@ -1743,7 +1749,7 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         public int? VirtualSize { get; set; }
 
         /// <summary>
-        /// 是否被其他租户可见，取值为private或public
+        /// 是否被其他租户可见，取值为private、public或shared
         /// </summary>
         [JsonProperty("visibility", NullValueHandling = NullValueHandling.Ignore)]
         public VisibilityEnum Visibility { get; set; }

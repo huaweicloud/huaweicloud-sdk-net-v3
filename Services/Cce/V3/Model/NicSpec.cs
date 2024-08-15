@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cce.V3.Model
 {
     /// <summary>
-    /// 主网卡的描述信息。  
+    /// 主网卡的描述信息。 
     /// </summary>
     public class NicSpec 
     {

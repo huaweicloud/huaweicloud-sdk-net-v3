@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<LoadBalancerStatusMember> Members { get; set; }
 
         /// <summary>
-        /// 后端服务器组ID。
+        /// 参数解释：后端服务器组ID。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }

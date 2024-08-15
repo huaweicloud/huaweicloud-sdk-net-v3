@@ -184,6 +184,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("conditions", NullValueHandling = NullValueHandling.Ignore)]
         public List<NodePoolCondition> Conditions { get; set; }
 
+        /// <summary>
+        /// 伸缩组当前详细状态信息，详情参见ScaleGroupStatus类型定义
+        /// </summary>
+        [JsonProperty("scaleGroupStatuses", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ScaleGroupStatus> ScaleGroupStatuses { get; set; }
+
 
 
         /// <summary>
@@ -199,6 +205,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  phase: ").Append(Phase).Append("\n");
             sb.Append("  jobId: ").Append(JobId).Append("\n");
             sb.Append("  conditions: ").Append(Conditions).Append("\n");
+            sb.Append("  scaleGroupStatuses: ").Append(ScaleGroupStatuses).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -250,6 +257,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.Conditions != null &&
                     input.Conditions != null &&
                     this.Conditions.SequenceEqual(input.Conditions)
+                ) && 
+                (
+                    this.ScaleGroupStatuses == input.ScaleGroupStatuses ||
+                    this.ScaleGroupStatuses != null &&
+                    input.ScaleGroupStatuses != null &&
+                    this.ScaleGroupStatuses.SequenceEqual(input.ScaleGroupStatuses)
                 );
         }
 
@@ -273,6 +286,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     hashCode = hashCode * 59 + this.JobId.GetHashCode();
                 if (this.Conditions != null)
                     hashCode = hashCode * 59 + this.Conditions.GetHashCode();
+                if (this.ScaleGroupStatuses != null)
+                    hashCode = hashCode * 59 + this.ScaleGroupStatuses.GetHashCode();
                 return hashCode;
             }
         }

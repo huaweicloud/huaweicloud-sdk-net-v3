@@ -34,6 +34,12 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         [JsonProperty("isQueryComplete", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsQueryComplete { get; set; }
 
+        /// <summary>
+        /// 分析日志返回响应体
+        /// </summary>
+        [JsonProperty("analysisLogs", NullValueHandling = NullValueHandling.Ignore)]
+        public List<Dictionary<string, string>> AnalysisLogs { get; set; }
+
 
 
         /// <summary>
@@ -46,6 +52,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             sb.Append("  count: ").Append(Count).Append("\n");
             sb.Append("  logs: ").Append(Logs).Append("\n");
             sb.Append("  isQueryComplete: ").Append(IsQueryComplete).Append("\n");
+            sb.Append("  analysisLogs: ").Append(AnalysisLogs).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -82,6 +89,12 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                     this.IsQueryComplete == input.IsQueryComplete ||
                     (this.IsQueryComplete != null &&
                     this.IsQueryComplete.Equals(input.IsQueryComplete))
+                ) && 
+                (
+                    this.AnalysisLogs == input.AnalysisLogs ||
+                    this.AnalysisLogs != null &&
+                    input.AnalysisLogs != null &&
+                    this.AnalysisLogs.SequenceEqual(input.AnalysisLogs)
                 );
         }
 
@@ -99,6 +112,8 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                     hashCode = hashCode * 59 + this.Logs.GetHashCode();
                 if (this.IsQueryComplete != null)
                     hashCode = hashCode * 59 + this.IsQueryComplete.GetHashCode();
+                if (this.AnalysisLogs != null)
+                    hashCode = hashCode * 59 + this.AnalysisLogs.GetHashCode();
                 return hashCode;
             }
         }

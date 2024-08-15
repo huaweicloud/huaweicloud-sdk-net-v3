@@ -59,7 +59,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<string> Description { get; set; }
 
         /// <summary>
-        /// 参数解释：负载均衡器的启用状态。  取值范围：布尔类型。 - true ：启用。 - false：停用。  [不支持该字段，请勿使用。](tag:dt,dt_test)
+        /// 参数解释：负载均衡器的启用状态。  取值范围： - true ：启用。 - false：停用。  [不支持该字段，请勿使用。](tag:dt,dt_test)
         /// </summary>
         [SDKProperty("admin_state_up", IsQuery = true)]
         [JsonProperty("admin_state_up", NullValueHandling = NullValueHandling.Ignore)]
@@ -108,7 +108,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<string> VipAddress { get; set; }
 
         /// <summary>
-        /// 负载均衡器所在子网的IPv4子网ID，也称为该负载均衡器实例的前端子网。  支持多值查询，查询条件格式：*vip_subnet_cidr_id&#x3D;xxx&amp;vip_subnet_cidr_id&#x3D;xxx*。
+        /// 负载均衡器所在子网的IPv4子网ID，也称为该负载均衡器实例的前端子网。   支持多值查询，查询条件格式：*vip_subnet_cidr_id&#x3D;xxx&amp;vip_subnet_cidr_id&#x3D;xxx*。
         /// </summary>
         [SDKProperty("vip_subnet_cidr_id", IsQuery = true)]
         [JsonProperty("vip_subnet_cidr_id", NullValueHandling = NullValueHandling.Ignore)]

@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// 转发策略的结构体
+        /// 参数解释：转发策略的结构体。
         /// </summary>
         [JsonProperty("l7policies", NullValueHandling = NullValueHandling.Ignore)]
         public List<BatchUpdatePriorityRequestBody> L7policies { get; set; }
