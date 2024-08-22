@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
     public class JobEndpointInfo 
     {
         /// <summary>
-        /// 数据库类型。取值：  - oracle：Oracle。 - gaussdbv5：GaussDB分布式版。 - redis：Redis。 - rediscluster：Redis集群版。 - gaussredis: GeminiDB Redis。
+        /// 数据库类型。取值：  - oracle：Oracle。 - gaussdbv5：GaussDB分布式版。 - redis：Redis。 - rediscluster：Redis集群版。 - gaussredis: GeminiDB Redis。 - mysql：MySQL。
         /// </summary>
-        /// <value>数据库类型。取值：  - oracle：Oracle。 - gaussdbv5：GaussDB分布式版。 - redis：Redis。 - rediscluster：Redis集群版。 - gaussredis: GeminiDB Redis。</value>
+        /// <value>数据库类型。取值：  - oracle：Oracle。 - gaussdbv5：GaussDB分布式版。 - redis：Redis。 - rediscluster：Redis集群版。 - gaussredis: GeminiDB Redis。 - mysql：MySQL。</value>
         [JsonConverter(typeof(EnumClassConverter<DbTypeEnum>))]
         public class DbTypeEnum
         {
@@ -47,6 +47,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             /// </summary>
             public static readonly DbTypeEnum GAUSSREDIS = new DbTypeEnum("gaussredis");
 
+            /// <summary>
+            /// Enum MYSQL for value: mysql
+            /// </summary>
+            public static readonly DbTypeEnum MYSQL = new DbTypeEnum("mysql");
+
             private static readonly Dictionary<string, DbTypeEnum> StaticFields =
             new Dictionary<string, DbTypeEnum>()
             {
@@ -55,6 +60,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                 { "redis", REDIS },
                 { "rediscluster", REDISCLUSTER },
                 { "gaussredis", GAUSSREDIS },
+                { "mysql", MYSQL },
             };
 
             private string _value;
@@ -386,7 +392,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
 
 
         /// <summary>
-        /// 数据库类型。取值：  - oracle：Oracle。 - gaussdbv5：GaussDB分布式版。 - redis：Redis。 - rediscluster：Redis集群版。 - gaussredis: GeminiDB Redis。
+        /// 数据库类型。取值：  - oracle：Oracle。 - gaussdbv5：GaussDB分布式版。 - redis：Redis。 - rediscluster：Redis集群版。 - gaussredis: GeminiDB Redis。 - mysql：MySQL。
         /// </summary>
         [JsonProperty("db_type", NullValueHandling = NullValueHandling.Ignore)]
         public DbTypeEnum DbType { get; set; }

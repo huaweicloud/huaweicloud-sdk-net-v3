@@ -26,7 +26,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         /// 终端节点策略信息，仅当终端节点服务的enable_policy值为true时支持该参数，默认值为完全访问权限。（OBS、SFS的终端节点服务暂不支持该参数）
         /// </summary>
         [JsonProperty("policy_document", NullValueHandling = NullValueHandling.Ignore)]
-        public string PolicyDocument { get; set; }
+        public Object PolicyDocument { get; set; }
 
 
 

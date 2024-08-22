@@ -152,6 +152,32 @@ namespace HuaweiCloud.SDK.Cce.V3
         }
         
         /// <summary>
+        /// 批量同步节点
+        ///
+        /// 该API用于批量同步节点。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchSyncNodesResponse> BatchSyncNodesAsync(BatchSyncNodesRequest batchSyncNodesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", batchSyncNodesRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes/sync", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchSyncNodesRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<BatchSyncNodesResponse>(response);
+        }
+
+        public AsyncInvoker<BatchSyncNodesResponse> BatchSyncNodesAsyncInvoker(BatchSyncNodesRequest batchSyncNodesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", batchSyncNodesRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes/sync", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchSyncNodesRequest);
+            return new AsyncInvoker<BatchSyncNodesResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchSyncNodesResponse>);
+        }
+        
+        /// <summary>
         /// 继续执行集群升级任务
         ///
         /// 继续执行被暂停的集群升级任务。
@@ -2060,6 +2086,34 @@ namespace HuaweiCloud.SDK.Cce.V3
             var urlPath = HttpUtils.AddUrlPath("/v2/charts/{project_id}/quotas", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUserChartsQuotasRequest);
             return new AsyncInvoker<ShowUserChartsQuotasResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowUserChartsQuotasResponse>);
+        }
+        
+        /// <summary>
+        /// 同步节点
+        ///
+        /// 该API用于同步节点。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<SyncNodeResponse> SyncNodeAsync(SyncNodeRequest syncNodeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", syncNodeRequest.ClusterId.ToString());
+            urlParam.Add("node_id", syncNodeRequest.NodeId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v2/projects/{project_id}/clusters/{cluster_id}/nodes/{node_id}/sync", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", syncNodeRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerializeNull<SyncNodeResponse>(response);
+        }
+
+        public AsyncInvoker<SyncNodeResponse> SyncNodeAsyncInvoker(SyncNodeRequest syncNodeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", syncNodeRequest.ClusterId.ToString());
+            urlParam.Add("node_id", syncNodeRequest.NodeId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v2/projects/{project_id}/clusters/{cluster_id}/nodes/{node_id}/sync", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", syncNodeRequest);
+            return new AsyncInvoker<SyncNodeResponse>(this, "GET", request, JsonUtils.DeSerializeNull<SyncNodeResponse>);
         }
         
         /// <summary>

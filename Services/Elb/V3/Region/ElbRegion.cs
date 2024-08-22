@@ -61,6 +61,8 @@ namespace HuaweiCloud.SDK.Elb.V3
             "https://elb.cn-east-4.myhuaweicloud.com");
         public static readonly Region AF_NORTH_1 = new Region("af-north-1",
             "https://elb.af-north-1.myhuaweicloud.com");
+        public static readonly Region CN_EAST_5 = new Region("cn-east-5",
+            "https://elb.cn-east-5.myhuaweicloud.com");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("ELB");
 
@@ -93,6 +95,7 @@ namespace HuaweiCloud.SDK.Elb.V3
                 { "ru-moscow-1", RU_MOSCOW_1 },
                 { "cn-east-4", CN_EAST_4 },
                 { "af-north-1", AF_NORTH_1 },
+                { "cn-east-5", CN_EAST_5 },
         };
 
         public static Region ValueOf(string regionId)

@@ -568,6 +568,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         [JsonProperty("dml_types", NullValueHandling = NullValueHandling.Ignore)]
         public string DmlTypes { get; set; }
 
+        /// <summary>
+        /// 索引与表结构是否同时建立。
+        /// </summary>
+        [JsonProperty("is_create_table_with_index", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsCreateTableWithIndex { get; set; }
+
 
 
         /// <summary>
@@ -586,6 +592,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             sb.Append("  syncTypePolicy: ").Append(SyncTypePolicy).Append("\n");
             sb.Append("  incrementReadMode: ").Append(IncrementReadMode).Append("\n");
             sb.Append("  dmlTypes: ").Append(DmlTypes).Append("\n");
+            sb.Append("  isCreateTableWithIndex: ").Append(IsCreateTableWithIndex).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -651,6 +658,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                     this.DmlTypes == input.DmlTypes ||
                     (this.DmlTypes != null &&
                     this.DmlTypes.Equals(input.DmlTypes))
+                ) && 
+                (
+                    this.IsCreateTableWithIndex == input.IsCreateTableWithIndex ||
+                    (this.IsCreateTableWithIndex != null &&
+                    this.IsCreateTableWithIndex.Equals(input.IsCreateTableWithIndex))
                 );
         }
 
@@ -680,6 +692,8 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                     hashCode = hashCode * 59 + this.IncrementReadMode.GetHashCode();
                 if (this.DmlTypes != null)
                     hashCode = hashCode * 59 + this.DmlTypes.GetHashCode();
+                if (this.IsCreateTableWithIndex != null)
+                    hashCode = hashCode * 59 + this.IsCreateTableWithIndex.GetHashCode();
                 return hashCode;
             }
         }

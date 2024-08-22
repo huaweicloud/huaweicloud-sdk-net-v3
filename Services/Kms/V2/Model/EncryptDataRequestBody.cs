@@ -155,6 +155,12 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         [JsonProperty("encryption_algorithm", NullValueHandling = NullValueHandling.Ignore)]
         public EncryptionAlgorithmEnum EncryptionAlgorithm { get; set; }
         /// <summary>
+        /// 身份验证的非敏感额外数据。任意字符串，长度不超过128字节。
+        /// </summary>
+        [JsonProperty("additional_authenticated_data", NullValueHandling = NullValueHandling.Ignore)]
+        public string AdditionalAuthenticatedData { get; set; }
+
+        /// <summary>
         /// 请求消息序列号，36字节序列号。 例如：919c82d4-8046-4722-9094-35c3c6524cff
         /// </summary>
         [JsonProperty("sequence", NullValueHandling = NullValueHandling.Ignore)]
@@ -172,6 +178,7 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
             sb.Append("  keyId: ").Append(KeyId).Append("\n");
             sb.Append("  plainText: ").Append(PlainText).Append("\n");
             sb.Append("  encryptionAlgorithm: ").Append(EncryptionAlgorithm).Append("\n");
+            sb.Append("  additionalAuthenticatedData: ").Append(AdditionalAuthenticatedData).Append("\n");
             sb.Append("  sequence: ").Append(Sequence).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -210,6 +217,11 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
                     this.EncryptionAlgorithm.Equals(input.EncryptionAlgorithm))
                 ) && 
                 (
+                    this.AdditionalAuthenticatedData == input.AdditionalAuthenticatedData ||
+                    (this.AdditionalAuthenticatedData != null &&
+                    this.AdditionalAuthenticatedData.Equals(input.AdditionalAuthenticatedData))
+                ) && 
+                (
                     this.Sequence == input.Sequence ||
                     (this.Sequence != null &&
                     this.Sequence.Equals(input.Sequence))
@@ -230,6 +242,8 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
                     hashCode = hashCode * 59 + this.PlainText.GetHashCode();
                 if (this.EncryptionAlgorithm != null)
                     hashCode = hashCode * 59 + this.EncryptionAlgorithm.GetHashCode();
+                if (this.AdditionalAuthenticatedData != null)
+                    hashCode = hashCode * 59 + this.AdditionalAuthenticatedData.GetHashCode();
                 if (this.Sequence != null)
                     hashCode = hashCode * 59 + this.Sequence.GetHashCode();
                 return hashCode;

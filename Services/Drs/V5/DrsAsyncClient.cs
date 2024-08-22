@@ -482,6 +482,30 @@ namespace HuaweiCloud.SDK.Drs.V5
         }
         
         /// <summary>
+        /// 删除驱动文件
+        ///
+        /// 删除驱动文件。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteUserJdbcDriverResponse> DeleteUserJdbcDriverAsync(DeleteUserJdbcDriverRequest deleteUserJdbcDriverRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/drivers", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteUserJdbcDriverRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteUserJdbcDriverResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteUserJdbcDriverResponse> DeleteUserJdbcDriverAsyncInvoker(DeleteUserJdbcDriverRequest deleteUserJdbcDriverRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/drivers", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteUserJdbcDriverRequest);
+            return new AsyncInvoker<DeleteUserJdbcDriverResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteUserJdbcDriverResponse>);
+        }
+        
+        /// <summary>
         /// 下载批量导入任务模板
         ///
         /// 下载批量导入任务模板
@@ -913,6 +937,30 @@ namespace HuaweiCloud.SDK.Drs.V5
             var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/{resource_type}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTagsRequest);
             return new AsyncInvoker<ListTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListTagsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询驱动文件列表
+        ///
+        /// 查询驱动文件列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListUserJdbcDriversResponse> ListUserJdbcDriversAsync(ListUserJdbcDriversRequest listUserJdbcDriversRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/drivers", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listUserJdbcDriversRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListUserJdbcDriversResponse>(response);
+        }
+
+        public AsyncInvoker<ListUserJdbcDriversResponse> ListUserJdbcDriversAsyncInvoker(ListUserJdbcDriversRequest listUserJdbcDriversRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/drivers", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listUserJdbcDriversRequest);
+            return new AsyncInvoker<ListUserJdbcDriversResponse>(this, "GET", request, JsonUtils.DeSerialize<ListUserJdbcDriversResponse>);
         }
         
         /// <summary>
@@ -1680,6 +1728,32 @@ namespace HuaweiCloud.SDK.Drs.V5
         }
         
         /// <summary>
+        /// 同步驱动文件
+        ///
+        /// 同步驱动文件。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<SyncUserJdbcDriverResponse> SyncUserJdbcDriverAsync(SyncUserJdbcDriverRequest syncUserJdbcDriverRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", syncUserJdbcDriverRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/update-driver", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", syncUserJdbcDriverRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<SyncUserJdbcDriverResponse>(response);
+        }
+
+        public AsyncInvoker<SyncUserJdbcDriverResponse> SyncUserJdbcDriverAsyncInvoker(SyncUserJdbcDriverRequest syncUserJdbcDriverRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", syncUserJdbcDriverRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/update-driver", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", syncUserJdbcDriverRequest);
+            return new AsyncInvoker<SyncUserJdbcDriverResponse>(this, "PUT", request, JsonUtils.DeSerialize<SyncUserJdbcDriverResponse>);
+        }
+        
+        /// <summary>
         /// 更新指定ID批量异步任务详情
         ///
         /// 更新租户指定ID批量异步任务详情。
@@ -1886,6 +1960,30 @@ namespace HuaweiCloud.SDK.Drs.V5
             var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jdbc-driver", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", uploadJdbcDriverRequest);
             return new AsyncInvoker<UploadJdbcDriverResponse>(this, "POST", request, JsonUtils.DeSerialize<UploadJdbcDriverResponse>);
+        }
+        
+        /// <summary>
+        /// 上传驱动文件
+        ///
+        /// 上传驱动文件。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UploadUserJdbcDriverResponse> UploadUserJdbcDriverAsync(UploadUserJdbcDriverRequest uploadUserJdbcDriverRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/driver", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", uploadUserJdbcDriverRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<UploadUserJdbcDriverResponse>(response);
+        }
+
+        public AsyncInvoker<UploadUserJdbcDriverResponse> UploadUserJdbcDriverAsyncInvoker(UploadUserJdbcDriverRequest uploadUserJdbcDriverRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/driver", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", uploadUserJdbcDriverRequest);
+            return new AsyncInvoker<UploadUserJdbcDriverResponse>(this, "POST", request, JsonUtils.DeSerialize<UploadUserJdbcDriverResponse>);
         }
         
         /// <summary>

@@ -59,6 +59,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         public bool? IsSyncReEdit { get; set; }
 
         /// <summary>
+        /// 是否支持只初始化任务。仅支持白名单用户使用，需要提交工单申请才能使用。
+        /// </summary>
+        [JsonProperty("is_only_init_task", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsOnlyInitTask { get; set; }
+
+        /// <summary>
         /// 强制结束时取值为true。
         /// </summary>
         [JsonProperty("force_delete", NullValueHandling = NullValueHandling.Ignore)]
@@ -92,6 +98,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             sb.Append("  startTime: ").Append(StartTime).Append("\n");
             sb.Append("  compareTaskParam: ").Append(CompareTaskParam).Append("\n");
             sb.Append("  isSyncReEdit: ").Append(IsSyncReEdit).Append("\n");
+            sb.Append("  isOnlyInitTask: ").Append(IsOnlyInitTask).Append("\n");
             sb.Append("  forceDelete: ").Append(ForceDelete).Append("\n");
             sb.Append("  publicIpConfig: ").Append(PublicIpConfig).Append("\n");
             sb.Append("  replayConfig: ").Append(ReplayConfig).Append("\n");
@@ -153,6 +160,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                     this.IsSyncReEdit.Equals(input.IsSyncReEdit))
                 ) && 
                 (
+                    this.IsOnlyInitTask == input.IsOnlyInitTask ||
+                    (this.IsOnlyInitTask != null &&
+                    this.IsOnlyInitTask.Equals(input.IsOnlyInitTask))
+                ) && 
+                (
                     this.ForceDelete == input.ForceDelete ||
                     (this.ForceDelete != null &&
                     this.ForceDelete.Equals(input.ForceDelete))
@@ -191,6 +203,8 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                     hashCode = hashCode * 59 + this.CompareTaskParam.GetHashCode();
                 if (this.IsSyncReEdit != null)
                     hashCode = hashCode * 59 + this.IsSyncReEdit.GetHashCode();
+                if (this.IsOnlyInitTask != null)
+                    hashCode = hashCode * 59 + this.IsOnlyInitTask.GetHashCode();
                 if (this.ForceDelete != null)
                     hashCode = hashCode * 59 + this.ForceDelete.GetHashCode();
                 if (this.PublicIpConfig != null)
