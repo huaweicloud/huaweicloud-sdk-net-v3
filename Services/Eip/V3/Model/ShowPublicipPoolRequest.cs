@@ -28,7 +28,7 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         /// </summary>
         [SDKProperty("fields", IsQuery = true)]
         [JsonProperty("fields", NullValueHandling = NullValueHandling.Ignore)]
-        public string Fields { get; set; }
+        public List<string> Fields { get; set; }
 
 
 
@@ -69,8 +69,9 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
                 ) && 
                 (
                     this.Fields == input.Fields ||
-                    (this.Fields != null &&
-                    this.Fields.Equals(input.Fields))
+                    this.Fields != null &&
+                    input.Fields != null &&
+                    this.Fields.SequenceEqual(input.Fields)
                 );
         }
 

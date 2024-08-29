@@ -787,6 +787,30 @@ namespace HuaweiCloud.SDK.Ecs.V2
         }
         
         /// <summary>
+        /// 查询云服务器列表接口
+        ///
+        /// 查询云服务器列表接口。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListCloudServersResponse ListCloudServers(ListCloudServersRequest listCloudServersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.1/{project_id}/cloudservers/detail", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCloudServersRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListCloudServersResponse>(response);
+        }
+
+        public SyncInvoker<ListCloudServersResponse> ListCloudServersInvoker(ListCloudServersRequest listCloudServersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.1/{project_id}/cloudservers/detail", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCloudServersRequest);
+            return new SyncInvoker<ListCloudServersResponse>(this, "GET", request, JsonUtils.DeSerialize<ListCloudServersResponse>);
+        }
+        
+        /// <summary>
         /// 查询规格销售策略
         ///
         /// 查询规格销售策略。

@@ -335,10 +335,10 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public string DepId { get; set; }
 
         /// <summary>
-        /// 函数最后一次更新时间。
+        /// 依赖包最后一次更新时间。
         /// </summary>
         [JsonProperty("last_modified", NullValueHandling = NullValueHandling.Ignore)]
-        public DateTime? LastModified { get; set; }
+        public long? LastModified { get; set; }
 
 
 

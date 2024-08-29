@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public Object Content { get; set; }
 
         /// <summary>
-        /// 对应票证的类别。 
+        /// 对应票证的类别。         
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }

@@ -1372,6 +1372,48 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         [JsonProperty("ssl_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? SslEnable { get; set; }
 
+        /// <summary>
+        /// EG obs触发器是否对对象加密。
+        /// </summary>
+        [JsonProperty("Key_encode", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? KeyEncode { get; set; }
+
+        /// <summary>
+        /// 使用的代理
+        /// </summary>
+        [JsonProperty("agency", NullValueHandling = NullValueHandling.Ignore)]
+        public string Agency { get; set; }
+
+        /// <summary>
+        /// 通道名称
+        /// </summary>
+        [JsonProperty("channel_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string ChannelName { get; set; }
+
+        /// <summary>
+        /// 事件源名称
+        /// </summary>
+        [JsonProperty("source_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string SourceName { get; set; }
+
+        /// <summary>
+        /// 创建时间
+        /// </summary>
+        [JsonProperty("created_time", NullValueHandling = NullValueHandling.Ignore)]
+        public DateTime? CreatedTime { get; set; }
+
+        /// <summary>
+        /// 触发器状态
+        /// </summary>
+        [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
+        public string Status { get; set; }
+
+        /// <summary>
+        /// 触发器名称
+        /// </summary>
+        [JsonProperty("trigger_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string TriggerName { get; set; }
+
 
 
         /// <summary>
@@ -1430,6 +1472,13 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  exchangeName: ").Append(ExchangeName).Append("\n");
             sb.Append("  vhost: ").Append(Vhost).Append("\n");
             sb.Append("  sslEnable: ").Append(SslEnable).Append("\n");
+            sb.Append("  keyEncode: ").Append(KeyEncode).Append("\n");
+            sb.Append("  agency: ").Append(Agency).Append("\n");
+            sb.Append("  channelName: ").Append(ChannelName).Append("\n");
+            sb.Append("  sourceName: ").Append(SourceName).Append("\n");
+            sb.Append("  createdTime: ").Append(CreatedTime).Append("\n");
+            sb.Append("  status: ").Append(Status).Append("\n");
+            sb.Append("  triggerName: ").Append(TriggerName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -1698,6 +1747,41 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.SslEnable == input.SslEnable ||
                     (this.SslEnable != null &&
                     this.SslEnable.Equals(input.SslEnable))
+                ) && 
+                (
+                    this.KeyEncode == input.KeyEncode ||
+                    (this.KeyEncode != null &&
+                    this.KeyEncode.Equals(input.KeyEncode))
+                ) && 
+                (
+                    this.Agency == input.Agency ||
+                    (this.Agency != null &&
+                    this.Agency.Equals(input.Agency))
+                ) && 
+                (
+                    this.ChannelName == input.ChannelName ||
+                    (this.ChannelName != null &&
+                    this.ChannelName.Equals(input.ChannelName))
+                ) && 
+                (
+                    this.SourceName == input.SourceName ||
+                    (this.SourceName != null &&
+                    this.SourceName.Equals(input.SourceName))
+                ) && 
+                (
+                    this.CreatedTime == input.CreatedTime ||
+                    (this.CreatedTime != null &&
+                    this.CreatedTime.Equals(input.CreatedTime))
+                ) && 
+                (
+                    this.Status == input.Status ||
+                    (this.Status != null &&
+                    this.Status.Equals(input.Status))
+                ) && 
+                (
+                    this.TriggerName == input.TriggerName ||
+                    (this.TriggerName != null &&
+                    this.TriggerName.Equals(input.TriggerName))
                 );
         }
 
@@ -1807,6 +1891,20 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     hashCode = hashCode * 59 + this.Vhost.GetHashCode();
                 if (this.SslEnable != null)
                     hashCode = hashCode * 59 + this.SslEnable.GetHashCode();
+                if (this.KeyEncode != null)
+                    hashCode = hashCode * 59 + this.KeyEncode.GetHashCode();
+                if (this.Agency != null)
+                    hashCode = hashCode * 59 + this.Agency.GetHashCode();
+                if (this.ChannelName != null)
+                    hashCode = hashCode * 59 + this.ChannelName.GetHashCode();
+                if (this.SourceName != null)
+                    hashCode = hashCode * 59 + this.SourceName.GetHashCode();
+                if (this.CreatedTime != null)
+                    hashCode = hashCode * 59 + this.CreatedTime.GetHashCode();
+                if (this.Status != null)
+                    hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.TriggerName != null)
+                    hashCode = hashCode * 59 + this.TriggerName.GetHashCode();
                 return hashCode;
             }
         }

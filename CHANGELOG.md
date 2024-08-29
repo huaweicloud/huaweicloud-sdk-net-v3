@@ -1,3 +1,200 @@
+# 3.1.110 2024-08-29
+
+### HuaweiCloud SDK CCE
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowNode**
+    - changes of response param
+      - `+ spec.nodeNicSpec.primaryNic.subnetList`
+  - **UpdateNode**
+    - changes of response param
+      - `+ spec.nodeNicSpec.primaryNic.subnetList`
+  - **DeleteNode**
+    - changes of response param
+      - `+ spec.nodeNicSpec.primaryNic.subnetList`
+  - **CreateNode**
+    - changes of request param
+      - `+ spec.nodeNicSpec.primaryNic.subnetList`
+    - changes of response param
+      - `+ spec.nodeNicSpec.primaryNic.subnetList`
+  - **ListNodes**
+    - changes of response param
+      - `+ items.spec.nodeNicSpec.primaryNic.subnetList`
+  - **ShowNodePool**
+    - changes of response param
+      - `+ spec.nodeTemplate.nodeNicSpec.primaryNic.subnetList`
+  - **UpdateNodePool**
+    - changes of request param
+      - `+ spec.nodeTemplate.nodeNicSpecUpdate`
+    - changes of response param
+      - `+ spec.nodeTemplate.nodeNicSpec.primaryNic.subnetList`
+  - **DeleteNodePool**
+    - changes of response param
+      - `+ spec.nodeTemplate.nodeNicSpec.primaryNic.subnetList`
+  - **CreateNodePool**
+    - changes of request param
+      - `+ spec.nodeTemplate.nodeNicSpec.primaryNic.subnetList`
+    - changes of response param
+      - `+ spec.nodeTemplate.nodeNicSpec.primaryNic.subnetList`
+  - **ListNodePools**
+    - changes of response param
+      - `+ items.spec.nodeTemplate.nodeNicSpec.primaryNic.subnetList`
+
+### HuaweiCloud SDK ECS
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the API `ListCloudServers`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK EIP
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListCommonPools**
+    - changes of request param
+      - `* fields: string -> list<string>`
+  - **ListShareBandwidthTypes**
+    - changes of request param
+      - `* fields: string -> list<string>`
+  - **ListTenantVpcIgws**
+    - changes of request param
+      - `* fields: string -> list<string>`
+  - **CreateTenantVpcIgw**
+    - changes of request param
+      - `* fields: string -> list<string>`
+  - **ShowInternalVpcIgw**
+    - changes of request param
+      - `* fields: string -> list<string>`
+  - **UpdateTenantVpcIgw**
+    - changes of request param
+      - `* fields: string -> list<string>`
+  - **ListEipBandwidths**
+    - changes of request param
+      - `+ fields`
+  - **ListBandwidth**
+    - changes of request param
+      - `+ fields`
+  - **ListPublicipPool**
+    - changes of request param
+      - `* fields: string -> list<string>`
+  - **ShowPublicipPool**
+    - changes of request param
+      - `* fields: string -> list<string>`
+  - **ListProjectGeipBindings**
+    - changes of request param
+      - `* fields: string -> list<string>`
+
+### HuaweiCloud SDK EVS
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the API `RetypeVolume`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK FunctionGraph
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowFunctionCode**
+    - changes of response param
+      - `* dependencies.last_modified: date-time -> int64`
+  - **UpdateFunctionCode**
+    - changes of response param
+      - `* dependencies.last_modified: date-time -> int64`
+  - **CreateFunction**
+    - changes of response param
+      - `* dependencies.last_modified: date-time -> int64`
+  - **ShowFunctionConfig**
+    - changes of response param
+      - `* dependencies.last_modified: date-time -> int64`
+  - **UpdateFunctionConfig**
+    - changes of response param
+      - `* dependencies.last_modified: date-time -> int64`
+  - **UpdateFunctionMaxInstanceConfig**
+    - changes of response param
+      - `* dependencies.last_modified: date-time -> int64`
+  - **CreateFunctionTrigger**
+    - changes of request param
+      - `+ event_data.Key_encode`
+      - `+ event_data.agency`
+      - `+ event_data.channel_name`
+      - `+ event_data.source_name`
+      - `+ event_data.created_time`
+      - `+ event_data.status`
+      - `+ event_data.trigger_name`
+  - **CreateFunctionVersion**
+    - changes of response param
+      - `* dependencies.last_modified: date-time -> int64`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the API `CreateGaussDbInstance`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK RDS
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateManualBackup**
+    - changes of request param
+      - `+ backup_database_individually`
+
+### HuaweiCloud SDK VPC
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **AddSecurityGroups**
+    - changes of response param
+      - `+ port.extra_dhcp_opts.opt_name`
+      - `+ port.extra_dhcp_opts.opt_value`
+      - `* port.extra_dhcp_opts: list<object> -> list<ExtraDhcpOpt>`
+  - **RemoveSecurityGroups**
+    - changes of response param
+      - `+ port.extra_dhcp_opts.opt_name`
+      - `+ port.extra_dhcp_opts.opt_value`
+      - `* port.extra_dhcp_opts: list<object> -> list<ExtraDhcpOpt>`
+
 # 3.1.109 2024-08-22
 
 ### HuaweiCloud SDK CCE

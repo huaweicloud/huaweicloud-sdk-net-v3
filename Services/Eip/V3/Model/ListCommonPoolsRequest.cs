@@ -17,11 +17,11 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
     {
 
         /// <summary>
-        /// 显示，形式为\&quot;fields&#x3D;id&amp;fields&#x3D;name&amp;...\&quot;  支持字段：id/name/status/type/used/allow_share_bandwidth_types/public_border_group
+        /// 显示，形式为\&quot;fields&#x3D;id&amp;fields&#x3D;name&amp;...\&quot;  支持字段：id/name/status/type/used/allow_share_bandwidth_types/public_border_group/description
         /// </summary>
         [SDKProperty("fields", IsQuery = true)]
         [JsonProperty("fields", NullValueHandling = NullValueHandling.Ignore)]
-        public string Fields { get; set; }
+        public List<string> Fields { get; set; }
 
         /// <summary>
         /// 每页返回的个数取值范围：0~[2000]，其中2000为局点差异项，具体取值由局点决定
@@ -88,8 +88,9 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
             return 
                 (
                     this.Fields == input.Fields ||
-                    (this.Fields != null &&
-                    this.Fields.Equals(input.Fields))
+                    this.Fields != null &&
+                    input.Fields != null &&
+                    this.Fields.SequenceEqual(input.Fields)
                 ) && 
                 (
                     this.Limit == input.Limit ||

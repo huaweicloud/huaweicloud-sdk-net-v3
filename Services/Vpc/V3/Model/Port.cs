@@ -203,10 +203,10 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         public Object BindingmigrationInfo { get; set; }
 
         /// <summary>
-        /// 1、功能描述：DHCP的扩展属性 2、取值范围：N/A 3、约束：N/A 4、默认值：N/A 5、权限：N/A
+        /// 功能说明：DHCP的扩展属性
         /// </summary>
         [JsonProperty("extra_dhcp_opts", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Object> ExtraDhcpOpts { get; set; }
+        public List<ExtraDhcpOpt> ExtraDhcpOpts { get; set; }
 
         /// <summary>
         /// 1、功能描述：边缘场景位置类型 2、取值范围：N/A 3、约束：N/A 4、默认值：center 5、权限：N/A

@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         /// </summary>
         [SDKProperty("fields", IsQuery = true)]
         [JsonProperty("fields", NullValueHandling = NullValueHandling.Ignore)]
-        public string Fields { get; set; }
+        public List<string> Fields { get; set; }
 
         /// <summary>
         /// 排序，形式为\&quot;sort_key&#x3D;id&amp;sort_dir&#x3D;asc\&quot;  支持字段：id/name/created_at/updated_at/public_border_group
@@ -154,8 +154,9 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
                 ) && 
                 (
                     this.Fields == input.Fields ||
-                    (this.Fields != null &&
-                    this.Fields.Equals(input.Fields))
+                    this.Fields != null &&
+                    input.Fields != null &&
+                    this.Fields.SequenceEqual(input.Fields)
                 ) && 
                 (
                     this.SortKey == input.SortKey ||

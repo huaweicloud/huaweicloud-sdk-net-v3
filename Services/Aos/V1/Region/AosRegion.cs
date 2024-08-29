@@ -13,6 +13,8 @@ namespace HuaweiCloud.SDK.Aos.V1
             "https://rfs.cn-south-1.myhuaweicloud.com");
         public static readonly Region CN_EAST_3 = new Region("cn-east-3",
             "https://rfs.cn-east-3.myhuaweicloud.com");
+        public static readonly Region CN_EAST_4 = new Region("cn-east-4",
+            "https://rfs.cn-east-4.myhuaweicloud.com");
         public static readonly Region CN_NORTH_9 = new Region("cn-north-9",
             "https://rfs.cn-north-9.myhuaweicloud.com");
         public static readonly Region CN_SOUTHWEST_2 = new Region("cn-southwest-2",
@@ -55,6 +57,7 @@ namespace HuaweiCloud.SDK.Aos.V1
                 { "cn-north-4", CN_NORTH_4 },
                 { "cn-south-1", CN_SOUTH_1 },
                 { "cn-east-3", CN_EAST_3 },
+                { "cn-east-4", CN_EAST_4 },
                 { "cn-north-9", CN_NORTH_9 },
                 { "cn-southwest-2", CN_SOUTHWEST_2 },
                 { "ap-southeast-3", AP_SOUTHEAST_3 },

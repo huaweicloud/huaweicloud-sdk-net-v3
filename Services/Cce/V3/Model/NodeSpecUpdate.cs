@@ -52,6 +52,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("serverEnterpriseProjectID", NullValueHandling = NullValueHandling.Ignore)]
         public string ServerEnterpriseProjectID { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("nodeNicSpecUpdate", NullValueHandling = NullValueHandling.Ignore)]
+        public NodeSpecUpdateNodeNicSpecUpdate NodeNicSpecUpdate { get; set; }
+
 
 
         /// <summary>
@@ -67,6 +73,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  initializedConditions: ").Append(InitializedConditions).Append("\n");
             sb.Append("  login: ").Append(Login).Append("\n");
             sb.Append("  serverEnterpriseProjectID: ").Append(ServerEnterpriseProjectID).Append("\n");
+            sb.Append("  nodeNicSpecUpdate: ").Append(NodeNicSpecUpdate).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -121,6 +128,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.ServerEnterpriseProjectID == input.ServerEnterpriseProjectID ||
                     (this.ServerEnterpriseProjectID != null &&
                     this.ServerEnterpriseProjectID.Equals(input.ServerEnterpriseProjectID))
+                ) && 
+                (
+                    this.NodeNicSpecUpdate == input.NodeNicSpecUpdate ||
+                    (this.NodeNicSpecUpdate != null &&
+                    this.NodeNicSpecUpdate.Equals(input.NodeNicSpecUpdate))
                 );
         }
 
@@ -144,6 +156,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     hashCode = hashCode * 59 + this.Login.GetHashCode();
                 if (this.ServerEnterpriseProjectID != null)
                     hashCode = hashCode * 59 + this.ServerEnterpriseProjectID.GetHashCode();
+                if (this.NodeNicSpecUpdate != null)
+                    hashCode = hashCode * 59 + this.NodeNicSpecUpdate.GetHashCode();
                 return hashCode;
             }
         }

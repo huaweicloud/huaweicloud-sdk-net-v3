@@ -1,3 +1,200 @@
+# 3.1.110 2024-08-29
+
+### HuaweiCloud SDK CCE
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowNode**
+    - 响应参数变更
+      - `+ spec.nodeNicSpec.primaryNic.subnetList`
+  - **UpdateNode**
+    - 响应参数变更
+      - `+ spec.nodeNicSpec.primaryNic.subnetList`
+  - **DeleteNode**
+    - 响应参数变更
+      - `+ spec.nodeNicSpec.primaryNic.subnetList`
+  - **CreateNode**
+    - 请求参数变更
+      - `+ spec.nodeNicSpec.primaryNic.subnetList`
+    - 响应参数变更
+      - `+ spec.nodeNicSpec.primaryNic.subnetList`
+  - **ListNodes**
+    - 响应参数变更
+      - `+ items.spec.nodeNicSpec.primaryNic.subnetList`
+  - **ShowNodePool**
+    - 响应参数变更
+      - `+ spec.nodeTemplate.nodeNicSpec.primaryNic.subnetList`
+  - **UpdateNodePool**
+    - 请求参数变更
+      - `+ spec.nodeTemplate.nodeNicSpecUpdate`
+    - 响应参数变更
+      - `+ spec.nodeTemplate.nodeNicSpec.primaryNic.subnetList`
+  - **DeleteNodePool**
+    - 响应参数变更
+      - `+ spec.nodeTemplate.nodeNicSpec.primaryNic.subnetList`
+  - **CreateNodePool**
+    - 请求参数变更
+      - `+ spec.nodeTemplate.nodeNicSpec.primaryNic.subnetList`
+    - 响应参数变更
+      - `+ spec.nodeTemplate.nodeNicSpec.primaryNic.subnetList`
+  - **ListNodePools**
+    - 响应参数变更
+      - `+ items.spec.nodeTemplate.nodeNicSpec.primaryNic.subnetList`
+
+### HuaweiCloud SDK ECS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 支持接口`ListCloudServers`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK EIP
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListCommonPools**
+    - 请求参数变更
+      - `* fields: string -> list<string>`
+  - **ListShareBandwidthTypes**
+    - 请求参数变更
+      - `* fields: string -> list<string>`
+  - **ListTenantVpcIgws**
+    - 请求参数变更
+      - `* fields: string -> list<string>`
+  - **CreateTenantVpcIgw**
+    - 请求参数变更
+      - `* fields: string -> list<string>`
+  - **ShowInternalVpcIgw**
+    - 请求参数变更
+      - `* fields: string -> list<string>`
+  - **UpdateTenantVpcIgw**
+    - 请求参数变更
+      - `* fields: string -> list<string>`
+  - **ListEipBandwidths**
+    - 请求参数变更
+      - `+ fields`
+  - **ListBandwidth**
+    - 请求参数变更
+      - `+ fields`
+  - **ListPublicipPool**
+    - 请求参数变更
+      - `* fields: string -> list<string>`
+  - **ShowPublicipPool**
+    - 请求参数变更
+      - `* fields: string -> list<string>`
+  - **ListProjectGeipBindings**
+    - 请求参数变更
+      - `* fields: string -> list<string>`
+
+### HuaweiCloud SDK EVS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 支持接口`RetypeVolume`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK FunctionGraph
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowFunctionCode**
+    - 响应参数变更
+      - `* dependencies.last_modified: date-time -> int64`
+  - **UpdateFunctionCode**
+    - 响应参数变更
+      - `* dependencies.last_modified: date-time -> int64`
+  - **CreateFunction**
+    - 响应参数变更
+      - `* dependencies.last_modified: date-time -> int64`
+  - **ShowFunctionConfig**
+    - 响应参数变更
+      - `* dependencies.last_modified: date-time -> int64`
+  - **UpdateFunctionConfig**
+    - 响应参数变更
+      - `* dependencies.last_modified: date-time -> int64`
+  - **UpdateFunctionMaxInstanceConfig**
+    - 响应参数变更
+      - `* dependencies.last_modified: date-time -> int64`
+  - **CreateFunctionTrigger**
+    - 请求参数变更
+      - `+ event_data.Key_encode`
+      - `+ event_data.agency`
+      - `+ event_data.channel_name`
+      - `+ event_data.source_name`
+      - `+ event_data.created_time`
+      - `+ event_data.status`
+      - `+ event_data.trigger_name`
+  - **CreateFunctionVersion**
+    - 响应参数变更
+      - `* dependencies.last_modified: date-time -> int64`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持接口`CreateGaussDbInstance`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK RDS
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateManualBackup**
+    - 请求参数变更
+      - `+ backup_database_individually`
+
+### HuaweiCloud SDK VPC
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **AddSecurityGroups**
+    - 响应参数变更
+      - `+ port.extra_dhcp_opts.opt_name`
+      - `+ port.extra_dhcp_opts.opt_value`
+      - `* port.extra_dhcp_opts: list<object> -> list<ExtraDhcpOpt>`
+  - **RemoveSecurityGroups**
+    - 响应参数变更
+      - `+ port.extra_dhcp_opts.opt_name`
+      - `+ port.extra_dhcp_opts.opt_value`
+      - `* port.extra_dhcp_opts: list<object> -> list<ExtraDhcpOpt>`
+
 # 3.1.109 2024-08-22
 
 ### HuaweiCloud SDK CCE

@@ -31,6 +31,13 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         public string Marker { get; set; }
 
         /// <summary>
+        /// display in the form \&quot;fields&#x3D;id&amp;fields&#x3D;name&amp;...\&quot;  Supported fields：id/name/tenant_id/size/ratio_95peak_plus/ingress_size/bandwidth_type/admin_state/billing_info/charge_mode/type/publicip_info/enable_bandwidth_rules/rule_quota/bandwidth_rules/public_border_group/created_at/updated_at/lock_infos
+        /// </summary>
+        [SDKProperty("fields", IsQuery = true)]
+        [JsonProperty("fields", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> Fields { get; set; }
+
+        /// <summary>
         /// - 功能说明：带宽唯一标识
         /// </summary>
         [SDKProperty("id", IsQuery = true)]
@@ -146,6 +153,7 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
             sb.Append("class ListEipBandwidthsRequest {\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  marker: ").Append(Marker).Append("\n");
+            sb.Append("  fields: ").Append(Fields).Append("\n");
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  bandwidthType: ").Append(BandwidthType).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
@@ -191,6 +199,12 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
                     this.Marker == input.Marker ||
                     (this.Marker != null &&
                     this.Marker.Equals(input.Marker))
+                ) && 
+                (
+                    this.Fields == input.Fields ||
+                    this.Fields != null &&
+                    input.Fields != null &&
+                    this.Fields.SequenceEqual(input.Fields)
                 ) && 
                 (
                     this.Id == input.Id ||
@@ -281,6 +295,8 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
                     hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.Marker != null)
                     hashCode = hashCode * 59 + this.Marker.GetHashCode();
+                if (this.Fields != null)
+                    hashCode = hashCode * 59 + this.Fields.GetHashCode();
                 if (this.Id != null)
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.BandwidthType != null)

@@ -47,6 +47,8 @@ Install-Package HuaweiCloud.SDK.Core
 Install-Package HuaweiCloud.SDK.Vpc
 ```
 
+You can get the SDK version information through [SDK center](https://console-intl.huaweicloud.com/apiexplorer/#/sdkcenter?language=.NET) or [NUGET](https://www.nuget.org/packages?q=HuaweiCloud.SDK).
+
 ## Code example
 
 - The following example shows how to query a list of VPC in a specific region, you need to substitute your
@@ -204,7 +206,7 @@ namespace ListVpcsSolution
 
 ## Online Debugging
 
-[API Explorer](https://apiexplorer.developer.intl.huaweicloud.com/apiexplorer/overview) provides api retrieval and online debugging, supports full fast retrieval, visual debugging, help document viewing, and online consultation.
+[API Explorer](https://apiexplorer.developer.intl.huaweicloud.com/apiexplorer/overview) provides api retrieval, SDK samples and online debugging, supports full fast retrieval, visual debugging, help document viewing, and online consultation.
 
 ## Changelog
 

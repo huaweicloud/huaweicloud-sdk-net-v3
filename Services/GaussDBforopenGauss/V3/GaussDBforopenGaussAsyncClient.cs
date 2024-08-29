@@ -276,6 +276,30 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
         /// <summary>
         /// 创建数据库实例
         ///
+        /// 创建数据库实例，仅支持IAM5的新平面认证方式（AK/SK认证方式）。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateGaussDbInstanceResponse> CreateGaussDbInstanceAsync(CreateGaussDbInstanceRequest createGaussDbInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/instances", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createGaussDbInstanceRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateGaussDbInstanceResponse>(response);
+        }
+
+        public AsyncInvoker<CreateGaussDbInstanceResponse> CreateGaussDbInstanceAsyncInvoker(CreateGaussDbInstanceRequest createGaussDbInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/instances", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createGaussDbInstanceRequest);
+            return new AsyncInvoker<CreateGaussDbInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateGaussDbInstanceResponse>);
+        }
+        
+        /// <summary>
+        /// 创建数据库实例
+        ///
         /// 创建数据库企业版和集中式实例
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.

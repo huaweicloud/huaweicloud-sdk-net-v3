@@ -33,6 +33,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
             "https://gaussdbformysql.ap-southeast-1.myhuaweicloud.com");
         public static readonly Region AP_SOUTHEAST_2 = new Region("ap-southeast-2",
             "https://gaussdbformysql.ap-southeast-2.myhuaweicloud.com");
+        public static readonly Region AF_SOUTH_1 = new Region("af-south-1",
+            "https://gaussdb-mysql.af-south-1.myhuaweicloud.com");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("GAUSSDB");
 
@@ -51,6 +53,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
                 { "sa-brazil-1", SA_BRAZIL_1 },
                 { "ap-southeast-1", AP_SOUTHEAST_1 },
                 { "ap-southeast-2", AP_SOUTHEAST_2 },
+                { "af-south-1", AF_SOUTH_1 },
         };
 
         public static Region ValueOf(string regionId)

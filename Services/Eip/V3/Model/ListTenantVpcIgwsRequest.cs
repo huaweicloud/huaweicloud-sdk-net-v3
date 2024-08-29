@@ -21,7 +21,7 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         /// </summary>
         [SDKProperty("fields", IsQuery = true)]
         [JsonProperty("fields", NullValueHandling = NullValueHandling.Ignore)]
-        public string Fields { get; set; }
+        public List<string> Fields { get; set; }
 
         /// <summary>
         /// 虚拟IGW的uuid
@@ -120,8 +120,9 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
             return 
                 (
                     this.Fields == input.Fields ||
-                    (this.Fields != null &&
-                    this.Fields.Equals(input.Fields))
+                    this.Fields != null &&
+                    input.Fields != null &&
+                    this.Fields.SequenceEqual(input.Fields)
                 ) && 
                 (
                     this.Id == input.Id ||

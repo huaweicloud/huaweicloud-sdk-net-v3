@@ -553,6 +553,37 @@ namespace HuaweiCloud.SDK.Evs.V2
         }
         
         /// <summary>
+        /// 磁盘类型变更
+        ///
+        /// 对按需或者包周期云硬盘进行磁盘类型变更。
+        /// [在磁盘类型变更包周期云硬盘的场景下：](tag:hws)
+        /// - [如果您需要查看订单可用的优惠券，请参考\&quot;[查询订单可用优惠券](https://support.huaweicloud.com/api-oce/zh-cn_topic_0092953630.html)\&quot;。](tag:hws)
+        /// - [如果您需要支付订单，请参考\&quot;[支付包周期产品订单](https://support.huaweicloud.com/api-oce/api_order_00030.html)\&quot;。](tag:hws)
+        /// - [如果您需要查询订单的资源开通详情，请参考\&quot;[查询订单的资源开通详情](https://support.huaweicloud.com/api-oce/api_order_00001.html)\&quot;。](tag:hws)
+        /// - [如果您需要退订该包周期资源，请参考“[退订包周期资源](https://support.huaweicloud.com/api-oce/zh-cn_topic_0082522030.html)”。](tag:hws)
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public RetypeVolumeResponse RetypeVolume(RetypeVolumeRequest retypeVolumeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("volume_id", retypeVolumeRequest.VolumeId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/volumes/{volume_id}/retype", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", retypeVolumeRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<RetypeVolumeResponse>(response);
+        }
+
+        public SyncInvoker<RetypeVolumeResponse> RetypeVolumeInvoker(RetypeVolumeRequest retypeVolumeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("volume_id", retypeVolumeRequest.VolumeId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/volumes/{volume_id}/retype", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", retypeVolumeRequest);
+            return new SyncInvoker<RetypeVolumeResponse>(this, "POST", request, JsonUtils.DeSerialize<RetypeVolumeResponse>);
+        }
+        
+        /// <summary>
         /// 回滚快照到云硬盘
         ///
         /// 将快照数据回滚到云硬盘。支持企业项目授权功能。

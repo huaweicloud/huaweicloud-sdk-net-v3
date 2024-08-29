@@ -61,6 +61,8 @@ namespace HuaweiCloud.SDK.Ecs.V2
             "https://ecs.eu-west-0.myhuaweicloud.com");
         public static readonly Region MY_KUALALUMPUR_1 = new Region("my-kualalumpur-1",
             "https://ecs.my-kualalumpur-1.myhuaweicloud.com");
+        public static readonly Region AF_NORTH_1 = new Region("af-north-1",
+            "https://ecs.af-north-1.myhuaweicloud.com");
         public static readonly Region RU_MOSCOW_1 = new Region("ru-moscow-1",
             "https://ecs.ru-moscow-1.myhuaweicloud.com");
         
@@ -95,6 +97,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
                 { "cn-east-5", CN_EAST_5 },
                 { "eu-west-0", EU_WEST_0 },
                 { "my-kualalumpur-1", MY_KUALALUMPUR_1 },
+                { "af-north-1", AF_NORTH_1 },
                 { "ru-moscow-1", RU_MOSCOW_1 },
         };
 

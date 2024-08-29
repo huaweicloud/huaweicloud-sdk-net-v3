@@ -40,6 +40,12 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         [JsonProperty("databases", NullValueHandling = NullValueHandling.Ignore)]
         public List<BackupDatabase> Databases { get; set; }
 
+        /// <summary>
+        /// 是否分库备份，只适用于SQLServer，默认为false
+        /// </summary>
+        [JsonProperty("backup_database_individually", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? BackupDatabaseIndividually { get; set; }
+
 
 
         /// <summary>
@@ -53,6 +59,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  databases: ").Append(Databases).Append("\n");
+            sb.Append("  backupDatabaseIndividually: ").Append(BackupDatabaseIndividually).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -94,6 +101,11 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
                     this.Databases != null &&
                     input.Databases != null &&
                     this.Databases.SequenceEqual(input.Databases)
+                ) && 
+                (
+                    this.BackupDatabaseIndividually == input.BackupDatabaseIndividually ||
+                    (this.BackupDatabaseIndividually != null &&
+                    this.BackupDatabaseIndividually.Equals(input.BackupDatabaseIndividually))
                 );
         }
 
@@ -113,6 +125,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.Databases != null)
                     hashCode = hashCode * 59 + this.Databases.GetHashCode();
+                if (this.BackupDatabaseIndividually != null)
+                    hashCode = hashCode * 59 + this.BackupDatabaseIndividually.GetHashCode();
                 return hashCode;
             }
         }

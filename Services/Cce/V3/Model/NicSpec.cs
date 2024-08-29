@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     {
 
         /// <summary>
-        /// 网卡所在子网的网络ID。主网卡创建时若未指定subnetId,将使用集群子网。扩展网卡创建时必须指定subnetId。  
+        /// 网卡所在子网的网络ID。主网卡创建时若未指定subnetId,将使用集群子网。若节点池同时配置了subnetList，则节点池扩容子网以subnetList字段为准。扩展网卡创建时必须指定subnetId。  
         /// </summary>
         [JsonProperty("subnetId", NullValueHandling = NullValueHandling.Ignore)]
         public string SubnetId { get; set; }
@@ -34,6 +34,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("ipBlock", NullValueHandling = NullValueHandling.Ignore)]
         public string IpBlock { get; set; }
 
+        /// <summary>
+        /// 网卡所在子网的网络ID列表，支持节点池配置多个子网，最多支持配置20个子网。
+        /// </summary>
+        [JsonProperty("subnetList", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> SubnetList { get; set; }
+
 
 
         /// <summary>
@@ -46,6 +52,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  subnetId: ").Append(SubnetId).Append("\n");
             sb.Append("  fixedIps: ").Append(FixedIps).Append("\n");
             sb.Append("  ipBlock: ").Append(IpBlock).Append("\n");
+            sb.Append("  subnetList: ").Append(SubnetList).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -82,6 +89,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.IpBlock == input.IpBlock ||
                     (this.IpBlock != null &&
                     this.IpBlock.Equals(input.IpBlock))
+                ) && 
+                (
+                    this.SubnetList == input.SubnetList ||
+                    this.SubnetList != null &&
+                    input.SubnetList != null &&
+                    this.SubnetList.SequenceEqual(input.SubnetList)
                 );
         }
 
@@ -99,6 +112,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     hashCode = hashCode * 59 + this.FixedIps.GetHashCode();
                 if (this.IpBlock != null)
                     hashCode = hashCode * 59 + this.IpBlock.GetHashCode();
+                if (this.SubnetList != null)
+                    hashCode = hashCode * 59 + this.SubnetList.GetHashCode();
                 return hashCode;
             }
         }

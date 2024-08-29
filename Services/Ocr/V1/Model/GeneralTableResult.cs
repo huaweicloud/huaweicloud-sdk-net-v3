@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
     {
 
         /// <summary>
-        /// 文字区域数目。 
+        /// 文字区域数目。          
         /// </summary>
         [JsonProperty("words_region_count", NullValueHandling = NullValueHandling.Ignore)]
         public int? WordsRegionCount { get; set; }
