@@ -101,13 +101,13 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public PageLink Links { get; set; }
 
         /// <summary>
-        /// 主从模式中，从DNS服务器用以获取DNS信息。
+        /// 主从模式中，从DNS服务器获取DNS信息。
         /// </summary>
         [JsonProperty("masters", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Masters { get; set; }
 
         /// <summary>
-        /// 内网Zone关联的Router(VPC)信息
+        /// 与该zone关联的Router(VPC)列表。
         /// </summary>
         [JsonProperty("routers", NullValueHandling = NullValueHandling.Ignore)]
         public List<RouterWithStatus> Routers { get; set; }

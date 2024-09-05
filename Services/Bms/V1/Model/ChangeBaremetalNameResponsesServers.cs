@@ -750,7 +750,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         /// 裸金属服务器的主机ID
         /// </summary>
         [JsonProperty("hostId", NullValueHandling = NullValueHandling.Ignore)]
-        public Guid? HostId { get; set; }
+        public string HostId { get; set; }
 
         /// <summary>
         /// 

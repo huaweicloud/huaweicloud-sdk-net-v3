@@ -88,12 +88,6 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         [JsonProperty("created_time", NullValueHandling = NullValueHandling.Ignore)]
         public string CreatedTime { get; set; }
 
-        /// <summary>
-        /// 自定义策略的引用次数。
-        /// </summary>
-        [JsonProperty("references", NullValueHandling = NullValueHandling.Ignore)]
-        public string References { get; set; }
-
 
 
         /// <summary>
@@ -115,7 +109,6 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  updatedTime: ").Append(UpdatedTime).Append("\n");
             sb.Append("  createdTime: ").Append(CreatedTime).Append("\n");
-            sb.Append("  references: ").Append(References).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -196,11 +189,6 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
                     this.CreatedTime == input.CreatedTime ||
                     (this.CreatedTime != null &&
                     this.CreatedTime.Equals(input.CreatedTime))
-                ) && 
-                (
-                    this.References == input.References ||
-                    (this.References != null &&
-                    this.References.Equals(input.References))
                 );
         }
 
@@ -236,8 +224,6 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
                     hashCode = hashCode * 59 + this.UpdatedTime.GetHashCode();
                 if (this.CreatedTime != null)
                     hashCode = hashCode * 59 + this.CreatedTime.GetHashCode();
-                if (this.References != null)
-                    hashCode = hashCode * 59 + this.References.GetHashCode();
                 return hashCode;
             }
         }

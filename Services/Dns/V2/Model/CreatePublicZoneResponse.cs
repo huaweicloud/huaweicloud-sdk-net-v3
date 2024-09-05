@@ -107,7 +107,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 主从模式中，从DNS服务器用以获取DNS信息。  目前暂未使用。
+        /// 主从模式中，从DNS服务器获取DNS信息。  目前暂未使用。
         /// </summary>
         [JsonProperty("masters", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Masters { get; set; }

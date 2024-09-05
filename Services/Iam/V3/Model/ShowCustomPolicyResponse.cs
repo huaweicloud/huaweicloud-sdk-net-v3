@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// 
         /// </summary>
         [JsonProperty("role", NullValueHandling = NullValueHandling.Ignore)]
-        public PolicyRoleResult Role { get; set; }
+        public ShowPolicyRoleResult Role { get; set; }
 
 
 

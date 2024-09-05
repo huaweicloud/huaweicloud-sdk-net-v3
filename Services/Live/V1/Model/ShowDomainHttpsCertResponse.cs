@@ -148,6 +148,18 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         [JsonProperty("force_redirect", NullValueHandling = NullValueHandling.Ignore)]
         public bool? ForceRedirect { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("gm_certificate", NullValueHandling = NullValueHandling.Ignore)]
+        public GmCertificateInfo GmCertificate { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("tls_certificate", NullValueHandling = NullValueHandling.Ignore)]
+        public TlsCertificateInfo TlsCertificate { get; set; }
+
 
 
         /// <summary>
@@ -161,6 +173,8 @@ namespace HuaweiCloud.SDK.Live.V1.Model
             sb.Append("  certificate: ").Append(Certificate).Append("\n");
             sb.Append("  certificateKey: ").Append(CertificateKey).Append("\n");
             sb.Append("  forceRedirect: ").Append(ForceRedirect).Append("\n");
+            sb.Append("  gmCertificate: ").Append(GmCertificate).Append("\n");
+            sb.Append("  tlsCertificate: ").Append(TlsCertificate).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -201,6 +215,16 @@ namespace HuaweiCloud.SDK.Live.V1.Model
                     this.ForceRedirect == input.ForceRedirect ||
                     (this.ForceRedirect != null &&
                     this.ForceRedirect.Equals(input.ForceRedirect))
+                ) && 
+                (
+                    this.GmCertificate == input.GmCertificate ||
+                    (this.GmCertificate != null &&
+                    this.GmCertificate.Equals(input.GmCertificate))
+                ) && 
+                (
+                    this.TlsCertificate == input.TlsCertificate ||
+                    (this.TlsCertificate != null &&
+                    this.TlsCertificate.Equals(input.TlsCertificate))
                 );
         }
 
@@ -220,6 +244,10 @@ namespace HuaweiCloud.SDK.Live.V1.Model
                     hashCode = hashCode * 59 + this.CertificateKey.GetHashCode();
                 if (this.ForceRedirect != null)
                     hashCode = hashCode * 59 + this.ForceRedirect.GetHashCode();
+                if (this.GmCertificate != null)
+                    hashCode = hashCode * 59 + this.GmCertificate.GetHashCode();
+                if (this.TlsCertificate != null)
+                    hashCode = hashCode * 59 + this.TlsCertificate.GetHashCode();
                 return hashCode;
             }
         }

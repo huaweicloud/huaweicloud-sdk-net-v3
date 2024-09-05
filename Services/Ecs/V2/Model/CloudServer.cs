@@ -101,10 +101,10 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         public string Updated { get; set; }
 
         /// <summary>
-        /// 云服务器启动时间。时间格式例如：2020-05-22T07:48:53Z。
+        /// 云服务器启动时间。时间格式例如：2020-05-22T07:48:53.000000。
         /// </summary>
-        [JsonProperty("launched", NullValueHandling = NullValueHandling.Ignore)]
-        public string Launched { get; set; }
+        [JsonProperty("launched_at", NullValueHandling = NullValueHandling.Ignore)]
+        public string LaunchedAt { get; set; }
 
         /// <summary>
         /// 云服务器的描述信息。
@@ -225,7 +225,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             sb.Append("  inRecycleBin: ").Append(InRecycleBin).Append("\n");
             sb.Append("  spodId: ").Append(SpodId).Append("\n");
             sb.Append("  updated: ").Append(Updated).Append("\n");
-            sb.Append("  launched: ").Append(Launched).Append("\n");
+            sb.Append("  launchedAt: ").Append(LaunchedAt).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  keyName: ").Append(KeyName).Append("\n");
             sb.Append("  locked: ").Append(Locked).Append("\n");
@@ -334,9 +334,9 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     this.Updated.Equals(input.Updated))
                 ) && 
                 (
-                    this.Launched == input.Launched ||
-                    (this.Launched != null &&
-                    this.Launched.Equals(input.Launched))
+                    this.LaunchedAt == input.LaunchedAt ||
+                    (this.LaunchedAt != null &&
+                    this.LaunchedAt.Equals(input.LaunchedAt))
                 ) && 
                 (
                     this.Description == input.Description ||
@@ -461,8 +461,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     hashCode = hashCode * 59 + this.SpodId.GetHashCode();
                 if (this.Updated != null)
                     hashCode = hashCode * 59 + this.Updated.GetHashCode();
-                if (this.Launched != null)
-                    hashCode = hashCode * 59 + this.Launched.GetHashCode();
+                if (this.LaunchedAt != null)
+                    hashCode = hashCode * 59 + this.LaunchedAt.GetHashCode();
                 if (this.Description != null)
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.KeyName != null)

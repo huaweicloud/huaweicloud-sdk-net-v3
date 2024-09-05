@@ -105,14 +105,14 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         [SDKProperty("page", IsQuery = true)]
         [JsonProperty("page", NullValueHandling = NullValueHandling.Ignore)]
-        public string Page { get; set; }
+        public int? Page { get; set; }
 
         /// <summary>
         /// 分页查询时每页的数据个数，取值范围为[1,50]。需要与page同时存在。
         /// </summary>
         [SDKProperty("per_page", IsQuery = true)]
         [JsonProperty("per_page", NullValueHandling = NullValueHandling.Ignore)]
-        public string PerPage { get; set; }
+        public int? PerPage { get; set; }
 
 
 

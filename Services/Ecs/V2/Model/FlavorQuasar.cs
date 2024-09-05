@@ -49,20 +49,14 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// <summary>
         /// 
         /// </summary>
-        [JsonProperty("root_gb", NullValueHandling = NullValueHandling.Ignore)]
-        public int? RootGb { get; set; }
+        [JsonProperty("gpus", NullValueHandling = NullValueHandling.Ignore)]
+        public List<GpuInfo> Gpus { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [JsonProperty("ephemeral_gb", NullValueHandling = NullValueHandling.Ignore)]
-        public int? EphemeralGb { get; set; }
-
-        /// <summary>
-        /// flavor扩展字段。
-        /// </summary>
-        [JsonProperty("extra_specs", NullValueHandling = NullValueHandling.Ignore)]
-        public Dictionary<string, string> ExtraSpecs { get; set; }
+        [JsonProperty("asic_accelerators", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ASICAcceleratorInfo> AsicAccelerators { get; set; }
 
 
 
@@ -78,9 +72,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             sb.Append("  vcpus: ").Append(Vcpus).Append("\n");
             sb.Append("  ram: ").Append(Ram).Append("\n");
             sb.Append("  disk: ").Append(Disk).Append("\n");
-            sb.Append("  rootGb: ").Append(RootGb).Append("\n");
-            sb.Append("  ephemeralGb: ").Append(EphemeralGb).Append("\n");
-            sb.Append("  extraSpecs: ").Append(ExtraSpecs).Append("\n");
+            sb.Append("  gpus: ").Append(Gpus).Append("\n");
+            sb.Append("  asicAccelerators: ").Append(AsicAccelerators).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -128,20 +121,16 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     this.Disk.Equals(input.Disk))
                 ) && 
                 (
-                    this.RootGb == input.RootGb ||
-                    (this.RootGb != null &&
-                    this.RootGb.Equals(input.RootGb))
+                    this.Gpus == input.Gpus ||
+                    this.Gpus != null &&
+                    input.Gpus != null &&
+                    this.Gpus.SequenceEqual(input.Gpus)
                 ) && 
                 (
-                    this.EphemeralGb == input.EphemeralGb ||
-                    (this.EphemeralGb != null &&
-                    this.EphemeralGb.Equals(input.EphemeralGb))
-                ) && 
-                (
-                    this.ExtraSpecs == input.ExtraSpecs ||
-                    this.ExtraSpecs != null &&
-                    input.ExtraSpecs != null &&
-                    this.ExtraSpecs.SequenceEqual(input.ExtraSpecs)
+                    this.AsicAccelerators == input.AsicAccelerators ||
+                    this.AsicAccelerators != null &&
+                    input.AsicAccelerators != null &&
+                    this.AsicAccelerators.SequenceEqual(input.AsicAccelerators)
                 );
         }
 
@@ -163,12 +152,10 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     hashCode = hashCode * 59 + this.Ram.GetHashCode();
                 if (this.Disk != null)
                     hashCode = hashCode * 59 + this.Disk.GetHashCode();
-                if (this.RootGb != null)
-                    hashCode = hashCode * 59 + this.RootGb.GetHashCode();
-                if (this.EphemeralGb != null)
-                    hashCode = hashCode * 59 + this.EphemeralGb.GetHashCode();
-                if (this.ExtraSpecs != null)
-                    hashCode = hashCode * 59 + this.ExtraSpecs.GetHashCode();
+                if (this.Gpus != null)
+                    hashCode = hashCode * 59 + this.Gpus.GetHashCode();
+                if (this.AsicAccelerators != null)
+                    hashCode = hashCode * 59 + this.AsicAccelerators.GetHashCode();
                 return hashCode;
             }
         }

@@ -24,6 +24,13 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public string FunctionUrn { get; set; }
 
         /// <summary>
+        /// 设置本次执行函数使用的内存规格,取值： 128、256、512、768、1024、1280、1536、1792、2048、2560、3072、3584、4096、8192、10240
+        /// </summary>
+        [SDKProperty("X-Cff-Instance-Memory", IsHeader = true)]
+        [JsonProperty("X-Cff-Instance-Memory", NullValueHandling = NullValueHandling.Ignore)]
+        public string XCffInstanceMemory { get; set; }
+
+        /// <summary>
         /// 执行函数请求体，为json格式。
         /// </summary>
         [SDKProperty("body", IsBody = true)]
@@ -40,6 +47,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             var sb = new StringBuilder();
             sb.Append("class AsyncInvokeFunctionRequest {\n");
             sb.Append("  functionUrn: ").Append(FunctionUrn).Append("\n");
+            sb.Append("  xCffInstanceMemory: ").Append(XCffInstanceMemory).Append("\n");
             sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -68,6 +76,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                     this.FunctionUrn.Equals(input.FunctionUrn))
                 ) && 
                 (
+                    this.XCffInstanceMemory == input.XCffInstanceMemory ||
+                    (this.XCffInstanceMemory != null &&
+                    this.XCffInstanceMemory.Equals(input.XCffInstanceMemory))
+                ) && 
+                (
                     this.Body == input.Body ||
                     this.Body != null &&
                     input.Body != null &&
@@ -85,6 +98,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                 int hashCode = 41;
                 if (this.FunctionUrn != null)
                     hashCode = hashCode * 59 + this.FunctionUrn.GetHashCode();
+                if (this.XCffInstanceMemory != null)
+                    hashCode = hashCode * 59 + this.XCffInstanceMemory.GetHashCode();
                 if (this.Body != null)
                     hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;

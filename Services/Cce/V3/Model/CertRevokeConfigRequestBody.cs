@@ -8,25 +8,25 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Ecs.V2.Model
+namespace HuaweiCloud.SDK.Cce.V3.Model
 {
     /// <summary>
-    /// 云服务器所属安全组信息。
+    /// 
     /// </summary>
-    public class SecurityGroup 
+    public class CertRevokeConfigRequestBody 
     {
 
         /// <summary>
-        /// 安全组名称。
+        /// 用户ID
         /// </summary>
-        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
-        public string Name { get; set; }
+        [JsonProperty("userId", NullValueHandling = NullValueHandling.Ignore)]
+        public string UserId { get; set; }
 
         /// <summary>
-        /// 安全组ID。
+        /// 委托用户ID
         /// </summary>
-        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
-        public string Id { get; set; }
+        [JsonProperty("agencyId", NullValueHandling = NullValueHandling.Ignore)]
+        public string AgencyId { get; set; }
 
 
 
@@ -36,9 +36,9 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class SecurityGroup {\n");
-            sb.Append("  name: ").Append(Name).Append("\n");
-            sb.Append("  id: ").Append(Id).Append("\n");
+            sb.Append("class CertRevokeConfigRequestBody {\n");
+            sb.Append("  userId: ").Append(UserId).Append("\n");
+            sb.Append("  agencyId: ").Append(AgencyId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -48,27 +48,27 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as SecurityGroup);
+            return this.Equals(input as CertRevokeConfigRequestBody);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(SecurityGroup input)
+        public bool Equals(CertRevokeConfigRequestBody input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
+                    this.UserId == input.UserId ||
+                    (this.UserId != null &&
+                    this.UserId.Equals(input.UserId))
                 ) && 
                 (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
+                    this.AgencyId == input.AgencyId ||
+                    (this.AgencyId != null &&
+                    this.AgencyId.Equals(input.AgencyId))
                 );
         }
 
@@ -80,10 +80,10 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.UserId != null)
+                    hashCode = hashCode * 59 + this.UserId.GetHashCode();
+                if (this.AgencyId != null)
+                    hashCode = hashCode * 59 + this.AgencyId.GetHashCode();
                 return hashCode;
             }
         }

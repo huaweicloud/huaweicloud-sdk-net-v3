@@ -40,6 +40,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         [JsonProperty("bootIndex", NullValueHandling = NullValueHandling.Ignore)]
         public string BootIndex { get; set; }
 
+        /// <summary>
+        /// 云盘大小（单位：GB）。
+        /// </summary>
+        [JsonProperty("size", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Size { get; set; }
+
 
 
         /// <summary>
@@ -53,6 +59,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             sb.Append("  deleteOnTermination: ").Append(DeleteOnTermination).Append("\n");
             sb.Append("  device: ").Append(Device).Append("\n");
             sb.Append("  bootIndex: ").Append(BootIndex).Append("\n");
+            sb.Append("  size: ").Append(Size).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -93,6 +100,11 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     this.BootIndex == input.BootIndex ||
                     (this.BootIndex != null &&
                     this.BootIndex.Equals(input.BootIndex))
+                ) && 
+                (
+                    this.Size == input.Size ||
+                    (this.Size != null &&
+                    this.Size.Equals(input.Size))
                 );
         }
 
@@ -112,6 +124,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     hashCode = hashCode * 59 + this.Device.GetHashCode();
                 if (this.BootIndex != null)
                     hashCode = hashCode * 59 + this.BootIndex.GetHashCode();
+                if (this.Size != null)
+                    hashCode = hashCode * 59 + this.Size.GetHashCode();
                 return hashCode;
             }
         }

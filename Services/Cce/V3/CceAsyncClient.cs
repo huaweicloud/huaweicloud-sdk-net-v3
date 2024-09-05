@@ -1318,6 +1318,34 @@ namespace HuaweiCloud.SDK.Cce.V3
         }
         
         /// <summary>
+        /// 吊销用户的集群证书
+        ///
+        /// 该API用于吊销指定集群的用户证书
+        /// 
+        /// &gt; 吊销操作完成后，此证书申请人之前下载的证书和 kubectl 配置文件无法再用于连接集群。此证书申请人可以重新下载证书或 kubectl 配置文件，并使用新下载的文件连接集群
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<RevokeKubernetesClusterCertResponse> RevokeKubernetesClusterCertAsync(RevokeKubernetesClusterCertRequest revokeKubernetesClusterCertRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", revokeKubernetesClusterCertRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/clustercertrevoke", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", revokeKubernetesClusterCertRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<RevokeKubernetesClusterCertResponse>(response);
+        }
+
+        public AsyncInvoker<RevokeKubernetesClusterCertResponse> RevokeKubernetesClusterCertAsyncInvoker(RevokeKubernetesClusterCertRequest revokeKubernetesClusterCertRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", revokeKubernetesClusterCertRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/clustercertrevoke", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", revokeKubernetesClusterCertRequest);
+            return new AsyncInvoker<RevokeKubernetesClusterCertResponse>(this, "POST", request, JsonUtils.DeSerializeNull<RevokeKubernetesClusterCertResponse>);
+        }
+        
+        /// <summary>
         /// 回滚AddonInstance
         ///
         /// 将插件实例回滚到升级前的版本。只有在当前插件实例版本支持回滚到升级前的版本（status.isRollbackable为true），且插件实例状态为running（运行中）、available（可用）、abnormal（不可用）、upgradeFailed（升级失败）、rollbackFailed（回滚失败）时支持回滚。

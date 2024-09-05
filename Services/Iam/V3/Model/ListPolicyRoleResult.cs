@@ -13,7 +13,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
     /// <summary>
     /// 
     /// </summary>
-    public class PolicyRoleResult 
+    public class ListPolicyRoleResult 
     {
 
         /// <summary>
@@ -21,12 +21,6 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         [JsonProperty("domain_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DomainId { get; set; }
-
-        /// <summary>
-        /// 自定义策略的引用次数。
-        /// </summary>
-        [JsonProperty("references", NullValueHandling = NullValueHandling.Ignore)]
-        public int? References { get; set; }
 
         /// <summary>
         /// 自定义策略更新时间。
@@ -102,9 +96,8 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class PolicyRoleResult {\n");
+            sb.Append("class ListPolicyRoleResult {\n");
             sb.Append("  domainId: ").Append(DomainId).Append("\n");
-            sb.Append("  references: ").Append(References).Append("\n");
             sb.Append("  updatedTime: ").Append(UpdatedTime).Append("\n");
             sb.Append("  createdTime: ").Append(CreatedTime).Append("\n");
             sb.Append("  descriptionCn: ").Append(DescriptionCn).Append("\n");
@@ -125,13 +118,13 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as PolicyRoleResult);
+            return this.Equals(input as ListPolicyRoleResult);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(PolicyRoleResult input)
+        public bool Equals(ListPolicyRoleResult input)
         {
             if (input == null)
                 return false;
@@ -141,11 +134,6 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
                     this.DomainId == input.DomainId ||
                     (this.DomainId != null &&
                     this.DomainId.Equals(input.DomainId))
-                ) && 
-                (
-                    this.References == input.References ||
-                    (this.References != null &&
-                    this.References.Equals(input.References))
                 ) && 
                 (
                     this.UpdatedTime == input.UpdatedTime ||
@@ -214,8 +202,6 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
                 int hashCode = 41;
                 if (this.DomainId != null)
                     hashCode = hashCode * 59 + this.DomainId.GetHashCode();
-                if (this.References != null)
-                    hashCode = hashCode * 59 + this.References.GetHashCode();
                 if (this.UpdatedTime != null)
                     hashCode = hashCode * 59 + this.UpdatedTime.GetHashCode();
                 if (this.CreatedTime != null)

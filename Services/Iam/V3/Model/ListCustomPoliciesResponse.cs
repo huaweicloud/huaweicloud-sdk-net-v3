@@ -26,7 +26,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// 自定义策略信息列表。
         /// </summary>
         [JsonProperty("roles", NullValueHandling = NullValueHandling.Ignore)]
-        public List<PolicyRoleResult> Roles { get; set; }
+        public List<ListPolicyRoleResult> Roles { get; set; }
 
         /// <summary>
         /// 返回自定义策略的总条数

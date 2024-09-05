@@ -8,34 +8,27 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Dns.V2.Model
+namespace HuaweiCloud.SDK.Cce.V3.Model
 {
     /// <summary>
     /// Request Object
     /// </summary>
-    public class CreateEipRecordSetRequest 
+    public class RevokeKubernetesClusterCertRequest 
     {
 
         /// <summary>
-        /// 租户的区域信息。
+        /// 集群ID，获取方式请参见[如何获取接口URI中参数](cce_02_0271.xml)。
         /// </summary>
-        [SDKProperty("region", IsPath = true)]
-        [JsonProperty("region", NullValueHandling = NullValueHandling.Ignore)]
-        public string Region { get; set; }
-
-        /// <summary>
-        /// 弹性公网IP（EIP）的ID。
-        /// </summary>
-        [SDKProperty("floatingip_id", IsPath = true)]
-        [JsonProperty("floatingip_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string FloatingipId { get; set; }
+        [SDKProperty("cluster_id", IsPath = true)]
+        [JsonProperty("cluster_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ClusterId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public CreatePtrReq Body { get; set; }
+        public CertRevokeConfigRequestBody Body { get; set; }
 
 
 
@@ -45,9 +38,8 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class CreateEipRecordSetRequest {\n");
-            sb.Append("  region: ").Append(Region).Append("\n");
-            sb.Append("  floatingipId: ").Append(FloatingipId).Append("\n");
+            sb.Append("class RevokeKubernetesClusterCertRequest {\n");
+            sb.Append("  clusterId: ").Append(ClusterId).Append("\n");
             sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -58,27 +50,22 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CreateEipRecordSetRequest);
+            return this.Equals(input as RevokeKubernetesClusterCertRequest);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(CreateEipRecordSetRequest input)
+        public bool Equals(RevokeKubernetesClusterCertRequest input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Region == input.Region ||
-                    (this.Region != null &&
-                    this.Region.Equals(input.Region))
-                ) && 
-                (
-                    this.FloatingipId == input.FloatingipId ||
-                    (this.FloatingipId != null &&
-                    this.FloatingipId.Equals(input.FloatingipId))
+                    this.ClusterId == input.ClusterId ||
+                    (this.ClusterId != null &&
+                    this.ClusterId.Equals(input.ClusterId))
                 ) && 
                 (
                     this.Body == input.Body ||
@@ -95,10 +82,8 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Region != null)
-                    hashCode = hashCode * 59 + this.Region.GetHashCode();
-                if (this.FloatingipId != null)
-                    hashCode = hashCode * 59 + this.FloatingipId.GetHashCode();
+                if (this.ClusterId != null)
+                    hashCode = hashCode * 59 + this.ClusterId.GetHashCode();
                 if (this.Body != null)
                     hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;

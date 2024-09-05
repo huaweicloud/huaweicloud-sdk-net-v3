@@ -17,12 +17,6 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
     {
 
         /// <summary>
-        /// 查询云服务器个数。
-        /// </summary>
-        [JsonProperty("count", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Count { get; set; }
-
-        /// <summary>
         /// 查询云服务器信息列表。
         /// </summary>
         [JsonProperty("servers", NullValueHandling = NullValueHandling.Ignore)]
@@ -49,7 +43,6 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListCloudServersResponse {\n");
-            sb.Append("  count: ").Append(Count).Append("\n");
             sb.Append("  servers: ").Append(Servers).Append("\n");
             sb.Append("  serversLinks: ").Append(ServersLinks).Append("\n");
             sb.Append("  requestId: ").Append(RequestId).Append("\n");
@@ -74,11 +67,6 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                 return false;
 
             return 
-                (
-                    this.Count == input.Count ||
-                    (this.Count != null &&
-                    this.Count.Equals(input.Count))
-                ) && 
                 (
                     this.Servers == input.Servers ||
                     this.Servers != null &&
@@ -106,8 +94,6 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Count != null)
-                    hashCode = hashCode * 59 + this.Count.GetHashCode();
                 if (this.Servers != null)
                     hashCode = hashCode * 59 + this.Servers.GetHashCode();
                 if (this.ServersLinks != null)

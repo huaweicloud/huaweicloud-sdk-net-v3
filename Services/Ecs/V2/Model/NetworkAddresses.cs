@@ -160,6 +160,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         [JsonProperty("OS-EXT-IPS:type", NullValueHandling = NullValueHandling.Ignore)]
         public string OSEXTIPStype { get; set; }
 
+        /// <summary>
+        /// 是否是主网卡。  true：主网卡。 false：辅助网卡。
+        /// </summary>
+        [JsonProperty("primary", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? Primary { get; set; }
+
 
 
         /// <summary>
@@ -174,6 +180,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             sb.Append("  oSEXTIPSportId: ").Append(OSEXTIPSportId).Append("\n");
             sb.Append("  oSEXTIPSMACmacAddr: ").Append(OSEXTIPSMACmacAddr).Append("\n");
             sb.Append("  oSEXTIPStype: ").Append(OSEXTIPStype).Append("\n");
+            sb.Append("  primary: ").Append(Primary).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -219,6 +226,11 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     this.OSEXTIPStype == input.OSEXTIPStype ||
                     (this.OSEXTIPStype != null &&
                     this.OSEXTIPStype.Equals(input.OSEXTIPStype))
+                ) && 
+                (
+                    this.Primary == input.Primary ||
+                    (this.Primary != null &&
+                    this.Primary.Equals(input.Primary))
                 );
         }
 
@@ -240,6 +252,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     hashCode = hashCode * 59 + this.OSEXTIPSMACmacAddr.GetHashCode();
                 if (this.OSEXTIPStype != null)
                     hashCode = hashCode * 59 + this.OSEXTIPStype.GetHashCode();
+                if (this.Primary != null)
+                    hashCode = hashCode * 59 + this.Primary.GetHashCode();
                 return hashCode;
             }
         }

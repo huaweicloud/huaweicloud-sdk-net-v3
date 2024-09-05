@@ -24,7 +24,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public string Region { get; set; }
 
         /// <summary>
-        /// 待修改弹性IP的PTR记录ID信息。
+        /// 弹性公网IP（EIP）的ID。
         /// </summary>
         [SDKProperty("floatingip_id", IsPath = true)]
         [JsonProperty("floatingip_id", NullValueHandling = NullValueHandling.Ignore)]
