@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
     public class PolicyStatement 
     {
         /// <summary>
-        /// Allow允许或Deny拒绝，控制访问权限
+        /// - Allow,允许控制访问权限 - Deny,拒绝控制访问权限
         /// </summary>
-        /// <value>Allow允许或Deny拒绝，控制访问权限</value>
+        /// <value>- Allow,允许控制访问权限 - Deny,拒绝控制访问权限</value>
         [JsonConverter(typeof(EnumClassConverter<EffectEnum>))]
         public class EffectEnum
         {
@@ -132,7 +132,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
 
 
         /// <summary>
-        /// Allow允许或Deny拒绝，控制访问权限
+        /// - Allow,允许控制访问权限 - Deny,拒绝控制访问权限
         /// </summary>
         [JsonProperty("Effect", NullValueHandling = NullValueHandling.Ignore)]
         public EffectEnum Effect { get; set; }

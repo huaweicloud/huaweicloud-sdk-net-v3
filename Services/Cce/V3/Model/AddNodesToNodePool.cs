@@ -11,22 +11,16 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cce.V3.Model
 {
     /// <summary>
-    /// 
+    /// 自定义节点池纳管节点参数。
     /// </summary>
-    public class TagFilter 
+    public class AddNodesToNodePool 
     {
 
         /// <summary>
-        /// 需要过滤的标签key。
+        /// 服务器ID，获取方式请参见ECS/BMS相关资料。
         /// </summary>
-        [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]
-        public string Key { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("values", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> Values { get; set; }
+        [JsonProperty("serverID", NullValueHandling = NullValueHandling.Ignore)]
+        public Guid? ServerID { get; set; }
 
 
 
@@ -36,9 +30,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class TagFilter {\n");
-            sb.Append("  key: ").Append(Key).Append("\n");
-            sb.Append("  values: ").Append(Values).Append("\n");
+            sb.Append("class AddNodesToNodePool {\n");
+            sb.Append("  serverID: ").Append(ServerID).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -48,28 +41,22 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as TagFilter);
+            return this.Equals(input as AddNodesToNodePool);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(TagFilter input)
+        public bool Equals(AddNodesToNodePool input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Key == input.Key ||
-                    (this.Key != null &&
-                    this.Key.Equals(input.Key))
-                ) && 
-                (
-                    this.Values == input.Values ||
-                    this.Values != null &&
-                    input.Values != null &&
-                    this.Values.SequenceEqual(input.Values)
+                    this.ServerID == input.ServerID ||
+                    (this.ServerID != null &&
+                    this.ServerID.Equals(input.ServerID))
                 );
         }
 
@@ -81,10 +68,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Key != null)
-                    hashCode = hashCode * 59 + this.Key.GetHashCode();
-                if (this.Values != null)
-                    hashCode = hashCode * 59 + this.Values.GetHashCode();
+                if (this.ServerID != null)
+                    hashCode = hashCode * 59 + this.ServerID.GetHashCode();
                 return hashCode;
             }
         }

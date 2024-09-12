@@ -58,6 +58,30 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
+        /// <summary>
+        /// 告警流水号。
+        /// </summary>
+        [JsonProperty("event_sn", NullValueHandling = NullValueHandling.Ignore)]
+        public string EventSn { get; set; }
+
+        /// <summary>
+        /// 事件到达系统时间，CST毫秒级时间戳。
+        /// </summary>
+        [JsonProperty("arrives_at", NullValueHandling = NullValueHandling.Ignore)]
+        public long? ArrivesAt { get; set; }
+
+        /// <summary>
+        /// 事件或告警所属企业项目id。
+        /// </summary>
+        [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string EnterpriseProjectId { get; set; }
+
+        /// <summary>
+        /// 开放告警策略
+        /// </summary>
+        [JsonProperty("policy", NullValueHandling = NullValueHandling.Ignore)]
+        public Dictionary<string, Object> Policy { get; set; }
+
 
 
         /// <summary>
@@ -74,6 +98,10 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
             sb.Append("  annotations: ").Append(Annotations).Append("\n");
             sb.Append("  attachRule: ").Append(AttachRule).Append("\n");
             sb.Append("  id: ").Append(Id).Append("\n");
+            sb.Append("  eventSn: ").Append(EventSn).Append("\n");
+            sb.Append("  arrivesAt: ").Append(ArrivesAt).Append("\n");
+            sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  policy: ").Append(Policy).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -132,6 +160,27 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
+                ) && 
+                (
+                    this.EventSn == input.EventSn ||
+                    (this.EventSn != null &&
+                    this.EventSn.Equals(input.EventSn))
+                ) && 
+                (
+                    this.ArrivesAt == input.ArrivesAt ||
+                    (this.ArrivesAt != null &&
+                    this.ArrivesAt.Equals(input.ArrivesAt))
+                ) && 
+                (
+                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
+                    (this.EnterpriseProjectId != null &&
+                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
+                ) && 
+                (
+                    this.Policy == input.Policy ||
+                    this.Policy != null &&
+                    input.Policy != null &&
+                    this.Policy.SequenceEqual(input.Policy)
                 );
         }
 
@@ -157,6 +206,14 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
                     hashCode = hashCode * 59 + this.AttachRule.GetHashCode();
                 if (this.Id != null)
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.EventSn != null)
+                    hashCode = hashCode * 59 + this.EventSn.GetHashCode();
+                if (this.ArrivesAt != null)
+                    hashCode = hashCode * 59 + this.ArrivesAt.GetHashCode();
+                if (this.EnterpriseProjectId != null)
+                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.Policy != null)
+                    hashCode = hashCode * 59 + this.Policy.GetHashCode();
                 return hashCode;
             }
         }

@@ -22,6 +22,12 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         [JsonProperty("events", NullValueHandling = NullValueHandling.Ignore)]
         public List<EventModel> Events { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("page_info", NullValueHandling = NullValueHandling.Ignore)]
+        public PageInfo PageInfo { get; set; }
+
 
 
         /// <summary>
@@ -32,6 +38,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
             var sb = new StringBuilder();
             sb.Append("class ListEventsResponse {\n");
             sb.Append("  events: ").Append(Events).Append("\n");
+            sb.Append("  pageInfo: ").Append(PageInfo).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -58,6 +65,11 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
                     this.Events != null &&
                     input.Events != null &&
                     this.Events.SequenceEqual(input.Events)
+                ) && 
+                (
+                    this.PageInfo == input.PageInfo ||
+                    (this.PageInfo != null &&
+                    this.PageInfo.Equals(input.PageInfo))
                 );
         }
 
@@ -71,6 +83,8 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
                 int hashCode = 41;
                 if (this.Events != null)
                     hashCode = hashCode * 59 + this.Events.GetHashCode();
+                if (this.PageInfo != null)
+                    hashCode = hashCode * 59 + this.PageInfo.GetHashCode();
                 return hashCode;
             }
         }

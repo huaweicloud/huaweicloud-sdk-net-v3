@@ -372,6 +372,127 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
             }
         }
 
+        /// <summary>
+        /// 后端类型
+        /// </summary>
+        /// <value>后端类型</value>
+        [JsonConverter(typeof(EnumClassConverter<NetTypeEnum>))]
+        public class NetTypeEnum
+        {
+            /// <summary>
+            /// Enum VLAN for value: vlan
+            /// </summary>
+            public static readonly NetTypeEnum VLAN = new NetTypeEnum("vlan");
+
+            /// <summary>
+            /// Enum VXLAN for value: vxlan
+            /// </summary>
+            public static readonly NetTypeEnum VXLAN = new NetTypeEnum("vxlan");
+
+            /// <summary>
+            /// Enum ALL for value: all
+            /// </summary>
+            public static readonly NetTypeEnum ALL = new NetTypeEnum("all");
+
+            private static readonly Dictionary<string, NetTypeEnum> StaticFields =
+            new Dictionary<string, NetTypeEnum>()
+            {
+                { "vlan", VLAN },
+                { "vxlan", VXLAN },
+                { "all", ALL },
+            };
+
+            private string _value;
+
+            public NetTypeEnum()
+            {
+
+            }
+
+            public NetTypeEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static NetTypeEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as NetTypeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(NetTypeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(NetTypeEnum a, NetTypeEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(NetTypeEnum a, NetTypeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 终端节点服务的名称，支持大小写，前后模糊匹配。
@@ -426,6 +547,12 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         [JsonProperty("public_border_group", NullValueHandling = NullValueHandling.Ignore)]
         public string PublicBorderGroup { get; set; }
 
+        /// <summary>
+        /// 后端类型
+        /// </summary>
+        [SDKProperty("net_type", IsQuery = true)]
+        [JsonProperty("net_type", NullValueHandling = NullValueHandling.Ignore)]
+        public NetTypeEnum NetType { get; set; }
 
 
         /// <summary>
@@ -443,6 +570,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  publicBorderGroup: ").Append(PublicBorderGroup).Append("\n");
+            sb.Append("  netType: ").Append(NetType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -503,6 +631,11 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                     this.PublicBorderGroup == input.PublicBorderGroup ||
                     (this.PublicBorderGroup != null &&
                     this.PublicBorderGroup.Equals(input.PublicBorderGroup))
+                ) && 
+                (
+                    this.NetType == input.NetType ||
+                    (this.NetType != null &&
+                    this.NetType.Equals(input.NetType))
                 );
         }
 
@@ -530,6 +663,8 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                     hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.PublicBorderGroup != null)
                     hashCode = hashCode * 59 + this.PublicBorderGroup.GetHashCode();
+                if (this.NetType != null)
+                    hashCode = hashCode * 59 + this.NetType.GetHashCode();
                 return hashCode;
             }
         }

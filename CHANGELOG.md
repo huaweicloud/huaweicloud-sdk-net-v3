@@ -1,3 +1,74 @@
+# 3.1.112 2024-09-12
+
+### HuaweiCloud SDK AOM
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListEvents**
+    - changes of request param
+      - `+ limit`
+      - `+ marker`
+    - changes of response param
+      - `+ page_info`
+      - `+ events.event_sn`
+      - `+ events.arrives_at`
+      - `+ events.enterprise_project_id`
+      - `+ events.policy`
+  - **PushEvents**
+    - changes of request param
+      - `- events`
+      - `+ events.event_sn`
+      - `+ events.arrives_at`
+      - `+ events.enterprise_project_id`
+      - `+ events.policy`
+  - **DeletePromInstance**
+    - changes of request param
+      - `* Enterprise-Project-Id: optional -> required`
+
+### HuaweiCloud SDK CCE
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the API `AddNodesToNodePool`
+- _Bug Fix_
+  - None
+- _Change_
+  - Remove the APIs `ShowResourceInstances`, `BatchCreateDeleteResourceTags`, `ShowResourceTags`, `ShowCustomizeClusterTagsByProjectId`
+
+### HuaweiCloud SDK VPCEP
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListServiceDetails**
+    - changes of response param
+      - `+ ip`
+  - **UpdateEndpointService**
+    - changes of request param
+      - `+ ip`
+    - changes of response param
+      - `+ ip`
+  - **CreateEndpointService**
+    - changes of request param
+      - `+ ip`
+    - changes of response param
+      - `+ ip`
+  - **ListEndpointService**
+    - changes of request param
+      - `+ net_type`
+    - changes of response param
+      - `+ endpoint_services.ip`
+
 # 3.1.111 2024-09-05
 
 ### HuaweiCloud SDK BMS

@@ -80,6 +80,8 @@ namespace HuaweiCloud.SDK.Cts.V3
             "https://cts.my-kualalumpur-1.myhuaweicloud.com");
         public static readonly Region RU_MOSCOW_1 = new Region("ru-moscow-1",
             "https://cts.ru-moscow-1.myhuaweicloud.com");
+        public static readonly Region AE_AD_1 = new Region("ae-ad-1",
+            "https://cts.ae-ad-1.myhuaweicloud.com");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("CTS");
 
@@ -111,6 +113,7 @@ namespace HuaweiCloud.SDK.Cts.V3
                 { "eu-west-0", EU_WEST_0 },
                 { "my-kualalumpur-1", MY_KUALALUMPUR_1 },
                 { "ru-moscow-1", RU_MOSCOW_1 },
+                { "ae-ad-1", AE_AD_1 },
         };
 
         public static Region ValueOf(string regionId)

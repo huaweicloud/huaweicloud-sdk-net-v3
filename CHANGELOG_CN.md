@@ -1,3 +1,74 @@
+# 3.1.112 2024-09-12
+
+### HuaweiCloud SDK AOM
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListEvents**
+    - 请求参数变更
+      - `+ limit`
+      - `+ marker`
+    - 响应参数变更
+      - `+ page_info`
+      - `+ events.event_sn`
+      - `+ events.arrives_at`
+      - `+ events.enterprise_project_id`
+      - `+ events.policy`
+  - **PushEvents**
+    - 请求参数变更
+      - `- events`
+      - `+ events.event_sn`
+      - `+ events.arrives_at`
+      - `+ events.enterprise_project_id`
+      - `+ events.policy`
+  - **DeletePromInstance**
+    - 请求参数变更
+      - `* Enterprise-Project-Id: optional -> required`
+
+### HuaweiCloud SDK CCE
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持接口`AddNodesToNodePool`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 移除接口`ShowResourceInstances`、`BatchCreateDeleteResourceTags`、`ShowResourceTags`、`ShowCustomizeClusterTagsByProjectId`
+
+### HuaweiCloud SDK VPCEP
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListServiceDetails**
+    - 响应参数变更
+      - `+ ip`
+  - **UpdateEndpointService**
+    - 请求参数变更
+      - `+ ip`
+    - 响应参数变更
+      - `+ ip`
+  - **CreateEndpointService**
+    - 请求参数变更
+      - `+ ip`
+    - 响应参数变更
+      - `+ ip`
+  - **ListEndpointService**
+    - 请求参数变更
+      - `+ net_type`
+    - 响应参数变更
+      - `+ endpoint_services.ip`
+
 # 3.1.111 2024-09-05
 
 ### HuaweiCloud SDK BMS

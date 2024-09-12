@@ -11,17 +11,16 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cce.V3.Model
 {
     /// <summary>
-    /// Request Object
+    /// Response Object
     /// </summary>
-    public class ShowCustomizeClusterTagsByProjectIdRequest 
+    public class AddNodesToNodePoolResponse : SdkResponse
     {
 
         /// <summary>
-        /// 资源类型，获取方式请参见[如何获取接口URI中参数](cce_02_0271.xml)。
+        /// 提交任务成功后返回的任务ID，用户可以使用该ID对任务执行情况进行查询。
         /// </summary>
-        [SDKProperty("resource_type", IsPath = true)]
-        [JsonProperty("resource_type", NullValueHandling = NullValueHandling.Ignore)]
-        public string ResourceType { get; set; }
+        [JsonProperty("jobid", NullValueHandling = NullValueHandling.Ignore)]
+        public Guid? Jobid { get; set; }
 
 
 
@@ -31,8 +30,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ShowCustomizeClusterTagsByProjectIdRequest {\n");
-            sb.Append("  resourceType: ").Append(ResourceType).Append("\n");
+            sb.Append("class AddNodesToNodePoolResponse {\n");
+            sb.Append("  jobid: ").Append(Jobid).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -42,22 +41,22 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ShowCustomizeClusterTagsByProjectIdRequest);
+            return this.Equals(input as AddNodesToNodePoolResponse);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ShowCustomizeClusterTagsByProjectIdRequest input)
+        public bool Equals(AddNodesToNodePoolResponse input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.ResourceType == input.ResourceType ||
-                    (this.ResourceType != null &&
-                    this.ResourceType.Equals(input.ResourceType))
+                    this.Jobid == input.Jobid ||
+                    (this.Jobid != null &&
+                    this.Jobid.Equals(input.Jobid))
                 );
         }
 
@@ -69,8 +68,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.ResourceType != null)
-                    hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
+                if (this.Jobid != null)
+                    hashCode = hashCode * 59 + this.Jobid.GetHashCode();
                 return hashCode;
             }
         }

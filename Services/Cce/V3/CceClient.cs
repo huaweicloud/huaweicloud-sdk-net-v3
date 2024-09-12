@@ -42,6 +42,35 @@ namespace HuaweiCloud.SDK.Cce.V3
         }
         
         /// <summary>
+        /// 自定义节点池纳管节点
+        ///
+        /// 该API用于在指定集群自定义节点池下纳管节点。竞价实例不支持纳管。
+        /// &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public AddNodesToNodePoolResponse AddNodesToNodePool(AddNodesToNodePoolRequest addNodesToNodePoolRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", addNodesToNodePoolRequest.ClusterId.ToString());
+            urlParam.Add("nodepool_id", addNodesToNodePoolRequest.NodepoolId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodepools/{nodepool_id}/nodes/add", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addNodesToNodePoolRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<AddNodesToNodePoolResponse>(response);
+        }
+
+        public SyncInvoker<AddNodesToNodePoolResponse> AddNodesToNodePoolInvoker(AddNodesToNodePoolRequest addNodesToNodePoolRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", addNodesToNodePoolRequest.ClusterId.ToString());
+            urlParam.Add("nodepool_id", addNodesToNodePoolRequest.NodepoolId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodepools/{nodepool_id}/nodes/add", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addNodesToNodePoolRequest);
+            return new SyncInvoker<AddNodesToNodePoolResponse>(this, "POST", request, JsonUtils.DeSerialize<AddNodesToNodePoolResponse>);
+        }
+        
+        /// <summary>
         /// 集群唤醒
         ///
         /// 集群唤醒用于唤醒已休眠的集群，唤醒后，将继续收取控制节点资源费用。
@@ -93,34 +122,6 @@ namespace HuaweiCloud.SDK.Cce.V3
             var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/tags/create", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateClusterTagsRequest);
             return new SyncInvoker<BatchCreateClusterTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchCreateClusterTagsResponse>);
-        }
-        
-        /// <summary>
-        /// 绑定、删除资源标签，创建集群时供EPS调用；EPS页面迁移集群企业项目时调用
-        ///
-        /// 该API用于绑定、删除资源标签，创建集群时供EPS调用；EPS页面迁移集群企业项目时调用
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public BatchCreateDeleteResourceTagsResponse BatchCreateDeleteResourceTags(BatchCreateDeleteResourceTagsRequest batchCreateDeleteResourceTagsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", batchCreateDeleteResourceTagsRequest.ResourceType.ToString());
-            urlParam.Add("resource_id", batchCreateDeleteResourceTagsRequest.ResourceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/cce/v1/{project_id}/{resource_type}/{resource_id}/tags/action", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateDeleteResourceTagsRequest);
-            var response = DoHttpRequestSync("POST", request);
-            return JsonUtils.DeSerializeNull<BatchCreateDeleteResourceTagsResponse>(response);
-        }
-
-        public SyncInvoker<BatchCreateDeleteResourceTagsResponse> BatchCreateDeleteResourceTagsInvoker(BatchCreateDeleteResourceTagsRequest batchCreateDeleteResourceTagsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", batchCreateDeleteResourceTagsRequest.ResourceType.ToString());
-            urlParam.Add("resource_id", batchCreateDeleteResourceTagsRequest.ResourceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/cce/v1/{project_id}/{resource_type}/{resource_id}/tags/action", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateDeleteResourceTagsRequest);
-            return new SyncInvoker<BatchCreateDeleteResourceTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchCreateDeleteResourceTagsResponse>);
         }
         
         /// <summary>
@@ -1656,32 +1657,6 @@ namespace HuaweiCloud.SDK.Cce.V3
         }
         
         /// <summary>
-        /// 查询集群的标签
-        ///
-        /// 该API用于查询集群的标签
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public ShowCustomizeClusterTagsByProjectIdResponse ShowCustomizeClusterTagsByProjectId(ShowCustomizeClusterTagsByProjectIdRequest showCustomizeClusterTagsByProjectIdRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", showCustomizeClusterTagsByProjectIdRequest.ResourceType.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/cce/v1/{project_id}/{resource_type}/tags", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCustomizeClusterTagsByProjectIdRequest);
-            var response = DoHttpRequestSync("GET", request);
-            return JsonUtils.DeSerialize<ShowCustomizeClusterTagsByProjectIdResponse>(response);
-        }
-
-        public SyncInvoker<ShowCustomizeClusterTagsByProjectIdResponse> ShowCustomizeClusterTagsByProjectIdInvoker(ShowCustomizeClusterTagsByProjectIdRequest showCustomizeClusterTagsByProjectIdRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", showCustomizeClusterTagsByProjectIdRequest.ResourceType.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/cce/v1/{project_id}/{resource_type}/tags", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCustomizeClusterTagsByProjectIdRequest);
-            return new SyncInvoker<ShowCustomizeClusterTagsByProjectIdResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowCustomizeClusterTagsByProjectIdResponse>);
-        }
-        
-        /// <summary>
         /// 获取任务信息
         ///
         /// 该API用于获取任务信息。通过某一任务请求下发后返回的jobID来查询指定任务的进度。
@@ -1977,60 +1952,6 @@ namespace HuaweiCloud.SDK.Cce.V3
                 showReleaseHistoryResponse.Body = JsonUtils.DeSerializeList<ReleaseResp>(response);
                 return showReleaseHistoryResponse;
             });
-        }
-        
-        /// <summary>
-        /// 查询资源实例，EPS页面查询CCE集群资源时调用
-        ///
-        /// 该API用于查询资源实例，EPS页面查询CCE集群资源时调用。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public ShowResourceInstancesResponse ShowResourceInstances(ShowResourceInstancesRequest showResourceInstancesRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", showResourceInstancesRequest.ResourceType.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/cce/v1/{project_id}/{resource_type}/resource_instances/action", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showResourceInstancesRequest);
-            var response = DoHttpRequestSync("POST", request);
-            return JsonUtils.DeSerialize<ShowResourceInstancesResponse>(response);
-        }
-
-        public SyncInvoker<ShowResourceInstancesResponse> ShowResourceInstancesInvoker(ShowResourceInstancesRequest showResourceInstancesRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", showResourceInstancesRequest.ResourceType.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/cce/v1/{project_id}/{resource_type}/resource_instances/action", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showResourceInstancesRequest);
-            return new SyncInvoker<ShowResourceInstancesResponse>(this, "POST", request, JsonUtils.DeSerialize<ShowResourceInstancesResponse>);
-        }
-        
-        /// <summary>
-        /// 查询资源标签（用于企业项目场景，企业项目是一种系统标签）
-        ///
-        /// 该API用于查询资源标签（用于企业项目场景，企业项目是一种系统标签）
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public ShowResourceTagsResponse ShowResourceTags(ShowResourceTagsRequest showResourceTagsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", showResourceTagsRequest.ResourceType.ToString());
-            urlParam.Add("resource_id", showResourceTagsRequest.ResourceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/cce/v1/{project_id}/{resource_type}/{resource_id}/tags", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showResourceTagsRequest);
-            var response = DoHttpRequestSync("GET", request);
-            return JsonUtils.DeSerialize<ShowResourceTagsResponse>(response);
-        }
-
-        public SyncInvoker<ShowResourceTagsResponse> ShowResourceTagsInvoker(ShowResourceTagsRequest showResourceTagsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", showResourceTagsRequest.ResourceType.ToString());
-            urlParam.Add("resource_id", showResourceTagsRequest.ResourceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/cce/v1/{project_id}/{resource_type}/{resource_id}/tags", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showResourceTagsRequest);
-            return new SyncInvoker<ShowResourceTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowResourceTagsResponse>);
         }
         
         /// <summary>

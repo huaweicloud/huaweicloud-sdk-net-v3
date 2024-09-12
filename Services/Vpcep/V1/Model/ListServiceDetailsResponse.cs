@@ -89,6 +89,12 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         public string CidrType { get; set; }
 
         /// <summary>
+        /// 接口型VLAN场景服务端IPv4地址或域名
+        /// </summary>
+        [JsonProperty("ip", NullValueHandling = NullValueHandling.Ignore)]
+        public string Ip { get; set; }
+
+        /// <summary>
         /// 服务开放的端口映射列表，详细内容请参见表4-17 同一个终端节点服务下，不允许重复的端口映射。若多个终端节点服务共用一个port_id，则 终端节点服务之间的所有端口映射的server_port和protocol的组合不能重复。
         /// </summary>
         [JsonProperty("ports", NullValueHandling = NullValueHandling.Ignore)]
@@ -145,6 +151,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
             sb.Append("  updatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("  projectId: ").Append(ProjectId).Append("\n");
             sb.Append("  cidrType: ").Append(CidrType).Append("\n");
+            sb.Append("  ip: ").Append(Ip).Append("\n");
             sb.Append("  ports: ").Append(Ports).Append("\n");
             sb.Append("  tcpProxy: ").Append(TcpProxy).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
@@ -233,6 +240,11 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                     this.CidrType.Equals(input.CidrType))
                 ) && 
                 (
+                    this.Ip == input.Ip ||
+                    (this.Ip != null &&
+                    this.Ip.Equals(input.Ip))
+                ) && 
+                (
                     this.Ports == input.Ports ||
                     this.Ports != null &&
                     input.Ports != null &&
@@ -299,6 +311,8 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                     hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
                 if (this.CidrType != null)
                     hashCode = hashCode * 59 + this.CidrType.GetHashCode();
+                if (this.Ip != null)
+                    hashCode = hashCode * 59 + this.Ip.GetHashCode();
                 if (this.Ports != null)
                     hashCode = hashCode * 59 + this.Ports.GetHashCode();
                 if (this.TcpProxy != null)

@@ -535,6 +535,12 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         [JsonProperty("server_type", NullValueHandling = NullValueHandling.Ignore)]
         public ServerTypeEnum ServerType { get; set; }
         /// <summary>
+        /// 接口型VLAN场景服务端IPv4地址或域名
+        /// </summary>
+        [JsonProperty("ip", NullValueHandling = NullValueHandling.Ignore)]
+        public string Ip { get; set; }
+
+        /// <summary>
         /// 服务开放的端口映射列表，详细内容请参见表4-10。 同一个终端节点服务下，不允许重复的端口映射。若多个终端节点服务共用一个port_id， 则终端节点服务之间的所有端口映射的server_port和protocol的组合不能重复， 单次最多添加200个。
         /// </summary>
         [JsonProperty("ports", NullValueHandling = NullValueHandling.Ignore)]
@@ -546,7 +552,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         [JsonProperty("tcp_proxy", NullValueHandling = NullValueHandling.Ignore)]
         public TcpProxyEnum TcpProxy { get; set; }
         /// <summary>
-        /// 资源标签列表。同一个终端节点服务最多可添加10个标签。
+        /// 资源标签列表。同一个终端节点服务最多可添加20个标签。
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<TagList> Tags { get; set; }
@@ -577,6 +583,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
             sb.Append("  approvalEnabled: ").Append(ApprovalEnabled).Append("\n");
             sb.Append("  serviceType: ").Append(ServiceType).Append("\n");
             sb.Append("  serverType: ").Append(ServerType).Append("\n");
+            sb.Append("  ip: ").Append(Ip).Append("\n");
             sb.Append("  ports: ").Append(Ports).Append("\n");
             sb.Append("  tcpProxy: ").Append(TcpProxy).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
@@ -634,6 +641,11 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                     this.ServerType.Equals(input.ServerType))
                 ) && 
                 (
+                    this.Ip == input.Ip ||
+                    (this.Ip != null &&
+                    this.Ip.Equals(input.Ip))
+                ) && 
+                (
                     this.Ports == input.Ports ||
                     this.Ports != null &&
                     input.Ports != null &&
@@ -682,6 +694,8 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                     hashCode = hashCode * 59 + this.ServiceType.GetHashCode();
                 if (this.ServerType != null)
                     hashCode = hashCode * 59 + this.ServerType.GetHashCode();
+                if (this.Ip != null)
+                    hashCode = hashCode * 59 + this.Ip.GetHashCode();
                 if (this.Ports != null)
                     hashCode = hashCode * 59 + this.Ports.GetHashCode();
                 if (this.TcpProxy != null)

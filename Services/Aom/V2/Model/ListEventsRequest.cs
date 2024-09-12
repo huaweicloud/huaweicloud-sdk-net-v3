@@ -145,6 +145,20 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
+        /// 不填默认值为1000
+        /// </summary>
+        [SDKProperty("limit", IsQuery = true)]
+        [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Limit { get; set; }
+
+        /// <summary>
+        /// 分页标记，初始为0，后续值为返回体中的next_marker
+        /// </summary>
+        [SDKProperty("marker", IsQuery = true)]
+        [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
+        public string Marker { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [SDKProperty("body", IsBody = true)]
@@ -162,6 +176,8 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
             sb.Append("class ListEventsRequest {\n");
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  limit: ").Append(Limit).Append("\n");
+            sb.Append("  marker: ").Append(Marker).Append("\n");
             sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -195,6 +211,16 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
                     this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
                 ) && 
                 (
+                    this.Limit == input.Limit ||
+                    (this.Limit != null &&
+                    this.Limit.Equals(input.Limit))
+                ) && 
+                (
+                    this.Marker == input.Marker ||
+                    (this.Marker != null &&
+                    this.Marker.Equals(input.Marker))
+                ) && 
+                (
                     this.Body == input.Body ||
                     (this.Body != null &&
                     this.Body.Equals(input.Body))
@@ -213,6 +239,10 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
                     hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.EnterpriseProjectId != null)
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.Limit != null)
+                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Marker != null)
+                    hashCode = hashCode * 59 + this.Marker.GetHashCode();
                 if (this.Body != null)
                     hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;

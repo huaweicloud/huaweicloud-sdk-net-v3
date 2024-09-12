@@ -184,6 +184,12 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
+        /// <summary>
+        /// 接口型VLAN场景服务端IPv4地址或域名
+        /// </summary>
+        [JsonProperty("ip", NullValueHandling = NullValueHandling.Ignore)]
+        public string Ip { get; set; }
+
 
 
         /// <summary>
@@ -199,6 +205,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
             sb.Append("  portId: ").Append(PortId).Append("\n");
             sb.Append("  tcpProxy: ").Append(TcpProxy).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
+            sb.Append("  ip: ").Append(Ip).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -250,6 +257,11 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
+                ) && 
+                (
+                    this.Ip == input.Ip ||
+                    (this.Ip != null &&
+                    this.Ip.Equals(input.Ip))
                 );
         }
 
@@ -273,6 +285,8 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                     hashCode = hashCode * 59 + this.TcpProxy.GetHashCode();
                 if (this.Description != null)
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.Ip != null)
+                    hashCode = hashCode * 59 + this.Ip.GetHashCode();
                 return hashCode;
             }
         }
