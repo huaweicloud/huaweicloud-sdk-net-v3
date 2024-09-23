@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
     public class ListResourceTagsRequest 
     {
         /// <summary>
-        /// 资源类型 organizations:policies服务策略 organizations:ous组织OU organizations:accounts账号信息 organizations:roots根
+        /// 资源类型。枚举值：organizations:policies（服务策略）、organizations:ous（组织OU）、organizations:accounts（账号信息） 、organizations:roots：（根）。
         /// </summary>
-        /// <value>资源类型 organizations:policies服务策略 organizations:ous组织OU organizations:accounts账号信息 organizations:roots根</value>
+        /// <value>资源类型。枚举值：organizations:policies（服务策略）、organizations:ous（组织OU）、organizations:accounts（账号信息） 、organizations:roots：（根）。</value>
         [JsonConverter(typeof(EnumClassConverter<ResourceTypeEnum>))]
         public class ResourceTypeEnum
         {
@@ -144,7 +144,14 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
 
 
         /// <summary>
-        /// 资源类型 organizations:policies服务策略 organizations:ous组织OU organizations:accounts账号信息 organizations:roots根
+        /// 如果正在使用临时安全凭据，则此header是必需的，该值是临时安全凭据的安全令牌（会话令牌）。
+        /// </summary>
+        [SDKProperty("X-Security-Token", IsHeader = true)]
+        [JsonProperty("X-Security-Token", NullValueHandling = NullValueHandling.Ignore)]
+        public string XSecurityToken { get; set; }
+
+        /// <summary>
+        /// 资源类型。枚举值：organizations:policies（服务策略）、organizations:ous（组织OU）、organizations:accounts（账号信息） 、organizations:roots：（根）。
         /// </summary>
         [SDKProperty("resource_type", IsPath = true)]
         [JsonProperty("resource_type", NullValueHandling = NullValueHandling.Ignore)]
@@ -158,6 +165,7 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListResourceTagsRequest {\n");
+            sb.Append("  xSecurityToken: ").Append(XSecurityToken).Append("\n");
             sb.Append("  resourceType: ").Append(ResourceType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -181,6 +189,11 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
 
             return 
                 (
+                    this.XSecurityToken == input.XSecurityToken ||
+                    (this.XSecurityToken != null &&
+                    this.XSecurityToken.Equals(input.XSecurityToken))
+                ) && 
+                (
                     this.ResourceType == input.ResourceType ||
                     (this.ResourceType != null &&
                     this.ResourceType.Equals(input.ResourceType))
@@ -195,6 +208,8 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.XSecurityToken != null)
+                    hashCode = hashCode * 59 + this.XSecurityToken.GetHashCode();
                 if (this.ResourceType != null)
                     hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
                 return hashCode;

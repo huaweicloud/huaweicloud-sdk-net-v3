@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         public string Id { get; set; }
 
         /// <summary>
-        /// 实体的类型，account:账户，organizational_unit:组织单元，root:根。
+        /// 实体的类型。account：账号；organizational_unit：组织单元；root：根。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }

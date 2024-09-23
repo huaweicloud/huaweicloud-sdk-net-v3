@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Organizations.V1.Model
 {
     /// <summary>
-    /// 包含有关组织的详细信息。组织是账号集合，使用合并计费集中管理，由组织单元构成的层次结构，并通过策略控制。
+    /// 包含有关组织的详细信息。组织是账号集合，由组织单元构成的层次结构，并通过策略控制。
     /// </summary>
     public class OrganizationDto 
     {

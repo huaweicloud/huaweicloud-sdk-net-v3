@@ -64,6 +64,12 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         [JsonProperty("trust_domain_name", NullValueHandling = NullValueHandling.Ignore)]
         public string TrustDomainName { get; set; }
 
+        /// <summary>
+        /// 委托URN。
+        /// </summary>
+        [JsonProperty("agency_urn", NullValueHandling = NullValueHandling.Ignore)]
+        public string AgencyUrn { get; set; }
+
 
 
         /// <summary>
@@ -81,6 +87,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  trustDomainId: ").Append(TrustDomainId).Append("\n");
             sb.Append("  trustDomainName: ").Append(TrustDomainName).Append("\n");
+            sb.Append("  agencyUrn: ").Append(AgencyUrn).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -141,6 +148,11 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
                     this.TrustDomainName == input.TrustDomainName ||
                     (this.TrustDomainName != null &&
                     this.TrustDomainName.Equals(input.TrustDomainName))
+                ) && 
+                (
+                    this.AgencyUrn == input.AgencyUrn ||
+                    (this.AgencyUrn != null &&
+                    this.AgencyUrn.Equals(input.AgencyUrn))
                 );
         }
 
@@ -168,6 +180,8 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
                     hashCode = hashCode * 59 + this.TrustDomainId.GetHashCode();
                 if (this.TrustDomainName != null)
                     hashCode = hashCode * 59 + this.TrustDomainName.GetHashCode();
+                if (this.AgencyUrn != null)
+                    hashCode = hashCode * 59 + this.AgencyUrn.GetHashCode();
                 return hashCode;
             }
         }

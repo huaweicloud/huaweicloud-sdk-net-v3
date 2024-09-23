@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// 事件或者告警详情。
         /// </summary>
         [JsonProperty("events", NullValueHandling = NullValueHandling.Ignore)]
-        public List<EventModel> Events { get; set; }
+        public List<ListEventModel> Events { get; set; }
 
         /// <summary>
         /// 

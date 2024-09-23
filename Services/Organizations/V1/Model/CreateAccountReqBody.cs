@@ -41,6 +41,12 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         public string AgencyName { get; set; }
 
         /// <summary>
+        /// 描述信息。
+        /// </summary>
+        [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
+        public string Description { get; set; }
+
+        /// <summary>
         /// 要绑定到新创建的账号的标签列表。
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
@@ -59,6 +65,7 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
             sb.Append("  email: ").Append(Email).Append("\n");
             sb.Append("  phone: ").Append(Phone).Append("\n");
             sb.Append("  agencyName: ").Append(AgencyName).Append("\n");
+            sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -102,6 +109,11 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
                     this.AgencyName.Equals(input.AgencyName))
                 ) && 
                 (
+                    this.Description == input.Description ||
+                    (this.Description != null &&
+                    this.Description.Equals(input.Description))
+                ) && 
+                (
                     this.Tags == input.Tags ||
                     this.Tags != null &&
                     input.Tags != null &&
@@ -125,6 +137,8 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
                     hashCode = hashCode * 59 + this.Phone.GetHashCode();
                 if (this.AgencyName != null)
                     hashCode = hashCode * 59 + this.AgencyName.GetHashCode();
+                if (this.Description != null)
+                    hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.Tags != null)
                     hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 return hashCode;

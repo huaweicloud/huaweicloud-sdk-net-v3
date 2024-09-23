@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// 当前页事件、告警总数
         /// </summary>
         [JsonProperty("current_count", NullValueHandling = NullValueHandling.Ignore)]
-        public string CurrentCount { get; set; }
+        public int? CurrentCount { get; set; }
 
         /// <summary>
         /// 前一个marker

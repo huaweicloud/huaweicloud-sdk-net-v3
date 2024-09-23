@@ -126,6 +126,13 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
 
 
         /// <summary>
+        /// 如果正在使用临时安全凭据，则此header是必需的，该值是临时安全凭据的安全令牌（会话令牌）。
+        /// </summary>
+        [SDKProperty("X-Security-Token", IsHeader = true)]
+        [JsonProperty("X-Security-Token", NullValueHandling = NullValueHandling.Ignore)]
+        public string XSecurityToken { get; set; }
+
+        /// <summary>
         /// 账号的唯一标识符（ID）。当前还不支持指定根、组织单元。
         /// </summary>
         [SDKProperty("entity_id", IsQuery = true)]
@@ -147,6 +154,7 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ShowEffectivePoliciesRequest {\n");
+            sb.Append("  xSecurityToken: ").Append(XSecurityToken).Append("\n");
             sb.Append("  entityId: ").Append(EntityId).Append("\n");
             sb.Append("  policyType: ").Append(PolicyType).Append("\n");
             sb.Append("}\n");
@@ -171,6 +179,11 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
 
             return 
                 (
+                    this.XSecurityToken == input.XSecurityToken ||
+                    (this.XSecurityToken != null &&
+                    this.XSecurityToken.Equals(input.XSecurityToken))
+                ) && 
+                (
                     this.EntityId == input.EntityId ||
                     (this.EntityId != null &&
                     this.EntityId.Equals(input.EntityId))
@@ -190,6 +203,8 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.XSecurityToken != null)
+                    hashCode = hashCode * 59 + this.XSecurityToken.GetHashCode();
                 if (this.EntityId != null)
                     hashCode = hashCode * 59 + this.EntityId.GetHashCode();
                 if (this.PolicyType != null)

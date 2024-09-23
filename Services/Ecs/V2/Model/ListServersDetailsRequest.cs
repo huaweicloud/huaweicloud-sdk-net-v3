@@ -100,6 +100,13 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         [JsonProperty("server_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ServerId { get; set; }
 
+        /// <summary>
+        /// 以单页最后一条server的id作为分页标记。
+        /// </summary>
+        [SDKProperty("marker", IsQuery = true)]
+        [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
+        public string Marker { get; set; }
+
 
 
         /// <summary>
@@ -121,6 +128,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  ipEq: ").Append(IpEq).Append("\n");
             sb.Append("  serverId: ").Append(ServerId).Append("\n");
+            sb.Append("  marker: ").Append(Marker).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -201,6 +209,11 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     this.ServerId == input.ServerId ||
                     (this.ServerId != null &&
                     this.ServerId.Equals(input.ServerId))
+                ) && 
+                (
+                    this.Marker == input.Marker ||
+                    (this.Marker != null &&
+                    this.Marker.Equals(input.Marker))
                 );
         }
 
@@ -236,6 +249,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                     hashCode = hashCode * 59 + this.IpEq.GetHashCode();
                 if (this.ServerId != null)
                     hashCode = hashCode * 59 + this.ServerId.GetHashCode();
+                if (this.Marker != null)
+                    hashCode = hashCode * 59 + this.Marker.GetHashCode();
                 return hashCode;
             }
         }

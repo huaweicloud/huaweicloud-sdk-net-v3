@@ -71,10 +71,16 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string PrivateKey { get; set; }
 
         /// <summary>
-        /// 证书类型（0为自有证书 ；1为托管证书，此时不必不传入证书内容和私钥，自动根据证书名称匹配；不传默认为自有证书）
+        /// 证书类型（0为自有证书；2为SCM证书；不传默认为自有证书）
         /// </summary>
         [JsonProperty("certificate_type", NullValueHandling = NullValueHandling.Ignore)]
         public int? CertificateType { get; set; }
+
+        /// <summary>
+        /// SCM证书id
+        /// </summary>
+        [JsonProperty("scm_certificate_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ScmCertificateId { get; set; }
 
 
 
@@ -95,6 +101,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             sb.Append("  certificate: ").Append(Certificate).Append("\n");
             sb.Append("  privateKey: ").Append(PrivateKey).Append("\n");
             sb.Append("  certificateType: ").Append(CertificateType).Append("\n");
+            sb.Append("  scmCertificateId: ").Append(ScmCertificateId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -165,6 +172,11 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     this.CertificateType == input.CertificateType ||
                     (this.CertificateType != null &&
                     this.CertificateType.Equals(input.CertificateType))
+                ) && 
+                (
+                    this.ScmCertificateId == input.ScmCertificateId ||
+                    (this.ScmCertificateId != null &&
+                    this.ScmCertificateId.Equals(input.ScmCertificateId))
                 );
         }
 
@@ -196,6 +208,8 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     hashCode = hashCode * 59 + this.PrivateKey.GetHashCode();
                 if (this.CertificateType != null)
                     hashCode = hashCode * 59 + this.CertificateType.GetHashCode();
+                if (this.ScmCertificateId != null)
+                    hashCode = hashCode * 59 + this.ScmCertificateId.GetHashCode();
                 return hashCode;
             }
         }

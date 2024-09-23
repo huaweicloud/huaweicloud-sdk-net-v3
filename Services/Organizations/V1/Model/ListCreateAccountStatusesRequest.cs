@@ -139,6 +139,13 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
 
 
         /// <summary>
+        /// 如果正在使用临时安全凭据，则此header是必需的，该值是临时安全凭据的安全令牌（会话令牌）。
+        /// </summary>
+        [SDKProperty("X-Security-Token", IsHeader = true)]
+        [JsonProperty("X-Security-Token", NullValueHandling = NullValueHandling.Ignore)]
+        public string XSecurityToken { get; set; }
+
+        /// <summary>
         /// 要包含在响应中的一个或多个状态的列表。如果此参数不存在，则所有请求都包含在响应中。
         /// </summary>
         [SDKProperty("states", IsQuery = true)]
@@ -167,6 +174,7 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListCreateAccountStatusesRequest {\n");
+            sb.Append("  xSecurityToken: ").Append(XSecurityToken).Append("\n");
             sb.Append("  states: ").Append(States).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  marker: ").Append(Marker).Append("\n");
@@ -191,6 +199,11 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
                 return false;
 
             return 
+                (
+                    this.XSecurityToken == input.XSecurityToken ||
+                    (this.XSecurityToken != null &&
+                    this.XSecurityToken.Equals(input.XSecurityToken))
+                ) && 
                 (
                     this.States == input.States ||
                     this.States != null &&
@@ -217,6 +230,8 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.XSecurityToken != null)
+                    hashCode = hashCode * 59 + this.XSecurityToken.GetHashCode();
                 if (this.States != null)
                     hashCode = hashCode * 59 + this.States.GetHashCode();
                 if (this.Limit != null)

@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
     {
 
         /// <summary>
-        /// 
+        /// 云服务名称。
         /// </summary>
         [JsonProperty("services", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Services { get; set; }

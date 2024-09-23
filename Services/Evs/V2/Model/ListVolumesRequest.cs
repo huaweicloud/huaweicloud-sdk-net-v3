@@ -142,6 +142,13 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         [JsonProperty("server_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ServerId { get; set; }
 
+        /// <summary>
+        /// 自动快照策略ID
+        /// </summary>
+        [SDKProperty("snapshot_policy_id", IsQuery = true)]
+        [JsonProperty("snapshot_policy_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string SnapshotPolicyId { get; set; }
+
 
 
         /// <summary>
@@ -169,6 +176,7 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
             sb.Append("  ids: ").Append(Ids).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  serverId: ").Append(ServerId).Append("\n");
+            sb.Append("  snapshotPolicyId: ").Append(SnapshotPolicyId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -279,6 +287,11 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
                     this.ServerId == input.ServerId ||
                     (this.ServerId != null &&
                     this.ServerId.Equals(input.ServerId))
+                ) && 
+                (
+                    this.SnapshotPolicyId == input.SnapshotPolicyId ||
+                    (this.SnapshotPolicyId != null &&
+                    this.SnapshotPolicyId.Equals(input.SnapshotPolicyId))
                 );
         }
 
@@ -326,6 +339,8 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
                     hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.ServerId != null)
                     hashCode = hashCode * 59 + this.ServerId.GetHashCode();
+                if (this.SnapshotPolicyId != null)
+                    hashCode = hashCode * 59 + this.SnapshotPolicyId.GetHashCode();
                 return hashCode;
             }
         }

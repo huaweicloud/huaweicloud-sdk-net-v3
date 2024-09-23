@@ -1013,6 +1013,32 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
+        /// 查询数据库列表
+        ///
+        /// 查询数据库列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListDatabasesResponse ListDatabases(ListDatabasesRequest listDatabasesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listDatabasesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/databases", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDatabasesRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListDatabasesResponse>(response);
+        }
+
+        public SyncInvoker<ListDatabasesResponse> ListDatabasesInvoker(ListDatabasesRequest listDatabasesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listDatabasesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/databases", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDatabasesRequest);
+            return new SyncInvoker<ListDatabasesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDatabasesResponse>);
+        }
+        
+        /// <summary>
         /// 查询数据库版本信息
         ///
         /// 查询指定实例类型的数据库版本信息。

@@ -29,13 +29,13 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         public string Urn { get; set; }
 
         /// <summary>
-        /// 账号加入组织的方式,invited：邀请加入，created：创建加入。
+        /// 账号加入组织的方式。invited：邀请加入，created：创建加入。
         /// </summary>
         [JsonProperty("join_method", NullValueHandling = NullValueHandling.Ignore)]
         public string JoinMethod { get; set; }
 
         /// <summary>
-        /// 账号当前的状态,ACTIVE 有效| SUSPENDED 静默| PENDING_CLOSURE 关闭中
+        /// 账号当前的状态。active：有效； suspended：已关闭； pending_closure：关闭中。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
@@ -52,6 +52,30 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
+        /// <summary>
+        /// 手机号码
+        /// </summary>
+        [JsonProperty("mobile_phone", NullValueHandling = NullValueHandling.Ignore)]
+        public string MobilePhone { get; set; }
+
+        /// <summary>
+        /// 手机号前缀。
+        /// </summary>
+        [JsonProperty("intl_number_prefix", NullValueHandling = NullValueHandling.Ignore)]
+        public string IntlNumberPrefix { get; set; }
+
+        /// <summary>
+        /// 与此账号关联的电子邮件地址。
+        /// </summary>
+        [JsonProperty("email", NullValueHandling = NullValueHandling.Ignore)]
+        public string Email { get; set; }
+
+        /// <summary>
+        /// 描述信息。
+        /// </summary>
+        [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
+        public string Description { get; set; }
+
 
 
         /// <summary>
@@ -67,6 +91,10 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  joinedAt: ").Append(JoinedAt).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
+            sb.Append("  mobilePhone: ").Append(MobilePhone).Append("\n");
+            sb.Append("  intlNumberPrefix: ").Append(IntlNumberPrefix).Append("\n");
+            sb.Append("  email: ").Append(Email).Append("\n");
+            sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -117,6 +145,26 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
+                ) && 
+                (
+                    this.MobilePhone == input.MobilePhone ||
+                    (this.MobilePhone != null &&
+                    this.MobilePhone.Equals(input.MobilePhone))
+                ) && 
+                (
+                    this.IntlNumberPrefix == input.IntlNumberPrefix ||
+                    (this.IntlNumberPrefix != null &&
+                    this.IntlNumberPrefix.Equals(input.IntlNumberPrefix))
+                ) && 
+                (
+                    this.Email == input.Email ||
+                    (this.Email != null &&
+                    this.Email.Equals(input.Email))
+                ) && 
+                (
+                    this.Description == input.Description ||
+                    (this.Description != null &&
+                    this.Description.Equals(input.Description))
                 );
         }
 
@@ -140,6 +188,14 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
                     hashCode = hashCode * 59 + this.JoinedAt.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.MobilePhone != null)
+                    hashCode = hashCode * 59 + this.MobilePhone.GetHashCode();
+                if (this.IntlNumberPrefix != null)
+                    hashCode = hashCode * 59 + this.IntlNumberPrefix.GetHashCode();
+                if (this.Email != null)
+                    hashCode = hashCode * 59 + this.Email.GetHashCode();
+                if (this.Description != null)
+                    hashCode = hashCode * 59 + this.Description.GetHashCode();
                 return hashCode;
             }
         }

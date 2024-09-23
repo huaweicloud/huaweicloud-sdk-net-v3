@@ -29,10 +29,16 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string CertificateType { get; set; }
 
         /// <summary>
-        /// 证书来源，1：华为云托管证书，0：自有证书。
+        /// 证书来源，1：华为云托管证书，0：自有证书。2：SCM证书。
         /// </summary>
         [JsonProperty("certificate_source", NullValueHandling = NullValueHandling.Ignore)]
         public int? CertificateSource { get; set; }
+
+        /// <summary>
+        /// SCM证书id
+        /// </summary>
+        [JsonProperty("scm_certificate_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ScmCertificateId { get; set; }
 
         /// <summary>
         /// 证书名字。
@@ -94,6 +100,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             sb.Append("  httpsStatus: ").Append(HttpsStatus).Append("\n");
             sb.Append("  certificateType: ").Append(CertificateType).Append("\n");
             sb.Append("  certificateSource: ").Append(CertificateSource).Append("\n");
+            sb.Append("  scmCertificateId: ").Append(ScmCertificateId).Append("\n");
             sb.Append("  certificateName: ").Append(CertificateName).Append("\n");
             sb.Append("  certificateValue: ").Append(CertificateValue).Append("\n");
             sb.Append("  expireTime: ").Append(ExpireTime).Append("\n");
@@ -137,6 +144,11 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     this.CertificateSource == input.CertificateSource ||
                     (this.CertificateSource != null &&
                     this.CertificateSource.Equals(input.CertificateSource))
+                ) && 
+                (
+                    this.ScmCertificateId == input.ScmCertificateId ||
+                    (this.ScmCertificateId != null &&
+                    this.ScmCertificateId.Equals(input.ScmCertificateId))
                 ) && 
                 (
                     this.CertificateName == input.CertificateName ||
@@ -195,6 +207,8 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                     hashCode = hashCode * 59 + this.CertificateType.GetHashCode();
                 if (this.CertificateSource != null)
                     hashCode = hashCode * 59 + this.CertificateSource.GetHashCode();
+                if (this.ScmCertificateId != null)
+                    hashCode = hashCode * 59 + this.ScmCertificateId.GetHashCode();
                 if (this.CertificateName != null)
                     hashCode = hashCode * 59 + this.CertificateName.GetHashCode();
                 if (this.CertificateValue != null)

@@ -17,6 +17,18 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
     {
 
         /// <summary>
+        /// 证书来源，0：自有证书。2：SCM证书。
+        /// </summary>
+        [JsonProperty("certificate_source", NullValueHandling = NullValueHandling.Ignore)]
+        public int? CertificateSource { get; set; }
+
+        /// <summary>
+        /// SCM证书id
+        /// </summary>
+        [JsonProperty("scm_certificate_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ScmCertificateId { get; set; }
+
+        /// <summary>
         /// 证书类型，server：国际证书；server_sm：国密证书。
         /// </summary>
         [JsonProperty("certificate_type", NullValueHandling = NullValueHandling.Ignore)]
@@ -61,6 +73,8 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class CertificatesPutBody {\n");
+            sb.Append("  certificateSource: ").Append(CertificateSource).Append("\n");
+            sb.Append("  scmCertificateId: ").Append(ScmCertificateId).Append("\n");
             sb.Append("  certificateType: ").Append(CertificateType).Append("\n");
             sb.Append("  certificateName: ").Append(CertificateName).Append("\n");
             sb.Append("  certificateValue: ").Append(CertificateValue).Append("\n");
@@ -88,6 +102,16 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                 return false;
 
             return 
+                (
+                    this.CertificateSource == input.CertificateSource ||
+                    (this.CertificateSource != null &&
+                    this.CertificateSource.Equals(input.CertificateSource))
+                ) && 
+                (
+                    this.ScmCertificateId == input.ScmCertificateId ||
+                    (this.ScmCertificateId != null &&
+                    this.ScmCertificateId.Equals(input.ScmCertificateId))
+                ) && 
                 (
                     this.CertificateType == input.CertificateType ||
                     (this.CertificateType != null &&
@@ -128,6 +152,10 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.CertificateSource != null)
+                    hashCode = hashCode * 59 + this.CertificateSource.GetHashCode();
+                if (this.ScmCertificateId != null)
+                    hashCode = hashCode * 59 + this.ScmCertificateId.GetHashCode();
                 if (this.CertificateType != null)
                     hashCode = hashCode * 59 + this.CertificateType.GetHashCode();
                 if (this.CertificateName != null)

@@ -41,6 +41,12 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         public DateTime? CreatedAt { get; set; }
 
         /// <summary>
+        /// 邀请（握手）过期的日期和时间。
+        /// </summary>
+        [JsonProperty("expired_at", NullValueHandling = NullValueHandling.Ignore)]
+        public DateTime? ExpiredAt { get; set; }
+
+        /// <summary>
         /// 组织管理账号的唯一标识符（ID）。
         /// </summary>
         [JsonProperty("management_account_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -89,6 +95,7 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
             sb.Append("  urn: ").Append(Urn).Append("\n");
             sb.Append("  updatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
+            sb.Append("  expiredAt: ").Append(ExpiredAt).Append("\n");
             sb.Append("  managementAccountId: ").Append(ManagementAccountId).Append("\n");
             sb.Append("  managementAccountName: ").Append(ManagementAccountName).Append("\n");
             sb.Append("  organizationId: ").Append(OrganizationId).Append("\n");
@@ -135,6 +142,11 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
                     this.CreatedAt == input.CreatedAt ||
                     (this.CreatedAt != null &&
                     this.CreatedAt.Equals(input.CreatedAt))
+                ) && 
+                (
+                    this.ExpiredAt == input.ExpiredAt ||
+                    (this.ExpiredAt != null &&
+                    this.ExpiredAt.Equals(input.ExpiredAt))
                 ) && 
                 (
                     this.ManagementAccountId == input.ManagementAccountId ||
@@ -184,6 +196,8 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
                     hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
                 if (this.CreatedAt != null)
                     hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.ExpiredAt != null)
+                    hashCode = hashCode * 59 + this.ExpiredAt.GetHashCode();
                 if (this.ManagementAccountId != null)
                     hashCode = hashCode * 59 + this.ManagementAccountId.GetHashCode();
                 if (this.ManagementAccountName != null)

@@ -11,19 +11,19 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Organizations.V1.Model
 {
     /// <summary>
-    /// A quota of organization.
+    /// 被添加到标签策略强制执行的资源类型。
     /// </summary>
     public class TagPolicyServiceDto 
     {
 
         /// <summary>
-        /// The service name of the service.
+        /// 服务名称。
         /// </summary>
         [JsonProperty("service_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ServiceName { get; set; }
 
         /// <summary>
-        /// 
+        /// 资源类型。
         /// </summary>
         [JsonProperty("resource_types", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> ResourceTypes { get; set; }

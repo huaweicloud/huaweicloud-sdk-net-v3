@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
     public class ShowEffectivePoliciesResponse : SdkResponse
     {
         /// <summary>
-        /// 策略类型的名称，tag_policy标签策略。
+        /// 策略类型的名称。tag_policy标签策略。
         /// </summary>
-        /// <value>策略类型的名称，tag_policy标签策略。</value>
+        /// <value>策略类型的名称。tag_policy标签策略。</value>
         [JsonConverter(typeof(EnumClassConverter<PolicyTypeEnum>))]
         public class PolicyTypeEnum
         {
@@ -138,7 +138,7 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         public string PolicyContent { get; set; }
 
         /// <summary>
-        /// 策略类型的名称，tag_policy标签策略。
+        /// 策略类型的名称。tag_policy标签策略。
         /// </summary>
         [JsonProperty("policy_type", NullValueHandling = NullValueHandling.Ignore)]
         public PolicyTypeEnum PolicyType { get; set; }

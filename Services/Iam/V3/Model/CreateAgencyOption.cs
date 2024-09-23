@@ -15,121 +15,6 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
     /// </summary>
     public class CreateAgencyOption 
     {
-        /// <summary>
-        /// 委托的期限。取值为“FOREVER\&quot;表示委托的期限为永久，取值为\&quot;ONEDAY\&quot;表示委托的期限为一天。不填写该参数则默认为\&quot;null\&quot;也表示委托的期限为永久。
-        /// </summary>
-        /// <value>委托的期限。取值为“FOREVER\&quot;表示委托的期限为永久，取值为\&quot;ONEDAY\&quot;表示委托的期限为一天。不填写该参数则默认为\&quot;null\&quot;也表示委托的期限为永久。</value>
-        [JsonConverter(typeof(EnumClassConverter<DurationEnum>))]
-        public class DurationEnum
-        {
-            /// <summary>
-            /// Enum FOREVER for value: FOREVER
-            /// </summary>
-            public static readonly DurationEnum FOREVER = new DurationEnum("FOREVER");
-
-            /// <summary>
-            /// Enum ONEDAY for value: ONEDAY
-            /// </summary>
-            public static readonly DurationEnum ONEDAY = new DurationEnum("ONEDAY");
-
-            private static readonly Dictionary<string, DurationEnum> StaticFields =
-            new Dictionary<string, DurationEnum>()
-            {
-                { "FOREVER", FOREVER },
-                { "ONEDAY", ONEDAY },
-            };
-
-            private string _value;
-
-            public DurationEnum()
-            {
-
-            }
-
-            public DurationEnum(string value)
-            {
-                _value = value;
-            }
-
-            public static DurationEnum FromValue(string value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public string GetValue()
-            {
-                return _value;
-            }
-
-            public override string ToString()
-            {
-                return $"{_value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this._value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as DurationEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(DurationEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
-            }
-
-            public static bool operator ==(DurationEnum a, DurationEnum b)
-            {
-                if (System.Object.ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(DurationEnum a, DurationEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
 
         /// <summary>
         /// 委托名，长度不大于64位。
@@ -162,10 +47,11 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// 委托的期限。取值为“FOREVER\&quot;表示委托的期限为永久，取值为\&quot;ONEDAY\&quot;表示委托的期限为一天。不填写该参数则默认为\&quot;null\&quot;也表示委托的期限为永久。
+        /// description: 委托的期限，单位为“天”。默认为FOREVER。取值为“FOREVER\&quot;表示委托的期限为永久，取值为\&quot;ONEDAY\&quot;表示委托的期限为一天,取值为自定义天数表示委托的期限为有限天数，如20。四个参数至少填写一个。
         /// </summary>
         [JsonProperty("duration", NullValueHandling = NullValueHandling.Ignore)]
-        public DurationEnum Duration { get; set; }
+        public string Duration { get; set; }
+
 
 
         /// <summary>

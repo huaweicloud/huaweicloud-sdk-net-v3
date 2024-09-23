@@ -17,11 +17,25 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
     {
 
         /// <summary>
+        /// 如果正在使用临时安全凭据，则此header是必需的，该值是临时安全凭据的安全令牌（会话令牌）。
+        /// </summary>
+        [SDKProperty("X-Security-Token", IsHeader = true)]
+        [JsonProperty("X-Security-Token", NullValueHandling = NullValueHandling.Ignore)]
+        public string XSecurityToken { get; set; }
+
+        /// <summary>
         /// 父节点（根或组织单元）的唯一标识符（ID）。
         /// </summary>
         [SDKProperty("parent_id", IsQuery = true)]
         [JsonProperty("parent_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ParentId { get; set; }
+
+        /// <summary>
+        /// 是否返回账号邮箱、手机号信息。若此参数为True，Limit最多200。
+        /// </summary>
+        [SDKProperty("with_register_contact_info", IsQuery = true)]
+        [JsonProperty("with_register_contact_info", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? WithRegisterContactInfo { get; set; }
 
         /// <summary>
         /// 页面中最大结果数量。
@@ -46,7 +60,9 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListAccountsRequest {\n");
+            sb.Append("  xSecurityToken: ").Append(XSecurityToken).Append("\n");
             sb.Append("  parentId: ").Append(ParentId).Append("\n");
+            sb.Append("  withRegisterContactInfo: ").Append(WithRegisterContactInfo).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  marker: ").Append(Marker).Append("\n");
             sb.Append("}\n");
@@ -71,9 +87,19 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
 
             return 
                 (
+                    this.XSecurityToken == input.XSecurityToken ||
+                    (this.XSecurityToken != null &&
+                    this.XSecurityToken.Equals(input.XSecurityToken))
+                ) && 
+                (
                     this.ParentId == input.ParentId ||
                     (this.ParentId != null &&
                     this.ParentId.Equals(input.ParentId))
+                ) && 
+                (
+                    this.WithRegisterContactInfo == input.WithRegisterContactInfo ||
+                    (this.WithRegisterContactInfo != null &&
+                    this.WithRegisterContactInfo.Equals(input.WithRegisterContactInfo))
                 ) && 
                 (
                     this.Limit == input.Limit ||
@@ -95,8 +121,12 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.XSecurityToken != null)
+                    hashCode = hashCode * 59 + this.XSecurityToken.GetHashCode();
                 if (this.ParentId != null)
                     hashCode = hashCode * 59 + this.ParentId.GetHashCode();
+                if (this.WithRegisterContactInfo != null)
+                    hashCode = hashCode * 59 + this.WithRegisterContactInfo.GetHashCode();
                 if (this.Limit != null)
                     hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.Marker != null)
