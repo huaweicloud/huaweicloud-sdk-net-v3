@@ -2309,7 +2309,7 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/auditlog-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setAuditlogPolicyRequest);
             var response = DoHttpRequestSync("PUT", request);
-            return JsonUtils.DeSerializeNull<SetAuditlogPolicyResponse>(response);
+            return JsonUtils.DeSerialize<SetAuditlogPolicyResponse>(response);
         }
 
         public SyncInvoker<SetAuditlogPolicyResponse> SetAuditlogPolicyInvoker(SetAuditlogPolicyRequest setAuditlogPolicyRequest)
@@ -2318,7 +2318,7 @@ namespace HuaweiCloud.SDK.Rds.V3
             urlParam.Add("instance_id", setAuditlogPolicyRequest.InstanceId.ToString());
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/auditlog-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setAuditlogPolicyRequest);
-            return new SyncInvoker<SetAuditlogPolicyResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<SetAuditlogPolicyResponse>);
+            return new SyncInvoker<SetAuditlogPolicyResponse>(this, "PUT", request, JsonUtils.DeSerialize<SetAuditlogPolicyResponse>);
         }
         
         /// <summary>

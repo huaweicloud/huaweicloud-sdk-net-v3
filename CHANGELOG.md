@@ -1,3 +1,148 @@
+# 3.1.114 2024-09-26
+
+### HuaweiCloud SDK CCE
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowNode**
+    - changes of response param
+      - `+ spec.rootVolume.iops`
+      - `+ spec.rootVolume.throughput`
+      - `+ spec.storage.storageSelectors.matchLabels.iops`
+      - `+ spec.storage.storageSelectors.matchLabels.throughput`
+  - **UpdateNode**
+    - changes of response param
+      - `+ spec.rootVolume.iops`
+      - `+ spec.rootVolume.throughput`
+      - `+ spec.storage.storageSelectors.matchLabels.iops`
+      - `+ spec.storage.storageSelectors.matchLabels.throughput`
+  - **DeleteNode**
+    - changes of response param
+      - `+ spec.rootVolume.iops`
+      - `+ spec.rootVolume.throughput`
+      - `+ spec.storage.storageSelectors.matchLabels.iops`
+      - `+ spec.storage.storageSelectors.matchLabels.throughput`
+  - **CreateNode**
+    - changes of request param
+      - `+ spec.rootVolume.iops`
+      - `+ spec.rootVolume.throughput`
+      - `+ spec.storage.storageSelectors.matchLabels.iops`
+      - `+ spec.storage.storageSelectors.matchLabels.throughput`
+    - changes of response param
+      - `+ spec.rootVolume.iops`
+      - `+ spec.rootVolume.throughput`
+      - `+ spec.storage.storageSelectors.matchLabels.iops`
+      - `+ spec.storage.storageSelectors.matchLabels.throughput`
+  - **ListNodes**
+    - changes of response param
+      - `+ items.spec.rootVolume.iops`
+      - `+ items.spec.rootVolume.throughput`
+      - `+ items.spec.storage.storageSelectors.matchLabels.iops`
+      - `+ items.spec.storage.storageSelectors.matchLabels.throughput`
+  - **ShowNodePool**
+    - changes of response param
+      - `+ spec.nodeTemplate.rootVolume.iops`
+      - `+ spec.nodeTemplate.rootVolume.throughput`
+      - `+ spec.nodeTemplate.storage.storageSelectors.matchLabels.iops`
+      - `+ spec.nodeTemplate.storage.storageSelectors.matchLabels.throughput`
+  - **UpdateNodePool**
+    - changes of response param
+      - `+ spec.nodeTemplate.rootVolume.iops`
+      - `+ spec.nodeTemplate.rootVolume.throughput`
+      - `+ spec.nodeTemplate.storage.storageSelectors.matchLabels.iops`
+      - `+ spec.nodeTemplate.storage.storageSelectors.matchLabels.throughput`
+  - **DeleteNodePool**
+    - changes of response param
+      - `+ spec.nodeTemplate.rootVolume.iops`
+      - `+ spec.nodeTemplate.rootVolume.throughput`
+      - `+ spec.nodeTemplate.storage.storageSelectors.matchLabels.iops`
+      - `+ spec.nodeTemplate.storage.storageSelectors.matchLabels.throughput`
+  - **AddNode**
+    - changes of request param
+      - `+ nodeList.spec.volumeConfig.storage.storageSelectors.matchLabels.iops`
+      - `+ nodeList.spec.volumeConfig.storage.storageSelectors.matchLabels.throughput`
+  - **ResetNode**
+    - changes of request param
+      - `+ nodeList.spec.volumeConfig.storage.storageSelectors.matchLabels.iops`
+      - `+ nodeList.spec.volumeConfig.storage.storageSelectors.matchLabels.throughput`
+  - **CreateNodePool**
+    - changes of request param
+      - `+ spec.nodeTemplate.rootVolume.iops`
+      - `+ spec.nodeTemplate.rootVolume.throughput`
+      - `+ spec.nodeTemplate.storage.storageSelectors.matchLabels.iops`
+      - `+ spec.nodeTemplate.storage.storageSelectors.matchLabels.throughput`
+    - changes of response param
+      - `+ spec.nodeTemplate.rootVolume.iops`
+      - `+ spec.nodeTemplate.rootVolume.throughput`
+      - `+ spec.nodeTemplate.storage.storageSelectors.matchLabels.iops`
+      - `+ spec.nodeTemplate.storage.storageSelectors.matchLabels.throughput`
+  - **ListNodePools**
+    - changes of response param
+      - `+ items.spec.nodeTemplate.rootVolume.iops`
+      - `+ items.spec.nodeTemplate.rootVolume.throughput`
+      - `+ items.spec.nodeTemplate.storage.storageSelectors.matchLabels.iops`
+      - `+ items.spec.nodeTemplate.storage.storageSelectors.matchLabels.throughput`
+
+### HuaweiCloud SDK CES
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateAlarmRules**
+    - changes of request param
+      - `+ tags`
+
+### HuaweiCloud SDK DDS
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ResizeInstance**
+    - changes of request param
+      - `+ resize.target_type: enum value [config,readonly]`
+
+### HuaweiCloud SDK Live
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the following APIs:
+    - `ListHarvestTask`
+    - `ModifyHarvestTask`
+    - `CreateHarvestTask`
+    - `DeleteHarvestTask`
+    - `UpdateHarvestJobStatus`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK VPCEP
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateEndpointService**
+    - changes of request param
+      - `+ snat_network_id`
+
 # 3.1.113 2024-09-23
 
 ### HuaweiCloud SDK AOM

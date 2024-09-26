@@ -568,6 +568,12 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         /// </summary>
         [JsonProperty("ip_version", NullValueHandling = NullValueHandling.Ignore)]
         public IpVersionEnum IpVersion { get; set; }
+        /// <summary>
+        /// 接口型snat的地址段，ip_version为ipv6时必选。创建服务时使用的VPC内的任意一个网络ID。当服务类型为VIP、VM、ELBV2类型时使用
+        /// </summary>
+        [JsonProperty("snat_network_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string SnatNetworkId { get; set; }
+
 
 
         /// <summary>
@@ -589,6 +595,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
             sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  ipVersion: ").Append(IpVersion).Append("\n");
+            sb.Append("  snatNetworkId: ").Append(SnatNetworkId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -671,6 +678,11 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                     this.IpVersion == input.IpVersion ||
                     (this.IpVersion != null &&
                     this.IpVersion.Equals(input.IpVersion))
+                ) && 
+                (
+                    this.SnatNetworkId == input.SnatNetworkId ||
+                    (this.SnatNetworkId != null &&
+                    this.SnatNetworkId.Equals(input.SnatNetworkId))
                 );
         }
 
@@ -706,6 +718,8 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.IpVersion != null)
                     hashCode = hashCode * 59 + this.IpVersion.GetHashCode();
+                if (this.SnatNetworkId != null)
+                    hashCode = hashCode * 59 + this.SnatNetworkId.GetHashCode();
                 return hashCode;
             }
         }

@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         public string NodeType { get; set; }
 
         /// <summary>
-        /// version数据库版本。DDS引擎取值为3.2, 3.4, 4.0。
+        /// version数据库版本。
         /// </summary>
         [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]
         public string Version { get; set; }

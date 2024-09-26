@@ -1,3 +1,148 @@
+# 3.1.114 2024-09-26
+
+### HuaweiCloud SDK CCE
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowNode**
+    - 响应参数变更
+      - `+ spec.rootVolume.iops`
+      - `+ spec.rootVolume.throughput`
+      - `+ spec.storage.storageSelectors.matchLabels.iops`
+      - `+ spec.storage.storageSelectors.matchLabels.throughput`
+  - **UpdateNode**
+    - 响应参数变更
+      - `+ spec.rootVolume.iops`
+      - `+ spec.rootVolume.throughput`
+      - `+ spec.storage.storageSelectors.matchLabels.iops`
+      - `+ spec.storage.storageSelectors.matchLabels.throughput`
+  - **DeleteNode**
+    - 响应参数变更
+      - `+ spec.rootVolume.iops`
+      - `+ spec.rootVolume.throughput`
+      - `+ spec.storage.storageSelectors.matchLabels.iops`
+      - `+ spec.storage.storageSelectors.matchLabels.throughput`
+  - **CreateNode**
+    - 请求参数变更
+      - `+ spec.rootVolume.iops`
+      - `+ spec.rootVolume.throughput`
+      - `+ spec.storage.storageSelectors.matchLabels.iops`
+      - `+ spec.storage.storageSelectors.matchLabels.throughput`
+    - 响应参数变更
+      - `+ spec.rootVolume.iops`
+      - `+ spec.rootVolume.throughput`
+      - `+ spec.storage.storageSelectors.matchLabels.iops`
+      - `+ spec.storage.storageSelectors.matchLabels.throughput`
+  - **ListNodes**
+    - 响应参数变更
+      - `+ items.spec.rootVolume.iops`
+      - `+ items.spec.rootVolume.throughput`
+      - `+ items.spec.storage.storageSelectors.matchLabels.iops`
+      - `+ items.spec.storage.storageSelectors.matchLabels.throughput`
+  - **ShowNodePool**
+    - 响应参数变更
+      - `+ spec.nodeTemplate.rootVolume.iops`
+      - `+ spec.nodeTemplate.rootVolume.throughput`
+      - `+ spec.nodeTemplate.storage.storageSelectors.matchLabels.iops`
+      - `+ spec.nodeTemplate.storage.storageSelectors.matchLabels.throughput`
+  - **UpdateNodePool**
+    - 响应参数变更
+      - `+ spec.nodeTemplate.rootVolume.iops`
+      - `+ spec.nodeTemplate.rootVolume.throughput`
+      - `+ spec.nodeTemplate.storage.storageSelectors.matchLabels.iops`
+      - `+ spec.nodeTemplate.storage.storageSelectors.matchLabels.throughput`
+  - **DeleteNodePool**
+    - 响应参数变更
+      - `+ spec.nodeTemplate.rootVolume.iops`
+      - `+ spec.nodeTemplate.rootVolume.throughput`
+      - `+ spec.nodeTemplate.storage.storageSelectors.matchLabels.iops`
+      - `+ spec.nodeTemplate.storage.storageSelectors.matchLabels.throughput`
+  - **AddNode**
+    - 请求参数变更
+      - `+ nodeList.spec.volumeConfig.storage.storageSelectors.matchLabels.iops`
+      - `+ nodeList.spec.volumeConfig.storage.storageSelectors.matchLabels.throughput`
+  - **ResetNode**
+    - 请求参数变更
+      - `+ nodeList.spec.volumeConfig.storage.storageSelectors.matchLabels.iops`
+      - `+ nodeList.spec.volumeConfig.storage.storageSelectors.matchLabels.throughput`
+  - **CreateNodePool**
+    - 请求参数变更
+      - `+ spec.nodeTemplate.rootVolume.iops`
+      - `+ spec.nodeTemplate.rootVolume.throughput`
+      - `+ spec.nodeTemplate.storage.storageSelectors.matchLabels.iops`
+      - `+ spec.nodeTemplate.storage.storageSelectors.matchLabels.throughput`
+    - 响应参数变更
+      - `+ spec.nodeTemplate.rootVolume.iops`
+      - `+ spec.nodeTemplate.rootVolume.throughput`
+      - `+ spec.nodeTemplate.storage.storageSelectors.matchLabels.iops`
+      - `+ spec.nodeTemplate.storage.storageSelectors.matchLabels.throughput`
+  - **ListNodePools**
+    - 响应参数变更
+      - `+ items.spec.nodeTemplate.rootVolume.iops`
+      - `+ items.spec.nodeTemplate.rootVolume.throughput`
+      - `+ items.spec.nodeTemplate.storage.storageSelectors.matchLabels.iops`
+      - `+ items.spec.nodeTemplate.storage.storageSelectors.matchLabels.throughput`
+
+### HuaweiCloud SDK CES
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateAlarmRules**
+    - 请求参数变更
+      - `+ tags`
+
+### HuaweiCloud SDK DDS
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ResizeInstance**
+    - 请求参数变更
+      - `+ resize.target_type: enum value [config,readonly]`
+
+### HuaweiCloud SDK Live
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持以下接口：
+    - `ListHarvestTask`
+    - `ModifyHarvestTask`
+    - `CreateHarvestTask`
+    - `DeleteHarvestTask`
+    - `UpdateHarvestJobStatus`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK VPCEP
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateEndpointService**
+    - 请求参数变更
+      - `+ snat_network_id`
+
 # 3.1.113 2024-09-23
 
 ### HuaweiCloud SDK AOM

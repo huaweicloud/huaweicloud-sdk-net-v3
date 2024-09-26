@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
     public class ResizeInstanceOption 
     {
         /// <summary>
-        /// 对象类型。 - 对于集群实例，该参数为必选。变更mongos节点规格时，取值为“mongos”；变更shard组规格时，取值为“shard”。 - 对于副本集和单节点实例，不传该参数。
+        /// 对象类型。 - 对于集群实例，该参数为必选。变更mongos节点规格时，取值为“mongos”；变更单个shard组规格、或者批量变更多个shard组规格时，取值为“shard”，变更config组规格时，取值为\&quot;config\&quot;。 - 对于副本集实例，不传该参数。变更readonly节点规格时,取值为“readonly”。 - 对于单节点实例，不传该参数。
         /// </summary>
-        /// <value>对象类型。 - 对于集群实例，该参数为必选。变更mongos节点规格时，取值为“mongos”；变更shard组规格时，取值为“shard”。 - 对于副本集和单节点实例，不传该参数。</value>
+        /// <value>对象类型。 - 对于集群实例，该参数为必选。变更mongos节点规格时，取值为“mongos”；变更单个shard组规格、或者批量变更多个shard组规格时，取值为“shard”，变更config组规格时，取值为\&quot;config\&quot;。 - 对于副本集实例，不传该参数。变更readonly节点规格时,取值为“readonly”。 - 对于单节点实例，不传该参数。</value>
         [JsonConverter(typeof(EnumClassConverter<TargetTypeEnum>))]
         public class TargetTypeEnum
         {
@@ -32,11 +32,23 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             /// </summary>
             public static readonly TargetTypeEnum SHARD = new TargetTypeEnum("shard");
 
+            /// <summary>
+            /// Enum CONFIG for value: config
+            /// </summary>
+            public static readonly TargetTypeEnum CONFIG = new TargetTypeEnum("config");
+
+            /// <summary>
+            /// Enum READONLY for value: readonly
+            /// </summary>
+            public static readonly TargetTypeEnum READONLY = new TargetTypeEnum("readonly");
+
             private static readonly Dictionary<string, TargetTypeEnum> StaticFields =
             new Dictionary<string, TargetTypeEnum>()
             {
                 { "mongos", MONGOS },
                 { "shard", SHARD },
+                { "config", CONFIG },
+                { "readonly", READONLY },
             };
 
             private string _value;
@@ -132,12 +144,12 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
 
 
         /// <summary>
-        /// 对象类型。 - 对于集群实例，该参数为必选。变更mongos节点规格时，取值为“mongos”；变更shard组规格时，取值为“shard”。 - 对于副本集和单节点实例，不传该参数。
+        /// 对象类型。 - 对于集群实例，该参数为必选。变更mongos节点规格时，取值为“mongos”；变更单个shard组规格、或者批量变更多个shard组规格时，取值为“shard”，变更config组规格时，取值为\&quot;config\&quot;。 - 对于副本集实例，不传该参数。变更readonly节点规格时,取值为“readonly”。 - 对于单节点实例，不传该参数。
         /// </summary>
         [JsonProperty("target_type", NullValueHandling = NullValueHandling.Ignore)]
         public TargetTypeEnum TargetType { get; set; }
         /// <summary>
-        /// 待变更规格的节点ID或实例ID，可以调用“查询实例列表和详情”接口获取。如果未申请实例，可以调用“创建实例”接口创建。 - 对于集群实例，变更mongos节点规格时，取值为mongos节点ID；变更shard组规格时，取值为shard组ID。 - 对于副本集实例，取值为相应的实例ID。 - 对于单节点实例，取值为相应的实例ID。
+        /// 待变更规格的节点ID或实例ID，可以调用“查询实例列表和详情”接口获取。如果未申请实例，可以调用“创建实例”接口创建。 - 对于集群实例，变更mongos节点规格时，取值为mongos节点ID；变更单个shard组规格时，取值为shard组ID；批量变更多个shard组规格时，不传该参数；变更config组规格时，取值为config组的ID。 - 对于副本集实例，取值为相应的实例ID。变更readonly节点规格时，取值为readonly节点ID。 - 对于单节点实例，取值为相应的实例ID。
         /// </summary>
         [JsonProperty("target_id", NullValueHandling = NullValueHandling.Ignore)]
         public string TargetId { get; set; }

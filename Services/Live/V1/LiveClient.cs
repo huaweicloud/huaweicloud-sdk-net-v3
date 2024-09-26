@@ -1425,6 +1425,126 @@ namespace HuaweiCloud.SDK.Live.V1
         }
         
         /// <summary>
+        /// 创建Live2VOD任务
+        ///
+        /// 创建Live2VOD任务。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateHarvestTaskResponse CreateHarvestTask(CreateHarvestTaskRequest createHarvestTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ott/harvest/task", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", createHarvestTaskRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateHarvestTaskResponse>(response);
+        }
+
+        public SyncInvoker<CreateHarvestTaskResponse> CreateHarvestTaskInvoker(CreateHarvestTaskRequest createHarvestTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ott/harvest/task", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", createHarvestTaskRequest);
+            return new SyncInvoker<CreateHarvestTaskResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateHarvestTaskResponse>);
+        }
+        
+        /// <summary>
+        /// 删除Live2VOD任务
+        ///
+        /// 删除Live2VOD任务。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteHarvestTaskResponse DeleteHarvestTask(DeleteHarvestTaskRequest deleteHarvestTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ott/harvest/task", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteHarvestTaskRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteHarvestTaskResponse>(response);
+        }
+
+        public SyncInvoker<DeleteHarvestTaskResponse> DeleteHarvestTaskInvoker(DeleteHarvestTaskRequest deleteHarvestTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ott/harvest/task", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteHarvestTaskRequest);
+            return new SyncInvoker<DeleteHarvestTaskResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteHarvestTaskResponse>);
+        }
+        
+        /// <summary>
+        /// 查询Live2VOD任务
+        ///
+        /// 查询Live2VOD任务，支持批量查询。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListHarvestTaskResponse ListHarvestTask(ListHarvestTaskRequest listHarvestTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ott/harvest/task", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listHarvestTaskRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListHarvestTaskResponse>(response);
+        }
+
+        public SyncInvoker<ListHarvestTaskResponse> ListHarvestTaskInvoker(ListHarvestTaskRequest listHarvestTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ott/harvest/task", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listHarvestTaskRequest);
+            return new SyncInvoker<ListHarvestTaskResponse>(this, "GET", request, JsonUtils.DeSerialize<ListHarvestTaskResponse>);
+        }
+        
+        /// <summary>
+        /// 修改Live2VOD任务
+        ///
+        /// 修改Live2VOD任务。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ModifyHarvestTaskResponse ModifyHarvestTask(ModifyHarvestTaskRequest modifyHarvestTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ott/harvest/task", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", modifyHarvestTaskRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<ModifyHarvestTaskResponse>(response);
+        }
+
+        public SyncInvoker<ModifyHarvestTaskResponse> ModifyHarvestTaskInvoker(ModifyHarvestTaskRequest modifyHarvestTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ott/harvest/task", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", modifyHarvestTaskRequest);
+            return new SyncInvoker<ModifyHarvestTaskResponse>(this, "PUT", request, JsonUtils.DeSerialize<ModifyHarvestTaskResponse>);
+        }
+        
+        /// <summary>
+        /// 修改Live2VOD任务状态
+        ///
+        /// 修改Live2VOD任务状态。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateHarvestJobStatusResponse UpdateHarvestJobStatus(UpdateHarvestJobStatusRequest updateHarvestJobStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ott/harvest/task/status", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", updateHarvestJobStatusRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateHarvestJobStatusResponse>(response);
+        }
+
+        public SyncInvoker<UpdateHarvestJobStatusResponse> UpdateHarvestJobStatusInvoker(UpdateHarvestJobStatusRequest updateHarvestJobStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ott/harvest/task/status", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", updateHarvestJobStatusRequest);
+            return new SyncInvoker<UpdateHarvestJobStatusResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateHarvestJobStatusResponse>);
+        }
+        
+        /// <summary>
         /// OBS桶授权及取消授权
         ///
         /// OBS桶授权及取消授权

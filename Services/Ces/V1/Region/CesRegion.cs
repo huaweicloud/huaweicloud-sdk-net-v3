@@ -57,6 +57,10 @@ namespace HuaweiCloud.SDK.Ces.V1
             "https://ces.cn-south-2.myhuaweicloud.com");
         public static readonly Region CN_SOUTH_4 = new Region("cn-south-4",
             "https://ces.cn-south-4.myhuaweicloud.com");
+        public static readonly Region CN_EAST_4 = new Region("cn-east-4",
+            "https://ces.cn-east-4.myhuaweicloud.com");
+        public static readonly Region AF_NORTH_1 = new Region("af-north-1",
+            "https://ces.af-north-1.myhuaweicloud.com");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("CES");
 
@@ -87,6 +91,8 @@ namespace HuaweiCloud.SDK.Ces.V1
                 { "ru-moscow-1", RU_MOSCOW_1 },
                 { "cn-south-2", CN_SOUTH_2 },
                 { "cn-south-4", CN_SOUTH_4 },
+                { "cn-east-4", CN_EAST_4 },
+                { "af-north-1", AF_NORTH_1 },
         };
 
         public static Region ValueOf(string regionId)
