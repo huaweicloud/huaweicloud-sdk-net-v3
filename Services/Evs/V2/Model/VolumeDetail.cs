@@ -232,12 +232,6 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         [JsonProperty("throughput", NullValueHandling = NullValueHandling.Ignore)]
         public Throughput Throughput { get; set; }
 
-        /// <summary>
-        /// 云硬盘关联的自动快照策略ID
-        /// </summary>
-        [JsonProperty("snapshot_policy_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string SnapshotPolicyId { get; set; }
-
 
 
         /// <summary>
@@ -283,7 +277,6 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
             sb.Append("  serialNumber: ").Append(SerialNumber).Append("\n");
             sb.Append("  iops: ").Append(Iops).Append("\n");
             sb.Append("  throughput: ").Append(Throughput).Append("\n");
-            sb.Append("  snapshotPolicyId: ").Append(SnapshotPolicyId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -489,11 +482,6 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
                     this.Throughput == input.Throughput ||
                     (this.Throughput != null &&
                     this.Throughput.Equals(input.Throughput))
-                ) && 
-                (
-                    this.SnapshotPolicyId == input.SnapshotPolicyId ||
-                    (this.SnapshotPolicyId != null &&
-                    this.SnapshotPolicyId.Equals(input.SnapshotPolicyId))
                 );
         }
 
@@ -577,8 +565,6 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
                     hashCode = hashCode * 59 + this.Iops.GetHashCode();
                 if (this.Throughput != null)
                     hashCode = hashCode * 59 + this.Throughput.GetHashCode();
-                if (this.SnapshotPolicyId != null)
-                    hashCode = hashCode * 59 + this.SnapshotPolicyId.GetHashCode();
                 return hashCode;
             }
         }

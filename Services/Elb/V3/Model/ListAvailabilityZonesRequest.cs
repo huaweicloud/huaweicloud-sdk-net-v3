@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// 参数解释：AZ组。
+        /// 参数解释：可用区组。
         /// </summary>
         [SDKProperty("public_border_group", IsQuery = true)]
         [JsonProperty("public_border_group", NullValueHandling = NullValueHandling.Ignore)]

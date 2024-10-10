@@ -221,6 +221,32 @@ namespace HuaweiCloud.SDK.Aad.V1
         }
         
         /// <summary>
+        /// 策略和防护包绑定防护对象
+        ///
+        /// 策略和防护包绑定防护对象
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public AssociateIpToPolicyAndPackageResponse AssociateIpToPolicyAndPackage(AssociateIpToPolicyAndPackageRequest associateIpToPolicyAndPackageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("policy_id", associateIpToPolicyAndPackageRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/cnad/policies/{policy_id}/bind", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateIpToPolicyAndPackageRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<AssociateIpToPolicyAndPackageResponse>(response);
+        }
+
+        public SyncInvoker<AssociateIpToPolicyAndPackageResponse> AssociateIpToPolicyAndPackageInvoker(AssociateIpToPolicyAndPackageRequest associateIpToPolicyAndPackageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("policy_id", associateIpToPolicyAndPackageRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/cnad/policies/{policy_id}/bind", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateIpToPolicyAndPackageRequest);
+            return new SyncInvoker<AssociateIpToPolicyAndPackageResponse>(this, "POST", request, JsonUtils.DeSerializeNull<AssociateIpToPolicyAndPackageResponse>);
+        }
+        
+        /// <summary>
         /// 批量创建高防实例IP的转发规则
         ///
         /// 批量创建高防实例IP的转发规则
@@ -448,6 +474,32 @@ namespace HuaweiCloud.SDK.Aad.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/cnad/policies/{policy_id}/unbind", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disassociateIpFromPolicyRequest);
             return new SyncInvoker<DisassociateIpFromPolicyResponse>(this, "POST", request, JsonUtils.DeSerializeNull<DisassociateIpFromPolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 策略和防护包解绑防护对象
+        ///
+        /// 策略和防护包解绑防护对象
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DisassociateIpFromPolicyAndPackageResponse DisassociateIpFromPolicyAndPackage(DisassociateIpFromPolicyAndPackageRequest disassociateIpFromPolicyAndPackageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("policy_id", disassociateIpFromPolicyAndPackageRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/cnad/policies/{policy_id}/unbind", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disassociateIpFromPolicyAndPackageRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<DisassociateIpFromPolicyAndPackageResponse>(response);
+        }
+
+        public SyncInvoker<DisassociateIpFromPolicyAndPackageResponse> DisassociateIpFromPolicyAndPackageInvoker(DisassociateIpFromPolicyAndPackageRequest disassociateIpFromPolicyAndPackageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("policy_id", disassociateIpFromPolicyAndPackageRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/cnad/policies/{policy_id}/unbind", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disassociateIpFromPolicyAndPackageRequest);
+            return new SyncInvoker<DisassociateIpFromPolicyAndPackageResponse>(this, "POST", request, JsonUtils.DeSerializeNull<DisassociateIpFromPolicyAndPackageResponse>);
         }
         
         /// <summary>

@@ -1,3 +1,138 @@
+# 3.1.115 2024-10-10
+
+### HuaweiCloud SDK AAD
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the APIs `AssociateIpToPolicyAndPackage`, `DisassociateIpFromPolicyAndPackage`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK CCE
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowAutopilotCluster**
+    - changes of response param
+      - `+ spec.deletionProtection`
+  - **UpdateAutopilotCluster**
+    - changes of response param
+      - `+ spec.deletionProtection`
+  - **DeleteAutopilotCluster**
+    - changes of response param
+      - `+ spec.deletionProtection`
+  - **CreateAutopilotCluster**
+    - changes of request param
+      - `+ spec.deletionProtection`
+    - changes of response param
+      - `+ spec.deletionProtection`
+  - **ListAutopilotClusters**
+    - changes of response param
+      - `+ items.spec.deletionProtection`
+
+### HuaweiCloud SDK DRS
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **BatchListJobDetails**
+    - changes of response param
+      - `* results.node_num: string -> int32`
+
+### HuaweiCloud SDK DRS
+
+- _API Version_
+  - V5
+- _Features_
+  - Support the following APIs:
+    - `ListReplicationJobs`
+    - `CreateReplicationJob`
+    - `ShowReplicationJob`
+    - `UpdateReplicationJob`
+    - `DeleteReplicationJob`
+    - `ChangeToPeriod`
+    - `ListConnections`
+    - `CreateConnection`
+    - `ModifyConnection`
+    - `DeleteConnection`
+    - `ListJobDdls`
+    - `CleanAlarms`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK ELB
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListMembers**
+    - changes of request param
+      - `+ enterprise_project_id`
+
+### HuaweiCloud SDK EVS
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowVolume**
+    - changes of response param
+      - `- volume.snapshot_policy_id`
+  - **ListVolumes**
+    - changes of request param
+      - `- snapshot_policy_id`
+    - changes of response param
+      - `- volumes.snapshot_policy_id`
+
+### HuaweiCloud SDK GaussDB
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateStarrocksInstance**
+    - changes of request param
+      - `+ security_group_id`
+  - **CheckStarrocksParams**
+    - changes of response param
+      - `+ differences`
+      - `- check_starrocks_params_responce`
+
+### HuaweiCloud SDK RDS
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the APIs `ShowRecoveryTimeWindow`, `UpdateToPeriod`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.1.114 2024-09-26
 
 ### HuaweiCloud SDK CCE

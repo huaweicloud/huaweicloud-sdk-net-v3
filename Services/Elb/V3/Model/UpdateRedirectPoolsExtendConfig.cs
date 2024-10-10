@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 转发到的后端主机组的URL配置。
+    /// 参数解释：转发到的后端主机组的URL配置。
     /// </summary>
     public class UpdateRedirectPoolsExtendConfig 
     {

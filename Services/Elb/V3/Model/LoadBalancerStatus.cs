@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<LoadBalancerStatusListener> Listeners { get; set; }
 
         /// <summary>
-        /// 负载均衡器关联的后端云服务器组列表。
+        /// 负载均衡器关联的后端服务器组列表。
         /// </summary>
         [JsonProperty("pools", NullValueHandling = NullValueHandling.Ignore)]
         public List<LoadBalancerStatusPool> Pools { get; set; }

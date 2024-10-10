@@ -19,8 +19,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// <summary>
         /// 参数之间区别的集合。
         /// </summary>
-        [JsonProperty("check_starrocks_params_responce", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ParamGroupParameterDifferences> CheckStarrocksParamsResponce { get; set; }
+        [JsonProperty("differences", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ParamGroupParameterDifferences> Differences { get; set; }
 
 
 
@@ -31,7 +31,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class CheckStarrocksParamsResponse {\n");
-            sb.Append("  checkStarrocksParamsResponce: ").Append(CheckStarrocksParamsResponce).Append("\n");
+            sb.Append("  differences: ").Append(Differences).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -54,10 +54,10 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
 
             return 
                 (
-                    this.CheckStarrocksParamsResponce == input.CheckStarrocksParamsResponce ||
-                    this.CheckStarrocksParamsResponce != null &&
-                    input.CheckStarrocksParamsResponce != null &&
-                    this.CheckStarrocksParamsResponce.SequenceEqual(input.CheckStarrocksParamsResponce)
+                    this.Differences == input.Differences ||
+                    this.Differences != null &&
+                    input.Differences != null &&
+                    this.Differences.SequenceEqual(input.Differences)
                 );
         }
 
@@ -69,8 +69,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.CheckStarrocksParamsResponce != null)
-                    hashCode = hashCode * 59 + this.CheckStarrocksParamsResponce.GetHashCode();
+                if (this.Differences != null)
+                    hashCode = hashCode * 59 + this.Differences.GetHashCode();
                 return hashCode;
             }
         }

@@ -11,13 +11,13 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 后端全下线转发配置
+    /// 参数解释：后端全下线转发配置。
     /// </summary>
     public class PoolHealth 
     {
 
         /// <summary>
-        /// 当健康检查在线的member个数小于该个数，判定pool的state为不健康； 取值范围：0或者1； 0：默认值，不生效； 1：全下线转发生效；
+        /// 参数解释：当健康检查在线的member个数小于该个数，判定pool的state为不健康。  取值范围： - 0：默认值，不生效。 - 1：全下线转发生效。
         /// </summary>
         [JsonProperty("minimum_healthy_member_count", NullValueHandling = NullValueHandling.Ignore)]
         public int? MinimumHealthyMemberCount { get; set; }

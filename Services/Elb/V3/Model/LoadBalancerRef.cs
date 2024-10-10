@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 负载均衡器信息
+    /// 参数解释：负载均衡器信息
     /// </summary>
     public class LoadBalancerRef 
     {

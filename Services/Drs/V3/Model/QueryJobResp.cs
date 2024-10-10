@@ -1284,10 +1284,10 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         [JsonProperty("schema_type", NullValueHandling = NullValueHandling.Ignore)]
         public SchemaTypeEnum SchemaType { get; set; }
         /// <summary>
-        /// 节点个数。
+        /// 节点个数。MongoDB数据库时对应源端分片个数，源库为集群时必填，[1-32]，MySQL双主灾备时会默认设置为2。
         /// </summary>
         [JsonProperty("node_num", NullValueHandling = NullValueHandling.Ignore)]
-        public string NodeNum { get; set; }
+        public int? NodeNum { get; set; }
 
         /// <summary>
         /// 对象选择开关

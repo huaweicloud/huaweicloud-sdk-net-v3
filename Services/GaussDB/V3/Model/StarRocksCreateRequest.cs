@@ -208,6 +208,12 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         [JsonProperty("tags_info", NullValueHandling = NullValueHandling.Ignore)]
         public StarRocksCreateRequestTagsInfo TagsInfo { get; set; }
 
+        /// <summary>
+        /// 实例安全组ID。默认与Taurus安全组ID一致。
+        /// </summary>
+        [JsonProperty("security_group_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string SecurityGroupId { get; set; }
+
 
 
         /// <summary>
@@ -231,6 +237,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             sb.Append("  azCode: ").Append(AzCode).Append("\n");
             sb.Append("  timeZone: ").Append(TimeZone).Append("\n");
             sb.Append("  tagsInfo: ").Append(TagsInfo).Append("\n");
+            sb.Append("  securityGroupId: ").Append(SecurityGroupId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -321,6 +328,11 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                     this.TagsInfo == input.TagsInfo ||
                     (this.TagsInfo != null &&
                     this.TagsInfo.Equals(input.TagsInfo))
+                ) && 
+                (
+                    this.SecurityGroupId == input.SecurityGroupId ||
+                    (this.SecurityGroupId != null &&
+                    this.SecurityGroupId.Equals(input.SecurityGroupId))
                 );
         }
 
@@ -360,6 +372,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                     hashCode = hashCode * 59 + this.TimeZone.GetHashCode();
                 if (this.TagsInfo != null)
                     hashCode = hashCode * 59 + this.TagsInfo.GetHashCode();
+                if (this.SecurityGroupId != null)
+                    hashCode = hashCode * 59 + this.SecurityGroupId.GetHashCode();
                 return hashCode;
             }
         }

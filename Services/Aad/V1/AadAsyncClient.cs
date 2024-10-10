@@ -222,6 +222,32 @@ namespace HuaweiCloud.SDK.Aad.V1
         }
         
         /// <summary>
+        /// 策略和防护包绑定防护对象
+        ///
+        /// 策略和防护包绑定防护对象
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<AssociateIpToPolicyAndPackageResponse> AssociateIpToPolicyAndPackageAsync(AssociateIpToPolicyAndPackageRequest associateIpToPolicyAndPackageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("policy_id", associateIpToPolicyAndPackageRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/cnad/policies/{policy_id}/bind", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateIpToPolicyAndPackageRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<AssociateIpToPolicyAndPackageResponse>(response);
+        }
+
+        public AsyncInvoker<AssociateIpToPolicyAndPackageResponse> AssociateIpToPolicyAndPackageAsyncInvoker(AssociateIpToPolicyAndPackageRequest associateIpToPolicyAndPackageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("policy_id", associateIpToPolicyAndPackageRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/cnad/policies/{policy_id}/bind", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateIpToPolicyAndPackageRequest);
+            return new AsyncInvoker<AssociateIpToPolicyAndPackageResponse>(this, "POST", request, JsonUtils.DeSerializeNull<AssociateIpToPolicyAndPackageResponse>);
+        }
+        
+        /// <summary>
         /// 批量创建高防实例IP的转发规则
         ///
         /// 批量创建高防实例IP的转发规则
@@ -449,6 +475,32 @@ namespace HuaweiCloud.SDK.Aad.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/cnad/policies/{policy_id}/unbind", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disassociateIpFromPolicyRequest);
             return new AsyncInvoker<DisassociateIpFromPolicyResponse>(this, "POST", request, JsonUtils.DeSerializeNull<DisassociateIpFromPolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 策略和防护包解绑防护对象
+        ///
+        /// 策略和防护包解绑防护对象
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DisassociateIpFromPolicyAndPackageResponse> DisassociateIpFromPolicyAndPackageAsync(DisassociateIpFromPolicyAndPackageRequest disassociateIpFromPolicyAndPackageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("policy_id", disassociateIpFromPolicyAndPackageRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/cnad/policies/{policy_id}/unbind", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disassociateIpFromPolicyAndPackageRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<DisassociateIpFromPolicyAndPackageResponse>(response);
+        }
+
+        public AsyncInvoker<DisassociateIpFromPolicyAndPackageResponse> DisassociateIpFromPolicyAndPackageAsyncInvoker(DisassociateIpFromPolicyAndPackageRequest disassociateIpFromPolicyAndPackageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("policy_id", disassociateIpFromPolicyAndPackageRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/cnad/policies/{policy_id}/unbind", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disassociateIpFromPolicyAndPackageRequest);
+            return new AsyncInvoker<DisassociateIpFromPolicyAndPackageResponse>(this, "POST", request, JsonUtils.DeSerializeNull<DisassociateIpFromPolicyAndPackageResponse>);
         }
         
         /// <summary>

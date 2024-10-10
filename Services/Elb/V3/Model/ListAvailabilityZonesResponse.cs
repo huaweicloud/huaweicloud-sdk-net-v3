@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<List<AvailabilityZone>> AvailabilityZones { get; set; }
 
         /// <summary>
-        /// 可用区的产品编码，仅边缘场景有效。
+        /// 参数解释：可用区的产品编码，仅边缘场景有效。
         /// </summary>
         [JsonProperty("spec_code", NullValueHandling = NullValueHandling.Ignore)]
         public string SpecCode { get; set; }

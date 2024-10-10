@@ -87,7 +87,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<int?> ConnectionLimit { get; set; }
 
         /// <summary>
-        /// 监听器的默认后端云服务器组ID。当请求没有匹配的转发策略时，转发到默认后端云服务器上处理。  支持多值查询，查询条件格式：*default_pool_id&#x3D;xxx&amp;default_pool_id&#x3D;xxx*。
+        /// 监听器的默认后端服务器组ID。当请求没有匹配的转发策略时，转发到默认后端服务器上处理。  支持多值查询，查询条件格式：*default_pool_id&#x3D;xxx&amp;default_pool_id&#x3D;xxx*。
         /// </summary>
         [SDKProperty("default_pool_id", IsQuery = true)]
         [JsonProperty("default_pool_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -129,14 +129,14 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<string> TlsCiphersPolicy { get; set; }
 
         /// <summary>
-        /// 后端云服务器的IP地址。仅用于查询条件，不作为响应参数字段。  支持多值查询，查询条件格式：*member_address&#x3D;xxx&amp;member_address&#x3D;xxx*。
+        /// 后端服务器的IP地址。仅用于查询条件，不作为响应参数字段。  支持多值查询，查询条件格式：*member_address&#x3D;xxx&amp;member_address&#x3D;xxx*。
         /// </summary>
         [SDKProperty("member_address", IsQuery = true)]
         [JsonProperty("member_address", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> MemberAddress { get; set; }
 
         /// <summary>
-        /// 后端云服务器对应的弹性云服务器的ID。仅用于查询条件，不作为响应参数字段。  支持多值查询，查询条件格式：*member_device_id&#x3D;xxx&amp;member_device_id&#x3D;xxx*。
+        /// 后端服务器对应的弹性云服务器的ID。仅用于查询条件，不作为响应参数字段。  支持多值查询，查询条件格式：*member_device_id&#x3D;xxx&amp;member_device_id&#x3D;xxx*。
         /// </summary>
         [SDKProperty("member_device_id", IsQuery = true)]
         [JsonProperty("member_device_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -199,7 +199,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public bool? EnhanceL7policyEnable { get; set; }
 
         /// <summary>
-        /// 后端云服务器ID。仅用于查询条件，不作为响应参数字段。  支持多值查询，查询条件格式：*member_instance_id&#x3D;xxx&amp;member_instance_id&#x3D;xxx*。
+        /// 后端服务器ID。仅用于查询条件，不作为响应参数字段。  支持多值查询，查询条件格式：*member_instance_id&#x3D;xxx&amp;member_instance_id&#x3D;xxx*。
         /// </summary>
         [SDKProperty("member_instance_id", IsQuery = true)]
         [JsonProperty("member_instance_id", NullValueHandling = NullValueHandling.Ignore)]

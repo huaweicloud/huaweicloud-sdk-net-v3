@@ -93,6 +93,13 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         [JsonProperty("weight", NullValueHandling = NullValueHandling.Ignore)]
         public int? Weight { get; set; }
 
+        /// <summary>
+        /// 企业项目ID。 不传时查询default企业项目（即enterprise_project_id&#x3D;0）下的资源，鉴权按照default企业项目鉴权。 如果传值enterprise_project_id&#x3D;all_granted_eps，则表示查询所有有权限的企业项目下的资源。 其他情况则传已存在的企业项目ID。此时会校验ID，若不存在或格式错误则报错。
+        /// </summary>
+        [SDKProperty("enterprise_project_id", IsQuery = true)]
+        [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string EnterpriseProjectId { get; set; }
+
 
 
         /// <summary>
@@ -113,6 +120,7 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
             sb.Append("  subnetId: ").Append(SubnetId).Append("\n");
             sb.Append("  adminStateUp: ").Append(AdminStateUp).Append("\n");
             sb.Append("  weight: ").Append(Weight).Append("\n");
+            sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -188,6 +196,11 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
                     this.Weight == input.Weight ||
                     (this.Weight != null &&
                     this.Weight.Equals(input.Weight))
+                ) && 
+                (
+                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
+                    (this.EnterpriseProjectId != null &&
+                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
                 );
         }
 
@@ -221,6 +234,8 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
                     hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
                 if (this.Weight != null)
                     hashCode = hashCode * 59 + this.Weight.GetHashCode();
+                if (this.EnterpriseProjectId != null)
+                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 return hashCode;
             }
         }

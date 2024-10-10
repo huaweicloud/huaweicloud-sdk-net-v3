@@ -196,6 +196,32 @@ namespace HuaweiCloud.SDK.Drs.V5
         }
         
         /// <summary>
+        /// 按需转包周期
+        ///
+        /// DRS同步和灾备任务按需计费转包周期计费。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ChangeToPeriodResponse> ChangeToPeriodAsync(ChangeToPeriodRequest changeToPeriodRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", changeToPeriodRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/job/{job_id}/change-to-period", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", changeToPeriodRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<ChangeToPeriodResponse>(response);
+        }
+
+        public AsyncInvoker<ChangeToPeriodResponse> ChangeToPeriodAsyncInvoker(ChangeToPeriodRequest changeToPeriodRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", changeToPeriodRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/job/{job_id}/change-to-period", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", changeToPeriodRequest);
+            return new AsyncInvoker<ChangeToPeriodResponse>(this, "POST", request, JsonUtils.DeSerialize<ChangeToPeriodResponse>);
+        }
+        
+        /// <summary>
         /// 数据过滤规则校验
         ///
         /// 数据过滤规则校验
@@ -219,6 +245,34 @@ namespace HuaweiCloud.SDK.Drs.V5
             var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/job/{job_id}/data-filtering/check", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", checkDataFilterRequest);
             return new AsyncInvoker<CheckDataFilterResponse>(this, "POST", request, JsonUtils.DeSerialize<CheckDataFilterResponse>);
+        }
+        
+        /// <summary>
+        /// 清除DDL告警
+        ///
+        /// 清除DDL告警
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CleanAlarmsResponse> CleanAlarmsAsync(CleanAlarmsRequest cleanAlarmsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", cleanAlarmsRequest.JobId.ToString());
+            urlParam.Add("alarm_id", cleanAlarmsRequest.AlarmId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/alarms/{alarm_id}/clean", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", cleanAlarmsRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CleanAlarmsResponse>(response);
+        }
+
+        public AsyncInvoker<CleanAlarmsResponse> CleanAlarmsAsyncInvoker(CleanAlarmsRequest cleanAlarmsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", cleanAlarmsRequest.JobId.ToString());
+            urlParam.Add("alarm_id", cleanAlarmsRequest.AlarmId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/alarms/{alarm_id}/clean", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", cleanAlarmsRequest);
+            return new AsyncInvoker<CleanAlarmsResponse>(this, "POST", request, JsonUtils.DeSerialize<CleanAlarmsResponse>);
         }
         
         /// <summary>
@@ -408,6 +462,30 @@ namespace HuaweiCloud.SDK.Drs.V5
         }
         
         /// <summary>
+        /// 创建连接
+        ///
+        /// 创建单个连接，该连接可以为线下自建库或云上RDS等，目前支持的数据库引擎包括MySQL、PostgreSQL、Oracle和MongoDB。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateConnectionResponse> CreateConnectionAsync(CreateConnectionRequest createConnectionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/connections", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createConnectionRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateConnectionResponse>(response);
+        }
+
+        public AsyncInvoker<CreateConnectionResponse> CreateConnectionAsyncInvoker(CreateConnectionRequest createConnectionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/connections", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createConnectionRequest);
+            return new AsyncInvoker<CreateConnectionResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateConnectionResponse>);
+        }
+        
+        /// <summary>
         /// 创建任务
         ///
         /// 创建单个任务，根据请求参数不同，可以创建单个实时迁移、实时同步、实时灾备等任务。
@@ -432,7 +510,61 @@ namespace HuaweiCloud.SDK.Drs.V5
         }
         
         /// <summary>
-        /// 删除驱动文件
+        /// 创建备份迁移任务
+        ///
+        /// 该接口主要用于三种常见场景下备份迁移任务的配置。
+        /// 备份迁移支持如下的常见场景：
+        /// - 通过OBS桶备份文件进行全量数据迁移。
+        /// - 通过OBS桶备份文件进行全量+增量数据迁移。
+        /// - 通过RDS全量备份进行全量数据迁移。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateReplicationJobResponse> CreateReplicationJobAsync(CreateReplicationJobRequest createReplicationJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/backup-migration-jobs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createReplicationJobRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateReplicationJobResponse>(response);
+        }
+
+        public AsyncInvoker<CreateReplicationJobResponse> CreateReplicationJobAsyncInvoker(CreateReplicationJobRequest createReplicationJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/backup-migration-jobs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createReplicationJobRequest);
+            return new AsyncInvoker<CreateReplicationJobResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateReplicationJobResponse>);
+        }
+        
+        /// <summary>
+        /// 删除连接
+        ///
+        /// 删除租户指定的连接。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteConnectionResponse> DeleteConnectionAsync(DeleteConnectionRequest deleteConnectionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("connection_id", deleteConnectionRequest.ConnectionId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/connections/{connection_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteConnectionRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteConnectionResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteConnectionResponse> DeleteConnectionAsyncInvoker(DeleteConnectionRequest deleteConnectionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("connection_id", deleteConnectionRequest.ConnectionId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/connections/{connection_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteConnectionRequest);
+            return new AsyncInvoker<DeleteConnectionResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteConnectionResponse>);
+        }
+        
+        /// <summary>
+        /// 删除驱动文件（不再推广）
         ///
         /// 删除驱动文件。
         /// 
@@ -479,6 +611,32 @@ namespace HuaweiCloud.SDK.Drs.V5
             var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteJobRequest);
             return new AsyncInvoker<DeleteJobResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteJobResponse>);
+        }
+        
+        /// <summary>
+        /// 删除备份迁移任务
+        ///
+        /// 对于已经完成的备份迁移任务，可以选择删除迁移任务。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteReplicationJobResponse> DeleteReplicationJobAsync(DeleteReplicationJobRequest deleteReplicationJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", deleteReplicationJobRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/backup-migration-jobs/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteReplicationJobRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteReplicationJobResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteReplicationJobResponse> DeleteReplicationJobAsyncInvoker(DeleteReplicationJobRequest deleteReplicationJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", deleteReplicationJobRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/backup-migration-jobs/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteReplicationJobRequest);
+            return new AsyncInvoker<DeleteReplicationJobResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteReplicationJobResponse>);
         }
         
         /// <summary>
@@ -682,6 +840,30 @@ namespace HuaweiCloud.SDK.Drs.V5
         }
         
         /// <summary>
+        /// 查询连接列表
+        ///
+        /// 查询连接列表，可根据连接类型进行查询。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListConnectionsResponse> ListConnectionsAsync(ListConnectionsRequest listConnectionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/connections", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listConnectionsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListConnectionsResponse>(response);
+        }
+
+        public AsyncInvoker<ListConnectionsResponse> ListConnectionsAsyncInvoker(ListConnectionsRequest listConnectionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/connections", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listConnectionsRequest);
+            return new AsyncInvoker<ListConnectionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListConnectionsResponse>);
+        }
+        
+        /// <summary>
         /// 查询数据库对象信息
         ///
         /// 查询数据库对象信息。
@@ -762,7 +944,7 @@ namespace HuaweiCloud.SDK.Drs.V5
         }
         
         /// <summary>
-        /// 查询驱动文件列表
+        /// 查询驱动文件列表（不再推广）
         ///
         /// 查询驱动文件列表。
         /// 
@@ -783,6 +965,32 @@ namespace HuaweiCloud.SDK.Drs.V5
             var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jdbc-drivers", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listJdbcDriversRequest);
             return new AsyncInvoker<ListJdbcDriversResponse>(this, "GET", request, JsonUtils.DeSerialize<ListJdbcDriversResponse>);
+        }
+        
+        /// <summary>
+        /// 查询增量DDL列表
+        ///
+        /// 查询增量DDL列表，可根据status查询
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListJobDdlsResponse> ListJobDdlsAsync(ListJobDdlsRequest listJobDdlsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", listJobDdlsRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/ddl", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listJobDdlsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListJobDdlsResponse>(response);
+        }
+
+        public AsyncInvoker<ListJobDdlsResponse> ListJobDdlsAsyncInvoker(ListJobDdlsRequest listJobDdlsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", listJobDdlsRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/ddl", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listJobDdlsRequest);
+            return new AsyncInvoker<ListJobDdlsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListJobDdlsResponse>);
         }
         
         /// <summary>
@@ -914,6 +1122,30 @@ namespace HuaweiCloud.SDK.Drs.V5
         }
         
         /// <summary>
+        /// 查询备份迁移任务列表
+        ///
+        /// 获取当前备份迁移任务列表，不包含已删除的任务。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListReplicationJobsResponse> ListReplicationJobsAsync(ListReplicationJobsRequest listReplicationJobsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/backup-migration-jobs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listReplicationJobsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListReplicationJobsResponse>(response);
+        }
+
+        public AsyncInvoker<ListReplicationJobsResponse> ListReplicationJobsAsyncInvoker(ListReplicationJobsRequest listReplicationJobsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/backup-migration-jobs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listReplicationJobsRequest);
+            return new AsyncInvoker<ListReplicationJobsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListReplicationJobsResponse>);
+        }
+        
+        /// <summary>
         /// 查询项目标签
         ///
         /// 查询租户在指定Project中实例类型的所有资源标签集合。
@@ -985,6 +1217,32 @@ namespace HuaweiCloud.SDK.Drs.V5
             var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/agency/permissions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listsAgencyPermissionsRequest);
             return new AsyncInvoker<ListsAgencyPermissionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListsAgencyPermissionsResponse>);
+        }
+        
+        /// <summary>
+        /// 修改连接
+        ///
+        /// 修改创建的连接信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ModifyConnectionResponse> ModifyConnectionAsync(ModifyConnectionRequest modifyConnectionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("connection_id", modifyConnectionRequest.ConnectionId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/connections/{connection_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyConnectionRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<ModifyConnectionResponse>(response);
+        }
+
+        public AsyncInvoker<ModifyConnectionResponse> ModifyConnectionAsyncInvoker(ModifyConnectionRequest modifyConnectionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("connection_id", modifyConnectionRequest.ConnectionId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/connections/{connection_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyConnectionRequest);
+            return new AsyncInvoker<ModifyConnectionResponse>(this, "PUT", request, JsonUtils.DeSerialize<ModifyConnectionResponse>);
         }
         
         /// <summary>
@@ -1624,6 +1882,32 @@ namespace HuaweiCloud.SDK.Drs.V5
         }
         
         /// <summary>
+        /// 查询备份迁移任务详细信息
+        ///
+        /// 获取指定备份迁移任务详细信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowReplicationJobResponse> ShowReplicationJobAsync(ShowReplicationJobRequest showReplicationJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", showReplicationJobRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/backup-migration-jobs/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showReplicationJobRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowReplicationJobResponse>(response);
+        }
+
+        public AsyncInvoker<ShowReplicationJobResponse> ShowReplicationJobAsyncInvoker(ShowReplicationJobRequest showReplicationJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", showReplicationJobRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/backup-migration-jobs/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showReplicationJobRequest);
+            return new AsyncInvoker<ShowReplicationJobResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowReplicationJobResponse>);
+        }
+        
+        /// <summary>
         /// 查询是否支持对象选择和列映射
         ///
         /// 查询任务支持的对象选择类型、列映射、支持搜索的对象类型等信息。
@@ -1702,7 +1986,7 @@ namespace HuaweiCloud.SDK.Drs.V5
         }
         
         /// <summary>
-        /// 同步驱动文件
+        /// 同步驱动文件（不再推广）
         ///
         /// 同步驱动文件。
         /// 
@@ -1886,6 +2170,32 @@ namespace HuaweiCloud.SDK.Drs.V5
         }
         
         /// <summary>
+        /// 修改备份迁移任务信息
+        ///
+        /// 修改指定备份迁移任务信息，任务名与任务描述。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateReplicationJobResponse> UpdateReplicationJobAsync(UpdateReplicationJobRequest updateReplicationJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", updateReplicationJobRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/backup-migration-jobs/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateReplicationJobRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateReplicationJobResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateReplicationJobResponse> UpdateReplicationJobAsyncInvoker(UpdateReplicationJobRequest updateReplicationJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", updateReplicationJobRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/backup-migration-jobs/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateReplicationJobRequest);
+            return new AsyncInvoker<UpdateReplicationJobResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateReplicationJobResponse>);
+        }
+        
+        /// <summary>
         /// 更新增量任务启动位点
         ///
         /// 更新增量任务的启动位点。
@@ -1939,7 +2249,7 @@ namespace HuaweiCloud.SDK.Drs.V5
         }
         
         /// <summary>
-        /// 上传驱动文件
+        /// 上传驱动文件（不再推广）
         ///
         /// 上传驱动文件。
         /// 

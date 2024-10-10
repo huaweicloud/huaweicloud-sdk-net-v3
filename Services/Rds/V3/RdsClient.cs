@@ -3726,6 +3726,32 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// RDS实例按需转包周期
+        ///
+        /// RDS实例按需转包周期
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateToPeriodResponse UpdateToPeriod(UpdateToPeriodRequest updateToPeriodRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateToPeriodRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/to-period", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateToPeriodRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<UpdateToPeriodResponse>(response);
+        }
+
+        public SyncInvoker<UpdateToPeriodResponse> UpdateToPeriodInvoker(UpdateToPeriodRequest updateToPeriodRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateToPeriodRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/to-period", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateToPeriodRequest);
+            return new SyncInvoker<UpdateToPeriodResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateToPeriodResponse>);
+        }
+        
+        /// <summary>
         /// 
         ///
         /// PostgreSQL数据库升级大版本。
@@ -4959,6 +4985,32 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/parameter/{name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPostgresqlParamValueRequest);
             return new SyncInvoker<ShowPostgresqlParamValueResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPostgresqlParamValueResponse>);
+        }
+        
+        /// <summary>
+        /// 查询wal日志恢复时间窗
+        ///
+        /// 查询wal日志恢复时间窗
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowRecoveryTimeWindowResponse ShowRecoveryTimeWindow(ShowRecoveryTimeWindowRequest showRecoveryTimeWindowRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showRecoveryTimeWindowRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/recovery-time", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecoveryTimeWindowRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowRecoveryTimeWindowResponse>(response);
+        }
+
+        public SyncInvoker<ShowRecoveryTimeWindowResponse> ShowRecoveryTimeWindowInvoker(ShowRecoveryTimeWindowRequest showRecoveryTimeWindowRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showRecoveryTimeWindowRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/recovery-time", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecoveryTimeWindowRequest);
+            return new SyncInvoker<ShowRecoveryTimeWindowResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRecoveryTimeWindowResponse>);
         }
         
         /// <summary>

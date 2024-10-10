@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         public string Key { get; set; }
 
         /// <summary>
-        /// 标签值。 约束：最大长度43，只能包含字母、数字、下划线、中划线和中文。
+        /// 标签值。标签的值可以包含任意语种字母、数字、空格和_ . : / &#x3D; + - @。
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public string Value { get; set; }

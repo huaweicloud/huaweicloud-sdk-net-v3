@@ -53,7 +53,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public int? ConditionPerPolicy { get; set; }
 
         /// <summary>
-        /// 后端云服务器组配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+        /// 后端服务器组配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
         /// </summary>
         [JsonProperty("pool", NullValueHandling = NullValueHandling.Ignore)]
         public int? Pool { get; set; }
@@ -65,7 +65,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public int? Healthmonitor { get; set; }
 
         /// <summary>
-        /// 后端云服务器配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+        /// 后端服务器配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
         /// </summary>
         [JsonProperty("member", NullValueHandling = NullValueHandling.Ignore)]
         public int? Member { get; set; }

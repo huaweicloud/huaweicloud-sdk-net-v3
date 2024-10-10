@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
     public class CollectColumnsResponse : SdkResponse
     {
         /// <summary>
-        /// 查询状态
+        /// 查询状态 pending：处理中 failed：失败 success：成功
         /// </summary>
-        /// <value>查询状态</value>
+        /// <value>查询状态 pending：处理中 failed：失败 success：成功</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -144,7 +144,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         public string Id { get; set; }
 
         /// <summary>
-        /// 查询状态
+        /// 查询状态 pending：处理中 failed：失败 success：成功
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }

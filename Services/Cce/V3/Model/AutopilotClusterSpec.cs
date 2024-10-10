@@ -478,6 +478,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("configurationsOverride", NullValueHandling = NullValueHandling.Ignore)]
         public List<AutopilotPackageConfiguration> ConfigurationsOverride { get; set; }
 
+        /// <summary>
+        /// 集群删除保护，开启后禁止用户通过API或console调用删除集群，true表示开启，默认值false关闭。
+        /// </summary>
+        [JsonProperty("deletionProtection", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? DeletionProtection { get; set; }
+
 
 
         /// <summary>
@@ -510,6 +516,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  az: ").Append(Az).Append("\n");
             sb.Append("  extendParam: ").Append(ExtendParam).Append("\n");
             sb.Append("  configurationsOverride: ").Append(ConfigurationsOverride).Append("\n");
+            sb.Append("  deletionProtection: ").Append(DeletionProtection).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -648,6 +655,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     this.ConfigurationsOverride != null &&
                     input.ConfigurationsOverride != null &&
                     this.ConfigurationsOverride.SequenceEqual(input.ConfigurationsOverride)
+                ) && 
+                (
+                    this.DeletionProtection == input.DeletionProtection ||
+                    (this.DeletionProtection != null &&
+                    this.DeletionProtection.Equals(input.DeletionProtection))
                 );
         }
 
@@ -705,6 +717,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                     hashCode = hashCode * 59 + this.ExtendParam.GetHashCode();
                 if (this.ConfigurationsOverride != null)
                     hashCode = hashCode * 59 + this.ConfigurationsOverride.GetHashCode();
+                if (this.DeletionProtection != null)
+                    hashCode = hashCode * 59 + this.DeletionProtection.GetHashCode();
                 return hashCode;
             }
         }

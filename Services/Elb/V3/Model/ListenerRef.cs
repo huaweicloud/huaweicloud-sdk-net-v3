@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 监听器
+    /// 参数解释：监听器
     /// </summary>
     public class ListenerRef 
     {
